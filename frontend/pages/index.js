@@ -1,20 +1,19 @@
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
+import Container from '../components/container';
+import MoreStories from '../components/more-stories';
+import HeroPost from '../components/hero-post';
+import Intro from '../components/intro';
+import Layout from '../components/layout';
+import { getPostBySlug } from '../lib/api';
+import Head from 'next/head';
+import { CMS_TITLE } from '../lib/constants';
+import markdownToHtml from '../lib/markdownToHtml';
 
-export default function Index({ allPosts }) {
-  const heroPost = false;//allPosts[0]
-  const morePosts = allPosts.slice(1)
+export default function Index({ heroPost }) {
   return (
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>{CMS_TITLE}</title>
         </Head>
         <Container>
           <Intro />
@@ -26,27 +25,28 @@ export default function Index({ allPosts }) {
               author={heroPost.author}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
+              content={heroPost.content}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
+  const heroPost = getPostBySlug('index.md', [
     'title',
     'date',
     'slug',
     'author',
     'coverImage',
     'excerpt',
-    'content'
-  ])
+    'content',
+  ]);
+  heroPost.content = await markdownToHtml(heroPost.content.replace(/\]\(/gim, '\]\(\/manual/uk/') || '');
 
   return {
-    props: { allPosts },
-  }
+    props: { heroPost },
+  };
 }

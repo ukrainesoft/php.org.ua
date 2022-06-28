@@ -8,13 +8,16 @@ export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)
 }
 
-export function getPostBySlug(slug, fields = []) {
-  const realSlug = slug;//.replace(/\.md$/, '')
+export function getPostBySlug(realSlug: string, fields: string[] = []) {
   const fullPath = join(postsDirectory, `${realSlug}`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
-  const items = {}
+  type Items = {
+    [key: string]: string
+  }
+
+  const items: Items = {}
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
@@ -32,10 +35,11 @@ export function getPostBySlug(slug, fields = []) {
       items[field] = data[field]
     }
   })
+
   return items
 }
 
-export function getAllPosts(fields = []) {
+export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs()
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))

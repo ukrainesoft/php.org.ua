@@ -2,9 +2,8 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '../../../components/container'
 import PostBody from '../../../components/post-body'
-import Header from '../../../components/header'
 import Layout from '../../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../../lib/api'
+import { getPostBySlug, getAllPosts } from '../../../lib/api/page'
 import PostTitle from '../../../components/post-title'
 import Head from 'next/head'
 import { CMS_TITLE, CMS_WESITE_NAME } from '../../../lib/constants'
@@ -24,12 +23,11 @@ const Post = ({ post }: Props) => {
   return (
     <Layout>
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article>
               <Head>
                 <title>
                   {post.title} | {CMS_WESITE_NAME} {CMS_TITLE}

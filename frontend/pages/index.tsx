@@ -1,4 +1,4 @@
-import { getPostBySlug } from '../lib/api'
+import { getPostBySlug } from '../lib/api/page'
 import markdownToHtml from '../lib/markdownToHtml'
 import Post from '../types/post'
 import PostComponent, {

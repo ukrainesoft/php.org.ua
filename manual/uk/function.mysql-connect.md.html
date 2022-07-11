@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.mysql-connect | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.mysql-close.md">«mysql_close</a></p>
+</li>
+<li>
+<p><a href="function.mysql-create-db.md">mysql_create_db »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.mysql.md">MySQL</a></p>
+</li>
+<li>
+<p>Відкриває з'єднання із сервером MySQL</p>
+</li>
+</ul>
+<h1>mysql_connect</h1>
+<p>(PHP 4, PHP 5)</p>
+<p>mysql_connect — Відкриває з'єднання із сервером MySQL</p>
+<p><strong>Увага</strong></p>
+<p>Цей модуль застарів, починаючи з версії PHP 5.5.0, і вилучений до PHP 7.0.0.
+Використовуйте замість нього <a href="book.mysqli.md">MySQLi</a> або
+<a href="ref.pdo-mysql.md">PDO_MySQL</a>. Дивіться також інструкцію <a href="mysqlinfo.api.choosing.md">MySQL: вибір API</a>. Альтернативи для цієї функції:</p>
+<ul>
+<li><a href="function.mysqli-connect.md">mysqli_connect()</a></li>
+<li><a href="pdo.construct.md">PDO::__construct()</a></li>
+</ul>
+<h3>Опис</h3>
+<p><strong>mysql_connect</strong>(
+string <code>$server</code> = ini_get("mysql.default_host"),
+string <code>$username</code> = ini_get("mysql.default_user"),
+string <code>$password</code> = ini_get("mysql.default_password"),
+bool <code>$new_link</code> = <strong><code>false</code></strong>,
+int <code>$client_flags</code> = 0
+): resource \ | false</p>
+<p>Відкриває нове з'єднання з сервером MySQL або використовує вже
+існуюче.</p>
+<h3>Список параметрів</h3>
+<p><code>server</code>
+Сервер MySQL. Може також включати номер порту, наприклад,
+"hostname:port" або шлях до локального сокету, наприклад,
+":/path/to/socket" для локального сервера.</p>
+<p>Якщо PHP-директива
+<a href="mysql.configuration.md#ini.mysql.default-host">mysql.default_host</a> не
+визначено (за замовчуванням), то значенням за замовчуванням є
+'localhost:3306'. В <a href="ini.core.md#ini.sql.safe-mode">SQL safe mode</a>
+цей параметр ігнорується і завжди використовується значення
+'localhost:3306'.</p>
+<p><code>username</code>
+Ім'я користувача. Значення за умовчанням визначається директивою
+<a href="mysql.configuration.md#ini.mysql.default-user">mysql.default_user</a>. В
+<a href="ini.core.md#ini.sql.safe-mode">SQL safe mode</a> цей параметр буде
+проігнорований і буде використаний користувач, який володіє процесом
+сервера.</p>
+<p><code>password</code>
+Пароль. Значення за умовчанням визначається директивою
+<a href="mysql.configuration.md#ini.mysql.default-password">mysql.default_password</a>.
+У <a href="ini.core.md#ini.sql.safe-mode">SQL safe mode</a> цей параметр буде
+проігнорований і як пароль буде використаний порожній рядок.</p>
+<p><code>new_link</code>
+Якщо другий виклик функції <strong>mysql_connect()</strong> стався з тими ж
+аргументами, то нове з'єднання нічого очікувати встановлено. Замість цього
+функція поверне посилання вже встановлене з'єднання. Параметр
+<code>new_link</code> може змусити функцію <strong>mysql_connect()</strong> відкрити ще одне
+з'єднання, навіть якщо з'єднання з аналогічними параметрами вже відкрито.
+У <a href="ini.core.md#ini.sql.safe-mode">SQL safe mode</a> цей параметр
+ігнорується.</p>
+<p><code>client_flags</code>
+Параметр <code>client_flags</code> має бути комбінацією з наступних констант:
+128 (включає обробку <code>LOAD DATA LOCAL</code>), <strong><code>MYSQL_CLIENT_SSL</code></strong>,
+<strong><code>MYSQL_CLIENT_COMPRESS</code></strong>, <strong><code>MYSQL_CLIENT_IGNORE_SPACE</code></strong> or
+<strong><code>MYSQL_CLIENT_INTERACTIVE</code></strong>. Докладніше читайте в розділі <a href="mysql.constants.md#mysql.client-flags">Клієнтські константи MySQL</a>. У <a href="ini.core.md#ini.sql.safe-mode">SQL safe mode</a> цей параметр ігнорується.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає дескриптор з'єднання з MySQL у разі успішного виконання
+або <strong><code>false</code></strong> у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>mysql_connect()</strong></strong></p>
+<p><code>&#x3C;?php$link = mysql_connect('localhost', 'mysql_user', 'mysql_password');if (!$link) {    die('Помилка з'єднання: ' . mysql_error());}echo ' ($link);?></code></p>
+<p><strong>Приклад #2 Приклад використання <strong>mysql_connect()</strong> із синтаксисом
+<code>hostname:port</code></strong></p>
+<p><code>&#x3C;?php// з'єднуємося з example.com на порту 3307$link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');if (!$link) { '   . mysql_error());}echo 'Успішно з'єдналися';mysql_close($link);// з'єднуємось з localhost на порту 3307$link = mysql_connect('127.0.0.1:3307',''pass (!$link) {   die('Помилка з'єднання: ' . mysql_error());}echo 'Успішно з'єдналися';mysql_close($link);?></code></p>
+<p><strong>Приклад #3 Приклад використання <strong>mysql_connect()</strong> із синтаксисом
+":/path/to/socket"</strong></p>
+<p><code>&#x3C;?php// з'єднуємося до localhost по сокету, т.е. /tmp/mysql.sock// варіант 1: не вказуємо localhost$link = mysql_connect(':/tmp/mysql', 'mysql_user', 'mysql_password');if (!$link) { 'є|'' . mysql_error());}echo 'Успішно з'єдналися';mysql_close($link);// варіант 2: вказуємо localhost$link = mysql_connect('localhost:/tmp/mysql.sock', 'mysql_user', 'mysql_user', ;if (!$link) {   die('Помилка з'єднання: ' . mysql_error());}echo ''Успішно з'єдналися';mysql_close($link);?> </code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>При вказівці параметра <code>server</code> значення "localhost" або
+"localhost:port" клієнтська бібліотека MySQL намагатиметься
+з'єднатися із локальним сокетом. Якщо ви все ж таки хочете використовувати
+TCP/IP, використовуйте адресу "127.0.0.1" замість "localhost". Якщо
+клієнтська бібліотека намагається підключитися не до того локального
+сокету, правильний шлях має бути встановлений через вказівку
+директиви <code>php.ini</code>
+<a href="mysql.configuration.md#ini.mysql.default-host">mysql.default_host</a>
+в <code>php.ini</code>, після чого можна залишати параметр <code>server</code> порожнім.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>З'єднання з сервером буде закрито після завершення виконання скрипта,
+якщо до цього воно не було закрито за допомогою функції
+<a href="function.mysql-close.md">mysql_close()</a>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Помилка "Can't create TCP/IP socket (10106)" (Неможливо створити сокет
+TCP/IP) зазвичай означає, що конфігураційна директива
+<a href="ini.core.md#ini.variables-order">variables_order</a> не містить
+Символ <code>E</code>. У Windows, якщо оточення не буде скопійовано
+змінна оточення <code>SYSTEMROOT</code>, то PHP відчуватиме проблеми
+під час завантаження Winsock.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.mysql-pconnect.md">mysql_pconnect()</a> - Встановлює
+постійне з'єднання з сервером MySQL</li>
+<li><a href="function.mysql-close.md">mysql_close()</a> - Закриває з'єднання з
+сервером MySQL</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.mysql-connect.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.mysql-connect.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.mysql-connect","slug":"function.mysql-connect.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mysql-close.md\"\u003e«mysql_close\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mysql-create-db.md\"\u003emysql_create_db »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.mysql.md\"\u003eMySQL\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВідкриває з'єднання із сервером MySQL\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003emysql_connect\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5)\u003c/p\u003e\n\u003cp\u003emysql_connect — Відкриває з'єднання із сервером MySQL\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЦей модуль застарів, починаючи з версії PHP 5.5.0, і вилучений до PHP 7.0.0.\nВикористовуйте замість нього \u003ca href=\"book.mysqli.md\"\u003eMySQLi\u003c/a\u003e або\n\u003ca href=\"ref.pdo-mysql.md\"\u003ePDO_MySQL\u003c/a\u003e. Дивіться також інструкцію \u003ca href=\"mysqlinfo.api.choosing.md\"\u003eMySQL: вибір API\u003c/a\u003e. Альтернативи для цієї функції:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.mysqli-connect.md\"\u003emysqli_connect()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdo.construct.md\"\u003ePDO::__construct()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003emysql_connect\u003c/strong\u003e(\nstring \u003ccode\u003e$server\u003c/code\u003e = ini_get(\"mysql.default_host\"),\nstring \u003ccode\u003e$username\u003c/code\u003e = ini_get(\"mysql.default_user\"),\nstring \u003ccode\u003e$password\u003c/code\u003e = ini_get(\"mysql.default_password\"),\nbool \u003ccode\u003e$new_link\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e,\nint \u003ccode\u003e$client_flags\u003c/code\u003e = 0\n): resource \\ | false\u003c/p\u003e\n\u003cp\u003eВідкриває нове з'єднання з сервером MySQL або використовує вже\nіснуюче.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eserver\u003c/code\u003e\nСервер MySQL. Може також включати номер порту, наприклад,\n\"hostname:port\" або шлях до локального сокету, наприклад,\n\":/path/to/socket\" для локального сервера.\u003c/p\u003e\n\u003cp\u003eЯкщо PHP-директива\n\u003ca href=\"mysql.configuration.md#ini.mysql.default-host\"\u003emysql.default_host\u003c/a\u003e не\nвизначено (за замовчуванням), то значенням за замовчуванням є\n'localhost:3306'. В \u003ca href=\"ini.core.md#ini.sql.safe-mode\"\u003eSQL safe mode\u003c/a\u003e\nцей параметр ігнорується і завжди використовується значення\n'localhost:3306'.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eusername\u003c/code\u003e\nІм'я користувача. Значення за умовчанням визначається директивою\n\u003ca href=\"mysql.configuration.md#ini.mysql.default-user\"\u003emysql.default_user\u003c/a\u003e. В\n\u003ca href=\"ini.core.md#ini.sql.safe-mode\"\u003eSQL safe mode\u003c/a\u003e цей параметр буде\nпроігнорований і буде використаний користувач, який володіє процесом\nсервера.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epassword\u003c/code\u003e\nПароль. Значення за умовчанням визначається директивою\n\u003ca href=\"mysql.configuration.md#ini.mysql.default-password\"\u003emysql.default_password\u003c/a\u003e.\nУ \u003ca href=\"ini.core.md#ini.sql.safe-mode\"\u003eSQL safe mode\u003c/a\u003e цей параметр буде\nпроігнорований і як пароль буде використаний порожній рядок.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003enew_link\u003c/code\u003e\nЯкщо другий виклик функції \u003cstrong\u003emysql_connect()\u003c/strong\u003e стався з тими ж\nаргументами, то нове з'єднання нічого очікувати встановлено. Замість цього\nфункція поверне посилання вже встановлене з'єднання. Параметр\n\u003ccode\u003enew_link\u003c/code\u003e може змусити функцію \u003cstrong\u003emysql_connect()\u003c/strong\u003e відкрити ще одне\nз'єднання, навіть якщо з'єднання з аналогічними параметрами вже відкрито.\nУ \u003ca href=\"ini.core.md#ini.sql.safe-mode\"\u003eSQL safe mode\u003c/a\u003e цей параметр\nігнорується.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eclient_flags\u003c/code\u003e\nПараметр \u003ccode\u003eclient_flags\u003c/code\u003e має бути комбінацією з наступних констант:\n128 (включає обробку \u003ccode\u003eLOAD DATA LOCAL\u003c/code\u003e), \u003cstrong\u003e\u003ccode\u003eMYSQL_CLIENT_SSL\u003c/code\u003e\u003c/strong\u003e,\n\u003cstrong\u003e\u003ccode\u003eMYSQL_CLIENT_COMPRESS\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eMYSQL_CLIENT_IGNORE_SPACE\u003c/code\u003e\u003c/strong\u003e or\n\u003cstrong\u003e\u003ccode\u003eMYSQL_CLIENT_INTERACTIVE\u003c/code\u003e\u003c/strong\u003e. Докладніше читайте в розділі \u003ca href=\"mysql.constants.md#mysql.client-flags\"\u003eКлієнтські константи MySQL\u003c/a\u003e. У \u003ca href=\"ini.core.md#ini.sql.safe-mode\"\u003eSQL safe mode\u003c/a\u003e цей параметр ігнорується.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає дескриптор з'єднання з MySQL у разі успішного виконання\nабо \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003emysql_connect()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$link = mysql_connect('localhost', 'mysql_user', 'mysql_password');if (!$link) {    die('Помилка з'єднання: ' . mysql_error());}echo ' ($link);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклад використання \u003cstrong\u003emysql_connect()\u003c/strong\u003e із синтаксисом\n\u003ccode\u003ehostname:port\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// з'єднуємося з example.com на порту 3307$link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');if (!$link) { '   . mysql_error());}echo 'Успішно з'єдналися';mysql_close($link);// з'єднуємось з localhost на порту 3307$link = mysql_connect('127.0.0.1:3307',''pass (!$link) {   die('Помилка з'єднання: ' . mysql_error());}echo 'Успішно з'єдналися';mysql_close($link);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Приклад використання \u003cstrong\u003emysql_connect()\u003c/strong\u003e із синтаксисом\n\":/path/to/socket\"\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// з'єднуємося до localhost по сокету, т.е. /tmp/mysql.sock// варіант 1: не вказуємо localhost$link = mysql_connect(':/tmp/mysql', 'mysql_user', 'mysql_password');if (!$link) { 'є|'' . mysql_error());}echo 'Успішно з'єдналися';mysql_close($link);// варіант 2: вказуємо localhost$link = mysql_connect('localhost:/tmp/mysql.sock', 'mysql_user', 'mysql_user', ;if (!$link) {   die('Помилка з'єднання: ' . mysql_error());}echo ''Успішно з'єдналися';mysql_close($link);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПри вказівці параметра \u003ccode\u003eserver\u003c/code\u003e значення \"localhost\" або\n\"localhost:port\" клієнтська бібліотека MySQL намагатиметься\nз'єднатися із локальним сокетом. Якщо ви все ж таки хочете використовувати\nTCP/IP, використовуйте адресу \"127.0.0.1\" замість \"localhost\". Якщо\nклієнтська бібліотека намагається підключитися не до того локального\nсокету, правильний шлях має бути встановлений через вказівку\nдирективи \u003ccode\u003ephp.ini\u003c/code\u003e\n\u003ca href=\"mysql.configuration.md#ini.mysql.default-host\"\u003emysql.default_host\u003c/a\u003e\nв \u003ccode\u003ephp.ini\u003c/code\u003e, після чого можна залишати параметр \u003ccode\u003eserver\u003c/code\u003e порожнім.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЗ'єднання з сервером буде закрито після завершення виконання скрипта,\nякщо до цього воно не було закрито за допомогою функції\n\u003ca href=\"function.mysql-close.md\"\u003emysql_close()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПомилка \"Can't create TCP/IP socket (10106)\" (Неможливо створити сокет\nTCP/IP) зазвичай означає, що конфігураційна директива\n\u003ca href=\"ini.core.md#ini.variables-order\"\u003evariables_order\u003c/a\u003e не містить\nСимвол \u003ccode\u003eE\u003c/code\u003e. У Windows, якщо оточення не буде скопійовано\nзмінна оточення \u003ccode\u003eSYSTEMROOT\u003c/code\u003e, то PHP відчуватиме проблеми\nпід час завантаження Winsock.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.mysql-pconnect.md\"\u003emysql_pconnect()\u003c/a\u003e - Встановлює\nпостійне з'єднання з сервером MySQL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mysql-close.md\"\u003emysql_close()\u003c/a\u003e - Закриває з'єднання з\nсервером MySQL\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.mysql-connect.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

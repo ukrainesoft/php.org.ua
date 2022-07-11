@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.cubrid-pconnect | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.cubrid-pconnect-with-url.md">« cubrid_pconnect_with_url</a></p>
+</li>
+<li>
+<p><a href="function.cubrid-prepare.md">cubrid_prepare »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.cubrid.md">Функції CUBRID</a></p>
+</li>
+<li>
+<p>Відкриває постійне з'єднання із сервером CUBRID</p>
+</li>
+</ul>
+<p>#cubrid_pconnect</p>
+<p>(PECL CUBRID = 8.3.1)</p>
+<p>cubrid_pconnect — Відкриває постійне з'єднання із сервером CUBRID</p>
+<h3>Опис</h3>
+<p><strong>cubrid_pconnect</strong>(
+string <code>$host</code>,
+int <code>$port</code>,
+string <code>$dbname</code>,
+string <code>$userid</code> = ?,
+string <code>$passwd</code> = ?
+): resource</p>
+<p>Встановлює постійне з'єднання із сервером CUBRID.</p>
+<p><strong>cubrid_pconnect()</strong> діє дуже схоже на
+<a href="function.cubrid-connect.md">cubrid_connect()</a> з двома основними
+відмінностями:</p>
+<p>По-перше, при підключенні функція спочатку намагатиметься знайти (постійну)
+посилання, яке вже відкрито з тим самим хостом, портом, ім'ям бази даних
+та ідентифікатором користувача. Якщо з'єднання буде знайдено, замість
+відкриття нового буде повернуто його ідентифікатор.</p>
+<p>По-друге, з'єднання з SQL-сервером не буде закрито після закінчення
+виконання скрипту. Замість цього посилання залишиться відкритим для
+використання у майбутньому (<a href="function.cubrid-close.md">cubrid_close()</a>
+або <a href="function.cubrid-disconnect.md">cubrid_disconnect()</a> не закриє
+посилання, встановлені <strong>cubrid_pconnect()</strong>).</p>
+<p>Тому цей тип посилання називається "постійним".</p>
+<h3>Список параметрів</h3>
+<p><code>host</code>
+Ім'я хоста або IP-адреса сервера CUBRID CAS.</p>
+<p><code>port</code>
+Номер порту CUBRID CAS-сервера (BROKER_PORT налаштований на
+$CUBRID/conf/cubrid_broker.conf).</p>
+<p><code>dbname</code>
+Назва бази даних.</p>
+<p><code>userid</code>
+Ім'я користувача бази даних.</p>
+<p><code>passwd</code>
+Пароль користувача.</p>
+<h3>Значення, що повертаються</h3>
+<p>Ідентифікатор з'єднання у разі успішного виконання процесу або
+<strong><code>false</code></strong> у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання
+<a href="function.cubrid-connect.md">cubrid_connect()</a></strong></p>
+<p><code>&#x3C;?phpprintf("%-30s %s ", "Версія PHP CUBRID:", cubrid_version());printf(" ");$conn==cubrid_pconnect("localhost", 33000, "demodb", "dba");if (!$conn) {    die('Помилка з'єднання ('. cubrid_error_code()      ) ;}$db_params = cubrid_get_db_parameter($conn);while (list($param_name, $param_value) = each($db_params)) {    printf("%-30s %s ", $param_name, $param_value);}printf(" ");$server_info = cubrid_get_server_info($conn);$client_info = cubrid_get_client_info();printf("%-30s %s ", "Інформація про сервері:", $server_info);printf("%-30s %s ", "Інформація про клієнт:", $client_info);printf(" ");$charset = cubrid_get_charset($conn);printf("%-30s %s ", "Кодування CUBRID:", $charset);cubrid_disconnect($conn);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Версія PHP CUBRID: 9.1.0.0001</p>
+<p>PARAM_ISOLATION_LEVEL 3
+LOCK_TIMEOUT -1
+MAX_STRING_LENGTH 1073741823
+PARAM_AUTO_COMMIT 1</p>
+<p>Інформація про сервер: 9.1.0.0212
+Інформація про клієнта: 9.1.0</p>
+<p>Кодування CUBRID: iso8859-1</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.cubrid-connect.md">cubrid_connect()</a> - Відкриває
+з'єднання з сервером CUBRID</li>
+<li><a href="function.cubrid-connect-with-url.md">cubrid_connect_with_url()</a> -
+Створює оточення для з'єднання із сервером CUBRID</li>
+<li><a href="function.cubrid-pconnect-with-url.md">cubrid_pconnect_with_url()</a> -
+Відкриває постійне з'єднання із сервером CUBRID</li>
+<li><a href="function.cubrid-disconnect.md">cubrid_disconnect()</a> - Закриває
+з'єднання з базою даних</li>
+<li><a href="function.cubrid-close.md">cubrid_close()</a> - Закриває з'єднання
+з базою даних</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.cubrid-pconnect.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.cubrid-pconnect.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.cubrid-pconnect","slug":"function.cubrid-pconnect.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.cubrid-pconnect-with-url.md\"\u003e« cubrid_pconnect_with_url\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.cubrid-prepare.md\"\u003ecubrid_prepare »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.cubrid.md\"\u003eФункції CUBRID\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВідкриває постійне з'єднання із сервером CUBRID\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#cubrid_pconnect\u003c/p\u003e\n\u003cp\u003e(PECL CUBRID = 8.3.1)\u003c/p\u003e\n\u003cp\u003ecubrid_pconnect — Відкриває постійне з'єднання із сервером CUBRID\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003ecubrid_pconnect\u003c/strong\u003e(\nstring \u003ccode\u003e$host\u003c/code\u003e,\nint \u003ccode\u003e$port\u003c/code\u003e,\nstring \u003ccode\u003e$dbname\u003c/code\u003e,\nstring \u003ccode\u003e$userid\u003c/code\u003e = ?,\nstring \u003ccode\u003e$passwd\u003c/code\u003e = ?\n): resource\u003c/p\u003e\n\u003cp\u003eВстановлює постійне з'єднання із сервером CUBRID.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003ecubrid_pconnect()\u003c/strong\u003e діє дуже схоже на\n\u003ca href=\"function.cubrid-connect.md\"\u003ecubrid_connect()\u003c/a\u003e з двома основними\nвідмінностями:\u003c/p\u003e\n\u003cp\u003eПо-перше, при підключенні функція спочатку намагатиметься знайти (постійну)\nпосилання, яке вже відкрито з тим самим хостом, портом, ім'ям бази даних\nта ідентифікатором користувача. Якщо з'єднання буде знайдено, замість\nвідкриття нового буде повернуто його ідентифікатор.\u003c/p\u003e\n\u003cp\u003eПо-друге, з'єднання з SQL-сервером не буде закрито після закінчення\nвиконання скрипту. Замість цього посилання залишиться відкритим для\nвикористання у майбутньому (\u003ca href=\"function.cubrid-close.md\"\u003ecubrid_close()\u003c/a\u003e\nабо \u003ca href=\"function.cubrid-disconnect.md\"\u003ecubrid_disconnect()\u003c/a\u003e не закриє\nпосилання, встановлені \u003cstrong\u003ecubrid_pconnect()\u003c/strong\u003e).\u003c/p\u003e\n\u003cp\u003eТому цей тип посилання називається \"постійним\".\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ehost\u003c/code\u003e\nІм'я хоста або IP-адреса сервера CUBRID CAS.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eport\u003c/code\u003e\nНомер порту CUBRID CAS-сервера (BROKER_PORT налаштований на\n$CUBRID/conf/cubrid_broker.conf).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edbname\u003c/code\u003e\nНазва бази даних.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euserid\u003c/code\u003e\nІм'я користувача бази даних.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epasswd\u003c/code\u003e\nПароль користувача.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eІдентифікатор з'єднання у разі успішного виконання процесу або\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання\n\u003ca href=\"function.cubrid-connect.md\"\u003ecubrid_connect()\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpprintf(\"%-30s %s \", \"Версія PHP CUBRID:\", cubrid_version());printf(\" \");$conn==cubrid_pconnect(\"localhost\", 33000, \"demodb\", \"dba\");if (!$conn) {    die('Помилка з'єднання ('. cubrid_error_code()      ) ;}$db_params = cubrid_get_db_parameter($conn);while (list($param_name, $param_value) = each($db_params)) {    printf(\"%-30s %s \", $param_name, $param_value);}printf(\" \");$server_info = cubrid_get_server_info($conn);$client_info = cubrid_get_client_info();printf(\"%-30s %s \", \"Інформація про сервері:\", $server_info);printf(\"%-30s %s \", \"Інформація про клієнт:\", $client_info);printf(\" \");$charset = cubrid_get_charset($conn);printf(\"%-30s %s \", \"Кодування CUBRID:\", $charset);cubrid_disconnect($conn);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eВерсія PHP CUBRID: 9.1.0.0001\u003c/p\u003e\n\u003cp\u003ePARAM_ISOLATION_LEVEL 3\nLOCK_TIMEOUT -1\nMAX_STRING_LENGTH 1073741823\nPARAM_AUTO_COMMIT 1\u003c/p\u003e\n\u003cp\u003eІнформація про сервер: 9.1.0.0212\nІнформація про клієнта: 9.1.0\u003c/p\u003e\n\u003cp\u003eКодування CUBRID: iso8859-1\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.cubrid-connect.md\"\u003ecubrid_connect()\u003c/a\u003e - Відкриває\nз'єднання з сервером CUBRID\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.cubrid-connect-with-url.md\"\u003ecubrid_connect_with_url()\u003c/a\u003e -\nСтворює оточення для з'єднання із сервером CUBRID\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.cubrid-pconnect-with-url.md\"\u003ecubrid_pconnect_with_url()\u003c/a\u003e -\nВідкриває постійне з'єднання із сервером CUBRID\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.cubrid-disconnect.md\"\u003ecubrid_disconnect()\u003c/a\u003e - Закриває\nз'єднання з базою даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.cubrid-close.md\"\u003ecubrid_close()\u003c/a\u003e - Закриває з'єднання\nз базою даних\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.cubrid-pconnect.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

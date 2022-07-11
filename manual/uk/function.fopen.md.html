@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.fopen | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.fnmatch.md">«fnmatch</a></p>
+</li>
+<li>
+<p><a href="function.fpassthru.md">fpassthru»</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.filesystem.md">Функції файлової системи</a></p>
+</li>
+<li>
+<p>Відкриває файл або URL</p>
+</li>
+</ul>
+<h1>fopen</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>fopen — Відкриває файл або URL</p>
+<h3>Опис</h3>
+<p><strong>fopen</strong>(
+string <code>$filename</code>,
+string <code>$mode</code>,
+bool <code>$use_include_path</code> = <strong><code>false</code></strong>,
+?resource <code>$context</code> = <strong><code>null</code></strong>
+): resource \ | false</p>
+<p><strong>fopen()</strong> закріплює іменований ресурс, зазначений у аргументі
+<code>filename</code>, за потоком.</p>
+<h3>Список параметрів</h3>
+<p><code>filename</code>
+Якщо <code>filename</code> передано у формі "scheme://...", він вважається URL і PHP
+проведе пошук обробника протоколу (також відомого як "обертка")
+для цієї схеми. Якщо жодна обгортка не закріплена за протоколом, PHP
+видасть зауваження, щоб допомогти вам відстежити потенційну проблему
+вашому скрипті і потім продовжить виконання, начебто <code>filename</code>
+вказував на звичайний файл.</p>
+<p>Якщо PHP встановлено, що <code>filename</code> вказує на локальний файл, тоді
+спроба відкрити потік до цього файлу. Файл має бути
+доступний PHP, так що вам слід переконатися, що права доступу на файл
+це дозволяють. Якщо ви увімкнули
+<a href="ini.core.md#ini.open-basedir">open_basedir</a>, то накладаються
+подальші обмеження.</p>
+<p>Якщо PHP встановив, що 'filename' вказує на зареєстрований
+протокол і цей протокол зареєстрований як мережевий URL, PHP виконує
+перевірку стану директиви
+<a href="filesystem.configuration.md#ini.allow-url-fopen">allow_url_fopen</a>.
+Якщо вона вимкнена, PHP видасть попередження та виклик fopen закінчиться
+невдачею.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Список підтримуваних протоколів доступний у розділі <a href="wrappers.md">Підтримувані > протоколи та обгортки</a>. Деякі протоколи (<code>обгортки</code>)
+підтримують <code>контекст</code> та/або опції <code>php.ini</code>. Зверніться до
+відповідній сторінці з описом використовуваного протоколу для
+отримання списку опцій, які можна встановити. (наприклад,
+значення <code>php.ini</code> <code>user_agent</code> використовується обгорткою <code>http</code>).</p>
+</blockquote>
+<p>На платформі Windows, необхідно екранувати всі зворотні сліші в дорозі
+до файлу або використовувати прямі сліші.</p>
+<p><code>&#x3C;?php$handle =fopen("c:\folder\resource.txt", "r");?></code></p>
+<p><code>mode</code>
+Параметр <code>mode</code> вказує тип доступу, який ви просите потоку.
+Він може бути одним із наступних варіантів:</p>
+<table>
+<thead>
+<tr>
+<th>mode</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r'</td>
+<td>Відкриває файл лише для читання; поміщає покажчик на початок файлу.</td>
+</tr>
+<tr>
+<td>r+'</td>
+<td>Відкриває файл для читання та запису; поміщає покажчик на початок файлу.</td>
+</tr>
+<tr>
+<td>w'</td>
+<td>Відкриває файл для запису; в іншому випадку поводиться так само, як і "w +".</td>
+</tr>
+<tr>
+<td>w+'</td>
+<td>Відкриває файл для читання та запису; поміщає покажчик на початок файлу і обрізає файл до нульової довжини. Якщо файл не існує – намагається його створити.</td>
+</tr>
+<tr>
+<td>a'</td>
+<td>Відкриває файл для запису; поміщає покажчик у кінець файлу. Якщо файл не існує – намагається його створити. У цьому режимі функція <a href="function.fseek.md">fseek()</a> не застосовується, записи завжди додаються до кінця.</td>
+</tr>
+<tr>
+<td>a+'</td>
+<td>Відкриває файл для читання та запису; поміщає покажчик у кінець файлу. Якщо файл не існує – намагається його створити. У цьому режимі функція <a href="function.fseek.md">fseek()</a> впливає лише на позицію читання, записи завжди додаються до кінця.</td>
+</tr>
+<tr>
+<td>x'</td>
+<td>Створює та відкриває тільки для запису; поміщає покажчик на початок файлу. Якщо файл вже існує, виклик <strong>fopen()</strong> закінчиться невдачею, поверне <strong>false</strong> та видасть помилку рівня <strong>E_WARNING</strong>. Якщо файл не існує, він спробує його створити. Це еквівалентно вказівкам прапорів O_EXCL</td>
+</tr>
+<tr>
+<td>x+'</td>
+<td>Створює та відкриває для читання та запису; в іншому має таку ж поведінку, що і x'.</td>
+</tr>
+<tr>
+<td>c'</td>
+<td>Відкриває файл лише для запису. Якщо файл не існує, він створюється. Якщо ж файл існує, то він не обрізається (на відміну від "w"), і виклик до цієї функції не викликає помилки (так само як і у випадку з "x"). Вказівник на файл буде встановлено на початок файлу. Це може бути корисно при бажанні заблокувати файл (дивіться <a href="function.flock.md">flock()</a>) перед зміною, так як використання w' може обрізати файл ще до того, як було отримано блокування (якщо ви хочете обрізати файл , Ви можете використовувати функцію <a href="function.ftruncate.md">ftruncate()</a> після запиту на блокування).</td>
+</tr>
+<tr>
+<td>c+'</td>
+<td>Відкриває файл для читання та запису; в іншому має таку ж поведінку, що і c'.</td>
+</tr>
+<tr>
+<td>e'</td>
+<td>Встановити прапорець close-on-exec (закрити під час запуску) на відкритий файловий дескриптор. Доступно лише в PHP скомпілюваному на системах, що підтримують POSIX.1-2008.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Список можливих режимів для <strong>fopen()</strong>, використовуючи <code>mode</code></strong></p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Різні сімейства операційних систем мають різні угоди
+щодо закінчення рядків. Коли ви пишете текст і бажаєте вставити
+розрив рядка, ви повинні використовувати правильні символи (або символ)
+для операційної системи. Системи сімейства Unix використовують <code> </code>
+як символ кінця рядка, системи сімейства Windows використовують
+<code> </code> як символи закінчення рядка та системи сімейства
+Macintosh (Mac OS Classic) використовують <code> </code> як символ кінця
+Рядки.</p>
+<p>Якщо ви використовуєте неправильний символ кінця рядка під час редагування
+файлів, ви можете виявити, що при відкритті ці файли "дивно
+виглядають".</p>
+<p>Windows пропонує прапор режиму текстової трансляції (<code>t'`), який автоматично переведе ` `в` ` під час роботи з файлом. І навпаки - ви також можете використовувати "b", щоб примусово увімкнути бінарний режим, у якому ваші дані не будуть Перетворюватися. Щоб використовувати ці режими, вкажіть "b" або </code>t'<code>останньою літерою параметра</code>mode`.</p>
+<p>Прапором трансляції за замовчуванням є "b". Ви можете використовувати
+режим ``t'<code>, якщо працюєте з текстовими файлами та використовуєте </code>
+`
+для позначення кінця рядка у вашому скрипті, але при цьому
+припускаєте, що ваші файли будуть використовуватися в таких
+програмах, як "Блокнот" (у застарілих версіях). У всіх інших
+Використовуйте прапор "b".</p>
+<p>Якщо ви вкажете прапорець 't' під час роботи з бінарними файлами, ви
+можете зіткнутися з дивними проблемами з вашими даними, включаючи
+пошкоджені файли зображень та проблеми із символами <code> </code>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Знову ж таки з міркувань портованості рекомендується переписати
+старий код, який покладається на режим <code>t'`, щоб натомість він використовував правильні кінці рядків та режим </code>b'`.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>: Параметр <code>mode</code> ігнорується під час роботи з обгортками
+потоку <code>php://output</code>, <code>php://input</code>, <code>php://stdin</code>, <code>php://stdout</code>,
+<code>php://stderr</code> та <code>php://fd</code>.</p>
+</blockquote>
+<p><code>use_include_path</code>
+Необов'язковий третій параметр use_include_path може бути встановлений
+в '1' або <strong><code>true</code></strong>, якщо ви хочете провести пошук файлу в
+<a href="ini.core.md#ini.include-path">include_path</a>.</p>
+<p><code>context</code>
+Ресурс (resource) із <a href="stream.contexts.md">контекстом потоку</a>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає покажчик на файл у разі успішного виконання або
+<strong><code>false</code></strong> у разі виникнення помилки</p>
+<h3>Помилки</h3>
+<p>У разі невдалого завершення роботи генерується помилка рівня
+<strong><code>E_WARNING</code></strong>.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.0.16, 7.1.2</td>
+<td>Додана опція e'.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклади використання <strong>fopen()</strong></strong></p>
+<p><code>&#x3C;?php$handle =fopen("/home/rasmus/file.txt", "r");$handle = fopen("/home/rasmus/file.gif", "wb");$handle =fopen ("http://www.example.com/", "r");$handle =fopen("ftp://user:password@example.com/somefile.txt", "w");?></code></p>
+<h3>Примітки</h3>
+<p><strong>Увага</strong></p>
+<p>При використанні SSL Microsoft IIS порушує протокол, закриваючи
+з'єднання без надсилання індикатора <code>close_notify</code>. PHP повідомить про це
+як "SSL: Fatal Protocol Error" в той момент, коли ви досягнете кінця
+даних. Щоб обійти це, ви повинні встановити
+<a href="errorfunc.configuration.md#ini.error-reporting">error_reporting</a>
+рівень, що виключає E_WARNING. PHP вміє визначати, що на стороні
+сервера знаходиться проблемний IIS при відкритті потоку за допомогою обгортки
+<code>https://</code> і виводить попередження. Якщо ви використовуєте
+<a href="function.fsockopen.md">fsockopen()</a> для створення <code>ssl://</code> сокету, ви
+самі відповідаєте за визначення та придушення цього попередження.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо ви стикаєтеся з проблемами під час читання або запису файлів,
+і ви використовуєте PHP у вигляді серверного модуля, переконайтеся, що
+процес сервера має доступ до використовуваних вами файлів та директорій.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ця функція також може приймати директорії як параметр
+<code>filename</code>. Якщо ви не знаєте, чи є 'filename' файлом або
+директорією, то вам може знадобитися використовувати функцію
+<a href="function.is-dir.md">is_dir()</a> до виклику функції <strong>fopen()</strong>.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="wrappers.md">Підтримувані протоколи та обгортки</a></li>
+<li><a href="function.fclose.md">fclose()</a> - Закриває відкритий дескриптор
+файлу</li>
+<li><a href="function.fgets.md">fgets()</a> - Читає рядок із файлу</li>
+<li><a href="function.fread.md">fread()</a> - Бінарно-безпечне читання файлу</li>
+<li><a href="function.fwrite.md">fwrite()</a> - Бінарно-безпечний запис у файл</li>
+<li><a href="function.fsockopen.md">fsockopen()</a> - Відкриває з'єднання з
+інтернет-сокетом або доменним сокетом Unix</li>
+<li><a href="function.file.md">file()</a> - Читає вміст файлу та поміщає
+його в масив</li>
+<li><a href="function.file-exists.md">file_exists()</a> - Перевіряє існування
+вказаного файлу чи каталогу</li>
+<li><a href="function.is-readable.md">is_readable()</a> - Визначає
+існування файлу і чи доступний він для читання</li>
+<li><a href="function.stream-set-timeout.md">stream_set_timeout()</a> -
+Встановити час очікування для потоку</li>
+<li><a href="function.popen.md">popen()</a> - Відкриває файловий покажчик
+процесу</li>
+<li><a href="function.stream-context-create.md">stream_context_create()</a> -
+Створює контекст потоку</li>
+<li><a href="function.umask.md">umask()</a> - Змінює поточну umask</li>
+<li><a href="class.splfileobject.md">SplFileObject</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.fopen.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.fopen.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.fopen","slug":"function.fopen.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.fnmatch.md\"\u003e«fnmatch\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.fpassthru.md\"\u003efpassthru»\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.filesystem.md\"\u003eФункції файлової системи\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВідкриває файл або URL\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003efopen\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003efopen — Відкриває файл або URL\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003efopen\u003c/strong\u003e(\nstring \u003ccode\u003e$filename\u003c/code\u003e,\nstring \u003ccode\u003e$mode\u003c/code\u003e,\nbool \u003ccode\u003e$use_include_path\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e,\n?resource \u003ccode\u003e$context\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\n): resource \\ | false\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003efopen()\u003c/strong\u003e закріплює іменований ресурс, зазначений у аргументі\n\u003ccode\u003efilename\u003c/code\u003e, за потоком.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003efilename\u003c/code\u003e\nЯкщо \u003ccode\u003efilename\u003c/code\u003e передано у формі \"scheme://...\", він вважається URL і PHP\nпроведе пошук обробника протоколу (також відомого як \"обертка\")\nдля цієї схеми. Якщо жодна обгортка не закріплена за протоколом, PHP\nвидасть зауваження, щоб допомогти вам відстежити потенційну проблему\nвашому скрипті і потім продовжить виконання, начебто \u003ccode\u003efilename\u003c/code\u003e\nвказував на звичайний файл.\u003c/p\u003e\n\u003cp\u003eЯкщо PHP встановлено, що \u003ccode\u003efilename\u003c/code\u003e вказує на локальний файл, тоді\nспроба відкрити потік до цього файлу. Файл має бути\nдоступний PHP, так що вам слід переконатися, що права доступу на файл\nце дозволяють. Якщо ви увімкнули\n\u003ca href=\"ini.core.md#ini.open-basedir\"\u003eopen_basedir\u003c/a\u003e, то накладаються\nподальші обмеження.\u003c/p\u003e\n\u003cp\u003eЯкщо PHP встановив, що 'filename' вказує на зареєстрований\nпротокол і цей протокол зареєстрований як мережевий URL, PHP виконує\nперевірку стану директиви\n\u003ca href=\"filesystem.configuration.md#ini.allow-url-fopen\"\u003eallow_url_fopen\u003c/a\u003e.\nЯкщо вона вимкнена, PHP видасть попередження та виклик fopen закінчиться\nневдачею.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eСписок підтримуваних протоколів доступний у розділі \u003ca href=\"wrappers.md\"\u003eПідтримувані \u003e протоколи та обгортки\u003c/a\u003e. Деякі протоколи (\u003ccode\u003eобгортки\u003c/code\u003e)\nпідтримують \u003ccode\u003eконтекст\u003c/code\u003e та/або опції \u003ccode\u003ephp.ini\u003c/code\u003e. Зверніться до\nвідповідній сторінці з описом використовуваного протоколу для\nотримання списку опцій, які можна встановити. (наприклад,\nзначення \u003ccode\u003ephp.ini\u003c/code\u003e \u003ccode\u003euser_agent\u003c/code\u003e використовується обгорткою \u003ccode\u003ehttp\u003c/code\u003e).\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eНа платформі Windows, необхідно екранувати всі зворотні сліші в дорозі\nдо файлу або використовувати прямі сліші.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$handle =fopen(\"c:\\folder\\resource.txt\", \"r\");?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emode\u003c/code\u003e\nПараметр \u003ccode\u003emode\u003c/code\u003e вказує тип доступу, який ви просите потоку.\nВін може бути одним із наступних варіантів:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003emode\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003er'\u003c/td\u003e\n\u003ctd\u003eВідкриває файл лише для читання; поміщає покажчик на початок файлу.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003er+'\u003c/td\u003e\n\u003ctd\u003eВідкриває файл для читання та запису; поміщає покажчик на початок файлу.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ew'\u003c/td\u003e\n\u003ctd\u003eВідкриває файл для запису; в іншому випадку поводиться так само, як і \"w +\".\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ew+'\u003c/td\u003e\n\u003ctd\u003eВідкриває файл для читання та запису; поміщає покажчик на початок файлу і обрізає файл до нульової довжини. Якщо файл не існує – намагається його створити.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ea'\u003c/td\u003e\n\u003ctd\u003eВідкриває файл для запису; поміщає покажчик у кінець файлу. Якщо файл не існує – намагається його створити. У цьому режимі функція \u003ca href=\"function.fseek.md\"\u003efseek()\u003c/a\u003e не застосовується, записи завжди додаються до кінця.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ea+'\u003c/td\u003e\n\u003ctd\u003eВідкриває файл для читання та запису; поміщає покажчик у кінець файлу. Якщо файл не існує – намагається його створити. У цьому режимі функція \u003ca href=\"function.fseek.md\"\u003efseek()\u003c/a\u003e впливає лише на позицію читання, записи завжди додаються до кінця.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ex'\u003c/td\u003e\n\u003ctd\u003eСтворює та відкриває тільки для запису; поміщає покажчик на початок файлу. Якщо файл вже існує, виклик \u003cstrong\u003efopen()\u003c/strong\u003e закінчиться невдачею, поверне \u003cstrong\u003efalse\u003c/strong\u003e та видасть помилку рівня \u003cstrong\u003eE_WARNING\u003c/strong\u003e. Якщо файл не існує, він спробує його створити. Це еквівалентно вказівкам прапорів O_EXCL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ex+'\u003c/td\u003e\n\u003ctd\u003eСтворює та відкриває для читання та запису; в іншому має таку ж поведінку, що і x'.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ec'\u003c/td\u003e\n\u003ctd\u003eВідкриває файл лише для запису. Якщо файл не існує, він створюється. Якщо ж файл існує, то він не обрізається (на відміну від \"w\"), і виклик до цієї функції не викликає помилки (так само як і у випадку з \"x\"). Вказівник на файл буде встановлено на початок файлу. Це може бути корисно при бажанні заблокувати файл (дивіться \u003ca href=\"function.flock.md\"\u003eflock()\u003c/a\u003e) перед зміною, так як використання w' може обрізати файл ще до того, як було отримано блокування (якщо ви хочете обрізати файл , Ви можете використовувати функцію \u003ca href=\"function.ftruncate.md\"\u003eftruncate()\u003c/a\u003e після запиту на блокування).\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ec+'\u003c/td\u003e\n\u003ctd\u003eВідкриває файл для читання та запису; в іншому має таку ж поведінку, що і c'.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ee'\u003c/td\u003e\n\u003ctd\u003eВстановити прапорець close-on-exec (закрити під час запуску) на відкритий файловий дескриптор. Доступно лише в PHP скомпілюваному на системах, що підтримують POSIX.1-2008.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eСписок можливих режимів для \u003cstrong\u003efopen()\u003c/strong\u003e, використовуючи \u003ccode\u003emode\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eРізні сімейства операційних систем мають різні угоди\nщодо закінчення рядків. Коли ви пишете текст і бажаєте вставити\nрозрив рядка, ви повинні використовувати правильні символи (або символ)\nдля операційної системи. Системи сімейства Unix використовують \u003ccode\u003e \u003c/code\u003e\nяк символ кінця рядка, системи сімейства Windows використовують\n\u003ccode\u003e \u003c/code\u003e як символи закінчення рядка та системи сімейства\nMacintosh (Mac OS Classic) використовують \u003ccode\u003e \u003c/code\u003e як символ кінця\nРядки.\u003c/p\u003e\n\u003cp\u003eЯкщо ви використовуєте неправильний символ кінця рядка під час редагування\nфайлів, ви можете виявити, що при відкритті ці файли \"дивно\nвиглядають\".\u003c/p\u003e\n\u003cp\u003eWindows пропонує прапор режиму текстової трансляції (\u003ccode\u003et'`), який автоматично переведе ` `в` ` під час роботи з файлом. І навпаки - ви також можете використовувати \"b\", щоб примусово увімкнути бінарний режим, у якому ваші дані не будуть Перетворюватися. Щоб використовувати ці режими, вкажіть \"b\" або \u003c/code\u003et'\u003ccode\u003eостанньою літерою параметра\u003c/code\u003emode`.\u003c/p\u003e\n\u003cp\u003eПрапором трансляції за замовчуванням є \"b\". Ви можете використовувати\nрежим ``t'\u003ccode\u003e, якщо працюєте з текстовими файлами та використовуєте \u003c/code\u003e\n`\nдля позначення кінця рядка у вашому скрипті, але при цьому\nприпускаєте, що ваші файли будуть використовуватися в таких\nпрограмах, як \"Блокнот\" (у застарілих версіях). У всіх інших\nВикористовуйте прапор \"b\".\u003c/p\u003e\n\u003cp\u003eЯкщо ви вкажете прапорець 't' під час роботи з бінарними файлами, ви\nможете зіткнутися з дивними проблемами з вашими даними, включаючи\nпошкоджені файли зображень та проблеми із символами \u003ccode\u003e \u003c/code\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЗнову ж таки з міркувань портованості рекомендується переписати\nстарий код, який покладається на режим \u003ccode\u003et'`, щоб натомість він використовував правильні кінці рядків та режим \u003c/code\u003eb'`.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Параметр \u003ccode\u003emode\u003c/code\u003e ігнорується під час роботи з обгортками\nпотоку \u003ccode\u003ephp://output\u003c/code\u003e, \u003ccode\u003ephp://input\u003c/code\u003e, \u003ccode\u003ephp://stdin\u003c/code\u003e, \u003ccode\u003ephp://stdout\u003c/code\u003e,\n\u003ccode\u003ephp://stderr\u003c/code\u003e та \u003ccode\u003ephp://fd\u003c/code\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003euse_include_path\u003c/code\u003e\nНеобов'язковий третій параметр use_include_path може бути встановлений\nв '1' або \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, якщо ви хочете провести пошук файлу в\n\u003ca href=\"ini.core.md#ini.include-path\"\u003einclude_path\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003econtext\u003c/code\u003e\nРесурс (resource) із \u003ca href=\"stream.contexts.md\"\u003eконтекстом потоку\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає покажчик на файл у разі успішного виконання або\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cp\u003eУ разі невдалого завершення роботи генерується помилка рівня\n\u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.0.16, 7.1.2\u003c/td\u003e\n\u003ctd\u003eДодана опція e'.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклади використання \u003cstrong\u003efopen()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$handle =fopen(\"/home/rasmus/file.txt\", \"r\");$handle = fopen(\"/home/rasmus/file.gif\", \"wb\");$handle =fopen (\"http://www.example.com/\", \"r\");$handle =fopen(\"ftp://user:password@example.com/somefile.txt\", \"w\");?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПри використанні SSL Microsoft IIS порушує протокол, закриваючи\nз'єднання без надсилання індикатора \u003ccode\u003eclose_notify\u003c/code\u003e. PHP повідомить про це\nяк \"SSL: Fatal Protocol Error\" в той момент, коли ви досягнете кінця\nданих. Щоб обійти це, ви повинні встановити\n\u003ca href=\"errorfunc.configuration.md#ini.error-reporting\"\u003eerror_reporting\u003c/a\u003e\nрівень, що виключає E_WARNING. PHP вміє визначати, що на стороні\nсервера знаходиться проблемний IIS при відкритті потоку за допомогою обгортки\n\u003ccode\u003ehttps://\u003c/code\u003e і виводить попередження. Якщо ви використовуєте\n\u003ca href=\"function.fsockopen.md\"\u003efsockopen()\u003c/a\u003e для створення \u003ccode\u003essl://\u003c/code\u003e сокету, ви\nсамі відповідаєте за визначення та придушення цього попередження.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо ви стикаєтеся з проблемами під час читання або запису файлів,\nі ви використовуєте PHP у вигляді серверного модуля, переконайтеся, що\nпроцес сервера має доступ до використовуваних вами файлів та директорій.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЦя функція також може приймати директорії як параметр\n\u003ccode\u003efilename\u003c/code\u003e. Якщо ви не знаєте, чи є 'filename' файлом або\nдиректорією, то вам може знадобитися використовувати функцію\n\u003ca href=\"function.is-dir.md\"\u003eis_dir()\u003c/a\u003e до виклику функції \u003cstrong\u003efopen()\u003c/strong\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"wrappers.md\"\u003eПідтримувані протоколи та обгортки\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fclose.md\"\u003efclose()\u003c/a\u003e - Закриває відкритий дескриптор\nфайлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fgets.md\"\u003efgets()\u003c/a\u003e - Читає рядок із файлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fread.md\"\u003efread()\u003c/a\u003e - Бінарно-безпечне читання файлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fwrite.md\"\u003efwrite()\u003c/a\u003e - Бінарно-безпечний запис у файл\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fsockopen.md\"\u003efsockopen()\u003c/a\u003e - Відкриває з'єднання з\nінтернет-сокетом або доменним сокетом Unix\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.file.md\"\u003efile()\u003c/a\u003e - Читає вміст файлу та поміщає\nйого в масив\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.file-exists.md\"\u003efile_exists()\u003c/a\u003e - Перевіряє існування\nвказаного файлу чи каталогу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.is-readable.md\"\u003eis_readable()\u003c/a\u003e - Визначає\nіснування файлу і чи доступний він для читання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.stream-set-timeout.md\"\u003estream_set_timeout()\u003c/a\u003e -\nВстановити час очікування для потоку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.popen.md\"\u003epopen()\u003c/a\u003e - Відкриває файловий покажчик\nпроцесу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.stream-context-create.md\"\u003estream_context_create()\u003c/a\u003e -\nСтворює контекст потоку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.umask.md\"\u003eumask()\u003c/a\u003e - Змінює поточну umask\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"class.splfileobject.md\"\u003eSplFileObject\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.fopen.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

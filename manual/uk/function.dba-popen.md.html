@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.dba-popen | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.dba-optimize.md">« dba_optimize</a></p>
+</li>
+<li>
+<p><a href="function.dba-replace.md">dba_replace »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.dba.md">Функції DBA</a></p>
+</li>
+<li>
+<p>встановити постійний екземпляр бази даних</p>
+</li>
+</ul>
+<p>#dba_popen</p>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>dba_popen — Встановити постійний екземпляр бази даних</p>
+<h3>Опис</h3>
+<p><strong>dba_popen</strong>(
+string <code>$path</code>,
+string <code>$mode</code>,
+string <code>$handler</code> = ?,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>...$args</code>
+): resource \ | false</p>
+<p><a href="function.dba-open.md">dba_open()</a> встановлює постійний екземпляр
+бази даних по дорозі <code>path</code> в режимі <code>mode</code>, використовуючи обробник
+<code>handler</code>.</p>
+<h3>Список параметрів</h3>
+<p><code>path</code>
+Дорога до файлів бази даних.</p>
+<p><code>mode</code>
+<code>r</code> для режиму читання, <code>w</code> для режиму читання/запису з вже існуючою
+базою даних. <code>c</code> для режиму читання/запису та створення бази даних, якщо
+вона ще не була створена, і <code>n</code> для створення, обрізання та доступу для
+читання/запису. База даних створюється з архітектурою BTree, інші
+архітектури (на зразок Hash або Queue) не підтримуються.</p>
+<p><code>handler</code>
+Ім'я <a href="dba.requirements.md">обробника</a>, який буде використовуватись
+для доступу на шляху <code>path</code>. Йому передаються всі необов'язкові параметри,
+задані в <a href="function.dba-open.md">dba_open()</a>.</p>
+<p><code>args</code>
+Необов'язковий рядок (string) параметрів, що передаються драйверу.</p>
+<p>Драйвери <code>cdb</code>, <code>cdb_make</code>, <code>flatfile</code>, <code>inifile</code>, <code>qdbm</code> та <code>tcadb</code> не
+підтримують додаткові параметри.</p>
+<p>Драйвери <code>db1</code>, <code>db2</code>, <code>db3</code>, <code>db4</code>, <code>dbm</code>, <code>gdbm</code> та <code>ndbm</code> підтримують
+єдиний додатковий параметр <code>$filemode</code>, який має те ж саме
+значення, що і параметр <code>$mode</code> в <a href="function.chmod.md">chmod()</a>
+замовчуванням дорівнює <code>0644</code>.</p>
+<p>Драйвер <code>lmdb</code> приймає два додаткові параметри. Перший дозволяє
+вказати <code>$filemode</code> (дивіться опис вище), а другий - вказати
+<code>$mapsize</code>, де значення має бути кратним розміру сторінки ОС або
+нулю, щоб використовувати розмір картки за замовчуванням. Параметр <code>$mapsize</code>
+підтримується в PHP 7.3.14 та 7.4.2 відповідно.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає обробник у разі успішного виконання або <strong><code>false</code></strong>
+у разі виникнення помилки.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.dba-open.md">dba_open()</a> - Відкриває базу даних</li>
+<li><a href="function.dba-close.md">dba_close()</a> - Закриває базу даних DBA</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.dba-popen.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.dba-popen.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.dba-popen","slug":"function.dba-popen.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.dba-optimize.md\"\u003e« dba_optimize\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.dba-replace.md\"\u003edba_replace »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.dba.md\"\u003eФункції DBA\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eвстановити постійний екземпляр бази даних\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#dba_popen\u003c/p\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003edba_popen — Встановити постійний екземпляр бази даних\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003edba_popen\u003c/strong\u003e(\nstring \u003ccode\u003e$path\u003c/code\u003e,\nstring \u003ccode\u003e$mode\u003c/code\u003e,\nstring \u003ccode\u003e$handler\u003c/code\u003e = ?,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e...$args\u003c/code\u003e\n): resource \\ | false\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"function.dba-open.md\"\u003edba_open()\u003c/a\u003e встановлює постійний екземпляр\nбази даних по дорозі \u003ccode\u003epath\u003c/code\u003e в режимі \u003ccode\u003emode\u003c/code\u003e, використовуючи обробник\n\u003ccode\u003ehandler\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003epath\u003c/code\u003e\nДорога до файлів бази даних.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emode\u003c/code\u003e\n\u003ccode\u003er\u003c/code\u003e для режиму читання, \u003ccode\u003ew\u003c/code\u003e для режиму читання/запису з вже існуючою\nбазою даних. \u003ccode\u003ec\u003c/code\u003e для режиму читання/запису та створення бази даних, якщо\nвона ще не була створена, і \u003ccode\u003en\u003c/code\u003e для створення, обрізання та доступу для\nчитання/запису. База даних створюється з архітектурою BTree, інші\nархітектури (на зразок Hash або Queue) не підтримуються.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ehandler\u003c/code\u003e\nІм'я \u003ca href=\"dba.requirements.md\"\u003eобробника\u003c/a\u003e, який буде використовуватись\nдля доступу на шляху \u003ccode\u003epath\u003c/code\u003e. Йому передаються всі необов'язкові параметри,\nзадані в \u003ca href=\"function.dba-open.md\"\u003edba_open()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eargs\u003c/code\u003e\nНеобов'язковий рядок (string) параметрів, що передаються драйверу.\u003c/p\u003e\n\u003cp\u003eДрайвери \u003ccode\u003ecdb\u003c/code\u003e, \u003ccode\u003ecdb_make\u003c/code\u003e, \u003ccode\u003eflatfile\u003c/code\u003e, \u003ccode\u003einifile\u003c/code\u003e, \u003ccode\u003eqdbm\u003c/code\u003e та \u003ccode\u003etcadb\u003c/code\u003e не\nпідтримують додаткові параметри.\u003c/p\u003e\n\u003cp\u003eДрайвери \u003ccode\u003edb1\u003c/code\u003e, \u003ccode\u003edb2\u003c/code\u003e, \u003ccode\u003edb3\u003c/code\u003e, \u003ccode\u003edb4\u003c/code\u003e, \u003ccode\u003edbm\u003c/code\u003e, \u003ccode\u003egdbm\u003c/code\u003e та \u003ccode\u003endbm\u003c/code\u003e підтримують\nєдиний додатковий параметр \u003ccode\u003e$filemode\u003c/code\u003e, який має те ж саме\nзначення, що і параметр \u003ccode\u003e$mode\u003c/code\u003e в \u003ca href=\"function.chmod.md\"\u003echmod()\u003c/a\u003e\nзамовчуванням дорівнює \u003ccode\u003e0644\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eДрайвер \u003ccode\u003elmdb\u003c/code\u003e приймає два додаткові параметри. Перший дозволяє\nвказати \u003ccode\u003e$filemode\u003c/code\u003e (дивіться опис вище), а другий - вказати\n\u003ccode\u003e$mapsize\u003c/code\u003e, де значення має бути кратним розміру сторінки ОС або\nнулю, щоб використовувати розмір картки за замовчуванням. Параметр \u003ccode\u003e$mapsize\u003c/code\u003e\nпідтримується в PHP 7.3.14 та 7.4.2 відповідно.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає обробник у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.dba-open.md\"\u003edba_open()\u003c/a\u003e - Відкриває базу даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.dba-close.md\"\u003edba_close()\u003c/a\u003e - Закриває базу даних DBA\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.dba-popen.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

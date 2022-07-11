@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>control-structures.match | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="control-structures.switch.md">«switch</a></p>
+</li>
+<li>
+<p><a href="control-structures.declare.md">declare »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="language.control-structures.md">Керування конструкції</a></p>
+</li>
+<li>
+<p>match</p>
+</li>
+</ul>
+<h2>match</h2>
+<p>(PHP 8)</p>
+<p>Вираз <code>match</code> призначений для розгалуження потоку виконання на
+підставі перевірки збігу значення із заданою умовою. Аналогічно
+оператору <code>switch</code>, вираз <code>match</code> приймає на вхід вираз,
+яке порівнюється з безліччю альтернатив. Але, на відміну від
+<code>switch</code>, воно обробляє значення у стилі, більше схожому на тернарний
+оператор. Також, на відміну від <code>switch</code>, використовується суворе порівняння
+(<code>===</code>), а не слабке (<code>==</code>). Вираз match доступний починаючи з PHP
+8.0.0.</p>
+<p><strong>Приклад #1 Структура вираження <code>match</code></strong></p>
+<p>` &#x3C;?php$return_value = match (subject_expression) {    single_conditional_expression => return_expression,    conditional_expression1, conditional_expression2 => return;</p>
+<p><strong>Приклад #2 Простий приклад використання <code>match</code></strong></p>
+<p>`&#x3C;?php$food = 'cake';$return_value = match ($food) {   'apple' => 'На столі лежать яблуко',    'banana' =>'  На столі стоїть торт, var_dump ($ return_value);</p>
+<p>Результат виконання цього прикладу:</p>
+<p>string(35) "На столі стоїть торт"</p>
+<blockquote>
+<p><strong>Примітка</strong>: Результат <code>match</code> використовувати не обов'язково.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>: Вираз <code>match</code> <em>має</em> завершуватися крапкою з комою
+<code>;</code>.</p>
+</blockquote>
+<p>Вираз <code>match</code> схожий на оператор <code>switch</code> за винятком деяких
+ключових відмінностей:</p>
+<ul>
+<li>На відміну від switch, <code>match</code> використовується суворе порівняння
+(<code>===</code>).</li>
+<li>Вираз <code>match</code> повертає результат.</li>
+<li>В <code>match</code> виконується тільки одна, перша підійшла, гілка коду,
+тоді як у <code>switch</code> відбувається наскрізне виконання починаючи з
+підійшов умови і до першого оператора <code>break</code>, що зустрівся.</li>
+<li>Вираз <code>match</code> має бути вичерпним.</li>
+</ul>
+<p>Також як і оператор <code>switch</code>, <code>match</code> послідовно проводить перевірки
+на збіг із заданими умовами. Виконання коду умов відбувається
+ліниво, тобто. код наступної умови виконується лише якщо всі
+попередні перевірки провалилися. Буде виконана лише одна гілка коду,
+відповідна умові, що підійшла. Приклад:</p>
+<p>` &#x3C;?php$result = match ($x) {    foo() => ...,   $this->bar() => ..., // $this->bar() не буде виконаний, () === $x    $this->baz => beep(), // beep() буде виконаний тільки якщо$x === $this->baz    // etc;</p>
+<p>Умови в <code>match</code> можуть бути множинними. В цьому випадку їх слід
+розділяти комами. Множинні умови працюють за принципом
+логічного АБО і, по суті, є скороченою формою для випадків,
+коли кілька умов мають оброблятися ідентично.</p>
+<p><code>&#x3C;?php$result = match ($x) {    // Множинна умова:    $a, $b, $c => 5,    // Анологічно трем$                     => 5,};?> </code></p>
+<p>Також можна використати шаблон <code>default</code>. Цей шаблон збігається з чим
+завгодно, навіщо не знайшлося збігів раніше. Наприклад:</p>
+<p>` &#x3C;?php$expressionResult = match ($condition) {    1, 2 => foo(),    3, 4 => bar(),    default => baz()</p>
+<blockquote>
+<p><strong>Примітка</strong>: Використання декількох шаблонів default призведе до
+фатальної помилки <strong><code>E_FATAL_ERROR</code></strong>.</p>
+</blockquote>
+<p>Вираз <code>match</code> має бути вичерпним. Якщо вираз, що перевіряється
+не співпало з жодною з умов, то буде викинуто виняток
+<a href="class.unhandledmatcherror.md">UnhandledMatchError</a>.</p>
+<p><strong>Приклад #3 Приклад необробленого виразу</strong></p>
+<p><code>&#x3C;?php$condition = 5;try {    match ($condition) {        1, 2 => foo(),        3, 4 => bar(),    };} catch (\UnhandledMatchError $e) {    var_dump($e );}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>object(UnhandledMatchError)#1 (7) {
+["message":protected]=>
+string(33) "Unhandled match value of type int"
+["string":"Error":private]=>
+string(0) ""
+["code":protected]=>
+int(0)
+["file":protected]=>
+string(9) "/in/ICgGK"
+["line":protected]=>
+int(6)
+["trace":"Error":private]=>
+array(0) {
+}
+["previous":"Error":private]=>
+NULL
+}</p>
+<h3>Використання match для перевірки складних умов</h3>
+<p>Вираз <code>match</code> можна використовувати не лише для перевірки
+ідентичності, але й для будь-яких виразів, що повертають логічне
+значення. В цьому випадку як вхідний параметр передається
+вираз <code>true</code>.</p>
+<p><strong>Приклад #4 Використання match для розгалуження в залежності від входження
+у діапазони цілих чисел</strong></p>
+<p><code>&#x3C;?php$age = 23;$result = match (true) {    $age >= 65 => 'літній',   $age >= 25 => 'дорослий',                 default => 'дитина',};var_dump($result);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>string(11) "повнолітній"</p>
+<p><strong>Приклад #5 Використання match для розгалуження залежно від
+вмісту рядка</strong></p>
+<p><code>&#x3C;?php$text = 'Bienvenue chez nous';$result = match (true) {   str_contains($text, 'Welcome') || str_contains($text, 'Hello') => 'en',    str_contains($text, 'Bienvenue') || str_contains($text, 'Bonjour') => 'fr',    // ...};var_dump($result);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>string(2) "fr"</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/control-structures.match.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/control-structures.match.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"control-structures.match","slug":"control-structures.match.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"control-structures.switch.md\"\u003e«switch\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"control-structures.declare.md\"\u003edeclare »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"language.control-structures.md\"\u003eКерування конструкції\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ematch\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003ematch\u003c/h2\u003e\n\u003cp\u003e(PHP 8)\u003c/p\u003e\n\u003cp\u003eВираз \u003ccode\u003ematch\u003c/code\u003e призначений для розгалуження потоку виконання на\nпідставі перевірки збігу значення із заданою умовою. Аналогічно\nоператору \u003ccode\u003eswitch\u003c/code\u003e, вираз \u003ccode\u003ematch\u003c/code\u003e приймає на вхід вираз,\nяке порівнюється з безліччю альтернатив. Але, на відміну від\n\u003ccode\u003eswitch\u003c/code\u003e, воно обробляє значення у стилі, більше схожому на тернарний\nоператор. Також, на відміну від \u003ccode\u003eswitch\u003c/code\u003e, використовується суворе порівняння\n(\u003ccode\u003e===\u003c/code\u003e), а не слабке (\u003ccode\u003e==\u003c/code\u003e). Вираз match доступний починаючи з PHP\n8.0.0.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Структура вираження \u003ccode\u003ematch\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$return_value = match (subject_expression) {    single_conditional_expression =\u003e return_expression,    conditional_expression1, conditional_expression2 =\u003e return;\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Простий приклад використання \u003ccode\u003ematch\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?php$food = 'cake';$return_value = match ($food) {   'apple' =\u003e 'На столі лежать яблуко',    'banana' =\u003e'  На столі стоїть торт, var_dump ($ return_value);\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003estring(35) \"На столі стоїть торт\"\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Результат \u003ccode\u003ematch\u003c/code\u003e використовувати не обов'язково.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Вираз \u003ccode\u003ematch\u003c/code\u003e \u003cem\u003eмає\u003c/em\u003e завершуватися крапкою з комою\n\u003ccode\u003e;\u003c/code\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eВираз \u003ccode\u003ematch\u003c/code\u003e схожий на оператор \u003ccode\u003eswitch\u003c/code\u003e за винятком деяких\nключових відмінностей:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eНа відміну від switch, \u003ccode\u003ematch\u003c/code\u003e використовується суворе порівняння\n(\u003ccode\u003e===\u003c/code\u003e).\u003c/li\u003e\n\u003cli\u003eВираз \u003ccode\u003ematch\u003c/code\u003e повертає результат.\u003c/li\u003e\n\u003cli\u003eВ \u003ccode\u003ematch\u003c/code\u003e виконується тільки одна, перша підійшла, гілка коду,\nтоді як у \u003ccode\u003eswitch\u003c/code\u003e відбувається наскрізне виконання починаючи з\nпідійшов умови і до першого оператора \u003ccode\u003ebreak\u003c/code\u003e, що зустрівся.\u003c/li\u003e\n\u003cli\u003eВираз \u003ccode\u003ematch\u003c/code\u003e має бути вичерпним.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eТакож як і оператор \u003ccode\u003eswitch\u003c/code\u003e, \u003ccode\u003ematch\u003c/code\u003e послідовно проводить перевірки\nна збіг із заданими умовами. Виконання коду умов відбувається\nліниво, тобто. код наступної умови виконується лише якщо всі\nпопередні перевірки провалилися. Буде виконана лише одна гілка коду,\nвідповідна умові, що підійшла. Приклад:\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$result = match ($x) {    foo() =\u003e ...,   $this-\u003ebar() =\u003e ..., // $this-\u003ebar() не буде виконаний, () === $x    $this-\u003ebaz =\u003e beep(), // beep() буде виконаний тільки якщо$x === $this-\u003ebaz    // etc;\u003c/p\u003e\n\u003cp\u003eУмови в \u003ccode\u003ematch\u003c/code\u003e можуть бути множинними. В цьому випадку їх слід\nрозділяти комами. Множинні умови працюють за принципом\nлогічного АБО і, по суті, є скороченою формою для випадків,\nколи кілька умов мають оброблятися ідентично.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$result = match ($x) {    // Множинна умова:    $a, $b, $c =\u003e 5,    // Анологічно трем$                     =\u003e 5,};?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eТакож можна використати шаблон \u003ccode\u003edefault\u003c/code\u003e. Цей шаблон збігається з чим\nзавгодно, навіщо не знайшлося збігів раніше. Наприклад:\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$expressionResult = match ($condition) {    1, 2 =\u003e foo(),    3, 4 =\u003e bar(),    default =\u003e baz()\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Використання декількох шаблонів default призведе до\nфатальної помилки \u003cstrong\u003e\u003ccode\u003eE_FATAL_ERROR\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eВираз \u003ccode\u003ematch\u003c/code\u003e має бути вичерпним. Якщо вираз, що перевіряється\nне співпало з жодною з умов, то буде викинуто виняток\n\u003ca href=\"class.unhandledmatcherror.md\"\u003eUnhandledMatchError\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Приклад необробленого виразу\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$condition = 5;try {    match ($condition) {        1, 2 =\u003e foo(),        3, 4 =\u003e bar(),    };} catch (\\UnhandledMatchError $e) {    var_dump($e );}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eobject(UnhandledMatchError)#1 (7) {\n[\"message\":protected]=\u003e\nstring(33) \"Unhandled match value of type int\"\n[\"string\":\"Error\":private]=\u003e\nstring(0) \"\"\n[\"code\":protected]=\u003e\nint(0)\n[\"file\":protected]=\u003e\nstring(9) \"/in/ICgGK\"\n[\"line\":protected]=\u003e\nint(6)\n[\"trace\":\"Error\":private]=\u003e\narray(0) {\n}\n[\"previous\":\"Error\":private]=\u003e\nNULL\n}\u003c/p\u003e\n\u003ch3\u003eВикористання match для перевірки складних умов\u003c/h3\u003e\n\u003cp\u003eВираз \u003ccode\u003ematch\u003c/code\u003e можна використовувати не лише для перевірки\nідентичності, але й для будь-яких виразів, що повертають логічне\nзначення. В цьому випадку як вхідний параметр передається\nвираз \u003ccode\u003etrue\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Використання match для розгалуження в залежності від входження\nу діапазони цілих чисел\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$age = 23;$result = match (true) {    $age \u003e= 65 =\u003e 'літній',   $age \u003e= 25 =\u003e 'дорослий',                 default =\u003e 'дитина',};var_dump($result);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003estring(11) \"повнолітній\"\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Використання match для розгалуження залежно від\nвмісту рядка\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$text = 'Bienvenue chez nous';$result = match (true) {   str_contains($text, 'Welcome') || str_contains($text, 'Hello') =\u003e 'en',    str_contains($text, 'Bienvenue') || str_contains($text, 'Bonjour') =\u003e 'fr',    // ...};var_dump($result);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003estring(2) \"fr\"\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"control-structures.match.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

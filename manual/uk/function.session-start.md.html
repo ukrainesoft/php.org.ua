@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.session-start | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.session-set-save-handler.md">« session_set_save_handler</a></p>
+</li>
+<li>
+<p><a href="function.session-status.md">session_status »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.session.md">Функції для роботи з сесіями</a></p>
+</li>
+<li>
+<p>Стартує нову сесію, або відновлює існуючу</p>
+</li>
+</ul>
+<h1>session_start</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>session_start — Стартує нову сесію або відновлює існуючу</p>
+<h3>Опис</h3>
+<p><strong>session_start</strong>(array <code>$options</code> = []): bool</p>
+<p>Функція <strong>session_start()</strong> створює сесію або відновлює
+існуючу, ґрунтуючись на ідентифікаторі сесії, переданому через
+GET- або POST-запит або переданий через cookie.</p>
+<p>Коли викликана функція <strong>session_start()</strong> або коли сесія створюється
+автоматично, PHP викличе відкриття та читання обробників запису сесії.
+Це можуть бути як вбудовані обробники, так і ті, що надаються
+модулями (наприклад, SQLite або Memcached); або взагалі певний
+користувачем обробник, заданий функцією
+<a href="function.session-set-save-handler.md">session_set_save_handler()</a>.
+Callback-функція читання витягне всі існуючі дані сесії
+(збережені у спеціальному серіалізованому вигляді), десеріалізує їх та
+занесе до суперглобального масиву $_SESSION, після чого поверне
+збережені дані обробнику сесій PHP.</p>
+<p>Для використання іменованих сесій, використовуйте
+<a href="function.session-name.md">session_name()</a> перед <strong>session_start()</strong>.</p>
+<p>Якщо дозволено опцію
+<a href="session.configuration.md#ini.session.use-trans-sid">session.use_trans_sid</a>,
+функція <strong>session_start()</strong> реєструє внутрішній обробник виводу
+для перезапису URL-адреси.</p>
+<p>Якщо користувач використовує <code>ob_gzhandler</code> або щось подібне
+спільно з функцією <a href="function.ob-start.md">ob_start()</a>, порядок
+функцій важливий для правильного виведення. Наприклад, <code>ob_gzhandler</code> повинен
+бути зареєстрованим до старту сесії.</p>
+<h3>Список параметрів</h3>
+<p><code>options</code>
+Якщо поставлено, то має бути асоціативним масивом, що перевизначає
+поточні <a href="session.configuration.md">директиви конфігурації сесій</a>.
+Ключі не повинні мати префіксу <code>session.</code>.</p>
+<p>Крім звичайного набору конфігураційних директив, можливо
+додано опцію <code>read_and_close</code>. Якщо встановлена в <strong><code>true</code></strong>, то
+сесія буде закрита відразу ж після прочитання, теоретично дозволяючи
+уникнути блокування, якщо дані сесії не змінюватимуться.</p>
+<h3>Значення, що повертаються</h3>
+<p>Функція повертає <strong><code>true</code></strong>, якщо сесія успішно стартована,
+в іншому випадку <strong><code>false</code></strong>.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.1.0</td>
+<td><strong>session_start()</strong> тепер повертає <strong>false</strong> і більше не ініціалізує $_SESSION, коли вона не змогла запустити сесію.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<h4>Простий приклад сесії</h4>
+<p><strong>Приклад #1 <code>page1.php</code></strong></p>
+<p><code>&#x3C;?php// page1.phpsession_start();echo 'Ласкаво просимо на сторінку 1';$_SESSION['favcolor'] = 'green';$_SESSION['animal']   = 'cat';$_SSION ? br />&#x3C;a href="page2.php?' . SID . '">page 2&#x3C;/a>';?></code></p>
+<p>Після перегляду <code>page1.php</code>, друга сторінка <code>page2.php</code> чудовим
+чином отримає всі дані сесії. Читайте розділ <a href="ref.session.md">робота з сесіями</a>, там розповідається про <a href="session.idpassing.md">передачу ідентифікаторів сесій</a>. Зокрема там
+говориться про те, що таке константа ** <code>SID</code>**.</p>
+<p><strong>Приклад #2 <code>page2.php</code></strong></p>
+<p><code>&#x3C;?php// page2.phpsession_start();echo 'Ласкаво просимо на сторінку 2&#x3C;br />';echo $_SESSION['favcolor']; // greenecho $_SESSION['animal']; // catecho date('Y m d H:i:s', $_SESSION['time']);// Можете тут використовувати ідентифікатор сесії, як в page1.phpecho '&#x3C;br />&#x3C;a php">page 1&#x3C;/a>';?></code></p>
+<h4>Передача опцій у <strong>session_start()</strong></h4>
+<p><strong>Приклад #3 Перевизначення часу життя cookie</strong></p>
+<p><code>&#x3C;?php// Встановлюємо термін дії cookie одному дню.session_start([   'cookie_lifetime' => 86400,]);?> </code></p>
+<p><strong>Приклад #4 Читання та закриття сесії</strong></p>
+<p><code>&#x3C;?php// Если мы знаем, что в сессии не надо ничего изменять,// мы можем просто прочитать её переменные и сразу закрыть,// чтобы не блокировать файл сессии, который может понадобиться другим сессиямsession_start([    'cookie_lifetime' => 86400,  'read_and_close' => true,]);</code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Для використання сесій на основі cookie, функція <strong>session_start()</strong>
+повинна бути викликана перед виведенням чогось у браузер.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Використовуйте
+<a href="zlib.configuration.md#ini.zlib.output-compression">zlib.output_compression</a>
+замість <a href="function.ob-gzhandler.md">ob_gzhandler()</a></p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ця функція надсилає кілька заголовків HTTP, залежно від
+Налаштування. Дивіться опис функції
+<a href="function.session-cache-limiter.md">session_cache_limiter()</a> для
+керування цими заголовками.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><code>$_SESSION</code></li>
+<li>Директива конфігурації
+<a href="session.configuration.md#ini.session.auto-start">session.auto_start</a></li>
+<li><a href="function.session-id.md">session_id()</a> - Отримує та/або
+встановлює ідентифікатор поточної сесії</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.session-start.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.session-start.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.session-start","slug":"function.session-start.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.session-set-save-handler.md\"\u003e« session_set_save_handler\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.session-status.md\"\u003esession_status »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.session.md\"\u003eФункції для роботи з сесіями\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eСтартує нову сесію, або відновлює існуючу\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003esession_start\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003esession_start — Стартує нову сесію або відновлює існуючу\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003esession_start\u003c/strong\u003e(array \u003ccode\u003e$options\u003c/code\u003e = []): bool\u003c/p\u003e\n\u003cp\u003eФункція \u003cstrong\u003esession_start()\u003c/strong\u003e створює сесію або відновлює\nіснуючу, ґрунтуючись на ідентифікаторі сесії, переданому через\nGET- або POST-запит або переданий через cookie.\u003c/p\u003e\n\u003cp\u003eКоли викликана функція \u003cstrong\u003esession_start()\u003c/strong\u003e або коли сесія створюється\nавтоматично, PHP викличе відкриття та читання обробників запису сесії.\nЦе можуть бути як вбудовані обробники, так і ті, що надаються\nмодулями (наприклад, SQLite або Memcached); або взагалі певний\nкористувачем обробник, заданий функцією\n\u003ca href=\"function.session-set-save-handler.md\"\u003esession_set_save_handler()\u003c/a\u003e.\nCallback-функція читання витягне всі існуючі дані сесії\n(збережені у спеціальному серіалізованому вигляді), десеріалізує їх та\nзанесе до суперглобального масиву $_SESSION, після чого поверне\nзбережені дані обробнику сесій PHP.\u003c/p\u003e\n\u003cp\u003eДля використання іменованих сесій, використовуйте\n\u003ca href=\"function.session-name.md\"\u003esession_name()\u003c/a\u003e перед \u003cstrong\u003esession_start()\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо дозволено опцію\n\u003ca href=\"session.configuration.md#ini.session.use-trans-sid\"\u003esession.use_trans_sid\u003c/a\u003e,\nфункція \u003cstrong\u003esession_start()\u003c/strong\u003e реєструє внутрішній обробник виводу\nдля перезапису URL-адреси.\u003c/p\u003e\n\u003cp\u003eЯкщо користувач використовує \u003ccode\u003eob_gzhandler\u003c/code\u003e або щось подібне\nспільно з функцією \u003ca href=\"function.ob-start.md\"\u003eob_start()\u003c/a\u003e, порядок\nфункцій важливий для правильного виведення. Наприклад, \u003ccode\u003eob_gzhandler\u003c/code\u003e повинен\nбути зареєстрованим до старту сесії.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eoptions\u003c/code\u003e\nЯкщо поставлено, то має бути асоціативним масивом, що перевизначає\nпоточні \u003ca href=\"session.configuration.md\"\u003eдирективи конфігурації сесій\u003c/a\u003e.\nКлючі не повинні мати префіксу \u003ccode\u003esession.\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eКрім звичайного набору конфігураційних директив, можливо\nдодано опцію \u003ccode\u003eread_and_close\u003c/code\u003e. Якщо встановлена в \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, то\nсесія буде закрита відразу ж після прочитання, теоретично дозволяючи\nуникнути блокування, якщо дані сесії не змінюватимуться.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eФункція повертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, якщо сесія успішно стартована,\nв іншому випадку \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.1.0\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003esession_start()\u003c/strong\u003e тепер повертає \u003cstrong\u003efalse\u003c/strong\u003e і більше не ініціалізує $_SESSION, коли вона не змогла запустити сесію.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003ch4\u003eПростий приклад сесії\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 \u003ccode\u003epage1.php\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// page1.phpsession_start();echo 'Ласкаво просимо на сторінку 1';$_SESSION['favcolor'] = 'green';$_SESSION['animal']   = 'cat';$_SSION ? br /\u003e\u0026#x3C;a href=\"page2.php?' . SID . '\"\u003epage 2\u0026#x3C;/a\u003e';?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПісля перегляду \u003ccode\u003epage1.php\u003c/code\u003e, друга сторінка \u003ccode\u003epage2.php\u003c/code\u003e чудовим\nчином отримає всі дані сесії. Читайте розділ \u003ca href=\"ref.session.md\"\u003eробота з сесіями\u003c/a\u003e, там розповідається про \u003ca href=\"session.idpassing.md\"\u003eпередачу ідентифікаторів сесій\u003c/a\u003e. Зокрема там\nговориться про те, що таке константа ** \u003ccode\u003eSID\u003c/code\u003e**.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 \u003ccode\u003epage2.php\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// page2.phpsession_start();echo 'Ласкаво просимо на сторінку 2\u0026#x3C;br /\u003e';echo $_SESSION['favcolor']; // greenecho $_SESSION['animal']; // catecho date('Y m d H:i:s', $_SESSION['time']);// Можете тут використовувати ідентифікатор сесії, як в page1.phpecho '\u0026#x3C;br /\u003e\u0026#x3C;a php\"\u003epage 1\u0026#x3C;/a\u003e';?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eПередача опцій у \u003cstrong\u003esession_start()\u003c/strong\u003e\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Перевизначення часу життя cookie\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Встановлюємо термін дії cookie одному дню.session_start([   'cookie_lifetime' =\u003e 86400,]);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Читання та закриття сесії\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Если мы знаем, что в сессии не надо ничего изменять,// мы можем просто прочитать её переменные и сразу закрыть,// чтобы не блокировать файл сессии, который может понадобиться другим сессиямsession_start([    'cookie_lifetime' =\u003e 86400,  'read_and_close' =\u003e true,]);\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eДля використання сесій на основі cookie, функція \u003cstrong\u003esession_start()\u003c/strong\u003e\nповинна бути викликана перед виведенням чогось у браузер.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eВикористовуйте\n\u003ca href=\"zlib.configuration.md#ini.zlib.output-compression\"\u003ezlib.output_compression\u003c/a\u003e\nзамість \u003ca href=\"function.ob-gzhandler.md\"\u003eob_gzhandler()\u003c/a\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЦя функція надсилає кілька заголовків HTTP, залежно від\nНалаштування. Дивіться опис функції\n\u003ca href=\"function.session-cache-limiter.md\"\u003esession_cache_limiter()\u003c/a\u003e для\nкерування цими заголовками.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e$_SESSION\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eДиректива конфігурації\n\u003ca href=\"session.configuration.md#ini.session.auto-start\"\u003esession.auto_start\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.session-id.md\"\u003esession_id()\u003c/a\u003e - Отримує та/або\nвстановлює ідентифікатор поточної сесії\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.session-start.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

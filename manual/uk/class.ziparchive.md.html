@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.ziparchive | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="zip.examples.md">« Приклади</a></p>
+</li>
+<li>
+<p><a href="ziparchive.addemptydir.md">ZipArchive::addEmptyDir »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.zip.md">Zip</a></p>
+</li>
+<li>
+<p>Клас ZipArchive</p>
+</li>
+</ul>
+<h1>Клас <a href="class.ziparchive.md">ZipArchive</a></h1>
+<p>(PHP 5 >= 5.2.0, PHP 7, PHP 8, PECL zip >= 1.1.0)</p>
+<h2>Вступ</h2>
+<p>Файловий архів, стислий Zip.</p>
+<h2>Огляд класів</h2>
+<p>class <strong>ZipArchive</strong> implements <a href="class.countable.md">Countable</a> {</p>
+<p>/* Властивості */</p>
+<p>public readonly int <code>$lastId</code>;</p>
+<p>public readonly int <code>$status</code>;</p>
+<p>public readonly int <code>$statusSys</code>;</p>
+<p>public readonly int <code>$numFiles</code>;</p>
+<p>public readonly string $filename;</p>
+<p>public readonly string <code>$comment</code>;</p>
+<p>/* Методи */</p>
+<p>public <a href="ziparchive.addemptydir.md">addEmptyDir</a>(string <code>$dirname</code>, int
+$flags = 0): bool</p>
+<p>public <a href="ziparchive.addfile.md">addFile</a>(
+string <code>$filepath</code>,
+string <code>$entryname</code> = "",
+int <code>$start</code> = 0,
+int <code>$length</code> = 0,
+int <code>$flags</code> = ZipArchive::FL_OVERWRITE
+): bool</p>
+<p>public <a href="ziparchive.addfromstring.md">addFromString</a>(string <code>$name</code>,
+string <code>$content</code>, int <code>$flags</code> = ZipArchive::FL_OVERWRITE): bool</p>
+<p>public <a href="ziparchive.addglob.md">addGlob</a>(string <code>$pattern</code>, int
+<code>$flags</code> = 0, array <code>$options</code> = []): array|false
+public <a href="ziparchive.addpattern.md">addPattern</a>(string <code>$pattern</code>,
+string <code>$path</code> = ".", array <code>$options</code> = []): array|false
+public <a href="ziparchive.clearerror.md">clearError</a>(): void</p>
+<p>public <a href="ziparchive.close.md">close</a>(): bool</p>
+<p>public <a href="ziparchive.count.md">count</a>(): int</p>
+<p>public <a href="ziparchive.deleteindex.md">deleteIndex</a>(int <code>$index</code>): bool</p>
+<p>public <a href="ziparchive.deletename.md">deleteName</a>(string <code>$name</code>): bool</p>
+<p>public <a href="ziparchive.extractto.md">extractTo</a>(string <code>$pathto</code>,
+array|string|null <code>$files</code> = <strong><code>null</code></strong>): bool</p>
+<p>public <a href="ziparchive.getarchivecomment.md">getArchiveComment</a>(int
+<code>$flags</code> = 0): string|false</p>
+<p>public <a href="ziparchive.getcommentindex.md">getCommentIndex</a>(int <code>$index</code>,
+int <code>$flags</code> = 0): string|false</p>
+<p>public <a href="ziparchive.getcommentname.md">getCommentName</a>(string <code>$name</code>,
+int <code>$flags</code> = 0): string|false</p>
+<p>public
+<a href="ziparchive.getexternalattributesindex.md">getExternalAttributesIndex</a>(
+int <code>$index</code>,
+int <code>&#x26;$opsys</code>,
+int <code>&#x26;$attr</code>,
+int <code>$flags</code> = ?
+): bool</p>
+<p>public
+<a href="ziparchive.getexternalattributesname.md">getExternalAttributesName</a>(
+string <code>$name</code>,
+int <code>&#x26;$opsys</code>,
+int <code>&#x26;$attr</code>,
+int <code>$flags</code> = 0
+): bool</p>
+<p>public <a href="ziparchive.getfromindex.md">getFromIndex</a>(int <code>$index</code>, int
+<code>$len</code> = 0, int <code>$flags</code> = 0): string|false</p>
+<p>public <a href="ziparchive.getfromname.md">getFromName</a>(string <code>$name</code>, int
+<code>$len</code> = 0, int <code>$flags</code> = 0): string|false</p>
+<p>public <a href="ziparchive.getnameindex.md">getNameIndex</a>(int <code>$index</code>, int
+<code>$flags</code> = 0): string|false</p>
+<p>public <a href="ziparchive.getstatusstring.md">getStatusString</a>(): string</p>
+<p>public <a href="ziparchive.getstream.md">getStream</a>(string <code>$name</code>):
+resource|false</p>
+<p>public <a href="ziparchive.getstreamindex.md">getStreamIndex</a>(int <code>$index</code>,
+int <code>$flags</code> = 0): resource|false</p>
+<p>public <a href="ziparchive.getstreamname.md">getStreamName</a>(string <code>$name</code>,
+int <code>$flags</code> = 0): resource|false</p>
+<p>public static
+<a href="ziparchive.iscompressionmethoddupported.md">isCompressionMethodSupported</a>(int
+<code>$method</code>, bool <code>$enc</code> = <strong><code>true</code></strong>): bool</p>
+<p>public static
+<a href="ziparchive.isencryptionmethoddupported.md">isEncryptionMethodSupported</a>(int
+<code>$method</code>, bool <code>$enc</code> = <strong><code>true</code></strong>): bool</p>
+<p>public <a href="ziparchive.locatename.md">locateName</a>(string <code>$name</code>, int
+<code>$flags</code> = 0): int|false</p>
+<p>public <a href="ziparchive.open.md">open</a>(string <code>$filename</code>, int <code>$flags</code> =
+0): bool|int</p>
+<p>public
+<a href="ziparchive.registercancelcallback.md">registerCancelCallback</a>(<a href="language.types.callable.md">callable</a>
+<code>$callback</code>): bool</p>
+<p>public
+<a href="ziparchive.registerprogresscallback.md">registerProgressCallback</a>(float
+<code>$rate</code>, <a href="language.types.callable.md">callable</a> <code>$callback</code>): bool</p>
+<p>public <a href="ziparchive.renameindex.md">renameIndex</a>(int <code>$index</code>, string
+<code>$new_name</code>): bool</p>
+<p>public <a href="ziparchive.renamename.md">renameName</a>(string <code>$name</code>, string
+<code>$new_name</code>): bool</p>
+<p>public <a href="ziparchive.replacefile.md">replaceFile</a>(
+string <code>$filepath</code>,
+int <code>$index</code>,
+int <code>$start</code> = 0,
+int <code>$length</code> = 0,
+int <code>$flags</code> = 0
+): bool</p>
+<p>public <a href="ziparchive.setarchivecomment.md">setArchiveComment</a>(string
+<code>$comment</code>): bool</p>
+<p>public <a href="ziparchive.setcommentindex.md">setCommentIndex</a>(int <code>$index</code>,
+string <code>$comment</code>): bool</p>
+<p>public <a href="ziparchive.setcommentname.md">setCommentName</a>(string <code>$name</code>,
+string <code>$comment</code>): bool</p>
+<p>public <a href="ziparchive.setcompressionindex.md">setCompressionIndex</a>(int
+<code>$index</code>, int <code>$method</code>, int <code>$compflags</code> = 0): bool</p>
+<p>public <a href="ziparchive.setcompressionname.md">setCompressionName</a>(string
+<code>$name</code>, int <code>$method</code>, int <code>$compflags</code> = 0): bool</p>
+<p>public <a href="ziparchive.setencryptionindex.md">setEncryptionIndex</a>(int
+<code>$index</code>, int <code>$method</code>, ?string <code>$password</code> = <strong><code>null</code></strong>): bool</p>
+<p>public <a href="ziparchive.setencryptionname.md">setEncryptionName</a>(string
+<code>$name</code>, int <code>$method</code>, ?string <code>$password</code> = <strong><code>null</code></strong>): bool</p>
+<p>public
+<a href="ziparchive.setexternalattributesindex.md">setExternalAttributesIndex</a>(
+int <code>$index</code>,
+int <code>$opsys</code>,
+int <code>$attr</code>,
+int <code>$flags</code> = 0
+): bool</p>
+<p>public
+<a href="ziparchive.setexternalattributesname.md">setExternalAttributesName</a>(
+string <code>$name</code>,
+int <code>$opsys</code>,
+int <code>$attr</code>,
+int <code>$flags</code> = 0
+): bool</p>
+<p>public <a href="ziparchive.setmtimeindex.md">setMtimeIndex</a>(int <code>$index</code>, int
+<code>$timestamp</code>, int <code>$flags</code> = 0): bool</p>
+<p>public <a href="ziparchive.setmtimename.md">setMtimeName</a>(string <code>$name</code>, int
+<code>$timestamp</code>, int <code>$flags</code> = 0): bool</p>
+<p>public <a href="ziparchive.setpassword.md">setPassword</a>(string <code>$password</code>):
+bool</p>
+<p>public <a href="ziparchive.statindex.md">statIndex</a>(int <code>$index</code>, int <code>$flags</code>
+= 0): array \ | false</p>
+<p>public <a href="ziparchive.statname.md">statName</a>(string <code>$name</code>, int <code>$flags</code>
+= 0): array \ | false</p>
+<p>public <a href="ziparchive.unchangeall.md">unchangeAll</a>(): bool</p>
+<p>public <a href="ziparchive.unchangearchive.md">unchangeArchive</a>(): bool</p>
+<p>public <a href="ziparchive.unchangeindex.md">unchangeIndex</a>(int <code>$index</code>):
+bool</p>
+<p>public <a href="ziparchive.unchangename.md">unchangeName</a>(string <code>$name</code>):
+bool</p>
+<p>}</p>
+<h2>Властивості</h2>
+<p><code>lastId</code>
+Значення індексу останнього доданого запису (файл або каталог).
+Доступно з PHP 8.0.0 та PECL zip 1.18.0.</p>
+<p><code>status</code>
+Заголовок Zip-архіву. Доступно для закритого архіву, починаючи з PHP 8.0.0 та
+PECL ZIP 1.18.0.</p>
+<p><code>statusSys</code>
+Системний статус zip-архіву. Доступно для закритого архіву, починаючи з
+PHP 8.0.0 та PECL zip 1.18.0.</p>
+<p><code>numFiles</code>
+Кількість файлів в архіві</p>
+<p><code>filename</code>
+Ім'я файлу у файловій системі</p>
+<p><code>comment</code>
+Коментар до архіву</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="ziparchive.addemptydir.md">ZipArchive::addEmptyDir</a> - Додає
+нову директорію</li>
+<li><a href="ziparchive.addfile.md">ZipArchive::addFile</a> — Додає до
+ZIP-архів файл за вказаним шляхом</li>
+<li><a href="ziparchive.addfromstring.md">ZipArchive::addFromString</a> -
+Додає файл до ZIP-архіву, використовуючи його вміст</li>
+<li><a href="ziparchive.addglob.md">ZipArchive::addGlob</a> — Додати файли з
+директорії відповідно до шаблону</li>
+<li><a href="ziparchive.addpattern.md">ZipArchive::addPattern</a> — Додати
+файли з директорії відповідно до шаблону регулярного виразу
+PCRE</li>
+<li><a href="ziparchive.clearerror.md">ZipArchive::clearError</a> — Видаляє
+повідомлення про помилку статусу, системні та/або повідомлення модуля zip</li>
+<li><a href="ziparchive.close.md">ZipArchive::close</a> - Закриває активний
+архів (відкритий або знову створений)</li>
+<li><a href="ziparchive.count.md">ZipArchive::count</a> — Підраховує кількість
+файлів в архіві</li>
+<li><a href="ziparchive.deleteindex.md">ZipArchive::deleteIndex</a> — Видаляє
+елемент в архіві, використовуючи його індекс</li>
+<li><a href="ziparchive.deletename.md">ZipArchive::deleteName</a> — Видаляє
+елемент в архіві, використовуючи його ім'я</li>
+<li><a href="ziparchive.extractto.md">ZipArchive::extractTo</a> - Витягує
+вміст архіву</li>
+<li><a href="ziparchive.getarchivecomment.md">ZipArchive::getArchiveComment</a> -
+Повертає коментар ZIP-архіву</li>
+<li><a href="ziparchive.getcommentindex.md">ZipArchive::getCommentIndex</a> -
+Повертає коментар елемента, використовуючи його індекс</li>
+<li><a href="ziparchive.getcommentname.md">ZipArchive::getCommentName</a> -
+Повертає коментар елемента, використовуючи його ім'я</li>
+<li><a href="ziparchive.getexternalattributesindex.md">ZipArchive::getExternalAttributesIndex</a>
+— Витягти зовнішні атрибути запису за його індексом</li>
+<li><a href="ziparchive.getexternalattributesname.md">ZipArchive::getExternalAttributesName</a>
+— Витягти зовнішні атрибути запису на її ім'я</li>
+<li><a href="ziparchive.getfromindex.md">ZipArchive::getFromIndex</a> -
+Повертає вміст елемента за його індексом</li>
+<li><a href="ziparchive.getfromname.md">ZipArchive::getFromName</a> - Повертає
+вміст елемента на його ім'я</li>
+<li><a href="ziparchive.getnameindex.md">ZipArchive::getNameIndex</a>
+Повертає ім'я елемента за його індексом</li>
+<li><a href="ziparchive.getstatusstring.md">ZipArchive::getStatusString</a> -
+Повертають статус повідомлення про помилку, системний та/або zip-статус</li>
+<li><a href="ziparchive.getstream.md">ZipArchive::getStream</a> — Отримати
+дескриптор файлу елемента, визначений на ім'я елемента (тільки
+для читання)</li>
+<li><a href="ziparchive.getstreamindex.md">ZipArchive::getStreamIndex</a> -
+Отримує обробник файлу для запису, визначеного його індексом
+(тільки для читання)</li>
+<li><a href="ziparchive.getstreamname.md">ZipArchive::getStreamName</a> -
+Отримує обробник файлу для запису, визначеного його ім'ям (тільки
+для читання)</li>
+<li><a href="ziparchive.iscompressionmethoddupported.md">ZipArchive::isCompressionMethodSupported</a>
+— Перевіряє, чи підтримується метод стиснення libzip</li>
+<li><a href="ziparchive.isencryptionmethoddupported.md">ZipArchive::isEncryptionMethodSupported</a>
+— Перевіряє, чи підтримується метод шифрування libzip</li>
+<li><a href="ziparchive.locatename.md">ZipArchive::locateName</a> - Повертає
+індекс елемента в архіві</li>
+<li><a href="ziparchive.open.md">ZipArchive::open</a> - Відкриває ZIP-архів</li>
+<li><a href="ziparchive.registercancelcallback.md">ZipArchive::registerCancelCallback</a>
+— Реєструє callback-функцію для дозволу скасування під час
+закриття архіву</li>
+<li><a href="ziparchive.registerprogresscallback.md">ZipArchive::registerProgressCallback</a>
+— Реєструє callback-функцію для надання оновлень при
+закриття архіву</li>
+<li><a href="ziparchive.renameindex.md">ZipArchive::renameIndex</a> -
+Перейменовує елемент за його індексом</li>
+<li><a href="ziparchive.renamename.md">ZipArchive::renameName</a> -
+Перейменовує елемент на його ім'я</li>
+<li><a href="ziparchive.replacefile.md">ZipArchive::replaceFile</a> — Замінює
+файл у ZIP-архіві вказаним шляхом</li>
+<li><a href="ziparchive.setarchivecomment.md">ZipArchive::setArchiveComment</a> -
+Встановлює коментар до ZIP-архіву</li>
+<li><a href="ziparchive.setcommentindex.md">ZipArchive::setCommentIndex</a> -
+Встановлює коментар до елемента за його індексом</li>
+<li><a href="ziparchive.setcommentname.md">ZipArchive::setCommentName</a> -
+Встановлює коментар до елемента, заданого на ім'я</li>
+<li><a href="ziparchive.setcompressionindex.md">ZipArchive::setCompressionIndex</a>
+— Встановити метод стиснення запису, заданого його індексом</li>
+<li><a href="ziparchive.setcompressionname.md">ZipArchive::setCompressionName</a>
+— Встановити метод стиснення запису, заданого на ім'я</li>
+<li><a href="ziparchive.setencryptionindex.md">ZipArchive::setEncryptionIndex</a>
+— Встановити метод шифрування запису за його індексом</li>
+<li><a href="ziparchive.setencryptionname.md">ZipArchive::setEncryptionName</a> -
+Встановити метод шифрування запису на його ім'я</li>
+<li><a href="ziparchive.setexternalattributesindex.md">ZipArchive::setExternalAttributesIndex</a>
+— Встановити зовнішні атрибути запису за його індексом</li>
+<li><a href="ziparchive.setexternalattributesname.md">ZipArchive::setExternalAttributesName</a>
+— Встановлення зовнішніх атрибутів запису, заданого на ім'я</li>
+<li><a href="ziparchive.setmtimeindex.md">ZipArchive::setMtimeIndex</a> -
+Встановити час модифікації файлу за його індексом</li>
+<li><a href="ziparchive.setmtimename.md">ZipArchive::setMtimeName</a> -
+Встановити час модифікації файлу на його ім'я</li>
+<li><a href="ziparchive.setpassword.md">ZipArchive::setPassword</a> — Встановлення
+пароля для активного архіву</li>
+<li><a href="ziparchive.statindex.md">ZipArchive::statIndex</a> - Отримання
+детальної інформації про елемент за його індексом</li>
+<li><a href="ziparchive.statname.md">ZipArchive::statName</a> — Отримання
+детальної інформації про елемент за його ім'ям</li>
+<li><a href="ziparchive.unchangeall.md">ZipArchive::unchangeAll</a> — Скасує
+всі зміни, зроблені в архіві</li>
+<li><a href="ziparchive.unchangearchive.md">ZipArchive::unchangeArchive</a>
+Повертає всі глобальні зміни, зроблені в архіві</li>
+<li><a href="ziparchive.unchangeindex.md">ZipArchive::unchangeIndex</a>
+Скасує всі зміни у позиції із заданим індексом</li>
+<li><a href="ziparchive.unchangename.md">ZipArchive::unchangeName</a> — Скасує
+усі зміни у позиції із заданим ім'ям</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.ziparchive.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.ziparchive.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.ziparchive","slug":"class.ziparchive.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"zip.examples.md\"\u003e« Приклади\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ziparchive.addemptydir.md\"\u003eZipArchive::addEmptyDir »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.zip.md\"\u003eZip\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас ZipArchive\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас \u003ca href=\"class.ziparchive.md\"\u003eZipArchive\u003c/a\u003e\u003c/h1\u003e\n\u003cp\u003e(PHP 5 \u003e= 5.2.0, PHP 7, PHP 8, PECL zip \u003e= 1.1.0)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003eФайловий архів, стислий Zip.\u003c/p\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eZipArchive\u003c/strong\u003e implements \u003ca href=\"class.countable.md\"\u003eCountable\u003c/a\u003e {\u003c/p\u003e\n\u003cp\u003e/* Властивості */\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$lastId\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$status\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$statusSys\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$numFiles\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly string $filename;\u003c/p\u003e\n\u003cp\u003epublic readonly string \u003ccode\u003e$comment\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.addemptydir.md\"\u003eaddEmptyDir\u003c/a\u003e(string \u003ccode\u003e$dirname\u003c/code\u003e, int\n$flags = 0): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.addfile.md\"\u003eaddFile\u003c/a\u003e(\nstring \u003ccode\u003e$filepath\u003c/code\u003e,\nstring \u003ccode\u003e$entryname\u003c/code\u003e = \"\",\nint \u003ccode\u003e$start\u003c/code\u003e = 0,\nint \u003ccode\u003e$length\u003c/code\u003e = 0,\nint \u003ccode\u003e$flags\u003c/code\u003e = ZipArchive::FL_OVERWRITE\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.addfromstring.md\"\u003eaddFromString\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e,\nstring \u003ccode\u003e$content\u003c/code\u003e, int \u003ccode\u003e$flags\u003c/code\u003e = ZipArchive::FL_OVERWRITE): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.addglob.md\"\u003eaddGlob\u003c/a\u003e(string \u003ccode\u003e$pattern\u003c/code\u003e, int\n\u003ccode\u003e$flags\u003c/code\u003e = 0, array \u003ccode\u003e$options\u003c/code\u003e = []): array|false\npublic \u003ca href=\"ziparchive.addpattern.md\"\u003eaddPattern\u003c/a\u003e(string \u003ccode\u003e$pattern\u003c/code\u003e,\nstring \u003ccode\u003e$path\u003c/code\u003e = \".\", array \u003ccode\u003e$options\u003c/code\u003e = []): array|false\npublic \u003ca href=\"ziparchive.clearerror.md\"\u003eclearError\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.close.md\"\u003eclose\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.count.md\"\u003ecount\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.deleteindex.md\"\u003edeleteIndex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.deletename.md\"\u003edeleteName\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.extractto.md\"\u003eextractTo\u003c/a\u003e(string \u003ccode\u003e$pathto\u003c/code\u003e,\narray|string|null \u003ccode\u003e$files\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.getarchivecomment.md\"\u003egetArchiveComment\u003c/a\u003e(int\n\u003ccode\u003e$flags\u003c/code\u003e = 0): string|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.getcommentindex.md\"\u003egetCommentIndex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0): string|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.getcommentname.md\"\u003egetCommentName\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0): string|false\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ziparchive.getexternalattributesindex.md\"\u003egetExternalAttributesIndex\u003c/a\u003e(\nint \u003ccode\u003e$index\u003c/code\u003e,\nint \u003ccode\u003e\u0026#x26;$opsys\u003c/code\u003e,\nint \u003ccode\u003e\u0026#x26;$attr\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ziparchive.getexternalattributesname.md\"\u003egetExternalAttributesName\u003c/a\u003e(\nstring \u003ccode\u003e$name\u003c/code\u003e,\nint \u003ccode\u003e\u0026#x26;$opsys\u003c/code\u003e,\nint \u003ccode\u003e\u0026#x26;$attr\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.getfromindex.md\"\u003egetFromIndex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e, int\n\u003ccode\u003e$len\u003c/code\u003e = 0, int \u003ccode\u003e$flags\u003c/code\u003e = 0): string|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.getfromname.md\"\u003egetFromName\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e, int\n\u003ccode\u003e$len\u003c/code\u003e = 0, int \u003ccode\u003e$flags\u003c/code\u003e = 0): string|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.getnameindex.md\"\u003egetNameIndex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e, int\n\u003ccode\u003e$flags\u003c/code\u003e = 0): string|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.getstatusstring.md\"\u003egetStatusString\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.getstream.md\"\u003egetStream\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e):\nresource|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.getstreamindex.md\"\u003egetStreamIndex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0): resource|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.getstreamname.md\"\u003egetStreamName\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0): resource|false\u003c/p\u003e\n\u003cp\u003epublic static\n\u003ca href=\"ziparchive.iscompressionmethoddupported.md\"\u003eisCompressionMethodSupported\u003c/a\u003e(int\n\u003ccode\u003e$method\u003c/code\u003e, bool \u003ccode\u003e$enc\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic static\n\u003ca href=\"ziparchive.isencryptionmethoddupported.md\"\u003eisEncryptionMethodSupported\u003c/a\u003e(int\n\u003ccode\u003e$method\u003c/code\u003e, bool \u003ccode\u003e$enc\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.locatename.md\"\u003elocateName\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e, int\n\u003ccode\u003e$flags\u003c/code\u003e = 0): int|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.open.md\"\u003eopen\u003c/a\u003e(string \u003ccode\u003e$filename\u003c/code\u003e, int \u003ccode\u003e$flags\u003c/code\u003e =\n0): bool|int\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ziparchive.registercancelcallback.md\"\u003eregisterCancelCallback\u003c/a\u003e(\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\n\u003ccode\u003e$callback\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ziparchive.registerprogresscallback.md\"\u003eregisterProgressCallback\u003c/a\u003e(float\n\u003ccode\u003e$rate\u003c/code\u003e, \u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$callback\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.renameindex.md\"\u003erenameIndex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e, string\n\u003ccode\u003e$new_name\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.renamename.md\"\u003erenameName\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e, string\n\u003ccode\u003e$new_name\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.replacefile.md\"\u003ereplaceFile\u003c/a\u003e(\nstring \u003ccode\u003e$filepath\u003c/code\u003e,\nint \u003ccode\u003e$index\u003c/code\u003e,\nint \u003ccode\u003e$start\u003c/code\u003e = 0,\nint \u003ccode\u003e$length\u003c/code\u003e = 0,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.setarchivecomment.md\"\u003esetArchiveComment\u003c/a\u003e(string\n\u003ccode\u003e$comment\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.setcommentindex.md\"\u003esetCommentIndex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e,\nstring \u003ccode\u003e$comment\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.setcommentname.md\"\u003esetCommentName\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e,\nstring \u003ccode\u003e$comment\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.setcompressionindex.md\"\u003esetCompressionIndex\u003c/a\u003e(int\n\u003ccode\u003e$index\u003c/code\u003e, int \u003ccode\u003e$method\u003c/code\u003e, int \u003ccode\u003e$compflags\u003c/code\u003e = 0): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.setcompressionname.md\"\u003esetCompressionName\u003c/a\u003e(string\n\u003ccode\u003e$name\u003c/code\u003e, int \u003ccode\u003e$method\u003c/code\u003e, int \u003ccode\u003e$compflags\u003c/code\u003e = 0): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.setencryptionindex.md\"\u003esetEncryptionIndex\u003c/a\u003e(int\n\u003ccode\u003e$index\u003c/code\u003e, int \u003ccode\u003e$method\u003c/code\u003e, ?string \u003ccode\u003e$password\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.setencryptionname.md\"\u003esetEncryptionName\u003c/a\u003e(string\n\u003ccode\u003e$name\u003c/code\u003e, int \u003ccode\u003e$method\u003c/code\u003e, ?string \u003ccode\u003e$password\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ziparchive.setexternalattributesindex.md\"\u003esetExternalAttributesIndex\u003c/a\u003e(\nint \u003ccode\u003e$index\u003c/code\u003e,\nint \u003ccode\u003e$opsys\u003c/code\u003e,\nint \u003ccode\u003e$attr\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0\n): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ziparchive.setexternalattributesname.md\"\u003esetExternalAttributesName\u003c/a\u003e(\nstring \u003ccode\u003e$name\u003c/code\u003e,\nint \u003ccode\u003e$opsys\u003c/code\u003e,\nint \u003ccode\u003e$attr\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.setmtimeindex.md\"\u003esetMtimeIndex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e, int\n\u003ccode\u003e$timestamp\u003c/code\u003e, int \u003ccode\u003e$flags\u003c/code\u003e = 0): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.setmtimename.md\"\u003esetMtimeName\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e, int\n\u003ccode\u003e$timestamp\u003c/code\u003e, int \u003ccode\u003e$flags\u003c/code\u003e = 0): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.setpassword.md\"\u003esetPassword\u003c/a\u003e(string \u003ccode\u003e$password\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.statindex.md\"\u003estatIndex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e, int \u003ccode\u003e$flags\u003c/code\u003e\n= 0): array \\ | false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.statname.md\"\u003estatName\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e, int \u003ccode\u003e$flags\u003c/code\u003e\n= 0): array \\ | false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.unchangeall.md\"\u003eunchangeAll\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.unchangearchive.md\"\u003eunchangeArchive\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.unchangeindex.md\"\u003eunchangeIndex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ziparchive.unchangename.md\"\u003eunchangeName\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eВластивості\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003elastId\u003c/code\u003e\nЗначення індексу останнього доданого запису (файл або каталог).\nДоступно з PHP 8.0.0 та PECL zip 1.18.0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003estatus\u003c/code\u003e\nЗаголовок Zip-архіву. Доступно для закритого архіву, починаючи з PHP 8.0.0 та\nPECL ZIP 1.18.0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003estatusSys\u003c/code\u003e\nСистемний статус zip-архіву. Доступно для закритого архіву, починаючи з\nPHP 8.0.0 та PECL zip 1.18.0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003enumFiles\u003c/code\u003e\nКількість файлів в архіві\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003efilename\u003c/code\u003e\nІм'я файлу у файловій системі\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ecomment\u003c/code\u003e\nКоментар до архіву\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.addemptydir.md\"\u003eZipArchive::addEmptyDir\u003c/a\u003e - Додає\nнову директорію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.addfile.md\"\u003eZipArchive::addFile\u003c/a\u003e — Додає до\nZIP-архів файл за вказаним шляхом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.addfromstring.md\"\u003eZipArchive::addFromString\u003c/a\u003e -\nДодає файл до ZIP-архіву, використовуючи його вміст\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.addglob.md\"\u003eZipArchive::addGlob\u003c/a\u003e — Додати файли з\nдиректорії відповідно до шаблону\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.addpattern.md\"\u003eZipArchive::addPattern\u003c/a\u003e — Додати\nфайли з директорії відповідно до шаблону регулярного виразу\nPCRE\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.clearerror.md\"\u003eZipArchive::clearError\u003c/a\u003e — Видаляє\nповідомлення про помилку статусу, системні та/або повідомлення модуля zip\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.close.md\"\u003eZipArchive::close\u003c/a\u003e - Закриває активний\nархів (відкритий або знову створений)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.count.md\"\u003eZipArchive::count\u003c/a\u003e — Підраховує кількість\nфайлів в архіві\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.deleteindex.md\"\u003eZipArchive::deleteIndex\u003c/a\u003e — Видаляє\nелемент в архіві, використовуючи його індекс\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.deletename.md\"\u003eZipArchive::deleteName\u003c/a\u003e — Видаляє\nелемент в архіві, використовуючи його ім'я\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.extractto.md\"\u003eZipArchive::extractTo\u003c/a\u003e - Витягує\nвміст архіву\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getarchivecomment.md\"\u003eZipArchive::getArchiveComment\u003c/a\u003e -\nПовертає коментар ZIP-архіву\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getcommentindex.md\"\u003eZipArchive::getCommentIndex\u003c/a\u003e -\nПовертає коментар елемента, використовуючи його індекс\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getcommentname.md\"\u003eZipArchive::getCommentName\u003c/a\u003e -\nПовертає коментар елемента, використовуючи його ім'я\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getexternalattributesindex.md\"\u003eZipArchive::getExternalAttributesIndex\u003c/a\u003e\n— Витягти зовнішні атрибути запису за його індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getexternalattributesname.md\"\u003eZipArchive::getExternalAttributesName\u003c/a\u003e\n— Витягти зовнішні атрибути запису на її ім'я\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getfromindex.md\"\u003eZipArchive::getFromIndex\u003c/a\u003e -\nПовертає вміст елемента за його індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getfromname.md\"\u003eZipArchive::getFromName\u003c/a\u003e - Повертає\nвміст елемента на його ім'я\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getnameindex.md\"\u003eZipArchive::getNameIndex\u003c/a\u003e\nПовертає ім'я елемента за його індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getstatusstring.md\"\u003eZipArchive::getStatusString\u003c/a\u003e -\nПовертають статус повідомлення про помилку, системний та/або zip-статус\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getstream.md\"\u003eZipArchive::getStream\u003c/a\u003e — Отримати\nдескриптор файлу елемента, визначений на ім'я елемента (тільки\nдля читання)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getstreamindex.md\"\u003eZipArchive::getStreamIndex\u003c/a\u003e -\nОтримує обробник файлу для запису, визначеного його індексом\n(тільки для читання)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.getstreamname.md\"\u003eZipArchive::getStreamName\u003c/a\u003e -\nОтримує обробник файлу для запису, визначеного його ім'ям (тільки\nдля читання)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.iscompressionmethoddupported.md\"\u003eZipArchive::isCompressionMethodSupported\u003c/a\u003e\n— Перевіряє, чи підтримується метод стиснення libzip\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.isencryptionmethoddupported.md\"\u003eZipArchive::isEncryptionMethodSupported\u003c/a\u003e\n— Перевіряє, чи підтримується метод шифрування libzip\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.locatename.md\"\u003eZipArchive::locateName\u003c/a\u003e - Повертає\nіндекс елемента в архіві\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.open.md\"\u003eZipArchive::open\u003c/a\u003e - Відкриває ZIP-архів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.registercancelcallback.md\"\u003eZipArchive::registerCancelCallback\u003c/a\u003e\n— Реєструє callback-функцію для дозволу скасування під час\nзакриття архіву\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.registerprogresscallback.md\"\u003eZipArchive::registerProgressCallback\u003c/a\u003e\n— Реєструє callback-функцію для надання оновлень при\nзакриття архіву\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.renameindex.md\"\u003eZipArchive::renameIndex\u003c/a\u003e -\nПерейменовує елемент за його індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.renamename.md\"\u003eZipArchive::renameName\u003c/a\u003e -\nПерейменовує елемент на його ім'я\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.replacefile.md\"\u003eZipArchive::replaceFile\u003c/a\u003e — Замінює\nфайл у ZIP-архіві вказаним шляхом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setarchivecomment.md\"\u003eZipArchive::setArchiveComment\u003c/a\u003e -\nВстановлює коментар до ZIP-архіву\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setcommentindex.md\"\u003eZipArchive::setCommentIndex\u003c/a\u003e -\nВстановлює коментар до елемента за його індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setcommentname.md\"\u003eZipArchive::setCommentName\u003c/a\u003e -\nВстановлює коментар до елемента, заданого на ім'я\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setcompressionindex.md\"\u003eZipArchive::setCompressionIndex\u003c/a\u003e\n— Встановити метод стиснення запису, заданого його індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setcompressionname.md\"\u003eZipArchive::setCompressionName\u003c/a\u003e\n— Встановити метод стиснення запису, заданого на ім'я\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setencryptionindex.md\"\u003eZipArchive::setEncryptionIndex\u003c/a\u003e\n— Встановити метод шифрування запису за його індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setencryptionname.md\"\u003eZipArchive::setEncryptionName\u003c/a\u003e -\nВстановити метод шифрування запису на його ім'я\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setexternalattributesindex.md\"\u003eZipArchive::setExternalAttributesIndex\u003c/a\u003e\n— Встановити зовнішні атрибути запису за його індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setexternalattributesname.md\"\u003eZipArchive::setExternalAttributesName\u003c/a\u003e\n— Встановлення зовнішніх атрибутів запису, заданого на ім'я\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setmtimeindex.md\"\u003eZipArchive::setMtimeIndex\u003c/a\u003e -\nВстановити час модифікації файлу за його індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setmtimename.md\"\u003eZipArchive::setMtimeName\u003c/a\u003e -\nВстановити час модифікації файлу на його ім'я\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.setpassword.md\"\u003eZipArchive::setPassword\u003c/a\u003e — Встановлення\nпароля для активного архіву\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.statindex.md\"\u003eZipArchive::statIndex\u003c/a\u003e - Отримання\nдетальної інформації про елемент за його індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.statname.md\"\u003eZipArchive::statName\u003c/a\u003e — Отримання\nдетальної інформації про елемент за його ім'ям\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.unchangeall.md\"\u003eZipArchive::unchangeAll\u003c/a\u003e — Скасує\nвсі зміни, зроблені в архіві\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.unchangearchive.md\"\u003eZipArchive::unchangeArchive\u003c/a\u003e\nПовертає всі глобальні зміни, зроблені в архіві\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.unchangeindex.md\"\u003eZipArchive::unchangeIndex\u003c/a\u003e\nСкасує всі зміни у позиції із заданим індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.unchangename.md\"\u003eZipArchive::unchangeName\u003c/a\u003e — Скасує\nусі зміни у позиції із заданим ім'ям\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.ziparchive.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

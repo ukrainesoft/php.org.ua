@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.mktime | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.microtime.md">«microtime</a></p>
+</li>
+<li>
+<p><a href="function.strftime.md">strftime »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.datetime.md">Функції дати та часу</a></p>
+</li>
+<li>
+<p>Повертає позначку часу Unix для заданої дати</p>
+</li>
+</ul>
+<h1>mktime</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>mktime — Повертає позначку часу Unix для заданої дати</p>
+<h3>Опис</h3>
+<p><strong>mktime</strong>(
+int <code>$hour</code>,
+?int <code>$minute</code> = <strong><code>null</code></strong>,
+?int <code>$second</code> = <strong><code>null</code></strong>,
+?int <code>$month</code> = <strong><code>null</code></strong>,
+?int <code>$day</code> = <strong><code>null</code></strong>,
+?int <code>$year</code> = <strong><code>null</code></strong>
+): int|false</p>
+<p>Функція повертає мітку часу Unix, що відповідає даті та часу,
+переданих як аргументи. Мітка часу - це ціле число,
+рівну різниці в секундах між заданою датою/часом і початком епохи
+Unix (1 січня 1970 00:00:00 GMT).</p>
+<p>Аргументи можуть бути опущені праворуч наліво. В цьому випадку їх
+значення за промовчанням дорівнюють відповідним компонентам локальної
+дати/часу.</p>
+<p>Виклик <strong>mktime()</strong> без аргументів застарів. Для отримання поточної позначки
+часу можна використовувати <a href="function.time.md">time()</a>.</p>
+<h3>Список параметрів</h3>
+<p><code>hour</code>
+Кількість годин, що минули з початку дня, зазначеного параметрами
+<code>month</code>, <code>day</code> та <code>year</code>. Негативні значення визначають годинник до
+півночі вказаного дня. Значення більше 23 визначають відповідний
+годину наступного дня (або днів).</p>
+<p><code>minute</code>
+Кількість хвилин, що минули від початку години, вказаної параметром
+<code>hour</code>. Негативні значення визначають хвилини попередньої години.
+Значення більше 59 визначають відповідні хвилини наступної години
+(або годин).</p>
+<p><code>second</code>
+Кількість секунд, що минули від початку хвилини, зазначеної параметром
+<code>minute</code>. Негативні значення визначають секунди з попередньої
+хвилини. Значення більше 59 визначають відповідні секунди наступної
+хвилин (або хвилин).</p>
+<p><code>month</code>
+Кількість місяців, що минули з кінця минулого року. Значення від 1 до
+12 визначають нормальні звичайні календарні місяці року. Значення
+менше 1 (включаючи негативні значення) визначають місяці попереднього
+року у зворотному порядку, тобто 0 буде груднем, -1 – листопадом тощо.
+Значення більше 12 визначають відповідний місяць наступного року
+(або роках).</p>
+<p><code>day</code>
+Кількість днів, що минули з кінця попереднього місяця. Значення від 1 до
+28, 29, 30 або 31 (залежно від місяця) визначають нормальні дні
+відповідного місяця. Значення менше 1 (включаючи негативні
+значення) визначають дні попереднього місяця, таким чином, 0 є
+останнім днем попереднього місяця, -1 - передостаннім днем попереднього
+місяці та ін. Значення більше за кількість днів відповідного місяця
+визначають відповідний день наступного місяця (або місяців).</p>
+<p><code>year</code>
+Номер року може бути вказаний двома або чотирма цифрами, причому
+значення між 0-69 будуть трактовані як 2000-2069, а між 70-100 - як
+1970–2000. На тих системах, де time_t є 32-бітовим знаковим цілим
+(найпоширеніший варіант на сьогодні), коректний діапазон для
+параметра <code>year</code> містить дати десь між 1901 та 2038.</p>
+<h3>Значення, що повертаються</h3>
+<p><strong>mktime()</strong> повертає тимчасову мітку Unix відповідно до
+переданими аргументами. Якщо було передано некоректними аргументи,
+функція поверне <strong><code>false</code></strong>.</p>
+<h3>Помилки</h3>
+<p>Кожен виклик до функцій дати/часу при неправильних налаштуваннях
+часового поясу згенерує помилку рівня <strong><code>E_WARNING</code></strong>, якщо часовий
+пояс некоректний. Дивіться також
+<a href="function.date-default-timezone-set.md">date_default_timezone_set()</a></p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>hour більше не є необов'язковим.</td>
+</tr>
+<tr>
+<td>8.0.0</td>
+<td>minute, second, month, day та year тепер допускають значення null.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання функції <strong>mktime()</strong></strong></p>
+<p><code>&#x3C;?php// Встановлюємо використовуваний за мовчанням годинний пояс.date_default_timezone_set('UTC');// Виводить: July 1, 2000 is on a Saturdaye   date("l", mktime(0, 0, 0, 7, 1, 2000));// Виводить щось на зразок: 2006-04-05T01:02:03+00:00echo date('c', (1, 2, 3, 4, 5, 2006));?> </code></p>
+<p><strong>Приклад #2 Приклад використання <strong>mktime()</strong></strong></p>
+<p>Функцію <strong>mktime()</strong> зручно використовувати для виконання арифметичних
+операцій з датами, оскільки вона обчислює правильні значення при
+некоректні аргументи. Наприклад, у наступному прикладі кожен рядок
+виведе "Jan-01-1998".</p>
+<p><code>&#x3C;?phpecho date("M-d-Y", mktime(0, 0, 0, 12, 32, 1997));echo date("M-d-Y", mktime(0, 0, 0, 13, 1, 9) date("M-d-Y", mktime(0, 0, 0, 1, 1, 1998));echo date("M-d-Y", mktime(0, 0, 0, 1, 1, 98));?> </code></p>
+<p><strong>Приклад #3 Останній день місяця</strong></p>
+<p>Останній день будь-якого місяця можна вирахувати як "нульовий" день
+наступного місяця, що не -1 день. Обидва наведені нижче приклади виведуть
+"Останній день лютого 2000: 29".</p>
+<p><code>&#x3C;?php$lastday = mktime(0, 0, 0, 3, 0, 2000);echo strftime("Останній день лютого 2000 г.: %d", $lastday);$lastday 0, 4, -31, 2000);echo strftime("Останній день лютого 2000 г.: %d", $lastday);?></code></p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.checkdate.md">checkdate()</a> - Перевіряє правильність дати
+за григоріанським календарем</li>
+<li><a href="function.gmmktime.md">gmmktime()</a> - Повертає локальну позначку
+часу Unix для часу за Грінвічем</li>
+<li><a href="function.date.md">date()</a> - Форматує тимчасову мітку Unix</li>
+<li><a href="function.time.md">time()</a> - Повертає поточну мітку системного
+часу Unix</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.mktime.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.mktime.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.mktime","slug":"function.mktime.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.microtime.md\"\u003e«microtime\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.strftime.md\"\u003estrftime »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.datetime.md\"\u003eФункції дати та часу\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПовертає позначку часу Unix для заданої дати\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003emktime\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emktime — Повертає позначку часу Unix для заданої дати\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003emktime\u003c/strong\u003e(\nint \u003ccode\u003e$hour\u003c/code\u003e,\n?int \u003ccode\u003e$minute\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\n?int \u003ccode\u003e$second\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\n?int \u003ccode\u003e$month\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\n?int \u003ccode\u003e$day\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\n?int \u003ccode\u003e$year\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\n): int|false\u003c/p\u003e\n\u003cp\u003eФункція повертає мітку часу Unix, що відповідає даті та часу,\nпереданих як аргументи. Мітка часу - це ціле число,\nрівну різниці в секундах між заданою датою/часом і початком епохи\nUnix (1 січня 1970 00:00:00 GMT).\u003c/p\u003e\n\u003cp\u003eАргументи можуть бути опущені праворуч наліво. В цьому випадку їх\nзначення за промовчанням дорівнюють відповідним компонентам локальної\nдати/часу.\u003c/p\u003e\n\u003cp\u003eВиклик \u003cstrong\u003emktime()\u003c/strong\u003e без аргументів застарів. Для отримання поточної позначки\nчасу можна використовувати \u003ca href=\"function.time.md\"\u003etime()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ehour\u003c/code\u003e\nКількість годин, що минули з початку дня, зазначеного параметрами\n\u003ccode\u003emonth\u003c/code\u003e, \u003ccode\u003eday\u003c/code\u003e та \u003ccode\u003eyear\u003c/code\u003e. Негативні значення визначають годинник до\nпівночі вказаного дня. Значення більше 23 визначають відповідний\nгодину наступного дня (або днів).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eminute\u003c/code\u003e\nКількість хвилин, що минули від початку години, вказаної параметром\n\u003ccode\u003ehour\u003c/code\u003e. Негативні значення визначають хвилини попередньої години.\nЗначення більше 59 визначають відповідні хвилини наступної години\n(або годин).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esecond\u003c/code\u003e\nКількість секунд, що минули від початку хвилини, зазначеної параметром\n\u003ccode\u003eminute\u003c/code\u003e. Негативні значення визначають секунди з попередньої\nхвилини. Значення більше 59 визначають відповідні секунди наступної\nхвилин (або хвилин).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emonth\u003c/code\u003e\nКількість місяців, що минули з кінця минулого року. Значення від 1 до\n12 визначають нормальні звичайні календарні місяці року. Значення\nменше 1 (включаючи негативні значення) визначають місяці попереднього\nроку у зворотному порядку, тобто 0 буде груднем, -1 – листопадом тощо.\nЗначення більше 12 визначають відповідний місяць наступного року\n(або роках).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eday\u003c/code\u003e\nКількість днів, що минули з кінця попереднього місяця. Значення від 1 до\n28, 29, 30 або 31 (залежно від місяця) визначають нормальні дні\nвідповідного місяця. Значення менше 1 (включаючи негативні\nзначення) визначають дні попереднього місяця, таким чином, 0 є\nостаннім днем попереднього місяця, -1 - передостаннім днем попереднього\nмісяці та ін. Значення більше за кількість днів відповідного місяця\nвизначають відповідний день наступного місяця (або місяців).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eyear\u003c/code\u003e\nНомер року може бути вказаний двома або чотирма цифрами, причому\nзначення між 0-69 будуть трактовані як 2000-2069, а між 70-100 - як\n1970–2000. На тих системах, де time_t є 32-бітовим знаковим цілим\n(найпоширеніший варіант на сьогодні), коректний діапазон для\nпараметра \u003ccode\u003eyear\u003c/code\u003e містить дати десь між 1901 та 2038.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003emktime()\u003c/strong\u003e повертає тимчасову мітку Unix відповідно до\nпереданими аргументами. Якщо було передано некоректними аргументи,\nфункція поверне \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cp\u003eКожен виклик до функцій дати/часу при неправильних налаштуваннях\nчасового поясу згенерує помилку рівня \u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e, якщо часовий\nпояс некоректний. Дивіться також\n\u003ca href=\"function.date-default-timezone-set.md\"\u003edate_default_timezone_set()\u003c/a\u003e\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003ehour більше не є необов'язковим.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eminute, second, month, day та year тепер допускають значення null.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання функції \u003cstrong\u003emktime()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Встановлюємо використовуваний за мовчанням годинний пояс.date_default_timezone_set('UTC');// Виводить: July 1, 2000 is on a Saturdaye   date(\"l\", mktime(0, 0, 0, 7, 1, 2000));// Виводить щось на зразок: 2006-04-05T01:02:03+00:00echo date('c', (1, 2, 3, 4, 5, 2006));?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклад використання \u003cstrong\u003emktime()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eФункцію \u003cstrong\u003emktime()\u003c/strong\u003e зручно використовувати для виконання арифметичних\nоперацій з датами, оскільки вона обчислює правильні значення при\nнекоректні аргументи. Наприклад, у наступному прикладі кожен рядок\nвиведе \"Jan-01-1998\".\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpecho date(\"M-d-Y\", mktime(0, 0, 0, 12, 32, 1997));echo date(\"M-d-Y\", mktime(0, 0, 0, 13, 1, 9) date(\"M-d-Y\", mktime(0, 0, 0, 1, 1, 1998));echo date(\"M-d-Y\", mktime(0, 0, 0, 1, 1, 98));?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Останній день місяця\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОстанній день будь-якого місяця можна вирахувати як \"нульовий\" день\nнаступного місяця, що не -1 день. Обидва наведені нижче приклади виведуть\n\"Останній день лютого 2000: 29\".\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$lastday = mktime(0, 0, 0, 3, 0, 2000);echo strftime(\"Останній день лютого 2000 г.: %d\", $lastday);$lastday 0, 4, -31, 2000);echo strftime(\"Останній день лютого 2000 г.: %d\", $lastday);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.checkdate.md\"\u003echeckdate()\u003c/a\u003e - Перевіряє правильність дати\nза григоріанським календарем\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.gmmktime.md\"\u003egmmktime()\u003c/a\u003e - Повертає локальну позначку\nчасу Unix для часу за Грінвічем\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.date.md\"\u003edate()\u003c/a\u003e - Форматує тимчасову мітку Unix\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.time.md\"\u003etime()\u003c/a\u003e - Повертає поточну мітку системного\nчасу Unix\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.mktime.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

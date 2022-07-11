@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.socket-select | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.socket-recvmsg.md">«socket_recvmsg</a></p>
+</li>
+<li>
+<p><a href="function.socket-send.md">socket_send »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.sockets.md">Функції сокету</a></p>
+</li>
+<li>
+<p>Запускає системний виклик select() для заданих масивів сокетів з
+вказаним часом очікування</p>
+</li>
+</ul>
+<h1>socket_select</h1>
+<p>(PHP 4 >= 4.1.0, PHP 5, PHP 7, PHP 8)</p>
+<p>socket_select — Запуск системного виклику select() для заданих масивів
+сокетів із зазначеним часом очікування</p>
+<h3>Опис</h3>
+<p><strong>socket_select</strong>(
+?array <code>&#x26;$read</code>,
+?array <code>&#x26;$write</code>,
+?array <code>&#x26;$except</code>,
+?int <code>$seconds</code>,
+int <code>$microseconds</code> = 0
+): int|false</p>
+<p><strong>socket_select()</strong> приймає масиви сокетів і чекає їх зміни
+статусу. Ті, хто знайомий із сокетами BSD, виявлять, що масиви сокетів
+насправді є так званими наборами дескрипторів файлів.
+Спостерігаються три незалежні масиви ресурсів сокетів.</p>
+<h3>Список параметрів</h3>
+<p><code>read</code>
+Сокети, перелічені в масиві <code>read</code> будуть спостерігатися для перегляду
+є доступні символи для читання ( точніше, щоб бачити, чи не буде
+читання блокуватися, зокрема, сокет вже досяг кінця файлу, і в
+цьому випадку <a href="function.socket-read.md">socket_read()</a> поверне рядок з
+нульовою довжиною).</p>
+<p><code>write</code>
+Сокети, перелічені в масиві <code>write</code> будуть спостерігатися для перегляду,
+чи запис блокуватиметься.</p>
+<p><code>except</code>
+Сокети, перераховані в масиві <code>except</code> будуть спостерігатися для
+винятків.</p>
+<p><code>seconds</code>
+<code>seconds</code> та <code>microseconds</code> разом утворюють параметр <code>timeout</code>. Параметр
+<code>timeout</code> - максимальний проміжок часу до повернення
+<strong>socket_select()</strong>. <code>seconds</code> може бути нулем, змушуючи
+<strong>socket_select()</strong> до негайного повернення. Це корисно для опитування.
+Якщо <code>seconds</code> дорівнює <strong><code>null</code></strong> (немає часу очікування),
+<strong>socket_select()</strong> може блокуватися нескінченно.</p>
+<p><code>microseconds</code></p>
+<p><strong>Увага</strong></p>
+<p>При завершенні масиви змінюються для позначення, який сокет насправді
+справі змінив статус.</p>
+<p>Не потрібно передавати кожен масив <strong>socket_select()</strong>. Ви можете
+пропустити його і використовувати порожній масив або <strong><code>null</code></strong> замість цього.
+Також не забувайте, що ці масиви передаються за посиланням і будуть
+змінено після завершення <strong>socket_select()</strong>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Через обмеження поточного двигуна Zend неможливо передати модифікатор
+константи, такий як <strong><code>null</code></strong>, безпосередньо як параметр
+у функцію, яка очікує, що цей параметр буде передано за посиланням.
+Натомість використовуйте тимчасову змінну або вираз, де ліва
+сторона є тимчасовою змінною:</p>
+<p><strong>Приклад #1 Використання <strong><code>null</code></strong> у <strong>socket_select()</strong></strong></p>
+<p><code>&#x3C;?php$e = NULL;socket_select($r, $w, $e, 0);?></code></p>
+</blockquote>
+<h3>Значення, що повертаються</h3>
+<p>У разі успішного виконання <strong>socket_select()</strong> повертає кількість
+сокетів, що містяться в змінених масивах, яке може бути рівним
+нулю, якщо час очікування закінчиться до того, як станеться щось
+цікаве. У разі виникнення помилки повертається <strong><code>false</code></strong>. Код
+помилки може бути отримано за допомогою
+<a href="function.socket-last-error.md">socket_last_error()</a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Обов'язково використовуйте оператор <code>===</code> під час перевірки помилки.
+Оскільки <strong>socket_select()</strong> може повертати 0, порівняння з <code>==</code>
+оцінюватиметься як <strong><code>true</code></strong>:</p>
+<p><strong>Приклад #2 Аналіз результату <strong>socket_select()</strong></strong></p>
+<p><code>&#x3C;?php$e = NULL;if (false === socket_select($r, $w, $e, 0)) {    echo "Невдалий виклик socket_select(), причина: " . socket_strerror(socket_last_error()) . " ";}?></code></p>
+</blockquote>
+<h3>Приклади</h3>
+<p><strong>Приклад #3 Приклад використання <strong>socket_select()</strong></strong></p>
+<p><code>&#x3C;?php/* Підготувати масив сокетів для читання */$read    = array($socket1, $socket2);$write  = NULL;$except = NULL;$num_changed_$ );if ($num_changed_sockets === false) {    /* Обработка ошибок */} else if ($num_changed_sockets > 0) {    /* По крайней мере, в одном из сокетов произошло что-то интересное */}?> </code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Майте на увазі, що деякі реалізації сокетів необхідно
+обробляти дуже обережно. Декілька основних правил:</p>
+<ul>
+<li>Ви завжди повинні спробувати використати <strong>socket_select()</strong> без
+Час очікування. Ваша програма нічого не повинна робити, якщо ні
+Доступні дані. Код, що залежить від часу очікування, звичайно не
+дуже переносимий і важкий для налагодження.</li>
+<li>Сокет не повинен додаватися до будь-якого з масивів, якщо ви не
+збираєтеся перевіряти результат після дзвінка <strong>socket_select()</strong>.
+Після повернення <strong>socket_select()</strong> всі сокети у всіх масивах
+повинні бути перевірені. Будь-який сокет, доступний для запису або
+читання, повинен використовуватися для запису чи читання.</li>
+<li>Якщо ви читаєте або записуєте з сокету, який повертається в
+масивах, майте на увазі, що він необов'язково зможе прочитати або
+записати дані, що повністю запитуються вами. Будьте готові
+прочитати або записати лише один байт.</li>
+<li>Зазвичай для більшості реалізацій сокетів єдине
+виняток, спійманий за допомогою масиву <code>except</code> - це дані без
+прив'язки, отримані у сокеті.</li>
+</ul>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.socket-read.md">socket_read()</a> - Читає рядок
+максимальну довжину байт із сокету</li>
+<li><a href="function.socket-write.md">socket_write()</a> - Запис у сокет</li>
+<li><a href="function.socket-last-error.md">socket_last_error()</a> - Повертає
+останню помилку на сокеті</li>
+<li><a href="function.socket-strerror.md">socket_strerror()</a> - Повертає
+рядок, що описує помилку сокету</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.socket-select.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.socket-select.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.socket-select","slug":"function.socket-select.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.socket-recvmsg.md\"\u003e«socket_recvmsg\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.socket-send.md\"\u003esocket_send »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.sockets.md\"\u003eФункції сокету\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗапускає системний виклик select() для заданих масивів сокетів з\nвказаним часом очікування\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003esocket_select\u003c/h1\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.1.0, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003esocket_select — Запуск системного виклику select() для заданих масивів\nсокетів із зазначеним часом очікування\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003esocket_select\u003c/strong\u003e(\n?array \u003ccode\u003e\u0026#x26;$read\u003c/code\u003e,\n?array \u003ccode\u003e\u0026#x26;$write\u003c/code\u003e,\n?array \u003ccode\u003e\u0026#x26;$except\u003c/code\u003e,\n?int \u003ccode\u003e$seconds\u003c/code\u003e,\nint \u003ccode\u003e$microseconds\u003c/code\u003e = 0\n): int|false\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003esocket_select()\u003c/strong\u003e приймає масиви сокетів і чекає їх зміни\nстатусу. Ті, хто знайомий із сокетами BSD, виявлять, що масиви сокетів\nнасправді є так званими наборами дескрипторів файлів.\nСпостерігаються три незалежні масиви ресурсів сокетів.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eread\u003c/code\u003e\nСокети, перелічені в масиві \u003ccode\u003eread\u003c/code\u003e будуть спостерігатися для перегляду\nє доступні символи для читання ( точніше, щоб бачити, чи не буде\nчитання блокуватися, зокрема, сокет вже досяг кінця файлу, і в\nцьому випадку \u003ca href=\"function.socket-read.md\"\u003esocket_read()\u003c/a\u003e поверне рядок з\nнульовою довжиною).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewrite\u003c/code\u003e\nСокети, перелічені в масиві \u003ccode\u003ewrite\u003c/code\u003e будуть спостерігатися для перегляду,\nчи запис блокуватиметься.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eexcept\u003c/code\u003e\nСокети, перераховані в масиві \u003ccode\u003eexcept\u003c/code\u003e будуть спостерігатися для\nвинятків.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eseconds\u003c/code\u003e\n\u003ccode\u003eseconds\u003c/code\u003e та \u003ccode\u003emicroseconds\u003c/code\u003e разом утворюють параметр \u003ccode\u003etimeout\u003c/code\u003e. Параметр\n\u003ccode\u003etimeout\u003c/code\u003e - максимальний проміжок часу до повернення\n\u003cstrong\u003esocket_select()\u003c/strong\u003e. \u003ccode\u003eseconds\u003c/code\u003e може бути нулем, змушуючи\n\u003cstrong\u003esocket_select()\u003c/strong\u003e до негайного повернення. Це корисно для опитування.\nЯкщо \u003ccode\u003eseconds\u003c/code\u003e дорівнює \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e (немає часу очікування),\n\u003cstrong\u003esocket_select()\u003c/strong\u003e може блокуватися нескінченно.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emicroseconds\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПри завершенні масиви змінюються для позначення, який сокет насправді\nсправі змінив статус.\u003c/p\u003e\n\u003cp\u003eНе потрібно передавати кожен масив \u003cstrong\u003esocket_select()\u003c/strong\u003e. Ви можете\nпропустити його і використовувати порожній масив або \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e замість цього.\nТакож не забувайте, що ці масиви передаються за посиланням і будуть\nзмінено після завершення \u003cstrong\u003esocket_select()\u003c/strong\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЧерез обмеження поточного двигуна Zend неможливо передати модифікатор\nконстанти, такий як \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, безпосередньо як параметр\nу функцію, яка очікує, що цей параметр буде передано за посиланням.\nНатомість використовуйте тимчасову змінну або вираз, де ліва\nсторона є тимчасовою змінною:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Використання \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e у \u003cstrong\u003esocket_select()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$e = NULL;socket_select($r, $w, $e, 0);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eУ разі успішного виконання \u003cstrong\u003esocket_select()\u003c/strong\u003e повертає кількість\nсокетів, що містяться в змінених масивах, яке може бути рівним\nнулю, якщо час очікування закінчиться до того, як станеться щось\nцікаве. У разі виникнення помилки повертається \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e. Код\nпомилки може бути отримано за допомогою\n\u003ca href=\"function.socket-last-error.md\"\u003esocket_last_error()\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eОбов'язково використовуйте оператор \u003ccode\u003e===\u003c/code\u003e під час перевірки помилки.\nОскільки \u003cstrong\u003esocket_select()\u003c/strong\u003e може повертати 0, порівняння з \u003ccode\u003e==\u003c/code\u003e\nоцінюватиметься як \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Аналіз результату \u003cstrong\u003esocket_select()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$e = NULL;if (false === socket_select($r, $w, $e, 0)) {    echo \"Невдалий виклик socket_select(), причина: \" . socket_strerror(socket_last_error()) . \" \";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Приклад використання \u003cstrong\u003esocket_select()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Підготувати масив сокетів для читання */$read    = array($socket1, $socket2);$write  = NULL;$except = NULL;$num_changed_$ );if ($num_changed_sockets === false) {    /* Обработка ошибок */} else if ($num_changed_sockets \u003e 0) {    /* По крайней мере, в одном из сокетов произошло что-то интересное */}?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eМайте на увазі, що деякі реалізації сокетів необхідно\nобробляти дуже обережно. Декілька основних правил:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eВи завжди повинні спробувати використати \u003cstrong\u003esocket_select()\u003c/strong\u003e без\nЧас очікування. Ваша програма нічого не повинна робити, якщо ні\nДоступні дані. Код, що залежить від часу очікування, звичайно не\nдуже переносимий і важкий для налагодження.\u003c/li\u003e\n\u003cli\u003eСокет не повинен додаватися до будь-якого з масивів, якщо ви не\nзбираєтеся перевіряти результат після дзвінка \u003cstrong\u003esocket_select()\u003c/strong\u003e.\nПісля повернення \u003cstrong\u003esocket_select()\u003c/strong\u003e всі сокети у всіх масивах\nповинні бути перевірені. Будь-який сокет, доступний для запису або\nчитання, повинен використовуватися для запису чи читання.\u003c/li\u003e\n\u003cli\u003eЯкщо ви читаєте або записуєте з сокету, який повертається в\nмасивах, майте на увазі, що він необов'язково зможе прочитати або\nзаписати дані, що повністю запитуються вами. Будьте готові\nпрочитати або записати лише один байт.\u003c/li\u003e\n\u003cli\u003eЗазвичай для більшості реалізацій сокетів єдине\nвиняток, спійманий за допомогою масиву \u003ccode\u003eexcept\u003c/code\u003e - це дані без\nприв'язки, отримані у сокеті.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.socket-read.md\"\u003esocket_read()\u003c/a\u003e - Читає рядок\nмаксимальну довжину байт із сокету\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.socket-write.md\"\u003esocket_write()\u003c/a\u003e - Запис у сокет\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.socket-last-error.md\"\u003esocket_last_error()\u003c/a\u003e - Повертає\nостанню помилку на сокеті\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.socket-strerror.md\"\u003esocket_strerror()\u003c/a\u003e - Повертає\nрядок, що описує помилку сокету\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.socket-select.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

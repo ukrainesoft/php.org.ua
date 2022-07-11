@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.mb-detect-encoding | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.mb-decode-numericentity.md">« mb_decode_numericentity</a></p>
+</li>
+<li>
+<p><a href="function.mb-detect-order.md">mb_detect_order »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.mbstring.md">Функції для роботи з багатобайтовими рядками</a></p>
+</li>
+<li>
+<p>Визначення кодування символів</p>
+</li>
+</ul>
+<p>#mb_detect_encoding</p>
+<p>(PHP 4 >= 4.0.6, PHP 5, PHP 7, PHP 8)</p>
+<p>mb_detect_encoding — Визначення кодування символів</p>
+<h3>Опис</h3>
+<p><strong>mb_detect_encoding</strong>(string <code>$string</code>, array|string|null
+<code>$encodings</code> = <strong><code>null</code></strong>, bool <code>$strict</code> = <strong><code>false</code></strong>): string|false</p>
+<p>Визначає найімовірніше кодування символів для рядка (string)
+<code>string</code> із впорядкованого списку кандидатів.</p>
+<p>Автоматичне визначення передбачуваного кодування символів не може
+бути повністю надійним; без додаткової інформації це схоже на
+розшифровка зашифрованого рядка без ключа. Завжди бажано
+використовувати індикацію кодування символів, що зберігається або передається з
+даними, як HTTP-заголовок "Content-Type".</p>
+<p>Функція найбільш корисна з багатобайтовим кодуванням, коли не всі
+послідовності байтів утворюють допустимий рядок. Якщо вхідна
+рядок містить таку послідовність, це кодування буде відхилено,
+і буде перевірено наступне кодування.</p>
+<h3>Список параметрів</h3>
+<p><code>string</code>
+Перевірений рядок (string).</p>
+<p><code>encodings</code>
+Впорядкований список кодувань символів. Список може бути вказаний як
+масив рядків або як рядок кодувань, розділених комами.</p>
+<p>Якщо <code>encodings</code> не заданий або є <strong><code>null</code></strong>, буде використовуватись
+поточний detect_order (встановлений за допомогою параметра конфігурації
+<a href="mbstring.configuration.md#ini.mbstring.detect-order">mbstring.detect_order</a>
+або функції <a href="function.mb-detect-order.md">mb_detect_order()</a>).</p>
+<p><code>strict</code>
+Керує поведінкою, коли <code>string</code> неприпустима в жодній з
+перерахованих 'encodings'. Якщо для 'strict' встановлено значення
+<strong><code>false</code></strong>, буде повернуто найбільш відповідне кодування; якщо для
+<code>strict</code> встановлено значення <strong><code>true</code></strong>, буде повернено <strong><code>false</code></strong>.</p>
+<p>Значення за замовчуванням для 'strict' можна встановити за допомогою параметра
+конфігурації
+<a href="mbstring.configuration.md#ini.mbstring.strict-detection">mbstring.strict_detection</a>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Назва кодування символів або <strong><code>false</code></strong>, якщо рядок неприпустимий
+в одному з перерахованих кодувань.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>mb_detect_encoding()</strong></strong></p>
+<p><code>&#x3C;?php// Определение кодировки с текущим detect_orderecho mb_detect_encoding($str);// "auto" раскрывается в соответствии с mbstring.languageecho mb_detect_encoding($str, "auto");// Зададим список кодировок "encodings" в виде строкиecho mb_detect_encoding($str, "JIS, eucjp-win, sjis-win");// Використання масиву для завдання можливих кодувань "encodings"$encodings = [  "ASCII",| ($str, $encodings);?></code></p>
+<p><strong>Приклад #2 Дія параметра <code>strict</code></strong></p>
+<p><code>&#x3C;?php//''áéóú' закодована в ISO-8859-1$str = "\xE1\xE9\xF3\xFA";// Рядок недійсна в ASCII або УТF-8, з| mb_detect_encoding($str, ['ASCII', 'UTF-8'], false));var_dump(mb_detect_encoding($str, ['ASCII', 'UTF-8'], true));// Якщо допустима , параметр strict не змінює результатvar_dump(mb_detect_encoding($str, ['ASCII', 'UTF-8', 'ISO-8859-1'], false));var_dump(mb_detect_encoding('str, -8', 'ISO-8859-1'], true));?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>string(5) "UTF-8"
+bool(false)
+string(10) "ISO-8859-1"
+string(10) "ISO-8859-1"</p>
+<p>У деяких випадках одна і та ж послідовність байтів може
+утворювати допустимий рядок у кількох кодуваннях символів, та
+неможливо дізнатись, яка інтерпретація призначалася. Наприклад, серед
+багатьох інших байтова послідовність "xC4\xA2" може бути:</p>
+<ul>
+<li>"Ä¢" (U+00C4 LATIN CAPITAL LETTER A WITH DIAERESIS з наступним
+U+00A2 CENT SIGN) закодована в ISO-8859-1, ISO-8859-15 або
+Windows-1252</li>
+<li>"ФЂ" (U+0424 CYRILLIC CAPITAL LETTER EF з наступним U+0402
+CYRILLIC CAPITAL LETTER (DJE) закодована в ISO-8859-5</li>
+<li>""" (U+0122 LATIN CAPITAL LETTER G WITH CEDILLA) закодована в
+UTF-8</li>
+</ul>
+<p><strong>Приклад #3 Використання порядку при збігу кількох кодувань</strong></p>
+<p><code>&#x3C;?php$str = "\xC4\xA2";// Рядок дійсний у всіх трьох кодуваннях, тому буде повернена перше з перелічених кодувань.var_dump(mb_dete_8' 1', 'ISO-8859-5']));var_dump(mb_detect_encoding($str, ['ISO-8859-1', 'ISO-8859-5', 'UTF-8']));var_dump(mb_detect_encoding ($str, ['ISO-8859-5', 'UTF-8', 'ISO-8859-1']));?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>string(5) "UTF-8"
+string(10) "ISO-8859-1"
+string(10) "ISO-8859-5"</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.mb-detect-order.md">mb_detect_order()</a> -
+Встановлення/отримання списку кодувань для механізмів визначення
+кодування</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.mb-detect-encoding.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.mb-detect-encoding.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.mb-detect-encoding","slug":"function.mb-detect-encoding.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mb-decode-numericentity.md\"\u003e« mb_decode_numericentity\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mb-detect-order.md\"\u003emb_detect_order »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.mbstring.md\"\u003eФункції для роботи з багатобайтовими рядками\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВизначення кодування символів\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#mb_detect_encoding\u003c/p\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.0.6, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emb_detect_encoding — Визначення кодування символів\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003emb_detect_encoding\u003c/strong\u003e(string \u003ccode\u003e$string\u003c/code\u003e, array|string|null\n\u003ccode\u003e$encodings\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, bool \u003ccode\u003e$strict\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e): string|false\u003c/p\u003e\n\u003cp\u003eВизначає найімовірніше кодування символів для рядка (string)\n\u003ccode\u003estring\u003c/code\u003e із впорядкованого списку кандидатів.\u003c/p\u003e\n\u003cp\u003eАвтоматичне визначення передбачуваного кодування символів не може\nбути повністю надійним; без додаткової інформації це схоже на\nрозшифровка зашифрованого рядка без ключа. Завжди бажано\nвикористовувати індикацію кодування символів, що зберігається або передається з\nданими, як HTTP-заголовок \"Content-Type\".\u003c/p\u003e\n\u003cp\u003eФункція найбільш корисна з багатобайтовим кодуванням, коли не всі\nпослідовності байтів утворюють допустимий рядок. Якщо вхідна\nрядок містить таку послідовність, це кодування буде відхилено,\nі буде перевірено наступне кодування.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003estring\u003c/code\u003e\nПеревірений рядок (string).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eencodings\u003c/code\u003e\nВпорядкований список кодувань символів. Список може бути вказаний як\nмасив рядків або як рядок кодувань, розділених комами.\u003c/p\u003e\n\u003cp\u003eЯкщо \u003ccode\u003eencodings\u003c/code\u003e не заданий або є \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, буде використовуватись\nпоточний detect_order (встановлений за допомогою параметра конфігурації\n\u003ca href=\"mbstring.configuration.md#ini.mbstring.detect-order\"\u003embstring.detect_order\u003c/a\u003e\nабо функції \u003ca href=\"function.mb-detect-order.md\"\u003emb_detect_order()\u003c/a\u003e).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003estrict\u003c/code\u003e\nКерує поведінкою, коли \u003ccode\u003estring\u003c/code\u003e неприпустима в жодній з\nперерахованих 'encodings'. Якщо для 'strict' встановлено значення\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, буде повернуто найбільш відповідне кодування; якщо для\n\u003ccode\u003estrict\u003c/code\u003e встановлено значення \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, буде повернено \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eЗначення за замовчуванням для 'strict' можна встановити за допомогою параметра\nконфігурації\n\u003ca href=\"mbstring.configuration.md#ini.mbstring.strict-detection\"\u003embstring.strict_detection\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eНазва кодування символів або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, якщо рядок неприпустимий\nв одному з перерахованих кодувань.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003emb_detect_encoding()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Определение кодировки с текущим detect_orderecho mb_detect_encoding($str);// \"auto\" раскрывается в соответствии с mbstring.languageecho mb_detect_encoding($str, \"auto\");// Зададим список кодировок \"encodings\" в виде строкиecho mb_detect_encoding($str, \"JIS, eucjp-win, sjis-win\");// Використання масиву для завдання можливих кодувань \"encodings\"$encodings = [  \"ASCII\",| ($str, $encodings);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Дія параметра \u003ccode\u003estrict\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php//''áéóú' закодована в ISO-8859-1$str = \"\\xE1\\xE9\\xF3\\xFA\";// Рядок недійсна в ASCII або УТF-8, з| mb_detect_encoding($str, ['ASCII', 'UTF-8'], false));var_dump(mb_detect_encoding($str, ['ASCII', 'UTF-8'], true));// Якщо допустима , параметр strict не змінює результатvar_dump(mb_detect_encoding($str, ['ASCII', 'UTF-8', 'ISO-8859-1'], false));var_dump(mb_detect_encoding('str, -8', 'ISO-8859-1'], true));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003estring(5) \"UTF-8\"\nbool(false)\nstring(10) \"ISO-8859-1\"\nstring(10) \"ISO-8859-1\"\u003c/p\u003e\n\u003cp\u003eУ деяких випадках одна і та ж послідовність байтів може\nутворювати допустимий рядок у кількох кодуваннях символів, та\nнеможливо дізнатись, яка інтерпретація призначалася. Наприклад, серед\nбагатьох інших байтова послідовність \"xC4\\xA2\" може бути:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\"Ä¢\" (U+00C4 LATIN CAPITAL LETTER A WITH DIAERESIS з наступним\nU+00A2 CENT SIGN) закодована в ISO-8859-1, ISO-8859-15 або\nWindows-1252\u003c/li\u003e\n\u003cli\u003e\"ФЂ\" (U+0424 CYRILLIC CAPITAL LETTER EF з наступним U+0402\nCYRILLIC CAPITAL LETTER (DJE) закодована в ISO-8859-5\u003c/li\u003e\n\u003cli\u003e\"\"\" (U+0122 LATIN CAPITAL LETTER G WITH CEDILLA) закодована в\nUTF-8\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Використання порядку при збігу кількох кодувань\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$str = \"\\xC4\\xA2\";// Рядок дійсний у всіх трьох кодуваннях, тому буде повернена перше з перелічених кодувань.var_dump(mb_dete_8' 1', 'ISO-8859-5']));var_dump(mb_detect_encoding($str, ['ISO-8859-1', 'ISO-8859-5', 'UTF-8']));var_dump(mb_detect_encoding ($str, ['ISO-8859-5', 'UTF-8', 'ISO-8859-1']));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003estring(5) \"UTF-8\"\nstring(10) \"ISO-8859-1\"\nstring(10) \"ISO-8859-5\"\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.mb-detect-order.md\"\u003emb_detect_order()\u003c/a\u003e -\nВстановлення/отримання списку кодувань для механізмів визначення\nкодування\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.mb-detect-encoding.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

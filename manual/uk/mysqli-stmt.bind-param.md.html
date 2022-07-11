@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli-stmt.bind-param | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli-stmt.attr-set.md">« mysqli_stmt::attr_set</a></p>
+</li>
+<li>
+<p><a href="mysqli-stmt.bind-result.md">mysqli_stmt::bind_result »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.mysqli-stmt.md">mysqli_stmt</a></p>
+</li>
+<li>
+<p>Прив'язка змінних до параметрів запиту</p>
+</li>
+</ul>
+<h1>mysqli_stmt::bind_param</h1>
+<h1>mysqli_stmt_bind_param</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<p>mysqli_stmt::bind_param -- mysqli_stmt_bind_param -- Прив'язка змінних
+до параметрів запиту, що готується</p>
+<h3>Опис</h3>
+<p>Об'єктно-орієнтований стиль</p>
+<p>public <strong>mysqli_stmt::bind_param</strong>(string <code>$types</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>&#x26;$var</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>&#x26;...$vars</code>): bool</p>
+<p>Процедурний стиль</p>
+<p><strong>mysqli_stmt_bind_param</strong>(
+<a href="class.mysqli-stmt.md">mysqli_stmt</a> <code>$statement</code>,
+string <code>$types</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>&#x26;$var</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>&#x26;...$vars</code>
+): bool</p>
+<p>Прив'язує змінні до позначок параметрів у SQL-вираженні, яке було
+підготовлено функцією <a href="mysqli.prepare.md">mysqli_prepare()</a> або
+<a href="mysqli-stmt.prepare.md">mysqli_stmt_prepare()</a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо розмір даних змінної перевищує максимально допустимий розмір
+пакета (max_allowed_packet), необхідно встановити значення <code>b</code> параметру
+<code>types</code> та використовувати функцію
+<a href="mysqli-stmt.send-long-data.md">mysqli_stmt_send_long_data()</a>,
+яка передаватиме дані пакетами.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>При використанні <strong>mysqli_stmt_bind_param()</strong> спільно з
+<a href="function.call-user-func-array.md">call_user_func_array()</a>
+необхідно дотримуватися особливої обережності. Потрібно брати до уваги,
+що <strong>mysqli_stmt_bind_param()</strong> приймає як параметри
+тільки посилання на значення, у той час як
+<a href="function.call-user-func-array.md">call_user_func_array()</a> приймає
+список параметрів, які можуть передаватися як за посиланням, так і
+значення.</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>stmt</code>
+Тільки для процедурного стилю: об'єкт
+<a href="class.mysqli-stmt.md">mysqli_stmt</a>, отриманий за допомогою
+<a href="mysqli.stmt-init.md">mysqli_stmt_init()</a>.</p>
+<p><code>types</code>
+Рядок, що містить один або більше символів, кожен з яких визначає тип
+значення змінної, що прив'язується:</p>
+<table>
+<thead>
+<tr>
+<th>Символ</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>відповідна змінна має тип integer</td>
+</tr>
+<tr>
+<td>d</td>
+<td>відповідна змінна має тип double</td>
+</tr>
+<tr>
+<td>s</td>
+<td>відповідна змінна має тип string</td>
+</tr>
+<tr>
+<td>b</td>
+<td>відповідна змінна є великим двійковим об'єктом (blob) і пересилатиметься пакетами</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Символи, що задають тип</strong></p>
+<p><code>var</code>
+<code>vars</code>
+Кількість змінних і довжина рядка <code>types</code> повинні бути точно
+відповідати кількості параметрів у запиті.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>mysqli_stmt::bind_param()</strong></strong></p>
+<p>Об'єктно-орієнтований стиль</p>
+<p><code>&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');$stmt = $my ?, ?, ?)");$stmt->bind_param('sssd', $code, $language, $official, $percent);$code = 'DEU';$language = 'Bavarian';$official = F";$percent = 11.2;$stmt->execute();printf("рядок додано: %d. ", $stmt->affected_rows);/* Clean up table CountryLanguage */$mysqli->query("DELETE FROM CountryLanguage WHERE Language='Bavarian'");printf("рядок уда. ", $mysqli->affected_rows); </code></p>
+<p>Процедурний стиль</p>
+<p>`&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$link = mysqli_connect('localhost', 'my_user', 'my_password', 'world')|$? ?, ?)");mysqli_stmt_bind_param($stmt, 'sssd', $code, $language, $official, $percent);$code = 'DEU';$language = 'Bavarian';$official| $percent=11.2;mysqli_stmt_execute($stmt);printf("рядок|додано:%d.
+", Mysqli_stmt_affected_rows($stmt));
+"mysqli_affected_rows($link));</p>
+<p>Результат виконання даних прикладів:</p>
+<p>рядків додано: 1.
+1 row deleted.</p>
+<p><strong>Приклад #2 Приклад використання <code>...</code> для надання аргументів</strong></p>
+<p>Оператор <code>...</code> може використовуватись для надання списку аргументів
+змінної довжини, наприклад, у конструкції <code>WHERE IN</code>.</p>
+<p>`&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world') (?, ?)");/* використання ... для надання аргументів */$stmt->bind_param('ss', ...['DEU', 'POL']);$stmt->execute() ;$stmt->store_result();printf("знайдено рядок: %d.
+", $stmt->num_rows());</p>
+<p>Результат виконання даних прикладів:</p>
+<p>знайдено рядків: 10</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="mysqli-stmt.bind-result.md">mysqli_stmt_bind_result()</a> - Прив'язка
+змінних до підготовленого запиту для розміщення результату</li>
+<li><a href="mysqli-stmt.execute.md">mysqli_stmt_execute()</a> - Виконує
+підготовлене затвердження</li>
+<li><a href="mysqli-stmt.fetch.md">mysqli_stmt_fetch()</a> - Зв'язує результати
+підготовленого виразу зі змінними</li>
+<li><a href="mysqli.prepare.md">mysqli_prepare()</a> - Підготовляє SQL
+вираз до виконання</li>
+<li><a href="mysqli-stmt.send-long-data.md">mysqli_stmt_send_long_data()</a> -
+Надсилання даних блоками</li>
+<li><a href="mysqli-stmt.errno.md">mysqli_stmt_errno()</a> - Повертає код
+помилки виконання останнього запиту</li>
+<li><a href="mysqli-stmt.error.md">mysqli_stmt_error()</a> - Повертає рядок з
+поясненням останньої помилки під час виконання запиту</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli-stmt.bind-param.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli-stmt.bind-param.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli-stmt.bind-param","slug":"mysqli-stmt.bind-param.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli-stmt.attr-set.md\"\u003e« mysqli_stmt::attr_set\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli-stmt.bind-result.md\"\u003emysqli_stmt::bind_result »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mysqli-stmt.md\"\u003emysqli_stmt\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПрив'язка змінних до параметрів запиту\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003emysqli_stmt::bind_param\u003c/h1\u003e\n\u003ch1\u003emysqli_stmt_bind_param\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emysqli_stmt::bind_param -- mysqli_stmt_bind_param -- Прив'язка змінних\nдо параметрів запиту, що готується\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003emysqli_stmt::bind_param\u003c/strong\u003e(string \u003ccode\u003e$types\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e\u0026#x26;$var\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e\u0026#x26;...$vars\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003emysqli_stmt_bind_param\u003c/strong\u003e(\n\u003ca href=\"class.mysqli-stmt.md\"\u003emysqli_stmt\u003c/a\u003e \u003ccode\u003e$statement\u003c/code\u003e,\nstring \u003ccode\u003e$types\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e\u0026#x26;$var\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e\u0026#x26;...$vars\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003eПрив'язує змінні до позначок параметрів у SQL-вираженні, яке було\nпідготовлено функцією \u003ca href=\"mysqli.prepare.md\"\u003emysqli_prepare()\u003c/a\u003e або\n\u003ca href=\"mysqli-stmt.prepare.md\"\u003emysqli_stmt_prepare()\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо розмір даних змінної перевищує максимально допустимий розмір\nпакета (max_allowed_packet), необхідно встановити значення \u003ccode\u003eb\u003c/code\u003e параметру\n\u003ccode\u003etypes\u003c/code\u003e та використовувати функцію\n\u003ca href=\"mysqli-stmt.send-long-data.md\"\u003emysqli_stmt_send_long_data()\u003c/a\u003e,\nяка передаватиме дані пакетами.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПри використанні \u003cstrong\u003emysqli_stmt_bind_param()\u003c/strong\u003e спільно з\n\u003ca href=\"function.call-user-func-array.md\"\u003ecall_user_func_array()\u003c/a\u003e\nнеобхідно дотримуватися особливої обережності. Потрібно брати до уваги,\nщо \u003cstrong\u003emysqli_stmt_bind_param()\u003c/strong\u003e приймає як параметри\nтільки посилання на значення, у той час як\n\u003ca href=\"function.call-user-func-array.md\"\u003ecall_user_func_array()\u003c/a\u003e приймає\nсписок параметрів, які можуть передаватися як за посиланням, так і\nзначення.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003estmt\u003c/code\u003e\nТільки для процедурного стилю: об'єкт\n\u003ca href=\"class.mysqli-stmt.md\"\u003emysqli_stmt\u003c/a\u003e, отриманий за допомогою\n\u003ca href=\"mysqli.stmt-init.md\"\u003emysqli_stmt_init()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003etypes\u003c/code\u003e\nРядок, що містить один або більше символів, кожен з яких визначає тип\nзначення змінної, що прив'язується:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eСимвол\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ei\u003c/td\u003e\n\u003ctd\u003eвідповідна змінна має тип integer\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ed\u003c/td\u003e\n\u003ctd\u003eвідповідна змінна має тип double\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003es\u003c/td\u003e\n\u003ctd\u003eвідповідна змінна має тип string\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eb\u003c/td\u003e\n\u003ctd\u003eвідповідна змінна є великим двійковим об'єктом (blob) і пересилатиметься пакетами\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eСимволи, що задають тип\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003evar\u003c/code\u003e\n\u003ccode\u003evars\u003c/code\u003e\nКількість змінних і довжина рядка \u003ccode\u003etypes\u003c/code\u003e повинні бути точно\nвідповідати кількості параметрів у запиті.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003emysqli_stmt::bind_param()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');$stmt = $my ?, ?, ?)\");$stmt-\u003ebind_param('sssd', $code, $language, $official, $percent);$code = 'DEU';$language = 'Bavarian';$official = F\";$percent = 11.2;$stmt-\u003eexecute();printf(\"рядок додано: %d. \", $stmt-\u003eaffected_rows);/* Clean up table CountryLanguage */$mysqli-\u003equery(\"DELETE FROM CountryLanguage WHERE Language='Bavarian'\");printf(\"рядок уда. \", $mysqli-\u003eaffected_rows); \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$link = mysqli_connect('localhost', 'my_user', 'my_password', 'world')|$? ?, ?)\");mysqli_stmt_bind_param($stmt, 'sssd', $code, $language, $official, $percent);$code = 'DEU';$language = 'Bavarian';$official| $percent=11.2;mysqli_stmt_execute($stmt);printf(\"рядок|додано:%d.\n\", Mysqli_stmt_affected_rows($stmt));\n\"mysqli_affected_rows($link));\u003c/p\u003e\n\u003cp\u003eРезультат виконання даних прикладів:\u003c/p\u003e\n\u003cp\u003eрядків додано: 1.\n1 row deleted.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклад використання \u003ccode\u003e...\u003c/code\u003e для надання аргументів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОператор \u003ccode\u003e...\u003c/code\u003e може використовуватись для надання списку аргументів\nзмінної довжини, наприклад, у конструкції \u003ccode\u003eWHERE IN\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world') (?, ?)\");/* використання ... для надання аргументів */$stmt-\u003ebind_param('ss', ...['DEU', 'POL']);$stmt-\u003eexecute() ;$stmt-\u003estore_result();printf(\"знайдено рядок: %d.\n\", $stmt-\u003enum_rows());\u003c/p\u003e\n\u003cp\u003eРезультат виконання даних прикладів:\u003c/p\u003e\n\u003cp\u003eзнайдено рядків: 10\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mysqli-stmt.bind-result.md\"\u003emysqli_stmt_bind_result()\u003c/a\u003e - Прив'язка\nзмінних до підготовленого запиту для розміщення результату\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-stmt.execute.md\"\u003emysqli_stmt_execute()\u003c/a\u003e - Виконує\nпідготовлене затвердження\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-stmt.fetch.md\"\u003emysqli_stmt_fetch()\u003c/a\u003e - Зв'язує результати\nпідготовленого виразу зі змінними\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.prepare.md\"\u003emysqli_prepare()\u003c/a\u003e - Підготовляє SQL\nвираз до виконання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-stmt.send-long-data.md\"\u003emysqli_stmt_send_long_data()\u003c/a\u003e -\nНадсилання даних блоками\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-stmt.errno.md\"\u003emysqli_stmt_errno()\u003c/a\u003e - Повертає код\nпомилки виконання останнього запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-stmt.error.md\"\u003emysqli_stmt_error()\u003c/a\u003e - Повертає рядок з\nпоясненням останньої помилки під час виконання запиту\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli-stmt.bind-param.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.readfile | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.popen.md">«popen</a></p>
+</li>
+<li>
+<p><a href="function.readlink.md">readlink »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.filesystem.md">Функції файлової системи</a></p>
+</li>
+<li>
+<p>Виводить файл</p>
+</li>
+</ul>
+<h1>readfile</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>readfile — Виводить файл</p>
+<h3>Опис</h3>
+<p><strong>readfile</strong>(string <code>$filename</code>, bool <code>$use_include_path</code> = <strong><code>false</code></strong>,
+?resource <code>$context</code> = <strong><code>null</code></strong>): int|false</p>
+<p>Читає файл та записує його у буфер виводу.</p>
+<h3>Список параметрів</h3>
+<p><code>filename</code>
+Ім'я файлу, що читається.</p>
+<p><code>use_include_path</code>
+Якщо ви хочете, щоб використовувався пошук файлу в
+<a href="ini.core.md#ini.include-path">include_path</a>, установіть цей параметр
+в <strong><code>true</code></strong>.</p>
+<p><code>context</code>
+Ресурс (resource) із <a href="stream.contexts.md">контекстом потоку</a>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає кількість прочитаних із файлу байт у разі успішного
+виконання або <strong><code>false</code></strong> у разі виникнення помилки</p>
+<h3>Помилки</h3>
+<p>У разі невдалого завершення роботи генерується помилка рівня
+<strong><code>E_WARNING</code></strong>.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Примусове завантаження за допомогою <strong>readfile()</strong></strong></p>
+<p><code>&#x3C;?php$file = 'monkey.gif';if (file_exists($file)) {    header('Content-Description: File Transfer'); header('Content-Type: application/octet-stream'); header('Content-Disposition: attachment; filename="'.basename($file).'"'); header('Expires: 0'); header('Cache-Control: must-revalidate'); header('Pragma: public'); header('Content-Length: ' . filesize($file)); readfile($file); exit;}?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p><img src="images/e88cefb5c3fca5060e2490b9763c4433-readfile.png" alt="Діалог відкриття / збереження файлу"></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p><strong>readfile()</strong> сама по собі не призводить до будь-яких проблем з
+пам'яттю, навіть під час надсилання великих файлів. У разі виникнення помилки
+Перевищення пам'яті переконайтеся, що буферизація виводу вимкнена з
+за допомогою <a href="function.ob-get-level.md">ob_get_level()</a>.</p>
+</blockquote>
+<p><strong>Підказка</strong></p>
+<p>Для цієї функції ви можете використовувати URL як ім'я файлу, якщо
+була включена опція <a href="filesystem.configuration.md#ini.allow-url-fopen">fopen wrappers</a>. Дивіться
+докладнішу інформацію про визначення імені файлу в описі функції
+<a href="function.fopen.md">fopen()</a>. Дивіться також список підтримуваних
+оберток URL, їх можливості, зауваження щодо використання та список
+визначених констант у розділі <a href="wrappers.md">Підтримувані протоколи та обертки</a>.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.fpassthru.md">fpassthru()</a> - Виводить всі, що залишилися.
+дані з файлового покажчика</li>
+<li><a href="function.file.md">file()</a> - Читає вміст файлу та поміщає
+його в масив</li>
+<li><a href="function.fopen.md">fopen()</a> - Відкриває файл або URL</li>
+<li><a href="function.include.md">include</a> - include</li>
+<li><a href="function.require.md">require</a> - require</li>
+<li><a href="function.virtual.md">virtual()</a> - Виконує підзапит Apache</li>
+<li><a href="function.file-get-contents.md">file_get_contents()</a> - Читає
+вміст файлу в рядок</li>
+<li><a href="wrappers.md">Підтримувані протоколи та обгортки</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.readfile.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.readfile.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.readfile","slug":"function.readfile.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.popen.md\"\u003e«popen\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.readlink.md\"\u003ereadlink »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.filesystem.md\"\u003eФункції файлової системи\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВиводить файл\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003ereadfile\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003ereadfile — Виводить файл\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003ereadfile\u003c/strong\u003e(string \u003ccode\u003e$filename\u003c/code\u003e, bool \u003ccode\u003e$use_include_path\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e,\n?resource \u003ccode\u003e$context\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e): int|false\u003c/p\u003e\n\u003cp\u003eЧитає файл та записує його у буфер виводу.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003efilename\u003c/code\u003e\nІм'я файлу, що читається.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euse_include_path\u003c/code\u003e\nЯкщо ви хочете, щоб використовувався пошук файлу в\n\u003ca href=\"ini.core.md#ini.include-path\"\u003einclude_path\u003c/a\u003e, установіть цей параметр\nв \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003econtext\u003c/code\u003e\nРесурс (resource) із \u003ca href=\"stream.contexts.md\"\u003eконтекстом потоку\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає кількість прочитаних із файлу байт у разі успішного\nвиконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cp\u003eУ разі невдалого завершення роботи генерується помилка рівня\n\u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Примусове завантаження за допомогою \u003cstrong\u003ereadfile()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$file = 'monkey.gif';if (file_exists($file)) {    header('Content-Description: File Transfer'); header('Content-Type: application/octet-stream'); header('Content-Disposition: attachment; filename=\"'.basename($file).'\"'); header('Expires: 0'); header('Cache-Control: must-revalidate'); header('Pragma: public'); header('Content-Length: ' . filesize($file)); readfile($file); exit;}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003e\u003cimg src=\"images/e88cefb5c3fca5060e2490b9763c4433-readfile.png\" alt=\"Діалог відкриття / збереження файлу\"\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003ereadfile()\u003c/strong\u003e сама по собі не призводить до будь-яких проблем з\nпам'яттю, навіть під час надсилання великих файлів. У разі виникнення помилки\nПеревищення пам'яті переконайтеся, що буферизація виводу вимкнена з\nза допомогою \u003ca href=\"function.ob-get-level.md\"\u003eob_get_level()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПідказка\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля цієї функції ви можете використовувати URL як ім'я файлу, якщо\nбула включена опція \u003ca href=\"filesystem.configuration.md#ini.allow-url-fopen\"\u003efopen wrappers\u003c/a\u003e. Дивіться\nдокладнішу інформацію про визначення імені файлу в описі функції\n\u003ca href=\"function.fopen.md\"\u003efopen()\u003c/a\u003e. Дивіться також список підтримуваних\nоберток URL, їх можливості, зауваження щодо використання та список\nвизначених констант у розділі \u003ca href=\"wrappers.md\"\u003eПідтримувані протоколи та обертки\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.fpassthru.md\"\u003efpassthru()\u003c/a\u003e - Виводить всі, що залишилися.\nдані з файлового покажчика\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.file.md\"\u003efile()\u003c/a\u003e - Читає вміст файлу та поміщає\nйого в масив\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fopen.md\"\u003efopen()\u003c/a\u003e - Відкриває файл або URL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.include.md\"\u003einclude\u003c/a\u003e - include\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.require.md\"\u003erequire\u003c/a\u003e - require\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.virtual.md\"\u003evirtual()\u003c/a\u003e - Виконує підзапит Apache\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.file-get-contents.md\"\u003efile_get_contents()\u003c/a\u003e - Читає\nвміст файлу в рядок\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"wrappers.md\"\u003eПідтримувані протоколи та обгортки\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.readfile.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

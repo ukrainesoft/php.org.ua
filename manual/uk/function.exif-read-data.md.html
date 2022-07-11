@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.exif-read-data | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.exif-imagetype.md">«exif_imagetype</a></p>
+</li>
+<li>
+<p><a href="function.exif-tagname.md">exif_tagname »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.exif.md">Exif Функції</a></p>
+</li>
+<li>
+<p>Читає заголовки EXIF із файлів зображень</p>
+</li>
+</ul>
+<h1>exif_read_data</h1>
+<p>(PHP 4 >= 4.2.0, PHP 5, PHP 7, PHP 8)</p>
+<p>exif_read_data — Читає заголовки EXIF із файлів зображень</p>
+<h3>Опис</h3>
+<p><strong>exif_read_data</strong>(
+resource|string <code>$file</code>,
+?string <code>$required_sections</code> = <strong><code>null</code></strong>,
+bool <code>$as_arrays</code> = <strong><code>false</code></strong>,
+bool <code>$read_thumbnail</code> = <strong><code>false</code></strong>
+): array|false</p>
+<p><strong>exif_read_data()</strong> читає заголовки EXIF із файлів зображень. Таким
+можна читати метадані, генеровані цифровими фотоапаратами.</p>
+<p>За ідеєю, EXIF-заголовки повинні йти першими в JPEG/TIFF файлах,
+генеруються фотоапаратами. Але, на жаль, кожен виробник має
+своє уявлення про те, як компонувати метадані
+зображення. Тому будьте готові до ситуації, коли перед
+Exif-заголовком є ще щось.</p>
+<p><code>Height</code> та <code>Width</code> обчислюються аналогічно до обчислень
+<a href="function.getimagesize.md">getimagesize()</a>, тому ці параметри не
+повинні бути у заголовку. <code>html</code> - текстовий рядок, що задає
+висоту/ширину, яку можна використовувати у звичайному HTML.</p>
+<p>Якщо Exif-заголовок містить повідомлення про авторські права (Copyright),
+саме повідомлення може містити 2 значення. Ця ситуація не описана в
+стандарті Exif 2.10, тому розділ <code>COMPUTED</code> буде містити обидва ці
+значення в полях <code>Copyright.Photographer</code> та <code>Copyright.Editor</code>. В теж
+час розділи <code>IFD0</code> будуть містити масив байт з NULL-символом
+як роздільник цих двох значень або тільки перше значення,
+якщо тип файлу визначено неправильно (звичайна ситуація для Exif). Розділ
+<code>COMPUTED</code> буде також містити <code>Copyright</code>, це може бути або
+вихідний рядок, або список із власника фотографії та редактора через
+кому.</p>
+<p>Тег UserComment має ті ж проблеми, що і Copyright. Він може
+зберігати 2 значення. Перше - використане кодування, друге - саме
+значення. У цьому випадку розділ <code>IFD</code> містить або кодування, або
+масив байт. Розділ <code>COMPUTED</code> буде зберігати обидва ці значення в полях
+<code>UserCommentEncoding</code> та <code>UserComment</code>. Вміст <code>UserComment</code> буде
+доступно в будь-якому випадку, тому краще використовувати його
+замість розділу <code>IFD0</code>.</p>
+<p>Також <strong>exif_read_data()</strong> перевіряє EXIF теги на відповідність
+специфікації EXIF
+(<a href="http://exif.org/Exif2-2.PDF">»http://exif.org/Exif2-2.PDF</a>, стор 20).</p>
+<h3>Список параметрів</h3>
+<p><code>file</code>
+Розташування файлу із зображенням. Можливо як шляхом до файлу, і
+потоковим ресурсом (можна використовувати обгортки).</p>
+<p><code>required_sections</code>
+Список розділених ком розділів, які повинні бути представлені в
+результуючий масив (array). Якщо жоден із розділів знайти не
+вдасться, функція поверне <strong><code>false</code></strong>.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FILE</td>
+<td>FileName, FileSize, FileDateTime, SectionsFound</td>
+</tr>
+<tr>
+<td>COMPUTED</td>
+<td>html, Width, Height, IsColor, та інші. Height і Width обчислюються аналогічно <a href="function.getimagesize.md">getimagesize()</a>, тому їх обов'язково включати в заголовок. html - текстовий рядок, що задає висоту/ширину, яку можна використовувати у звичайному HTML.</td>
+</tr>
+<tr>
+<td>ANY_TAG</td>
+<td>Будь-яка інформація міститься в тег, наприклад, IFD0, EXIF, ...</td>
+</tr>
+<tr>
+<td>IFD0</td>
+<td>Всі дані тега IFD0. У звичайних зображеннях зберігається розмір зображення.</td>
+</tr>
+<tr>
+<td>THUMBNAIL</td>
+<td>Якщо файл містить другий розділ IFD, то вважається, що зображення є ескіз. Вся інформація про ескіз зберігається у цьому розділі.</td>
+</tr>
+<tr>
+<td>COMMENT</td>
+<td>Заголовки коментарів JPEG-зображень.</td>
+</tr>
+<tr>
+<td>EXIF</td>
+<td>Розділ EXIF є підрозділом IFD0. Він містить більш детальну інформацію про зображення. Більшість його записів залежить від фотоапарата.</td>
+</tr>
+</tbody>
+</table>
+<p><code>as_arrays</code>
+Визначає, чи формувати розділи як масивів. Розділи
+<code>required_sections</code>, <code>COMPUTED</code>, <code>THUMBNAIL</code> і <code>COMMENT</code> завжди робляться
+масивами, тому що вони можуть містити значення, імена яких будуть
+конфліктувати з іменами інших розділах.</p>
+<p><code>read_thumbnail</code>
+Якщо <strong><code>true</code></strong>, буде прочитано сам ескіз. Інакше буде
+прочитана лише інформація у тегах.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає асоціативний масив (array), у якому ключами будуть імена
+заголовків, а значеннями - значення, що відповідають цим заголовкам.
+Якщо жодних даних повернути не можна, <strong>exif_read_data()</strong> поверне
+<strong><code>false</code></strong>.</p>
+<h3>Помилки</h3>
+<p>Помилки рівня <strong><code>E_WARNING</code></strong> та/або <strong><code>E_NOTICE</code></strong> можуть виникати для
+непідтримуваних тегів або інших потенційних умов помилки, але
+функція все одно намагається прочитати всю зрозумілу інформацію.</p>
+<h3>Список змін</h3>
+<p>[TABLE]</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>exif_read_data()</strong></strong></p>
+<p><code>&#x3C;?phpecho "test1.jpg:&#x3C;br /> ";$exif = exif_read_data('tests/test1.jpg', 'IFD0');echo $exif===false ? "Не найдено даних заголовка.&#x3C;br /> " : "Зображення містить заголовки&#x3C;br /> ";$exif = exif_read_data('tests/test2.jpg', 0, true);echo "test2.jpg:&#x3C;br /> ";foreach ($exif as $key => $section) {    foreach ($section as $name => $val) {        echo "$key.$name: > ";    }}?> </code></p>
+<p>Перший виклик завершується невдачею, тому що в заголовках зображення немає
+інформації.</p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>test1.jpg:
+No header data found.
+test2.jpg:
+FILE.FileName: test2.jpg
+FILE.FileDateTime: 1017666176
+FILE.FileSize: 1240
+FILE.FileType: 2
+FILE.SectionsFound: ANY_TAG, IFD0, THUMBNAIL, COMMENT
+COMPUTED.md: width="1" height="1"
+COMPUTED.Height: 1
+COMPUTED.Width: 1
+COMPUTED.IsColor: 1
+COMPUTED.ByteOrderMotorola: 1
+COMPUTED.UserComment: Exif test image.
+COMPUTED.UserCommentEncoding: ASCII
+COMPUTED.Copyright: Фотографії (c) M.Boerger, Edited by M.Boerger.
+COMPUTED.Copyright.Photographer: Photo (c) M.Boerger
+COMPUTED.Copyright.Editor: Edited by M.Boerger.
+IFD0.Copyright: Photo (c) M.Boerger
+IFD0.UserComment: ASCII
+THUMBNAIL.JPEGInterchangeFormat: 134
+THUMBNAIL.JPEGInterchangeFormatLength: 523
+COMMENT.0: Comment #1.
+COMMENT.1: Comment #2.
+COMMENT.2: Comment #3end
+THUMBNAIL.JPEGInterchangeFormat: 134
+THUMBNAIL.Thumbnail.Height: 1
+THUMBNAIL.Thumbnail.Height: 1</p>
+<p><strong>Приклад #2 Використання <strong>exif_read_data()</strong> з потоковим ресурсом
+(доступно з PHP 7.2.0)</strong></p>
+<p>` &#x3C;?php//Відкриваємо файл в бінарному режимі$fp = fopen('/path/to/image.jpg', 'rb');if (!$fp) {    echo 'Помилка: Неможливий  Неможливий| exit;}// Спроба прочитати заголовки exif$headers = exif_read_data($fp);if (!$headers) {   echo 'Помилка: неможливо прочитати заголовки exif'; exit;}// Надрукувати заголовки 'COMPUTED'echo 'Заголовки EXIF:' . PHP_EOL;foreach ($headers['COMPUTED'] as $header => $value) {    printf(' %s => %s%s', $header, $value, PHP_EOL);}>?</p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>EXIF Headers:
+Height => 576
+Width => 1024
+IsColor => 1
+ByteOrderMotorola => 0
+ApertureFNumber => f/5.6
+UserComment =>
+UserCommentEncoding => UNDEFINED
+Copyright => Denis
+Thumbnail.FileType => 2
+Thumbnail.MimeType => image/jpeg</p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо дозволено <a href="ref.mbstring.md">mbstring</a>, exif буде намагатися
+обробляти юнікод і брати кодування як зазначено в
+<a href="exif.configuration.md#ini.exif.decode-unicode-motorola">exif.decode_unicode_motorola</a>
+і
+<a href="exif.configuration.md#ini.exif.decode-unicode-intel">exif.decode_unicode_intel</a>.
+Модуль exif не намагатиметься самостійно визначити кодування та
+Вказівка правильного кодування залишається на совісті користувача шляхом
+встановлення однієї з двох INI-директив перед викликом
+<strong>exif_read_data()</strong>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо параметр <code>file</code> використаний передачі у функцію потоку, то
+цей потік повинен бути перемотувати. Зверніть увагу, що файловий
+Позиційний покажчик не буде змінено після завершення цієї роботи
+Функції.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.exif-thumbnail.md">exif_thumbnail()</a> - Отримує
+вбудоване прев'ю зображення</li>
+<li><a href="function.getimagesize.md">getimagesize()</a> - Отримання розміру
+зображення</li>
+<li><a href="wrappers.md">Підтримувані протоколи та обгортки</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.exif-read-data.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.exif-read-data.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.exif-read-data","slug":"function.exif-read-data.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.exif-imagetype.md\"\u003e«exif_imagetype\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.exif-tagname.md\"\u003eexif_tagname »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.exif.md\"\u003eExif Функції\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЧитає заголовки EXIF із файлів зображень\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eexif_read_data\u003c/h1\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.2.0, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eexif_read_data — Читає заголовки EXIF із файлів зображень\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eexif_read_data\u003c/strong\u003e(\nresource|string \u003ccode\u003e$file\u003c/code\u003e,\n?string \u003ccode\u003e$required_sections\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\nbool \u003ccode\u003e$as_arrays\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e,\nbool \u003ccode\u003e$read_thumbnail\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\n): array|false\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eexif_read_data()\u003c/strong\u003e читає заголовки EXIF із файлів зображень. Таким\nможна читати метадані, генеровані цифровими фотоапаратами.\u003c/p\u003e\n\u003cp\u003eЗа ідеєю, EXIF-заголовки повинні йти першими в JPEG/TIFF файлах,\nгенеруються фотоапаратами. Але, на жаль, кожен виробник має\nсвоє уявлення про те, як компонувати метадані\nзображення. Тому будьте готові до ситуації, коли перед\nExif-заголовком є ще щось.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eHeight\u003c/code\u003e та \u003ccode\u003eWidth\u003c/code\u003e обчислюються аналогічно до обчислень\n\u003ca href=\"function.getimagesize.md\"\u003egetimagesize()\u003c/a\u003e, тому ці параметри не\nповинні бути у заголовку. \u003ccode\u003ehtml\u003c/code\u003e - текстовий рядок, що задає\nвисоту/ширину, яку можна використовувати у звичайному HTML.\u003c/p\u003e\n\u003cp\u003eЯкщо Exif-заголовок містить повідомлення про авторські права (Copyright),\nсаме повідомлення може містити 2 значення. Ця ситуація не описана в\nстандарті Exif 2.10, тому розділ \u003ccode\u003eCOMPUTED\u003c/code\u003e буде містити обидва ці\nзначення в полях \u003ccode\u003eCopyright.Photographer\u003c/code\u003e та \u003ccode\u003eCopyright.Editor\u003c/code\u003e. В теж\nчас розділи \u003ccode\u003eIFD0\u003c/code\u003e будуть містити масив байт з NULL-символом\nяк роздільник цих двох значень або тільки перше значення,\nякщо тип файлу визначено неправильно (звичайна ситуація для Exif). Розділ\n\u003ccode\u003eCOMPUTED\u003c/code\u003e буде також містити \u003ccode\u003eCopyright\u003c/code\u003e, це може бути або\nвихідний рядок, або список із власника фотографії та редактора через\nкому.\u003c/p\u003e\n\u003cp\u003eТег UserComment має ті ж проблеми, що і Copyright. Він може\nзберігати 2 значення. Перше - використане кодування, друге - саме\nзначення. У цьому випадку розділ \u003ccode\u003eIFD\u003c/code\u003e містить або кодування, або\nмасив байт. Розділ \u003ccode\u003eCOMPUTED\u003c/code\u003e буде зберігати обидва ці значення в полях\n\u003ccode\u003eUserCommentEncoding\u003c/code\u003e та \u003ccode\u003eUserComment\u003c/code\u003e. Вміст \u003ccode\u003eUserComment\u003c/code\u003e буде\nдоступно в будь-якому випадку, тому краще використовувати його\nзамість розділу \u003ccode\u003eIFD0\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eТакож \u003cstrong\u003eexif_read_data()\u003c/strong\u003e перевіряє EXIF теги на відповідність\nспецифікації EXIF\n(\u003ca href=\"http://exif.org/Exif2-2.PDF\"\u003e»http://exif.org/Exif2-2.PDF\u003c/a\u003e, стор 20).\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003efile\u003c/code\u003e\nРозташування файлу із зображенням. Можливо як шляхом до файлу, і\nпотоковим ресурсом (можна використовувати обгортки).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erequired_sections\u003c/code\u003e\nСписок розділених ком розділів, які повинні бути представлені в\nрезультуючий масив (array). Якщо жоден із розділів знайти не\nвдасться, функція поверне \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eFILE\u003c/td\u003e\n\u003ctd\u003eFileName, FileSize, FileDateTime, SectionsFound\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCOMPUTED\u003c/td\u003e\n\u003ctd\u003ehtml, Width, Height, IsColor, та інші. Height і Width обчислюються аналогічно \u003ca href=\"function.getimagesize.md\"\u003egetimagesize()\u003c/a\u003e, тому їх обов'язково включати в заголовок. html - текстовий рядок, що задає висоту/ширину, яку можна використовувати у звичайному HTML.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eANY_TAG\u003c/td\u003e\n\u003ctd\u003eБудь-яка інформація міститься в тег, наприклад, IFD0, EXIF, ...\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eIFD0\u003c/td\u003e\n\u003ctd\u003eВсі дані тега IFD0. У звичайних зображеннях зберігається розмір зображення.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eTHUMBNAIL\u003c/td\u003e\n\u003ctd\u003eЯкщо файл містить другий розділ IFD, то вважається, що зображення є ескіз. Вся інформація про ескіз зберігається у цьому розділі.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCOMMENT\u003c/td\u003e\n\u003ctd\u003eЗаголовки коментарів JPEG-зображень.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eEXIF\u003c/td\u003e\n\u003ctd\u003eРозділ EXIF є підрозділом IFD0. Він містить більш детальну інформацію про зображення. Більшість його записів залежить від фотоапарата.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003ccode\u003eas_arrays\u003c/code\u003e\nВизначає, чи формувати розділи як масивів. Розділи\n\u003ccode\u003erequired_sections\u003c/code\u003e, \u003ccode\u003eCOMPUTED\u003c/code\u003e, \u003ccode\u003eTHUMBNAIL\u003c/code\u003e і \u003ccode\u003eCOMMENT\u003c/code\u003e завжди робляться\nмасивами, тому що вони можуть містити значення, імена яких будуть\nконфліктувати з іменами інших розділах.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eread_thumbnail\u003c/code\u003e\nЯкщо \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, буде прочитано сам ескіз. Інакше буде\nпрочитана лише інформація у тегах.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає асоціативний масив (array), у якому ключами будуть імена\nзаголовків, а значеннями - значення, що відповідають цим заголовкам.\nЯкщо жодних даних повернути не можна, \u003cstrong\u003eexif_read_data()\u003c/strong\u003e поверне\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cp\u003eПомилки рівня \u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e та/або \u003cstrong\u003e\u003ccode\u003eE_NOTICE\u003c/code\u003e\u003c/strong\u003e можуть виникати для\nнепідтримуваних тегів або інших потенційних умов помилки, але\nфункція все одно намагається прочитати всю зрозумілу інформацію.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003cp\u003e[TABLE]\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003eexif_read_data()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpecho \"test1.jpg:\u0026#x3C;br /\u003e \";$exif = exif_read_data('tests/test1.jpg', 'IFD0');echo $exif===false ? \"Не найдено даних заголовка.\u0026#x3C;br /\u003e \" : \"Зображення містить заголовки\u0026#x3C;br /\u003e \";$exif = exif_read_data('tests/test2.jpg', 0, true);echo \"test2.jpg:\u0026#x3C;br /\u003e \";foreach ($exif as $key =\u003e $section) {    foreach ($section as $name =\u003e $val) {        echo \"$key.$name: \u003e \";    }}?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПерший виклик завершується невдачею, тому що в заголовках зображення немає\nінформації.\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003etest1.jpg:\nNo header data found.\ntest2.jpg:\nFILE.FileName: test2.jpg\nFILE.FileDateTime: 1017666176\nFILE.FileSize: 1240\nFILE.FileType: 2\nFILE.SectionsFound: ANY_TAG, IFD0, THUMBNAIL, COMMENT\nCOMPUTED.md: width=\"1\" height=\"1\"\nCOMPUTED.Height: 1\nCOMPUTED.Width: 1\nCOMPUTED.IsColor: 1\nCOMPUTED.ByteOrderMotorola: 1\nCOMPUTED.UserComment: Exif test image.\nCOMPUTED.UserCommentEncoding: ASCII\nCOMPUTED.Copyright: Фотографії (c) M.Boerger, Edited by M.Boerger.\nCOMPUTED.Copyright.Photographer: Photo (c) M.Boerger\nCOMPUTED.Copyright.Editor: Edited by M.Boerger.\nIFD0.Copyright: Photo (c) M.Boerger\nIFD0.UserComment: ASCII\nTHUMBNAIL.JPEGInterchangeFormat: 134\nTHUMBNAIL.JPEGInterchangeFormatLength: 523\nCOMMENT.0: Comment #1.\nCOMMENT.1: Comment #2.\nCOMMENT.2: Comment #3end\nTHUMBNAIL.JPEGInterchangeFormat: 134\nTHUMBNAIL.Thumbnail.Height: 1\nTHUMBNAIL.Thumbnail.Height: 1\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Використання \u003cstrong\u003eexif_read_data()\u003c/strong\u003e з потоковим ресурсом\n(доступно з PHP 7.2.0)\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php//Відкриваємо файл в бінарному режимі$fp = fopen('/path/to/image.jpg', 'rb');if (!$fp) {    echo 'Помилка: Неможливий  Неможливий| exit;}// Спроба прочитати заголовки exif$headers = exif_read_data($fp);if (!$headers) {   echo 'Помилка: неможливо прочитати заголовки exif'; exit;}// Надрукувати заголовки 'COMPUTED'echo 'Заголовки EXIF:' . PHP_EOL;foreach ($headers['COMPUTED'] as $header =\u003e $value) {    printf(' %s =\u003e %s%s', $header, $value, PHP_EOL);}\u003e?\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eEXIF Headers:\nHeight =\u003e 576\nWidth =\u003e 1024\nIsColor =\u003e 1\nByteOrderMotorola =\u003e 0\nApertureFNumber =\u003e f/5.6\nUserComment =\u003e\nUserCommentEncoding =\u003e UNDEFINED\nCopyright =\u003e Denis\nThumbnail.FileType =\u003e 2\nThumbnail.MimeType =\u003e image/jpeg\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо дозволено \u003ca href=\"ref.mbstring.md\"\u003embstring\u003c/a\u003e, exif буде намагатися\nобробляти юнікод і брати кодування як зазначено в\n\u003ca href=\"exif.configuration.md#ini.exif.decode-unicode-motorola\"\u003eexif.decode_unicode_motorola\u003c/a\u003e\nі\n\u003ca href=\"exif.configuration.md#ini.exif.decode-unicode-intel\"\u003eexif.decode_unicode_intel\u003c/a\u003e.\nМодуль exif не намагатиметься самостійно визначити кодування та\nВказівка правильного кодування залишається на совісті користувача шляхом\nвстановлення однієї з двох INI-директив перед викликом\n\u003cstrong\u003eexif_read_data()\u003c/strong\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо параметр \u003ccode\u003efile\u003c/code\u003e використаний передачі у функцію потоку, то\nцей потік повинен бути перемотувати. Зверніть увагу, що файловий\nПозиційний покажчик не буде змінено після завершення цієї роботи\nФункції.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.exif-thumbnail.md\"\u003eexif_thumbnail()\u003c/a\u003e - Отримує\nвбудоване прев'ю зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.getimagesize.md\"\u003egetimagesize()\u003c/a\u003e - Отримання розміру\nзображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"wrappers.md\"\u003eПідтримувані протоколи та обгортки\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.exif-read-data.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

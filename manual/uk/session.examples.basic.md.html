@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>session.examples.basic | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="session.examples.md">« Приклади</a></p>
+</li>
+<li>
+<p><a href="session.idpassing.md">Передача сесії ідентифікатора »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="session.examples.md">Приклади</a></p>
+</li>
+<li>
+<p>Основи використання</p>
+</li>
+</ul>
+<h2>Основи використання</h2>
+<p>Сесії є простим способом зберігання інформації для окремих
+користувачів із унікальним ідентифікатором сесії. Це може
+використовуватись для збереження стану між запитами сторінок.
+Ідентифікатори сесій зазвичай відправляються браузеру через сесійний
+cookie та використовуються для отримання наявних даних сесії. Відсутність
+ідентифікатор сесії або сесійного cookie повідомляє PHP про те, що
+необхідно створити нову сесію та згенерувати новий ідентифікатор
+сесії.</p>
+<p>Сесії використовують просту технологію. Коли сесія створена, PHP буде
+або отримувати існуючу сесію, використовуючи переданий ідентифікатор
+(зазвичай із сесійного cookie) або, якщо нічого не передавалося, буде
+створено нову сесію. PHP заповнить суперглобальну змінну
+<code>$_SESSION</code> сесійною інформацією після того, як буде запущена
+сесія. Коли PHP завершує роботу, він автоматично серіалізує
+вміст суперглобальної змінної <code>$_SESSION</code> і відправить для
+збереження, використовуючи сесійний обробник для запису сесії.</p>
+<p>За промовчанням PHP використовує внутрішній обробник <code>files</code> для збереження
+сесій, який встановлений в INI-змінній
+<a href="session.configuration.md#ini.session.save-handler">session.save_handler</a>.
+Цей обробник зберігає дані на сервері в директорії, зазначеній у
+конфігураційної директиви
+<a href="session.configuration.md#ini.session.save-path">session.save_path</a>.</p>
+<p>Сесії можуть запускатися вручну за допомогою функції
+<a href="function.session-start.md">session_start()</a>. Якщо директива
+<a href="session.configuration.md#ini.session.auto-start">session.auto_start</a>
+встановлена в <code>1</code>, сесія автоматично запуститься на початку запиту.</p>
+<p>Сесія зазвичай завершує свою роботу, коли PHP закінчує виконувати
+скрипт, але може бути завершено і вручну за допомогою функції
+<a href="function.session-write-close.md">session_write_close()</a>.</p>
+<p><strong>Приклад #1 Реєстрація змінної за допомогою <code>$_SESSION</code>.</strong></p>
+<p><code>&#x3C;?phpsession_start();if(!isset($_SESSION['count'])) { $_SESSION['count'] = 0;} else {  $_SESSION['count']++;}?></code></p>
+<p><strong>Приклад #2 Скасування оголошення змінної за допомогою <code>$_SESSION</code>.</strong></p>
+<p><code>&#x3C;?phpsession_start();unset($_SESSION['count']);?></code></p>
+<p><strong>Застереження</strong></p>
+<p>НЕ ОЧИЩАЙТЕ <code>$_SESSION</code> повністю, використовуючи <code>unset($_SESSION)</code>, тому що
+це відключить можливість реєстрації сесійних змінних через
+суперглобальну змінну <code>$_SESSION</code>.</p>
+<p><strong>Увага</strong></p>
+<p>Ви не можете використовувати посилання в сесійних змінних, тому що не
+Існує реального способу відновлення посилання до іншої змінної.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Сесії, які використовують файли (за замовчуванням у PHP), блокують файл сесії
+відразу при відкритті сесії функцією
+<a href="function.session-start.md">session_start()</a> або опосередковано
+вказівки
+<a href="session.configuration.md#ini.session.auto-start">session.auto_start</a>.
+Після блокування, жодний інший скрипт не може отримати доступ до
+цього ж файлу сесії, доки він не буде закритий або при завершенні
+скрипт або виклик виклику
+<a href="function.session-write-close.md">session_write_close()</a>.</p>
+<p>Швидше за все це стане проблемою для сайтів, які активно
+використовують AJAX та роблять кілька одночасних запитів. Найпростішим
+шляхом вирішення цієї проблеми буде виклик функції
+<a href="function.session-write-close.md">session_write_close()</a> відразу ж
+як тільки всі необхідні зміни в сесії будуть зроблені,
+Переважно ближче до початку роботи скрипта. Також можна
+використовувати інший механізм сесії, який підтримує конкурентний
+доступ.</p>
+</blockquote>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/session.examples.basic.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/session.examples.basic.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"session.examples.basic","slug":"session.examples.basic.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"session.examples.md\"\u003e« Приклади\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"session.idpassing.md\"\u003eПередача сесії ідентифікатора »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"session.examples.md\"\u003eПриклади\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОснови використання\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eОснови використання\u003c/h2\u003e\n\u003cp\u003eСесії є простим способом зберігання інформації для окремих\nкористувачів із унікальним ідентифікатором сесії. Це може\nвикористовуватись для збереження стану між запитами сторінок.\nІдентифікатори сесій зазвичай відправляються браузеру через сесійний\ncookie та використовуються для отримання наявних даних сесії. Відсутність\nідентифікатор сесії або сесійного cookie повідомляє PHP про те, що\nнеобхідно створити нову сесію та згенерувати новий ідентифікатор\nсесії.\u003c/p\u003e\n\u003cp\u003eСесії використовують просту технологію. Коли сесія створена, PHP буде\nабо отримувати існуючу сесію, використовуючи переданий ідентифікатор\n(зазвичай із сесійного cookie) або, якщо нічого не передавалося, буде\nстворено нову сесію. PHP заповнить суперглобальну змінну\n\u003ccode\u003e$_SESSION\u003c/code\u003e сесійною інформацією після того, як буде запущена\nсесія. Коли PHP завершує роботу, він автоматично серіалізує\nвміст суперглобальної змінної \u003ccode\u003e$_SESSION\u003c/code\u003e і відправить для\nзбереження, використовуючи сесійний обробник для запису сесії.\u003c/p\u003e\n\u003cp\u003eЗа промовчанням PHP використовує внутрішній обробник \u003ccode\u003efiles\u003c/code\u003e для збереження\nсесій, який встановлений в INI-змінній\n\u003ca href=\"session.configuration.md#ini.session.save-handler\"\u003esession.save_handler\u003c/a\u003e.\nЦей обробник зберігає дані на сервері в директорії, зазначеній у\nконфігураційної директиви\n\u003ca href=\"session.configuration.md#ini.session.save-path\"\u003esession.save_path\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eСесії можуть запускатися вручну за допомогою функції\n\u003ca href=\"function.session-start.md\"\u003esession_start()\u003c/a\u003e. Якщо директива\n\u003ca href=\"session.configuration.md#ini.session.auto-start\"\u003esession.auto_start\u003c/a\u003e\nвстановлена в \u003ccode\u003e1\u003c/code\u003e, сесія автоматично запуститься на початку запиту.\u003c/p\u003e\n\u003cp\u003eСесія зазвичай завершує свою роботу, коли PHP закінчує виконувати\nскрипт, але може бути завершено і вручну за допомогою функції\n\u003ca href=\"function.session-write-close.md\"\u003esession_write_close()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Реєстрація змінної за допомогою \u003ccode\u003e$_SESSION\u003c/code\u003e.\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpsession_start();if(!isset($_SESSION['count'])) { $_SESSION['count'] = 0;} else {  $_SESSION['count']++;}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Скасування оголошення змінної за допомогою \u003ccode\u003e$_SESSION\u003c/code\u003e.\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpsession_start();unset($_SESSION['count']);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eЗастереження\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eНЕ ОЧИЩАЙТЕ \u003ccode\u003e$_SESSION\u003c/code\u003e повністю, використовуючи \u003ccode\u003eunset($_SESSION)\u003c/code\u003e, тому що\nце відключить можливість реєстрації сесійних змінних через\nсуперглобальну змінну \u003ccode\u003e$_SESSION\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eВи не можете використовувати посилання в сесійних змінних, тому що не\nІснує реального способу відновлення посилання до іншої змінної.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eСесії, які використовують файли (за замовчуванням у PHP), блокують файл сесії\nвідразу при відкритті сесії функцією\n\u003ca href=\"function.session-start.md\"\u003esession_start()\u003c/a\u003e або опосередковано\nвказівки\n\u003ca href=\"session.configuration.md#ini.session.auto-start\"\u003esession.auto_start\u003c/a\u003e.\nПісля блокування, жодний інший скрипт не може отримати доступ до\nцього ж файлу сесії, доки він не буде закритий або при завершенні\nскрипт або виклик виклику\n\u003ca href=\"function.session-write-close.md\"\u003esession_write_close()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eШвидше за все це стане проблемою для сайтів, які активно\nвикористовують AJAX та роблять кілька одночасних запитів. Найпростішим\nшляхом вирішення цієї проблеми буде виклик функції\n\u003ca href=\"function.session-write-close.md\"\u003esession_write_close()\u003c/a\u003e відразу ж\nяк тільки всі необхідні зміни в сесії будуть зроблені,\nПереважно ближче до початку роботи скрипта. Також можна\nвикористовувати інший механізм сесії, який підтримує конкурентний\nдоступ.\u003c/p\u003e\n\u003c/blockquote\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"session.examples.basic.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

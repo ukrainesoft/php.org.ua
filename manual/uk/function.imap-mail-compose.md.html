@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.imap-mail-compose | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.imap-lsub.md">« imap_lsub</a></p>
+</li>
+<li>
+<p><a href="function.imap-mail-copy.md">imap_mail_copy »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.imap.md">Функції IMAP</a></p>
+</li>
+<li>
+<p>Створити MIME-повідомлення на основі заданих обгортки та тіла</p>
+</li>
+</ul>
+<p>#imap_mail_compose</p>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>imap_mail_compose — Створити MIME-повідомлення на основі заданих обгортки та
+тіла</p>
+<h3>Опис</h3>
+<p><strong>imap_mail_compose</strong>(array <code>$envelope</code>, array <code>$bodies</code>): string|false</p>
+<p>Створює MIME-повідомлення на основі обгортки <code>envelope</code> та тіла <code>bodies</code>.</p>
+<h3>Список параметрів</h3>
+<p><code>envelope</code>
+Асоціативний масив із полями заголовка. Допустимі ключі: <code>remail'</code>,
+<code>return_path'', </code>date'', <code>from'', </code>reply_to"<code>, </code>"in_reply_to"<code>, "subject", "to", "cc", "bcc" і "message_id", які встановлюють відповідні заголовки повідомлень у заданий рядок (string). Для встановлення додаткових заголовків підтримується ключ ``custom_headers'', який містить асоціативний масив інших заголовків, наприклад, </code>["User-Agent: My Mail Client"]`.</p>
+<p><code>bodies</code>
+Індексований масив тел. Перше тіло – це основна частина повідомлення;
+подальші тіла обробляються тільки якщо воно з типом
+<strong><code>TYPEMULTIPART</code></strong>; ці тіла становлять тіла частин.</p>
+<table>
+<thead>
+<tr>
+<th>Ключ</th>
+<th>Тип</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>int</td>
+<td>Тип MIME. Один з <strong>TYPETEXT</strong> (за замовчуванням), <strong>TYPEMULTIPART</strong>, <strong>TYPEMESSAGE</strong>, <strong>TYPEAPPLICATION</strong>, <strong>TYPEAUDIO</strong>, **TYPEIMAGE **, <strong>TYPEMODEL</strong> або <strong>TYPEOTHER</strong>.</td>
+</tr>
+<tr>
+<td>'encoding'</td>
+<td>int</td>
+<td>Значення Content-Transfer-Encoding. Одне з <strong>ENC7BIT</strong> (default), <strong>ENC8BIT</strong>, <strong>ENCBINARY</strong>, <strong>ENCBASE64</strong>, <strong>ENCQUOTEDPRINTABLE</strong> або **ENCOTHER **.</td>
+</tr>
+<tr>
+<td>charset</td>
+<td>string</td>
+<td>Параметр charset типу MIME.</td>
+</tr>
+<tr>
+<td>type.parameters</td>
+<td>array</td>
+<td>Асоціативний масив (array) імен параметрів Content-Type та їх значень.</td>
+</tr>
+<tr>
+<td>subtype</td>
+<td>string</td>
+<td>Підтип MIME, наприклад, jpeg для <strong>TYPEIMAGE</strong>.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Значення Content-ID.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Значення Content-Description.</td>
+</tr>
+<tr>
+<td>disposition.type</td>
+<td>string</td>
+<td>Значення "Content-Disposition", наприклад, "attachment".</td>
+</tr>
+<tr>
+<td>disposition</td>
+<td>array</td>
+<td>Асоціативний масив (array) імен параметрів Content-Disposition та їх значень.</td>
+</tr>
+<tr>
+<td>contents.data</td>
+<td>string</td>
+<td>Корисне навантаження.</td>
+</tr>
+<tr>
+<td>lines</td>
+<td>int</td>
+<td>Розмір корисного навантаження у рядках.</td>
+</tr>
+<tr>
+<td>bytes</td>
+<td>int</td>
+<td>Розмір корисного навантаження у байтах.</td>
+</tr>
+<tr>
+<td>md5</td>
+<td>string</td>
+<td>Контрольна сума MD5 корисного навантаження.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Структура масиву тіла</strong></p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає MIME-повідомлення у вигляді рядка (string) або <strong><code>false</code></strong>
+у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>imap_mail_compose()</strong></strong></p>
+<p>` &#x3C;?php$envelope["from"]= "<a href="mailto:joe@example.com">joe@example.com</a>";$envelope["to"] = "<a href="mailto:foo@example.com">foo@example.com</a>";$envelope["cc"]  = "<a href="mailto:bar@example.com">bar@example.com</a> ";$part1["type"] = TYPEMULTIPART;$part1["subtype"] = "mixed";$filename = "/tmp/imap.c.gz";$fp = fopen($filename, "r") ;$contents = fread($fp, filesize($filename));fclose($fp);$part2["type"] = TYPEAPPLICATION;$part2["encoding"] = ENCBINARY;$part2["subtype"] = "octet-stream";$part2["description"] = basename($filename);$part2["contents.data"] = $contents;$part3["type"] = TYPETEXT;$part3["subtype"] = "plain";$part3["description"] = "description3";$part3["contents.data"] = "contents.data3</p>
+<p>";$body[1] = $part1;$body[2] = $part2;$body[3] = $part3;echo nl2br(imap_mail_compose($envelope, $body));?> `</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.imap-mail-compose.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.imap-mail-compose.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.imap-mail-compose","slug":"function.imap-mail-compose.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.imap-lsub.md\"\u003e« imap_lsub\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.imap-mail-copy.md\"\u003eimap_mail_copy »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.imap.md\"\u003eФункції IMAP\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eСтворити MIME-повідомлення на основі заданих обгортки та тіла\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#imap_mail_compose\u003c/p\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eimap_mail_compose — Створити MIME-повідомлення на основі заданих обгортки та\nтіла\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eimap_mail_compose\u003c/strong\u003e(array \u003ccode\u003e$envelope\u003c/code\u003e, array \u003ccode\u003e$bodies\u003c/code\u003e): string|false\u003c/p\u003e\n\u003cp\u003eСтворює MIME-повідомлення на основі обгортки \u003ccode\u003eenvelope\u003c/code\u003e та тіла \u003ccode\u003ebodies\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eenvelope\u003c/code\u003e\nАсоціативний масив із полями заголовка. Допустимі ключі: \u003ccode\u003eremail'\u003c/code\u003e,\n\u003ccode\u003ereturn_path'', \u003c/code\u003edate'', \u003ccode\u003efrom'', \u003c/code\u003ereply_to\"\u003ccode\u003e, \u003c/code\u003e\"in_reply_to\"\u003ccode\u003e, \"subject\", \"to\", \"cc\", \"bcc\" і \"message_id\", які встановлюють відповідні заголовки повідомлень у заданий рядок (string). Для встановлення додаткових заголовків підтримується ключ ``custom_headers'', який містить асоціативний масив інших заголовків, наприклад, \u003c/code\u003e[\"User-Agent: My Mail Client\"]`.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ebodies\u003c/code\u003e\nІндексований масив тел. Перше тіло – це основна частина повідомлення;\nподальші тіла обробляються тільки якщо воно з типом\n\u003cstrong\u003e\u003ccode\u003eTYPEMULTIPART\u003c/code\u003e\u003c/strong\u003e; ці тіла становлять тіла частин.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eКлюч\u003c/th\u003e\n\u003cth\u003eТип\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003etype\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003eТип MIME. Один з \u003cstrong\u003eTYPETEXT\u003c/strong\u003e (за замовчуванням), \u003cstrong\u003eTYPEMULTIPART\u003c/strong\u003e, \u003cstrong\u003eTYPEMESSAGE\u003c/strong\u003e, \u003cstrong\u003eTYPEAPPLICATION\u003c/strong\u003e, \u003cstrong\u003eTYPEAUDIO\u003c/strong\u003e, **TYPEIMAGE **, \u003cstrong\u003eTYPEMODEL\u003c/strong\u003e або \u003cstrong\u003eTYPEOTHER\u003c/strong\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e'encoding'\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003eЗначення Content-Transfer-Encoding. Одне з \u003cstrong\u003eENC7BIT\u003c/strong\u003e (default), \u003cstrong\u003eENC8BIT\u003c/strong\u003e, \u003cstrong\u003eENCBINARY\u003c/strong\u003e, \u003cstrong\u003eENCBASE64\u003c/strong\u003e, \u003cstrong\u003eENCQUOTEDPRINTABLE\u003c/strong\u003e або **ENCOTHER **.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003echarset\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003eПараметр charset типу MIME.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003etype.parameters\u003c/td\u003e\n\u003ctd\u003earray\u003c/td\u003e\n\u003ctd\u003eАсоціативний масив (array) імен параметрів Content-Type та їх значень.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003esubtype\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003eПідтип MIME, наприклад, jpeg для \u003cstrong\u003eTYPEIMAGE\u003c/strong\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eid\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003eЗначення Content-ID.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edescription\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003eЗначення Content-Description.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edisposition.type\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003eЗначення \"Content-Disposition\", наприклад, \"attachment\".\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edisposition\u003c/td\u003e\n\u003ctd\u003earray\u003c/td\u003e\n\u003ctd\u003eАсоціативний масив (array) імен параметрів Content-Disposition та їх значень.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003econtents.data\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003eКорисне навантаження.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003elines\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003eРозмір корисного навантаження у рядках.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ebytes\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003eРозмір корисного навантаження у байтах.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003emd5\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003eКонтрольна сума MD5 корисного навантаження.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eСтруктура масиву тіла\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає MIME-повідомлення у вигляді рядка (string) або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003eimap_mail_compose()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$envelope[\"from\"]= \"\u003ca href=\"mailto:joe@example.com\"\u003ejoe@example.com\u003c/a\u003e\";$envelope[\"to\"] = \"\u003ca href=\"mailto:foo@example.com\"\u003efoo@example.com\u003c/a\u003e\";$envelope[\"cc\"]  = \"\u003ca href=\"mailto:bar@example.com\"\u003ebar@example.com\u003c/a\u003e \";$part1[\"type\"] = TYPEMULTIPART;$part1[\"subtype\"] = \"mixed\";$filename = \"/tmp/imap.c.gz\";$fp = fopen($filename, \"r\") ;$contents = fread($fp, filesize($filename));fclose($fp);$part2[\"type\"] = TYPEAPPLICATION;$part2[\"encoding\"] = ENCBINARY;$part2[\"subtype\"] = \"octet-stream\";$part2[\"description\"] = basename($filename);$part2[\"contents.data\"] = $contents;$part3[\"type\"] = TYPETEXT;$part3[\"subtype\"] = \"plain\";$part3[\"description\"] = \"description3\";$part3[\"contents.data\"] = \"contents.data3\u003c/p\u003e\n\u003cp\u003e\";$body[1] = $part1;$body[2] = $part2;$body[3] = $part3;echo nl2br(imap_mail_compose($envelope, $body));?\u003e `\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.imap-mail-compose.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

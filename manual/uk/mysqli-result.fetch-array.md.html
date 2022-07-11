@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli-result.fetch-array | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli-result.fetch-all.md">« mysqli_result::fetch_all</a></p>
+</li>
+<li>
+<p><a href="mysqli-result.fetch-assoc.md">mysqli_result::fetch_assoc »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.mysqli-result.md">mysqli_result</a></p>
+</li>
+<li>
+<p>Вибирає наступний рядок з набору результатів та поміщає його в
+асоціативний масив, звичайний масив або обидва</p>
+</li>
+</ul>
+<h1>mysqli_result::fetch_array</h1>
+<h1>mysqli_fetch_array</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<p>mysqli_result::fetch_array -- mysqli_fetch_array -- Вибирає наступну
+рядок з набору результатів і поміщає їх у асоціативний масив,
+звичайний масив або в обидва</p>
+<h3>Опис</h3>
+<p>Об'єктно-орієнтований стиль</p>
+<p>public <strong>mysqli_result::fetch_array</strong>(int <code>$mode</code> = <strong><code>MYSQLI_BOTH</code></strong>):
+array|null|false</p>
+<p>Процедурний стиль</p>
+<p><strong>mysqli_fetch_array</strong>(<a href="class.mysqli-result.md">mysqli_result</a>
+<code>$result</code>, int <code>$mode</code> = <strong><code>MYSQLI_BOTH</code></strong>): array|null|false</p>
+<p>Вибирає один рядок даних із набору результатів та повертає її у вигляді
+масиву. Кожен наступний виклик цієї функції повертатиметься
+наступний рядок у наборі результатів або <strong><code>null</code></strong>, якщо рядків більше
+ні.</p>
+<p>Крім зберігання даних у числових індексах масиву результатів, функція
+також може зберігати дані в асоціативних індексах, використовуючи імена
+полів набору результатів як ключі.</p>
+<p>Якщо два і більше стовпця результату мають однакове ім'я, то останній
+стовпець матиме пріоритет і перезапише будь-які попередні дані. В
+таких ситуаціях для доступу до даних всіх стовпців з однаковими іменами
+краще користуватися звичайними масивами, індексованими номерами
+стовпців.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Імена полів, що повертаються цією функцією,
+<em>залежними від регістру</em>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>: Ця функція встановлює NULL-поля у значення
+<strong><code>null</code></strong> PHP.</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>result</code>
+Тільки для процедурного стилю: об'єкт
+<a href="class.mysqli-result.md">mysqli_result</a>, отриманий за допомогою
+<a href="mysqli.query.md">mysqli_query()</a>,
+<a href="mysqli.store-result.md">mysqli_store_result()</a>,
+<a href="mysqli.use-result.md">mysqli_use_result()</a> або
+<a href="mysqli-stmt.get-result.md">mysqli_stmt_get_result()</a>.</p>
+<p><code>mode</code>
+Цей необов'язковий параметр набуває значення константи, яка
+вказує на тип масиву, який потрібно помістити дані.
+Можливі значення параметра: <strong><code>MYSQLI_ASSOC</code></strong>, <strong><code>MYSQLI_NUM</code></strong> або
+<strong><code>MYSQLI_BOTH</code></strong>.</p>
+<p>При використанні константи <strong><code>MYSQLI_ASSOC</code></strong> функція поводитиметься
+ідентично <a href="mysqli-result.fetch-assoc.md">mysqli_fetch_assoc()</a>, а при
+<strong><code>MYSQLI_NUM</code></strong> ідентичні функції
+<a href="mysqli-result.fetch-row.md">mysqli_fetch_row()</a>. При завданні
+<strong><code>MYSQLI_BOTH</code></strong> функція створить один масив, що включає атрибути обох
+варіантів.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає масив, що представляє обраний рядок, <strong><code>null</code></strong>, якщо у
+наборі результатів більше немає рядків або <strong><code>false</code></strong> у разі
+виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>mysqli_result::fetch_array()</strong></strong></p>
+<p>Об'єктно-орієнтований стиль</p>
+<p>`&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli("localhost", "my_user", "my_password", "world");$query =| | $result = $mysqli->query($query);/* числовий масив <em>/$row = $result->fetch_array(MYSQLI_NUM);printf("%s (%s)
+", $row[0], $row[1]);/</em> асоціативний масив <em>/$row = $result->fetch_array(MYSQLI_ASSOC);printf("%s (%s)
+", $row["Name"], $row["CountryCode"]);/</em> асоціативний і числової масиви */$row = $result->fetch_array(MYSQLI_BOTH);printf("%s (%s)
+", $row[0], $row["CountryCode"]);</p>
+<p>Процедурний стиль</p>
+<p>`&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = mysqli_connect("localhost", "my_user", "my_password", "world");$query = "SELECT result = mysqli_query($mysqli, $query);/* числовий масив <em>/$row = mysqli_fetch_array($result, MYSQLI_NUM);printf("%s (%s)
+", $row[0], $row[1]);/</em> асоціативний масив <em>/$row = mysqli_fetch_array($result, MYSQLI_ASSOC);printf("%s (%s)
+", $row["Name"], $row["CountryCode"]);/</em> асоціативний і числової масиви */$row = mysqli_fetch_array($result, MYSQLI_BOTH);printf("%s (%s)
+", $row[0], $row["CountryCode"]);</p>
+<p>Результат виконання даних прикладів:</p>
+<p>Kabul (AFG)
+Кандахар (AFG)
+Herat (AFG)</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="mysqli-result.fetch-assoc.md">mysqli_fetch_assoc()</a> - Вибирає
+наступний рядок з набору результатів та поміщає її в асоціативний
+масив</li>
+<li><a href="mysqli-result.fetch-column.md">mysqli_fetch_column()</a> - Отримує
+один стовпець з наступного рядка набору результатів</li>
+<li><a href="mysqli-result.fetch-row.md">mysqli_fetch_row()</a> - Вибирає
+наступний рядок з набору результатів та поміщає її у звичайний
+масив</li>
+<li><a href="mysqli-result.fetch-object.md">mysqli_fetch_object()</a> - Вибирає
+наступний рядок із набору результатів у вигляді об'єкта</li>
+<li><a href="mysqli.query.md">mysqli_query()</a> - Виконує запит до бази даних</li>
+<li><a href="mysqli-result.data-seek.md">mysqli_data_seek()</a> - Переміщує
+покажчик результату на вибраний рядок</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli-result.fetch-array.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli-result.fetch-array.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli-result.fetch-array","slug":"mysqli-result.fetch-array.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli-result.fetch-all.md\"\u003e« mysqli_result::fetch_all\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli-result.fetch-assoc.md\"\u003emysqli_result::fetch_assoc »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВибирає наступний рядок з набору результатів та поміщає його в\nасоціативний масив, звичайний масив або обидва\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003emysqli_result::fetch_array\u003c/h1\u003e\n\u003ch1\u003emysqli_fetch_array\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emysqli_result::fetch_array -- mysqli_fetch_array -- Вибирає наступну\nрядок з набору результатів і поміщає їх у асоціативний масив,\nзвичайний масив або в обидва\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003emysqli_result::fetch_array\u003c/strong\u003e(int \u003ccode\u003e$mode\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003eMYSQLI_BOTH\u003c/code\u003e\u003c/strong\u003e):\narray|null|false\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003emysqli_fetch_array\u003c/strong\u003e(\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e\n\u003ccode\u003e$result\u003c/code\u003e, int \u003ccode\u003e$mode\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003eMYSQLI_BOTH\u003c/code\u003e\u003c/strong\u003e): array|null|false\u003c/p\u003e\n\u003cp\u003eВибирає один рядок даних із набору результатів та повертає її у вигляді\nмасиву. Кожен наступний виклик цієї функції повертатиметься\nнаступний рядок у наборі результатів або \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, якщо рядків більше\nні.\u003c/p\u003e\n\u003cp\u003eКрім зберігання даних у числових індексах масиву результатів, функція\nтакож може зберігати дані в асоціативних індексах, використовуючи імена\nполів набору результатів як ключі.\u003c/p\u003e\n\u003cp\u003eЯкщо два і більше стовпця результату мають однакове ім'я, то останній\nстовпець матиме пріоритет і перезапише будь-які попередні дані. В\nтаких ситуаціях для доступу до даних всіх стовпців з однаковими іменами\nкраще користуватися звичайними масивами, індексованими номерами\nстовпців.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Імена полів, що повертаються цією функцією,\n\u003cem\u003eзалежними від регістру\u003c/em\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Ця функція встановлює NULL-поля у значення\n\u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e PHP.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eresult\u003c/code\u003e\nТільки для процедурного стилю: об'єкт\n\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e, отриманий за допомогою\n\u003ca href=\"mysqli.query.md\"\u003emysqli_query()\u003c/a\u003e,\n\u003ca href=\"mysqli.store-result.md\"\u003emysqli_store_result()\u003c/a\u003e,\n\u003ca href=\"mysqli.use-result.md\"\u003emysqli_use_result()\u003c/a\u003e або\n\u003ca href=\"mysqli-stmt.get-result.md\"\u003emysqli_stmt_get_result()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emode\u003c/code\u003e\nЦей необов'язковий параметр набуває значення константи, яка\nвказує на тип масиву, який потрібно помістити дані.\nМожливі значення параметра: \u003cstrong\u003e\u003ccode\u003eMYSQLI_ASSOC\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eMYSQLI_NUM\u003c/code\u003e\u003c/strong\u003e або\n\u003cstrong\u003e\u003ccode\u003eMYSQLI_BOTH\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eПри використанні константи \u003cstrong\u003e\u003ccode\u003eMYSQLI_ASSOC\u003c/code\u003e\u003c/strong\u003e функція поводитиметься\nідентично \u003ca href=\"mysqli-result.fetch-assoc.md\"\u003emysqli_fetch_assoc()\u003c/a\u003e, а при\n\u003cstrong\u003e\u003ccode\u003eMYSQLI_NUM\u003c/code\u003e\u003c/strong\u003e ідентичні функції\n\u003ca href=\"mysqli-result.fetch-row.md\"\u003emysqli_fetch_row()\u003c/a\u003e. При завданні\n\u003cstrong\u003e\u003ccode\u003eMYSQLI_BOTH\u003c/code\u003e\u003c/strong\u003e функція створить один масив, що включає атрибути обох\nваріантів.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає масив, що представляє обраний рядок, \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, якщо у\nнаборі результатів більше немає рядків або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі\nвиникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003emysqli_result::fetch_array()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli(\"localhost\", \"my_user\", \"my_password\", \"world\");$query =| | $result = $mysqli-\u003equery($query);/* числовий масив \u003cem\u003e/$row = $result-\u003efetch_array(MYSQLI_NUM);printf(\"%s (%s)\n\", $row[0], $row[1]);/\u003c/em\u003e асоціативний масив \u003cem\u003e/$row = $result-\u003efetch_array(MYSQLI_ASSOC);printf(\"%s (%s)\n\", $row[\"Name\"], $row[\"CountryCode\"]);/\u003c/em\u003e асоціативний і числової масиви */$row = $result-\u003efetch_array(MYSQLI_BOTH);printf(\"%s (%s)\n\", $row[0], $row[\"CountryCode\"]);\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = mysqli_connect(\"localhost\", \"my_user\", \"my_password\", \"world\");$query = \"SELECT result = mysqli_query($mysqli, $query);/* числовий масив \u003cem\u003e/$row = mysqli_fetch_array($result, MYSQLI_NUM);printf(\"%s (%s)\n\", $row[0], $row[1]);/\u003c/em\u003e асоціативний масив \u003cem\u003e/$row = mysqli_fetch_array($result, MYSQLI_ASSOC);printf(\"%s (%s)\n\", $row[\"Name\"], $row[\"CountryCode\"]);/\u003c/em\u003e асоціативний і числової масиви */$row = mysqli_fetch_array($result, MYSQLI_BOTH);printf(\"%s (%s)\n\", $row[0], $row[\"CountryCode\"]);\u003c/p\u003e\n\u003cp\u003eРезультат виконання даних прикладів:\u003c/p\u003e\n\u003cp\u003eKabul (AFG)\nКандахар (AFG)\nHerat (AFG)\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-assoc.md\"\u003emysqli_fetch_assoc()\u003c/a\u003e - Вибирає\nнаступний рядок з набору результатів та поміщає її в асоціативний\nмасив\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-column.md\"\u003emysqli_fetch_column()\u003c/a\u003e - Отримує\nодин стовпець з наступного рядка набору результатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-row.md\"\u003emysqli_fetch_row()\u003c/a\u003e - Вибирає\nнаступний рядок з набору результатів та поміщає її у звичайний\nмасив\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-object.md\"\u003emysqli_fetch_object()\u003c/a\u003e - Вибирає\nнаступний рядок із набору результатів у вигляді об'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.query.md\"\u003emysqli_query()\u003c/a\u003e - Виконує запит до бази даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.data-seek.md\"\u003emysqli_data_seek()\u003c/a\u003e - Переміщує\nпокажчик результату на вибраний рядок\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli-result.fetch-array.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

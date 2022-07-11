@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.db2-set-option | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.db2-server-info.md">«db2_server_info</a></p>
+</li>
+<li>
+<p><a href="function.db2-special-columns.md">db2_special_columns »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.ibm-db2.md">Функції IBM DB2</a></p>
+</li>
+<li>
+<p>Встановлення опції для з'єднання чи ресурсу оператора</p>
+</li>
+</ul>
+<p>#db2_set_option</p>
+<p>(PECL ibm_db2 >= 1.0.0)</p>
+<p>db2_set_option — Встановіть опцію для з'єднання або ресурсу оператора.</p>
+<h3>Опис</h3>
+<p><strong>db2_set_option</strong>(resource <code>$resource</code>, array <code>$options</code>, int <code>$type</code>):
+bool</p>
+<p>Встановіть опцію для з'єднання або ресурсу оператора. Для ресурсу
+результуючого набору опції задавати не можна.</p>
+<h3>Список параметрів</h3>
+<p><code>resource</code>
+Коректний ресурс оператора, отриманий з
+<a href="function.db2-prepare.md">db2_prepare()</a> або ресурс з'єднання,
+отриманий з <a href="function.db2-connect.md">db2_connect()</a> або
+<a href="function.db2-pconnect.md">db2_pconnect()</a>.</p>
+<p><code>options</code>
+Асоціативний масив, що містить опції, що відповідають ресурсу. Цей
+параметр можна використовувати для зміни режиму автопідтвердження
+транзакцій, типу курсору та завдання регістру імен стовпців (нижній,
+верхній, як є) у результуючому наборі.</p>
+<p><code>autocommit</code>
+<code>DB2_AUTOCOMMIT_ON</code> - включити режим автопідтвердження транзакцій для
+заданого з'єднання.</p>
+<p><code>DB2_AUTOCOMMIT_OFF</code> - вимкнути режим автопідтвердження транзакцій для
+заданого з'єднання.</p>
+<p><code>cursor</code>
+<code>DB2_FORWARD_ONLY</code> - встановити тип курсору "тільки вперед". Це тип по
+замовчуванням і він підтримується всіма базами даних.</p>
+<p><code>DB2_SCROLLABLE</code> - задати тип курсору як "перемотується". Цей тип
+курсора дозволяє отримувати доступ до довільних рядків результуючого
+доступний лише для IBM DB2 Universal Database.</p>
+<p><code>binmode</code>
+<code>DB2_BINARY</code> - визначає, що бінарні дані будуть повернені як
+є. Це режим за промовчанням, він рівнозначний завданням <code>ibm_db2.binmode=1</code>
+в <code>php.ini</code>.</p>
+<p><code>DB2_CONVERT</code> - визначає, що бінарні дані будуть сконвертовані в
+шістнадцяткове уявлення. Рівносильне завдання <code>ibm_db2.binmode=2</code>
+в <code>php.ini</code>.</p>
+<p><code>DB2_CONVERT</code> - визначає, що бінарні дані будуть сконвертовані в
+<strong><code>null</code></strong>. Рівносильно завдання <code>ibm_db2.binmode=3</code> в <code>php.ini</code>.</p>
+<p><code>db2_attr_case</code>
+<code>DB2_CASE_LOWER</code> - визначає, що імена стовпців будуть повернуті до
+нижньому регістрі.</p>
+<p>DB2_CASE_UPPER - визначає, що імена стовпців будуть повернуті в
+верхньому регістрі.</p>
+<p><code>DB2_CASE_NATURAL</code> - визначає, що імена стовпців будуть повернуті як
+є.</p>
+<p><code>deferred_prepare</code>
+<code>DB2_DEFERRED_PREPARE_ON</code> - включає відкладену підготовку ресурсу
+оператора.</p>
+<p><code>DB2_DEFERRED_PREPARE_OFF</code> - вимикає відкладену підготовку ресурсу
+оператора.</p>
+<p>Наступні нові опції i5/OS доступні у ibm_db2 версії 1.5.1 та вище. Ці
+опції доступні лише якщо PHP та ibm_db2 запущені на системі i5.</p>
+<p><code>i5_fetch_only</code>
+DB2_I5_FETCH_ON - курсори можуть бути тільки для читання і не можуть
+використовуватися для позиціонування DELETE або UPDATE. Є
+поведінкою за умовчанням, тільки якщо змінна оточення
+<code>SQL_ATTR_FOR_FETCH_ONLY</code> не встановлена в <code>SQL_FALSE</code>.</p>
+<p><code>DB2_I5_FETCH_OFF</code> - курсори можна використовувати для позиціонування при
+DELETE чи UPDATE.</p>
+<p>Наступні нові опції доступні в ibm_db2 версії 1.8.0 та вище.</p>
+<p><code>rowcount</code>
+<code>DB2_ROWCOUNT_PREFETCH_ON</code> - клієнт може запросити кількість рядків
+перед вилученням, що означає, що функція
+<a href="function.db2-num-rows.md">db2_num_rows()</a> поверне кількість
+вибраних рядків, навіть якщо використовується курсор <code>ROLLFORWARD_ONLY</code>.</p>
+<p><code>DB2_ROWCOUNT_PREFETCH_OFF</code> - клієнт не може запросити кількість рядків
+перед вилученням</p>
+<p>Наступні нові опції доступні у ibm_db2 версії 1.7.0 та вище.</p>
+<p><code>trusted_user</code>
+Щоб перевести користувача до статусу довіреного користувача, вкажіть
+ідентифікатор (рядок) довіреного користувача як значення
+цього параметра. Ця опція може бути задана лише для ресурсу
+з'єднання. Для використання цієї опції необхідно, щоб
+з'єднання було дозволено довірений контекст.</p>
+<p><code>trusted_password</code>
+Пароль (рядок), який відповідає ідентифікатору користувача, заданому
+у trusted_user.</p>
+<p>Наступні нові опції доступні в ibm_db2 версії 1.6.0 та вище. Ці опції
+надають корисну інформацію, яку можна отримати через
+<a href="function.db2-get-option.md">db2_get_option()</a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо значення кожної опції встановлено, деякі сервери можуть не зуміти
+обробити все значення і обріжуть його.</p>
+<p>Для впевненості в тому, що всі опції конвертовані коректно при
+передачі на хост, використовуйте лише символи A-Z, 0-9,
+підкреслення (_) та точку (.).</p>
+</blockquote>
+<p><code>userid</code>
+<code>SQL_ATTR_INFO_USERID</code> - покажчик на символьний рядок, що закінчується
+null-байтом і містить ідентифікатор користувача, переданий базі
+даний при з'єднанні.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>DB2 для серверів z/OS та OS/390 підтримує довжину до 16
+символи. Ідентифікатор користувача не скомпрометує
+Ідентифікатор авторизації – це різні сутності.</p>
+</blockquote>
+<p><code>acctstr</code>
+<code>SQL_ATTR_INFO_ACCTSTR</code> - покажчик на символьний рядок, що закінчується
+null-байтом і використовується для ідентифікації облікового рядка клієнта,
+відповідної надісланої на сервер при з'єднанні.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>DB2 для серверів z/OS та OS/390 підтримує довжину аж до 200
+символи.</p>
+</blockquote>
+<p><code>applname</code>
+<code>SQL_ATTR_INFO_APPLNAME</code> - вказівник на символьний рядок, що закінчується
+null-байтом і використовується для ідентифікації клієнтського імені
+програми, відповідної надісланої на сервер при з'єднанні.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>DB2 для серверів z/OS та OS/390 підтримує довжину аж до 32
+символи.</p>
+</blockquote>
+<p><code>wrkstnname</code>
+<code>SQL_ATTR_INFO_WRKSTNNAME</code> - вказівник на символьний рядок, що закінчується
+null-байтом і використовується для ідентифікації імені робочої станції,
+відповідної надісланої на сервер при з'єднанні.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>DB2 для серверів z/OS та OS/390 підтримує довжину до 18
+символи.</p>
+</blockquote>
+<p><code>type</code>
+Цілочисленне значення, що визначає тип ресурсу, який був переданий у
+функцію.</p>
+<p><code>1</code> - переданий ресурс з'єднання.</p>
+<p>Будь-яке інше значення, відмінне від <code>1</code> означає ресурс оператора.</p>
+<p>Наступна таблиця показує, які параметри сумісні з якими
+ресурсами:</p>
+<table>
+<thead>
+<tr>
+<th>Ключ</th>
+<th>Значення</th>
+<th>Тип ресурсу</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td>Поєднання</td>
+<td>Оператор</td>
+<td>Результуючий набір</td>
+</tr>
+<tr>
+<td>autocommit</td>
+<td>DB2_AUTOCOMMIT_ON</td>
+<td>X</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>autocommit</td>
+<td>DB2_AUTOCOMMIT_OFF</td>
+<td>X</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>DB2_SCROLLABLE</td>
+<td>-</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>DB2_FORWARD_ONLY</td>
+<td>-</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>binmode</td>
+<td>DB2_BINARY</td>
+<td>X</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>binmode</td>
+<td>DB2_CONVERT</td>
+<td>X</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>binmode</td>
+<td>DB2_PASSTHRU</td>
+<td>X</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>db2_attr_case</td>
+<td>DB2_CASE_LOWER</td>
+<td>X</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>db2_attr_case</td>
+<td>DB2_CASE_UPPER</td>
+<td>X</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>db2_attr_case</td>
+<td>DB2_CASE_NATURAL</td>
+<td>X</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>deferred_prepare</td>
+<td>DB2_DEFERRED_PREPARE_ON</td>
+<td>-</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>deferred_prepare</td>
+<td>DB2_DEFERRED_PREPARE_OFF</td>
+<td>-</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>i5_fetch_only</td>
+<td>DB2_I5_FETCH_ON</td>
+<td>-</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>i5_fetch_only</td>
+<td>DB2_I5_FETCH_OFF</td>
+<td>-</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>rowcount</td>
+<td>DB2_ROWCOUNT_PREFETCH_ON</td>
+<td>-</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>rowcount</td>
+<td>DB2_ROWCOUNT_PREFETCH_OFF</td>
+<td>-</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>trusted_user</td>
+<td> (String)</td>
+<td>X</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>trusted_password</td>
+<td> (String)</td>
+<td>X</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>userid</td>
+<td>SQL_ATTR_INFO_USERID</td>
+<td>X</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>acctstr</td>
+<td>SQL_ATTR_INFO_ACCTSTR</td>
+<td>X</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>applname</td>
+<td>SQL_ATTR_INFO_APPLNAME</td>
+<td>X</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>wrkstnname</td>
+<td>SQL_ATTR_INFO_WRKSTNNAME</td>
+<td>X</td>
+<td>X</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Матриця ресурс/параметр</strong></p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Встановлення одного параметра для ресурсу з'єднання</strong></p>
+<p><code>&#x3C;?php/* Параметри з'єднання з базою даних */$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/* Рядок з'єднання */$conn_string = "DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;";$conn_string .= "HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= "UID=$username;PWD=$password;";/* Отримуємо ресурс з'єднання */$conn = db2_connect($conn_string, '', '');/* Створюємо ассоциативный  = array('autocommit' => DB2_AUTOCOMMIT_ON);/* Викликаємо функцію */$result = db2_set_option($conn, $options, 1);/* Перевіряємо, всілі опції  Set Successfully';}else{ echo 'Could Not Set Options';}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Options Set Successfully</p>
+<p><strong>Приклад #2 Встановлення кількох параметрів для ресурсу з'єднання</strong></p>
+<p>` &#x3C;?php/* Параметри з'єднання з базою даних <em>/$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/</em> Рядок з'єднання <em>/$conn_string = "DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;";$conn_string .= "HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= "UID=$username;PWD=$password;";/</em> Отримуємо ресурс з'єднання <em>/$conn = db2_connect($conn_string, '', '');/</em> Створюємо ассоциативный  = array('autocommit' => DB2_AUTOCOMMIT_OFF,                    'binmode' => DB2_PASSTHRU,              'db2_attr_case' => DB2_CASE_UPPER,                     'cursor' => DB2_SCROLLABLE);/* Вызываем функцию <em>/$result = db2_set_option($conn, $options, 1 );/</em> Перевіряємо, всі лі опції встановилися */if($result){ echo 'Options Set Successfully';}else{ echo 'Could Not Set Options';}?</p>
+<p>Результат виконання цього прикладу:</p>
+<p>Options Set Successfully</p>
+<p><strong>Приклад #3 Встановлення кількох параметрів з одним некоректним
+ключем</strong></p>
+<p><code>&#x3C;?php/* Параметри з'єднання з базою даних */$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/* Рядок з'єднання */$conn_string = "DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;";$conn_string .= "HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= "UID=$username;PWD=$password;";/* Отримуємо ресурс з'єднання */$conn = db2_connect($conn_string, '', '');/* Створюємо ассоциативный  = array('autocommit' => DB2_AUTOCOMMIT_OFF,             'MY_INVALID_KEY' => DB2_PASSTHRU,              'db2_attr_case' => DB2_CASE_UPPER,                     'cursor' => DB2_SCROLLABLE);/* Вызываем функцию */$result = db2_set_option($conn, $options, 1 );/* Перевіряємо, усі ли опції встановилися */if($result){ echo 'Options Set Successfully';}else{ echo 'Could Not Set Options';}></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Could Not Set Options</p>
+<p><strong>Приклад #4 Встановлення кількох параметрів з одним некоректним
+значенням</strong></p>
+<p>` &#x3C;?php/* Параметри з'єднання з базою даних <em>/$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/</em> Рядок з'єднання <em>/$conn_string = "DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;";$conn_string .= "HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= "UID=$username;PWD=$password;";/</em> Отримуємо ресурс з'єднання <em>/$conn = db2_connect($conn_string, '', '');/</em> Створюємо ассоциативный  = array('autocommit' => DB2_AUTOCOMMIT_OFF,                    'binmode' => 'INVALID_VALUE',              'db2_attr_case' => DB2_CASE_UPPER,                     'cursor' => DB2_SCROLLABLE);/* Вызываем функцию <em>/$result = db2_set_option($conn, $options , 1);/</em> Перевіряємо, всі лі опції встановилися */if($result){  echo 'Options Set Successfully';}else{ echo 'Could Not Set Options';</p>
+<p>Результат виконання цього прикладу:</p>
+<p>Could Not Set Options</p>
+<p><strong>Приклад #5 Setting multiple parameters with a connection resource and
+the wrong type</strong></p>
+<p><code>&#x3C;?php/* Параметри з'єднання з базою даних */$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/* Рядок з'єднання */$conn_string = "DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;";$conn_string .= "HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= "UID=$username;PWD=$password;";/* Отримуємо ресурс з'єднання */$conn = db2_connect($conn_string, '', '');/* Створюємо ассоциативный  = array('autocommit' => DB2_AUTOCOMMIT_OFF,                    'binmode' => DB2_PASSTHRU,              'db2_attr_case' => DB2_CASE_UPPER,                     'cursor' => DB2_SCROLLABLE);/* Вызываем функцию */$result = db2_set_option($conn, $options, 2 );/* Перевіряємо, усі ли опції встановилися */if($result){ echo 'Options Set Successfully';}else{ echo 'Could Not Set Options';}></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Could Not Set Options</p>
+<p><strong>Приклад #6 Setting multiple parameters with the wrong resource</strong></p>
+<p><code>&#x3C;?php/* Параметри з'єднання з базою даних */$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/* Рядок з'єднання */$conn_string = "DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;";$conn_string .= "HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= "UID=$username;PWD=$password;";/* Отримуємо ресурс з'єднання */$conn = db2_connect($conn_string, '', '');/* Створюємо ассоциативный  = array('autocommit' => DB2_AUTOCOMMIT_OFF,                    'binmode' => DB2_PASSTHRU,              'db2_attr_case' => DB2_CASE_UPPER,                     'cursor' => DB2_SCROLLABLE);$stmt = db2_prepare($conn, 'SELECT * FROM EMPLOYEE');/* Викликаємо функцію */$result = db2_set_option($stmt, $options, 1);/* Перевіряємо, всі лі опції встановилися */if($result){  echo 'Options Set S? ';}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Could Not Set Options</p>
+<p><strong>Приклад #7 Putting it all together</strong></p>
+<p><code>&#x3C;?php/* Параметри з'єднання з базою даних */$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/* Рядок з'єднання */$conn_string = "DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;";$conn_string .= "HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= "UID=$username;PWD=$password;";/* Отримуємо ресурс з'єднання */$conn = db2_connect($conn_string, '', '');/* Створюємо ассоциативный  = array('db2_attr_case' => DB2_CASE_LOWER,                        'cursor' => DB2_SCROLLABLE);$stmt = db2_prepare($conn, 'SELECT * FROM EMPLOYEE WHERE EMPNO = ? OR EMPNO = ?');/* Вызываем функцию */$option_result = db2_set_option($stmt, $options, 2);$result = db2_execute($stmt, array('000130', '000140'));/* Отримуємо рядок 2 перед рядком */print_r(db2_fetch_assoc($stmt, 2));print '&#x3C;br />&#x3C;br />';print_r(db2_fetch_assoc($stmt, 1));?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Array
+(
+[empno] => 000140
+[firstnme] => HEATHER
+[midinit] => A
+[lastname] => NICHOLLS
+[workdept] => C01
+[phoneno] => 1793
+[hiredate] => 1976-12-15
+[job] => ANALYST
+[edlevel] => 18
+[sex] => F
+[birthdate] => 1946-01-19
+[salary] => 28420.00
+[bonus] => 600.00
+[comm] => 2274.00
+)</p>
+<p>Array
+(
+[empno] => 000130
+[firstnme] => DELORES
+[midinit] => M
+[lastname] => QUINTANA
+[workdept] => C01
+[phoneno] => 4578
+[hiredate] => 1971-07-28
+[job] => ANALYST
+[edlevel] => 16
+[sex] => F
+[birthdate] => 1925-09-15
+[salary] => 23800.00
+[bonus] => 500.00
+[comm] => 1904.00
+)</p>
+<p><strong>Приклад #8 Курсор i5/OS тільки для читання</strong></p>
+<p><code>&#x3C;?php  $conn = db2_connect("", "", "", array("i5_lib"=>"nobody")); $stmt = db2_prepare($conn, 'select * from names wherefirst = ?'); $name=="first2"; db2_bind_param($stmt, 1, "name", DB2_PARAM_IN); $options==array("i5_fetch_only"=>DB2_I5_FETCH_ON); db2_set_option($stmt,$options,0); if (db2_execute($stmt)) {    while ($row = db2_fetch_array($stmt)) {     echo "{$row[0]} {$row[1]}"; }  }?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>first2 last2</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.db2-connect.md">db2_connect()</a> - Повертає з'єднання з
+базою даних</li>
+<li><a href="function.db2-pconnect.md">db2_pconnect()</a> - Повертає постійне
+з'єднання з базою даних</li>
+<li><a href="function.db2-exec.md">db2_exec()</a> - Виконує SQL-запит безпосередньо</li>
+<li><a href="function.db2-prepare.md">db2_prepare()</a> - Підготовка
+SQL-запит до виконання</li>
+<li><a href="function.db2-cursor-type.md">db2_cursor_type()</a> - Повертає тип
+курсор, який використовується в ресурсі оператора</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.db2-set-option.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.db2-set-option.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.db2-set-option","slug":"function.db2-set-option.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.db2-server-info.md\"\u003e«db2_server_info\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.db2-special-columns.md\"\u003edb2_special_columns »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.ibm-db2.md\"\u003eФункції IBM DB2\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВстановлення опції для з'єднання чи ресурсу оператора\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#db2_set_option\u003c/p\u003e\n\u003cp\u003e(PECL ibm_db2 \u003e= 1.0.0)\u003c/p\u003e\n\u003cp\u003edb2_set_option — Встановіть опцію для з'єднання або ресурсу оператора.\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003edb2_set_option\u003c/strong\u003e(resource \u003ccode\u003e$resource\u003c/code\u003e, array \u003ccode\u003e$options\u003c/code\u003e, int \u003ccode\u003e$type\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003eВстановіть опцію для з'єднання або ресурсу оператора. Для ресурсу\nрезультуючого набору опції задавати не можна.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eresource\u003c/code\u003e\nКоректний ресурс оператора, отриманий з\n\u003ca href=\"function.db2-prepare.md\"\u003edb2_prepare()\u003c/a\u003e або ресурс з'єднання,\nотриманий з \u003ca href=\"function.db2-connect.md\"\u003edb2_connect()\u003c/a\u003e або\n\u003ca href=\"function.db2-pconnect.md\"\u003edb2_pconnect()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoptions\u003c/code\u003e\nАсоціативний масив, що містить опції, що відповідають ресурсу. Цей\nпараметр можна використовувати для зміни режиму автопідтвердження\nтранзакцій, типу курсору та завдання регістру імен стовпців (нижній,\nверхній, як є) у результуючому наборі.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eautocommit\u003c/code\u003e\n\u003ccode\u003eDB2_AUTOCOMMIT_ON\u003c/code\u003e - включити режим автопідтвердження транзакцій для\nзаданого з'єднання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_AUTOCOMMIT_OFF\u003c/code\u003e - вимкнути режим автопідтвердження транзакцій для\nзаданого з'єднання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ecursor\u003c/code\u003e\n\u003ccode\u003eDB2_FORWARD_ONLY\u003c/code\u003e - встановити тип курсору \"тільки вперед\". Це тип по\nзамовчуванням і він підтримується всіма базами даних.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_SCROLLABLE\u003c/code\u003e - задати тип курсору як \"перемотується\". Цей тип\nкурсора дозволяє отримувати доступ до довільних рядків результуючого\nдоступний лише для IBM DB2 Universal Database.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ebinmode\u003c/code\u003e\n\u003ccode\u003eDB2_BINARY\u003c/code\u003e - визначає, що бінарні дані будуть повернені як\nє. Це режим за промовчанням, він рівнозначний завданням \u003ccode\u003eibm_db2.binmode=1\u003c/code\u003e\nв \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_CONVERT\u003c/code\u003e - визначає, що бінарні дані будуть сконвертовані в\nшістнадцяткове уявлення. Рівносильне завдання \u003ccode\u003eibm_db2.binmode=2\u003c/code\u003e\nв \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_CONVERT\u003c/code\u003e - визначає, що бінарні дані будуть сконвертовані в\n\u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e. Рівносильно завдання \u003ccode\u003eibm_db2.binmode=3\u003c/code\u003e в \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edb2_attr_case\u003c/code\u003e\n\u003ccode\u003eDB2_CASE_LOWER\u003c/code\u003e - визначає, що імена стовпців будуть повернуті до\nнижньому регістрі.\u003c/p\u003e\n\u003cp\u003eDB2_CASE_UPPER - визначає, що імена стовпців будуть повернуті в\nверхньому регістрі.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_CASE_NATURAL\u003c/code\u003e - визначає, що імена стовпців будуть повернуті як\nє.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edeferred_prepare\u003c/code\u003e\n\u003ccode\u003eDB2_DEFERRED_PREPARE_ON\u003c/code\u003e - включає відкладену підготовку ресурсу\nоператора.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_DEFERRED_PREPARE_OFF\u003c/code\u003e - вимикає відкладену підготовку ресурсу\nоператора.\u003c/p\u003e\n\u003cp\u003eНаступні нові опції i5/OS доступні у ibm_db2 версії 1.5.1 та вище. Ці\nопції доступні лише якщо PHP та ibm_db2 запущені на системі i5.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_fetch_only\u003c/code\u003e\nDB2_I5_FETCH_ON - курсори можуть бути тільки для читання і не можуть\nвикористовуватися для позиціонування DELETE або UPDATE. Є\nповедінкою за умовчанням, тільки якщо змінна оточення\n\u003ccode\u003eSQL_ATTR_FOR_FETCH_ONLY\u003c/code\u003e не встановлена в \u003ccode\u003eSQL_FALSE\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FETCH_OFF\u003c/code\u003e - курсори можна використовувати для позиціонування при\nDELETE чи UPDATE.\u003c/p\u003e\n\u003cp\u003eНаступні нові опції доступні в ibm_db2 версії 1.8.0 та вище.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erowcount\u003c/code\u003e\n\u003ccode\u003eDB2_ROWCOUNT_PREFETCH_ON\u003c/code\u003e - клієнт може запросити кількість рядків\nперед вилученням, що означає, що функція\n\u003ca href=\"function.db2-num-rows.md\"\u003edb2_num_rows()\u003c/a\u003e поверне кількість\nвибраних рядків, навіть якщо використовується курсор \u003ccode\u003eROLLFORWARD_ONLY\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_ROWCOUNT_PREFETCH_OFF\u003c/code\u003e - клієнт не може запросити кількість рядків\nперед вилученням\u003c/p\u003e\n\u003cp\u003eНаступні нові опції доступні у ibm_db2 версії 1.7.0 та вище.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003etrusted_user\u003c/code\u003e\nЩоб перевести користувача до статусу довіреного користувача, вкажіть\nідентифікатор (рядок) довіреного користувача як значення\nцього параметра. Ця опція може бути задана лише для ресурсу\nз'єднання. Для використання цієї опції необхідно, щоб\nз'єднання було дозволено довірений контекст.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003etrusted_password\u003c/code\u003e\nПароль (рядок), який відповідає ідентифікатору користувача, заданому\nу trusted_user.\u003c/p\u003e\n\u003cp\u003eНаступні нові опції доступні в ibm_db2 версії 1.6.0 та вище. Ці опції\nнадають корисну інформацію, яку можна отримати через\n\u003ca href=\"function.db2-get-option.md\"\u003edb2_get_option()\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо значення кожної опції встановлено, деякі сервери можуть не зуміти\nобробити все значення і обріжуть його.\u003c/p\u003e\n\u003cp\u003eДля впевненості в тому, що всі опції конвертовані коректно при\nпередачі на хост, використовуйте лише символи A-Z, 0-9,\nпідкреслення (_) та точку (.).\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003euserid\u003c/code\u003e\n\u003ccode\u003eSQL_ATTR_INFO_USERID\u003c/code\u003e - покажчик на символьний рядок, що закінчується\nnull-байтом і містить ідентифікатор користувача, переданий базі\nданий при з'єднанні.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eDB2 для серверів z/OS та OS/390 підтримує довжину до 16\nсимволи. Ідентифікатор користувача не скомпрометує\nІдентифікатор авторизації – це різні сутності.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eacctstr\u003c/code\u003e\n\u003ccode\u003eSQL_ATTR_INFO_ACCTSTR\u003c/code\u003e - покажчик на символьний рядок, що закінчується\nnull-байтом і використовується для ідентифікації облікового рядка клієнта,\nвідповідної надісланої на сервер при з'єднанні.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eDB2 для серверів z/OS та OS/390 підтримує довжину аж до 200\nсимволи.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eapplname\u003c/code\u003e\n\u003ccode\u003eSQL_ATTR_INFO_APPLNAME\u003c/code\u003e - вказівник на символьний рядок, що закінчується\nnull-байтом і використовується для ідентифікації клієнтського імені\nпрограми, відповідної надісланої на сервер при з'єднанні.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eDB2 для серверів z/OS та OS/390 підтримує довжину аж до 32\nсимволи.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003ewrkstnname\u003c/code\u003e\n\u003ccode\u003eSQL_ATTR_INFO_WRKSTNNAME\u003c/code\u003e - вказівник на символьний рядок, що закінчується\nnull-байтом і використовується для ідентифікації імені робочої станції,\nвідповідної надісланої на сервер при з'єднанні.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eDB2 для серверів z/OS та OS/390 підтримує довжину до 18\nсимволи.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003etype\u003c/code\u003e\nЦілочисленне значення, що визначає тип ресурсу, який був переданий у\nфункцію.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e1\u003c/code\u003e - переданий ресурс з'єднання.\u003c/p\u003e\n\u003cp\u003eБудь-яке інше значення, відмінне від \u003ccode\u003e1\u003c/code\u003e означає ресурс оператора.\u003c/p\u003e\n\u003cp\u003eНаступна таблиця показує, які параметри сумісні з якими\nресурсами:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eКлюч\u003c/th\u003e\n\u003cth\u003eЗначення\u003c/th\u003e\n\u003cth\u003eТип ресурсу\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003eПоєднання\u003c/td\u003e\n\u003ctd\u003eОператор\u003c/td\u003e\n\u003ctd\u003eРезультуючий набір\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eautocommit\u003c/td\u003e\n\u003ctd\u003eDB2_AUTOCOMMIT_ON\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eautocommit\u003c/td\u003e\n\u003ctd\u003eDB2_AUTOCOMMIT_OFF\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCursor\u003c/td\u003e\n\u003ctd\u003eDB2_SCROLLABLE\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCursor\u003c/td\u003e\n\u003ctd\u003eDB2_FORWARD_ONLY\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ebinmode\u003c/td\u003e\n\u003ctd\u003eDB2_BINARY\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ebinmode\u003c/td\u003e\n\u003ctd\u003eDB2_CONVERT\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ebinmode\u003c/td\u003e\n\u003ctd\u003eDB2_PASSTHRU\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edb2_attr_case\u003c/td\u003e\n\u003ctd\u003eDB2_CASE_LOWER\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edb2_attr_case\u003c/td\u003e\n\u003ctd\u003eDB2_CASE_UPPER\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edb2_attr_case\u003c/td\u003e\n\u003ctd\u003eDB2_CASE_NATURAL\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edeferred_prepare\u003c/td\u003e\n\u003ctd\u003eDB2_DEFERRED_PREPARE_ON\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edeferred_prepare\u003c/td\u003e\n\u003ctd\u003eDB2_DEFERRED_PREPARE_OFF\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ei5_fetch_only\u003c/td\u003e\n\u003ctd\u003eDB2_I5_FETCH_ON\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ei5_fetch_only\u003c/td\u003e\n\u003ctd\u003eDB2_I5_FETCH_OFF\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003erowcount\u003c/td\u003e\n\u003ctd\u003eDB2_ROWCOUNT_PREFETCH_ON\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003erowcount\u003c/td\u003e\n\u003ctd\u003eDB2_ROWCOUNT_PREFETCH_OFF\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003etrusted_user\u003c/td\u003e\n\u003ctd\u003e (String)\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003etrusted_password\u003c/td\u003e\n\u003ctd\u003e (String)\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003euserid\u003c/td\u003e\n\u003ctd\u003eSQL_ATTR_INFO_USERID\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eacctstr\u003c/td\u003e\n\u003ctd\u003eSQL_ATTR_INFO_ACCTSTR\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eapplname\u003c/td\u003e\n\u003ctd\u003eSQL_ATTR_INFO_APPLNAME\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ewrkstnname\u003c/td\u003e\n\u003ctd\u003eSQL_ATTR_INFO_WRKSTNNAME\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003eX\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eМатриця ресурс/параметр\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Встановлення одного параметра для ресурсу з'єднання\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Параметри з'єднання з базою даних */$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/* Рядок з'єднання */$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= \"UID=$username;PWD=$password;\";/* Отримуємо ресурс з'єднання */$conn = db2_connect($conn_string, '', '');/* Створюємо ассоциативный  = array('autocommit' =\u003e DB2_AUTOCOMMIT_ON);/* Викликаємо функцію */$result = db2_set_option($conn, $options, 1);/* Перевіряємо, всілі опції  Set Successfully';}else{ echo 'Could Not Set Options';}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eOptions Set Successfully\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Встановлення кількох параметрів для ресурсу з'єднання\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php/* Параметри з'єднання з базою даних \u003cem\u003e/$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/\u003c/em\u003e Рядок з'єднання \u003cem\u003e/$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= \"UID=$username;PWD=$password;\";/\u003c/em\u003e Отримуємо ресурс з'єднання \u003cem\u003e/$conn = db2_connect($conn_string, '', '');/\u003c/em\u003e Створюємо ассоциативный  = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF,                    'binmode' =\u003e DB2_PASSTHRU,              'db2_attr_case' =\u003e DB2_CASE_UPPER,                     'cursor' =\u003e DB2_SCROLLABLE);/* Вызываем функцию \u003cem\u003e/$result = db2_set_option($conn, $options, 1 );/\u003c/em\u003e Перевіряємо, всі лі опції встановилися */if($result){ echo 'Options Set Successfully';}else{ echo 'Could Not Set Options';}?\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eOptions Set Successfully\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Встановлення кількох параметрів з одним некоректним\nключем\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Параметри з'єднання з базою даних */$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/* Рядок з'єднання */$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= \"UID=$username;PWD=$password;\";/* Отримуємо ресурс з'єднання */$conn = db2_connect($conn_string, '', '');/* Створюємо ассоциативный  = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF,             'MY_INVALID_KEY' =\u003e DB2_PASSTHRU,              'db2_attr_case' =\u003e DB2_CASE_UPPER,                     'cursor' =\u003e DB2_SCROLLABLE);/* Вызываем функцию */$result = db2_set_option($conn, $options, 1 );/* Перевіряємо, усі ли опції встановилися */if($result){ echo 'Options Set Successfully';}else{ echo 'Could Not Set Options';}\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eCould Not Set Options\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Встановлення кількох параметрів з одним некоректним\nзначенням\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php/* Параметри з'єднання з базою даних \u003cem\u003e/$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/\u003c/em\u003e Рядок з'єднання \u003cem\u003e/$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= \"UID=$username;PWD=$password;\";/\u003c/em\u003e Отримуємо ресурс з'єднання \u003cem\u003e/$conn = db2_connect($conn_string, '', '');/\u003c/em\u003e Створюємо ассоциативный  = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF,                    'binmode' =\u003e 'INVALID_VALUE',              'db2_attr_case' =\u003e DB2_CASE_UPPER,                     'cursor' =\u003e DB2_SCROLLABLE);/* Вызываем функцию \u003cem\u003e/$result = db2_set_option($conn, $options , 1);/\u003c/em\u003e Перевіряємо, всі лі опції встановилися */if($result){  echo 'Options Set Successfully';}else{ echo 'Could Not Set Options';\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eCould Not Set Options\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Setting multiple parameters with a connection resource and\nthe wrong type\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Параметри з'єднання з базою даних */$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/* Рядок з'єднання */$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= \"UID=$username;PWD=$password;\";/* Отримуємо ресурс з'єднання */$conn = db2_connect($conn_string, '', '');/* Створюємо ассоциативный  = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF,                    'binmode' =\u003e DB2_PASSTHRU,              'db2_attr_case' =\u003e DB2_CASE_UPPER,                     'cursor' =\u003e DB2_SCROLLABLE);/* Вызываем функцию */$result = db2_set_option($conn, $options, 2 );/* Перевіряємо, усі ли опції встановилися */if($result){ echo 'Options Set Successfully';}else{ echo 'Could Not Set Options';}\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eCould Not Set Options\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #6 Setting multiple parameters with the wrong resource\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Параметри з'єднання з базою даних */$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/* Рядок з'єднання */$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= \"UID=$username;PWD=$password;\";/* Отримуємо ресурс з'єднання */$conn = db2_connect($conn_string, '', '');/* Створюємо ассоциативный  = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF,                    'binmode' =\u003e DB2_PASSTHRU,              'db2_attr_case' =\u003e DB2_CASE_UPPER,                     'cursor' =\u003e DB2_SCROLLABLE);$stmt = db2_prepare($conn, 'SELECT * FROM EMPLOYEE');/* Викликаємо функцію */$result = db2_set_option($stmt, $options, 1);/* Перевіряємо, всі лі опції встановилися */if($result){  echo 'Options Set S? ';}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eCould Not Set Options\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #7 Putting it all together\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Параметри з'єднання з базою даних */$database = 'SAMPLE';$hostname = 'localhost';$port = 50000;$protocol = 'TCPIP';$username =    ibmdb2';/* Рядок з'єднання */$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL= ;$conn_string .= \"UID=$username;PWD=$password;\";/* Отримуємо ресурс з'єднання */$conn = db2_connect($conn_string, '', '');/* Створюємо ассоциативный  = array('db2_attr_case' =\u003e DB2_CASE_LOWER,                        'cursor' =\u003e DB2_SCROLLABLE);$stmt = db2_prepare($conn, 'SELECT * FROM EMPLOYEE WHERE EMPNO = ? OR EMPNO = ?');/* Вызываем функцию */$option_result = db2_set_option($stmt, $options, 2);$result = db2_execute($stmt, array('000130', '000140'));/* Отримуємо рядок 2 перед рядком */print_r(db2_fetch_assoc($stmt, 2));print '\u0026#x3C;br /\u003e\u0026#x3C;br /\u003e';print_r(db2_fetch_assoc($stmt, 1));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eArray\n(\n[empno] =\u003e 000140\n[firstnme] =\u003e HEATHER\n[midinit] =\u003e A\n[lastname] =\u003e NICHOLLS\n[workdept] =\u003e C01\n[phoneno] =\u003e 1793\n[hiredate] =\u003e 1976-12-15\n[job] =\u003e ANALYST\n[edlevel] =\u003e 18\n[sex] =\u003e F\n[birthdate] =\u003e 1946-01-19\n[salary] =\u003e 28420.00\n[bonus] =\u003e 600.00\n[comm] =\u003e 2274.00\n)\u003c/p\u003e\n\u003cp\u003eArray\n(\n[empno] =\u003e 000130\n[firstnme] =\u003e DELORES\n[midinit] =\u003e M\n[lastname] =\u003e QUINTANA\n[workdept] =\u003e C01\n[phoneno] =\u003e 4578\n[hiredate] =\u003e 1971-07-28\n[job] =\u003e ANALYST\n[edlevel] =\u003e 16\n[sex] =\u003e F\n[birthdate] =\u003e 1925-09-15\n[salary] =\u003e 23800.00\n[bonus] =\u003e 500.00\n[comm] =\u003e 1904.00\n)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #8 Курсор i5/OS тільки для читання\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php  $conn = db2_connect(\"\", \"\", \"\", array(\"i5_lib\"=\u003e\"nobody\")); $stmt = db2_prepare($conn, 'select * from names wherefirst = ?'); $name==\"first2\"; db2_bind_param($stmt, 1, \"name\", DB2_PARAM_IN); $options==array(\"i5_fetch_only\"=\u003eDB2_I5_FETCH_ON); db2_set_option($stmt,$options,0); if (db2_execute($stmt)) {    while ($row = db2_fetch_array($stmt)) {     echo \"{$row[0]} {$row[1]}\"; }  }?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003efirst2 last2\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.db2-connect.md\"\u003edb2_connect()\u003c/a\u003e - Повертає з'єднання з\nбазою даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.db2-pconnect.md\"\u003edb2_pconnect()\u003c/a\u003e - Повертає постійне\nз'єднання з базою даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.db2-exec.md\"\u003edb2_exec()\u003c/a\u003e - Виконує SQL-запит безпосередньо\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.db2-prepare.md\"\u003edb2_prepare()\u003c/a\u003e - Підготовка\nSQL-запит до виконання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.db2-cursor-type.md\"\u003edb2_cursor_type()\u003c/a\u003e - Повертає тип\nкурсор, який використовується в ресурсі оператора\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.db2-set-option.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

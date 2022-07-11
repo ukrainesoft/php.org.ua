@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.mysqli-get-client-stats | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.mysqli-execute.md">«mysqli_execute</a></p>
+</li>
+<li>
+<p><a href="function.mysqli-get-links-stats.md">mysqli_get_links_stats »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.mysqli.md">Синоніми та застарілі функції Mysqli</a></p>
+</li>
+<li>
+<p>отримати клієнтську попроцесну статистику</p>
+</li>
+</ul>
+<h1>mysqli_get_client_stats</h1>
+<p>(PHP 5 >= 5.3.0, PHP 7, PHP 8)</p>
+<p>mysqli_get_client_stats - Отримати клієнтську попроцесну статистику</p>
+<h3>Опис</h3>
+<p><strong>mysqli_get_client_stats</strong>(): array</p>
+<p>Повертає попроцесну клієнтську статистику.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Доступно лише з модулем <a href="book.mysqlnd.md">mysqlnd</a>.</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<h3>Значення, що повертаються</h3>
+<p>Повертає масив із статистикою.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>mysqli_get_client_stats()</strong></strong></p>
+<p><code>&#x3C;?php$link = mysqli_connect();print_r(mysqli_get_client_stats());?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Array
+(
+[bytes_sent] => 43
+[bytes_received] => 80
+[packets_sent] => 1
+[packets_received] => 2
+[protocol_overhead_in] => 8
+[protocol_overhead_out] => 4
+[bytes_received_ok_packet] => 11
+[bytes_received_eof_packet] => 0
+[bytes_received_rset_header_packet] => 0
+[bytes_received_rset_field_meta_packet] => 0
+[bytes_received_rset_row_packet] => 0
+[bytes_received_prepare_response_packet] => 0
+[bytes_received_change_user_packet] => 0
+[packets_sent_command] => 0
+[packets_received_ok] => 1
+[packets_received_eof] => 0
+[packets_received_rset_header] => 0
+[packets_received_rset_field_meta] => 0
+[packets_received_rset_row] => 0
+[packets_received_prepare_response] => 0
+[packets_received_change_user] => 0
+[result_set_queries] => 0
+[non_result_set_queries] => 0
+[no_index_used] => 0
+[bad_index_used] => 0
+[slow_queries] => 0
+[buffered_sets] => 0
+[unbuffered_sets] => 0
+[ps_buffered_sets] => 0
+[ps_unbuffered_sets] => 0
+[flushed_normal_sets] => 0
+[flushed_ps_sets] => 0
+[ps_prepared_never_executed] => 0
+[ps_prepared_once_executed] => 0
+[rows_fetched_from_server_normal] => 0
+[rows_fetched_from_server_ps] => 0
+[rows_buffered_from_client_normal] => 0
+[rows_buffered_from_client_ps] => 0
+[rows_fetched_from_client_normal_buffered] => 0
+[rows_fetched_from_client_normal_unbuffered] => 0
+[rows_fetched_from_client_ps_buffered] => 0
+[rows_fetched_from_client_ps_unbuffered] => 0
+[rows_fetched_from_client_ps_cursor] => 0
+[rows_skipped_normal] => 0
+[rows_skipped_ps] => 0
+[copy_on_write_saved] => 0
+[copy_on_write_performed] => 0
+[command_buffer_too_small] => 0
+[connect_success] => 1
+[connect_failure] => 0
+[connection_reused] => 0
+[reconnect] => 0
+[pconnect_success] => 0
+[active_connections] => 1
+[active_persistent_connections] => 0
+[explicit_close] => 0
+[implicit_close] => 0
+[disconnect_close] => 0
+[in_middle_of_command_close] => 0
+[explicit_free_result] => 0
+[implicit_free_result] => 0
+[explicit_stmt_close] => 0
+[implicit_stmt_close] => 0
+[mem_emalloc_count] => 0
+[mem_emalloc_ammount] => 0
+[mem_ecalloc_count] => 0
+[mem_ecalloc_ammount] => 0
+[mem_erealloc_count] => 0
+[mem_erealloc_ammount] => 0
+[mem_efree_count] => 0
+[mem_malloc_count] => 0
+[mem_malloc_ammount] => 0
+[mem_calloc_count] => 0
+[mem_calloc_ammount] => 0
+[mem_realloc_count] => 0
+[mem_realloc_ammount] => 0
+[mem_free_count] => 0
+[proto_text_fetched_null] => 0
+[proto_text_fetched_bit] => 0
+[proto_text_fetched_tinyint] => 0
+[proto_text_fetched_short] => 0
+[proto_text_fetched_int24] => 0
+[proto_text_fetched_int] => 0
+[proto_text_fetched_bigint] => 0
+[proto_text_fetched_decimal] => 0
+[proto_text_fetched_float] => 0
+[proto_text_fetched_double] => 0
+[proto_text_fetched_date] => 0
+[proto_text_fetched_year] => 0
+[proto_text_fetched_time] => 0
+[proto_text_fetched_datetime] => 0
+[proto_text_fetched_timestamp] => 0
+[proto_text_fetched_string] => 0
+[proto_text_fetched_blob] => 0
+[proto_text_fetched_enum] => 0
+[proto_text_fetched_set] => 0
+[proto_text_fetched_geometry] => 0
+[proto_text_fetched_other] => 0
+[proto_binary_fetched_null] => 0
+[proto_binary_fetched_bit] => 0
+[proto_binary_fetched_tinyint] => 0
+[proto_binary_fetched_short] => 0
+[proto_binary_fetched_int24] => 0
+[proto_binary_fetched_int] => 0
+[proto_binary_fetched_bigint] => 0
+[proto_binary_fetched_decimal] => 0
+[proto_binary_fetched_float] => 0
+[proto_binary_fetched_double] => 0
+[proto_binary_fetched_date] => 0
+[proto_binary_fetched_year] => 0
+[proto_binary_fetched_time] => 0
+[proto_binary_fetched_datetime] => 0
+[proto_binary_fetched_timestamp] => 0
+[proto_binary_fetched_string] => 0
+[proto_binary_fetched_blob] => 0
+[proto_binary_fetched_enum] => 0
+[proto_binary_fetched_set] => 0
+[proto_binary_fetched_geometry] => 0
+[proto_binary_fetched_other] => 0
+)</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="mysqlnd.stats.md">Опис метрик</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.mysqli-get-client-stats.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.mysqli-get-client-stats.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.mysqli-get-client-stats","slug":"function.mysqli-get-client-stats.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mysqli-execute.md\"\u003e«mysqli_execute\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mysqli-get-links-stats.md\"\u003emysqli_get_links_stats »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.mysqli.md\"\u003eСиноніми та застарілі функції Mysqli\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eотримати клієнтську попроцесну статистику\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003emysqli_get_client_stats\u003c/h1\u003e\n\u003cp\u003e(PHP 5 \u003e= 5.3.0, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emysqli_get_client_stats - Отримати клієнтську попроцесну статистику\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003emysqli_get_client_stats\u003c/strong\u003e(): array\u003c/p\u003e\n\u003cp\u003eПовертає попроцесну клієнтську статистику.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eДоступно лише з модулем \u003ca href=\"book.mysqlnd.md\"\u003emysqlnd\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає масив із статистикою.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003emysqli_get_client_stats()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$link = mysqli_connect();print_r(mysqli_get_client_stats());?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eArray\n(\n[bytes_sent] =\u003e 43\n[bytes_received] =\u003e 80\n[packets_sent] =\u003e 1\n[packets_received] =\u003e 2\n[protocol_overhead_in] =\u003e 8\n[protocol_overhead_out] =\u003e 4\n[bytes_received_ok_packet] =\u003e 11\n[bytes_received_eof_packet] =\u003e 0\n[bytes_received_rset_header_packet] =\u003e 0\n[bytes_received_rset_field_meta_packet] =\u003e 0\n[bytes_received_rset_row_packet] =\u003e 0\n[bytes_received_prepare_response_packet] =\u003e 0\n[bytes_received_change_user_packet] =\u003e 0\n[packets_sent_command] =\u003e 0\n[packets_received_ok] =\u003e 1\n[packets_received_eof] =\u003e 0\n[packets_received_rset_header] =\u003e 0\n[packets_received_rset_field_meta] =\u003e 0\n[packets_received_rset_row] =\u003e 0\n[packets_received_prepare_response] =\u003e 0\n[packets_received_change_user] =\u003e 0\n[result_set_queries] =\u003e 0\n[non_result_set_queries] =\u003e 0\n[no_index_used] =\u003e 0\n[bad_index_used] =\u003e 0\n[slow_queries] =\u003e 0\n[buffered_sets] =\u003e 0\n[unbuffered_sets] =\u003e 0\n[ps_buffered_sets] =\u003e 0\n[ps_unbuffered_sets] =\u003e 0\n[flushed_normal_sets] =\u003e 0\n[flushed_ps_sets] =\u003e 0\n[ps_prepared_never_executed] =\u003e 0\n[ps_prepared_once_executed] =\u003e 0\n[rows_fetched_from_server_normal] =\u003e 0\n[rows_fetched_from_server_ps] =\u003e 0\n[rows_buffered_from_client_normal] =\u003e 0\n[rows_buffered_from_client_ps] =\u003e 0\n[rows_fetched_from_client_normal_buffered] =\u003e 0\n[rows_fetched_from_client_normal_unbuffered] =\u003e 0\n[rows_fetched_from_client_ps_buffered] =\u003e 0\n[rows_fetched_from_client_ps_unbuffered] =\u003e 0\n[rows_fetched_from_client_ps_cursor] =\u003e 0\n[rows_skipped_normal] =\u003e 0\n[rows_skipped_ps] =\u003e 0\n[copy_on_write_saved] =\u003e 0\n[copy_on_write_performed] =\u003e 0\n[command_buffer_too_small] =\u003e 0\n[connect_success] =\u003e 1\n[connect_failure] =\u003e 0\n[connection_reused] =\u003e 0\n[reconnect] =\u003e 0\n[pconnect_success] =\u003e 0\n[active_connections] =\u003e 1\n[active_persistent_connections] =\u003e 0\n[explicit_close] =\u003e 0\n[implicit_close] =\u003e 0\n[disconnect_close] =\u003e 0\n[in_middle_of_command_close] =\u003e 0\n[explicit_free_result] =\u003e 0\n[implicit_free_result] =\u003e 0\n[explicit_stmt_close] =\u003e 0\n[implicit_stmt_close] =\u003e 0\n[mem_emalloc_count] =\u003e 0\n[mem_emalloc_ammount] =\u003e 0\n[mem_ecalloc_count] =\u003e 0\n[mem_ecalloc_ammount] =\u003e 0\n[mem_erealloc_count] =\u003e 0\n[mem_erealloc_ammount] =\u003e 0\n[mem_efree_count] =\u003e 0\n[mem_malloc_count] =\u003e 0\n[mem_malloc_ammount] =\u003e 0\n[mem_calloc_count] =\u003e 0\n[mem_calloc_ammount] =\u003e 0\n[mem_realloc_count] =\u003e 0\n[mem_realloc_ammount] =\u003e 0\n[mem_free_count] =\u003e 0\n[proto_text_fetched_null] =\u003e 0\n[proto_text_fetched_bit] =\u003e 0\n[proto_text_fetched_tinyint] =\u003e 0\n[proto_text_fetched_short] =\u003e 0\n[proto_text_fetched_int24] =\u003e 0\n[proto_text_fetched_int] =\u003e 0\n[proto_text_fetched_bigint] =\u003e 0\n[proto_text_fetched_decimal] =\u003e 0\n[proto_text_fetched_float] =\u003e 0\n[proto_text_fetched_double] =\u003e 0\n[proto_text_fetched_date] =\u003e 0\n[proto_text_fetched_year] =\u003e 0\n[proto_text_fetched_time] =\u003e 0\n[proto_text_fetched_datetime] =\u003e 0\n[proto_text_fetched_timestamp] =\u003e 0\n[proto_text_fetched_string] =\u003e 0\n[proto_text_fetched_blob] =\u003e 0\n[proto_text_fetched_enum] =\u003e 0\n[proto_text_fetched_set] =\u003e 0\n[proto_text_fetched_geometry] =\u003e 0\n[proto_text_fetched_other] =\u003e 0\n[proto_binary_fetched_null] =\u003e 0\n[proto_binary_fetched_bit] =\u003e 0\n[proto_binary_fetched_tinyint] =\u003e 0\n[proto_binary_fetched_short] =\u003e 0\n[proto_binary_fetched_int24] =\u003e 0\n[proto_binary_fetched_int] =\u003e 0\n[proto_binary_fetched_bigint] =\u003e 0\n[proto_binary_fetched_decimal] =\u003e 0\n[proto_binary_fetched_float] =\u003e 0\n[proto_binary_fetched_double] =\u003e 0\n[proto_binary_fetched_date] =\u003e 0\n[proto_binary_fetched_year] =\u003e 0\n[proto_binary_fetched_time] =\u003e 0\n[proto_binary_fetched_datetime] =\u003e 0\n[proto_binary_fetched_timestamp] =\u003e 0\n[proto_binary_fetched_string] =\u003e 0\n[proto_binary_fetched_blob] =\u003e 0\n[proto_binary_fetched_enum] =\u003e 0\n[proto_binary_fetched_set] =\u003e 0\n[proto_binary_fetched_geometry] =\u003e 0\n[proto_binary_fetched_other] =\u003e 0\n)\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mysqlnd.stats.md\"\u003eОпис метрик\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.mysqli-get-client-stats.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mongodb-driver-query.construct | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="class.mongodb-driver-query.md">«MongoDB\Driver\Query</a></p>
+</li>
+<li>
+<p><a href="class.mongodb-driver-bulkwrite.md">MongoDB\Driver\BulkWrite »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.mongodb-driver-query.md">MongoDB\Driver\Query</a></p>
+</li>
+<li>
+<p>Створює новий запит</p>
+</li>
+</ul>
+<h1>MongoDB\Driver\Query::__construct</h1>
+<p>(mongodb >=1.0.0)</p>
+<p>MongoDB\Driver\Query::__construct — Створює новий запит</p>
+<h3>Опис</h3>
+<p>final public <strong>MongoDB\Driver\Query::__construct</strong>(array|object
+<code>$filter</code>, array <code>$queryOptions</code> = ?)</p>
+<p>Створює новий <a href="class.mongodb-driver-query.md">MongoDB\Driver\Query</a>,
+який є об'єктом незмінного значення, що представляє запит
+до бази даних. Потім запит може бути виконаний за допомогою
+<a href="mongodb-driver-manager.executequery.md">MongoDB\Driver\Manager::executeQuery()</a>.</p>
+<h3>Список параметрів</h3>
+<p><code>filter</code> (array|object)
+<a href="https://www.mongodb.com/docs/manual/tutorial/query-documents/">» Предикат запиту</a>.
+Порожній предикат збігатиметься з усіма елементами колекції.</p>
+<blockquote>
+<p><strong>Примітка</strong>: При обчисленні критеріїв запиту MongoDB порівнює
+типи та значення відповідно до власних <a href="https://www.mongodb.com/docs/manual/reference/bson-type-comparison-order/">» правил порівняння
+типів > BSON</a>,
+відмінних від правил <a href="types.comparisons.md">порівняння</a> та <a href="language.types.type-juggling.md">приведення > типів</a> PHP. Коли використовується
+спеціальний тип BSON, критерію запиту має відповідати <a href="book.bson.md">класу > BSON</a> (тобто використовувати
+<a href="class.mongodb-bson-objectid.md">MongoDB\BSON\ObjectId</a> для вибірки
+по
+<a href="https://www.mongodb.com/docs/manual/reference/bson-types/#objectid">» ObjectId</a>).</p>
+</blockquote>
+<p><code>queryOptions</code>
+[TABLE]</p>
+<p><strong>queryOptions</strong></p>
+<h3>Помилки</h3>
+<ul>
+<li>При помилці парсингу аргумент кидає виняток <a href="class.mongodb-driver-exception-invalidargumentexception.md">MongoDB\Driver\Exception\InvalidArgumentException</a>.</li>
+</ul>
+<h3>Список змін</h3>
+<p>[TABLE]</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання
+<strong>MongoDB\Driver\Query::__construct()</strong></strong></p>
+<p><code>&#x3C;?php/* Выберите только документы, автором которых является "bjori" с не менее 100 просмотров */$filter = [    'author' => 'bjori',    'views' => [        '$gte' => 100, ],];$options = [    /* Вернуть только следующие поля в соответствующих документах */    'projection' => [        'title' => 1,        'article' => 1,    ],    /* Вернуть документы в порядке убывания просмотров * /   'sort' => [       'views' => -1    ],];$query = new MongoDB\Driver\Query($filter, $options);$mana localhost:27017');$readPreference = new MongoDB\Driver\ReadPreference(MongoDB\Driver\ReadPreference::RP_PRIMARY);$cursor = $manager->executeQuery('databaseName.collectionName', $query, $ $cursor as $document) {    var_dump($document);}?></code></p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="mongodb-driver-manager.executequery.md">MongoDB\Driver\Manager::executeQuery()</a> -
+Виконує запит до бази даних</li>
+<li><a href="class.mongodb-driver-cursor.md">MongoDB\Driver\Cursor</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mongodb-driver-query.construct.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mongodb-driver-query.construct.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mongodb-driver-query.construct","slug":"mongodb-driver-query.construct.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mongodb-driver-query.md\"\u003e«MongoDB\\Driver\\Query\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mongodb-driver-bulkwrite.md\"\u003eMongoDB\\Driver\\BulkWrite »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mongodb-driver-query.md\"\u003eMongoDB\\Driver\\Query\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eСтворює новий запит\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eMongoDB\\Driver\\Query::__construct\u003c/h1\u003e\n\u003cp\u003e(mongodb \u003e=1.0.0)\u003c/p\u003e\n\u003cp\u003eMongoDB\\Driver\\Query::__construct — Створює новий запит\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003efinal public \u003cstrong\u003eMongoDB\\Driver\\Query::__construct\u003c/strong\u003e(array|object\n\u003ccode\u003e$filter\u003c/code\u003e, array \u003ccode\u003e$queryOptions\u003c/code\u003e = ?)\u003c/p\u003e\n\u003cp\u003eСтворює новий \u003ca href=\"class.mongodb-driver-query.md\"\u003eMongoDB\\Driver\\Query\u003c/a\u003e,\nякий є об'єктом незмінного значення, що представляє запит\nдо бази даних. Потім запит може бути виконаний за допомогою\n\u003ca href=\"mongodb-driver-manager.executequery.md\"\u003eMongoDB\\Driver\\Manager::executeQuery()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003efilter\u003c/code\u003e (array|object)\n\u003ca href=\"https://www.mongodb.com/docs/manual/tutorial/query-documents/\"\u003e» Предикат запиту\u003c/a\u003e.\nПорожній предикат збігатиметься з усіма елементами колекції.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: При обчисленні критеріїв запиту MongoDB порівнює\nтипи та значення відповідно до власних \u003ca href=\"https://www.mongodb.com/docs/manual/reference/bson-type-comparison-order/\"\u003e» правил порівняння\nтипів \u003e BSON\u003c/a\u003e,\nвідмінних від правил \u003ca href=\"types.comparisons.md\"\u003eпорівняння\u003c/a\u003e та \u003ca href=\"language.types.type-juggling.md\"\u003eприведення \u003e типів\u003c/a\u003e PHP. Коли використовується\nспеціальний тип BSON, критерію запиту має відповідати \u003ca href=\"book.bson.md\"\u003eкласу \u003e BSON\u003c/a\u003e (тобто використовувати\n\u003ca href=\"class.mongodb-bson-objectid.md\"\u003eMongoDB\\BSON\\ObjectId\u003c/a\u003e для вибірки\nпо\n\u003ca href=\"https://www.mongodb.com/docs/manual/reference/bson-types/#objectid\"\u003e» ObjectId\u003c/a\u003e).\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003equeryOptions\u003c/code\u003e\n[TABLE]\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003equeryOptions\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eПри помилці парсингу аргумент кидає виняток \u003ca href=\"class.mongodb-driver-exception-invalidargumentexception.md\"\u003eMongoDB\\Driver\\Exception\\InvalidArgumentException\u003c/a\u003e.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003cp\u003e[TABLE]\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання\n\u003cstrong\u003eMongoDB\\Driver\\Query::__construct()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Выберите только документы, автором которых является \"bjori\" с не менее 100 просмотров */$filter = [    'author' =\u003e 'bjori',    'views' =\u003e [        '$gte' =\u003e 100, ],];$options = [    /* Вернуть только следующие поля в соответствующих документах */    'projection' =\u003e [        'title' =\u003e 1,        'article' =\u003e 1,    ],    /* Вернуть документы в порядке убывания просмотров * /   'sort' =\u003e [       'views' =\u003e -1    ],];$query = new MongoDB\\Driver\\Query($filter, $options);$mana localhost:27017');$readPreference = new MongoDB\\Driver\\ReadPreference(MongoDB\\Driver\\ReadPreference::RP_PRIMARY);$cursor = $manager-\u003eexecuteQuery('databaseName.collectionName', $query, $ $cursor as $document) {    var_dump($document);}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-manager.executequery.md\"\u003eMongoDB\\Driver\\Manager::executeQuery()\u003c/a\u003e -\nВиконує запит до бази даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"class.mongodb-driver-cursor.md\"\u003eMongoDB\\Driver\\Cursor\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mongodb-driver-query.construct.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

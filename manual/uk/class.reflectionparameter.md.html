@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.reflectionparameter | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="reflectionobject.export.md">« ReflectionObject::export</a></p>
+</li>
+<li>
+<p><a href="reflectionparameter.allowsnull.md">ReflectionParameter::allowsNull »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.reflection.md">Reflection</a></p>
+</li>
+<li>
+<p>Клас ReflectionParameter</p>
+</li>
+</ul>
+<h1>Клас ReflectionParameter</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<h2>Вступ</h2>
+<p>Клас <strong>ReflectionParameter</strong> повідомляє інформацію про параметри методів та
+функцій.</p>
+<p>Щоб мати можливість досліджувати аргументи функції, спершу створіть
+екземпляр класу <a href="class.reflectionfunction.md">ReflectionFunction</a>
+або <a href="class.reflectionmethod.md">ReflectionMethod</a>, а потім
+використовуйте його метод
+<a href="reflectionfunctionabstract.getparameters.md">ReflectionFunctionAbstract::getParameters()</a>
+для одержання масиву аргументів.</p>
+<h2>Огляд класів</h2>
+<p>class <strong>ReflectionParameter</strong> implements
+<a href="class.reflector.md">Reflector</a> {</p>
+<p>/* Властивості */</p>
+<p>public string <code>$name</code>;</p>
+<p>/* Методи */</p>
+<p>public
+<a href="reflectionparameter.construct.md">__construct</a>(string|array|object
+<code>$function</code>, int|string <code>$param</code>)</p>
+<p>public <a href="reflectionparameter.allowsnull.md">allowsNull</a>(): bool</p>
+<p>public
+<a href="reflectionparameter.canbepassedbyvalue.md">canBePassedByValue</a>():
+bool</p>
+<p>private <a href="reflectionparameter.clone.md">__clone</a>(): void</p>
+<p>public static <a href="reflectionparameter.export.md">export</a>(string
+<code>$function</code>, string <code>$parameter</code>, bool <code>$return</code> = ?): string</p>
+<p>public <a href="reflectionparameter.getattributes.md">getAttributes</a>(?string
+<code>$name</code> = <strong><code>null</code></strong>, int <code>$flags</code> = 0): array</p>
+<p>public <a href="reflectionparameter.getclass.md">getClass</a>():
+?<a href="class.reflectionclass.md">ReflectionClass</a></p>
+<p>public
+<a href="reflectionparameter.getdeclaringclass.md">getDeclaringClass</a>():
+?<a href="class.reflectionclass.md">ReflectionClass</a></p>
+<p>public
+<a href="reflectionparameter.getdeclaringfunction.md">getDeclaringFunction</a>():
+<a href="class.reflectionfunctionabstract.md">ReflectionFunctionAbstract</a></p>
+<p>public <a href="reflectionparameter.getdefaultvalue.md">getDefaultValue</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public
+<a href="reflectionparameter.getdefaultvalueconstantname.md">getDefaultValueConstantName</a>():
+?string</p>
+<p>public <a href="reflectionparameter.getname.md">getName</a>(): string</p>
+<p>public <a href="reflectionparameter.getposition.md">getPosition</a>(): int</p>
+<p>public <a href="reflectionparameter.gettype.md">getType</a>():
+?<a href="class.reflectiontype.md">ReflectionType</a></p>
+<p>public <a href="reflectionparameter.hastype.md">hasType</a>(): bool</p>
+<p>public <a href="reflectionparameter.isarray.md">isArray</a>(): bool</p>
+<p>public <a href="reflectionparameter.iscallable.md">isCallable</a>(): bool</p>
+<p>public
+<a href="reflectionparameter.isdefaultvalueavailable.md">isDefaultValueAvailable</a>():
+bool</p>
+<p>public
+<a href="reflectionparameter.isdefaultvalueconstant.md">isDefaultValueConstant</a>():
+bool</p>
+<p>public <a href="reflectionparameter.isoptional.md">isOptional</a>(): bool</p>
+<p>public
+<a href="reflectionparameter.ispassedbyreference.md">isPassedByReference</a>():
+bool</p>
+<p>public <a href="reflectionparameter.isvariadic.md">isVariadic</a>(): bool</p>
+<p>public <a href="reflectionparameter.tostring.md">__toString</a>(): string</p>
+<p>}</p>
+<h2>Властивості</h2>
+<p><code>name</code>
+Ім'я аргументу. Доступно тільки для читання та викидає виняток
+<a href="class.reflectionexception.md">ReflectionException</a> під час спроби
+запису.</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="reflectionparameter.allowsnull.md">ReflectionParameter::allowsNull</a>
+— Перевіряє, чи допустиме значення null для параметра</li>
+<li><a href="reflectionparameter.canbepassedbyvalue.md">ReflectionParameter::canBePassedByValue</a>
+— Перевіряє, чи можна передати цей аргумент за значенням</li>
+<li><a href="reflectionparameter.clone.md">ReflectionParameter::__clone</a> -
+Клонувати</li>
+<li><a href="reflectionparameter.construct.md">ReflectionParameter::__construct</a></li>
+<li>Конструктор</li>
+<li><a href="reflectionparameter.export.md">ReflectionParameter::export</a> -
+Експорт</li>
+<li><a href="reflectionparameter.getattributes.md">ReflectionParameter::getAttributes</a>
+— Отримує атрибути</li>
+<li><a href="reflectionparameter.getclass.md">ReflectionParameter::getClass</a> -
+Отримує об'єкт ReflectionClass для параметра, що відображається, або null</li>
+<li><a href="reflectionparameter.getdeclaringclass.md">ReflectionParameter::getDeclaringClass</a>
+— Отримання класу, що оголошує</li>
+<li><a href="reflectionparameter.getdeclaringfunction.md">ReflectionParameter::getDeclaringFunction</a>
+— Отримання функції, що оголошує</li>
+<li><a href="reflectionparameter.getdefaultvalue.md">ReflectionParameter::getDefaultValue</a>
+— Отримання стандартного значення для параметра</li>
+<li><a href="reflectionparameter.getdefaultvalueconstantname.md">ReflectionParameter::getDefaultValueConstantName</a>
+— Повертає ім'я константи за замовчуванням, якщо значення по
+замовчуванням константа або null</li>
+<li><a href="reflectionparameter.getname.md">ReflectionParameter::getName</a> -
+Отримання імені параметра</li>
+<li><a href="reflectionparameter.getposition.md">ReflectionParameter::getPosition</a>
+— Отримання позиції параметра</li>
+<li><a href="reflectionparameter.gettype.md">ReflectionParameter::getType</a> -
+Отримати тип параметра</li>
+<li><a href="reflectionparameter.hastype.md">ReflectionParameter::hasType</a> -
+Перевірити, чи вказано тип параметра</li>
+<li><a href="reflectionparameter.isarray.md">ReflectionParameter::isArray</a> -
+Перевіряє, чи очікує аргумент масив як значення</li>
+<li><a href="reflectionparameter.iscallable.md">ReflectionParameter::isCallable</a>
+— Визначити, чи параметр має бути типу callable</li>
+<li><a href="reflectionparameter.isdefaultvalueavailable.md">ReflectionParameter::isDefaultValueAvailable</a>
+— Перевіряє, чи є значення за замовчуванням</li>
+<li><a href="reflectionparameter.isdefaultvalueconstant.md">ReflectionParameter::isDefaultValueConstant</a>
+— Визначити, чи є значення за замовчуванням константою</li>
+<li><a href="reflectionparameter.isoptional.md">ReflectionParameter::isOptional</a>
+— Перевіряє, чи є аргумент необов'язковим</li>
+<li><a href="reflectionparameter.ispassedbyreference.md">ReflectionParameter::isPassedByReference</a>
+— Перевіряє, чи передано параметр за посиланням</li>
+<li><a href="reflectionparameter.isvariadic.md">ReflectionParameter::isVariadic</a>
+— Перевірити, чи параметр є змінним.
+кількістю аргументів</li>
+<li><a href="reflectionparameter.tostring.md">ReflectionParameter::__toString</a>
+— Перетворення на рядок</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.reflectionparameter.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.reflectionparameter.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.reflectionparameter","slug":"class.reflectionparameter.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reflectionobject.export.md\"\u003e« ReflectionObject::export\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reflectionparameter.allowsnull.md\"\u003eReflectionParameter::allowsNull »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.reflection.md\"\u003eReflection\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас ReflectionParameter\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас ReflectionParameter\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003eКлас \u003cstrong\u003eReflectionParameter\u003c/strong\u003e повідомляє інформацію про параметри методів та\nфункцій.\u003c/p\u003e\n\u003cp\u003eЩоб мати можливість досліджувати аргументи функції, спершу створіть\nекземпляр класу \u003ca href=\"class.reflectionfunction.md\"\u003eReflectionFunction\u003c/a\u003e\nабо \u003ca href=\"class.reflectionmethod.md\"\u003eReflectionMethod\u003c/a\u003e, а потім\nвикористовуйте його метод\n\u003ca href=\"reflectionfunctionabstract.getparameters.md\"\u003eReflectionFunctionAbstract::getParameters()\u003c/a\u003e\nдля одержання масиву аргументів.\u003c/p\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eReflectionParameter\u003c/strong\u003e implements\n\u003ca href=\"class.reflector.md\"\u003eReflector\u003c/a\u003e {\u003c/p\u003e\n\u003cp\u003e/* Властивості */\u003c/p\u003e\n\u003cp\u003epublic string \u003ccode\u003e$name\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionparameter.construct.md\"\u003e__construct\u003c/a\u003e(string|array|object\n\u003ccode\u003e$function\u003c/code\u003e, int|string \u003ccode\u003e$param\u003c/code\u003e)\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.allowsnull.md\"\u003eallowsNull\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionparameter.canbepassedbyvalue.md\"\u003ecanBePassedByValue\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003eprivate \u003ca href=\"reflectionparameter.clone.md\"\u003e__clone\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic static \u003ca href=\"reflectionparameter.export.md\"\u003eexport\u003c/a\u003e(string\n\u003ccode\u003e$function\u003c/code\u003e, string \u003ccode\u003e$parameter\u003c/code\u003e, bool \u003ccode\u003e$return\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.getattributes.md\"\u003egetAttributes\u003c/a\u003e(?string\n\u003ccode\u003e$name\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, int \u003ccode\u003e$flags\u003c/code\u003e = 0): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.getclass.md\"\u003egetClass\u003c/a\u003e():\n?\u003ca href=\"class.reflectionclass.md\"\u003eReflectionClass\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionparameter.getdeclaringclass.md\"\u003egetDeclaringClass\u003c/a\u003e():\n?\u003ca href=\"class.reflectionclass.md\"\u003eReflectionClass\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionparameter.getdeclaringfunction.md\"\u003egetDeclaringFunction\u003c/a\u003e():\n\u003ca href=\"class.reflectionfunctionabstract.md\"\u003eReflectionFunctionAbstract\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.getdefaultvalue.md\"\u003egetDefaultValue\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionparameter.getdefaultvalueconstantname.md\"\u003egetDefaultValueConstantName\u003c/a\u003e():\n?string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.getname.md\"\u003egetName\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.getposition.md\"\u003egetPosition\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.gettype.md\"\u003egetType\u003c/a\u003e():\n?\u003ca href=\"class.reflectiontype.md\"\u003eReflectionType\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.hastype.md\"\u003ehasType\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.isarray.md\"\u003eisArray\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.iscallable.md\"\u003eisCallable\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionparameter.isdefaultvalueavailable.md\"\u003eisDefaultValueAvailable\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionparameter.isdefaultvalueconstant.md\"\u003eisDefaultValueConstant\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.isoptional.md\"\u003eisOptional\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionparameter.ispassedbyreference.md\"\u003eisPassedByReference\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.isvariadic.md\"\u003eisVariadic\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionparameter.tostring.md\"\u003e__toString\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eВластивості\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003ename\u003c/code\u003e\nІм'я аргументу. Доступно тільки для читання та викидає виняток\n\u003ca href=\"class.reflectionexception.md\"\u003eReflectionException\u003c/a\u003e під час спроби\nзапису.\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.allowsnull.md\"\u003eReflectionParameter::allowsNull\u003c/a\u003e\n— Перевіряє, чи допустиме значення null для параметра\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.canbepassedbyvalue.md\"\u003eReflectionParameter::canBePassedByValue\u003c/a\u003e\n— Перевіряє, чи можна передати цей аргумент за значенням\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.clone.md\"\u003eReflectionParameter::__clone\u003c/a\u003e -\nКлонувати\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.construct.md\"\u003eReflectionParameter::__construct\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eКонструктор\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.export.md\"\u003eReflectionParameter::export\u003c/a\u003e -\nЕкспорт\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.getattributes.md\"\u003eReflectionParameter::getAttributes\u003c/a\u003e\n— Отримує атрибути\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.getclass.md\"\u003eReflectionParameter::getClass\u003c/a\u003e -\nОтримує об'єкт ReflectionClass для параметра, що відображається, або null\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.getdeclaringclass.md\"\u003eReflectionParameter::getDeclaringClass\u003c/a\u003e\n— Отримання класу, що оголошує\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.getdeclaringfunction.md\"\u003eReflectionParameter::getDeclaringFunction\u003c/a\u003e\n— Отримання функції, що оголошує\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.getdefaultvalue.md\"\u003eReflectionParameter::getDefaultValue\u003c/a\u003e\n— Отримання стандартного значення для параметра\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.getdefaultvalueconstantname.md\"\u003eReflectionParameter::getDefaultValueConstantName\u003c/a\u003e\n— Повертає ім'я константи за замовчуванням, якщо значення по\nзамовчуванням константа або null\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.getname.md\"\u003eReflectionParameter::getName\u003c/a\u003e -\nОтримання імені параметра\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.getposition.md\"\u003eReflectionParameter::getPosition\u003c/a\u003e\n— Отримання позиції параметра\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.gettype.md\"\u003eReflectionParameter::getType\u003c/a\u003e -\nОтримати тип параметра\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.hastype.md\"\u003eReflectionParameter::hasType\u003c/a\u003e -\nПеревірити, чи вказано тип параметра\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.isarray.md\"\u003eReflectionParameter::isArray\u003c/a\u003e -\nПеревіряє, чи очікує аргумент масив як значення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.iscallable.md\"\u003eReflectionParameter::isCallable\u003c/a\u003e\n— Визначити, чи параметр має бути типу callable\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.isdefaultvalueavailable.md\"\u003eReflectionParameter::isDefaultValueAvailable\u003c/a\u003e\n— Перевіряє, чи є значення за замовчуванням\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.isdefaultvalueconstant.md\"\u003eReflectionParameter::isDefaultValueConstant\u003c/a\u003e\n— Визначити, чи є значення за замовчуванням константою\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.isoptional.md\"\u003eReflectionParameter::isOptional\u003c/a\u003e\n— Перевіряє, чи є аргумент необов'язковим\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.ispassedbyreference.md\"\u003eReflectionParameter::isPassedByReference\u003c/a\u003e\n— Перевіряє, чи передано параметр за посиланням\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.isvariadic.md\"\u003eReflectionParameter::isVariadic\u003c/a\u003e\n— Перевірити, чи параметр є змінним.\nкількістю аргументів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionparameter.tostring.md\"\u003eReflectionParameter::__toString\u003c/a\u003e\n— Перетворення на рядок\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.reflectionparameter.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration73.new-features | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration73.md">« Міграція з PHP 7.2.x на PHP 7.3.x</a></p>
+</li>
+<li>
+<p><a href="migration73.new-functions.md">Нові функції »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration73.md">Міграція з PHP 7.2.x на PHP 7.3.x</a></p>
+</li>
+<li>
+<p>Нові можливості</p>
+</li>
+</ul>
+<h2>Нові можливості</h2>
+<h3>Ядро PHP</h3>
+<h4>Більш гнучкий синтаксис Heredoc і Nowdoc</h4>
+<p>Після закриття ідентифікатора в doc-рядках більше не потрібно ставити
+точку з комою або новий рядок. Крім того, що закриває ідентифікатор
+може бути з відступом, і в цьому випадку він буде видалений з усіх рядків
+doc-рядку.</p>
+<h4>Деструктурування масиву підтримує присвоєння за посиланнями</h4>
+<p>Деструктурування масиву тепер підтримує присвоєння за посиланнями
+за допомогою синтаксису <code>[&#x26;$a, [$b, &#x26;$c]] = $d</code>. Те саме підтримується і
+для <a href="function.list.md">list()</a>.</p>
+<h4>Оператор instanceof приймає літерали</h4>
+<p>Оператор <code>instanceof</code> тепер підтримує літерали як перший
+операнда, і в цьому випадку результат завжди буде <strong><code>false</code></strong>.</p>
+<h4>Виняток CompileError замість деяких помилок компіляції</h4>
+<p>Додано новий виняток <a href="class.compileerror.md">CompileError</a>,
+яке успадковується від <a href="class.parseerror.md">ParseError</a>. Невелике
+кількість помилок компіляції тепер викидатиме
+<a href="class.compileerror.md">CompileError</a> замість створення фатальної
+помилки. В даний час це впливає лише на помилки компіляції,
+які можуть бути створені
+<a href="function.token-get-all.md">token_get_all()</a> у режимі
+<strong><code>TOKEN_PARSE</code></strong>, але в майбутньому може бути перетворено більше помилок.</p>
+<h4>У викликах дозволена завершальна кома</h4>
+<p>Завершальні коми у викликах функцій та методів тепер дозволені.</p>
+<h4>Підтримка Argon2id</h4>
+<p>З аргументом <strong>--with-password-argon2[=dir]</strong> скрипта configure тепер
+підтримуються обидва хеші, як Argon2i, так і Argon2id, у функціях
+<a href="function.password-hash.md">password_hash()</a>,
+<a href="function.password-verify.md">password_verify()</a>,
+<a href="function.password-get-info.md">password_get_info()</a> та
+<a href="function.password-needs-rehash.md">password_needs_rehash()</a>. Паролі
+можуть бути хешовані та перевірені, використовуючи константу
+<strong><code>PASSWORD_ARGON2ID</code></strong>. Підтримка обох алгоритмів Argon2i та Argon2id в
+функціях сімейства <strong>password_*()</strong> тепер вимагає, щоб PHP був
+скомпільований з бібліотекою libargon2 версії ≥20161029.</p>
+<h3>Менеджер процесів FastCGI</h3>
+<p>Для налаштування логування FPM було додано нові опції:</p>
+<p><code>log_limit</code>
+Ця глобальна опція може використовуватись для встановлення ліміту
+логування для рядка логування, що дозволяє записувати повідомлення
+довжиною понад 1024 символи без перенесення. Також виправляє різні
+проблеми із упаковкою (wrapping).</p>
+<p><code>log_buffering</code>
+Ця глобальна опція дозволяє вести експериментальне логування без
+додаткової буферизації.</p>
+<p><code>decorate_workers_output</code>
+Цей варіант пула дозволяє відключити відмітку виводу (output decoration)
+для обробників, коли <code>catch_workers_output</code> увімкнена.</p>
+<h3>Функції BC Math</h3>
+<p>Функція <a href="function.bcscale.md">bcscale()</a> тепер також може
+використовуватися як гетер для вилучення поточного використовуваного
+масштабу.</p>
+<h3>Полегшений протокол доступу до каталогів (LDAP)</h3>
+<p>Була додана повна підтримка LDAP Controls до функцій запитів
+<a href="book.ldap.md">LDAP</a> та
+<a href="function.ldap-parse-result.md">ldap_parse_result()</a>:</p>
+<ul>
+<li>Доданий параметр <code>$serverctrls</code> для відправки управління сервером
+функціях <a href="function.ldap-add.md">ldap_add()</a>,
+<a href="function.ldap-mod-replace.md">ldap_mod_replace()</a>,
+<a href="function.ldap-mod-add.md">ldap_mod_add()</a>,
+<a href="function.ldap-mod-del.md">ldap_mod_del()</a>,
+<a href="function.ldap-rename.md">ldap_rename()</a>,
+<a href="function.ldap-compare.md">ldap_compare()</a>,
+<a href="function.ldap-delete.md">ldap_delete()</a>,
+<a href="function.ldap-modify-batch.md">ldap_modify_batch()</a>,
+<a href="function.ldap-search.md">ldap_search()</a>,
+<a href="function.ldap-list.md">ldap_list()</a> та
+<a href="function.ldap-read.md">ldap_read()</a>.</li>
+<li>Додано параметр <code>$serverctrls</code> для отримання керування з сервера
+у функції <a href="function.ldap-parse-result.md">ldap_parse_result()</a>.</li>
+<li>Підтримка <strong><code>LDAP_OPT_SERVER_CONTROLS</code></strong> та
+<strong><code>LDAP_OPT_CLIENT_CONTROLS</code></strong> у функціях
+<a href="function.ldap-get-option.md">ldap_get_option()</a> та
+<a href="function.ldap-set-option.md">ldap_set_option()</a> було виправлено.</li>
+</ul>
+<h3>Функції мультибайтових рядків</h3>
+<h4>Повна підтримка case-mapping та case-folding</h4>
+<p>Додано підтримку повного процесу перетворення регістру символів
+(case-mapping) та порівняння на ідентичність різних регістрів
+(Case-folding). На відміну від простого case-mapping, повний case-mapping
+може змінити довжину рядка. Приклад:</p>
+<p>`</p>
+<p>Різні режими перетворення та порівняння регістру символів доступні в
+функції <a href="function.mb-convert-case.md">mb_convert_case()</a>:</p>
+<ul>
+<li><strong><code>MB_CASE_LOWER</code></strong> (використовується
+<a href="function.mb-strtolower.md">mb_strtolower()</a>)</li>
+<li><strong><code>MB_CASE_UPPER</code></strong> (використовується
+<a href="function.mb-strtoupper.md">mb_strtoupper()</a>)</li>
+<li><strong><code>MB_CASE_TITLE</code></strong></li>
+<li><strong><code>MB_CASE_FOLD</code></strong></li>
+<li><strong><code>MB_CASE_LOWER_SIMPLE</code></strong></li>
+<li><strong><code>MB_CASE_UPPER_SIMPLE</code></strong></li>
+<li><strong><code>MB_CASE_TITLE_SIMPLE</code></strong></li>
+<li><strong><code>MB_CASE_FOLD_SIMPLE</code></strong> (використовується нечутливими до
+регістру операціями)</li>
+</ul>
+<p>Виконує лише безумовний, незалежний від мови, повний процес
+перетворення.</p>
+<h4>Операції, нечутливі до регістру, використовують case-folding</h4>
+<p>Строкові операції без урахування регістру тепер використовують case-folding
+замість case-mapping регістру при порівнянні. Це означає, що тепер
+більше символів будуть вважатися (без урахування регістру) рівними.</p>
+<h4>MB_CASE_TITLE виконує перетворення title-case</h4>
+<p>Функція <a href="function.mb-convert-case.md">mb_convert_case()</a> з
+<strong><code>MB_CASE_TITLE</code></strong> тепер виконує перетворення title-case на
+Залежно від властивостей Unicode, заснованих на Cased і CaseIgnorable. В
+зокрема, це також покращує обробку лапок та апострофів.</p>
+<h4>Підтримка Unicode 11</h4>
+<p>Таблиці даних <a href="book.mbstring.md">мультибайтових рядків</a> було оновлено
+до Юнікод версії 11.</p>
+<h4>Підтримка великих рядків</h4>
+<p><a href="ref.mbstring.md">Функції мультибайтових рядків</a> тепер коректно
+підтримують рядки розміром понад 2 Гб.</p>
+<h4>Поліпшення продуктивності</h4>
+<p>Продуктивність модуля <a href="book.mbstring.md">мультибайтових рядків</a>
+була значно повсюдно покращена. Найбільші поліпшення в
+функціях перетворення регістру.</p>
+<h4>Підтримка іменованих фрагментів</h4>
+<p>Функції <code>mb_ereg_*</code> тепер підтримують іменовані фрагменти.
+Відповідні функції, такі як <a href="function.mb-ereg.md">mb_ereg()</a>,
+тепер повертатимуть іменовані фрагменти як із їх номером групи,
+так і з їх ім'ям, аналогічно PCRE:</p>
+<p><code>&#x3C;?phpmb_ereg('(?&#x3C;word>\w+)', '국', $matches);// => [0 => "국", 1 => "국", "word" => "국 "];?></code></p>
+<p>Крім того, функція <a href="function.mb-ereg-replace.md">mb_ereg_replace()</a>
+тепер підтримує позначення <code>\k&#x3C;></code> та <code>\k''</code> для посилання на
+іменовані фрагменти в рядку, що замінює:</p>
+<p><code>&#x3C;?phpmb_ereg_replace('\s*(?&#x3C;word>\w+)\s*', "_\k&#x3C;word>_\k'word'_", ' foo ');// => "_foo_foo_" ?></code></p>
+<p><code>\k&#x3C;></code> і <code>\k''</code> також можуть використовуватися для нумерованих посилань,
+які також працюють із номерами груп більше 9.</p>
+<h3>Readline</h3>
+<p>У функції <a href="function.readline-info.md">readline_info()</a> додано
+підтримка параметрів <code>completion_append_character</code> та
+<code>completion_suppress_append</code>. Ці опції доступні, лише якщо PHP
+скомпільований з бібліотекою libreadline (а не libedit).</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration73.new-features.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration73.new-features.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration73.new-features","slug":"migration73.new-features.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration73.md\"\u003e« Міграція з PHP 7.2.x на PHP 7.3.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration73.new-functions.md\"\u003eНові функції »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration73.md\"\u003eМіграція з PHP 7.2.x на PHP 7.3.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНові можливості\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНові можливості\u003c/h2\u003e\n\u003ch3\u003eЯдро PHP\u003c/h3\u003e\n\u003ch4\u003eБільш гнучкий синтаксис Heredoc і Nowdoc\u003c/h4\u003e\n\u003cp\u003eПісля закриття ідентифікатора в doc-рядках більше не потрібно ставити\nточку з комою або новий рядок. Крім того, що закриває ідентифікатор\nможе бути з відступом, і в цьому випадку він буде видалений з усіх рядків\ndoc-рядку.\u003c/p\u003e\n\u003ch4\u003eДеструктурування масиву підтримує присвоєння за посиланнями\u003c/h4\u003e\n\u003cp\u003eДеструктурування масиву тепер підтримує присвоєння за посиланнями\nза допомогою синтаксису \u003ccode\u003e[\u0026#x26;$a, [$b, \u0026#x26;$c]] = $d\u003c/code\u003e. Те саме підтримується і\nдля \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eОператор instanceof приймає літерали\u003c/h4\u003e\n\u003cp\u003eОператор \u003ccode\u003einstanceof\u003c/code\u003e тепер підтримує літерали як перший\nоперанда, і в цьому випадку результат завжди буде \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch4\u003eВиняток CompileError замість деяких помилок компіляції\u003c/h4\u003e\n\u003cp\u003eДодано новий виняток \u003ca href=\"class.compileerror.md\"\u003eCompileError\u003c/a\u003e,\nяке успадковується від \u003ca href=\"class.parseerror.md\"\u003eParseError\u003c/a\u003e. Невелике\nкількість помилок компіляції тепер викидатиме\n\u003ca href=\"class.compileerror.md\"\u003eCompileError\u003c/a\u003e замість створення фатальної\nпомилки. В даний час це впливає лише на помилки компіляції,\nякі можуть бути створені\n\u003ca href=\"function.token-get-all.md\"\u003etoken_get_all()\u003c/a\u003e у режимі\n\u003cstrong\u003e\u003ccode\u003eTOKEN_PARSE\u003c/code\u003e\u003c/strong\u003e, але в майбутньому може бути перетворено більше помилок.\u003c/p\u003e\n\u003ch4\u003eУ викликах дозволена завершальна кома\u003c/h4\u003e\n\u003cp\u003eЗавершальні коми у викликах функцій та методів тепер дозволені.\u003c/p\u003e\n\u003ch4\u003eПідтримка Argon2id\u003c/h4\u003e\n\u003cp\u003eЗ аргументом \u003cstrong\u003e--with-password-argon2[=dir]\u003c/strong\u003e скрипта configure тепер\nпідтримуються обидва хеші, як Argon2i, так і Argon2id, у функціях\n\u003ca href=\"function.password-hash.md\"\u003epassword_hash()\u003c/a\u003e,\n\u003ca href=\"function.password-verify.md\"\u003epassword_verify()\u003c/a\u003e,\n\u003ca href=\"function.password-get-info.md\"\u003epassword_get_info()\u003c/a\u003e та\n\u003ca href=\"function.password-needs-rehash.md\"\u003epassword_needs_rehash()\u003c/a\u003e. Паролі\nможуть бути хешовані та перевірені, використовуючи константу\n\u003cstrong\u003e\u003ccode\u003ePASSWORD_ARGON2ID\u003c/code\u003e\u003c/strong\u003e. Підтримка обох алгоритмів Argon2i та Argon2id в\nфункціях сімейства \u003cstrong\u003epassword_*()\u003c/strong\u003e тепер вимагає, щоб PHP був\nскомпільований з бібліотекою libargon2 версії ≥20161029.\u003c/p\u003e\n\u003ch3\u003eМенеджер процесів FastCGI\u003c/h3\u003e\n\u003cp\u003eДля налаштування логування FPM було додано нові опції:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elog_limit\u003c/code\u003e\nЦя глобальна опція може використовуватись для встановлення ліміту\nлогування для рядка логування, що дозволяє записувати повідомлення\nдовжиною понад 1024 символи без перенесення. Також виправляє різні\nпроблеми із упаковкою (wrapping).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elog_buffering\u003c/code\u003e\nЦя глобальна опція дозволяє вести експериментальне логування без\nдодаткової буферизації.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edecorate_workers_output\u003c/code\u003e\nЦей варіант пула дозволяє відключити відмітку виводу (output decoration)\nдля обробників, коли \u003ccode\u003ecatch_workers_output\u003c/code\u003e увімкнена.\u003c/p\u003e\n\u003ch3\u003eФункції BC Math\u003c/h3\u003e\n\u003cp\u003eФункція \u003ca href=\"function.bcscale.md\"\u003ebcscale()\u003c/a\u003e тепер також може\nвикористовуватися як гетер для вилучення поточного використовуваного\nмасштабу.\u003c/p\u003e\n\u003ch3\u003eПолегшений протокол доступу до каталогів (LDAP)\u003c/h3\u003e\n\u003cp\u003eБула додана повна підтримка LDAP Controls до функцій запитів\n\u003ca href=\"book.ldap.md\"\u003eLDAP\u003c/a\u003e та\n\u003ca href=\"function.ldap-parse-result.md\"\u003eldap_parse_result()\u003c/a\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eДоданий параметр \u003ccode\u003e$serverctrls\u003c/code\u003e для відправки управління сервером\nфункціях \u003ca href=\"function.ldap-add.md\"\u003eldap_add()\u003c/a\u003e,\n\u003ca href=\"function.ldap-mod-replace.md\"\u003eldap_mod_replace()\u003c/a\u003e,\n\u003ca href=\"function.ldap-mod-add.md\"\u003eldap_mod_add()\u003c/a\u003e,\n\u003ca href=\"function.ldap-mod-del.md\"\u003eldap_mod_del()\u003c/a\u003e,\n\u003ca href=\"function.ldap-rename.md\"\u003eldap_rename()\u003c/a\u003e,\n\u003ca href=\"function.ldap-compare.md\"\u003eldap_compare()\u003c/a\u003e,\n\u003ca href=\"function.ldap-delete.md\"\u003eldap_delete()\u003c/a\u003e,\n\u003ca href=\"function.ldap-modify-batch.md\"\u003eldap_modify_batch()\u003c/a\u003e,\n\u003ca href=\"function.ldap-search.md\"\u003eldap_search()\u003c/a\u003e,\n\u003ca href=\"function.ldap-list.md\"\u003eldap_list()\u003c/a\u003e та\n\u003ca href=\"function.ldap-read.md\"\u003eldap_read()\u003c/a\u003e.\u003c/li\u003e\n\u003cli\u003eДодано параметр \u003ccode\u003e$serverctrls\u003c/code\u003e для отримання керування з сервера\nу функції \u003ca href=\"function.ldap-parse-result.md\"\u003eldap_parse_result()\u003c/a\u003e.\u003c/li\u003e\n\u003cli\u003eПідтримка \u003cstrong\u003e\u003ccode\u003eLDAP_OPT_SERVER_CONTROLS\u003c/code\u003e\u003c/strong\u003e та\n\u003cstrong\u003e\u003ccode\u003eLDAP_OPT_CLIENT_CONTROLS\u003c/code\u003e\u003c/strong\u003e у функціях\n\u003ca href=\"function.ldap-get-option.md\"\u003eldap_get_option()\u003c/a\u003e та\n\u003ca href=\"function.ldap-set-option.md\"\u003eldap_set_option()\u003c/a\u003e було виправлено.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eФункції мультибайтових рядків\u003c/h3\u003e\n\u003ch4\u003eПовна підтримка case-mapping та case-folding\u003c/h4\u003e\n\u003cp\u003eДодано підтримку повного процесу перетворення регістру символів\n(case-mapping) та порівняння на ідентичність різних регістрів\n(Case-folding). На відміну від простого case-mapping, повний case-mapping\nможе змінити довжину рядка. Приклад:\u003c/p\u003e\n\u003cp\u003e`\u003c/p\u003e\n\u003cp\u003eРізні режими перетворення та порівняння регістру символів доступні в\nфункції \u003ca href=\"function.mb-convert-case.md\"\u003emb_convert_case()\u003c/a\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eMB_CASE_LOWER\u003c/code\u003e\u003c/strong\u003e (використовується\n\u003ca href=\"function.mb-strtolower.md\"\u003emb_strtolower()\u003c/a\u003e)\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eMB_CASE_UPPER\u003c/code\u003e\u003c/strong\u003e (використовується\n\u003ca href=\"function.mb-strtoupper.md\"\u003emb_strtoupper()\u003c/a\u003e)\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eMB_CASE_TITLE\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eMB_CASE_FOLD\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eMB_CASE_LOWER_SIMPLE\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eMB_CASE_UPPER_SIMPLE\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eMB_CASE_TITLE_SIMPLE\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eMB_CASE_FOLD_SIMPLE\u003c/code\u003e\u003c/strong\u003e (використовується нечутливими до\nрегістру операціями)\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eВиконує лише безумовний, незалежний від мови, повний процес\nперетворення.\u003c/p\u003e\n\u003ch4\u003eОперації, нечутливі до регістру, використовують case-folding\u003c/h4\u003e\n\u003cp\u003eСтрокові операції без урахування регістру тепер використовують case-folding\nзамість case-mapping регістру при порівнянні. Це означає, що тепер\nбільше символів будуть вважатися (без урахування регістру) рівними.\u003c/p\u003e\n\u003ch4\u003eMB_CASE_TITLE виконує перетворення title-case\u003c/h4\u003e\n\u003cp\u003eФункція \u003ca href=\"function.mb-convert-case.md\"\u003emb_convert_case()\u003c/a\u003e з\n\u003cstrong\u003e\u003ccode\u003eMB_CASE_TITLE\u003c/code\u003e\u003c/strong\u003e тепер виконує перетворення title-case на\nЗалежно від властивостей Unicode, заснованих на Cased і CaseIgnorable. В\nзокрема, це також покращує обробку лапок та апострофів.\u003c/p\u003e\n\u003ch4\u003eПідтримка Unicode 11\u003c/h4\u003e\n\u003cp\u003eТаблиці даних \u003ca href=\"book.mbstring.md\"\u003eмультибайтових рядків\u003c/a\u003e було оновлено\nдо Юнікод версії 11.\u003c/p\u003e\n\u003ch4\u003eПідтримка великих рядків\u003c/h4\u003e\n\u003cp\u003e\u003ca href=\"ref.mbstring.md\"\u003eФункції мультибайтових рядків\u003c/a\u003e тепер коректно\nпідтримують рядки розміром понад 2 Гб.\u003c/p\u003e\n\u003ch4\u003eПоліпшення продуктивності\u003c/h4\u003e\n\u003cp\u003eПродуктивність модуля \u003ca href=\"book.mbstring.md\"\u003eмультибайтових рядків\u003c/a\u003e\nбула значно повсюдно покращена. Найбільші поліпшення в\nфункціях перетворення регістру.\u003c/p\u003e\n\u003ch4\u003eПідтримка іменованих фрагментів\u003c/h4\u003e\n\u003cp\u003eФункції \u003ccode\u003emb_ereg_*\u003c/code\u003e тепер підтримують іменовані фрагменти.\nВідповідні функції, такі як \u003ca href=\"function.mb-ereg.md\"\u003emb_ereg()\u003c/a\u003e,\nтепер повертатимуть іменовані фрагменти як із їх номером групи,\nтак і з їх ім'ям, аналогічно PCRE:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmb_ereg('(?\u0026#x3C;word\u003e\\w+)', '국', $matches);// =\u003e [0 =\u003e \"국\", 1 =\u003e \"국\", \"word\" =\u003e \"국 \"];?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eКрім того, функція \u003ca href=\"function.mb-ereg-replace.md\"\u003emb_ereg_replace()\u003c/a\u003e\nтепер підтримує позначення \u003ccode\u003e\\k\u0026#x3C;\u003e\u003c/code\u003e та \u003ccode\u003e\\k''\u003c/code\u003e для посилання на\nіменовані фрагменти в рядку, що замінює:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmb_ereg_replace('\\s*(?\u0026#x3C;word\u003e\\w+)\\s*', \"_\\k\u0026#x3C;word\u003e_\\k'word'_\", ' foo ');// =\u003e \"_foo_foo_\" ?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\\k\u0026#x3C;\u003e\u003c/code\u003e і \u003ccode\u003e\\k''\u003c/code\u003e також можуть використовуватися для нумерованих посилань,\nякі також працюють із номерами груп більше 9.\u003c/p\u003e\n\u003ch3\u003eReadline\u003c/h3\u003e\n\u003cp\u003eУ функції \u003ca href=\"function.readline-info.md\"\u003ereadline_info()\u003c/a\u003e додано\nпідтримка параметрів \u003ccode\u003ecompletion_append_character\u003c/code\u003e та\n\u003ccode\u003ecompletion_suppress_append\u003c/code\u003e. Ці опції доступні, лише якщо PHP\nскомпільований з бібліотекою libreadline (а не libedit).\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration73.new-features.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

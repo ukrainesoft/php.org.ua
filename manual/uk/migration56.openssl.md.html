@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration56.openssl | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration56.new-functions.md">« Нові функції</a></p>
+</li>
+<li>
+<p><a href="migration56.extensions.md">Інші зміни у модулях »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration56.md">Міграція з PHP 5.5.x на PHP 5.6.x</a></p>
+</li>
+<li>
+<p>Зміни OpenSSL у PHP 5.6.x</p>
+</li>
+</ul>
+<h2>Зміни OpenSSL у PHP 5.6.x</h2>
+<h3>Обертки потоків тепер за замовчуванням перевіряють сертифікати вузлів та імена хостів при використанні SSL/TLS</h3>
+<p>Всі клієнтські потоки, що шифруються, тепер за замовчуванням включають перевірку
+бенкетів. За замовчуванням використовується OpenSSL CA пакет для перевірки
+сертифіката бенкету. У більшості випадків не потрібно нічого робити для
+з'єднання з серверами з правильним SSL сертифікатом, оскільки зазвичай
+OpenSSL вже налаштований для використання хороших пакетів CA.</p>
+<p>Стандартний CA пакет може бути перевизначений глобально за допомогою
+установки або openssl.cafile або openssl.capath рядків конфігурації, або
+ж на рівні кожного запиту використовуючи опції контексту
+<a href="context.ssl.md#context.ssl.cafile"><code>cafile</code></a> або
+<a href="context.ssl.md#context.ssl.capath"><code>capath</code></a>.</p>
+<p>Хоча це й не рекомендується, але можна вимкнути перевірку сертифіката
+бенкету для запиту, встановивши
+<a href="context.ssl.md#context.ssl.verify-peer"><code>verify_peer</code></a> опцію
+контексту в <strong><code>false</code></strong>, і можна відключити перевірку імені бенкету,
+встановивши
+<a href="context.ssl.md#context.ssl.verify-peer-name"><code>verify_peer_name</code></a> в
+<strong><code>false</code></strong>.</p>
+<h3>Сигнатура сертифіката</h3>
+<p>Була додана підтримка вилучення та перевірки сигнатури сертифікату.
+Для отримання сигнатур сертифікатів X.509 додано функцію
+<a href="function.openssl-x509-fingerprint.md">openssl_x509_fingerprint()</a>.
+Також було додано дві опції <a href="context.ssl.md">контексту потоку SSL</a>:
+<code>capture_peer_cert</code> для захоплення вузлового сертифіката X.509, та
+<code>peer_fingerprint</code> для перевірки сертифіката на відповідність заданої
+сигнатурі.</p>
+<h3>Оновлені шифри за замовчуванням</h3>
+<p>Список стандартних шифрів, що використовуються PHP, був оновлений на більш
+безпечний відповідно до <a href="https://wiki.mozilla.org/Security/Server_Side_TLS#Recommended_Ciphersuite">»  рекомендацій щодо шифрів від Mozilla</a>,
+з двома додатковими винятками: анонімні шифри Діффі-Хеллмана та
+RC4.</p>
+<p>Цей список доступний через нову константу
+<strong><code>OPENSSL_DEFAULT_STREAM_CIPHERS</code></strong>, і може бути перевизначений (як і
+у попередніх версіях PHP) установкою опцією контексту
+<a href="context.ssl.md#context.ssl.ciphers"><code>ciphers</code></a>.</p>
+<h3>Стиснення заборонено за замовчуванням</h3>
+<p>Стиснення SSL/TLS було заборонено за замовчуванням для зменшення зменшення
+ймовірність атаки типу CRIME. У PHP 5.4.13 було додано опцію
+контексту
+<a href="context.ssl.md#context.ssl.disable-compression"><code>disable_compression</code></a>
+для можливості заборонити компресію і тепер вона за умовчанням
+встановлена як <strong><code>true</code></strong> (тобто компресія заборонена).</p>
+<h3>Дозвіл серверу визначати свій власний порядок шифрів</h3>
+<p>Була додана опція контексту <code>honor_cipher_order</code>, яка дозволяє
+серверу обслуговуючому зашифрований потік самому визначати шифри,
+якими користуватиметься клієнт. Це дозволить знизити ризик атаки
+типу BEAST.</p>
+<h3>Доступ до узгодженого протоколу та шифру</h3>
+<p>Протокол і шифр, узгоджені для шифрованого потоку, доступні з
+допомогою функцій
+<a href="function.stream-get-meta-data.md">stream_get_meta_data()</a> або
+<a href="function.stream-context-get-options.md">stream_context_get_options()</a>,
+якщо опція контексту SSL <code>capture_session_meta</code> встановлена як
+<strong><code>true</code></strong>.</p>
+<p><code>&#x3C;?php$ctx = stream_context_create(['ssl' => [    'capture_session_meta' => TRUE]]);$html = file_get_contents('https://google.com/', FALSE,$ = stream_context_get_options($ctx)['ssl']['session_meta'];var_dump($meta);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>array(4) {
+["protocol"]=>
+string(5) "TLSv1"
+["cipher_name"]=>
+string(20) "ECDHE-RSA-AES128-SHA"
+["cipher_bits"]=>
+int(128)
+["cipher_version"]=>
+string(11) "TLSv1/SSLv3"
+}</p>
+<h3>Нові можливості для досконалої прямої секретності (PFS) для серверів, що обслуговують шифровані потоки</h3>
+<p>Шифровані потоки клієнта вже підтримують досконалу пряму
+таємність, оскільки вона, як правило, контролюється сервером.
+Сервери PHP, що обслуговують шифровані потоки, що використовують сертифікати
+підтримують досконалу пряму секретність не потребують будь-яких
+додаткові дії для включення PFS; однак, було додано
+кілька нових опцій контексту SSL для більш точного
+контролю над PFS та для вирішення можливих проблем.</p>
+<p><code>ecdh_curve</code>
+Ця опція дозволяє вибрати криву для використання у шифрах ECDH. Якщо
+не задано, то буде використовуватись <code>prime256v1</code>.</p>
+<p><code>dh_param</code>
+Шлях до файлу, що містить параметри обміну ключами Діффі-Хеллмана,
+створеного, наприклад, за допомогою такої команди:</p>
+<p>`` shellcode
+openssl dhparam -out /path/to/my/certs/dh-2048.pem 2048</p>
+<pre><code>
+`single_dh_use`
+Якщо встановлено як **`true`**, нова пара ключів буде створена,
+використовуючи параметри Діффі-Хеллмана, тим самим покращуючи пряму
+таємність.
+
+`single_ecdh_use`
+Якщо встановлено як **`true`**, нова пара ключів генеруватиметься
+завжди, за узгодженням шифру ECDH. Це покращує пряму таємність.
+
+### Вибір версії SSL/TLS
+
+Тепер можна вибирати конкретну версію SSL та TLS за допомогою опції
+контексту `crypto_method` або вказуючи конкретний транспорт під час створення
+обгортки потоку (наприклад, за допомогою виклику
+[stream_socket_client()](function.stream-socket-client.md) або
+[stream_socket_server()](function.stream-socket-server.md)).
+
+Опція контексту SSL `crypto_method` приймає бітову маску,
+що перераховує допустимі протоколи, як це задається в параметрі
+`crypto_type` функції
+[stream_socket_enable_crypto()](function.stream-socket-enable-crypto.md).
+
+| Протокол Прапор клієнта                         | Прапор сервера                          | Транспорт                               |
+| ----------------------------------------------- | --------------------------------------- | --------------------------------------- |
+| Будь-які версії TLS чи SSL                      | **STREAM_CRYPTO_METHOD_ANY_CLIENT**     | **STREAM_CRYPTO_METHOD_ANY_SERVER**     | ssl:// |                                           
+| Будь-яка версія TLS                             | **STREAM_CRYPTO_METHOD_TLS_CLIENT**     | **STREAM_CRYPTO_METHOD_TLS_SERVER**     | tls://
+| TLS 1.0 **STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT** | **STREAM_CRYPTO_METHOD_TLSv1_0_SERVER** | tlsv1.0://                              |
+| TLS 1.1                                         | **STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT** | **STREAM_CRYPTO_METHOD_TLSv1_1_SERVER** | tlsv1.1://
+| TLS 1.2                                         | **STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT** | **STREAM_CRYPTO_METHOD_TLSv1_2_SERVER** | tlsv1.2://
+| SSL 3                                           | **STREAM_CRYPTO_METHOD_SSLv3_CLIENT**   | **STREAM_CRYPTO_METHOD_SSLv3_SERVER**   | sslv3://
+
+**Вибрана версія протоколу та відповідні опції**
+
+` &#x3C;?php// Требуется TLS 1.0 или выше для использования file_get_contents():$ctx = stream_context_create([    'ssl' => [        'crypto_method' => STREAM_CRYPTO_METHOD_TLS_CLIENT,    ],]);$html = file_get_contents('https:/ /google.com/', false, $ctx);// Требуется TLS 1.1 или 1.2:$ctx = stream_context_create([    'ssl' => [        'crypto_method' => STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT |                           STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT,    ],]);$html = file_get_contents('https://google.com/', false, $ctx);// Сполучаємось з використанням транспорту струмового сокету tlsv1.2://$sock = stream_socket_client('tlsv1.2://google. / ');?> `
+
+### Додана функція [openssl_get_cert_locations()](function.openssl-get-cert-locations.md)
+
+Була додана функція
+[openssl_get_cert_locations()](function.openssl-get-cert-locations.md):
+вона повертає розташування, в яких PHP буде шукати пакети CA
+замовчуванням.
+
+` &#x3C;?phpvar_dump(openssl_get_cert_locations());?> `
+
+Результат виконання цього прикладу:
+
+array(8) {
+["default_cert_file"]=>
+string(21) "/etc/pki/tls/cert.pem"
+["default_cert_file_env"]=>
+string(13) "SSL_CERT_FILE"
+["default_cert_dir"]=>
+string(18) "/etc/pki/tls/certs"
+["default_cert_dir_env"]=>
+string(12) "SSL_CERT_DIR"
+["default_private_dir"]=>
+string(20) "/etc/pki/tls/private"
+["default_default_cert_area"]=>
+string(12) "/etc/pki/tls"
+["ini_cafile"]=>
+string(0) ""
+["ini_capath"]=>
+string(0) ""
+}
+
+### Підтримка SPKI
+
+Була додана підтримка для створення, вилучення та перевірки підписаних
+публічних ключів та розпізнавальних рядків (SPKAC). Були додані функції
+[openssl_spki_new()](function.openssl-spki-new.md),
+[openssl_spki_verify()](function.openssl-spki-verify.md),
+[openssl_spki_export_challenge()](function.openssl-spki-export-challenge.md)
+та [openssl_spki_export()](function.openssl-spki-export.md) для
+створення, перевірки експорту PEM публічних ключів та відповідних
+розпізнавальних рядків із SPKAC, створених з елементів HTML5 `KeyGen`.
+
+`openssl_spki_new`
+Генерація нового SPKAC з використанням приватного ключа
+розпізнавального рядка та алгоритму хешування.
+
+` &#x3C;?php$pkey = openssl_pkey_new();openssl_pkey_export($pkey, 'secret passphrase');$spkac = openssl_spki_new($pkey, 'challenge string');?> `
+
+Результат виконання цього прикладу:
+
+SPKAC=MIIBXjCByDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA3L0IfUijj7+A8CPC8EmhcdNoe5fUAog7OrBdhn7EkxFButUp40P7+LiYiygYG1TmoI/a5EgsLU3s9twEz3hmgY9mYIqb/rb+SF8qlD/K6KVyUORC7Wlz1Df4L8O3DuRGzx6/+3jIW6cPBpfgH1sVuYS1vDBsP/gMMIxwTsKJ4P0CAwEAARYkYjViMzYxMTktNjY5YS00ZDljLWEyYzctMGZjNGFhMjVlMmE2MA0GCSqGSIb3DQEBAwUAA4GBAF7hu0ifzmjonhAak2FhhBRsKFDzXdKIkrWxVNe8e0bZzMrWOxFM/rqBgeH3/gtOUDRS5Fnzyq425UsTYbjfiKzxGeCYCQJb1KJ2V5Ij/mIJHZr53WYEXHQTNMGR8RPm7IxwVXVSHIgAfXsXZ9IXNbFbcaLRiSTr9/N4U+MXUWL7
+
+`openssl_spki_verify`
+Перевірка наданого SPKAC.
+
+` &#x3C;?php$pkey =openssl_pkey_new();openssl_pkey_export($pkey, 'secret passphrase');$spkac = openssl_spki_new($pkey, 'challenge string');var_dump(ka
+
+`openssl_spki_export_challenge`
+Експорт пов'язаного розпізнавального рядка із наданого SPKAC.
+
+`&#x3C;?php$pkey = openssl_pkey_new();openssl_pkey_export($pkey, 'secret passphrase');$spkac = openssl_spki_new($pkey, 'challenge string')_$challenge > `
+
+Результат виконання цього прикладу:
+
+challenge string
+
+`openssl_spki_export`
+Експорт публічного ключа RSA у форматі SPKAC.
+
+` &#x3C;?php$pkey = openssl_pkey_new();openssl_pkey_export($pkey, 'secret passphrase');$spkac = openssl_spki_new($pkey, 'challenge string');echo$>
+
+Результат виконання цього прикладу:
+
+-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcvQh9SKOPv4DwI8LwSaFx02h7
+l9QCiDs6sF2GfsSTEUG61SnjQ/v4uJiLKBgbVOagj9rkSCwtTez23ATPeGaBj2Zg
+ipv+tv5IXyqUP8ropXJQ5ELtbXPUN/gvw7cO5EbPHr/7eMhbpw8Gl+AfWxW5hLW8
+MGw/+AwwjHBOwong/QIDAQAB
+-----END PUBLIC KEY-----
+</code></pre>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration56.openssl.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration56.openssl.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration56.openssl","slug":"migration56.openssl.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration56.new-functions.md\"\u003e« Нові функції\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration56.extensions.md\"\u003eІнші зміни у модулях »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration56.md\"\u003eМіграція з PHP 5.5.x на PHP 5.6.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗміни OpenSSL у PHP 5.6.x\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eЗміни OpenSSL у PHP 5.6.x\u003c/h2\u003e\n\u003ch3\u003eОбертки потоків тепер за замовчуванням перевіряють сертифікати вузлів та імена хостів при використанні SSL/TLS\u003c/h3\u003e\n\u003cp\u003eВсі клієнтські потоки, що шифруються, тепер за замовчуванням включають перевірку\nбенкетів. За замовчуванням використовується OpenSSL CA пакет для перевірки\nсертифіката бенкету. У більшості випадків не потрібно нічого робити для\nз'єднання з серверами з правильним SSL сертифікатом, оскільки зазвичай\nOpenSSL вже налаштований для використання хороших пакетів CA.\u003c/p\u003e\n\u003cp\u003eСтандартний CA пакет може бути перевизначений глобально за допомогою\nустановки або openssl.cafile або openssl.capath рядків конфігурації, або\nж на рівні кожного запиту використовуючи опції контексту\n\u003ca href=\"context.ssl.md#context.ssl.cafile\"\u003e\u003ccode\u003ecafile\u003c/code\u003e\u003c/a\u003e або\n\u003ca href=\"context.ssl.md#context.ssl.capath\"\u003e\u003ccode\u003ecapath\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eХоча це й не рекомендується, але можна вимкнути перевірку сертифіката\nбенкету для запиту, встановивши\n\u003ca href=\"context.ssl.md#context.ssl.verify-peer\"\u003e\u003ccode\u003everify_peer\u003c/code\u003e\u003c/a\u003e опцію\nконтексту в \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, і можна відключити перевірку імені бенкету,\nвстановивши\n\u003ca href=\"context.ssl.md#context.ssl.verify-peer-name\"\u003e\u003ccode\u003everify_peer_name\u003c/code\u003e\u003c/a\u003e в\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eСигнатура сертифіката\u003c/h3\u003e\n\u003cp\u003eБула додана підтримка вилучення та перевірки сигнатури сертифікату.\nДля отримання сигнатур сертифікатів X.509 додано функцію\n\u003ca href=\"function.openssl-x509-fingerprint.md\"\u003eopenssl_x509_fingerprint()\u003c/a\u003e.\nТакож було додано дві опції \u003ca href=\"context.ssl.md\"\u003eконтексту потоку SSL\u003c/a\u003e:\n\u003ccode\u003ecapture_peer_cert\u003c/code\u003e для захоплення вузлового сертифіката X.509, та\n\u003ccode\u003epeer_fingerprint\u003c/code\u003e для перевірки сертифіката на відповідність заданої\nсигнатурі.\u003c/p\u003e\n\u003ch3\u003eОновлені шифри за замовчуванням\u003c/h3\u003e\n\u003cp\u003eСписок стандартних шифрів, що використовуються PHP, був оновлений на більш\nбезпечний відповідно до \u003ca href=\"https://wiki.mozilla.org/Security/Server_Side_TLS#Recommended_Ciphersuite\"\u003e»  рекомендацій щодо шифрів від Mozilla\u003c/a\u003e,\nз двома додатковими винятками: анонімні шифри Діффі-Хеллмана та\nRC4.\u003c/p\u003e\n\u003cp\u003eЦей список доступний через нову константу\n\u003cstrong\u003e\u003ccode\u003eOPENSSL_DEFAULT_STREAM_CIPHERS\u003c/code\u003e\u003c/strong\u003e, і може бути перевизначений (як і\nу попередніх версіях PHP) установкою опцією контексту\n\u003ca href=\"context.ssl.md#context.ssl.ciphers\"\u003e\u003ccode\u003eciphers\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eСтиснення заборонено за замовчуванням\u003c/h3\u003e\n\u003cp\u003eСтиснення SSL/TLS було заборонено за замовчуванням для зменшення зменшення\nймовірність атаки типу CRIME. У PHP 5.4.13 було додано опцію\nконтексту\n\u003ca href=\"context.ssl.md#context.ssl.disable-compression\"\u003e\u003ccode\u003edisable_compression\u003c/code\u003e\u003c/a\u003e\nдля можливості заборонити компресію і тепер вона за умовчанням\nвстановлена як \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e (тобто компресія заборонена).\u003c/p\u003e\n\u003ch3\u003eДозвіл серверу визначати свій власний порядок шифрів\u003c/h3\u003e\n\u003cp\u003eБула додана опція контексту \u003ccode\u003ehonor_cipher_order\u003c/code\u003e, яка дозволяє\nсерверу обслуговуючому зашифрований потік самому визначати шифри,\nякими користуватиметься клієнт. Це дозволить знизити ризик атаки\nтипу BEAST.\u003c/p\u003e\n\u003ch3\u003eДоступ до узгодженого протоколу та шифру\u003c/h3\u003e\n\u003cp\u003eПротокол і шифр, узгоджені для шифрованого потоку, доступні з\nдопомогою функцій\n\u003ca href=\"function.stream-get-meta-data.md\"\u003estream_get_meta_data()\u003c/a\u003e або\n\u003ca href=\"function.stream-context-get-options.md\"\u003estream_context_get_options()\u003c/a\u003e,\nякщо опція контексту SSL \u003ccode\u003ecapture_session_meta\u003c/code\u003e встановлена як\n\u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$ctx = stream_context_create(['ssl' =\u003e [    'capture_session_meta' =\u003e TRUE]]);$html = file_get_contents('https://google.com/', FALSE,$ = stream_context_get_options($ctx)['ssl']['session_meta'];var_dump($meta);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003earray(4) {\n[\"protocol\"]=\u003e\nstring(5) \"TLSv1\"\n[\"cipher_name\"]=\u003e\nstring(20) \"ECDHE-RSA-AES128-SHA\"\n[\"cipher_bits\"]=\u003e\nint(128)\n[\"cipher_version\"]=\u003e\nstring(11) \"TLSv1/SSLv3\"\n}\u003c/p\u003e\n\u003ch3\u003eНові можливості для досконалої прямої секретності (PFS) для серверів, що обслуговують шифровані потоки\u003c/h3\u003e\n\u003cp\u003eШифровані потоки клієнта вже підтримують досконалу пряму\nтаємність, оскільки вона, як правило, контролюється сервером.\nСервери PHP, що обслуговують шифровані потоки, що використовують сертифікати\nпідтримують досконалу пряму секретність не потребують будь-яких\nдодаткові дії для включення PFS; однак, було додано\nкілька нових опцій контексту SSL для більш точного\nконтролю над PFS та для вирішення можливих проблем.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eecdh_curve\u003c/code\u003e\nЦя опція дозволяє вибрати криву для використання у шифрах ECDH. Якщо\nне задано, то буде використовуватись \u003ccode\u003eprime256v1\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edh_param\u003c/code\u003e\nШлях до файлу, що містить параметри обміну ключами Діффі-Хеллмана,\nствореного, наприклад, за допомогою такої команди:\u003c/p\u003e\n\u003cp\u003e`` shellcode\nopenssl dhparam -out /path/to/my/certs/dh-2048.pem 2048\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e\n`single_dh_use`\nЯкщо встановлено як **`true`**, нова пара ключів буде створена,\nвикористовуючи параметри Діффі-Хеллмана, тим самим покращуючи пряму\nтаємність.\n\n`single_ecdh_use`\nЯкщо встановлено як **`true`**, нова пара ключів генеруватиметься\nзавжди, за узгодженням шифру ECDH. Це покращує пряму таємність.\n\n### Вибір версії SSL/TLS\n\nТепер можна вибирати конкретну версію SSL та TLS за допомогою опції\nконтексту `crypto_method` або вказуючи конкретний транспорт під час створення\nобгортки потоку (наприклад, за допомогою виклику\n[stream_socket_client()](function.stream-socket-client.md) або\n[stream_socket_server()](function.stream-socket-server.md)).\n\nОпція контексту SSL `crypto_method` приймає бітову маску,\nщо перераховує допустимі протоколи, як це задається в параметрі\n`crypto_type` функції\n[stream_socket_enable_crypto()](function.stream-socket-enable-crypto.md).\n\n| Протокол Прапор клієнта                         | Прапор сервера                          | Транспорт                               |\n| ----------------------------------------------- | --------------------------------------- | --------------------------------------- |\n| Будь-які версії TLS чи SSL                      | **STREAM_CRYPTO_METHOD_ANY_CLIENT**     | **STREAM_CRYPTO_METHOD_ANY_SERVER**     | ssl:// |                                           \n| Будь-яка версія TLS                             | **STREAM_CRYPTO_METHOD_TLS_CLIENT**     | **STREAM_CRYPTO_METHOD_TLS_SERVER**     | tls://\n| TLS 1.0 **STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT** | **STREAM_CRYPTO_METHOD_TLSv1_0_SERVER** | tlsv1.0://                              |\n| TLS 1.1                                         | **STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT** | **STREAM_CRYPTO_METHOD_TLSv1_1_SERVER** | tlsv1.1://\n| TLS 1.2                                         | **STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT** | **STREAM_CRYPTO_METHOD_TLSv1_2_SERVER** | tlsv1.2://\n| SSL 3                                           | **STREAM_CRYPTO_METHOD_SSLv3_CLIENT**   | **STREAM_CRYPTO_METHOD_SSLv3_SERVER**   | sslv3://\n\n**Вибрана версія протоколу та відповідні опції**\n\n` \u0026#x3C;?php// Требуется TLS 1.0 или выше для использования file_get_contents():$ctx = stream_context_create([    'ssl' =\u003e [        'crypto_method' =\u003e STREAM_CRYPTO_METHOD_TLS_CLIENT,    ],]);$html = file_get_contents('https:/ /google.com/', false, $ctx);// Требуется TLS 1.1 или 1.2:$ctx = stream_context_create([    'ssl' =\u003e [        'crypto_method' =\u003e STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT |                           STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT,    ],]);$html = file_get_contents('https://google.com/', false, $ctx);// Сполучаємось з використанням транспорту струмового сокету tlsv1.2://$sock = stream_socket_client('tlsv1.2://google. / ');?\u003e `\n\n### Додана функція [openssl_get_cert_locations()](function.openssl-get-cert-locations.md)\n\nБула додана функція\n[openssl_get_cert_locations()](function.openssl-get-cert-locations.md):\nвона повертає розташування, в яких PHP буде шукати пакети CA\nзамовчуванням.\n\n` \u0026#x3C;?phpvar_dump(openssl_get_cert_locations());?\u003e `\n\nРезультат виконання цього прикладу:\n\narray(8) {\n[\"default_cert_file\"]=\u003e\nstring(21) \"/etc/pki/tls/cert.pem\"\n[\"default_cert_file_env\"]=\u003e\nstring(13) \"SSL_CERT_FILE\"\n[\"default_cert_dir\"]=\u003e\nstring(18) \"/etc/pki/tls/certs\"\n[\"default_cert_dir_env\"]=\u003e\nstring(12) \"SSL_CERT_DIR\"\n[\"default_private_dir\"]=\u003e\nstring(20) \"/etc/pki/tls/private\"\n[\"default_default_cert_area\"]=\u003e\nstring(12) \"/etc/pki/tls\"\n[\"ini_cafile\"]=\u003e\nstring(0) \"\"\n[\"ini_capath\"]=\u003e\nstring(0) \"\"\n}\n\n### Підтримка SPKI\n\nБула додана підтримка для створення, вилучення та перевірки підписаних\nпублічних ключів та розпізнавальних рядків (SPKAC). Були додані функції\n[openssl_spki_new()](function.openssl-spki-new.md),\n[openssl_spki_verify()](function.openssl-spki-verify.md),\n[openssl_spki_export_challenge()](function.openssl-spki-export-challenge.md)\nта [openssl_spki_export()](function.openssl-spki-export.md) для\nстворення, перевірки експорту PEM публічних ключів та відповідних\nрозпізнавальних рядків із SPKAC, створених з елементів HTML5 `KeyGen`.\n\n`openssl_spki_new`\nГенерація нового SPKAC з використанням приватного ключа\nрозпізнавального рядка та алгоритму хешування.\n\n` \u0026#x3C;?php$pkey = openssl_pkey_new();openssl_pkey_export($pkey, 'secret passphrase');$spkac = openssl_spki_new($pkey, 'challenge string');?\u003e `\n\nРезультат виконання цього прикладу:\n\nSPKAC=MIIBXjCByDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA3L0IfUijj7+A8CPC8EmhcdNoe5fUAog7OrBdhn7EkxFButUp40P7+LiYiygYG1TmoI/a5EgsLU3s9twEz3hmgY9mYIqb/rb+SF8qlD/K6KVyUORC7Wlz1Df4L8O3DuRGzx6/+3jIW6cPBpfgH1sVuYS1vDBsP/gMMIxwTsKJ4P0CAwEAARYkYjViMzYxMTktNjY5YS00ZDljLWEyYzctMGZjNGFhMjVlMmE2MA0GCSqGSIb3DQEBAwUAA4GBAF7hu0ifzmjonhAak2FhhBRsKFDzXdKIkrWxVNe8e0bZzMrWOxFM/rqBgeH3/gtOUDRS5Fnzyq425UsTYbjfiKzxGeCYCQJb1KJ2V5Ij/mIJHZr53WYEXHQTNMGR8RPm7IxwVXVSHIgAfXsXZ9IXNbFbcaLRiSTr9/N4U+MXUWL7\n\n`openssl_spki_verify`\nПеревірка наданого SPKAC.\n\n` \u0026#x3C;?php$pkey =openssl_pkey_new();openssl_pkey_export($pkey, 'secret passphrase');$spkac = openssl_spki_new($pkey, 'challenge string');var_dump(ka\n\n`openssl_spki_export_challenge`\nЕкспорт пов'язаного розпізнавального рядка із наданого SPKAC.\n\n`\u0026#x3C;?php$pkey = openssl_pkey_new();openssl_pkey_export($pkey, 'secret passphrase');$spkac = openssl_spki_new($pkey, 'challenge string')_$challenge \u003e `\n\nРезультат виконання цього прикладу:\n\nchallenge string\n\n`openssl_spki_export`\nЕкспорт публічного ключа RSA у форматі SPKAC.\n\n` \u0026#x3C;?php$pkey = openssl_pkey_new();openssl_pkey_export($pkey, 'secret passphrase');$spkac = openssl_spki_new($pkey, 'challenge string');echo$\u003e\n\nРезультат виконання цього прикладу:\n\n-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcvQh9SKOPv4DwI8LwSaFx02h7\nl9QCiDs6sF2GfsSTEUG61SnjQ/v4uJiLKBgbVOagj9rkSCwtTez23ATPeGaBj2Zg\nipv+tv5IXyqUP8ropXJQ5ELtbXPUN/gvw7cO5EbPHr/7eMhbpw8Gl+AfWxW5hLW8\nMGw/+AwwjHBOwong/QIDAQAB\n-----END PUBLIC KEY-----\n\u003c/code\u003e\u003c/pre\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration56.openssl.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

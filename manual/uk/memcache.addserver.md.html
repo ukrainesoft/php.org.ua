@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>memcache.addserver | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="memcache.add.md">«Memcache::add</a></p>
+</li>
+<li>
+<p><a href="memcache.close.md">Memcache::close »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.memcache.md">Memcache</a></p>
+</li>
+<li>
+<p>Додає сервер memcached в пул з'єднань</p>
+</li>
+</ul>
+<h1>Memcache::addServer</h1>
+<p>(PECL memcache >= 2.0.0)</p>
+<p>Memcache::addServer — Додає сервер memcached у пул з'єднань</p>
+<h3>Опис</h3>
+<p><strong>Memcache::addServer</strong>(
+string <code>$host</code>,
+int <code>$port</code> = 11211,
+bool <code>$persistent</code> = ?,
+int <code>$weight</code> = ?,
+int <code>$timeout</code> = ?,
+int <code>$retry_interval</code> = ?,
+bool <code>$status</code> = ?,
+<a href="language.types.callable.md">callable</a> <code>$failure_callback</code> = ?,
+int <code>$timeoutms</code> = ?
+): bool</p>
+<p><strong>Memcache::addServer()</strong> додає сервер до пулу з'єднань. Ви також
+Ви можете використовувати функцію <strong>memcache_add_server()</strong>.</p>
+<p>При використанні цього методу (на відміну від
+<a href="memcache.connect.md">Memcache::connect()</a> та
+<a href="memcache.pconnect.md">Memcache::pconnect()</a>) мережне з'єднання не
+буде встановлено, поки в ньому не виникне потреби. У зв'язку з цим
+можна не побоюватися зниження продуктивності при додаванні великого
+кількості серверів в пул, тому що, можливо, вони ніколи не будуть
+використані.</p>
+<p>Потреба у забезпеченні відмовостійкості може виникнути на будь-якому
+етапі в будь-якому методі і якщо при цьому будуть доступні хоча б один сервер
+з пулу - користувач не отримає будь-якого сповіщення. Будь-який тип
+помилки сокету або сервера Memcached (за винятком помилки переповнення
+пам'яті) може увімкнути протокол забезпечення відмовостійкості. Звичайні
+клієнтські помилки, такі як додавання існуючого ключа, не викликають
+подібної поведінки.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ця функція була додана до Memcache версії 2.0.0.</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>host</code>
+Вказує на хост із запущеним сервісом memcached. Цей параметр можна
+поставити у вигляді <code>unix:///path/to/memcached.sock</code> для використання сокетів
+Unix, але в такому випадку необхідно встановити параметр <code>port</code>,
+рівним <code>0</code>.</p>
+<p><code>port</code>
+Вказує порт, яким доступний сервіс memcached. Необхідно
+встановити рівним <code>0</code> якщо використовуються сокети Unix.</p>
+<p>Будь ласка, зверніть увагу: <code>port</code> за замовчуванням дорівнює
+<a href="memcache.ini.md#ini.memcache.default-port">memcache.default_port</a>.
+Тому рекомендується завжди вказувати номер порту під час використання
+цього методу.</p>
+<p><code>persistent</code>
+Чи використовувати постійне з'єднання. За промовчанням <strong><code>true</code></strong>.</p>
+<p><code>weight</code>
+Необхідна кількість створених пакетів даних для цього сервера, що,
+своєю чергою, визначає можливість його вибору. Ймовірність
+розраховується щодо загальної ваги всіх серверів.</p>
+<p><code>timeout</code>
+Час очікування в секундах для встановлення з'єднання із сервером. Двічі
+подумайте, перш ніж встановлювати це значення більше ніж 1. Це може
+нівелювати всю користь від використання memcached.</p>
+<p><code>retry_interval</code>
+Керує частотою перевірки доступності сервера, що відмовив,
+15 секунд. Якщо встановити значення "-1", то спроб перевірити
+доступність сервера не буде. Ні цей параметр, ні
+параметр <code>persistent</code> не впливає, якщо модуль
+завантажений динамічно через функцію <a href="function.dl.md">dl()</a>.</p>
+<p>Кожна структура з'єднання, що провалилася, має власне значення
+часу очікування і, доки воно не перевищено, структура буде пропущена,
+після чого спробує вибрати інший сервер обслуговування запиту.
+Після того як час з'єднання закінчився, воно або успішно переєднається,
+або буде позначено проваленим і чекатиме ще <code>retry_interval</code>
+секунд. Зазвичай ефект полягає в тому, що кожен процес веб-сервера
+буде очікувати <code>retry_interval</code> секунд під час обслуговування запиту.</p>
+<p><code>status</code>
+Визначає, чи сервер позначений прапором як "онлайн". Встановлення
+цього параметра в <strong><code>false</code></strong> та <code>retry_interval</code> у -1 дозволить зберегти
+сервер у пулі, але не використовувати його в алгоритмі розподілу ключів.
+Запит на цей сервер або запустить механізм забезпечення
+відмови стійкості, або відразу ж перерветься з помилкою, залежно від
+налаштування <code>memcache.allow_failover</code>. За умовчанням одно <strong><code>true</code></strong>, що
+означає, що сервер активний та готовий приймати запити.</p>
+<p><code>failure_callback</code>
+Дозволяє користувачеві встановити функцію зворотного виклику, яка
+запуститься у разі будь-якої помилки. Ця функція буде викликана раніше,
+чим буде запущено механізм забезпечення стійкості до відмови. Функція
+приймає два параметри - ім'я хоста і порт сервера, що відмовив.</p>
+<p><code>timeoutms</code></p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>Memcache::addServer()</strong></strong></p>
+<p><code>&#x3C;?php/* об'єктно-орієнтоване API */$memcache = new Memcache;$memcache->addServer('memcache_host', 11211);$memcache->addServer('memcache_host2'  $memcache_obj=memcache_connect('memcache_host', 11211);memcache_add_server($memcache_obj, 'memcache_host2', 11211);?> </code></p>
+<h3>Примітки</h3>
+<p><strong>Увага</strong></p>
+<p>Коли значення <code>port</code> не вказано, цей метод використовує значення,
+вказане в ini-директиві PHP
+<a href="memcache.ini.md#ini.memcache.default-port">memcache.default_port</a>.
+Якщо це значення було змінено десь у вашому додатку, то
+це може дати непередбачувані результати. З цієї причини краще завжди
+явно вказувати порт під час виклику методу.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="memcache.connect.md">Memcache::connect()</a> - Відкриває з'єднання
+з сервером memcached</li>
+<li><a href="memcache.pconnect.md">Memcache::pconnect()</a> - Відкриває
+постійне з'єднання з сервером memcached</li>
+<li><a href="memcache.close.md">Memcache::close()</a> - Закрити з'єднання з
+сервером memcached</li>
+<li><a href="memcache.setserverparams.md">Memcache::setServerParams()</a> -
+Змінює параметри сервера та статус під час виконання</li>
+<li><a href="memcache.getserverstatus.md">Memcache::getServerStatus()</a> -
+Повертає статус сервера</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/memcache.addserver.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/memcache.addserver.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"memcache.addserver","slug":"memcache.addserver.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"memcache.add.md\"\u003e«Memcache::add\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"memcache.close.md\"\u003eMemcache::close »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.memcache.md\"\u003eMemcache\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДодає сервер memcached в пул з'єднань\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eMemcache::addServer\u003c/h1\u003e\n\u003cp\u003e(PECL memcache \u003e= 2.0.0)\u003c/p\u003e\n\u003cp\u003eMemcache::addServer — Додає сервер memcached у пул з'єднань\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eMemcache::addServer\u003c/strong\u003e(\nstring \u003ccode\u003e$host\u003c/code\u003e,\nint \u003ccode\u003e$port\u003c/code\u003e = 11211,\nbool \u003ccode\u003e$persistent\u003c/code\u003e = ?,\nint \u003ccode\u003e$weight\u003c/code\u003e = ?,\nint \u003ccode\u003e$timeout\u003c/code\u003e = ?,\nint \u003ccode\u003e$retry_interval\u003c/code\u003e = ?,\nbool \u003ccode\u003e$status\u003c/code\u003e = ?,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$failure_callback\u003c/code\u003e = ?,\nint \u003ccode\u003e$timeoutms\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eMemcache::addServer()\u003c/strong\u003e додає сервер до пулу з'єднань. Ви також\nВи можете використовувати функцію \u003cstrong\u003ememcache_add_server()\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eПри використанні цього методу (на відміну від\n\u003ca href=\"memcache.connect.md\"\u003eMemcache::connect()\u003c/a\u003e та\n\u003ca href=\"memcache.pconnect.md\"\u003eMemcache::pconnect()\u003c/a\u003e) мережне з'єднання не\nбуде встановлено, поки в ньому не виникне потреби. У зв'язку з цим\nможна не побоюватися зниження продуктивності при додаванні великого\nкількості серверів в пул, тому що, можливо, вони ніколи не будуть\nвикористані.\u003c/p\u003e\n\u003cp\u003eПотреба у забезпеченні відмовостійкості може виникнути на будь-якому\nетапі в будь-якому методі і якщо при цьому будуть доступні хоча б один сервер\nз пулу - користувач не отримає будь-якого сповіщення. Будь-який тип\nпомилки сокету або сервера Memcached (за винятком помилки переповнення\nпам'яті) може увімкнути протокол забезпечення відмовостійкості. Звичайні\nклієнтські помилки, такі як додавання існуючого ключа, не викликають\nподібної поведінки.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЦя функція була додана до Memcache версії 2.0.0.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ehost\u003c/code\u003e\nВказує на хост із запущеним сервісом memcached. Цей параметр можна\nпоставити у вигляді \u003ccode\u003eunix:///path/to/memcached.sock\u003c/code\u003e для використання сокетів\nUnix, але в такому випадку необхідно встановити параметр \u003ccode\u003eport\u003c/code\u003e,\nрівним \u003ccode\u003e0\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eport\u003c/code\u003e\nВказує порт, яким доступний сервіс memcached. Необхідно\nвстановити рівним \u003ccode\u003e0\u003c/code\u003e якщо використовуються сокети Unix.\u003c/p\u003e\n\u003cp\u003eБудь ласка, зверніть увагу: \u003ccode\u003eport\u003c/code\u003e за замовчуванням дорівнює\n\u003ca href=\"memcache.ini.md#ini.memcache.default-port\"\u003ememcache.default_port\u003c/a\u003e.\nТому рекомендується завжди вказувати номер порту під час використання\nцього методу.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epersistent\u003c/code\u003e\nЧи використовувати постійне з'єднання. За промовчанням \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eweight\u003c/code\u003e\nНеобхідна кількість створених пакетів даних для цього сервера, що,\nсвоєю чергою, визначає можливість його вибору. Ймовірність\nрозраховується щодо загальної ваги всіх серверів.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003etimeout\u003c/code\u003e\nЧас очікування в секундах для встановлення з'єднання із сервером. Двічі\nподумайте, перш ніж встановлювати це значення більше ніж 1. Це може\nнівелювати всю користь від використання memcached.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eretry_interval\u003c/code\u003e\nКерує частотою перевірки доступності сервера, що відмовив,\n15 секунд. Якщо встановити значення \"-1\", то спроб перевірити\nдоступність сервера не буде. Ні цей параметр, ні\nпараметр \u003ccode\u003epersistent\u003c/code\u003e не впливає, якщо модуль\nзавантажений динамічно через функцію \u003ca href=\"function.dl.md\"\u003edl()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eКожна структура з'єднання, що провалилася, має власне значення\nчасу очікування і, доки воно не перевищено, структура буде пропущена,\nпісля чого спробує вибрати інший сервер обслуговування запиту.\nПісля того як час з'єднання закінчився, воно або успішно переєднається,\nабо буде позначено проваленим і чекатиме ще \u003ccode\u003eretry_interval\u003c/code\u003e\nсекунд. Зазвичай ефект полягає в тому, що кожен процес веб-сервера\nбуде очікувати \u003ccode\u003eretry_interval\u003c/code\u003e секунд під час обслуговування запиту.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003estatus\u003c/code\u003e\nВизначає, чи сервер позначений прапором як \"онлайн\". Встановлення\nцього параметра в \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e та \u003ccode\u003eretry_interval\u003c/code\u003e у -1 дозволить зберегти\nсервер у пулі, але не використовувати його в алгоритмі розподілу ключів.\nЗапит на цей сервер або запустить механізм забезпечення\nвідмови стійкості, або відразу ж перерветься з помилкою, залежно від\nналаштування \u003ccode\u003ememcache.allow_failover\u003c/code\u003e. За умовчанням одно \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, що\nозначає, що сервер активний та готовий приймати запити.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003efailure_callback\u003c/code\u003e\nДозволяє користувачеві встановити функцію зворотного виклику, яка\nзапуститься у разі будь-якої помилки. Ця функція буде викликана раніше,\nчим буде запущено механізм забезпечення стійкості до відмови. Функція\nприймає два параметри - ім'я хоста і порт сервера, що відмовив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003etimeoutms\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003eMemcache::addServer()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* об'єктно-орієнтоване API */$memcache = new Memcache;$memcache-\u003eaddServer('memcache_host', 11211);$memcache-\u003eaddServer('memcache_host2'  $memcache_obj=memcache_connect('memcache_host', 11211);memcache_add_server($memcache_obj, 'memcache_host2', 11211);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eКоли значення \u003ccode\u003eport\u003c/code\u003e не вказано, цей метод використовує значення,\nвказане в ini-директиві PHP\n\u003ca href=\"memcache.ini.md#ini.memcache.default-port\"\u003ememcache.default_port\u003c/a\u003e.\nЯкщо це значення було змінено десь у вашому додатку, то\nце може дати непередбачувані результати. З цієї причини краще завжди\nявно вказувати порт під час виклику методу.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"memcache.connect.md\"\u003eMemcache::connect()\u003c/a\u003e - Відкриває з'єднання\nз сервером memcached\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcache.pconnect.md\"\u003eMemcache::pconnect()\u003c/a\u003e - Відкриває\nпостійне з'єднання з сервером memcached\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcache.close.md\"\u003eMemcache::close()\u003c/a\u003e - Закрити з'єднання з\nсервером memcached\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcache.setserverparams.md\"\u003eMemcache::setServerParams()\u003c/a\u003e -\nЗмінює параметри сервера та статус під час виконання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcache.getserverstatus.md\"\u003eMemcache::getServerStatus()\u003c/a\u003e -\nПовертає статус сервера\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"memcache.addserver.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

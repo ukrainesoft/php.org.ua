@@ -1,0 +1,340 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli.quickstart.prepared-statements | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli.quickstart.statements.md">«Виконання запитів</a></p>
+</li>
+<li>
+<p><a href="mysqli.quickstart.stored-procedures.md">Збережені процедури »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mysqli.quickstart.md">Короткий посібник</a></p>
+</li>
+<li>
+<p>запити, що готуються</p>
+</li>
+</ul>
+<h2>Підготовлювані запити</h2>
+<p>СУБД MySQL підтримує запити, що готуються. Що готуються (або
+параметризовані) запити використовуються для підвищення ефективності,
+коли один запит виконується багаторазово і захищає від ін'єкцій SQL.</p>
+<p><em>Принцип роботи</em></p>
+<p>Виконання запиту, що готується, проводиться в два етапи: підготовка
+та виконання. На етапі підготовки на сервер надсилається шаблон запиту.
+Сервер виконує синтаксичну перевірку цього шаблону, будує план
+виконання запиту та виділяє під нього ресурси.</p>
+<p>MySQL сервер підтримує неіменовані, або позиційні,
+псевдозмінні <code>?</code>.</p>
+<p>За підготовкою слідує виконання. Під час виконання клієнт пов'язує
+значення параметрів і надсилає їх на сервер. Сервер виконує запит
+із пов'язаними значеннями, використовуючи раніше створені внутрішні ресурси.</p>
+<p><strong>Приклад #1 Підготовлений запит</strong></p>
+<p><code>&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli("example.com", "user", "password", "database");/* Непідготовлений TA IF EXISTS test");$mysqli->query("CREATE TABLE test(id INT, label TEXT)");/* Підготовлений запрос, крок1: підготовка */$stmt = $mysqli- (id, label) VALUES (?, ?)");/* Підготовлений запит, крок2: зв'язування і виконання */$id = 1;$label = 'PHP';$stmt->bind_param(" id, $label); // "is"  означає, що $id зв'язується, як ціле число, а $label - як рядок$stmt->execute();</code></p>
+<p><em>Повторне виконання запиту</em></p>
+<p>Підготовлений запит можна запускати багаторазово. Перед кожним запуском
+значення прив'язаних змінних будуть передаватися на сервер та
+підставлятись у текст запиту. Сам текст запиту повторно не
+аналізується, так само як і не надсилається повторно шаблон.</p>
+<p><strong>Приклад #2 Вираз INSERT один раз готується, а потім
+багаторазово виконується</strong></p>
+<p><code>&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli("example.com", "user", "password", "database");/* Непідготовлений TA IF EXISTS test");$mysqli->query("CREATE TABLE test(id INT, label TEXT)");/* Підготовлений запрос, крок1: підготовка */$stmt = $mysqli- (id, label) VALUES (?, ?)");/* Підготовлений запит, крок 2: зв'язування і виконання */$stmt->bind_param("is", $id, $label); // "is"  означає, що $id зв'язується, як ціле число, а $label - як рядок$data = [   1 => 'PHP',  '              $data as $id => $label) {    $stmt->execute();}$result = $mysqli->query('SELECT id, label FROM test');var_dump($result->fetch_all ;</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>array(3) {
+[0]=>
+array(2) {
+["id"]=>
+string(1) "1"
+["label"]=>
+string(3) "PHP"
+}
+[1]=>
+array(2) {
+["id"]=>
+string(1) "2"
+["label"]=>
+string(4) "Java"
+}
+[2]=>
+array(2) {
+["id"]=>
+string(1) "3"
+["label"]=>
+string(3) "C++"
+}
+}</p>
+<p>Кожен запит, що готується, використовує ресурси сервера. Якщо запит
+більше не потрібен, його необхідно одразу закрити. Якщо не зробити цього
+явно запит закриється сам, але тільки коли PHP звільнить його
+дескриптор, як правило, це відбувається при виході запиту з області
+видимості або після завершення роботи скрипта.</p>
+<p>Використання підготовлюваних запитів не завжди призводить до підвищення
+ефективності. Якщо параметризований запит запускається лише раз, це
+призводить до більшої кількості клієнт-серверних обмінів даними, ніж
+під час простого запиту. Саме з цієї причини у прикладі вище
+вираз <code>SELECT</code> виконувалося як звичайний запит.</p>
+<p>Також має сенс розглянути SQL-синтаксис вставки множини значень у
+виразі INSERT. У прикладі вище мультивставка (значення для вставки
+перераховуються через кому) у реченні INSERT обійшлася б дешевше,
+ніж підготовлений запит.</p>
+<p><strong>Приклад #3 Менше обміну даними під час використання мультивставок SQL</strong></p>
+<p><code>&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli("example.com", "user", "password", "database");$mysqli->query("DR| $mysqli->query("CREATE TABLE test(id INT)");$values = [1, 2, 3, 4];$stmt = $mysqli->prepare("INSERT INTO test(id) VALUES (?) , (?), (?), (?)");$stmt->bind_param('iiii', ...$values);$stmt->execute();</code></p>
+<p><em>Типи даних значень у результуючій таблиці</em></p>
+<p>У протоколі клієнт-серверної взаємодії MySQL для звичайних і
+підготовлюваних запитів визначено різні протоколи передачі даних
+клієнту. Параметризовані запити використовують так званий двійковий
+протокол. Сервер MySQL надсилає результуючий набір клієнту "як є"
+у двійковому форматі. Дані в таблиці не перетворюються на текст.
+Клієнтські бібліотеки отримують двійкові дані та намагаються перетворити
+значення відповідних типів даних PHP. Наприклад, стовпець
+результатів запиту типу SQL <code>INT</code> PHP прийме та перетворює на тип
+integer.</p>
+<p><strong>Приклад #4 Вихідні типи даних</strong></p>
+<p><code>&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli("example.com", "user", "password", "database");/* Непідготовлений TA IF EXISTS test");$mysqli->query("CREATE TABLE test(id INT, label TEXT)");$mysqli->query("INSERT INTO test(id, label) VALUES (1, 'PHP) );$stmt = $mysqli->prepare("SELECT id, label FROM test WHERE id = 1");$stmt->execute();$result = $stmt->get_result();$row = $ >fetch_assoc();printf("id = %s (%s) ", $row['id'], gettype($row['id']));printf("label = %s (%s) ", $row['label'], gettype($row['label']));</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>id = 1 (integer)
+label = PHP (string)</p>
+<p>Така поведінка не характерна для звичайних запитів, які за замовчуванням
+всі результати повертають як текстових рядків. Ця поведінка по
+За замовчуванням можна змінити, настроївши з'єднання відповідно.
+Після такого настроювання різниці між даними підготовлюваного та звичайного
+запитів не буде.</p>
+<p><em>Отримання результатів запиту з прив'язкою змінних</em></p>
+<p>Результати з підготовленого запиту можна отримати або прив'язавши
+вихідні змінні, або запитавши об'єкт
+<a href="class.mysqli-result.md">mysqli_result</a>.</p>
+<p>Вихідні параметри слід прив'язувати після виконання запиту. кожному
+стовпцю результуючої таблиці повинна відповідати рівно одна
+змінна.</p>
+<p><strong>Приклад #5 Прив'язка змінних до результату запиту</strong></p>
+<p><code>&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli("example.com", "user", "password", "database");/* Непідготовлений TA IF EXISTS test");$mysqli->query("CREATE TABLE test(id INT, label TEXT)");$mysqli->query("INSERT INTO test(id, label) VALUES (1, 'PHP) );$stmt = $mysqli->prepare("SELECT id, label FROM test WHERE id = 1");$stmt->execute();$stmt->bind_result($out_id, $out_label);wh ->fetch()) {    printf("id==%s|(%s), label==%s|(%s) ", $out_id, gettype($out_id), $out_label, gettype($out_label));}</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>id = 1 (integer), label = PHP (string)</p>
+<p>Об'єкти запитів за замовчуванням повертають
+небуферизовані результати набори. Ці таблиці ніяким неявним
+не переносяться на клієнта, вони залишаються на сервері, займаючи його
+ресурси, поки клієнтський процес самостійно не витягне всі дані.
+Якщо клієнт не може отримати дані результуючого набору, або після
+закриття об'єкта запиту залишаються невибраними якісь дані, то на
+<code>mysqli</code> лягає відповідальність неявно підчистити це сміття за
+клієнтським процесом.</p>
+<p>Також можна буферизувати дані результуючих таблиць підготовленого
+запиту за допомогою функції
+<a href="mysqli-stmt.store-result.md">mysqli_stmt::store_result()</a>.</p>
+<p><em>Вилучення результатів запиту за допомогою mysqli_result інтерфейсу</em></p>
+<p>Замість використання прив'язки змінних до результатів запиту,
+результуючі таблиці можна видобувати засобами інтерфейсу
+mysqli_result. Функція
+<a href="mysqli-stmt.get-result.md">mysqli_stmt::get_result()</a> повертає
+буферизований результуючий набір рядків.</p>
+<p><strong>Приклад #6 Використання mysqli_result для вибірки результатів
+запиту</strong></p>
+<p><code>&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli("example.com", "user", "password", "database");/* Непідготовлений TA IF EXISTS test");$mysqli->query("CREATE TABLE test(id INT, label TEXT)");$mysqli->query("INSERT INTO test(id, label) VALUES (1, 'PHP) );$stmt==$mysqli->prepare("SELECT id, label FROM test WHERE id = 1");$stmt->execute();$result = $stmt->get_result();var_dump($result fetch_all(MYSQLI_ASSOC));</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>array(1) {
+[0]=>
+array(2) {
+["id"]=>
+int(1)
+["label"]=>
+string(3) "PHP"
+}
+}</p>
+<p>Використання інтерфейсу <a href="class.mysqli-result.md">mysqli_result</a> має
+додаткова перевага в тому, що буферизація результуючих таблиць
+на клієнті пропонує гнучку систему навігації за цими таблицями.</p>
+<p><strong>Приклад #7 Буферизація результуючого набору для зручності читання
+даних</strong></p>
+<p><code>&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli("example.com", "user", "password", "database");/* Непідготовлений TA IF EXISTS test");$mysqli->query("CREATE TABLE test(id INT, label TEXT)");$mysqli->query("INSERT INTO test(id, label) VALUES (1, 'PHP) (2, 'Java'), (3, 'C++')");$stmt==$mysqli->prepare("SELECT id, label FROM test");$stmt->execute();$result = $stmt ->get_result();for ($row_no = $result->num_rows - 1; $row_no >= 0; $row_no--) {    $result->data_seek($row_no); var_dump($result->fetch_assoc());}</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>array(2) {
+["id"]=>
+int(3)
+["label"]=>
+string(3) "C++"
+}
+array(2) {
+["id"]=>
+int(2)
+["label"]=>
+string(4) "Java"
+}
+array(2) {
+["id"]=>
+int(1)
+["label"]=>
+string(3) "PHP"
+}</p>
+<p><em>Екранування та SQL-ін'єкції</em></p>
+<p>Прив'язані змінні відправляються на сервер окремо від запиту та
+таким чином не можуть впливати на нього. Сервер використовує ці значення
+безпосередньо в момент виконання вже після того, як був оброблений
+вираз. Прив'язані параметри не потребують екранування,
+тому що вони ніколи не підставляються безпосередньо в рядок запиту.
+Необхідно відправляти тип прив'язаної змінної на сервер, щоб
+визначити відповідне перетворення. Дивіться функцію
+<a href="mysqli-stmt.bind-param.md">mysqli_stmt::bind_param()</a> для отримання
+більшої інформації.</p>
+<p>Такий поділ часто вважається єдиним способом убезпечитися від
+SQL-ін'єкції, але насправді такого ж рівня безпеки можна
+добитися і з непідготовленими висловлюваннями, якщо правильно
+відформатувати всі значення. Правильне відзначити, що правильне
+форматування - не те саме, що і екранування, і включає в себе
+більше логіки. Таким чином, підготовлені висловлювання - просто більше
+зручний і менш схильний до помилок спосіб для досягнення такої
+безпеки бази даних</p>
+<p><em>Емуляція підготовленого запиту на клієнті</em></p>
+<p>В API немає можливості емулювати підготовлювані запити на клієнта.</p>
+<p><em>Швидке порівняння підготовлених та непідготовлених запитів</em></p>
+<p>У таблиці нижче наведено порівняння звичайного та підготовленого на сервері
+запитів.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Підготовлений запит Звичайний запит</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Кількість звернень до сервера, SELECT, одноразове виконання 2</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>Кількість рядків із текстом запиту, переданих клієнтом на сервер</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Кількість звернень до сервера, SELECT, n-кратне виконання</td>
+<td>1+n</td>
+<td>n</td>
+</tr>
+<tr>
+<td>Кількість рядків із текстом запиту, переданих клієнтом на сервер</td>
+<td>1 шаблон, n разів параметри, якщо є</td>
+<td>n разів і щоразу розбирається</td>
+</tr>
+<tr>
+<td>Прив'язка вхідних параметрів засобами API Є</td>
+<td>Ні, настройки екрануються вручну</td>
+<td></td>
+</tr>
+<tr>
+<td>Прив'язка вихідних параметрів засобами API Є</td>
+<td>Ні</td>
+<td></td>
+</tr>
+<tr>
+<td>Підтримує API mysqli_result</td>
+<td>Так, використовується <a href="mysqli-stmt.get-result.md">mysqli_stmt::get_result()</a></td>
+<td>Так</td>
+</tr>
+<tr>
+<td>Буферизація результуючих наборів Є, можна використовувати функцію <a href="mysqli-stmt.get-result.md">mysqli_stmt::get_result()</a> або <a href="mysqli-stmt.store-result.md">mysqli_stmt::store_result()</a></td>
+<td>Є ця поведінка за умовчанням для <a href="mysqli.query.md">mysqli::query()</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Робота з небуферизованими результуючими наборами Можливо, використовується прив'язка вихідних параметрів за допомогою API Можливо, використовується функція <a href="mysqli.real-query.md">mysqli::real_query()</a> спільно з <a href="mysqli.use-result.md">mysqli::use_result()</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Спосіб передачі даних протоколу клієнт-серверної взаємодії MySQL Двійковий протокол</td>
+<td>Текстовий протокол</td>
+<td></td>
+</tr>
+<tr>
+<td>SQL-типи значень результуючого набору Зберігаються під час вилучення</td>
+<td>Перетворюються на рядки або зберігаються під час вилучення</td>
+<td></td>
+</tr>
+<tr>
+<td>Підтримує всі SQL-вирази Останні версії MySQL підтримують більшість, але все</td>
+<td>Так</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Порівняння підготовлених та непідготовлених запитів</strong></p>
+<p><em>Дивіться також</em></p>
+<ul>
+<li><a href="mysqli.construct.md">mysqli::__construct()</a></li>
+<li><a href="mysqli.query.md">mysqli::query()</a></li>
+<li><a href="mysqli.prepare.md">mysqli::prepare()</a></li>
+<li><a href="mysqli-stmt.prepare.md">mysqli_stmt::prepare()</a></li>
+<li><a href="mysqli-stmt.execute.md">mysqli_stmt::execute()</a></li>
+<li><a href="mysqli-stmt.bind-param.md">mysqli_stmt::bind_param()</a></li>
+<li><a href="mysqli-stmt.bind-result.md">mysqli_stmt::bind_result()</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli.quickstart.prepared-statements.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli.quickstart.prepared-statements.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli.quickstart.prepared-statements","slug":"mysqli.quickstart.prepared-statements.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.quickstart.statements.md\"\u003e«Виконання запитів\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.quickstart.stored-procedures.md\"\u003eЗбережені процедури »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.quickstart.md\"\u003eКороткий посібник\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eзапити, що готуються\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eПідготовлювані запити\u003c/h2\u003e\n\u003cp\u003eСУБД MySQL підтримує запити, що готуються. Що готуються (або\nпараметризовані) запити використовуються для підвищення ефективності,\nколи один запит виконується багаторазово і захищає від ін'єкцій SQL.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eПринцип роботи\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eВиконання запиту, що готується, проводиться в два етапи: підготовка\nта виконання. На етапі підготовки на сервер надсилається шаблон запиту.\nСервер виконує синтаксичну перевірку цього шаблону, будує план\nвиконання запиту та виділяє під нього ресурси.\u003c/p\u003e\n\u003cp\u003eMySQL сервер підтримує неіменовані, або позиційні,\nпсевдозмінні \u003ccode\u003e?\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЗа підготовкою слідує виконання. Під час виконання клієнт пов'язує\nзначення параметрів і надсилає їх на сервер. Сервер виконує запит\nіз пов'язаними значеннями, використовуючи раніше створені внутрішні ресурси.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Підготовлений запит\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli(\"example.com\", \"user\", \"password\", \"database\");/* Непідготовлений TA IF EXISTS test\");$mysqli-\u003equery(\"CREATE TABLE test(id INT, label TEXT)\");/* Підготовлений запрос, крок1: підготовка */$stmt = $mysqli- (id, label) VALUES (?, ?)\");/* Підготовлений запит, крок2: зв'язування і виконання */$id = 1;$label = 'PHP';$stmt-\u003ebind_param(\" id, $label); // \"is\"  означає, що $id зв'язується, як ціле число, а $label - як рядок$stmt-\u003eexecute();\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eПовторне виконання запиту\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eПідготовлений запит можна запускати багаторазово. Перед кожним запуском\nзначення прив'язаних змінних будуть передаватися на сервер та\nпідставлятись у текст запиту. Сам текст запиту повторно не\nаналізується, так само як і не надсилається повторно шаблон.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Вираз INSERT один раз готується, а потім\nбагаторазово виконується\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli(\"example.com\", \"user\", \"password\", \"database\");/* Непідготовлений TA IF EXISTS test\");$mysqli-\u003equery(\"CREATE TABLE test(id INT, label TEXT)\");/* Підготовлений запрос, крок1: підготовка */$stmt = $mysqli- (id, label) VALUES (?, ?)\");/* Підготовлений запит, крок 2: зв'язування і виконання */$stmt-\u003ebind_param(\"is\", $id, $label); // \"is\"  означає, що $id зв'язується, як ціле число, а $label - як рядок$data = [   1 =\u003e 'PHP',  '              $data as $id =\u003e $label) {    $stmt-\u003eexecute();}$result = $mysqli-\u003equery('SELECT id, label FROM test');var_dump($result-\u003efetch_all ;\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003earray(3) {\n[0]=\u003e\narray(2) {\n[\"id\"]=\u003e\nstring(1) \"1\"\n[\"label\"]=\u003e\nstring(3) \"PHP\"\n}\n[1]=\u003e\narray(2) {\n[\"id\"]=\u003e\nstring(1) \"2\"\n[\"label\"]=\u003e\nstring(4) \"Java\"\n}\n[2]=\u003e\narray(2) {\n[\"id\"]=\u003e\nstring(1) \"3\"\n[\"label\"]=\u003e\nstring(3) \"C++\"\n}\n}\u003c/p\u003e\n\u003cp\u003eКожен запит, що готується, використовує ресурси сервера. Якщо запит\nбільше не потрібен, його необхідно одразу закрити. Якщо не зробити цього\nявно запит закриється сам, але тільки коли PHP звільнить його\nдескриптор, як правило, це відбувається при виході запиту з області\nвидимості або після завершення роботи скрипта.\u003c/p\u003e\n\u003cp\u003eВикористання підготовлюваних запитів не завжди призводить до підвищення\nефективності. Якщо параметризований запит запускається лише раз, це\nпризводить до більшої кількості клієнт-серверних обмінів даними, ніж\nпід час простого запиту. Саме з цієї причини у прикладі вище\nвираз \u003ccode\u003eSELECT\u003c/code\u003e виконувалося як звичайний запит.\u003c/p\u003e\n\u003cp\u003eТакож має сенс розглянути SQL-синтаксис вставки множини значень у\nвиразі INSERT. У прикладі вище мультивставка (значення для вставки\nперераховуються через кому) у реченні INSERT обійшлася б дешевше,\nніж підготовлений запит.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Менше обміну даними під час використання мультивставок SQL\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli(\"example.com\", \"user\", \"password\", \"database\");$mysqli-\u003equery(\"DR| $mysqli-\u003equery(\"CREATE TABLE test(id INT)\");$values = [1, 2, 3, 4];$stmt = $mysqli-\u003eprepare(\"INSERT INTO test(id) VALUES (?) , (?), (?), (?)\");$stmt-\u003ebind_param('iiii', ...$values);$stmt-\u003eexecute();\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eТипи даних значень у результуючій таблиці\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eУ протоколі клієнт-серверної взаємодії MySQL для звичайних і\nпідготовлюваних запитів визначено різні протоколи передачі даних\nклієнту. Параметризовані запити використовують так званий двійковий\nпротокол. Сервер MySQL надсилає результуючий набір клієнту \"як є\"\nу двійковому форматі. Дані в таблиці не перетворюються на текст.\nКлієнтські бібліотеки отримують двійкові дані та намагаються перетворити\nзначення відповідних типів даних PHP. Наприклад, стовпець\nрезультатів запиту типу SQL \u003ccode\u003eINT\u003c/code\u003e PHP прийме та перетворює на тип\ninteger.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Вихідні типи даних\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli(\"example.com\", \"user\", \"password\", \"database\");/* Непідготовлений TA IF EXISTS test\");$mysqli-\u003equery(\"CREATE TABLE test(id INT, label TEXT)\");$mysqli-\u003equery(\"INSERT INTO test(id, label) VALUES (1, 'PHP) );$stmt = $mysqli-\u003eprepare(\"SELECT id, label FROM test WHERE id = 1\");$stmt-\u003eexecute();$result = $stmt-\u003eget_result();$row = $ \u003efetch_assoc();printf(\"id = %s (%s) \", $row['id'], gettype($row['id']));printf(\"label = %s (%s) \", $row['label'], gettype($row['label']));\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eid = 1 (integer)\nlabel = PHP (string)\u003c/p\u003e\n\u003cp\u003eТака поведінка не характерна для звичайних запитів, які за замовчуванням\nвсі результати повертають як текстових рядків. Ця поведінка по\nЗа замовчуванням можна змінити, настроївши з'єднання відповідно.\nПісля такого настроювання різниці між даними підготовлюваного та звичайного\nзапитів не буде.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eОтримання результатів запиту з прив'язкою змінних\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eРезультати з підготовленого запиту можна отримати або прив'язавши\nвихідні змінні, або запитавши об'єкт\n\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eВихідні параметри слід прив'язувати після виконання запиту. кожному\nстовпцю результуючої таблиці повинна відповідати рівно одна\nзмінна.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Прив'язка змінних до результату запиту\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli(\"example.com\", \"user\", \"password\", \"database\");/* Непідготовлений TA IF EXISTS test\");$mysqli-\u003equery(\"CREATE TABLE test(id INT, label TEXT)\");$mysqli-\u003equery(\"INSERT INTO test(id, label) VALUES (1, 'PHP) );$stmt = $mysqli-\u003eprepare(\"SELECT id, label FROM test WHERE id = 1\");$stmt-\u003eexecute();$stmt-\u003ebind_result($out_id, $out_label);wh -\u003efetch()) {    printf(\"id==%s|(%s), label==%s|(%s) \", $out_id, gettype($out_id), $out_label, gettype($out_label));}\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eid = 1 (integer), label = PHP (string)\u003c/p\u003e\n\u003cp\u003eОб'єкти запитів за замовчуванням повертають\nнебуферизовані результати набори. Ці таблиці ніяким неявним\nне переносяться на клієнта, вони залишаються на сервері, займаючи його\nресурси, поки клієнтський процес самостійно не витягне всі дані.\nЯкщо клієнт не може отримати дані результуючого набору, або після\nзакриття об'єкта запиту залишаються невибраними якісь дані, то на\n\u003ccode\u003emysqli\u003c/code\u003e лягає відповідальність неявно підчистити це сміття за\nклієнтським процесом.\u003c/p\u003e\n\u003cp\u003eТакож можна буферизувати дані результуючих таблиць підготовленого\nзапиту за допомогою функції\n\u003ca href=\"mysqli-stmt.store-result.md\"\u003emysqli_stmt::store_result()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eВилучення результатів запиту за допомогою mysqli_result інтерфейсу\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eЗамість використання прив'язки змінних до результатів запиту,\nрезультуючі таблиці можна видобувати засобами інтерфейсу\nmysqli_result. Функція\n\u003ca href=\"mysqli-stmt.get-result.md\"\u003emysqli_stmt::get_result()\u003c/a\u003e повертає\nбуферизований результуючий набір рядків.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #6 Використання mysqli_result для вибірки результатів\nзапиту\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli(\"example.com\", \"user\", \"password\", \"database\");/* Непідготовлений TA IF EXISTS test\");$mysqli-\u003equery(\"CREATE TABLE test(id INT, label TEXT)\");$mysqli-\u003equery(\"INSERT INTO test(id, label) VALUES (1, 'PHP) );$stmt==$mysqli-\u003eprepare(\"SELECT id, label FROM test WHERE id = 1\");$stmt-\u003eexecute();$result = $stmt-\u003eget_result();var_dump($result fetch_all(MYSQLI_ASSOC));\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003earray(1) {\n[0]=\u003e\narray(2) {\n[\"id\"]=\u003e\nint(1)\n[\"label\"]=\u003e\nstring(3) \"PHP\"\n}\n}\u003c/p\u003e\n\u003cp\u003eВикористання інтерфейсу \u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e має\nдодаткова перевага в тому, що буферизація результуючих таблиць\nна клієнті пропонує гнучку систему навігації за цими таблицями.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #7 Буферизація результуючого набору для зручності читання\nданих\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli(\"example.com\", \"user\", \"password\", \"database\");/* Непідготовлений TA IF EXISTS test\");$mysqli-\u003equery(\"CREATE TABLE test(id INT, label TEXT)\");$mysqli-\u003equery(\"INSERT INTO test(id, label) VALUES (1, 'PHP) (2, 'Java'), (3, 'C++')\");$stmt==$mysqli-\u003eprepare(\"SELECT id, label FROM test\");$stmt-\u003eexecute();$result = $stmt -\u003eget_result();for ($row_no = $result-\u003enum_rows - 1; $row_no \u003e= 0; $row_no--) {    $result-\u003edata_seek($row_no); var_dump($result-\u003efetch_assoc());}\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003earray(2) {\n[\"id\"]=\u003e\nint(3)\n[\"label\"]=\u003e\nstring(3) \"C++\"\n}\narray(2) {\n[\"id\"]=\u003e\nint(2)\n[\"label\"]=\u003e\nstring(4) \"Java\"\n}\narray(2) {\n[\"id\"]=\u003e\nint(1)\n[\"label\"]=\u003e\nstring(3) \"PHP\"\n}\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЕкранування та SQL-ін'єкції\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eПрив'язані змінні відправляються на сервер окремо від запиту та\nтаким чином не можуть впливати на нього. Сервер використовує ці значення\nбезпосередньо в момент виконання вже після того, як був оброблений\nвираз. Прив'язані параметри не потребують екранування,\nтому що вони ніколи не підставляються безпосередньо в рядок запиту.\nНеобхідно відправляти тип прив'язаної змінної на сервер, щоб\nвизначити відповідне перетворення. Дивіться функцію\n\u003ca href=\"mysqli-stmt.bind-param.md\"\u003emysqli_stmt::bind_param()\u003c/a\u003e для отримання\nбільшої інформації.\u003c/p\u003e\n\u003cp\u003eТакий поділ часто вважається єдиним способом убезпечитися від\nSQL-ін'єкції, але насправді такого ж рівня безпеки можна\nдобитися і з непідготовленими висловлюваннями, якщо правильно\nвідформатувати всі значення. Правильне відзначити, що правильне\nформатування - не те саме, що і екранування, і включає в себе\nбільше логіки. Таким чином, підготовлені висловлювання - просто більше\nзручний і менш схильний до помилок спосіб для досягнення такої\nбезпеки бази даних\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЕмуляція підготовленого запиту на клієнті\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eВ API немає можливості емулювати підготовлювані запити на клієнта.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eШвидке порівняння підготовлених та непідготовлених запитів\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eУ таблиці нижче наведено порівняння звичайного та підготовленого на сервері\nзапитів.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003eПідготовлений запит Звичайний запит\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eКількість звернень до сервера, SELECT, одноразове виконання 2\u003c/td\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eКількість рядків із текстом запиту, переданих клієнтом на сервер\u003c/td\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eКількість звернень до сервера, SELECT, n-кратне виконання\u003c/td\u003e\n\u003ctd\u003e1+n\u003c/td\u003e\n\u003ctd\u003en\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eКількість рядків із текстом запиту, переданих клієнтом на сервер\u003c/td\u003e\n\u003ctd\u003e1 шаблон, n разів параметри, якщо є\u003c/td\u003e\n\u003ctd\u003en разів і щоразу розбирається\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eПрив'язка вхідних параметрів засобами API Є\u003c/td\u003e\n\u003ctd\u003eНі, настройки екрануються вручну\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eПрив'язка вихідних параметрів засобами API Є\u003c/td\u003e\n\u003ctd\u003eНі\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eПідтримує API mysqli_result\u003c/td\u003e\n\u003ctd\u003eТак, використовується \u003ca href=\"mysqli-stmt.get-result.md\"\u003emysqli_stmt::get_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eБуферизація результуючих наборів Є, можна використовувати функцію \u003ca href=\"mysqli-stmt.get-result.md\"\u003emysqli_stmt::get_result()\u003c/a\u003e або \u003ca href=\"mysqli-stmt.store-result.md\"\u003emysqli_stmt::store_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eЄ ця поведінка за умовчанням для \u003ca href=\"mysqli.query.md\"\u003emysqli::query()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eРобота з небуферизованими результуючими наборами Можливо, використовується прив'язка вихідних параметрів за допомогою API Можливо, використовується функція \u003ca href=\"mysqli.real-query.md\"\u003emysqli::real_query()\u003c/a\u003e спільно з \u003ca href=\"mysqli.use-result.md\"\u003emysqli::use_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eСпосіб передачі даних протоколу клієнт-серверної взаємодії MySQL Двійковий протокол\u003c/td\u003e\n\u003ctd\u003eТекстовий протокол\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eSQL-типи значень результуючого набору Зберігаються під час вилучення\u003c/td\u003e\n\u003ctd\u003eПеретворюються на рядки або зберігаються під час вилучення\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eПідтримує всі SQL-вирази Останні версії MySQL підтримують більшість, але все\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eПорівняння підготовлених та непідготовлених запитів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eДивіться також\u003c/em\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mysqli.construct.md\"\u003emysqli::__construct()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.query.md\"\u003emysqli::query()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.prepare.md\"\u003emysqli::prepare()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-stmt.prepare.md\"\u003emysqli_stmt::prepare()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-stmt.execute.md\"\u003emysqli_stmt::execute()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-stmt.bind-param.md\"\u003emysqli_stmt::bind_param()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-stmt.bind-result.md\"\u003emysqli_stmt::bind_result()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli.quickstart.prepared-statements.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

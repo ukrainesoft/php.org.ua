@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.ldap-set-option | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.ldap-search.md">«ldap_search</a></p>
+</li>
+<li>
+<p><a href="function.ldap-set-rebind-proc.md">ldap_set_rebind_proc »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.ldap.md">Функції LDAP</a></p>
+</li>
+<li>
+<p>Встановити значення цієї опції</p>
+</li>
+</ul>
+<p>#ldap_set_option</p>
+<p>(PHP 4 >= 4.0.4, PHP 5, PHP 7, PHP 8)</p>
+<p>ldap_set_option — Встановити значення цієї опції</p>
+<h3>Опис</h3>
+<p><strong>ldap_set_option</strong>(?<a href="class.ldap-connection.md">LDAP\Connection</a>
+<code>$ldap</code>, int <code>$option</code>, array|string|int|bool <code>$value</code>): bool</p>
+<p>Встановлює значення зазначеної опції <code>value</code>.</p>
+<h3>Список параметрів</h3>
+<p><code>ldap</code>
+Примірник <a href="class.ldap-connection.md">LDAP\Connection</a>, що повертається
+функцією <a href="function.ldap-connect.md">ldap_connect()</a>.</p>
+<p><code>option</code>
+Опція <code>option</code> може бути однією з:</p>
+<table>
+<thead>
+<tr>
+<th>Опція</th>
+<th>Тип</th>
+<th>Доступна із</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LDAP_OPT_DEREF</strong></td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_SIZELIMIT</strong></td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_TIMELIMIT</strong></td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_NETWORK_TIMEOUT</strong></td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_PROTOCOL_VERSION</strong></td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_ERROR_NUMBER</strong></td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_REFERRALS</strong></td>
+<td>bool</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_RESTART</strong></td>
+<td>bool</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_HOST_NAME</strong></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_ERROR_STRING</strong></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_DIAGNOSTIC_MESSAGE</strong></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_MATCHED_DN</strong></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_SERVER_CONTROLS</strong></td>
+<td>array</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_CLIENT_CONTROLS</strong></td>
+<td>array</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_KEEPALIVE_IDLE</strong></td>
+<td>int</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_KEEPALIVE_PROBES</strong></td>
+<td>int</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_KEEPALIVE_INTERVAL</strong></td>
+<td>int</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_CACERTDIR</strong></td>
+<td>string</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_CACERTFILE</strong></td>
+<td>string</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_CERTFILE</strong></td>
+<td>string</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_CIPHER_SUITE</strong></td>
+<td>string</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_CRLCHECK</strong></td>
+<td>int</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_CRLFILE</strong></td>
+<td>string</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_DHFILE</strong></td>
+<td>string</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_KEYFILE</strong></td>
+<td>string</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_PROTOCOL_MIN</strong></td>
+<td>int</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_RANDOM_FILE</strong></td>
+<td>string</td>
+<td>PHP 7.1.0</td>
+</tr>
+<tr>
+<td><strong>LDAP_OPT_X_TLS_REQUIRE_CERT</strong></td>
+<td>int</td>
+<td>PHP 7.0.5</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>LDAP_OPT_SERVER_CONTROLS</code></strong> та <strong><code>LDAP_OPT_CLIENT_CONTROLS</code></strong> вимагають
+список елементів керування. Це означає, що значення має бути
+масивом елементів керування. Елемент управління складається з <em>oid</em>,
+визначального елемент управління, опціонального <em>значення</em>, та
+додаткового прапора для <em>критичності</em>. У PHP елемент керування
+задається масивом, що містить елемент з ключем <em>oid</em> і рядковим
+значенням і двома необов'язковими елементами. Необов'язкові елементи
+є ключем <em>value</em> з рядковим значенням та ключом <em>iscritical</em> з
+логічним значенням. <em>iscritical</em> за замовчуванням встановлюється в
+<em><strong><code>false</code></strong></em>, якщо не вказано. Для більш детальної інформації дивіться
+[» draft-ietf-ldapext-ldap-c-api-xx.txt](<a href="http://www.openldap.org/devel/cvsweb.cgi/~checkout~/doc/drafts/draft-ietf-ldapext-ldap">http://www.openldap.org/devel/cvsweb.cgi/~checkout~/doc/drafts/draft-ietf-ldapext-ldap</a> -c-api-xx.txt).
+Дивіться також другий приклад, наведений нижче.</p>
+<p><code>value</code>
+Нове значення для зазначеної <code>option</code> (опції).</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.1.0</td>
+<td>Параметр ldap тепер очікує на екземпляр <a href="class.ldap-connection.md">LDAP\Connection</a>; раніше очікувався ресурс (<a href="language.types.resource.md">resource</a>).</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Встановлює версію протоколу</strong></p>
+<p><code>&#x3C;?php// $ds - действительный идентификатор связи с LDAP-серверомif (ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3)) {    echo "Используется LDAPv3";} else {    echo "Не удалось установить версию протокола в 3";}? ></code></p>
+<p><strong>Приклад #2 Встановлює керування сервером</strong></p>
+<p><code>&#x3C;?php//$$ds - дійсний ідентифікатор зв'язку з LDAP-сервером// елемент управління з відсутнім значенням$ctrl1 = array("oid" => "1.2.752. / iscritical за мовчанням FALSE$ctrl2 = array("oid" => "1.2.752.58.1.10", "value" => "magic");// проба встановлення оба ($ctrl1, $ctrl2))) {    echo "Не удалося встановити серверні елементи управління";}?> </code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ця функція доступна лише при використанні OpenLDAP 2.x.x або
+Netscape Directory SDK x.x.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.ldap-get-option.md">ldap_get_option()</a> - Отримати
+поточне значення цієї опції</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.ldap-set-option.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.ldap-set-option.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.ldap-set-option","slug":"function.ldap-set-option.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.ldap-search.md\"\u003e«ldap_search\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.ldap-set-rebind-proc.md\"\u003eldap_set_rebind_proc »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.ldap.md\"\u003eФункції LDAP\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВстановити значення цієї опції\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#ldap_set_option\u003c/p\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.0.4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eldap_set_option — Встановити значення цієї опції\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eldap_set_option\u003c/strong\u003e(?\u003ca href=\"class.ldap-connection.md\"\u003eLDAP\\Connection\u003c/a\u003e\n\u003ccode\u003e$ldap\u003c/code\u003e, int \u003ccode\u003e$option\u003c/code\u003e, array|string|int|bool \u003ccode\u003e$value\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eВстановлює значення зазначеної опції \u003ccode\u003evalue\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eldap\u003c/code\u003e\nПримірник \u003ca href=\"class.ldap-connection.md\"\u003eLDAP\\Connection\u003c/a\u003e, що повертається\nфункцією \u003ca href=\"function.ldap-connect.md\"\u003eldap_connect()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoption\u003c/code\u003e\nОпція \u003ccode\u003eoption\u003c/code\u003e може бути однією з:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eОпція\u003c/th\u003e\n\u003cth\u003eТип\u003c/th\u003e\n\u003cth\u003eДоступна із\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_DEREF\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_SIZELIMIT\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_TIMELIMIT\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_NETWORK_TIMEOUT\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_PROTOCOL_VERSION\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_ERROR_NUMBER\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_REFERRALS\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003ebool\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_RESTART\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003ebool\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_HOST_NAME\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_ERROR_STRING\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_DIAGNOSTIC_MESSAGE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_MATCHED_DN\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_SERVER_CONTROLS\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003earray\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_CLIENT_CONTROLS\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003earray\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_KEEPALIVE_IDLE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_KEEPALIVE_PROBES\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_KEEPALIVE_INTERVAL\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_CACERTDIR\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_CACERTFILE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_CERTFILE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_CIPHER_SUITE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_CRLCHECK\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_CRLFILE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_DHFILE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_KEYFILE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_PROTOCOL_MIN\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_RANDOM_FILE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003estring\u003c/td\u003e\n\u003ctd\u003ePHP 7.1.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eLDAP_OPT_X_TLS_REQUIRE_CERT\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eint\u003c/td\u003e\n\u003ctd\u003ePHP 7.0.5\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eLDAP_OPT_SERVER_CONTROLS\u003c/code\u003e\u003c/strong\u003e та \u003cstrong\u003e\u003ccode\u003eLDAP_OPT_CLIENT_CONTROLS\u003c/code\u003e\u003c/strong\u003e вимагають\nсписок елементів керування. Це означає, що значення має бути\nмасивом елементів керування. Елемент управління складається з \u003cem\u003eoid\u003c/em\u003e,\nвизначального елемент управління, опціонального \u003cem\u003eзначення\u003c/em\u003e, та\nдодаткового прапора для \u003cem\u003eкритичності\u003c/em\u003e. У PHP елемент керування\nзадається масивом, що містить елемент з ключем \u003cem\u003eoid\u003c/em\u003e і рядковим\nзначенням і двома необов'язковими елементами. Необов'язкові елементи\nє ключем \u003cem\u003evalue\u003c/em\u003e з рядковим значенням та ключом \u003cem\u003eiscritical\u003c/em\u003e з\nлогічним значенням. \u003cem\u003eiscritical\u003c/em\u003e за замовчуванням встановлюється в\n\u003cem\u003e\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\u003c/em\u003e, якщо не вказано. Для більш детальної інформації дивіться\n[» draft-ietf-ldapext-ldap-c-api-xx.txt](\u003ca href=\"http://www.openldap.org/devel/cvsweb.cgi/~checkout~/doc/drafts/draft-ietf-ldapext-ldap\"\u003ehttp://www.openldap.org/devel/cvsweb.cgi/~checkout~/doc/drafts/draft-ietf-ldapext-ldap\u003c/a\u003e -c-api-xx.txt).\nДивіться також другий приклад, наведений нижче.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003evalue\u003c/code\u003e\nНове значення для зазначеної \u003ccode\u003eoption\u003c/code\u003e (опції).\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.1.0\u003c/td\u003e\n\u003ctd\u003eПараметр ldap тепер очікує на екземпляр \u003ca href=\"class.ldap-connection.md\"\u003eLDAP\\Connection\u003c/a\u003e; раніше очікувався ресурс (\u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e).\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Встановлює версію протоколу\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// $ds - действительный идентификатор связи с LDAP-серверомif (ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3)) {    echo \"Используется LDAPv3\";} else {    echo \"Не удалось установить версию протокола в 3\";}? \u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Встановлює керування сервером\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php//$$ds - дійсний ідентифікатор зв'язку з LDAP-сервером// елемент управління з відсутнім значенням$ctrl1 = array(\"oid\" =\u003e \"1.2.752. / iscritical за мовчанням FALSE$ctrl2 = array(\"oid\" =\u003e \"1.2.752.58.1.10\", \"value\" =\u003e \"magic\");// проба встановлення оба ($ctrl1, $ctrl2))) {    echo \"Не удалося встановити серверні елементи управління\";}?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЦя функція доступна лише при використанні OpenLDAP 2.x.x або\nNetscape Directory SDK x.x.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.ldap-get-option.md\"\u003eldap_get_option()\u003c/a\u003e - Отримати\nпоточне значення цієї опції\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.ldap-set-option.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

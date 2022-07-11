@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration72.new-functions | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration72.new-features.md">« Нові можливості</a></p>
+</li>
+<li>
+<p><a href="migration72.constants.md">Нові глобальні константи »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration72.md">Міграція з PHP 7.1.x на PHP 7.2.x</a></p>
+</li>
+<li>
+<p>Нові функції</p>
+</li>
+</ul>
+<h2>Нові функції</h2>
+<h3>Ядро PHP</h3>
+<ul>
+<li><a href="function.stream-isatty.md">stream_isatty()</a></li>
+<li></li>
+</ul>
+<p><a href="function.sapi-windows-vt100-support.md">sapi_windows_vt100_support()</a></p>
+<h3><a href="book.spl.md">SPL</a></h3>
+<ul>
+<li><a href="function.spl-object-id.md">spl_object_id()</a></li>
+</ul>
+<h3><a href="book.dom.md">DOM</a></h3>
+<ul>
+<li><a href="domnodelist.count.md">DomNodeList::count()</a></li>
+<li><a href="domnamednodemap.count.md">DOMNamedNodeMap::count()</a></li>
+</ul>
+<h3><a href="book.ftp.md">FTP</a></h3>
+<ul>
+<li><a href="function.ftp-append.md">ftp_append()</a></li>
+</ul>
+<h3><a href="book.image.md">GD</a></h3>
+<ul>
+<li><a href="function.imagesetclip.md">imagesetclip()</a></li>
+<li><a href="function.imagegetclip.md">imagegetclip()</a></li>
+<li><a href="function.imageopenpolygon.md">imageopenpolygon()</a></li>
+<li><a href="function.imageresolution.md">imageresolution()</a></li>
+<li><a href="function.imagecreatefrombmp.md">imagecreatefrombmp()</a></li>
+<li><a href="function.imagebmp.md">imagebmp()</a></li>
+</ul>
+<h3><a href="book.hash.md">Hash</a></h3>
+<ul>
+<li><a href="function.hash-hmac-algos.md">hash_hmac_algos()</a></li>
+</ul>
+<h3><a href="book.ldap.md">LDAP</a></h3>
+<ul>
+<li><a href="function.ldap-parse-exop.md">ldap_parse_exop()</a></li>
+<li><a href="function.ldap-exop.md">ldap_exop()</a></li>
+<li><a href="function.ldap-exop-passwd.md">ldap_exop_passwd()</a></li>
+<li><a href="function.ldap-exop-whoami.md">ldap_exop_whoami()</a></li>
+</ul>
+<h3><a href="book.mbstring.md">Багатобайтні рядки</a></h3>
+<ul>
+<li><a href="function.mb-chr.md">mb_chr()</a></li>
+<li><a href="function.mb-ord.md">mb_ord()</a></li>
+<li><a href="function.mb-scrub.md">mb_scrub()</a></li>
+</ul>
+<h3><a href="book.oci8.md">Oracle OCI8</a></h3>
+<ul>
+<li></li>
+</ul>
+<h2><a href="function.oci-register-taf-callback.md">oci_register_taf_callback()</a></h2>
+<p><a href="function.oci-unregister-taf-callback.md">oci_unregister_taf_callback()</a></p>
+<h3><a href="book.sockets.md">Сокети</a></h3>
+<ul>
+<li><a href="function.socket-addrinfo-lookup.md">socket_addrinfo_lookup()</a></li>
+<li><a href="function.socket-addrinfo-connect.md">socket_addrinfo_connect()</a></li>
+<li><a href="function.socket-addrinfo-bind.md">socket_addrinfo_bind()</a></li>
+<li><a href="function.socket-addrinfo-explain.md">socket_addrinfo_explain()</a></li>
+</ul>
+<h3><a href="book.sodium.md">Sodium</a></h3>
+<ul>
+<li><a href="function.sodium-add.md">sodium_add()</a></li>
+<li><a href="function.sodium-bin2hex.md">sodium_bin2hex()</a></li>
+<li><a href="function.sodium-compare.md">sodium_compare()</a></li>
+<li></li>
+</ul>
+<h2><a href="function.sodium-crypto-aead-aes256gcm-decrypt.md">sodium_crypto_aead_aes256gcm_decrypt()</a></h2>
+<h2><a href="function.sodium-crypto-aead-aes256gcm-encrypt.md">sodium_crypto_aead_aes256gcm_encrypt()</a></h2>
+<h2><a href="function.sodium-crypto-aead-aes256gcm-is-available.md">sodium_crypto_aead_aes256gcm_is_available()</a></h2>
+<h2><a href="function.sodium-crypto-aead-aes256gcm-keygen.md">sodium_crypto_aead_aes256gcm_keygen()</a></h2>
+<h2><a href="function.sodium-crypto-aead-chacha20poly1305-decrypt.md">sodium_crypto_aead_chacha20poly1305_decrypt()</a></h2>
+<h2><a href="function.sodium-crypto-aead-chacha20poly1305-encrypt.md">sodium_crypto_aead_chacha20poly1305_encrypt()</a></h2>
+<h2><a href="function.sodium-crypto-aead-chacha20poly1305-ietf-decrypt.md">sodium_crypto_aead_chacha20poly1305_ietf_decrypt()</a></h2>
+<h2><a href="function.sodium-crypto-aead-chacha20poly1305-ietf-encrypt.md">sodium_crypto_aead_chacha20poly1305_ietf_encrypt()</a></h2>
+<h2><a href="function.sodium-crypto-aead-chacha20poly1305-ietf-keygen.md">sodium_crypto_aead_chacha20poly1305_ietf_keygen()</a></h2>
+<h2><a href="function.sodium-crypto-aead-chacha20poly1305-keygen.md">sodium_crypto_aead_chacha20poly1305_keygen()</a></h2>
+<h2><a href="function.sodium-crypto-auth-keygen.md">sodium_crypto_auth_keygen()</a></h2>
+<p><a href="function.sodium-crypto-auth-verify.md">sodium_crypto_auth_verify()</a></p>
+<ul>
+<li><a href="function.sodium-crypto-auth.md">sodium_crypto_auth()</a></li>
+<li></li>
+</ul>
+<h2><a href="function.sodium-crypto-box-keypair-from-secretkey-and-publickey.md">sodium_crypto_box_keypair_from_secretkey_and_publickey()</a></h2>
+<p><a href="function.sodium-crypto-box-keypair.md">sodium_crypto_box_keypair()</a></p>
+<ul>
+<li><a href="function.sodium-crypto-box-open.md">sodium_crypto_box_open()</a></li>
+<li></li>
+</ul>
+<h2><a href="function.sodium-crypto-box-publickey-from-secretkey.md">sodium_crypto_box_publickey_from_secretkey()</a></h2>
+<h2><a href="function.sodium-crypto-box-publickey.md">sodium_crypto_box_publickey()</a></h2>
+<p><a href="function.sodium-crypto-box-seal-open.md">sodium_crypto_box_seal_open()</a></p>
+<ul>
+<li><a href="function.sodium-crypto-box-seal.md">sodium_crypto_box_seal()</a></li>
+<li></li>
+</ul>
+<h2><a href="function.sodium-crypto-box-secretkey.md">sodium_crypto_box_secretkey()</a></h2>
+<p><a href="function.sodium-crypto-box-seed-keypair.md">sodium_crypto_box_seed_keypair()</a></p>
+<ul>
+<li><a href="function.sodium-crypto-box.md">sodium_crypto_box()</a></li>
+<li></li>
+</ul>
+<h2><a href="function.sodium-crypto-generichash-final.md">sodium_crypto_generichash_final()</a></h2>
+<h2><a href="function.sodium-crypto-generichash-init.md">sodium_crypto_generichash_init()</a></h2>
+<h2><a href="function.sodium-crypto-generichash-keygen.md">sodium_crypto_generichash_keygen()</a></h2>
+<h2><a href="function.sodium-crypto-generichash-update.md">sodium_crypto_generichash_update()</a></h2>
+<h2><a href="function.sodium-crypto-generichash.md">sodium_crypto_generichash()</a></h2>
+<h2><a href="function.sodium-crypto-kdf-derive-from-key.md">sodium_crypto_kdf_derive_from_key()</a></h2>
+<h2><a href="function.sodium-crypto-kdf-keygen.md">sodium_crypto_kdf_keygen()</a></h2>
+<h2><a href="function.sodium-crypto-kx-client-session-keys.md">sodium_crypto_kx_client_session_keys()</a></h2>
+<h2><a href="function.sodium-crypto-kx-keypair.md">sodium_crypto_kx_keypair()</a></h2>
+<h2><a href="function.sodium-crypto-kx-publickey.md">sodium_crypto_kx_publickey()</a></h2>
+<h2><a href="function.sodium-crypto-kx-secretkey.md">sodium_crypto_kx_secretkey()</a></h2>
+<h2><a href="function.sodium-crypto-kx-seed-keypair.md">sodium_crypto_kx_seed_keypair()</a></h2>
+<h2><a href="function.sodium-crypto-kx-server-session-keys.md">sodium_crypto_kx_server_session_keys()</a></h2>
+<h2><a href="function.sodium-crypto-pwhash-scryptsalsa208sha256-str-verify.md">sodium_crypto_pwhash_scryptsalsa208sha256_str_verify()</a></h2>
+<h2><a href="function.sodium-crypto-pwhash-scryptsalsa208sha256-str.md">sodium_crypto_pwhash_scryptsalsa208sha256_str()</a></h2>
+<h2><a href="function.sodium-crypto-pwhash-scryptsalsa208sha256.md">sodium_crypto_pwhash_scryptsalsa208sha256()</a></h2>
+<h2><a href="function.sodium-crypto-pwhash-str-verify.md">sodium_crypto_pwhash_str_verify()</a></h2>
+<p><a href="function.sodium-crypto-pwhash-str.md">sodium_crypto_pwhash_str()</a></p>
+<ul>
+<li><a href="function.sodium-crypto-pwhash.md">sodium_crypto_pwhash()</a></li>
+<li></li>
+</ul>
+<h2><a href="function.sodium-crypto-scalarmult-base.md">sodium_crypto_scalarmult_base()</a></h2>
+<h2><a href="function.sodium-crypto-scalarmult.md">sodium_crypto_scalarmult()</a></h2>
+<h2><a href="function.sodium-crypto-secretbox-keygen.md">sodium_crypto_secretbox_keygen()</a></h2>
+<p><a href="function.sodium-crypto-secretbox-open.md">sodium_crypto_secretbox_open()</a></p>
+<ul>
+<li><a href="function.sodium-crypto-secretbox.md">sodium_crypto_secretbox()</a></li>
+<li></li>
+</ul>
+<p><a href="function.sodium-crypto-shorthash-keygen.md">sodium_crypto_shorthash_keygen()</a></p>
+<ul>
+<li><a href="function.sodium-crypto-shorthash.md">sodium_crypto_shorthash()</a></li>
+<li></li>
+</ul>
+<h2><a href="function.sodium-crypto-sign-detached.md">sodium_crypto_sign_detached()</a></h2>
+<h2><a href="function.sodium-crypto-sign-ed25519-pk-to-curve25519.md">sodium_crypto_sign_ed25519_pk_to_curve25519()</a></h2>
+<h2><a href="function.sodium-crypto-sign-ed25519-sk-to-curve25519.md">sodium_crypto_sign_ed25519_sk_to_curve25519()</a></h2>
+<h2><a href="function.sodium-crypto-sign-keypair-from-secretkey-and-publickey.md">sodium_crypto_sign_keypair_from_secretkey_and_publickey()</a></h2>
+<p><a href="function.sodium-crypto-sign-keypair.md">sodium_crypto_sign_keypair()</a></p>
+<ul>
+<li><a href="function.sodium-crypto-sign-open.md">sodium_crypto_sign_open()</a></li>
+<li></li>
+</ul>
+<h2><a href="function.sodium-crypto-sign-publickey-from-secretkey.md">sodium_crypto_sign_publickey_from_secretkey()</a></h2>
+<h2><a href="function.sodium-crypto-sign-publickey.md">sodium_crypto_sign_publickey()</a></h2>
+<h2><a href="function.sodium-crypto-sign-secretkey.md">sodium_crypto_sign_secretkey()</a></h2>
+<h2><a href="function.sodium-crypto-sign-seed-keypair.md">sodium_crypto_sign_seed_keypair()</a></h2>
+<p><a href="function.sodium-crypto-sign-verify-detached.md">sodium_crypto_sign_verify_detached()</a></p>
+<ul>
+<li><a href="function.sodium-crypto-sign.md">sodium_crypto_sign()</a></li>
+<li></li>
+</ul>
+<h2><a href="function.sodium-crypto-stream-keygen.md">sodium_crypto_stream_keygen()</a></h2>
+<p><a href="function.sodium-crypto-stream-xor.md">sodium_crypto_stream_xor()</a></p>
+<ul>
+<li><a href="function.sodium-crypto-stream.md">sodium_crypto_stream()</a></li>
+<li><a href="function.sodium-hex2bin.md">sodium_hex2bin()</a></li>
+<li><a href="function.sodium-increment.md">sodium_increment()</a></li>
+<li><a href="function.sodium-memcmp.md">sodium_memcmp()</a></li>
+<li><a href="function.sodium-memzero.md">sodium_memzero()</a></li>
+<li><a href="function.sodium-pad.md">sodium_pad()</a></li>
+<li><a href="function.sodium-unpad.md">sodium_unpad()</a></li>
+</ul>
+<h3><a href="book.zip.md">ZIP</a></h3>
+<ul>
+<li><a href="ziparchive.count.md">ZipArchive::count()</a></li>
+<li></li>
+</ul>
+<h2><a href="ziparchive.setencryptionname.md">ZipArchive::setEncryptionName()</a></h2>
+<p><a href="ziparchive.setencryptionindex.md">ZipArchive::SetEncryptionIndex()</a></p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration72.new-functions.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration72.new-functions.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration72.new-functions","slug":"migration72.new-functions.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration72.new-features.md\"\u003e« Нові можливості\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration72.constants.md\"\u003eНові глобальні константи »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration72.md\"\u003eМіграція з PHP 7.1.x на PHP 7.2.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНові функції\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНові функції\u003c/h2\u003e\n\u003ch3\u003eЯдро PHP\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.stream-isatty.md\"\u003estream_isatty()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ca href=\"function.sapi-windows-vt100-support.md\"\u003esapi_windows_vt100_support()\u003c/a\u003e\u003c/p\u003e\n\u003ch3\u003e\u003ca href=\"book.spl.md\"\u003eSPL\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.spl-object-id.md\"\u003espl_object_id()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e\u003ca href=\"book.dom.md\"\u003eDOM\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"domnodelist.count.md\"\u003eDomNodeList::count()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"domnamednodemap.count.md\"\u003eDOMNamedNodeMap::count()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e\u003ca href=\"book.ftp.md\"\u003eFTP\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.ftp-append.md\"\u003eftp_append()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e\u003ca href=\"book.image.md\"\u003eGD\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.imagesetclip.md\"\u003eimagesetclip()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.imagegetclip.md\"\u003eimagegetclip()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.imageopenpolygon.md\"\u003eimageopenpolygon()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.imageresolution.md\"\u003eimageresolution()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.imagecreatefrombmp.md\"\u003eimagecreatefrombmp()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.imagebmp.md\"\u003eimagebmp()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e\u003ca href=\"book.hash.md\"\u003eHash\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.hash-hmac-algos.md\"\u003ehash_hmac_algos()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e\u003ca href=\"book.ldap.md\"\u003eLDAP\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.ldap-parse-exop.md\"\u003eldap_parse_exop()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.ldap-exop.md\"\u003eldap_exop()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.ldap-exop-passwd.md\"\u003eldap_exop_passwd()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.ldap-exop-whoami.md\"\u003eldap_exop_whoami()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e\u003ca href=\"book.mbstring.md\"\u003eБагатобайтні рядки\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.mb-chr.md\"\u003emb_chr()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mb-ord.md\"\u003emb_ord()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mb-scrub.md\"\u003emb_scrub()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e\u003ca href=\"book.oci8.md\"\u003eOracle OCI8\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"function.oci-register-taf-callback.md\"\u003eoci_register_taf_callback()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"function.oci-unregister-taf-callback.md\"\u003eoci_unregister_taf_callback()\u003c/a\u003e\u003c/p\u003e\n\u003ch3\u003e\u003ca href=\"book.sockets.md\"\u003eСокети\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.socket-addrinfo-lookup.md\"\u003esocket_addrinfo_lookup()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.socket-addrinfo-connect.md\"\u003esocket_addrinfo_connect()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.socket-addrinfo-bind.md\"\u003esocket_addrinfo_bind()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.socket-addrinfo-explain.md\"\u003esocket_addrinfo_explain()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e\u003ca href=\"book.sodium.md\"\u003eSodium\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-add.md\"\u003esodium_add()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-bin2hex.md\"\u003esodium_bin2hex()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-compare.md\"\u003esodium_compare()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-aead-aes256gcm-decrypt.md\"\u003esodium_crypto_aead_aes256gcm_decrypt()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-aead-aes256gcm-encrypt.md\"\u003esodium_crypto_aead_aes256gcm_encrypt()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-aead-aes256gcm-is-available.md\"\u003esodium_crypto_aead_aes256gcm_is_available()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-aead-aes256gcm-keygen.md\"\u003esodium_crypto_aead_aes256gcm_keygen()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-aead-chacha20poly1305-decrypt.md\"\u003esodium_crypto_aead_chacha20poly1305_decrypt()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-aead-chacha20poly1305-encrypt.md\"\u003esodium_crypto_aead_chacha20poly1305_encrypt()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-aead-chacha20poly1305-ietf-decrypt.md\"\u003esodium_crypto_aead_chacha20poly1305_ietf_decrypt()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-aead-chacha20poly1305-ietf-encrypt.md\"\u003esodium_crypto_aead_chacha20poly1305_ietf_encrypt()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-aead-chacha20poly1305-ietf-keygen.md\"\u003esodium_crypto_aead_chacha20poly1305_ietf_keygen()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-aead-chacha20poly1305-keygen.md\"\u003esodium_crypto_aead_chacha20poly1305_keygen()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-auth-keygen.md\"\u003esodium_crypto_auth_keygen()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"function.sodium-crypto-auth-verify.md\"\u003esodium_crypto_auth_verify()\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-crypto-auth.md\"\u003esodium_crypto_auth()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-box-keypair-from-secretkey-and-publickey.md\"\u003esodium_crypto_box_keypair_from_secretkey_and_publickey()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"function.sodium-crypto-box-keypair.md\"\u003esodium_crypto_box_keypair()\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-crypto-box-open.md\"\u003esodium_crypto_box_open()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-box-publickey-from-secretkey.md\"\u003esodium_crypto_box_publickey_from_secretkey()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-box-publickey.md\"\u003esodium_crypto_box_publickey()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"function.sodium-crypto-box-seal-open.md\"\u003esodium_crypto_box_seal_open()\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-crypto-box-seal.md\"\u003esodium_crypto_box_seal()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-box-secretkey.md\"\u003esodium_crypto_box_secretkey()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"function.sodium-crypto-box-seed-keypair.md\"\u003esodium_crypto_box_seed_keypair()\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-crypto-box.md\"\u003esodium_crypto_box()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-generichash-final.md\"\u003esodium_crypto_generichash_final()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-generichash-init.md\"\u003esodium_crypto_generichash_init()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-generichash-keygen.md\"\u003esodium_crypto_generichash_keygen()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-generichash-update.md\"\u003esodium_crypto_generichash_update()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-generichash.md\"\u003esodium_crypto_generichash()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-kdf-derive-from-key.md\"\u003esodium_crypto_kdf_derive_from_key()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-kdf-keygen.md\"\u003esodium_crypto_kdf_keygen()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-kx-client-session-keys.md\"\u003esodium_crypto_kx_client_session_keys()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-kx-keypair.md\"\u003esodium_crypto_kx_keypair()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-kx-publickey.md\"\u003esodium_crypto_kx_publickey()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-kx-secretkey.md\"\u003esodium_crypto_kx_secretkey()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-kx-seed-keypair.md\"\u003esodium_crypto_kx_seed_keypair()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-kx-server-session-keys.md\"\u003esodium_crypto_kx_server_session_keys()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-pwhash-scryptsalsa208sha256-str-verify.md\"\u003esodium_crypto_pwhash_scryptsalsa208sha256_str_verify()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-pwhash-scryptsalsa208sha256-str.md\"\u003esodium_crypto_pwhash_scryptsalsa208sha256_str()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-pwhash-scryptsalsa208sha256.md\"\u003esodium_crypto_pwhash_scryptsalsa208sha256()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-pwhash-str-verify.md\"\u003esodium_crypto_pwhash_str_verify()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"function.sodium-crypto-pwhash-str.md\"\u003esodium_crypto_pwhash_str()\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-crypto-pwhash.md\"\u003esodium_crypto_pwhash()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-scalarmult-base.md\"\u003esodium_crypto_scalarmult_base()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-scalarmult.md\"\u003esodium_crypto_scalarmult()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-secretbox-keygen.md\"\u003esodium_crypto_secretbox_keygen()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"function.sodium-crypto-secretbox-open.md\"\u003esodium_crypto_secretbox_open()\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-crypto-secretbox.md\"\u003esodium_crypto_secretbox()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ca href=\"function.sodium-crypto-shorthash-keygen.md\"\u003esodium_crypto_shorthash_keygen()\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-crypto-shorthash.md\"\u003esodium_crypto_shorthash()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-sign-detached.md\"\u003esodium_crypto_sign_detached()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-sign-ed25519-pk-to-curve25519.md\"\u003esodium_crypto_sign_ed25519_pk_to_curve25519()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-sign-ed25519-sk-to-curve25519.md\"\u003esodium_crypto_sign_ed25519_sk_to_curve25519()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-sign-keypair-from-secretkey-and-publickey.md\"\u003esodium_crypto_sign_keypair_from_secretkey_and_publickey()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"function.sodium-crypto-sign-keypair.md\"\u003esodium_crypto_sign_keypair()\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-crypto-sign-open.md\"\u003esodium_crypto_sign_open()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-sign-publickey-from-secretkey.md\"\u003esodium_crypto_sign_publickey_from_secretkey()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-sign-publickey.md\"\u003esodium_crypto_sign_publickey()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-sign-secretkey.md\"\u003esodium_crypto_sign_secretkey()\u003c/a\u003e\u003c/h2\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-sign-seed-keypair.md\"\u003esodium_crypto_sign_seed_keypair()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"function.sodium-crypto-sign-verify-detached.md\"\u003esodium_crypto_sign_verify_detached()\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-crypto-sign.md\"\u003esodium_crypto_sign()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"function.sodium-crypto-stream-keygen.md\"\u003esodium_crypto_stream_keygen()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"function.sodium-crypto-stream-xor.md\"\u003esodium_crypto_stream_xor()\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-crypto-stream.md\"\u003esodium_crypto_stream()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-hex2bin.md\"\u003esodium_hex2bin()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-increment.md\"\u003esodium_increment()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-memcmp.md\"\u003esodium_memcmp()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-memzero.md\"\u003esodium_memzero()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-pad.md\"\u003esodium_pad()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.sodium-unpad.md\"\u003esodium_unpad()\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e\u003ca href=\"book.zip.md\"\u003eZIP\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"ziparchive.count.md\"\u003eZipArchive::count()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e\u003ca href=\"ziparchive.setencryptionname.md\"\u003eZipArchive::setEncryptionName()\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"ziparchive.setencryptionindex.md\"\u003eZipArchive::SetEncryptionIndex()\u003c/a\u003e\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration72.new-functions.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

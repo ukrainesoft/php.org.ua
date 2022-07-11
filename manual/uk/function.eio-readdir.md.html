@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.eio-readdir | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.eio-readahead.md">«eio_readahead</a></p>
+</li>
+<li>
+<p><a href="function.eio-readlink.md">eio_readlink »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.eio.md">Eio Функції</a></p>
+</li>
+<li>
+<p>Читає вміст директорії</p>
+</li>
+</ul>
+<p>#eio_readdir</p>
+<p>(PECL eio >= 0.0.1dev)</p>
+<p>eio_readdir - Читає вміст директорії</p>
+<h3>Опис</h3>
+<p><strong>eio_readdir</strong>(
+string <code>$path</code>,
+int <code>$flags</code>,
+int <code>$pri</code>,
+<a href="language.types.callable.md">callable</a> <code>$callback</code>,
+string <code>$data</code> = NULL
+): resource</p>
+<p>Читає вміст директорії (за допомогою системних викликів <code>opendir</code>,
+<code>readdir</code> та <code>closedir</code>) і або повертає імена файлів, або передає
+масив як аргумент 'result' у функцію 'callback'. Поведінка
+методу залежить від значення параметра <code>flags</code>.</p>
+<h3>Список параметрів</h3>
+<p><code>path</code>
+Шлях до директорії.</p>
+<p><code>flags</code>
+Комбінація констант <em>EIO_READDIR_*</em>.</p>
+<p><code>pri</code>
+Пріоритет запитів: <strong><code>EIO_PRI_DEFAULT</code></strong>, <strong><code>EIO_PRI_MIN</code></strong>,
+<strong><code>EIO_PRI_MAX</code></strong>, або <strong><code>null</code></strong>. Якщо переданий <strong><code>null</code></strong>, то <code>pri</code>
+встановлюється у <strong><code>EIO_PRI_DEFAULT</code></strong>.</p>
+<p><code>callback</code>
+Функція callback викликається при завершенні запиту. Вона повинна
+задовольняти наступний прототип:</p>
+<p>` void callback(mixed $data, int $result[, resource $req]);'</p>
+<p><code>data</code>
+є даними користувача, переданими в запиті.</p>
+<p><code>result</code>
+містить результуюче значення, що залежить від запиту; зазвичай це
+значення, яке повертається відповідним системним викликом.</p>
+<p><code>req</code>
+є опціональним запитуваним ресурсом, який може
+використовуватися з такими функціями як
+<a href="function.eio-get-last-error.md">eio_get_last_error()</a></p>
+<p><code>data</code>
+Дані, які потрібно передати функції <code>callback</code>.</p>
+<h3>Значення, що повертаються</h3>
+<p><strong>eio_readdir()</strong> повертає ресурс запиту у разі успішного
+виконання або <strong><code>false</code></strong> у разі виникнення помилки. Також може
+задавати значення аргументу <code>result</code> функції <code>callback</code> залежно від
+значення параметра <code>flags</code>:</p>
+<p><strong><code>EIO_READDIR_DENTS</code></strong> (int)
+Прапор <strong>eio_readdir()</strong>. Якщо заданий, як аргумент
+callback-функції передаватиметься масив з такими ключами:
+<code>names`` - масив імен директорії ``dents'</code> - масив структур типу
+<code>struct eio_dirent</code>, кожна з яких є масивом з
+ключами: <code>name'` - ім'я директорії; </code>type'<code> - одна з констант *EIO_DT\_\**; ``inode'</code> - номер вузла inode, якщо доступний, або порожній
+значення;</p>
+<p><strong><code>EIO_READDIR_DIRS_FIRST</code></strong> (int)
+Якщо цей прапор задано, першими повертатимуться імена директорій, потім
+імена файлів. Порядок проходження імен у кожній групі буде оптимальним
+для застосування функції stat.</p>
+<p><strong><code>EIO_READDIR_STAT_ORDER</code></strong> (int)
+Якщо цей прапор задано, імена файлів та директорій будуть повертатися в
+порядку, зручному збору статистики (<code>stat</code>) кожного з об'єктів. Якщо
+отриманий список імен передбачається передавати у функцію
+<a href="function.stat.md">stat()</a>, порядок проходження імен забезпечить найбільш
+швидку роботу функції.</p>
+<p><strong><code>EIO_READDIR_FOUND_UNKNOWN</code></strong> (int)</p>
+<p>Типи вузлів:</p>
+<p><strong><code>EIO_DT_UNKNOWN</code></strong> (int)
+Невідомий тип вузла (дуже часто). Необхідна обробка функцією
+<a href="function.stat.md">stat()</a>.</p>
+<p><strong><code>EIO_DT_FIFO</code></strong> (int)
+Тип вузла – FIFO</p>
+<p><strong><code>EIO_DT_CHR</code></strong> (int)
+Тип вузла</p>
+<p><strong><code>EIO_DT_MPC</code></strong> (int)
+Тип вузла - складовий символьний пристрій (v7+coherent)</p>
+<p><strong><code>EIO_DT_DIR</code></strong> (int)
+Тип вузла – директорія</p>
+<p><strong><code>EIO_DT_NAM</code></strong> (int)
+Тип вузла - файл зі спеціальним Xenix найменуванням</p>
+<p><strong><code>EIO_DT_BLK</code></strong> (int)
+Тип вузла</p>
+<p><strong><code>EIO_DT_MPB</code></strong> (int)
+Складовий блоковий пристрій (v7+coherent)</p>
+<p><strong><code>EIO_DT_REG</code></strong> (int)
+Тип вузла</p>
+<p><strong><code>EIO_DT_NWK</code></strong> (int)</p>
+<p><strong><code>EIO_DT_CMP</code></strong> (int)
+Спеціальний тип вузла для мереж HP-UX</p>
+<p><strong><code>EIO_DT_LNK</code></strong> (int)
+Тип вузла - посилання</p>
+<p><strong><code>EIO_DT_SOCK</code></strong> (int)
+Тип вузла – сокет</p>
+<p><strong><code>EIO_DT_DOOR</code></strong> (int)
+Тип вузла - Solaris door</p>
+<p><strong><code>EIO_DT_WHT</code></strong> (int)
+Тип вузла</p>
+<p><strong><code>EIO_DT_MAX</code></strong> (int)
+Максимальне значення типу вузла</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>eio_readdir()</strong></strong></p>
+<p><code>&#x3C;?php/* Викликається, коли відпрацює eio_readdir() */function my_readdir_callback($data, $result) {    echo "Викликана функція", __FUNCTION__,  ";    echo "дані: "; var_dump($data);    echo "результат: "; var_dump($result);    echo " ";}eio_readdir("/var/spool/news", EIO_READDIR_STAT_ORDER | EIO_READDIR_DIRS_FIRST, EIO_PRI_DEFAULT, "my_readdir_callback");eio_event_loop();?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Викликано функцію my_readdir_callback
+дані: NULL
+результат: array(2) {
+["names"]=>
+array(7) {
+[0]=>
+string(7) "archive"
+[1]=>
+string(8) "articles"
+[2]=>
+string(8) "incoming"
+[3]=>
+string(7) "innfeed"
+[4]=>
+string(8) "outgoing"
+[5]=>
+string(8) "overview"
+[6]=>
+string(3) "tmp"
+}
+["dents"]=>
+array(7) {
+[0]=>
+array(3)
+{
+["name"]=>
+string(7)
+"archive"
+["type"]=>
+int(4)
+["inode"]=>
+int(393265)
+}
+[1]=>
+array(3)
+{
+["name"]=>
+string(8)
+"articles"
+["type"]=>
+int(4)
+["inode"]=>
+int(393266)
+}
+[2]=>
+array(3)
+{
+["name"]=>
+string(8)
+"incoming"
+["type"]=>
+int(4)
+["inode"]=>
+int(393267)
+}
+[3]=>
+array(3)
+{
+["name"]=>
+string(7)
+"innfeed"
+["type"]=>
+int(4)
+["inode"]=>
+int(393269)
+}
+[4]=>
+array(3)
+{
+["name"]=>
+string(8)
+"outgoing"
+["type"]=>
+int(4)
+["inode"]=>
+int(393270)
+}
+[5]=>
+array(3)
+{
+["name"]=>
+string(8)
+"overview"
+["type"]=>
+int(4)
+["inode"]=>
+int(393271)
+}
+[6]=>
+array(3)
+{
+["name"]=>
+string(3)
+"tmp"
+["type"]=>
+int(4)
+["inode"]=>
+int(393272)
+}
+}
+}</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.eio-readdir.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.eio-readdir.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.eio-readdir","slug":"function.eio-readdir.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.eio-readahead.md\"\u003e«eio_readahead\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.eio-readlink.md\"\u003eeio_readlink »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.eio.md\"\u003eEio Функції\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЧитає вміст директорії\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#eio_readdir\u003c/p\u003e\n\u003cp\u003e(PECL eio \u003e= 0.0.1dev)\u003c/p\u003e\n\u003cp\u003eeio_readdir - Читає вміст директорії\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eeio_readdir\u003c/strong\u003e(\nstring \u003ccode\u003e$path\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e,\nint \u003ccode\u003e$pri\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$callback\u003c/code\u003e,\nstring \u003ccode\u003e$data\u003c/code\u003e = NULL\n): resource\u003c/p\u003e\n\u003cp\u003eЧитає вміст директорії (за допомогою системних викликів \u003ccode\u003eopendir\u003c/code\u003e,\n\u003ccode\u003ereaddir\u003c/code\u003e та \u003ccode\u003eclosedir\u003c/code\u003e) і або повертає імена файлів, або передає\nмасив як аргумент 'result' у функцію 'callback'. Поведінка\nметоду залежить від значення параметра \u003ccode\u003eflags\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003epath\u003c/code\u003e\nШлях до директорії.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eflags\u003c/code\u003e\nКомбінація констант \u003cem\u003eEIO_READDIR_*\u003c/em\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epri\u003c/code\u003e\nПріоритет запитів: \u003cstrong\u003e\u003ccode\u003eEIO_PRI_DEFAULT\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eEIO_PRI_MIN\u003c/code\u003e\u003c/strong\u003e,\n\u003cstrong\u003e\u003ccode\u003eEIO_PRI_MAX\u003c/code\u003e\u003c/strong\u003e, або \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e. Якщо переданий \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, то \u003ccode\u003epri\u003c/code\u003e\nвстановлюється у \u003cstrong\u003e\u003ccode\u003eEIO_PRI_DEFAULT\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ecallback\u003c/code\u003e\nФункція callback викликається при завершенні запиту. Вона повинна\nзадовольняти наступний прототип:\u003c/p\u003e\n\u003cp\u003e` void callback(mixed $data, int $result[, resource $req]);'\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edata\u003c/code\u003e\nє даними користувача, переданими в запиті.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eresult\u003c/code\u003e\nмістить результуюче значення, що залежить від запиту; зазвичай це\nзначення, яке повертається відповідним системним викликом.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ereq\u003c/code\u003e\nє опціональним запитуваним ресурсом, який може\nвикористовуватися з такими функціями як\n\u003ca href=\"function.eio-get-last-error.md\"\u003eeio_get_last_error()\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edata\u003c/code\u003e\nДані, які потрібно передати функції \u003ccode\u003ecallback\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eeio_readdir()\u003c/strong\u003e повертає ресурс запиту у разі успішного\nвиконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки. Також може\nзадавати значення аргументу \u003ccode\u003eresult\u003c/code\u003e функції \u003ccode\u003ecallback\u003c/code\u003e залежно від\nзначення параметра \u003ccode\u003eflags\u003c/code\u003e:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_READDIR_DENTS\u003c/code\u003e\u003c/strong\u003e (int)\nПрапор \u003cstrong\u003eeio_readdir()\u003c/strong\u003e. Якщо заданий, як аргумент\ncallback-функції передаватиметься масив з такими ключами:\n\u003ccode\u003enames`` - масив імен директорії ``dents'\u003c/code\u003e - масив структур типу\n\u003ccode\u003estruct eio_dirent\u003c/code\u003e, кожна з яких є масивом з\nключами: \u003ccode\u003ename'` - ім'я директорії; \u003c/code\u003etype'\u003ccode\u003e - одна з констант *EIO_DT\\_\\**; ``inode'\u003c/code\u003e - номер вузла inode, якщо доступний, або порожній\nзначення;\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_READDIR_DIRS_FIRST\u003c/code\u003e\u003c/strong\u003e (int)\nЯкщо цей прапор задано, першими повертатимуться імена директорій, потім\nімена файлів. Порядок проходження імен у кожній групі буде оптимальним\nдля застосування функції stat.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_READDIR_STAT_ORDER\u003c/code\u003e\u003c/strong\u003e (int)\nЯкщо цей прапор задано, імена файлів та директорій будуть повертатися в\nпорядку, зручному збору статистики (\u003ccode\u003estat\u003c/code\u003e) кожного з об'єктів. Якщо\nотриманий список імен передбачається передавати у функцію\n\u003ca href=\"function.stat.md\"\u003estat()\u003c/a\u003e, порядок проходження імен забезпечить найбільш\nшвидку роботу функції.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_READDIR_FOUND_UNKNOWN\u003c/code\u003e\u003c/strong\u003e (int)\u003c/p\u003e\n\u003cp\u003eТипи вузлів:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_UNKNOWN\u003c/code\u003e\u003c/strong\u003e (int)\nНевідомий тип вузла (дуже часто). Необхідна обробка функцією\n\u003ca href=\"function.stat.md\"\u003estat()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_FIFO\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла – FIFO\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_CHR\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_MPC\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла - складовий символьний пристрій (v7+coherent)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_DIR\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла – директорія\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_NAM\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла - файл зі спеціальним Xenix найменуванням\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_BLK\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_MPB\u003c/code\u003e\u003c/strong\u003e (int)\nСкладовий блоковий пристрій (v7+coherent)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_REG\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_NWK\u003c/code\u003e\u003c/strong\u003e (int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_CMP\u003c/code\u003e\u003c/strong\u003e (int)\nСпеціальний тип вузла для мереж HP-UX\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_LNK\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла - посилання\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_SOCK\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла – сокет\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_DOOR\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла - Solaris door\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_WHT\u003c/code\u003e\u003c/strong\u003e (int)\nТип вузла\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eEIO_DT_MAX\u003c/code\u003e\u003c/strong\u003e (int)\nМаксимальне значення типу вузла\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003eeio_readdir()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Викликається, коли відпрацює eio_readdir() */function my_readdir_callback($data, $result) {    echo \"Викликана функція\", __FUNCTION__,  \";    echo \"дані: \"; var_dump($data);    echo \"результат: \"; var_dump($result);    echo \" \";}eio_readdir(\"/var/spool/news\", EIO_READDIR_STAT_ORDER | EIO_READDIR_DIRS_FIRST, EIO_PRI_DEFAULT, \"my_readdir_callback\");eio_event_loop();?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eВикликано функцію my_readdir_callback\nдані: NULL\nрезультат: array(2) {\n[\"names\"]=\u003e\narray(7) {\n[0]=\u003e\nstring(7) \"archive\"\n[1]=\u003e\nstring(8) \"articles\"\n[2]=\u003e\nstring(8) \"incoming\"\n[3]=\u003e\nstring(7) \"innfeed\"\n[4]=\u003e\nstring(8) \"outgoing\"\n[5]=\u003e\nstring(8) \"overview\"\n[6]=\u003e\nstring(3) \"tmp\"\n}\n[\"dents\"]=\u003e\narray(7) {\n[0]=\u003e\narray(3)\n{\n[\"name\"]=\u003e\nstring(7)\n\"archive\"\n[\"type\"]=\u003e\nint(4)\n[\"inode\"]=\u003e\nint(393265)\n}\n[1]=\u003e\narray(3)\n{\n[\"name\"]=\u003e\nstring(8)\n\"articles\"\n[\"type\"]=\u003e\nint(4)\n[\"inode\"]=\u003e\nint(393266)\n}\n[2]=\u003e\narray(3)\n{\n[\"name\"]=\u003e\nstring(8)\n\"incoming\"\n[\"type\"]=\u003e\nint(4)\n[\"inode\"]=\u003e\nint(393267)\n}\n[3]=\u003e\narray(3)\n{\n[\"name\"]=\u003e\nstring(7)\n\"innfeed\"\n[\"type\"]=\u003e\nint(4)\n[\"inode\"]=\u003e\nint(393269)\n}\n[4]=\u003e\narray(3)\n{\n[\"name\"]=\u003e\nstring(8)\n\"outgoing\"\n[\"type\"]=\u003e\nint(4)\n[\"inode\"]=\u003e\nint(393270)\n}\n[5]=\u003e\narray(3)\n{\n[\"name\"]=\u003e\nstring(8)\n\"overview\"\n[\"type\"]=\u003e\nint(4)\n[\"inode\"]=\u003e\nint(393271)\n}\n[6]=\u003e\narray(3)\n{\n[\"name\"]=\u003e\nstring(3)\n\"tmp\"\n[\"type\"]=\u003e\nint(4)\n[\"inode\"]=\u003e\nint(393272)\n}\n}\n}\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.eio-readdir.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

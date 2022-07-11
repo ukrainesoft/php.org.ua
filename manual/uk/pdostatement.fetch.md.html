@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>pdostatement.fetch | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="pdostatement.execute.md">« PDOStatement::execute</a></p>
+</li>
+<li>
+<p><a href="pdostatement.fetchall.md">PDOStatement::fetchAll »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.pdostatement.md">PDOStatement</a></p>
+</li>
+<li>
+<p>Вилучення наступного рядка з результуючого набору</p>
+</li>
+</ul>
+<h1>PDOStatement::fetch</h1>
+<p>(PHP 5 = 5.1.0, PHP 7, PHP 8, PECL pdo = 0.1.0)</p>
+<p>PDOStatement::fetch — Витяг наступного рядка з результуючого
+набору</p>
+<h3>Опис</h3>
+<p>public <strong>PDOStatement::fetch</strong>(int <code>$mode</code> = PDO::FETCH_DEFAULT, int
+<code>$cursorOrientation</code> = PDO::FETCH_ORI_NEXT, int <code>$cursorOffset</code> = 0):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>Витягує наступний рядок із результуючого набору об'єкта
+PDOStatement. Параметр <code>mode</code> визначає, як PDO поверне цю
+рядок.</p>
+<h3>Список параметрів</h3>
+<p><code>mode</code>
+Визначає, у якому вигляді наступний рядок буде повернено до викликаючого
+метод. Це може бути одна із констант <code>PDO::FETCH_*</code>. За замовчуванням
+<code>PDO::ATTR_DEFAULT_FETCH_MODE</code> (що рівносильно <code>PDO::FETCH_BOTH</code>).</p>
+<ul>
+<li>
+<p><code>PDO::FETCH_ASSOC</code>: повертає масив, індексований іменами
+стовпців результуючого набору</p>
+</li>
+<li>
+<p><code>PDO::FETCH_BOTH</code> (за замовчуванням): повертає масив, індексований
+іменами стовпців результуючого набору, а також їх номерами
+(починаючи з 0)</p>
+</li>
+<li>
+<p><code>PDO::FETCH_BOUND</code>: повертає <strong><code>true</code></strong> і надає значення
+стовпців результуючого набору змінним PHP, які були
+прив'язані до цих стовпців методом
+<a href="pdostatement.bindcolumn.md">PDOStatement::bindColumn()</a></p>
+</li>
+<li>
+<p><code>PDO::FETCH_CLASS</code>: створює та повертає об'єкт запитаного класу,
+привласнюючи значення стовпців результуючого набору іменованим
+властивостям класу і слідом викликає конструктор, якщо не заданий
+<code>PDO::FETCH_PROPS_LATE</code>. Якщо <code>mode</code> включає атрибут
+PDO::FETCH_CLASSTYPE (наприклад,
+<code>PDO::FETCH_CLASS | PDO::FETCH_CLASSTYPE</code>), то ім'я класу, від
+якого потрібно створити об'єкт, буде взято з першого стовпця.</p>
+</li>
+<li>
+<p><code>PDO::FETCH_INTO</code>: оновлює існуючий об'єкт запитаного
+класу, надаючи значення стовпців результуючого набору
+іменованим властивостям об'єкта</p>
+</li>
+<li>
+<p><code>PDO::FETCH_LAZY</code>: комбінує <code>PDO::FETCH_BOTH</code> та <code>PDO::FETCH_OBJ</code>,
+створюючи новий об'єкт із властивостями, що відповідають іменам
+стовпців результуючого набору</p>
+</li>
+<li>
+<p><code>PDO::FETCH_NAMED</code>: повертає масив такого ж виду, як і
+<code>PDO::FETCH_ASSOC</code>, але якщо є кілька полів з однаковим
+ім'ям, то значенням із цим ключем буде масив з усіма значеннями
+із рядів, у яких це поле вказано.</p>
+</li>
+<li>
+<p><code>PDO::FETCH_NUM</code>: повертає масив, індексований номерами
+стовпців (починаючи з 0)</p>
+</li>
+<li>
+<p><code>PDO::FETCH_OBJ</code>: створює анонімний об'єкт із властивостями,
+відповідними іменами стовпців результуючого набору</p>
+</li>
+<li>
+<p><code>PDO::FETCH_PROPS_LATE</code>: якщо використовується з <code>PDO::FETCH_CLASS</code>,
+конструктор класу буде викликаний перед призначенням властивостей
+значень шпальт.</p>
+</li>
+</ul>
+<p><code>cursorOrientation</code>
+Для об'єктів PDOStatement, що представляють курсор, що прокручується, цей
+параметр визначає, який рядок буде повертатися в метод, що викликає.
+Значенням параметра має бути одна з констант <code>PDO::FETCH_ORI_*</code>,
+за замовчуванням <code>PDO::FETCH_ORI_NEXT</code>. Щоб запросити курсор, що прокручується
+для запиту PDOStatement необхідно задати атрибут <code>PDO::ATTR_CURSOR</code>
+зі значенням <code>PDO::CURSOR_SCROLL</code> під час підготовки запиту методом
+<a href="pdo.prepare.md">PDO::prepare()</a>.</p>
+<p><code>offset</code>
+Для об'єктів PDOStatement, що представляють курсор, що прокручується,
+параметр <code>cursor_orientation</code> яких набуває значення
+<code>PDO::FETCH_ORI_ABS</code>, ця величина означає абсолютний номер рядка,
+яку необхідно витягти з результуючого набору.</p>
+<p>Для об'єктів PDOStatement, що представляють курсор, що прокручується,
+параметр <code>cursor_orientation</code> яких набуває значення
+<code>PDO::FETCH_ORI_REL</code>, ця величина вказує, який рядок щодо
+поточного положення курсору буде вилучено функцією
+<strong>PDOStatement::fetch()</strong>.</p>
+<h3>Значення, що повертаються</h3>
+<p>У разі успішного виконання функції значення, що повертається, залежить від
+режиму вибірки. У разі виникнення помилки або якщо більше немає рядків,
+функція повертає <strong><code>false</code></strong>.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Вилучення рядків у різних режимах вибірки</strong></p>
+<p><code>&#x3C;?php$sth = $dbh->prepare("SELECT name, colour FROM fruit");$sth->execute();/* Приклади різних режимів роботи PDOStatement::fetch */print("PDO : ");print("Повертаємо наступне рядок у виді масиву, індексованого іменами стовпців ");$result = $sth->fetch(PDO::FETCH_ASSOC);print_r($result);print(" ");print("PDO::FETCH_BOTH: ");print("Повертаємо наступний рядок у виді масиву, індексованого як іменами стовпців, так і їх номерами ");$result = $sth->fetch(PDO::FETCH_BOTH);print_r($result);print(" ");print("PDO::FETCH_LAZY: ");print("Повертаємо наступний рядок у вигляді анонімного об'єкта з властивостями, відповідними стовпцям ");$result = $sth->fetch(PDO::FETCH_LAZY);print_r($result);print(" ");print("PDO::FETCH_OBJ: ");print("Повертаємо наступний рядок у вигляді анонімного об'єкта з властивостями, відповідними стовпцям ");$result = $sth->fetch(PDO::FETCH_OBJ);print $result->name;print(" ");?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>PDO::FETCH_ASSOC: Повертаємо наступний рядок у вигляді масиву, індексованого іменами стовпців
+Array
+(
+[name] => apple
+[colour] => red
+)</p>
+<p>PDO::FETCH_BOTH: Повертаємо наступний рядок у вигляді масиву, індексованого як іменами стовпців, так і їх номерами
+Array
+(
+[name] => banana
+[0] => banana
+[colour] => yellow
+[1] => yellow
+)</p>
+<p>PDO::FETCH_LAZY: Повертаємо наступний рядок у вигляді анонімного об'єкта з властивостями, що відповідають стовпцям
+PDORow Object
+(
+[name] => orange
+[colour] => orange
+)</p>
+<p>PDO::FETCH_OBJ: Повертаємо наступний рядок у вигляді анонімного об'єкта з властивостями, що відповідають стовпцям
+kiwi</p>
+<p><strong>Приклад #2 Вибірка рядків засобами прокручуваного курсору</strong></p>
+<p><code>&#x3C;?phpfunction readDataForwards($dbh) {    $sql = 'SELECT hand, won, bet FROM mynumbers ORDER BY BET'; $stmt==$dbh->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL)); $stmt->execute(); while($row = $stmt->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)) {        $data = $row[0] . " " . $row[1] . " " . $row[2] . " ";        print $data;    }}function readDataBackwards($dbh) {    $sql = 'SELECT hand, won, bet FROM mynumbers ORDER BY bet';    $stmt = $dbh->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));   $stmt->execute();  $row = $stmt->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_LAST);                . $row[1] . " " . $row[2] . " ";         print $data;    } while ($row = $stmt->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_PRIOR));}print "Читаємо  ";readDataForwards($conn);print "Читаємо в зворотній послідовності: ";readDataBackwards($conn);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Читаємо у прямій послідовності:
+21 10 5
+16 0 5
+19 20 10</p>
+<p>Читаємо у зворотній послідовності:
+19 20 10
+16 0 5
+21 10 5</p>
+<p><strong>Приклад #3 Порядок конструкторів</strong></p>
+<p>Якщо об'єкти забираються за допомогою <code>PDO::FETCH_CLASS</code>, спочатку
+надаються властивості об'єкта, а потім викликається конструктор об'єкта.
+Якщо також встановлено <code>PDO::FETCH_PROPS_LATE</code>, цей порядок змінюється на
+зворотний.</p>
+<p><code>&#x3C;?phpclass Person{    private $name; public function __construct()    {       $$this->tell(); }   publicfunction tell()    {        if (isset($this->name)) {             echo "Я> ";        }}else {             echo "У мене ще ні імені. ";        }    }}$sth = $dbh->query("SELECT * FROM people");$sth->setFetchMode(PDO::FETCH_CLASS, 'Person');$$son| person->tell();$sth->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Person');$person = $sth->fetch();$person->tell();?> </code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Я – Alice.
+Я Alice.
+В мене ще немає імені.
+Я Bob.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="pdo.prepare.md">PDO::prepare()</a> - Підготовка запиту до
+виконання та повертає пов'язаний з цим запитом об'єкт</li>
+<li><a href="pdostatement.execute.md">PDOStatement::execute()</a> - Запускає
+підготовлений запит на виконання</li>
+<li><a href="pdostatement.fetchall.md">PDOStatement::fetchAll()</a> - Вибирає
+рядки, що залишилися з набору результатів</li>
+<li><a href="pdostatement.fetchcolumn.md">PDOStatement::fetchColumn()</a> -
+Повертає дані одного стовпця наступного рядка результуючого
+набору</li>
+<li><a href="pdostatement.fetchobject.md">PDOStatement::fetchObject()</a> -
+Витягує наступний рядок і повертає його у вигляді об'єкта</li>
+<li><a href="pdostatement.setfetchmode.md">PDOStatement::setFetchMode()</a> -
+Встановлює стандартний режим вибірки для об'єкта запиту</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/pdostatement.fetch.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/pdostatement.fetch.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"pdostatement.fetch","slug":"pdostatement.fetch.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"pdostatement.execute.md\"\u003e« PDOStatement::execute\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"pdostatement.fetchall.md\"\u003ePDOStatement::fetchAll »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.pdostatement.md\"\u003ePDOStatement\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВилучення наступного рядка з результуючого набору\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003ePDOStatement::fetch\u003c/h1\u003e\n\u003cp\u003e(PHP 5 = 5.1.0, PHP 7, PHP 8, PECL pdo = 0.1.0)\u003c/p\u003e\n\u003cp\u003ePDOStatement::fetch — Витяг наступного рядка з результуючого\nнабору\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003epublic \u003cstrong\u003ePDOStatement::fetch\u003c/strong\u003e(int \u003ccode\u003e$mode\u003c/code\u003e = PDO::FETCH_DEFAULT, int\n\u003ccode\u003e$cursorOrientation\u003c/code\u003e = PDO::FETCH_ORI_NEXT, int \u003ccode\u003e$cursorOffset\u003c/code\u003e = 0):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eВитягує наступний рядок із результуючого набору об'єкта\nPDOStatement. Параметр \u003ccode\u003emode\u003c/code\u003e визначає, як PDO поверне цю\nрядок.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003emode\u003c/code\u003e\nВизначає, у якому вигляді наступний рядок буде повернено до викликаючого\nметод. Це може бути одна із констант \u003ccode\u003ePDO::FETCH_*\u003c/code\u003e. За замовчуванням\n\u003ccode\u003ePDO::ATTR_DEFAULT_FETCH_MODE\u003c/code\u003e (що рівносильно \u003ccode\u003ePDO::FETCH_BOTH\u003c/code\u003e).\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ePDO::FETCH_ASSOC\u003c/code\u003e: повертає масив, індексований іменами\nстовпців результуючого набору\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ePDO::FETCH_BOTH\u003c/code\u003e (за замовчуванням): повертає масив, індексований\nіменами стовпців результуючого набору, а також їх номерами\n(починаючи з 0)\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ePDO::FETCH_BOUND\u003c/code\u003e: повертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e і надає значення\nстовпців результуючого набору змінним PHP, які були\nприв'язані до цих стовпців методом\n\u003ca href=\"pdostatement.bindcolumn.md\"\u003ePDOStatement::bindColumn()\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ePDO::FETCH_CLASS\u003c/code\u003e: створює та повертає об'єкт запитаного класу,\nпривласнюючи значення стовпців результуючого набору іменованим\nвластивостям класу і слідом викликає конструктор, якщо не заданий\n\u003ccode\u003ePDO::FETCH_PROPS_LATE\u003c/code\u003e. Якщо \u003ccode\u003emode\u003c/code\u003e включає атрибут\nPDO::FETCH_CLASSTYPE (наприклад,\n\u003ccode\u003ePDO::FETCH_CLASS | PDO::FETCH_CLASSTYPE\u003c/code\u003e), то ім'я класу, від\nякого потрібно створити об'єкт, буде взято з першого стовпця.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ePDO::FETCH_INTO\u003c/code\u003e: оновлює існуючий об'єкт запитаного\nкласу, надаючи значення стовпців результуючого набору\nіменованим властивостям об'єкта\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ePDO::FETCH_LAZY\u003c/code\u003e: комбінує \u003ccode\u003ePDO::FETCH_BOTH\u003c/code\u003e та \u003ccode\u003ePDO::FETCH_OBJ\u003c/code\u003e,\nстворюючи новий об'єкт із властивостями, що відповідають іменам\nстовпців результуючого набору\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ePDO::FETCH_NAMED\u003c/code\u003e: повертає масив такого ж виду, як і\n\u003ccode\u003ePDO::FETCH_ASSOC\u003c/code\u003e, але якщо є кілька полів з однаковим\nім'ям, то значенням із цим ключем буде масив з усіма значеннями\nіз рядів, у яких це поле вказано.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ePDO::FETCH_NUM\u003c/code\u003e: повертає масив, індексований номерами\nстовпців (починаючи з 0)\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ePDO::FETCH_OBJ\u003c/code\u003e: створює анонімний об'єкт із властивостями,\nвідповідними іменами стовпців результуючого набору\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ePDO::FETCH_PROPS_LATE\u003c/code\u003e: якщо використовується з \u003ccode\u003ePDO::FETCH_CLASS\u003c/code\u003e,\nконструктор класу буде викликаний перед призначенням властивостей\nзначень шпальт.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003ecursorOrientation\u003c/code\u003e\nДля об'єктів PDOStatement, що представляють курсор, що прокручується, цей\nпараметр визначає, який рядок буде повертатися в метод, що викликає.\nЗначенням параметра має бути одна з констант \u003ccode\u003ePDO::FETCH_ORI_*\u003c/code\u003e,\nза замовчуванням \u003ccode\u003ePDO::FETCH_ORI_NEXT\u003c/code\u003e. Щоб запросити курсор, що прокручується\nдля запиту PDOStatement необхідно задати атрибут \u003ccode\u003ePDO::ATTR_CURSOR\u003c/code\u003e\nзі значенням \u003ccode\u003ePDO::CURSOR_SCROLL\u003c/code\u003e під час підготовки запиту методом\n\u003ca href=\"pdo.prepare.md\"\u003ePDO::prepare()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoffset\u003c/code\u003e\nДля об'єктів PDOStatement, що представляють курсор, що прокручується,\nпараметр \u003ccode\u003ecursor_orientation\u003c/code\u003e яких набуває значення\n\u003ccode\u003ePDO::FETCH_ORI_ABS\u003c/code\u003e, ця величина означає абсолютний номер рядка,\nяку необхідно витягти з результуючого набору.\u003c/p\u003e\n\u003cp\u003eДля об'єктів PDOStatement, що представляють курсор, що прокручується,\nпараметр \u003ccode\u003ecursor_orientation\u003c/code\u003e яких набуває значення\n\u003ccode\u003ePDO::FETCH_ORI_REL\u003c/code\u003e, ця величина вказує, який рядок щодо\nпоточного положення курсору буде вилучено функцією\n\u003cstrong\u003ePDOStatement::fetch()\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eУ разі успішного виконання функції значення, що повертається, залежить від\nрежиму вибірки. У разі виникнення помилки або якщо більше немає рядків,\nфункція повертає \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Вилучення рядків у різних режимах вибірки\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$sth = $dbh-\u003eprepare(\"SELECT name, colour FROM fruit\");$sth-\u003eexecute();/* Приклади різних режимів роботи PDOStatement::fetch */print(\"PDO : \");print(\"Повертаємо наступне рядок у виді масиву, індексованого іменами стовпців \");$result = $sth-\u003efetch(PDO::FETCH_ASSOC);print_r($result);print(\" \");print(\"PDO::FETCH_BOTH: \");print(\"Повертаємо наступний рядок у виді масиву, індексованого як іменами стовпців, так і їх номерами \");$result = $sth-\u003efetch(PDO::FETCH_BOTH);print_r($result);print(\" \");print(\"PDO::FETCH_LAZY: \");print(\"Повертаємо наступний рядок у вигляді анонімного об'єкта з властивостями, відповідними стовпцям \");$result = $sth-\u003efetch(PDO::FETCH_LAZY);print_r($result);print(\" \");print(\"PDO::FETCH_OBJ: \");print(\"Повертаємо наступний рядок у вигляді анонімного об'єкта з властивостями, відповідними стовпцям \");$result = $sth-\u003efetch(PDO::FETCH_OBJ);print $result-\u003ename;print(\" \");?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003ePDO::FETCH_ASSOC: Повертаємо наступний рядок у вигляді масиву, індексованого іменами стовпців\nArray\n(\n[name] =\u003e apple\n[colour] =\u003e red\n)\u003c/p\u003e\n\u003cp\u003ePDO::FETCH_BOTH: Повертаємо наступний рядок у вигляді масиву, індексованого як іменами стовпців, так і їх номерами\nArray\n(\n[name] =\u003e banana\n[0] =\u003e banana\n[colour] =\u003e yellow\n[1] =\u003e yellow\n)\u003c/p\u003e\n\u003cp\u003ePDO::FETCH_LAZY: Повертаємо наступний рядок у вигляді анонімного об'єкта з властивостями, що відповідають стовпцям\nPDORow Object\n(\n[name] =\u003e orange\n[colour] =\u003e orange\n)\u003c/p\u003e\n\u003cp\u003ePDO::FETCH_OBJ: Повертаємо наступний рядок у вигляді анонімного об'єкта з властивостями, що відповідають стовпцям\nkiwi\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Вибірка рядків засобами прокручуваного курсору\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction readDataForwards($dbh) {    $sql = 'SELECT hand, won, bet FROM mynumbers ORDER BY BET'; $stmt==$dbh-\u003eprepare($sql, array(PDO::ATTR_CURSOR =\u003e PDO::CURSOR_SCROLL)); $stmt-\u003eexecute(); while($row = $stmt-\u003efetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)) {        $data = $row[0] . \" \" . $row[1] . \" \" . $row[2] . \" \";        print $data;    }}function readDataBackwards($dbh) {    $sql = 'SELECT hand, won, bet FROM mynumbers ORDER BY bet';    $stmt = $dbh-\u003eprepare($sql, array(PDO::ATTR_CURSOR =\u003e PDO::CURSOR_SCROLL));   $stmt-\u003eexecute();  $row = $stmt-\u003efetch(PDO::FETCH_NUM, PDO::FETCH_ORI_LAST);                . $row[1] . \" \" . $row[2] . \" \";         print $data;    } while ($row = $stmt-\u003efetch(PDO::FETCH_NUM, PDO::FETCH_ORI_PRIOR));}print \"Читаємо  \";readDataForwards($conn);print \"Читаємо в зворотній послідовності: \";readDataBackwards($conn);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eЧитаємо у прямій послідовності:\n21 10 5\n16 0 5\n19 20 10\u003c/p\u003e\n\u003cp\u003eЧитаємо у зворотній послідовності:\n19 20 10\n16 0 5\n21 10 5\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Порядок конструкторів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЯкщо об'єкти забираються за допомогою \u003ccode\u003ePDO::FETCH_CLASS\u003c/code\u003e, спочатку\nнадаються властивості об'єкта, а потім викликається конструктор об'єкта.\nЯкщо також встановлено \u003ccode\u003ePDO::FETCH_PROPS_LATE\u003c/code\u003e, цей порядок змінюється на\nзворотний.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass Person{    private $name; public function __construct()    {       $$this-\u003etell(); }   publicfunction tell()    {        if (isset($this-\u003ename)) {             echo \"Я\u003e \";        }}else {             echo \"У мене ще ні імені. \";        }    }}$sth = $dbh-\u003equery(\"SELECT * FROM people\");$sth-\u003esetFetchMode(PDO::FETCH_CLASS, 'Person');$$son| person-\u003etell();$sth-\u003esetFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Person');$person = $sth-\u003efetch();$person-\u003etell();?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eЯ – Alice.\nЯ Alice.\nВ мене ще немає імені.\nЯ Bob.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"pdo.prepare.md\"\u003ePDO::prepare()\u003c/a\u003e - Підготовка запиту до\nвиконання та повертає пов'язаний з цим запитом об'єкт\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdostatement.execute.md\"\u003ePDOStatement::execute()\u003c/a\u003e - Запускає\nпідготовлений запит на виконання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdostatement.fetchall.md\"\u003ePDOStatement::fetchAll()\u003c/a\u003e - Вибирає\nрядки, що залишилися з набору результатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdostatement.fetchcolumn.md\"\u003ePDOStatement::fetchColumn()\u003c/a\u003e -\nПовертає дані одного стовпця наступного рядка результуючого\nнабору\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdostatement.fetchobject.md\"\u003ePDOStatement::fetchObject()\u003c/a\u003e -\nВитягує наступний рядок і повертає його у вигляді об'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdostatement.setfetchmode.md\"\u003ePDOStatement::setFetchMode()\u003c/a\u003e -\nВстановлює стандартний режим вибірки для об'єкта запиту\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"pdostatement.fetch.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

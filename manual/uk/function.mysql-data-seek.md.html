@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.mysql-data-seek | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.mysql-create-db.md">«mysql_create_db</a></p>
+</li>
+<li>
+<p><a href="function.mysql-db-name.md">mysql_db_name »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.mysql.md">MySQL</a></p>
+</li>
+<li>
+<p>Переміщує внутрішній покажчик у результаті запиту</p>
+</li>
+</ul>
+<h1>mysql_data_seek</h1>
+<p>(PHP 4, PHP 5)</p>
+<p>mysql_data_seek — Переміщує внутрішній покажчик у результаті запиту</p>
+<p><strong>Увага</strong></p>
+<p>Цей модуль застарів, починаючи з версії PHP 5.5.0, і вилучений до PHP 7.0.0.
+Використовуйте замість нього <a href="book.mysqli.md">MySQLi</a> або
+<a href="ref.pdo-mysql.md">PDO_MySQL</a>. Дивіться також інструкцію <a href="mysqlinfo.api.choosing.md">MySQL: вибір API</a>. Альтернативи для цієї функції:</p>
+<ul>
+<li><a href="mysqli-result.data-seek.md">mysqli_data_seek()</a></li>
+<li><strong><code>PDO::FETCH_ORI_ABS</code></strong></li>
+</ul>
+<h3>Опис</h3>
+<p><strong>mysql_data_seek</strong>(resource <code>$result</code>, int <code>$row_number</code>): bool</p>
+<p><strong>mysql_data_seek()</strong> переміщує внутрішній покажчик результату
+запиту, з яким пов'язаний переданий дескриптор, до ряду із зазначеним
+номером. Наступний дзвінок до функції отримання даних MySQL, такий як
+<a href="function.mysql-fetch-assoc.md">mysql_fetch_assoc()</a>, поверне саме
+його.</p>
+<p>Нумерація <code>row_number</code> починається з 0. <code>row_number</code> має бути
+значенням у діапазоні від 0 до
+<a href="function.mysql-num-rows.md">mysql_num_rows()</a> - 1. Однак, якщо
+результат порожній (<a href="function.mysql-num-rows.md">mysql_num_rows()</a> == 0),
+то спроба зсуву покажчика до нульового ряду завершиться невдачею – буде
+викликана помилка рівня <strong><code>E_WARNING</code></strong> та <strong>mysql_data_seek()</strong> поверне
+<strong><code>false</code></strong>.</p>
+<h3>Список параметрів</h3>
+<p><code>result</code>
+Оброблюваний <a href="language.types.resource.md">результат запита</a>. Цей
+результат може бути отриманий за допомогою функції
+<a href="function.mysql-query.md">mysql_query()</a>.</p>
+<p><code>row_number</code>
+Бажаний номер ряду в отриманому дескрипторі результату.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>mysql_data_seek()</strong></strong></p>
+<p><code>&#x3C;?php$link = mysql_connect('localhost', 'mysql_user', 'mysql_password');if (!$link) {    die('Помилка з'єднання: ' . mysql_error());}$db_selected ');if(!$db_selected) {   die('Не вдалося вибрати базу даних: mysql_error());}$query=='SELECT last_name, !$result) {    die('Помилка запиту: ' . mysql_error());}/* отримання рядів в зворотному порядку */for ($i = mysql_num_rows($result)> $$ $$  -) {    if (!mysql_data_seek($result, $i)) {       echo "Не удалося переміститися до ряду $i: " . mysql_error() . " ";        continue;    }    if (!($row = mysql_fetch_assoc($result))) {        continue;    }    echo $row['last_name'] . ' ' . $row['first_name'] . "&#x3C;br /> ";} mysql_free_result($result);?></code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Функція <strong>mysql_data_seek()</strong> може бути використана тільки з
+<a href="function.mysql-query.md">mysql_query()</a>, але не з
+<a href="function.mysql-unbuffered-query.md">mysql_unbuffered_query()</a>.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.mysql-query.md">mysql_query()</a> - Надсилає запит MySQL</li>
+<li><a href="function.mysql-num-rows.md">mysql_num_rows()</a> - Повертає
+кількість рядів результату запиту</li>
+<li><a href="function.mysql-fetch-row.md">mysql_fetch_row()</a> - Обробляє
+ряд результату запиту та повертає масив з числовими індексами</li>
+<li><a href="function.mysql-fetch-assoc.md">mysql_fetch_assoc()</a> - Повертає
+ряд результату запиту як асоціативний масив</li>
+<li><a href="function.mysql-fetch-array.md">mysql_fetch_array()</a> -
+Обробляє ряд результатів запиту, повертаючи асоціативний масив,
+чисельний масив чи обидва</li>
+<li><a href="function.mysql-fetch-object.md">mysql_fetch_object()</a> -
+Обробляє ряд результату запиту та повертає об'єкт</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.mysql-data-seek.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.mysql-data-seek.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.mysql-data-seek","slug":"function.mysql-data-seek.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mysql-create-db.md\"\u003e«mysql_create_db\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mysql-db-name.md\"\u003emysql_db_name »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.mysql.md\"\u003eMySQL\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПереміщує внутрішній покажчик у результаті запиту\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003emysql_data_seek\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5)\u003c/p\u003e\n\u003cp\u003emysql_data_seek — Переміщує внутрішній покажчик у результаті запиту\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЦей модуль застарів, починаючи з версії PHP 5.5.0, і вилучений до PHP 7.0.0.\nВикористовуйте замість нього \u003ca href=\"book.mysqli.md\"\u003eMySQLi\u003c/a\u003e або\n\u003ca href=\"ref.pdo-mysql.md\"\u003ePDO_MySQL\u003c/a\u003e. Дивіться також інструкцію \u003ca href=\"mysqlinfo.api.choosing.md\"\u003eMySQL: вибір API\u003c/a\u003e. Альтернативи для цієї функції:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.data-seek.md\"\u003emysqli_data_seek()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003ePDO::FETCH_ORI_ABS\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003emysql_data_seek\u003c/strong\u003e(resource \u003ccode\u003e$result\u003c/code\u003e, int \u003ccode\u003e$row_number\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003emysql_data_seek()\u003c/strong\u003e переміщує внутрішній покажчик результату\nзапиту, з яким пов'язаний переданий дескриптор, до ряду із зазначеним\nномером. Наступний дзвінок до функції отримання даних MySQL, такий як\n\u003ca href=\"function.mysql-fetch-assoc.md\"\u003emysql_fetch_assoc()\u003c/a\u003e, поверне саме\nйого.\u003c/p\u003e\n\u003cp\u003eНумерація \u003ccode\u003erow_number\u003c/code\u003e починається з 0. \u003ccode\u003erow_number\u003c/code\u003e має бути\nзначенням у діапазоні від 0 до\n\u003ca href=\"function.mysql-num-rows.md\"\u003emysql_num_rows()\u003c/a\u003e - 1. Однак, якщо\nрезультат порожній (\u003ca href=\"function.mysql-num-rows.md\"\u003emysql_num_rows()\u003c/a\u003e == 0),\nто спроба зсуву покажчика до нульового ряду завершиться невдачею – буде\nвикликана помилка рівня \u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e та \u003cstrong\u003emysql_data_seek()\u003c/strong\u003e поверне\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eresult\u003c/code\u003e\nОброблюваний \u003ca href=\"language.types.resource.md\"\u003eрезультат запита\u003c/a\u003e. Цей\nрезультат може бути отриманий за допомогою функції\n\u003ca href=\"function.mysql-query.md\"\u003emysql_query()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erow_number\u003c/code\u003e\nБажаний номер ряду в отриманому дескрипторі результату.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003emysql_data_seek()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$link = mysql_connect('localhost', 'mysql_user', 'mysql_password');if (!$link) {    die('Помилка з'єднання: ' . mysql_error());}$db_selected ');if(!$db_selected) {   die('Не вдалося вибрати базу даних: mysql_error());}$query=='SELECT last_name, !$result) {    die('Помилка запиту: ' . mysql_error());}/* отримання рядів в зворотному порядку */for ($i = mysql_num_rows($result)\u003e $$ $$  -) {    if (!mysql_data_seek($result, $i)) {       echo \"Не удалося переміститися до ряду $i: \" . mysql_error() . \" \";        continue;    }    if (!($row = mysql_fetch_assoc($result))) {        continue;    }    echo $row['last_name'] . ' ' . $row['first_name'] . \"\u0026#x3C;br /\u003e \";} mysql_free_result($result);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eФункція \u003cstrong\u003emysql_data_seek()\u003c/strong\u003e може бути використана тільки з\n\u003ca href=\"function.mysql-query.md\"\u003emysql_query()\u003c/a\u003e, але не з\n\u003ca href=\"function.mysql-unbuffered-query.md\"\u003emysql_unbuffered_query()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.mysql-query.md\"\u003emysql_query()\u003c/a\u003e - Надсилає запит MySQL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mysql-num-rows.md\"\u003emysql_num_rows()\u003c/a\u003e - Повертає\nкількість рядів результату запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mysql-fetch-row.md\"\u003emysql_fetch_row()\u003c/a\u003e - Обробляє\nряд результату запиту та повертає масив з числовими індексами\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mysql-fetch-assoc.md\"\u003emysql_fetch_assoc()\u003c/a\u003e - Повертає\nряд результату запиту як асоціативний масив\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mysql-fetch-array.md\"\u003emysql_fetch_array()\u003c/a\u003e -\nОбробляє ряд результатів запиту, повертаючи асоціативний масив,\nчисельний масив чи обидва\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mysql-fetch-object.md\"\u003emysql_fetch_object()\u003c/a\u003e -\nОбробляє ряд результату запиту та повертає об'єкт\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.mysql-data-seek.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

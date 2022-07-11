@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mbstring.configuration | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mbstring.installation.md">« Установка</a></p>
+</li>
+<li>
+<p><a href="mbstring.resources.md">Типи ресурсів»</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mbstring.setup.md">Встановлення та налаштування</a></p>
+</li>
+<li>
+<p>Налаштування під час виконання</p>
+</li>
+</ul>
+<h2>Налаштування під час виконання</h2>
+<p>Поведінка цих функцій залежить від установок <code>php.ini</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Ім'я За замовчуванням</th>
+<th>Місце зміни</th>
+<th>Список змін</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="mbstring.configuration.md#ini.mbstring.language">mbstring.language</a></td>
+<td>"neutral"</td>
+<td>PHP_INI_ALL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mbstring.configuration.md#ini.mbstring.detect-order">mbstring.detect_order</a></td>
+<td>NULL</td>
+<td>PHP_INI_ALL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mbstring.configuration.md#ini.mbstring.http-input">mbstring.http_input</a></td>
+<td>"pass"</td>
+<td>PHP_INI_ALL</td>
+<td>Застаріла</td>
+</tr>
+<tr>
+<td><a href="mbstring.configuration.md#ini.mbstring.http-output">mbstring.http_output</a></td>
+<td>"pass"</td>
+<td>PHP_INI_ALL</td>
+<td>Застаріла</td>
+</tr>
+<tr>
+<td><a href="mbstring.configuration.md#ini.mbstring.internal-encoding">mbstring.internal_encoding</a></td>
+<td>NULL</td>
+<td>PHP_INI_ALL</td>
+<td>Застаріла</td>
+</tr>
+<tr>
+<td><a href="mbstring.configuration.md#ini.mbstring.substitute-character">mbstring.substitute_character</a></td>
+<td>NULL</td>
+<td>PHP_INI_ALL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mbstring.configuration.md#ini.mbstring.func-overload">mbstring.func_overload</a></td>
+<td>"0"</td>
+<td>PHP_INI_SYSTEM</td>
+<td>Оголошено застарілим у PHP 7.2.0; видалено з PHP 8.0.0.</td>
+</tr>
+<tr>
+<td><a href="mbstring.configuration.md#ini.mbstring.encoding-translation">mbstring.encoding_translation</a></td>
+<td>"0"</td>
+<td>PHP_INI_PERDIR</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mbstring.configuration.md#ini.mbstring.http-output-conv-mimetypes">mbstring.http_output_conv_mimetypes</a></td>
+<td>"^(text/|application/xhtml+xml)"</td>
+<td>PHP_INI_ALL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mbstring.configuration.md#ini.mbstring.strict-detection">mbstring.strict_detection</a></td>
+<td>"0"</td>
+<td>PHP_INI_ALL</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Опції конфігурації mbstring</strong></p>
+<p>Для детального опису констант PHP_INI_*, зверніться до розділу <a href="configuration.changes.modes.md">Де
+можуть бути встановлені параметри конфігурації</a>.</p>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>mbstring.language</code> string
+За замовчуванням в mbstring використовуються установки національної мови.
+Зверніть увагу, що ця опція автоматично визначає
+<code>mbstring.internal_encoding</code>, і <code>mbstring.internal_encoding</code> має бути
+поміщений після <code>mbstring.language</code> в <code>php.ini</code></p>
+<p><code>mbstring.encoding_translation</code> bool
+Включає прозорий фільтр кодування для вхідних запитів HTTP
+виконує виявлення та перетворення вхідного кодування у внутрішнє
+кодування.</p>
+<p><code>mbstring.internal_encoding</code> string
+<strong>Увага</strong>
+Ця можливість застаріла і буде обов'язково віддалена в майбутньому.</p>
+<p>Визначає внутрішнє кодування символів за промовчанням.</p>
+<p>Користувачі повинні залишити цю опцію порожньою та поставити замість неї
+<a href="ini.core.md#ini.default-charset"><code>default_charset</code></a>.</p>
+<p><code>mbstring.http_input</code> string
+<strong>Увага</strong>
+Ця можливість застаріла і буде обов'язково віддалена в майбутньому.</p>
+<p>Визначає кодування символів за промовчанням для введення HTTP.</p>
+<p>Користувачі повинні залишити цю опцію порожньою та поставити замість неї
+<a href="ini.core.md#ini.default-charset"><code>default_charset</code></a>.</p>
+<p><code>mbstring.http_output</code> string
+<strong>Увага</strong>
+Ця можливість застаріла і буде обов'язково віддалена в майбутньому.</p>
+<p>Визначає кодування символів за замовчуванням для виводу HTTP (конвертація
+з внутрішнього кодування кодування HTTP виводу відбудеться перед
+виведенням).</p>
+<p>Користувачі повинні залишити цю опцію порожньою та поставити замість неї
+<a href="ini.core.md#ini.default-charset"><code>default_charset</code></a>.</p>
+<p><code>mbstring.detect_order</code> string
+Визначає порядок визначення кодування символів за промовчанням. Дивіться
+також <a href="function.mb-detect-order.md">mb_detect_order()</a>.</p>
+<p><code>mbstring.substitute_character</code> string
+Визначає символ заміни неприпустимих символів кодування. перелік
+підтримуваних значень дивіться в описі функції
+<a href="function.mb-substitute-character.md">mb_substitute_character()</a>.</p>
+<p><code>mbstring.func_overload</code> string
+<strong>Увага</strong>
+Ця функціональність оголошена <em>ЗАСТАРЛЕННОЮ</em>, починаючи з PHP 7.2.0 та
+була <em>Видалена</em> у версії PHP 8.0.0. Використовувати цю функцію вкрай не
+рекомендується.</p>
+<p>Перевантажує багато однобайтових функцій аналогами з mbstring.
+Дивіться розділ <a href="mbstring.overload.md">Перевантаження функцій</a> для
+отримання додаткової інформації.</p>
+<p>Ця опція може бути змінена лише у файлі <code>php.ini</code>.</p>
+<p><code>mbstring.http_output_conv_mimetypes</code> string</p>
+<p><code>mbstring.strict_detection</code> bool
+Включає чітке визначення кодування. Дивіться опис та приклади в
+<a href="function.mb-detect-encoding.md">mb_detect_encoding()</a>.</p>
+<p>Відповідно до <a href="http://www.w3.org/TR/REC-html40/interact/forms.md#adef-accept-charset">» специфікації HTML 4.01</a>,
+веб-браузерам можна перекодувати дані з форми, які вони
+отримують у кодуванні символів, відмінною від використовуваної на сторінці.
+Дивіться функцію <a href="function.mb-http-input.md">mb_http_input()</a> для
+того, щоб визначити кодування символів, яке використовується браузерами.</p>
+<p>Хоча популярні браузери здатні досить точно визначити кодування
+символів даного HTML-документа, було б краще встановити параметр
+<code>charset</code> у HTTP-заголовку <code>Content-Type</code> відповідним значенням з
+за допомогою <a href="function.header.md">header()</a> або вказати потрібне значення
+у параметрі <a href="ini.core.md#ini.sect.data-handling">default_charset</a>
+ini-налаштуваннях.</p>
+<p><strong>Приклад #1 Приклади налаштувань <code>php.ini</code></strong></p>
+<p>; Встановити мову за замовчуванням
+mbstring.language = Neutral; Установити Neutral(UTF-8) за замовчуванням (за замовчуванням)
+mbstring.language = English; Встановити англійською за замовчуванням
+mbstring.language = Japanese; Встановити японську мову за замовчуванням</p>
+<p>;;; Встановити внутрішнє кодування за замовчуванням
+;;; Примітка: Переконайтеся, що ви використовуєте кодування символів, яке працює з PHP
+mbstring.internal_encoding = UTF-8; Встановити внутрішнє кодування в UTF-8</p>
+<p>;;; Увімкнено перетворення кодування HTTP-введення.
+mbstring.encoding_translation = On</p>
+<p>;;; Встановити кодування символів за промовчанням для введення HTTP
+;;; Примітка: Скрипт не може змінити інсталяцію http_input.
+mbstring.http_input=pass; Немає перетворення.
+mbstring.http_input = auto; Встановити HTTP-введення в auto
+; "auto" розширюється відповідно до mbstring.language
+mbstring.http_input=SJIS; Встановити HTTP-введення у SJIS
+mbstring.http_input = UTF-8, SJIS, EUC-JP; Вказати порядок</p>
+<p>;;; Встановити кодування символів за промовчанням для виводу HTTP
+mbstring.http_output=pass; Немає перетворення.
+mbstring.http_output = UTF-8; Встановити кодування HTTP-виводу в UTF-8</p>
+<p>;;; Встановити порядок визначення кодування символів за промовчанням
+mbstring.detect_order = auto; Встановити порядок визначення у auto
+mbstring.detect_order = ASCII,JIS,UTF-8,SJIS,EUC-JP; Вказати порядок</p>
+<p>;;; Встановити символ заміни за промовчанням
+mbstring.substitute_character = 12307; Вказати значення Unicode
+mbstring.substitute_character=none; Не друкувати символ
+mbstring.substitute_character = long; Приклад кодових значень символів: U+3000,JIS+7E7E</p>
+<p><strong>Приклад #2 Налаштування <code>php.ini</code> для користувачів <code>EUC-JP</code></strong></p>
+<p>;;; Вимкнути буферизацію виводу
+output_buffering = Off</p>
+<p>;;; Встановити кодування у http-заголовку
+default_charset = EUC-JP</p>
+<p>;;; Встановити японську мову за замовчуванням
+mbstring.language=Japanese</p>
+<p>;;; Увімкнено перетворення кодування HTTP-введення.
+mbstring.encoding_translation = On</p>
+<p>;;; Встановити перекодування HTTP-введення в auto
+mbstring.http_input=auto</p>
+<p>;;; Конвертувати HTTP-виведення в EUC-JP
+mbstring.http_output = EUC-JP</p>
+<p>;;; Встановити внутрішнє кодування в EUC-JP
+mbstring.internal_encoding = EUC-JP</p>
+<p>;;; Не друкувати неприпустимі символи
+mbstring.substitute_character = none</p>
+<p><strong>Приклад #3 Налаштування <code>php.ini</code> для користувачів <code>SJIS</code></strong></p>
+<p>;;; Включити буферизацію виводу
+output_buffering = On</p>
+<p>;;; Встановити mb_output_handler для увімкнення перекодування виводу
+output_handler = mb_output_handler</p>
+<p>;;; Встановити кодування у http-заголовку
+default_charset = Shift_JIS</p>
+<p>;;; Встановити японську мову за замовчуванням
+mbstring.language=Japanese</p>
+<p>;;; Встановити перекодування HTTP-введення в auto
+mbstring.http_input=auto</p>
+<p>;;; Конвертувати у SJIS
+mbstring.http_output=SJIS</p>
+<p>;;; Встановити внутрішнє кодування в EUC-JP
+mbstring.internal_encoding = EUC-JP</p>
+<p>;;; Не друкувати неприпустимі символи
+mbstring.substitute_character = none</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mbstring.configuration.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mbstring.configuration.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mbstring.configuration","slug":"mbstring.configuration.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mbstring.installation.md\"\u003e« Установка\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mbstring.resources.md\"\u003eТипи ресурсів»\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mbstring.setup.md\"\u003eВстановлення та налаштування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНалаштування під час виконання\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНалаштування під час виконання\u003c/h2\u003e\n\u003cp\u003eПоведінка цих функцій залежить від установок \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІм'я За замовчуванням\u003c/th\u003e\n\u003cth\u003eМісце зміни\u003c/th\u003e\n\u003cth\u003eСписок змін\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mbstring.configuration.md#ini.mbstring.language\"\u003embstring.language\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"neutral\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mbstring.configuration.md#ini.mbstring.detect-order\"\u003embstring.detect_order\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mbstring.configuration.md#ini.mbstring.http-input\"\u003embstring.http_input\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"pass\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003eЗастаріла\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mbstring.configuration.md#ini.mbstring.http-output\"\u003embstring.http_output\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"pass\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003eЗастаріла\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mbstring.configuration.md#ini.mbstring.internal-encoding\"\u003embstring.internal_encoding\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003eЗастаріла\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mbstring.configuration.md#ini.mbstring.substitute-character\"\u003embstring.substitute_character\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mbstring.configuration.md#ini.mbstring.func-overload\"\u003embstring.func_overload\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003ctd\u003eОголошено застарілим у PHP 7.2.0; видалено з PHP 8.0.0.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mbstring.configuration.md#ini.mbstring.encoding-translation\"\u003embstring.encoding_translation\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_PERDIR\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mbstring.configuration.md#ini.mbstring.http-output-conv-mimetypes\"\u003embstring.http_output_conv_mimetypes\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"^(text/|application/xhtml+xml)\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mbstring.configuration.md#ini.mbstring.strict-detection\"\u003embstring.strict_detection\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОпції конфігурації mbstring\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля детального опису констант PHP_INI_*, зверніться до розділу \u003ca href=\"configuration.changes.modes.md\"\u003eДе\nможуть бути встановлені параметри конфігурації\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eКоротке пояснення конфігураційних директив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003embstring.language\u003c/code\u003e string\nЗа замовчуванням в mbstring використовуються установки національної мови.\nЗверніть увагу, що ця опція автоматично визначає\n\u003ccode\u003embstring.internal_encoding\u003c/code\u003e, і \u003ccode\u003embstring.internal_encoding\u003c/code\u003e має бути\nпоміщений після \u003ccode\u003embstring.language\u003c/code\u003e в \u003ccode\u003ephp.ini\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003embstring.encoding_translation\u003c/code\u003e bool\nВключає прозорий фільтр кодування для вхідних запитів HTTP\nвиконує виявлення та перетворення вхідного кодування у внутрішнє\nкодування.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003embstring.internal_encoding\u003c/code\u003e string\n\u003cstrong\u003eУвага\u003c/strong\u003e\nЦя можливість застаріла і буде обов'язково віддалена в майбутньому.\u003c/p\u003e\n\u003cp\u003eВизначає внутрішнє кодування символів за промовчанням.\u003c/p\u003e\n\u003cp\u003eКористувачі повинні залишити цю опцію порожньою та поставити замість неї\n\u003ca href=\"ini.core.md#ini.default-charset\"\u003e\u003ccode\u003edefault_charset\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003embstring.http_input\u003c/code\u003e string\n\u003cstrong\u003eУвага\u003c/strong\u003e\nЦя можливість застаріла і буде обов'язково віддалена в майбутньому.\u003c/p\u003e\n\u003cp\u003eВизначає кодування символів за промовчанням для введення HTTP.\u003c/p\u003e\n\u003cp\u003eКористувачі повинні залишити цю опцію порожньою та поставити замість неї\n\u003ca href=\"ini.core.md#ini.default-charset\"\u003e\u003ccode\u003edefault_charset\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003embstring.http_output\u003c/code\u003e string\n\u003cstrong\u003eУвага\u003c/strong\u003e\nЦя можливість застаріла і буде обов'язково віддалена в майбутньому.\u003c/p\u003e\n\u003cp\u003eВизначає кодування символів за замовчуванням для виводу HTTP (конвертація\nз внутрішнього кодування кодування HTTP виводу відбудеться перед\nвиведенням).\u003c/p\u003e\n\u003cp\u003eКористувачі повинні залишити цю опцію порожньою та поставити замість неї\n\u003ca href=\"ini.core.md#ini.default-charset\"\u003e\u003ccode\u003edefault_charset\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003embstring.detect_order\u003c/code\u003e string\nВизначає порядок визначення кодування символів за промовчанням. Дивіться\nтакож \u003ca href=\"function.mb-detect-order.md\"\u003emb_detect_order()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003embstring.substitute_character\u003c/code\u003e string\nВизначає символ заміни неприпустимих символів кодування. перелік\nпідтримуваних значень дивіться в описі функції\n\u003ca href=\"function.mb-substitute-character.md\"\u003emb_substitute_character()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003embstring.func_overload\u003c/code\u003e string\n\u003cstrong\u003eУвага\u003c/strong\u003e\nЦя функціональність оголошена \u003cem\u003eЗАСТАРЛЕННОЮ\u003c/em\u003e, починаючи з PHP 7.2.0 та\nбула \u003cem\u003eВидалена\u003c/em\u003e у версії PHP 8.0.0. Використовувати цю функцію вкрай не\nрекомендується.\u003c/p\u003e\n\u003cp\u003eПеревантажує багато однобайтових функцій аналогами з mbstring.\nДивіться розділ \u003ca href=\"mbstring.overload.md\"\u003eПеревантаження функцій\u003c/a\u003e для\nотримання додаткової інформації.\u003c/p\u003e\n\u003cp\u003eЦя опція може бути змінена лише у файлі \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003embstring.http_output_conv_mimetypes\u003c/code\u003e string\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003embstring.strict_detection\u003c/code\u003e bool\nВключає чітке визначення кодування. Дивіться опис та приклади в\n\u003ca href=\"function.mb-detect-encoding.md\"\u003emb_detect_encoding()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eВідповідно до \u003ca href=\"http://www.w3.org/TR/REC-html40/interact/forms.md#adef-accept-charset\"\u003e» специфікації HTML 4.01\u003c/a\u003e,\nвеб-браузерам можна перекодувати дані з форми, які вони\nотримують у кодуванні символів, відмінною від використовуваної на сторінці.\nДивіться функцію \u003ca href=\"function.mb-http-input.md\"\u003emb_http_input()\u003c/a\u003e для\nтого, щоб визначити кодування символів, яке використовується браузерами.\u003c/p\u003e\n\u003cp\u003eХоча популярні браузери здатні досить точно визначити кодування\nсимволів даного HTML-документа, було б краще встановити параметр\n\u003ccode\u003echarset\u003c/code\u003e у HTTP-заголовку \u003ccode\u003eContent-Type\u003c/code\u003e відповідним значенням з\nза допомогою \u003ca href=\"function.header.md\"\u003eheader()\u003c/a\u003e або вказати потрібне значення\nу параметрі \u003ca href=\"ini.core.md#ini.sect.data-handling\"\u003edefault_charset\u003c/a\u003e\nini-налаштуваннях.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклади налаштувань \u003ccode\u003ephp.ini\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e; Встановити мову за замовчуванням\nmbstring.language = Neutral; Установити Neutral(UTF-8) за замовчуванням (за замовчуванням)\nmbstring.language = English; Встановити англійською за замовчуванням\nmbstring.language = Japanese; Встановити японську мову за замовчуванням\u003c/p\u003e\n\u003cp\u003e;;; Встановити внутрішнє кодування за замовчуванням\n;;; Примітка: Переконайтеся, що ви використовуєте кодування символів, яке працює з PHP\nmbstring.internal_encoding = UTF-8; Встановити внутрішнє кодування в UTF-8\u003c/p\u003e\n\u003cp\u003e;;; Увімкнено перетворення кодування HTTP-введення.\nmbstring.encoding_translation = On\u003c/p\u003e\n\u003cp\u003e;;; Встановити кодування символів за промовчанням для введення HTTP\n;;; Примітка: Скрипт не може змінити інсталяцію http_input.\nmbstring.http_input=pass; Немає перетворення.\nmbstring.http_input = auto; Встановити HTTP-введення в auto\n; \"auto\" розширюється відповідно до mbstring.language\nmbstring.http_input=SJIS; Встановити HTTP-введення у SJIS\nmbstring.http_input = UTF-8, SJIS, EUC-JP; Вказати порядок\u003c/p\u003e\n\u003cp\u003e;;; Встановити кодування символів за промовчанням для виводу HTTP\nmbstring.http_output=pass; Немає перетворення.\nmbstring.http_output = UTF-8; Встановити кодування HTTP-виводу в UTF-8\u003c/p\u003e\n\u003cp\u003e;;; Встановити порядок визначення кодування символів за промовчанням\nmbstring.detect_order = auto; Встановити порядок визначення у auto\nmbstring.detect_order = ASCII,JIS,UTF-8,SJIS,EUC-JP; Вказати порядок\u003c/p\u003e\n\u003cp\u003e;;; Встановити символ заміни за промовчанням\nmbstring.substitute_character = 12307; Вказати значення Unicode\nmbstring.substitute_character=none; Не друкувати символ\nmbstring.substitute_character = long; Приклад кодових значень символів: U+3000,JIS+7E7E\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Налаштування \u003ccode\u003ephp.ini\u003c/code\u003e для користувачів \u003ccode\u003eEUC-JP\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e;;; Вимкнути буферизацію виводу\noutput_buffering = Off\u003c/p\u003e\n\u003cp\u003e;;; Встановити кодування у http-заголовку\ndefault_charset = EUC-JP\u003c/p\u003e\n\u003cp\u003e;;; Встановити японську мову за замовчуванням\nmbstring.language=Japanese\u003c/p\u003e\n\u003cp\u003e;;; Увімкнено перетворення кодування HTTP-введення.\nmbstring.encoding_translation = On\u003c/p\u003e\n\u003cp\u003e;;; Встановити перекодування HTTP-введення в auto\nmbstring.http_input=auto\u003c/p\u003e\n\u003cp\u003e;;; Конвертувати HTTP-виведення в EUC-JP\nmbstring.http_output = EUC-JP\u003c/p\u003e\n\u003cp\u003e;;; Встановити внутрішнє кодування в EUC-JP\nmbstring.internal_encoding = EUC-JP\u003c/p\u003e\n\u003cp\u003e;;; Не друкувати неприпустимі символи\nmbstring.substitute_character = none\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Налаштування \u003ccode\u003ephp.ini\u003c/code\u003e для користувачів \u003ccode\u003eSJIS\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e;;; Включити буферизацію виводу\noutput_buffering = On\u003c/p\u003e\n\u003cp\u003e;;; Встановити mb_output_handler для увімкнення перекодування виводу\noutput_handler = mb_output_handler\u003c/p\u003e\n\u003cp\u003e;;; Встановити кодування у http-заголовку\ndefault_charset = Shift_JIS\u003c/p\u003e\n\u003cp\u003e;;; Встановити японську мову за замовчуванням\nmbstring.language=Japanese\u003c/p\u003e\n\u003cp\u003e;;; Встановити перекодування HTTP-введення в auto\nmbstring.http_input=auto\u003c/p\u003e\n\u003cp\u003e;;; Конвертувати у SJIS\nmbstring.http_output=SJIS\u003c/p\u003e\n\u003cp\u003e;;; Встановити внутрішнє кодування в EUC-JP\nmbstring.internal_encoding = EUC-JP\u003c/p\u003e\n\u003cp\u003e;;; Не друкувати неприпустимі символи\nmbstring.substitute_character = none\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mbstring.configuration.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

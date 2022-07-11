@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>features.commandline.differences | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="features.commandline.introduction.md">«Вступ</a></p>
+</li>
+<li>
+<p><a href="features.commandline.options.md">Опції »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="features.commandline.md">Використання PHP у командному рядку</a></p>
+</li>
+<li>
+<p>Основні відмінності від інших реалізацій SAPI</p>
+</li>
+</ul>
+<h2>Основні відмінності від інших реалізацій SAPI</h2>
+<p>Основні відмінності CLI SAPI від інших реалізацій SAPI:</p>
+<ul>
+<li>На відміну від CGI SAPI, заголовки не пишуться до потоку виведення.</li>
+</ul>
+<p>Незважаючи на те, що у CGI SAPI є спосіб придушення
+HTTP-заголовків, CLI SAPI немає можливості їх включити.</p>
+<p>CLI за замовчуванням запускається в тихому режимі, проте ключі
+<strong>-q</strong> та <strong>--no-header</strong> збережені для зворотної сумісності, що
+дозволяє використовувати старі CGI-скрипти.</p>
+<p>Поточна директорія не змінюється робочої директорії скрипта.
+(Ключі <strong>-C</strong> та <strong>--no-chdir</strong> збережені для зворотної сумісності)</p>
+<p>Повідомлення про помилки видаються в текстовому режимі (без
+HTML-форматування).</p>
+<ul>
+<li>Деякі налаштування <code>php.ini</code> перевизначаються CLI SAPI, оскільки
+вони не мають сенсу при роботі в командному рядку:</li>
+</ul>
+<p>[TABLE]</p>
+<p><strong>Перевизначені директиви <code>php.ini</code></strong></p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ці директиви не можуть бути ініціалізовані іншими значеннями з
+конфігураційного файлу <code>php.ini</code> або будь-якого іншого (у випадку,
+якщо він вказаний). Це обмеження пов'язано з тим, що значення
+використовуються після обробки конфігураційних файлів. Проте,
+ці значення можуть бути змінені під час роботи скрипта (хоча це
+немає особливого сенсу всім них, наприклад
+<a href="ini.core.md#ini.register-argc-argv">register_argc_argv</a>).</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Рекомендується встановити опцію
+<a href="misc.configuration.md#ini.ignore-user-abort">ignore_user_abort</a>
+для скриптів, які використовуються з командного рядка. За подробицями
+зверніться до функції
+<a href="function.ignore-user-abort.md">ignore_user_abort()</a>.</p>
+</blockquote>
+<ul>
+<li>
+<p>Для полегшення роботи в оточенні оболонки було визначено деяке
+кількість констант для <a href="features.commandline.io-streams.md">потоків введення/виводу</a>.</p>
+</li>
+<li>
+<p>CLI SAPI <em>не</em> змінює поточну директорію на директорію виконуваного
+скрипт.</p>
+</li>
+</ul>
+<p><strong>Приклад #1 Приклад, що демонструє різницю з CGI SAPI:</strong></p>
+<p><code>&#x3C;?php// Простіший тестовий скрипт під назвою test.phpecho getcwd(), " ";?></code></p>
+<p>Якщо використовується CGI-версія, результат роботи буде
+наступним:</p>
+<p>$ pwd
+/tmp</p>
+<p>$ php -q another_directory/test.php
+/tmp/another_directory</p>
+<p>Це наочно демонструє, що PHP змінює поточну директорію на
+директорію виконуваного скрипта.</p>
+<p>Використання CLI SAPI дає інший результат:</p>
+<p>$ pwd
+/tmp</p>
+<p>$ php -f another_directory/test.php
+/tmp</p>
+<p>Це забезпечує більшу гнучкість при написанні консольних скриптів.
+на PHP.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>CGI SAPI дозволяє отримати аналогічну CLI SAPI поведінку в
+у разі використання ключа <strong>-C</strong> під час запуску з командного рядка.</p>
+</blockquote>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/features.commandline.differences.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/features.commandline.differences.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"features.commandline.differences","slug":"features.commandline.differences.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"features.commandline.introduction.md\"\u003e«Вступ\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"features.commandline.options.md\"\u003eОпції »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"features.commandline.md\"\u003eВикористання PHP у командному рядку\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОсновні відмінності від інших реалізацій SAPI\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eОсновні відмінності від інших реалізацій SAPI\u003c/h2\u003e\n\u003cp\u003eОсновні відмінності CLI SAPI від інших реалізацій SAPI:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eНа відміну від CGI SAPI, заголовки не пишуться до потоку виведення.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eНезважаючи на те, що у CGI SAPI є спосіб придушення\nHTTP-заголовків, CLI SAPI немає можливості їх включити.\u003c/p\u003e\n\u003cp\u003eCLI за замовчуванням запускається в тихому режимі, проте ключі\n\u003cstrong\u003e-q\u003c/strong\u003e та \u003cstrong\u003e--no-header\u003c/strong\u003e збережені для зворотної сумісності, що\nдозволяє використовувати старі CGI-скрипти.\u003c/p\u003e\n\u003cp\u003eПоточна директорія не змінюється робочої директорії скрипта.\n(Ключі \u003cstrong\u003e-C\u003c/strong\u003e та \u003cstrong\u003e--no-chdir\u003c/strong\u003e збережені для зворотної сумісності)\u003c/p\u003e\n\u003cp\u003eПовідомлення про помилки видаються в текстовому режимі (без\nHTML-форматування).\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eДеякі налаштування \u003ccode\u003ephp.ini\u003c/code\u003e перевизначаються CLI SAPI, оскільки\nвони не мають сенсу при роботі в командному рядку:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e[TABLE]\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПеревизначені директиви \u003ccode\u003ephp.ini\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЦі директиви не можуть бути ініціалізовані іншими значеннями з\nконфігураційного файлу \u003ccode\u003ephp.ini\u003c/code\u003e або будь-якого іншого (у випадку,\nякщо він вказаний). Це обмеження пов'язано з тим, що значення\nвикористовуються після обробки конфігураційних файлів. Проте,\nці значення можуть бути змінені під час роботи скрипта (хоча це\nнемає особливого сенсу всім них, наприклад\n\u003ca href=\"ini.core.md#ini.register-argc-argv\"\u003eregister_argc_argv\u003c/a\u003e).\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eРекомендується встановити опцію\n\u003ca href=\"misc.configuration.md#ini.ignore-user-abort\"\u003eignore_user_abort\u003c/a\u003e\nдля скриптів, які використовуються з командного рядка. За подробицями\nзверніться до функції\n\u003ca href=\"function.ignore-user-abort.md\"\u003eignore_user_abort()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eДля полегшення роботи в оточенні оболонки було визначено деяке\nкількість констант для \u003ca href=\"features.commandline.io-streams.md\"\u003eпотоків введення/виводу\u003c/a\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eCLI SAPI \u003cem\u003eне\u003c/em\u003e змінює поточну директорію на директорію виконуваного\nскрипт.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад, що демонструє різницю з CGI SAPI:\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Простіший тестовий скрипт під назвою test.phpecho getcwd(), \" \";?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eЯкщо використовується CGI-версія, результат роботи буде\nнаступним:\u003c/p\u003e\n\u003cp\u003e$ pwd\n/tmp\u003c/p\u003e\n\u003cp\u003e$ php -q another_directory/test.php\n/tmp/another_directory\u003c/p\u003e\n\u003cp\u003eЦе наочно демонструє, що PHP змінює поточну директорію на\nдиректорію виконуваного скрипта.\u003c/p\u003e\n\u003cp\u003eВикористання CLI SAPI дає інший результат:\u003c/p\u003e\n\u003cp\u003e$ pwd\n/tmp\u003c/p\u003e\n\u003cp\u003e$ php -f another_directory/test.php\n/tmp\u003c/p\u003e\n\u003cp\u003eЦе забезпечує більшу гнучкість при написанні консольних скриптів.\nна PHP.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eCGI SAPI дозволяє отримати аналогічну CLI SAPI поведінку в\nу разі використання ключа \u003cstrong\u003e-C\u003c/strong\u003e під час запуску з командного рядка.\u003c/p\u003e\n\u003c/blockquote\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"features.commandline.differences.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

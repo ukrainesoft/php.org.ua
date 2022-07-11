@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.parse-ini-file | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.move-uploaded-file.md">« move_uploaded_file</a></p>
+</li>
+<li>
+<p><a href="function.parse-ini-string.md">parse_ini_string »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.filesystem.md">Функції файлової системи</a></p>
+</li>
+<li>
+<p>Обробляє конфігураційний файл</p>
+</li>
+</ul>
+<p>#parse_ini_file</p>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>parse_ini_file — Обробляє файл конфігурації</p>
+<h3>Опис</h3>
+<p><strong>parse_ini_file</strong>(string <code>$filename</code>, bool <code>$process_sections</code> =
+<strong><code>false</code></strong>, int <code>$scanner_mode</code> = <strong><code>INI_SCANNER_NORMAL</code></strong>):
+array|false</p>
+<p><strong>parse_ini_file()</strong> завантажує ini-файл, вказаний у аргументі
+<code>filename</code>, і повертає його налаштування у вигляді асоціативного масиву.</p>
+<p>Структура ini-файлу подібна до структури <code>php.ini</code>.</p>
+<h3>Список параметрів</h3>
+<p><code>filename</code>
+Ім'я ini-файлу, що обробляється. Якщо використовується відносний шлях
+оцінюється щодо поточного робочого каталогу, а потім
+<a href="ini.core.md#ini.include-path">include_path</a>.</p>
+<p><code>process_sections</code>
+Встановивши параметр <code>process_sections</code> у <strong><code>true</code></strong>, ви отримуєте
+багатовимірний масив, який включає як назву окремих налаштувань,
+і секції. За промовчанням <code>process_sections</code> дорівнює <strong><code>false</code></strong></p>
+<p><code>scanner_mode</code>
+Може приймати такі значення: <strong><code>INI_SCANNER_NORMAL</code></strong> (за
+замовчуванням) або <strong><code>INI_SCANNER_RAW</code></strong>. Якщо вказано значення
+<strong><code>INI_SCANNER_RAW</code></strong>, то значення опцій не будуть оброблятися.</p>
+<p>З версії PHP 5.6.1 можна також задати <strong><code>INI_SCANNER_TYPED</code></strong>. В цьому
+режими типів boolean, null і integer будуть, по можливості, зберігатися.
+Рядкові значення <code>true'', </code>on'' і <code>yes'' будуть перетворені на **`true`**. </code>false<code>, </code>off'<code>, ``no'' і </code>'none'' в <strong><code>false</code></strong>.
+``null'<code> перетворюється на **</code>null`**. Крім цього, всі числові рядки
+будуть, наскільки можна, перетворені до цілим числам.</p>
+<h3>Значення, що повертаються</h3>
+<p>У разі успішного виконання налаштування повертаються у вигляді
+асоціативний масив (array). У разі виникнення помилки
+повертається <strong><code>false</code></strong>.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Вміст <code>sample.ini</code></strong></p>
+<p>; Це приклад файлу налаштувань
+; Коментарі починаються з ';', як у php.ini</p>
+<p>[first_section]
+one = 1
+five = 5
+animal = BIRD</p>
+<p>[second_section]
+path = "/usr/local/bin"
+URL = "<a href="http://www.example.com/~username">http://www.example.com/~username</a>"</p>
+<p>[third_section]
+phpversion[] = "5.0"
+phpversion[] = "5.1"
+phpversion[] = "5.2"
+phpversion[] = "5.3"</p>
+<p>urls[svn] = "<a href="http://svn.php.net">http://svn.php.net</a>"
+urls[git] = "<a href="http://git.php.net">http://git.php.net</a>"</p>
+<p><strong>Приклад #2 Приклад використання функції <strong>parse_ini_file()</strong></strong></p>
+<p><a href="language.constants.md">Константи</a> (але не "магічні константи" на кшталт
+<strong><code>__FILE__</code></strong>) також можуть оброблятися в ini-файлах, так що якщо ви
+оголосіть константу як значення для ini-файла до виклику
+<strong>parse_ini_file()</strong>, то константа буде коректно оброблена. Тільки
+значення опцій будуть оброблятися і значення має бути просто
+константою. Наприклад:</p>
+<p><code>&#x3C;?phpdefine('BIRD', 'Птиця додо');// Обробляємо без секцій$ini_array = parse_ini_file("sample.ini");print_r($ini_array);// Обробляємо з секціями$ini_array .ini", true);print_r($ini_array);?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Array
+(
+[one] => 1
+[five] => 5
+[animal] => Птах додо
+[path] => /usr/local/bin
+[URL] => <a href="http://www.example.com/~username">http://www.example.com/~username</a>
+[phpversion] => Array
+(
+[0] => 5.0
+[1] => 5.1
+[2] => 5.2
+[3] => 5.3
+)</p>
+<p>[urls] => Array
+(
+[svn] => <a href="http://svn.php.net">http://svn.php.net</a>
+[git] => <a href="http://git.php.net">http://git.php.net</a>
+)</p>
+<p>)
+Array
+(
+[first_section] => Array
+(
+[one] => 1
+[five] => 5
+[animal] => Птах додо
+)</p>
+<p>[second_section] => Array
+(
+[path] => /usr/local/bin
+[URL] => <a href="http://www.example.com/~username">http://www.example.com/~username</a>
+)</p>
+<p>[third_section] => Array
+(
+[phpversion] => Array
+(
+[0] => 5.0
+[1] => 5.1
+[2] => 5.2
+[3] => 5.3
+)</p>
+<p>[urls] => Array
+(
+[svn] => <a href="http://svn.php.net">http://svn.php.net</a>
+[git] => <a href="http://git.php.net">http://git.php.net</a>
+)</p>
+<p>)</p>
+<p>)</p>
+<p><strong>Приклад #3 Обробка файлу php.ini функцією <strong>parse_ini_file()</strong></strong></p>
+<p><code>&#x3C;?php// Проста функція для порівняння результатівfunction yesno($expression){   return($expression ? 'Так' : 'Ні');}// Отримуємо шлях к| ();// Обрабатываем php.ini$ini = parse_ini_file($ini_path);// Выводим и сравниваем значения, учтите, что использование get_cfg_var()// даст одинаковые результаты для используемых здесь значений parsed (загруженное из файла) и loaded ( використовуване в даний момент)echo '(parsed) magic_quotes_gpc = ' . yesno($ini['magic_quotes_gpc']) . PHP_EOL;echo '(loaded) magic_quotes_gpc = ' . yesno(get_cfg_var('magic_quotes_gpc')) . PHP_EOL;?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>(parsed) magic_quotes_gpc = Так
+(loaded) magic_quotes_gpc = Так</p>
+<p><strong>Приклад #4 Інтерполяція значень</strong></p>
+<p>Крім оцінки констант, деякі символи мають особливе значення в
+значення ini-файли. Крім того, змінні середовища та раніше визначені
+параметри конфігурації (дивіться
+<a href="function.get-cfg-var.md">get_cfg_var()</a>) можуть бути прочитані з
+використанням синтаксису <code>${}</code>.</p>
+<p>; | використовується для побитового АБО
+three = 2 | 3</p>
+<p>; &#x26; використовується для бітового AND
+four = 6&#x26;5</p>
+<p>; ^ використовується для побитового XOR
+five = 3^6</p>
+<p>; ~ використовується для побитового заперечення
+negative_two = ~1</p>
+<p>; () використовується для угруповання
+seven = (8|7)&#x26;(6|5)</p>
+<p>path = ${PATH}
+also_five = ${five}</p>
+<p><strong>Приклад #5 Екранування символів</strong></p>
+<p>Деякі символи мають особливе значення у рядках з подвійними лапками та
+повинні бути екрановані префіксом зворотної косої межі. Насамперед,
+це подвійна лапка ```` як маркера кордону і сама зворотна коса
+риса `\ (якщо за нею слідує один із спеціальних символів):</p>
+<p>quoted = "Вона сказала "Саме моя точка зору"." ; Результатом є рядок із лапками.
+hint = "Використовуйте \", щоб уникнути подвійних лапок" ; Результат: Використовуйте ", щоб уникнути подвійних лапок</p>
+<p>Для шляхів, подібних до Windows, зроблено виняток: можна не екранувати
+зворотну косу межу в кінці, якщо за рядком у лапках слідує розрив
+рядки:</p>
+<p>save_path = "C:\Temp"</p>
+<p>Якщо потрібно екранувати подвійні лапки, за якими слід перенести
+рядки у багаторядковому значенні, можна використовувати конкатенацію
+значень наступним чином (за одним рядком у подвійних лапках
+безпосередньо слідує інша):</p>
+<p>long_text = "Lorem "ipsum"""
+dolor" ; Результат: Lorem "ipsum"
+dolor</p>
+<p>Інший символ зі спеціальним значенням – це <code>$</code> (знак долара). Він
+повинен бути екранований, якщо за ним слідує відкрита фігурна дужка:</p>
+<p>code = "${test}"</p>
+<p>Екрануючі символи не підтримуються в режимі <strong><code>INI_SCANNER_RAW</code></strong> (в
+цьому режимі всі символи обробляються "як є").</p>
+<p>Зверніть увагу, що синтаксичний аналізатор ini не підтримує
+стандартні послідовності екранування (`
+<code> </code> і т.д.). При
+необхідності виконайте постобробку результату <strong>parse_ini_file()</strong> з
+за допомогою функції <a href="function.stripcslashes.md">stripcslashes()</a>.</p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ця функція не має жодного відношення до файлу <code>php.ini</code>. До моменту
+Виконання вашого скрипта, він вже оброблений. Ця функція може бути
+використовується для завантаження настройок вашої власної програми.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо значення ini-файлу містить інші символи, крім літер та цифр,
+воно має полягати у подвійні лапки (").</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>: Існує зарезервовані слова, які не можна
+використовувати як ключі в ini-файлах. Такими словами є:
+<code>null</code>, <code>yes</code>, <code>no</code>, <code>true</code>, <code>false</code>, <code>on</code>, <code>off</code>, <code>none</code>. Значення
+<code>null</code>, <code>off</code>, <code>no</code> і <code>false</code> перетворюються на `````, а значення <code>on</code>,
+<code>yes</code> та <code>true</code> в <code>"1"</code> , але тільки якщо не використовується режим
+<strong><code>INI_SCANNER_TYPED</code></strong>. Символи <code>?{}|&#x26;~!()^"</code> не повинні
+використовуватися в ключах і мати якийсь особливий сенс у значеннях.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Записи без рівня знання ігноруються. Наприклад, "foo" ігнорується,
+тоді як "bar =" обробляється та додається з порожнім значенням.
+Наприклад, у MySQL є опція "no-auto-rehash", що встановлюється в
+<code>my.cnf</code>, яка не має значення та ігнорується.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>ini-файли зазвичай обробляються веб-серверами як простий текст,
+таким чином, за запитом надсилаються браузерам. Це означає, що в
+З метою безпеки ви повинні або зберігати свої ini-файли поза кореневим
+каталог документів, або переналаштувати веб-сервер, щоб вони не
+обслуговувалися. Невиконання будь-якої з цих вимог може створити
+загрозу безпеці.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.parse-ini-string.md">parse_ini_string()</a> - Розбирає
+рядок конфігурації</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.parse-ini-file.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.parse-ini-file.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.parse-ini-file","slug":"function.parse-ini-file.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.move-uploaded-file.md\"\u003e« move_uploaded_file\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.parse-ini-string.md\"\u003eparse_ini_string »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.filesystem.md\"\u003eФункції файлової системи\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОбробляє конфігураційний файл\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#parse_ini_file\u003c/p\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eparse_ini_file — Обробляє файл конфігурації\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eparse_ini_file\u003c/strong\u003e(string \u003ccode\u003e$filename\u003c/code\u003e, bool \u003ccode\u003e$process_sections\u003c/code\u003e =\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, int \u003ccode\u003e$scanner_mode\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003eINI_SCANNER_NORMAL\u003c/code\u003e\u003c/strong\u003e):\narray|false\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eparse_ini_file()\u003c/strong\u003e завантажує ini-файл, вказаний у аргументі\n\u003ccode\u003efilename\u003c/code\u003e, і повертає його налаштування у вигляді асоціативного масиву.\u003c/p\u003e\n\u003cp\u003eСтруктура ini-файлу подібна до структури \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003efilename\u003c/code\u003e\nІм'я ini-файлу, що обробляється. Якщо використовується відносний шлях\nоцінюється щодо поточного робочого каталогу, а потім\n\u003ca href=\"ini.core.md#ini.include-path\"\u003einclude_path\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eprocess_sections\u003c/code\u003e\nВстановивши параметр \u003ccode\u003eprocess_sections\u003c/code\u003e у \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, ви отримуєте\nбагатовимірний масив, який включає як назву окремих налаштувань,\nі секції. За промовчанням \u003ccode\u003eprocess_sections\u003c/code\u003e дорівнює \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003escanner_mode\u003c/code\u003e\nМоже приймати такі значення: \u003cstrong\u003e\u003ccode\u003eINI_SCANNER_NORMAL\u003c/code\u003e\u003c/strong\u003e (за\nзамовчуванням) або \u003cstrong\u003e\u003ccode\u003eINI_SCANNER_RAW\u003c/code\u003e\u003c/strong\u003e. Якщо вказано значення\n\u003cstrong\u003e\u003ccode\u003eINI_SCANNER_RAW\u003c/code\u003e\u003c/strong\u003e, то значення опцій не будуть оброблятися.\u003c/p\u003e\n\u003cp\u003eЗ версії PHP 5.6.1 можна також задати \u003cstrong\u003e\u003ccode\u003eINI_SCANNER_TYPED\u003c/code\u003e\u003c/strong\u003e. В цьому\nрежими типів boolean, null і integer будуть, по можливості, зберігатися.\nРядкові значення \u003ccode\u003etrue'', \u003c/code\u003eon'' і \u003ccode\u003eyes'' будуть перетворені на **`true`**. \u003c/code\u003efalse\u003ccode\u003e, \u003c/code\u003eoff'\u003ccode\u003e, ``no'' і \u003c/code\u003e'none'' в \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\n``null'\u003ccode\u003e перетворюється на **\u003c/code\u003enull`**. Крім цього, всі числові рядки\nбудуть, наскільки можна, перетворені до цілим числам.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eУ разі успішного виконання налаштування повертаються у вигляді\nасоціативний масив (array). У разі виникнення помилки\nповертається \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Вміст \u003ccode\u003esample.ini\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e; Це приклад файлу налаштувань\n; Коментарі починаються з ';', як у php.ini\u003c/p\u003e\n\u003cp\u003e[first_section]\none = 1\nfive = 5\nanimal = BIRD\u003c/p\u003e\n\u003cp\u003e[second_section]\npath = \"/usr/local/bin\"\nURL = \"\u003ca href=\"http://www.example.com/~username\"\u003ehttp://www.example.com/~username\u003c/a\u003e\"\u003c/p\u003e\n\u003cp\u003e[third_section]\nphpversion[] = \"5.0\"\nphpversion[] = \"5.1\"\nphpversion[] = \"5.2\"\nphpversion[] = \"5.3\"\u003c/p\u003e\n\u003cp\u003eurls[svn] = \"\u003ca href=\"http://svn.php.net\"\u003ehttp://svn.php.net\u003c/a\u003e\"\nurls[git] = \"\u003ca href=\"http://git.php.net\"\u003ehttp://git.php.net\u003c/a\u003e\"\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклад використання функції \u003cstrong\u003eparse_ini_file()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"language.constants.md\"\u003eКонстанти\u003c/a\u003e (але не \"магічні константи\" на кшталт\n\u003cstrong\u003e\u003ccode\u003e__FILE__\u003c/code\u003e\u003c/strong\u003e) також можуть оброблятися в ini-файлах, так що якщо ви\nоголосіть константу як значення для ini-файла до виклику\n\u003cstrong\u003eparse_ini_file()\u003c/strong\u003e, то константа буде коректно оброблена. Тільки\nзначення опцій будуть оброблятися і значення має бути просто\nконстантою. Наприклад:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpdefine('BIRD', 'Птиця додо');// Обробляємо без секцій$ini_array = parse_ini_file(\"sample.ini\");print_r($ini_array);// Обробляємо з секціями$ini_array .ini\", true);print_r($ini_array);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eArray\n(\n[one] =\u003e 1\n[five] =\u003e 5\n[animal] =\u003e Птах додо\n[path] =\u003e /usr/local/bin\n[URL] =\u003e \u003ca href=\"http://www.example.com/~username\"\u003ehttp://www.example.com/~username\u003c/a\u003e\n[phpversion] =\u003e Array\n(\n[0] =\u003e 5.0\n[1] =\u003e 5.1\n[2] =\u003e 5.2\n[3] =\u003e 5.3\n)\u003c/p\u003e\n\u003cp\u003e[urls] =\u003e Array\n(\n[svn] =\u003e \u003ca href=\"http://svn.php.net\"\u003ehttp://svn.php.net\u003c/a\u003e\n[git] =\u003e \u003ca href=\"http://git.php.net\"\u003ehttp://git.php.net\u003c/a\u003e\n)\u003c/p\u003e\n\u003cp\u003e)\nArray\n(\n[first_section] =\u003e Array\n(\n[one] =\u003e 1\n[five] =\u003e 5\n[animal] =\u003e Птах додо\n)\u003c/p\u003e\n\u003cp\u003e[second_section] =\u003e Array\n(\n[path] =\u003e /usr/local/bin\n[URL] =\u003e \u003ca href=\"http://www.example.com/~username\"\u003ehttp://www.example.com/~username\u003c/a\u003e\n)\u003c/p\u003e\n\u003cp\u003e[third_section] =\u003e Array\n(\n[phpversion] =\u003e Array\n(\n[0] =\u003e 5.0\n[1] =\u003e 5.1\n[2] =\u003e 5.2\n[3] =\u003e 5.3\n)\u003c/p\u003e\n\u003cp\u003e[urls] =\u003e Array\n(\n[svn] =\u003e \u003ca href=\"http://svn.php.net\"\u003ehttp://svn.php.net\u003c/a\u003e\n[git] =\u003e \u003ca href=\"http://git.php.net\"\u003ehttp://git.php.net\u003c/a\u003e\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Обробка файлу php.ini функцією \u003cstrong\u003eparse_ini_file()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Проста функція для порівняння результатівfunction yesno($expression){   return($expression ? 'Так' : 'Ні');}// Отримуємо шлях к| ();// Обрабатываем php.ini$ini = parse_ini_file($ini_path);// Выводим и сравниваем значения, учтите, что использование get_cfg_var()// даст одинаковые результаты для используемых здесь значений parsed (загруженное из файла) и loaded ( використовуване в даний момент)echo '(parsed) magic_quotes_gpc = ' . yesno($ini['magic_quotes_gpc']) . PHP_EOL;echo '(loaded) magic_quotes_gpc = ' . yesno(get_cfg_var('magic_quotes_gpc')) . PHP_EOL;?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003e(parsed) magic_quotes_gpc = Так\n(loaded) magic_quotes_gpc = Так\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Інтерполяція значень\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eКрім оцінки констант, деякі символи мають особливе значення в\nзначення ini-файли. Крім того, змінні середовища та раніше визначені\nпараметри конфігурації (дивіться\n\u003ca href=\"function.get-cfg-var.md\"\u003eget_cfg_var()\u003c/a\u003e) можуть бути прочитані з\nвикористанням синтаксису \u003ccode\u003e${}\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e; | використовується для побитового АБО\nthree = 2 | 3\u003c/p\u003e\n\u003cp\u003e; \u0026#x26; використовується для бітового AND\nfour = 6\u0026#x26;5\u003c/p\u003e\n\u003cp\u003e; ^ використовується для побитового XOR\nfive = 3^6\u003c/p\u003e\n\u003cp\u003e; ~ використовується для побитового заперечення\nnegative_two = ~1\u003c/p\u003e\n\u003cp\u003e; () використовується для угруповання\nseven = (8|7)\u0026#x26;(6|5)\u003c/p\u003e\n\u003cp\u003epath = ${PATH}\nalso_five = ${five}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Екранування символів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДеякі символи мають особливе значення у рядках з подвійними лапками та\nповинні бути екрановані префіксом зворотної косої межі. Насамперед,\nце подвійна лапка ```` як маркера кордону і сама зворотна коса\nриса `\\ (якщо за нею слідує один із спеціальних символів):\u003c/p\u003e\n\u003cp\u003equoted = \"Вона сказала \"Саме моя точка зору\".\" ; Результатом є рядок із лапками.\nhint = \"Використовуйте \\\", щоб уникнути подвійних лапок\" ; Результат: Використовуйте \", щоб уникнути подвійних лапок\u003c/p\u003e\n\u003cp\u003eДля шляхів, подібних до Windows, зроблено виняток: можна не екранувати\nзворотну косу межу в кінці, якщо за рядком у лапках слідує розрив\nрядки:\u003c/p\u003e\n\u003cp\u003esave_path = \"C:\\Temp\"\u003c/p\u003e\n\u003cp\u003eЯкщо потрібно екранувати подвійні лапки, за якими слід перенести\nрядки у багаторядковому значенні, можна використовувати конкатенацію\nзначень наступним чином (за одним рядком у подвійних лапках\nбезпосередньо слідує інша):\u003c/p\u003e\n\u003cp\u003elong_text = \"Lorem \"ipsum\"\"\"\ndolor\" ; Результат: Lorem \"ipsum\"\ndolor\u003c/p\u003e\n\u003cp\u003eІнший символ зі спеціальним значенням – це \u003ccode\u003e$\u003c/code\u003e (знак долара). Він\nповинен бути екранований, якщо за ним слідує відкрита фігурна дужка:\u003c/p\u003e\n\u003cp\u003ecode = \"${test}\"\u003c/p\u003e\n\u003cp\u003eЕкрануючі символи не підтримуються в режимі \u003cstrong\u003e\u003ccode\u003eINI_SCANNER_RAW\u003c/code\u003e\u003c/strong\u003e (в\nцьому режимі всі символи обробляються \"як є\").\u003c/p\u003e\n\u003cp\u003eЗверніть увагу, що синтаксичний аналізатор ini не підтримує\nстандартні послідовності екранування (`\n\u003ccode\u003e \u003c/code\u003e і т.д.). При\nнеобхідності виконайте постобробку результату \u003cstrong\u003eparse_ini_file()\u003c/strong\u003e з\nза допомогою функції \u003ca href=\"function.stripcslashes.md\"\u003estripcslashes()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЦя функція не має жодного відношення до файлу \u003ccode\u003ephp.ini\u003c/code\u003e. До моменту\nВиконання вашого скрипта, він вже оброблений. Ця функція може бути\nвикористовується для завантаження настройок вашої власної програми.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо значення ini-файлу містить інші символи, крім літер та цифр,\nвоно має полягати у подвійні лапки (\").\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Існує зарезервовані слова, які не можна\nвикористовувати як ключі в ini-файлах. Такими словами є:\n\u003ccode\u003enull\u003c/code\u003e, \u003ccode\u003eyes\u003c/code\u003e, \u003ccode\u003eno\u003c/code\u003e, \u003ccode\u003etrue\u003c/code\u003e, \u003ccode\u003efalse\u003c/code\u003e, \u003ccode\u003eon\u003c/code\u003e, \u003ccode\u003eoff\u003c/code\u003e, \u003ccode\u003enone\u003c/code\u003e. Значення\n\u003ccode\u003enull\u003c/code\u003e, \u003ccode\u003eoff\u003c/code\u003e, \u003ccode\u003eno\u003c/code\u003e і \u003ccode\u003efalse\u003c/code\u003e перетворюються на `````, а значення \u003ccode\u003eon\u003c/code\u003e,\n\u003ccode\u003eyes\u003c/code\u003e та \u003ccode\u003etrue\u003c/code\u003e в \u003ccode\u003e\"1\"\u003c/code\u003e , але тільки якщо не використовується режим\n\u003cstrong\u003e\u003ccode\u003eINI_SCANNER_TYPED\u003c/code\u003e\u003c/strong\u003e. Символи \u003ccode\u003e?{}|\u0026#x26;~!()^\"\u003c/code\u003e не повинні\nвикористовуватися в ключах і мати якийсь особливий сенс у значеннях.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЗаписи без рівня знання ігноруються. Наприклад, \"foo\" ігнорується,\nтоді як \"bar =\" обробляється та додається з порожнім значенням.\nНаприклад, у MySQL є опція \"no-auto-rehash\", що встановлюється в\n\u003ccode\u003emy.cnf\u003c/code\u003e, яка не має значення та ігнорується.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eini-файли зазвичай обробляються веб-серверами як простий текст,\nтаким чином, за запитом надсилаються браузерам. Це означає, що в\nЗ метою безпеки ви повинні або зберігати свої ini-файли поза кореневим\nкаталог документів, або переналаштувати веб-сервер, щоб вони не\nобслуговувалися. Невиконання будь-якої з цих вимог може створити\nзагрозу безпеці.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.parse-ini-string.md\"\u003eparse_ini_string()\u003c/a\u003e - Розбирає\nрядок конфігурації\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.parse-ini-file.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

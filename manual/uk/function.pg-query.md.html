@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.pg-query | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.pg-query-params.md">« pg_query_params</a></p>
+</li>
+<li>
+<p><a href="function.pg-result-error-field.md">pg_result_error_field »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.pgsql.md">Функції PostgreSQL</a></p>
+</li>
+<li>
+<p>Виконує запит</p>
+</li>
+</ul>
+<p>#pg_query</p>
+<p>(PHP 4 >= 4.2.0, PHP 5, PHP 7, PHP 8)</p>
+<p>pg_query — Виконує запит</p>
+<h3>Опис</h3>
+<p><strong>pg_query</strong>(<a href="class.pgsql-connection.md">PgSql\Connection</a>
+<code>$connection</code> = ?, string <code>$query</code>):
+<a href="class.pgsql-result.md">PgSql\Result</a>|false</p>
+<p><strong>pg_query()</strong> виконує <code>query</code> до вказаної в <code>connection</code> базі даних.
+<a href="function.pg-query-params.md">pg_query_params()</a> має бути
+переважно в більшості випадків.</p>
+<p>У разі виникнення помилки функція повертає <strong><code>false</code></strong>, деталі
+помилки можна отримати за допомогою функції
+<a href="function.pg-last-error.md">pg_last_error()</a>, якщо з'єднання з БД не
+порушено.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Незважаючи на те, що параметр <code>connection</code> може бути
+опущений, так не рекомендується, оскільки це може призвести до
+важким помилкам у скриптах.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Раніше ця функція називалася <strong>pg_exec()</strong>. <strong>pg_exec()</strong> все ще
+доступна для забезпечення сумісності, але краще використовувати
+нове ім'я.</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>connection</code>
+Примірник <a href="class.pgsql-connection.md">PgSql\Connection</a>. Якщо
+<code>connection</code> не вказано, використовується стандартне з'єднання.
+З'єднання за замовчуванням - це останнє з'єднання, виконане з
+за допомогою функцій <a href="function.pg-connect.md">pg_connect()</a> або
+<a href="function.pg-pconnect.md">pg_pconnect()</a>.</p>
+<p><strong>Увага</strong>
+Починаючи з версії PHP 8.1.0, використання стандартного з'єднання
+застаріло.</p>
+<p><code>query</code>
+Вираз або вираз SQL для виконання. Якщо передано кілька
+виразів вони автоматично виконуються, як одна транзакція якщо явно
+не вказано команди BEGIN/COMMIT усередині виразу. Проте,
+використовувати кілька транзакцій в одному виклику функції не
+рекомендується.</p>
+<p><strong>Увага</strong>
+Строкове представлення даних користувача дуже небезпечне і часто
+призводить до можливості <a href="security.database.sql-injection.md">SQL ін'єкції</a>. В більшості випадків
+краще передавати дані користувача параметром в
+<a href="function.pg-query-params.md">pg_query_params()</a>, а не підставляти їх
+у рядок запиту.</p>
+<p>Будь-які дані, що передаються від користувача безпосередньо в рядок
+запиту повинні бути <a href="function.pg-escape-string.md">добре екрановані</a>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Примірник <a href="class.pgsql-result.md">PgSql\Result</a> у разі успішного
+виконання або <strong><code>false</code></strong> у разі виникнення помилки.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.1.0</td>
+<td>Повертає екземпляр <a href="class.pgsql-result.md">PgSql\Result</a>; раніше повертався ресурс (<a href="language.types.resource.md">resource</a>).</td>
+</tr>
+<tr>
+<td>8.1.0</td>
+<td>Параметр connection тепер чекає на екземпляр <a href="class.pgsql-connection.md">PgSql\Connection</a>; раніше очікувався ресурс (<a href="language.types.resource.md">resource</a>).</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>pg_query()</strong></strong></p>
+<p><code>&#x3C;?php$conn = pg_pconnect("dbname=publisher");if (!$conn) { echo "Відбулася помилка. ";  exit;}$result =pg_query($conn, "SELECT author, email FROM authors");if (!$result) { echo "Відбулася помилка. ";  exit;}while ($row = pg_fetch_row($result)) {  echo "Автор: $row[0]  E-mail: $row[1]";  echo "&#x3C;br /> ";}?></code></p>
+<p><strong>Приклад #2 Використання декількох виразів у <strong>pg_query()</strong></strong></p>
+<p>` ``</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.pg-connect.md">pg_connect()</a> - Відкриває з'єднання з
+базою даних PostgreSQL</li>
+<li><a href="function.pg-pconnect.md">pg_pconnect()</a> - Відкриває постійне
+з'єднання з сервером PostgreSQL</li>
+<li><a href="function.pg-fetch-array.md">pg_fetch_array()</a> - Повертає рядок
+результату у вигляді масиву</li>
+<li><a href="function.pg-fetch-object.md">pg_fetch_object()</a> - Вибирає рядок
+результату запиту та повертає дані у вигляді об'єкта</li>
+<li><a href="function.pg-num-rows.md">pg_num_rows()</a> - Повертає кількість
+рядків у вибірці</li>
+<li><a href="function.pg-affected-rows.md">pg_affected_rows()</a> - Повертає
+кількість порушених запитом записів (кортежів)</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.pg-query.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.pg-query.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.pg-query","slug":"function.pg-query.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.pg-query-params.md\"\u003e« pg_query_params\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.pg-result-error-field.md\"\u003epg_result_error_field »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.pgsql.md\"\u003eФункції PostgreSQL\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВиконує запит\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#pg_query\u003c/p\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.2.0, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003epg_query — Виконує запит\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003epg_query\u003c/strong\u003e(\u003ca href=\"class.pgsql-connection.md\"\u003ePgSql\\Connection\u003c/a\u003e\n\u003ccode\u003e$connection\u003c/code\u003e = ?, string \u003ccode\u003e$query\u003c/code\u003e):\n\u003ca href=\"class.pgsql-result.md\"\u003ePgSql\\Result\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003epg_query()\u003c/strong\u003e виконує \u003ccode\u003equery\u003c/code\u003e до вказаної в \u003ccode\u003econnection\u003c/code\u003e базі даних.\n\u003ca href=\"function.pg-query-params.md\"\u003epg_query_params()\u003c/a\u003e має бути\nпереважно в більшості випадків.\u003c/p\u003e\n\u003cp\u003eУ разі виникнення помилки функція повертає \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, деталі\nпомилки можна отримати за допомогою функції\n\u003ca href=\"function.pg-last-error.md\"\u003epg_last_error()\u003c/a\u003e, якщо з'єднання з БД не\nпорушено.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Незважаючи на те, що параметр \u003ccode\u003econnection\u003c/code\u003e може бути\nопущений, так не рекомендується, оскільки це може призвести до\nважким помилкам у скриптах.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eРаніше ця функція називалася \u003cstrong\u003epg_exec()\u003c/strong\u003e. \u003cstrong\u003epg_exec()\u003c/strong\u003e все ще\nдоступна для забезпечення сумісності, але краще використовувати\nнове ім'я.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003econnection\u003c/code\u003e\nПримірник \u003ca href=\"class.pgsql-connection.md\"\u003ePgSql\\Connection\u003c/a\u003e. Якщо\n\u003ccode\u003econnection\u003c/code\u003e не вказано, використовується стандартне з'єднання.\nЗ'єднання за замовчуванням - це останнє з'єднання, виконане з\nза допомогою функцій \u003ca href=\"function.pg-connect.md\"\u003epg_connect()\u003c/a\u003e або\n\u003ca href=\"function.pg-pconnect.md\"\u003epg_pconnect()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\nПочинаючи з версії PHP 8.1.0, використання стандартного з'єднання\nзастаріло.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003equery\u003c/code\u003e\nВираз або вираз SQL для виконання. Якщо передано кілька\nвиразів вони автоматично виконуються, як одна транзакція якщо явно\nне вказано команди BEGIN/COMMIT усередині виразу. Проте,\nвикористовувати кілька транзакцій в одному виклику функції не\nрекомендується.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\nСтрокове представлення даних користувача дуже небезпечне і часто\nпризводить до можливості \u003ca href=\"security.database.sql-injection.md\"\u003eSQL ін'єкції\u003c/a\u003e. В більшості випадків\nкраще передавати дані користувача параметром в\n\u003ca href=\"function.pg-query-params.md\"\u003epg_query_params()\u003c/a\u003e, а не підставляти їх\nу рядок запиту.\u003c/p\u003e\n\u003cp\u003eБудь-які дані, що передаються від користувача безпосередньо в рядок\nзапиту повинні бути \u003ca href=\"function.pg-escape-string.md\"\u003eдобре екрановані\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПримірник \u003ca href=\"class.pgsql-result.md\"\u003ePgSql\\Result\u003c/a\u003e у разі успішного\nвиконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.1.0\u003c/td\u003e\n\u003ctd\u003eПовертає екземпляр \u003ca href=\"class.pgsql-result.md\"\u003ePgSql\\Result\u003c/a\u003e; раніше повертався ресурс (\u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e).\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.1.0\u003c/td\u003e\n\u003ctd\u003eПараметр connection тепер чекає на екземпляр \u003ca href=\"class.pgsql-connection.md\"\u003ePgSql\\Connection\u003c/a\u003e; раніше очікувався ресурс (\u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e).\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003epg_query()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$conn = pg_pconnect(\"dbname=publisher\");if (!$conn) { echo \"Відбулася помилка. \";  exit;}$result =pg_query($conn, \"SELECT author, email FROM authors\");if (!$result) { echo \"Відбулася помилка. \";  exit;}while ($row = pg_fetch_row($result)) {  echo \"Автор: $row[0]  E-mail: $row[1]\";  echo \"\u0026#x3C;br /\u003e \";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Використання декількох виразів у \u003cstrong\u003epg_query()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` ``\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.pg-connect.md\"\u003epg_connect()\u003c/a\u003e - Відкриває з'єднання з\nбазою даних PostgreSQL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pg-pconnect.md\"\u003epg_pconnect()\u003c/a\u003e - Відкриває постійне\nз'єднання з сервером PostgreSQL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pg-fetch-array.md\"\u003epg_fetch_array()\u003c/a\u003e - Повертає рядок\nрезультату у вигляді масиву\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pg-fetch-object.md\"\u003epg_fetch_object()\u003c/a\u003e - Вибирає рядок\nрезультату запиту та повертає дані у вигляді об'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pg-num-rows.md\"\u003epg_num_rows()\u003c/a\u003e - Повертає кількість\nрядків у вибірці\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pg-affected-rows.md\"\u003epg_affected_rows()\u003c/a\u003e - Повертає\nкількість порушених запитом записів (кортежів)\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.pg-query.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

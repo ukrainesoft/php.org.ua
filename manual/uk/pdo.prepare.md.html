@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>pdo.prepare | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="pdo.lastinsertid.md">«PDO::lastInsertId</a></p>
+</li>
+<li>
+<p><a href="pdo.query.md">PDO::query »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.pdo.md">PDO</a></p>
+</li>
+<li>
+<p>готує запит до виконання та повертає пов'язаний із цим
+запитом об'єкт</p>
+</li>
+</ul>
+<h1>PDO::prepare</h1>
+<p>(PHP 5 >= 5.1.0, PHP 7, PHP 8, PHP 8,PECL pdo >= 0.1.0)</p>
+<p>PDO::prepare — Готує запит до виконання та повертає пов'язаний
+із цим запитом об'єкт</p>
+<h3>Опис</h3>
+<p>public <strong>PDO::prepare</strong>(string <code>$query</code>, array <code>$options</code> = []): <a href="class.pdostatement.md">PDOStatement</a>|false</p>
+<p>Підготовка SQL-запиту до бази даних до запуску за допомогою методу
+<a href="pdostatement.execute.md">PDOStatement::execute()</a>. Запит може
+містити іменовані (:name) або неіменовані (?) псевдозмінні,
+які будуть замінені реальними значеннями під час запуску запиту на
+Виконання. Використовувати одночасно і іменовані, і неіменовані
+псевдозмінні в одному запиті не можна, потрібно вибрати щось одне.
+Використовуйте псевдозмінні, щоб прив'язати до запиту
+введення, не включайте дані, введені користувачем, безпосередньо на запит.</p>
+<p>Ви повинні підбирати унікальні імена псевдозмінних для кожного
+значення, яке необхідно передавати в запит під час виклику
+<a href="pdostatement.execute.md">PDOStatement::execute()</a>. Не можна
+використовувати одну псевдозмінну у запиті більше одного разу, крім
+варіанти, коли включено режим емуляції.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Псевдозмінні повинні представляти лише одиничний обсяг даних. Ні
+частина значення, ні службове слово, ні ім'я поля, ні будь-яку
+довільну частину запиту. Наприклад, ви не можете пов'язати
+псевдозмінну з кількома значеннями для вставки в конструкцію
+IN().</p>
+</blockquote>
+<p>Виклик <strong>PDO::prepare()</strong> та
+<a href="pdostatement.execute.md">PDOStatement::execute()</a> для запитів,
+які будуть запускатися багаторазово з різними параметрами, підвищує
+продуктивність програми, дозволяючи драйверу кешувати на клієнті
+та/або сервері план виконання запиту та метадані, а також допомагає
+уникнути SQL-ін'єкцій, тому що немає необхідності екранувати
+параметри, що передаються.</p>
+<p>Якщо драйвер не підтримує запити, що підготовляються, PDO вміє їх
+емулювати, а також може замінювати псевдозмінні на те, що більше
+підходить, якщо, наприклад, драйвер підтримує лише іменовані або,
+навпаки, лише неіменовані псевдозмінні.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Синтаксичний аналізатор, що використовується для емульованих
+підготовлених операторів та для перезапису іменованих параметрів або
+параметрів стилю знака питання, підтримує нестандартні
+зворотні сліші для одинарних та подвійних лапок. Це означає, що
+завершальні лапки, що безпосередньо передують зворотною косою
+чорті, не розпізнаються як такі, що може призвести до неправильного
+виявлення параметрів, що призведе до збою підготовленого оператора
+під час виконання. Обхідний шлях - не використовувати емульовану
+підготовку до таких SQL-запитів та уникати перезапису параметрів,
+використовуючи стиль параметрів, який спочатку підтримується
+драйвером.</p>
+</blockquote>
+<p>Починаючи з PHP 7.4.0, можна уникнути екранування знаків питання,
+подвоївши їх. Це означає, що рядок <code>??</code> буде перетворено на <code>?</code> при
+надсилання запиту до бази даних.</p>
+<h3>Список параметрів</h3>
+<p><code>query</code>
+Це має бути коректний SQL-запит із погляду цільової СУБД.</p>
+<p><code>options</code>
+Цей масив містить одну або більше пар ключ = значення для установки
+значень атрибутів об'єкта PDOStatement, який буде повернено з
+цього методу. В основному, ви будете використовувати цей масив для
+присвоєння значення <code>PDO::ATTR_CURSOR</code> атрибуту <code>PDO::CURSOR_SCROLL</code>,
+щоб отримати курсор, що прокручується. Деякі драйвери можуть мати
+свої специфічні налаштування, які можна задати під час підготовки
+запиту.</p>
+<h3>Значення, що повертаються</h3>
+<p>Якщо СУБД успішно підготувала запит, <strong>PDO::prepare()</strong> повертає
+об'єкт <a href="class.pdostatement.md">PDOStatement</a>. Якщо підготувати запит
+не вдалося, <strong>PDO::prepare()</strong> повертає <strong><code>false</code></strong> або викидає
+виняток <a href="class.pdoexception.md">PDOException</a> (залежить від поточного
+режиму обробки помилок (pdo.error-handling.md)).</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Емульовані підготовлені запити не створюються на сервері баз даних,
+тому <strong>PDO::prepare()</strong> не може перевірити правильність
+побудованого запиту.</p>
+</blockquote>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Підготовка SQL-запиту з іменованими параметрами</strong></p>
+<p><code>&#x3C;?php/* Виконання запиту з передачею йому масива параметрів */$sql = 'SELECT name, colour, calories   FROM fruit     WHERE calo         ¦¦ , array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));$sth->execute(array('calories' => 150, 'colour' => 'red'));$red = $sth->fetchAl ();/* Ключі масиву також можуть починатися з двоточки ":" (необов'язково) */$sth->execute(array(':calories' => 175, ':colour' => ) = $sth->fetchAll();?> </code></p>
+<p><strong>Приклад #2 Підготовка SQL-запиту з неназваними параметрами (символ
+'?')</strong></p>
+<p><code>&#x3C;?php/* Виконання запиту з передачею йому масиву параметрів */$sth = $dbh->prepare('SELECT name, colour, calories    FROM fruit                                                        array(150, 'red'));$red = $sth->fetchAll();$sth->execute(array(175, 'yellow'));$yellow = $sth->fetchAll();?> </code></p>
+<p><strong>Приклад #3 Підготовка SQL-запиту з екранованим питанням
+знаком</strong></p>
+<p><code>&#x3C;?php/* зауваження: працює тільки з базами даних PostgreSQL */$sth = $dbh->prepare('SELECT * FROM issues WHERE tag::jsonb ?? ?'' ']);$featureIssues = $sth->fetchAll();$sth->execute(['performance']);$performanceIssues = $sth->fetchAll();?></code></p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="pdo.exec.md">PDO::exec()</a> - Виконує SQL-запит і повертає
+кількість порушених рядків</li>
+<li><a href="pdo.query.md">PDO::query()</a> - Готує та виконує
+вираз SQL без наповнювачів</li>
+<li><a href="pdostatement.execute.md">PDOStatement::execute()</a> - Запускає
+підготовлений запит на виконання</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/pdo.prepare.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/pdo.prepare.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"pdo.prepare","slug":"pdo.prepare.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"pdo.lastinsertid.md\"\u003e«PDO::lastInsertId\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"pdo.query.md\"\u003ePDO::query »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.pdo.md\"\u003ePDO\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eготує запит до виконання та повертає пов'язаний із цим\nзапитом об'єкт\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003ePDO::prepare\u003c/h1\u003e\n\u003cp\u003e(PHP 5 \u003e= 5.1.0, PHP 7, PHP 8, PHP 8,PECL pdo \u003e= 0.1.0)\u003c/p\u003e\n\u003cp\u003ePDO::prepare — Готує запит до виконання та повертає пов'язаний\nіз цим запитом об'єкт\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003epublic \u003cstrong\u003ePDO::prepare\u003c/strong\u003e(string \u003ccode\u003e$query\u003c/code\u003e, array \u003ccode\u003e$options\u003c/code\u003e = []): \u003ca href=\"class.pdostatement.md\"\u003ePDOStatement\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003eПідготовка SQL-запиту до бази даних до запуску за допомогою методу\n\u003ca href=\"pdostatement.execute.md\"\u003ePDOStatement::execute()\u003c/a\u003e. Запит може\nмістити іменовані (:name) або неіменовані (?) псевдозмінні,\nякі будуть замінені реальними значеннями під час запуску запиту на\nВиконання. Використовувати одночасно і іменовані, і неіменовані\nпсевдозмінні в одному запиті не можна, потрібно вибрати щось одне.\nВикористовуйте псевдозмінні, щоб прив'язати до запиту\nвведення, не включайте дані, введені користувачем, безпосередньо на запит.\u003c/p\u003e\n\u003cp\u003eВи повинні підбирати унікальні імена псевдозмінних для кожного\nзначення, яке необхідно передавати в запит під час виклику\n\u003ca href=\"pdostatement.execute.md\"\u003ePDOStatement::execute()\u003c/a\u003e. Не можна\nвикористовувати одну псевдозмінну у запиті більше одного разу, крім\nваріанти, коли включено режим емуляції.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПсевдозмінні повинні представляти лише одиничний обсяг даних. Ні\nчастина значення, ні службове слово, ні ім'я поля, ні будь-яку\nдовільну частину запиту. Наприклад, ви не можете пов'язати\nпсевдозмінну з кількома значеннями для вставки в конструкцію\nIN().\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eВиклик \u003cstrong\u003ePDO::prepare()\u003c/strong\u003e та\n\u003ca href=\"pdostatement.execute.md\"\u003ePDOStatement::execute()\u003c/a\u003e для запитів,\nякі будуть запускатися багаторазово з різними параметрами, підвищує\nпродуктивність програми, дозволяючи драйверу кешувати на клієнті\nта/або сервері план виконання запиту та метадані, а також допомагає\nуникнути SQL-ін'єкцій, тому що немає необхідності екранувати\nпараметри, що передаються.\u003c/p\u003e\n\u003cp\u003eЯкщо драйвер не підтримує запити, що підготовляються, PDO вміє їх\nемулювати, а також може замінювати псевдозмінні на те, що більше\nпідходить, якщо, наприклад, драйвер підтримує лише іменовані або,\nнавпаки, лише неіменовані псевдозмінні.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Синтаксичний аналізатор, що використовується для емульованих\nпідготовлених операторів та для перезапису іменованих параметрів або\nпараметрів стилю знака питання, підтримує нестандартні\nзворотні сліші для одинарних та подвійних лапок. Це означає, що\nзавершальні лапки, що безпосередньо передують зворотною косою\nчорті, не розпізнаються як такі, що може призвести до неправильного\nвиявлення параметрів, що призведе до збою підготовленого оператора\nпід час виконання. Обхідний шлях - не використовувати емульовану\nпідготовку до таких SQL-запитів та уникати перезапису параметрів,\nвикористовуючи стиль параметрів, який спочатку підтримується\nдрайвером.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eПочинаючи з PHP 7.4.0, можна уникнути екранування знаків питання,\nподвоївши їх. Це означає, що рядок \u003ccode\u003e??\u003c/code\u003e буде перетворено на \u003ccode\u003e?\u003c/code\u003e при\nнадсилання запиту до бази даних.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003equery\u003c/code\u003e\nЦе має бути коректний SQL-запит із погляду цільової СУБД.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoptions\u003c/code\u003e\nЦей масив містить одну або більше пар ключ = значення для установки\nзначень атрибутів об'єкта PDOStatement, який буде повернено з\nцього методу. В основному, ви будете використовувати цей масив для\nприсвоєння значення \u003ccode\u003ePDO::ATTR_CURSOR\u003c/code\u003e атрибуту \u003ccode\u003ePDO::CURSOR_SCROLL\u003c/code\u003e,\nщоб отримати курсор, що прокручується. Деякі драйвери можуть мати\nсвої специфічні налаштування, які можна задати під час підготовки\nзапиту.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eЯкщо СУБД успішно підготувала запит, \u003cstrong\u003ePDO::prepare()\u003c/strong\u003e повертає\nоб'єкт \u003ca href=\"class.pdostatement.md\"\u003ePDOStatement\u003c/a\u003e. Якщо підготувати запит\nне вдалося, \u003cstrong\u003ePDO::prepare()\u003c/strong\u003e повертає \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e або викидає\nвиняток \u003ca href=\"class.pdoexception.md\"\u003ePDOException\u003c/a\u003e (залежить від поточного\nрежиму обробки помилок (pdo.error-handling.md)).\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЕмульовані підготовлені запити не створюються на сервері баз даних,\nтому \u003cstrong\u003ePDO::prepare()\u003c/strong\u003e не може перевірити правильність\nпобудованого запиту.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Підготовка SQL-запиту з іменованими параметрами\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Виконання запиту з передачею йому масива параметрів */$sql = 'SELECT name, colour, calories   FROM fruit     WHERE calo         ¦¦ , array(PDO::ATTR_CURSOR =\u003e PDO::CURSOR_FWDONLY));$sth-\u003eexecute(array('calories' =\u003e 150, 'colour' =\u003e 'red'));$red = $sth-\u003efetchAl ();/* Ключі масиву також можуть починатися з двоточки \":\" (необов'язково) */$sth-\u003eexecute(array(':calories' =\u003e 175, ':colour' =\u003e ) = $sth-\u003efetchAll();?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Підготовка SQL-запиту з неназваними параметрами (символ\n'?')\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Виконання запиту з передачею йому масиву параметрів */$sth = $dbh-\u003eprepare('SELECT name, colour, calories    FROM fruit                                                        array(150, 'red'));$red = $sth-\u003efetchAll();$sth-\u003eexecute(array(175, 'yellow'));$yellow = $sth-\u003efetchAll();?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Підготовка SQL-запиту з екранованим питанням\nзнаком\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* зауваження: працює тільки з базами даних PostgreSQL */$sth = $dbh-\u003eprepare('SELECT * FROM issues WHERE tag::jsonb ?? ?'' ']);$featureIssues = $sth-\u003efetchAll();$sth-\u003eexecute(['performance']);$performanceIssues = $sth-\u003efetchAll();?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"pdo.exec.md\"\u003ePDO::exec()\u003c/a\u003e - Виконує SQL-запит і повертає\nкількість порушених рядків\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdo.query.md\"\u003ePDO::query()\u003c/a\u003e - Готує та виконує\nвираз SQL без наповнювачів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdostatement.execute.md\"\u003ePDOStatement::execute()\u003c/a\u003e - Запускає\nпідготовлений запит на виконання\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"pdo.prepare.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

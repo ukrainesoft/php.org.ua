@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.http-build-query | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.get-meta-tags.md">«get_meta_tags</a></p>
+</li>
+<li>
+<p><a href="function.parse-url.md">parse_url »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.url.md">Функції URL</a></p>
+</li>
+<li>
+<p>Генерує URL-кодований рядок запиту</p>
+</li>
+</ul>
+<h1>http_build_query</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<p>http_build_query — Генерує URL-кодований рядок запиту</p>
+<h3>Опис</h3>
+<p><strong>http_build_query</strong>(
+array|object <code>$data</code>,
+string <code>$numeric_prefix</code> = "",
+?string <code>$arg_separator</code> = <strong><code>null</code></strong>,
+int <code>$encoding_type</code> = <strong><code>PHP_QUERY_RFC1738</code></strong>
+): string</p>
+<p>Генерує URL-кодований рядок запиту з наданого
+асоціативного (або індексованого) масиву</p>
+<h3>Список параметрів</h3>
+<p><code>data</code>
+Може бути масив чи об'єкт, що містить властивості.</p>
+<p>Якщо <code>data</code> масив, то він може бути простою одномірною структурою або
+масивом масивів (який, у свою чергу, може містити інші
+масиви).</p>
+<p>Якщо <code>data</code> об'єкт, тоді лише загальнодоступні властивості будуть включені до
+результат.</p>
+<p><code>numeric_prefix</code>
+Якщо числові індекси використовуються в базовому масиві та цей параметр
+зазначений, то він буде доданий до числового індексу для елементів тільки в
+базовий масив.</p>
+<p>Це дозволяє забезпечити допустимі імена змінних, які пізніше
+дані будуть декодовані PHP або іншим програмним забезпеченням CGI.</p>
+<p><code>arg_separator</code>
+<a href="ini.core.md#ini.arg-separator.output">arg_separator.output</a>
+використовується як роздільник аргументів, але може бути
+перевизначено шляхом зазначення цього параметра.</p>
+<p><code>encoding_type</code>
+За промовчанням <strong><code>PHP_QUERY_RFC1738</code></strong>.</p>
+<p>Якщо <code>encoding_type</code> дорівнює <strong><code>PHP_QUERY_RFC1738</code></strong>, тоді кодування
+здійснюється за <a href="http://www.faqs.org/rfcs/rfc1738">» RFC 1738</a> та типом
+контенту <code>application/x-www-form-urlencoded</code>, що має на увазі, що
+пробіли кодуються як символи "плюс" (<code>+</code>).</p>
+<p>Якщо <code>enc_type</code> дорівнює <strong><code>PHP_QUERY_RFC3986</code></strong>, тоді кодування
+здійснюється відповідно до <a href="http://www.faqs.org/rfcs/rfc3986">» RFC 3986</a>, а пробіли будуть закодовані в
+відсотках (%20).</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає URL-кодований рядок.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Простий приклад використання <strong>http_build_query()</strong></strong></p>
+<p><code>&#x3C;?php$data = array(   'foo' => 'bar',   'baz' => 'boom',   'cow' => 'milk',    'null'  processor');echo http_build_query($data) . " ";echo http_build_query($data, '', '&#x26;');?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>foo=bar&#x26;baz=boom&#x26;cow=milk&#x26;php=hypertext+processor
+foo=bar&#x26;baz=boom&#x26;cow=milk&#x26;php=hypertext+processor</p>
+<p>**Приклад #2 Приклад використання <strong>http_build_query()</strong> з числовими
+індексами елементів.</p>
+<p><code>&#x3C;?php$data = array('foo', 'bar', 'baz', null, 'boom', 'cow' => 'milk', 'php' => 'hypertext processor');echo http_build_quer $ data) . " ";echo http_build_query($data, 'myvar_');?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>0=foo&#x26;1=bar&#x26;2=baz&#x26;4=boom&#x26;cow=milk&#x26;php=hypertext+processor
+myvar_0=foo&#x26;myvar_1=bar&#x26;myvar_2=baz&#x26;myvar_4=boom&#x26;cow=milk&#x26;php=hypertext+processor</p>
+<p><strong>Приклад #3 Приклад використання <strong>http_build_query()</strong> з багатовимірними
+масивами</strong></p>
+<p><code>&#x3C;?php$data = array(    'user' => array(        'name' => 'Bob Smith',        'age'  => 47,        'sex'  => 'M',        'dob'  => '5/ 12/1956'    ),   'pastimes' => array('golf', 'opera', 'poker', 'rap'),   'children' => array( b>=' > , 'sex'=>'M'),        'sally' => array('age'=>8, 'sex'=>'F')    ),    'CEO');echo http_$$'' );?></code></p>
+<p>Результат виконання даних прикладів: (символи перенесені для зручності
+читання)</p>
+<p>user%5Bname%5D=Bob+Smith&#x26;user%5Bage%5D=47&#x26;user%5Bsex%5D=M&#x26;
+user%5Bdob%5D=5%2F12%2F1956&#x26;pastimes%5B0%5D=golf&#x26;pastimes%5B1%5D=opera&#x26;
+pastimes%5B2%5D=poker&#x26;pastimes%5B3%5D=rap&#x26;children%5Bbobby%5D%5Bage%5D=12&#x26;
+children%5Bbobby%5D%5Bsex%5D=M&#x26;children%5Bsally%5D%5Bage%5D=8&#x26;
+children%5Bsally%5D%5Bsex%5D=F&#x26;flags_0=CEO</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Тільки числовий індексований елемент "CEO" у базовому масиві
+отримав префікс. Інші числові індекси, знайдені в pastimes, не
+вимагають рядкового префікса, щоб бути допустимими іменами
+Змінні.</p>
+</blockquote>
+<p><strong>Приклад #4 Приклад використання <strong>http_build_query()</strong> з об'єктом</strong></p>
+<p><code>&#x3C;?phpclass parentClass {    public    $pub      ==''publicParent'; protected $prot     = 'protectedParent'; private   $priv     = 'privateParent'; public   $pub_bar = null; protected $prot_bar = = null; private   $priv_bar = null; public function __construct(){        $this->pub_bar == new childClass(); $this->prot_bar==new childClass(); $this->priv_bar==new childClass(); }}class childClass {    public   $$pub =='publicChild'; protected $prot = 'protectedChild'; private   $priv = 'privateChild';}$parent = new parentClass();echo http_build_query($parent);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>pub=publicParent&#x26;pub_bar%5Bpub%5D=publicChild</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.parse-str.md">parse_str()</a> - Розбирає рядок у
+змінні</li>
+<li><a href="function.parse-url.md">parse_url()</a> - Розбирає URL та повертає
+його компоненти</li>
+<li><a href="function.urlencode.md">urlencode()</a> - URL-кодування рядка</li>
+<li><a href="function.array-walk.md">array_walk()</a> - Застосовує задану
+користувачем функцію до кожного елементу масиву</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.http-build-query.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.http-build-query.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.http-build-query","slug":"function.http-build-query.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.get-meta-tags.md\"\u003e«get_meta_tags\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.parse-url.md\"\u003eparse_url »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.url.md\"\u003eФункції URL\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eГенерує URL-кодований рядок запиту\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003ehttp_build_query\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003ehttp_build_query — Генерує URL-кодований рядок запиту\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003ehttp_build_query\u003c/strong\u003e(\narray|object \u003ccode\u003e$data\u003c/code\u003e,\nstring \u003ccode\u003e$numeric_prefix\u003c/code\u003e = \"\",\n?string \u003ccode\u003e$arg_separator\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\nint \u003ccode\u003e$encoding_type\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003ePHP_QUERY_RFC1738\u003c/code\u003e\u003c/strong\u003e\n): string\u003c/p\u003e\n\u003cp\u003eГенерує URL-кодований рядок запиту з наданого\nасоціативного (або індексованого) масиву\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003edata\u003c/code\u003e\nМоже бути масив чи об'єкт, що містить властивості.\u003c/p\u003e\n\u003cp\u003eЯкщо \u003ccode\u003edata\u003c/code\u003e масив, то він може бути простою одномірною структурою або\nмасивом масивів (який, у свою чергу, може містити інші\nмасиви).\u003c/p\u003e\n\u003cp\u003eЯкщо \u003ccode\u003edata\u003c/code\u003e об'єкт, тоді лише загальнодоступні властивості будуть включені до\nрезультат.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003enumeric_prefix\u003c/code\u003e\nЯкщо числові індекси використовуються в базовому масиві та цей параметр\nзазначений, то він буде доданий до числового індексу для елементів тільки в\nбазовий масив.\u003c/p\u003e\n\u003cp\u003eЦе дозволяє забезпечити допустимі імена змінних, які пізніше\nдані будуть декодовані PHP або іншим програмним забезпеченням CGI.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003earg_separator\u003c/code\u003e\n\u003ca href=\"ini.core.md#ini.arg-separator.output\"\u003earg_separator.output\u003c/a\u003e\nвикористовується як роздільник аргументів, але може бути\nперевизначено шляхом зазначення цього параметра.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eencoding_type\u003c/code\u003e\nЗа промовчанням \u003cstrong\u003e\u003ccode\u003ePHP_QUERY_RFC1738\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо \u003ccode\u003eencoding_type\u003c/code\u003e дорівнює \u003cstrong\u003e\u003ccode\u003ePHP_QUERY_RFC1738\u003c/code\u003e\u003c/strong\u003e, тоді кодування\nздійснюється за \u003ca href=\"http://www.faqs.org/rfcs/rfc1738\"\u003e» RFC 1738\u003c/a\u003e та типом\nконтенту \u003ccode\u003eapplication/x-www-form-urlencoded\u003c/code\u003e, що має на увазі, що\nпробіли кодуються як символи \"плюс\" (\u003ccode\u003e+\u003c/code\u003e).\u003c/p\u003e\n\u003cp\u003eЯкщо \u003ccode\u003eenc_type\u003c/code\u003e дорівнює \u003cstrong\u003e\u003ccode\u003ePHP_QUERY_RFC3986\u003c/code\u003e\u003c/strong\u003e, тоді кодування\nздійснюється відповідно до \u003ca href=\"http://www.faqs.org/rfcs/rfc3986\"\u003e» RFC 3986\u003c/a\u003e, а пробіли будуть закодовані в\nвідсотках (%20).\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає URL-кодований рядок.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Простий приклад використання \u003cstrong\u003ehttp_build_query()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$data = array(   'foo' =\u003e 'bar',   'baz' =\u003e 'boom',   'cow' =\u003e 'milk',    'null'  processor');echo http_build_query($data) . \" \";echo http_build_query($data, '', '\u0026#x26;');?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003efoo=bar\u0026#x26;baz=boom\u0026#x26;cow=milk\u0026#x26;php=hypertext+processor\nfoo=bar\u0026#x26;baz=boom\u0026#x26;cow=milk\u0026#x26;php=hypertext+processor\u003c/p\u003e\n\u003cp\u003e**Приклад #2 Приклад використання \u003cstrong\u003ehttp_build_query()\u003c/strong\u003e з числовими\nіндексами елементів.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$data = array('foo', 'bar', 'baz', null, 'boom', 'cow' =\u003e 'milk', 'php' =\u003e 'hypertext processor');echo http_build_quer $ data) . \" \";echo http_build_query($data, 'myvar_');?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e0=foo\u0026#x26;1=bar\u0026#x26;2=baz\u0026#x26;4=boom\u0026#x26;cow=milk\u0026#x26;php=hypertext+processor\nmyvar_0=foo\u0026#x26;myvar_1=bar\u0026#x26;myvar_2=baz\u0026#x26;myvar_4=boom\u0026#x26;cow=milk\u0026#x26;php=hypertext+processor\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Приклад використання \u003cstrong\u003ehttp_build_query()\u003c/strong\u003e з багатовимірними\nмасивами\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$data = array(    'user' =\u003e array(        'name' =\u003e 'Bob Smith',        'age'  =\u003e 47,        'sex'  =\u003e 'M',        'dob'  =\u003e '5/ 12/1956'    ),   'pastimes' =\u003e array('golf', 'opera', 'poker', 'rap'),   'children' =\u003e array( b\u003e=' \u003e , 'sex'=\u003e'M'),        'sally' =\u003e array('age'=\u003e8, 'sex'=\u003e'F')    ),    'CEO');echo http_$$'' );?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання даних прикладів: (символи перенесені для зручності\nчитання)\u003c/p\u003e\n\u003cp\u003euser%5Bname%5D=Bob+Smith\u0026#x26;user%5Bage%5D=47\u0026#x26;user%5Bsex%5D=M\u0026#x26;\nuser%5Bdob%5D=5%2F12%2F1956\u0026#x26;pastimes%5B0%5D=golf\u0026#x26;pastimes%5B1%5D=opera\u0026#x26;\npastimes%5B2%5D=poker\u0026#x26;pastimes%5B3%5D=rap\u0026#x26;children%5Bbobby%5D%5Bage%5D=12\u0026#x26;\nchildren%5Bbobby%5D%5Bsex%5D=M\u0026#x26;children%5Bsally%5D%5Bage%5D=8\u0026#x26;\nchildren%5Bsally%5D%5Bsex%5D=F\u0026#x26;flags_0=CEO\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eТільки числовий індексований елемент \"CEO\" у базовому масиві\nотримав префікс. Інші числові індекси, знайдені в pastimes, не\nвимагають рядкового префікса, щоб бути допустимими іменами\nЗмінні.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Приклад використання \u003cstrong\u003ehttp_build_query()\u003c/strong\u003e з об'єктом\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass parentClass {    public    $pub      ==''publicParent'; protected $prot     = 'protectedParent'; private   $priv     = 'privateParent'; public   $pub_bar = null; protected $prot_bar = = null; private   $priv_bar = null; public function __construct(){        $this-\u003epub_bar == new childClass(); $this-\u003eprot_bar==new childClass(); $this-\u003epriv_bar==new childClass(); }}class childClass {    public   $$pub =='publicChild'; protected $prot = 'protectedChild'; private   $priv = 'privateChild';}$parent = new parentClass();echo http_build_query($parent);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003epub=publicParent\u0026#x26;pub_bar%5Bpub%5D=publicChild\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.parse-str.md\"\u003eparse_str()\u003c/a\u003e - Розбирає рядок у\nзмінні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.parse-url.md\"\u003eparse_url()\u003c/a\u003e - Розбирає URL та повертає\nйого компоненти\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.urlencode.md\"\u003eurlencode()\u003c/a\u003e - URL-кодування рядка\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.array-walk.md\"\u003earray_walk()\u003c/a\u003e - Застосовує задану\nкористувачем функцію до кожного елементу масиву\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.http-build-query.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

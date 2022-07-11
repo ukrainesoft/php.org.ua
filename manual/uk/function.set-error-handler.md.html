@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.set-error-handler | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.restore-exception-handler.md">« restore_exception_handler</a></p>
+</li>
+<li>
+<p><a href="function.set-exception-handler.md">set_exception_handler »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.errorfunc.md">Функції обробки помилок</a></p>
+</li>
+<li>
+<p>Задає користувальницький обробник помилок</p>
+</li>
+</ul>
+<p>#set_error_handler</p>
+<p>(PHP 4 >= 4.0.1, PHP 5, PHP 7, PHP 8)</p>
+<p>set_error_handler — Задає користувальницький обробник помилок</p>
+<h3>Опис</h3>
+<p><strong>set_error_handler</strong>(?<a href="language.types.callable.md">callable</a>
+<code>$callback</code>, int <code>$error_levels</code> = <strong><code>E_ALL</code></strong>):
+?<a href="language.types.callable.md">callable</a></p>
+<p>Задає функцію користувача (<code>callback</code>), як обробник помилок в
+скрипт.</p>
+<p>Ця функція використовується для визначення власного обробника помилок
+часу виконання сценарію. Наприклад, якщо потрібно очистити
+дані/файли, коли сталася критична помилка, або якщо потрібно
+переключити тип помилки, виходячи з якихось умов (використовуючи функцію
+<a href="function.trigger-error.md">trigger_error()</a>).</p>
+<p>Важливо пам'ятати, що стандартний обробник помилок PHP не буде
+обробляти ніякі типи помилок, визначені в <code>error_levels</code>, поки
+callback-функція не поверне <strong><code>false</code></strong>. Користувальницький обробник
+буде викликатися за будь-якої помилки, незалежно від налаштувань, заданих
+функцією
+<a href="errorfunc.configuration.md#ini.error-reporting">error_reporting</a>.</p>
+<p>Також важливо пам'ятати, що на совісті обробника лежить виклик функції
+<a href="function.die.md">die()</a> у разі потреби. Якщо відбувається
+повернення з обробника помилок, керування передається наступному
+виразу, що стоїть за тим, що викликало помилку.</p>
+<p>Помилки таких типів не можуть бути оброблені користувачем:
+<strong><code>E_ERROR</code></strong>, <strong><code>E_PARSE</code></strong>, <strong><code>E_CORE_ERROR</code></strong>, <strong><code>E_CORE_WARNING</code></strong>,
+<strong><code>E_COMPILE_ERROR</code></strong>, <strong><code>E_COMPILE_WARNING</code></strong> незалежно від того, де
+вони були згенеровані і більшість помилок <strong><code>E_STRICT</code></strong>, що відбулися
+у файлі, де викликана функція <strong>set_error_handler()</strong>.</p>
+<p>Якщо помилки виникають до запуску скрипта (наприклад, поки файл
+завантажується), користувальницький обробник не буде викликатися, якщо на
+цей момент ще не зареєстрований.</p>
+<h3>Список параметрів</h3>
+<p><code>callback</code>
+Якщо передано значення <strong><code>null</code></strong>, обробник скидається у стан
+за замовчуванням. Інакше обробник є
+callback-функцію з наступною сигнатурою:</p>
+<p>handler(
+int <code>$errno</code>,
+string <code>$errstr</code>,
+string <code>$errfile</code> = ?,
+int <code>$errline</code> = ?,
+array <code>$errcontext</code> = ?
+): bool</p>
+<p><code>errno</code>
+У перший аргумент <code>errno</code> буде передано рівень помилки у вигляді цілого
+числа.</p>
+<p><code>errstr</code>
+У другому аргументі <code>errstr</code> буде передано повідомлення про помилку у вигляді
+рядки.</p>
+<p><code>errfile</code>
+Якщо функція зворотного виклику приймає третій параметр <code>errfile</code>, то
+його буде передано ім'я файлу, в якому відбулася помилка, у вигляді
+рядки.</p>
+<p><code>errline</code>
+Якщо функція зворотного дзвінка приймає четвертий параметр <code>errline</code>, то
+у нього буде передано номер рядка, в якому сталася помилка, у вигляді
+цілого числа.</p>
+<p><code>errcontext</code>
+Якщо функція зворотного виклику приймає п'ятий параметр errcontext, то
+у нього буде передано масив покажчиків на активну таблицю символів
+точці, де сталася помилка. Іншими словами, <code>errcontext</code> буде
+утримувати масив усіх змінних, що існують в області видимості, де
+Виникла помилка. Користувальницькі обробники помилок не повинні змінювати
+цей контекст.</p>
+<p><strong>Увага</strong>
+Цей параметр оголошений <em>УСТАРШИМ</em> починаючи з PHP 7.2.0 і був <em>Видалений</em> в
+PHP 8.0.0 Якщо у вашій функції цей параметр використовується і для нього немає
+встановлено значення за замовчуванням, то при виклику функції обробника буде
+видано помилку "too few arguments".</p>
+<p>Якщо функція повертає <strong><code>false</code></strong>, керування передається вбудованому
+обробнику помилок.</p>
+<p><code>error_levels</code>
+Може використовуватися для завдання маски, відповідно до якої буде
+викликатися <code>callback</code>, за аналогією з ini-настроюванням
+<a href="errorfunc.configuration.md#ini.error-reporting">error_reporting</a>,
+яка відповідає за те, які помилки будуть показані у звіті. Без цієї
+маски <code>callback</code> буде викликатися для обробки всіх, що відбуваються
+помилок, незалежно від налаштувань у
+<a href="errorfunc.configuration.md#ini.error-reporting">error_reporting</a>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає раніше визначений обробник помилок (якщо є) Якщо на
+на даний момент використовується вбудований обробник, функція поверне
+<strong><code>null</code></strong>. Якщо попередній певний обробник є методом
+класу, функція поверне масив, що містить ім'я класу та ім'я методу.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>Параметр errcontext був видалений і більше не передається в функцію обробки помилок.</td>
+</tr>
+<tr>
+<td>7.2.0</td>
+<td>Параметр errcontext оголошений застарілим. Тепер при його використанні буде викликатись помилка рівня <strong>E_DEPRECATED</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Обробка помилок за допомогою функцій <strong>set_error_handler()</strong> та
+<a href="function.trigger-error.md">trigger_error()</a></strong></p>
+<p>Приклад нижче демонструє обробку внутрішніх виключень шляхом виклику
+помилок різних типів та їх обробки користувальницькою функцією:</p>
+<p><code>&#x3C;?php// функция обработки ошибокfunction myErrorHandler($errno, $errstr, $errfile, $errline){    if (!(error_reporting() &#x26; $errno)) {        // Этот код ошибки не включён в error_reporting,        // так що нехай обробляються стандартним обробником помилок PHP        return false; }    // може потрібно екранування $errstr:    $errstr = htmlspecialchars($errstr); switch ($errno) {   case E_USER_ERROR:        echo "&#x3C;b>Користувацька ПОМИЛКА&#x3C;/b> [$errno] $errstr&#x3C;br /> ";||   |||||||||||||||||||| ";        echo "Завершення роботи...&#x3C;br /> ";         exit(1);   case E_USER_WARNING:        echo "&#x3C;b>Користувальне ПОПЕРЕДЖЕННЯ&#x3C;/b> [$errno] $ ";        break;    case E_USER_NOTICE:        echo "&#x3C;b>Користувачське ПОВІДОМЛЕННЯ&#x3C;/b> [$errno] $errstr&#x3C;br ";        break;    default:        echo "Невідома помилка: [$errno] $errstr&#x3C;br /> ";        break;    }    /* Не запускаем внутренний обработчик ошибок PHP */    return true;}// функция для тестирования обработчика ошибокfunction scale_by_log($vect, $scale){    if (!is_numeric($scale) || $scale &#x3C;= 0 ) {        trigger_error("log(x) для x &#x3C;= 0 не определён, вы используете: scale = $scale", E_USER_ERROR);    }    if (!is_array($vect)) {        trigger_error("Некорректный входной вектор, пропущен массив значений ", E_USER_WARNING);        return null;    }    $temp = array();    foreach($vect as $pos => $value) {        if (!is_numeric($value)) {            trigger_error("Значение на позиции $pos не является числом , будет использован 0 (ноль)", E_USER_NOTICE);            $value = 0;        }        $temp[$pos] = log($scale) * $value;    }    return $temp;}// переключаемся на пользовательский обработчик$old_error_handler = set_error_handler ("myErrorHandler");// викликаємо кілька помилок, по-перше, визначимо масив з нечисловим елементомecho "vector a ";$a = array(2, 3, "foo", 5.5, 43.3, 21.11);print_r($a);// тепер створимо ще один масивecho "---- vector b - a notice (b = log(PI) * a) ";/* Значення на позиції $pos не є числом, буде використаний 0 (нуль)*/$b = scale_by_log($a, M_PI);print_r($b);// проблема, ми| - vector c - a warning ";/* Некоректний вхідний вектор, пропущений масив значень */$c = scale_by_log("not array", 2.3);var_dump($c); // NULL// критична помилка  - vector d - fatal error ";/* log(x) для x &#x3C;= 0 не визначений, ви використовується: scale = $scale */$d = scale_by_log($a, -2.5); ?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<h2>vector a
+Array
+(
+[0] => 2
+[1] => 3
+[2] => foo
+[3] => 5.5
+[4] => 43.3
+[5] => 21.11
+)</h2>
+<h2>vector b - a notice (b = log(PI) * a)
+УВАГА користувача [1024] Значення на позиції 2 не є числом, буде використано 0 (нуль)
+Array
+(
+[0] => 2.2894597716988
+[1] => 3.4341896575482
+[2] => 0
+[3] => 6.2960143721717
+[4] => 49.566804057279
+[5] => 24.165247890281
+)</h2>
+<h2>vector c - a warning
+Користувацьке ПОПЕРЕДЖЕННЯ [512] Некоректний вхідний вектор, пропущений масив значень
+NULL</h2>
+<p>vector d - fatal error
+Помилка користувача [256] log(x) for x &#x3C;= 0 не визначено, ви використовуєте: scale = -2.5
+Фатальна помилка у рядку 35 файлу trigger_error.php, PHP 5.2.1 (FreeBSD)
+Завершення роботи...</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="class.errorexception.md">ErrorException</a></li>
+<li><a href="function.error-reporting.md">error_reporting()</a> - Задає, які
+помилки PHP потраплять у звіт</li>
+<li><a href="function.restore-error-handler.md">restore_error_handler()</a> -
+Відновлює попередній обробник помилок</li>
+<li><a href="function.trigger-error.md">trigger_error()</a> - Викликає
+помилку користувача/попередження/повідомлення</li>
+<li><a href="errorfunc.constants.md">Константи рівнів помилок</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.set-error-handler.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.set-error-handler.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.set-error-handler","slug":"function.set-error-handler.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.restore-exception-handler.md\"\u003e« restore_exception_handler\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.set-exception-handler.md\"\u003eset_exception_handler »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.errorfunc.md\"\u003eФункції обробки помилок\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗадає користувальницький обробник помилок\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#set_error_handler\u003c/p\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.0.1, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eset_error_handler — Задає користувальницький обробник помилок\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eset_error_handler\u003c/strong\u003e(?\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\n\u003ccode\u003e$callback\u003c/code\u003e, int \u003ccode\u003e$error_levels\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003eE_ALL\u003c/code\u003e\u003c/strong\u003e):\n?\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eЗадає функцію користувача (\u003ccode\u003ecallback\u003c/code\u003e), як обробник помилок в\nскрипт.\u003c/p\u003e\n\u003cp\u003eЦя функція використовується для визначення власного обробника помилок\nчасу виконання сценарію. Наприклад, якщо потрібно очистити\nдані/файли, коли сталася критична помилка, або якщо потрібно\nпереключити тип помилки, виходячи з якихось умов (використовуючи функцію\n\u003ca href=\"function.trigger-error.md\"\u003etrigger_error()\u003c/a\u003e).\u003c/p\u003e\n\u003cp\u003eВажливо пам'ятати, що стандартний обробник помилок PHP не буде\nобробляти ніякі типи помилок, визначені в \u003ccode\u003eerror_levels\u003c/code\u003e, поки\ncallback-функція не поверне \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e. Користувальницький обробник\nбуде викликатися за будь-якої помилки, незалежно від налаштувань, заданих\nфункцією\n\u003ca href=\"errorfunc.configuration.md#ini.error-reporting\"\u003eerror_reporting\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eТакож важливо пам'ятати, що на совісті обробника лежить виклик функції\n\u003ca href=\"function.die.md\"\u003edie()\u003c/a\u003e у разі потреби. Якщо відбувається\nповернення з обробника помилок, керування передається наступному\nвиразу, що стоїть за тим, що викликало помилку.\u003c/p\u003e\n\u003cp\u003eПомилки таких типів не можуть бути оброблені користувачем:\n\u003cstrong\u003e\u003ccode\u003eE_ERROR\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eE_PARSE\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eE_CORE_ERROR\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eE_CORE_WARNING\u003c/code\u003e\u003c/strong\u003e,\n\u003cstrong\u003e\u003ccode\u003eE_COMPILE_ERROR\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eE_COMPILE_WARNING\u003c/code\u003e\u003c/strong\u003e незалежно від того, де\nвони були згенеровані і більшість помилок \u003cstrong\u003e\u003ccode\u003eE_STRICT\u003c/code\u003e\u003c/strong\u003e, що відбулися\nу файлі, де викликана функція \u003cstrong\u003eset_error_handler()\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо помилки виникають до запуску скрипта (наприклад, поки файл\nзавантажується), користувальницький обробник не буде викликатися, якщо на\nцей момент ще не зареєстрований.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ecallback\u003c/code\u003e\nЯкщо передано значення \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, обробник скидається у стан\nза замовчуванням. Інакше обробник є\ncallback-функцію з наступною сигнатурою:\u003c/p\u003e\n\u003cp\u003ehandler(\nint \u003ccode\u003e$errno\u003c/code\u003e,\nstring \u003ccode\u003e$errstr\u003c/code\u003e,\nstring \u003ccode\u003e$errfile\u003c/code\u003e = ?,\nint \u003ccode\u003e$errline\u003c/code\u003e = ?,\narray \u003ccode\u003e$errcontext\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eerrno\u003c/code\u003e\nУ перший аргумент \u003ccode\u003eerrno\u003c/code\u003e буде передано рівень помилки у вигляді цілого\nчисла.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eerrstr\u003c/code\u003e\nУ другому аргументі \u003ccode\u003eerrstr\u003c/code\u003e буде передано повідомлення про помилку у вигляді\nрядки.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eerrfile\u003c/code\u003e\nЯкщо функція зворотного виклику приймає третій параметр \u003ccode\u003eerrfile\u003c/code\u003e, то\nйого буде передано ім'я файлу, в якому відбулася помилка, у вигляді\nрядки.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eerrline\u003c/code\u003e\nЯкщо функція зворотного дзвінка приймає четвертий параметр \u003ccode\u003eerrline\u003c/code\u003e, то\nу нього буде передано номер рядка, в якому сталася помилка, у вигляді\nцілого числа.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eerrcontext\u003c/code\u003e\nЯкщо функція зворотного виклику приймає п'ятий параметр errcontext, то\nу нього буде передано масив покажчиків на активну таблицю символів\nточці, де сталася помилка. Іншими словами, \u003ccode\u003eerrcontext\u003c/code\u003e буде\nутримувати масив усіх змінних, що існують в області видимості, де\nВиникла помилка. Користувальницькі обробники помилок не повинні змінювати\nцей контекст.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\nЦей параметр оголошений \u003cem\u003eУСТАРШИМ\u003c/em\u003e починаючи з PHP 7.2.0 і був \u003cem\u003eВидалений\u003c/em\u003e в\nPHP 8.0.0 Якщо у вашій функції цей параметр використовується і для нього немає\nвстановлено значення за замовчуванням, то при виклику функції обробника буде\nвидано помилку \"too few arguments\".\u003c/p\u003e\n\u003cp\u003eЯкщо функція повертає \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, керування передається вбудованому\nобробнику помилок.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eerror_levels\u003c/code\u003e\nМоже використовуватися для завдання маски, відповідно до якої буде\nвикликатися \u003ccode\u003ecallback\u003c/code\u003e, за аналогією з ini-настроюванням\n\u003ca href=\"errorfunc.configuration.md#ini.error-reporting\"\u003eerror_reporting\u003c/a\u003e,\nяка відповідає за те, які помилки будуть показані у звіті. Без цієї\nмаски \u003ccode\u003ecallback\u003c/code\u003e буде викликатися для обробки всіх, що відбуваються\nпомилок, незалежно від налаштувань у\n\u003ca href=\"errorfunc.configuration.md#ini.error-reporting\"\u003eerror_reporting\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає раніше визначений обробник помилок (якщо є) Якщо на\nна даний момент використовується вбудований обробник, функція поверне\n\u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e. Якщо попередній певний обробник є методом\nкласу, функція поверне масив, що містить ім'я класу та ім'я методу.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eПараметр errcontext був видалений і більше не передається в функцію обробки помилок.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.2.0\u003c/td\u003e\n\u003ctd\u003eПараметр errcontext оголошений застарілим. Тепер при його використанні буде викликатись помилка рівня \u003cstrong\u003eE_DEPRECATED\u003c/strong\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Обробка помилок за допомогою функцій \u003cstrong\u003eset_error_handler()\u003c/strong\u003e та\n\u003ca href=\"function.trigger-error.md\"\u003etrigger_error()\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПриклад нижче демонструє обробку внутрішніх виключень шляхом виклику\nпомилок різних типів та їх обробки користувальницькою функцією:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// функция обработки ошибокfunction myErrorHandler($errno, $errstr, $errfile, $errline){    if (!(error_reporting() \u0026#x26; $errno)) {        // Этот код ошибки не включён в error_reporting,        // так що нехай обробляються стандартним обробником помилок PHP        return false; }    // може потрібно екранування $errstr:    $errstr = htmlspecialchars($errstr); switch ($errno) {   case E_USER_ERROR:        echo \"\u0026#x3C;b\u003eКористувацька ПОМИЛКА\u0026#x3C;/b\u003e [$errno] $errstr\u0026#x3C;br /\u003e \";||   |||||||||||||||||||| \";        echo \"Завершення роботи...\u0026#x3C;br /\u003e \";         exit(1);   case E_USER_WARNING:        echo \"\u0026#x3C;b\u003eКористувальне ПОПЕРЕДЖЕННЯ\u0026#x3C;/b\u003e [$errno] $ \";        break;    case E_USER_NOTICE:        echo \"\u0026#x3C;b\u003eКористувачське ПОВІДОМЛЕННЯ\u0026#x3C;/b\u003e [$errno] $errstr\u0026#x3C;br \";        break;    default:        echo \"Невідома помилка: [$errno] $errstr\u0026#x3C;br /\u003e \";        break;    }    /* Не запускаем внутренний обработчик ошибок PHP */    return true;}// функция для тестирования обработчика ошибокfunction scale_by_log($vect, $scale){    if (!is_numeric($scale) || $scale \u0026#x3C;= 0 ) {        trigger_error(\"log(x) для x \u0026#x3C;= 0 не определён, вы используете: scale = $scale\", E_USER_ERROR);    }    if (!is_array($vect)) {        trigger_error(\"Некорректный входной вектор, пропущен массив значений \", E_USER_WARNING);        return null;    }    $temp = array();    foreach($vect as $pos =\u003e $value) {        if (!is_numeric($value)) {            trigger_error(\"Значение на позиции $pos не является числом , будет использован 0 (ноль)\", E_USER_NOTICE);            $value = 0;        }        $temp[$pos] = log($scale) * $value;    }    return $temp;}// переключаемся на пользовательский обработчик$old_error_handler = set_error_handler (\"myErrorHandler\");// викликаємо кілька помилок, по-перше, визначимо масив з нечисловим елементомecho \"vector a \";$a = array(2, 3, \"foo\", 5.5, 43.3, 21.11);print_r($a);// тепер створимо ще один масивecho \"---- vector b - a notice (b = log(PI) * a) \";/* Значення на позиції $pos не є числом, буде використаний 0 (нуль)*/$b = scale_by_log($a, M_PI);print_r($b);// проблема, ми| - vector c - a warning \";/* Некоректний вхідний вектор, пропущений масив значень */$c = scale_by_log(\"not array\", 2.3);var_dump($c); // NULL// критична помилка  - vector d - fatal error \";/* log(x) для x \u0026#x3C;= 0 не визначений, ви використовується: scale = $scale */$d = scale_by_log($a, -2.5); ?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003ch2\u003evector a\nArray\n(\n[0] =\u003e 2\n[1] =\u003e 3\n[2] =\u003e foo\n[3] =\u003e 5.5\n[4] =\u003e 43.3\n[5] =\u003e 21.11\n)\u003c/h2\u003e\n\u003ch2\u003evector b - a notice (b = log(PI) * a)\nУВАГА користувача [1024] Значення на позиції 2 не є числом, буде використано 0 (нуль)\nArray\n(\n[0] =\u003e 2.2894597716988\n[1] =\u003e 3.4341896575482\n[2] =\u003e 0\n[3] =\u003e 6.2960143721717\n[4] =\u003e 49.566804057279\n[5] =\u003e 24.165247890281\n)\u003c/h2\u003e\n\u003ch2\u003evector c - a warning\nКористувацьке ПОПЕРЕДЖЕННЯ [512] Некоректний вхідний вектор, пропущений масив значень\nNULL\u003c/h2\u003e\n\u003cp\u003evector d - fatal error\nПомилка користувача [256] log(x) for x \u0026#x3C;= 0 не визначено, ви використовуєте: scale = -2.5\nФатальна помилка у рядку 35 файлу trigger_error.php, PHP 5.2.1 (FreeBSD)\nЗавершення роботи...\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"class.errorexception.md\"\u003eErrorException\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.error-reporting.md\"\u003eerror_reporting()\u003c/a\u003e - Задає, які\nпомилки PHP потраплять у звіт\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.restore-error-handler.md\"\u003erestore_error_handler()\u003c/a\u003e -\nВідновлює попередній обробник помилок\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.trigger-error.md\"\u003etrigger_error()\u003c/a\u003e - Викликає\nпомилку користувача/попередження/повідомлення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"errorfunc.constants.md\"\u003eКонстанти рівнів помилок\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.set-error-handler.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

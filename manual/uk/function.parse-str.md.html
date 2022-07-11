@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.parse-str | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.ord.md">«ord</a></p>
+</li>
+<li>
+<p><a href="function.print.md">print »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.strings.md">Функції для роботи з рядками</a></p>
+</li>
+<li>
+<p>Розбирає рядок у змінні</p>
+</li>
+</ul>
+<p>#parse_str</p>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>parse_str — Розбирає рядок на змінні</p>
+<h3>Опис</h3>
+<p><strong>parse_str</strong>(string <code>$string</code>, array <code>&#x26;$result</code>): void</p>
+<p>Розбирає рядок <code>string</code>, який повинен мати формат рядка запиту
+URL і надає значення змінним у поточному контексті (або заносить до
+масив, якщо заданий параметр 'result').</p>
+<h3>Список параметрів</h3>
+<p><code>string</code>
+Вхідний рядок.</p>
+<p><code>result</code>
+Якщо вказано другий параметр <code>result</code>, то замість присвоєння змінних
+поточному контексті вони будуть збережені в цьому параметрі як
+елементів масиву.</p>
+<p><strong>Увага</strong>
+Використовувати цю функцію без параметра <code>result</code> вкрай <em>НЕ
+РЕКОМЕНДУЄТЬСЯ</em>. Подібне використання оголошено <em>УСТАРШИМ</em> з PHP 7.2.</p>
+<h3>Значення, що повертаються</h3>
+<p>Функція не повертає значення після виконання.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>result більше не є необов'язковим.</td>
+</tr>
+<tr>
+<td>7.2.0</td>
+<td>Використання <strong>parse_str()</strong> без другого параметра викликатиме помилку рівня <strong>E_DEPRECATED</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Використання <strong>parse_str()</strong></strong></p>
+<p><code>&#x3C;?php$str = "first=value&#x26;arr[]=foo+bar&#x26;arr[]=baz";// Рекомендований підхідparse_str($str, $output);echo $output['first']; //valueecho$output['arr'][0]; //foo barecho $output['arr'][1]; // baz// НЕ РЕКОМЕНДУЄТЬСЯparse_str($str);echo $first; //valueecho$arr[0]; //foo barecho $arr[1]; //?baz?></code></p>
+<p>Так як імена змінних PHP не можуть містити пробіли та точки, ці
+символи буде замінено на символ підкреслення. Такі ж правила
+накладаються на імена ключів у масиві <code>result</code>, якщо він заданий.</p>
+<p><strong>Приклад #2 Співвідношення імен <strong>parse_str()</strong></strong></p>
+<p><code>&#x3C;?phpparse_str("My Value=Something");echo $My_Value; // Somethingparse_str("My Value=Something", $output);echo $output['My_Value']; // Something?></code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Всі змінні створюються (або заносяться до масиву) вже оброблені
+функцією <a href="function.urldecode.md">urldecode()</a>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Для отримання поточної <code>QUERY_STRING</code> можна використовувати змінну
+<code>$_SERVER['QUERY_STRING']</code>. Крім того, можливо, ви захочете прочитати > розділ про <a href="language.variables.external.md">змінні поза PHP</a>.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.parse-url.md">parse_url()</a> - Розбирає URL та повертає
+його компоненти</li>
+<li><a href="function.pathinfo.md">pathinfo()</a> - Повертає інформацію про шлях
+до файлу</li>
+<li><a href="function.http-build-query.md">http_build_query()</a> - Генерує
+URL-кодований рядок запиту</li>
+<li><a href="function.urldecode.md">urldecode()</a> - Декодування
+URL-кодованого рядка</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.parse-str.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.parse-str.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.parse-str","slug":"function.parse-str.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.ord.md\"\u003e«ord\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.print.md\"\u003eprint »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.strings.md\"\u003eФункції для роботи з рядками\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eРозбирає рядок у змінні\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#parse_str\u003c/p\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eparse_str — Розбирає рядок на змінні\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eparse_str\u003c/strong\u003e(string \u003ccode\u003e$string\u003c/code\u003e, array \u003ccode\u003e\u0026#x26;$result\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003eРозбирає рядок \u003ccode\u003estring\u003c/code\u003e, який повинен мати формат рядка запиту\nURL і надає значення змінним у поточному контексті (або заносить до\nмасив, якщо заданий параметр 'result').\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003estring\u003c/code\u003e\nВхідний рядок.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eresult\u003c/code\u003e\nЯкщо вказано другий параметр \u003ccode\u003eresult\u003c/code\u003e, то замість присвоєння змінних\nпоточному контексті вони будуть збережені в цьому параметрі як\nелементів масиву.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\nВикористовувати цю функцію без параметра \u003ccode\u003eresult\u003c/code\u003e вкрай \u003cem\u003eНЕ\nРЕКОМЕНДУЄТЬСЯ\u003c/em\u003e. Подібне використання оголошено \u003cem\u003eУСТАРШИМ\u003c/em\u003e з PHP 7.2.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eФункція не повертає значення після виконання.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eresult більше не є необов'язковим.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.2.0\u003c/td\u003e\n\u003ctd\u003eВикористання \u003cstrong\u003eparse_str()\u003c/strong\u003e без другого параметра викликатиме помилку рівня \u003cstrong\u003eE_DEPRECATED\u003c/strong\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Використання \u003cstrong\u003eparse_str()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$str = \"first=value\u0026#x26;arr[]=foo+bar\u0026#x26;arr[]=baz\";// Рекомендований підхідparse_str($str, $output);echo $output['first']; //valueecho$output['arr'][0]; //foo barecho $output['arr'][1]; // baz// НЕ РЕКОМЕНДУЄТЬСЯparse_str($str);echo $first; //valueecho$arr[0]; //foo barecho $arr[1]; //?baz?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eТак як імена змінних PHP не можуть містити пробіли та точки, ці\nсимволи буде замінено на символ підкреслення. Такі ж правила\nнакладаються на імена ключів у масиві \u003ccode\u003eresult\u003c/code\u003e, якщо він заданий.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Співвідношення імен \u003cstrong\u003eparse_str()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpparse_str(\"My Value=Something\");echo $My_Value; // Somethingparse_str(\"My Value=Something\", $output);echo $output['My_Value']; // Something?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eВсі змінні створюються (або заносяться до масиву) вже оброблені\nфункцією \u003ca href=\"function.urldecode.md\"\u003eurldecode()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eДля отримання поточної \u003ccode\u003eQUERY_STRING\u003c/code\u003e можна використовувати змінну\n\u003ccode\u003e$_SERVER['QUERY_STRING']\u003c/code\u003e. Крім того, можливо, ви захочете прочитати \u003e розділ про \u003ca href=\"language.variables.external.md\"\u003eзмінні поза PHP\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.parse-url.md\"\u003eparse_url()\u003c/a\u003e - Розбирає URL та повертає\nйого компоненти\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pathinfo.md\"\u003epathinfo()\u003c/a\u003e - Повертає інформацію про шлях\nдо файлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.http-build-query.md\"\u003ehttp_build_query()\u003c/a\u003e - Генерує\nURL-кодований рядок запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.urldecode.md\"\u003eurldecode()\u003c/a\u003e - Декодування\nURL-кодованого рядка\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.parse-str.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

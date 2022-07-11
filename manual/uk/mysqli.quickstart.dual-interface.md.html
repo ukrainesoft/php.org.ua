@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli.quickstart.dual-interface | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli.quickstart.md">« Короткий посібник</a></p>
+</li>
+<li>
+<p><a href="mysqli.quickstart.connections.md">З'єднання »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mysqli.quickstart.md">Короткий посібник</a></p>
+</li>
+<li>
+<p>Процедурний та об'єктно-орієнтований інтерфейс</p>
+</li>
+</ul>
+<h2>Процедурний та об'єктно-орієнтований інтерфейс</h2>
+<p>Модуль mysqli надає подвійний інтерфейс програмісту.
+Підтримуються як процедурна, так і об'єктно-орієнтована парадигми
+програмування.</p>
+<p>Користувачі, що переходять зі старого модуля mysql, можливо, віддадуть перевагу
+процедурний інтерфейс. Він дуже схожий з інтерфейсом старого модуля, і в
+У багатьох випадках функції відрізняються лише префіксом в імені. Деякі
+mysqli-функції приймають дескриптор з'єднання першим аргументом,
+на відміну від відповідних їм функцій старого модуля, які приймають
+його як останній необов'язковий аргумент.</p>
+<p><strong>Приклад #1 Простота переходу зі старого модуля mysql</strong></p>
+<p>` &#x3C;?php$mysqli = mysqli_connect("example.com", "user", "password", "database");$result = mysqli_query($mysqli, "SELECT 'Будь ласка, не використовуйте встаріший    ' AS _msg FROM DUAL");$row = mysqli_fetch_assoc($result);echo $row['_msg'];$mysql = mysql_connect("example.com", "user", "password");mysql_select_db ");$result = mysql_query("SELECT 'Використовуйте замого модуль mysqli.' AS _msg FROM DUAL", $mysql);$row = mysql_fetch_assoc($result);'ech>''</p>
+<p>Результат виконання цього прикладу:</p>
+<p>Будь ласка, не використовуйте застарілий модуль mysql у нових проектах. Використовуйте натомість модуль mysqli.</p>
+<p><em>Об'єктно-орієнтований інтерфейс</em></p>
+<p>Крім процедурного, користувачі можуть використовувати
+об'єктно-орієнтований інтерфейс. Документація заточена саме під
+об'єктний інтерфейс. Об'єктно-орієнтований інтерфейс пропонує
+функції згруповані за метою їх застосування, що полегшує їх пошук та
+освоєння. Тим не менш, у практичних прикладах до функцій наводиться
+код для обох парадигм</p>
+<p>Будь-яких принципових відмінностей у продуктивності між
+інтерфейсів немає. Користувачі вільні у виборі інтерфейсу, базуючись
+на особистих уподобаннях.</p>
+<p><strong>Приклад #2 Об'єктно-орієнтований та процедурний інтерфейси</strong></p>
+<p><code>&#x3C;?php$mysqli = mysqli_connect("example.com", "user", "password", "database");$result = mysqli_query($mysqli, "SELECT 'Світ, повний ' AS _msg $row = mysqli_fetch_assoc($result);echo $row['_msg'];$mysqli = new mysqli("example.com", "user", "password", "database");$result = $mysqli-> query("SELECT 'вибору, щоб угодити усім.' AS _msg FROM DUAL");$row = $result->fetch_assoc();echo $row['_msg'];</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Світ, повний вибору, щоб догодити всім.</p>
+<p>Приклади в цьому посібнику будуть написані в об'єктному стилі через те,
+що об'єктному підходу віддавалася перевага під час створення
+документації.</p>
+<p><em>Змішування стилів</em></p>
+<p>Перемикатися між стилями програмування можна як завгодно часто і
+в будь-який час, однак робити це не рекомендується, так як це
+погіршує читаність коду та ускладнює його підтримку.</p>
+<p><strong>Приклад #3 Поганий стиль програмування</strong></p>
+<p><code>&#x3C;?php$mysqli = new mysqli("example.com", "user", "password", "database");$result = mysqli_query($mysqli, "SELECT 'Цей код працює, не   ' AS _msg FROM DUAL");if ($row = $result->fetch_assoc()) {    echo $row['_msg'];}</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Цей код працює, але краще не писати.</p>
+<p><em>Дивіться також</em></p>
+<ul>
+<li><a href="mysqli.construct.md">mysqli::__construct()</a></li>
+<li><a href="mysqli.query.md">mysqli::query()</a></li>
+<li><a href="mysqli-result.fetch-assoc.md">mysqli_result::fetch_assoc()</a></li>
+<li><a href="mysqli.connect-errno.md">$mysqli::connect_errno</a></li>
+<li><a href="mysqli.connect-error.md">$mysqli::connect_error</a></li>
+<li><a href="mysqli.errno.md">$mysqli::errno</a></li>
+<li><a href="mysqli.error.md">$mysqli::error</a></li>
+<li><a href="mysqli.summary.md">Загальний опис функцій модуля MySQLi</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli.quickstart.dual-interface.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli.quickstart.dual-interface.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli.quickstart.dual-interface","slug":"mysqli.quickstart.dual-interface.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.quickstart.md\"\u003e« Короткий посібник\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.quickstart.connections.md\"\u003eЗ'єднання »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.quickstart.md\"\u003eКороткий посібник\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПроцедурний та об'єктно-орієнтований інтерфейс\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eПроцедурний та об'єктно-орієнтований інтерфейс\u003c/h2\u003e\n\u003cp\u003eМодуль mysqli надає подвійний інтерфейс програмісту.\nПідтримуються як процедурна, так і об'єктно-орієнтована парадигми\nпрограмування.\u003c/p\u003e\n\u003cp\u003eКористувачі, що переходять зі старого модуля mysql, можливо, віддадуть перевагу\nпроцедурний інтерфейс. Він дуже схожий з інтерфейсом старого модуля, і в\nУ багатьох випадках функції відрізняються лише префіксом в імені. Деякі\nmysqli-функції приймають дескриптор з'єднання першим аргументом,\nна відміну від відповідних їм функцій старого модуля, які приймають\nйого як останній необов'язковий аргумент.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Простота переходу зі старого модуля mysql\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$mysqli = mysqli_connect(\"example.com\", \"user\", \"password\", \"database\");$result = mysqli_query($mysqli, \"SELECT 'Будь ласка, не використовуйте встаріший    ' AS _msg FROM DUAL\");$row = mysqli_fetch_assoc($result);echo $row['_msg'];$mysql = mysql_connect(\"example.com\", \"user\", \"password\");mysql_select_db \");$result = mysql_query(\"SELECT 'Використовуйте замого модуль mysqli.' AS _msg FROM DUAL\", $mysql);$row = mysql_fetch_assoc($result);'ech\u003e''\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eБудь ласка, не використовуйте застарілий модуль mysql у нових проектах. Використовуйте натомість модуль mysqli.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eОб'єктно-орієнтований інтерфейс\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eКрім процедурного, користувачі можуть використовувати\nоб'єктно-орієнтований інтерфейс. Документація заточена саме під\nоб'єктний інтерфейс. Об'єктно-орієнтований інтерфейс пропонує\nфункції згруповані за метою їх застосування, що полегшує їх пошук та\nосвоєння. Тим не менш, у практичних прикладах до функцій наводиться\nкод для обох парадигм\u003c/p\u003e\n\u003cp\u003eБудь-яких принципових відмінностей у продуктивності між\nінтерфейсів немає. Користувачі вільні у виборі інтерфейсу, базуючись\nна особистих уподобаннях.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Об'єктно-орієнтований та процедурний інтерфейси\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$mysqli = mysqli_connect(\"example.com\", \"user\", \"password\", \"database\");$result = mysqli_query($mysqli, \"SELECT 'Світ, повний ' AS _msg $row = mysqli_fetch_assoc($result);echo $row['_msg'];$mysqli = new mysqli(\"example.com\", \"user\", \"password\", \"database\");$result = $mysqli-\u003e query(\"SELECT 'вибору, щоб угодити усім.' AS _msg FROM DUAL\");$row = $result-\u003efetch_assoc();echo $row['_msg'];\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eСвіт, повний вибору, щоб догодити всім.\u003c/p\u003e\n\u003cp\u003eПриклади в цьому посібнику будуть написані в об'єктному стилі через те,\nщо об'єктному підходу віддавалася перевага під час створення\nдокументації.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЗмішування стилів\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eПеремикатися між стилями програмування можна як завгодно часто і\nв будь-який час, однак робити це не рекомендується, так як це\nпогіршує читаність коду та ускладнює його підтримку.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Поганий стиль програмування\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$mysqli = new mysqli(\"example.com\", \"user\", \"password\", \"database\");$result = mysqli_query($mysqli, \"SELECT 'Цей код працює, не   ' AS _msg FROM DUAL\");if ($row = $result-\u003efetch_assoc()) {    echo $row['_msg'];}\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eЦей код працює, але краще не писати.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eДивіться також\u003c/em\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mysqli.construct.md\"\u003emysqli::__construct()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.query.md\"\u003emysqli::query()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-assoc.md\"\u003emysqli_result::fetch_assoc()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.connect-errno.md\"\u003e$mysqli::connect_errno\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.connect-error.md\"\u003e$mysqli::connect_error\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.errno.md\"\u003e$mysqli::errno\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.error.md\"\u003e$mysqli::error\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.summary.md\"\u003eЗагальний опис функцій модуля MySQLi\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli.quickstart.dual-interface.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

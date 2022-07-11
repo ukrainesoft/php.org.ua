@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>oci8.connection | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="oci8.examples.md">« Приклади</a></p>
+</li>
+<li>
+<p><a href="oci8.fan.md">Підтримка OCI8 Fast Application Notification (FAN)
+»</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.oci8.md">OCI8</a></p>
+</li>
+<li>
+<p>Робота зі з'єднаннями OCI8 та Connection Pooling</p>
+</li>
+</ul>
+<h1>Робота зі з'єднаннями OCI8 та Connection Pooling</h1>
+<h2>Функції підключення</h2>
+<p>Модуль OCI8 надає три різні функції для підключення до
+серверу Oracle. Стандартна функція з'єднання - це
+<a href="function.oci-connect.md">oci_connect()</a>. Вона створює з'єднання до
+базі даних Oracle і повертає ресурс, який використовується при
+наступних зверненнях до БД.</p>
+<p>Підключення до сервера Oracle є досить дорогою операцією
+з точки зору часу, який потрібний для виконання. Функція
+<a href="function.oci-pconnect.md">oci_pconnect()</a> використовує постійний кеш
+з'єднань, які можуть бути повторно використані різними
+запитами скриптів. Це означає, що витрати на встановлення з'єднання,
+як правило, відбуваються лише один раз на один процес PHP (або на
+нащадка Apache).</p>
+<p>Якщо програма з'єднується з сервером Oracle, використовуючи спеціальний набір
+даних для кожного веб-користувача, то постійний кеш з'єднань,
+використовуваний функцією <a href="function.oci-pconnect.md">oci_pconnect()</a> буде
+менш корисним, т.к. кількість одночасних користувачів зростає до
+того рівня, де він може почати негативно впливати на загальну
+продуктивність сервера Oracle через підтримку занадто великого
+кількості з'єднань, що простоюють. Якщо програма налаштована такою
+рекомендується або налаштувати його за допомогою параметрів
+конфігурації
+<a href="oci8.configuration.md#ini.oci8.max-persistent">oci8.max_persistent</a> та
+<a href="oci8.configuration.md#ini.oci8.persistent-timeout">oci8.persistent_timeout</a>
+(це дасть можливість керування розміром кешу постійних з'єднань та
+їх час життя), або використовувати Oracle Database Resident Connection
+Pooling (в Oracle Database 11g і новіше), або використовувати функцію
+<a href="function.oci-connect.md">oci_connect()</a> замість неї.</p>
+<p>Водночас <a href="function.oci-connect.md">oci_connect()</a> та
+<a href="function.oci-pconnect.md">oci_pconnect()</a> використовують кеш підключень;
+якщо багато дзвінків <a href="function.oci-connect.md">oci_connect()</a>
+використовує однакові параметри в даному скрипті, другий та наступні
+дзвінки повернуть існуючий дескриптор з'єднання. Кеш, використовуваний
+функцією <a href="function.oci-connect.md">oci_connect()</a>, очищається за
+завершення виконання скрипта або коли з'єднання неявно закривається.
+У функції <a href="function.oci-pconnect.md">oci_pconnect()</a> схоже
+поведінка, хоча її кеш обробляється окремо і залишається чинним
+між запитами HTTP</p>
+<p>Ця можливість кешування означає, що два дескриптори не ізольовані
+транзакційно (вони насправді є одним і тим же дескриптором,
+тому тут немає жодної ізоляції. Якщо програмі необхідні два
+окремих транзакційно ізольованих з'єднань, то необхідно
+використовувати функцію <a href="function.oci-new-connect.md">oci_new_connect()</a>.</p>
+<p>Кеш функції <a href="function.oci-pconnect.md">oci_pconnect()</a> очищається і
+закриваються всі з'єднання БД, коли завершується процес PHP. Тому
+ефективне використання постійних з'єднань вимагає, щоб PHP був
+модулем Apache або використовувався з FPM або подібним. Постійні
+з'єднання не матимуть жодних переваг перед
+<a href="function.oci-connect.md">oci_connect()</a>, коли PHP використовується з CGI
+або через командний рядок.</p>
+<p>Функція <a href="function.oci-new-connect.md">oci_new_connect()</a> завжди
+створює нове з'єднання з сервером Oracle, незважаючи на те, що інші
+з'єднання можуть існувати. Високонавантаженим веб-додаткам
+слід уникати використання
+<a href="function.oci-new-connect.md">oci_new_connect()</a>, особливо у самих
+завантажених частинах програми.</p>
+<p>Починаючи з OCI8 1.3, постійні з'єднання можуть бути закриті
+користувачем, що дає більш повний контроль за використанням
+ресурсів. Також постійні з'єднання можуть бути закриті автоматично,
+якщо не залишилося змінних PHP, що вказують на них, наприклад при
+завершення виконання функції користувача. Закриття з'єднання
+відкотить усі підтверджені транзакції. Ці зміни в постійних
+підключеннях роблять їхню поведінку аналогічною не постійним з'єднанням.
+Щоб увімкнути стару поведінку, задайте опцію
+<a href="oci8.configuration.md#ini.oci8.old-oci-close-semantics">oci8.old_oci_close_semantics</a>
+значенням * On *.</p>
+<p>Автоматичне перестворення постійних з'єднань після перезапуску
+процесів Apache або FPM, означає, що Oracle Database <code>LOGON</code>
+рекомендується лише для налаштування атрибутів сеансу, а не для запитів
+на підключення користувачів для окремих програм.</p>
+<h2>Створення пулу з'єднань DRCP</h2>
+<p>PHP починаючи з 5.3 (PECL OCI8 1.3) підтримує постійний пул з'єднань
+Oracle 11g (DRCP). DRCP дозволяє ефективніше використовувати пам'ять
+СУБД і надає високу масштабованість. Змінювати код програми
+для використання DRCP або немає потреби, або потрібні
+мінімальні зміни.</p>
+<p>DRCP підходить для програм, які підключаються за допомогою декількох
+схем БД та зберігають з'єднання до БД відкритими короткий проміжок
+часу. Іншим програмам слід використовувати доступні за замовчуванням
+<code>Dedicated</code> серверні процеси або використовувати <code>Shared</code> сервера.</p>
+<p>DRCP приносить користь усім трьом функціям підключення, проте
+надає найвищу масштабованість, коли з'єднання створюються
+за допомогою функції <a href="function.oci-pconnect.md">oci_pconnect()</a>.</p>
+<p>Щоб функціональність DRCP була доступна в OCI8, клієнтські бібліотеки
+Oracle, що використовуються в PHP, і версія сервера баз даних повинні бути 11g
+та новіше.</p>
+<p>Документація з DRCP знаходиться в кількох посібниках Oracle. До
+Наприклад, дивіться <a href="https://www.oracle.com/pls/topic/lookup?ctx=dblatest&#x26;id=GUID-82FF6896-F57E-41CF-89F7-755F3BC9C924">»Конфігурування пулу постійних з'єднань бази даних</a>
+у документації Oracle для інформації щодо використання. Документ
+<a href="https://www.oracle.com/technetwork/topics/php/whatsnew/php-scalability-ha-twp-128842.pdf">" технічний опис DRCP</a>
+містить додаткову інформацію щодо DRCP.</p>
+<p>Для використання DRCP, встановіть модуль OCI8 1.3 (або новий) і
+бібліотеки Oracle 11g (або новіші) і потім виконайте такі дії:</p>
+<ul>
+<li>Як привілейований адміністратор БД скористайтесь програмою
+на зразок SQL*Plus, щоб запустити пул з'єднань у СУБД:</li>
+</ul>
+<p>SQL> execute dbms_connection_pool.start_pool;</p>
+<ul>
+<li>
+<p>Додатково можна використовувати
+<code>dbms_connection_pool.alter_param()</code>, щоб конфігурувати
+Параметри DRPC. Поточні налаштування пулу можуть бути отримані з
+уявлення <code>DBA_CPOOL_INFO</code>.</p>
+</li>
+<li>
+<p>Оновіть рядок з'єднання. Наприклад, для додатків
+PHP, які зараз з'єднуються, використовуючи Network Connect Name
+<code>MYDB</code>:</p>
+</li>
+</ul>
+<p>$c = oci_pconnect("myuser", "mypassword", "MYDB");</p>
+<p>змініть файл tnsnames.ora та додайте оператор <code>(SERVER=POOLED)</code>,
+наприклад:</p>
+<p>MYDB = (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)) (HOST=myhost.dom.com)
+(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=sales)
+(SERVER = POOLED)))</p>
+<p>Як альтернативу можна змінити синтаксис спрощеного
+з'єднання в PHP і додати туди <code>:POOLED</code> після імені сервісу:</p>
+<p>$c = oci_pconnect("myuser", "mypassword", "myhost.dom.com:1521/sales:POOLED");</p>
+<ul>
+<li>Відредагуйте <code>php.ini</code> та виберіть ім'я класу з'єднання. Це ім'я
+встановлює логічне поділ пулу сполук і може
+використовуватися, щоб ізолювати пул для окремих програм.
+Будь-яке PHP-додаток з однаковим ім'ям користувача та класом для
+з'єднання буде мати можливість спільно використовувати з'єднання
+в пулі, отримуючи більшу масштабованість.</li>
+</ul>
+<p>oci8.connection_class = "MY_APPLICATION_NAME"</p>
+<ul>
+<li>Запустіть програму, що з'єднується з базою 11g та новішою.</li>
+</ul>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Програми, які використовують Oracle 10g, які вимагають
+продуктивності від постійних з'єднань можуть зменшити
+кількість пам'яті сервера БД, яка використовується <code>Shared</code>-серверами
+Oracle (раніше відомі як багатопотокові сервери). Зверніться до
+документації Oracle для більш детальної інформації.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>При зміні пароля через з'єднання DRCP буде видаватися помилка
+<em>ORA-56609: Usage not supported with DRCP</em>. Це документоване
+обмеження Oracle Database 11g.</p>
+</blockquote>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/oci8.connection.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/oci8.connection.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"oci8.connection","slug":"oci8.connection.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"oci8.examples.md\"\u003e« Приклади\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"oci8.fan.md\"\u003eПідтримка OCI8 Fast Application Notification (FAN)\n»\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.oci8.md\"\u003eOCI8\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eРобота зі з'єднаннями OCI8 та Connection Pooling\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eРобота зі з'єднаннями OCI8 та Connection Pooling\u003c/h1\u003e\n\u003ch2\u003eФункції підключення\u003c/h2\u003e\n\u003cp\u003eМодуль OCI8 надає три різні функції для підключення до\nсерверу Oracle. Стандартна функція з'єднання - це\n\u003ca href=\"function.oci-connect.md\"\u003eoci_connect()\u003c/a\u003e. Вона створює з'єднання до\nбазі даних Oracle і повертає ресурс, який використовується при\nнаступних зверненнях до БД.\u003c/p\u003e\n\u003cp\u003eПідключення до сервера Oracle є досить дорогою операцією\nз точки зору часу, який потрібний для виконання. Функція\n\u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e використовує постійний кеш\nз'єднань, які можуть бути повторно використані різними\nзапитами скриптів. Це означає, що витрати на встановлення з'єднання,\nяк правило, відбуваються лише один раз на один процес PHP (або на\nнащадка Apache).\u003c/p\u003e\n\u003cp\u003eЯкщо програма з'єднується з сервером Oracle, використовуючи спеціальний набір\nданих для кожного веб-користувача, то постійний кеш з'єднань,\nвикористовуваний функцією \u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e буде\nменш корисним, т.к. кількість одночасних користувачів зростає до\nтого рівня, де він може почати негативно впливати на загальну\nпродуктивність сервера Oracle через підтримку занадто великого\nкількості з'єднань, що простоюють. Якщо програма налаштована такою\nрекомендується або налаштувати його за допомогою параметрів\nконфігурації\n\u003ca href=\"oci8.configuration.md#ini.oci8.max-persistent\"\u003eoci8.max_persistent\u003c/a\u003e та\n\u003ca href=\"oci8.configuration.md#ini.oci8.persistent-timeout\"\u003eoci8.persistent_timeout\u003c/a\u003e\n(це дасть можливість керування розміром кешу постійних з'єднань та\nїх час життя), або використовувати Oracle Database Resident Connection\nPooling (в Oracle Database 11g і новіше), або використовувати функцію\n\u003ca href=\"function.oci-connect.md\"\u003eoci_connect()\u003c/a\u003e замість неї.\u003c/p\u003e\n\u003cp\u003eВодночас \u003ca href=\"function.oci-connect.md\"\u003eoci_connect()\u003c/a\u003e та\n\u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e використовують кеш підключень;\nякщо багато дзвінків \u003ca href=\"function.oci-connect.md\"\u003eoci_connect()\u003c/a\u003e\nвикористовує однакові параметри в даному скрипті, другий та наступні\nдзвінки повернуть існуючий дескриптор з'єднання. Кеш, використовуваний\nфункцією \u003ca href=\"function.oci-connect.md\"\u003eoci_connect()\u003c/a\u003e, очищається за\nзавершення виконання скрипта або коли з'єднання неявно закривається.\nУ функції \u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e схоже\nповедінка, хоча її кеш обробляється окремо і залишається чинним\nміж запитами HTTP\u003c/p\u003e\n\u003cp\u003eЦя можливість кешування означає, що два дескриптори не ізольовані\nтранзакційно (вони насправді є одним і тим же дескриптором,\nтому тут немає жодної ізоляції. Якщо програмі необхідні два\nокремих транзакційно ізольованих з'єднань, то необхідно\nвикористовувати функцію \u003ca href=\"function.oci-new-connect.md\"\u003eoci_new_connect()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eКеш функції \u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e очищається і\nзакриваються всі з'єднання БД, коли завершується процес PHP. Тому\nефективне використання постійних з'єднань вимагає, щоб PHP був\nмодулем Apache або використовувався з FPM або подібним. Постійні\nз'єднання не матимуть жодних переваг перед\n\u003ca href=\"function.oci-connect.md\"\u003eoci_connect()\u003c/a\u003e, коли PHP використовується з CGI\nабо через командний рядок.\u003c/p\u003e\n\u003cp\u003eФункція \u003ca href=\"function.oci-new-connect.md\"\u003eoci_new_connect()\u003c/a\u003e завжди\nстворює нове з'єднання з сервером Oracle, незважаючи на те, що інші\nз'єднання можуть існувати. Високонавантаженим веб-додаткам\nслід уникати використання\n\u003ca href=\"function.oci-new-connect.md\"\u003eoci_new_connect()\u003c/a\u003e, особливо у самих\nзавантажених частинах програми.\u003c/p\u003e\n\u003cp\u003eПочинаючи з OCI8 1.3, постійні з'єднання можуть бути закриті\nкористувачем, що дає більш повний контроль за використанням\nресурсів. Також постійні з'єднання можуть бути закриті автоматично,\nякщо не залишилося змінних PHP, що вказують на них, наприклад при\nзавершення виконання функції користувача. Закриття з'єднання\nвідкотить усі підтверджені транзакції. Ці зміни в постійних\nпідключеннях роблять їхню поведінку аналогічною не постійним з'єднанням.\nЩоб увімкнути стару поведінку, задайте опцію\n\u003ca href=\"oci8.configuration.md#ini.oci8.old-oci-close-semantics\"\u003eoci8.old_oci_close_semantics\u003c/a\u003e\nзначенням * On *.\u003c/p\u003e\n\u003cp\u003eАвтоматичне перестворення постійних з'єднань після перезапуску\nпроцесів Apache або FPM, означає, що Oracle Database \u003ccode\u003eLOGON\u003c/code\u003e\nрекомендується лише для налаштування атрибутів сеансу, а не для запитів\nна підключення користувачів для окремих програм.\u003c/p\u003e\n\u003ch2\u003eСтворення пулу з'єднань DRCP\u003c/h2\u003e\n\u003cp\u003ePHP починаючи з 5.3 (PECL OCI8 1.3) підтримує постійний пул з'єднань\nOracle 11g (DRCP). DRCP дозволяє ефективніше використовувати пам'ять\nСУБД і надає високу масштабованість. Змінювати код програми\nдля використання DRCP або немає потреби, або потрібні\nмінімальні зміни.\u003c/p\u003e\n\u003cp\u003eDRCP підходить для програм, які підключаються за допомогою декількох\nсхем БД та зберігають з'єднання до БД відкритими короткий проміжок\nчасу. Іншим програмам слід використовувати доступні за замовчуванням\n\u003ccode\u003eDedicated\u003c/code\u003e серверні процеси або використовувати \u003ccode\u003eShared\u003c/code\u003e сервера.\u003c/p\u003e\n\u003cp\u003eDRCP приносить користь усім трьом функціям підключення, проте\nнадає найвищу масштабованість, коли з'єднання створюються\nза допомогою функції \u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЩоб функціональність DRCP була доступна в OCI8, клієнтські бібліотеки\nOracle, що використовуються в PHP, і версія сервера баз даних повинні бути 11g\nта новіше.\u003c/p\u003e\n\u003cp\u003eДокументація з DRCP знаходиться в кількох посібниках Oracle. До\nНаприклад, дивіться \u003ca href=\"https://www.oracle.com/pls/topic/lookup?ctx=dblatest\u0026#x26;id=GUID-82FF6896-F57E-41CF-89F7-755F3BC9C924\"\u003e»Конфігурування пулу постійних з'єднань бази даних\u003c/a\u003e\nу документації Oracle для інформації щодо використання. Документ\n\u003ca href=\"https://www.oracle.com/technetwork/topics/php/whatsnew/php-scalability-ha-twp-128842.pdf\"\u003e\" технічний опис DRCP\u003c/a\u003e\nмістить додаткову інформацію щодо DRCP.\u003c/p\u003e\n\u003cp\u003eДля використання DRCP, встановіть модуль OCI8 1.3 (або новий) і\nбібліотеки Oracle 11g (або новіші) і потім виконайте такі дії:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eЯк привілейований адміністратор БД скористайтесь програмою\nна зразок SQL*Plus, щоб запустити пул з'єднань у СУБД:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eSQL\u003e execute dbms_connection_pool.start_pool;\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eДодатково можна використовувати\n\u003ccode\u003edbms_connection_pool.alter_param()\u003c/code\u003e, щоб конфігурувати\nПараметри DRPC. Поточні налаштування пулу можуть бути отримані з\nуявлення \u003ccode\u003eDBA_CPOOL_INFO\u003c/code\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОновіть рядок з'єднання. Наприклад, для додатків\nPHP, які зараз з'єднуються, використовуючи Network Connect Name\n\u003ccode\u003eMYDB\u003c/code\u003e:\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e$c = oci_pconnect(\"myuser\", \"mypassword\", \"MYDB\");\u003c/p\u003e\n\u003cp\u003eзмініть файл tnsnames.ora та додайте оператор \u003ccode\u003e(SERVER=POOLED)\u003c/code\u003e,\nнаприклад:\u003c/p\u003e\n\u003cp\u003eMYDB = (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)) (HOST=myhost.dom.com)\n(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=sales)\n(SERVER = POOLED)))\u003c/p\u003e\n\u003cp\u003eЯк альтернативу можна змінити синтаксис спрощеного\nз'єднання в PHP і додати туди \u003ccode\u003e:POOLED\u003c/code\u003e після імені сервісу:\u003c/p\u003e\n\u003cp\u003e$c = oci_pconnect(\"myuser\", \"mypassword\", \"myhost.dom.com:1521/sales:POOLED\");\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eВідредагуйте \u003ccode\u003ephp.ini\u003c/code\u003e та виберіть ім'я класу з'єднання. Це ім'я\nвстановлює логічне поділ пулу сполук і може\nвикористовуватися, щоб ізолювати пул для окремих програм.\nБудь-яке PHP-додаток з однаковим ім'ям користувача та класом для\nз'єднання буде мати можливість спільно використовувати з'єднання\nв пулі, отримуючи більшу масштабованість.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eoci8.connection_class = \"MY_APPLICATION_NAME\"\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eЗапустіть програму, що з'єднується з базою 11g та новішою.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПрограми, які використовують Oracle 10g, які вимагають\nпродуктивності від постійних з'єднань можуть зменшити\nкількість пам'яті сервера БД, яка використовується \u003ccode\u003eShared\u003c/code\u003e-серверами\nOracle (раніше відомі як багатопотокові сервери). Зверніться до\nдокументації Oracle для більш детальної інформації.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПри зміні пароля через з'єднання DRCP буде видаватися помилка\n\u003cem\u003eORA-56609: Usage not supported with DRCP\u003c/em\u003e. Це документоване\nобмеження Oracle Database 11g.\u003c/p\u003e\n\u003c/blockquote\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"oci8.connection.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

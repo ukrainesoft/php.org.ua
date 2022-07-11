@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysql.installation | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysql.requirements.md">« Вимоги</a></p>
+</li>
+<li>
+<p><a href="mysql.configuration.md">Налаштування під час виконання »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mysql.setup.md">Встановлення та налаштування</a></p>
+</li>
+<li>
+<p>Встановлення</p>
+</li>
+</ul>
+<h2>Установка</h2>
+<p><strong>Увага</strong></p>
+<p>Цей модуль застарів, починаючи з версії PHP 5.5.0, і вилучений до PHP 7.0.0.
+Використовуйте замість нього <a href="book.mysqli.md">MySQLi</a> або
+<a href="ref.pdo-mysql.md">PDO_MySQL</a>. Дивіться також інструкцію <a href="mysqlinfo.api.choosing.md">MySQL: вибір API</a>. Альтернативи для цієї функції:</p>
+<p>Для компіляції просто використовуйте опцію конфігурації
+<strong>--with-mysql[=DIR]</strong>, де необов'язковий параметр <code>[DIR]</code> вказує
+на директорію із встановленим MySQL.</p>
+<p>Незважаючи на те, що модуль MySQL сумісний з MySQL 4.1.0 та вище, він не
+підтримує додаткову функціональність, що надається цими
+версіями. Для отримання такої можливості скористайтесь модулем <a href="book.mysqli.md">MySQLi</a>.</p>
+<p>Якщо ви хочете встановити модуль mysql спільно з mysqli, то для
+уникнення будь-яких конфліктів необхідно використовувати ту саму
+клієнтську бібліотеку.</p>
+<h2>Установка на Linux-системи</h2>
+<p>Примітка: <code>[DIR]</code> є шляхом до файлів клієнтської бібліотеки MySQL
+(<em>заголовкам та бібліотекам</em>), які можна завантажити з
+<a href="http://www.mysql.com/">»MySQL</a>.</p>
+<table>
+<thead>
+<tr>
+<th>PHP Версія</th>
+<th>За замовчуванням</th>
+<th>Опції налаштування: <a href="mysqlnd.overview.md">mysqlnd</a></th>
+<th>Опції налаштування: libmysqlclient</th>
+<th>Список змін</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.x.x</td>
+<td>libmysqlclient</td>
+<td>Недоступний</td>
+<td><strong>--without-mysql</strong> для відключення</td>
+<td>MySQL включений за замовчуванням, клієнтські бібліотеки MySQL входять до постачання PHP</td>
+</tr>
+<tr>
+<td>5.0.x, 5.1.x, 5.2.x</td>
+<td>libmysqlclient</td>
+<td>Недоступний</td>
+<td><strong>--with-mysql=[DIR]</strong></td>
+<td>MySQL більше не включений за замовчуванням, і клієнтські бібліотеки MySQL більше не входять до постачання PHP</td>
+</tr>
+<tr>
+<td>5.3.x</td>
+<td>libmysqlclient</td>
+<td><strong>--with-mysql=mysqlnd</strong></td>
+<td><strong>--with-mysql=[DIR]</strong></td>
+<td>Став доступним mysqlnd</td>
+</tr>
+<tr>
+<td>5.4.x</td>
+<td>mysqlnd</td>
+<td><strong>--with-mysql</strong></td>
+<td><strong>--with-mysql=[DIR]</strong></td>
+<td>mysqlnd вибирається за замовчуванням</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Таблиця компіляції ext/mysql за версіями PHP</strong></p>
+<h2>Встановлення на Windows-системи</h2>
+<h2>PHP 5.0.x, 5.1.x, 5.2.x</h2>
+<p>Підтримка MySQL більше не включена за замовчуванням, тому для неї
+включення необхідно підключити <code>php_mysql.dll</code> DLL всередині <code>php.ini</code>.
+Крім цього, PHP знадобиться доступ до клієнтської бібліотеки MySQL. Файл
+<code>libmysql.dll</code> поставляється у Windows дистрибутиві PHP, і для
+коректного спілкування PHP з MySQL, цей файл повинен бути доступний
+системному шляху Windows <code>PATH</code>. Про те, як це зробити, дивіться FAQ "<a href="faq.installation.md#faq.installation.addtopath">Як
+додати мою PHP директорію в системний <code>PATH</code> на Windows?</a>". Хоча
+копіювання <code>libmysql.dll</code> у системну папку Windows також спрацює
+(оскільки системна папка знаходиться за умовчанням в <code>PATH</code>), це не
+рекомендується.</p>
+<p>Як і при включенні будь-якого іншого модуля PHP (в тому числі і
+<code>php_mysql.dll</code>), директива
+<a href="ini.core.md#ini.extension-dir">extension_dir</a> має вказувати на
+директорію, що містить PHP-модулі. Дивіться також <a href="install.windows.manual.md">Інструкції з ручної роботи інсталяції у Windows</a> . Приклад значення
+extension_dir для PHP 5: <code>c:\php xt</code></p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо під час старту веб-сервера відбувається подібна помилка:
+``Unable to load dynamic library './php_mysql.dll''<code>, ("Неможливо підвантажити динамічну бібліотеку './php_mysql.dll'), то це трапляється через те, що на вашій системі не може бути знайдено </code>php_mysql.dll<code>та/або</code>libmysql.dll`.</p>
+</blockquote>
+<h2>PHP 5.3.0+</h2>
+<p><a href="mysqlnd.overview.md">MySQL Native Driver</a> включений за замовчуванням. В тому
+числа <code>php_mysql.dll</code>, але без вимоги та використання <code>libmysql.dll</code>.</p>
+<h2>Зауваження щодо встановлення MySQL</h2>
+<p><strong>Увага</strong></p>
+<p>Збої в роботі PHP можуть виникнути при завантаженні цього модуля разом з
+модулем recode. За додатковою інформацією звертайтесь до розділу
+модуль для <a href="ref.recode.md">recode</a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо вам потрібна підтримка кодувань, відмінних від <em>latin</em>,
+(за замовчуванням), вам доведеться встановити зовнішню
+бібліотеку libmysqlclient, скомпільовану з їхньою підтримкою.</p>
+</blockquote>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysql.installation.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysql.installation.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysql.installation","slug":"mysql.installation.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysql.requirements.md\"\u003e« Вимоги\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysql.configuration.md\"\u003eНалаштування під час виконання »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysql.setup.md\"\u003eВстановлення та налаштування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВстановлення\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eУстановка\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЦей модуль застарів, починаючи з версії PHP 5.5.0, і вилучений до PHP 7.0.0.\nВикористовуйте замість нього \u003ca href=\"book.mysqli.md\"\u003eMySQLi\u003c/a\u003e або\n\u003ca href=\"ref.pdo-mysql.md\"\u003ePDO_MySQL\u003c/a\u003e. Дивіться також інструкцію \u003ca href=\"mysqlinfo.api.choosing.md\"\u003eMySQL: вибір API\u003c/a\u003e. Альтернативи для цієї функції:\u003c/p\u003e\n\u003cp\u003eДля компіляції просто використовуйте опцію конфігурації\n\u003cstrong\u003e--with-mysql[=DIR]\u003c/strong\u003e, де необов'язковий параметр \u003ccode\u003e[DIR]\u003c/code\u003e вказує\nна директорію із встановленим MySQL.\u003c/p\u003e\n\u003cp\u003eНезважаючи на те, що модуль MySQL сумісний з MySQL 4.1.0 та вище, він не\nпідтримує додаткову функціональність, що надається цими\nверсіями. Для отримання такої можливості скористайтесь модулем \u003ca href=\"book.mysqli.md\"\u003eMySQLi\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо ви хочете встановити модуль mysql спільно з mysqli, то для\nуникнення будь-яких конфліктів необхідно використовувати ту саму\nклієнтську бібліотеку.\u003c/p\u003e\n\u003ch2\u003eУстановка на Linux-системи\u003c/h2\u003e\n\u003cp\u003eПримітка: \u003ccode\u003e[DIR]\u003c/code\u003e є шляхом до файлів клієнтської бібліотеки MySQL\n(\u003cem\u003eзаголовкам та бібліотекам\u003c/em\u003e), які можна завантажити з\n\u003ca href=\"http://www.mysql.com/\"\u003e»MySQL\u003c/a\u003e.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003ePHP Версія\u003c/th\u003e\n\u003cth\u003eЗа замовчуванням\u003c/th\u003e\n\u003cth\u003eОпції налаштування: \u003ca href=\"mysqlnd.overview.md\"\u003emysqlnd\u003c/a\u003e\u003c/th\u003e\n\u003cth\u003eОпції налаштування: libmysqlclient\u003c/th\u003e\n\u003cth\u003eСписок змін\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e4.x.x\u003c/td\u003e\n\u003ctd\u003elibmysqlclient\u003c/td\u003e\n\u003ctd\u003eНедоступний\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003e--without-mysql\u003c/strong\u003e для відключення\u003c/td\u003e\n\u003ctd\u003eMySQL включений за замовчуванням, клієнтські бібліотеки MySQL входять до постачання PHP\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e5.0.x, 5.1.x, 5.2.x\u003c/td\u003e\n\u003ctd\u003elibmysqlclient\u003c/td\u003e\n\u003ctd\u003eНедоступний\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003e--with-mysql=[DIR]\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eMySQL більше не включений за замовчуванням, і клієнтські бібліотеки MySQL більше не входять до постачання PHP\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e5.3.x\u003c/td\u003e\n\u003ctd\u003elibmysqlclient\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003e--with-mysql=mysqlnd\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003e--with-mysql=[DIR]\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eСтав доступним mysqlnd\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e5.4.x\u003c/td\u003e\n\u003ctd\u003emysqlnd\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003e--with-mysql\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003e--with-mysql=[DIR]\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003emysqlnd вибирається за замовчуванням\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eТаблиця компіляції ext/mysql за версіями PHP\u003c/strong\u003e\u003c/p\u003e\n\u003ch2\u003eВстановлення на Windows-системи\u003c/h2\u003e\n\u003ch2\u003ePHP 5.0.x, 5.1.x, 5.2.x\u003c/h2\u003e\n\u003cp\u003eПідтримка MySQL більше не включена за замовчуванням, тому для неї\nвключення необхідно підключити \u003ccode\u003ephp_mysql.dll\u003c/code\u003e DLL всередині \u003ccode\u003ephp.ini\u003c/code\u003e.\nКрім цього, PHP знадобиться доступ до клієнтської бібліотеки MySQL. Файл\n\u003ccode\u003elibmysql.dll\u003c/code\u003e поставляється у Windows дистрибутиві PHP, і для\nкоректного спілкування PHP з MySQL, цей файл повинен бути доступний\nсистемному шляху Windows \u003ccode\u003ePATH\u003c/code\u003e. Про те, як це зробити, дивіться FAQ \"\u003ca href=\"faq.installation.md#faq.installation.addtopath\"\u003eЯк\nдодати мою PHP директорію в системний \u003ccode\u003ePATH\u003c/code\u003e на Windows?\u003c/a\u003e\". Хоча\nкопіювання \u003ccode\u003elibmysql.dll\u003c/code\u003e у системну папку Windows також спрацює\n(оскільки системна папка знаходиться за умовчанням в \u003ccode\u003ePATH\u003c/code\u003e), це не\nрекомендується.\u003c/p\u003e\n\u003cp\u003eЯк і при включенні будь-якого іншого модуля PHP (в тому числі і\n\u003ccode\u003ephp_mysql.dll\u003c/code\u003e), директива\n\u003ca href=\"ini.core.md#ini.extension-dir\"\u003eextension_dir\u003c/a\u003e має вказувати на\nдиректорію, що містить PHP-модулі. Дивіться також \u003ca href=\"install.windows.manual.md\"\u003eІнструкції з ручної роботи інсталяції у Windows\u003c/a\u003e . Приклад значення\nextension_dir для PHP 5: \u003ccode\u003ec:\\php xt\u003c/code\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо під час старту веб-сервера відбувається подібна помилка:\n``Unable to load dynamic library './php_mysql.dll''\u003ccode\u003e, (\"Неможливо підвантажити динамічну бібліотеку './php_mysql.dll'), то це трапляється через те, що на вашій системі не може бути знайдено \u003c/code\u003ephp_mysql.dll\u003ccode\u003eта/або\u003c/code\u003elibmysql.dll`.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch2\u003ePHP 5.3.0+\u003c/h2\u003e\n\u003cp\u003e\u003ca href=\"mysqlnd.overview.md\"\u003eMySQL Native Driver\u003c/a\u003e включений за замовчуванням. В тому\nчисла \u003ccode\u003ephp_mysql.dll\u003c/code\u003e, але без вимоги та використання \u003ccode\u003elibmysql.dll\u003c/code\u003e.\u003c/p\u003e\n\u003ch2\u003eЗауваження щодо встановлення MySQL\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЗбої в роботі PHP можуть виникнути при завантаженні цього модуля разом з\nмодулем recode. За додатковою інформацією звертайтесь до розділу\nмодуль для \u003ca href=\"ref.recode.md\"\u003erecode\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо вам потрібна підтримка кодувань, відмінних від \u003cem\u003elatin\u003c/em\u003e,\n(за замовчуванням), вам доведеться встановити зовнішню\nбібліотеку libmysqlclient, скомпільовану з їхньою підтримкою.\u003c/p\u003e\n\u003c/blockquote\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysql.installation.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

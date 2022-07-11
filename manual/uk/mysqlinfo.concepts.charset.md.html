@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqlinfo.concepts.charset | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqlinfo.concepts.buffering.md">« Буферизовані та небуферизовані запити</a></p>
+</li>
+<li>
+<p><a href="book.mysqli.md">MySQLi »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mysqlinfo.concepts.md">Основні поняття</a></p>
+</li>
+<li>
+<p>Кодування символів</p>
+</li>
+</ul>
+<h2>Кодування символів</h2>
+<p>В ідеальному випадку кодування символів має встановлюватися на рівні
+сервера і робити це згідно з описом у розділі <a href="http://dev.mysql.com/doc/mysql/en/charset-configuration.md">»Конфігурація
+кодування символів</a>
+документації сервера MySQL Як альтернатива кожен MySQL API
+пропонує метод встановлення кодування символів під час виконання.</p>
+<p><strong>Застереження</strong></p>
+<h1>Кодування символів та екранування символів</h1>
+<p>Кодування символів має бути чітко визначено, оскільки впливає на
+кожна дія, у тому числі на дії з наслідками для
+безпеки. Наприклад, механізми екранування (такі як
+<a href="mysqli.real-escape-string.md">mysqli_real_escape_string()</a> для mysqli
+і <a href="pdo.quote.md">PDO::quote()</a> для PDO_MySQL) залежать від цих
+налаштувань. Важливо розуміти, що ці функції не використовують кодування
+символів, визначених у запиті, наприклад, такі запити не
+впливатимуть на поведінку цих функцій:</p>
+<p><strong>Приклад #1 Проблеми встановлення кодування символів за допомогою SQL</strong></p>
+<p><code>&#x3C;?php$mysqli = new mysqli("localhost", "my_user", "my_password", "world"); SET NAMES utf8mb4");// І этот не впливає на $mysqli->real_escape_string();$mysqli->query("SET CHARACTER SET utf8mb4");// но вот на );$mysqli->set_charset('utf8mb4');// а це НЕ вплине, потому не можна використовувати "-"$mysqli->set_charset('UTF-8'); // (utf8mb4, а не UTF-8)?></code></p>
+<p>Приклади нижче демонструють, як правильно змінювати кодування символів
+час виконання за допомогою кожного з API.</p>
+<blockquote>
+<p><strong>Примітка</strong>: <strong>Можлива плутанина з UTF-8</strong></p>
+<p>Оскільки імена кодувань символів у MySQL не містять тире/дефіс,
+рядок "utf8" застосовується в MySQL для встановлення кодування UTF-8 (до 3
+байт у кодуванні Unicode (UTF-8). Рядок "UTF-8" неприйнятний і викине
+помилку під час встановлення кодування символів.</p>
+</blockquote>
+<p><strong>Приклад #2 Приклад установки кодування символів: mysqli</strong></p>
+<p><code>&#x3C;?php$mysqli = new mysqli("localhost", "my_user", "my_password", "world");echo 'Початкове кодування: ' . $mysqli->character_set_name() . " ";if (!$mysqli->set_charset('utf8mb4')) {    printf("Помилка завантаження кодування utf8mb4: %s ", $mysqli->error);   exit;}echo 'Ваше поточне кодування: ' . $mysqli->character_set_name() . " ";?></code></p>
+<p><strong>Приклад #3 Приклад установки кодування символів:
+<a href="ref.pdo-mysql.connection.md">pdo_mysql</a></strong></p>
+<p><code>&#x3C;?php$pdo = new PDO("mysql:host=localhost;dbname=world;charset=utf8mb4", 'my_user', 'my_pass');?></code></p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqlinfo.concepts.charset.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqlinfo.concepts.charset.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqlinfo.concepts.charset","slug":"mysqlinfo.concepts.charset.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqlinfo.concepts.buffering.md\"\u003e« Буферизовані та небуферизовані запити\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.mysqli.md\"\u003eMySQLi »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqlinfo.concepts.md\"\u003eОсновні поняття\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКодування символів\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eКодування символів\u003c/h2\u003e\n\u003cp\u003eВ ідеальному випадку кодування символів має встановлюватися на рівні\nсервера і робити це згідно з описом у розділі \u003ca href=\"http://dev.mysql.com/doc/mysql/en/charset-configuration.md\"\u003e»Конфігурація\nкодування символів\u003c/a\u003e\nдокументації сервера MySQL Як альтернатива кожен MySQL API\nпропонує метод встановлення кодування символів під час виконання.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eЗастереження\u003c/strong\u003e\u003c/p\u003e\n\u003ch1\u003eКодування символів та екранування символів\u003c/h1\u003e\n\u003cp\u003eКодування символів має бути чітко визначено, оскільки впливає на\nкожна дія, у тому числі на дії з наслідками для\nбезпеки. Наприклад, механізми екранування (такі як\n\u003ca href=\"mysqli.real-escape-string.md\"\u003emysqli_real_escape_string()\u003c/a\u003e для mysqli\nі \u003ca href=\"pdo.quote.md\"\u003ePDO::quote()\u003c/a\u003e для PDO_MySQL) залежать від цих\nналаштувань. Важливо розуміти, що ці функції не використовують кодування\nсимволів, визначених у запиті, наприклад, такі запити не\nвпливатимуть на поведінку цих функцій:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Проблеми встановлення кодування символів за допомогою SQL\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$mysqli = new mysqli(\"localhost\", \"my_user\", \"my_password\", \"world\"); SET NAMES utf8mb4\");// І этот не впливає на $mysqli-\u003ereal_escape_string();$mysqli-\u003equery(\"SET CHARACTER SET utf8mb4\");// но вот на );$mysqli-\u003eset_charset('utf8mb4');// а це НЕ вплине, потому не можна використовувати \"-\"$mysqli-\u003eset_charset('UTF-8'); // (utf8mb4, а не UTF-8)?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПриклади нижче демонструють, як правильно змінювати кодування символів\nчас виконання за допомогою кожного з API.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: \u003cstrong\u003eМожлива плутанина з UTF-8\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОскільки імена кодувань символів у MySQL не містять тире/дефіс,\nрядок \"utf8\" застосовується в MySQL для встановлення кодування UTF-8 (до 3\nбайт у кодуванні Unicode (UTF-8). Рядок \"UTF-8\" неприйнятний і викине\nпомилку під час встановлення кодування символів.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклад установки кодування символів: mysqli\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$mysqli = new mysqli(\"localhost\", \"my_user\", \"my_password\", \"world\");echo 'Початкове кодування: ' . $mysqli-\u003echaracter_set_name() . \" \";if (!$mysqli-\u003eset_charset('utf8mb4')) {    printf(\"Помилка завантаження кодування utf8mb4: %s \", $mysqli-\u003eerror);   exit;}echo 'Ваше поточне кодування: ' . $mysqli-\u003echaracter_set_name() . \" \";?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Приклад установки кодування символів:\n\u003ca href=\"ref.pdo-mysql.connection.md\"\u003epdo_mysql\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$pdo = new PDO(\"mysql:host=localhost;dbname=world;charset=utf8mb4\", 'my_user', 'my_pass');?\u003e\u003c/code\u003e\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqlinfo.concepts.charset.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

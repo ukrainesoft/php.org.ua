@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>features.gc.performance-considerations | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="features.gc.collecting-cycles.md">«Збір циклічних посилань</a></p>
+</li>
+<li>
+<p><a href="features.dtrace.md">Динамічна трасування DTrace »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="features.gc.md">Складання сміття</a></p>
+</li>
+<li>
+<p>Питання продуктивності</p>
+</li>
+</ul>
+<h2>Питання продуктивності</h2>
+<p>У попередньому розділі нами вже говорилося, що простий збирання коріння менше
+впливає на продуктивність. Хоча запис коріння в буфер в порівнянні з
+повною відсутністю такої в PHP 5.2 працює повільніше, інші
+зміни у роботі PHP 5.3 зробили цю втрату продуктивності
+непомітною.</p>
+<p>Є дві основні області, що впливають на продуктивність: зменшення
+розміру пам'яті, що використовується, і уповільнення роботи при складання сміття.
+Розглянемо їх.</p>
+<h3>Зменшення розміру пам'яті, що використовується</h3>
+<p>Насамперед, основною причиною реалізації механізму складання сміття
+є зменшення розміру пам'яті за допомогою чищення
+циклічних посилань, що відбувається при досягненні відповідних
+умов. У реалізації PHP це відбувається щойно заповниться кореневою
+буфер або під час виклику функції
+<a href="function.gc-collect-cycles.md">gc_collect_cycles()</a>. На графіку нижче
+наведено використання пам'яті скрипта, запущеного в PHP 5.2 та PHP 5.3,
+без урахування пам'яті, використовуваної самим PHP при запуску.</p>
+<p><strong>Приклад #1 Приклад використання пам'яті</strong></p>
+<p><code>&#x3C;?phpclass Foo{    public $var = '3.14159265359';}$baseMemory = memory_get_usage();for ( $i = 0; $i &#x3C;= 10   $a->self = $a; if ( $i % 500 === 0 )   {        echo sprintf( '%8d: ', $i ), memory_get_usage() - $ ";    }}?></code></p>
+<p><img src="images/12f37b1c6963c1c5c18f30495416a197-gc-benchmark.png" alt="Порівняння використання пам&#x27;яті в PHP 5.2 та PHP 5.3"></p>
+<p>У цьому дуже академічному прикладі ми створюємо об'єкт, властивість a
+якого задається посиланням сам об'єкт. Коли у скрипті у наступній
+ітерації циклу перевизначається змінна <code>$a</code>, то відбувається типова
+витік памяті. В даному випадку пропадають два контейнери zval (контейнер
+об'єкта та контейнер властивості об'єкта), але визначається тільки один
+корінь - віддалена змінна. Щойно пройдуть 10 000 ітерацій
+(максимально у кореневому буфері буде 10 000 коренів), то запуститься
+механізм складання сміття і пам'ять, що займається цим корінням, буде
+звільнено. Цей процес добре видно на графіку використання пам'яті
+для PHP 5.3: після кожних 10 000 ітерацій графік просідає. Сам по собі
+механізм у цьому прикладі робить не так багато роботи, тому що
+структура витоків дуже проста. З графіка видно, що максимальне
+використання пам'яті у PHP 5.3 склало близько 9 Мб, тоді як у PHP 5.2
+воно продовжує зростати.</p>
+<h3>Уповільнення роботи</h3>
+<p>Другий областю, де складання сміття впливає на продуктивність,
+є втрата часу, коли збирач сміття звільняє пам'ять. Щоб
+зрозуміти ступінь цього впливу, ми трохи змінимо попередній скрипт,
+додавши більше ітерацій і проміжних змінних. Змінений
+скрипт:</p>
+<p><strong>Приклад #2 Вплив на продуктивність</strong></p>
+<p><code>&#x3C;?phpclass Foo{    public $var = '3.1415962654';}for ( $i = 0; $i &#x3C;= 1000000; $i++ ){    |$a $a->self = $a;}echo memory_get_peak_usage(), " ";?></code></p>
+<p>Ми запустимо скрипт двічі: із включеною опцією
+<a href="info.configuration.md#ini.zend.enable-gc">zend.enable_gc</a> та без неї.</p>
+<p><strong>Приклад #3 Запуск скрипту</strong></p>
+<p>`` shellcode
+time php -dzend.enable_gc=0 -dmemory_limit=-1 -n example2.php</p>
+<h1>і</h1>
+<p>time php -dzend.enable_gc=1 -dmemory_limit=-1 -n example2.php</p>
+<pre><code>
+На тестовій машині перша команда виконується приблизно 10.7 секунд, а
+друга приблизно 11.4 секунди. Це приблизно на 7% повільніше. Проте,
+максимальне використання пам'яті скриптом зменшилося на 98% із 931 Мб.
+до 10 Мб. Цей тест не дуже науковий, але він справді демонструє
+перевага з використання пам'яті, що забезпечується збирачем сміття.
+Також добре те, що уповільнення для цього скрипта завжди приблизно 7%,
+тоді як економія пам'яті збільшується все більше і більше при
+знаходження нового сміття.
+
+### Внутрішня статистика збирача сміття
+
+Можна отримати трохи більше інформації про те, як механізм збирання
+сміття виконується у PHP. Але для цього вам необхідно перезабрати PHP
+для включення тесту продуктивності та коду для додаткового збору
+даних. Необхідно встановити змінну оточення `CFLAGS` у значення
+`-DGC_BENCH=1` до виконання команди `./configure` з вашими параметрами.
+Наступні команди повинні спрацювати:
+
+**Приклад #4 Складання PHP для включення тесту продуктивності GC**
+
+`` shellcode
+export CFLAGS=-DGC_BENCH=1
+./config.nice
+make clean
+make
+</code></pre>
+<p>При запуску вищенаведеного прикладу з оновленим PHP можна побачити
+наступну інформацію після завершення роботи скрипта:</p>
+<p><strong>Приклад #5 Статистика GC</strong></p>
+<h2>`` shellcode
+GC Statistics</h2>
+<p>Runs: 110
+Завантажено: 2072204
+Root buffer length: 0
+Root buffer peak: 10000</p>
+<p>Possible Remove from Marked
+Root Buffered buffer grey</p>
+<hr>
+<p>ZVAL 7175487 1491291 1241690 3611871
+ZOBJ 28506264 1527980 677581 1025731</p>
+<pre><code>
+Найкорисніша статистика відображена у першому блоці. Можна побачити,
+що механізм складання сміття був запущений 110 разів, і сумарно було
+звільнено понад 2 мільйони записів у пам'яті. Якщо складання сміття було
+запущена хоча б раз, то максимальна кількість коренів у буфері завжди буде
+одно 10 000.
+
+### Висновок
+
+В цілому, збирач сміття на PHP викличе відчутні уповільнення тільки в
+час безпосередньої роботи механізму складання циклічних посилань, тоді
+як у звичайних (невеликих) скриптах не повинно бути жодного падіння
+продуктивність.
+
+Однак у тих випадках, коли механізм збирання повинен спрацьовувати і
+звичайних скриптах, зниження використовуваної пам'яті дозволяє одночасно
+працювати на сервері більшій кількості.
+
+Переваги найбільш очевидні для довгопрацюючих скриптів, таких як
+великі набори тестів чи демони. Новий механізм також має зменшити
+витоку пам'яті для додатків [» PHP-GTK](http://gtk.php.net/), які
+зазвичай виконуються довше, ніж веб-скрипти.
+</code></pre>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/features.gc.performance-considerations.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/features.gc.performance-considerations.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"features.gc.performance-considerations","slug":"features.gc.performance-considerations.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"features.gc.collecting-cycles.md\"\u003e«Збір циклічних посилань\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"features.dtrace.md\"\u003eДинамічна трасування DTrace »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"features.gc.md\"\u003eСкладання сміття\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПитання продуктивності\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eПитання продуктивності\u003c/h2\u003e\n\u003cp\u003eУ попередньому розділі нами вже говорилося, що простий збирання коріння менше\nвпливає на продуктивність. Хоча запис коріння в буфер в порівнянні з\nповною відсутністю такої в PHP 5.2 працює повільніше, інші\nзміни у роботі PHP 5.3 зробили цю втрату продуктивності\nнепомітною.\u003c/p\u003e\n\u003cp\u003eЄ дві основні області, що впливають на продуктивність: зменшення\nрозміру пам'яті, що використовується, і уповільнення роботи при складання сміття.\nРозглянемо їх.\u003c/p\u003e\n\u003ch3\u003eЗменшення розміру пам'яті, що використовується\u003c/h3\u003e\n\u003cp\u003eНасамперед, основною причиною реалізації механізму складання сміття\nє зменшення розміру пам'яті за допомогою чищення\nциклічних посилань, що відбувається при досягненні відповідних\nумов. У реалізації PHP це відбувається щойно заповниться кореневою\nбуфер або під час виклику функції\n\u003ca href=\"function.gc-collect-cycles.md\"\u003egc_collect_cycles()\u003c/a\u003e. На графіку нижче\nнаведено використання пам'яті скрипта, запущеного в PHP 5.2 та PHP 5.3,\nбез урахування пам'яті, використовуваної самим PHP при запуску.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання пам'яті\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass Foo{    public $var = '3.14159265359';}$baseMemory = memory_get_usage();for ( $i = 0; $i \u0026#x3C;= 10   $a-\u003eself = $a; if ( $i % 500 === 0 )   {        echo sprintf( '%8d: ', $i ), memory_get_usage() - $ \";    }}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cimg src=\"images/12f37b1c6963c1c5c18f30495416a197-gc-benchmark.png\" alt=\"Порівняння використання пам\u0026#x27;яті в PHP 5.2 та PHP 5.3\"\u003e\u003c/p\u003e\n\u003cp\u003eУ цьому дуже академічному прикладі ми створюємо об'єкт, властивість a\nякого задається посиланням сам об'єкт. Коли у скрипті у наступній\nітерації циклу перевизначається змінна \u003ccode\u003e$a\u003c/code\u003e, то відбувається типова\nвитік памяті. В даному випадку пропадають два контейнери zval (контейнер\nоб'єкта та контейнер властивості об'єкта), але визначається тільки один\nкорінь - віддалена змінна. Щойно пройдуть 10 000 ітерацій\n(максимально у кореневому буфері буде 10 000 коренів), то запуститься\nмеханізм складання сміття і пам'ять, що займається цим корінням, буде\nзвільнено. Цей процес добре видно на графіку використання пам'яті\nдля PHP 5.3: після кожних 10 000 ітерацій графік просідає. Сам по собі\nмеханізм у цьому прикладі робить не так багато роботи, тому що\nструктура витоків дуже проста. З графіка видно, що максимальне\nвикористання пам'яті у PHP 5.3 склало близько 9 Мб, тоді як у PHP 5.2\nвоно продовжує зростати.\u003c/p\u003e\n\u003ch3\u003eУповільнення роботи\u003c/h3\u003e\n\u003cp\u003eДругий областю, де складання сміття впливає на продуктивність,\nє втрата часу, коли збирач сміття звільняє пам'ять. Щоб\nзрозуміти ступінь цього впливу, ми трохи змінимо попередній скрипт,\nдодавши більше ітерацій і проміжних змінних. Змінений\nскрипт:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Вплив на продуктивність\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass Foo{    public $var = '3.1415962654';}for ( $i = 0; $i \u0026#x3C;= 1000000; $i++ ){    |$a $a-\u003eself = $a;}echo memory_get_peak_usage(), \" \";?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eМи запустимо скрипт двічі: із включеною опцією\n\u003ca href=\"info.configuration.md#ini.zend.enable-gc\"\u003ezend.enable_gc\u003c/a\u003e та без неї.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Запуск скрипту\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e`` shellcode\ntime php -dzend.enable_gc=0 -dmemory_limit=-1 -n example2.php\u003c/p\u003e\n\u003ch1\u003eі\u003c/h1\u003e\n\u003cp\u003etime php -dzend.enable_gc=1 -dmemory_limit=-1 -n example2.php\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e\nНа тестовій машині перша команда виконується приблизно 10.7 секунд, а\nдруга приблизно 11.4 секунди. Це приблизно на 7% повільніше. Проте,\nмаксимальне використання пам'яті скриптом зменшилося на 98% із 931 Мб.\nдо 10 Мб. Цей тест не дуже науковий, але він справді демонструє\nперевага з використання пам'яті, що забезпечується збирачем сміття.\nТакож добре те, що уповільнення для цього скрипта завжди приблизно 7%,\nтоді як економія пам'яті збільшується все більше і більше при\nзнаходження нового сміття.\n\n### Внутрішня статистика збирача сміття\n\nМожна отримати трохи більше інформації про те, як механізм збирання\nсміття виконується у PHP. Але для цього вам необхідно перезабрати PHP\nдля включення тесту продуктивності та коду для додаткового збору\nданих. Необхідно встановити змінну оточення `CFLAGS` у значення\n`-DGC_BENCH=1` до виконання команди `./configure` з вашими параметрами.\nНаступні команди повинні спрацювати:\n\n**Приклад #4 Складання PHP для включення тесту продуктивності GC**\n\n`` shellcode\nexport CFLAGS=-DGC_BENCH=1\n./config.nice\nmake clean\nmake\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eПри запуску вищенаведеного прикладу з оновленим PHP можна побачити\nнаступну інформацію після завершення роботи скрипта:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Статистика GC\u003c/strong\u003e\u003c/p\u003e\n\u003ch2\u003e`` shellcode\nGC Statistics\u003c/h2\u003e\n\u003cp\u003eRuns: 110\nЗавантажено: 2072204\nRoot buffer length: 0\nRoot buffer peak: 10000\u003c/p\u003e\n\u003cp\u003ePossible Remove from Marked\nRoot Buffered buffer grey\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eZVAL 7175487 1491291 1241690 3611871\nZOBJ 28506264 1527980 677581 1025731\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e\nНайкорисніша статистика відображена у першому блоці. Можна побачити,\nщо механізм складання сміття був запущений 110 разів, і сумарно було\nзвільнено понад 2 мільйони записів у пам'яті. Якщо складання сміття було\nзапущена хоча б раз, то максимальна кількість коренів у буфері завжди буде\nодно 10 000.\n\n### Висновок\n\nВ цілому, збирач сміття на PHP викличе відчутні уповільнення тільки в\nчас безпосередньої роботи механізму складання циклічних посилань, тоді\nяк у звичайних (невеликих) скриптах не повинно бути жодного падіння\nпродуктивність.\n\nОднак у тих випадках, коли механізм збирання повинен спрацьовувати і\nзвичайних скриптах, зниження використовуваної пам'яті дозволяє одночасно\nпрацювати на сервері більшій кількості.\n\nПереваги найбільш очевидні для довгопрацюючих скриптів, таких як\nвеликі набори тестів чи демони. Новий механізм також має зменшити\nвитоку пам'яті для додатків [» PHP-GTK](http://gtk.php.net/), які\nзазвичай виконуються довше, ніж веб-скрипти.\n\u003c/code\u003e\u003c/pre\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"features.gc.performance-considerations.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

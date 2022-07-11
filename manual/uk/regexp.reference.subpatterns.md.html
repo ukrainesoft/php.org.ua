@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>regexp.reference.subpatterns | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="regexp.reference.internal-options.md">« Установка внутрішніх опцій</a></p>
+</li>
+<li>
+<p><a href="regexp.reference.repetition.md">Повторення »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="reference.pcre.pattern.syntax.md">Опис синтаксису Perl-сумісних регулярних виразів</a></p>
+</li>
+<li>
+<p>Підмаски</p>
+</li>
+</ul>
+<h2>Підмаски</h2>
+<p>Підмаски обмежуються круглими дужками, які можуть бути
+вкладеними. Використання частини шаблону як підмаски має наступні
+функції:</p>
+<ol>
+<li>
+<p>Локалізує набір альтернатив. Наприклад, шаблон
+<code>cat(aract|erpillar|)</code> відповідає одному зі слів "cat",
+"cataract" або "caterpillar". Без використання дужок він
+відповідав би рядкам "cataract", "erpillar" або порожньому рядку.</p>
+</li>
+<li>
+<p>Вказує на необхідність захоплення підрядка (як показано вище). В
+тому випадку, якщо відповідність шаблону було знайдено, підрядок,
+відповідна підмаску, також передається назад, що викликає при
+за допомогою аргументу <em>ovector</em> функції <strong>pcre_exec()</strong>. Відкриваючі
+круглі дужки нумеруються зліва направо (починаючи з одиниці) та їх
+порядкові номери використовуються для нумерації відповідних
+підрядок у результаті.</p>
+</li>
+</ol>
+<p>Наприклад, якщо рядок "The Red King" зіставляється з шаблоном
+<code>the ((red|white) (king|queen))</code>, будуть захоплені підрядки "red king",
+"red" та "king", з номерами 1, 2 та 3 відповідно.</p>
+<p>Насправді виконання одночасно двох функцій не завжди зручне.
+Бувають випадки, коли необхідне угруповання альтернатив без захоплення
+рядки. У разі, якщо після відкритої круглої дужки слід "?:",
+захоплення рядка немає, і поточна підмаска не нумерується. Наприклад,
+якщо рядок "the white queen" зіставляється із шаблоном
+<code>the ((?:red|white) (king|queen))</code>, будуть захоплені підрядки "white
+queen" і "queen", і вони будуть пронумеровані 1 та 2 відповідно.
+Максимальна кількість захоплюючих підмасок – 65535. Такі великі
+шаблони можуть не скомпілюватися залежно від налаштувань libpcre.</p>
+<p>У разі, якщо в незахоплюючій підмасці необхідно вказати
+додаткові опції, можна скористатися зручним скороченням: символ,
+позначає опцію, що встановлюється, поміщається між "?" та ":". Таким
+Таким чином, наступні два шаблони</p>
+<p>(?i:saturday|sunday)
+(?:(?i)saturday|sunday)</p>
+<p>відповідають тому самому набору рядків. Оскільки альтернативні
+версії беруться ліворуч, і встановлені опції зберігають своє
+дія до кінця підмаски, опція, встановлена в одній гілці, також
+має ефект у всіх наступних гілках. Тому наведені вище
+шаблони збігаються як із "SUNDAY", і з "Saturday".</p>
+<p>Також можна використовувати іменовані підмаски за допомогою синтаксису
+<code>(?P&#x3C;name>pattern)</code>. Ця підмаска буде індексована в масиві
+збігів крім звичайного числового індексу, ще й на ім'я name. Також
+існують два альтернативні синтаксиси: <code>(?&#x3C;name>pattern)</code> і
+<code>(?'name'pattern)</code>.</p>
+<p>Іноді буває необхідно мати кілька збігів, що виключають друг
+друга. Зазвичай, кожен такий збіг отримує свій власний номер,
+навіть якщо шаблон дозволяє збігтися лише з них. Синтаксис
+<code>(?|</code> дозволяє обійти цю поведінку і прибрати номери, що дублюються.
+Розглянемо наступне регулярне вираження, зіставлене з рядком
+<code>Sunday</code>:</p>
+<p>(?:(Sat)ur|(Sun))day</p>
+<p>Тут <code>Sun</code> зберігається на посиланні 2, тоді як посилання 1 порожня. Якщо ж
+збігається <code>Sat</code>, то вона буде поміщена в посилання 1, а посилання 2 взагалі не
+буде існувати. Використання <code>(?|</code> у шаблоні вирішує цю проблему:</p>
+<p>(?|(Sat)ur|(Sun))day</p>
+<p>У цьому шаблоні обидві підмаски <code>Sun</code> та <code>Sat</code> будуть збережені під номером 1.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/regexp.reference.subpatterns.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/regexp.reference.subpatterns.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"regexp.reference.subpatterns","slug":"regexp.reference.subpatterns.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.internal-options.md\"\u003e« Установка внутрішніх опцій\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.repetition.md\"\u003eПовторення »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reference.pcre.pattern.syntax.md\"\u003eОпис синтаксису Perl-сумісних регулярних виразів\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПідмаски\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eПідмаски\u003c/h2\u003e\n\u003cp\u003eПідмаски обмежуються круглими дужками, які можуть бути\nвкладеними. Використання частини шаблону як підмаски має наступні\nфункції:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003eЛокалізує набір альтернатив. Наприклад, шаблон\n\u003ccode\u003ecat(aract|erpillar|)\u003c/code\u003e відповідає одному зі слів \"cat\",\n\"cataract\" або \"caterpillar\". Без використання дужок він\nвідповідав би рядкам \"cataract\", \"erpillar\" або порожньому рядку.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВказує на необхідність захоплення підрядка (як показано вище). В\nтому випадку, якщо відповідність шаблону було знайдено, підрядок,\nвідповідна підмаску, також передається назад, що викликає при\nза допомогою аргументу \u003cem\u003eovector\u003c/em\u003e функції \u003cstrong\u003epcre_exec()\u003c/strong\u003e. Відкриваючі\nкруглі дужки нумеруються зліва направо (починаючи з одиниці) та їх\nпорядкові номери використовуються для нумерації відповідних\nпідрядок у результаті.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eНаприклад, якщо рядок \"The Red King\" зіставляється з шаблоном\n\u003ccode\u003ethe ((red|white) (king|queen))\u003c/code\u003e, будуть захоплені підрядки \"red king\",\n\"red\" та \"king\", з номерами 1, 2 та 3 відповідно.\u003c/p\u003e\n\u003cp\u003eНасправді виконання одночасно двох функцій не завжди зручне.\nБувають випадки, коли необхідне угруповання альтернатив без захоплення\nрядки. У разі, якщо після відкритої круглої дужки слід \"?:\",\nзахоплення рядка немає, і поточна підмаска не нумерується. Наприклад,\nякщо рядок \"the white queen\" зіставляється із шаблоном\n\u003ccode\u003ethe ((?:red|white) (king|queen))\u003c/code\u003e, будуть захоплені підрядки \"white\nqueen\" і \"queen\", і вони будуть пронумеровані 1 та 2 відповідно.\nМаксимальна кількість захоплюючих підмасок – 65535. Такі великі\nшаблони можуть не скомпілюватися залежно від налаштувань libpcre.\u003c/p\u003e\n\u003cp\u003eУ разі, якщо в незахоплюючій підмасці необхідно вказати\nдодаткові опції, можна скористатися зручним скороченням: символ,\nпозначає опцію, що встановлюється, поміщається між \"?\" та \":\". Таким\nТаким чином, наступні два шаблони\u003c/p\u003e\n\u003cp\u003e(?i:saturday|sunday)\n(?:(?i)saturday|sunday)\u003c/p\u003e\n\u003cp\u003eвідповідають тому самому набору рядків. Оскільки альтернативні\nверсії беруться ліворуч, і встановлені опції зберігають своє\nдія до кінця підмаски, опція, встановлена в одній гілці, також\nмає ефект у всіх наступних гілках. Тому наведені вище\nшаблони збігаються як із \"SUNDAY\", і з \"Saturday\".\u003c/p\u003e\n\u003cp\u003eТакож можна використовувати іменовані підмаски за допомогою синтаксису\n\u003ccode\u003e(?P\u0026#x3C;name\u003epattern)\u003c/code\u003e. Ця підмаска буде індексована в масиві\nзбігів крім звичайного числового індексу, ще й на ім'я name. Також\nіснують два альтернативні синтаксиси: \u003ccode\u003e(?\u0026#x3C;name\u003epattern)\u003c/code\u003e і\n\u003ccode\u003e(?'name'pattern)\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eІноді буває необхідно мати кілька збігів, що виключають друг\nдруга. Зазвичай, кожен такий збіг отримує свій власний номер,\nнавіть якщо шаблон дозволяє збігтися лише з них. Синтаксис\n\u003ccode\u003e(?|\u003c/code\u003e дозволяє обійти цю поведінку і прибрати номери, що дублюються.\nРозглянемо наступне регулярне вираження, зіставлене з рядком\n\u003ccode\u003eSunday\u003c/code\u003e:\u003c/p\u003e\n\u003cp\u003e(?:(Sat)ur|(Sun))day\u003c/p\u003e\n\u003cp\u003eТут \u003ccode\u003eSun\u003c/code\u003e зберігається на посиланні 2, тоді як посилання 1 порожня. Якщо ж\nзбігається \u003ccode\u003eSat\u003c/code\u003e, то вона буде поміщена в посилання 1, а посилання 2 взагалі не\nбуде існувати. Використання \u003ccode\u003e(?|\u003c/code\u003e у шаблоні вирішує цю проблему:\u003c/p\u003e\n\u003cp\u003e(?|(Sat)ur|(Sun))day\u003c/p\u003e\n\u003cp\u003eУ цьому шаблоні обидві підмаски \u003ccode\u003eSun\u003c/code\u003e та \u003ccode\u003eSat\u003c/code\u003e будуть збережені під номером 1.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"regexp.reference.subpatterns.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

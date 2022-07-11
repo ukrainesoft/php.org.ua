@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.clearstatcache | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.chown.md">«chown</a></p>
+</li>
+<li>
+<p><a href="function.copy.md">Copy »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.filesystem.md">Функції файлової системи</a></p>
+</li>
+<li>
+<p>Очищає кеш стану файлів</p>
+</li>
+</ul>
+<h1>clearstatcache</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>clearstatcache — Очищає кеш стану файлів</p>
+<h3>Опис</h3>
+<p><strong>clearstatcache</strong>(bool <code>$clear_realpath_cache</code> = <strong><code>false</code></strong>, string
+<code>$filename</code> = ""): void</p>
+<p>Для забезпечення більшої продуктивності під час використання функцій
+<a href="function.stat.md">stat()</a>, <a href="function.lstat.md">lstat()</a> або будь-який
+іншої функції, перерахованих у наведеному нижче списку, PHP кешує
+результати виконання. Однак, у деяких випадках вам може
+потрібно очищення цього кешу. Наприклад, коли ваш скрипт дещо
+раз перевіряє стан одного і того ж файлу, який може бути
+змінено або видалено під час виконання скрипту, ви можете захотіти
+очистити кеш стану. У цьому випадку необхідно використати функцію
+<strong>clearstatcache()</strong> для очищення в PHP кешованої інформації про
+вказаному файлі.</p>
+<p>Зверніть увагу, що PHP не кешує інформацію про неіснуючих
+файли. Так що, якщо ви викличете
+<a href="function.file-exists.md">file_exists()</a> на неіснуючому файлі, вона
+буде повертати <strong><code>false</code></strong> доти, доки ви не створите цей файл.
+Якщо ж ви створите файл, вона повертатиме <strong><code>true</code></strong>, навіть якщо
+потім ви його вилучите. Однак, функція <a href="function.unlink.md">unlink()</a>
+очистить цей кеш автоматично.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ця функція кешує інформацію про певні файли, тому
+має сенс викликати <strong>clearstatcache()</strong> тільки в тому випадку, якщо ви
+здійснюєте кілька операцій з одним і тим самим файлом і не хочете
+отримати кешовану інформацію про цей файл.</p>
+</blockquote>
+<p>Список функцій, результати виконання яких кешуються:
+<a href="function.stat.md">stat()</a>, <a href="function.lstat.md">lstat()</a>,
+<a href="function.file-exists.md">file_exists()</a>,
+<a href="function.is-writable.md">is_writable()</a>,
+<a href="function.is-readable.md">is_readable()</a>,
+<a href="function.is-executable.md">is_executable()</a>,
+<a href="function.is-file.md">is_file()</a>, <a href="function.is-dir.md">is_dir()</a>,
+<a href="function.is-link.md">is_link()</a>,
+<a href="function.filectime.md">filectime()</a>,
+<a href="function.fileatime.md">fileatime()</a>,
+<a href="function.filemtime.md">filemtime()</a>,
+<a href="function.fileinode.md">fileinode()</a>,
+<a href="function.filegroup.md">filegroup()</a>,
+<a href="function.fileowner.md">fileowner()</a>,
+<a href="function.filesize.md">filesize()</a>,
+<a href="function.filetype.md">filetype()</a> та
+<a href="function.fileperms.md">fileperms()</a>.</p>
+<h3>Список параметрів</h3>
+<p><code>clear_realpath_cache</code>
+Чи потрібно * також * очищати кеш realpath.</p>
+<p><code>filename</code>
+Очистити кеш realpath лише для певного імені файлу; використовується
+тільки в тому випадку, якщо параметр clear_realpath_cache встановлено
+значення <strong><code>true</code></strong>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Функція не повертає значення після виконання.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>clearstatcache()</strong></strong></p>
+<p><code>&#x3C;?php$file = 'output_log.txt';function get_owner($file){   $stat =stat($file); $user==posix_getpwuid($stat['uid']); return $user['name'];}$format = "UID @ %s: %s ";printf($format, date('r'), get_owner($file));chown($file, 'ross');printf($format, date('r'), get_owner($file)); clearstatcache();printf($format, date('r'), get_owner($file));?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>UID @ Sun, 12 Oct 2008 20:48:28 +0100: root
+UID @ Sun, 12 Oct 2008 20:48:28 +0100: root
+UID @ Sun, 12 Oct 2008 20:48:28 +0100: ross</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.clearstatcache.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.clearstatcache.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.clearstatcache","slug":"function.clearstatcache.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.chown.md\"\u003e«chown\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.copy.md\"\u003eCopy »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.filesystem.md\"\u003eФункції файлової системи\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОчищає кеш стану файлів\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eclearstatcache\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eclearstatcache — Очищає кеш стану файлів\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eclearstatcache\u003c/strong\u003e(bool \u003ccode\u003e$clear_realpath_cache\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, string\n\u003ccode\u003e$filename\u003c/code\u003e = \"\"): void\u003c/p\u003e\n\u003cp\u003eДля забезпечення більшої продуктивності під час використання функцій\n\u003ca href=\"function.stat.md\"\u003estat()\u003c/a\u003e, \u003ca href=\"function.lstat.md\"\u003elstat()\u003c/a\u003e або будь-який\nіншої функції, перерахованих у наведеному нижче списку, PHP кешує\nрезультати виконання. Однак, у деяких випадках вам може\nпотрібно очищення цього кешу. Наприклад, коли ваш скрипт дещо\nраз перевіряє стан одного і того ж файлу, який може бути\nзмінено або видалено під час виконання скрипту, ви можете захотіти\nочистити кеш стану. У цьому випадку необхідно використати функцію\n\u003cstrong\u003eclearstatcache()\u003c/strong\u003e для очищення в PHP кешованої інформації про\nвказаному файлі.\u003c/p\u003e\n\u003cp\u003eЗверніть увагу, що PHP не кешує інформацію про неіснуючих\nфайли. Так що, якщо ви викличете\n\u003ca href=\"function.file-exists.md\"\u003efile_exists()\u003c/a\u003e на неіснуючому файлі, вона\nбуде повертати \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e доти, доки ви не створите цей файл.\nЯкщо ж ви створите файл, вона повертатиме \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, навіть якщо\nпотім ви його вилучите. Однак, функція \u003ca href=\"function.unlink.md\"\u003eunlink()\u003c/a\u003e\nочистить цей кеш автоматично.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЦя функція кешує інформацію про певні файли, тому\nмає сенс викликати \u003cstrong\u003eclearstatcache()\u003c/strong\u003e тільки в тому випадку, якщо ви\nздійснюєте кілька операцій з одним і тим самим файлом і не хочете\nотримати кешовану інформацію про цей файл.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eСписок функцій, результати виконання яких кешуються:\n\u003ca href=\"function.stat.md\"\u003estat()\u003c/a\u003e, \u003ca href=\"function.lstat.md\"\u003elstat()\u003c/a\u003e,\n\u003ca href=\"function.file-exists.md\"\u003efile_exists()\u003c/a\u003e,\n\u003ca href=\"function.is-writable.md\"\u003eis_writable()\u003c/a\u003e,\n\u003ca href=\"function.is-readable.md\"\u003eis_readable()\u003c/a\u003e,\n\u003ca href=\"function.is-executable.md\"\u003eis_executable()\u003c/a\u003e,\n\u003ca href=\"function.is-file.md\"\u003eis_file()\u003c/a\u003e, \u003ca href=\"function.is-dir.md\"\u003eis_dir()\u003c/a\u003e,\n\u003ca href=\"function.is-link.md\"\u003eis_link()\u003c/a\u003e,\n\u003ca href=\"function.filectime.md\"\u003efilectime()\u003c/a\u003e,\n\u003ca href=\"function.fileatime.md\"\u003efileatime()\u003c/a\u003e,\n\u003ca href=\"function.filemtime.md\"\u003efilemtime()\u003c/a\u003e,\n\u003ca href=\"function.fileinode.md\"\u003efileinode()\u003c/a\u003e,\n\u003ca href=\"function.filegroup.md\"\u003efilegroup()\u003c/a\u003e,\n\u003ca href=\"function.fileowner.md\"\u003efileowner()\u003c/a\u003e,\n\u003ca href=\"function.filesize.md\"\u003efilesize()\u003c/a\u003e,\n\u003ca href=\"function.filetype.md\"\u003efiletype()\u003c/a\u003e та\n\u003ca href=\"function.fileperms.md\"\u003efileperms()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eclear_realpath_cache\u003c/code\u003e\nЧи потрібно * також * очищати кеш realpath.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003efilename\u003c/code\u003e\nОчистити кеш realpath лише для певного імені файлу; використовується\nтільки в тому випадку, якщо параметр clear_realpath_cache встановлено\nзначення \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eФункція не повертає значення після виконання.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003eclearstatcache()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$file = 'output_log.txt';function get_owner($file){   $stat =stat($file); $user==posix_getpwuid($stat['uid']); return $user['name'];}$format = \"UID @ %s: %s \";printf($format, date('r'), get_owner($file));chown($file, 'ross');printf($format, date('r'), get_owner($file)); clearstatcache();printf($format, date('r'), get_owner($file));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eUID @ Sun, 12 Oct 2008 20:48:28 +0100: root\nUID @ Sun, 12 Oct 2008 20:48:28 +0100: root\nUID @ Sun, 12 Oct 2008 20:48:28 +0100: ross\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.clearstatcache.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

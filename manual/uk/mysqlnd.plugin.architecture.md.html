@@ -1,0 +1,393 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqlnd.plugin.architecture | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqlnd.plugin.obtaining.md">« Отримання API плагінів mysqlnd</a></p>
+</li>
+<li>
+<p><a href="mysqlnd.plugin.api.md">API плагінів mysqlnd »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mysqlnd.plugin.md">API для плагінів до вбудованого драйвера MySQL</a></p>
+</li>
+<li>
+<p>Архітектура плагінів MySQL Native Driver</p>
+</li>
+</ul>
+<h2>Архітектура плагінів MySQL Native Driver</h2>
+<p>У цій секції розглянуто архітектуру плагінів <code>mysqlnd</code>.</p>
+<p><em>Поверхневий огляд MySQL Native Driver</em></p>
+<p>Перед початком розробки плагінів <code>mysqlnd</code>, корисно ознайомитись, як
+сам собою організований <code>mysqlnd</code>. <code>Mysqlnd</code> складається з наступних
+модулів:</p>
+<table>
+<thead>
+<tr>
+<th>Модулі статистики mysqlnd_statistics.c</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Поєднання</td>
+<td>mysqlnd.c</td>
+</tr>
+<tr>
+<td>Результуючий набір mysqlnd_result.c</td>
+<td></td>
+</tr>
+<tr>
+<td>Методи результуючого набору</td>
+<td>mysqlnd_result_meta.c</td>
+</tr>
+<tr>
+<td>Оператор</td>
+<td>mysqlnd_ps.c</td>
+</tr>
+<tr>
+<td>Мережа</td>
+<td>mysqlnd_net.c</td>
+</tr>
+<tr>
+<td>Протокол обміну mysqlnd_wireprotocol.c</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Організаційна схема mysqlnd, помодульно</strong></p>
+<p><em>Об'єктно-орієнтована парадигма C</em></p>
+<p>На рівні коду <code>mysqlnd</code> використовує патерн C для реалізації
+об'єктно-орієнтованого підходу</p>
+<p>C об'єкти описують використовуючи <code>struct</code>. Члени структури є
+властивостями об'єкта. Члени структури, що вказують на функції, є
+методами.</p>
+<p>На відміну від таких мов як C++ або Java, C немає фіксованих правил
+успадкування. Проте є деякі домовленості, яким
+необхідно слідувати, але ми обговоримо пізніше.</p>
+<p><em>Життєвий цикл PHP</em></p>
+<p>При розгляді життєвого циклу PHP існує два основних цикли:</p>
+<ul>
+<li>
+<p>Цикл старту та зупинки двигуна PHP</p>
+</li>
+<li>
+<p>Цикл обробки запиту</p>
+</li>
+</ul>
+<p>При старті двигуна PHP, перш за все викликається функція ініціалізації
+модулів (MINIT) кожного зареєстрованого модуля. Це дозволяє
+кожному модулю встановити змінні та виділити ресурси, які будуть
+задіяні весь час життя процесу движка PHP. Коли двигун PHP
+вимикається, він викликає функцію зупинки модулів (MSHUTDOWN) для
+кожного модуля.</p>
+<p>Протягом життєвого циклу двигуна PHP, він приймає деяке
+кількість запитів. Кожен запит породжує новий цикл життя. На
+кожен запит, двигун PHP викликає функцію ініціалізації для кожного
+модуля. Модуль може зробити виставлення змінних та виділення
+ресурсів, необхідних обслуговування запита. Після закінчення життя
+Запит, двигун викликає функцію зупинки запиту (RSHUTDOWN) для
+кожного модуля, що дозволяє зробити необхідні чистки.</p>
+<p><em>Як працює плагін</em></p>
+<p>Плагін <code>mysqlnd</code> працює перехоплюючи виклики модулів, які використовують
+<code>mysqlnd</code>, до <code>mysqlnd</code>. Це досягається заміною таблиці функцій
+<code>mysqlnd</code> на створену плагіном.</p>
+<p>Наступний код демонструє заміну таблиці функцій mysqlnd:</p>
+<p>/* сховище оригінальної таблиці */
+struct st_mysqlnd_conn_methods org_methods;</p>
+<p>void minit_register_hooks(TSRMLS_D) {
+/* активна таблиця функцій */
+struct st_mysqlnd_conn_methods * current_methods
+= mysqlnd_conn_get_methods();</p>
+<p>/* Бекап оригінальної таблиці */
+memcpy(&#x26;org_methods, current_methods,
+sizeof(struct st_mysqlnd_conn_methods);</p>
+<p>/* встановлення нових методів */
+current_methods->query = MYSQLND_METHOD(my_conn_class, query);
+}</p>
+<p>Маніпуляцією з таблицею функцій з'єднання необхідно займатися
+етапі ініціалізації модуля (MINIT) Таблиця функцій – це глобальний
+ресурс, що розділяється. У багатопотоковому оточенні, зі складанням TSRM,
+маніпуляція глобальним ресурсом, що розділяється на етапі обробки запиту
+призведе до конфліктів.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Не використовуйте будь-яку логіку, пов'язану з фіксованим розміром
+під час маніпуляції з таблицею функцій <code>mysqlnd</code>. Завжди додавайте нові
+методи наприкінці таблиці, оскільки сама таблиця може у майбутньому будь-який
+момент змінити.</p>
+</blockquote>
+<p><em>Виклик батьківських методів</em></p>
+<p>Якщо записи оригінальної таблиці функцій були збережені, завжди
+залишається можливість викликати оригінальний метод – батьківський.</p>
+<p>У деяких випадках, наприклад, для Connection::stmt_init(), життєво
+важливо спочатку викликати батьківський метод, і тільки потім робити що-небудь
+у новому методі.</p>
+<p>MYSQLND_METHOD(my_conn_class, query)(MYSQLND *conn,
+const char *query, unsigned int query_len TSRMLS_DC) {</p>
+<p>php_printf("my_conn_class::query(query = %s)
+", Query);</p>
+<p>query = "SELECT 'query rewritten' FROM DUAL";
+query_len = strlen (query);</p>
+<p>return org_methods.query(conn, query, query_len); /* Повернення з викликом батька */
+}</p>
+<p><em>Розширення властивостей</em></p>
+<p>Об'єкти <code>mysqlnd</code> представлені як C struct. Неможливо додати члена до
+C struct під час виконання. Користувачі об'єктів mysqlnd не можуть
+просто додати властивості об'єкту.</p>
+<p>Довільні дані (властивості) можуть бути додані до об'єкта <code>mysqlnd</code>
+з використанням відповідної функції із сімейства
+<code>mysqlnd_plugin_get_plugin_&#x3C;object>_data()</code>. При розміщенні об'єкту
+<code>mysqlnd</code> резервується місце в кінці об'єкта для утримання <code>void *</code>
+вказівника на довільні дані. <code>mysqlnd</code> резервує місце для одного
+<code>void*</code> покажчика на плагін.</p>
+<p>У наступній таблиці показано, як обчислити положення вказівника для
+конкретного плагіна:</p>
+<table>
+<thead>
+<tr>
+<th>Адреса пам'яті Вміст</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Початок об'єкту mysqlnd(C struct)</td>
+</tr>
+<tr>
+<td>n</td>
+<td>Кінець об'єкту mysqlnd (C struct)</td>
+</tr>
+<tr>
+<td>n + (m x sizeof(void*))</td>
+<td>void* для даних об'єкта плагіна номер m</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Розрахунок покажчика для mysqlnd</strong></p>
+<p>Якщо ви плануєте робити підклас від одного з конструкторів об'єкту
+<code>mysqlnd</code>, які дозволені, майте це на увазі!</p>
+<p>Наступний код демонструє розширення властивостей:</p>
+<p>/* Будь-які дані, які ми хочемо додати */
+typedef struct my_conn_properties {
+unsigned long query_counter;
+} MY_CONN_PROPERTIES;</p>
+<p>/* ідентифікатор плагіна */
+unsigned int my_plugin_id;</p>
+<p>void minit_register_hooks(TSRMLS_D) {
+/* отримуємо унікальний ідентифікатор плагіна <em>/
+my_plugin_id = mysqlnd_plugin_register();
+/</em> snip - see Extending Connection: methods */
+}</p>
+<p>static MY_CONN_PROPERTIES** get_conn_properties(const MYSQLND <em>conn TSRMLS_DC) {
+MY_CONN_PROPERTIES</em>* props;
+props = (MY_CONN_PROPERTIES**) mysqlnd_plugin_get_plugin_connection_data(
+conn, my_plugin_id);
+if (!props || !(*props)) {
+*props = mnd_pecalloc(1, sizeof(MY_CONN_PROPERTIES), conn->persistent);
+(*props)->query_counter = 0;
+}
+return props;
+}</p>
+<p>Розробник плагіна відповідає за керування пам'яттю даних плагіна.</p>
+<p>Рекомендується використовувати керування пам'яттю <code>mysqlnd</code> для даних
+плагіна. Ці функції називаються використовуючи такі угоди: <code>mnd_*loc()</code>.
+Управління пам'яттю <code>mysqlnd</code> має низку корисних властивостей, таких як
+використання налагоджувального модуля управління пам'яттю в неналагоджувальних
+складання.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Коли робити підклас?</th>
+<th>Кожен екземпляр має власну таблицю функцій?</th>
+<th>Як створювати підклас?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сполука (MYSQLND)</td>
+<td>MINIT</td>
+<td>Ні</td>
+<td>mysqlnd_conn_get_methods()</td>
+</tr>
+<tr>
+<td>Результативний набір (MYSQLND_RES)</td>
+<td>MINIT or later</td>
+<td>Так</td>
+<td>mysqlnd_result_get_methods() або методом об'єкта, що маніпулює таблицею функцій</td>
+</tr>
+<tr>
+<td>Результативний набір (MYSQLND_RES_METADATA)</td>
+<td>MINIT</td>
+<td>Ні</td>
+<td>mysqlnd_result_metadata_get_methods()</td>
+</tr>
+<tr>
+<td>Оператор (MySQLND_STMT)</td>
+<td>MINIT</td>
+<td>Ні</td>
+<td>mysqlnd_stmt_get_methods()</td>
+</tr>
+<tr>
+<td>Мережа (MYSQLND_NET) MINIT чи пізніше</td>
+<td>Так</td>
+<td>mysqlnd_net_get_methods() або методом об'єкта, що маніпулює таблицею функцій</td>
+<td></td>
+</tr>
+<tr>
+<td>Протокол обміну (MYSQLND_PROTOCOL) MINIT чи пізніше</td>
+<td>Так</td>
+<td>mysqlnd_protocol_get_methods() або методом об'єкта, що маніпулює таблицею функцій</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Коли та як створювати підклас</strong></p>
+<p>Ви не повинні маніпулювати таблицею функцій після MINIT, якщо це прямо
+не дозволено у таблиці вище.</p>
+<p>Деякі класи містять покажчик таблицю функцій методів. всі
+екземпляри подібних класів повинні ділити одну й ту саму таблицю функцій.
+Для того, щоб уникнути хаосу, особливо в багатопотоковому оточенні,
+керувати такими таблицями функцій слід лише під час MINIT.</p>
+<p>Інші класи використовують копії глобально поділених таблиць функцій.
+Таблиця функцій створюється одночасно з об'єктом. Кожен об'єкт
+використовує таблицю. Це дає вам дві можливості: ви можете
+керувати таблицею функцій за промовчанням для об'єкта під час MINIT, а
+також ви можете змінювати методи об'єкта, не торкаючись інших екземплярів.
+цього ж класу.</p>
+<p>Перевага таблиці функцій у продуктивності, так як
+немає потреби копіювати таблицю функцій окремо для кожного об'єкта.</p>
+<p>[TABLE]</p>
+<p><strong>Статус конструктора</strong></p>
+<p>Настійно рекомендується не замінювати конструктор повністю. Конструктори
+виробляють виділення пам'яті. Виділення пам'яті життєво необхідне
+API плагінів <code>mysqlnd</code> та для логіки об'єкта <code>mysqlnd</code>. Якщо вам не
+страшні попередження і хочете сильно поміняти конструктор, то хоча б
+Викличте батьківський конструктор перш, ніж що-небудь робити.</p>
+<p>Незважаючи на всі попередження, це може бути корисним для конструктора
+підкласу. Конструктори – відмінне місце для зміни таблиці функцій
+для об'єктів, які не використовують розділену таблицю, таких як
+результуючий набір, мережа, протокол обміну.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Похідний метод має викликати батьківський?</th>
+<th>Деструктор</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Поєднання</td>
+<td>так, після виконання методу</td>
+<td>free_contents(), end_psession()</td>
+</tr>
+<tr>
+<td>Результуючий набір так, після виконання методу</td>
+<td>free_result()</td>
+<td></td>
+</tr>
+<tr>
+<td>Методи результуючого набору</td>
+<td>так, після виконання методу</td>
+<td>free()</td>
+</tr>
+<tr>
+<td>Оператор</td>
+<td>так, після виконання методу</td>
+<td>dtor(), free_stmt_content()</td>
+</tr>
+<tr>
+<td>Мережа</td>
+<td>так, після виконання методу</td>
+<td>free()</td>
+</tr>
+<tr>
+<td>Протокол обміну так, після виконання методу</td>
+<td>free()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Статус знищення</strong></p>
+<p>Деструктори є відповідним місцем, щоб звільнити ресурси,
+займані властивостями <code>mysqlnd_plugin_get_plugin_&#x3C;object>_data()</code>.</p>
+<p>Перелічені деструктори можуть не співпадати з актуальними методами
+<code>mysqlnd</code> для очищення самого об'єкта. Однак вони є найкращим
+місцем, куди можна вклинитися для очищення даних свого плагіна. Так
+як і з конструкторами, ви можете повністю перевизначити ці
+методи, але це не рекомендується. Якщо вам необхідно вставити в
+кожен із перерахованих методів очищення даних свого плагіна, то
+необхідно забезпечити запуск батьківських методів <code>mysqlnd</code>.</p>
+<p>Рекомендований метод для плагінів – виконати код очищення даних
+плагіна і відразу після цього викликати батьківський метод.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqlnd.plugin.architecture.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqlnd.plugin.architecture.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqlnd.plugin.architecture","slug":"mysqlnd.plugin.architecture.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqlnd.plugin.obtaining.md\"\u003e« Отримання API плагінів mysqlnd\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqlnd.plugin.api.md\"\u003eAPI плагінів mysqlnd »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqlnd.plugin.md\"\u003eAPI для плагінів до вбудованого драйвера MySQL\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eАрхітектура плагінів MySQL Native Driver\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eАрхітектура плагінів MySQL Native Driver\u003c/h2\u003e\n\u003cp\u003eУ цій секції розглянуто архітектуру плагінів \u003ccode\u003emysqlnd\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eПоверхневий огляд MySQL Native Driver\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eПеред початком розробки плагінів \u003ccode\u003emysqlnd\u003c/code\u003e, корисно ознайомитись, як\nсам собою організований \u003ccode\u003emysqlnd\u003c/code\u003e. \u003ccode\u003eMysqlnd\u003c/code\u003e складається з наступних\nмодулів:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eМодулі статистики mysqlnd_statistics.c\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eПоєднання\u003c/td\u003e\n\u003ctd\u003emysqlnd.c\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eРезультуючий набір mysqlnd_result.c\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eМетоди результуючого набору\u003c/td\u003e\n\u003ctd\u003emysqlnd_result_meta.c\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eОператор\u003c/td\u003e\n\u003ctd\u003emysqlnd_ps.c\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eМережа\u003c/td\u003e\n\u003ctd\u003emysqlnd_net.c\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eПротокол обміну mysqlnd_wireprotocol.c\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОрганізаційна схема mysqlnd, помодульно\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eОб'єктно-орієнтована парадигма C\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eНа рівні коду \u003ccode\u003emysqlnd\u003c/code\u003e використовує патерн C для реалізації\nоб'єктно-орієнтованого підходу\u003c/p\u003e\n\u003cp\u003eC об'єкти описують використовуючи \u003ccode\u003estruct\u003c/code\u003e. Члени структури є\nвластивостями об'єкта. Члени структури, що вказують на функції, є\nметодами.\u003c/p\u003e\n\u003cp\u003eНа відміну від таких мов як C++ або Java, C немає фіксованих правил\nуспадкування. Проте є деякі домовленості, яким\nнеобхідно слідувати, але ми обговоримо пізніше.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЖиттєвий цикл PHP\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eПри розгляді життєвого циклу PHP існує два основних цикли:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eЦикл старту та зупинки двигуна PHP\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЦикл обробки запиту\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eПри старті двигуна PHP, перш за все викликається функція ініціалізації\nмодулів (MINIT) кожного зареєстрованого модуля. Це дозволяє\nкожному модулю встановити змінні та виділити ресурси, які будуть\nзадіяні весь час життя процесу движка PHP. Коли двигун PHP\nвимикається, він викликає функцію зупинки модулів (MSHUTDOWN) для\nкожного модуля.\u003c/p\u003e\n\u003cp\u003eПротягом життєвого циклу двигуна PHP, він приймає деяке\nкількість запитів. Кожен запит породжує новий цикл життя. На\nкожен запит, двигун PHP викликає функцію ініціалізації для кожного\nмодуля. Модуль може зробити виставлення змінних та виділення\nресурсів, необхідних обслуговування запита. Після закінчення життя\nЗапит, двигун викликає функцію зупинки запиту (RSHUTDOWN) для\nкожного модуля, що дозволяє зробити необхідні чистки.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЯк працює плагін\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eПлагін \u003ccode\u003emysqlnd\u003c/code\u003e працює перехоплюючи виклики модулів, які використовують\n\u003ccode\u003emysqlnd\u003c/code\u003e, до \u003ccode\u003emysqlnd\u003c/code\u003e. Це досягається заміною таблиці функцій\n\u003ccode\u003emysqlnd\u003c/code\u003e на створену плагіном.\u003c/p\u003e\n\u003cp\u003eНаступний код демонструє заміну таблиці функцій mysqlnd:\u003c/p\u003e\n\u003cp\u003e/* сховище оригінальної таблиці */\nstruct st_mysqlnd_conn_methods org_methods;\u003c/p\u003e\n\u003cp\u003evoid minit_register_hooks(TSRMLS_D) {\n/* активна таблиця функцій */\nstruct st_mysqlnd_conn_methods * current_methods\n= mysqlnd_conn_get_methods();\u003c/p\u003e\n\u003cp\u003e/* Бекап оригінальної таблиці */\nmemcpy(\u0026#x26;org_methods, current_methods,\nsizeof(struct st_mysqlnd_conn_methods);\u003c/p\u003e\n\u003cp\u003e/* встановлення нових методів */\ncurrent_methods-\u003equery = MYSQLND_METHOD(my_conn_class, query);\n}\u003c/p\u003e\n\u003cp\u003eМаніпуляцією з таблицею функцій з'єднання необхідно займатися\nетапі ініціалізації модуля (MINIT) Таблиця функцій – це глобальний\nресурс, що розділяється. У багатопотоковому оточенні, зі складанням TSRM,\nманіпуляція глобальним ресурсом, що розділяється на етапі обробки запиту\nпризведе до конфліктів.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eНе використовуйте будь-яку логіку, пов'язану з фіксованим розміром\nпід час маніпуляції з таблицею функцій \u003ccode\u003emysqlnd\u003c/code\u003e. Завжди додавайте нові\nметоди наприкінці таблиці, оскільки сама таблиця може у майбутньому будь-який\nмомент змінити.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cem\u003eВиклик батьківських методів\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eЯкщо записи оригінальної таблиці функцій були збережені, завжди\nзалишається можливість викликати оригінальний метод – батьківський.\u003c/p\u003e\n\u003cp\u003eУ деяких випадках, наприклад, для Connection::stmt_init(), життєво\nважливо спочатку викликати батьківський метод, і тільки потім робити що-небудь\nу новому методі.\u003c/p\u003e\n\u003cp\u003eMYSQLND_METHOD(my_conn_class, query)(MYSQLND *conn,\nconst char *query, unsigned int query_len TSRMLS_DC) {\u003c/p\u003e\n\u003cp\u003ephp_printf(\"my_conn_class::query(query = %s)\n\", Query);\u003c/p\u003e\n\u003cp\u003equery = \"SELECT 'query rewritten' FROM DUAL\";\nquery_len = strlen (query);\u003c/p\u003e\n\u003cp\u003ereturn org_methods.query(conn, query, query_len); /* Повернення з викликом батька */\n}\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eРозширення властивостей\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eОб'єкти \u003ccode\u003emysqlnd\u003c/code\u003e представлені як C struct. Неможливо додати члена до\nC struct під час виконання. Користувачі об'єктів mysqlnd не можуть\nпросто додати властивості об'єкту.\u003c/p\u003e\n\u003cp\u003eДовільні дані (властивості) можуть бути додані до об'єкта \u003ccode\u003emysqlnd\u003c/code\u003e\nз використанням відповідної функції із сімейства\n\u003ccode\u003emysqlnd_plugin_get_plugin_\u0026#x3C;object\u003e_data()\u003c/code\u003e. При розміщенні об'єкту\n\u003ccode\u003emysqlnd\u003c/code\u003e резервується місце в кінці об'єкта для утримання \u003ccode\u003evoid *\u003c/code\u003e\nвказівника на довільні дані. \u003ccode\u003emysqlnd\u003c/code\u003e резервує місце для одного\n\u003ccode\u003evoid*\u003c/code\u003e покажчика на плагін.\u003c/p\u003e\n\u003cp\u003eУ наступній таблиці показано, як обчислити положення вказівника для\nконкретного плагіна:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eАдреса пам'яті Вміст\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003eПочаток об'єкту mysqlnd(C struct)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003en\u003c/td\u003e\n\u003ctd\u003eКінець об'єкту mysqlnd (C struct)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003en + (m x sizeof(void*))\u003c/td\u003e\n\u003ctd\u003evoid* для даних об'єкта плагіна номер m\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eРозрахунок покажчика для mysqlnd\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЯкщо ви плануєте робити підклас від одного з конструкторів об'єкту\n\u003ccode\u003emysqlnd\u003c/code\u003e, які дозволені, майте це на увазі!\u003c/p\u003e\n\u003cp\u003eНаступний код демонструє розширення властивостей:\u003c/p\u003e\n\u003cp\u003e/* Будь-які дані, які ми хочемо додати */\ntypedef struct my_conn_properties {\nunsigned long query_counter;\n} MY_CONN_PROPERTIES;\u003c/p\u003e\n\u003cp\u003e/* ідентифікатор плагіна */\nunsigned int my_plugin_id;\u003c/p\u003e\n\u003cp\u003evoid minit_register_hooks(TSRMLS_D) {\n/* отримуємо унікальний ідентифікатор плагіна \u003cem\u003e/\nmy_plugin_id = mysqlnd_plugin_register();\n/\u003c/em\u003e snip - see Extending Connection: methods */\n}\u003c/p\u003e\n\u003cp\u003estatic MY_CONN_PROPERTIES** get_conn_properties(const MYSQLND \u003cem\u003econn TSRMLS_DC) {\nMY_CONN_PROPERTIES\u003c/em\u003e* props;\nprops = (MY_CONN_PROPERTIES**) mysqlnd_plugin_get_plugin_connection_data(\nconn, my_plugin_id);\nif (!props || !(*props)) {\n*props = mnd_pecalloc(1, sizeof(MY_CONN_PROPERTIES), conn-\u003epersistent);\n(*props)-\u003equery_counter = 0;\n}\nreturn props;\n}\u003c/p\u003e\n\u003cp\u003eРозробник плагіна відповідає за керування пам'яттю даних плагіна.\u003c/p\u003e\n\u003cp\u003eРекомендується використовувати керування пам'яттю \u003ccode\u003emysqlnd\u003c/code\u003e для даних\nплагіна. Ці функції називаються використовуючи такі угоди: \u003ccode\u003emnd_*loc()\u003c/code\u003e.\nУправління пам'яттю \u003ccode\u003emysqlnd\u003c/code\u003e має низку корисних властивостей, таких як\nвикористання налагоджувального модуля управління пам'яттю в неналагоджувальних\nскладання.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003eКоли робити підклас?\u003c/th\u003e\n\u003cth\u003eКожен екземпляр має власну таблицю функцій?\u003c/th\u003e\n\u003cth\u003eЯк створювати підклас?\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eСполука (MYSQLND)\u003c/td\u003e\n\u003ctd\u003eMINIT\u003c/td\u003e\n\u003ctd\u003eНі\u003c/td\u003e\n\u003ctd\u003emysqlnd_conn_get_methods()\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eРезультативний набір (MYSQLND_RES)\u003c/td\u003e\n\u003ctd\u003eMINIT or later\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003ctd\u003emysqlnd_result_get_methods() або методом об'єкта, що маніпулює таблицею функцій\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eРезультативний набір (MYSQLND_RES_METADATA)\u003c/td\u003e\n\u003ctd\u003eMINIT\u003c/td\u003e\n\u003ctd\u003eНі\u003c/td\u003e\n\u003ctd\u003emysqlnd_result_metadata_get_methods()\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eОператор (MySQLND_STMT)\u003c/td\u003e\n\u003ctd\u003eMINIT\u003c/td\u003e\n\u003ctd\u003eНі\u003c/td\u003e\n\u003ctd\u003emysqlnd_stmt_get_methods()\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eМережа (MYSQLND_NET) MINIT чи пізніше\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003ctd\u003emysqlnd_net_get_methods() або методом об'єкта, що маніпулює таблицею функцій\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eПротокол обміну (MYSQLND_PROTOCOL) MINIT чи пізніше\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003ctd\u003emysqlnd_protocol_get_methods() або методом об'єкта, що маніпулює таблицею функцій\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eКоли та як створювати підклас\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eВи не повинні маніпулювати таблицею функцій після MINIT, якщо це прямо\nне дозволено у таблиці вище.\u003c/p\u003e\n\u003cp\u003eДеякі класи містять покажчик таблицю функцій методів. всі\nекземпляри подібних класів повинні ділити одну й ту саму таблицю функцій.\nДля того, щоб уникнути хаосу, особливо в багатопотоковому оточенні,\nкерувати такими таблицями функцій слід лише під час MINIT.\u003c/p\u003e\n\u003cp\u003eІнші класи використовують копії глобально поділених таблиць функцій.\nТаблиця функцій створюється одночасно з об'єктом. Кожен об'єкт\nвикористовує таблицю. Це дає вам дві можливості: ви можете\nкерувати таблицею функцій за промовчанням для об'єкта під час MINIT, а\nтакож ви можете змінювати методи об'єкта, не торкаючись інших екземплярів.\nцього ж класу.\u003c/p\u003e\n\u003cp\u003eПеревага таблиці функцій у продуктивності, так як\nнемає потреби копіювати таблицю функцій окремо для кожного об'єкта.\u003c/p\u003e\n\u003cp\u003e[TABLE]\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eСтатус конструктора\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eНастійно рекомендується не замінювати конструктор повністю. Конструктори\nвиробляють виділення пам'яті. Виділення пам'яті життєво необхідне\nAPI плагінів \u003ccode\u003emysqlnd\u003c/code\u003e та для логіки об'єкта \u003ccode\u003emysqlnd\u003c/code\u003e. Якщо вам не\nстрашні попередження і хочете сильно поміняти конструктор, то хоча б\nВикличте батьківський конструктор перш, ніж що-небудь робити.\u003c/p\u003e\n\u003cp\u003eНезважаючи на всі попередження, це може бути корисним для конструктора\nпідкласу. Конструктори – відмінне місце для зміни таблиці функцій\nдля об'єктів, які не використовують розділену таблицю, таких як\nрезультуючий набір, мережа, протокол обміну.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003eПохідний метод має викликати батьківський?\u003c/th\u003e\n\u003cth\u003eДеструктор\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eПоєднання\u003c/td\u003e\n\u003ctd\u003eтак, після виконання методу\u003c/td\u003e\n\u003ctd\u003efree_contents(), end_psession()\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eРезультуючий набір так, після виконання методу\u003c/td\u003e\n\u003ctd\u003efree_result()\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eМетоди результуючого набору\u003c/td\u003e\n\u003ctd\u003eтак, після виконання методу\u003c/td\u003e\n\u003ctd\u003efree()\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eОператор\u003c/td\u003e\n\u003ctd\u003eтак, після виконання методу\u003c/td\u003e\n\u003ctd\u003edtor(), free_stmt_content()\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eМережа\u003c/td\u003e\n\u003ctd\u003eтак, після виконання методу\u003c/td\u003e\n\u003ctd\u003efree()\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eПротокол обміну так, після виконання методу\u003c/td\u003e\n\u003ctd\u003efree()\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eСтатус знищення\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДеструктори є відповідним місцем, щоб звільнити ресурси,\nзаймані властивостями \u003ccode\u003emysqlnd_plugin_get_plugin_\u0026#x3C;object\u003e_data()\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eПерелічені деструктори можуть не співпадати з актуальними методами\n\u003ccode\u003emysqlnd\u003c/code\u003e для очищення самого об'єкта. Однак вони є найкращим\nмісцем, куди можна вклинитися для очищення даних свого плагіна. Так\nяк і з конструкторами, ви можете повністю перевизначити ці\nметоди, але це не рекомендується. Якщо вам необхідно вставити в\nкожен із перерахованих методів очищення даних свого плагіна, то\nнеобхідно забезпечити запуск батьківських методів \u003ccode\u003emysqlnd\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eРекомендований метод для плагінів – виконати код очищення даних\nплагіна і відразу після цього викликати батьківський метод.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqlnd.plugin.architecture.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

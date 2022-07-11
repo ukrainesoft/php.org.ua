@@ -1,0 +1,948 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.solrquery | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="solrmodifiableparams.destruct.md">« SolrModifiableParams::__destruct</a></p>
+</li>
+<li>
+<p><a href="solrquery.addexpandfilterquery.md">SolrQuery::addExpandFilterQuery »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.solr.md">Solr</a></p>
+</li>
+<li>
+<p>Клас SolrQuery</p>
+</li>
+</ul>
+<h1>Клас SolrQuery</h1>
+<p>(PECL solr > = 0.9.2)</p>
+<h2>Вступ</h2>
+<p>Представляє колекцію пар ім'я-значення, відправлену на сервер Solr
+час запиту.</p>
+<h2>Огляд класів</h2>
+<p>class <strong>SolrQuery</strong> extends
+<a href="class.solrmodifiableparams.md">SolrModifiableParams</a> implements
+<a href="class.serializable.md">Serializable</a> {</p>
+<p>/* Константи */</p>
+<p>const int <code>ORDER_ASC</code> = 0;</p>
+<p>const int <code>ORDER_DESC</code> = 1;</p>
+<p>const int <code>FACET_SORT_INDEX</code> = 0;</p>
+<p>const int <code>FACET_SORT_COUNT</code> = 1;</p>
+<p>const int <code>TERMS_SORT_INDEX</code> = 0;</p>
+<p>const int <code>TERMS_SORT_COUNT</code> = 1;</p>
+<p>/* Властивості */</p>
+<p>/* Методи */</p>
+<p>public <a href="solrquery.construct.md">__construct</a>(string <code>$q</code> = ?)</p>
+<p>public
+<a href="solrquery.addexpandfilterquery.md">addExpandFilterQuery</a>(string
+<code>$fq</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addexpandsortfield.md">addExpandSortField</a>(string
+<code>$field</code>, string <code>$order</code> = ?): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addfacetdatefield.md">addFacetDateField</a>(string
+<code>$dateField</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addfacetdateother.md">addFacetDateOther</a>(string
+<code>$value</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addfacetfield.md">addFacetField</a>(string <code>$field</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addfacetquery.md">addFacetQuery</a>(string
+<code>$facetQuery</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addfield.md">addField</a>(string <code>$field</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addfilterquery.md">addFilterQuery</a>(string <code>$fq</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addgroupfield.md">addGroupField</a>(string <code>$value</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addgroupfunction.md">addGroupFunction</a>(string
+<code>$value</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addgroupquery.md">addGroupQuery</a>(string $value):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addgroupsortfield.md">addGroupSortField</a>(string
+<code>$field</code>, int <code>$order</code> = ?): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addhighlightfield.md">addHighlightField</a>(string
+<code>$field</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addmltfield.md">addMltField</a>(string <code>$field</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addmltqueryfield.md">addMltQueryField</a>(string
+<code>$field</code>, float <code>$boost</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addsortfield.md">addSortField</a>(string <code>$field</code>, int
+<code>$order</code> = SolrQuery::ORDER_DESC): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addstatsfacet.md">addStatsFacet</a>(string <code>$field</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.addstatsfield.md">addStatsField</a>(string <code>$field</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.collapse.md">collapse</a>(<a href="class.solrcollapsefunction.md">SolrCollapseFunction</a>
+<code>$collapseFunction</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.getexpand.md">getExpand</a>(): bool</p>
+<p>public
+<a href="solrquery.getexpandfilterqueries.md">getExpandFilterQueries</a>(): array</p>
+<p>public <a href="solrquery.getexpandquery.md">getExpandQuery</a>(): array</p>
+<p>public <a href="solrquery.getexpandrows.md">getExpandRows</a>(): int</p>
+<p>public <a href="solrquery.getexpandsortfields.md">getExpandSortFields</a>():
+array</p>
+<p>public <a href="solrquery.getfacet.md">getFacet</a>(): bool</p>
+<p>public <a href="solrquery.getfacetdateend.md">getFacetDateEnd</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public <a href="solrquery.getfacetdatefields.md">getFacetDateFields</a>(): array</p>
+<p>public <a href="solrquery.getfacetdategap.md">getFacetDateGap</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public <a href="solrquery.getfacetdatehardend.md">getFacetDateHardEnd</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public <a href="solrquery.getfacetdateother.md">getFacetDateOther</a>(string
+<code>$field_override</code> = ?): array</p>
+<p>public <a href="solrquery.getfacetdatestart.md">getFacetDateStart</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public <a href="solrquery.getfacetfields.md">getFacetFields</a>(): array</p>
+<p>public <a href="solrquery.getfacetlimit.md">getFacetLimit</a>(string
+<code>$field_override</code> = ?): int</p>
+<p>public <a href="solrquery.getfacetmethod.md">getFacetMethod</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public <a href="solrquery.getfacetmincount.md">getFacetMinCount</a>(string
+<code>$field_override</code> = ?): int</p>
+<p>public <a href="solrquery.getfacetmissing.md">getFacetMissing</a>(string
+<code>$field_override</code> = ?): bool</p>
+<p>public <a href="solrquery.getfacetoffset.md">getFacetOffset</a>(string
+<code>$field_override</code> = ?): int</p>
+<p>public <a href="solrquery.getfacetprefix.md">getFacetPrefix</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public <a href="solrquery.getfacetqueries.md">getFacetQueries</a>(): array</p>
+<p>public <a href="solrquery.getfacetsort.md">getFacetSort</a>(string
+<code>$field_override</code> = ?): int</p>
+<p>public <a href="solrquery.getfields.md">getFields</a>(): array</p>
+<p>public <a href="solrquery.getfilterqueries.md">getFilterQueries</a>(): array</p>
+<p>public <a href="solrquery.getgroup.md">getGroup</a>(): bool</p>
+<p>public <a href="solrquery.getgroupcachepercent.md">getGroupCachePercent</a>():
+int</p>
+<p>public <a href="solrquery.getgroupfacet.md">getGroupFacet</a>(): bool</p>
+<p>public <a href="solrquery.getgroupfields.md">getGroupFields</a>(): array</p>
+<p>public <a href="solrquery.getgroupformat.md">getGroupFormat</a>(): string</p>
+<p>public <a href="solrquery.getgroupfunctions.md">getGroupFunctions</a>(): array</p>
+<p>public <a href="solrquery.getgrouplimit.md">getGroupLimit</a>(): int</p>
+<p>public <a href="solrquery.getgroupmain.md">getGroupMain</a>(): bool</p>
+<p>public <a href="solrquery.getgroupngroups.md">getGroupNGroups</a>(): bool</p>
+<p>public <a href="solrquery.getgroupoffset.md">getGroupOffset</a>(): int</p>
+<p>public <a href="solrquery.getgroupqueries.md">getGroupQueries</a>(): array</p>
+<p>public <a href="solrquery.getgroupsortfields.md">getGroupSortFields</a>(): array</p>
+<p>public <a href="solrquery.getgrouptruncate.md">getGroupTruncate</a>(): bool</p>
+<p>public <a href="solrquery.gethighlight.md">getHighlight</a>(): bool</p>
+<p>public
+<a href="solrquery.gethighlightalternatefield.md">getHighlightAlternateField</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public <a href="solrquery.gethighlightfields.md">getHighlightFields</a>(): array</p>
+<p>public
+<a href="solrquery.gethighlightformatter.md">getHighlightFormatter</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public
+<a href="solrquery.gethighlightfragmenter.md">getHighlightFragmenter</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public
+<a href="solrquery.gethighlightfragsize.md">getHighlightFragsize</a>(string
+<code>$field_override</code> = ?): int</p>
+<p>public
+<a href="solrquery.gethighlighthighlightmultiterm.md">getHighlightHighlightMultiTerm</a>():
+bool</p>
+<p>public
+<a href="solrquery.gethighlightmaxalternatefieldlength.md">getHighlightMaxAlternateFieldLength</a>(string
+<code>$field_override</code> = ?): int</p>
+<p>public
+<a href="solrquery.gethighlightmaxanalyzedchars.md">getHighlightMaxAnalyzedChars</a>():
+int</p>
+<p>public
+<a href="solrquery.gethighlightmergecontiguous.md">getHighlightMergeContiguous</a>(string
+<code>$field_override</code> = ?): bool</p>
+<p>public
+<a href="solrquery.gethighlightregexmaxanalyzedchars.md">getHighlightRegexMaxAnalyzedChars</a>():
+int</p>
+<p>public
+<a href="solrquery.gethighlightregexpattern.md">getHighlightRegexPattern</a>():
+string</p>
+<p>public <a href="solrquery.gethighlightregexslop.md">getHighlightRegexSlop</a>():
+float</p>
+<p>public
+<a href="solrquery.gethighlightrequirefieldmatch.md">getHighlightRequireFieldMatch</a>():
+bool</p>
+<p>public
+<a href="solrquery.gethighlightsimplepost.md">getHighlightSimplePost</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public
+<a href="solrquery.gethighlightsimplepre.md">getHighlightSimplePre</a>(string
+<code>$field_override</code> = ?): string</p>
+<p>public
+<a href="solrquery.gethighlightsnippets.md">getHighlightSnippets</a>(string
+<code>$field_override</code> = ?): int</p>
+<p>public
+<a href="solrquery.gethighlightusephrasehighlighter.md">getHighlightUsePhraseHighlighter</a>():
+bool</p>
+<p>public <a href="solrquery.getmlt.md">getMlt</a>(): bool</p>
+<p>public <a href="solrquery.getmltboost.md">getMltBoost</a>(): bool</p>
+<p>public <a href="solrquery.getmltcount.md">getMltCount</a>(): int</p>
+<p>public <a href="solrquery.getmltfields.md">getMltFields</a>(): array</p>
+<p>public
+<a href="solrquery.getmltmaxnumqueryterms.md">getMltMaxNumQueryTerms</a>(): int</p>
+<p>public <a href="solrquery.getmltmaxnumtokens.md">getMltMaxNumTokens</a>(): int</p>
+<p>public <a href="solrquery.getmltmaxwordlength.md">getMltMaxWordLength</a>(): int</p>
+<p>public <a href="solrquery.getmltmindocfrequency.md">getMltMinDocFrequency</a>():
+int</p>
+<p>public
+<a href="solrquery.getmltmintermfrequency.md">getMltMinTermFrequency</a>(): int</p>
+<p>public <a href="solrquery.getmltminwordlength.md">getMltMinWordLength</a>(): int</p>
+<p>public <a href="solrquery.getmltqueryfields.md">getMltQueryFields</a>(): array</p>
+<p>public <a href="solrquery.getquery.md">getQuery</a>(): string</p>
+<p>public <a href="solrquery.getrows.md">getRows</a>(): int</p>
+<p>public <a href="solrquery.getsortfields.md">getSortFields</a>(): array</p>
+<p>public <a href="solrquery.getstart.md">getStart</a>(): int</p>
+<p>public <a href="solrquery.getstats.md">getStats</a>(): bool</p>
+<p>public <a href="solrquery.getstatsfacets.md">getStatsFacets</a>(): array</p>
+<p>public <a href="solrquery.getstatsfields.md">getStatsFields</a>(): array</p>
+<p>public <a href="solrquery.getterms.md">getTerms</a>(): bool</p>
+<p>public <a href="solrquery.gettermsfield.md">getTermsField</a>(): string</p>
+<p>public
+<a href="solrquery.gettermsincludelowerbound.md">getTermsIncludeLowerBound</a>():
+bool</p>
+<p>public
+<a href="solrquery.gettermsincludeupperbound.md">getTermsIncludeUpperBound</a>():
+bool</p>
+<p>public <a href="solrquery.gettermslimit.md">getTermsLimit</a>(): int</p>
+<p>public <a href="solrquery.gettermslowerbound.md">getTermsLowerBound</a>(): string</p>
+<p>public <a href="solrquery.gettermsmaxcount.md">getTermsMaxCount</a>(): int</p>
+<p>public <a href="solrquery.gettermsmincount.md">getTermsMinCount</a>(): int</p>
+<p>public <a href="solrquery.gettermsprefix.md">getTermsPrefix</a>(): string</p>
+<p>public <a href="solrquery.gettermsreturnraw.md">getTermsReturnRaw</a>(): bool</p>
+<p>public <a href="solrquery.gettermssort.md">getTermsSort</a>(): int</p>
+<p>public <a href="solrquery.gettermsupperbound.md">getTermsUpperBound</a>(): string</p>
+<p>public <a href="solrquery.gettimeallowed.md">getTimeAllowed</a>(): int</p>
+<p>public
+<a href="solrquery.removeexpandfilterquery.md">removeExpandFilterQuery</a>(string
+<code>$fq</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.removeexpandsortfield.md">removeExpandSortField</a>(string
+<code>$field</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.removefacetdatefield.md">removeFacetDateField</a>(string
+<code>$field</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.removefacetdateother.md">removeFacetDateOther</a>(string
+<code>$value</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.removefacetfield.md">removeFacetField</a>(string
+<code>$field</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.removefacetquery.md">removeFacetQuery</a>(string
+<code>$value</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.removefield.md">removeField</a>(string <code>$field</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.removefilterquery.md">removeFilterQuery</a>(string
+<code>$fq</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.removehighlightfield.md">removeHighlightField</a>(string
+<code>$field</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.removemltfield.md">removeMltField</a>(string <code>$field</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.removemltqueryfield.md">removeMltQueryField</a>(string
+<code>$queryField</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.removesortfield.md">removeSortField</a>(string
+<code>$field</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.removestatsfacet.md">removeStatsFacet</a>(string
+<code>$value</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.removestatsfield.md">removeStatsField</a>(string
+<code>$field</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setechohandler.md">setEchoHandler</a>(bool <code>$flag</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setechoparams.md">setEchoParams</a>(string <code>$type</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setexpand.md">setExpand</a>(bool <code>$value</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setexpandquery.md">setExpandQuery</a>(string <code>$q</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setexpandrows.md">setExpandRows</a>(int <code>$value</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setexplainother.md">setExplainOther</a>(string
+<code>$query</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacet.md">setFacet</a>(bool <code>$flag</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetdateend.md">setFacetDateEnd</a>(string
+<code>$value</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetdategap.md">setFacetDateGap</a>(string
+<code>$value</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetdatehardend.md">setFacetDateHardEnd</a>(bool
+<code>$value</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetdatestart.md">setFacetDateStart</a>(string
+<code>$value</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.setfacetenumcachemindefaultfrequency.md">setFacetEnumCacheMinDefaultFrequency</a>(int
+<code>$frequency</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetlimit.md">setFacetLimit</a>(int <code>$limit</code>,
+string <code>$field_override</code> = ?): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetmethod.md">setFacetMethod</a>(string <code>$method</code>,
+string <code>$field_override</code> = ?): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetmincount.md">setFacetMinCount</a>(int
+<code>$mincount</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetmissing.md">setFacetMissing</a>(bool <code>$flag</code>,
+string <code>$field_override</code> = ?): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetoffset.md">setFacetOffset</a>(int <code>$offset</code>,
+string <code>$field_override</code> = ?): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetprefix.md">setFacetPrefix</a>(string <code>$prefix</code>,
+string <code>$field_override</code> = ?): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setfacetsort.md">setFacetSort</a>(int <code>$facetSort</code>,
+string <code>$field_override</code> = ?): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setgroup.md">setGroup</a>(bool <code>$value</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setgroupcachepercent.md">setGroupCachePercent</a>(int
+<code>$percent</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setgroupfacet.md">setGroupFacet</a>(bool <code>$value</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setgroupformat.md">setGroupFormat</a>(string <code>$value</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setgrouplimit.md">setGroupLimit</a>(int <code>$value</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setgroupmain.md">setGroupMain</a>(string <code>$value</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setgroupngroups.md">setGroupNGroups</a>(bool <code>$value</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setgroupoffset.md">setGroupOffset</a>(int <code>$value</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setgrouptruncate.md">setGroupTruncate</a>(bool
+<code>$value</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.sethighlight.md">setHighlight</a>(bool <code>$flag</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightalternatefield.md">setHighlightAlternateField</a>(string
+<code>$field</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightformatter.md">setHighlightFormatter</a>(string
+<code>$formatter</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightfragmenter.md">setHighlightFragmenter</a>(string
+<code>$fragmenter</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.sethighlightfragsize.md">setHighlightFragsize</a>(int
+<code>$size</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlighthighlightmultiterm.md">setHighlightHighlightMultiTerm</a>(bool
+<code>$flag</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightmaxalternatefieldlength.md">setHighlightMaxAlternateFieldLength</a>(int
+<code>$fieldLength</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightmaxanalyzedchars.md">setHighlightMaxAnalyzedChars</a>(int
+<code>$value</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightmergecontiguous.md">setHighlightMergeContiguous</a>(bool
+<code>$flag</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightregexmaxanalyzedchars.md">setHighlightRegexMaxAnalyzedChars</a>(int
+<code>$maxAnalyzedChars</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightregexpattern.md">setHighlightRegexPattern</a>(string
+<code>$value</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightregexslop.md">setHighlightRegexSlop</a>(float
+<code>$factor</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightrequirefieldmatch.md">setHighlightRequireFieldMatch</a>(bool
+<code>$flag</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightsimplepost.md">setHighlightSimplePost</a>(string
+<code>$simplePost</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightsimplepre.md">setHighlightSimplePre</a>(string
+<code>$simplePre</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.sethighlightsnippets.md">setHighlightSnippets</a>(int
+<code>$value</code>, string <code>$field_override</code> = ?):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.sethighlightusephrasehighlighter.md">setHighlightUsePhraseHighlighter</a>(bool
+<code>$flag</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setmlt.md">setMlt</a>(bool <code>$flag</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setmltboost.md">setMltBoost</a>(bool <code>$flag</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setmltcount.md">setMltCount</a>(int <code>$count</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.setmltmaxnumqueryterms.md">setMltMaxNumQueryTerms</a>(int
+<code>$value</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setmltmaxnumtokens.md">setMltMaxNumTokens</a>(int
+<code>$value</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setmltmaxwordlength.md">setMltMaxWordLength</a>(int
+<code>$maxWordLength</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setmltmindocfrequency.md">setMltMinDocFrequency</a>(int
+<code>$minDocFrequency</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.setmltmintermfrequency.md">setMltMinTermFrequency</a>(int
+<code>$minTermFrequency</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setmltminwordlength.md">setMltMinWordLength</a>(int
+<code>$minWordLength</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setomitheader.md">setOmitHeader</a>(bool <code>$flag</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setquery.md">setQuery</a>(string <code>$query</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setrows.md">setRows</a>(int <code>$rows</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setshowdebuginfo.md">setShowDebugInfo</a>(bool
+<code>$flag</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setstart.md">setStart</a>(int <code>$start</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setstats.md">setStats</a>(bool <code>$flag</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.setterms.md">setTerms</a>(bool <code>$flag</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.settermsfield.md">setTermsField</a>(string
+<code>$fieldname</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.settermsincludelowerbound.md">setTermsIncludeLowerBound</a>(bool
+<code>$flag</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public
+<a href="solrquery.settermsincludeupperbound.md">setTermsIncludeUpperBound</a>(bool
+<code>$flag</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.settermslimit.md">setTermsLimit</a>(int <code>$limit</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.settermslowerbound.md">setTermsLowerBound</a>(string
+<code>$lowerBound</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.settermsmaxcount.md">setTermsMaxCount</a>(int
+<code>$frequency</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.settermsmincount.md">setTermsMinCount</a>(int
+<code>$frequency</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.settermsprefix.md">setTermsPrefix</a>(string
+<code>$prefix</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.settermsreturnraw.md">setTermsReturnRaw</a>(bool
+<code>$flag</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.settermssort.md">setTermsSort</a>(int <code>$sortType</code>):
+<a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.settermsupperbound.md">setTermsUpperBound</a>(string
+<code>$upperBound</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.settimeallowed.md">setTimeAllowed</a>(int
+<code>$timeAllowed</code>): <a href="class.solrquery.md">SolrQuery</a></p>
+<p>public <a href="solrquery.destruct.md">__destruct</a>()</p>
+<p>/* Наслідувані методи */</p>
+<p>public
+<a href="solrmodifiableparams.construct.md">SolrModifiableParams::__construct</a>()</p>
+<p>public
+<a href="solrmodifiableparams.destruct.md">SolrModifiableParams::__destruct</a>()</p>
+<p>}</p>
+<h2>Зумовлені константи</h2>
+<p><strong><code>SolrQuery::ORDER_ASC</code></strong>
+Використовується для вказівки того, що сортування має бути в порядку
+зростання</p>
+<p><strong><code>SolrQuery::ORDER_DESC</code></strong>
+Використовується для вказівки, що сортування має бути в порядку зменшення</p>
+<p><strong><code>SolrQuery::FACET_SORT_INDEX</code></strong>
+Використовується для вказівки сортування фасету за індексом</p>
+<p><strong><code>SolrQuery::FACET_SORT_COUNT</code></strong>
+Використовується для вказівки того, що фасет повинен сортувати за
+кількості</p>
+<p><strong><code>SolrQuery::TERMS_SORT_INDEX</code></strong>
+Використовується в TermsComponent</p>
+<p><strong><code>SolrQuery::TERMS_SORT_COUNT</code></strong>
+Використовується в TermsComponent</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="solrquery.addexpandfilterquery.md">SolrQuery::addExpandFilterQuery</a>
+— Перевизначає запит основного фільтра, визначає які
+документи включити до основної групи</li>
+<li><a href="solrquery.addexpandsortfield.md">SolrQuery::addExpandSortField</a> -
+Впорядковує документи у розширених групах (параметр expand.sort)</li>
+<li><a href="solrquery.addfacetdatefield.md">SolrQuery::addFacetDateField</a> -
+Карти для facet.date</li>
+<li><a href="solrquery.addfacetdateother.md">SolrQuery::addFacetDateOther</a> -
+Додає ще один параметр facet.date.other</li>
+<li><a href="solrquery.addfacetfield.md">SolrQuery::addFacetField</a> — Додає
+інше поле до фасету</li>
+<li><a href="solrquery.addfacetquery.md">SolrQuery::addFacetQuery</a> — Додає
+фасетний запит</li>
+<li><a href="solrquery.addfield.md">SolrQuery::addField</a> — Вказує, які
+поля повертати в результаті</li>
+<li><a href="solrquery.addfilterquery.md">SolrQuery::addFilterQuery</a> -
+Визначає запит фільтру</li>
+<li><a href="solrquery.addgroupfield.md">SolrQuery::addGroupField</a> — Додає
+поле, яке використовуватиметься для групування результатів</li>
+<li><a href="solrquery.addgroupfunction.md">SolrQuery::addGroupFunction</a> -
+Дозволяє групувати результати на основі унікальних значень
+запиту функції (параметр group.func)</li>
+<li><a href="solrquery.addgroupquery.md">SolrQuery::addGroupQuery</a> — Дозволяє
+групувати документи, що відповідають даному запиту</li>
+<li><a href="solrquery.addgroupsortfield.md">SolrQuery::addGroupSortField</a> -
+Додає поле сортування групи (параметр group.sort)</li>
+<li><a href="solrquery.addhighlightfield.md">SolrQuery::addHighlightField</a> -
+Відповідає hl.fl</li>
+<li><a href="solrquery.addmltfield.md">SolrQuery::addMltField</a> — Встановлює
+поле для використання для подоби</li>
+<li><a href="solrquery.addmltqueryfield.md">SolrQuery::addMltQueryField</a> -
+Відповідає mlt.qf</li>
+<li><a href="solrquery.addsortfield.md">SolrQuery::addSortField</a> -
+Використовується для керування сортуванням результатів</li>
+<li><a href="solrquery.addstatsfacet.md">SolrQuery::addStatsFacet</a> -
+Запитує повернення допоміжних результатів для значень у
+даному фасеті</li>
+<li><a href="solrquery.addstatsfield.md">SolrQuery::addStatsField</a> -
+Відповідає параметру stats.field</li>
+<li><a href="solrquery.collapse.md">SolrQuery::collapse</a> — Згортає набір
+результатів до одного документа на групу</li>
+<li><a href="solrquery.construct.md">SolrQuery::__construct</a> - Конструктор</li>
+<li><a href="solrquery.destruct.md">SolrQuery::__destruct</a> - Деструктор</li>
+<li><a href="solrquery.getexpand.md">SolrQuery::getExpand</a> - Повертає true,
+якщо увімкнено розширення групи</li>
+<li><a href="solrquery.getexpandfilterqueries.md">SolrQuery::getExpandFilterQueries</a>
+— Повертає запити на розширений фільтр</li>
+<li><a href="solrquery.getexpandquery.md">SolrQuery::getExpandQuery</a> -
+Повертає параметр розширеного запиту expand.q</li>
+<li><a href="solrquery.getexpandrows.md">SolrQuery::getExpandRows</a> -
+Повертає кількість рядків, які відображаються в кожній групі
+(expand.rows)</li>
+<li><a href="solrquery.getexpandsortfields.md">SolrQuery::getExpandSortFields</a></li>
+<li>Повертає масив полів</li>
+<li><a href="solrquery.getfacet.md">SolrQuery::getFacet</a> — Повертає значення
+параметра фасета</li>
+<li><a href="solrquery.getfacetdateend.md">SolrQuery::getFacetDateEnd</a> -
+Повертає значення параметра facet.date.end</li>
+<li><a href="solrquery.getfacetdatefields.md">SolrQuery::getFacetDateFields</a> -
+Повертає усі поля facet.date</li>
+<li><a href="solrquery.getfacetdategap.md">SolrQuery::getFacetDateGap</a> -
+Повертає значення параметра facet.date.gap</li>
+<li><a href="solrquery.getfacetdatehardend.md">SolrQuery::getFacetDateHardEnd</a>
+— Повертає значення параметра facet.date.hardend</li>
+<li><a href="solrquery.getfacetdateother.md">SolrQuery::getFacetDateOther</a> -
+Повертає значення параметра facet.date.other</li>
+<li><a href="solrquery.getfacetdatestart.md">SolrQuery::getFacetDateStart</a> -
+Повертає нижню межу першого діапазону дат для всіх аспектів
+дати у цьому полі</li>
+<li><a href="solrquery.getfacetfields.md">SolrQuery::getFacetFields</a> -
+Повертає всі поля фасетів</li>
+<li><a href="solrquery.getfacetlimit.md">SolrQuery::getFacetLimit</a> -
+Повертає максимальну кількість лічильників обмежень, яка
+має бути повернено для полів фасету</li>
+<li><a href="solrquery.getfacetmethod.md">SolrQuery::getFacetMethod</a> -
+Повертає значення параметра facet.method</li>
+<li><a href="solrquery.getfacetmincount.md">SolrQuery::getFacetMinCount</a> -
+Повертає мінімальну кількість полів аспектів, які мають
+бути включені у відповідь</li>
+<li><a href="solrquery.getfacetmissing.md">SolrQuery::getFacetMissing</a> -
+Повертає поточний стан facet.missing</li>
+<li><a href="solrquery.getfacetoffset.md">SolrQuery::getFacetOffset</a> -
+Повертає зсув у списку обмежень, які будуть
+використовуватися для посторінкової навігації</li>
+<li><a href="solrquery.getfacetprefix.md">SolrQuery::getFacetPrefix</a> -
+Повертає префікс фасету</li>
+<li><a href="solrquery.getfacetqueries.md">SolrQuery::getFacetQueries</a> -
+Повертає всі фасетні запити</li>
+<li><a href="solrquery.getfacetsort.md">SolrQuery::getFacetSort</a> — Повертає
+тип сортування фасета</li>
+<li><a href="solrquery.getfields.md">SolrQuery::getFields</a> — Повертає список
+полів, які будуть повернені у відповіді</li>
+<li><a href="solrquery.getfilterqueries.md">SolrQuery::getFilterQueries</a> -
+Повертає масив запитів фільтра</li>
+<li><a href="solrquery.getgroup.md">SolrQuery::getGroup</a> - Повертає true,
+якщо угруповання увімкнено</li>
+<li><a href="solrquery.getgroupcachepercent.md">SolrQuery::getGroupCachePercent</a>
+— Повертає відсоткове значення групового кешу</li>
+<li><a href="solrquery.getgroupfacet.md">SolrQuery::getGroupFacet</a> -
+Повертає значення параметра group.facet</li>
+<li><a href="solrquery.getgroupfields.md">SolrQuery::getGroupFields</a> -
+Повертає групові поля (значення параметра group.field)</li>
+<li><a href="solrquery.getgroupformat.md">SolrQuery::getGroupFormat</a> -
+Повертає значення group.format</li>
+<li><a href="solrquery.getgroupfunctions.md">SolrQuery::getGroupFunctions</a> -
+Повертає групові функції (значення параметрів group.func)</li>
+<li><a href="solrquery.getgrouplimit.md">SolrQuery::getGroupLimit</a> -
+Повертає значення group.limit</li>
+<li><a href="solrquery.getgroupmain.md">SolrQuery::getGroupMain</a> — Повертає
+значення group.main</li>
+<li><a href="solrquery.getgroupngroups.md">SolrQuery::getGroupNGroups</a> -
+Повертає значення group.ngroups</li>
+<li><a href="solrquery.getgroupoffset.md">SolrQuery::getGroupOffset</a> -
+Повертає значення group.offset</li>
+<li><a href="solrquery.getgroupqueries.md">SolrQuery::getGroupQueries</a> -
+Повертає всі параметри group.query</li>
+<li><a href="solrquery.getgroupsortfields.md">SolrQuery::getGroupSortFields</a> -
+Повертає значення group.sort</li>
+<li><a href="solrquery.getgrouptruncate.md">SolrQuery::getGroupTruncate</a> -
+Повертає значення group.truncate</li>
+<li><a href="solrquery.gethighlight.md">SolrQuery::getHighlight</a> — Повертає
+стан параметра hl</li>
+<li><a href="solrquery.gethighlightalternatefield.md">SolrQuery::getHighlightAlternateField</a>
+— Повертає виділене поле для використання як резервну
+копії або за замовчуванням</li>
+<li><a href="solrquery.gethighlightfields.md">SolrQuery::getHighlightFields</a> -
+Повертає всі поля, для яких Solr має генерувати виділені
+фрагменти</li>
+<li><a href="solrquery.gethighlightformatter.md">SolrQuery::getHighlightFormatter</a>
+— Повертає засіб форматування для виділеного висновку</li>
+<li><a href="solrquery.gethighlightfragmenter.md">SolrQuery::getHighlightFragmenter</a>
+— Повертає генератор фрагментів тексту для виділеного тексту</li>
+<li><a href="solrquery.gethighlightfragsize.md">SolrQuery::getHighlightFragsize</a>
+— Повертає кількість символів фрагментів для виділення</li>
+<li><a href="solrquery.gethighlighthighlightmultiterm.md">SolrQuery::getHighlightHighlightMultiTerm</a>
+— Повертає, чи потрібно вмикати виділення для запитів
+діапазону/підстановочних знаків/нечітких/префіксів</li>
+<li><a href="solrquery.gethighlightmaxalternatefieldlength.md">SolrQuery::getHighlightMaxAlternateFieldLength</a>
+— Повертає максимальну кількість символів поля для повернення</li>
+<li><a href="solrquery.gethighlightmaxanalyzedchars.md">SolrQuery::getHighlightMaxAnalyzedChars</a>
+— Повертає максимальну кількість символів у документі для пошуку
+відповідних фрагментів</li>
+<li><a href="solrquery.gethighlightmergecontiguous.md">SolrQuery::getHighlightMergeContiguous</a>
+— Повертає, чи повернути суміжні фрагменти в один фрагмент</li>
+<li><a href="solrquery.gethighlightregexmaxanalyzedchars.md">SolrQuery::getHighlightRegexMaxAnalyzedChars</a>
+— Повертає максимальну кількість символів із поля при
+використання фрагментатора регулярного вираження</li>
+<li><a href="solrquery.gethighlightregexpattern.md">SolrQuery::getHighlightRegexPattern</a>
+— Повертає регулярний вираз для фрагментації</li>
+<li><a href="solrquery.gethighlightregexslop.md">SolrQuery::getHighlightRegexSlop</a>
+— Повертає коефіцієнт відхилення від ідеального розміру фрагмента</li>
+<li><a href="solrquery.gethighlightrequirefieldmatch.md">SolrQuery::getHighlightRequireFieldMatch</a>
+— Повертає, якщо поле буде виділено лише у тому випадку, якщо
+запит відповідає цьому конкретному полю</li>
+<li><a href="solrquery.gethighlightsimplepost.md">SolrQuery::getHighlightSimplePost</a>
+— Повертає текст, який з'являється після виділення.</li>
+<li><a href="solrquery.gethighlightsimplepre.md">SolrQuery::getHighlightSimplePre</a>
+— Повертає текст, який з'являється перед виділеним виразом</li>
+<li><a href="solrquery.gethighlightsnippets.md">SolrQuery::getHighlightSnippets</a>
+— Повертає максимальну кількість виділених фрагментів
+створення для кожного поля</li>
+<li><a href="solrquery.gethighlightusephrasehighlighter.md">SolrQuery::getHighlightUsePhraseHighlighter</a>
+— Повертає стан параметра hl.usePhraseHighlighter</li>
+<li><a href="solrquery.getmlt.md">SolrQuery::getMlt</a> — Повертає, чи повинні
+бути включені результати MoreLikeThis</li>
+<li><a href="solrquery.getmltboost.md">SolrQuery::getMltBoost</a> — Повертає,
+буде запит посилено релевантністю виразу, що цікавить</li>
+<li><a href="solrquery.getmltcount.md">SolrQuery::getMltCount</a> - Повертає
+кількість схожих документів, що повертаються для кожного результату</li>
+<li><a href="solrquery.getmltfields.md">SolrQuery::getMltFields</a> — Повертає
+всі поля, які потрібно використовувати для порівняння</li>
+<li><a href="solrquery.getmltmaxnumqueryterms.md">SolrQuery::getMltMaxNumQueryTerms</a>
+— Повертає максимальну кількість умов запиту, які будуть
+включені до будь-якого згенерованого запиту</li>
+<li><a href="solrquery.getmltmaxnumtokens.md">SolrQuery::getMltMaxNumTokens</a> -
+Повертає максимальну кількість токенів для аналізу у кожному полі
+документа, який не зберігається за допомогою TermVector</li>
+<li><a href="solrquery.getmltmaxwordlength.md">SolrQuery::getMltMaxWordLength</a>
+— Повертає максимальну довжину слова, вище за яку будуть слова
+ігноруватися</li>
+<li><a href="solrquery.getmltmindocfrequency.md">SolrQuery::getMltMinDocFrequency</a>
+— Повертає граничну частоту, з якої ігноруватимуться
+слова, яких немає, принаймні, у такій кількості документів</li>
+<li><a href="solrquery.getmltmintermfrequency.md">SolrQuery::getMltMinTermFrequency</a>
+— Повертає частоту, нижче за яку вирази ігноруватимуться в
+вихідному документі</li>
+<li><a href="solrquery.getmltminwordlength.md">SolrQuery::getMltMinWordLength</a>
+— Повертає мінімальну довжину слова, нижче за яку слова будуть
+ігноруватися</li>
+<li><a href="solrquery.getmltqueryfields.md">SolrQuery::getMltQueryFields</a> -
+Повертає поля запиту та їх підвищення</li>
+<li><a href="solrquery.getquery.md">SolrQuery::getQuery</a> - Повертає основний
+запит</li>
+<li><a href="solrquery.getrows.md">SolrQuery::getRows</a> - Повертає
+максимальна кількість документів</li>
+<li><a href="solrquery.getsortfields.md">SolrQuery::getSortFields</a> -
+Повертає всі поля сортування</li>
+<li><a href="solrquery.getstart.md">SolrQuery::getStart</a> — Повертає зсув
+у повному наборі результатів</li>
+<li><a href="solrquery.getstats.md">SolrQuery::getStats</a> — Повертає,
+чи включена статистика</li>
+<li><a href="solrquery.getstatsfacets.md">SolrQuery::getStatsFacets</a> -
+Повертає всі фасети статистики, встановлені</li>
+<li><a href="solrquery.getstatsfields.md">SolrQuery::getStatsFields</a> -
+Повертає усі поля статистики</li>
+<li><a href="solrquery.getterms.md">SolrQuery::getTerms</a> — Повертає, увімкнено
+чи TermsComponent</li>
+<li><a href="solrquery.gettermsfield.md">SolrQuery::getTermsField</a> -
+Повертає поле, з якого витягуються вирази</li>
+<li><a href="solrquery.gettermsincludelowerbound.md">SolrQuery::getTermsIncludeLowerBound</a>
+— Повертає, чи потрібно включати вираз нижньої межі до набору
+результатів</li>
+<li><a href="solrquery.gettermsincludeupperbound.md">SolrQuery::getTermsIncludeUpperBound</a>
+— Повертає, чи потрібно включати вираз верхньої межі до набору
+результатів</li>
+<li><a href="solrquery.gettermslimit.md">SolrQuery::getTermsLimit</a> -
+Повертає максимальну кількість виразів, які має повернути
+Solr</li>
+<li><a href="solrquery.gettermslowerbound.md">SolrQuery::getTermsLowerBound</a> -
+Повертає вираз для початку</li>
+<li><a href="solrquery.gettermsmaxcount.md">SolrQuery::getTermsMaxCount</a> -
+Повертає максимальну частоту документа</li>
+<li><a href="solrquery.gettermsmincount.md">SolrQuery::getTermsMinCount</a> -
+Повертає мінімальну частоту повернення документів для включення</li>
+<li><a href="solrquery.gettermsprefix.md">SolrQuery::getTermsPrefix</a> -
+Повертає префікс виразу</li>
+<li><a href="solrquery.gettermsreturnraw.md">SolrQuery::getTermsReturnRaw</a> -
+Чи слід повертати необроблені символи</li>
+<li><a href="solrquery.gettermssort.md">SolrQuery::getTermsSort</a> — Повертає
+ціле число, що вказує, як сортуються вирази</li>
+<li><a href="solrquery.gettermsupperbound.md">SolrQuery::getTermsUpperBound</a> -
+Повертає вираз для зупинки</li>
+<li><a href="solrquery.gettimeallowed.md">SolrQuery::getTimeAllowed</a> -
+Повертає час у мілісекундах, дозволений для завершення запиту</li>
+<li><a href="solrquery.removeexpandfilterquery.md">SolrQuery::removeExpandFilterQuery</a>
+— Видаляє запит на розширений фільтр</li>
+<li><a href="solrquery.removeexpandsortfield.md">SolrQuery::removeExpandSortField</a>
+— Видаляє розширене поле сортування за допомогою параметра expand.sort</li>
+<li><a href="solrquery.removefacetdatefield.md">SolrQuery::removeFacetDateField</a>
+— Видаляє одне з полів дати фасету</li>
+<li><a href="solrquery.removefacetdateother.md">SolrQuery::removeFacetDateOther</a>
+— Видалення одного з параметрів facet.date.other</li>
+<li><a href="solrquery.removefacetfield.md">SolrQuery::removeFacetField</a> -
+Видаляє один із параметрів facet.date</li>
+<li><a href="solrquery.removefacetquery.md">SolrQuery::removeFacetQuery</a> -
+Видаляє один із параметрів facet.query</li>
+<li><a href="solrquery.removefield.md">SolrQuery::removeField</a> — Видаляє поле
+зі списку полів</li>
+<li><a href="solrquery.removefilterquery.md">SolrQuery::removeFilterQuery</a> -
+Видаляє запит фільтру</li>
+<li><a href="solrquery.removehighlightfield.md">SolrQuery::removeHighlightField</a>
+— Видаляє одне з полів, що використовуються для виділення</li>
+<li><a href="solrquery.removemltfield.md">SolrQuery::removeMltField</a> — Видаляє
+одне з полів більшеLikeThis</li>
+<li><a href="solrquery.removemltqueryfield.md">SolrQuery::removeMltQueryField</a></li>
+<li>Видаляє одне з полів запиту moreLikeThis</li>
+<li><a href="solrquery.removesortfield.md">SolrQuery::removeSortField</a> -
+Видаляє одне з полів сортування</li>
+<li><a href="solrquery.removestatsfacet.md">SolrQuery::removeStatsFacet</a> -
+Видаляє один із параметрів stats.facet</li>
+<li><a href="solrquery.removestatsfield.md">SolrQuery::removeStatsField</a> -
+Видаляє один із параметрів stats.field</li>
+<li><a href="solrquery.setechohandler.md">SolrQuery::setEchoHandler</a> -
+Перемикає параметр echoHandler</li>
+<li><a href="solrquery.setechoparams.md">SolrQuery::setEchoParams</a> -
+Визначає, які параметри включати у відповідь</li>
+<li><a href="solrquery.setexpand.md">SolrQuery::setExpand</a> -
+Вмикає/вимикає компонент Expand</li>
+<li><a href="solrquery.setexpandquery.md">SolrQuery::setExpandQuery</a> -
+Встановлює параметр expand.q</li>
+<li><a href="solrquery.setexpandrows.md">SolrQuery::setExpandRows</a> -
+Встановлює кількість рядків для відображення у кожній групі
+(expand.rows). Типово 5</li>
+<li><a href="solrquery.setexplainother.md">SolrQuery::setExplainOther</a> -
+Встановлює загальний параметр запиту explainOther</li>
+<li><a href="solrquery.setfacet.md">SolrQuery::setFacet</a> — Відповідає
+параметр фасета. Включає або вимикає фасетування</li>
+<li><a href="solrquery.setfacetdateend.md">SolrQuery::setFacetDateEnd</a> -
+Відповідає facet.date.end</li>
+<li><a href="solrquery.setfacetdategap.md">SolrQuery::setFacetDateGap</a> -
+Відповідає facet.date.gap</li>
+<li><a href="solrquery.setfacetdatehardend.md">SolrQuery::setFacetDateHardEnd</a>
+— Відповідає facet.date.hardend</li>
+<li><a href="solrquery.setfacetdatestart.md">SolrQuery::setFacetDateStart</a> -
+Відповідає facet.date.start</li>
+<li><a href="solrquery.setfacetenumcachemindefaultfrequency.md">SolrQuery::setFacetEnumCacheMinDefaultFrequency</a>
+— Встановлює мінімальну частоту документа, що використовується для
+визначення кількості виразів</li>
+<li><a href="solrquery.setfacetlimit.md">SolrQuery::setFacetLimit</a> -
+Відповідає facet.limit</li>
+<li><a href="solrquery.setfacetmethod.md">SolrQuery::setFacetMethod</a> — Задає
+тип алгоритму, який слід використовувати під час фасетування поля</li>
+<li><a href="solrquery.setfacetmincount.md">SolrQuery::setFacetMinCount</a> -
+Відповідає facet.mincount</li>
+<li><a href="solrquery.setfacetmissing.md">SolrQuery::setFacetMissing</a> -
+Відповідає facet.missing</li>
+<li><a href="solrquery.setfacetoffset.md">SolrQuery::setFacetOffset</a> -
+Встановлює переміщення до списку обмежень для розбивки на сторінки</li>
+<li><a href="solrquery.setfacetprefix.md">SolrQuery::setFacetPrefix</a> -
+Визначає рядковий префікс, за допомогою якого обмежуються
+вирази, на яких виконується фасет</li>
+<li><a href="solrquery.setfacetsort.md">SolrQuery::setFacetSort</a> — Визначає
+порядок обмежень поля фасету</li>
+<li><a href="solrquery.setgroup.md">SolrQuery::setGroup</a> — Вмикає/вимикає
+групування результатів (параметр group)</li>
+<li><a href="solrquery.setgroupcachepercent.md">SolrQuery::setGroupCachePercent</a>
+— Включає кешування для угруповання результатів</li>
+<li><a href="solrquery.setgroupfacet.md">SolrQuery::setGroupFacet</a> -
+Встановлює параметр group.facet</li>
+<li><a href="solrquery.setgroupformat.md">SolrQuery::setGroupFormat</a> -
+Встановлює формат групи, структуру результату (параметр
+group.format)</li>
+<li><a href="solrquery.setgrouplimit.md">SolrQuery::setGroupLimit</a> — Задає
+кількість результатів, що повертаються для кожної групи. Значення
+сервера за промовчанням - 1</li>
+<li><a href="solrquery.setgroupmain.md">SolrQuery::setGroupMain</a> — Якщо true,
+результат першої команди угруповання полів використовується як
+основного списку результатів у відповіді з використанням
+group.format=simple</li>
+<li><a href="solrquery.setgroupngroups.md">SolrQuery::setGroupNGroups</a> — Якщо
+true, Solr включає в результати кількість груп, які
+відповідають запиту</li>
+<li><a href="solrquery.setgroupoffset.md">SolrQuery::setGroupOffset</a> -
+Встановлює параметр group.offset</li>
+<li><a href="solrquery.setgrouptruncate.md">SolrQuery::setGroupTruncate</a> -
+Якщо true, підрахунок фасетів базується на найбільш релевантному документі
+кожної групи, що відповідає запиту</li>
+<li><a href="solrquery.sethighlight.md">SolrQuery::setHighlight</a> — Включає
+або відключає виділення</li>
+<li><a href="solrquery.sethighlightalternatefield.md">SolrQuery::setHighlightAlternateField</a>
+— Задає поле резервного копіювання для використання</li>
+<li><a href="solrquery.sethighlightformatter.md">SolrQuery::setHighlightFormatter</a>
+— Задає засіб форматування для виведення виділення</li>
+<li><a href="solrquery.sethighlightfragmenter.md">SolrQuery::setHighlightFragmenter</a>
+— Встановлює генератор текстових фрагментів для виділення
+тексту</li>
+<li><a href="solrquery.sethighlightfragsize.md">SolrQuery::setHighlightFragsize</a>
+— Розмір фрагментів, які слід враховувати під час виділення</li>
+<li><a href="solrquery.sethighlighthighlightmultiterm.md">SolrQuery::setHighlightHighlightMultiTerm</a>
+— Використовувати SpanScorer для виділення виразів</li>
+<li><a href="solrquery.sethighlightmaxalternatefieldlength.md">SolrQuery::setHighlightMaxAlternateFieldLength</a>
+— Встановлює максимальну кількість символів поля для повернення</li>
+<li><a href="solrquery.sethighlightmaxanalyzedchars.md">SolrQuery::setHighlightMaxAnalyzedChars</a>
+— Задає кількість символів у документі для пошуку відповідних
+фрагментів</li>
+<li><a href="solrquery.sethighlightmergecontiguous.md">SolrQuery::setHighlightMergeContiguous</a></li>
+<li>Чи згортати суміжні фрагменти в один фрагмент</li>
+<li><a href="solrquery.sethighlightregexmaxanalyzedchars.md">SolrQuery::setHighlightRegexMaxAnalyzedChars</a>
+— Задає максимальну кількість символів для аналізу</li>
+<li><a href="solrquery.sethighlightregexpattern.md">SolrQuery::setHighlightRegexPattern</a>
+— Задає регулярний вираз фрагментації</li>
+<li><a href="solrquery.sethighlightregexslop.md">SolrQuery::setHighlightRegexSlop</a></li>
+<li>Встановлює коефіцієнт, на який фрагментатор регулярно
+вирази може відхилитися від ідеального розміру фрагмента</li>
+<li><a href="solrquery.sethighlightrequirefieldmatch.md">SolrQuery::setHighlightRequireFieldMatch</a></li>
+<li>Вимагати зіставлення полів при виділенні</li>
+<li><a href="solrquery.sethighlightsimplepost.md">SolrQuery::setHighlightSimplePost</a>
+— Встановлює текст, який з'являється після виділення
+вирази</li>
+<li><a href="solrquery.sethighlightsimplepre.md">SolrQuery::setHighlightSimplePre</a>
+— Встановлює текст, який з'являється перед виділенням
+виразом</li>
+<li><a href="solrquery.sethighlightsnippets.md">SolrQuery::setHighlightSnippets</a>
+— Встановлює максимальну кількість виділених фрагментів
+створення для кожного поля</li>
+<li><a href="solrquery.sethighlightusephrasehighlighter.md">SolrQuery::setHighlightUsePhraseHighlighter</a>
+— Чи слід виділяти вирази лише тоді, коли вони з'являються
+у фразі запиту</li>
+<li><a href="solrquery.setmlt.md">SolrQuery::setMlt</a> — Вмикає або вимикає
+moreLikeThis</li>
+<li><a href="solrquery.setmltboost.md">SolrQuery::setMltBoost</a> -
+Встановлює, чи буде запит посилено релевантністю цікавого
+вирази</li>
+<li><a href="solrquery.setmltcount.md">SolrQuery::setMltCount</a> - Встановлює
+кількість схожих документів, що повертаються для кожного результату</li>
+<li><a href="solrquery.setmltmaxnumqueryterms.md">SolrQuery::setMltMaxNumQueryTerms</a>
+— Встановлює максимальну кількість виразів запиту, що включаються.</li>
+<li><a href="solrquery.setmltmaxnumtokens.md">SolrQuery::setMltMaxNumTokens</a> -
+Задає максимальну кількість токенів для аналізу</li>
+<li><a href="solrquery.setmltmaxwordlength.md">SolrQuery::setMltMaxWordLength</a></li>
+<li>Встановлює максимальну довжину слова</li>
+<li><a href="solrquery.setmltmindocfrequency.md">SolrQuery::setMltMinDocFrequency</a></li>
+<li>Встановлює частоту mltMinDoc</li>
+<li><a href="solrquery.setmltmintermfrequency.md">SolrQuery::setMltMinTermFrequency</a>
+— Встановлює частоту, нижче за яку вирази ігноруватимуться
+у вихідній документації</li>
+<li><a href="solrquery.setmltminwordlength.md">SolrQuery::setMltMinWordLength</a></li>
+<li>Встановлює мінімальну довжину слова</li>
+<li><a href="solrquery.setomitheader.md">SolrQuery::setOmitHeader</a> - Виключає
+заголовок з результатів, що повертаються</li>
+<li><a href="solrquery.setquery.md">SolrQuery::setQuery</a> - Встановлює
+пошуковий запит</li>
+<li><a href="solrquery.setrows.md">SolrQuery::setRows</a> — Визначає максимальне
+кількість рядків, що повертаються в результаті</li>
+<li><a href="solrquery.setshowdebuginfo.md">SolrQuery::setShowDebugInfo</a> -
+Прапор для відображення налагоджувальної інформації</li>
+<li><a href="solrquery.setstart.md">SolrQuery::setStart</a> — Визначає
+кількість рядків, що пропускаються</li>
+<li><a href="solrquery.setstats.md">SolrQuery::setStats</a> — Включає або
+відключає компонент Stats</li>
+<li><a href="solrquery.setterms.md">SolrQuery::setTerms</a> — Включає або
+відключає TermsComponent</li>
+<li><a href="solrquery.settermsfield.md">SolrQuery::setTermsField</a> -
+Встановлює ім'я поля, з якого потрібно отримати вираз</li>
+<li><a href="solrquery.settermsincludelowerbound.md">SolrQuery::setTermsIncludeLowerBound</a>
+— Включає нижню межу вираження у набір результатів</li>
+<li><a href="solrquery.settermsincludeupperbound.md">SolrQuery::setTermsIncludeUpperBound</a>
+— Включає верхню межу вираження у набір результатів</li>
+<li><a href="solrquery.settermslimit.md">SolrQuery::setTermsLimit</a> -
+Встановлює максимальну кількість виразів, що повертаються.</li>
+<li><a href="solrquery.settermslowerbound.md">SolrQuery::setTermsLowerBound</a> -
+Визначає вираз, із якого треба починати</li>
+<li><a href="solrquery.settermsmaxcount.md">SolrQuery::setTermsMaxCount</a> -
+Встановлює максимальну частоту документів</li>
+<li><a href="solrquery.settermsmincount.md">SolrQuery::setTermsMinCount</a> -
+Встановлює мінімальну частоту документів</li>
+<li><a href="solrquery.settermsprefix.md">SolrQuery::setTermsPrefix</a> -
+Обмежує збіги виразами, що починаються з префіксу</li>
+<li><a href="solrquery.settermsreturnraw.md">SolrQuery::setTermsReturnRaw</a> -
+Повернути необроблені символи проіндексованого виразу</li>
+<li><a href="solrquery.settermssort.md">SolrQuery::setTermsSort</a> — Визначає,
+як сортувати повернені умови</li>
+<li><a href="solrquery.settermsupperbound.md">SolrQuery::setTermsUpperBound</a> -
+Встановлює умову для зупинки</li>
+<li><a href="solrquery.settimeallowed.md">SolrQuery::setTimeAllowed</a> — Час,
+відведене на пошук</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.solrquery.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.solrquery.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.solrquery","slug":"class.solrquery.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"solrmodifiableparams.destruct.md\"\u003e« SolrModifiableParams::__destruct\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"solrquery.addexpandfilterquery.md\"\u003eSolrQuery::addExpandFilterQuery »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.solr.md\"\u003eSolr\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас SolrQuery\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас SolrQuery\u003c/h1\u003e\n\u003cp\u003e(PECL solr \u003e = 0.9.2)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003eПредставляє колекцію пар ім'я-значення, відправлену на сервер Solr\nчас запиту.\u003c/p\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eSolrQuery\u003c/strong\u003e extends\n\u003ca href=\"class.solrmodifiableparams.md\"\u003eSolrModifiableParams\u003c/a\u003e implements\n\u003ca href=\"class.serializable.md\"\u003eSerializable\u003c/a\u003e {\u003c/p\u003e\n\u003cp\u003e/* Константи */\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eORDER_ASC\u003c/code\u003e = 0;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eORDER_DESC\u003c/code\u003e = 1;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eFACET_SORT_INDEX\u003c/code\u003e = 0;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eFACET_SORT_COUNT\u003c/code\u003e = 1;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eTERMS_SORT_INDEX\u003c/code\u003e = 0;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eTERMS_SORT_COUNT\u003c/code\u003e = 1;\u003c/p\u003e\n\u003cp\u003e/* Властивості */\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.construct.md\"\u003e__construct\u003c/a\u003e(string \u003ccode\u003e$q\u003c/code\u003e = ?)\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.addexpandfilterquery.md\"\u003eaddExpandFilterQuery\u003c/a\u003e(string\n\u003ccode\u003e$fq\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addexpandsortfield.md\"\u003eaddExpandSortField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e, string \u003ccode\u003e$order\u003c/code\u003e = ?): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addfacetdatefield.md\"\u003eaddFacetDateField\u003c/a\u003e(string\n\u003ccode\u003e$dateField\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addfacetdateother.md\"\u003eaddFacetDateOther\u003c/a\u003e(string\n\u003ccode\u003e$value\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addfacetfield.md\"\u003eaddFacetField\u003c/a\u003e(string \u003ccode\u003e$field\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addfacetquery.md\"\u003eaddFacetQuery\u003c/a\u003e(string\n\u003ccode\u003e$facetQuery\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addfield.md\"\u003eaddField\u003c/a\u003e(string \u003ccode\u003e$field\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addfilterquery.md\"\u003eaddFilterQuery\u003c/a\u003e(string \u003ccode\u003e$fq\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addgroupfield.md\"\u003eaddGroupField\u003c/a\u003e(string \u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addgroupfunction.md\"\u003eaddGroupFunction\u003c/a\u003e(string\n\u003ccode\u003e$value\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addgroupquery.md\"\u003eaddGroupQuery\u003c/a\u003e(string $value):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addgroupsortfield.md\"\u003eaddGroupSortField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e, int \u003ccode\u003e$order\u003c/code\u003e = ?): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addhighlightfield.md\"\u003eaddHighlightField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addmltfield.md\"\u003eaddMltField\u003c/a\u003e(string \u003ccode\u003e$field\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addmltqueryfield.md\"\u003eaddMltQueryField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e, float \u003ccode\u003e$boost\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addsortfield.md\"\u003eaddSortField\u003c/a\u003e(string \u003ccode\u003e$field\u003c/code\u003e, int\n\u003ccode\u003e$order\u003c/code\u003e = SolrQuery::ORDER_DESC): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addstatsfacet.md\"\u003eaddStatsFacet\u003c/a\u003e(string \u003ccode\u003e$field\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.addstatsfield.md\"\u003eaddStatsField\u003c/a\u003e(string \u003ccode\u003e$field\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.collapse.md\"\u003ecollapse\u003c/a\u003e(\u003ca href=\"class.solrcollapsefunction.md\"\u003eSolrCollapseFunction\u003c/a\u003e\n\u003ccode\u003e$collapseFunction\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getexpand.md\"\u003egetExpand\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.getexpandfilterqueries.md\"\u003egetExpandFilterQueries\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getexpandquery.md\"\u003egetExpandQuery\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getexpandrows.md\"\u003egetExpandRows\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getexpandsortfields.md\"\u003egetExpandSortFields\u003c/a\u003e():\narray\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacet.md\"\u003egetFacet\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetdateend.md\"\u003egetFacetDateEnd\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetdatefields.md\"\u003egetFacetDateFields\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetdategap.md\"\u003egetFacetDateGap\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetdatehardend.md\"\u003egetFacetDateHardEnd\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetdateother.md\"\u003egetFacetDateOther\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetdatestart.md\"\u003egetFacetDateStart\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetfields.md\"\u003egetFacetFields\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetlimit.md\"\u003egetFacetLimit\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetmethod.md\"\u003egetFacetMethod\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetmincount.md\"\u003egetFacetMinCount\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetmissing.md\"\u003egetFacetMissing\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetoffset.md\"\u003egetFacetOffset\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetprefix.md\"\u003egetFacetPrefix\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetqueries.md\"\u003egetFacetQueries\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfacetsort.md\"\u003egetFacetSort\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfields.md\"\u003egetFields\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getfilterqueries.md\"\u003egetFilterQueries\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroup.md\"\u003egetGroup\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroupcachepercent.md\"\u003egetGroupCachePercent\u003c/a\u003e():\nint\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroupfacet.md\"\u003egetGroupFacet\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroupfields.md\"\u003egetGroupFields\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroupformat.md\"\u003egetGroupFormat\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroupfunctions.md\"\u003egetGroupFunctions\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgrouplimit.md\"\u003egetGroupLimit\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroupmain.md\"\u003egetGroupMain\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroupngroups.md\"\u003egetGroupNGroups\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroupoffset.md\"\u003egetGroupOffset\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroupqueries.md\"\u003egetGroupQueries\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgroupsortfields.md\"\u003egetGroupSortFields\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getgrouptruncate.md\"\u003egetGroupTruncate\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gethighlight.md\"\u003egetHighlight\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightalternatefield.md\"\u003egetHighlightAlternateField\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gethighlightfields.md\"\u003egetHighlightFields\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightformatter.md\"\u003egetHighlightFormatter\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightfragmenter.md\"\u003egetHighlightFragmenter\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightfragsize.md\"\u003egetHighlightFragsize\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): int\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlighthighlightmultiterm.md\"\u003egetHighlightHighlightMultiTerm\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightmaxalternatefieldlength.md\"\u003egetHighlightMaxAlternateFieldLength\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): int\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightmaxanalyzedchars.md\"\u003egetHighlightMaxAnalyzedChars\u003c/a\u003e():\nint\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightmergecontiguous.md\"\u003egetHighlightMergeContiguous\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightregexmaxanalyzedchars.md\"\u003egetHighlightRegexMaxAnalyzedChars\u003c/a\u003e():\nint\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightregexpattern.md\"\u003egetHighlightRegexPattern\u003c/a\u003e():\nstring\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gethighlightregexslop.md\"\u003egetHighlightRegexSlop\u003c/a\u003e():\nfloat\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightrequirefieldmatch.md\"\u003egetHighlightRequireFieldMatch\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightsimplepost.md\"\u003egetHighlightSimplePost\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightsimplepre.md\"\u003egetHighlightSimplePre\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightsnippets.md\"\u003egetHighlightSnippets\u003c/a\u003e(string\n\u003ccode\u003e$field_override\u003c/code\u003e = ?): int\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gethighlightusephrasehighlighter.md\"\u003egetHighlightUsePhraseHighlighter\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getmlt.md\"\u003egetMlt\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getmltboost.md\"\u003egetMltBoost\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getmltcount.md\"\u003egetMltCount\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getmltfields.md\"\u003egetMltFields\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.getmltmaxnumqueryterms.md\"\u003egetMltMaxNumQueryTerms\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getmltmaxnumtokens.md\"\u003egetMltMaxNumTokens\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getmltmaxwordlength.md\"\u003egetMltMaxWordLength\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getmltmindocfrequency.md\"\u003egetMltMinDocFrequency\u003c/a\u003e():\nint\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.getmltmintermfrequency.md\"\u003egetMltMinTermFrequency\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getmltminwordlength.md\"\u003egetMltMinWordLength\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getmltqueryfields.md\"\u003egetMltQueryFields\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getquery.md\"\u003egetQuery\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getrows.md\"\u003egetRows\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getsortfields.md\"\u003egetSortFields\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getstart.md\"\u003egetStart\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getstats.md\"\u003egetStats\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getstatsfacets.md\"\u003egetStatsFacets\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getstatsfields.md\"\u003egetStatsFields\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.getterms.md\"\u003egetTerms\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gettermsfield.md\"\u003egetTermsField\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gettermsincludelowerbound.md\"\u003egetTermsIncludeLowerBound\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.gettermsincludeupperbound.md\"\u003egetTermsIncludeUpperBound\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gettermslimit.md\"\u003egetTermsLimit\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gettermslowerbound.md\"\u003egetTermsLowerBound\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gettermsmaxcount.md\"\u003egetTermsMaxCount\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gettermsmincount.md\"\u003egetTermsMinCount\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gettermsprefix.md\"\u003egetTermsPrefix\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gettermsreturnraw.md\"\u003egetTermsReturnRaw\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gettermssort.md\"\u003egetTermsSort\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gettermsupperbound.md\"\u003egetTermsUpperBound\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.gettimeallowed.md\"\u003egetTimeAllowed\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.removeexpandfilterquery.md\"\u003eremoveExpandFilterQuery\u003c/a\u003e(string\n\u003ccode\u003e$fq\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.removeexpandsortfield.md\"\u003eremoveExpandSortField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.removefacetdatefield.md\"\u003eremoveFacetDateField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.removefacetdateother.md\"\u003eremoveFacetDateOther\u003c/a\u003e(string\n\u003ccode\u003e$value\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.removefacetfield.md\"\u003eremoveFacetField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.removefacetquery.md\"\u003eremoveFacetQuery\u003c/a\u003e(string\n\u003ccode\u003e$value\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.removefield.md\"\u003eremoveField\u003c/a\u003e(string \u003ccode\u003e$field\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.removefilterquery.md\"\u003eremoveFilterQuery\u003c/a\u003e(string\n\u003ccode\u003e$fq\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.removehighlightfield.md\"\u003eremoveHighlightField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.removemltfield.md\"\u003eremoveMltField\u003c/a\u003e(string \u003ccode\u003e$field\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.removemltqueryfield.md\"\u003eremoveMltQueryField\u003c/a\u003e(string\n\u003ccode\u003e$queryField\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.removesortfield.md\"\u003eremoveSortField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.removestatsfacet.md\"\u003eremoveStatsFacet\u003c/a\u003e(string\n\u003ccode\u003e$value\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.removestatsfield.md\"\u003eremoveStatsField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setechohandler.md\"\u003esetEchoHandler\u003c/a\u003e(bool \u003ccode\u003e$flag\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setechoparams.md\"\u003esetEchoParams\u003c/a\u003e(string \u003ccode\u003e$type\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setexpand.md\"\u003esetExpand\u003c/a\u003e(bool \u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setexpandquery.md\"\u003esetExpandQuery\u003c/a\u003e(string \u003ccode\u003e$q\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setexpandrows.md\"\u003esetExpandRows\u003c/a\u003e(int \u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setexplainother.md\"\u003esetExplainOther\u003c/a\u003e(string\n\u003ccode\u003e$query\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacet.md\"\u003esetFacet\u003c/a\u003e(bool \u003ccode\u003e$flag\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetdateend.md\"\u003esetFacetDateEnd\u003c/a\u003e(string\n\u003ccode\u003e$value\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetdategap.md\"\u003esetFacetDateGap\u003c/a\u003e(string\n\u003ccode\u003e$value\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetdatehardend.md\"\u003esetFacetDateHardEnd\u003c/a\u003e(bool\n\u003ccode\u003e$value\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetdatestart.md\"\u003esetFacetDateStart\u003c/a\u003e(string\n\u003ccode\u003e$value\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.setfacetenumcachemindefaultfrequency.md\"\u003esetFacetEnumCacheMinDefaultFrequency\u003c/a\u003e(int\n\u003ccode\u003e$frequency\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetlimit.md\"\u003esetFacetLimit\u003c/a\u003e(int \u003ccode\u003e$limit\u003c/code\u003e,\nstring \u003ccode\u003e$field_override\u003c/code\u003e = ?): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetmethod.md\"\u003esetFacetMethod\u003c/a\u003e(string \u003ccode\u003e$method\u003c/code\u003e,\nstring \u003ccode\u003e$field_override\u003c/code\u003e = ?): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetmincount.md\"\u003esetFacetMinCount\u003c/a\u003e(int\n\u003ccode\u003e$mincount\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetmissing.md\"\u003esetFacetMissing\u003c/a\u003e(bool \u003ccode\u003e$flag\u003c/code\u003e,\nstring \u003ccode\u003e$field_override\u003c/code\u003e = ?): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetoffset.md\"\u003esetFacetOffset\u003c/a\u003e(int \u003ccode\u003e$offset\u003c/code\u003e,\nstring \u003ccode\u003e$field_override\u003c/code\u003e = ?): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetprefix.md\"\u003esetFacetPrefix\u003c/a\u003e(string \u003ccode\u003e$prefix\u003c/code\u003e,\nstring \u003ccode\u003e$field_override\u003c/code\u003e = ?): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setfacetsort.md\"\u003esetFacetSort\u003c/a\u003e(int \u003ccode\u003e$facetSort\u003c/code\u003e,\nstring \u003ccode\u003e$field_override\u003c/code\u003e = ?): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setgroup.md\"\u003esetGroup\u003c/a\u003e(bool \u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setgroupcachepercent.md\"\u003esetGroupCachePercent\u003c/a\u003e(int\n\u003ccode\u003e$percent\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setgroupfacet.md\"\u003esetGroupFacet\u003c/a\u003e(bool \u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setgroupformat.md\"\u003esetGroupFormat\u003c/a\u003e(string \u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setgrouplimit.md\"\u003esetGroupLimit\u003c/a\u003e(int \u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setgroupmain.md\"\u003esetGroupMain\u003c/a\u003e(string \u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setgroupngroups.md\"\u003esetGroupNGroups\u003c/a\u003e(bool \u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setgroupoffset.md\"\u003esetGroupOffset\u003c/a\u003e(int \u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setgrouptruncate.md\"\u003esetGroupTruncate\u003c/a\u003e(bool\n\u003ccode\u003e$value\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.sethighlight.md\"\u003esetHighlight\u003c/a\u003e(bool \u003ccode\u003e$flag\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightalternatefield.md\"\u003esetHighlightAlternateField\u003c/a\u003e(string\n\u003ccode\u003e$field\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightformatter.md\"\u003esetHighlightFormatter\u003c/a\u003e(string\n\u003ccode\u003e$formatter\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightfragmenter.md\"\u003esetHighlightFragmenter\u003c/a\u003e(string\n\u003ccode\u003e$fragmenter\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.sethighlightfragsize.md\"\u003esetHighlightFragsize\u003c/a\u003e(int\n\u003ccode\u003e$size\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlighthighlightmultiterm.md\"\u003esetHighlightHighlightMultiTerm\u003c/a\u003e(bool\n\u003ccode\u003e$flag\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightmaxalternatefieldlength.md\"\u003esetHighlightMaxAlternateFieldLength\u003c/a\u003e(int\n\u003ccode\u003e$fieldLength\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightmaxanalyzedchars.md\"\u003esetHighlightMaxAnalyzedChars\u003c/a\u003e(int\n\u003ccode\u003e$value\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightmergecontiguous.md\"\u003esetHighlightMergeContiguous\u003c/a\u003e(bool\n\u003ccode\u003e$flag\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightregexmaxanalyzedchars.md\"\u003esetHighlightRegexMaxAnalyzedChars\u003c/a\u003e(int\n\u003ccode\u003e$maxAnalyzedChars\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightregexpattern.md\"\u003esetHighlightRegexPattern\u003c/a\u003e(string\n\u003ccode\u003e$value\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightregexslop.md\"\u003esetHighlightRegexSlop\u003c/a\u003e(float\n\u003ccode\u003e$factor\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightrequirefieldmatch.md\"\u003esetHighlightRequireFieldMatch\u003c/a\u003e(bool\n\u003ccode\u003e$flag\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightsimplepost.md\"\u003esetHighlightSimplePost\u003c/a\u003e(string\n\u003ccode\u003e$simplePost\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightsimplepre.md\"\u003esetHighlightSimplePre\u003c/a\u003e(string\n\u003ccode\u003e$simplePre\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.sethighlightsnippets.md\"\u003esetHighlightSnippets\u003c/a\u003e(int\n\u003ccode\u003e$value\u003c/code\u003e, string \u003ccode\u003e$field_override\u003c/code\u003e = ?):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.sethighlightusephrasehighlighter.md\"\u003esetHighlightUsePhraseHighlighter\u003c/a\u003e(bool\n\u003ccode\u003e$flag\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setmlt.md\"\u003esetMlt\u003c/a\u003e(bool \u003ccode\u003e$flag\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setmltboost.md\"\u003esetMltBoost\u003c/a\u003e(bool \u003ccode\u003e$flag\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setmltcount.md\"\u003esetMltCount\u003c/a\u003e(int \u003ccode\u003e$count\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.setmltmaxnumqueryterms.md\"\u003esetMltMaxNumQueryTerms\u003c/a\u003e(int\n\u003ccode\u003e$value\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setmltmaxnumtokens.md\"\u003esetMltMaxNumTokens\u003c/a\u003e(int\n\u003ccode\u003e$value\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setmltmaxwordlength.md\"\u003esetMltMaxWordLength\u003c/a\u003e(int\n\u003ccode\u003e$maxWordLength\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setmltmindocfrequency.md\"\u003esetMltMinDocFrequency\u003c/a\u003e(int\n\u003ccode\u003e$minDocFrequency\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.setmltmintermfrequency.md\"\u003esetMltMinTermFrequency\u003c/a\u003e(int\n\u003ccode\u003e$minTermFrequency\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setmltminwordlength.md\"\u003esetMltMinWordLength\u003c/a\u003e(int\n\u003ccode\u003e$minWordLength\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setomitheader.md\"\u003esetOmitHeader\u003c/a\u003e(bool \u003ccode\u003e$flag\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setquery.md\"\u003esetQuery\u003c/a\u003e(string \u003ccode\u003e$query\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setrows.md\"\u003esetRows\u003c/a\u003e(int \u003ccode\u003e$rows\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setshowdebuginfo.md\"\u003esetShowDebugInfo\u003c/a\u003e(bool\n\u003ccode\u003e$flag\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setstart.md\"\u003esetStart\u003c/a\u003e(int \u003ccode\u003e$start\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setstats.md\"\u003esetStats\u003c/a\u003e(bool \u003ccode\u003e$flag\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.setterms.md\"\u003esetTerms\u003c/a\u003e(bool \u003ccode\u003e$flag\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.settermsfield.md\"\u003esetTermsField\u003c/a\u003e(string\n\u003ccode\u003e$fieldname\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.settermsincludelowerbound.md\"\u003esetTermsIncludeLowerBound\u003c/a\u003e(bool\n\u003ccode\u003e$flag\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrquery.settermsincludeupperbound.md\"\u003esetTermsIncludeUpperBound\u003c/a\u003e(bool\n\u003ccode\u003e$flag\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.settermslimit.md\"\u003esetTermsLimit\u003c/a\u003e(int \u003ccode\u003e$limit\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.settermslowerbound.md\"\u003esetTermsLowerBound\u003c/a\u003e(string\n\u003ccode\u003e$lowerBound\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.settermsmaxcount.md\"\u003esetTermsMaxCount\u003c/a\u003e(int\n\u003ccode\u003e$frequency\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.settermsmincount.md\"\u003esetTermsMinCount\u003c/a\u003e(int\n\u003ccode\u003e$frequency\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.settermsprefix.md\"\u003esetTermsPrefix\u003c/a\u003e(string\n\u003ccode\u003e$prefix\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.settermsreturnraw.md\"\u003esetTermsReturnRaw\u003c/a\u003e(bool\n\u003ccode\u003e$flag\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.settermssort.md\"\u003esetTermsSort\u003c/a\u003e(int \u003ccode\u003e$sortType\u003c/code\u003e):\n\u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.settermsupperbound.md\"\u003esetTermsUpperBound\u003c/a\u003e(string\n\u003ccode\u003e$upperBound\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.settimeallowed.md\"\u003esetTimeAllowed\u003c/a\u003e(int\n\u003ccode\u003e$timeAllowed\u003c/code\u003e): \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"solrquery.destruct.md\"\u003e__destruct\u003c/a\u003e()\u003c/p\u003e\n\u003cp\u003e/* Наслідувані методи */\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrmodifiableparams.construct.md\"\u003eSolrModifiableParams::__construct\u003c/a\u003e()\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"solrmodifiableparams.destruct.md\"\u003eSolrModifiableParams::__destruct\u003c/a\u003e()\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗумовлені константи\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eSolrQuery::ORDER_ASC\u003c/code\u003e\u003c/strong\u003e\nВикористовується для вказівки того, що сортування має бути в порядку\nзростання\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eSolrQuery::ORDER_DESC\u003c/code\u003e\u003c/strong\u003e\nВикористовується для вказівки, що сортування має бути в порядку зменшення\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eSolrQuery::FACET_SORT_INDEX\u003c/code\u003e\u003c/strong\u003e\nВикористовується для вказівки сортування фасету за індексом\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eSolrQuery::FACET_SORT_COUNT\u003c/code\u003e\u003c/strong\u003e\nВикористовується для вказівки того, що фасет повинен сортувати за\nкількості\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eSolrQuery::TERMS_SORT_INDEX\u003c/code\u003e\u003c/strong\u003e\nВикористовується в TermsComponent\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eSolrQuery::TERMS_SORT_COUNT\u003c/code\u003e\u003c/strong\u003e\nВикористовується в TermsComponent\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addexpandfilterquery.md\"\u003eSolrQuery::addExpandFilterQuery\u003c/a\u003e\n— Перевизначає запит основного фільтра, визначає які\nдокументи включити до основної групи\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addexpandsortfield.md\"\u003eSolrQuery::addExpandSortField\u003c/a\u003e -\nВпорядковує документи у розширених групах (параметр expand.sort)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addfacetdatefield.md\"\u003eSolrQuery::addFacetDateField\u003c/a\u003e -\nКарти для facet.date\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addfacetdateother.md\"\u003eSolrQuery::addFacetDateOther\u003c/a\u003e -\nДодає ще один параметр facet.date.other\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addfacetfield.md\"\u003eSolrQuery::addFacetField\u003c/a\u003e — Додає\nінше поле до фасету\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addfacetquery.md\"\u003eSolrQuery::addFacetQuery\u003c/a\u003e — Додає\nфасетний запит\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addfield.md\"\u003eSolrQuery::addField\u003c/a\u003e — Вказує, які\nполя повертати в результаті\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addfilterquery.md\"\u003eSolrQuery::addFilterQuery\u003c/a\u003e -\nВизначає запит фільтру\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addgroupfield.md\"\u003eSolrQuery::addGroupField\u003c/a\u003e — Додає\nполе, яке використовуватиметься для групування результатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addgroupfunction.md\"\u003eSolrQuery::addGroupFunction\u003c/a\u003e -\nДозволяє групувати результати на основі унікальних значень\nзапиту функції (параметр group.func)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addgroupquery.md\"\u003eSolrQuery::addGroupQuery\u003c/a\u003e — Дозволяє\nгрупувати документи, що відповідають даному запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addgroupsortfield.md\"\u003eSolrQuery::addGroupSortField\u003c/a\u003e -\nДодає поле сортування групи (параметр group.sort)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addhighlightfield.md\"\u003eSolrQuery::addHighlightField\u003c/a\u003e -\nВідповідає hl.fl\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addmltfield.md\"\u003eSolrQuery::addMltField\u003c/a\u003e — Встановлює\nполе для використання для подоби\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addmltqueryfield.md\"\u003eSolrQuery::addMltQueryField\u003c/a\u003e -\nВідповідає mlt.qf\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addsortfield.md\"\u003eSolrQuery::addSortField\u003c/a\u003e -\nВикористовується для керування сортуванням результатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addstatsfacet.md\"\u003eSolrQuery::addStatsFacet\u003c/a\u003e -\nЗапитує повернення допоміжних результатів для значень у\nданому фасеті\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.addstatsfield.md\"\u003eSolrQuery::addStatsField\u003c/a\u003e -\nВідповідає параметру stats.field\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.collapse.md\"\u003eSolrQuery::collapse\u003c/a\u003e — Згортає набір\nрезультатів до одного документа на групу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.construct.md\"\u003eSolrQuery::__construct\u003c/a\u003e - Конструктор\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.destruct.md\"\u003eSolrQuery::__destruct\u003c/a\u003e - Деструктор\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getexpand.md\"\u003eSolrQuery::getExpand\u003c/a\u003e - Повертає true,\nякщо увімкнено розширення групи\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getexpandfilterqueries.md\"\u003eSolrQuery::getExpandFilterQueries\u003c/a\u003e\n— Повертає запити на розширений фільтр\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getexpandquery.md\"\u003eSolrQuery::getExpandQuery\u003c/a\u003e -\nПовертає параметр розширеного запиту expand.q\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getexpandrows.md\"\u003eSolrQuery::getExpandRows\u003c/a\u003e -\nПовертає кількість рядків, які відображаються в кожній групі\n(expand.rows)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getexpandsortfields.md\"\u003eSolrQuery::getExpandSortFields\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПовертає масив полів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacet.md\"\u003eSolrQuery::getFacet\u003c/a\u003e — Повертає значення\nпараметра фасета\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetdateend.md\"\u003eSolrQuery::getFacetDateEnd\u003c/a\u003e -\nПовертає значення параметра facet.date.end\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetdatefields.md\"\u003eSolrQuery::getFacetDateFields\u003c/a\u003e -\nПовертає усі поля facet.date\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetdategap.md\"\u003eSolrQuery::getFacetDateGap\u003c/a\u003e -\nПовертає значення параметра facet.date.gap\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetdatehardend.md\"\u003eSolrQuery::getFacetDateHardEnd\u003c/a\u003e\n— Повертає значення параметра facet.date.hardend\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetdateother.md\"\u003eSolrQuery::getFacetDateOther\u003c/a\u003e -\nПовертає значення параметра facet.date.other\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetdatestart.md\"\u003eSolrQuery::getFacetDateStart\u003c/a\u003e -\nПовертає нижню межу першого діапазону дат для всіх аспектів\nдати у цьому полі\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetfields.md\"\u003eSolrQuery::getFacetFields\u003c/a\u003e -\nПовертає всі поля фасетів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetlimit.md\"\u003eSolrQuery::getFacetLimit\u003c/a\u003e -\nПовертає максимальну кількість лічильників обмежень, яка\nмає бути повернено для полів фасету\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetmethod.md\"\u003eSolrQuery::getFacetMethod\u003c/a\u003e -\nПовертає значення параметра facet.method\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetmincount.md\"\u003eSolrQuery::getFacetMinCount\u003c/a\u003e -\nПовертає мінімальну кількість полів аспектів, які мають\nбути включені у відповідь\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetmissing.md\"\u003eSolrQuery::getFacetMissing\u003c/a\u003e -\nПовертає поточний стан facet.missing\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetoffset.md\"\u003eSolrQuery::getFacetOffset\u003c/a\u003e -\nПовертає зсув у списку обмежень, які будуть\nвикористовуватися для посторінкової навігації\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetprefix.md\"\u003eSolrQuery::getFacetPrefix\u003c/a\u003e -\nПовертає префікс фасету\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetqueries.md\"\u003eSolrQuery::getFacetQueries\u003c/a\u003e -\nПовертає всі фасетні запити\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfacetsort.md\"\u003eSolrQuery::getFacetSort\u003c/a\u003e — Повертає\nтип сортування фасета\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfields.md\"\u003eSolrQuery::getFields\u003c/a\u003e — Повертає список\nполів, які будуть повернені у відповіді\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getfilterqueries.md\"\u003eSolrQuery::getFilterQueries\u003c/a\u003e -\nПовертає масив запитів фільтра\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroup.md\"\u003eSolrQuery::getGroup\u003c/a\u003e - Повертає true,\nякщо угруповання увімкнено\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroupcachepercent.md\"\u003eSolrQuery::getGroupCachePercent\u003c/a\u003e\n— Повертає відсоткове значення групового кешу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroupfacet.md\"\u003eSolrQuery::getGroupFacet\u003c/a\u003e -\nПовертає значення параметра group.facet\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroupfields.md\"\u003eSolrQuery::getGroupFields\u003c/a\u003e -\nПовертає групові поля (значення параметра group.field)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroupformat.md\"\u003eSolrQuery::getGroupFormat\u003c/a\u003e -\nПовертає значення group.format\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroupfunctions.md\"\u003eSolrQuery::getGroupFunctions\u003c/a\u003e -\nПовертає групові функції (значення параметрів group.func)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgrouplimit.md\"\u003eSolrQuery::getGroupLimit\u003c/a\u003e -\nПовертає значення group.limit\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroupmain.md\"\u003eSolrQuery::getGroupMain\u003c/a\u003e — Повертає\nзначення group.main\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroupngroups.md\"\u003eSolrQuery::getGroupNGroups\u003c/a\u003e -\nПовертає значення group.ngroups\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroupoffset.md\"\u003eSolrQuery::getGroupOffset\u003c/a\u003e -\nПовертає значення group.offset\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroupqueries.md\"\u003eSolrQuery::getGroupQueries\u003c/a\u003e -\nПовертає всі параметри group.query\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgroupsortfields.md\"\u003eSolrQuery::getGroupSortFields\u003c/a\u003e -\nПовертає значення group.sort\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getgrouptruncate.md\"\u003eSolrQuery::getGroupTruncate\u003c/a\u003e -\nПовертає значення group.truncate\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlight.md\"\u003eSolrQuery::getHighlight\u003c/a\u003e — Повертає\nстан параметра hl\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightalternatefield.md\"\u003eSolrQuery::getHighlightAlternateField\u003c/a\u003e\n— Повертає виділене поле для використання як резервну\nкопії або за замовчуванням\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightfields.md\"\u003eSolrQuery::getHighlightFields\u003c/a\u003e -\nПовертає всі поля, для яких Solr має генерувати виділені\nфрагменти\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightformatter.md\"\u003eSolrQuery::getHighlightFormatter\u003c/a\u003e\n— Повертає засіб форматування для виділеного висновку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightfragmenter.md\"\u003eSolrQuery::getHighlightFragmenter\u003c/a\u003e\n— Повертає генератор фрагментів тексту для виділеного тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightfragsize.md\"\u003eSolrQuery::getHighlightFragsize\u003c/a\u003e\n— Повертає кількість символів фрагментів для виділення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlighthighlightmultiterm.md\"\u003eSolrQuery::getHighlightHighlightMultiTerm\u003c/a\u003e\n— Повертає, чи потрібно вмикати виділення для запитів\nдіапазону/підстановочних знаків/нечітких/префіксів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightmaxalternatefieldlength.md\"\u003eSolrQuery::getHighlightMaxAlternateFieldLength\u003c/a\u003e\n— Повертає максимальну кількість символів поля для повернення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightmaxanalyzedchars.md\"\u003eSolrQuery::getHighlightMaxAnalyzedChars\u003c/a\u003e\n— Повертає максимальну кількість символів у документі для пошуку\nвідповідних фрагментів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightmergecontiguous.md\"\u003eSolrQuery::getHighlightMergeContiguous\u003c/a\u003e\n— Повертає, чи повернути суміжні фрагменти в один фрагмент\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightregexmaxanalyzedchars.md\"\u003eSolrQuery::getHighlightRegexMaxAnalyzedChars\u003c/a\u003e\n— Повертає максимальну кількість символів із поля при\nвикористання фрагментатора регулярного вираження\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightregexpattern.md\"\u003eSolrQuery::getHighlightRegexPattern\u003c/a\u003e\n— Повертає регулярний вираз для фрагментації\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightregexslop.md\"\u003eSolrQuery::getHighlightRegexSlop\u003c/a\u003e\n— Повертає коефіцієнт відхилення від ідеального розміру фрагмента\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightrequirefieldmatch.md\"\u003eSolrQuery::getHighlightRequireFieldMatch\u003c/a\u003e\n— Повертає, якщо поле буде виділено лише у тому випадку, якщо\nзапит відповідає цьому конкретному полю\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightsimplepost.md\"\u003eSolrQuery::getHighlightSimplePost\u003c/a\u003e\n— Повертає текст, який з'являється після виділення.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightsimplepre.md\"\u003eSolrQuery::getHighlightSimplePre\u003c/a\u003e\n— Повертає текст, який з'являється перед виділеним виразом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightsnippets.md\"\u003eSolrQuery::getHighlightSnippets\u003c/a\u003e\n— Повертає максимальну кількість виділених фрагментів\nстворення для кожного поля\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gethighlightusephrasehighlighter.md\"\u003eSolrQuery::getHighlightUsePhraseHighlighter\u003c/a\u003e\n— Повертає стан параметра hl.usePhraseHighlighter\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmlt.md\"\u003eSolrQuery::getMlt\u003c/a\u003e — Повертає, чи повинні\nбути включені результати MoreLikeThis\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmltboost.md\"\u003eSolrQuery::getMltBoost\u003c/a\u003e — Повертає,\nбуде запит посилено релевантністю виразу, що цікавить\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmltcount.md\"\u003eSolrQuery::getMltCount\u003c/a\u003e - Повертає\nкількість схожих документів, що повертаються для кожного результату\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmltfields.md\"\u003eSolrQuery::getMltFields\u003c/a\u003e — Повертає\nвсі поля, які потрібно використовувати для порівняння\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmltmaxnumqueryterms.md\"\u003eSolrQuery::getMltMaxNumQueryTerms\u003c/a\u003e\n— Повертає максимальну кількість умов запиту, які будуть\nвключені до будь-якого згенерованого запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmltmaxnumtokens.md\"\u003eSolrQuery::getMltMaxNumTokens\u003c/a\u003e -\nПовертає максимальну кількість токенів для аналізу у кожному полі\nдокумента, який не зберігається за допомогою TermVector\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmltmaxwordlength.md\"\u003eSolrQuery::getMltMaxWordLength\u003c/a\u003e\n— Повертає максимальну довжину слова, вище за яку будуть слова\nігноруватися\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmltmindocfrequency.md\"\u003eSolrQuery::getMltMinDocFrequency\u003c/a\u003e\n— Повертає граничну частоту, з якої ігноруватимуться\nслова, яких немає, принаймні, у такій кількості документів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmltmintermfrequency.md\"\u003eSolrQuery::getMltMinTermFrequency\u003c/a\u003e\n— Повертає частоту, нижче за яку вирази ігноруватимуться в\nвихідному документі\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmltminwordlength.md\"\u003eSolrQuery::getMltMinWordLength\u003c/a\u003e\n— Повертає мінімальну довжину слова, нижче за яку слова будуть\nігноруватися\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getmltqueryfields.md\"\u003eSolrQuery::getMltQueryFields\u003c/a\u003e -\nПовертає поля запиту та їх підвищення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getquery.md\"\u003eSolrQuery::getQuery\u003c/a\u003e - Повертає основний\nзапит\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getrows.md\"\u003eSolrQuery::getRows\u003c/a\u003e - Повертає\nмаксимальна кількість документів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getsortfields.md\"\u003eSolrQuery::getSortFields\u003c/a\u003e -\nПовертає всі поля сортування\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getstart.md\"\u003eSolrQuery::getStart\u003c/a\u003e — Повертає зсув\nу повному наборі результатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getstats.md\"\u003eSolrQuery::getStats\u003c/a\u003e — Повертає,\nчи включена статистика\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getstatsfacets.md\"\u003eSolrQuery::getStatsFacets\u003c/a\u003e -\nПовертає всі фасети статистики, встановлені\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getstatsfields.md\"\u003eSolrQuery::getStatsFields\u003c/a\u003e -\nПовертає усі поля статистики\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.getterms.md\"\u003eSolrQuery::getTerms\u003c/a\u003e — Повертає, увімкнено\nчи TermsComponent\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermsfield.md\"\u003eSolrQuery::getTermsField\u003c/a\u003e -\nПовертає поле, з якого витягуються вирази\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermsincludelowerbound.md\"\u003eSolrQuery::getTermsIncludeLowerBound\u003c/a\u003e\n— Повертає, чи потрібно включати вираз нижньої межі до набору\nрезультатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermsincludeupperbound.md\"\u003eSolrQuery::getTermsIncludeUpperBound\u003c/a\u003e\n— Повертає, чи потрібно включати вираз верхньої межі до набору\nрезультатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermslimit.md\"\u003eSolrQuery::getTermsLimit\u003c/a\u003e -\nПовертає максимальну кількість виразів, які має повернути\nSolr\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermslowerbound.md\"\u003eSolrQuery::getTermsLowerBound\u003c/a\u003e -\nПовертає вираз для початку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermsmaxcount.md\"\u003eSolrQuery::getTermsMaxCount\u003c/a\u003e -\nПовертає максимальну частоту документа\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermsmincount.md\"\u003eSolrQuery::getTermsMinCount\u003c/a\u003e -\nПовертає мінімальну частоту повернення документів для включення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermsprefix.md\"\u003eSolrQuery::getTermsPrefix\u003c/a\u003e -\nПовертає префікс виразу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermsreturnraw.md\"\u003eSolrQuery::getTermsReturnRaw\u003c/a\u003e -\nЧи слід повертати необроблені символи\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermssort.md\"\u003eSolrQuery::getTermsSort\u003c/a\u003e — Повертає\nціле число, що вказує, як сортуються вирази\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettermsupperbound.md\"\u003eSolrQuery::getTermsUpperBound\u003c/a\u003e -\nПовертає вираз для зупинки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.gettimeallowed.md\"\u003eSolrQuery::getTimeAllowed\u003c/a\u003e -\nПовертає час у мілісекундах, дозволений для завершення запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removeexpandfilterquery.md\"\u003eSolrQuery::removeExpandFilterQuery\u003c/a\u003e\n— Видаляє запит на розширений фільтр\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removeexpandsortfield.md\"\u003eSolrQuery::removeExpandSortField\u003c/a\u003e\n— Видаляє розширене поле сортування за допомогою параметра expand.sort\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removefacetdatefield.md\"\u003eSolrQuery::removeFacetDateField\u003c/a\u003e\n— Видаляє одне з полів дати фасету\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removefacetdateother.md\"\u003eSolrQuery::removeFacetDateOther\u003c/a\u003e\n— Видалення одного з параметрів facet.date.other\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removefacetfield.md\"\u003eSolrQuery::removeFacetField\u003c/a\u003e -\nВидаляє один із параметрів facet.date\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removefacetquery.md\"\u003eSolrQuery::removeFacetQuery\u003c/a\u003e -\nВидаляє один із параметрів facet.query\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removefield.md\"\u003eSolrQuery::removeField\u003c/a\u003e — Видаляє поле\nзі списку полів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removefilterquery.md\"\u003eSolrQuery::removeFilterQuery\u003c/a\u003e -\nВидаляє запит фільтру\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removehighlightfield.md\"\u003eSolrQuery::removeHighlightField\u003c/a\u003e\n— Видаляє одне з полів, що використовуються для виділення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removemltfield.md\"\u003eSolrQuery::removeMltField\u003c/a\u003e — Видаляє\nодне з полів більшеLikeThis\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removemltqueryfield.md\"\u003eSolrQuery::removeMltQueryField\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВидаляє одне з полів запиту moreLikeThis\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removesortfield.md\"\u003eSolrQuery::removeSortField\u003c/a\u003e -\nВидаляє одне з полів сортування\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removestatsfacet.md\"\u003eSolrQuery::removeStatsFacet\u003c/a\u003e -\nВидаляє один із параметрів stats.facet\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.removestatsfield.md\"\u003eSolrQuery::removeStatsField\u003c/a\u003e -\nВидаляє один із параметрів stats.field\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setechohandler.md\"\u003eSolrQuery::setEchoHandler\u003c/a\u003e -\nПеремикає параметр echoHandler\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setechoparams.md\"\u003eSolrQuery::setEchoParams\u003c/a\u003e -\nВизначає, які параметри включати у відповідь\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setexpand.md\"\u003eSolrQuery::setExpand\u003c/a\u003e -\nВмикає/вимикає компонент Expand\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setexpandquery.md\"\u003eSolrQuery::setExpandQuery\u003c/a\u003e -\nВстановлює параметр expand.q\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setexpandrows.md\"\u003eSolrQuery::setExpandRows\u003c/a\u003e -\nВстановлює кількість рядків для відображення у кожній групі\n(expand.rows). Типово 5\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setexplainother.md\"\u003eSolrQuery::setExplainOther\u003c/a\u003e -\nВстановлює загальний параметр запиту explainOther\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacet.md\"\u003eSolrQuery::setFacet\u003c/a\u003e — Відповідає\nпараметр фасета. Включає або вимикає фасетування\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetdateend.md\"\u003eSolrQuery::setFacetDateEnd\u003c/a\u003e -\nВідповідає facet.date.end\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetdategap.md\"\u003eSolrQuery::setFacetDateGap\u003c/a\u003e -\nВідповідає facet.date.gap\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetdatehardend.md\"\u003eSolrQuery::setFacetDateHardEnd\u003c/a\u003e\n— Відповідає facet.date.hardend\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetdatestart.md\"\u003eSolrQuery::setFacetDateStart\u003c/a\u003e -\nВідповідає facet.date.start\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetenumcachemindefaultfrequency.md\"\u003eSolrQuery::setFacetEnumCacheMinDefaultFrequency\u003c/a\u003e\n— Встановлює мінімальну частоту документа, що використовується для\nвизначення кількості виразів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetlimit.md\"\u003eSolrQuery::setFacetLimit\u003c/a\u003e -\nВідповідає facet.limit\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetmethod.md\"\u003eSolrQuery::setFacetMethod\u003c/a\u003e — Задає\nтип алгоритму, який слід використовувати під час фасетування поля\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetmincount.md\"\u003eSolrQuery::setFacetMinCount\u003c/a\u003e -\nВідповідає facet.mincount\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetmissing.md\"\u003eSolrQuery::setFacetMissing\u003c/a\u003e -\nВідповідає facet.missing\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetoffset.md\"\u003eSolrQuery::setFacetOffset\u003c/a\u003e -\nВстановлює переміщення до списку обмежень для розбивки на сторінки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetprefix.md\"\u003eSolrQuery::setFacetPrefix\u003c/a\u003e -\nВизначає рядковий префікс, за допомогою якого обмежуються\nвирази, на яких виконується фасет\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setfacetsort.md\"\u003eSolrQuery::setFacetSort\u003c/a\u003e — Визначає\nпорядок обмежень поля фасету\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setgroup.md\"\u003eSolrQuery::setGroup\u003c/a\u003e — Вмикає/вимикає\nгрупування результатів (параметр group)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setgroupcachepercent.md\"\u003eSolrQuery::setGroupCachePercent\u003c/a\u003e\n— Включає кешування для угруповання результатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setgroupfacet.md\"\u003eSolrQuery::setGroupFacet\u003c/a\u003e -\nВстановлює параметр group.facet\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setgroupformat.md\"\u003eSolrQuery::setGroupFormat\u003c/a\u003e -\nВстановлює формат групи, структуру результату (параметр\ngroup.format)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setgrouplimit.md\"\u003eSolrQuery::setGroupLimit\u003c/a\u003e — Задає\nкількість результатів, що повертаються для кожної групи. Значення\nсервера за промовчанням - 1\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setgroupmain.md\"\u003eSolrQuery::setGroupMain\u003c/a\u003e — Якщо true,\nрезультат першої команди угруповання полів використовується як\nосновного списку результатів у відповіді з використанням\ngroup.format=simple\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setgroupngroups.md\"\u003eSolrQuery::setGroupNGroups\u003c/a\u003e — Якщо\ntrue, Solr включає в результати кількість груп, які\nвідповідають запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setgroupoffset.md\"\u003eSolrQuery::setGroupOffset\u003c/a\u003e -\nВстановлює параметр group.offset\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setgrouptruncate.md\"\u003eSolrQuery::setGroupTruncate\u003c/a\u003e -\nЯкщо true, підрахунок фасетів базується на найбільш релевантному документі\nкожної групи, що відповідає запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlight.md\"\u003eSolrQuery::setHighlight\u003c/a\u003e — Включає\nабо відключає виділення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightalternatefield.md\"\u003eSolrQuery::setHighlightAlternateField\u003c/a\u003e\n— Задає поле резервного копіювання для використання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightformatter.md\"\u003eSolrQuery::setHighlightFormatter\u003c/a\u003e\n— Задає засіб форматування для виведення виділення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightfragmenter.md\"\u003eSolrQuery::setHighlightFragmenter\u003c/a\u003e\n— Встановлює генератор текстових фрагментів для виділення\nтексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightfragsize.md\"\u003eSolrQuery::setHighlightFragsize\u003c/a\u003e\n— Розмір фрагментів, які слід враховувати під час виділення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlighthighlightmultiterm.md\"\u003eSolrQuery::setHighlightHighlightMultiTerm\u003c/a\u003e\n— Використовувати SpanScorer для виділення виразів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightmaxalternatefieldlength.md\"\u003eSolrQuery::setHighlightMaxAlternateFieldLength\u003c/a\u003e\n— Встановлює максимальну кількість символів поля для повернення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightmaxanalyzedchars.md\"\u003eSolrQuery::setHighlightMaxAnalyzedChars\u003c/a\u003e\n— Задає кількість символів у документі для пошуку відповідних\nфрагментів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightmergecontiguous.md\"\u003eSolrQuery::setHighlightMergeContiguous\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eЧи згортати суміжні фрагменти в один фрагмент\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightregexmaxanalyzedchars.md\"\u003eSolrQuery::setHighlightRegexMaxAnalyzedChars\u003c/a\u003e\n— Задає максимальну кількість символів для аналізу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightregexpattern.md\"\u003eSolrQuery::setHighlightRegexPattern\u003c/a\u003e\n— Задає регулярний вираз фрагментації\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightregexslop.md\"\u003eSolrQuery::setHighlightRegexSlop\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВстановлює коефіцієнт, на який фрагментатор регулярно\nвирази може відхилитися від ідеального розміру фрагмента\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightrequirefieldmatch.md\"\u003eSolrQuery::setHighlightRequireFieldMatch\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВимагати зіставлення полів при виділенні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightsimplepost.md\"\u003eSolrQuery::setHighlightSimplePost\u003c/a\u003e\n— Встановлює текст, який з'являється після виділення\nвирази\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightsimplepre.md\"\u003eSolrQuery::setHighlightSimplePre\u003c/a\u003e\n— Встановлює текст, який з'являється перед виділенням\nвиразом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightsnippets.md\"\u003eSolrQuery::setHighlightSnippets\u003c/a\u003e\n— Встановлює максимальну кількість виділених фрагментів\nстворення для кожного поля\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.sethighlightusephrasehighlighter.md\"\u003eSolrQuery::setHighlightUsePhraseHighlighter\u003c/a\u003e\n— Чи слід виділяти вирази лише тоді, коли вони з'являються\nу фразі запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setmlt.md\"\u003eSolrQuery::setMlt\u003c/a\u003e — Вмикає або вимикає\nmoreLikeThis\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setmltboost.md\"\u003eSolrQuery::setMltBoost\u003c/a\u003e -\nВстановлює, чи буде запит посилено релевантністю цікавого\nвирази\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setmltcount.md\"\u003eSolrQuery::setMltCount\u003c/a\u003e - Встановлює\nкількість схожих документів, що повертаються для кожного результату\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setmltmaxnumqueryterms.md\"\u003eSolrQuery::setMltMaxNumQueryTerms\u003c/a\u003e\n— Встановлює максимальну кількість виразів запиту, що включаються.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setmltmaxnumtokens.md\"\u003eSolrQuery::setMltMaxNumTokens\u003c/a\u003e -\nЗадає максимальну кількість токенів для аналізу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setmltmaxwordlength.md\"\u003eSolrQuery::setMltMaxWordLength\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВстановлює максимальну довжину слова\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setmltmindocfrequency.md\"\u003eSolrQuery::setMltMinDocFrequency\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВстановлює частоту mltMinDoc\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setmltmintermfrequency.md\"\u003eSolrQuery::setMltMinTermFrequency\u003c/a\u003e\n— Встановлює частоту, нижче за яку вирази ігноруватимуться\nу вихідній документації\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setmltminwordlength.md\"\u003eSolrQuery::setMltMinWordLength\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВстановлює мінімальну довжину слова\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setomitheader.md\"\u003eSolrQuery::setOmitHeader\u003c/a\u003e - Виключає\nзаголовок з результатів, що повертаються\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setquery.md\"\u003eSolrQuery::setQuery\u003c/a\u003e - Встановлює\nпошуковий запит\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setrows.md\"\u003eSolrQuery::setRows\u003c/a\u003e — Визначає максимальне\nкількість рядків, що повертаються в результаті\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setshowdebuginfo.md\"\u003eSolrQuery::setShowDebugInfo\u003c/a\u003e -\nПрапор для відображення налагоджувальної інформації\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setstart.md\"\u003eSolrQuery::setStart\u003c/a\u003e — Визначає\nкількість рядків, що пропускаються\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setstats.md\"\u003eSolrQuery::setStats\u003c/a\u003e — Включає або\nвідключає компонент Stats\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.setterms.md\"\u003eSolrQuery::setTerms\u003c/a\u003e — Включає або\nвідключає TermsComponent\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermsfield.md\"\u003eSolrQuery::setTermsField\u003c/a\u003e -\nВстановлює ім'я поля, з якого потрібно отримати вираз\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermsincludelowerbound.md\"\u003eSolrQuery::setTermsIncludeLowerBound\u003c/a\u003e\n— Включає нижню межу вираження у набір результатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermsincludeupperbound.md\"\u003eSolrQuery::setTermsIncludeUpperBound\u003c/a\u003e\n— Включає верхню межу вираження у набір результатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermslimit.md\"\u003eSolrQuery::setTermsLimit\u003c/a\u003e -\nВстановлює максимальну кількість виразів, що повертаються.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermslowerbound.md\"\u003eSolrQuery::setTermsLowerBound\u003c/a\u003e -\nВизначає вираз, із якого треба починати\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermsmaxcount.md\"\u003eSolrQuery::setTermsMaxCount\u003c/a\u003e -\nВстановлює максимальну частоту документів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermsmincount.md\"\u003eSolrQuery::setTermsMinCount\u003c/a\u003e -\nВстановлює мінімальну частоту документів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermsprefix.md\"\u003eSolrQuery::setTermsPrefix\u003c/a\u003e -\nОбмежує збіги виразами, що починаються з префіксу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermsreturnraw.md\"\u003eSolrQuery::setTermsReturnRaw\u003c/a\u003e -\nПовернути необроблені символи проіндексованого виразу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermssort.md\"\u003eSolrQuery::setTermsSort\u003c/a\u003e — Визначає,\nяк сортувати повернені умови\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settermsupperbound.md\"\u003eSolrQuery::setTermsUpperBound\u003c/a\u003e -\nВстановлює умову для зупинки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"solrquery.settimeallowed.md\"\u003eSolrQuery::setTimeAllowed\u003c/a\u003e — Час,\nвідведене на пошук\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.solrquery.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

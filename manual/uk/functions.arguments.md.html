@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>functions.arguments | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="functions.user-defined.md">« Функції, що визначаються користувачем</a></p>
+</li>
+<li>
+<p><a href="functions.returning-values.md">Повернення значень »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="language.functions.md">Функції</a></p>
+</li>
+<li>
+<p>аргументи функції</p>
+</li>
+</ul>
+<h2>Аргументи функції</h2>
+<p>Функція може приймати інформацію як списку аргументів, який
+є списком розділених комами виразів. Аргументи обчислюються
+ліворуч праворуч перед фактичним викликом функції (<em>енергійне</em>
+обчислення).</p>
+<p>PHP підтримує передачу аргументів за значенням (за умовчанням),
+<a href="functions.arguments.md#functions.arguments.by-reference">передачу аргументів по ссылке</a>, та
+<a href="functions.arguments.md#functions.arguments.default">значення по замовчуванням</a>.
+<a href="functions.arguments.md#functions.variable-arg-list">Списки аргументів змінної довжини</a> та
+<a href="functions.arguments.md#functions.named-arguments">іменовані аргументи</a> також
+підтримуються.</p>
+<p><strong>Приклад #1 Передача масиву у функцію</strong></p>
+<p><code>&#x3C;?phpfunction takes_array($input){    echo "$input[0] + $input[1] = ", $input[0]+$input[1];}?></code></p>
+<p>Починаючи з PHP 8.0.0, список аргументів функції може містити
+завершальну кому, яка буде проігнорована. Це корисно в
+випадку, коли список аргументів дуже довгий, або якщо імена
+змінних довжини, що підштовхує до їхнього вертикального розташування.</p>
+<p><strong>Приклад #2 Список аргументів функції із завершальною комою</strong></p>
+<p><code>&#x3C;?phpfunction takes_many_args(    $first_arg,    $second_arg,    $a_very_long_argument_name,    $arg_with_default = 5,    $again = 'a default string', // Эта завершающая запятая допустима только начиная с  8.0.0.){    // ...} ?></code></p>
+<h3>Передача аргументів за посиланням</h3>
+<p>За умовчанням аргументи у функцію передаються за значенням (це означає,
+якщо ви зміните значення аргументу всередині функції, то поза нею
+значення все одно залишиться тим самим). Якщо ви хочете дозволити функції
+модифікувати свої аргументи, ви повинні передавати їх за посиланням.</p>
+<p>Якщо ви хочете, щоб аргумент завжди передавався за посиланням, ви можете
+вказати амперсанд (&#x26;) перед ім'ям аргументу в описі функції:</p>
+<p><strong>Приклад #3 Передача аргументів за посиланням</strong></p>
+<p><code>&#x3C;?phpfunction add_some_extra(&#x26;$string){    $string .= 'і щосьщо.';}$str = 'Це рядок, ';add_some_extra($str);echo $str; // виведе 'Це рядок, і що-що ще.'?></code></p>
+<p>Передача значення як аргумент, який має передаватися по
+посилання, є помилкою.</p>
+<h3>Значення аргументів за замовчуванням</h3>
+<p>Функція може визначати значення за промовчанням для аргументів, використовуючи
+синтаксис, подібний до присвоєння змінної. Значення за замовчуванням
+використовується лише у тому випадку, якщо параметр не вказано; зокрема,
+зверніть увагу, що передача <strong><code>null</code></strong> <em>не</em> надає значення по
+замовчуванням.</p>
+<p><strong>Приклад #4 Використання значень за промовчанням для визначення функції</strong></p>
+<p><code>&#x3C;?phpfunction makecoffee($type = "капучино"){    return "Готуємо чашку $type. ";}echo makecoffee();echo makecoffee(null);echo makecoffee("еспресо");?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Готуємо чашку капучіно.
+Готуємо чашку.
+Готуємо чашку еспресо.</p>
+<p>Значення параметрів за замовчуванням можуть бути скалярні значення,
+масиви (array), спеціальний тип <strong><code>null</code></strong>, і, починаючи з версії PHP
+8.1.0 об'єкти, що використовують синтаксис <a href="language.oop5.basic.md#language.oop5.basic.new">new
+ClassName()</a>.</p>
+<p><strong>Приклад #5 Використання нескалярних типів як значень по
+замовчуванням</strong></p>
+<p><code>&#x3C;?phpfunction makecoffee($types = array("капучино"), $coffeeMaker = NULL){    $device = is_null($coffeeMaker) ? "вручну": $coffeeMaker; return "Готую чашку ".join(", ", $types)." $device. ";}echo makecoffee();echo makecoffee(array("капучино", "лаватися"), "в чайнику");?></code></p>
+<p>**Приклад #6 Використання об'єктів як значень за замовчуванням
+(починаючи з PHP 8.1.0) **</p>
+<p>` &#x3C;?phpclass DefaultCoffeeMaker {    public function brew() {       return 'Приготування кави.'; }}class FancyCoffeeMaker {     public function brew() {       return 'Приготування прекрасної кави спеціально для вас.'; }}function makecoffee($coffeeMaker = new DefaultCoffeeMaker){    return $coffeeMaker->brew();}echo makecoffee();echo makecoffee(new ></p>
+<p>Значення за умовчанням має бути константним виразом, а не (до
+приклад) змінної або викликом функції/методу класу.</p>
+<p>Зверніть увагу, що будь-які необов'язкові аргументи мають бути
+вказані після будь-яких обов'язкових аргументів, інакше вони не можуть бути
+опущені під час виклику. Розглянемо наступний приклад:</p>
+<p><strong>Приклад #7 Некоректне використання значень за замовчуванням</strong></p>
+<p><code>&#x3C;?phpfunction makeyogurt($container = "миску", $flavour){    return "Робимо $container з $flavour йогуртом. ";}echo makeyogurt("малиновим"); // "малиновим" - це $container, не $flavour?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Fatal error: Uncaught ArgumentCountError: Too few arguments
+to function makeyogurt(), 1 passed in example.php on line 42</p>
+<p>Тепер порівняємо його з наступним прикладом:</p>
+<p><strong>Приклад #8 Коректне використання значень за замовчуванням</strong></p>
+<p><code>&#x3C;?phpfunction makeyogurt($flavour, $container = "миску"){    return "Робимо $container з $flavour йогуртом. ";}echo makeyogurt("малиновим"); // "малиновим" - це $flavour?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Робимо миску з малиновим йогуртом.</p>
+<p>Починаючи з PHP 8.0.0, <a href="functions.arguments.md#functions.named-arguments">іменовані аргументи</a> можна
+використовуватиме пропуску кількох необов'язкових параметрів.</p>
+<p><strong>Приклад #9 Правильне використання аргументів за замовчуванням</strong></p>
+<p><code>&#x3C;?phpfunction makeyogurt($container = "миску", $flavour = "малиновим", $style = "грецьким"){   return "Робимо $container с $flavour | ";}echo makeyogurt(style: "натуральним");?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Робимо миску з малиновим натуральним йогуртом.</p>
+<p>Починаючи з PHP 8.0.0, оголошення обов'язкових аргументів після
+необов'язкових аргументів є застарілим. Зазвичай це можна вирішити
+відмовившись від значення за промовчанням, оскільки воно ніколи не буде
+використовуватись. Винятком із цього правила є аргументи виду
+<code>Type $param = null</code>, де <strong><code>null</code></strong> за умовчанням робить тип неявно
+обнулюваним. Таке використання залишається допустимим, хоча рекомендується
+використовувати явний <a href="language.types.declarations.md#language.types.declarations.nullable">тип nullable</a>.</p>
+<p><strong>Приклад #10 Оголошення необов'язкових аргументів після обов'язкових
+аргументів</strong></p>
+<p><code>&#x3C;?phpfunction foo($a = [], $b) {} // За умовчанням не використовується; застарів, починаючи з версії PHP 8.0.0 function foo ($a, $ b) $a є обов'язковим, але допускає значення nullfunction bar(?A $a, $b) {}        // Рекомендується?></code></p>
+<blockquote>
+<p><strong>Примітка</strong>: Починаючи з PHP 7.1.0, опущення параметра, не заданого
+за замовчуванням викидає виняток
+<a href="class.argumentcounterror.md">ArgumentCountError</a>; у попередніх
+версіях це викликало попередження.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>: Значення за промовчанням можна надсилати за посиланням.</p>
+</blockquote>
+<h3>Списки аргументів змінної довжини</h3>
+<p>PHP підтримує списки аргументів змінної довжини для функцій,
+визначаються користувачем за допомогою додавання крапки (<code>...</code>).</p>
+<blockquote>
+<p><strong>Примітка</strong>: Також можна добитися аргументів змінної довжини,
+використовуючи функції <a href="function.func-num-args.md">func_num_args()</a>,
+<a href="function.func-get-arg.md">func_get_arg()</a> та
+<a href="function.func-get-args.md">func_get_args()</a>. Цей метод не
+рекомендується, оскільки він використовувався до введення крапки
+(<code>...</code>).</p>
+</blockquote>
+<p>Список аргументів може містити багатокрапку (<code>...</code>), щоб показати,
+що функція приймає змінну кількість аргументів. Аргументи у цьому
+у разі будуть передані у вигляді масиву. Наприклад:</p>
+<p><strong>Приклад #11 Використання <code>...</code> для доступу до аргументів</strong></p>
+<p><code>&#x3C;?phpfunction sum(...$numbers) {   $acc = 0; foreach ($numbers as $n) {        $acc += $n; }   return$acc;}echo sum(1, 2, 3, 4);?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>10</p>
+<p>Три крапки (<code>...</code>) можна використовувати при виклику функції, щоб
+розпакувати масив (array) або <a href="class.traversable.md">Traversable</a>
+змінну до списку аргументів:</p>
+<p><strong>Приклад #12 Використання <code>...</code> для передачі аргументів</strong></p>
+<p><code>&#x3C;?phpfunction add($a, $b) {    return $a + $b;}echo add(...[1, 2])." ";$a = [1, 2];echo add(...$a);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>3
+3</p>
+<p>Можна задати кілька аргументів у звичному вигляді, а потім додати
+<code>...</code>. У цьому випадку <code>...</code> помістить до масиву ті аргументи,
+які знайшли відповідності зазначеним у оголошенні функції.</p>
+<p>Також можна додати <a href="language.types.declarations.md">оголошення типу</a>
+перед <code>...</code>. В цьому випадку, всі аргументи, оброблені трьома крапками
+(<code>...</code>), повинні відповідати цьому типу параметра.</p>
+<p><strong>Приклад #13 Аргументи з підказкою типу</strong></p>
+<p><code>&#x3C;?phpfunction total_intervals($unit, DateInterval ...$intervals) {   $time = 0; foreach ($intervals as $interval) {        $time += $interval->$unit; }   return $time;}$a = new DateInterval('P1D');$b = new DateInterval('P2D');echo total_intervals('d', $a, $b).' days';// Це не спрацює, т.к. null не є об'єктом DateInterval.echo total_intervals('d', null);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>3 дні
+Catchable fatal error: 2</p>
+<p>Зрештою, можна передавати аргументи
+ссылке](functions.arguments.md#functions.arguments.by-reference). Для
+цього перед <code>...</code> потрібно поставити амперсанд (<code>&#x26;</code>).</p>
+<h4>Попередні версії PHP</h4>
+<p>Для вказівки того, що функція приймає змінну кількість аргументів,
+ніякий спеціальний синтаксис не використовується. Для доступу до аргументів
+необхідно використовувати функції
+<a href="function.func-num-args.md">func_num_args()</a>,
+<a href="function.func-get-arg.md">func_get_arg()</a> та
+<a href="function.func-get-args.md">func_get_args()</a>.</p>
+<p>У першому прикладі вище було показано, як поставити список аргументів
+змінної довжини для попередніх версій PHP:</p>
+<p><strong>Приклад #14 Доступ до аргументів у попередніх версіях PHP</strong></p>
+<p><code>&#x3C;?phpfunction sum() {    $acc = 0; foreach (func_get_args() as $n) {       $acc += $n; }   return$acc;}echo sum(1, 2, 3, 4);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>10</p>
+<h3>Іменовані аргументи</h3>
+<p>У PHP 8.0.0 як продовження позиційних параметрів з'явилися
+іменовані аргументи. З їхньою допомогою аргументи функції можна передавати
+на ім'я параметра, а не на його позиції. Таким чином аргумент
+стає самодокументованим, незалежним від порядку та зазначеного
+значення за замовчуванням.</p>
+<p>Іменовані аргументи передаються шляхом додавання через двокрапки імені
+параметра перед значенням. Як імена параметрів можна
+використовувати зарезервовані ключові слова. Ім'я параметра має бути
+ідентифікатор, тобто. він не може бути створений динамічно.</p>
+<p><strong>Приклад #15 Синтаксис іменованого аргументу</strong></p>
+<p><code>&#x3C;?phpmyFunction(paramName: $value);array_foobar(array: $value);// НЕ підтримується.function_name($variableStoringParamName: $value);?></code></p>
+<p><strong>Приклад #16 Позиційні аргументи проти іменованими
+аргументами</strong></p>
+<p>`</p>
+<p>Порядок, у якому передаються іменовані аргументи, немає значення.</p>
+<p><strong>Приклад #17 Той самий приклад, що й вище, але з іншим порядком
+параметрів</strong></p>
+<p><code>&#x3C;?phparray_fill(value: 50, count: 100, start_index: 0);?> </code></p>
+<p>Іменовані аргументи можна поєднувати з позиційними. В цьому випадку
+Іменовані аргументи повинні слідувати після позиційних аргументів.
+Також можна передати лише частину необов'язкових аргументів функції,
+незалежно від їхнього порядку.</p>
+<p><strong>Приклад #18 Об'єднання іменованих аргументів із позиційними
+аргументами</strong></p>
+<p>`&#x3C;?phphtmlspecialchars($string, double_encode: false);// То самеhtmlspecialchars($string, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8', false);</p>
+<p>Передача одного і того ж параметра кілька разів призводить до
+викидання виключення Error.</p>
+<p><strong>Приклад #19 Помилка, що виникає при передачі одного і того ж параметра
+декілька разів</strong></p>
+<p><code>&#x3C;?phpfunction foo($param) { ... }foo(param: 1, param: 2);// Error: Named parameter $param overwrites previous argumentfoo(1, param: 2); $param overwrites previous argument?> </code></p>
+<p>Починаючи з PHP 8.1.0, можна використовувати іменовані аргументи після
+розпакування аргументів. Іменований аргумент <em>не повинен</em> перевизначати
+вже розпаковані аргументи.</p>
+<p><strong>Приклад #20 Приклад використання іменованих аргументів після
+розпакування</strong></p>
+<p><code>&#x3C;?phpfunction foo($a, $b, $c = 3, $d = 4) { return $a + $b + $c + $d;}var_dump(foo(...[1, 2], d: 40)); // 46var_dump(foo(...['b' => 2, 'a' => 1], d: 40)); // 46var_dump(foo(...[1, 2], b: 20)); // Фатальна помилка. Іменований аргумент $b перевизначає попередній аргумент?></code></p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/functions.arguments.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/functions.arguments.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"functions.arguments","slug":"functions.arguments.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"functions.user-defined.md\"\u003e« Функції, що визначаються користувачем\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"functions.returning-values.md\"\u003eПовернення значень »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"language.functions.md\"\u003eФункції\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eаргументи функції\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eАргументи функції\u003c/h2\u003e\n\u003cp\u003eФункція може приймати інформацію як списку аргументів, який\nє списком розділених комами виразів. Аргументи обчислюються\nліворуч праворуч перед фактичним викликом функції (\u003cem\u003eенергійне\u003c/em\u003e\nобчислення).\u003c/p\u003e\n\u003cp\u003ePHP підтримує передачу аргументів за значенням (за умовчанням),\n\u003ca href=\"functions.arguments.md#functions.arguments.by-reference\"\u003eпередачу аргументів по ссылке\u003c/a\u003e, та\n\u003ca href=\"functions.arguments.md#functions.arguments.default\"\u003eзначення по замовчуванням\u003c/a\u003e.\n\u003ca href=\"functions.arguments.md#functions.variable-arg-list\"\u003eСписки аргументів змінної довжини\u003c/a\u003e та\n\u003ca href=\"functions.arguments.md#functions.named-arguments\"\u003eіменовані аргументи\u003c/a\u003e також\nпідтримуються.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Передача масиву у функцію\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction takes_array($input){    echo \"$input[0] + $input[1] = \", $input[0]+$input[1];}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПочинаючи з PHP 8.0.0, список аргументів функції може містити\nзавершальну кому, яка буде проігнорована. Це корисно в\nвипадку, коли список аргументів дуже довгий, або якщо імена\nзмінних довжини, що підштовхує до їхнього вертикального розташування.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Список аргументів функції із завершальною комою\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction takes_many_args(    $first_arg,    $second_arg,    $a_very_long_argument_name,    $arg_with_default = 5,    $again = 'a default string', // Эта завершающая запятая допустима только начиная с  8.0.0.){    // ...} ?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПередача аргументів за посиланням\u003c/h3\u003e\n\u003cp\u003eЗа умовчанням аргументи у функцію передаються за значенням (це означає,\nякщо ви зміните значення аргументу всередині функції, то поза нею\nзначення все одно залишиться тим самим). Якщо ви хочете дозволити функції\nмодифікувати свої аргументи, ви повинні передавати їх за посиланням.\u003c/p\u003e\n\u003cp\u003eЯкщо ви хочете, щоб аргумент завжди передавався за посиланням, ви можете\nвказати амперсанд (\u0026#x26;) перед ім'ям аргументу в описі функції:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Передача аргументів за посиланням\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction add_some_extra(\u0026#x26;$string){    $string .= 'і щосьщо.';}$str = 'Це рядок, ';add_some_extra($str);echo $str; // виведе 'Це рядок, і що-що ще.'?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПередача значення як аргумент, який має передаватися по\nпосилання, є помилкою.\u003c/p\u003e\n\u003ch3\u003eЗначення аргументів за замовчуванням\u003c/h3\u003e\n\u003cp\u003eФункція може визначати значення за промовчанням для аргументів, використовуючи\nсинтаксис, подібний до присвоєння змінної. Значення за замовчуванням\nвикористовується лише у тому випадку, якщо параметр не вказано; зокрема,\nзверніть увагу, що передача \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e \u003cem\u003eне\u003c/em\u003e надає значення по\nзамовчуванням.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Використання значень за промовчанням для визначення функції\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction makecoffee($type = \"капучино\"){    return \"Готуємо чашку $type. \";}echo makecoffee();echo makecoffee(null);echo makecoffee(\"еспресо\");?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eГотуємо чашку капучіно.\nГотуємо чашку.\nГотуємо чашку еспресо.\u003c/p\u003e\n\u003cp\u003eЗначення параметрів за замовчуванням можуть бути скалярні значення,\nмасиви (array), спеціальний тип \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, і, починаючи з версії PHP\n8.1.0 об'єкти, що використовують синтаксис \u003ca href=\"language.oop5.basic.md#language.oop5.basic.new\"\u003enew\nClassName()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Використання нескалярних типів як значень по\nзамовчуванням\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction makecoffee($types = array(\"капучино\"), $coffeeMaker = NULL){    $device = is_null($coffeeMaker) ? \"вручну\": $coffeeMaker; return \"Готую чашку \".join(\", \", $types).\" $device. \";}echo makecoffee();echo makecoffee(array(\"капучино\", \"лаватися\"), \"в чайнику\");?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e**Приклад #6 Використання об'єктів як значень за замовчуванням\n(починаючи з PHP 8.1.0) **\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?phpclass DefaultCoffeeMaker {    public function brew() {       return 'Приготування кави.'; }}class FancyCoffeeMaker {     public function brew() {       return 'Приготування прекрасної кави спеціально для вас.'; }}function makecoffee($coffeeMaker = new DefaultCoffeeMaker){    return $coffeeMaker-\u003ebrew();}echo makecoffee();echo makecoffee(new \u003e\u003c/p\u003e\n\u003cp\u003eЗначення за умовчанням має бути константним виразом, а не (до\nприклад) змінної або викликом функції/методу класу.\u003c/p\u003e\n\u003cp\u003eЗверніть увагу, що будь-які необов'язкові аргументи мають бути\nвказані після будь-яких обов'язкових аргументів, інакше вони не можуть бути\nопущені під час виклику. Розглянемо наступний приклад:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #7 Некоректне використання значень за замовчуванням\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction makeyogurt($container = \"миску\", $flavour){    return \"Робимо $container з $flavour йогуртом. \";}echo makeyogurt(\"малиновим\"); // \"малиновим\" - це $container, не $flavour?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eFatal error: Uncaught ArgumentCountError: Too few arguments\nto function makeyogurt(), 1 passed in example.php on line 42\u003c/p\u003e\n\u003cp\u003eТепер порівняємо його з наступним прикладом:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #8 Коректне використання значень за замовчуванням\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction makeyogurt($flavour, $container = \"миску\"){    return \"Робимо $container з $flavour йогуртом. \";}echo makeyogurt(\"малиновим\"); // \"малиновим\" - це $flavour?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eРобимо миску з малиновим йогуртом.\u003c/p\u003e\n\u003cp\u003eПочинаючи з PHP 8.0.0, \u003ca href=\"functions.arguments.md#functions.named-arguments\"\u003eіменовані аргументи\u003c/a\u003e можна\nвикористовуватиме пропуску кількох необов'язкових параметрів.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #9 Правильне використання аргументів за замовчуванням\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction makeyogurt($container = \"миску\", $flavour = \"малиновим\", $style = \"грецьким\"){   return \"Робимо $container с $flavour | \";}echo makeyogurt(style: \"натуральним\");?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eРобимо миску з малиновим натуральним йогуртом.\u003c/p\u003e\n\u003cp\u003eПочинаючи з PHP 8.0.0, оголошення обов'язкових аргументів після\nнеобов'язкових аргументів є застарілим. Зазвичай це можна вирішити\nвідмовившись від значення за промовчанням, оскільки воно ніколи не буде\nвикористовуватись. Винятком із цього правила є аргументи виду\n\u003ccode\u003eType $param = null\u003c/code\u003e, де \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e за умовчанням робить тип неявно\nобнулюваним. Таке використання залишається допустимим, хоча рекомендується\nвикористовувати явний \u003ca href=\"language.types.declarations.md#language.types.declarations.nullable\"\u003eтип nullable\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #10 Оголошення необов'язкових аргументів після обов'язкових\nаргументів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction foo($a = [], $b) {} // За умовчанням не використовується; застарів, починаючи з версії PHP 8.0.0 function foo ($a, $ b) $a є обов'язковим, але допускає значення nullfunction bar(?A $a, $b) {}        // Рекомендується?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Починаючи з PHP 7.1.0, опущення параметра, не заданого\nза замовчуванням викидає виняток\n\u003ca href=\"class.argumentcounterror.md\"\u003eArgumentCountError\u003c/a\u003e; у попередніх\nверсіях це викликало попередження.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Значення за промовчанням можна надсилати за посиланням.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписки аргументів змінної довжини\u003c/h3\u003e\n\u003cp\u003ePHP підтримує списки аргументів змінної довжини для функцій,\nвизначаються користувачем за допомогою додавання крапки (\u003ccode\u003e...\u003c/code\u003e).\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Також можна добитися аргументів змінної довжини,\nвикористовуючи функції \u003ca href=\"function.func-num-args.md\"\u003efunc_num_args()\u003c/a\u003e,\n\u003ca href=\"function.func-get-arg.md\"\u003efunc_get_arg()\u003c/a\u003e та\n\u003ca href=\"function.func-get-args.md\"\u003efunc_get_args()\u003c/a\u003e. Цей метод не\nрекомендується, оскільки він використовувався до введення крапки\n(\u003ccode\u003e...\u003c/code\u003e).\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eСписок аргументів може містити багатокрапку (\u003ccode\u003e...\u003c/code\u003e), щоб показати,\nщо функція приймає змінну кількість аргументів. Аргументи у цьому\nу разі будуть передані у вигляді масиву. Наприклад:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #11 Використання \u003ccode\u003e...\u003c/code\u003e для доступу до аргументів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction sum(...$numbers) {   $acc = 0; foreach ($numbers as $n) {        $acc += $n; }   return$acc;}echo sum(1, 2, 3, 4);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e10\u003c/p\u003e\n\u003cp\u003eТри крапки (\u003ccode\u003e...\u003c/code\u003e) можна використовувати при виклику функції, щоб\nрозпакувати масив (array) або \u003ca href=\"class.traversable.md\"\u003eTraversable\u003c/a\u003e\nзмінну до списку аргументів:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #12 Використання \u003ccode\u003e...\u003c/code\u003e для передачі аргументів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction add($a, $b) {    return $a + $b;}echo add(...[1, 2]).\" \";$a = [1, 2];echo add(...$a);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e3\n3\u003c/p\u003e\n\u003cp\u003eМожна задати кілька аргументів у звичному вигляді, а потім додати\n\u003ccode\u003e...\u003c/code\u003e. У цьому випадку \u003ccode\u003e...\u003c/code\u003e помістить до масиву ті аргументи,\nякі знайшли відповідності зазначеним у оголошенні функції.\u003c/p\u003e\n\u003cp\u003eТакож можна додати \u003ca href=\"language.types.declarations.md\"\u003eоголошення типу\u003c/a\u003e\nперед \u003ccode\u003e...\u003c/code\u003e. В цьому випадку, всі аргументи, оброблені трьома крапками\n(\u003ccode\u003e...\u003c/code\u003e), повинні відповідати цьому типу параметра.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #13 Аргументи з підказкою типу\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction total_intervals($unit, DateInterval ...$intervals) {   $time = 0; foreach ($intervals as $interval) {        $time += $interval-\u003e$unit; }   return $time;}$a = new DateInterval('P1D');$b = new DateInterval('P2D');echo total_intervals('d', $a, $b).' days';// Це не спрацює, т.к. null не є об'єктом DateInterval.echo total_intervals('d', null);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e3 дні\nCatchable fatal error: 2\u003c/p\u003e\n\u003cp\u003eЗрештою, можна передавати аргументи\nссылке](functions.arguments.md#functions.arguments.by-reference). Для\nцього перед \u003ccode\u003e...\u003c/code\u003e потрібно поставити амперсанд (\u003ccode\u003e\u0026#x26;\u003c/code\u003e).\u003c/p\u003e\n\u003ch4\u003eПопередні версії PHP\u003c/h4\u003e\n\u003cp\u003eДля вказівки того, що функція приймає змінну кількість аргументів,\nніякий спеціальний синтаксис не використовується. Для доступу до аргументів\nнеобхідно використовувати функції\n\u003ca href=\"function.func-num-args.md\"\u003efunc_num_args()\u003c/a\u003e,\n\u003ca href=\"function.func-get-arg.md\"\u003efunc_get_arg()\u003c/a\u003e та\n\u003ca href=\"function.func-get-args.md\"\u003efunc_get_args()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eУ першому прикладі вище було показано, як поставити список аргументів\nзмінної довжини для попередніх версій PHP:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #14 Доступ до аргументів у попередніх версіях PHP\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction sum() {    $acc = 0; foreach (func_get_args() as $n) {       $acc += $n; }   return$acc;}echo sum(1, 2, 3, 4);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e10\u003c/p\u003e\n\u003ch3\u003eІменовані аргументи\u003c/h3\u003e\n\u003cp\u003eУ PHP 8.0.0 як продовження позиційних параметрів з'явилися\nіменовані аргументи. З їхньою допомогою аргументи функції можна передавати\nна ім'я параметра, а не на його позиції. Таким чином аргумент\nстає самодокументованим, незалежним від порядку та зазначеного\nзначення за замовчуванням.\u003c/p\u003e\n\u003cp\u003eІменовані аргументи передаються шляхом додавання через двокрапки імені\nпараметра перед значенням. Як імена параметрів можна\nвикористовувати зарезервовані ключові слова. Ім'я параметра має бути\nідентифікатор, тобто. він не може бути створений динамічно.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #15 Синтаксис іменованого аргументу\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmyFunction(paramName: $value);array_foobar(array: $value);// НЕ підтримується.function_name($variableStoringParamName: $value);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #16 Позиційні аргументи проти іменованими\nаргументами\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e`\u003c/p\u003e\n\u003cp\u003eПорядок, у якому передаються іменовані аргументи, немає значення.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #17 Той самий приклад, що й вище, але з іншим порядком\nпараметрів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phparray_fill(value: 50, count: 100, start_index: 0);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eІменовані аргументи можна поєднувати з позиційними. В цьому випадку\nІменовані аргументи повинні слідувати після позиційних аргументів.\nТакож можна передати лише частину необов'язкових аргументів функції,\nнезалежно від їхнього порядку.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #18 Об'єднання іменованих аргументів із позиційними\nаргументами\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?phphtmlspecialchars($string, double_encode: false);// То самеhtmlspecialchars($string, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8', false);\u003c/p\u003e\n\u003cp\u003eПередача одного і того ж параметра кілька разів призводить до\nвикидання виключення Error.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #19 Помилка, що виникає при передачі одного і того ж параметра\nдекілька разів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction foo($param) { ... }foo(param: 1, param: 2);// Error: Named parameter $param overwrites previous argumentfoo(1, param: 2); $param overwrites previous argument?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПочинаючи з PHP 8.1.0, можна використовувати іменовані аргументи після\nрозпакування аргументів. Іменований аргумент \u003cem\u003eне повинен\u003c/em\u003e перевизначати\nвже розпаковані аргументи.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #20 Приклад використання іменованих аргументів після\nрозпакування\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction foo($a, $b, $c = 3, $d = 4) { return $a + $b + $c + $d;}var_dump(foo(...[1, 2], d: 40)); // 46var_dump(foo(...['b' =\u003e 2, 'a' =\u003e 1], d: 40)); // 46var_dump(foo(...[1, 2], b: 20)); // Фатальна помилка. Іменований аргумент $b перевизначає попередній аргумент?\u003e\u003c/code\u003e\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"functions.arguments.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

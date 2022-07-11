@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.splpriorityqueue | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="splminheap.compare.md">« SplMinHeap::compare</a></p>
+</li>
+<li>
+<p><a href="splpriorityqueue.compare.md">SplPriorityQueue::compare »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="spl.datastructures.md">Структури даних</a></p>
+</li>
+<li>
+<p>Клас SplPriorityQueue</p>
+</li>
+</ul>
+<h1>Клас SplPriorityQueue</h1>
+<p>(PHP 5 >= 5.3.0, PHP 7, PHP 8)</p>
+<h2>Вступ</h2>
+<p>Клас SplPriorityQueue забезпечує основні функціональні можливості
+пріоритетної черги, реалізований за допомогою купи з максимальним
+елементом зверху (max-heap).</p>
+<blockquote>
+<p><strong>Примітка</strong>: Порядок елементів з однаковим пріоритетом <em>не
+визначено</em>. Він може відрізнятись від порядку, в якому елементи були
+Вставлені.</p>
+</blockquote>
+<h2>Огляд класів</h2>
+<p>class <strong>SplPriorityQueue</strong> implements <a href="class.iterator.md">Iterator</a>,
+<a href="class.countable.md">Countable</a> {</p>
+<p>/* Методи */</p>
+<p>public
+<a href="splpriorityqueue.compare.md">compare</a>(<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$priority1</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$priority2</code>): int</p>
+<p>public <a href="splpriorityqueue.count.md">count</a>(): int</p>
+<p>public <a href="splpriorityqueue.current.md">current</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="splpriorityqueue.extract.md">extract</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="splpriorityqueue.getextractflags.md">getExtractFlags</a>(): int</p>
+<p>public
+<a href="splpriorityqueue.insert.md">insert</a>(<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+$value,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$priority</code>): bool</p>
+<p>public <a href="splpriorityqueue.iscorrupted.md">isCorrupted</a>(): bool</p>
+<p>public <a href="splpriorityqueue.isempty.md">isEmpty</a>(): bool</p>
+<p>public <a href="splpriorityqueue.key.md">key</a>(): int</p>
+<p>public <a href="splpriorityqueue.next.md">next</a>(): void</p>
+<p>public
+<a href="splpriorityqueue.recoverfromcorruption.md">recoverFromCorruption</a>():
+bool</p>
+<p>public <a href="splpriorityqueue.rewind.md">rewind</a>(): void</p>
+<p>public <a href="splpriorityqueue.setextractflags.md">setExtractFlags</a>(int
+<code>$flags</code>): int</p>
+<p>public <a href="splpriorityqueue.top.md">top</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="splpriorityqueue.valid.md">valid</a>(): bool</p>
+<p>}</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="splpriorityqueue.compare.md">SplPriorityQueue::compare</a> -
+Порівнює пріоритети для коректного розміщення елементів у чергу</li>
+<li><a href="splpriorityqueue.count.md">SplPriorityQueue::count</a> — Виробляє
+підрахунок елементів у черзі</li>
+<li><a href="splpriorityqueue.current.md">SplPriorityQueue::current</a> -
+Повертає поточний вузол, який вказує ітератор</li>
+<li><a href="splpriorityqueue.extract.md">SplPriorityQueue::extract</a> -
+Витягує вузол з початку черги та пересортує її</li>
+<li><a href="splpriorityqueue.getextractflags.md">SplPriorityQueue::getExtractFlags</a>
+— Отримати прапори вилучення</li>
+<li><a href="splpriorityqueue.insert.md">SplPriorityQueue::insert</a> — Додає
+елемент у чергу і пересортує її</li>
+<li><a href="splpriorityqueue.iscorrupted.md">SplPriorityQueue::isCorrupted</a> -
+Вказує, чи є пріоритетна черга у пошкодженому
+стані</li>
+<li><a href="splpriorityqueue.isempty.md">SplPriorityQueue::isEmpty</a> -
+Перевіряє, чи є черга порожньою</li>
+<li><a href="splpriorityqueue.key.md">SplPriorityQueue::key</a> — Повертає
+індекс поточного вузла</li>
+<li><a href="splpriorityqueue.next.md">SplPriorityQueue::next</a> — Перехід до
+наступному вузлу</li>
+<li><a href="splpriorityqueue.recoverfromcorruption.md">SplPriorityQueue::recoverFromCorruption</a></li>
+<li>Відновлює коректний стан черги</li>
+<li><a href="splpriorityqueue.rewind.md">SplPriorityQueue::rewind</a> — Перекладає
+ітератор на початок черги</li>
+<li><a href="splpriorityqueue.setextractflags.md">SplPriorityQueue::setExtractFlags</a>
+— Встановлює режим вилучення вузлів</li>
+<li><a href="splpriorityqueue.top.md">SplPriorityQueue::top</a> — Повертає
+вузол, що знаходиться на початку черги</li>
+<li><a href="splpriorityqueue.valid.md">SplPriorityQueue::valid</a> — Перевіряє,
+чи є в черзі ще елементи</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.splpriorityqueue.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.splpriorityqueue.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.splpriorityqueue","slug":"class.splpriorityqueue.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"splminheap.compare.md\"\u003e« SplMinHeap::compare\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"splpriorityqueue.compare.md\"\u003eSplPriorityQueue::compare »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"spl.datastructures.md\"\u003eСтруктури даних\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас SplPriorityQueue\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас SplPriorityQueue\u003c/h1\u003e\n\u003cp\u003e(PHP 5 \u003e= 5.3.0, PHP 7, PHP 8)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003eКлас SplPriorityQueue забезпечує основні функціональні можливості\nпріоритетної черги, реалізований за допомогою купи з максимальним\nелементом зверху (max-heap).\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Порядок елементів з однаковим пріоритетом \u003cem\u003eне\nвизначено\u003c/em\u003e. Він може відрізнятись від порядку, в якому елементи були\nВставлені.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eSplPriorityQueue\u003c/strong\u003e implements \u003ca href=\"class.iterator.md\"\u003eIterator\u003c/a\u003e,\n\u003ca href=\"class.countable.md\"\u003eCountable\u003c/a\u003e {\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"splpriorityqueue.compare.md\"\u003ecompare\u003c/a\u003e(\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$priority1\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$priority2\u003c/code\u003e): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.count.md\"\u003ecount\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.current.md\"\u003ecurrent\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.extract.md\"\u003eextract\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.getextractflags.md\"\u003egetExtractFlags\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"splpriorityqueue.insert.md\"\u003einsert\u003c/a\u003e(\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n$value,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$priority\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.iscorrupted.md\"\u003eisCorrupted\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.isempty.md\"\u003eisEmpty\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.key.md\"\u003ekey\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.next.md\"\u003enext\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"splpriorityqueue.recoverfromcorruption.md\"\u003erecoverFromCorruption\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.rewind.md\"\u003erewind\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.setextractflags.md\"\u003esetExtractFlags\u003c/a\u003e(int\n\u003ccode\u003e$flags\u003c/code\u003e): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.top.md\"\u003etop\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"splpriorityqueue.valid.md\"\u003evalid\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.compare.md\"\u003eSplPriorityQueue::compare\u003c/a\u003e -\nПорівнює пріоритети для коректного розміщення елементів у чергу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.count.md\"\u003eSplPriorityQueue::count\u003c/a\u003e — Виробляє\nпідрахунок елементів у черзі\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.current.md\"\u003eSplPriorityQueue::current\u003c/a\u003e -\nПовертає поточний вузол, який вказує ітератор\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.extract.md\"\u003eSplPriorityQueue::extract\u003c/a\u003e -\nВитягує вузол з початку черги та пересортує її\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.getextractflags.md\"\u003eSplPriorityQueue::getExtractFlags\u003c/a\u003e\n— Отримати прапори вилучення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.insert.md\"\u003eSplPriorityQueue::insert\u003c/a\u003e — Додає\nелемент у чергу і пересортує її\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.iscorrupted.md\"\u003eSplPriorityQueue::isCorrupted\u003c/a\u003e -\nВказує, чи є пріоритетна черга у пошкодженому\nстані\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.isempty.md\"\u003eSplPriorityQueue::isEmpty\u003c/a\u003e -\nПеревіряє, чи є черга порожньою\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.key.md\"\u003eSplPriorityQueue::key\u003c/a\u003e — Повертає\nіндекс поточного вузла\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.next.md\"\u003eSplPriorityQueue::next\u003c/a\u003e — Перехід до\nнаступному вузлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.recoverfromcorruption.md\"\u003eSplPriorityQueue::recoverFromCorruption\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВідновлює коректний стан черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.rewind.md\"\u003eSplPriorityQueue::rewind\u003c/a\u003e — Перекладає\nітератор на початок черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.setextractflags.md\"\u003eSplPriorityQueue::setExtractFlags\u003c/a\u003e\n— Встановлює режим вилучення вузлів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.top.md\"\u003eSplPriorityQueue::top\u003c/a\u003e — Повертає\nвузол, що знаходиться на початку черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"splpriorityqueue.valid.md\"\u003eSplPriorityQueue::valid\u003c/a\u003e — Перевіряє,\nчи є в черзі ще елементи\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.splpriorityqueue.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

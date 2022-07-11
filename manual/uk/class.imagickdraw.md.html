@@ -1,0 +1,661 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.imagickdraw | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="imagick.writeimagesfile.md">« Imagick::writeImagesFile</a></p>
+</li>
+<li>
+<p><a href="imagickdraw.affine.md">ImagickDraw::affine »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.imagick.md">ImageMagick</a></p>
+</li>
+<li>
+<p>Клас ImagickDraw</p>
+</li>
+</ul>
+<h1>Клас <a href="class.imagickdraw.md">ImagickDraw</a></h1>
+<p>(PECL imagick 2, PECL imagick 3)</p>
+<h2>Огляд класів</h2>
+<p>class <strong>ImagickDraw</strong> {</p>
+<p>public <a href="imagickdraw.affine.md">affine</a>(array <code>$affine</code>): bool</p>
+<p>public <a href="imagickdraw.annotation.md">annotation</a>(float <code>$x</code>, float <code>$y</code>,
+string <code>$text</code>): bool</p>
+<p>public <a href="imagickdraw.arc.md">arc</a>(
+float <code>$sx</code>,
+float <code>$sy</code>,
+float <code>$ex</code>,
+float <code>$ey</code>,
+float <code>$sd</code>,
+float <code>$ed</code>
+): bool</p>
+<p>public <a href="imagickdraw.bezier.md">bezier</a>(array <code>$coordinates</code>): bool</p>
+<p>public <a href="imagickdraw.circle.md">circle</a>(
+float <code>$ox</code>,
+float <code>$oy</code>,
+float <code>$px</code>,
+float <code>$py</code>
+): bool</p>
+<p>public <a href="imagickdraw.clear.md">clear</a>(): bool</p>
+<p>public <a href="imagickdraw.clone.md">clone</a>():
+<a href="class.imagickdraw.md">ImagickDraw</a></p>
+<p>public <a href="imagickdraw.color.md">color</a>(float <code>$x</code>, float <code>$y</code>, int
+<code>$paintMethod</code>): bool</p>
+<p>public <a href="imagickdraw.comment.md">comment</a>(string <code>$comment</code>): bool</p>
+<p>public <a href="imagickdraw.composite.md">composite</a>(
+int <code>$compose</code>,
+float <code>$x</code>,
+float <code>$y</code>,
+float <code>$width</code>,
+float <code>$height</code>,
+<a href="class.imagick.md">Imagick</a> <code>$compositeWand</code>
+): bool</p>
+<p>public <a href="imagickdraw.construct.md">__construct</a>()</p>
+<p>public <a href="imagickdraw.destroy.md">destroy</a>(): bool</p>
+<p>public <a href="imagickdraw.ellipse.md">ellipse</a>(
+float <code>$ox</code>,
+float <code>$oy</code>,
+float <code>$rx</code>,
+float <code>$ry</code>,
+float <code>$start</code>,
+float <code>$end</code>
+): bool</p>
+<p>public <a href="imagickdraw.getclippath.md">getClipPath</a>(): string</p>
+<p>public <a href="imagickdraw.getcliprule.md">getClipRule</a>(): int</p>
+<p>public <a href="imagickdraw.getclipunits.md">getClipUnits</a>(): int</p>
+<p>public <a href="imagickdraw.getfillcolor.md">getFillColor</a>():
+<a href="class.imagickpixel.md">ImagickPixel</a></p>
+<p>public <a href="imagickdraw.getfillopacity.md">getFillOpacity</a>(): float</p>
+<p>public <a href="imagickdraw.getfillrule.md">getFillRule</a>(): int</p>
+<p>public <a href="imagickdraw.getfont.md">getFont</a>(): string</p>
+<p>public <a href="imagickdraw.getfontfamily.md">getFontFamily</a>(): string</p>
+<p>public <a href="imagickdraw.getfontsize.md">getFontSize</a>(): float</p>
+<p>public <a href="imagickdraw.getfontstretch.md">getFontStretch</a>(): int</p>
+<p>public <a href="imagickdraw.getfontstyle.md">getFontStyle</a>(): int</p>
+<p>public <a href="imagickdraw.getfontweight.md">getFontWeight</a>(): int</p>
+<p>public <a href="imagickdraw.getgravity.md">getGravity</a>(): int</p>
+<p>public <a href="imagickdraw.getstrokeantialias.md">getStrokeAntialias</a>(): bool</p>
+<p>public <a href="imagickdraw.getstrokecolor.md">getStrokeColor</a>():
+<a href="class.imagickpixel.md">ImagickPixel</a></p>
+<p>public <a href="imagickdraw.getstrokedasharray.md">getStrokeDashArray</a>():
+array</p>
+<p>public <a href="imagickdraw.getstrokedashoffset.md">getStrokeDashOffset</a>():
+float</p>
+<p>public <a href="imagickdraw.getstrokelinecap.md">getStrokeLineCap</a>(): int</p>
+<p>public <a href="imagickdraw.getstrokelinejoin.md">getStrokeLineJoin</a>(): int</p>
+<p>public <a href="imagickdraw.getstrokemiterlimit.md">getStrokeMiterLimit</a>():
+int</p>
+<p>public <a href="imagickdraw.getstrokeopacity.md">getStrokeOpacity</a>(): float</p>
+<p>public <a href="imagickdraw.getstrokewidth.md">getStrokeWidth</a>(): float</p>
+<p>public <a href="imagickdraw.gettextalignment.md">getTextAlignment</a>(): int</p>
+<p>public <a href="imagickdraw.gettextantialias.md">getTextAntialias</a>(): bool</p>
+<p>public <a href="imagickdraw.gettextdecoration.md">getTextDecoration</a>(): int</p>
+<p>public <a href="imagickdraw.gettextencoding.md">getTextEncoding</a>(): string</p>
+<p>public
+<a href="imagickdraw.gettextinterlinespacing.md">getTextInterlineSpacing</a>():
+float</p>
+<p>public
+<a href="imagickdraw.gettextinterwordspacing.md">getTextInterwordSpacing</a>():
+float</p>
+<p>public <a href="imagickdraw.gettextkerning.md">getTextKerning</a>(): float</p>
+<p>public <a href="imagickdraw.gettextundercolor.md">getTextUnderColor</a>():
+<a href="class.imagickpixel.md">ImagickPixel</a></p>
+<p>public <a href="imagickdraw.getvectorgraphics.md">getVectorGraphics</a>(): string</p>
+<p>public <a href="imagickdraw.line.md">line</a> (
+float <code>$sx</code>,
+float <code>$sy</code>,
+float <code>$ex</code>,
+float <code>$ey</code>
+): bool</p>
+<p>public <a href="imagickdraw.matte.md">matte</a>(float <code>$x</code>, float <code>$y</code>, int
+<code>$paintMethod</code>): bool</p>
+<p>public <a href="imagickdraw.pathclose.md">pathClose</a>(): bool</p>
+<p>public <a href="imagickdraw.pathcurvetoabsolute.md">pathCurveToAbsolute</a>(
+float <code>$x1</code>,
+float <code>$y1</code>,
+float <code>$x2</code>,
+float <code>$y2</code>,
+float <code>$x</code>,
+float <code>$y</code>
+): bool</p>
+<p>public
+<a href="imagickdraw.pathcurvetoquadraticbezierabsolute.md">pathCurveToQuadraticBezierAbsolute</a>(
+float <code>$x1</code>,
+float <code>$y1</code>,
+float <code>$x</code>,
+float <code>$y</code>
+): bool</p>
+<p>public
+<a href="imagickdraw.pathcurvetoquadraticbezierrelative.md">pathCurveToQuadraticBezierRelative</a>(
+float <code>$x1</code>,
+float <code>$y1</code>,
+float <code>$x</code>,
+float <code>$y</code>
+): bool</p>
+<p>public
+<a href="imagickdraw.pathcurvetoquadraticbeziersmoothabsolute.md">pathCurveToQuadraticBezierSmoothAbsolute</a>(float
+<code>$x</code>, float <code>$y</code>): bool</p>
+<p>public
+<a href="imagickdraw.pathcurvetoquadraticbeziersmoothrelative.md">pathCurveToQuadraticBezierSmoothRelative</a>(float
+<code>$x</code>, float <code>$y</code>): bool</p>
+<p>public <a href="imagickdraw.pathcurvetorelative.md">pathCurveToRelative</a>(
+float <code>$x1</code>,
+float <code>$y1</code>,
+float <code>$x2</code>,
+float <code>$y2</code>,
+float <code>$x</code>,
+float <code>$y</code>
+): bool</p>
+<p>public
+<a href="imagickdraw.pathcurvetosmoothabsolute.md">pathCurveToSmoothAbsolute</a>(
+float <code>$x2</code>,
+float <code>$y2</code>,
+float <code>$x</code>,
+float <code>$y</code>
+): bool</p>
+<p>public
+<a href="imagickdraw.pathcurvetosmoothrelative.md">pathCurveToSmoothRelative</a>(
+float <code>$x2</code>,
+float <code>$y2</code>,
+float <code>$x</code>,
+float <code>$y</code>
+): bool</p>
+<p>public
+<a href="imagickdraw.pathellipticarcabsolute.md">pathEllipticArcAbsolute</a>(
+float <code>$rx</code>,
+float <code>$ry</code>,
+float <code>$x_axis_rotation</code>,
+bool <code>$large_arc_flag</code>,
+bool <code>$sweep_flag</code>,
+float <code>$x</code>,
+float <code>$y</code>
+): bool</p>
+<p>public
+<a href="imagickdraw.pathellipticarcrelative.md">pathEllipticArcRelative</a>(
+float <code>$rx</code>,
+float <code>$ry</code>,
+float <code>$x_axis_rotation</code>,
+bool <code>$large_arc_flag</code>,
+bool <code>$sweep_flag</code>,
+float <code>$x</code>,
+float <code>$y</code>
+): bool</p>
+<p>public <a href="imagickdraw.pathfinish.md">pathFinish</a>(): bool</p>
+<p>public <a href="imagickdraw.pathlinetoabsolute.md">pathLineToAbsolute</a>(float
+<code>$x</code>, float <code>$y</code>): bool</p>
+<p>public
+<a href="imagickdraw.pathlinetohorizontalabsolute.md">pathLineToHorizontalAbsolute</a>(float
+<code>$x</code>): bool</p>
+<p>public
+<a href="imagickdraw.pathlinetohorizontalrelative.md">pathLineToHorizontalRelative</a>(float
+<code>$x</code>): bool</p>
+<p>public <a href="imagickdraw.pathlinetorelative.md">pathLineToRelative</a>(float
+<code>$x</code>, float <code>$y</code>): bool</p>
+<p>public
+<a href="imagickdraw.pathlinetoverticalabsolute.md">pathLineToVerticalAbsolute</a>(float
+<code>$y</code>): bool</p>
+<p>public
+<a href="imagickdraw.pathlinetoverticalrelative.md">pathLineToVerticalRelative</a>(float
+<code>$y</code>): bool</p>
+<p>public <a href="imagickdraw.pathmovetoabsolute.md">pathMoveToAbsolute</a>(float
+<code>$x</code>, float <code>$y</code>): bool</p>
+<p>public <a href="imagickdraw.pathmovetorelative.md">pathMoveToRelative</a>(float
+<code>$x</code>, float <code>$y</code>): bool</p>
+<p>public <a href="imagickdraw.pathstart.md">pathStart</a>(): bool</p>
+<p>public <a href="imagickdraw.point.md">point</a>(float <code>$x</code>, float <code>$y</code>): bool</p>
+<p>public <a href="imagickdraw.polygon.md">polygon</a>(array <code>$coordinates</code>): bool</p>
+<p>public <a href="imagickdraw.polyline.md">polyline</a>(array <code>$coordinates</code>): bool</p>
+<p>public <a href="imagickdraw.pop.md">pop</a>(): bool</p>
+<p>public <a href="imagickdraw.popclippath.md">popClipPath</a>(): bool</p>
+<p>public <a href="imagickdraw.popdefs.md">popDefs</a>(): bool</p>
+<p>public <a href="imagickdraw.poppattern.md">popPattern</a>(): bool</p>
+<p>public <a href="imagickdraw.push.md">push</a>(): bool</p>
+<p>public <a href="imagickdraw.pushclippath.md">pushClipPath</a>(string
+<code>$clip_mask_id</code>): bool</p>
+<p>public <a href="imagickdraw.pushdefs.md">pushDefs</a>(): bool</p>
+<p>public <a href="imagickdraw.pushpattern.md">pushPattern</a>(
+string <code>$pattern_id</code>,
+float <code>$x</code>,
+float <code>$y</code>,
+float <code>$width</code>,
+float <code>$height</code>
+): bool</p>
+<p>public <a href="imagickdraw.rectangle.md">rectangle</a>(
+float <code>$x1</code>,
+float <code>$y1</code>,
+float <code>$x2</code>,
+float <code>$y2</code>
+): bool</p>
+<p>public <a href="imagickdraw.render.md">render</a>(): bool</p>
+<p>public <a href="imagickdraw.resetvectorgraphics.md">resetVectorGraphics</a>():
+bool</p>
+<p>public <a href="imagickdraw.rotate.md">rotate</a>(float <code>$degrees</code>): bool</p>
+<p>public <a href="imagickdraw.roundrectangle.md">roundRectangle</a>(
+float <code>$x1</code>,
+float <code>$y1</code>,
+float <code>$x2</code>,
+float <code>$y2</code>,
+float <code>$rx</code>,
+float <code>$ry</code>
+): bool</p>
+<p>public <a href="imagickdraw.scale.md">scale</a>(float <code>$x</code>, float <code>$y</code>): bool</p>
+<p>public <a href="imagickdraw.setclippath.md">setClipPath</a>(string <code>$clip_mask</code>):
+bool</p>
+<p>public <a href="imagickdraw.setcliprule.md">setClipRule</a>(int <code>$fill_rule</code>):
+bool</p>
+<p>public <a href="imagickdraw.setclipunits.md">setClipUnits</a>(int <code>$clip_units</code>):
+bool</p>
+<p>public <a href="imagickdraw.setfillalpha.md">setFillAlpha</a>(float <code>$opacity</code>):
+bool</p>
+<p>public
+<a href="imagickdraw.setfillcolor.md">setFillColor</a>(<a href="class.imagickpixel.md">ImagickPixel</a>
+<code>$fill_pixel</code>): bool</p>
+<p>public <a href="imagickdraw.setfillopacity.md">setFillOpacity</a>(float
+<code>$fillOpacity</code>): bool</p>
+<p>public <a href="imagickdraw.setfillpatternurl.md">setFillPatternURL</a>(string
+<code>$fill_url</code>): bool</p>
+<p>public <a href="imagickdraw.setfillrule.md">setFillRule</a>(int <code>$fill_rule</code>):
+bool</p>
+<p>public <a href="imagickdraw.setfont.md">setFont</a>(string <code>$font_name</code>): bool</p>
+<p>public <a href="imagickdraw.setfontfamily.md">setFontFamily</a>(string
+<code>$font_family</code>): bool</p>
+<p>public <a href="imagickdraw.setfontsize.md">setFontSize</a>(float <code>$pointsize</code>):
+bool</p>
+<p>public <a href="imagickdraw.setfontstretch.md">setFontStretch</a>(int
+<code>$fontStretch</code>): bool</p>
+<p>public <a href="imagickdraw.setfontstyle.md">setFontStyle</a>(int <code>$style</code>): bool</p>
+<p>public <a href="imagickdraw.setfontweight.md">setFontWeight</a>(int
+<code>$font_weight</code>): bool</p>
+<p>public <a href="imagickdraw.setgravity.md">setGravity</a>(int <code>$gravity</code>): bool</p>
+<p>public <a href="imagickdraw.setresolution.md">setResolution</a>(float
+<code>$x_resolution</code>, float <code>$y_resolution</code>): bool</p>
+<p>public <a href="imagickdraw.setstrokealpha.md">setStrokeAlpha</a>(float
+<code>$opacity</code>): bool</p>
+<p>public <a href="imagickdraw.setstrokeantialias.md">setStrokeAntialias</a>(bool
+<code>$stroke_antialias</code>): bool</p>
+<p>public
+<a href="imagickdraw.setstrokecolor.md">setStrokeColor</a>(<a href="class.imagickpixel.md">ImagickPixel</a>
+<code>$stroke_pixel</code>): bool</p>
+<p>public <a href="imagickdraw.setstrokedasharray.md">setStrokeDashArray</a>(array
+<code>$dashArray</code>): bool</p>
+<p>public <a href="imagickdraw.setstrokedashoffset.md">setStrokeDashOffset</a>(float
+<code>$dash_offset</code>): bool</p>
+<p>public <a href="imagickdraw.setstrokelinecap.md">setStrokeLineCap</a>(int
+<code>$linecap</code>): bool</p>
+<p>public <a href="imagickdraw.setstrokelinejoin.md">setStrokeLineJoin</a>(int
+<code>$linejoin</code>): bool</p>
+<p>public <a href="imagickdraw.setstrokemiterlimit.md">setStrokeMiterLimit</a>(int
+<code>$miterlimit</code>): bool</p>
+<p>public <a href="imagickdraw.setstrokeopacity.md">setStrokeOpacity</a>(float
+<code>$stroke_opacity</code>): bool</p>
+<p>public
+<a href="imagickdraw.setstrokepatternurl.md">setStrokePatternURL</a>(string
+<code>$stroke_url</code>): bool</p>
+<p>public <a href="imagickdraw.setstrokewidth.md">setStrokeWidth</a>(float
+<code>$stroke_width</code>): bool</p>
+<p>public <a href="imagickdraw.settextalignment.md">setTextAlignment</a>(int
+<code>$alignment</code>): bool</p>
+<p>public <a href="imagickdraw.settextantialias.md">setTextAntialias</a>(bool
+<code>$antiAlias</code>): bool</p>
+<p>public <a href="imagickdraw.settextdecoration.md">setTextDecoration</a>(int
+<code>$decoration</code>): bool</p>
+<p>public <a href="imagickdraw.settextencoding.md">setTextEncoding</a>(string
+<code>$encoding</code>): bool</p>
+<p>public
+<a href="imagickdraw.settextinterlinespacing.md">setTextInterlineSpacing</a>(float
+<code>$spacing</code>): bool</p>
+<p>public
+<a href="imagickdraw.settextinterwordspacing.md">setTextInterwordSpacing</a>(float
+<code>$spacing</code>): bool</p>
+<p>public <a href="imagickdraw.settextkerning.md">setTextKerning</a>(float
+<code>$kerning</code>): bool</p>
+<p>public
+<a href="imagickdraw.settextundercolor.md">setTextUnderColor</a>(<a href="class.imagickpixel.md">ImagickPixel</a>
+<code>$under_color</code>): bool</p>
+<p>public <a href="imagickdraw.setvectorgraphics.md">setVectorGraphics</a>(string
+<code>$xml</code>): bool</p>
+<p>public <a href="imagickdraw.setviewbox.md">setViewbox</a>(
+int <code>$x1</code>,
+int <code>$y1</code>,
+int <code>$x2</code>,
+int <code>$y2</code>
+): bool</p>
+<p>public <a href="imagickdraw.skewx.md">skewX</a>(float <code>$degrees</code>): bool</p>
+<p>public <a href="imagickdraw.skewy.md">skewY</a>(float <code>$degrees</code>): bool</p>
+<p>public <a href="imagickdraw.translate.md">translate</a>(float <code>$x</code>, float <code>$y</code>):
+bool</p>
+<p>}</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="imagickdraw.affine.md">ImagickDraw::affine</a> — Регулює поточну
+матрицю афінного перетворення</li>
+<li><a href="imagickdraw.annotation.md">ImagickDraw::annotation</a> - Малює
+текст на зображенні</li>
+<li><a href="imagickdraw.arc.md">ImagickDraw::arc</a> - Малює дугу</li>
+<li><a href="imagickdraw.bezier.md">ImagickDraw::bezier</a> - Малює криву Безьє</li>
+<li><a href="imagickdraw.circle.md">ImagickDraw::circle</a> — Малює коло</li>
+<li><a href="imagickdraw.clear.md">ImagickDraw::clear</a> - Очищає ImagickDraw</li>
+<li><a href="imagickdraw.clone.md">ImagickDraw::clone</a> — Робить точну копію
+вказаного об'єкту ImagickDraw</li>
+<li><a href="imagickdraw.color.md">ImagickDraw::color</a> — Малює колір на
+зображенні</li>
+<li><a href="imagickdraw.comment.md">ImagickDraw::comment</a> — Додає
+коментар</li>
+<li><a href="imagickdraw.composite.md">ImagickDraw::composite</a> — Накладає
+зображення на поточне зображення</li>
+<li><a href="imagickdraw.construct.md">ImagickDraw::__construct</a> -
+Конструктор класу ImagickDraw</li>
+<li><a href="imagickdraw.destroy.md">ImagickDraw::destroy</a> - Звільняє все
+пов'язані ресурси</li>
+<li><a href="imagickdraw.ellipse.md">ImagickDraw::ellipse</a> — Малює на
+зображенні еліпс</li>
+<li><a href="imagickdraw.getclippath.md">ImagickDraw::getClipPath</a> -
+Повертає ідентифікатор поточного відсічного контуру</li>
+<li><a href="imagickdraw.getcliprule.md">ImagickDraw::getClipRule</a>
+Повертає поточне правило заливання багатокутника</li>
+<li><a href="imagickdraw.getclipunits.md">ImagickDraw::getClipUnits</a> -
+Повертає інтерпретацію одиниць відсічного контуру</li>
+<li><a href="imagickdraw.getfillcolor.md">ImagickDraw::getFillColor</a> -
+Повертає колір заливки</li>
+<li><a href="imagickdraw.getfillopacity.md">ImagickDraw::getFillOpacity</a> -
+Повертає непрозорість, що використовується при малюванні</li>
+<li><a href="imagickdraw.getfillrule.md">ImagickDraw::getFillRule</a> -
+Повертає правило заливання</li>
+<li><a href="imagickdraw.getfont.md">ImagickDraw::getFont</a> — Повертає шрифт</li>
+<li><a href="imagickdraw.getfontfamily.md">ImagickDraw::getFontFamily</a> -
+Повертає сімейство шрифтів</li>
+<li><a href="imagickdraw.getfontsize.md">ImagickDraw::getFontSize</a> -
+Повертає розмір шрифту</li>
+<li><a href="imagickdraw.getfontstretch.md">ImagickDraw::getFontStretch</a> -
+Опис</li>
+<li><a href="imagickdraw.getfontstyle.md">ImagickDraw::getFontStyle</a> -
+Повертає стиль шрифту</li>
+<li><a href="imagickdraw.getfontweight.md">ImagickDraw::getFontWeight</a> -
+Повертає товщину шрифту</li>
+<li><a href="imagickdraw.getgravity.md">ImagickDraw::getGravity</a> - Повертає
+гравітацію розміщення тексту</li>
+<li><a href="imagickdraw.getstrokeantialias.md">ImagickDraw::getStrokeAntialias</a>
+— Повертає поточне налаштування згладжування обведення</li>
+<li><a href="imagickdraw.getstrokecolor.md">ImagickDraw::getStrokeColor</a> -
+Повертає колір для обведення контурів об'єкта.</li>
+<li><a href="imagickdraw.getstrokedasharray.md">ImagickDraw::getStrokeDashArray</a></li>
+<li>Повертає масив, що представляє патерн зі штрихів та пробілів,
+використовуваних для обведення контурів</li>
+<li><a href="imagickdraw.getstrokedashoffset.md">ImagickDraw::getStrokeDashOffset</a>
+— Повертає зсув у штриховому патерні для початку штрихування.</li>
+<li><a href="imagickdraw.getstrokelinecap.md">ImagickDraw::getStrokeLineCap</a> -
+Повертає форму, яка використовуватиметься наприкінці відкритих
+внутрішніх контурів при їх обведенні</li>
+<li><a href="imagickdraw.getstrokelinejoin.md">ImagickDraw::getStrokeLineJoin</a>
+— Повертає форму, яка використовуватиметься у кутах контурів
+при їх обведенні</li>
+<li><a href="imagickdraw.getstrokemiterlimit.md">ImagickDraw::getStrokeMiterLimit</a>
+— Повертає межу зрізу обведення</li>
+<li><a href="imagickdraw.getstrokeopacity.md">ImagickDraw::getStrokeOpacity</a> -
+Повертає непрозорість обведених контурів об'єкта</li>
+<li><a href="imagickdraw.getstrokewidth.md">ImagickDraw::getStrokeWidth</a> -
+Повертає ширину обведення, що використовується для малювання контурів.
+об'єкта</li>
+<li><a href="imagickdraw.gettextalignment.md">ImagickDraw::getTextAlignment</a> -
+Повертає вирівнювання тексту</li>
+<li><a href="imagickdraw.gettextantialias.md">ImagickDraw::getTextAntialias</a> -
+Повертає поточне настроювання згладжування тексту</li>
+<li><a href="imagickdraw.gettextdecoration.md">ImagickDraw::getTextDecoration</a>
+— Повертає оформлення тексту</li>
+<li><a href="imagickdraw.gettextencoding.md">ImagickDraw::getTextEncoding</a> -
+Повертає кодовий набір, який використовується для текстових анотацій</li>
+<li><a href="imagickdraw.gettextinterlinespacing.md">ImagickDraw::getTextInterlineSpacing</a>
+— Повертає міжрядковий інтервал тексту</li>
+<li><a href="imagickdraw.gettextinterwordspacing.md">ImagickDraw::getTextInterwordSpacing</a>
+— Повертає міжслівний інтервал тексту</li>
+<li><a href="imagickdraw.gettextkerning.md">ImagickDraw::getTextKerning</a> -
+Повертає міжлітерний інтервал тексту</li>
+<li><a href="imagickdraw.gettextundercolor.md">ImagickDraw::getTextUnderColor</a>
+— Повертає колір під текстом</li>
+<li><a href="imagickdraw.getvectorgraphics.md">ImagickDraw::getVectorGraphics</a>
+— Повертає рядок, який містить векторну графіку</li>
+<li><a href="imagickdraw.line.md">ImagickDraw::line</a> — Малює лінію</li>
+<li><a href="imagickdraw.matte.md">ImagickDraw::matte</a> - Зафарбовує канал
+непрозорості зображення</li>
+<li><a href="imagickdraw.pathclose.md">ImagickDraw::pathClose</a> — Додає
+елемент шляху до поточного шляху</li>
+<li><a href="imagickdraw.pathcurvetoabsolute.md">ImagickDraw::pathCurveToAbsolute</a>
+— Малює кубічну криву Безьє</li>
+<li><a href="imagickdraw.pathcurvetoquadraticbezierabsolute.md">ImagickDraw::pathCurveToQuadraticBezierAbsolute</a>
+— Малює квадратичну криву Безьє</li>
+<li><a href="imagickdraw.pathcurvetoquadraticbezierrelative.md">ImagickDraw::pathCurveToQuadraticBezierRelative</a>
+— Малює квадратичну криву Безьє</li>
+<li><a href="imagickdraw.pathcurvetoquadraticbeziersmoothabsolute.md">ImagickDraw::pathCurveToQuadraticBezierSmoothAbsolute</a>
+— Малює квадратичну криву Безьє</li>
+<li><a href="imagickdraw.pathcurvetoquadraticbeziersmoothrelative.md">ImagickDraw::pathCurveToQuadraticBezierSmoothRelative</a>
+— Малює квадратичну криву Безьє</li>
+<li><a href="imagickdraw.pathcurvetorelative.md">ImagickDraw::pathCurveToRelative</a>
+— Малює кубічну криву Безьє</li>
+<li><a href="imagickdraw.pathcurvetosmoothabsolute.md">ImagickDraw::pathCurveToSmoothAbsolute</a>
+— Малює кубічну криву Безьє</li>
+<li><a href="imagickdraw.pathcurvetosmoothrelative.md">ImagickDraw::pathCurveToSmoothRelative</a>
+— Малює кубічну криву Безьє</li>
+<li><a href="imagickdraw.pathellipticarcabsolute.md">ImagickDraw::pathEllipticArcAbsolute</a>
+— Малює еліптичну дугу</li>
+<li><a href="imagickdraw.pathellipticarcrelative.md">ImagickDraw::pathEllipticArcRelative</a>
+— Малює еліптичну дугу</li>
+<li><a href="imagickdraw.pathfinish.md">ImagickDraw::pathFinish</a> - Завершує
+поточний шлях</li>
+<li><a href="imagickdraw.pathlinetoabsolute.md">ImagickDraw::pathLineToAbsolute</a>
+— Малює лінію</li>
+<li><a href="imagickdraw.pathlinetohorizontalabsolute.md">ImagickDraw::pathLineToHorizontalAbsolute</a>
+— Малює горизонтальну лінію</li>
+<li><a href="imagickdraw.pathlinetohorizontalrelative.md">ImagickDraw::pathLineToHorizontalRelative</a>
+— Малює горизонтальну лінію</li>
+<li><a href="imagickdraw.pathlinetorelative.md">ImagickDraw::pathLineToRelative</a>
+— Малює лінію</li>
+<li><a href="imagickdraw.pathlinetoverticalabsolute.md">ImagickDraw::pathLineToVerticalAbsolute</a>
+— Малює вертикальну лінію</li>
+<li><a href="imagickdraw.pathlinetoverticalrelative.md">ImagickDraw::pathLineToVerticalRelative</a>
+— Малює вертикальну лінію</li>
+<li><a href="imagickdraw.pathmovetoabsolute.md">ImagickDraw::pathMoveToAbsolute</a></li>
+<li>Починає новий внутрішній контур</li>
+<li><a href="imagickdraw.pathmovetorelative.md">ImagickDraw::pathMoveToRelative</a></li>
+<li>Починає новий внутрішній контур</li>
+<li><a href="imagickdraw.pathstart.md">ImagickDraw::pathStart</a> — Оголошує
+початок відображення контуру</li>
+<li><a href="imagickdraw.point.md">ImagickDraw::point</a> — Малює точку</li>
+<li><a href="imagickdraw.polygon.md">ImagickDraw::polygon</a> - Малює
+багатокутник</li>
+<li><a href="imagickdraw.polyline.md">ImagickDraw::polyline</a> - Малює ламану
+лінію</li>
+<li><a href="imagickdraw.pop.md">ImagickDraw::pop</a> — Знищує поточний об'єкт
+ImagickDraw у стеку та повертається до раніше доданого об'єкту
+ImagickDraw</li>
+<li><a href="imagickdraw.popclippath.md">ImagickDraw::popClipPath</a> - Завершує
+визначення шляху відсічного контуру</li>
+<li><a href="imagickdraw.popdefs.md">ImagickDraw::popDefs</a> — Завершує список
+визначень</li>
+<li><a href="imagickdraw.poppattern.md">ImagickDraw::popPattern</a> - Завершує
+визначення шаблону</li>
+<li><a href="imagickdraw.push.md">ImagickDraw::push</a> — Клонує поточний
+об'єкт ImagickDraw і додає його в стек</li>
+<li><a href="imagickdraw.pushclippath.md">ImagickDraw::pushClipPath</a> -
+Запускає визначення шляху відсічного контуру</li>
+<li><a href="imagickdraw.pushdefs.md">ImagickDraw::pushDefs</a> — Вказує, що
+наступні команди створюють іменовані елементи для ранньої обробки</li>
+<li><a href="imagickdraw.pushpattern.md">ImagickDraw::pushPattern</a> -
+Вказує, що наступні команди аж до
+ImagickDraw::opPattern() становлять визначення іменованого
+патерну</li>
+<li><a href="imagickdraw.rectangle.md">ImagickDraw::rectangle</a> - Малює
+прямокутник</li>
+<li><a href="imagickdraw.render.md">ImagickDraw::render</a> - Малює все
+попередні команди малювання на зображенні</li>
+<li><a href="imagickdraw.resetvectorgraphics.md">ImagickDraw::resetVectorGraphics</a>
+— Скидає векторну графіку</li>
+<li><a href="imagickdraw.rotate.md">ImagickDraw::rotate</a> — Застосовує вказаний
+поворот до поточного координатного простору</li>
+<li><a href="imagickdraw.roundrectangle.md">ImagickDraw::roundRectangle</a> -
+Малює прямокутник із закругленими кутами</li>
+<li><a href="imagickdraw.scale.md">ImagickDraw::scale</a> — Регулює
+коефіцієнт масштабування</li>
+<li><a href="imagickdraw.setclippath.md">ImagickDraw::setClipPath</a> — Зв'язує
+іменований контур відсічного контуру із зображенням</li>
+<li><a href="imagickdraw.setcliprule.md">ImagickDraw::setClipRule</a> -
+Встановлює правило заливання багатокутника, яке буде
+використовуватися відсічним контуром</li>
+<li><a href="imagickdraw.setclipunits.md">ImagickDraw::setClipUnits</a> -
+Встановлює інтерпретацію одиниць траєкторії відсічного контуру</li>
+<li><a href="imagickdraw.setfillalpha.md">ImagickDraw::setFillAlpha</a>
+Встановлює непрозорість під час малювання з використанням кольору.
+або текстури заливки</li>
+<li><a href="imagickdraw.setfillcolor.md">ImagickDraw::setFillColor</a> -
+Встановлює колір заливки, який використовується для малювання об'єктів.
+заливкою</li>
+<li><a href="imagickdraw.setfillopacity.md">ImagickDraw::setFillOpacity</a> -
+Встановлює непрозорість під час малювання з використанням кольору.
+або текстури заливки</li>
+<li><a href="imagickdraw.setfillpatternurl.md">ImagickDraw::setFillPatternURL</a>
+— Встановлює URL-адресу для використання як зразок
+заливки для заливки об'єктів</li>
+<li><a href="imagickdraw.setfillrule.md">ImagickDraw::setFillRule</a>
+Встановлює правило заливки для малювання
+полігонів</li>
+<li><a href="imagickdraw.setfont.md">ImagickDraw::setFont</a> — Встановлює
+вказаний шрифт для використання при анотуванні текстом</li>
+<li><a href="imagickdraw.setfontfamily.md">ImagickDraw::setFontFamily</a> -
+Встановлює сімейство шрифтів для використання при анотуванні
+текстом</li>
+<li><a href="imagickdraw.setfontsize.md">ImagickDraw::setFontSize</a> -
+Встановлює розмір шрифту для використання під час анотування
+текстом</li>
+<li><a href="imagickdraw.setfontstretch.md">ImagickDraw::setFontStretch</a> -
+Встановлює розтягування шрифту для використання при анотуванні
+текстом</li>
+<li><a href="imagickdraw.setfontstyle.md">ImagickDraw::setFontStyle</a> -
+Встановлює стиль шрифту для використання під час анотування
+текстом</li>
+<li><a href="imagickdraw.setfontweight.md">ImagickDraw::setFontWeight</a> -
+Встановлює товщину шрифту</li>
+<li><a href="imagickdraw.setgravity.md">ImagickDraw::setGravity</a>
+Встановлює гравітацію розміщення тексту</li>
+<li><a href="imagickdraw.setresolution.md">ImagickDraw::setResolution</a> -
+Встановлює дозвіл</li>
+<li><a href="imagickdraw.setstrokealpha.md">ImagickDraw::setStrokeAlpha</a>
+Визначає непрозорість обведення контурів об'єкта</li>
+<li><a href="imagickdraw.setstrokeantialias.md">ImagickDraw::setStrokeAntialias</a>
+— Керує згладжуванням обведення контурів</li>
+<li><a href="imagickdraw.setstrokecolor.md">ImagickDraw::setStrokeColor</a> -
+Встановлює колір, який використовується для обведення контурів об'єкта</li>
+<li><a href="imagickdraw.setstrokedasharray.md">ImagickDraw::setStrokeDashArray</a>
+— Задає патерн із штрихів та пробілів, які використовуються для обведення
+контурів</li>
+<li><a href="imagickdraw.setstrokedashoffset.md">ImagickDraw::setStrokeDashOffset</a>
+— Задає зсув у штриховому патерні для початку штрихування</li>
+<li><a href="imagickdraw.setstrokelinecap.md">ImagickDraw::setStrokeLineCap</a> -
+Задає форму, яка використовуватиметься наприкінці відкритих
+внутрішніх контурів при їх обведенні</li>
+<li><a href="imagickdraw.setstrokelinejoin.md">ImagickDraw::setStrokeLineJoin</a></li>
+<li>Задає форму, яка буде використовуватися в кутах контурів при їх
+обведенні</li>
+<li><a href="imagickdraw.setstrokemiterlimit.md">ImagickDraw::setStrokeMiterLimit</a></li>
+<li>Задає межу зрізу обведення</li>
+<li><a href="imagickdraw.setstrokeopacity.md">ImagickDraw::setStrokeOpacity</a> -
+Визначає непрозорість обведення контурів об'єкта</li>
+<li><a href="imagickdraw.setstrokepatternurl.md">ImagickDraw::setStrokePatternURL</a>
+— Встановлює патерн для обведення контурів об'єкта.</li>
+<li><a href="imagickdraw.setstrokewidth.md">ImagickDraw::setStrokeWidth</a> -
+Встановлює ширину обведення, яка використовується для малювання контурів.
+об'єкта</li>
+<li><a href="imagickdraw.settextalignment.md">ImagickDraw::setTextAlignment</a> -
+Задає вирівнювання тексту</li>
+<li><a href="imagickdraw.settextantialias.md">ImagickDraw::setTextAntialias</a> -
+Керує згладжуванням тексту</li>
+<li><a href="imagickdraw.settextdecoration.md">ImagickDraw::setTextDecoration</a></li>
+<li>Визначає оформлення</li>
+<li><a href="imagickdraw.settextencoding.md">ImagickDraw::setTextEncoding</a>
+Задає кодовий набір тексту</li>
+<li><a href="imagickdraw.settextinterlinespacing.md">ImagickDraw::setTextInterlineSpacing</a>
+— Встановлює міжрядковий інтервал тексту</li>
+<li><a href="imagickdraw.settextinterwordspacing.md">ImagickDraw::setTextInterwordSpacing</a>
+— Встановлює міжмовний інтервал тексту</li>
+<li><a href="imagickdraw.settextkerning.md">ImagickDraw::setTextKerning</a> -
+Встановлює міжлітерний інтервал тексту</li>
+<li><a href="imagickdraw.settextundercolor.md">ImagickDraw::setTextUnderColor</a>
+— Задає колір прямокутника фону</li>
+<li><a href="imagickdraw.setvectorgraphics.md">ImagickDraw::setVectorGraphics</a>
+— Встановлює векторну графіку</li>
+<li><a href="imagickdraw.setviewbox.md">ImagickDraw::setViewbox</a> -
+Встановлює загальний розмір полотна</li>
+<li><a href="imagickdraw.skewx.md">ImagickDraw::skewX</a> — Нахиляє поточну
+систему координат по горизонталі</li>
+<li><a href="imagickdraw.skewy.md">ImagickDraw::skewY</a> — Нахиляє поточну
+систему координат по вертикалі</li>
+<li><a href="imagickdraw.translate.md">ImagickDraw::translate</a> — Застосовує
+перенесення до поточної системи координат</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.imagickdraw.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.imagickdraw.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.imagickdraw","slug":"class.imagickdraw.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"imagick.writeimagesfile.md\"\u003e« Imagick::writeImagesFile\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"imagickdraw.affine.md\"\u003eImagickDraw::affine »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.imagick.md\"\u003eImageMagick\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас ImagickDraw\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас \u003ca href=\"class.imagickdraw.md\"\u003eImagickDraw\u003c/a\u003e\u003c/h1\u003e\n\u003cp\u003e(PECL imagick 2, PECL imagick 3)\u003c/p\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eImagickDraw\u003c/strong\u003e {\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.affine.md\"\u003eaffine\u003c/a\u003e(array \u003ccode\u003e$affine\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.annotation.md\"\u003eannotation\u003c/a\u003e(float \u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e,\nstring \u003ccode\u003e$text\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.arc.md\"\u003earc\u003c/a\u003e(\nfloat \u003ccode\u003e$sx\u003c/code\u003e,\nfloat \u003ccode\u003e$sy\u003c/code\u003e,\nfloat \u003ccode\u003e$ex\u003c/code\u003e,\nfloat \u003ccode\u003e$ey\u003c/code\u003e,\nfloat \u003ccode\u003e$sd\u003c/code\u003e,\nfloat \u003ccode\u003e$ed\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.bezier.md\"\u003ebezier\u003c/a\u003e(array \u003ccode\u003e$coordinates\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.circle.md\"\u003ecircle\u003c/a\u003e(\nfloat \u003ccode\u003e$ox\u003c/code\u003e,\nfloat \u003ccode\u003e$oy\u003c/code\u003e,\nfloat \u003ccode\u003e$px\u003c/code\u003e,\nfloat \u003ccode\u003e$py\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.clear.md\"\u003eclear\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.clone.md\"\u003eclone\u003c/a\u003e():\n\u003ca href=\"class.imagickdraw.md\"\u003eImagickDraw\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.color.md\"\u003ecolor\u003c/a\u003e(float \u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e, int\n\u003ccode\u003e$paintMethod\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.comment.md\"\u003ecomment\u003c/a\u003e(string \u003ccode\u003e$comment\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.composite.md\"\u003ecomposite\u003c/a\u003e(\nint \u003ccode\u003e$compose\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e,\nfloat \u003ccode\u003e$width\u003c/code\u003e,\nfloat \u003ccode\u003e$height\u003c/code\u003e,\n\u003ca href=\"class.imagick.md\"\u003eImagick\u003c/a\u003e \u003ccode\u003e$compositeWand\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.construct.md\"\u003e__construct\u003c/a\u003e()\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.destroy.md\"\u003edestroy\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.ellipse.md\"\u003eellipse\u003c/a\u003e(\nfloat \u003ccode\u003e$ox\u003c/code\u003e,\nfloat \u003ccode\u003e$oy\u003c/code\u003e,\nfloat \u003ccode\u003e$rx\u003c/code\u003e,\nfloat \u003ccode\u003e$ry\u003c/code\u003e,\nfloat \u003ccode\u003e$start\u003c/code\u003e,\nfloat \u003ccode\u003e$end\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getclippath.md\"\u003egetClipPath\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getcliprule.md\"\u003egetClipRule\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getclipunits.md\"\u003egetClipUnits\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getfillcolor.md\"\u003egetFillColor\u003c/a\u003e():\n\u003ca href=\"class.imagickpixel.md\"\u003eImagickPixel\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getfillopacity.md\"\u003egetFillOpacity\u003c/a\u003e(): float\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getfillrule.md\"\u003egetFillRule\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getfont.md\"\u003egetFont\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getfontfamily.md\"\u003egetFontFamily\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getfontsize.md\"\u003egetFontSize\u003c/a\u003e(): float\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getfontstretch.md\"\u003egetFontStretch\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getfontstyle.md\"\u003egetFontStyle\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getfontweight.md\"\u003egetFontWeight\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getgravity.md\"\u003egetGravity\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getstrokeantialias.md\"\u003egetStrokeAntialias\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getstrokecolor.md\"\u003egetStrokeColor\u003c/a\u003e():\n\u003ca href=\"class.imagickpixel.md\"\u003eImagickPixel\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getstrokedasharray.md\"\u003egetStrokeDashArray\u003c/a\u003e():\narray\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getstrokedashoffset.md\"\u003egetStrokeDashOffset\u003c/a\u003e():\nfloat\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getstrokelinecap.md\"\u003egetStrokeLineCap\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getstrokelinejoin.md\"\u003egetStrokeLineJoin\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getstrokemiterlimit.md\"\u003egetStrokeMiterLimit\u003c/a\u003e():\nint\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getstrokeopacity.md\"\u003egetStrokeOpacity\u003c/a\u003e(): float\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getstrokewidth.md\"\u003egetStrokeWidth\u003c/a\u003e(): float\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.gettextalignment.md\"\u003egetTextAlignment\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.gettextantialias.md\"\u003egetTextAntialias\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.gettextdecoration.md\"\u003egetTextDecoration\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.gettextencoding.md\"\u003egetTextEncoding\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.gettextinterlinespacing.md\"\u003egetTextInterlineSpacing\u003c/a\u003e():\nfloat\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.gettextinterwordspacing.md\"\u003egetTextInterwordSpacing\u003c/a\u003e():\nfloat\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.gettextkerning.md\"\u003egetTextKerning\u003c/a\u003e(): float\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.gettextundercolor.md\"\u003egetTextUnderColor\u003c/a\u003e():\n\u003ca href=\"class.imagickpixel.md\"\u003eImagickPixel\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.getvectorgraphics.md\"\u003egetVectorGraphics\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.line.md\"\u003eline\u003c/a\u003e (\nfloat \u003ccode\u003e$sx\u003c/code\u003e,\nfloat \u003ccode\u003e$sy\u003c/code\u003e,\nfloat \u003ccode\u003e$ex\u003c/code\u003e,\nfloat \u003ccode\u003e$ey\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.matte.md\"\u003ematte\u003c/a\u003e(float \u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e, int\n\u003ccode\u003e$paintMethod\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pathclose.md\"\u003epathClose\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pathcurvetoabsolute.md\"\u003epathCurveToAbsolute\u003c/a\u003e(\nfloat \u003ccode\u003e$x1\u003c/code\u003e,\nfloat \u003ccode\u003e$y1\u003c/code\u003e,\nfloat \u003ccode\u003e$x2\u003c/code\u003e,\nfloat \u003ccode\u003e$y2\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathcurvetoquadraticbezierabsolute.md\"\u003epathCurveToQuadraticBezierAbsolute\u003c/a\u003e(\nfloat \u003ccode\u003e$x1\u003c/code\u003e,\nfloat \u003ccode\u003e$y1\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathcurvetoquadraticbezierrelative.md\"\u003epathCurveToQuadraticBezierRelative\u003c/a\u003e(\nfloat \u003ccode\u003e$x1\u003c/code\u003e,\nfloat \u003ccode\u003e$y1\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathcurvetoquadraticbeziersmoothabsolute.md\"\u003epathCurveToQuadraticBezierSmoothAbsolute\u003c/a\u003e(float\n\u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathcurvetoquadraticbeziersmoothrelative.md\"\u003epathCurveToQuadraticBezierSmoothRelative\u003c/a\u003e(float\n\u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pathcurvetorelative.md\"\u003epathCurveToRelative\u003c/a\u003e(\nfloat \u003ccode\u003e$x1\u003c/code\u003e,\nfloat \u003ccode\u003e$y1\u003c/code\u003e,\nfloat \u003ccode\u003e$x2\u003c/code\u003e,\nfloat \u003ccode\u003e$y2\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathcurvetosmoothabsolute.md\"\u003epathCurveToSmoothAbsolute\u003c/a\u003e(\nfloat \u003ccode\u003e$x2\u003c/code\u003e,\nfloat \u003ccode\u003e$y2\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathcurvetosmoothrelative.md\"\u003epathCurveToSmoothRelative\u003c/a\u003e(\nfloat \u003ccode\u003e$x2\u003c/code\u003e,\nfloat \u003ccode\u003e$y2\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathellipticarcabsolute.md\"\u003epathEllipticArcAbsolute\u003c/a\u003e(\nfloat \u003ccode\u003e$rx\u003c/code\u003e,\nfloat \u003ccode\u003e$ry\u003c/code\u003e,\nfloat \u003ccode\u003e$x_axis_rotation\u003c/code\u003e,\nbool \u003ccode\u003e$large_arc_flag\u003c/code\u003e,\nbool \u003ccode\u003e$sweep_flag\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathellipticarcrelative.md\"\u003epathEllipticArcRelative\u003c/a\u003e(\nfloat \u003ccode\u003e$rx\u003c/code\u003e,\nfloat \u003ccode\u003e$ry\u003c/code\u003e,\nfloat \u003ccode\u003e$x_axis_rotation\u003c/code\u003e,\nbool \u003ccode\u003e$large_arc_flag\u003c/code\u003e,\nbool \u003ccode\u003e$sweep_flag\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pathfinish.md\"\u003epathFinish\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pathlinetoabsolute.md\"\u003epathLineToAbsolute\u003c/a\u003e(float\n\u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathlinetohorizontalabsolute.md\"\u003epathLineToHorizontalAbsolute\u003c/a\u003e(float\n\u003ccode\u003e$x\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathlinetohorizontalrelative.md\"\u003epathLineToHorizontalRelative\u003c/a\u003e(float\n\u003ccode\u003e$x\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pathlinetorelative.md\"\u003epathLineToRelative\u003c/a\u003e(float\n\u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathlinetoverticalabsolute.md\"\u003epathLineToVerticalAbsolute\u003c/a\u003e(float\n\u003ccode\u003e$y\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.pathlinetoverticalrelative.md\"\u003epathLineToVerticalRelative\u003c/a\u003e(float\n\u003ccode\u003e$y\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pathmovetoabsolute.md\"\u003epathMoveToAbsolute\u003c/a\u003e(float\n\u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pathmovetorelative.md\"\u003epathMoveToRelative\u003c/a\u003e(float\n\u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pathstart.md\"\u003epathStart\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.point.md\"\u003epoint\u003c/a\u003e(float \u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.polygon.md\"\u003epolygon\u003c/a\u003e(array \u003ccode\u003e$coordinates\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.polyline.md\"\u003epolyline\u003c/a\u003e(array \u003ccode\u003e$coordinates\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pop.md\"\u003epop\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.popclippath.md\"\u003epopClipPath\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.popdefs.md\"\u003epopDefs\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.poppattern.md\"\u003epopPattern\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.push.md\"\u003epush\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pushclippath.md\"\u003epushClipPath\u003c/a\u003e(string\n\u003ccode\u003e$clip_mask_id\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pushdefs.md\"\u003epushDefs\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.pushpattern.md\"\u003epushPattern\u003c/a\u003e(\nstring \u003ccode\u003e$pattern_id\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e,\nfloat \u003ccode\u003e$width\u003c/code\u003e,\nfloat \u003ccode\u003e$height\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.rectangle.md\"\u003erectangle\u003c/a\u003e(\nfloat \u003ccode\u003e$x1\u003c/code\u003e,\nfloat \u003ccode\u003e$y1\u003c/code\u003e,\nfloat \u003ccode\u003e$x2\u003c/code\u003e,\nfloat \u003ccode\u003e$y2\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.render.md\"\u003erender\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.resetvectorgraphics.md\"\u003eresetVectorGraphics\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.rotate.md\"\u003erotate\u003c/a\u003e(float \u003ccode\u003e$degrees\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.roundrectangle.md\"\u003eroundRectangle\u003c/a\u003e(\nfloat \u003ccode\u003e$x1\u003c/code\u003e,\nfloat \u003ccode\u003e$y1\u003c/code\u003e,\nfloat \u003ccode\u003e$x2\u003c/code\u003e,\nfloat \u003ccode\u003e$y2\u003c/code\u003e,\nfloat \u003ccode\u003e$rx\u003c/code\u003e,\nfloat \u003ccode\u003e$ry\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.scale.md\"\u003escale\u003c/a\u003e(float \u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setclippath.md\"\u003esetClipPath\u003c/a\u003e(string \u003ccode\u003e$clip_mask\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setcliprule.md\"\u003esetClipRule\u003c/a\u003e(int \u003ccode\u003e$fill_rule\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setclipunits.md\"\u003esetClipUnits\u003c/a\u003e(int \u003ccode\u003e$clip_units\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setfillalpha.md\"\u003esetFillAlpha\u003c/a\u003e(float \u003ccode\u003e$opacity\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.setfillcolor.md\"\u003esetFillColor\u003c/a\u003e(\u003ca href=\"class.imagickpixel.md\"\u003eImagickPixel\u003c/a\u003e\n\u003ccode\u003e$fill_pixel\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setfillopacity.md\"\u003esetFillOpacity\u003c/a\u003e(float\n\u003ccode\u003e$fillOpacity\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setfillpatternurl.md\"\u003esetFillPatternURL\u003c/a\u003e(string\n\u003ccode\u003e$fill_url\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setfillrule.md\"\u003esetFillRule\u003c/a\u003e(int \u003ccode\u003e$fill_rule\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setfont.md\"\u003esetFont\u003c/a\u003e(string \u003ccode\u003e$font_name\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setfontfamily.md\"\u003esetFontFamily\u003c/a\u003e(string\n\u003ccode\u003e$font_family\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setfontsize.md\"\u003esetFontSize\u003c/a\u003e(float \u003ccode\u003e$pointsize\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setfontstretch.md\"\u003esetFontStretch\u003c/a\u003e(int\n\u003ccode\u003e$fontStretch\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setfontstyle.md\"\u003esetFontStyle\u003c/a\u003e(int \u003ccode\u003e$style\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setfontweight.md\"\u003esetFontWeight\u003c/a\u003e(int\n\u003ccode\u003e$font_weight\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setgravity.md\"\u003esetGravity\u003c/a\u003e(int \u003ccode\u003e$gravity\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setresolution.md\"\u003esetResolution\u003c/a\u003e(float\n\u003ccode\u003e$x_resolution\u003c/code\u003e, float \u003ccode\u003e$y_resolution\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setstrokealpha.md\"\u003esetStrokeAlpha\u003c/a\u003e(float\n\u003ccode\u003e$opacity\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setstrokeantialias.md\"\u003esetStrokeAntialias\u003c/a\u003e(bool\n\u003ccode\u003e$stroke_antialias\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.setstrokecolor.md\"\u003esetStrokeColor\u003c/a\u003e(\u003ca href=\"class.imagickpixel.md\"\u003eImagickPixel\u003c/a\u003e\n\u003ccode\u003e$stroke_pixel\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setstrokedasharray.md\"\u003esetStrokeDashArray\u003c/a\u003e(array\n\u003ccode\u003e$dashArray\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setstrokedashoffset.md\"\u003esetStrokeDashOffset\u003c/a\u003e(float\n\u003ccode\u003e$dash_offset\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setstrokelinecap.md\"\u003esetStrokeLineCap\u003c/a\u003e(int\n\u003ccode\u003e$linecap\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setstrokelinejoin.md\"\u003esetStrokeLineJoin\u003c/a\u003e(int\n\u003ccode\u003e$linejoin\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setstrokemiterlimit.md\"\u003esetStrokeMiterLimit\u003c/a\u003e(int\n\u003ccode\u003e$miterlimit\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setstrokeopacity.md\"\u003esetStrokeOpacity\u003c/a\u003e(float\n\u003ccode\u003e$stroke_opacity\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.setstrokepatternurl.md\"\u003esetStrokePatternURL\u003c/a\u003e(string\n\u003ccode\u003e$stroke_url\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setstrokewidth.md\"\u003esetStrokeWidth\u003c/a\u003e(float\n\u003ccode\u003e$stroke_width\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.settextalignment.md\"\u003esetTextAlignment\u003c/a\u003e(int\n\u003ccode\u003e$alignment\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.settextantialias.md\"\u003esetTextAntialias\u003c/a\u003e(bool\n\u003ccode\u003e$antiAlias\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.settextdecoration.md\"\u003esetTextDecoration\u003c/a\u003e(int\n\u003ccode\u003e$decoration\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.settextencoding.md\"\u003esetTextEncoding\u003c/a\u003e(string\n\u003ccode\u003e$encoding\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.settextinterlinespacing.md\"\u003esetTextInterlineSpacing\u003c/a\u003e(float\n\u003ccode\u003e$spacing\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.settextinterwordspacing.md\"\u003esetTextInterwordSpacing\u003c/a\u003e(float\n\u003ccode\u003e$spacing\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.settextkerning.md\"\u003esetTextKerning\u003c/a\u003e(float\n\u003ccode\u003e$kerning\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"imagickdraw.settextundercolor.md\"\u003esetTextUnderColor\u003c/a\u003e(\u003ca href=\"class.imagickpixel.md\"\u003eImagickPixel\u003c/a\u003e\n\u003ccode\u003e$under_color\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setvectorgraphics.md\"\u003esetVectorGraphics\u003c/a\u003e(string\n\u003ccode\u003e$xml\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.setviewbox.md\"\u003esetViewbox\u003c/a\u003e(\nint \u003ccode\u003e$x1\u003c/code\u003e,\nint \u003ccode\u003e$y1\u003c/code\u003e,\nint \u003ccode\u003e$x2\u003c/code\u003e,\nint \u003ccode\u003e$y2\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.skewx.md\"\u003eskewX\u003c/a\u003e(float \u003ccode\u003e$degrees\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.skewy.md\"\u003eskewY\u003c/a\u003e(float \u003ccode\u003e$degrees\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"imagickdraw.translate.md\"\u003etranslate\u003c/a\u003e(float \u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.affine.md\"\u003eImagickDraw::affine\u003c/a\u003e — Регулює поточну\nматрицю афінного перетворення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.annotation.md\"\u003eImagickDraw::annotation\u003c/a\u003e - Малює\nтекст на зображенні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.arc.md\"\u003eImagickDraw::arc\u003c/a\u003e - Малює дугу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.bezier.md\"\u003eImagickDraw::bezier\u003c/a\u003e - Малює криву Безьє\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.circle.md\"\u003eImagickDraw::circle\u003c/a\u003e — Малює коло\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.clear.md\"\u003eImagickDraw::clear\u003c/a\u003e - Очищає ImagickDraw\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.clone.md\"\u003eImagickDraw::clone\u003c/a\u003e — Робить точну копію\nвказаного об'єкту ImagickDraw\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.color.md\"\u003eImagickDraw::color\u003c/a\u003e — Малює колір на\nзображенні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.comment.md\"\u003eImagickDraw::comment\u003c/a\u003e — Додає\nкоментар\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.composite.md\"\u003eImagickDraw::composite\u003c/a\u003e — Накладає\nзображення на поточне зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.construct.md\"\u003eImagickDraw::__construct\u003c/a\u003e -\nКонструктор класу ImagickDraw\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.destroy.md\"\u003eImagickDraw::destroy\u003c/a\u003e - Звільняє все\nпов'язані ресурси\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.ellipse.md\"\u003eImagickDraw::ellipse\u003c/a\u003e — Малює на\nзображенні еліпс\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getclippath.md\"\u003eImagickDraw::getClipPath\u003c/a\u003e -\nПовертає ідентифікатор поточного відсічного контуру\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getcliprule.md\"\u003eImagickDraw::getClipRule\u003c/a\u003e\nПовертає поточне правило заливання багатокутника\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getclipunits.md\"\u003eImagickDraw::getClipUnits\u003c/a\u003e -\nПовертає інтерпретацію одиниць відсічного контуру\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getfillcolor.md\"\u003eImagickDraw::getFillColor\u003c/a\u003e -\nПовертає колір заливки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getfillopacity.md\"\u003eImagickDraw::getFillOpacity\u003c/a\u003e -\nПовертає непрозорість, що використовується при малюванні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getfillrule.md\"\u003eImagickDraw::getFillRule\u003c/a\u003e -\nПовертає правило заливання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getfont.md\"\u003eImagickDraw::getFont\u003c/a\u003e — Повертає шрифт\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getfontfamily.md\"\u003eImagickDraw::getFontFamily\u003c/a\u003e -\nПовертає сімейство шрифтів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getfontsize.md\"\u003eImagickDraw::getFontSize\u003c/a\u003e -\nПовертає розмір шрифту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getfontstretch.md\"\u003eImagickDraw::getFontStretch\u003c/a\u003e -\nОпис\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getfontstyle.md\"\u003eImagickDraw::getFontStyle\u003c/a\u003e -\nПовертає стиль шрифту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getfontweight.md\"\u003eImagickDraw::getFontWeight\u003c/a\u003e -\nПовертає товщину шрифту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getgravity.md\"\u003eImagickDraw::getGravity\u003c/a\u003e - Повертає\nгравітацію розміщення тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getstrokeantialias.md\"\u003eImagickDraw::getStrokeAntialias\u003c/a\u003e\n— Повертає поточне налаштування згладжування обведення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getstrokecolor.md\"\u003eImagickDraw::getStrokeColor\u003c/a\u003e -\nПовертає колір для обведення контурів об'єкта.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getstrokedasharray.md\"\u003eImagickDraw::getStrokeDashArray\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПовертає масив, що представляє патерн зі штрихів та пробілів,\nвикористовуваних для обведення контурів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getstrokedashoffset.md\"\u003eImagickDraw::getStrokeDashOffset\u003c/a\u003e\n— Повертає зсув у штриховому патерні для початку штрихування.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getstrokelinecap.md\"\u003eImagickDraw::getStrokeLineCap\u003c/a\u003e -\nПовертає форму, яка використовуватиметься наприкінці відкритих\nвнутрішніх контурів при їх обведенні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getstrokelinejoin.md\"\u003eImagickDraw::getStrokeLineJoin\u003c/a\u003e\n— Повертає форму, яка використовуватиметься у кутах контурів\nпри їх обведенні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getstrokemiterlimit.md\"\u003eImagickDraw::getStrokeMiterLimit\u003c/a\u003e\n— Повертає межу зрізу обведення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getstrokeopacity.md\"\u003eImagickDraw::getStrokeOpacity\u003c/a\u003e -\nПовертає непрозорість обведених контурів об'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getstrokewidth.md\"\u003eImagickDraw::getStrokeWidth\u003c/a\u003e -\nПовертає ширину обведення, що використовується для малювання контурів.\nоб'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.gettextalignment.md\"\u003eImagickDraw::getTextAlignment\u003c/a\u003e -\nПовертає вирівнювання тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.gettextantialias.md\"\u003eImagickDraw::getTextAntialias\u003c/a\u003e -\nПовертає поточне настроювання згладжування тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.gettextdecoration.md\"\u003eImagickDraw::getTextDecoration\u003c/a\u003e\n— Повертає оформлення тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.gettextencoding.md\"\u003eImagickDraw::getTextEncoding\u003c/a\u003e -\nПовертає кодовий набір, який використовується для текстових анотацій\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.gettextinterlinespacing.md\"\u003eImagickDraw::getTextInterlineSpacing\u003c/a\u003e\n— Повертає міжрядковий інтервал тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.gettextinterwordspacing.md\"\u003eImagickDraw::getTextInterwordSpacing\u003c/a\u003e\n— Повертає міжслівний інтервал тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.gettextkerning.md\"\u003eImagickDraw::getTextKerning\u003c/a\u003e -\nПовертає міжлітерний інтервал тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.gettextundercolor.md\"\u003eImagickDraw::getTextUnderColor\u003c/a\u003e\n— Повертає колір під текстом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.getvectorgraphics.md\"\u003eImagickDraw::getVectorGraphics\u003c/a\u003e\n— Повертає рядок, який містить векторну графіку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.line.md\"\u003eImagickDraw::line\u003c/a\u003e — Малює лінію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.matte.md\"\u003eImagickDraw::matte\u003c/a\u003e - Зафарбовує канал\nнепрозорості зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathclose.md\"\u003eImagickDraw::pathClose\u003c/a\u003e — Додає\nелемент шляху до поточного шляху\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathcurvetoabsolute.md\"\u003eImagickDraw::pathCurveToAbsolute\u003c/a\u003e\n— Малює кубічну криву Безьє\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathcurvetoquadraticbezierabsolute.md\"\u003eImagickDraw::pathCurveToQuadraticBezierAbsolute\u003c/a\u003e\n— Малює квадратичну криву Безьє\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathcurvetoquadraticbezierrelative.md\"\u003eImagickDraw::pathCurveToQuadraticBezierRelative\u003c/a\u003e\n— Малює квадратичну криву Безьє\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathcurvetoquadraticbeziersmoothabsolute.md\"\u003eImagickDraw::pathCurveToQuadraticBezierSmoothAbsolute\u003c/a\u003e\n— Малює квадратичну криву Безьє\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathcurvetoquadraticbeziersmoothrelative.md\"\u003eImagickDraw::pathCurveToQuadraticBezierSmoothRelative\u003c/a\u003e\n— Малює квадратичну криву Безьє\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathcurvetorelative.md\"\u003eImagickDraw::pathCurveToRelative\u003c/a\u003e\n— Малює кубічну криву Безьє\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathcurvetosmoothabsolute.md\"\u003eImagickDraw::pathCurveToSmoothAbsolute\u003c/a\u003e\n— Малює кубічну криву Безьє\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathcurvetosmoothrelative.md\"\u003eImagickDraw::pathCurveToSmoothRelative\u003c/a\u003e\n— Малює кубічну криву Безьє\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathellipticarcabsolute.md\"\u003eImagickDraw::pathEllipticArcAbsolute\u003c/a\u003e\n— Малює еліптичну дугу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathellipticarcrelative.md\"\u003eImagickDraw::pathEllipticArcRelative\u003c/a\u003e\n— Малює еліптичну дугу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathfinish.md\"\u003eImagickDraw::pathFinish\u003c/a\u003e - Завершує\nпоточний шлях\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathlinetoabsolute.md\"\u003eImagickDraw::pathLineToAbsolute\u003c/a\u003e\n— Малює лінію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathlinetohorizontalabsolute.md\"\u003eImagickDraw::pathLineToHorizontalAbsolute\u003c/a\u003e\n— Малює горизонтальну лінію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathlinetohorizontalrelative.md\"\u003eImagickDraw::pathLineToHorizontalRelative\u003c/a\u003e\n— Малює горизонтальну лінію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathlinetorelative.md\"\u003eImagickDraw::pathLineToRelative\u003c/a\u003e\n— Малює лінію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathlinetoverticalabsolute.md\"\u003eImagickDraw::pathLineToVerticalAbsolute\u003c/a\u003e\n— Малює вертикальну лінію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathlinetoverticalrelative.md\"\u003eImagickDraw::pathLineToVerticalRelative\u003c/a\u003e\n— Малює вертикальну лінію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathmovetoabsolute.md\"\u003eImagickDraw::pathMoveToAbsolute\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПочинає новий внутрішній контур\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathmovetorelative.md\"\u003eImagickDraw::pathMoveToRelative\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПочинає новий внутрішній контур\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pathstart.md\"\u003eImagickDraw::pathStart\u003c/a\u003e — Оголошує\nпочаток відображення контуру\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.point.md\"\u003eImagickDraw::point\u003c/a\u003e — Малює точку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.polygon.md\"\u003eImagickDraw::polygon\u003c/a\u003e - Малює\nбагатокутник\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.polyline.md\"\u003eImagickDraw::polyline\u003c/a\u003e - Малює ламану\nлінію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pop.md\"\u003eImagickDraw::pop\u003c/a\u003e — Знищує поточний об'єкт\nImagickDraw у стеку та повертається до раніше доданого об'єкту\nImagickDraw\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.popclippath.md\"\u003eImagickDraw::popClipPath\u003c/a\u003e - Завершує\nвизначення шляху відсічного контуру\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.popdefs.md\"\u003eImagickDraw::popDefs\u003c/a\u003e — Завершує список\nвизначень\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.poppattern.md\"\u003eImagickDraw::popPattern\u003c/a\u003e - Завершує\nвизначення шаблону\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.push.md\"\u003eImagickDraw::push\u003c/a\u003e — Клонує поточний\nоб'єкт ImagickDraw і додає його в стек\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pushclippath.md\"\u003eImagickDraw::pushClipPath\u003c/a\u003e -\nЗапускає визначення шляху відсічного контуру\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pushdefs.md\"\u003eImagickDraw::pushDefs\u003c/a\u003e — Вказує, що\nнаступні команди створюють іменовані елементи для ранньої обробки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.pushpattern.md\"\u003eImagickDraw::pushPattern\u003c/a\u003e -\nВказує, що наступні команди аж до\nImagickDraw::opPattern() становлять визначення іменованого\nпатерну\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.rectangle.md\"\u003eImagickDraw::rectangle\u003c/a\u003e - Малює\nпрямокутник\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.render.md\"\u003eImagickDraw::render\u003c/a\u003e - Малює все\nпопередні команди малювання на зображенні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.resetvectorgraphics.md\"\u003eImagickDraw::resetVectorGraphics\u003c/a\u003e\n— Скидає векторну графіку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.rotate.md\"\u003eImagickDraw::rotate\u003c/a\u003e — Застосовує вказаний\nповорот до поточного координатного простору\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.roundrectangle.md\"\u003eImagickDraw::roundRectangle\u003c/a\u003e -\nМалює прямокутник із закругленими кутами\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.scale.md\"\u003eImagickDraw::scale\u003c/a\u003e — Регулює\nкоефіцієнт масштабування\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setclippath.md\"\u003eImagickDraw::setClipPath\u003c/a\u003e — Зв'язує\nіменований контур відсічного контуру із зображенням\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setcliprule.md\"\u003eImagickDraw::setClipRule\u003c/a\u003e -\nВстановлює правило заливання багатокутника, яке буде\nвикористовуватися відсічним контуром\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setclipunits.md\"\u003eImagickDraw::setClipUnits\u003c/a\u003e -\nВстановлює інтерпретацію одиниць траєкторії відсічного контуру\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfillalpha.md\"\u003eImagickDraw::setFillAlpha\u003c/a\u003e\nВстановлює непрозорість під час малювання з використанням кольору.\nабо текстури заливки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfillcolor.md\"\u003eImagickDraw::setFillColor\u003c/a\u003e -\nВстановлює колір заливки, який використовується для малювання об'єктів.\nзаливкою\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfillopacity.md\"\u003eImagickDraw::setFillOpacity\u003c/a\u003e -\nВстановлює непрозорість під час малювання з використанням кольору.\nабо текстури заливки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfillpatternurl.md\"\u003eImagickDraw::setFillPatternURL\u003c/a\u003e\n— Встановлює URL-адресу для використання як зразок\nзаливки для заливки об'єктів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfillrule.md\"\u003eImagickDraw::setFillRule\u003c/a\u003e\nВстановлює правило заливки для малювання\nполігонів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfont.md\"\u003eImagickDraw::setFont\u003c/a\u003e — Встановлює\nвказаний шрифт для використання при анотуванні текстом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfontfamily.md\"\u003eImagickDraw::setFontFamily\u003c/a\u003e -\nВстановлює сімейство шрифтів для використання при анотуванні\nтекстом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfontsize.md\"\u003eImagickDraw::setFontSize\u003c/a\u003e -\nВстановлює розмір шрифту для використання під час анотування\nтекстом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfontstretch.md\"\u003eImagickDraw::setFontStretch\u003c/a\u003e -\nВстановлює розтягування шрифту для використання при анотуванні\nтекстом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfontstyle.md\"\u003eImagickDraw::setFontStyle\u003c/a\u003e -\nВстановлює стиль шрифту для використання під час анотування\nтекстом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setfontweight.md\"\u003eImagickDraw::setFontWeight\u003c/a\u003e -\nВстановлює товщину шрифту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setgravity.md\"\u003eImagickDraw::setGravity\u003c/a\u003e\nВстановлює гравітацію розміщення тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setresolution.md\"\u003eImagickDraw::setResolution\u003c/a\u003e -\nВстановлює дозвіл\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokealpha.md\"\u003eImagickDraw::setStrokeAlpha\u003c/a\u003e\nВизначає непрозорість обведення контурів об'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokeantialias.md\"\u003eImagickDraw::setStrokeAntialias\u003c/a\u003e\n— Керує згладжуванням обведення контурів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokecolor.md\"\u003eImagickDraw::setStrokeColor\u003c/a\u003e -\nВстановлює колір, який використовується для обведення контурів об'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokedasharray.md\"\u003eImagickDraw::setStrokeDashArray\u003c/a\u003e\n— Задає патерн із штрихів та пробілів, які використовуються для обведення\nконтурів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokedashoffset.md\"\u003eImagickDraw::setStrokeDashOffset\u003c/a\u003e\n— Задає зсув у штриховому патерні для початку штрихування\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokelinecap.md\"\u003eImagickDraw::setStrokeLineCap\u003c/a\u003e -\nЗадає форму, яка використовуватиметься наприкінці відкритих\nвнутрішніх контурів при їх обведенні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokelinejoin.md\"\u003eImagickDraw::setStrokeLineJoin\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eЗадає форму, яка буде використовуватися в кутах контурів при їх\nобведенні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokemiterlimit.md\"\u003eImagickDraw::setStrokeMiterLimit\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eЗадає межу зрізу обведення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokeopacity.md\"\u003eImagickDraw::setStrokeOpacity\u003c/a\u003e -\nВизначає непрозорість обведення контурів об'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokepatternurl.md\"\u003eImagickDraw::setStrokePatternURL\u003c/a\u003e\n— Встановлює патерн для обведення контурів об'єкта.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setstrokewidth.md\"\u003eImagickDraw::setStrokeWidth\u003c/a\u003e -\nВстановлює ширину обведення, яка використовується для малювання контурів.\nоб'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.settextalignment.md\"\u003eImagickDraw::setTextAlignment\u003c/a\u003e -\nЗадає вирівнювання тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.settextantialias.md\"\u003eImagickDraw::setTextAntialias\u003c/a\u003e -\nКерує згладжуванням тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.settextdecoration.md\"\u003eImagickDraw::setTextDecoration\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВизначає оформлення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.settextencoding.md\"\u003eImagickDraw::setTextEncoding\u003c/a\u003e\nЗадає кодовий набір тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.settextinterlinespacing.md\"\u003eImagickDraw::setTextInterlineSpacing\u003c/a\u003e\n— Встановлює міжрядковий інтервал тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.settextinterwordspacing.md\"\u003eImagickDraw::setTextInterwordSpacing\u003c/a\u003e\n— Встановлює міжмовний інтервал тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.settextkerning.md\"\u003eImagickDraw::setTextKerning\u003c/a\u003e -\nВстановлює міжлітерний інтервал тексту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.settextundercolor.md\"\u003eImagickDraw::setTextUnderColor\u003c/a\u003e\n— Задає колір прямокутника фону\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setvectorgraphics.md\"\u003eImagickDraw::setVectorGraphics\u003c/a\u003e\n— Встановлює векторну графіку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.setviewbox.md\"\u003eImagickDraw::setViewbox\u003c/a\u003e -\nВстановлює загальний розмір полотна\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.skewx.md\"\u003eImagickDraw::skewX\u003c/a\u003e — Нахиляє поточну\nсистему координат по горизонталі\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.skewy.md\"\u003eImagickDraw::skewY\u003c/a\u003e — Нахиляє поточну\nсистему координат по вертикалі\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"imagickdraw.translate.md\"\u003eImagickDraw::translate\u003c/a\u003e — Застосовує\nперенесення до поточної системи координат\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.imagickdraw.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

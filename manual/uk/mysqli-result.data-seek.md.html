@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli-result.data-seek | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli-result.current-field.md">« mysqli_result::$current_field</a></p>
+</li>
+<li>
+<p><a href="mysqli-result.fetch-all.md">mysqli_result::fetch_all »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.mysqli-result.md">mysqli_result</a></p>
+</li>
+<li>
+<p>Переміщує покажчик результату на вибраний рядок</p>
+</li>
+</ul>
+<h1>mysqli_result::data_seek</h1>
+<h1>mysqli_data_seek</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<p>mysqli_result::data_seek -- mysqli_data_seek — Переміщує покажчик
+результату на вибраний рядок</p>
+<h3>Опис</h3>
+<p>Об'єктно-орієнтований стиль</p>
+<p>public <strong>mysqli_result::data_seek</strong>(int <code>$offset</code>): bool</p>
+<p>Процедурний стиль</p>
+<p><strong>mysqli_data_seek</strong>(<a href="class.mysqli-result.md">mysqli_result</a>
+<code>$result</code>, int <code>$offset</code>): bool</p>
+<p>Функція <strong>mysqli_data_seek()</strong> переміщує покажчик в результаті на
+рядок, вказаний у параметрі <code>offset</code>.</p>
+<h3>Список параметрів</h3>
+<p><code>result</code>
+Тільки для процедурного стилю: об'єкт
+<a href="class.mysqli-result.md">mysqli_result</a>, отриманий за допомогою
+<a href="mysqli.query.md">mysqli_query()</a>,
+<a href="mysqli.store-result.md">mysqli_store_result()</a>,
+<a href="mysqli.use-result.md">mysqli_use_result()</a> або
+<a href="mysqli-stmt.get-result.md">mysqli_stmt_get_result()</a>.</p>
+<p><code>offset</code>
+Зміщення. Повинно бути між нулем та числом рядків у результаті мінус один
+(0..<a href="mysqli-result.num-rows.md">mysqli_num_rows()</a> - 1).</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>mysqli::data_seek()</strong></strong></p>
+<p>Об'єктно-орієнтований стиль</p>
+<p>` &#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli("localhost", "my_user", "my_password", "world");$query = "C = $mysqli->query($query);/* Перехід до рядку 401 <em>/$result->data_seek(400);/</em> Отримання рядки */$row = $result->fetch_row();printf("Місто: %s  Код країни: %s
+", $row[0], $row[1]);</p>
+<p>Процедурний стиль</p>
+<p>` &#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$link = mysqli_connect("localhost", "my_user", "my_password", "world");$query = "SELECT Name| mysqli_query($link, $query);/* Перехід до рядку 401 <em>/mysqli_data_seek($result, 400);/</em> Отримання рядки */$row = mysqli_fetch_row($result); %s
+", $row[0], $row[1]);</p>
+<p>Результат виконання даних прикладів:</p>
+<p>Місто: Benin City Код країни: NGA</p>
+<p><strong>Приклад #2 Регулювання вказівника результату під час переміщення</strong></p>
+<p>Функція може бути корисною при переміщенні по набору результатів для
+накладення настроюваного порядку або перемотування набору результатів при
+багаторазовому повторенні.</p>
+<p><code>&#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli("localhost", "my_user", "my_password", "world");$query = " ";$result = $mysqli->query($query);/* Переміщення по набору результатів в зворотному порядку */for ($row_no = $result->num_rows - 1; $row_no | {   $result->data_seek($row_no); /* Отримання рядки */    $row = $result->fetch_row(); printf("Місто: %s  Код країни: %s ", $row[0], $row[1]);}/* Скидання вказівника на початок набору результатів */$result->data_seek(0);print " ";/* Знову переміщення за тому ж набору результатів */while ($row = $result->fetch_row()) {    printf("Місто: %s  Код країни: | ", $row[0], $row[1]);} </code></p>
+<p>Результат виконання даних прикладів:</p>
+<p>Місто: Acmbaro Код країни: MEX
+Місто: Abuja Код країни: NGA
+Місто: Abu Dhabi Код країни: ARE
+Місто: Abottabad Код країни: PAK</p>
+<p>Місто: Abottabad Код країни: PAK
+Місто: Abu Dhabi Код країни: ARE
+Місто: Abuja Код країни: NGA
+Місто: Acmbaro Код країни: MEX</p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Функція може бути використана лише з буферизованими результатами,
+які можна отримати за допомогою функцій
+<a href="mysqli.store-result.md">mysqli_store_result()</a> або
+<a href="mysqli.query.md">mysqli_query()</a>.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="mysqli.store-result.md">mysqli_store_result()</a> - Передає на
+клієнта результуючий набір останнього запиту</li>
+<li><a href="mysqli-result.fetch-row.md">mysqli_fetch_row()</a> - Вибирає
+наступний рядок з набору результатів та поміщає її у звичайний
+масив</li>
+<li><a href="mysqli-result.fetch-array.md">mysqli_fetch_array()</a> - Вибирає
+наступний рядок з набору результатів та поміщає її в асоціативний
+масив, звичайний масив або в обидва</li>
+<li><a href="mysqli-result.fetch-assoc.md">mysqli_fetch_assoc()</a> - Вибирає
+наступний рядок з набору результатів та поміщає її в асоціативний
+масив</li>
+<li><a href="mysqli-result.fetch-object.md">mysqli_fetch_object()</a> - Вибирає
+наступний рядок із набору результатів у вигляді об'єкта</li>
+<li><a href="mysqli.query.md">mysqli_query()</a> - Виконує запит до бази даних</li>
+<li><a href="mysqli-result.num-rows.md">mysqli_num_rows()</a> - Отримує
+кількість рядків у наборі результатів</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli-result.data-seek.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli-result.data-seek.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli-result.data-seek","slug":"mysqli-result.data-seek.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli-result.current-field.md\"\u003e« mysqli_result::$current_field\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli-result.fetch-all.md\"\u003emysqli_result::fetch_all »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПереміщує покажчик результату на вибраний рядок\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003emysqli_result::data_seek\u003c/h1\u003e\n\u003ch1\u003emysqli_data_seek\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emysqli_result::data_seek -- mysqli_data_seek — Переміщує покажчик\nрезультату на вибраний рядок\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003emysqli_result::data_seek\u003c/strong\u003e(int \u003ccode\u003e$offset\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003emysqli_data_seek\u003c/strong\u003e(\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e\n\u003ccode\u003e$result\u003c/code\u003e, int \u003ccode\u003e$offset\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eФункція \u003cstrong\u003emysqli_data_seek()\u003c/strong\u003e переміщує покажчик в результаті на\nрядок, вказаний у параметрі \u003ccode\u003eoffset\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eresult\u003c/code\u003e\nТільки для процедурного стилю: об'єкт\n\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e, отриманий за допомогою\n\u003ca href=\"mysqli.query.md\"\u003emysqli_query()\u003c/a\u003e,\n\u003ca href=\"mysqli.store-result.md\"\u003emysqli_store_result()\u003c/a\u003e,\n\u003ca href=\"mysqli.use-result.md\"\u003emysqli_use_result()\u003c/a\u003e або\n\u003ca href=\"mysqli-stmt.get-result.md\"\u003emysqli_stmt_get_result()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoffset\u003c/code\u003e\nЗміщення. Повинно бути між нулем та числом рядків у результаті мінус один\n(0..\u003ca href=\"mysqli-result.num-rows.md\"\u003emysqli_num_rows()\u003c/a\u003e - 1).\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003emysqli::data_seek()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli(\"localhost\", \"my_user\", \"my_password\", \"world\");$query = \"C = $mysqli-\u003equery($query);/* Перехід до рядку 401 \u003cem\u003e/$result-\u003edata_seek(400);/\u003c/em\u003e Отримання рядки */$row = $result-\u003efetch_row();printf(\"Місто: %s  Код країни: %s\n\", $row[0], $row[1]);\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$link = mysqli_connect(\"localhost\", \"my_user\", \"my_password\", \"world\");$query = \"SELECT Name| mysqli_query($link, $query);/* Перехід до рядку 401 \u003cem\u003e/mysqli_data_seek($result, 400);/\u003c/em\u003e Отримання рядки */$row = mysqli_fetch_row($result); %s\n\", $row[0], $row[1]);\u003c/p\u003e\n\u003cp\u003eРезультат виконання даних прикладів:\u003c/p\u003e\n\u003cp\u003eМісто: Benin City Код країни: NGA\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Регулювання вказівника результату під час переміщення\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eФункція може бути корисною при переміщенні по набору результатів для\nнакладення настроюваного порядку або перемотування набору результатів при\nбагаторазовому повторенні.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpmysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli(\"localhost\", \"my_user\", \"my_password\", \"world\");$query = \" \";$result = $mysqli-\u003equery($query);/* Переміщення по набору результатів в зворотному порядку */for ($row_no = $result-\u003enum_rows - 1; $row_no | {   $result-\u003edata_seek($row_no); /* Отримання рядки */    $row = $result-\u003efetch_row(); printf(\"Місто: %s  Код країни: %s \", $row[0], $row[1]);}/* Скидання вказівника на початок набору результатів */$result-\u003edata_seek(0);print \" \";/* Знову переміщення за тому ж набору результатів */while ($row = $result-\u003efetch_row()) {    printf(\"Місто: %s  Код країни: | \", $row[0], $row[1]);} \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання даних прикладів:\u003c/p\u003e\n\u003cp\u003eМісто: Acmbaro Код країни: MEX\nМісто: Abuja Код країни: NGA\nМісто: Abu Dhabi Код країни: ARE\nМісто: Abottabad Код країни: PAK\u003c/p\u003e\n\u003cp\u003eМісто: Abottabad Код країни: PAK\nМісто: Abu Dhabi Код країни: ARE\nМісто: Abuja Код країни: NGA\nМісто: Acmbaro Код країни: MEX\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eФункція може бути використана лише з буферизованими результатами,\nякі можна отримати за допомогою функцій\n\u003ca href=\"mysqli.store-result.md\"\u003emysqli_store_result()\u003c/a\u003e або\n\u003ca href=\"mysqli.query.md\"\u003emysqli_query()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mysqli.store-result.md\"\u003emysqli_store_result()\u003c/a\u003e - Передає на\nклієнта результуючий набір останнього запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-row.md\"\u003emysqli_fetch_row()\u003c/a\u003e - Вибирає\nнаступний рядок з набору результатів та поміщає її у звичайний\nмасив\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-array.md\"\u003emysqli_fetch_array()\u003c/a\u003e - Вибирає\nнаступний рядок з набору результатів та поміщає її в асоціативний\nмасив, звичайний масив або в обидва\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-assoc.md\"\u003emysqli_fetch_assoc()\u003c/a\u003e - Вибирає\nнаступний рядок з набору результатів та поміщає її в асоціативний\nмасив\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-object.md\"\u003emysqli_fetch_object()\u003c/a\u003e - Вибирає\nнаступний рядок із набору результатів у вигляді об'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.query.md\"\u003emysqli_query()\u003c/a\u003e - Виконує запит до бази даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.num-rows.md\"\u003emysqli_num_rows()\u003c/a\u003e - Отримує\nкількість рядків у наборі результатів\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli-result.data-seek.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

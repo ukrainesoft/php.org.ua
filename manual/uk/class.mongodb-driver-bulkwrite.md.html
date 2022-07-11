@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.mongodb-driver-bulkwrite | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mongodb-driver-query.construct.md">« MongoDB\Driver\Query::__construct</a></p>
+</li>
+<li>
+<p><a href="mongodb-driver-bulkwrite.construct.md">MongoDB\Driver\BulkWrite::__construct »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.mongodb.md">MongoDB\Driver</a></p>
+</li>
+<li>
+<p>Клас MongoDB\Driver\BulkWrite</p>
+</li>
+</ul>
+<h1>Клас MongoDB\Driver\BulkWrite</h1>
+<p>(mongodb >=1.0.0)</p>
+<h2>Вступ</h2>
+<p>Клас <strong>MongoDB\Driver\BulkWrite</strong> збирає одну або кілька операцій
+записи, які мають бути надіслані на сервер. Після додавання
+будь-якої кількості операцій вставки, оновлення або видалення, колекція
+може бути виконана за допомогою
+<a href="mongodb-driver-manager.executebulkwrite.md">MongoDB\Driver\Manager::executeBulkWrite()</a>.</p>
+<p>Операції запису можуть бути відсортовані (за замовчуванням) чи не
+відсортовані. Відсортовані операції запису відправляються на сервер
+вказаному порядку для послідовного виконання. В разі
+виникнення помилки запису, будь-які операції, що залишилися, будуть перервані.
+Невідсортовані операції відправляються на сервер у довільному
+порядку, де можуть виконуватися паралельно. Повідомлення про помилки,
+які виникають будуть відправлені після виконання всіх операцій.</p>
+<h2>Огляд класів</h2>
+<p>final class <strong>MongoDB\Driver\BulkWrite</strong> implements
+<a href="class.countable.md">Countable</a> {</p>
+<p>/* Методи */</p>
+<p>public <a href="mongodb-driver-bulkwrite.construct.md">__construct</a>(array
+<code>$options</code> = ?)</p>
+<p>public <a href="mongodb-driver-bulkwrite.count.md">count</a>(): int</p>
+<p>public <a href="mongodb-driver-bulkwrite.delete.md">delete</a>(array|object
+<code>$filter</code>, array <code>$deleteOptions</code> = ?): void</p>
+<p>public <a href="mongodb-driver-bulkwrite.insert.md">insert</a>(array|object
+<code>$document</code>):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="mongodb-driver-bulkwrite.update.md">update</a>(array|object
+<code>$filter</code>, array|object <code>$newObj</code>, array <code>$updateOptions</code> = ?): void</p>
+<p>}</p>
+<h2>Приклади</h2>
+<p><strong>Приклад #1 Змішані операції групуються за типом</strong></p>
+<p>Змішані операції запису (тобто додавання, оновлення або видалення)
+будуть зібрані в типізовані команди записи, які в
+послідовно будуть відправлені на сервер.</p>
+<p><code>&#x3C;?php$bulk = new MongoDB\Driver\BulkWrite(['ordered' => true]);$bulk->insert(['_id' => 1, 'x' => 1]);$bulk- >insert(['_id' => 2, 'x' => 2]);$bulk->update(['x' => 2], ['$set' => ['x' => 1] ]);$bulk->insert(['_id' => 3, 'x' => 3]);$bulk->delete(['x' => 1]);?></code></p>
+<p>В результаті буде виконано чотири команди запису (тобто звернень).
+Оскільки операції відсортовані, третя вставка не може бути
+відправлено доти, доки не буде виконано попереднє оновлення.</p>
+<p><strong>Приклад #2 Відсортовані операції запису, що викликають помилку</strong></p>
+<p><code>&#x3C;?php$bulk = new MongoDB\Driver\BulkWrite(['ordered' => true]);$bulk->delete([]);$bulk->insert(['_id' => 1]); $bulk->insert(['_id' => 2]);$bulk->insert(['_id' => 3, 'hello' => 'world']);$bulk->update(['_id ' => 3], ['$set' => ['hello' => 'earth']]);$bulk->insert(['_id' => 4, 'hello' => 'pluto'])) ;$bulk->update(['_id' => 4], ['$set' => ['hello' => 'moon']]);$bulk->insert(['_id' => 3] );$bulk->insert(['_id' => 4]);$bulk->insert(['_id' => 5]);$manager = new MongoDB\Driver\Manager('mongodb://localhost :27017');$writeConcern==new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);try {    $result = $manager->execute$ ;} catch (MongoDB\Driver\Exception\BulkWriteException $e) {   $result = $e->getWriteResult(); // Перевіритися, що гарантія запису не може бути виконана    if ($writeConcernError = $result->getWriteConcernError()) {             ",            $writeConcernError->getMessage(),            $writeConcernError->getCode(),            var_export($writeConcernError->getInfo(), true)        );    }    // Проверить, не выполнялись ли какие-либо операции записи    foreach ($result- >getWriteErrors() as $writeError) {        printf("Operation#%d: %s (%d) ",            $writeError->getIndex(),            $writeError->getMessage(),            $writeError->getCode()        );    }} catch (MongoDB\Driver\Exception\Exception $e) {    printf("Другая ошибка: %s ", $e->getMessage());   exit;}printf("Додано %d документ(ів) ", $result->getInsertedCount());printf("Оновлено %d документ(ів) ", $result->getModifiedCount());?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Operation#7: E11000 duplicate key error index: db.collection.$<em>id</em> dup key: { : 3 } (11000)
+Додано 4 документ(ів)
+Оновлено 2 документ(ів)</p>
+<p>Якщо гарантія запису не може бути виконана, результат наведеного вище
+прикладу буде щось на кшталт цього:</p>
+<p>waiting for replication timed out (64): array (
+'wtimeout' => true,
+)
+Operation#7: E11000 duplicate key error index: databaseName.collectionName.$<em>id</em> dup key: { : 3 } (11000)
+Inserted 4 document(s)
+Updated 2 document(s)</p>
+<p>Якщо ми виконаємо приклад вище, але розв'яжемо невідсортовані записи:</p>
+<p><code>&#x3C;?php$bulk = new MongoDB\Driver\BulkWrite(['ordered' => false]);/* ... */?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Operation#7: E11000 duplicate key error index: db.collection.$<em>id</em> dup key: { : 3 } (11000)
+Operation#8: E11000 duplicate key error index: db.collection.$<em>id</em> dup key: { : 4 } (11000)
+Inserted 5 document(s)
+Updated 2 document(s)</p>
+<h2>Дивіться також</h2>
+<ul>
+<li><a href="mongodb-driver-manager.executebulkwrite.md">MongoDB\Driver\Manager::executeBulkWrite()</a></li>
+<li><a href="class.mongodb-driver-writeresult.md">MongoDB\Driver\WriteResult</a></li>
+<li><a href="class.mongodb-driver-writeconcern.md">MongoDB\Driver\WriteConcern</a></li>
+<li><a href="class.mongodb-driver-writeconcernerror.md">MongoDB\Driver\WriteConcernError</a></li>
+<li><a href="class.mongodb-driver-writeerror.md">MongoDB\Driver\WriteError</a></li>
+</ul>
+<h2>Зміст</h2>
+<ul>
+<li><a href="mongodb-driver-bulkwrite.construct.md">MongoDB\Driver\BulkWrite::__construct</a>
+— Створює новий об'єкт BulkWrite</li>
+<li><a href="mongodb-driver-bulkwrite.count.md">MongoDB\Driver\BulkWrite::count</a></li>
+<li>Підраховує кількість операцій запису в порції</li>
+<li><a href="mongodb-driver-bulkwrite.delete.md">MongoDB\Driver\BulkWrite::delete</a>
+— Додавання операції видалення порції</li>
+<li><a href="mongodb-driver-bulkwrite.insert.md">MongoDB\Driver\BulkWrite::insert</a></li>
+<li>Додати операцію вставки в порцію</li>
+<li><a href="mongodb-driver-bulkwrite.update.md">MongoDB\Driver\BulkWrite::update</a>
+— Додати операцію оновлення до порції</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.mongodb-driver-bulkwrite.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.mongodb-driver-bulkwrite.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.mongodb-driver-bulkwrite","slug":"class.mongodb-driver-bulkwrite.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb-driver-query.construct.md\"\u003e« MongoDB\\Driver\\Query::__construct\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb-driver-bulkwrite.construct.md\"\u003eMongoDB\\Driver\\BulkWrite::__construct »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.mongodb.md\"\u003eMongoDB\\Driver\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас MongoDB\\Driver\\BulkWrite\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас MongoDB\\Driver\\BulkWrite\u003c/h1\u003e\n\u003cp\u003e(mongodb \u003e=1.0.0)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003eКлас \u003cstrong\u003eMongoDB\\Driver\\BulkWrite\u003c/strong\u003e збирає одну або кілька операцій\nзаписи, які мають бути надіслані на сервер. Після додавання\nбудь-якої кількості операцій вставки, оновлення або видалення, колекція\nможе бути виконана за допомогою\n\u003ca href=\"mongodb-driver-manager.executebulkwrite.md\"\u003eMongoDB\\Driver\\Manager::executeBulkWrite()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eОперації запису можуть бути відсортовані (за замовчуванням) чи не\nвідсортовані. Відсортовані операції запису відправляються на сервер\nвказаному порядку для послідовного виконання. В разі\nвиникнення помилки запису, будь-які операції, що залишилися, будуть перервані.\nНевідсортовані операції відправляються на сервер у довільному\nпорядку, де можуть виконуватися паралельно. Повідомлення про помилки,\nякі виникають будуть відправлені після виконання всіх операцій.\u003c/p\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003efinal class \u003cstrong\u003eMongoDB\\Driver\\BulkWrite\u003c/strong\u003e implements\n\u003ca href=\"class.countable.md\"\u003eCountable\u003c/a\u003e {\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mongodb-driver-bulkwrite.construct.md\"\u003e__construct\u003c/a\u003e(array\n\u003ccode\u003e$options\u003c/code\u003e = ?)\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mongodb-driver-bulkwrite.count.md\"\u003ecount\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mongodb-driver-bulkwrite.delete.md\"\u003edelete\u003c/a\u003e(array|object\n\u003ccode\u003e$filter\u003c/code\u003e, array \u003ccode\u003e$deleteOptions\u003c/code\u003e = ?): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mongodb-driver-bulkwrite.insert.md\"\u003einsert\u003c/a\u003e(array|object\n\u003ccode\u003e$document\u003c/code\u003e):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mongodb-driver-bulkwrite.update.md\"\u003eupdate\u003c/a\u003e(array|object\n\u003ccode\u003e$filter\u003c/code\u003e, array|object \u003ccode\u003e$newObj\u003c/code\u003e, array \u003ccode\u003e$updateOptions\u003c/code\u003e = ?): void\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eПриклади\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Змішані операції групуються за типом\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЗмішані операції запису (тобто додавання, оновлення або видалення)\nбудуть зібрані в типізовані команди записи, які в\nпослідовно будуть відправлені на сервер.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$bulk = new MongoDB\\Driver\\BulkWrite(['ordered' =\u003e true]);$bulk-\u003einsert(['_id' =\u003e 1, 'x' =\u003e 1]);$bulk- \u003einsert(['_id' =\u003e 2, 'x' =\u003e 2]);$bulk-\u003eupdate(['x' =\u003e 2], ['$set' =\u003e ['x' =\u003e 1] ]);$bulk-\u003einsert(['_id' =\u003e 3, 'x' =\u003e 3]);$bulk-\u003edelete(['x' =\u003e 1]);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eВ результаті буде виконано чотири команди запису (тобто звернень).\nОскільки операції відсортовані, третя вставка не може бути\nвідправлено доти, доки не буде виконано попереднє оновлення.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Відсортовані операції запису, що викликають помилку\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$bulk = new MongoDB\\Driver\\BulkWrite(['ordered' =\u003e true]);$bulk-\u003edelete([]);$bulk-\u003einsert(['_id' =\u003e 1]); $bulk-\u003einsert(['_id' =\u003e 2]);$bulk-\u003einsert(['_id' =\u003e 3, 'hello' =\u003e 'world']);$bulk-\u003eupdate(['_id ' =\u003e 3], ['$set' =\u003e ['hello' =\u003e 'earth']]);$bulk-\u003einsert(['_id' =\u003e 4, 'hello' =\u003e 'pluto'])) ;$bulk-\u003eupdate(['_id' =\u003e 4], ['$set' =\u003e ['hello' =\u003e 'moon']]);$bulk-\u003einsert(['_id' =\u003e 3] );$bulk-\u003einsert(['_id' =\u003e 4]);$bulk-\u003einsert(['_id' =\u003e 5]);$manager = new MongoDB\\Driver\\Manager('mongodb://localhost :27017');$writeConcern==new MongoDB\\Driver\\WriteConcern(MongoDB\\Driver\\WriteConcern::MAJORITY, 1000);try {    $result = $manager-\u003eexecute$ ;} catch (MongoDB\\Driver\\Exception\\BulkWriteException $e) {   $result = $e-\u003egetWriteResult(); // Перевіритися, що гарантія запису не може бути виконана    if ($writeConcernError = $result-\u003egetWriteConcernError()) {             \",            $writeConcernError-\u003egetMessage(),            $writeConcernError-\u003egetCode(),            var_export($writeConcernError-\u003egetInfo(), true)        );    }    // Проверить, не выполнялись ли какие-либо операции записи    foreach ($result- \u003egetWriteErrors() as $writeError) {        printf(\"Operation#%d: %s (%d) \",            $writeError-\u003egetIndex(),            $writeError-\u003egetMessage(),            $writeError-\u003egetCode()        );    }} catch (MongoDB\\Driver\\Exception\\Exception $e) {    printf(\"Другая ошибка: %s \", $e-\u003egetMessage());   exit;}printf(\"Додано %d документ(ів) \", $result-\u003egetInsertedCount());printf(\"Оновлено %d документ(ів) \", $result-\u003egetModifiedCount());?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eOperation#7: E11000 duplicate key error index: db.collection.$\u003cem\u003eid\u003c/em\u003e dup key: { : 3 } (11000)\nДодано 4 документ(ів)\nОновлено 2 документ(ів)\u003c/p\u003e\n\u003cp\u003eЯкщо гарантія запису не може бути виконана, результат наведеного вище\nприкладу буде щось на кшталт цього:\u003c/p\u003e\n\u003cp\u003ewaiting for replication timed out (64): array (\n'wtimeout' =\u003e true,\n)\nOperation#7: E11000 duplicate key error index: databaseName.collectionName.$\u003cem\u003eid\u003c/em\u003e dup key: { : 3 } (11000)\nInserted 4 document(s)\nUpdated 2 document(s)\u003c/p\u003e\n\u003cp\u003eЯкщо ми виконаємо приклад вище, але розв'яжемо невідсортовані записи:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$bulk = new MongoDB\\Driver\\BulkWrite(['ordered' =\u003e false]);/* ... */?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eOperation#7: E11000 duplicate key error index: db.collection.$\u003cem\u003eid\u003c/em\u003e dup key: { : 3 } (11000)\nOperation#8: E11000 duplicate key error index: db.collection.$\u003cem\u003eid\u003c/em\u003e dup key: { : 4 } (11000)\nInserted 5 document(s)\nUpdated 2 document(s)\u003c/p\u003e\n\u003ch2\u003eДивіться також\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-manager.executebulkwrite.md\"\u003eMongoDB\\Driver\\Manager::executeBulkWrite()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"class.mongodb-driver-writeresult.md\"\u003eMongoDB\\Driver\\WriteResult\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"class.mongodb-driver-writeconcern.md\"\u003eMongoDB\\Driver\\WriteConcern\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"class.mongodb-driver-writeconcernerror.md\"\u003eMongoDB\\Driver\\WriteConcernError\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"class.mongodb-driver-writeerror.md\"\u003eMongoDB\\Driver\\WriteError\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-bulkwrite.construct.md\"\u003eMongoDB\\Driver\\BulkWrite::__construct\u003c/a\u003e\n— Створює новий об'єкт BulkWrite\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-bulkwrite.count.md\"\u003eMongoDB\\Driver\\BulkWrite::count\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПідраховує кількість операцій запису в порції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-bulkwrite.delete.md\"\u003eMongoDB\\Driver\\BulkWrite::delete\u003c/a\u003e\n— Додавання операції видалення порції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-bulkwrite.insert.md\"\u003eMongoDB\\Driver\\BulkWrite::insert\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eДодати операцію вставки в порцію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-bulkwrite.update.md\"\u003eMongoDB\\Driver\\BulkWrite::update\u003c/a\u003e\n— Додати операцію оновлення до порції\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.mongodb-driver-bulkwrite.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

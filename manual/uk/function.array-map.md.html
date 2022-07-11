@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.array-map | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.array-keys.md">«array_keys</a></p>
+</li>
+<li>
+<p><a href="function.array-merge-recursive.md">array_merge_recursive »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.array.md">Функції для роботи з масивами</a></p>
+</li>
+<li>
+<p>Застосовує callback-функцію до всіх елементів зазначених масивів</p>
+</li>
+</ul>
+<p>#array_map</p>
+<p>(PHP 4 >= 4.0.6, PHP 5, PHP 7, PHP 8)</p>
+<p>array_map — Застосовує функцію callback до всіх елементів зазначених
+масивів</p>
+<h3>Опис</h3>
+<p><strong>array_map</strong>(?<a href="language.types.callable.md">callable</a> <code>$callback</code>,
+array <code>$array</code>, array <code>...$arrays</code>): array</p>
+<p>Функція <strong>array_map()</strong> повертає масив (array), що містить результати
+застосування <code>callback</code>-функції до відповідного елементу <code>array</code> (і
+<code>arrays</code>, якщо вказано більше масивів), що використовується як
+аргументу callback-функції. Кількість параметрів, що передаються
+<code>callback</code>-функції, що має збігатися з кількістю масивів, переданим
+функції <strong>array_map()</strong>. Надлишкові вхідні масиви ігноруються. Якщо
+надано недостатню кількість аргументів, викидається
+<a href="class.argumentcounterror.md">ArgumentCountError</a>.</p>
+<h3>Список параметрів</h3>
+<p><code>callback</code>
+<a href="language.types.callable.md">callable</a>, що застосовується до кожного елемента
+у кожному масиві.</p>
+<p><strong><code>null</code></strong> може бути переданий як значення <code>callback</code> для
+виконання zip операції з кількома масивами. Якщо вказано тільки
+<code>array</code>, <strong>array_map()</strong> поверне вхідний масив.</p>
+<p><code>array</code>
+Масив, до якого застосовується callback-функція.</p>
+<p><code>arrays</code>
+Додаткові масиви для обробки <code>callback</code>-функцією.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає масив, що містить результати застосування <code>callback</code>-функції до
+відповідному елементу <code>array</code> (і <code>arrays</code>, якщо вказано більше
+масивів), що використовується як аргумент для callback-функції.</p>
+<p>Повернений масив збереже ключі аргументу масиву тоді і лише
+тоді, коли буде передано рівно один масив. Якщо передано більше одного
+масиву, повернутий масив матиме послідовні цілочисленні
+ключі.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>Якщо параметр callback очікує, що буде передано значення за посиланням, функція тепер видасть помилку рівня ** E_WARNING **.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>array_map()</strong></strong></p>
+<p><code>&#x3C;?phpfunction cube($n){   return ($n * $n * $n);}$a = [1, 2, 3, 4, 5];$b = array_map('cube', $a) ;print_r($b);?></code></p>
+<p>В результаті змінна <code>$b</code> міститиме:</p>
+<p>Array
+(
+[0] => 1
+[1] => 8
+[2] => 27
+[3] => 64
+[4] => 125
+)</p>
+<p><strong>Приклад #2 Використання <strong>array_map()</strong> разом з лямбда-функцією</strong></p>
+<p><code>&#x3C;?php$func = function(int $value): int {   return $value * 2;};print_r(array_map($func, range(1, 5)));// Або с P0 (array_map(fn($value): int => $value * 2, range(1, 5)));?></code></p>
+<p>Array
+(
+[0] => 2
+[1] => 4
+[2] => 6
+[3] => 8
+[4] => 10
+)</p>
+<p><strong>Приклад #3 Приклад використання <strong>array_map()</strong>: обробка кількох
+масивів</strong></p>
+<p><code>&#x3C;?phpfunction show_Spanish(int $n, string $m): string{    return "Число {$n} по-іспанськи - {$m}";}function map_Spanish(int $n, string     [$n => $m];}$a = [1, 2, 3, 4, 5];$b = ['uno', 'dos', 'tres', 'cuatro', 'cinco']; $c = array_map('show_Spanish', $a, $b);print_r($c);$d = array_map('map_Spanish', $a , $b);print_r($d);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>// Висновок $c
+Array
+(
+[0] => Число 1 іспанською - uno
+[1] => Число 2 іспанською - dos
+[2] => Число 3 іспанською - tres
+[3] => Число 4 іспанською - cuatro
+[4] => Число 5 іспанською - cinco
+)</p>
+<p>// Висновок $d
+Array
+(
+[0] => Array
+(
+[1] => uno
+)</p>
+<p>[1] => Array
+(
+[2] => dos
+)</p>
+<p>[2] => Array
+(
+[3] => tres
+)</p>
+<p>[3] => Array
+(
+[4] => cuatro
+)</p>
+<p>[4] => Array
+(
+[5] => cinco
+)</p>
+<p>)</p>
+<p>Зазвичай при обробці двох або більше масивів вони мають однакову
+довжину, так як callback-функція застосовується паралельно до
+відповідним елементам масивів. Якщо масиви мають різну довжину,
+більш короткі їх доповнюється елементами з порожніми значеннями до
+довжини найдовшого масиву.</p>
+<p>Цікавим ефектом при використанні цієї функції є створення
+масиву масивів, що може бути досягнуто шляхом використання значення
+<strong><code>null</code></strong> як ім'я callback-функції.</p>
+<p><strong>Приклад #4 Виконання zip операції з масивами</strong></p>
+<p><code>&#x3C;?php$a = [1, 2, 3, 4, 5];$b = ['one', 'two', 'three', 'four', 'five'];$c = ['uno ', 'dos', 'tres', 'cuatro', 'cinco'];$d = array_map(null, $a, $b, $c);print_r($d);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Array
+(
+[0] => Array
+(
+[0] => 1
+[1] => один
+[2] => uno
+)</p>
+<p>[1] => Array
+(
+[0] => 2
+[1] => two
+[2] => dos
+)</p>
+<p>[2] => Array
+(
+[0] => 3
+[1] => three
+[2] => tres
+)</p>
+<p>[3] => Array
+(
+[0] => 4
+[1] => four
+[2] => cuatro
+)</p>
+<p>[4] => Array
+(
+[0] => 5
+[1] => five
+[2] => cinco
+)</p>
+<p>)</p>
+<p><strong>Приклад #5 <strong><code>null</code></strong> <code>callback</code> тільки з <code>array</code></strong></p>
+<p><code>&#x3C;?php$array = [1, 2, 3];var_dump(array_map(null, $array));?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>array(3) {
+[0]=>
+int(1)
+[1]=>
+int(2)
+[2]=>
+int(3)
+}</p>
+<p><strong>Приклад #6 Використання <strong>array_map()</strong> з рядковими ключами</strong></p>
+<p><code>&#x3C;?php$arr = ['stringkey' => 'value'];function cb1($a) {   return [$a];}function cb2($a, $b) {    return $ ;}var_dump(array_map('cb1', $arr));var_dump(array_map('cb2', $arr, $arr));var_dump(array_map(null, $arr));var_dump(array_map(null, $ar , $arr));?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>array(1) {
+["stringkey"]=>
+array(1) {
+[0]=>
+string(5) "value"
+}
+}
+array(1) {
+[0]=>
+array(2) {
+[0]=>
+string(5) "value"
+[1]=>
+string(5) "value"
+}
+}
+array(1) {
+["stringkey"]=>
+string(5) "value"
+}
+array(1) {
+[0]=>
+array(2) {
+[0]=>
+string(5) "value"
+[1]=>
+string(5) "value"
+}
+}</p>
+<p><strong>Приклад #7 <strong>array_map()</strong> - асоціативні масиви</strong></p>
+<p>Хоча <strong>array_map()</strong> безпосередньо не підтримує використання ключа
+масиву як вхідні дані, це можна змоделювати за допомогою
+<a href="function.array-keys.md">array_keys()</a>.</p>
+<p><code>&#x3C;?php$arr = [   'v1' => 'Перший випуск',   'v2' => 'Другий випуск',   'v3' => 'Третій випуск'   | цього використовуйте більш довший синтаксис для анонімних функцій.$callback = fn(string $k, string $v): string => "$k - це $v";$result = array ($arr));var_dump($result);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>array(3) {
+[0]=>
+string(24) "v1 - це Перший випуск"
+[1]=>
+string(25) "v2 - це другий випуск"
+[2]=>
+string(24) "v3 - це третій випуск"
+}</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.array-filter.md">array_filter()</a> - Фільтрує елементи
+масиву за допомогою callback-функції</li>
+<li><a href="function.array-reduce.md">array_reduce()</a> - Ітеративно зменшує
+масив до єдиного значення, використовуючи callback-функцію</li>
+<li><a href="function.array-walk.md">array_walk()</a> - Застосовує задану
+користувачем функцію до кожного елементу масиву</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.array-map.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.array-map.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.array-map","slug":"function.array-map.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.array-keys.md\"\u003e«array_keys\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.array-merge-recursive.md\"\u003earray_merge_recursive »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.array.md\"\u003eФункції для роботи з масивами\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗастосовує callback-функцію до всіх елементів зазначених масивів\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#array_map\u003c/p\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.0.6, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003earray_map — Застосовує функцію callback до всіх елементів зазначених\nмасивів\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003earray_map\u003c/strong\u003e(?\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$callback\u003c/code\u003e,\narray \u003ccode\u003e$array\u003c/code\u003e, array \u003ccode\u003e...$arrays\u003c/code\u003e): array\u003c/p\u003e\n\u003cp\u003eФункція \u003cstrong\u003earray_map()\u003c/strong\u003e повертає масив (array), що містить результати\nзастосування \u003ccode\u003ecallback\u003c/code\u003e-функції до відповідного елементу \u003ccode\u003earray\u003c/code\u003e (і\n\u003ccode\u003earrays\u003c/code\u003e, якщо вказано більше масивів), що використовується як\nаргументу callback-функції. Кількість параметрів, що передаються\n\u003ccode\u003ecallback\u003c/code\u003e-функції, що має збігатися з кількістю масивів, переданим\nфункції \u003cstrong\u003earray_map()\u003c/strong\u003e. Надлишкові вхідні масиви ігноруються. Якщо\nнадано недостатню кількість аргументів, викидається\n\u003ca href=\"class.argumentcounterror.md\"\u003eArgumentCountError\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ecallback\u003c/code\u003e\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e, що застосовується до кожного елемента\nу кожному масиві.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e може бути переданий як значення \u003ccode\u003ecallback\u003c/code\u003e для\nвиконання zip операції з кількома масивами. Якщо вказано тільки\n\u003ccode\u003earray\u003c/code\u003e, \u003cstrong\u003earray_map()\u003c/strong\u003e поверне вхідний масив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003earray\u003c/code\u003e\nМасив, до якого застосовується callback-функція.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003earrays\u003c/code\u003e\nДодаткові масиви для обробки \u003ccode\u003ecallback\u003c/code\u003e-функцією.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає масив, що містить результати застосування \u003ccode\u003ecallback\u003c/code\u003e-функції до\nвідповідному елементу \u003ccode\u003earray\u003c/code\u003e (і \u003ccode\u003earrays\u003c/code\u003e, якщо вказано більше\nмасивів), що використовується як аргумент для callback-функції.\u003c/p\u003e\n\u003cp\u003eПовернений масив збереже ключі аргументу масиву тоді і лише\nтоді, коли буде передано рівно один масив. Якщо передано більше одного\nмасиву, повернутий масив матиме послідовні цілочисленні\nключі.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eЯкщо параметр callback очікує, що буде передано значення за посиланням, функція тепер видасть помилку рівня ** E_WARNING **.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003earray_map()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction cube($n){   return ($n * $n * $n);}$a = [1, 2, 3, 4, 5];$b = array_map('cube', $a) ;print_r($b);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eВ результаті змінна \u003ccode\u003e$b\u003c/code\u003e міститиме:\u003c/p\u003e\n\u003cp\u003eArray\n(\n[0] =\u003e 1\n[1] =\u003e 8\n[2] =\u003e 27\n[3] =\u003e 64\n[4] =\u003e 125\n)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Використання \u003cstrong\u003earray_map()\u003c/strong\u003e разом з лямбда-функцією\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$func = function(int $value): int {   return $value * 2;};print_r(array_map($func, range(1, 5)));// Або с P0 (array_map(fn($value): int =\u003e $value * 2, range(1, 5)));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eArray\n(\n[0] =\u003e 2\n[1] =\u003e 4\n[2] =\u003e 6\n[3] =\u003e 8\n[4] =\u003e 10\n)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Приклад використання \u003cstrong\u003earray_map()\u003c/strong\u003e: обробка кількох\nмасивів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction show_Spanish(int $n, string $m): string{    return \"Число {$n} по-іспанськи - {$m}\";}function map_Spanish(int $n, string     [$n =\u003e $m];}$a = [1, 2, 3, 4, 5];$b = ['uno', 'dos', 'tres', 'cuatro', 'cinco']; $c = array_map('show_Spanish', $a, $b);print_r($c);$d = array_map('map_Spanish', $a , $b);print_r($d);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e// Висновок $c\nArray\n(\n[0] =\u003e Число 1 іспанською - uno\n[1] =\u003e Число 2 іспанською - dos\n[2] =\u003e Число 3 іспанською - tres\n[3] =\u003e Число 4 іспанською - cuatro\n[4] =\u003e Число 5 іспанською - cinco\n)\u003c/p\u003e\n\u003cp\u003e// Висновок $d\nArray\n(\n[0] =\u003e Array\n(\n[1] =\u003e uno\n)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e Array\n(\n[2] =\u003e dos\n)\u003c/p\u003e\n\u003cp\u003e[2] =\u003e Array\n(\n[3] =\u003e tres\n)\u003c/p\u003e\n\u003cp\u003e[3] =\u003e Array\n(\n[4] =\u003e cuatro\n)\u003c/p\u003e\n\u003cp\u003e[4] =\u003e Array\n(\n[5] =\u003e cinco\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003eЗазвичай при обробці двох або більше масивів вони мають однакову\nдовжину, так як callback-функція застосовується паралельно до\nвідповідним елементам масивів. Якщо масиви мають різну довжину,\nбільш короткі їх доповнюється елементами з порожніми значеннями до\nдовжини найдовшого масиву.\u003c/p\u003e\n\u003cp\u003eЦікавим ефектом при використанні цієї функції є створення\nмасиву масивів, що може бути досягнуто шляхом використання значення\n\u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e як ім'я callback-функції.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Виконання zip операції з масивами\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$a = [1, 2, 3, 4, 5];$b = ['one', 'two', 'three', 'four', 'five'];$c = ['uno ', 'dos', 'tres', 'cuatro', 'cinco'];$d = array_map(null, $a, $b, $c);print_r($d);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eArray\n(\n[0] =\u003e Array\n(\n[0] =\u003e 1\n[1] =\u003e один\n[2] =\u003e uno\n)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e Array\n(\n[0] =\u003e 2\n[1] =\u003e two\n[2] =\u003e dos\n)\u003c/p\u003e\n\u003cp\u003e[2] =\u003e Array\n(\n[0] =\u003e 3\n[1] =\u003e three\n[2] =\u003e tres\n)\u003c/p\u003e\n\u003cp\u003e[3] =\u003e Array\n(\n[0] =\u003e 4\n[1] =\u003e four\n[2] =\u003e cuatro\n)\u003c/p\u003e\n\u003cp\u003e[4] =\u003e Array\n(\n[0] =\u003e 5\n[1] =\u003e five\n[2] =\u003e cinco\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e \u003ccode\u003ecallback\u003c/code\u003e тільки з \u003ccode\u003earray\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array = [1, 2, 3];var_dump(array_map(null, $array));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003earray(3) {\n[0]=\u003e\nint(1)\n[1]=\u003e\nint(2)\n[2]=\u003e\nint(3)\n}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #6 Використання \u003cstrong\u003earray_map()\u003c/strong\u003e з рядковими ключами\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$arr = ['stringkey' =\u003e 'value'];function cb1($a) {   return [$a];}function cb2($a, $b) {    return $ ;}var_dump(array_map('cb1', $arr));var_dump(array_map('cb2', $arr, $arr));var_dump(array_map(null, $arr));var_dump(array_map(null, $ar , $arr));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003earray(1) {\n[\"stringkey\"]=\u003e\narray(1) {\n[0]=\u003e\nstring(5) \"value\"\n}\n}\narray(1) {\n[0]=\u003e\narray(2) {\n[0]=\u003e\nstring(5) \"value\"\n[1]=\u003e\nstring(5) \"value\"\n}\n}\narray(1) {\n[\"stringkey\"]=\u003e\nstring(5) \"value\"\n}\narray(1) {\n[0]=\u003e\narray(2) {\n[0]=\u003e\nstring(5) \"value\"\n[1]=\u003e\nstring(5) \"value\"\n}\n}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #7 \u003cstrong\u003earray_map()\u003c/strong\u003e - асоціативні масиви\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eХоча \u003cstrong\u003earray_map()\u003c/strong\u003e безпосередньо не підтримує використання ключа\nмасиву як вхідні дані, це можна змоделювати за допомогою\n\u003ca href=\"function.array-keys.md\"\u003earray_keys()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$arr = [   'v1' =\u003e 'Перший випуск',   'v2' =\u003e 'Другий випуск',   'v3' =\u003e 'Третій випуск'   | цього використовуйте більш довший синтаксис для анонімних функцій.$callback = fn(string $k, string $v): string =\u003e \"$k - це $v\";$result = array ($arr));var_dump($result);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003earray(3) {\n[0]=\u003e\nstring(24) \"v1 - це Перший випуск\"\n[1]=\u003e\nstring(25) \"v2 - це другий випуск\"\n[2]=\u003e\nstring(24) \"v3 - це третій випуск\"\n}\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.array-filter.md\"\u003earray_filter()\u003c/a\u003e - Фільтрує елементи\nмасиву за допомогою callback-функції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.array-reduce.md\"\u003earray_reduce()\u003c/a\u003e - Ітеративно зменшує\nмасив до єдиного значення, використовуючи callback-функцію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.array-walk.md\"\u003earray_walk()\u003c/a\u003e - Застосовує задану\nкористувачем функцію до кожного елементу масиву\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.array-map.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

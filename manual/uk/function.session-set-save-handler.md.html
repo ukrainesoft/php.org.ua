@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.session-set-save-handler | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.session-set-cookie-params.md">« session_set_cookie_params</a></p>
+</li>
+<li>
+<p><a href="function.session-start.md">session_start »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.session.md">Функції для роботи з сесіями</a></p>
+</li>
+<li>
+<p>Встановлює користувальницькі обробники зберігання сесії</p>
+</li>
+</ul>
+<h1>session_set_save_handler</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>session_set_save_handler — Встановлює користувальницькі обробники
+зберігання сесії</p>
+<h3>Опис</h3>
+<p><strong>session_set_save_handler</strong>(
+<a href="language.types.callable.md">callable</a> <code>$open</code>,
+<a href="language.types.callable.md">callable</a> <code>$close</code>,
+<a href="language.types.callable.md">callable</a> <code>$read</code>,
+<a href="language.types.callable.md">callable</a> <code>$write</code>,
+<a href="language.types.callable.md">callable</a> <code>$destroy</code>,
+<a href="language.types.callable.md">callable</a> <code>$gc</code>,
+<a href="language.types.callable.md">callable</a> <code>$create_sid</code> = ?,
+<a href="language.types.callable.md">callable</a> <code>$validate_sid</code> = ?,
+<a href="language.types.callable.md">callable</a> <code>$update_timestamp</code> = ?
+): bool</p>
+<p>Також можна зареєструвати наступний прототип:</p>
+<p><strong>session_set_save_handler</strong>(object <code>$sessionhandler</code>, bool
+<code>$register_shutdown</code> = <strong><code>true</code></strong>): bool</p>
+<p><strong>session_set_save_handler()</strong> встановлює користувацькі
+обробники зберігання сесії, які використовуються для збереження та
+отримання даних, пов'язаних із сесією. Це особливо корисно, коли
+переважним є метод зберігання, відмінний від тих, які
+надаються сесіями PHP, наприклад, зберігання даних сесії в
+локальної бази даних.</p>
+<h3>Список параметрів</h3>
+<p>Ця функція має два визначення (прототипу).</p>
+<p><code>sessionhandler</code>
+Примірник класу, що реалізує інтерфейс
+<a href="class.sessionhandlerinterface.md">SessionHandlerInterface</a> та
+необов'язкові <a href="class.sessionidinterface.md">SessionIdInterface</a> та/або
+<a href="class.sessionupdatetimestamphandlerinterface.md">SessionUpdateTimestampHandlerInterface</a>,
+такий як <a href="class.sessionhandler.md">SessionHandler</a>, для реєстрації в
+як оброблювач сесії.</p>
+<p><code>register_shutdown</code>
+Зареєструвати
+<a href="function.session-write-close.md">session_write_close()</a> як функцію
+<a href="function.register-shutdown-function.md">register_shutdown_function()</a>.</p>
+<p>або</p>
+<p><code>open</code>
+Callback-функція з наступною сигнатурою:</p>
+<p>open(string <code>$savePath</code>, string <code>$sessionName</code>): bool</p>
+<p>Callback-функція <code>open</code> працює як конструктор у класах та виконується
+під час відкриття сесії. Це перша callback-функція, яка виконується,
+коли сесія стартує автоматично або вручну через
+<a href="function.session-start.md">session_start()</a>. Значення, що повертається
+<strong><code>true</code></strong> у разі успішного виконання, <strong><code>false</code></strong> у разі невдачі.</p>
+<p><code>close</code>
+Callback-функція з наступною сигнатурою:</p>
+<p>close(): bool</p>
+<p>Callback-функція <code>close</code> працює як деструктор у класах та виконується
+після того, як була викликана callback-функція 'write'. Вона також
+викликається під час виклику
+<a href="function.session-write-close.md">session_write_close()</a>. Повертається
+значення має бути <strong><code>true</code></strong> у разі успішного виконання,
+<strong><code>false</code></strong> у разі невдачі.</p>
+<p><code>read</code>
+Callback-функція з наступною сигнатурою:</p>
+<p>read(string <code>$sessionId</code>): string</p>
+<p>Callback-функція <code>read</code> повинна завжди повертати кодовану
+(серіалізований) рядок сесії або порожній рядок, якщо немає даних для
+читання.</p>
+<p>Ця callback-функція викликається внутрішнім механізмом PHP при старті
+сесії або під час виклику <a href="function.session-start.md">session_start()</a>.
+Перед тим, як буде викликана ця callback-функція, PHP викличе
+callback-функцію <code>open</code>.</p>
+<p>Повертається значення даної callback-функції має бути в такому
+ж серіалізованому форматі, який спочатку передавався для зберігання
+в callback-функцію <code>write</code>. Значення, що повертається, буде автоматично
+десеріалізовано PHP та використано для заповнення суперглобальної
+змінної <code>$_SESSION</code>. Навіть якщо дані схожі на результат
+<a href="function.serialize.md">serialize()</a>, варто пам'ятати, що це інший
+формат серіалізації, визначений ini-директивою
+<a href="session.configuration.md#ini.session.serialize-handler">session.serialize_handler</a>.</p>
+<p><code>write</code>
+Callback-функція з наступною сигнатурою:</p>
+<p>write(string <code>$sessionId</code>, string <code>$data</code>): bool</p>
+<p>Callback-функція <code>write</code> викликається, коли сесія має бути збережена
+та закрита. Ця callback-функція приймає ідентифікатор поточної
+сесії та серіалізовану версію суперглобальної змінної <code>$_SESSION</code>.
+Метод серіалізації, що використовується всередині PHP, визначений ini-директивою
+<a href="session.configuration.md#ini.session.serialize-handler">session.serialize_handler</a>.</p>
+<p>Передані в цю callback-функцію серіалізовані дані сесії мають
+бути збережені у зв'язку із переданим ідентифікатором сесії. При
+отриманні цих даних, callback-функція <code>read</code> повинна повернути те ж саме
+Саме значення було передано в callback-функцію <code>write</code>.</p>
+<p>Ця callback-функція викликається, коли PHP завершує роботу або явно
+під час виклику <a href="function.session-write-close.md">session_write_close()</a>.
+Слід пам'ятати, що після виконання цієї callback-функції, PHP
+виконає callback-функцію <code>close</code>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Обробник "write" не виконається доти, доки вихідний потік не
+буде закрито. Таким чином, виведення налагоджувальних операторів в обробнику
+"write" ніколи не відобразиться у браузері. Якщо необхідний висновок
+налагоджувальної інформації, рекомендується записувати налагоджувальні дані в
+файл.</p>
+</blockquote>
+<p><code>destroy</code>
+Callback-функція з наступною сигнатурою:</p>
+<p>destroy(string <code>$sessionId</code>): bool</p>
+<p>Ця callback-функція викликається, коли сесія знищується за допомогою
+<a href="function.session-destroy.md">session_destroy()</a> або під час виклику
+<a href="function.session-regenerate-id.md">session_regenerate_id()</a> з
+параметром destroy, встановленим у <strong><code>true</code></strong>. Значення, що повертається
+має бути <strong><code>true</code></strong> у разі успішного виконання, <strong><code>false</code></strong> в
+у разі невдачі.</p>
+<p><code>gc</code>
+Callback-функція з наступною сигнатурою:</p>
+<p>gc(int <code>$lifetime</code>): bool</p>
+<p>Callback-функція збирача сміття періодично викликається PHP для очищення
+даних старих сесій. Частота контролюється директивами
+<a href="session.configuration.md#ini.session.gc-probability">session.gc_probability</a>
+і
+<a href="session.configuration.md#ini.session.gc-divisor">session.gc_divisor</a>.
+Значення lifetime, яке передається в дану callback-функцію
+бути встановлено в
+<a href="session.configuration.md#ini.session.gc-maxlifetime">session.gc_maxlifetime</a>.
+Повертане значення має бути <strong><code>true</code></strong> у разі успішного
+виконання, <strong><code>false</code></strong> у разі невдачі.</p>
+<p><code>create_sid</code>
+Callback-функція з наступною сигнатурою:</p>
+<p>create_sid(): string</p>
+<p>Ця callback-функція виконується, коли потрібен новий ідентифікатор
+сесії. Не передбачає параметрів, а значення, що повертається
+бути рядком, який є допустимим ідентифікатором сесії для
+вашого обробника.</p>
+<p><code>validate_sid</code>
+Callback-функція з наступною сигнатурою:</p>
+<p>validate_sid(string <code>$key</code>): bool</p>
+<p>Callback-функція виконується, коли має бути запущена сесія,
+надається ідентифікатор сесії та включається
+<a href="session.configuration.md#ini.session.use-strict-mode">session.use_strict_mode</a>.
+<code>key</code> – це ідентифікатор сесії для перевірки. Ідентифікатор сесії
+дійсний, якщо сесія з таким ідентифікатором існує.
+Повертане значення має бути <strong><code>true</code></strong> у разі успішного
+виконання або <strong><code>false</code></strong> у разі виникнення помилки.</p>
+<p><code>update_timestamp</code>
+Callback-функція з наступною сигнатурою:</p>
+<p>update_timestamp(string <code>$key</code>, string <code>$val</code>): bool</p>
+<p>Callback-функція виконується під час сесії. <code>key</code> - це ідентифікатор
+сесії, <code>val</code> - це дані сесії. Повертане значення має бути
+<strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у разі
+виникнення помилки.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Користувальницький обробник сесії: повний код дивіться
+описі
+<a href="class.sessionhandlerinterface.md">SessionHandlerInterface</a>.</strong></p>
+<p>Тут лише продемонстровано виклик session_set_save_handler, повний
+приклад можна переглянути в описі
+<a href="class.sessionhandlerinterface.md">SessionHandlerInterface</a>.</p>
+<p>Зауважте, що з <strong>session_set_save_handler()</strong> ми використовуємо
+ООП-прототип і реєструємо функцію завершення, використовуючи прапорець параметра
+функції. Це зазвичай рекомендується при реєстрації об'єктів як
+обробників зберігання сесії</p>
+<p>`&#x3C;?phpclass MySessionHandler implements SessionHandlerInterface{    // тут реалізація інтерфейсу}$handler = new MySessionHandler();session_set_save_handler($handle; |</p>
+<h3>Примітки</h3>
+<p><strong>Увага</strong></p>
+<p>Обробники <code>write</code> та <code>close</code> викликаються після деструктора об'єкта та
+тому не можуть використовувати його контекст або кидати винятки.
+Винятки не можуть бути оброблені, тому що не будуть спіймані, не буде
+відображена трасування стека виключення та виконання просто припиниться
+несподівано. Однак при цьому деструктори об'єкта можуть використовувати
+сесії.</p>
+<p>Можна викликати <a href="function.session-write-close.md">session_write_close()</a>
+з деструктора, щоб вирішити цю проблему "курки та яйця", але самий
+надійний спосіб – це реєструвати функцію завершення, як описано
+вище.</p>
+<p><strong>Увага</strong></p>
+<p>Поточний робочий каталог змінюється деякими SAPI, якщо сесія
+закривається після завершення скрипта. Завершити сесію можна раніше з
+за допомогою <a href="function.session-write-close.md">session_write_close()</a>.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li>Директива
+<a href="session.configuration.md#ini.session.save-handler">session.save_handler</a></li>
+<li>Директива
+<a href="session.configuration.md#ini.session.serialize-handler">session.serialize_handler</a></li>
+<li><a href="function.register-shutdown-function.md">register_shutdown_function()</a> -
+Реєструє функцію, яка виконається після завершення роботи
+скрипта</li>
+<li><a href="function.session-register-shutdown.md">session_register_shutdown()</a> -
+Функція завершення сесії</li>
+<li>Зверніться до
+<a href="https://github.com/php/php-src/blob/master/ext/session/tests/save_handler.inc">» save_handler.inc</a>
+для повного набору рекомендацій щодо реалізації</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.session-set-save-handler.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.session-set-save-handler.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.session-set-save-handler","slug":"function.session-set-save-handler.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.session-set-cookie-params.md\"\u003e« session_set_cookie_params\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.session-start.md\"\u003esession_start »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.session.md\"\u003eФункції для роботи з сесіями\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВстановлює користувальницькі обробники зберігання сесії\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003esession_set_save_handler\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003esession_set_save_handler — Встановлює користувальницькі обробники\nзберігання сесії\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003esession_set_save_handler\u003c/strong\u003e(\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$open\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$close\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$read\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$write\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$destroy\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$gc\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$create_sid\u003c/code\u003e = ?,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$validate_sid\u003c/code\u003e = ?,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$update_timestamp\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003eТакож можна зареєструвати наступний прототип:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003esession_set_save_handler\u003c/strong\u003e(object \u003ccode\u003e$sessionhandler\u003c/code\u003e, bool\n\u003ccode\u003e$register_shutdown\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e): bool\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003esession_set_save_handler()\u003c/strong\u003e встановлює користувацькі\nобробники зберігання сесії, які використовуються для збереження та\nотримання даних, пов'язаних із сесією. Це особливо корисно, коли\nпереважним є метод зберігання, відмінний від тих, які\nнадаються сесіями PHP, наприклад, зберігання даних сесії в\nлокальної бази даних.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003eЦя функція має два визначення (прототипу).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esessionhandler\u003c/code\u003e\nПримірник класу, що реалізує інтерфейс\n\u003ca href=\"class.sessionhandlerinterface.md\"\u003eSessionHandlerInterface\u003c/a\u003e та\nнеобов'язкові \u003ca href=\"class.sessionidinterface.md\"\u003eSessionIdInterface\u003c/a\u003e та/або\n\u003ca href=\"class.sessionupdatetimestamphandlerinterface.md\"\u003eSessionUpdateTimestampHandlerInterface\u003c/a\u003e,\nтакий як \u003ca href=\"class.sessionhandler.md\"\u003eSessionHandler\u003c/a\u003e, для реєстрації в\nяк оброблювач сесії.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eregister_shutdown\u003c/code\u003e\nЗареєструвати\n\u003ca href=\"function.session-write-close.md\"\u003esession_write_close()\u003c/a\u003e як функцію\n\u003ca href=\"function.register-shutdown-function.md\"\u003eregister_shutdown_function()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eабо\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eopen\u003c/code\u003e\nCallback-функція з наступною сигнатурою:\u003c/p\u003e\n\u003cp\u003eopen(string \u003ccode\u003e$savePath\u003c/code\u003e, string \u003ccode\u003e$sessionName\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eCallback-функція \u003ccode\u003eopen\u003c/code\u003e працює як конструктор у класах та виконується\nпід час відкриття сесії. Це перша callback-функція, яка виконується,\nколи сесія стартує автоматично або вручну через\n\u003ca href=\"function.session-start.md\"\u003esession_start()\u003c/a\u003e. Значення, що повертається\n\u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання, \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі невдачі.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eclose\u003c/code\u003e\nCallback-функція з наступною сигнатурою:\u003c/p\u003e\n\u003cp\u003eclose(): bool\u003c/p\u003e\n\u003cp\u003eCallback-функція \u003ccode\u003eclose\u003c/code\u003e працює як деструктор у класах та виконується\nпісля того, як була викликана callback-функція 'write'. Вона також\nвикликається під час виклику\n\u003ca href=\"function.session-write-close.md\"\u003esession_write_close()\u003c/a\u003e. Повертається\nзначення має бути \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання,\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі невдачі.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eread\u003c/code\u003e\nCallback-функція з наступною сигнатурою:\u003c/p\u003e\n\u003cp\u003eread(string \u003ccode\u003e$sessionId\u003c/code\u003e): string\u003c/p\u003e\n\u003cp\u003eCallback-функція \u003ccode\u003eread\u003c/code\u003e повинна завжди повертати кодовану\n(серіалізований) рядок сесії або порожній рядок, якщо немає даних для\nчитання.\u003c/p\u003e\n\u003cp\u003eЦя callback-функція викликається внутрішнім механізмом PHP при старті\nсесії або під час виклику \u003ca href=\"function.session-start.md\"\u003esession_start()\u003c/a\u003e.\nПеред тим, як буде викликана ця callback-функція, PHP викличе\ncallback-функцію \u003ccode\u003eopen\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eПовертається значення даної callback-функції має бути в такому\nж серіалізованому форматі, який спочатку передавався для зберігання\nв callback-функцію \u003ccode\u003ewrite\u003c/code\u003e. Значення, що повертається, буде автоматично\nдесеріалізовано PHP та використано для заповнення суперглобальної\nзмінної \u003ccode\u003e$_SESSION\u003c/code\u003e. Навіть якщо дані схожі на результат\n\u003ca href=\"function.serialize.md\"\u003eserialize()\u003c/a\u003e, варто пам'ятати, що це інший\nформат серіалізації, визначений ini-директивою\n\u003ca href=\"session.configuration.md#ini.session.serialize-handler\"\u003esession.serialize_handler\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewrite\u003c/code\u003e\nCallback-функція з наступною сигнатурою:\u003c/p\u003e\n\u003cp\u003ewrite(string \u003ccode\u003e$sessionId\u003c/code\u003e, string \u003ccode\u003e$data\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eCallback-функція \u003ccode\u003ewrite\u003c/code\u003e викликається, коли сесія має бути збережена\nта закрита. Ця callback-функція приймає ідентифікатор поточної\nсесії та серіалізовану версію суперглобальної змінної \u003ccode\u003e$_SESSION\u003c/code\u003e.\nМетод серіалізації, що використовується всередині PHP, визначений ini-директивою\n\u003ca href=\"session.configuration.md#ini.session.serialize-handler\"\u003esession.serialize_handler\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eПередані в цю callback-функцію серіалізовані дані сесії мають\nбути збережені у зв'язку із переданим ідентифікатором сесії. При\nотриманні цих даних, callback-функція \u003ccode\u003eread\u003c/code\u003e повинна повернути те ж саме\nСаме значення було передано в callback-функцію \u003ccode\u003ewrite\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЦя callback-функція викликається, коли PHP завершує роботу або явно\nпід час виклику \u003ca href=\"function.session-write-close.md\"\u003esession_write_close()\u003c/a\u003e.\nСлід пам'ятати, що після виконання цієї callback-функції, PHP\nвиконає callback-функцію \u003ccode\u003eclose\u003c/code\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eОбробник \"write\" не виконається доти, доки вихідний потік не\nбуде закрито. Таким чином, виведення налагоджувальних операторів в обробнику\n\"write\" ніколи не відобразиться у браузері. Якщо необхідний висновок\nналагоджувальної інформації, рекомендується записувати налагоджувальні дані в\nфайл.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003edestroy\u003c/code\u003e\nCallback-функція з наступною сигнатурою:\u003c/p\u003e\n\u003cp\u003edestroy(string \u003ccode\u003e$sessionId\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eЦя callback-функція викликається, коли сесія знищується за допомогою\n\u003ca href=\"function.session-destroy.md\"\u003esession_destroy()\u003c/a\u003e або під час виклику\n\u003ca href=\"function.session-regenerate-id.md\"\u003esession_regenerate_id()\u003c/a\u003e з\nпараметром destroy, встановленим у \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e. Значення, що повертається\nмає бути \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання, \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e в\nу разі невдачі.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003egc\u003c/code\u003e\nCallback-функція з наступною сигнатурою:\u003c/p\u003e\n\u003cp\u003egc(int \u003ccode\u003e$lifetime\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eCallback-функція збирача сміття періодично викликається PHP для очищення\nданих старих сесій. Частота контролюється директивами\n\u003ca href=\"session.configuration.md#ini.session.gc-probability\"\u003esession.gc_probability\u003c/a\u003e\nі\n\u003ca href=\"session.configuration.md#ini.session.gc-divisor\"\u003esession.gc_divisor\u003c/a\u003e.\nЗначення lifetime, яке передається в дану callback-функцію\nбути встановлено в\n\u003ca href=\"session.configuration.md#ini.session.gc-maxlifetime\"\u003esession.gc_maxlifetime\u003c/a\u003e.\nПовертане значення має бути \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного\nвиконання, \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі невдачі.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ecreate_sid\u003c/code\u003e\nCallback-функція з наступною сигнатурою:\u003c/p\u003e\n\u003cp\u003ecreate_sid(): string\u003c/p\u003e\n\u003cp\u003eЦя callback-функція виконується, коли потрібен новий ідентифікатор\nсесії. Не передбачає параметрів, а значення, що повертається\nбути рядком, який є допустимим ідентифікатором сесії для\nвашого обробника.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003evalidate_sid\u003c/code\u003e\nCallback-функція з наступною сигнатурою:\u003c/p\u003e\n\u003cp\u003evalidate_sid(string \u003ccode\u003e$key\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eCallback-функція виконується, коли має бути запущена сесія,\nнадається ідентифікатор сесії та включається\n\u003ca href=\"session.configuration.md#ini.session.use-strict-mode\"\u003esession.use_strict_mode\u003c/a\u003e.\n\u003ccode\u003ekey\u003c/code\u003e – це ідентифікатор сесії для перевірки. Ідентифікатор сесії\nдійсний, якщо сесія з таким ідентифікатором існує.\nПовертане значення має бути \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного\nвиконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eupdate_timestamp\u003c/code\u003e\nCallback-функція з наступною сигнатурою:\u003c/p\u003e\n\u003cp\u003eupdate_timestamp(string \u003ccode\u003e$key\u003c/code\u003e, string \u003ccode\u003e$val\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eCallback-функція виконується під час сесії. \u003ccode\u003ekey\u003c/code\u003e - це ідентифікатор\nсесії, \u003ccode\u003eval\u003c/code\u003e - це дані сесії. Повертане значення має бути\n\u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі\nвиникнення помилки.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Користувальницький обробник сесії: повний код дивіться\nописі\n\u003ca href=\"class.sessionhandlerinterface.md\"\u003eSessionHandlerInterface\u003c/a\u003e.\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eТут лише продемонстровано виклик session_set_save_handler, повний\nприклад можна переглянути в описі\n\u003ca href=\"class.sessionhandlerinterface.md\"\u003eSessionHandlerInterface\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЗауважте, що з \u003cstrong\u003esession_set_save_handler()\u003c/strong\u003e ми використовуємо\nООП-прототип і реєструємо функцію завершення, використовуючи прапорець параметра\nфункції. Це зазвичай рекомендується при реєстрації об'єктів як\nобробників зберігання сесії\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?phpclass MySessionHandler implements SessionHandlerInterface{    // тут реалізація інтерфейсу}$handler = new MySessionHandler();session_set_save_handler($handle; |\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОбробники \u003ccode\u003ewrite\u003c/code\u003e та \u003ccode\u003eclose\u003c/code\u003e викликаються після деструктора об'єкта та\nтому не можуть використовувати його контекст або кидати винятки.\nВинятки не можуть бути оброблені, тому що не будуть спіймані, не буде\nвідображена трасування стека виключення та виконання просто припиниться\nнесподівано. Однак при цьому деструктори об'єкта можуть використовувати\nсесії.\u003c/p\u003e\n\u003cp\u003eМожна викликати \u003ca href=\"function.session-write-close.md\"\u003esession_write_close()\u003c/a\u003e\nз деструктора, щоб вирішити цю проблему \"курки та яйця\", але самий\nнадійний спосіб – це реєструвати функцію завершення, як описано\nвище.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПоточний робочий каталог змінюється деякими SAPI, якщо сесія\nзакривається після завершення скрипта. Завершити сесію можна раніше з\nза допомогою \u003ca href=\"function.session-write-close.md\"\u003esession_write_close()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eДиректива\n\u003ca href=\"session.configuration.md#ini.session.save-handler\"\u003esession.save_handler\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eДиректива\n\u003ca href=\"session.configuration.md#ini.session.serialize-handler\"\u003esession.serialize_handler\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.register-shutdown-function.md\"\u003eregister_shutdown_function()\u003c/a\u003e -\nРеєструє функцію, яка виконається після завершення роботи\nскрипта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.session-register-shutdown.md\"\u003esession_register_shutdown()\u003c/a\u003e -\nФункція завершення сесії\u003c/li\u003e\n\u003cli\u003eЗверніться до\n\u003ca href=\"https://github.com/php/php-src/blob/master/ext/session/tests/save_handler.inc\"\u003e» save_handler.inc\u003c/a\u003e\nдля повного набору рекомендацій щодо реалізації\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.session-set-save-handler.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

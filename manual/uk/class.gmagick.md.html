@@ -1,0 +1,682 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.gmagick | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="gmagick.examples.md">« Приклади</a></p>
+</li>
+<li>
+<p><a href="gmagick.addimage.md">Gmagick::addimage »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.gmagick.md">Gmagick</a></p>
+</li>
+<li>
+<p>Клас Gmagick</p>
+</li>
+</ul>
+<h1>Клас Gmagick</h1>
+<p>(PECL gmagick >= Unknown)</p>
+<h2>Вступ</h2>
+<h2>Огляд класів</h2>
+<p>class <strong>Gmagick</strong> {</p>
+<p>/* Методи */</p>
+<p>public <a href="gmagick.construct.md">__construct</a>(string <code>$filename</code> = ?)</p>
+<p>public <a href="gmagick.addimage.md">addimage</a>(<a href="class.gmagick.md">Gmagick</a>
+<code>$source</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.addnoiseimage.md">addnoiseimage</a>(int <code>$noise_type</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.annotateimage.md">annotateimage</a>(
+<a href="class.gmagickdraw.md">GmagickDraw</a> <code>$GmagickDraw</code>,
+float <code>$x</code>,
+float <code>$y</code>,
+float <code>$angle</code>,
+string <code>$text</code>
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.blurimage.md">blurimage</a>(float <code>$radius</code>, float
+<code>$sigma</code>, int <code>$channel</code> = ?): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public
+<a href="gmagick.borderimage.md">borderimage</a>(<a href="class.gmagickpixel.md">GmagickPixel</a>
+<code>$color</code>, int <code>$width</code>, int <code>$height</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.charcoalimage.md">charcoalimage</a>(float <code>$radius</code>,
+float <code>$sigma</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.chopimage.md">chopimage</a>(
+int <code>$width</code>,
+int <code>$height</code>,
+int <code>$x</code>,
+int <code>$y</code>
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.clear.md">clear</a>(): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.commentimage.md">commentimage</a>(string <code>$comment</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.compositeimage.md">compositeimage</a>(
+<a href="class.gmagick.md">Gmagick</a> <code>$source</code>,
+int <code>$COMPOSE</code>,
+int <code>$x</code>,
+int <code>$y</code>
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.cropimage.md">cropimage</a>(
+int <code>$width</code>,
+int <code>$height</code> ,
+int <code>$x</code>,
+int <code>$y</code>
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.cropthumbnailimage.md">cropthumbnailimage</a>(int
+<code>$width</code>, int <code>$height</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.current.md">current</a>(): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.cyclecolormapimage.md">cyclecolormapimage</a>(int
+<code>$displace</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.deconstructimages.md">deconstructimages</a>():
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.despeckleimage.md">despeckleimage</a>():
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.destroy.md">destroy</a>(): bool</p>
+<p>public
+<a href="gmagick.drawimage.md">drawimage</a>(<a href="class.gmagickdraw.md">GmagickDraw</a>
+<code>$GmagickDraw</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.edgeimage.md">edgeimage</a>(float <code>$radius</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.embossimage.md">embossimage</a>(float <code>$radius</code>, float
+<code>$sigma</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.enhanceimage.md">enhanceimage</a>():
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.equalizeimage.md">equalizeimage</a>():
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.flipimage.md">flipimage</a>():
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.flopimage.md">flopimage</a>():
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.frameimage.md">frameimage</a>(
+<a href="class.gmagickpixel.md">GmagickPixel</a> <code>$color</code>,
+int <code>$width</code>,
+int <code>$height</code>,
+int <code>$inner_bevel</code>,
+int <code>$outer_bevel</code>
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.gammaimage.md">gammaimage</a>(float <code>$gamma</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.getcopyright.md">getcopyright</a>(): string</p>
+<p>public <a href="gmagick.getfilename.md">getfilename</a>(): string</p>
+<p>public
+<a href="gmagick.getimagebackgroundcolor.md">getimagebackgroundcolor</a>():
+<a href="class.gmagickpixel.md">GmagickPixel</a></p>
+<p>public <a href="gmagick.getimageblueprimary.md">getimageblueprimary</a>(): array</p>
+<p>public <a href="gmagick.getimagebordercolor.md">getimagebordercolor</a>():
+<a href="class.gmagickpixel.md">GmagickPixel</a></p>
+<p>public <a href="gmagick.getimagechanneldepth.md">getimagechanneldepth</a>(int
+<code>$channel_type</code>): int</p>
+<p>public <a href="gmagick.getimagecolors.md">getimagecolors</a>(): int</p>
+<p>public <a href="gmagick.getimagecolorspace.md">getimagecolorspace</a>(): int</p>
+<p>public <a href="gmagick.getimagecompose.md">getimagecompose</a>(): int</p>
+<p>public <a href="gmagick.getimagedelay.md">getimagedelay</a>(): int</p>
+<p>public <a href="gmagick.getimagedepth.md">getimagedepth</a>(): int</p>
+<p>public <a href="gmagick.getimagedispose.md">getimagedispose</a>(): int</p>
+<p>public <a href="gmagick.getimageextrema.md">getimageextrema</a>(): array</p>
+<p>public <a href="gmagick.getimagefilename.md">getimagefilename</a>(): string</p>
+<p>public <a href="gmagick.getimageformat.md">getimageformat</a>(): string</p>
+<p>public <a href="gmagick.getimagegamma.md">getimagegamma</a>(): float</p>
+<p>public <a href="gmagick.getimagegreenprimary.md">getimagegreenprimary</a>():
+array</p>
+<p>public <a href="gmagick.getimageheight.md">getimageheight</a>(): int</p>
+<p>public <a href="gmagick.getimagehistogram.md">getimagehistogram</a>(): array</p>
+<p>public <a href="gmagick.getimageindex.md">getimageindex</a>(): int</p>
+<p>public
+<a href="gmagick.getimageinterlacescheme.md">getimageinterlacescheme</a>(): int</p>
+<p>public <a href="gmagick.getimageiterations.md">getimageiterations</a>(): int</p>
+<p>public <a href="gmagick.getimagematte.md">getimagematte</a>(): int</p>
+<p>public <a href="gmagick.getimagemattecolor.md">getimagemattecolor</a>():
+<a href="class.gmagickpixel.md">GmagickPixel</a></p>
+<p>public <a href="gmagick.getimageprofile.md">getimageprofile</a>(string <code>$name</code>):
+string</p>
+<p>public <a href="gmagick.getimageredprimary.md">getimageredprimary</a>(): array</p>
+<p>public
+<a href="gmagick.getimagerenderingintent.md">getimagerenderingintent</a>(): int</p>
+<p>public <a href="gmagick.getimageresolution.md">getimageresolution</a>(): array</p>
+<p>public <a href="gmagick.getimagescene.md">getimagescene</a>(): int</p>
+<p>public <a href="gmagick.getimagesignature.md">getimagesignature</a>(): string</p>
+<p>public <a href="gmagick.getimagetype.md">getimagetype</a>(): int</p>
+<p>public <a href="gmagick.getimageunits.md">getimageunits</a>(): int</p>
+<p>public <a href="gmagick.getimagewhitepoint.md">getimagewhitepoint</a>(): array</p>
+<p>public <a href="gmagick.getimagewidth.md">getimagewidth</a>(): int</p>
+<p>public <a href="gmagick.getpackagename.md">getpackagename</a>(): string</p>
+<p>public <a href="gmagick.getquantumdepth.md">getquantumdepth</a>(): array</p>
+<p>public <a href="gmagick.getreleasedate.md">getreleasedate</a>(): string</p>
+<p>public <a href="gmagick.getsamplingfactors.md">getsamplingfactors</a>(): array</p>
+<p>public <a href="gmagick.getsize.md">getsize</a>(): array</p>
+<p>public <a href="gmagick.getversion.md">getversion</a>(): array</p>
+<p>public <a href="gmagick.hasnextimage.md">hasnextimage</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="gmagick.haspreviousimage.md">haspreviousimage</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="gmagick.implodeimage.md">implodeimage</a>(float <code>$radius</code>):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="gmagick.labelimage.md">labelimage</a>(string <code>$label</code>):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="gmagick.levelimage.md">levelimage</a>(
+float <code>$blackPoint</code>,
+float <code>$gamma</code>,
+float <code>$whitePoint</code>,
+int <code>$channel</code> = Gmagick::CHANNEL_DEFAULT
+):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="gmagick.magnifyimage.md">magnifyimage</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="gmagick.mapimage.md">mapimage</a>(<a href="class.gmagick.md">gmagick</a>
+<code>$gmagick</code>, bool <code>$dither</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.medianfilterimage.md">medianfilterimage</a>(float
+<code>$radius</code>): void</p>
+<p>public <a href="gmagick.minifyimage.md">minifyimage</a>():
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.modulateimage.md">modulateimage</a>(float <code>$brightness</code>,
+float <code>$saturation</code>, float <code>$hue</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.motionblurimage.md">motionblurimage</a>(float <code>$radius</code>,
+float <code>$sigma</code>, float <code>$angle</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.newimage.md">newimage</a>(
+int <code>$width</code>,
+int <code>$height</code>,
+string <code>$background</code>,
+string <code>$format</code> = ?
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.nextimage.md">nextimage</a>(): bool</p>
+<p>public <a href="gmagick.normalizeimage.md">normalizeimage</a>(int <code>$channel</code> =
+?): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.oilpaintimage.md">oilpaintimage</a>( float <code>$radius</code> ):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.previousimage.md">previousimage</a>(): bool</p>
+<p>public <a href="gmagick.profileimage.md">profileimage</a>(string <code>$name</code>, string
+<code>$profile</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.quantizeimage.md">quantizeimage</a>(
+int <code>$numColors</code>,
+int <code>$colorspace</code>,
+int <code>$treeDepth</code>,
+bool <code>$dither</code>,
+bool <code>$ measureError</code>
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.quantizeimages.md">quantizeimages</a>(
+int <code>$numColors</code>,
+int <code>$colorspace</code>,
+int <code>$treeDepth</code>,
+bool <code>$dither</code>,
+bool <code>$ measureError</code>
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public
+<a href="gmagick.queryfontmetrics.md">queryfontmetrics</a>(<a href="class.gmagickdraw.md">GmagickDraw</a>
+<code>$draw</code>, string <code>$text</code>): array</p>
+<p>public <a href="gmagick.queryfonts.md">queryfonts</a>(string <code>$pattern</code> = "*"):
+array</p>
+<p>public <a href="gmagick.queryformats.md">queryformats</a>(string <code>$pattern</code> =
+"*"): array</p>
+<p>public <a href="gmagick.radialblurimage.md">radialblurimage</a>(float <code>$angle</code>,
+int <code>$channel</code> = Gmagick::CHANNEL_DEFAULT):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.raiseimage.md">raiseimage</a>(
+int <code>$width</code>,
+int <code>$height</code>,
+int <code>$x</code>,
+int <code>$y</code>,
+bool <code>$raise</code>
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.read.md">read</a>(string <code>$filename</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.readimage.md">readimage</a>(string <code>$filename</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.readimageblob.md">readimageblob</a>(string
+<code>$imageContents</code>, string <code>$filename</code> = ?): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.readimagefile.md">readimagefile</a>(resource <code>$fp</code>,
+string <code>$filename</code> = ?): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.reducenoiseimage.md">reducenoiseimage</a>(float
+<code>$radius</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.removeimage.md">removeimage</a>():
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.removeimageprofile.md">removeimageprofile</a>(string
+<code>$name</code>): string</p>
+<p>public <a href="gmagick.resampleimage.md">resampleimage</a>(
+float <code>$xResolution</code>,
+float <code>$yResolution</code>,
+int <code>$filter</code>,
+float <code>$blur</code>
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.resizeimage.md">resizeimage</a>(
+int <code>$width</code>,
+int <code>$height</code>,
+int <code>$filter</code>,
+float <code>$blur</code>,
+bool <code>$fit</code> = <strong><code>false</code></strong>
+): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.rollimage.md">rollimage</a>(int <code>$x</code>, int <code>$y</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public
+<a href="gmagick.rotateimage.md">rotateimage</a>(<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$color</code>, float <code>$degrees</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.scaleimage.md">scaleimage</a>(int <code>$width</code>, int
+<code>$height</code>, bool <code>$fit</code> = <strong><code>false</code></strong>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.separateimagechannel.md">separateimagechannel</a>(int
+<code>$channel</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p><a href="gmagick.setcompressionquality.md">setCompressionQuality</a>( int
+<code>$quality</code> = 75): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setfilename.md">setfilename</a>(string <code>$filename</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public
+<a href="gmagick.setimagebackgroundcolor.md">setimagebackgroundcolor</a>(<a href="class.gmagickpixel.md">GmagickPixel</a>
+<code>$color</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimageblueprimary.md">setimageblueprimary</a>(float
+<code>$x</code>, float <code>$y</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public
+<a href="gmagick.setimagebordercolor.md">setimagebordercolor</a>(<a href="class.gmagickpixel.md">GmagickPixel</a>
+<code>$color</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagechanneldepth.md">setimagechanneldepth</a>(int
+<code>$channel</code>, int <code>$depth</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagecolorspace.md">setimagecolorspace</a>(int
+<code>$colorspace</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagecompose.md">setimagecompose</a>(int
+<code>$composite</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagedelay.md">setimagedelay</a>(int <code>$delay</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagedepth.md">setimagedepth</a>(int <code>$depth</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagedispose.md">setimagedispose</a>(int
+<code>$disposeType</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagefilename.md">setimagefilename</a>(string
+<code>$filename</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimageformat.md">setimageformat</a>(string
+<code>$imageFormat</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagegamma.md">setimagegamma</a>(float <code>$gamma</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagegreenprimary.md">setimagegreenprimary</a>(float
+<code>$x</code>, float <code>$y</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimageindex.md">setimageindex</a>(int <code>$index</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public
+<a href="gmagick.setimageinterlacescheme.md">setimageinterlacescheme</a>(int
+<code>$interlace</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimageiterations.md">setimageiterations</a>(int
+<code>$iterations</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimageprofile.md">setimageprofile</a>(string <code>$name</code>,
+string <code>$profile</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimageredprimary.md">setimageredprimary</a>(float <code>$x</code>,
+float <code>$y</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public
+<a href="gmagick.setimagerenderingintent.md">setimagerenderingintent</a>(int
+<code>$rendering_intent</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimageresolution.md">setimageresolution</a>(float
+<code>$xResolution</code>, float <code>$yResolution</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagescene.md">setimagescene</a>(int <code>$scene</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagetype.md">setimagetype</a>(int <code>$imgType</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimageunits.md">setimageunits</a>(int <code>$resolution</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setimagewhitepoint.md">setimagewhitepoint</a>(float <code>$x</code>,
+float <code>$y</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setsamplingfactors.md">setsamplingfactors</a>(array
+<code>$factors</code>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.setsize.md">setsize</a>(int <code>$columns</code>, int <code>$rows</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public
+<a href="gmagick.shearimage.md">shearimage</a>(<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$color</code>, float <code>$xShear</code>, float <code>$yShear</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.solarizeimage.md">solarizeimage</a>(int <code>$threshold</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.spreadimage.md">spreadimage</a>(float <code>$radius</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.stripimage.md">stripimage</a>():
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.swirlimage.md">swirlimage</a>(float <code>$degrees</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.thumbnailimage.md">thumbnailimage</a>(int <code>$width</code>, int
+<code>$height</code>, bool <code>$fit</code> = <strong><code>false</code></strong>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.trimimage.md">trimimage</a>(float <code>$fuzz</code>):
+<a href="class.gmagick.md">Gmagick</a></p>
+<p>public <a href="gmagick.writeimage.md">writeimage</a>(string <code>$filename</code>, bool
+<code>$all_frames</code> = <strong><code>false</code></strong>): <a href="class.gmagick.md">Gmagick</a></p>
+<p>}</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="gmagick.addimage.md">Gmagick::addimage</a> — Додавання нового
+зображення до списку зображень об'єкта Gmagick</li>
+<li><a href="gmagick.addnoiseimage.md">Gmagick::addnoiseimage</a> — Додає
+випадковий шум до зображення</li>
+<li><a href="gmagick.annotateimage.md">Gmagick::annotateimage</a> — Підписати
+зображення текстом</li>
+<li><a href="gmagick.blurimage.md">Gmagick::blurimage</a> — Додати розмиття
+зображенню</li>
+<li><a href="gmagick.borderimage.md">Gmagick::borderimage</a> — Додати рамку до
+зображенню</li>
+<li><a href="gmagick.charcoalimage.md">Gmagick::charcoalimage</a> - Імітація
+малювання вугіллям</li>
+<li><a href="gmagick.chopimage.md">Gmagick::chopimage</a> — Видаляє область
+зображення і підрізає його</li>
+<li><a href="gmagick.clear.md">Gmagick::clear</a> — Зачищає всі ресурси,
+пов'язані з об'єктом Gmagick</li>
+<li><a href="gmagick.commentimage.md">Gmagick::commentimage</a> — Додати
+коментар до зображення</li>
+<li><a href="gmagick.compositeimage.md">Gmagick::compositeimage</a> — Накладає
+одне зображення на інше</li>
+<li><a href="gmagick.construct.md">Gmagick::__construct</a> - Конструктор
+об'єкту Gmagick</li>
+<li><a href="gmagick.cropimage.md">Gmagick::cropimage</a> — Обрізає зображення</li>
+<li><a href="gmagick.cropthumbnailimage.md">Gmagick::cropthumbnailimage</a>
+Створення обрізаного зменшеного зображення</li>
+<li><a href="gmagick.current.md">Gmagick::current</a> - Повернути себе</li>
+<li><a href="gmagick.cyclecolormapimage.md">Gmagick::cyclecolormapimage</a> -
+Зміщує колірну карту зображення</li>
+<li><a href="gmagick.deconstructimages.md">Gmagick::deconstructimages</a> -
+Повертає певні піксельні різницю між зображеннями</li>
+<li><a href="gmagick.despeckleimage.md">Gmagick::despeckleimage</a> — Призначення
+despeckleimage</li>
+<li><a href="gmagick.destroy.md">Gmagick::destroy</a> — Знищити об'єкт Gmagick</li>
+<li><a href="gmagick.drawimage.md">Gmagick::drawimage</a> — Відображає об'єкт
+GmagickDraw на поточному зображенні</li>
+<li><a href="gmagick.edgeimage.md">Gmagick::edgeimage</a> — Збільшує краї в
+зображенні</li>
+<li><a href="gmagick.embossimage.md">Gmagick::embossimage</a> — Повертає
+зображення в градаціях сірого з тривимірним ефектом</li>
+<li><a href="gmagick.enhanceimage.md">Gmagick::enhanceimage</a> - Покращує
+якість зображення з шумом</li>
+<li><a href="gmagick.equalizeimage.md">Gmagick::equalizeimage</a> — Вирівнює
+гістограму зображення</li>
+<li><a href="gmagick.flipimage.md">Gmagick::flipimage</a> — Створює вертикальне
+дзеркальне відображення</li>
+<li><a href="gmagick.flopimage.md">Gmagick::flopimage</a> — Створює
+горизонтальне дзеркальне відображення</li>
+<li><a href="gmagick.frameimage.md">Gmagick::frameimage</a> — Додає
+змодельований тривимірний кордон</li>
+<li><a href="gmagick.gammaimage.md">Gmagick::gammaimage</a> - Гамма-корекція
+зображення</li>
+<li><a href="gmagick.getcopyright.md">Gmagick::getcopyright</a> — Повертає
+копірайт GraphicsMagick API у вигляді рядка</li>
+<li><a href="gmagick.getfilename.md">Gmagick::getfilename</a> — Повертає ім'я
+файлу пов'язаного з послідовністю зображень</li>
+<li><a href="gmagick.getimagebackgroundcolor.md">Gmagick::getimagebackgroundcolor</a>
+— Повертає колір тла зображення</li>
+<li><a href="gmagick.getimageblueprimary.md">Gmagick::getimageblueprimary</a> -
+Повертає кольоровість синьої первинної точки</li>
+<li><a href="gmagick.getimagebordercolor.md">Gmagick::getimagebordercolor</a> -
+Повертає колір кордону зображення</li>
+<li><a href="gmagick.getimagechanneldepth.md">Gmagick::getimagechanneldepth</a> -
+Отримує глибину для певного каналу зображення</li>
+<li><a href="gmagick.getimagecolors.md">Gmagick::getimagecolors</a> — Повертає
+колір вказаного індексу карти кольорів</li>
+<li><a href="gmagick.getimagecolorspace.md">Gmagick::getimagecolorspace</a> -
+Повертає колірний простір зображення</li>
+<li><a href="gmagick.getimagecompose.md">Gmagick::getimagecompose</a> -
+Повертає складовий оператор, пов'язаний із зображенням</li>
+<li><a href="gmagick.getimagedelay.md">Gmagick::getimagedelay</a> — Отримує
+затримку зображення</li>
+<li><a href="gmagick.getimagedepth.md">Gmagick::getimagedepth</a> — Отримує
+глибину зображення</li>
+<li><a href="gmagick.getimagedispose.md">Gmagick::getimagedispose</a> — Отримує
+метод видалення зображення</li>
+<li><a href="gmagick.getimageextrema.md">Gmagick::getimageextrema</a> — Отримує
+екстремуми для зображення</li>
+<li><a href="gmagick.getimagefilename.md">Gmagick::getimagefilename</a> -
+Повертає ім'я файлу конкретного зображення у послідовності</li>
+<li><a href="gmagick.getimageformat.md">Gmagick::getimageformat</a> — Повертає
+формат конкретного зображення у послідовності</li>
+<li><a href="gmagick.getimagegamma.md">Gmagick::getimagegamma</a> — Повертає
+гаму зображення</li>
+<li><a href="gmagick.getimagegreenprimary.md">Gmagick::getimagegreenprimary</a> -
+Повертає первинну зелену точку</li>
+<li><a href="gmagick.getimageheight.md">Gmagick::getimageheight</a> — Повертає
+висоту зображення</li>
+<li><a href="gmagick.getimagehistogram.md">Gmagick::getimagehistogram</a> -
+Повертає гістограму зображення</li>
+<li><a href="gmagick.getimageindex.md">Gmagick::getimageindex</a> — Повертає
+індекс поточного активного зображення</li>
+<li><a href="gmagick.getimageinterlacescheme.md">Gmagick::getimageinterlacescheme</a>
+— Отримує схему чергування зображень</li>
+<li><a href="gmagick.getimageiterations.md">Gmagick::getimageiterations</a> -
+Отримує ітерацію зображення</li>
+<li><a href="gmagick.getimagematte.md">Gmagick::getimagematte</a> — Перевіряє,
+чи є на зображенні матовий канал</li>
+<li><a href="gmagick.getimagemattecolor.md">Gmagick::getimagemattecolor</a> -
+Повертає зображення матового кольору</li>
+<li><a href="gmagick.getimageprofile.md">Gmagick::getimageprofile</a> -
+Повертає іменований профайл зображення</li>
+<li><a href="gmagick.getimageredprimary.md">Gmagick::getimageredprimary</a> -
+Повертає первинну червону точку</li>
+<li><a href="gmagick.getimagerenderingintent.md">Gmagick::getimagerenderingintent</a>
+— Отримує мету рендерингу зображення</li>
+<li><a href="gmagick.getimageresolution.md">Gmagick::getimageresolution</a> -
+Повертає роздільну здатність зображення</li>
+<li><a href="gmagick.getimagescene.md">Gmagick::getimagescene</a> — Отримує
+сцену зображення</li>
+<li><a href="gmagick.getimagesignature.md">Gmagick::getimagesignature</a> -
+Створює підпис повідомлення SHA-256</li>
+<li><a href="gmagick.getimagetype.md">Gmagick::getimagetype</a> — Повертає
+потенційний тип зображення</li>
+<li><a href="gmagick.getimageunits.md">Gmagick::getimageunits</a> — Повертає
+одиниці роздільної здатності зображення</li>
+<li><a href="gmagick.getimagewhitepoint.md">Gmagick::getimagewhitepoint</a> -
+Повертає хроматичну білу точку</li>
+<li><a href="gmagick.getimagewidth.md">Gmagick::getimagewidth</a> — Повертає
+ширину зображення</li>
+<li><a href="gmagick.getpackagename.md">Gmagick::getpackagename</a> — Повертає
+ім'я пакета GraphicsMagick</li>
+<li><a href="gmagick.getquantumdepth.md">Gmagick::getquantumdepth</a> -
+Повертає глибину кольору (біт на канал) об'єкта Gmagick у вигляді
+рядки</li>
+<li><a href="gmagick.getreleasedate.md">Gmagick::getreleasedate</a> — Повертає
+дату релізу GraphicsMagick у вигляді рядка</li>
+<li><a href="gmagick.getsamplingfactors.md">Gmagick::getsamplingfactors</a> -
+Повертає вертикальний та горизонтальний фактор дискретизації</li>
+<li><a href="gmagick.getsize.md">Gmagick::getsize</a> — Повертає розмір,
+пов'язаний з об'єктом Gmagick</li>
+<li><a href="gmagick.getversion.md">Gmagick::getversion</a> — Повертає версію
+GraphicsMagick API</li>
+<li><a href="gmagick.hasnextimage.md">Gmagick::hasnextimage</a> — Перевіряє, чи є
+ще зображення в об'єкті</li>
+<li><a href="gmagick.haspreviousimage.md">Gmagick::haspreviousimage</a> -
+Перевіряє, чи є ще зображення в об'єкті під час ітерації назад</li>
+<li><a href="gmagick.implodeimage.md">Gmagick::implodeimage</a> — Створює копію
+зображення</li>
+<li><a href="gmagick.labelimage.md">Gmagick::labelimage</a> — Додає позначку до
+зображенню</li>
+<li><a href="gmagick.levelimage.md">Gmagick::levelimage</a> — Регулює рівні
+зображення</li>
+<li><a href="gmagick.magnifyimage.md">Gmagick::magnifyimage</a> - Пропорційно
+масштабує зображення у 2 рази</li>
+<li><a href="gmagick.mapimage.md">Gmagick::mapimage</a> — Замінює кольори
+зображення на найближчий колір із еталонного зображення</li>
+<li><a href="gmagick.medianfilterimage.md">Gmagick::medianfilterimage</a> -
+Застосовує цифровий фільтр</li>
+<li><a href="gmagick.minifyimage.md">Gmagick::minifyimage</a> - Масштабує
+зображення пропорційно половині його розміру</li>
+<li><a href="gmagick.modulateimage.md">Gmagick::modulateimage</a> — Керує
+яскравістю, насиченістю та відтінком</li>
+<li><a href="gmagick.motionblurimage.md">Gmagick::motionblurimage</a> - Імітує
+розмиття при русі</li>
+<li><a href="gmagick.newimage.md">Gmagick::newimage</a> — Створює нове
+зображення</li>
+<li><a href="gmagick.nextimage.md">Gmagick::nextimage</a> — Здійснює перехід
+до наступного зображення</li>
+<li><a href="gmagick.normalizeimage.md">Gmagick::normalizeimage</a> — Підвищує
+контрастність кольорового зображення</li>
+<li><a href="gmagick.oilpaintimage.md">Gmagick::oilpaintimage</a> - Імітує
+ефект картини олією</li>
+<li><a href="gmagick.previousimage.md">Gmagick::previousimage</a> - Здійснює
+перехід до попереднього зображення в об'єкті</li>
+<li><a href="gmagick.profileimage.md">Gmagick::profileimage</a> — Додає або
+видаляє профіль із зображення</li>
+<li><a href="gmagick.quantizeimage.md">Gmagick::quantizeimage</a> - Аналізує
+кольори еталонного зображення</li>
+<li><a href="gmagick.quantizeimages.md">Gmagick::quantizeimages</a> - Аналізує
+кольори у послідовності зображень</li>
+<li><a href="gmagick.queryfontmetrics.md">Gmagick::queryfontmetrics</a> -
+Повертає масив, що представляє метрики шрифту</li>
+<li><a href="gmagick.queryfonts.md">Gmagick::queryfonts</a> — Повертає
+налаштовані шрифти</li>
+<li><a href="gmagick.queryformats.md">Gmagick::queryformats</a> — Повертає
+формати, що підтримуються Gmagick</li>
+<li><a href="gmagick.radialblurimage.md">Gmagick::radialblurimage</a> — Застосовує
+радіальне розмиття до зображення</li>
+<li><a href="gmagick.raiseimage.md">Gmagick::raiseimage</a> — Створює імітацію
+ефекту тривимірної кнопки</li>
+<li><a href="gmagick.read.md">Gmagick::read</a> — Читає зображення з файлу</li>
+<li><a href="gmagick.readimage.md">Gmagick::readimage</a> — Читає зображення з
+файлу</li>
+<li><a href="gmagick.readimageblob.md">Gmagick::readimageblob</a> - Читає
+зображення з бінарного рядка</li>
+<li><a href="gmagick.readimagefile.md">Gmagick::readimagefile</a> - Читає
+зображення або послідовність зображень із файлового
+дескриптора</li>
+<li><a href="gmagick.reducenoiseimage.md">Gmagick::reducenoiseimage</a>
+Згладжує контури зображення</li>
+<li><a href="gmagick.removeimage.md">Gmagick::removeimage</a> — Видаляє
+зображення зі списку</li>
+<li><a href="gmagick.removeimageprofile.md">Gmagick::removeimageprofile</a> -
+Видаляє іменований профайл зображення та повертає його</li>
+<li><a href="gmagick.resampleimage.md">Gmagick::resampleimage</a> — Змінює
+роздільна здатність зображення до бажаного</li>
+<li><a href="gmagick.resizeimage.md">Gmagick::resizeimage</a> - Масштабує
+зображення</li>
+<li><a href="gmagick.rollimage.md">Gmagick::rollimage</a> — Зміщення зображення</li>
+<li><a href="gmagick.rotateimage.md">Gmagick::rotateimage</a> - Повертає
+зображення</li>
+<li><a href="gmagick.scaleimage.md">Gmagick::scaleimage</a> — Масштабування розміру
+зображення</li>
+<li><a href="gmagick.separateimagechannel.md">Gmagick::separateimagechannel</a> -
+Відокремлює канал від зображення</li>
+<li><a href="gmagick.setcompressionquality.md">Gmagick::setCompressionQuality</a>
+— Встановлює якість стандартного стиснення об'єкта</li>
+<li><a href="gmagick.setfilename.md">Gmagick::setfilename</a> — Встановлює ім'я
+файлу перед читанням або записуванням зображення</li>
+<li><a href="gmagick.setimagebackgroundcolor.md">Gmagick::setimagebackgroundcolor</a>
+— Встановлює колір тла зображення</li>
+<li><a href="gmagick.setimageblueprimary.md">Gmagick::setimageblueprimary</a> -
+Встановлює кольоровість зображення блакитною основною точкою</li>
+<li><a href="gmagick.setimagebordercolor.md">Gmagick::setimagebordercolor</a> -
+Встановлює колір рамки зображення</li>
+<li><a href="gmagick.setimagechanneldepth.md">Gmagick::setimagechanneldepth</a> -
+Встановлює глибину певного каналу зображення</li>
+<li><a href="gmagick.setimagecolorspace.md">Gmagick::setimagecolorspace</a> -
+Встановлює колірний простір зображення</li>
+<li><a href="gmagick.setimagecompose.md">Gmagick::setimagecompose</a> -
+Встановлює оператор складеного зображення</li>
+<li><a href="gmagick.setimagedelay.md">Gmagick::setimagedelay</a> — Встановлює
+затримку зображення</li>
+<li><a href="gmagick.setimagedepth.md">Gmagick::setimagedepth</a> — Встановлює
+глибину зображення</li>
+<li><a href="gmagick.setimagedispose.md">Gmagick::setimagedispose</a> -
+Встановлює спосіб видалення зображення</li>
+<li><a href="gmagick.setimagefilename.md">Gmagick::setimagefilename</a> -
+Встановлює ім'я файлу конкретного зображення у послідовності</li>
+<li><a href="gmagick.setimageformat.md">Gmagick::setimageformat</a> -
+Встановлює формат певного зображення</li>
+<li><a href="gmagick.setimagegamma.md">Gmagick::setimagegamma</a> — Встановлює
+гаму зображення</li>
+<li><a href="gmagick.setimagegreenprimary.md">Gmagick::setimagegreenprimary</a> -
+Встановлює кольоровість зображення зеленою первинною точкою</li>
+<li><a href="gmagick.setimageindex.md">Gmagick::setimageindex</a> — Встановлює
+ітератор у положення у списку зображень, заданому параметром index</li>
+<li><a href="gmagick.setimageinterlacescheme.md">Gmagick::setimageinterlacescheme</a>
+— Встановлює схему надстрокової розгортки зображення</li>
+<li><a href="gmagick.setimageiterations.md">Gmagick::setimageiterations</a> -
+Встановлює ітерацію зображення</li>
+<li><a href="gmagick.setimageprofile.md">Gmagick::setimageprofile</a> — Додає
+іменований профіль в об'єкт Gmagick</li>
+<li><a href="gmagick.setimageredprimary.md">Gmagick::setimageredprimary</a> -
+Встановлює кольоровість зображення червоною основною точкою</li>
+<li><a href="gmagick.setimagerenderingintent.md">Gmagick::setimagerenderingintent</a>
+— Встановлює спосіб візуалізації зображення</li>
+<li><a href="gmagick.setimageresolution.md">Gmagick::setimageresolution</a> -
+Встановлює роздільну здатність зображення</li>
+<li><a href="gmagick.setimagescene.md">Gmagick::setimagescene</a> — Встановлює
+сцену зображення</li>
+<li><a href="gmagick.setimagetype.md">Gmagick::setimagetype</a> — Встановлює
+тип зображення</li>
+<li><a href="gmagick.setimageunits.md">Gmagick::setimageunits</a> — Встановлює
+одиниці роздільної здатності зображення</li>
+<li><a href="gmagick.setimagewhitepoint.md">Gmagick::setimagewhitepoint</a> -
+Встановлює кольоровість зображення білою точкою</li>
+<li><a href="gmagick.setsamplingfactors.md">Gmagick::setsamplingfactors</a> -
+Встановлює фактори вибірки зображення</li>
+<li><a href="gmagick.setsize.md">Gmagick::setsize</a> — Встановлює розмір
+об'єкту Gmagick</li>
+<li><a href="gmagick.shearimage.md">Gmagick::shearimage</a> — Створює
+паралелограм</li>
+<li><a href="gmagick.solarizeimage.md">Gmagick::solarizeimage</a> — Застосовує
+соляризаційний ефект до зображення</li>
+<li><a href="gmagick.spreadimage.md">Gmagick::spreadimage</a> — Випадково зміщує
+кожен піксель у блоці</li>
+<li><a href="gmagick.stripimage.md">Gmagick::stripimage</a> — Знімає зображення
+всіх профілів та коментарів</li>
+<li><a href="gmagick.swirlimage.md">Gmagick::swirlimage</a> — Закручує пікселі
+навколо центру зображення</li>
+<li><a href="gmagick.thumbnailimage.md">Gmagick::thumbnailimage</a> — Змінює
+розмір зображення</li>
+<li><a href="gmagick.trimimage.md">Gmagick::trimimage</a> — Видаляє краї з
+зображення</li>
+<li><a href="gmagick.write.md">Gmagick::write</a> - Псевдонім Gmagick::writeimage</li>
+<li><a href="gmagick.writeimage.md">Gmagick::writeimage</a> - Записує
+зображення у вказаний файл</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.gmagick.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.gmagick.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.gmagick","slug":"class.gmagick.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"gmagick.examples.md\"\u003e« Приклади\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"gmagick.addimage.md\"\u003eGmagick::addimage »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас Gmagick\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас Gmagick\u003c/h1\u003e\n\u003cp\u003e(PECL gmagick \u003e= Unknown)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eGmagick\u003c/strong\u003e {\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.construct.md\"\u003e__construct\u003c/a\u003e(string \u003ccode\u003e$filename\u003c/code\u003e = ?)\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.addimage.md\"\u003eaddimage\u003c/a\u003e(\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\n\u003ccode\u003e$source\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.addnoiseimage.md\"\u003eaddnoiseimage\u003c/a\u003e(int \u003ccode\u003e$noise_type\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.annotateimage.md\"\u003eannotateimage\u003c/a\u003e(\n\u003ca href=\"class.gmagickdraw.md\"\u003eGmagickDraw\u003c/a\u003e \u003ccode\u003e$GmagickDraw\u003c/code\u003e,\nfloat \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e,\nfloat \u003ccode\u003e$angle\u003c/code\u003e,\nstring \u003ccode\u003e$text\u003c/code\u003e\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.blurimage.md\"\u003eblurimage\u003c/a\u003e(float \u003ccode\u003e$radius\u003c/code\u003e, float\n\u003ccode\u003e$sigma\u003c/code\u003e, int \u003ccode\u003e$channel\u003c/code\u003e = ?): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.borderimage.md\"\u003eborderimage\u003c/a\u003e(\u003ca href=\"class.gmagickpixel.md\"\u003eGmagickPixel\u003c/a\u003e\n\u003ccode\u003e$color\u003c/code\u003e, int \u003ccode\u003e$width\u003c/code\u003e, int \u003ccode\u003e$height\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.charcoalimage.md\"\u003echarcoalimage\u003c/a\u003e(float \u003ccode\u003e$radius\u003c/code\u003e,\nfloat \u003ccode\u003e$sigma\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.chopimage.md\"\u003echopimage\u003c/a\u003e(\nint \u003ccode\u003e$width\u003c/code\u003e,\nint \u003ccode\u003e$height\u003c/code\u003e,\nint \u003ccode\u003e$x\u003c/code\u003e,\nint \u003ccode\u003e$y\u003c/code\u003e\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.clear.md\"\u003eclear\u003c/a\u003e(): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.commentimage.md\"\u003ecommentimage\u003c/a\u003e(string \u003ccode\u003e$comment\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.compositeimage.md\"\u003ecompositeimage\u003c/a\u003e(\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e \u003ccode\u003e$source\u003c/code\u003e,\nint \u003ccode\u003e$COMPOSE\u003c/code\u003e,\nint \u003ccode\u003e$x\u003c/code\u003e,\nint \u003ccode\u003e$y\u003c/code\u003e\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.cropimage.md\"\u003ecropimage\u003c/a\u003e(\nint \u003ccode\u003e$width\u003c/code\u003e,\nint \u003ccode\u003e$height\u003c/code\u003e ,\nint \u003ccode\u003e$x\u003c/code\u003e,\nint \u003ccode\u003e$y\u003c/code\u003e\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.cropthumbnailimage.md\"\u003ecropthumbnailimage\u003c/a\u003e(int\n\u003ccode\u003e$width\u003c/code\u003e, int \u003ccode\u003e$height\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.current.md\"\u003ecurrent\u003c/a\u003e(): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.cyclecolormapimage.md\"\u003ecyclecolormapimage\u003c/a\u003e(int\n\u003ccode\u003e$displace\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.deconstructimages.md\"\u003edeconstructimages\u003c/a\u003e():\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.despeckleimage.md\"\u003edespeckleimage\u003c/a\u003e():\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.destroy.md\"\u003edestroy\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.drawimage.md\"\u003edrawimage\u003c/a\u003e(\u003ca href=\"class.gmagickdraw.md\"\u003eGmagickDraw\u003c/a\u003e\n\u003ccode\u003e$GmagickDraw\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.edgeimage.md\"\u003eedgeimage\u003c/a\u003e(float \u003ccode\u003e$radius\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.embossimage.md\"\u003eembossimage\u003c/a\u003e(float \u003ccode\u003e$radius\u003c/code\u003e, float\n\u003ccode\u003e$sigma\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.enhanceimage.md\"\u003eenhanceimage\u003c/a\u003e():\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.equalizeimage.md\"\u003eequalizeimage\u003c/a\u003e():\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.flipimage.md\"\u003eflipimage\u003c/a\u003e():\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.flopimage.md\"\u003eflopimage\u003c/a\u003e():\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.frameimage.md\"\u003eframeimage\u003c/a\u003e(\n\u003ca href=\"class.gmagickpixel.md\"\u003eGmagickPixel\u003c/a\u003e \u003ccode\u003e$color\u003c/code\u003e,\nint \u003ccode\u003e$width\u003c/code\u003e,\nint \u003ccode\u003e$height\u003c/code\u003e,\nint \u003ccode\u003e$inner_bevel\u003c/code\u003e,\nint \u003ccode\u003e$outer_bevel\u003c/code\u003e\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.gammaimage.md\"\u003egammaimage\u003c/a\u003e(float \u003ccode\u003e$gamma\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getcopyright.md\"\u003egetcopyright\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getfilename.md\"\u003egetfilename\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.getimagebackgroundcolor.md\"\u003egetimagebackgroundcolor\u003c/a\u003e():\n\u003ca href=\"class.gmagickpixel.md\"\u003eGmagickPixel\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimageblueprimary.md\"\u003egetimageblueprimary\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagebordercolor.md\"\u003egetimagebordercolor\u003c/a\u003e():\n\u003ca href=\"class.gmagickpixel.md\"\u003eGmagickPixel\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagechanneldepth.md\"\u003egetimagechanneldepth\u003c/a\u003e(int\n\u003ccode\u003e$channel_type\u003c/code\u003e): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagecolors.md\"\u003egetimagecolors\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagecolorspace.md\"\u003egetimagecolorspace\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagecompose.md\"\u003egetimagecompose\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagedelay.md\"\u003egetimagedelay\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagedepth.md\"\u003egetimagedepth\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagedispose.md\"\u003egetimagedispose\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimageextrema.md\"\u003egetimageextrema\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagefilename.md\"\u003egetimagefilename\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimageformat.md\"\u003egetimageformat\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagegamma.md\"\u003egetimagegamma\u003c/a\u003e(): float\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagegreenprimary.md\"\u003egetimagegreenprimary\u003c/a\u003e():\narray\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimageheight.md\"\u003egetimageheight\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagehistogram.md\"\u003egetimagehistogram\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimageindex.md\"\u003egetimageindex\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.getimageinterlacescheme.md\"\u003egetimageinterlacescheme\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimageiterations.md\"\u003egetimageiterations\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagematte.md\"\u003egetimagematte\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagemattecolor.md\"\u003egetimagemattecolor\u003c/a\u003e():\n\u003ca href=\"class.gmagickpixel.md\"\u003eGmagickPixel\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimageprofile.md\"\u003egetimageprofile\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e):\nstring\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimageredprimary.md\"\u003egetimageredprimary\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.getimagerenderingintent.md\"\u003egetimagerenderingintent\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimageresolution.md\"\u003egetimageresolution\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagescene.md\"\u003egetimagescene\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagesignature.md\"\u003egetimagesignature\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagetype.md\"\u003egetimagetype\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimageunits.md\"\u003egetimageunits\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagewhitepoint.md\"\u003egetimagewhitepoint\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getimagewidth.md\"\u003egetimagewidth\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getpackagename.md\"\u003egetpackagename\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getquantumdepth.md\"\u003egetquantumdepth\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getreleasedate.md\"\u003egetreleasedate\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getsamplingfactors.md\"\u003egetsamplingfactors\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getsize.md\"\u003egetsize\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.getversion.md\"\u003egetversion\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.hasnextimage.md\"\u003ehasnextimage\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.haspreviousimage.md\"\u003ehaspreviousimage\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.implodeimage.md\"\u003eimplodeimage\u003c/a\u003e(float \u003ccode\u003e$radius\u003c/code\u003e):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.labelimage.md\"\u003elabelimage\u003c/a\u003e(string \u003ccode\u003e$label\u003c/code\u003e):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.levelimage.md\"\u003elevelimage\u003c/a\u003e(\nfloat \u003ccode\u003e$blackPoint\u003c/code\u003e,\nfloat \u003ccode\u003e$gamma\u003c/code\u003e,\nfloat \u003ccode\u003e$whitePoint\u003c/code\u003e,\nint \u003ccode\u003e$channel\u003c/code\u003e = Gmagick::CHANNEL_DEFAULT\n):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.magnifyimage.md\"\u003emagnifyimage\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.mapimage.md\"\u003emapimage\u003c/a\u003e(\u003ca href=\"class.gmagick.md\"\u003egmagick\u003c/a\u003e\n\u003ccode\u003e$gmagick\u003c/code\u003e, bool \u003ccode\u003e$dither\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.medianfilterimage.md\"\u003emedianfilterimage\u003c/a\u003e(float\n\u003ccode\u003e$radius\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.minifyimage.md\"\u003eminifyimage\u003c/a\u003e():\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.modulateimage.md\"\u003emodulateimage\u003c/a\u003e(float \u003ccode\u003e$brightness\u003c/code\u003e,\nfloat \u003ccode\u003e$saturation\u003c/code\u003e, float \u003ccode\u003e$hue\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.motionblurimage.md\"\u003emotionblurimage\u003c/a\u003e(float \u003ccode\u003e$radius\u003c/code\u003e,\nfloat \u003ccode\u003e$sigma\u003c/code\u003e, float \u003ccode\u003e$angle\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.newimage.md\"\u003enewimage\u003c/a\u003e(\nint \u003ccode\u003e$width\u003c/code\u003e,\nint \u003ccode\u003e$height\u003c/code\u003e,\nstring \u003ccode\u003e$background\u003c/code\u003e,\nstring \u003ccode\u003e$format\u003c/code\u003e = ?\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.nextimage.md\"\u003enextimage\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.normalizeimage.md\"\u003enormalizeimage\u003c/a\u003e(int \u003ccode\u003e$channel\u003c/code\u003e =\n?): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.oilpaintimage.md\"\u003eoilpaintimage\u003c/a\u003e( float \u003ccode\u003e$radius\u003c/code\u003e ):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.previousimage.md\"\u003epreviousimage\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.profileimage.md\"\u003eprofileimage\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e, string\n\u003ccode\u003e$profile\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.quantizeimage.md\"\u003equantizeimage\u003c/a\u003e(\nint \u003ccode\u003e$numColors\u003c/code\u003e,\nint \u003ccode\u003e$colorspace\u003c/code\u003e,\nint \u003ccode\u003e$treeDepth\u003c/code\u003e,\nbool \u003ccode\u003e$dither\u003c/code\u003e,\nbool \u003ccode\u003e$ measureError\u003c/code\u003e\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.quantizeimages.md\"\u003equantizeimages\u003c/a\u003e(\nint \u003ccode\u003e$numColors\u003c/code\u003e,\nint \u003ccode\u003e$colorspace\u003c/code\u003e,\nint \u003ccode\u003e$treeDepth\u003c/code\u003e,\nbool \u003ccode\u003e$dither\u003c/code\u003e,\nbool \u003ccode\u003e$ measureError\u003c/code\u003e\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.queryfontmetrics.md\"\u003equeryfontmetrics\u003c/a\u003e(\u003ca href=\"class.gmagickdraw.md\"\u003eGmagickDraw\u003c/a\u003e\n\u003ccode\u003e$draw\u003c/code\u003e, string \u003ccode\u003e$text\u003c/code\u003e): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.queryfonts.md\"\u003equeryfonts\u003c/a\u003e(string \u003ccode\u003e$pattern\u003c/code\u003e = \"*\"):\narray\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.queryformats.md\"\u003equeryformats\u003c/a\u003e(string \u003ccode\u003e$pattern\u003c/code\u003e =\n\"*\"): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.radialblurimage.md\"\u003eradialblurimage\u003c/a\u003e(float \u003ccode\u003e$angle\u003c/code\u003e,\nint \u003ccode\u003e$channel\u003c/code\u003e = Gmagick::CHANNEL_DEFAULT):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.raiseimage.md\"\u003eraiseimage\u003c/a\u003e(\nint \u003ccode\u003e$width\u003c/code\u003e,\nint \u003ccode\u003e$height\u003c/code\u003e,\nint \u003ccode\u003e$x\u003c/code\u003e,\nint \u003ccode\u003e$y\u003c/code\u003e,\nbool \u003ccode\u003e$raise\u003c/code\u003e\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.read.md\"\u003eread\u003c/a\u003e(string \u003ccode\u003e$filename\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.readimage.md\"\u003ereadimage\u003c/a\u003e(string \u003ccode\u003e$filename\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.readimageblob.md\"\u003ereadimageblob\u003c/a\u003e(string\n\u003ccode\u003e$imageContents\u003c/code\u003e, string \u003ccode\u003e$filename\u003c/code\u003e = ?): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.readimagefile.md\"\u003ereadimagefile\u003c/a\u003e(resource \u003ccode\u003e$fp\u003c/code\u003e,\nstring \u003ccode\u003e$filename\u003c/code\u003e = ?): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.reducenoiseimage.md\"\u003ereducenoiseimage\u003c/a\u003e(float\n\u003ccode\u003e$radius\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.removeimage.md\"\u003eremoveimage\u003c/a\u003e():\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.removeimageprofile.md\"\u003eremoveimageprofile\u003c/a\u003e(string\n\u003ccode\u003e$name\u003c/code\u003e): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.resampleimage.md\"\u003eresampleimage\u003c/a\u003e(\nfloat \u003ccode\u003e$xResolution\u003c/code\u003e,\nfloat \u003ccode\u003e$yResolution\u003c/code\u003e,\nint \u003ccode\u003e$filter\u003c/code\u003e,\nfloat \u003ccode\u003e$blur\u003c/code\u003e\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.resizeimage.md\"\u003eresizeimage\u003c/a\u003e(\nint \u003ccode\u003e$width\u003c/code\u003e,\nint \u003ccode\u003e$height\u003c/code\u003e,\nint \u003ccode\u003e$filter\u003c/code\u003e,\nfloat \u003ccode\u003e$blur\u003c/code\u003e,\nbool \u003ccode\u003e$fit\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\n): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.rollimage.md\"\u003erollimage\u003c/a\u003e(int \u003ccode\u003e$x\u003c/code\u003e, int \u003ccode\u003e$y\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.rotateimage.md\"\u003erotateimage\u003c/a\u003e(\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$color\u003c/code\u003e, float \u003ccode\u003e$degrees\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.scaleimage.md\"\u003escaleimage\u003c/a\u003e(int \u003ccode\u003e$width\u003c/code\u003e, int\n\u003ccode\u003e$height\u003c/code\u003e, bool \u003ccode\u003e$fit\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.separateimagechannel.md\"\u003eseparateimagechannel\u003c/a\u003e(int\n\u003ccode\u003e$channel\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"gmagick.setcompressionquality.md\"\u003esetCompressionQuality\u003c/a\u003e( int\n\u003ccode\u003e$quality\u003c/code\u003e = 75): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setfilename.md\"\u003esetfilename\u003c/a\u003e(string \u003ccode\u003e$filename\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.setimagebackgroundcolor.md\"\u003esetimagebackgroundcolor\u003c/a\u003e(\u003ca href=\"class.gmagickpixel.md\"\u003eGmagickPixel\u003c/a\u003e\n\u003ccode\u003e$color\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimageblueprimary.md\"\u003esetimageblueprimary\u003c/a\u003e(float\n\u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.setimagebordercolor.md\"\u003esetimagebordercolor\u003c/a\u003e(\u003ca href=\"class.gmagickpixel.md\"\u003eGmagickPixel\u003c/a\u003e\n\u003ccode\u003e$color\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagechanneldepth.md\"\u003esetimagechanneldepth\u003c/a\u003e(int\n\u003ccode\u003e$channel\u003c/code\u003e, int \u003ccode\u003e$depth\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagecolorspace.md\"\u003esetimagecolorspace\u003c/a\u003e(int\n\u003ccode\u003e$colorspace\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagecompose.md\"\u003esetimagecompose\u003c/a\u003e(int\n\u003ccode\u003e$composite\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagedelay.md\"\u003esetimagedelay\u003c/a\u003e(int \u003ccode\u003e$delay\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagedepth.md\"\u003esetimagedepth\u003c/a\u003e(int \u003ccode\u003e$depth\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagedispose.md\"\u003esetimagedispose\u003c/a\u003e(int\n\u003ccode\u003e$disposeType\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagefilename.md\"\u003esetimagefilename\u003c/a\u003e(string\n\u003ccode\u003e$filename\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimageformat.md\"\u003esetimageformat\u003c/a\u003e(string\n\u003ccode\u003e$imageFormat\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagegamma.md\"\u003esetimagegamma\u003c/a\u003e(float \u003ccode\u003e$gamma\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagegreenprimary.md\"\u003esetimagegreenprimary\u003c/a\u003e(float\n\u003ccode\u003e$x\u003c/code\u003e, float \u003ccode\u003e$y\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimageindex.md\"\u003esetimageindex\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.setimageinterlacescheme.md\"\u003esetimageinterlacescheme\u003c/a\u003e(int\n\u003ccode\u003e$interlace\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimageiterations.md\"\u003esetimageiterations\u003c/a\u003e(int\n\u003ccode\u003e$iterations\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimageprofile.md\"\u003esetimageprofile\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e,\nstring \u003ccode\u003e$profile\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimageredprimary.md\"\u003esetimageredprimary\u003c/a\u003e(float \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.setimagerenderingintent.md\"\u003esetimagerenderingintent\u003c/a\u003e(int\n\u003ccode\u003e$rendering_intent\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimageresolution.md\"\u003esetimageresolution\u003c/a\u003e(float\n\u003ccode\u003e$xResolution\u003c/code\u003e, float \u003ccode\u003e$yResolution\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagescene.md\"\u003esetimagescene\u003c/a\u003e(int \u003ccode\u003e$scene\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagetype.md\"\u003esetimagetype\u003c/a\u003e(int \u003ccode\u003e$imgType\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimageunits.md\"\u003esetimageunits\u003c/a\u003e(int \u003ccode\u003e$resolution\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setimagewhitepoint.md\"\u003esetimagewhitepoint\u003c/a\u003e(float \u003ccode\u003e$x\u003c/code\u003e,\nfloat \u003ccode\u003e$y\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setsamplingfactors.md\"\u003esetsamplingfactors\u003c/a\u003e(array\n\u003ccode\u003e$factors\u003c/code\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.setsize.md\"\u003esetsize\u003c/a\u003e(int \u003ccode\u003e$columns\u003c/code\u003e, int \u003ccode\u003e$rows\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"gmagick.shearimage.md\"\u003eshearimage\u003c/a\u003e(\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$color\u003c/code\u003e, float \u003ccode\u003e$xShear\u003c/code\u003e, float \u003ccode\u003e$yShear\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.solarizeimage.md\"\u003esolarizeimage\u003c/a\u003e(int \u003ccode\u003e$threshold\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.spreadimage.md\"\u003espreadimage\u003c/a\u003e(float \u003ccode\u003e$radius\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.stripimage.md\"\u003estripimage\u003c/a\u003e():\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.swirlimage.md\"\u003eswirlimage\u003c/a\u003e(float \u003ccode\u003e$degrees\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.thumbnailimage.md\"\u003ethumbnailimage\u003c/a\u003e(int \u003ccode\u003e$width\u003c/code\u003e, int\n\u003ccode\u003e$height\u003c/code\u003e, bool \u003ccode\u003e$fit\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.trimimage.md\"\u003etrimimage\u003c/a\u003e(float \u003ccode\u003e$fuzz\u003c/code\u003e):\n\u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"gmagick.writeimage.md\"\u003ewriteimage\u003c/a\u003e(string \u003ccode\u003e$filename\u003c/code\u003e, bool\n\u003ccode\u003e$all_frames\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e): \u003ca href=\"class.gmagick.md\"\u003eGmagick\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"gmagick.addimage.md\"\u003eGmagick::addimage\u003c/a\u003e — Додавання нового\nзображення до списку зображень об'єкта Gmagick\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.addnoiseimage.md\"\u003eGmagick::addnoiseimage\u003c/a\u003e — Додає\nвипадковий шум до зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.annotateimage.md\"\u003eGmagick::annotateimage\u003c/a\u003e — Підписати\nзображення текстом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.blurimage.md\"\u003eGmagick::blurimage\u003c/a\u003e — Додати розмиття\nзображенню\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.borderimage.md\"\u003eGmagick::borderimage\u003c/a\u003e — Додати рамку до\nзображенню\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.charcoalimage.md\"\u003eGmagick::charcoalimage\u003c/a\u003e - Імітація\nмалювання вугіллям\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.chopimage.md\"\u003eGmagick::chopimage\u003c/a\u003e — Видаляє область\nзображення і підрізає його\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.clear.md\"\u003eGmagick::clear\u003c/a\u003e — Зачищає всі ресурси,\nпов'язані з об'єктом Gmagick\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.commentimage.md\"\u003eGmagick::commentimage\u003c/a\u003e — Додати\nкоментар до зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.compositeimage.md\"\u003eGmagick::compositeimage\u003c/a\u003e — Накладає\nодне зображення на інше\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.construct.md\"\u003eGmagick::__construct\u003c/a\u003e - Конструктор\nоб'єкту Gmagick\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.cropimage.md\"\u003eGmagick::cropimage\u003c/a\u003e — Обрізає зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.cropthumbnailimage.md\"\u003eGmagick::cropthumbnailimage\u003c/a\u003e\nСтворення обрізаного зменшеного зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.current.md\"\u003eGmagick::current\u003c/a\u003e - Повернути себе\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.cyclecolormapimage.md\"\u003eGmagick::cyclecolormapimage\u003c/a\u003e -\nЗміщує колірну карту зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.deconstructimages.md\"\u003eGmagick::deconstructimages\u003c/a\u003e -\nПовертає певні піксельні різницю між зображеннями\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.despeckleimage.md\"\u003eGmagick::despeckleimage\u003c/a\u003e — Призначення\ndespeckleimage\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.destroy.md\"\u003eGmagick::destroy\u003c/a\u003e — Знищити об'єкт Gmagick\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.drawimage.md\"\u003eGmagick::drawimage\u003c/a\u003e — Відображає об'єкт\nGmagickDraw на поточному зображенні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.edgeimage.md\"\u003eGmagick::edgeimage\u003c/a\u003e — Збільшує краї в\nзображенні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.embossimage.md\"\u003eGmagick::embossimage\u003c/a\u003e — Повертає\nзображення в градаціях сірого з тривимірним ефектом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.enhanceimage.md\"\u003eGmagick::enhanceimage\u003c/a\u003e - Покращує\nякість зображення з шумом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.equalizeimage.md\"\u003eGmagick::equalizeimage\u003c/a\u003e — Вирівнює\nгістограму зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.flipimage.md\"\u003eGmagick::flipimage\u003c/a\u003e — Створює вертикальне\nдзеркальне відображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.flopimage.md\"\u003eGmagick::flopimage\u003c/a\u003e — Створює\nгоризонтальне дзеркальне відображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.frameimage.md\"\u003eGmagick::frameimage\u003c/a\u003e — Додає\nзмодельований тривимірний кордон\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.gammaimage.md\"\u003eGmagick::gammaimage\u003c/a\u003e - Гамма-корекція\nзображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getcopyright.md\"\u003eGmagick::getcopyright\u003c/a\u003e — Повертає\nкопірайт GraphicsMagick API у вигляді рядка\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getfilename.md\"\u003eGmagick::getfilename\u003c/a\u003e — Повертає ім'я\nфайлу пов'язаного з послідовністю зображень\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagebackgroundcolor.md\"\u003eGmagick::getimagebackgroundcolor\u003c/a\u003e\n— Повертає колір тла зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageblueprimary.md\"\u003eGmagick::getimageblueprimary\u003c/a\u003e -\nПовертає кольоровість синьої первинної точки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagebordercolor.md\"\u003eGmagick::getimagebordercolor\u003c/a\u003e -\nПовертає колір кордону зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagechanneldepth.md\"\u003eGmagick::getimagechanneldepth\u003c/a\u003e -\nОтримує глибину для певного каналу зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagecolors.md\"\u003eGmagick::getimagecolors\u003c/a\u003e — Повертає\nколір вказаного індексу карти кольорів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagecolorspace.md\"\u003eGmagick::getimagecolorspace\u003c/a\u003e -\nПовертає колірний простір зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagecompose.md\"\u003eGmagick::getimagecompose\u003c/a\u003e -\nПовертає складовий оператор, пов'язаний із зображенням\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagedelay.md\"\u003eGmagick::getimagedelay\u003c/a\u003e — Отримує\nзатримку зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagedepth.md\"\u003eGmagick::getimagedepth\u003c/a\u003e — Отримує\nглибину зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagedispose.md\"\u003eGmagick::getimagedispose\u003c/a\u003e — Отримує\nметод видалення зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageextrema.md\"\u003eGmagick::getimageextrema\u003c/a\u003e — Отримує\nекстремуми для зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagefilename.md\"\u003eGmagick::getimagefilename\u003c/a\u003e -\nПовертає ім'я файлу конкретного зображення у послідовності\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageformat.md\"\u003eGmagick::getimageformat\u003c/a\u003e — Повертає\nформат конкретного зображення у послідовності\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagegamma.md\"\u003eGmagick::getimagegamma\u003c/a\u003e — Повертає\nгаму зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagegreenprimary.md\"\u003eGmagick::getimagegreenprimary\u003c/a\u003e -\nПовертає первинну зелену точку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageheight.md\"\u003eGmagick::getimageheight\u003c/a\u003e — Повертає\nвисоту зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagehistogram.md\"\u003eGmagick::getimagehistogram\u003c/a\u003e -\nПовертає гістограму зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageindex.md\"\u003eGmagick::getimageindex\u003c/a\u003e — Повертає\nіндекс поточного активного зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageinterlacescheme.md\"\u003eGmagick::getimageinterlacescheme\u003c/a\u003e\n— Отримує схему чергування зображень\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageiterations.md\"\u003eGmagick::getimageiterations\u003c/a\u003e -\nОтримує ітерацію зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagematte.md\"\u003eGmagick::getimagematte\u003c/a\u003e — Перевіряє,\nчи є на зображенні матовий канал\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagemattecolor.md\"\u003eGmagick::getimagemattecolor\u003c/a\u003e -\nПовертає зображення матового кольору\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageprofile.md\"\u003eGmagick::getimageprofile\u003c/a\u003e -\nПовертає іменований профайл зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageredprimary.md\"\u003eGmagick::getimageredprimary\u003c/a\u003e -\nПовертає первинну червону точку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagerenderingintent.md\"\u003eGmagick::getimagerenderingintent\u003c/a\u003e\n— Отримує мету рендерингу зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageresolution.md\"\u003eGmagick::getimageresolution\u003c/a\u003e -\nПовертає роздільну здатність зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagescene.md\"\u003eGmagick::getimagescene\u003c/a\u003e — Отримує\nсцену зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagesignature.md\"\u003eGmagick::getimagesignature\u003c/a\u003e -\nСтворює підпис повідомлення SHA-256\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagetype.md\"\u003eGmagick::getimagetype\u003c/a\u003e — Повертає\nпотенційний тип зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimageunits.md\"\u003eGmagick::getimageunits\u003c/a\u003e — Повертає\nодиниці роздільної здатності зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagewhitepoint.md\"\u003eGmagick::getimagewhitepoint\u003c/a\u003e -\nПовертає хроматичну білу точку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getimagewidth.md\"\u003eGmagick::getimagewidth\u003c/a\u003e — Повертає\nширину зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getpackagename.md\"\u003eGmagick::getpackagename\u003c/a\u003e — Повертає\nім'я пакета GraphicsMagick\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getquantumdepth.md\"\u003eGmagick::getquantumdepth\u003c/a\u003e -\nПовертає глибину кольору (біт на канал) об'єкта Gmagick у вигляді\nрядки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getreleasedate.md\"\u003eGmagick::getreleasedate\u003c/a\u003e — Повертає\nдату релізу GraphicsMagick у вигляді рядка\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getsamplingfactors.md\"\u003eGmagick::getsamplingfactors\u003c/a\u003e -\nПовертає вертикальний та горизонтальний фактор дискретизації\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getsize.md\"\u003eGmagick::getsize\u003c/a\u003e — Повертає розмір,\nпов'язаний з об'єктом Gmagick\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.getversion.md\"\u003eGmagick::getversion\u003c/a\u003e — Повертає версію\nGraphicsMagick API\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.hasnextimage.md\"\u003eGmagick::hasnextimage\u003c/a\u003e — Перевіряє, чи є\nще зображення в об'єкті\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.haspreviousimage.md\"\u003eGmagick::haspreviousimage\u003c/a\u003e -\nПеревіряє, чи є ще зображення в об'єкті під час ітерації назад\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.implodeimage.md\"\u003eGmagick::implodeimage\u003c/a\u003e — Створює копію\nзображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.labelimage.md\"\u003eGmagick::labelimage\u003c/a\u003e — Додає позначку до\nзображенню\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.levelimage.md\"\u003eGmagick::levelimage\u003c/a\u003e — Регулює рівні\nзображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.magnifyimage.md\"\u003eGmagick::magnifyimage\u003c/a\u003e - Пропорційно\nмасштабує зображення у 2 рази\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.mapimage.md\"\u003eGmagick::mapimage\u003c/a\u003e — Замінює кольори\nзображення на найближчий колір із еталонного зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.medianfilterimage.md\"\u003eGmagick::medianfilterimage\u003c/a\u003e -\nЗастосовує цифровий фільтр\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.minifyimage.md\"\u003eGmagick::minifyimage\u003c/a\u003e - Масштабує\nзображення пропорційно половині його розміру\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.modulateimage.md\"\u003eGmagick::modulateimage\u003c/a\u003e — Керує\nяскравістю, насиченістю та відтінком\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.motionblurimage.md\"\u003eGmagick::motionblurimage\u003c/a\u003e - Імітує\nрозмиття при русі\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.newimage.md\"\u003eGmagick::newimage\u003c/a\u003e — Створює нове\nзображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.nextimage.md\"\u003eGmagick::nextimage\u003c/a\u003e — Здійснює перехід\nдо наступного зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.normalizeimage.md\"\u003eGmagick::normalizeimage\u003c/a\u003e — Підвищує\nконтрастність кольорового зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.oilpaintimage.md\"\u003eGmagick::oilpaintimage\u003c/a\u003e - Імітує\nефект картини олією\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.previousimage.md\"\u003eGmagick::previousimage\u003c/a\u003e - Здійснює\nперехід до попереднього зображення в об'єкті\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.profileimage.md\"\u003eGmagick::profileimage\u003c/a\u003e — Додає або\nвидаляє профіль із зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.quantizeimage.md\"\u003eGmagick::quantizeimage\u003c/a\u003e - Аналізує\nкольори еталонного зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.quantizeimages.md\"\u003eGmagick::quantizeimages\u003c/a\u003e - Аналізує\nкольори у послідовності зображень\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.queryfontmetrics.md\"\u003eGmagick::queryfontmetrics\u003c/a\u003e -\nПовертає масив, що представляє метрики шрифту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.queryfonts.md\"\u003eGmagick::queryfonts\u003c/a\u003e — Повертає\nналаштовані шрифти\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.queryformats.md\"\u003eGmagick::queryformats\u003c/a\u003e — Повертає\nформати, що підтримуються Gmagick\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.radialblurimage.md\"\u003eGmagick::radialblurimage\u003c/a\u003e — Застосовує\nрадіальне розмиття до зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.raiseimage.md\"\u003eGmagick::raiseimage\u003c/a\u003e — Створює імітацію\nефекту тривимірної кнопки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.read.md\"\u003eGmagick::read\u003c/a\u003e — Читає зображення з файлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.readimage.md\"\u003eGmagick::readimage\u003c/a\u003e — Читає зображення з\nфайлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.readimageblob.md\"\u003eGmagick::readimageblob\u003c/a\u003e - Читає\nзображення з бінарного рядка\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.readimagefile.md\"\u003eGmagick::readimagefile\u003c/a\u003e - Читає\nзображення або послідовність зображень із файлового\nдескриптора\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.reducenoiseimage.md\"\u003eGmagick::reducenoiseimage\u003c/a\u003e\nЗгладжує контури зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.removeimage.md\"\u003eGmagick::removeimage\u003c/a\u003e — Видаляє\nзображення зі списку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.removeimageprofile.md\"\u003eGmagick::removeimageprofile\u003c/a\u003e -\nВидаляє іменований профайл зображення та повертає його\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.resampleimage.md\"\u003eGmagick::resampleimage\u003c/a\u003e — Змінює\nроздільна здатність зображення до бажаного\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.resizeimage.md\"\u003eGmagick::resizeimage\u003c/a\u003e - Масштабує\nзображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.rollimage.md\"\u003eGmagick::rollimage\u003c/a\u003e — Зміщення зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.rotateimage.md\"\u003eGmagick::rotateimage\u003c/a\u003e - Повертає\nзображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.scaleimage.md\"\u003eGmagick::scaleimage\u003c/a\u003e — Масштабування розміру\nзображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.separateimagechannel.md\"\u003eGmagick::separateimagechannel\u003c/a\u003e -\nВідокремлює канал від зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setcompressionquality.md\"\u003eGmagick::setCompressionQuality\u003c/a\u003e\n— Встановлює якість стандартного стиснення об'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setfilename.md\"\u003eGmagick::setfilename\u003c/a\u003e — Встановлює ім'я\nфайлу перед читанням або записуванням зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagebackgroundcolor.md\"\u003eGmagick::setimagebackgroundcolor\u003c/a\u003e\n— Встановлює колір тла зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimageblueprimary.md\"\u003eGmagick::setimageblueprimary\u003c/a\u003e -\nВстановлює кольоровість зображення блакитною основною точкою\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagebordercolor.md\"\u003eGmagick::setimagebordercolor\u003c/a\u003e -\nВстановлює колір рамки зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagechanneldepth.md\"\u003eGmagick::setimagechanneldepth\u003c/a\u003e -\nВстановлює глибину певного каналу зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagecolorspace.md\"\u003eGmagick::setimagecolorspace\u003c/a\u003e -\nВстановлює колірний простір зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagecompose.md\"\u003eGmagick::setimagecompose\u003c/a\u003e -\nВстановлює оператор складеного зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagedelay.md\"\u003eGmagick::setimagedelay\u003c/a\u003e — Встановлює\nзатримку зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagedepth.md\"\u003eGmagick::setimagedepth\u003c/a\u003e — Встановлює\nглибину зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagedispose.md\"\u003eGmagick::setimagedispose\u003c/a\u003e -\nВстановлює спосіб видалення зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagefilename.md\"\u003eGmagick::setimagefilename\u003c/a\u003e -\nВстановлює ім'я файлу конкретного зображення у послідовності\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimageformat.md\"\u003eGmagick::setimageformat\u003c/a\u003e -\nВстановлює формат певного зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagegamma.md\"\u003eGmagick::setimagegamma\u003c/a\u003e — Встановлює\nгаму зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagegreenprimary.md\"\u003eGmagick::setimagegreenprimary\u003c/a\u003e -\nВстановлює кольоровість зображення зеленою первинною точкою\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimageindex.md\"\u003eGmagick::setimageindex\u003c/a\u003e — Встановлює\nітератор у положення у списку зображень, заданому параметром index\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimageinterlacescheme.md\"\u003eGmagick::setimageinterlacescheme\u003c/a\u003e\n— Встановлює схему надстрокової розгортки зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimageiterations.md\"\u003eGmagick::setimageiterations\u003c/a\u003e -\nВстановлює ітерацію зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimageprofile.md\"\u003eGmagick::setimageprofile\u003c/a\u003e — Додає\nіменований профіль в об'єкт Gmagick\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimageredprimary.md\"\u003eGmagick::setimageredprimary\u003c/a\u003e -\nВстановлює кольоровість зображення червоною основною точкою\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagerenderingintent.md\"\u003eGmagick::setimagerenderingintent\u003c/a\u003e\n— Встановлює спосіб візуалізації зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimageresolution.md\"\u003eGmagick::setimageresolution\u003c/a\u003e -\nВстановлює роздільну здатність зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagescene.md\"\u003eGmagick::setimagescene\u003c/a\u003e — Встановлює\nсцену зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagetype.md\"\u003eGmagick::setimagetype\u003c/a\u003e — Встановлює\nтип зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimageunits.md\"\u003eGmagick::setimageunits\u003c/a\u003e — Встановлює\nодиниці роздільної здатності зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setimagewhitepoint.md\"\u003eGmagick::setimagewhitepoint\u003c/a\u003e -\nВстановлює кольоровість зображення білою точкою\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setsamplingfactors.md\"\u003eGmagick::setsamplingfactors\u003c/a\u003e -\nВстановлює фактори вибірки зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.setsize.md\"\u003eGmagick::setsize\u003c/a\u003e — Встановлює розмір\nоб'єкту Gmagick\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.shearimage.md\"\u003eGmagick::shearimage\u003c/a\u003e — Створює\nпаралелограм\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.solarizeimage.md\"\u003eGmagick::solarizeimage\u003c/a\u003e — Застосовує\nсоляризаційний ефект до зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.spreadimage.md\"\u003eGmagick::spreadimage\u003c/a\u003e — Випадково зміщує\nкожен піксель у блоці\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.stripimage.md\"\u003eGmagick::stripimage\u003c/a\u003e — Знімає зображення\nвсіх профілів та коментарів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.swirlimage.md\"\u003eGmagick::swirlimage\u003c/a\u003e — Закручує пікселі\nнавколо центру зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.thumbnailimage.md\"\u003eGmagick::thumbnailimage\u003c/a\u003e — Змінює\nрозмір зображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.trimimage.md\"\u003eGmagick::trimimage\u003c/a\u003e — Видаляє краї з\nзображення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.write.md\"\u003eGmagick::write\u003c/a\u003e - Псевдонім Gmagick::writeimage\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"gmagick.writeimage.md\"\u003eGmagick::writeimage\u003c/a\u003e - Записує\nзображення у вказаний файл\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.gmagick.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

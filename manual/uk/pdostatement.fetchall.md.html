@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>pdostatement.fetchall | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="pdostatement.fetch.md">« PDOStatement::fetch</a></p>
+</li>
+<li>
+<p><a href="pdostatement.fetchcolumn.md">PDOStatement::fetchColumn »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.pdostatement.md">PDOStatement</a></p>
+</li>
+<li>
+<p>Вибирає рядки з набору результатів, що залишилися.</p>
+</li>
+</ul>
+<h1>PDOStatement::fetchAll</h1>
+<p>(PHP 5 = 5.1.0, PHP 7, PHP 8, PECL pdo = 0.1.0)</p>
+<p>PDOStatement::fetchAll — Вибирає рядки, що залишилися, з набору
+результатів</p>
+<h3>Опис</h3>
+<p>public <strong>PDOStatement::fetchAll</strong>(int <code>$mode</code> = PDO::FETCH_DEFAULT):
+array</p>
+<p>public <strong>PDOStatement::fetchAll</strong>(int <code>$mode</code> = PDO::FETCH_COLUMN, int
+<code>$column</code>): array</p>
+<p>public <strong>PDOStatement::fetchAll</strong>(int <code>$mode</code> = PDO::FETCH_CLASS, string
+<code>$class</code>, ?array <code>$constructorArgs</code>): array</p>
+<p>public <strong>PDOStatement::fetchAll</strong>(int <code>$mode</code> = PDO::FETCH_FUNC,
+<a href="language.types.callable.md">callable</a> <code>$callback</code>): array</p>
+<h3>Список параметрів</h3>
+<p><code>mode</code>
+Визначає вміст масиву, що повертається. Докладніше можна дізнатися з
+документації до методу <a href="pdostatement.fetch.md">PDOStatement::fetch()</a>.
+За замовчуванням параметр приймає значення
+<strong><code>PDO::ATTR_DEFAULT_FETCH_MODE</code></strong> (яке в свою чергу має
+замовчування <strong><code>PDO::FETCH_BOTH</code></strong>)</p>
+<p>Щоб отримати значення лише одного стовпця, передайте як
+значення цього параметра константу <strong><code>PDO::FETCH_COLUMN</code></strong>. За допомогою
+параметра <code>column</code> можна задати стовпець, з якого потрібно витягти
+дані.</p>
+<p>Якщо потрібно витягти лише унікальні рядки одного стовпця, потрібно
+передати побітове АБО констант <strong><code>PDO::FETCH_COLUMN</code></strong> та
+<strong><code>PDO::FETCH_UNIQUE</code></strong>.</p>
+<p>Щоб отримати асоціативний масив рядків, згрупований за значеннями
+певного стовпця, потрібно передати побітове АБО констант
+<strong><code>PDO::FETCH_COLUMN</code></strong> та <strong><code>PDO::FETCH_GROUP</code></strong>.</p>
+<p><code>args</code>
+Сенс цього аргументу залежить від значення параметра <code>mode</code>:</p>
+<ul>
+<li>
+<p><strong><code>PDO::FETCH_COLUMN</code></strong>: Буде повернено вказаний стовпець.
+Індексація стовпців починається з 0.</p>
+</li>
+<li>
+<p><strong><code>PDO::FETCH_CLASS</code></strong>: Буде створено та повернено новий об'єкт
+вказаного класу. Властивості об'єкта будуть присвоєні значення
+стовпців, імена яких збігатимуться з іменами властивостей.</p>
+</li>
+<li>
+<p><strong><code>PDO::FETCH_FUNC</code></strong>: Будуть повернені результати викликів вказаної
+функції. Дані кожного рядка результуючого набору будуть
+передаватися у цю функцію.</p>
+</li>
+</ul>
+<p><code>constructorArgs</code>
+Аргументи конструктора класу. Для випадків, коли параметру <code>mode</code>
+надано значення <strong><code>PDO::FETCH_CLASS</code></strong>.</p>
+<h3>Значення, що повертаються</h3>
+<p><strong>PDOStatement::fetchAll()</strong> повертає масив, що містить усі
+рядки результуючого набору, що залишилися. Масив представляє кожну
+рядок або у вигляді масиву значень одного стовпця, або у вигляді об'єкта,
+імена властивостей якого збігаються з іменами стовпців.</p>
+<p>Використання цього методу для вилучення рядків великих результатів
+наборів може згубно позначитися на продуктивності системи та мережевих
+ресурсів. Замість вилучення всіх даних та їх обробки в PHP
+рекомендується використовувати вбудовані засоби СУБД. Наприклад,
+використання виразів WHERE та ORDER BY мови SQL може зменшити
+розміри результуючого набору.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>Метод тепер завжди повертає масив (array), раніше у разі виникнення помилки могло повертатися <strong>false</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Вилучення всіх рядків результуючого набору</strong>, що залишилися**</p>
+<p><code>&#x3C;?php$sth = $dbh->prepare("SELECT name, colour FROM fruit");$sth->execute();/* Витягнення всіх залишилися рядків рухнастрок і      : ");$result = $sth->fetchAll();print_r($result);?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Вилучення всіх рядків результуючого набору:
+Array
+(
+[0] => Array
+(
+[name] => apple
+[0] => apple
+[colour] => red
+[1] => red
+)</p>
+<p>[1] => Array
+(
+[name] => pear
+[0] => pear
+[colour] => green
+[1] => green
+)</p>
+<p>[2] => Array
+(
+[name] => watermelon
+[0] => watermelon
+[colour] => pink
+[1] => pink
+)
+)</p>
+<p><strong>Приклад #2 Вилучення всіх значень одного стовпця результуючого
+набору</strong></p>
+<p>У наступному прикладі показано, як витягти з результуючого набору
+значення лише одного стовпця, навіть якщо рядки містять значення
+кількох стовпців.</p>
+<p><code>&#x3C;?php$sth = $dbh->prepare("SELECT name, colour FROM fruit");$sth->execute();/*¦Вилучення всіх значень першого стовпця */$result = chs ::FETCH_COLUMN, 0);var_dump($result);?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Array(3)
+(
+[0] =>
+string(5) => apple
+[1] =>
+string(4) => pear
+[2] =>
+string(10) => watermelon
+)</p>
+<p><strong>Приклад #3 Угруповання рядків за значеннями одного стовпця</strong></p>
+<p>У наступному прикладі показано, як отримати асоціативний масив рядків
+результуючого набору, що згруповано за значеннями зазначеного стовпця.
+Масив містить три ключі: значення <code>apple</code> та <code>pear</code> є масивами,
+що містять два різні кольори; в той же час <code>watermelon</code> буде масивом,
+що містить лише один колір.</p>
+<p><code>&#x3C;?php$insert = $dbh->prepare("INSERT INTO fruit(name, colour) VALUES (?, ?)");$insert->execute(array('apple', 'green'));$ insert->execute(array('pear', 'yellow'));$sth = $dbh->prepare("SELECT name, colour FROM fruit");$sth->execute();/* Групуємо записи за значеннями першого стовпця*/var_dump($sth->fetchAll(PDO::FETCH_COLUMN|PDO::FETCH_GROUP));?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>array(3) {
+["apple"]=>
+array(2) {
+[0]=>
+string(5) "green"
+[1]=>
+string(3) "red"
+}
+["pear"]=>
+array(2) {
+[0]=>
+string(5) "green"
+[1]=>
+string(6) "yellow"
+}
+["watermelon"]=>
+array(1) {
+[0]=>
+string(5) "pink"
+}
+}</p>
+<p><strong>Приклад #4 Створення об'єкта для кожного рядка</strong></p>
+<p>У наступному прикладі показано поведінку методу у режимі вибірки
+<strong><code>PDO::FETCH_CLASS</code></strong>.</p>
+<p><code>&#x3C;?phpclass fruit {    public $name; public $colour;}$sth = $dbh->prepare("SELECT name, colour FROM fruit");$sth->execute();$result = $sth->fetchAll(PDO::FETCH_CLASS, "fruit" ;var_dump($result);?> </code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>array(3) {
+[0]=>
+object(fruit)#1 (2) {
+["name"]=>
+string(5) "apple"
+["colour"]=>
+string(5) "green"
+}
+[1]=>
+object(fruit)#2 (2) {
+["name"]=>
+string(4) "pear"
+["colour"]=>
+string(6) "yellow"
+}
+[2]=>
+object(fruit)#3 (2) {
+["name"]=>
+string(10) "watermelon"
+["colour"]=>
+string(4) "pink"
+}
+[3]=>
+object(fruit)#4 (2) {
+["name"]=>
+string(5) "apple"
+["colour"]=>
+string(3) "red"
+}
+[4]=>
+object(fruit)#5 (2) {
+["name"]=>
+string(4) "pear"
+["colour"]=>
+string(5) "green"
+}
+}</p>
+<p><strong>Приклад #5 Виклик функції для кожного рядка</strong></p>
+<p>У наступному прикладі показано поведінку методу у режимі вибірки
+<strong><code>PDO::FETCH_FUNC</code></strong>.</p>
+<p><code>&#x3C;?phpfunction fruit($name, $colour) {   return "{$name}: {$colour}";}$sth = $dbh->prepare("SELECT name, colour FROM fruit");$s execute();$result = $sth->fetchAll(PDO::FETCH_FUNC, "fruit");var_dump($result);?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>array(3) {
+[0]=>
+string(12) "apple: green"
+[1]=>
+string(12) "pear: yellow"
+[2]=>
+string(16) "watermelon: pink"
+[3]=>
+string(10) "apple: red"
+[4]=>
+string(11) "pear: green"
+}</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="pdo.query.md">PDO::query()</a> - Готує та виконує
+вираз SQL без наповнювачів</li>
+<li><a href="pdostatement.fetch.md">PDOStatement::fetch()</a> - Вилучення
+наступного рядка з результуючого набору</li>
+<li><a href="pdostatement.fetchcolumn.md">PDOStatement::fetchColumn()</a> -
+Повертає дані одного стовпця наступного рядка результуючого
+набору</li>
+<li><a href="pdo.prepare.md">PDO::prepare()</a> - Підготовка запиту до
+виконання та повертає пов'язаний з цим запитом об'єкт</li>
+<li><a href="pdostatement.setfetchmode.md">PDOStatement::setFetchMode()</a> -
+Встановлює стандартний режим вибірки для об'єкта запиту</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/pdostatement.fetchall.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/pdostatement.fetchall.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"pdostatement.fetchall","slug":"pdostatement.fetchall.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"pdostatement.fetch.md\"\u003e« PDOStatement::fetch\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"pdostatement.fetchcolumn.md\"\u003ePDOStatement::fetchColumn »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.pdostatement.md\"\u003ePDOStatement\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВибирає рядки з набору результатів, що залишилися.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003ePDOStatement::fetchAll\u003c/h1\u003e\n\u003cp\u003e(PHP 5 = 5.1.0, PHP 7, PHP 8, PECL pdo = 0.1.0)\u003c/p\u003e\n\u003cp\u003ePDOStatement::fetchAll — Вибирає рядки, що залишилися, з набору\nрезультатів\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003epublic \u003cstrong\u003ePDOStatement::fetchAll\u003c/strong\u003e(int \u003ccode\u003e$mode\u003c/code\u003e = PDO::FETCH_DEFAULT):\narray\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003ePDOStatement::fetchAll\u003c/strong\u003e(int \u003ccode\u003e$mode\u003c/code\u003e = PDO::FETCH_COLUMN, int\n\u003ccode\u003e$column\u003c/code\u003e): array\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003ePDOStatement::fetchAll\u003c/strong\u003e(int \u003ccode\u003e$mode\u003c/code\u003e = PDO::FETCH_CLASS, string\n\u003ccode\u003e$class\u003c/code\u003e, ?array \u003ccode\u003e$constructorArgs\u003c/code\u003e): array\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003ePDOStatement::fetchAll\u003c/strong\u003e(int \u003ccode\u003e$mode\u003c/code\u003e = PDO::FETCH_FUNC,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$callback\u003c/code\u003e): array\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003emode\u003c/code\u003e\nВизначає вміст масиву, що повертається. Докладніше можна дізнатися з\nдокументації до методу \u003ca href=\"pdostatement.fetch.md\"\u003ePDOStatement::fetch()\u003c/a\u003e.\nЗа замовчуванням параметр приймає значення\n\u003cstrong\u003e\u003ccode\u003ePDO::ATTR_DEFAULT_FETCH_MODE\u003c/code\u003e\u003c/strong\u003e (яке в свою чергу має\nзамовчування \u003cstrong\u003e\u003ccode\u003ePDO::FETCH_BOTH\u003c/code\u003e\u003c/strong\u003e)\u003c/p\u003e\n\u003cp\u003eЩоб отримати значення лише одного стовпця, передайте як\nзначення цього параметра константу \u003cstrong\u003e\u003ccode\u003ePDO::FETCH_COLUMN\u003c/code\u003e\u003c/strong\u003e. За допомогою\nпараметра \u003ccode\u003ecolumn\u003c/code\u003e можна задати стовпець, з якого потрібно витягти\nдані.\u003c/p\u003e\n\u003cp\u003eЯкщо потрібно витягти лише унікальні рядки одного стовпця, потрібно\nпередати побітове АБО констант \u003cstrong\u003e\u003ccode\u003ePDO::FETCH_COLUMN\u003c/code\u003e\u003c/strong\u003e та\n\u003cstrong\u003e\u003ccode\u003ePDO::FETCH_UNIQUE\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eЩоб отримати асоціативний масив рядків, згрупований за значеннями\nпевного стовпця, потрібно передати побітове АБО констант\n\u003cstrong\u003e\u003ccode\u003ePDO::FETCH_COLUMN\u003c/code\u003e\u003c/strong\u003e та \u003cstrong\u003e\u003ccode\u003ePDO::FETCH_GROUP\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eargs\u003c/code\u003e\nСенс цього аргументу залежить від значення параметра \u003ccode\u003emode\u003c/code\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ePDO::FETCH_COLUMN\u003c/code\u003e\u003c/strong\u003e: Буде повернено вказаний стовпець.\nІндексація стовпців починається з 0.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ePDO::FETCH_CLASS\u003c/code\u003e\u003c/strong\u003e: Буде створено та повернено новий об'єкт\nвказаного класу. Властивості об'єкта будуть присвоєні значення\nстовпців, імена яких збігатимуться з іменами властивостей.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ePDO::FETCH_FUNC\u003c/code\u003e\u003c/strong\u003e: Будуть повернені результати викликів вказаної\nфункції. Дані кожного рядка результуючого набору будуть\nпередаватися у цю функцію.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003econstructorArgs\u003c/code\u003e\nАргументи конструктора класу. Для випадків, коли параметру \u003ccode\u003emode\u003c/code\u003e\nнадано значення \u003cstrong\u003e\u003ccode\u003ePDO::FETCH_CLASS\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003ePDOStatement::fetchAll()\u003c/strong\u003e повертає масив, що містить усі\nрядки результуючого набору, що залишилися. Масив представляє кожну\nрядок або у вигляді масиву значень одного стовпця, або у вигляді об'єкта,\nімена властивостей якого збігаються з іменами стовпців.\u003c/p\u003e\n\u003cp\u003eВикористання цього методу для вилучення рядків великих результатів\nнаборів може згубно позначитися на продуктивності системи та мережевих\nресурсів. Замість вилучення всіх даних та їх обробки в PHP\nрекомендується використовувати вбудовані засоби СУБД. Наприклад,\nвикористання виразів WHERE та ORDER BY мови SQL може зменшити\nрозміри результуючого набору.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eМетод тепер завжди повертає масив (array), раніше у разі виникнення помилки могло повертатися \u003cstrong\u003efalse\u003c/strong\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Вилучення всіх рядків результуючого набору\u003c/strong\u003e, що залишилися**\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$sth = $dbh-\u003eprepare(\"SELECT name, colour FROM fruit\");$sth-\u003eexecute();/* Витягнення всіх залишилися рядків рухнастрок і      : \");$result = $sth-\u003efetchAll();print_r($result);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eВилучення всіх рядків результуючого набору:\nArray\n(\n[0] =\u003e Array\n(\n[name] =\u003e apple\n[0] =\u003e apple\n[colour] =\u003e red\n[1] =\u003e red\n)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e Array\n(\n[name] =\u003e pear\n[0] =\u003e pear\n[colour] =\u003e green\n[1] =\u003e green\n)\u003c/p\u003e\n\u003cp\u003e[2] =\u003e Array\n(\n[name] =\u003e watermelon\n[0] =\u003e watermelon\n[colour] =\u003e pink\n[1] =\u003e pink\n)\n)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Вилучення всіх значень одного стовпця результуючого\nнабору\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eУ наступному прикладі показано, як витягти з результуючого набору\nзначення лише одного стовпця, навіть якщо рядки містять значення\nкількох стовпців.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$sth = $dbh-\u003eprepare(\"SELECT name, colour FROM fruit\");$sth-\u003eexecute();/*¦Вилучення всіх значень першого стовпця */$result = chs ::FETCH_COLUMN, 0);var_dump($result);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eArray(3)\n(\n[0] =\u003e\nstring(5) =\u003e apple\n[1] =\u003e\nstring(4) =\u003e pear\n[2] =\u003e\nstring(10) =\u003e watermelon\n)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Угруповання рядків за значеннями одного стовпця\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eУ наступному прикладі показано, як отримати асоціативний масив рядків\nрезультуючого набору, що згруповано за значеннями зазначеного стовпця.\nМасив містить три ключі: значення \u003ccode\u003eapple\u003c/code\u003e та \u003ccode\u003epear\u003c/code\u003e є масивами,\nщо містять два різні кольори; в той же час \u003ccode\u003ewatermelon\u003c/code\u003e буде масивом,\nщо містить лише один колір.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$insert = $dbh-\u003eprepare(\"INSERT INTO fruit(name, colour) VALUES (?, ?)\");$insert-\u003eexecute(array('apple', 'green'));$ insert-\u003eexecute(array('pear', 'yellow'));$sth = $dbh-\u003eprepare(\"SELECT name, colour FROM fruit\");$sth-\u003eexecute();/* Групуємо записи за значеннями першого стовпця*/var_dump($sth-\u003efetchAll(PDO::FETCH_COLUMN|PDO::FETCH_GROUP));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003earray(3) {\n[\"apple\"]=\u003e\narray(2) {\n[0]=\u003e\nstring(5) \"green\"\n[1]=\u003e\nstring(3) \"red\"\n}\n[\"pear\"]=\u003e\narray(2) {\n[0]=\u003e\nstring(5) \"green\"\n[1]=\u003e\nstring(6) \"yellow\"\n}\n[\"watermelon\"]=\u003e\narray(1) {\n[0]=\u003e\nstring(5) \"pink\"\n}\n}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Створення об'єкта для кожного рядка\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eУ наступному прикладі показано поведінку методу у режимі вибірки\n\u003cstrong\u003e\u003ccode\u003ePDO::FETCH_CLASS\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass fruit {    public $name; public $colour;}$sth = $dbh-\u003eprepare(\"SELECT name, colour FROM fruit\");$sth-\u003eexecute();$result = $sth-\u003efetchAll(PDO::FETCH_CLASS, \"fruit\" ;var_dump($result);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003earray(3) {\n[0]=\u003e\nobject(fruit)#1 (2) {\n[\"name\"]=\u003e\nstring(5) \"apple\"\n[\"colour\"]=\u003e\nstring(5) \"green\"\n}\n[1]=\u003e\nobject(fruit)#2 (2) {\n[\"name\"]=\u003e\nstring(4) \"pear\"\n[\"colour\"]=\u003e\nstring(6) \"yellow\"\n}\n[2]=\u003e\nobject(fruit)#3 (2) {\n[\"name\"]=\u003e\nstring(10) \"watermelon\"\n[\"colour\"]=\u003e\nstring(4) \"pink\"\n}\n[3]=\u003e\nobject(fruit)#4 (2) {\n[\"name\"]=\u003e\nstring(5) \"apple\"\n[\"colour\"]=\u003e\nstring(3) \"red\"\n}\n[4]=\u003e\nobject(fruit)#5 (2) {\n[\"name\"]=\u003e\nstring(4) \"pear\"\n[\"colour\"]=\u003e\nstring(5) \"green\"\n}\n}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Виклик функції для кожного рядка\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eУ наступному прикладі показано поведінку методу у режимі вибірки\n\u003cstrong\u003e\u003ccode\u003ePDO::FETCH_FUNC\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction fruit($name, $colour) {   return \"{$name}: {$colour}\";}$sth = $dbh-\u003eprepare(\"SELECT name, colour FROM fruit\");$s execute();$result = $sth-\u003efetchAll(PDO::FETCH_FUNC, \"fruit\");var_dump($result);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003earray(3) {\n[0]=\u003e\nstring(12) \"apple: green\"\n[1]=\u003e\nstring(12) \"pear: yellow\"\n[2]=\u003e\nstring(16) \"watermelon: pink\"\n[3]=\u003e\nstring(10) \"apple: red\"\n[4]=\u003e\nstring(11) \"pear: green\"\n}\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"pdo.query.md\"\u003ePDO::query()\u003c/a\u003e - Готує та виконує\nвираз SQL без наповнювачів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdostatement.fetch.md\"\u003ePDOStatement::fetch()\u003c/a\u003e - Вилучення\nнаступного рядка з результуючого набору\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdostatement.fetchcolumn.md\"\u003ePDOStatement::fetchColumn()\u003c/a\u003e -\nПовертає дані одного стовпця наступного рядка результуючого\nнабору\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdo.prepare.md\"\u003ePDO::prepare()\u003c/a\u003e - Підготовка запиту до\nвиконання та повертає пов'язаний з цим запитом об'єкт\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"pdostatement.setfetchmode.md\"\u003ePDOStatement::setFetchMode()\u003c/a\u003e -\nВстановлює стандартний режим вибірки для об'єкта запиту\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"pdostatement.fetchall.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration81.new-features | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration81.md">« Міграція з PHP 8.0.x на PHP 8.1.x</a></p>
+</li>
+<li>
+<p><a href="migration81.new-classes.md">Нові класи та інтерфейси »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration81.md">Міграція з PHP 8.0.x на PHP 8.1.x</a></p>
+</li>
+<li>
+<p>Нова функціональність</p>
+</li>
+</ul>
+<h2>Нова функціональність</h2>
+<h3>Ядро PHP</h3>
+<h4>Літерний префікс вісімкових цілих чисел</h4>
+<p>Восьмеричні цілі числа тепер можуть використати явний префікс
+<code>0o</code>/<code>0O</code> в цілісних літералах, аналогічно двійковим і
+шістнадцятковим цілим літералам.</p>
+<p><code>&#x3C;?php014; //Восьмеричний літерал без префіксу0o14; // Восьмеричний літерал з префіксом?> </code></p>
+<h4>Розпакування масиву за допомогою рядкових ключів</h4>
+<p>Додано підтримку <a href="language.types.array.md#language.types.array.unpacking">розпакування масивів з рядковими ключами</a>.</p>
+<p><code>&#x3C;?php$arr1 = [1, 'a' => 'b'];$arr2 = [...$arr1, 'c' => 'd']; //[1, 'a' => 'b', 'c' => 'd']?></code></p>
+<h4>Іменований аргумент після розпакування аргументу</h4>
+<p>Тепер можна вказати іменовані аргументи після розпакування аргументів.
+наприклад: foo(...$args, named: $arg).</p>
+<h4>Ключ з повним шляхом при завантаженні файлів</h4>
+<p>При завантаженні файлів з'явився новий ключ full_path, який містить
+повний шлях (а не лише відносний) завантаженого файлу. Призначений
+для використання разом з HTML-атрибутом webkitdirectory.</p>
+<h4>Перерахування</h4>
+<p>Додано підтримку <a href="language.enumerations.md">перерахувань</a>.</p>
+<h4>Файбери</h4>
+<p>Додано підтримку <a href="language.fibers.md">файберів</a>.</p>
+<h4>Callback-функції як об'єкти першого класу</h4>
+<p>Замикання для callback-функцій тепер можна створювати за допомогою
+синтаксису <code>myFunc(...)</code>, який ідентичний <a href="functions.first_class_callable_syntax.md">синтаксису
+<code>Closure::fromCallable('myFunc')</code></a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>: <code>...</code> є частиною синтаксису, а не перепусткою.</p>
+</blockquote>
+<h4>Перетин типів</h4>
+<p>Додано підтримку <a href="language.types.declarations.md#language.types.declarations.composite.intersection">перетину типів</a>.</p>
+<p><strong>Застереження</strong></p>
+<p><a href="language.types.declarations.md#language.types.declarations.composite.intersection">Перетинання типів</a>
+не можна використовувати разом з <a href="language.types.declarations.md#language.types.declarations.composite.union">об'єднаними типами</a>.</p>
+<h4>Тип never</h4>
+<p>Доданий новий тип значення, що повертається never. Тип вказує на те,
+що функція або викликає <a href="function.exit.md">exit()</a>, або викидає
+виняток, або завершується.</p>
+<h4><a href="language.oop5.basic.md#language.oop5.basic.new"><code>new</code></a> в ініціалізації класу</h4>
+<p>Тепер можна використовувати вирази <code>new ClassName()</code> як
+значення за замовчуванням для статичної змінної параметра,
+ініціалізаторів глобальних констант і як аргументи атрибутів.
+Тепер об'єкти також можна передавати в
+<a href="function.define.md">define()</a>.</p>
+<h4>Readonly-властивості</h4>
+<p>Додана підтримка
+<a href="language.oop5.properties.md#language.oop5.properties.readonly-properties">readonly</a>-властивостей.</p>
+<h4>Остаточні константи класу</h4>
+<p>Додано підтримку <a href="language.oop5.final.md#language.oop5.final.example.php81">модифікатора final при визначенні констант класу</a>.
+Крім того, константи стандартного інтерфейсу стають
+перевизначуваними.</p>
+<h3>CURL</h3>
+<p>Додано опцію <strong><code>CURLOPT_DOH_URL</code></strong>.</p>
+<p>Додані параметри для сертифіката BLOB-об'єкта, доступні з libcurl
+>= 7.71.0:</p>
+<ul>
+<li><strong><code>CURLOPT_ISSUERCERT_BLOB</code></strong></li>
+<li><strong><code>CURLOPT_PROXY_ISSUERCERT</code></strong></li>
+<li><strong><code>CURLOPT_PROXY_ISSUERCERT_BLOB</code></strong></li>
+<li><strong><code>CURLOPT_PROXY_SSLCERT_BLOB</code></strong></li>
+<li><strong><code>CURLOPT_PROXY_SSLKEY_BLOB</code></strong></li>
+<li><strong><code>CURLOPT_SSLCERT_BLOB</code></strong></li>
+<li><strong><code>CURLOPT_SSLKEY_BLOB</code></strong></li>
+</ul>
+<p>Додано клас <a href="class.curlstringfile.md">CURLStringFile</a>, який
+можна використовувати для надсилання файлу з рядка (string), а не з файлу:</p>
+<p><code>&#x3C;?php$file = new CURLStringFile($data, 'filename.txt', 'text/plain');curl_setopt($curl, CURLOPT_POSTFIELDS, ['file' => $file]);?></code></p>
+<h3>FPM</h3>
+<p>Доданий формат статусу openmetrics. Prometheus може використовувати його
+для одержання метрик FPM.</p>
+<p>Додано новий пул для диспетчера динамічних процесів під назвою
+<code>pm.max_spawn_rate</code>. Він дозволяє запускати кілька дочірніх процесів
+швидшими темпами, якщо вибрано динамічний pm. Значення по
+замовчуванням - <code>32</code>, яке раніше було фіксованим значенням.</p>
+<h3>GD</h3>
+<p>Підтримка Avif тепер доступна за допомогою
+<a href="function.imagecreatefromavif.md">imagecreatefromavif()</a> та
+<a href="function.imageavif.md">imageavif()</a>, якщо libgd був зібраний з
+підтримкою Avif.</p>
+<h3>Hash</h3>
+<p>Наступні функції <a href="function.hash.md">hash()</a>,
+<a href="function.hash-file.md">hash_file()</a> та
+<a href="function.hash-init.md">hash_init()</a> тепер підтримують
+додатковий необов'язковий аргумент <code>options</code>, який можна
+використовуватиме передачі специфічних для алгоритму даних.</p>
+<h4>MurmurHash3</h4>
+<p>Додано підтримку <code>MurmurHash3</code> з підтримкою потокової передачі.
+Реалізовано такі варіанти:</p>
+<ul>
+<li>murmur3a, 32-бітний хеш</li>
+<li>murmur3c, 128-розрядний хеш для x86</li>
+<li>murmur3f, 128-розрядний хеш для x64</li>
+</ul>
+<p>Початковий стан хешування можна передати за допомогою ключа <code>seed</code>
+масиві <code>options</code>, наприклад:</p>
+<p><code>&#x3C;?php$h = hash("murmur3f", $data, options: ["seed" => 42]);echo $h, " ";?></code></p>
+<p>Допустиме початкове значення знаходиться в діапазоні від <code>0</code> до
+визначеного платформою значення <strong><code>UINT_MAX</code></strong>, зазвичай - <code>4294967295</code>.</p>
+<h4>xxHash</h4>
+<p>Додано підтримку <code>xxHash</code>. Реалізовано такі варіанти:</p>
+<ul>
+<li>xxh32, 32-bit hash</li>
+<li>xxh64, 64-bit hash</li>
+<li>xxh3, 64-bit hash</li>
+<li>xxh128, 128-bit hash</li>
+</ul>
+<p>Початковий стан хешування можна передати за допомогою ключа <code>seed</code>
+масиві <code>options</code>, наприклад:</p>
+<p><code>&#x3C;?php$h = hash("xxh3", $data, options: ["seed" => 42]);echo $h, " ";?></code></p>
+<p>Використання секрету також підтримується шляхом передачі ключа <code>secret</code>
+в масиві <code>options</code>:</p>
+<p><code>&#x3C;?php$h = hash("xxh3", $data, options: ["secret" => "як мінімум 136 байт секрету"]);echo $h, " ";?></code></p>
+<p>Якість секрету користувача має вирішальне значення для якості
+хеш результату. Для секрету рекомендується використовувати
+максимально можливу ентропію.</p>
+<h3>MySQLi</h3>
+<h4>Нова INI-директива <code>mysqli.local_infile_directory</code></h4>
+<p>Додано INI-директиву <a href="mysqli.configuration.md#ini.mysqli.local-infile-directory">mysqli.local_infile_directory</a>,
+за допомогою якої можна вказати каталог, з якого дозволено завантаження
+файлів. Це має сенс тільки якщо
+<a href="mysqli.configuration.md#ini.mysqli.allow-local-infile">mysqli.allow_local_infile</a>
+не включено, оскільки в цьому випадку дозволено всі каталоги.</p>
+<h4>Прив'язка параметрів під час виконання</h4>
+<p>Тепер можна прив'язувати параметри, передавши їх у вигляді масиву
+<a href="mysqli-stmt.execute.md">mysqli_stmt::execute()</a>. Усі значення будуть
+прив'язані як рядки. Дозволено лише спискові масиви. Ця нова
+функція недоступна, якщо MySQLi скомпільовано з libmysqlclient.</p>
+<p><code>&#x3C;?php$stmt = $mysqli->prepare('INSERT INTO users(id, name) VALUES(?,?)');$stmt->execute([1, $username]);?></code></p>
+<h4>Новий метод <a href="mysqli-result.fetch-column.md">mysqli_result::fetch_column()</a></h4>
+<p>Доданий
+<a href="mysqli-result.fetch-column.md">mysqli_result::fetch_column()</a> для
+вибірки єдиного скалярного значення набору результатів. новий
+метод приймає необов'язковий параметр <code>column</code>, що починається з 0,
+вигляді цілого числа (int), що вказує з якого стовпця виробляти
+вибірку.</p>
+<p><code>&#x3C;?php$result = $mysqli->query('SELECT username FROM users WHERE id = 123');echo $result->fetch_column();?></code></p>
+<h3>PDO</h3>
+<p>Доданий атрибут <strong><code>PDO::MYSQL_ATTR_LOCAL_INFILE_DIRECTORY</code></strong>, який
+можна використовувати для вказівки каталогу, з якого можуть бути
+завантажено файли. Це має сенс лише в тому випадку, якщо
+<strong><code>PDO::MYSQL_ATTR_LOCAL_INFILE</code></strong> не включено, оскільки в цьому випадку
+дозволено всі каталоги.</p>
+<h3>PDO_SQLite</h3>
+<p>Підтримується новий елемент <code>file:</code> у DSN-префіксі SQLite, який
+дозволяє вказувати додаткові прапори. Він не буде працювати, якщо
+включено опцію open_basedir.</p>
+<p><code>&#x3C;?phpnew PDO('sqlite:file:path/to/sqlite.db?mode=ro')?></code></p>
+<h3>POSIX</h3>
+<p>Додані константи <strong><code>POSIX_RLIMIT_KQUEUES</code></strong> та
+<strong><code>POSIX_RLIMIT_NPTS</code></strong>. Ці обмеження доступні лише у FreeBSD.</p>
+<h3>Стандартні функції</h3>
+<p><a href="function.fputcsv.md">fputcsv()</a> тепер приймає новий аргумент
+<code>eol</code>, який дозволяє визначати послідовність, що настроюється
+кінця рядка, значення за замовчуванням залишається незмінним - <code>" "</code>.</p>
+<h3>SPL</h3>
+<p><a href="splfileobject.fputcsv.md">SplFileObject::fputcsv()</a> тепер приймає
+новий аргумент <code>eol</code>, який дозволяє визначати настроювану
+послідовність кінця рядка, значення за замовчуванням залишається
+колишнім - ``
+"`.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration81.new-features.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration81.new-features.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration81.new-features","slug":"migration81.new-features.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration81.md\"\u003e« Міграція з PHP 8.0.x на PHP 8.1.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration81.new-classes.md\"\u003eНові класи та інтерфейси »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration81.md\"\u003eМіграція з PHP 8.0.x на PHP 8.1.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНова функціональність\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНова функціональність\u003c/h2\u003e\n\u003ch3\u003eЯдро PHP\u003c/h3\u003e\n\u003ch4\u003eЛітерний префікс вісімкових цілих чисел\u003c/h4\u003e\n\u003cp\u003eВосьмеричні цілі числа тепер можуть використати явний префікс\n\u003ccode\u003e0o\u003c/code\u003e/\u003ccode\u003e0O\u003c/code\u003e в цілісних літералах, аналогічно двійковим і\nшістнадцятковим цілим літералам.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php014; //Восьмеричний літерал без префіксу0o14; // Восьмеричний літерал з префіксом?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eРозпакування масиву за допомогою рядкових ключів\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"language.types.array.md#language.types.array.unpacking\"\u003eрозпакування масивів з рядковими ключами\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$arr1 = [1, 'a' =\u003e 'b'];$arr2 = [...$arr1, 'c' =\u003e 'd']; //[1, 'a' =\u003e 'b', 'c' =\u003e 'd']?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eІменований аргумент після розпакування аргументу\u003c/h4\u003e\n\u003cp\u003eТепер можна вказати іменовані аргументи після розпакування аргументів.\nнаприклад: foo(...$args, named: $arg).\u003c/p\u003e\n\u003ch4\u003eКлюч з повним шляхом при завантаженні файлів\u003c/h4\u003e\n\u003cp\u003eПри завантаженні файлів з'явився новий ключ full_path, який містить\nповний шлях (а не лише відносний) завантаженого файлу. Призначений\nдля використання разом з HTML-атрибутом webkitdirectory.\u003c/p\u003e\n\u003ch4\u003eПерерахування\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"language.enumerations.md\"\u003eперерахувань\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eФайбери\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"language.fibers.md\"\u003eфайберів\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eCallback-функції як об'єкти першого класу\u003c/h4\u003e\n\u003cp\u003eЗамикання для callback-функцій тепер можна створювати за допомогою\nсинтаксису \u003ccode\u003emyFunc(...)\u003c/code\u003e, який ідентичний \u003ca href=\"functions.first_class_callable_syntax.md\"\u003eсинтаксису\n\u003ccode\u003eClosure::fromCallable('myFunc')\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: \u003ccode\u003e...\u003c/code\u003e є частиною синтаксису, а не перепусткою.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch4\u003eПеретин типів\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"language.types.declarations.md#language.types.declarations.composite.intersection\"\u003eперетину типів\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eЗастереження\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"language.types.declarations.md#language.types.declarations.composite.intersection\"\u003eПеретинання типів\u003c/a\u003e\nне можна використовувати разом з \u003ca href=\"language.types.declarations.md#language.types.declarations.composite.union\"\u003eоб'єднаними типами\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eТип never\u003c/h4\u003e\n\u003cp\u003eДоданий новий тип значення, що повертається never. Тип вказує на те,\nщо функція або викликає \u003ca href=\"function.exit.md\"\u003eexit()\u003c/a\u003e, або викидає\nвиняток, або завершується.\u003c/p\u003e\n\u003ch4\u003e\u003ca href=\"language.oop5.basic.md#language.oop5.basic.new\"\u003e\u003ccode\u003enew\u003c/code\u003e\u003c/a\u003e в ініціалізації класу\u003c/h4\u003e\n\u003cp\u003eТепер можна використовувати вирази \u003ccode\u003enew ClassName()\u003c/code\u003e як\nзначення за замовчуванням для статичної змінної параметра,\nініціалізаторів глобальних констант і як аргументи атрибутів.\nТепер об'єкти також можна передавати в\n\u003ca href=\"function.define.md\"\u003edefine()\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eReadonly-властивості\u003c/h4\u003e\n\u003cp\u003eДодана підтримка\n\u003ca href=\"language.oop5.properties.md#language.oop5.properties.readonly-properties\"\u003ereadonly\u003c/a\u003e-властивостей.\u003c/p\u003e\n\u003ch4\u003eОстаточні константи класу\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"language.oop5.final.md#language.oop5.final.example.php81\"\u003eмодифікатора final при визначенні констант класу\u003c/a\u003e.\nКрім того, константи стандартного інтерфейсу стають\nперевизначуваними.\u003c/p\u003e\n\u003ch3\u003eCURL\u003c/h3\u003e\n\u003cp\u003eДодано опцію \u003cstrong\u003e\u003ccode\u003eCURLOPT_DOH_URL\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eДодані параметри для сертифіката BLOB-об'єкта, доступні з libcurl\n\u003e= 7.71.0:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eCURLOPT_ISSUERCERT_BLOB\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eCURLOPT_PROXY_ISSUERCERT\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eCURLOPT_PROXY_ISSUERCERT_BLOB\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eCURLOPT_PROXY_SSLCERT_BLOB\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eCURLOPT_PROXY_SSLKEY_BLOB\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eCURLOPT_SSLCERT_BLOB\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eCURLOPT_SSLKEY_BLOB\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eДодано клас \u003ca href=\"class.curlstringfile.md\"\u003eCURLStringFile\u003c/a\u003e, який\nможна використовувати для надсилання файлу з рядка (string), а не з файлу:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$file = new CURLStringFile($data, 'filename.txt', 'text/plain');curl_setopt($curl, CURLOPT_POSTFIELDS, ['file' =\u003e $file]);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eFPM\u003c/h3\u003e\n\u003cp\u003eДоданий формат статусу openmetrics. Prometheus може використовувати його\nдля одержання метрик FPM.\u003c/p\u003e\n\u003cp\u003eДодано новий пул для диспетчера динамічних процесів під назвою\n\u003ccode\u003epm.max_spawn_rate\u003c/code\u003e. Він дозволяє запускати кілька дочірніх процесів\nшвидшими темпами, якщо вибрано динамічний pm. Значення по\nзамовчуванням - \u003ccode\u003e32\u003c/code\u003e, яке раніше було фіксованим значенням.\u003c/p\u003e\n\u003ch3\u003eGD\u003c/h3\u003e\n\u003cp\u003eПідтримка Avif тепер доступна за допомогою\n\u003ca href=\"function.imagecreatefromavif.md\"\u003eimagecreatefromavif()\u003c/a\u003e та\n\u003ca href=\"function.imageavif.md\"\u003eimageavif()\u003c/a\u003e, якщо libgd був зібраний з\nпідтримкою Avif.\u003c/p\u003e\n\u003ch3\u003eHash\u003c/h3\u003e\n\u003cp\u003eНаступні функції \u003ca href=\"function.hash.md\"\u003ehash()\u003c/a\u003e,\n\u003ca href=\"function.hash-file.md\"\u003ehash_file()\u003c/a\u003e та\n\u003ca href=\"function.hash-init.md\"\u003ehash_init()\u003c/a\u003e тепер підтримують\nдодатковий необов'язковий аргумент \u003ccode\u003eoptions\u003c/code\u003e, який можна\nвикористовуватиме передачі специфічних для алгоритму даних.\u003c/p\u003e\n\u003ch4\u003eMurmurHash3\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ccode\u003eMurmurHash3\u003c/code\u003e з підтримкою потокової передачі.\nРеалізовано такі варіанти:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003emurmur3a, 32-бітний хеш\u003c/li\u003e\n\u003cli\u003emurmur3c, 128-розрядний хеш для x86\u003c/li\u003e\n\u003cli\u003emurmur3f, 128-розрядний хеш для x64\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eПочатковий стан хешування можна передати за допомогою ключа \u003ccode\u003eseed\u003c/code\u003e\nмасиві \u003ccode\u003eoptions\u003c/code\u003e, наприклад:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$h = hash(\"murmur3f\", $data, options: [\"seed\" =\u003e 42]);echo $h, \" \";?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eДопустиме початкове значення знаходиться в діапазоні від \u003ccode\u003e0\u003c/code\u003e до\nвизначеного платформою значення \u003cstrong\u003e\u003ccode\u003eUINT_MAX\u003c/code\u003e\u003c/strong\u003e, зазвичай - \u003ccode\u003e4294967295\u003c/code\u003e.\u003c/p\u003e\n\u003ch4\u003exxHash\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ccode\u003exxHash\u003c/code\u003e. Реалізовано такі варіанти:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003exxh32, 32-bit hash\u003c/li\u003e\n\u003cli\u003exxh64, 64-bit hash\u003c/li\u003e\n\u003cli\u003exxh3, 64-bit hash\u003c/li\u003e\n\u003cli\u003exxh128, 128-bit hash\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eПочатковий стан хешування можна передати за допомогою ключа \u003ccode\u003eseed\u003c/code\u003e\nмасиві \u003ccode\u003eoptions\u003c/code\u003e, наприклад:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$h = hash(\"xxh3\", $data, options: [\"seed\" =\u003e 42]);echo $h, \" \";?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eВикористання секрету також підтримується шляхом передачі ключа \u003ccode\u003esecret\u003c/code\u003e\nв масиві \u003ccode\u003eoptions\u003c/code\u003e:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$h = hash(\"xxh3\", $data, options: [\"secret\" =\u003e \"як мінімум 136 байт секрету\"]);echo $h, \" \";?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eЯкість секрету користувача має вирішальне значення для якості\nхеш результату. Для секрету рекомендується використовувати\nмаксимально можливу ентропію.\u003c/p\u003e\n\u003ch3\u003eMySQLi\u003c/h3\u003e\n\u003ch4\u003eНова INI-директива \u003ccode\u003emysqli.local_infile_directory\u003c/code\u003e\u003c/h4\u003e\n\u003cp\u003eДодано INI-директиву \u003ca href=\"mysqli.configuration.md#ini.mysqli.local-infile-directory\"\u003emysqli.local_infile_directory\u003c/a\u003e,\nза допомогою якої можна вказати каталог, з якого дозволено завантаження\nфайлів. Це має сенс тільки якщо\n\u003ca href=\"mysqli.configuration.md#ini.mysqli.allow-local-infile\"\u003emysqli.allow_local_infile\u003c/a\u003e\nне включено, оскільки в цьому випадку дозволено всі каталоги.\u003c/p\u003e\n\u003ch4\u003eПрив'язка параметрів під час виконання\u003c/h4\u003e\n\u003cp\u003eТепер можна прив'язувати параметри, передавши їх у вигляді масиву\n\u003ca href=\"mysqli-stmt.execute.md\"\u003emysqli_stmt::execute()\u003c/a\u003e. Усі значення будуть\nприв'язані як рядки. Дозволено лише спискові масиви. Ця нова\nфункція недоступна, якщо MySQLi скомпільовано з libmysqlclient.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$stmt = $mysqli-\u003eprepare('INSERT INTO users(id, name) VALUES(?,?)');$stmt-\u003eexecute([1, $username]);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eНовий метод \u003ca href=\"mysqli-result.fetch-column.md\"\u003emysqli_result::fetch_column()\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eДоданий\n\u003ca href=\"mysqli-result.fetch-column.md\"\u003emysqli_result::fetch_column()\u003c/a\u003e для\nвибірки єдиного скалярного значення набору результатів. новий\nметод приймає необов'язковий параметр \u003ccode\u003ecolumn\u003c/code\u003e, що починається з 0,\nвигляді цілого числа (int), що вказує з якого стовпця виробляти\nвибірку.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$result = $mysqli-\u003equery('SELECT username FROM users WHERE id = 123');echo $result-\u003efetch_column();?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003ePDO\u003c/h3\u003e\n\u003cp\u003eДоданий атрибут \u003cstrong\u003e\u003ccode\u003ePDO::MYSQL_ATTR_LOCAL_INFILE_DIRECTORY\u003c/code\u003e\u003c/strong\u003e, який\nможна використовувати для вказівки каталогу, з якого можуть бути\nзавантажено файли. Це має сенс лише в тому випадку, якщо\n\u003cstrong\u003e\u003ccode\u003ePDO::MYSQL_ATTR_LOCAL_INFILE\u003c/code\u003e\u003c/strong\u003e не включено, оскільки в цьому випадку\nдозволено всі каталоги.\u003c/p\u003e\n\u003ch3\u003ePDO_SQLite\u003c/h3\u003e\n\u003cp\u003eПідтримується новий елемент \u003ccode\u003efile:\u003c/code\u003e у DSN-префіксі SQLite, який\nдозволяє вказувати додаткові прапори. Він не буде працювати, якщо\nвключено опцію open_basedir.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpnew PDO('sqlite:file:path/to/sqlite.db?mode=ro')?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003ePOSIX\u003c/h3\u003e\n\u003cp\u003eДодані константи \u003cstrong\u003e\u003ccode\u003ePOSIX_RLIMIT_KQUEUES\u003c/code\u003e\u003c/strong\u003e та\n\u003cstrong\u003e\u003ccode\u003ePOSIX_RLIMIT_NPTS\u003c/code\u003e\u003c/strong\u003e. Ці обмеження доступні лише у FreeBSD.\u003c/p\u003e\n\u003ch3\u003eСтандартні функції\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"function.fputcsv.md\"\u003efputcsv()\u003c/a\u003e тепер приймає новий аргумент\n\u003ccode\u003eeol\u003c/code\u003e, який дозволяє визначати послідовність, що настроюється\nкінця рядка, значення за замовчуванням залишається незмінним - \u003ccode\u003e\" \"\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eSPL\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"splfileobject.fputcsv.md\"\u003eSplFileObject::fputcsv()\u003c/a\u003e тепер приймає\nновий аргумент \u003ccode\u003eeol\u003c/code\u003e, який дозволяє визначати настроювану\nпослідовність кінця рядка, значення за замовчуванням залишається\nколишнім - ``\n\"`.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration81.new-features.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

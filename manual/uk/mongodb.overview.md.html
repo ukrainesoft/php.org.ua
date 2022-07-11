@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mongodb.overview | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mongodb.architecture.md">« Архітектура та внутрішній пристрій драйвера</a></p>
+</li>
+<li>
+<p><a href="mongodb.connection-handling.md">З'єднання »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mongodb.architecture.md">Архітектура та внутрішній пристрій драйвера</a></p>
+</li>
+<li>
+<p>Огляд архітектури</p>
+</li>
+</ul>
+<h1>Огляд архітектури</h1>
+<p>У цьому розділі пояснюється, як різні частини драйвера з'єднуються
+разом. Від різних мов виконання, через модуль та до бібліотек PHP над
+ними. Ця нова архітектура замінила старий модуль Mongo. Ми називаємо
+новий модуль <code>mongodb</code>.</p>
+<p><img src="images/f3bc48edf40d5e3e09a166c7fadc7efb-driver_arch.png" alt="Схема архітектури"></p>
+<p>У верхній частині цього стека знаходиться Бібліотека
+PHP](<a href="https://github.com/mongodb/mongo-php-library">https://github.com/mongodb/mongo-php-library</a>), яку ми будемо
+поширювати як пакет Composer. Ця бібліотека надасть API,
+аналогічний тому, що користувачі очікують від старого драйвера
+(наприклад, методи CRUD, об'єкти баз даних та колекцій, помічники
+команд), і ми очікуємо, що він буде загальною залежністю для більшості
+програм, створених із MongoDB. Ця бібліотека також буде
+реалізовувати спільні
+<a href="https://github.com/mongodb/specifications">» специфікації</a> на користь
+покращення узгодженості API з усіма
+<a href="https://www.mongodb.com/docs/drivers/">» драйверами</a>, підтримуваними
+MongoDB (і, сподіваємось, також деякими драйверами спільноти).</p>
+<p>Під цією бібліотекою у нас є драйвер нижнього рівня. Цей модуль
+буде ефективно пов'язувати PHP та наші системні бібліотеки
+(<a href="https://github.com/mongodb/mongo-c-driver">» libmongoc</a> та
+<a href="https://github.com/mongodb/mongo-c-driver/tree/master/src/libbson">» libbson</a>).
+Цей модуль надаватиме ідентичний загальнодоступний API для
+найбільш важливою та чутливою до продуктивності функціональності:</p>
+<ul>
+<li>Управління з'єднанням</li>
+<li>BSON кодування та декодування</li>
+<li>Серіалізація документа об'єкта (для підтримки бібліотек ODM)</li>
+<li>Виконання команд та операцій запису</li>
+<li>Обробка запитів та курсорів</li>
+</ul>
+<p>Роз'єднуючи внутрішні компоненти драйвера та високорівневий API в
+модулі та бібліотеки PHP, відповідно, ми сподіваємося зменшити
+навантаження на обслуговування та прискорити ітерацію нових функцій. Як приємний
+побічний ефект, це також полегшить кому-небудь робити свій внесок у
+драйвера. Крім того, ідентичний загальнодоступний API значно спростить
+портування програми на середовища виконання PHP, незалежно від того,
+чи використовує програму драйвер низького рівня безпосередньо або бібліотеку
+PHP вищого рівня.</p>
+<p><a href="https://www.mongodb.com/docs/manual/core/gridfs/">» GridFS</a> - відмінний
+приклад того, чому ми вибрали цей напрямок. Хоча ми реалізували
+GridFS у C для нашого старого драйвера mongo, насправді це досить
+високорівнева специфікація. Його API - це просто абстракція для
+доступу до двох колекцій: файлів (тобто метаданих) та частин (тобто
+блоків даних). Аналогічно, весь синтаксичний цукор, знайдений у
+старому драйвері mongo, такий як обробка завантажених файлів або
+представлення файлів GridFS у вигляді потоків PHP, може бути реалізований на
+чистий PHP. За умови, що у нас є ефективні методи для читання та
+записи в колекції GridFS та завдяки нашим низькорівневим модулям ми
+перекладатимемо цей API на PHP - безпрограшний варіант.</p>
+<p>Раніше я згадував, що ми очікуємо, що бібліотека PHP буде спільною.
+залежністю для більшості програм, але не для всіх. Деякі
+користувачі можуть віддати перевагу дотримуватися API-інтерфейсу без
+надмірностей, запропонованого модулями, або створити власну
+високорівневу абстракцію (подібно до <a href="https://github.com/doctrine/mongodb">» Doctrine MongoDB</a> для старого драйвера
+mongo). Майбутні бібліотеки можуть містити PHP-бібліотеку,
+призначену для адміністрування MongoDB, яка надає API
+для різних команд керування користувачами та командами ops.
+Наступна основна версія <a href="https://github.com/doctrine/mongodb-odm">» Doctrine MongoDB ODM</a>, швидше за все, також буде
+розміщена безпосередньо над модулями.</p>
+<p>Хоча ми продовжуватимемо підтримувати і підтримувати старий драйвер
+mongo та його користувачів у найближчому майбутньому, ми запрошуємо всіх
+використовувати драйвер наступного покоління та розглядати його для будь-яких
+нових проектів у майбутньому. Ви можете знайти всі необхідні компоненти в
+GitHub та JIRA:</p>
+<table>
+<thead>
+<tr>
+<th>Проект</th>
+<th>GitHub</th>
+<th>JIRA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PHP бібліотека <a href="https://github.com/mongodb/mongo-php-library">»mongodb/mongo-php-library</a></td>
+<td><a href="https://jira.mongodb.org/browse/PHPLIB">»PHPLIB</a></td>
+<td></td>
+</tr>
+<tr>
+<td>PHP 5 та PHP 7 драйвер (phongo)</td>
+<td><a href="https://github.com/mongodb/mongo-php-driver">»mongodb/mongo-php-driver</a></td>
+<td><a href="https://jira.mongodb.org/browse/PHPC">» PHPC</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Вихідний код драйвера та розташування JIRA</strong></p>
+<p>Існуючий проект <a href="https://jira.mongodb.org/browse/PHP">»PHP</a> в JIRA
+залишиться відкритим для повідомлень про помилки у старому драйвері mongo, але
+ми просимо вас використовувати у нових проектах те, що описувалося вище та
+стосується наших драйверів наступного покоління.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mongodb.overview.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mongodb.overview.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mongodb.overview","slug":"mongodb.overview.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb.architecture.md\"\u003e« Архітектура та внутрішній пристрій драйвера\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb.connection-handling.md\"\u003eЗ'єднання »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb.architecture.md\"\u003eАрхітектура та внутрішній пристрій драйвера\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОгляд архітектури\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eОгляд архітектури\u003c/h1\u003e\n\u003cp\u003eУ цьому розділі пояснюється, як різні частини драйвера з'єднуються\nразом. Від різних мов виконання, через модуль та до бібліотек PHP над\nними. Ця нова архітектура замінила старий модуль Mongo. Ми називаємо\nновий модуль \u003ccode\u003emongodb\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cimg src=\"images/f3bc48edf40d5e3e09a166c7fadc7efb-driver_arch.png\" alt=\"Схема архітектури\"\u003e\u003c/p\u003e\n\u003cp\u003eУ верхній частині цього стека знаходиться Бібліотека\nPHP](\u003ca href=\"https://github.com/mongodb/mongo-php-library\"\u003ehttps://github.com/mongodb/mongo-php-library\u003c/a\u003e), яку ми будемо\nпоширювати як пакет Composer. Ця бібліотека надасть API,\nаналогічний тому, що користувачі очікують від старого драйвера\n(наприклад, методи CRUD, об'єкти баз даних та колекцій, помічники\nкоманд), і ми очікуємо, що він буде загальною залежністю для більшості\nпрограм, створених із MongoDB. Ця бібліотека також буде\nреалізовувати спільні\n\u003ca href=\"https://github.com/mongodb/specifications\"\u003e» специфікації\u003c/a\u003e на користь\nпокращення узгодженості API з усіма\n\u003ca href=\"https://www.mongodb.com/docs/drivers/\"\u003e» драйверами\u003c/a\u003e, підтримуваними\nMongoDB (і, сподіваємось, також деякими драйверами спільноти).\u003c/p\u003e\n\u003cp\u003eПід цією бібліотекою у нас є драйвер нижнього рівня. Цей модуль\nбуде ефективно пов'язувати PHP та наші системні бібліотеки\n(\u003ca href=\"https://github.com/mongodb/mongo-c-driver\"\u003e» libmongoc\u003c/a\u003e та\n\u003ca href=\"https://github.com/mongodb/mongo-c-driver/tree/master/src/libbson\"\u003e» libbson\u003c/a\u003e).\nЦей модуль надаватиме ідентичний загальнодоступний API для\nнайбільш важливою та чутливою до продуктивності функціональності:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eУправління з'єднанням\u003c/li\u003e\n\u003cli\u003eBSON кодування та декодування\u003c/li\u003e\n\u003cli\u003eСеріалізація документа об'єкта (для підтримки бібліотек ODM)\u003c/li\u003e\n\u003cli\u003eВиконання команд та операцій запису\u003c/li\u003e\n\u003cli\u003eОбробка запитів та курсорів\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eРоз'єднуючи внутрішні компоненти драйвера та високорівневий API в\nмодулі та бібліотеки PHP, відповідно, ми сподіваємося зменшити\nнавантаження на обслуговування та прискорити ітерацію нових функцій. Як приємний\nпобічний ефект, це також полегшить кому-небудь робити свій внесок у\nдрайвера. Крім того, ідентичний загальнодоступний API значно спростить\nпортування програми на середовища виконання PHP, незалежно від того,\nчи використовує програму драйвер низького рівня безпосередньо або бібліотеку\nPHP вищого рівня.\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"https://www.mongodb.com/docs/manual/core/gridfs/\"\u003e» GridFS\u003c/a\u003e - відмінний\nприклад того, чому ми вибрали цей напрямок. Хоча ми реалізували\nGridFS у C для нашого старого драйвера mongo, насправді це досить\nвисокорівнева специфікація. Його API - це просто абстракція для\nдоступу до двох колекцій: файлів (тобто метаданих) та частин (тобто\nблоків даних). Аналогічно, весь синтаксичний цукор, знайдений у\nстарому драйвері mongo, такий як обробка завантажених файлів або\nпредставлення файлів GridFS у вигляді потоків PHP, може бути реалізований на\nчистий PHP. За умови, що у нас є ефективні методи для читання та\nзаписи в колекції GridFS та завдяки нашим низькорівневим модулям ми\nперекладатимемо цей API на PHP - безпрограшний варіант.\u003c/p\u003e\n\u003cp\u003eРаніше я згадував, що ми очікуємо, що бібліотека PHP буде спільною.\nзалежністю для більшості програм, але не для всіх. Деякі\nкористувачі можуть віддати перевагу дотримуватися API-інтерфейсу без\nнадмірностей, запропонованого модулями, або створити власну\nвисокорівневу абстракцію (подібно до \u003ca href=\"https://github.com/doctrine/mongodb\"\u003e» Doctrine MongoDB\u003c/a\u003e для старого драйвера\nmongo). Майбутні бібліотеки можуть містити PHP-бібліотеку,\nпризначену для адміністрування MongoDB, яка надає API\nдля різних команд керування користувачами та командами ops.\nНаступна основна версія \u003ca href=\"https://github.com/doctrine/mongodb-odm\"\u003e» Doctrine MongoDB ODM\u003c/a\u003e, швидше за все, також буде\nрозміщена безпосередньо над модулями.\u003c/p\u003e\n\u003cp\u003eХоча ми продовжуватимемо підтримувати і підтримувати старий драйвер\nmongo та його користувачів у найближчому майбутньому, ми запрошуємо всіх\nвикористовувати драйвер наступного покоління та розглядати його для будь-яких\nнових проектів у майбутньому. Ви можете знайти всі необхідні компоненти в\nGitHub та JIRA:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eПроект\u003c/th\u003e\n\u003cth\u003eGitHub\u003c/th\u003e\n\u003cth\u003eJIRA\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ePHP бібліотека \u003ca href=\"https://github.com/mongodb/mongo-php-library\"\u003e»mongodb/mongo-php-library\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"https://jira.mongodb.org/browse/PHPLIB\"\u003e»PHPLIB\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePHP 5 та PHP 7 драйвер (phongo)\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"https://github.com/mongodb/mongo-php-driver\"\u003e»mongodb/mongo-php-driver\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"https://jira.mongodb.org/browse/PHPC\"\u003e» PHPC\u003c/a\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eВихідний код драйвера та розташування JIRA\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eІснуючий проект \u003ca href=\"https://jira.mongodb.org/browse/PHP\"\u003e»PHP\u003c/a\u003e в JIRA\nзалишиться відкритим для повідомлень про помилки у старому драйвері mongo, але\nми просимо вас використовувати у нових проектах те, що описувалося вище та\nстосується наших драйверів наступного покоління.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mongodb.overview.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

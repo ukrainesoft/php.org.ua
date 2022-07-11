@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>session.upload-progress | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="session.customhandler.md">« Користувальницькі обробники сесії</a></p>
+</li>
+<li>
+<p><a href="session.security.md">Безпека сесій »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.session.md">Сесії</a></p>
+</li>
+<li>
+<p>Відстеження прогресу завантаження файлів за допомогою сесій</p>
+</li>
+</ul>
+<h1>Відстеження прогресу завантаження файлів за допомогою сесій</h1>
+<p>PHP може відслідковувати прогрес завантаження окремих файлів при включеній
+опції
+<a href="session.configuration.md#ini.session.upload-progress.enabled">session.upload_progress.enabled</a>.
+Ця інформація не дуже корисна для запиту, безпосередньо
+закачує файл, однак, протягом даного завантаження програма може
+посилати POST-запити на окрему сторінку (наприклад, за допомогою XHR)
+для перевірки статусу.</p>
+<p>Прогрес закачування буде доступний у суперглобальній змінній <code>$_SESSION</code>
+під час виконання завантаження, а також під час надсилання POST-запитом
+змінної з ім'ям, рівним значенню опції
+<a href="session.configuration.md#ini.session.upload-progress.name">session.upload_progress.name</a>.
+Як тільки PHP виявить такий POST-запит, він створить масив у
+<code>$_SESSION</code>, ключем якого буде конкатенація значень опцій
+<a href="session.configuration.md#ini.session.upload-progress.prefix">session.upload_progress.prefix</a>
+і
+<a href="session.configuration.md#ini.session.upload-progress.name">session.upload_progress.name</a>.
+Ключ зазвичай можна отримати прочитавши ці опції, тобто:</p>
+<p><code>&#x3C;?php$key = ini_get("session.upload_progress.prefix") . $_POST[ini_get("session.upload_progress.name")];var_dump($_SESSION[$key]);?></code></p>
+<p>Також можливо <em>скасувати</em> файл, що завантажується в даний момент, встановивши
+ключ <code>$_SESSION[$key]["cancel_upload"]</code> у значення <strong><code>true</code></strong>. При
+завантаження декількох файлів за один раз, ця дія скасує тільки
+поточний файл, що завантажується, і всі наступні за ним, але не видалить вже
+успішно завантажені на той час файли. Якщо закачування було скасовано
+цим способом, то елемент з ключем <code>error</code> у масиві <code>$_FILES</code> буде
+встановлений у <strong><code>UPLOAD_ERR_EXTENSION</code></strong>.</p>
+<p>Опції <a href="session.configuration.md#ini.session.upload-progress.freq">session.upload_progress.freq</a>
+і
+<a href="session.configuration.md#ini.session.upload-progress.min-freq">session.upload_progress.min_freq</a>
+контролюють частоту оновлення інформації про прогрес завантаження. При
+розумних значеннях цих двох налаштувань, накладні витрати даної функції
+практично невідчутні.</p>
+<p><strong>Приклад #1 Приклад</strong></p>
+<p>Приклад структури масиву прогресу завантаження.</p>
+<pre><code>&#x3C;form action="upload.php" method="POST" enctype="multipart/form-data">
+&#x3C;input type="hidden" name="&#x3C;?php echo ini_get("session.upload_progress.name"); ?>" value="123" />
+&#x3C;input type="file" name="file1" />
+&#x3C;input type="file" name="file2" />
+&#x3C;input type="submit" />
+&#x3C;/form>
+</code></pre>
+<p>Дані в сесії виглядатимуть приблизно так:</p>
+<p><code>&#x3C;?php$_SESSION["upload_progress_123"] = array( "start_time" => 1234567890,   // Время начала запроса "content_length" => 57343257, // Длина содержимого POST "bytes_processed" => 453489,  // Количество полученных и обработанных байт "done" => false,              // true при завершении обработки POST, успешно или нет "files" => array(  0 => array(   "field_name" => "file1",       // Имя поля &#x3C;input/>   / / Следующие 3 элемента аналогичны соответствующим элементам массива $_FILES   "name" => "foo.avi",   "tmp_name" => "/tmp/phpxxxxxx",   "error" => 0,   "done" => true,                // True , если обработчик POST закончил обработку данного файла   "start_time" => 1234567890,    // Время начала обработки этого файла   "bytes_processed" => 57343250, // Число полученных и обработанных байт этого файла  ),  // И ещё один файл, загрузка которого ещё не закінчена в том ж запиті  1 => array(  "field_name" => "file2",   "name" => "bar.avi",   "tmp_name" =>    fa lse,  "start_time" => 1234567899,  "bytes_processed" => 54554,  ), ));</code></p>
+<p><strong>Увага</strong></p>
+<p>Для успішної роботи цієї функції необхідно відключити буферизацію
+запит на веб-сервер. Інакше PHP побачить завантаження файлу лише коли
+завантаження повністю завершиться. Сервери, такі як Nginx,
+буферизують великі запити.</p>
+<p><strong>Застереження</strong></p>
+<p>Інформація про прогрес завантаження записується в сесію до того, як буде
+запущений якийсь скрипт. Тому зміна імені сесії за допомогою
+<a href="function.ini-set.md">ini_set()</a> або
+<a href="function.session-name.md">session_name()</a> видасть сесію без
+інформації про прогрес завантаження.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/session.upload-progress.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/session.upload-progress.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"session.upload-progress","slug":"session.upload-progress.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"session.customhandler.md\"\u003e« Користувальницькі обробники сесії\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"session.security.md\"\u003eБезпека сесій »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.session.md\"\u003eСесії\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВідстеження прогресу завантаження файлів за допомогою сесій\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eВідстеження прогресу завантаження файлів за допомогою сесій\u003c/h1\u003e\n\u003cp\u003ePHP може відслідковувати прогрес завантаження окремих файлів при включеній\nопції\n\u003ca href=\"session.configuration.md#ini.session.upload-progress.enabled\"\u003esession.upload_progress.enabled\u003c/a\u003e.\nЦя інформація не дуже корисна для запиту, безпосередньо\nзакачує файл, однак, протягом даного завантаження програма може\nпосилати POST-запити на окрему сторінку (наприклад, за допомогою XHR)\nдля перевірки статусу.\u003c/p\u003e\n\u003cp\u003eПрогрес закачування буде доступний у суперглобальній змінній \u003ccode\u003e$_SESSION\u003c/code\u003e\nпід час виконання завантаження, а також під час надсилання POST-запитом\nзмінної з ім'ям, рівним значенню опції\n\u003ca href=\"session.configuration.md#ini.session.upload-progress.name\"\u003esession.upload_progress.name\u003c/a\u003e.\nЯк тільки PHP виявить такий POST-запит, він створить масив у\n\u003ccode\u003e$_SESSION\u003c/code\u003e, ключем якого буде конкатенація значень опцій\n\u003ca href=\"session.configuration.md#ini.session.upload-progress.prefix\"\u003esession.upload_progress.prefix\u003c/a\u003e\nі\n\u003ca href=\"session.configuration.md#ini.session.upload-progress.name\"\u003esession.upload_progress.name\u003c/a\u003e.\nКлюч зазвичай можна отримати прочитавши ці опції, тобто:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$key = ini_get(\"session.upload_progress.prefix\") . $_POST[ini_get(\"session.upload_progress.name\")];var_dump($_SESSION[$key]);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eТакож можливо \u003cem\u003eскасувати\u003c/em\u003e файл, що завантажується в даний момент, встановивши\nключ \u003ccode\u003e$_SESSION[$key][\"cancel_upload\"]\u003c/code\u003e у значення \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e. При\nзавантаження декількох файлів за один раз, ця дія скасує тільки\nпоточний файл, що завантажується, і всі наступні за ним, але не видалить вже\nуспішно завантажені на той час файли. Якщо закачування було скасовано\nцим способом, то елемент з ключем \u003ccode\u003eerror\u003c/code\u003e у масиві \u003ccode\u003e$_FILES\u003c/code\u003e буде\nвстановлений у \u003cstrong\u003e\u003ccode\u003eUPLOAD_ERR_EXTENSION\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eОпції \u003ca href=\"session.configuration.md#ini.session.upload-progress.freq\"\u003esession.upload_progress.freq\u003c/a\u003e\nі\n\u003ca href=\"session.configuration.md#ini.session.upload-progress.min-freq\"\u003esession.upload_progress.min_freq\u003c/a\u003e\nконтролюють частоту оновлення інформації про прогрес завантаження. При\nрозумних значеннях цих двох налаштувань, накладні витрати даної функції\nпрактично невідчутні.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПриклад структури масиву прогресу завантаження.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e\u0026#x3C;form action=\"upload.php\" method=\"POST\" enctype=\"multipart/form-data\"\u003e\n\u0026#x3C;input type=\"hidden\" name=\"\u0026#x3C;?php echo ini_get(\"session.upload_progress.name\"); ?\u003e\" value=\"123\" /\u003e\n\u0026#x3C;input type=\"file\" name=\"file1\" /\u003e\n\u0026#x3C;input type=\"file\" name=\"file2\" /\u003e\n\u0026#x3C;input type=\"submit\" /\u003e\n\u0026#x3C;/form\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eДані в сесії виглядатимуть приблизно так:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$_SESSION[\"upload_progress_123\"] = array( \"start_time\" =\u003e 1234567890,   // Время начала запроса \"content_length\" =\u003e 57343257, // Длина содержимого POST \"bytes_processed\" =\u003e 453489,  // Количество полученных и обработанных байт \"done\" =\u003e false,              // true при завершении обработки POST, успешно или нет \"files\" =\u003e array(  0 =\u003e array(   \"field_name\" =\u003e \"file1\",       // Имя поля \u0026#x3C;input/\u003e   / / Следующие 3 элемента аналогичны соответствующим элементам массива $_FILES   \"name\" =\u003e \"foo.avi\",   \"tmp_name\" =\u003e \"/tmp/phpxxxxxx\",   \"error\" =\u003e 0,   \"done\" =\u003e true,                // True , если обработчик POST закончил обработку данного файла   \"start_time\" =\u003e 1234567890,    // Время начала обработки этого файла   \"bytes_processed\" =\u003e 57343250, // Число полученных и обработанных байт этого файла  ),  // И ещё один файл, загрузка которого ещё не закінчена в том ж запиті  1 =\u003e array(  \"field_name\" =\u003e \"file2\",   \"name\" =\u003e \"bar.avi\",   \"tmp_name\" =\u003e    fa lse,  \"start_time\" =\u003e 1234567899,  \"bytes_processed\" =\u003e 54554,  ), ));\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля успішної роботи цієї функції необхідно відключити буферизацію\nзапит на веб-сервер. Інакше PHP побачить завантаження файлу лише коли\nзавантаження повністю завершиться. Сервери, такі як Nginx,\nбуферизують великі запити.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eЗастереження\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eІнформація про прогрес завантаження записується в сесію до того, як буде\nзапущений якийсь скрипт. Тому зміна імені сесії за допомогою\n\u003ca href=\"function.ini-set.md\"\u003eini_set()\u003c/a\u003e або\n\u003ca href=\"function.session-name.md\"\u003esession_name()\u003c/a\u003e видасть сесію без\nінформації про прогрес завантаження.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"session.upload-progress.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

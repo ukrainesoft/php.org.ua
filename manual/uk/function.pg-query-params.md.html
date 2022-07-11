@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.pg-query-params | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.pg-put-line.md">« pg_put_line</a></p>
+</li>
+<li>
+<p><a href="function.pg-query.md">pg_query »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.pgsql.md">Функції PostgreSQL</a></p>
+</li>
+<li>
+<p>Надсилає параметризований запит на сервер, параметри передаються
+окремо від тексту SQL запиту</p>
+</li>
+</ul>
+<p>#pg_query_params</p>
+<p>(PHP 5 >= 5.1.0, PHP 7, PHP 8)</p>
+<p>pg_query_params — Надсилає параметризований запит на сервер, параметри
+передаються окремо від тексту SQL запиту</p>
+<h3>Опис</h3>
+<p><strong>pg_query_params</strong>(<a href="class.pgsql-connection.md">PgSql\Connection</a>
+<code>$connection</code> = ?, string <code>$query</code>, array <code>$params</code>):
+<a href="class.pgsql-result.md">PgSql\Result</a>|false</p>
+<p>Посилає параметризований запит на сервер і чекає на результат. Параметри
+передаються окремо від рядка запиту.</p>
+<p><strong>pg_query_params()</strong> подібна до функції
+<a href="function.pg-query.md">pg_query()</a>, але надає додатковий
+функціонал: параметри запиту можна передавати окремо від рядка
+запиту. <strong>pg_query_params()</strong> підтримується на з'єднаннях із серверами
+PostgreSQL версій 7.4 та вище. Функція не працюватиме з серверами
+ранніх версій.</p>
+<p>Якщо використовуються параметри <code>params</code>, вони замінюють псевдозмінні $1,
+$2 і т.д. у рядку запиту <code>query</code>. Один і той самий параметр може бути
+вказано більше одного разу в <code>query</code>; у цьому випадку будуть використані
+однакові значення. <code>params</code> визначають поточні значення параметрів.
+Значення <strong><code>null</code></strong> у масиві параметрів означатиме SQL <code>NULL</code> в
+запит.</p>
+<p>Головна перевага <strong>pg_query_params()</strong> перед
+<a href="function.pg-query.md">pg_query()</a> полягає в тому, що значення
+параметри можуть передаватися окремо від рядка запиту <code>query</code>. Це
+дає можливість уникнути стомлюючу і схильну до помилок процедуру
+екранування спецсимволів та укладання значень у лапки. Однак, у
+на відміну від <a href="function.pg-query.md">pg_query()</a>, ця функція
+підтримує тільки один SQL запит у рядку, що передається. (Він може
+містити крапку з комою, але не більше однієї непустої SQL-команди.)</p>
+<h3>Список параметрів</h3>
+<p><code>connection</code>
+Примірник <a href="class.pgsql-connection.md">PgSql\Connection</a>. Якщо
+<code>connection</code> не вказано, використовується стандартне з'єднання.
+З'єднання за замовчуванням - це останнє з'єднання, виконане з
+за допомогою функцій <a href="function.pg-connect.md">pg_connect()</a> або
+<a href="function.pg-pconnect.md">pg_pconnect()</a>.</p>
+<p><strong>Увага</strong>
+Починаючи з версії PHP 8.1.0, використання стандартного з'єднання
+застаріло.</p>
+<p><code>query</code>
+Параметризований запит SQL. Повинен містити лише один вираз
+(кілька виразів розділених крапкою з комою не підтримуються).
+Якщо на запит будуть передаватися параметри, вони замінять
+псевдозмінні $1, $2 і т.д.</p>
+<p>Ці дані завжди повинні передаватися як параметри, і не
+передаватися в рядок запиту безпосередньо, де вони можуть призвести до
+можливим атакам через
+<a href="security.database.sql-injection.md">SQL-ін'єкції</a> і призводить до
+помилок, якщо дані містять лапки. Якщо з якихось причин ви не
+можете використовувати параметр, переконайтеся, що дані користувача
+<a href="function.pg-escape-string.md">правильно екрановані</a>.</p>
+<p><code>params</code>
+Масив значень параметрів запиту для заміни псевдозмінних $1, $2 та
+і т.д. у вихідному рядку запиту. Кількість елементів масиву має
+точно співпадати з кількістю псевдозмінних.</p>
+<p>Значення призначені для <code>bytea</code> полів не можна передавати в
+параметри. Використовуйте функцію
+<a href="function.pg-escape-bytea.md">pg_escape_bytea()</a> або функції для
+великих об'єктів.</p>
+<h3>Значення, що повертаються</h3>
+<p>Примірник <a href="class.pgsql-result.md">PgSql\Result</a> у разі успішного
+виконання або <strong><code>false</code></strong> у разі виникнення помилки.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.1.0</td>
+<td>Повертає екземпляр <a href="class.pgsql-result.md">PgSql\Result</a>; раніше повертався ресурс (<a href="language.types.resource.md">resource</a>).</td>
+</tr>
+<tr>
+<td>8.1.0</td>
+<td>Параметр connection тепер чекає на екземпляр <a href="class.pgsql-connection.md">PgSql\Connection</a>; раніше очікувався ресурс (<a href="language.types.resource.md">resource</a>).</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>pg_query_params()</strong></strong></p>
+<p>`&#x3C;?php// Підключення до базі даних "mary"$dbconn = pg_connect("dbname=mary");// Знайдемо все магазини з назвою "Joe's Widgets". Стоит отметить, что нет необходимости экранировать// спецсимволы в строке "Joe's Widgets"$result = pg_query_params($dbconn, 'SELECT * FROM shops WHERE name = $1', array("Joe's Widgets"));// Для сравнения то же саме, використовуючи функцію pg_query$str = pg_escape_string("Joe's Widgets");$result = pg_query($dbconn, "SELECT * FROM shops WHERE name > </p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.pg-query.md">pg_query()</a> - Виконує запит</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.pg-query-params.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.pg-query-params.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.pg-query-params","slug":"function.pg-query-params.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.pg-put-line.md\"\u003e« pg_put_line\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.pg-query.md\"\u003epg_query »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.pgsql.md\"\u003eФункції PostgreSQL\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНадсилає параметризований запит на сервер, параметри передаються\nокремо від тексту SQL запиту\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#pg_query_params\u003c/p\u003e\n\u003cp\u003e(PHP 5 \u003e= 5.1.0, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003epg_query_params — Надсилає параметризований запит на сервер, параметри\nпередаються окремо від тексту SQL запиту\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003epg_query_params\u003c/strong\u003e(\u003ca href=\"class.pgsql-connection.md\"\u003ePgSql\\Connection\u003c/a\u003e\n\u003ccode\u003e$connection\u003c/code\u003e = ?, string \u003ccode\u003e$query\u003c/code\u003e, array \u003ccode\u003e$params\u003c/code\u003e):\n\u003ca href=\"class.pgsql-result.md\"\u003ePgSql\\Result\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003eПосилає параметризований запит на сервер і чекає на результат. Параметри\nпередаються окремо від рядка запиту.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003epg_query_params()\u003c/strong\u003e подібна до функції\n\u003ca href=\"function.pg-query.md\"\u003epg_query()\u003c/a\u003e, але надає додатковий\nфункціонал: параметри запиту можна передавати окремо від рядка\nзапиту. \u003cstrong\u003epg_query_params()\u003c/strong\u003e підтримується на з'єднаннях із серверами\nPostgreSQL версій 7.4 та вище. Функція не працюватиме з серверами\nранніх версій.\u003c/p\u003e\n\u003cp\u003eЯкщо використовуються параметри \u003ccode\u003eparams\u003c/code\u003e, вони замінюють псевдозмінні $1,\n$2 і т.д. у рядку запиту \u003ccode\u003equery\u003c/code\u003e. Один і той самий параметр може бути\nвказано більше одного разу в \u003ccode\u003equery\u003c/code\u003e; у цьому випадку будуть використані\nоднакові значення. \u003ccode\u003eparams\u003c/code\u003e визначають поточні значення параметрів.\nЗначення \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e у масиві параметрів означатиме SQL \u003ccode\u003eNULL\u003c/code\u003e в\nзапит.\u003c/p\u003e\n\u003cp\u003eГоловна перевага \u003cstrong\u003epg_query_params()\u003c/strong\u003e перед\n\u003ca href=\"function.pg-query.md\"\u003epg_query()\u003c/a\u003e полягає в тому, що значення\nпараметри можуть передаватися окремо від рядка запиту \u003ccode\u003equery\u003c/code\u003e. Це\nдає можливість уникнути стомлюючу і схильну до помилок процедуру\nекранування спецсимволів та укладання значень у лапки. Однак, у\nна відміну від \u003ca href=\"function.pg-query.md\"\u003epg_query()\u003c/a\u003e, ця функція\nпідтримує тільки один SQL запит у рядку, що передається. (Він може\nмістити крапку з комою, але не більше однієї непустої SQL-команди.)\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003econnection\u003c/code\u003e\nПримірник \u003ca href=\"class.pgsql-connection.md\"\u003ePgSql\\Connection\u003c/a\u003e. Якщо\n\u003ccode\u003econnection\u003c/code\u003e не вказано, використовується стандартне з'єднання.\nЗ'єднання за замовчуванням - це останнє з'єднання, виконане з\nза допомогою функцій \u003ca href=\"function.pg-connect.md\"\u003epg_connect()\u003c/a\u003e або\n\u003ca href=\"function.pg-pconnect.md\"\u003epg_pconnect()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\nПочинаючи з версії PHP 8.1.0, використання стандартного з'єднання\nзастаріло.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003equery\u003c/code\u003e\nПараметризований запит SQL. Повинен містити лише один вираз\n(кілька виразів розділених крапкою з комою не підтримуються).\nЯкщо на запит будуть передаватися параметри, вони замінять\nпсевдозмінні $1, $2 і т.д.\u003c/p\u003e\n\u003cp\u003eЦі дані завжди повинні передаватися як параметри, і не\nпередаватися в рядок запиту безпосередньо, де вони можуть призвести до\nможливим атакам через\n\u003ca href=\"security.database.sql-injection.md\"\u003eSQL-ін'єкції\u003c/a\u003e і призводить до\nпомилок, якщо дані містять лапки. Якщо з якихось причин ви не\nможете використовувати параметр, переконайтеся, що дані користувача\n\u003ca href=\"function.pg-escape-string.md\"\u003eправильно екрановані\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eparams\u003c/code\u003e\nМасив значень параметрів запиту для заміни псевдозмінних $1, $2 та\nі т.д. у вихідному рядку запиту. Кількість елементів масиву має\nточно співпадати з кількістю псевдозмінних.\u003c/p\u003e\n\u003cp\u003eЗначення призначені для \u003ccode\u003ebytea\u003c/code\u003e полів не можна передавати в\nпараметри. Використовуйте функцію\n\u003ca href=\"function.pg-escape-bytea.md\"\u003epg_escape_bytea()\u003c/a\u003e або функції для\nвеликих об'єктів.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПримірник \u003ca href=\"class.pgsql-result.md\"\u003ePgSql\\Result\u003c/a\u003e у разі успішного\nвиконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.1.0\u003c/td\u003e\n\u003ctd\u003eПовертає екземпляр \u003ca href=\"class.pgsql-result.md\"\u003ePgSql\\Result\u003c/a\u003e; раніше повертався ресурс (\u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e).\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.1.0\u003c/td\u003e\n\u003ctd\u003eПараметр connection тепер чекає на екземпляр \u003ca href=\"class.pgsql-connection.md\"\u003ePgSql\\Connection\u003c/a\u003e; раніше очікувався ресурс (\u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e).\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003epg_query_params()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?php// Підключення до базі даних \"mary\"$dbconn = pg_connect(\"dbname=mary\");// Знайдемо все магазини з назвою \"Joe's Widgets\". Стоит отметить, что нет необходимости экранировать// спецсимволы в строке \"Joe's Widgets\"$result = pg_query_params($dbconn, 'SELECT * FROM shops WHERE name = $1', array(\"Joe's Widgets\"));// Для сравнения то же саме, використовуючи функцію pg_query$str = pg_escape_string(\"Joe's Widgets\");$result = pg_query($dbconn, \"SELECT * FROM shops WHERE name \u003e \u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.pg-query.md\"\u003epg_query()\u003c/a\u003e - Виконує запит\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.pg-query-params.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

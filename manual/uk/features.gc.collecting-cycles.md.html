@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>features.gc.collecting-cycles | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="features.gc.refcounting-basics.md">« Основи підрахунку посилань</a></p>
+</li>
+<li>
+<p><a href="features.gc.performance-considerations.md">Питання продуктивності »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="features.gc.md">Складання сміття</a></p>
+</li>
+<li>
+<p>Збір циклічних посилань</p>
+</li>
+</ul>
+<h2>Збір циклічних посилань</h2>
+<p>Зазвичай механізми підрахунку посилань у пам'яті, наприклад, використовуваний PHP
+раніше, не вирішують проблему витоку пам'яті через циклічні посилання.
+Починаючи з версії 5.3.0, в PHP реалізований синхронний механізм
+дослідження "<a href="http://researcher.watson.ibm.com/researcher/files/us-bacon/Bacon01Concurrent.pdf">» Concurrent Cycle Collection in Reference Counted Systems</a>",
+у якому розглядається це питання.</p>
+<p>Повний опис роботи алгоритму виходить за межі даного розділу,
+тому наведено лише основи. Насамперед ми повинні задати кілька
+Основні правила. Якщо лічильник посилань збільшується, то контейнер все ще
+використовується та не є сміттям. Якщо лічильник зменшується до нуля, то
+zval може бути вилучено. Виходячи з цих правил витоку пам'яті з
+циклічними посиланнями можуть вийти тільки при зменшенні лічильника
+посилань до ненульового значення. Потім, у виділених контейнерах можна
+знайти сміття перевіривши можливість зменшення всіх лічильників посилань на
+одиницю та визначивши ті контейнери, у яких лічильник стане рівним нулю.</p>
+<p><img src="images/12f37b1c6963c1c5c18f30495416a197-gc-algorithm.png" alt="Алгоритм складання сміття"></p>
+<p>Для уникнення постійної перевірки на сміття з циклічними посиланнями при
+кожному зменшенні лічильника посилань, алгоритм додає всі можливі
+коріння (zval контейнери) в "кореневий буфер" (позначаючи їх як
+"фіолетові"). Це також гарантує попадання будь-якого кореня в буфер.
+тільки один раз. Механізм складання сміття стартує лише тоді, коли
+наповнюється буфер (дивіться крок A на малюнку вище).</p>
+<p>На кроці B алгоритм здійснює пошук у глибину за всіма можливими коріннями
+для одноразового зменшення лічильника посилань на одиницю у всіх
+контейнерів (позначаючи їх як "сірі"). На кроці C алгоритм знову
+проводить пошук у глибину для перевірки лічильників посилань. Якщо він
+знаходить лічильник з нульовим значенням, контейнер позначається як "білий"
+(на малюнку відображено синім). Якщо ж лічильник більший за нуль, то
+відбувається пошук у глибину від цього контейнера зі зворотним збільшенням
+лічильників на одиницю і повторною позначкою як "чорний" на них
+контейнери. На останньому кроці D алгоритм проходить по кореневому буферу
+видаляє з нього коріння контейнерів, заразом перевіряючи які контейнери
+позначені як "білі". Ці контейнери буде звільнено з пам'яті.</p>
+<p>Тепер, коли ви маєте уявлення про роботу алгоритму, розглянемо його
+інтеграцію до PHP. За замовчуванням збирач сміття завжди увімкнений. Для
+зміни цієї опції використовується параметр
+<a href="info.configuration.md#ini.zend.enable-gc">zend.enable_gc</a> у
+<code>php.ini</code>.</p>
+<p>Якщо збирач сміття включений, алгоритм пошуку циклічних посилань
+виконується щоразу, коли кореневий буфер наповнюється 10,000 корінням
+(ви можете змінити це значення, змінивши константу
+<code>GC_ROOT_BUFFER_MAX_ENTRIES</code> у файлі <code>Zend/zend_gc.c</code> у вихідному коді
+PHP і перебравши PHP). Якщо збирач сміття вимкнено, алгоритм ніколи не
+буде запущено. Тим не менш, буфер завжди заповнюється корінням.</p>
+<p>Якщо буфер заповнився при вимкненому механізмі збирання сміття, то інші
+коріння нічого очікувати в нього записані. Таким чином, якщо вони виявляться сміттям
+з циклічними посиланнями, то ніколи не будуть очищені та створять витік
+пам'яті.</p>
+<p>Причиною постійного запису коріння в буфер навіть при вимкненому механізмі
+складання сміття є те, що це набагато швидше, ніж постійно
+перевіряти чи включений механізм складання сміття чи ні. Проте, саме складання
+сміття та алгоритм її аналізу можуть займати значний час.</p>
+<p>Крім зміни параметра
+<a href="info.configuration.md#ini.zend.enable-gc">zend.enable_gc</a>, механізм
+складання сміття також можна запустити і зупинити викликавши функції
+<a href="function.gc-enable.md">gc_enable()</a> та
+<a href="function.gc-disable.md">gc_disable()</a> відповідно. Виклик цих
+функцій має той же ефект, що і включення/вимкнення механізму
+налаштування конфігурації. Крім того, можна запустити складання
+сміття, навіть якщо кореневий буфер ще заповнений. Для цього ви можете
+викликати функцію <a href="function.gc-collect-cycles.md">gc_collect_cycles()</a>,
+яка також повертає кількість циклічних посилань зібраних
+алгоритмом.</p>
+<p>Причиною включення та вимикання механізму складання, а також його ручного
+запуску, може стати те, що деякі частини вашої програми можуть
+бути вимогливими до часу. У цих випадках ви, можливо, не
+захочете стороннього втручання збирача сміття. Зрозуміло,
+виключаючи збирач сміття у певних місцях вашої програми ви
+ризикуєте отримати витік пам'яті, т.к. потенційно деякі коріння можуть
+не поміститися в обмежений кореневий буфер. Більш доцільно буде
+викликати <a href="function.gc-collect-cycles.md">gc_collect_cycles()</a>
+безпосередньо перед викликом <a href="function.gc-disable.md">gc_disable()</a>
+для звільнення пам'яті та вже записаних коренів у буфері. Це очистить
+буфер і дозволить використовувати більше місця для зберігання коренів, поки
+механізм буде вимкнено.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/features.gc.collecting-cycles.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/features.gc.collecting-cycles.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"features.gc.collecting-cycles","slug":"features.gc.collecting-cycles.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"features.gc.refcounting-basics.md\"\u003e« Основи підрахунку посилань\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"features.gc.performance-considerations.md\"\u003eПитання продуктивності »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"features.gc.md\"\u003eСкладання сміття\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗбір циклічних посилань\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eЗбір циклічних посилань\u003c/h2\u003e\n\u003cp\u003eЗазвичай механізми підрахунку посилань у пам'яті, наприклад, використовуваний PHP\nраніше, не вирішують проблему витоку пам'яті через циклічні посилання.\nПочинаючи з версії 5.3.0, в PHP реалізований синхронний механізм\nдослідження \"\u003ca href=\"http://researcher.watson.ibm.com/researcher/files/us-bacon/Bacon01Concurrent.pdf\"\u003e» Concurrent Cycle Collection in Reference Counted Systems\u003c/a\u003e\",\nу якому розглядається це питання.\u003c/p\u003e\n\u003cp\u003eПовний опис роботи алгоритму виходить за межі даного розділу,\nтому наведено лише основи. Насамперед ми повинні задати кілька\nОсновні правила. Якщо лічильник посилань збільшується, то контейнер все ще\nвикористовується та не є сміттям. Якщо лічильник зменшується до нуля, то\nzval може бути вилучено. Виходячи з цих правил витоку пам'яті з\nциклічними посиланнями можуть вийти тільки при зменшенні лічильника\nпосилань до ненульового значення. Потім, у виділених контейнерах можна\nзнайти сміття перевіривши можливість зменшення всіх лічильників посилань на\nодиницю та визначивши ті контейнери, у яких лічильник стане рівним нулю.\u003c/p\u003e\n\u003cp\u003e\u003cimg src=\"images/12f37b1c6963c1c5c18f30495416a197-gc-algorithm.png\" alt=\"Алгоритм складання сміття\"\u003e\u003c/p\u003e\n\u003cp\u003eДля уникнення постійної перевірки на сміття з циклічними посиланнями при\nкожному зменшенні лічильника посилань, алгоритм додає всі можливі\nкоріння (zval контейнери) в \"кореневий буфер\" (позначаючи їх як\n\"фіолетові\"). Це також гарантує попадання будь-якого кореня в буфер.\nтільки один раз. Механізм складання сміття стартує лише тоді, коли\nнаповнюється буфер (дивіться крок A на малюнку вище).\u003c/p\u003e\n\u003cp\u003eНа кроці B алгоритм здійснює пошук у глибину за всіма можливими коріннями\nдля одноразового зменшення лічильника посилань на одиницю у всіх\nконтейнерів (позначаючи їх як \"сірі\"). На кроці C алгоритм знову\nпроводить пошук у глибину для перевірки лічильників посилань. Якщо він\nзнаходить лічильник з нульовим значенням, контейнер позначається як \"білий\"\n(на малюнку відображено синім). Якщо ж лічильник більший за нуль, то\nвідбувається пошук у глибину від цього контейнера зі зворотним збільшенням\nлічильників на одиницю і повторною позначкою як \"чорний\" на них\nконтейнери. На останньому кроці D алгоритм проходить по кореневому буферу\nвидаляє з нього коріння контейнерів, заразом перевіряючи які контейнери\nпозначені як \"білі\". Ці контейнери буде звільнено з пам'яті.\u003c/p\u003e\n\u003cp\u003eТепер, коли ви маєте уявлення про роботу алгоритму, розглянемо його\nінтеграцію до PHP. За замовчуванням збирач сміття завжди увімкнений. Для\nзміни цієї опції використовується параметр\n\u003ca href=\"info.configuration.md#ini.zend.enable-gc\"\u003ezend.enable_gc\u003c/a\u003e у\n\u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо збирач сміття включений, алгоритм пошуку циклічних посилань\nвиконується щоразу, коли кореневий буфер наповнюється 10,000 корінням\n(ви можете змінити це значення, змінивши константу\n\u003ccode\u003eGC_ROOT_BUFFER_MAX_ENTRIES\u003c/code\u003e у файлі \u003ccode\u003eZend/zend_gc.c\u003c/code\u003e у вихідному коді\nPHP і перебравши PHP). Якщо збирач сміття вимкнено, алгоритм ніколи не\nбуде запущено. Тим не менш, буфер завжди заповнюється корінням.\u003c/p\u003e\n\u003cp\u003eЯкщо буфер заповнився при вимкненому механізмі збирання сміття, то інші\nкоріння нічого очікувати в нього записані. Таким чином, якщо вони виявляться сміттям\nз циклічними посиланнями, то ніколи не будуть очищені та створять витік\nпам'яті.\u003c/p\u003e\n\u003cp\u003eПричиною постійного запису коріння в буфер навіть при вимкненому механізмі\nскладання сміття є те, що це набагато швидше, ніж постійно\nперевіряти чи включений механізм складання сміття чи ні. Проте, саме складання\nсміття та алгоритм її аналізу можуть займати значний час.\u003c/p\u003e\n\u003cp\u003eКрім зміни параметра\n\u003ca href=\"info.configuration.md#ini.zend.enable-gc\"\u003ezend.enable_gc\u003c/a\u003e, механізм\nскладання сміття також можна запустити і зупинити викликавши функції\n\u003ca href=\"function.gc-enable.md\"\u003egc_enable()\u003c/a\u003e та\n\u003ca href=\"function.gc-disable.md\"\u003egc_disable()\u003c/a\u003e відповідно. Виклик цих\nфункцій має той же ефект, що і включення/вимкнення механізму\nналаштування конфігурації. Крім того, можна запустити складання\nсміття, навіть якщо кореневий буфер ще заповнений. Для цього ви можете\nвикликати функцію \u003ca href=\"function.gc-collect-cycles.md\"\u003egc_collect_cycles()\u003c/a\u003e,\nяка також повертає кількість циклічних посилань зібраних\nалгоритмом.\u003c/p\u003e\n\u003cp\u003eПричиною включення та вимикання механізму складання, а також його ручного\nзапуску, може стати те, що деякі частини вашої програми можуть\nбути вимогливими до часу. У цих випадках ви, можливо, не\nзахочете стороннього втручання збирача сміття. Зрозуміло,\nвиключаючи збирач сміття у певних місцях вашої програми ви\nризикуєте отримати витік пам'яті, т.к. потенційно деякі коріння можуть\nне поміститися в обмежений кореневий буфер. Більш доцільно буде\nвикликати \u003ca href=\"function.gc-collect-cycles.md\"\u003egc_collect_cycles()\u003c/a\u003e\nбезпосередньо перед викликом \u003ca href=\"function.gc-disable.md\"\u003egc_disable()\u003c/a\u003e\nдля звільнення пам'яті та вже записаних коренів у буфері. Це очистить\nбуфер і дозволить використовувати більше місця для зберігання коренів, поки\nмеханізм буде вимкнено.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"features.gc.collecting-cycles.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

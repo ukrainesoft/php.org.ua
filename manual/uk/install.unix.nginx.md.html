@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>install.unix.nginx | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="install.unix.apache2.md">«Apache 2.x на Unix системах</a></p>
+</li>
+<li>
+<p><a href="install.unix.lighttpd-14.md">Установка PHP на Lighttpd 1.4 на Unix-системах »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="install.unix.md">Установка для Unix-системи</a></p>
+</li>
+<li>
+<p>Встановлення Nginx 1.4.x на систему Unix</p>
+</li>
+</ul>
+<h2>Встановлення Nginx 1.4.x на систему Unix</h2>
+<p>Ця документація описує процес встановлення та налаштування PHP з
+PHP-FPM для Nginx 1.4.x сервера HTTP.</p>
+<p>Даний посібник має на увазі, що ви зібрали Nginx з вихідних джерел,
+отже, всі бінарні файли та файли конфігурації розташовуються в
+<code>/usr/local/nginx</code>. Якщо ні, і ви отримали Nginx в інший спосіб,
+тоді, будь ласка, зверніться до <a href="https://www.nginx.com/resources/wiki/">» Nginx Wiki</a>, щоб перекласти це
+посібник для вашої установки.</p>
+<p>Даний посібник охоплює ази налаштування Nginx сервера, для обробки
+PHP додатків та відображення їх на порту 80. Рекомендується вивчити
+документацію Nginx та PHP-FPM, якщо ви хочете оптимізувати вашу
+встановлення за рамками цієї документації.</p>
+<p>Будь ласка, зверніть увагу, що у всій даній документації номери
+версій було замінено на 'x', щоб ця документація залишалася
+коректною у майбутньому. Будь ласка, замініть 'x' на необхідний номер
+версії.</p>
+<ol>
+<li>
+<p>Рекомендується відвідати <a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/install/">сторінку установки</a>
+на Nginx Wiki, для інформації про отримання та встановлення Nginx.</p>
+</li>
+<li>
+<p>Отримання та розпакування вихідники PHP:</p>
+</li>
+</ol>
+<p>tar zxf php-x.x.x</p>
+<ol start="3">
+<li>Налаштування та складання PHP. У цьому розділі описується налаштування та
+збирання PHP з вихідних кодів. Запустіть ./configure --help для
+отримання списку доступних опцій. У нашому прикладі ми зробимо прості
+налаштування з PHP-FPM та підтримкою MySQLi.</li>
+</ol>
+<p>cd ../php-x.x.x
+./configure --enable-fpm --with-mysqli
+make
+sudo make install</p>
+<ol start="4">
+<li>Переміщення файлів налаштування в необхідні директорії</li>
+</ol>
+<p>cp php.ini-development /usr/local/php/php.ini
+cp /usr/local/etc/php-fpm.d/<a href="http://www.conf.default">www.conf.default</a> /usr/local/etc/php-fpm.d/<a href="http://www.conf">www.conf</a>
+cp sapi/fpm/php-fpm /usr/local/bin</p>
+<ol start="5">
+<li>Важливо, що ми забороняємо Nginx від відправляти запити в бекенд
+PHP-FPM, якщо файл не існує, що допомагає уникнути атаки
+ін'єкції сценарію.</li>
+</ol>
+<p>Ми можемо виправити це шляхом встановлення директиви
+<a href="ini.core.md#ini.cgi.fix-pathinfo">cgi.fix_pathinfo</a> рівної <code>0</code> в
+нашому php.ini файлі.</p>
+<p>Редагування php.ini:</p>
+<p>vim /usr/local/php/php.ini</p>
+<p>Знайдіть опцію <code>cgi.fix_pathinfo=</code> та змініть її наступним чином:</p>
+<p>cgi.fix_pathinfo=0</p>
+<ol start="6">
+<li>php-fpm.conf має бути модифікований, щоб точно визначити, що
+php-fpm повинен працювати під користувачем www-data та групою
+www-data до того, як ми запустимо сервіс:</li>
+</ol>
+<p>vim /usr/local/etc/php-fpm.d/<a href="http://www.conf">www.conf</a></p>
+<p>Знайдіть та зміните наступне:</p>
+<p>; Unix user/group of processes
+; Примітка: Користувач є обов'язковим. Якщо групу не встановлено,
+; то буде використано стандартну групу користувача.
+user = www-data
+group = www-data</p>
+<p>Тепер можна запускати сервіс php-fpm:</p>
+<p>/usr/local/bin/php-fpm</p>
+<p>Більше в цьому посібнику ми не будемо стосуватися налаштування php-fpm.
+Якщо вам необхідно зробити додаткові налаштування - зверніться
+до документації з php-fpm.</p>
+<ol start="7">
+<li>Тепер Nginx має бути налаштований на підтримку виконання PHP:</li>
+</ol>
+<p>vim /usr/local/nginx/conf/nginx.conf</p>
+<p>Змініть блок "location", заданий за замовчуванням так, щоб можна було
+було обробляти .php файли:</p>
+<p>``nginx-confcode
+location / {
+root html;
+index index.php index.md index.htm;
+}</p>
+<pre><code>
+Наступний крок - переконатися, що .php файли відправляються в бекенд
+PHP-FPM. Введіть таке:
+
+``nginx-confcode
+location ~* \.php$ {
+fastcgi_index index.php;
+fastcgi_pass 127.0.0.1: 9000;
+include fastcgi_params;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+}
+</code></pre>
+<p>Перезапустіть Nginx.</p>
+<p>sudo /usr/local/nginx/sbin/nginx -s stop
+sudo /usr/local/nginx/sbin/nginx</p>
+<ol start="8">
+<li>Створіть тестовий файл</li>
+</ol>
+<p>rm /usr/local/nginx/html/index.md
+echo "" >> /usr/local/nginx/html/index.php</p>
+<p>Тепер відкрийте у браузері <a href="http://localhost">http://localhost</a>. Повинна відобразитись
+інформація phpinfo().</p>
+<p>Наслідуючи вищевказані кроки, ви отримаєте робочий Nginx сервер з
+підтримкою PHP як модуля <code>FPM</code> <code>SAPI</code>. Звичайно, доступна велика кількість
+опцій налаштувань для Nginx та PHP. Для більш детальної інформації наберіть
+<strong>./configure --help</strong> у відповідному дереві вихідних кодів.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/install.unix.nginx.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/install.unix.nginx.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"install.unix.nginx","slug":"install.unix.nginx.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"install.unix.apache2.md\"\u003e«Apache 2.x на Unix системах\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"install.unix.lighttpd-14.md\"\u003eУстановка PHP на Lighttpd 1.4 на Unix-системах »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"install.unix.md\"\u003eУстановка для Unix-системи\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВстановлення Nginx 1.4.x на систему Unix\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eВстановлення Nginx 1.4.x на систему Unix\u003c/h2\u003e\n\u003cp\u003eЦя документація описує процес встановлення та налаштування PHP з\nPHP-FPM для Nginx 1.4.x сервера HTTP.\u003c/p\u003e\n\u003cp\u003eДаний посібник має на увазі, що ви зібрали Nginx з вихідних джерел,\nотже, всі бінарні файли та файли конфігурації розташовуються в\n\u003ccode\u003e/usr/local/nginx\u003c/code\u003e. Якщо ні, і ви отримали Nginx в інший спосіб,\nтоді, будь ласка, зверніться до \u003ca href=\"https://www.nginx.com/resources/wiki/\"\u003e» Nginx Wiki\u003c/a\u003e, щоб перекласти це\nпосібник для вашої установки.\u003c/p\u003e\n\u003cp\u003eДаний посібник охоплює ази налаштування Nginx сервера, для обробки\nPHP додатків та відображення їх на порту 80. Рекомендується вивчити\nдокументацію Nginx та PHP-FPM, якщо ви хочете оптимізувати вашу\nвстановлення за рамками цієї документації.\u003c/p\u003e\n\u003cp\u003eБудь ласка, зверніть увагу, що у всій даній документації номери\nверсій було замінено на 'x', щоб ця документація залишалася\nкоректною у майбутньому. Будь ласка, замініть 'x' на необхідний номер\nверсії.\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003eРекомендується відвідати \u003ca href=\"https://www.nginx.com/resources/wiki/start/topics/tutorials/install/\"\u003eсторінку установки\u003c/a\u003e\nна Nginx Wiki, для інформації про отримання та встановлення Nginx.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОтримання та розпакування вихідники PHP:\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003etar zxf php-x.x.x\u003c/p\u003e\n\u003col start=\"3\"\u003e\n\u003cli\u003eНалаштування та складання PHP. У цьому розділі описується налаштування та\nзбирання PHP з вихідних кодів. Запустіть ./configure --help для\nотримання списку доступних опцій. У нашому прикладі ми зробимо прості\nналаштування з PHP-FPM та підтримкою MySQLi.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003ecd ../php-x.x.x\n./configure --enable-fpm --with-mysqli\nmake\nsudo make install\u003c/p\u003e\n\u003col start=\"4\"\u003e\n\u003cli\u003eПереміщення файлів налаштування в необхідні директорії\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003ecp php.ini-development /usr/local/php/php.ini\ncp /usr/local/etc/php-fpm.d/\u003ca href=\"http://www.conf.default\"\u003ewww.conf.default\u003c/a\u003e /usr/local/etc/php-fpm.d/\u003ca href=\"http://www.conf\"\u003ewww.conf\u003c/a\u003e\ncp sapi/fpm/php-fpm /usr/local/bin\u003c/p\u003e\n\u003col start=\"5\"\u003e\n\u003cli\u003eВажливо, що ми забороняємо Nginx від відправляти запити в бекенд\nPHP-FPM, якщо файл не існує, що допомагає уникнути атаки\nін'єкції сценарію.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eМи можемо виправити це шляхом встановлення директиви\n\u003ca href=\"ini.core.md#ini.cgi.fix-pathinfo\"\u003ecgi.fix_pathinfo\u003c/a\u003e рівної \u003ccode\u003e0\u003c/code\u003e в\nнашому php.ini файлі.\u003c/p\u003e\n\u003cp\u003eРедагування php.ini:\u003c/p\u003e\n\u003cp\u003evim /usr/local/php/php.ini\u003c/p\u003e\n\u003cp\u003eЗнайдіть опцію \u003ccode\u003ecgi.fix_pathinfo=\u003c/code\u003e та змініть її наступним чином:\u003c/p\u003e\n\u003cp\u003ecgi.fix_pathinfo=0\u003c/p\u003e\n\u003col start=\"6\"\u003e\n\u003cli\u003ephp-fpm.conf має бути модифікований, щоб точно визначити, що\nphp-fpm повинен працювати під користувачем www-data та групою\nwww-data до того, як ми запустимо сервіс:\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003evim /usr/local/etc/php-fpm.d/\u003ca href=\"http://www.conf\"\u003ewww.conf\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eЗнайдіть та зміните наступне:\u003c/p\u003e\n\u003cp\u003e; Unix user/group of processes\n; Примітка: Користувач є обов'язковим. Якщо групу не встановлено,\n; то буде використано стандартну групу користувача.\nuser = www-data\ngroup = www-data\u003c/p\u003e\n\u003cp\u003eТепер можна запускати сервіс php-fpm:\u003c/p\u003e\n\u003cp\u003e/usr/local/bin/php-fpm\u003c/p\u003e\n\u003cp\u003eБільше в цьому посібнику ми не будемо стосуватися налаштування php-fpm.\nЯкщо вам необхідно зробити додаткові налаштування - зверніться\nдо документації з php-fpm.\u003c/p\u003e\n\u003col start=\"7\"\u003e\n\u003cli\u003eТепер Nginx має бути налаштований на підтримку виконання PHP:\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003evim /usr/local/nginx/conf/nginx.conf\u003c/p\u003e\n\u003cp\u003eЗмініть блок \"location\", заданий за замовчуванням так, щоб можна було\nбуло обробляти .php файли:\u003c/p\u003e\n\u003cp\u003e``nginx-confcode\nlocation / {\nroot html;\nindex index.php index.md index.htm;\n}\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e\nНаступний крок - переконатися, що .php файли відправляються в бекенд\nPHP-FPM. Введіть таке:\n\n``nginx-confcode\nlocation ~* \\.php$ {\nfastcgi_index index.php;\nfastcgi_pass 127.0.0.1: 9000;\ninclude fastcgi_params;\nfastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;\nfastcgi_param SCRIPT_NAME $fastcgi_script_name;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eПерезапустіть Nginx.\u003c/p\u003e\n\u003cp\u003esudo /usr/local/nginx/sbin/nginx -s stop\nsudo /usr/local/nginx/sbin/nginx\u003c/p\u003e\n\u003col start=\"8\"\u003e\n\u003cli\u003eСтворіть тестовий файл\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003erm /usr/local/nginx/html/index.md\necho \"\" \u003e\u003e /usr/local/nginx/html/index.php\u003c/p\u003e\n\u003cp\u003eТепер відкрийте у браузері \u003ca href=\"http://localhost\"\u003ehttp://localhost\u003c/a\u003e. Повинна відобразитись\nінформація phpinfo().\u003c/p\u003e\n\u003cp\u003eНаслідуючи вищевказані кроки, ви отримаєте робочий Nginx сервер з\nпідтримкою PHP як модуля \u003ccode\u003eFPM\u003c/code\u003e \u003ccode\u003eSAPI\u003c/code\u003e. Звичайно, доступна велика кількість\nопцій налаштувань для Nginx та PHP. Для більш детальної інформації наберіть\n\u003cstrong\u003e./configure --help\u003c/strong\u003e у відповідному дереві вихідних кодів.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"install.unix.nginx.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

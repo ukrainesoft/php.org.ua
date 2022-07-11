@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.mysqli | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli.summary.md">« Основна інформація про функції модуля MySQLi</a></p>
+</li>
+<li>
+<p><a href="mysqli.affected-rows.md">mysqli::$affected_rows »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.mysqli.md">MySQLi</a></p>
+</li>
+<li>
+<p>Клас mysqli</p>
+</li>
+</ul>
+<h1>Клас mysqli</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<h2>Вступ</h2>
+<p>Представляє зв'язок між PHP та базою даних MySQL.</p>
+<h2>Огляд класів</h2>
+<p>class <strong>mysqli</strong> {</p>
+<p>/* Властивості */</p>
+<p>public readonly int|string <code>$affected_rows</code>;</p>
+<p>public readonly string <code>$client_info</code>;</p>
+<p>public readonly int <code>$client_version</code>;</p>
+<p>public readonly int <code>$connect_errno</code>;</p>
+<p>public readonly ?string <code>$connect_error</code>;</p>
+<p>public readonly int <code>$errno</code>;</p>
+<p>public readonly string <code>$error</code>;</p>
+<p>public readonly array <code>$error_list</code>;</p>
+<p>public readonly int <code>$field_count</code>;</p>
+<p>public readonly string <code>$host_info</code>;</p>
+<p>public readonly ?string <code>$info</code>;</p>
+<p>public readonly int|string <code>$insert_id</code>;</p>
+<p>public readonly string <code>$server_info</code>;</p>
+<p>public readonly int <code>$server_version</code>;</p>
+<p>public readonly string <code>$sqlstate</code>;</p>
+<p>public readonly int <code>$protocol_version</code>;</p>
+<p>public readonly int <code>$thread_id</code>;</p>
+<p>public readonly int <code>$warning_count</code>;</p>
+<p>/* Методи */</p>
+<p>public <a href="mysqli.construct.md">__construct</a>(
+string <code>$hostname</code> = ini_get("mysqli.default_host"),
+string <code>$username</code> = ini_get("mysqli.default_user"),
+string <code>$password</code> = ini_get("mysqli.default_pw"),
+string <code>$database</code> = "",
+int <code>$port</code> = ini_get("mysqli.default_port"),
+string <code>$socket</code> = ini_get("mysqli.default_socket")
+)</p>
+<p>public <a href="mysqli.autocommit.md">autocommit</a>(bool <code>$enable</code>): bool</p>
+<p>public <a href="mysqli.begin-transaction.md">begin_transaction</a>(int <code>$flags</code> =
+0, ?string <code>$name</code> = <strong><code>null</code></strong>): bool</p>
+<p>public <a href="mysqli.change-user.md">change_user</a>(string <code>$username</code>, string
+<code>$password</code>, ?string <code>$database</code>): bool</p>
+<p>public <a href="mysqli.character-set-name.md">character_set_name</a>(): string</p>
+<p>public <a href="mysqli.close.md">close</a>(): bool</p>
+<p>public <a href="mysqli.commit.md">commit</a>(int <code>$flags</code> = 0, ?string <code>$name</code> =
+<strong><code>null</code></strong>): bool</p>
+<p>public <a href="function.mysqli-connect.md">connect</a>(
+string <code>$hostname</code> = ini_get("mysqli.default_host"),
+string <code>$username</code> = ini_get("mysqli.default_user"),
+string <code>$password</code> = ini_get("mysqli.default_pw"),
+string <code>$database</code> = "",
+int <code>$port</code> = ini_get("mysqli.default_port"),
+string <code>$socket</code> = ini_get("mysqli.default_socket")
+): void</p>
+<p>public <a href="mysqli.debug.md">debug</a>(string <code>$options</code>): bool</p>
+<p>public <a href="mysqli.dump-debug-info.md">dump_debug_info</a>(): bool</p>
+<p>public <a href="mysqli.get-charset.md">get_charset</a>(): ?object</p>
+<p>public <a href="mysqli.get-client-info.md">get_client_info</a>(): string</p>
+<p>public <a href="mysqli.get-connection-stats.md">get_connection_stats</a>(): array</p>
+<p>public <strong>mysqli_stmt::get_server_info</strong>(): string</p>
+<p>public <a href="mysqli.get-warnings.md">get_warnings</a>():
+<a href="class.mysqli-warning.md">mysqli_warning</a>|false</p>
+<p>public <a href="mysqli.kill.md">kill</a>(int <code>$process_id</code>): bool</p>
+<p>public <a href="mysqli.more-results.md">more_results</a>(): bool</p>
+<p>public <a href="mysqli.multi-query.md">multi_query</a>(string <code>$query</code>): bool</p>
+<p>public <a href="mysqli.next-result.md">next_result</a>(): bool</p>
+<p>public <a href="mysqli.options.md">options</a>(int <code>$option</code>, string|int
+<code>$value</code>): bool</p>
+<p>public <a href="mysqli.ping.md">ping</a>(): bool</p>
+<p>public static <a href="mysqli.poll.md">poll</a>(
+?array <code>&#x26;$read</code>,
+?array <code>&#x26;$error</code>,
+array <code>&#x26;$reject</code>,
+int <code>$seconds</code>,
+int <code>$microseconds</code> = 0
+): int|false</p>
+<p>public <a href="mysqli.prepare.md">prepare</a>(string <code>$query</code>):
+<a href="class.mysqli-stmt.md">mysqli_stmt</a>|false</p>
+<p>public <a href="mysqli.query.md">query</a>(string <code>$query</code>, int <code>$result_mode</code> =
+<strong><code>MYSQLI_STORE_RESULT</code></strong>):
+<a href="class.mysqli-result.md">mysqli_result</a>|bool</p>
+<p>public <a href="mysqli.real-connect.md">real_connect</a>(
+string <code>$host</code> = ?,
+string <code>$username</code> = ?,
+string <code>$passwd</code> = ?,
+string <code>$dbname</code> = ?,
+int <code>$port</code> = ?,
+string <code>$socket</code> = ?,
+int <code>$flags</code> = ?
+): bool</p>
+<p>public <a href="mysqli.real-escape-string.md">real_escape_string</a>(string
+<code>$string</code>): string</p>
+<p>public <a href="mysqli.real-query.md">real_query</a>(string <code>$query</code>): bool</p>
+<p>public <a href="mysqli.reap-async-query.md">reap_async_query</a>():
+<a href="class.mysqli-result.md">mysqli_result</a>|bool</p>
+<p>public <a href="mysqli.refresh.md">refresh</a>(int <code>$flags</code>): bool</p>
+<p>public <a href="mysqli.release-savepoint.md">release_savepoint</a>(string
+<code>$name</code>): bool</p>
+<p>public <a href="mysqli.rollback.md">rollback</a>(int <code>$flags</code> = 0, ?string
+<code>$name</code> = <strong><code>null</code></strong>): bool</p>
+<p>public <a href="mysqli.savepoint.md">savepoint</a>(string <code>$name</code>): bool</p>
+<p>public <a href="mysqli.select-db.md">select_db</a>(string <code>$database</code>): bool</p>
+<p>public <a href="mysqli.set-charset.md">set_charset</a>(string <code>$charset</code>): bool</p>
+<p>public <a href="mysqli.ssl-set.md">ssl_set</a>(
+?string <code>$key</code>,
+?string <code>$certificate</code>,
+?string <code>$ca_certificate</code>,
+?string <code>$ca_path</code>,
+?string <code>$cipher_algos</code>
+): bool</p>
+<p>public <a href="mysqli.stat.md">stat</a>(): string|false</p>
+<p>public <a href="mysqli.stmt-init.md">stmt_init</a>():
+<a href="class.mysqli-stmt.md">mysqli_stmt</a>|false</p>
+<p>public <a href="mysqli.store-result.md">store_result</a>(int <code>$mode</code> = 0):
+<a href="class.mysqli-result.md">mysqli_result</a>|false</p>
+<p>public <a href="mysqli.thread-safe.md">thread_safe</a>(): bool</p>
+<p>public <a href="mysqli.use-result.md">use_result</a>():
+<a href="class.mysqli-result.md">mysqli_result</a>|false</p>
+<p>}</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="mysqli.affected-rows.md">mysqli::$affected_rows</a> — Отримує число
+рядків, порушених попередньою операцією MySQL</li>
+<li><a href="mysqli.autocommit.md">mysqli::autocommit</a> — Включає або
+відключає автоматичну фіксацію змін бази даних</li>
+<li><a href="mysqli.begin-transaction.md">mysqli::begin_transaction</a> -
+Стартує транзакцію</li>
+<li><a href="mysqli.change-user.md">mysqli::change_user</a> — Дозволяє змінити
+користувача підключеного до бази даних</li>
+<li><a href="mysqli.character-set-name.md">mysqli::character_set_name</a> -
+Повертає поточне кодування, встановлене для з'єднання з БД</li>
+<li><a href="mysqli.close.md">mysqli::close</a> — Закриває раніше відкрите
+з'єднання з базою даних</li>
+<li><a href="mysqli.commit.md">mysqli::commit</a> — Фіксує поточну транзакцію</li>
+<li><a href="mysqli.connect-errno.md">mysqli::$connect_errno</a> — Повертає код
+помилки останньої спроби з'єднання</li>
+<li><a href="mysqli.connect-error.md">mysqli::$connect_error</a> — Повертає
+опис останньої помилки підключення</li>
+<li><a href="mysqli.construct.md">mysqli::__construct</a> - Встановлює нове
+з'єднання з сервером MySQL</li>
+<li><a href="mysqli.debug.md">mysqli::debug</a> — Виконує процедури налагодження</li>
+<li><a href="mysqli.dump-debug-info.md">mysqli::dump_debug_info</a> -
+Журналування налагоджувальної інформації</li>
+<li><a href="mysqli.errno.md">mysqli::$errno</a> — Повертає код помилки
+останнього виклику функції</li>
+<li><a href="mysqli.error-list.md">mysqli::$error_list</a> — Повертає список
+помилок виконання останньої занедбаної команди</li>
+<li><a href="mysqli.error.md">mysqli::$error</a> — Повертає рядок із описом
+останньої помилки</li>
+<li><a href="mysqli.field-count.md">mysqli::$field_count</a> — Повертає число
+стовпців, порушених останнім запитом</li>
+<li><a href="mysqli.get-charset.md">mysqli::get_charset</a> — Повертає об'єкт,
+описує кодування</li>
+<li><a href="mysqli.get-client-info.md">mysqli::$client_info</a> — Отримує
+інформацію про клієнта MySQL</li>
+<li><a href="mysqli.get-client-version.md">mysqli::$client_version</a> -
+Повертає інформацію про клієнта MySQL у вигляді рядка</li>
+<li><a href="mysqli.get-connection-stats.md">mysqli::get_connection_stats</a> -
+Повертає статистику з'єднання з клієнтом</li>
+<li><a href="mysqli.get-host-info.md">mysqli::$host_info</a> — Повертає рядок,
+містить тип використовуваного з'єднання</li>
+<li><a href="mysqli.get-proto-info.md">mysqli::$protocol_version</a> — Повертає
+версію використовуваного MySQL протоколу</li>
+<li><a href="mysqli.get-server-info.md">mysqli::$server_info</a> — Повертає
+версію MySQL сервера</li>
+<li><a href="mysqli.get-server-version.md">mysqli::$server_version</a> -
+Повертає версію сервера MySQL, представлену у вигляді integer</li>
+<li><a href="mysqli.get-warnings.md">mysqli::get_warnings</a> — Отримує
+результат SHOW WARNINGS</li>
+<li><a href="mysqli.info.md">mysqli::$info</a> — Витягує інформацію про останнє
+виконаному запиті</li>
+<li><a href="mysqli.init.md">mysqli::init</a> - Ініціалізує MySQLi та
+повертає об'єкт для використання у функції mysqli_real_connect()</li>
+<li><a href="mysqli.insert-id.md">mysqli::$insert_id</a> — Повертає значення,
+створене для стовпця AUTO_INCREMENT останнім запитом</li>
+<li><a href="mysqli.kill.md">mysqli::kill</a> — Запит для сервера завершити
+виконання процесу MySQL</li>
+<li><a href="mysqli.more-results.md">mysqli::more_results</a> — Перевірка, чи є
+ще результати в мультизапиті</li>
+<li><a href="mysqli.multi-query.md">mysqli::multi_query</a> — Виконує один або
+кілька запитів до бази даних</li>
+<li><a href="mysqli.next-result.md">mysqli::next_result</a> — Підготовка
+наступного доступного результуючого набору з multi_query</li>
+<li><a href="mysqli.options.md">mysqli::options</a> — Налаштування установок</li>
+<li><a href="mysqli.ping.md">mysqli::ping</a> - Перевіряє працездатність
+з'єднання або намагається перепідключитися, якщо з'єднання розірвано</li>
+<li><a href="mysqli.poll.md">mysqli::poll</a> — Опитування підключень</li>
+<li><a href="mysqli.prepare.md">mysqli::prepare</a> — Підготовка SQL
+вираз до виконання</li>
+<li><a href="mysqli.query.md">mysqli::query</a> — Виконує запит до бази даних</li>
+<li><a href="mysqli.real-connect.md">mysqli::real_connect</a> — Встановлює
+з'єднання з сервером mysql</li>
+<li><a href="mysqli.real-escape-string.md">mysqli::real_escape_string</a> -
+Екранує спеціальні символи в рядку для використання в
+SQL-вираз, використовуючи поточний набір символів з'єднання</li>
+<li><a href="mysqli.real-query.md">mysqli::real_query</a> — Виконання SQL
+запиту</li>
+<li><a href="mysqli.reap-async-query.md">mysqli::reap_async_query</a> — Отримання
+результату асинхронного запиту</li>
+<li><a href="mysqli.refresh.md">mysqli::refresh</a> — Оновлення</li>
+<li><a href="mysqli.release-savepoint.md">mysqli::release_savepoint</a> — Видаляє
+іменовану точку збереження зі списку точок збереження поточної
+транзакції</li>
+<li><a href="mysqli.rollback.md">mysqli::rollback</a> - Відкат поточної транзакції</li>
+<li><a href="mysqli.savepoint.md">mysqli::savepoint</a> — Встановіть іменовану
+точку збереження транзакції</li>
+<li><a href="mysqli.select-db.md">mysqli::select_db</a> — Встановлює базу
+даних для виконуваних запитів</li>
+<li><a href="mysqli.set-charset.md">mysqli::set_charset</a> — Задає набір
+символів</li>
+<li><a href="mysqli.sqlstate.md">mysqli::$sqlstate</a> — Повертає код стану
+SQLSTATE останній MySQL операції</li>
+<li><a href="mysqli.ssl-set.md">mysqli::ssl_set</a> — Використовується для
+встановлення безпечних з'єднань за допомогою SSL</li>
+<li><a href="mysqli.stat.md">mysqli::stat</a> — Отримання інформації про поточний
+стан системи</li>
+<li><a href="mysqli.stmt-init.md">mysqli::stmt_init</a> — Ініціалізує запит та
+повертає об'єкт для використання в mysqli_stmt_prepare</li>
+<li><a href="mysqli.store-result.md">mysqli::store_result</a> — Передає на
+клієнта результуючий набір останнього запиту</li>
+<li><a href="mysqli.thread-id.md">mysqli::$thread_id</a> — Повертає ID процесу
+поточного підключення</li>
+<li><a href="mysqli.thread-safe.md">mysqli::thread_safe</a> — Показує,
+чи безпечна робота з процесами</li>
+<li><a href="mysqli.use-result.md">mysqli::use_result</a> - Готує
+результуючий набір на сервері для використання</li>
+<li><a href="mysqli.warning-count.md">mysqli::$warning_count</a> — Повертає
+кількість попереджень із останнього запиту заданого
+підключення</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.mysqli.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.mysqli.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.mysqli","slug":"class.mysqli.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.summary.md\"\u003e« Основна інформація про функції модуля MySQLi\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.affected-rows.md\"\u003emysqli::$affected_rows »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.mysqli.md\"\u003eMySQLi\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас mysqli\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас mysqli\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003eПредставляє зв'язок між PHP та базою даних MySQL.\u003c/p\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003emysqli\u003c/strong\u003e {\u003c/p\u003e\n\u003cp\u003e/* Властивості */\u003c/p\u003e\n\u003cp\u003epublic readonly int|string \u003ccode\u003e$affected_rows\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly string \u003ccode\u003e$client_info\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$client_version\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$connect_errno\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly ?string \u003ccode\u003e$connect_error\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$errno\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly string \u003ccode\u003e$error\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly array \u003ccode\u003e$error_list\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$field_count\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly string \u003ccode\u003e$host_info\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly ?string \u003ccode\u003e$info\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int|string \u003ccode\u003e$insert_id\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly string \u003ccode\u003e$server_info\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$server_version\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly string \u003ccode\u003e$sqlstate\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$protocol_version\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$thread_id\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic readonly int \u003ccode\u003e$warning_count\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.construct.md\"\u003e__construct\u003c/a\u003e(\nstring \u003ccode\u003e$hostname\u003c/code\u003e = ini_get(\"mysqli.default_host\"),\nstring \u003ccode\u003e$username\u003c/code\u003e = ini_get(\"mysqli.default_user\"),\nstring \u003ccode\u003e$password\u003c/code\u003e = ini_get(\"mysqli.default_pw\"),\nstring \u003ccode\u003e$database\u003c/code\u003e = \"\",\nint \u003ccode\u003e$port\u003c/code\u003e = ini_get(\"mysqli.default_port\"),\nstring \u003ccode\u003e$socket\u003c/code\u003e = ini_get(\"mysqli.default_socket\")\n)\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.autocommit.md\"\u003eautocommit\u003c/a\u003e(bool \u003ccode\u003e$enable\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.begin-transaction.md\"\u003ebegin_transaction\u003c/a\u003e(int \u003ccode\u003e$flags\u003c/code\u003e =\n0, ?string \u003ccode\u003e$name\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.change-user.md\"\u003echange_user\u003c/a\u003e(string \u003ccode\u003e$username\u003c/code\u003e, string\n\u003ccode\u003e$password\u003c/code\u003e, ?string \u003ccode\u003e$database\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.character-set-name.md\"\u003echaracter_set_name\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.close.md\"\u003eclose\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.commit.md\"\u003ecommit\u003c/a\u003e(int \u003ccode\u003e$flags\u003c/code\u003e = 0, ?string \u003ccode\u003e$name\u003c/code\u003e =\n\u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"function.mysqli-connect.md\"\u003econnect\u003c/a\u003e(\nstring \u003ccode\u003e$hostname\u003c/code\u003e = ini_get(\"mysqli.default_host\"),\nstring \u003ccode\u003e$username\u003c/code\u003e = ini_get(\"mysqli.default_user\"),\nstring \u003ccode\u003e$password\u003c/code\u003e = ini_get(\"mysqli.default_pw\"),\nstring \u003ccode\u003e$database\u003c/code\u003e = \"\",\nint \u003ccode\u003e$port\u003c/code\u003e = ini_get(\"mysqli.default_port\"),\nstring \u003ccode\u003e$socket\u003c/code\u003e = ini_get(\"mysqli.default_socket\")\n): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.debug.md\"\u003edebug\u003c/a\u003e(string \u003ccode\u003e$options\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.dump-debug-info.md\"\u003edump_debug_info\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.get-charset.md\"\u003eget_charset\u003c/a\u003e(): ?object\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.get-client-info.md\"\u003eget_client_info\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.get-connection-stats.md\"\u003eget_connection_stats\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003emysqli_stmt::get_server_info\u003c/strong\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.get-warnings.md\"\u003eget_warnings\u003c/a\u003e():\n\u003ca href=\"class.mysqli-warning.md\"\u003emysqli_warning\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.kill.md\"\u003ekill\u003c/a\u003e(int \u003ccode\u003e$process_id\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.more-results.md\"\u003emore_results\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.multi-query.md\"\u003emulti_query\u003c/a\u003e(string \u003ccode\u003e$query\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.next-result.md\"\u003enext_result\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.options.md\"\u003eoptions\u003c/a\u003e(int \u003ccode\u003e$option\u003c/code\u003e, string|int\n\u003ccode\u003e$value\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.ping.md\"\u003eping\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic static \u003ca href=\"mysqli.poll.md\"\u003epoll\u003c/a\u003e(\n?array \u003ccode\u003e\u0026#x26;$read\u003c/code\u003e,\n?array \u003ccode\u003e\u0026#x26;$error\u003c/code\u003e,\narray \u003ccode\u003e\u0026#x26;$reject\u003c/code\u003e,\nint \u003ccode\u003e$seconds\u003c/code\u003e,\nint \u003ccode\u003e$microseconds\u003c/code\u003e = 0\n): int|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.prepare.md\"\u003eprepare\u003c/a\u003e(string \u003ccode\u003e$query\u003c/code\u003e):\n\u003ca href=\"class.mysqli-stmt.md\"\u003emysqli_stmt\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.query.md\"\u003equery\u003c/a\u003e(string \u003ccode\u003e$query\u003c/code\u003e, int \u003ccode\u003e$result_mode\u003c/code\u003e =\n\u003cstrong\u003e\u003ccode\u003eMYSQLI_STORE_RESULT\u003c/code\u003e\u003c/strong\u003e):\n\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e|bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.real-connect.md\"\u003ereal_connect\u003c/a\u003e(\nstring \u003ccode\u003e$host\u003c/code\u003e = ?,\nstring \u003ccode\u003e$username\u003c/code\u003e = ?,\nstring \u003ccode\u003e$passwd\u003c/code\u003e = ?,\nstring \u003ccode\u003e$dbname\u003c/code\u003e = ?,\nint \u003ccode\u003e$port\u003c/code\u003e = ?,\nstring \u003ccode\u003e$socket\u003c/code\u003e = ?,\nint \u003ccode\u003e$flags\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.real-escape-string.md\"\u003ereal_escape_string\u003c/a\u003e(string\n\u003ccode\u003e$string\u003c/code\u003e): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.real-query.md\"\u003ereal_query\u003c/a\u003e(string \u003ccode\u003e$query\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.reap-async-query.md\"\u003ereap_async_query\u003c/a\u003e():\n\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e|bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.refresh.md\"\u003erefresh\u003c/a\u003e(int \u003ccode\u003e$flags\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.release-savepoint.md\"\u003erelease_savepoint\u003c/a\u003e(string\n\u003ccode\u003e$name\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.rollback.md\"\u003erollback\u003c/a\u003e(int \u003ccode\u003e$flags\u003c/code\u003e = 0, ?string\n\u003ccode\u003e$name\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.savepoint.md\"\u003esavepoint\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.select-db.md\"\u003eselect_db\u003c/a\u003e(string \u003ccode\u003e$database\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.set-charset.md\"\u003eset_charset\u003c/a\u003e(string \u003ccode\u003e$charset\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.ssl-set.md\"\u003essl_set\u003c/a\u003e(\n?string \u003ccode\u003e$key\u003c/code\u003e,\n?string \u003ccode\u003e$certificate\u003c/code\u003e,\n?string \u003ccode\u003e$ca_certificate\u003c/code\u003e,\n?string \u003ccode\u003e$ca_path\u003c/code\u003e,\n?string \u003ccode\u003e$cipher_algos\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.stat.md\"\u003estat\u003c/a\u003e(): string|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.stmt-init.md\"\u003estmt_init\u003c/a\u003e():\n\u003ca href=\"class.mysqli-stmt.md\"\u003emysqli_stmt\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.store-result.md\"\u003estore_result\u003c/a\u003e(int \u003ccode\u003e$mode\u003c/code\u003e = 0):\n\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.thread-safe.md\"\u003ethread_safe\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"mysqli.use-result.md\"\u003euse_result\u003c/a\u003e():\n\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mysqli.affected-rows.md\"\u003emysqli::$affected_rows\u003c/a\u003e — Отримує число\nрядків, порушених попередньою операцією MySQL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.autocommit.md\"\u003emysqli::autocommit\u003c/a\u003e — Включає або\nвідключає автоматичну фіксацію змін бази даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.begin-transaction.md\"\u003emysqli::begin_transaction\u003c/a\u003e -\nСтартує транзакцію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.change-user.md\"\u003emysqli::change_user\u003c/a\u003e — Дозволяє змінити\nкористувача підключеного до бази даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.character-set-name.md\"\u003emysqli::character_set_name\u003c/a\u003e -\nПовертає поточне кодування, встановлене для з'єднання з БД\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.close.md\"\u003emysqli::close\u003c/a\u003e — Закриває раніше відкрите\nз'єднання з базою даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.commit.md\"\u003emysqli::commit\u003c/a\u003e — Фіксує поточну транзакцію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.connect-errno.md\"\u003emysqli::$connect_errno\u003c/a\u003e — Повертає код\nпомилки останньої спроби з'єднання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.connect-error.md\"\u003emysqli::$connect_error\u003c/a\u003e — Повертає\nопис останньої помилки підключення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.construct.md\"\u003emysqli::__construct\u003c/a\u003e - Встановлює нове\nз'єднання з сервером MySQL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.debug.md\"\u003emysqli::debug\u003c/a\u003e — Виконує процедури налагодження\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.dump-debug-info.md\"\u003emysqli::dump_debug_info\u003c/a\u003e -\nЖурналування налагоджувальної інформації\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.errno.md\"\u003emysqli::$errno\u003c/a\u003e — Повертає код помилки\nостаннього виклику функції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.error-list.md\"\u003emysqli::$error_list\u003c/a\u003e — Повертає список\nпомилок виконання останньої занедбаної команди\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.error.md\"\u003emysqli::$error\u003c/a\u003e — Повертає рядок із описом\nостанньої помилки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.field-count.md\"\u003emysqli::$field_count\u003c/a\u003e — Повертає число\nстовпців, порушених останнім запитом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.get-charset.md\"\u003emysqli::get_charset\u003c/a\u003e — Повертає об'єкт,\nописує кодування\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.get-client-info.md\"\u003emysqli::$client_info\u003c/a\u003e — Отримує\nінформацію про клієнта MySQL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.get-client-version.md\"\u003emysqli::$client_version\u003c/a\u003e -\nПовертає інформацію про клієнта MySQL у вигляді рядка\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.get-connection-stats.md\"\u003emysqli::get_connection_stats\u003c/a\u003e -\nПовертає статистику з'єднання з клієнтом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.get-host-info.md\"\u003emysqli::$host_info\u003c/a\u003e — Повертає рядок,\nмістить тип використовуваного з'єднання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.get-proto-info.md\"\u003emysqli::$protocol_version\u003c/a\u003e — Повертає\nверсію використовуваного MySQL протоколу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.get-server-info.md\"\u003emysqli::$server_info\u003c/a\u003e — Повертає\nверсію MySQL сервера\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.get-server-version.md\"\u003emysqli::$server_version\u003c/a\u003e -\nПовертає версію сервера MySQL, представлену у вигляді integer\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.get-warnings.md\"\u003emysqli::get_warnings\u003c/a\u003e — Отримує\nрезультат SHOW WARNINGS\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.info.md\"\u003emysqli::$info\u003c/a\u003e — Витягує інформацію про останнє\nвиконаному запиті\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.init.md\"\u003emysqli::init\u003c/a\u003e - Ініціалізує MySQLi та\nповертає об'єкт для використання у функції mysqli_real_connect()\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.insert-id.md\"\u003emysqli::$insert_id\u003c/a\u003e — Повертає значення,\nстворене для стовпця AUTO_INCREMENT останнім запитом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.kill.md\"\u003emysqli::kill\u003c/a\u003e — Запит для сервера завершити\nвиконання процесу MySQL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.more-results.md\"\u003emysqli::more_results\u003c/a\u003e — Перевірка, чи є\nще результати в мультизапиті\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.multi-query.md\"\u003emysqli::multi_query\u003c/a\u003e — Виконує один або\nкілька запитів до бази даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.next-result.md\"\u003emysqli::next_result\u003c/a\u003e — Підготовка\nнаступного доступного результуючого набору з multi_query\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.options.md\"\u003emysqli::options\u003c/a\u003e — Налаштування установок\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.ping.md\"\u003emysqli::ping\u003c/a\u003e - Перевіряє працездатність\nз'єднання або намагається перепідключитися, якщо з'єднання розірвано\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.poll.md\"\u003emysqli::poll\u003c/a\u003e — Опитування підключень\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.prepare.md\"\u003emysqli::prepare\u003c/a\u003e — Підготовка SQL\nвираз до виконання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.query.md\"\u003emysqli::query\u003c/a\u003e — Виконує запит до бази даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.real-connect.md\"\u003emysqli::real_connect\u003c/a\u003e — Встановлює\nз'єднання з сервером mysql\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.real-escape-string.md\"\u003emysqli::real_escape_string\u003c/a\u003e -\nЕкранує спеціальні символи в рядку для використання в\nSQL-вираз, використовуючи поточний набір символів з'єднання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.real-query.md\"\u003emysqli::real_query\u003c/a\u003e — Виконання SQL\nзапиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.reap-async-query.md\"\u003emysqli::reap_async_query\u003c/a\u003e — Отримання\nрезультату асинхронного запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.refresh.md\"\u003emysqli::refresh\u003c/a\u003e — Оновлення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.release-savepoint.md\"\u003emysqli::release_savepoint\u003c/a\u003e — Видаляє\nіменовану точку збереження зі списку точок збереження поточної\nтранзакції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.rollback.md\"\u003emysqli::rollback\u003c/a\u003e - Відкат поточної транзакції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.savepoint.md\"\u003emysqli::savepoint\u003c/a\u003e — Встановіть іменовану\nточку збереження транзакції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.select-db.md\"\u003emysqli::select_db\u003c/a\u003e — Встановлює базу\nданих для виконуваних запитів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.set-charset.md\"\u003emysqli::set_charset\u003c/a\u003e — Задає набір\nсимволів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.sqlstate.md\"\u003emysqli::$sqlstate\u003c/a\u003e — Повертає код стану\nSQLSTATE останній MySQL операції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.ssl-set.md\"\u003emysqli::ssl_set\u003c/a\u003e — Використовується для\nвстановлення безпечних з'єднань за допомогою SSL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.stat.md\"\u003emysqli::stat\u003c/a\u003e — Отримання інформації про поточний\nстан системи\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.stmt-init.md\"\u003emysqli::stmt_init\u003c/a\u003e — Ініціалізує запит та\nповертає об'єкт для використання в mysqli_stmt_prepare\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.store-result.md\"\u003emysqli::store_result\u003c/a\u003e — Передає на\nклієнта результуючий набір останнього запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.thread-id.md\"\u003emysqli::$thread_id\u003c/a\u003e — Повертає ID процесу\nпоточного підключення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.thread-safe.md\"\u003emysqli::thread_safe\u003c/a\u003e — Показує,\nчи безпечна робота з процесами\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.use-result.md\"\u003emysqli::use_result\u003c/a\u003e - Готує\nрезультуючий набір на сервері для використання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.warning-count.md\"\u003emysqli::$warning_count\u003c/a\u003e — Повертає\nкількість попереджень із останнього запиту заданого\nпідключення\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.mysqli.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration80.new-features | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration80.md">« Міграція з PHP 7.4.x на PHP 8.0.x</a></p>
+</li>
+<li>
+<p><a href="migration80.incompatible.md">Зміни, що ламають зворотну сумісність »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration80.md">Міграція з PHP 7.4.x на PHP 8.0.x</a></p>
+</li>
+<li>
+<p>Нова функціональність</p>
+</li>
+</ul>
+<h2>Нова функціональність</h2>
+<h3>Ядро PHP</h3>
+<h4>Іменовані аргументи</h4>
+<p>Додана підтримка <a href="functions.arguments.md#functions.named-arguments">іменованих аргументів</a>.</p>
+<h4>Атрибути</h4>
+<p>Додано підтримку <a href="language.attributes.md">атрибутів</a>.</p>
+<h4>Оголошення властивостей у конструкторі</h4>
+<p>Додано підтримку <a href="language.oop5.decon.md#language.oop5.decon.constructor.promotion">визначення властивостей у конструктори</a>
+(Оголошення властивостей у сигнатурі конструктора).</p>
+<h4>Тип Union</h4>
+<p>Додано підтримку <a href="language.types.declarations.md#language.types.declarations.composite.union">об'єднаних типів</a>.</p>
+<h4>Вираз Match</h4>
+<p>Додано підтримку <a href="control-structures.match.md">вирази <code>match</code></a>.</p>
+<h4>Оператор Nullsafe</h4>
+<p>Додано підтримку <a href="language.oop5.basic.md#language.oop5.basic.nullsafe">оператора Nullsafe</a>
+(<code>?-></code>).</p>
+<h4>Інші нові функції</h4>
+<ul>
+<li>
+<p>Доданий клас <a href="class.weakmap.md">WeakMap</a>.</p>
+</li>
+<li>
+<p>Доданий клас <a href="class.valueerror.md">ValueError</a>.</p>
+</li>
+<li>
+<p>Будь-яка кількість параметрів функції тепер може бути замінена
+варіативним аргументом при сумісності типів. Наприклад, тепер
+наступний код є допустимим:</p>
+</li>
+</ul>
+<p>`&#x3C;?phpclass A {     public function method(int $many, string $parameters, $here) {}}class B extends A {     public function method(...$|</p>
+<ul>
+<li>static (як у "пізнім статичному зв'язуванні") тепер можна
+використовувати як тип, що повертається:</li>
+</ul>
+<p><code>&#x3C;?phpclass Test {     public function create(): static {          return new static(); }}?> </code></p>
+<ul>
+<li>
+<p>Тепер можна отримати ім'я класу об'єкта за допомогою $object::class.
+Результат такий самий, що і <code>get_class($object)</code>.</p>
+</li>
+<li>
+<p><a href="language.oop5.basic.md#language.oop5.basic.new"><code>new</code></a> та
+['instanceof<code>](language.operators.type.md) тепер можна використовувати з довільними виразами, використовуючи </code>new (expression)(...$args)<code>і</code>$obj instanceof (expression)`.</p>
+</li>
+<li>
+<p>Було внесено деякі виправлення узгодженості до синтаксису.
+змінних, наприклад, тепер дозволено запис <code>Foo::BAR::$baz</code>.</p>
+</li>
+<li>
+<p>Доданий інтерфейс <a href="class.stringable.md">Stringable</a>, який
+автоматично реалізується, якщо у класі визначено метод
+<a href="language.oop5.magic.md#object.tostring">__toString()</a>.</p>
+</li>
+</ul>
+<p>– Тепер трейти можуть визначати абстрактні закриті методи. Такі
+методи мають бути реалізовані класом за допомогою трейту.</p>
+<ul>
+<li><code>throw</code> тепер можна використовувати як вираз. Це означає, що
+тепер можливе таке:</li>
+</ul>
+<p><code>&#x3C;?php$fn = fn() => throw new Exception('Виключення в стрілочної функції');$user = $session->user ?? throw new Exception('Повинен бути користувач');</code></p>
+<ul>
+<li>У списках параметрів тепер дозволено необов'язкову завершальну
+кома.</li>
+</ul>
+<p><code>&#x3C;?phpfunction functionWithLongSignature(    Type1 $parameter1,    Type2 $parameter2, // &#x3C;-- Ця кома тепер дозволена.) {}</code></p>
+<ul>
+<li>
+<p>Тепер можна написати <code>catch (Exception)</code> для перехоплення виключення,
+не зберігаючи їх у змінній.</p>
+</li>
+<li>
+<p>Додана підтримка типу
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>.</p>
+</li>
+<li>
+<p>Закриті методи, оголошені у батьківському класі, більше не
+застосовують будь-які правила успадкування для методів дочірнього
+класу (крім остаточних закритих конструкторів). В
+на наступному прикладі показано, які обмеження були зняті:</p>
+</li>
+</ul>
+<p>` &#x3C;?phpclass ParentClass {    private function method1() {}    private function method2() {}    private static function method3() {}    // Выдаёт предупреждение, так как "final" больше не имеет значения:    private final function method4() { }}class ChildClass extends ParentClass {    // Тепер все наступне дозволено, хоч модифікатори не такі ж,    // як для закритих  | public abstract function method1() {}    public static function method2() {}    public function method3() {}    public function method4() {</p>
+<ul>
+<li>Додана функція
+<a href="function.get-resource-id.md">get_resource_id()</a>, яка
+повертає те саме значення, що і <code>(int) $resource</code>. Принцип роботи
+такий же, але з більш зрозумілим API.</li>
+</ul>
+<h3>Дата і час</h3>
+<ul>
+<li>
+<p>Були додані
+<a href="datetime.createfrominterface.md">DateTime::createFromInterface()</a>
+і
+<a href="datetimeimmutable.createfrominterface.md">DateTimeImmutable::createFromInterface()</a>.</p>
+</li>
+<li>
+<p>Доданий специфікатор формату DateTime <code>p</code>, який аналогічний <code>P</code>,
+але повертає <code>Z</code>, а не <code>+00:00</code> для UTC.</p>
+</li>
+</ul>
+<h3>DOM</h3>
+<p>Додані <a href="class.domparentnode.md">DOMParentNode</a> та
+<a href="class.domchildnode.md">DOMChildNode</a> з новими API-інтерфейсами обходу
+та управління.</p>
+<h3>Фільтрування даних</h3>
+<p><strong><code>FILTER_VALIDATE_BOOL</code></strong> був доданий як псевдонім для
+<strong><code>FILTER_VALIDATE_BOOLEAN</code></strong>. Нове ім'я є кращим, так
+як вона використовує ім'я канонічного типу.</p>
+<h3>Enchant</h3>
+<p>Додані <a href="function.enchant-dict-add.md">enchant_dict_add()</a>,
+<a href="function.enchant-dict-is-added.md">enchant_dict_is_added()</a> та
+<strong><code>LIBENCHANT_VERSION</code></strong>.</p>
+<h3>FPM</h3>
+<p>Додана нова опція <code>pm.status_listen</code>, що дозволяє набувати статусу з
+іншої кінцевої точки (наприклад, порту або файлу UDS). Це може
+стане в нагоді для отримання статусу, коли всі дочірні елементи зайняті
+обробкою довготривалих запитів.</p>
+<h3>Hash</h3>
+<p>Тепер об'єкти <a href="class.hashcontext.md">HashContext</a> можна
+серіалізувати.</p>
+<h3>Функції інтернаціоналізації</h3>
+<p>Додані константи <strong><code>IntlDateFormatter::RELATIVE_FULL</code></strong>,
+<strong><code>IntlDateFormatter::RELATIVE_LONG</code></strong>,
+<strong><code>IntlDateFormatter::RELATIVE_MEDIUM</code></strong> та
+<strong><code>IntlDateFormatter::RELATIVE_SHORT</code></strong>.</p>
+<h3>LDAP</h3>
+<p>Додана функція
+<a href="function.ldap-count-references.md">ldap_count_references()</a>, яка
+повертає кількість посилань у результатах пошуку.</p>
+<h3>OPcache</h3>
+<p>Якщо ini-параметр opcache.record_warnings увімкнено, OPcache буде
+записувати попередження під час компіляції та відтворювати їх при
+наступному включенні, навіть якщо вони обслуговуються з кеша.</p>
+<h3>OpenSSL</h3>
+<p>Додано підтримку синтаксису криптографічних повідомлень (CMS) (<a href="http://www.faqs.org/rfcs/rfc5652">» RFC 5652</a>), що складається з функцій для
+шифрування, дешифрування, підписи, перевірки та читання. API схожий на API
+для функцій PKCS #7 з додаванням нових констант кодування:
+<strong><code>OPENSSL_ENCODING_DER</code></strong>, <strong><code>OPENSSL_ENCODING_SMIME</code></strong> та
+<strong><code>OPENSSL_ENCODING_PEM</code></strong>:</p>
+<ul>
+<li><a href="function.openssl-cms-encrypt.md">openssl_cms_encrypt()</a> шифрує
+повідомлення у файлі з сертифікатами та виводить результат у
+наданий файл.</li>
+<li><a href="function.openssl-cms-decrypt.md">openssl_cms_decrypt()</a>
+розшифровує повідомлення S/MIME у файлі та виводить результати в
+наданий файл.</li>
+<li><a href="function.openssl-cms-read.md">openssl_cms_read()</a> експортує
+файл CMS у масив сертифікатів PEM.</li>
+<li><a href="function.openssl-cms-sign.md">openssl_cms_sign()</a> підписує
+повідомлення MIME у файлі сертифікатом та ключем і виводить результат у
+наданий файл.</li>
+<li><a href="function.openssl-cms-verify.md">openssl_cms_verify()</a> перевіряє,
+що блок даних не пошкоджений, сторона, що підписує, є тим,
+ким вона є і повертає сертифікати сторін, що підписують.</li>
+</ul>
+<h3>Регулярні вирази (сумісні з Perl)</h3>
+<p>Додана функція
+<a href="function.preg-last-error-msg.md">preg_last_error_msg()</a>, яка
+повертає людяне повідомлення про останню помилку PCRE. Вона
+доповнює <a href="function.preg-last-error.md">preg_last_error()</a>, яка
+повертає ціле значення перерахування.</p>
+<h3>Reflection</h3>
+<ul>
+<li>
+<p>Наступні методи тепер можуть повертати інформацію про значення
+параметрів внутрішніх функцій за замовчуванням:</p>
+</li>
+<li>
+<p><a href="reflectionparameter.isdefaultvalueavailable.md">ReflectionParameter::isDefaultValueAvailable()</a></p>
+</li>
+<li>
+<p><a href="reflectionparameter.getdefaultvalue.md">ReflectionParameter::getDefaultValue()</a></p>
+</li>
+<li>
+<p><a href="reflectionparameter.isdefaultvalueconstant.md">ReflectionParameter::isDefaultValueConstant()</a></p>
+</li>
+<li>
+<p><a href="reflectionparameter.getdefaultvalueconstantname.md">ReflectionParameter::getDefaultValueConstantName()</a></p>
+</li>
+</ul>
+<h3>SQLite3</h3>
+<p><a href="sqlite3.setauthorizer.md">SQLite3::setAuthorizer()</a> та відповідні
+константи класів були додані, за допомогою яких можна поставити
+власну callback-функцію для авторизації чи заборони дії у базі
+даних.</p>
+<h3>Бібліотека стандартних функцій</h3>
+<ul>
+<li>
+<p>Додані функції <a href="function.str-contains.md">str_contains()</a>,
+<a href="function.str-starts-with.md">str_starts_with()</a> та
+<a href="function.str-ends-with.md">str_ends_with()</a>, які перевіряють,
+чи містить <code>haystack</code>, починається або закінчується <code>needle</code>
+відповідно.</p>
+</li>
+<li>
+<p>Додано функцію <a href="function.fdiv.md">fdiv()</a>, яка виконує
+розподіл з плаваючою точкою відповідно до IEEE 754.
+нуль суворо визначено і повертає одне із значень: <code>Inf</code>, <code>-Inf</code>
+або <code>NaN</code>.</p>
+</li>
+<li>
+<p>Додана функція <a href="function.get-debug-type.md">get_debug_type()</a>,
+яка повертає тип, який може використовуватись для генерацій
+повідомлень про помилки. На відміну від
+<a href="function.gettype.md">gettype()</a>, вона використовує канонічні
+імена типів, повертає імена класів об'єктів та повідомляє про тип
+ресурсів.</p>
+</li>
+<li>
+<p><a href="function.printf.md">printf()</a> та її похідні тепер
+підтримують специфікатори формату '%h' та '%H'. Вони працюють як
+<code>%g</code> та <code>%G</code>, але завжди використовують <code>"."</code> як десятковий
+розділювача, а не визначають його за допомогою локалі <strong><code>LC_NUMERIC</code></strong>.</p>
+</li>
+<li>
+<p><a href="function.printf.md">printf()</a> та її похідні тепер
+підтримують використання ``*'' як ширини або точності, і в
+у цьому випадку ширина/точність передається як аргумент printf.
+Це також дозволяє використовувати точність <code>-1</code> з <code>%g</code>, <code>%G</code>, <code>%h</code> і
+<code>%H</code>. Наприклад, наступний код можна використовувати для відтворення
+форматування з плаваючою точкою за промовчанням PHP:</p>
+</li>
+</ul>
+<p><code>&#x3C;?phpprintf("%.*H", (int) ini_get("precision"), $float);printf("%.*H", (int) ini_get("serialize_precision"), $float);? ></code></p>
+<ul>
+<li><a href="function.proc-open.md">proc_open()</a> тепер підтримує
+дескриптори псевдотерміналу (PTY) Наступний код приєднує
+<code>stdin</code>, <code>stdout</code> і <code>stderr</code> до одного і того ж PTY:</li>
+</ul>
+<p><code>&#x3C;?php$proc = proc_open($command, [['pty'], ['pty'], ['pty']], $pipes);?></code></p>
+<ul>
+<li><a href="function.proc-open.md">proc_open()</a> тепер підтримує
+дескриптори пари сокетів. Наступний код приєднує окрему пару
+сокетів до <code>stdin</code>, <code>stdout</code> та <code>stderr</code>:</li>
+</ul>
+<p><code>&#x3C;?php$proc = proc_open($command, [['socket'], ['socket'], ['socket']], $pipes);?></code></p>
+<p>На відміну від каналів, у сокетів немає проблем із блокуванням
+введення-виводу у Windows. Проте чи всі програми можуть коректно
+працювати з сокетами stdio.</p>
+<ul>
+<li>
+<p>Функції сортування тепер використовують стійке сортування, це
+означає, що елементи, що порівнюються, збережуть вихідний порядок.</p>
+</li>
+<li>
+<p><a href="function.array-diff.md">array_diff()</a>,
+<a href="function.array-intersect.md">array_intersect()</a> та їх похідні
+тепер можуть використовуватися з одним масивом як аргумент.
+Це означає, що тепер можливе таке:</p>
+</li>
+</ul>
+<p><code>&#x3C;?php// Працює, навіть якщо $excludes порожній:array_diff($array, ...$excludes);// Працює, навіть якщо$array містить тільки один масив:array_intersect;?$</code></p>
+<ul>
+<li>Параметр <code>flag</code> у функції
+<a href="function.ob-implicit-flush.md">ob_implicit_flush()</a> було змінено,
+і тепер набуває логічного значення (bool), а не ціле число
+(int).</li>
+</ul>
+<h3>Лексер (Tokenizer)</h3>
+<p><a href="class.phptoken.md">PhpToken</a> додає об'єктно-орієнтований
+інтерфейс до PHP-лексера (tokenizer). Він забезпечує більш одноманітне
+і ергономічне уявлення, водночас ефективніше та швидше.</p>
+<h3>Zip</h3>
+<ul>
+<li>
+<p>Модуль Zip оновлено до версії 1.19.1.</p>
+</li>
+<li>
+<p>Нові методи
+<a href="ziparchive.setmtimename.md">ZipArchive::setMtimeName()</a> та
+<a href="ziparchive.setmtimeindex.md">ZipArchive::setMtimeIndex()</a> для
+встановлення часу зміни запису.</p>
+</li>
+<li>
+<p>Новий метод
+<a href="ziparchive.registerprogresscallback.md">ZipArchive::registerProgressCallback()</a>
+для надання оновлень під час закриття архіву.</p>
+</li>
+<li>
+<p>Новий метод
+<a href="ziparchive.registercancelcallback.md">ZipArchive::registerCancelCallback()</a>,
+щоб дозволити скасування під час закриття архіву.</p>
+</li>
+<li>
+<p>Новий метод <a href="ziparchive.replacefile.md">ZipArchive::replaceFile()</a>
+замінити вміст запису.</p>
+</li>
+<li>
+<p>Новий метод
+<a href="ziparchive.iscompressionmethoddupported.md">ZipArchive::isCompressionMethodSupported()</a>,
+щоб перевірити додаткові можливості стиснення.</p>
+</li>
+<li>
+<p>Новий метод
+<a href="ziparchive.isencryptionmethoddupported.md">ZipArchive::isEncryptionMethodSupported()</a>,
+щоб перевірити додаткові функції шифрування.</p>
+</li>
+<li>
+<p>Додано властивість <code>ZipArchive::lastId</code> для отримання значення
+індексу останнього доданого запису.</p>
+</li>
+<li>
+<p>Тепер помилки можна перевірити після закриття та за допомогою властивостей
+<code>ZipArchive::status</code> та <code>ZipArchive::statusSys</code> або методу
+<a href="ziparchive.getstatusstring.md">ZipArchive::getStatusString()</a>.</p>
+</li>
+<li>
+<p>Параметр <code>remove_path'` в [ZipArchive::addGlob()](ziparchive.addglob.md) та [ZipArchive::addPattern()](ziparchive.addpattern.md) тепер обробляється як довільний рядковий префікс (для узгодженості з </code>add_path'`), тоді як раніше він
+інтерпретувався як ім'я каталогу.</p>
+</li>
+<li>
+<p>Додаткові функції стиснення/шифрування тепер перераховані в
+phpinfo.</p>
+</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration80.new-features.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration80.new-features.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration80.new-features","slug":"migration80.new-features.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration80.md\"\u003e« Міграція з PHP 7.4.x на PHP 8.0.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration80.incompatible.md\"\u003eЗміни, що ламають зворотну сумісність »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration80.md\"\u003eМіграція з PHP 7.4.x на PHP 8.0.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНова функціональність\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНова функціональність\u003c/h2\u003e\n\u003ch3\u003eЯдро PHP\u003c/h3\u003e\n\u003ch4\u003eІменовані аргументи\u003c/h4\u003e\n\u003cp\u003eДодана підтримка \u003ca href=\"functions.arguments.md#functions.named-arguments\"\u003eіменованих аргументів\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eАтрибути\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"language.attributes.md\"\u003eатрибутів\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eОголошення властивостей у конструкторі\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"language.oop5.decon.md#language.oop5.decon.constructor.promotion\"\u003eвизначення властивостей у конструктори\u003c/a\u003e\n(Оголошення властивостей у сигнатурі конструктора).\u003c/p\u003e\n\u003ch4\u003eТип Union\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"language.types.declarations.md#language.types.declarations.composite.union\"\u003eоб'єднаних типів\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eВираз Match\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"control-structures.match.md\"\u003eвирази \u003ccode\u003ematch\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eОператор Nullsafe\u003c/h4\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"language.oop5.basic.md#language.oop5.basic.nullsafe\"\u003eоператора Nullsafe\u003c/a\u003e\n(\u003ccode\u003e?-\u003e\u003c/code\u003e).\u003c/p\u003e\n\u003ch4\u003eІнші нові функції\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eДоданий клас \u003ca href=\"class.weakmap.md\"\u003eWeakMap\u003c/a\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДоданий клас \u003ca href=\"class.valueerror.md\"\u003eValueError\u003c/a\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eБудь-яка кількість параметрів функції тепер може бути замінена\nваріативним аргументом при сумісності типів. Наприклад, тепер\nнаступний код є допустимим:\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e`\u0026#x3C;?phpclass A {     public function method(int $many, string $parameters, $here) {}}class B extends A {     public function method(...$|\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003estatic (як у \"пізнім статичному зв'язуванні\") тепер можна\nвикористовувати як тип, що повертається:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass Test {     public function create(): static {          return new static(); }}?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eТепер можна отримати ім'я класу об'єкта за допомогою $object::class.\nРезультат такий самий, що і \u003ccode\u003eget_class($object)\u003c/code\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"language.oop5.basic.md#language.oop5.basic.new\"\u003e\u003ccode\u003enew\u003c/code\u003e\u003c/a\u003e та\n['instanceof\u003ccode\u003e](language.operators.type.md) тепер можна використовувати з довільними виразами, використовуючи \u003c/code\u003enew (expression)(...$args)\u003ccode\u003eі\u003c/code\u003e$obj instanceof (expression)`.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eБуло внесено деякі виправлення узгодженості до синтаксису.\nзмінних, наприклад, тепер дозволено запис \u003ccode\u003eFoo::BAR::$baz\u003c/code\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДоданий інтерфейс \u003ca href=\"class.stringable.md\"\u003eStringable\u003c/a\u003e, який\nавтоматично реалізується, якщо у класі визначено метод\n\u003ca href=\"language.oop5.magic.md#object.tostring\"\u003e__toString()\u003c/a\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e– Тепер трейти можуть визначати абстрактні закриті методи. Такі\nметоди мають бути реалізовані класом за допомогою трейту.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003ethrow\u003c/code\u003e тепер можна використовувати як вираз. Це означає, що\nтепер можливе таке:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$fn = fn() =\u003e throw new Exception('Виключення в стрілочної функції');$user = $session-\u003euser ?? throw new Exception('Повинен бути користувач');\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eУ списках параметрів тепер дозволено необов'язкову завершальну\nкома.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction functionWithLongSignature(    Type1 $parameter1,    Type2 $parameter2, // \u0026#x3C;-- Ця кома тепер дозволена.) {}\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eТепер можна написати \u003ccode\u003ecatch (Exception)\u003c/code\u003e для перехоплення виключення,\nне зберігаючи їх у змінній.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДодана підтримка типу\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗакриті методи, оголошені у батьківському класі, більше не\nзастосовують будь-які правила успадкування для методів дочірнього\nкласу (крім остаточних закритих конструкторів). В\nна наступному прикладі показано, які обмеження були зняті:\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e` \u0026#x3C;?phpclass ParentClass {    private function method1() {}    private function method2() {}    private static function method3() {}    // Выдаёт предупреждение, так как \"final\" больше не имеет значения:    private final function method4() { }}class ChildClass extends ParentClass {    // Тепер все наступне дозволено, хоч модифікатори не такі ж,    // як для закритих  | public abstract function method1() {}    public static function method2() {}    public function method3() {}    public function method4() {\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eДодана функція\n\u003ca href=\"function.get-resource-id.md\"\u003eget_resource_id()\u003c/a\u003e, яка\nповертає те саме значення, що і \u003ccode\u003e(int) $resource\u003c/code\u003e. Принцип роботи\nтакий же, але з більш зрозумілим API.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eДата і час\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eБули додані\n\u003ca href=\"datetime.createfrominterface.md\"\u003eDateTime::createFromInterface()\u003c/a\u003e\nі\n\u003ca href=\"datetimeimmutable.createfrominterface.md\"\u003eDateTimeImmutable::createFromInterface()\u003c/a\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДоданий специфікатор формату DateTime \u003ccode\u003ep\u003c/code\u003e, який аналогічний \u003ccode\u003eP\u003c/code\u003e,\nале повертає \u003ccode\u003eZ\u003c/code\u003e, а не \u003ccode\u003e+00:00\u003c/code\u003e для UTC.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eDOM\u003c/h3\u003e\n\u003cp\u003eДодані \u003ca href=\"class.domparentnode.md\"\u003eDOMParentNode\u003c/a\u003e та\n\u003ca href=\"class.domchildnode.md\"\u003eDOMChildNode\u003c/a\u003e з новими API-інтерфейсами обходу\nта управління.\u003c/p\u003e\n\u003ch3\u003eФільтрування даних\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eFILTER_VALIDATE_BOOL\u003c/code\u003e\u003c/strong\u003e був доданий як псевдонім для\n\u003cstrong\u003e\u003ccode\u003eFILTER_VALIDATE_BOOLEAN\u003c/code\u003e\u003c/strong\u003e. Нове ім'я є кращим, так\nяк вона використовує ім'я канонічного типу.\u003c/p\u003e\n\u003ch3\u003eEnchant\u003c/h3\u003e\n\u003cp\u003eДодані \u003ca href=\"function.enchant-dict-add.md\"\u003eenchant_dict_add()\u003c/a\u003e,\n\u003ca href=\"function.enchant-dict-is-added.md\"\u003eenchant_dict_is_added()\u003c/a\u003e та\n\u003cstrong\u003e\u003ccode\u003eLIBENCHANT_VERSION\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eFPM\u003c/h3\u003e\n\u003cp\u003eДодана нова опція \u003ccode\u003epm.status_listen\u003c/code\u003e, що дозволяє набувати статусу з\nіншої кінцевої точки (наприклад, порту або файлу UDS). Це може\nстане в нагоді для отримання статусу, коли всі дочірні елементи зайняті\nобробкою довготривалих запитів.\u003c/p\u003e\n\u003ch3\u003eHash\u003c/h3\u003e\n\u003cp\u003eТепер об'єкти \u003ca href=\"class.hashcontext.md\"\u003eHashContext\u003c/a\u003e можна\nсеріалізувати.\u003c/p\u003e\n\u003ch3\u003eФункції інтернаціоналізації\u003c/h3\u003e\n\u003cp\u003eДодані константи \u003cstrong\u003e\u003ccode\u003eIntlDateFormatter::RELATIVE_FULL\u003c/code\u003e\u003c/strong\u003e,\n\u003cstrong\u003e\u003ccode\u003eIntlDateFormatter::RELATIVE_LONG\u003c/code\u003e\u003c/strong\u003e,\n\u003cstrong\u003e\u003ccode\u003eIntlDateFormatter::RELATIVE_MEDIUM\u003c/code\u003e\u003c/strong\u003e та\n\u003cstrong\u003e\u003ccode\u003eIntlDateFormatter::RELATIVE_SHORT\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eLDAP\u003c/h3\u003e\n\u003cp\u003eДодана функція\n\u003ca href=\"function.ldap-count-references.md\"\u003eldap_count_references()\u003c/a\u003e, яка\nповертає кількість посилань у результатах пошуку.\u003c/p\u003e\n\u003ch3\u003eOPcache\u003c/h3\u003e\n\u003cp\u003eЯкщо ini-параметр opcache.record_warnings увімкнено, OPcache буде\nзаписувати попередження під час компіляції та відтворювати їх при\nнаступному включенні, навіть якщо вони обслуговуються з кеша.\u003c/p\u003e\n\u003ch3\u003eOpenSSL\u003c/h3\u003e\n\u003cp\u003eДодано підтримку синтаксису криптографічних повідомлень (CMS) (\u003ca href=\"http://www.faqs.org/rfcs/rfc5652\"\u003e» RFC 5652\u003c/a\u003e), що складається з функцій для\nшифрування, дешифрування, підписи, перевірки та читання. API схожий на API\nдля функцій PKCS #7 з додаванням нових констант кодування:\n\u003cstrong\u003e\u003ccode\u003eOPENSSL_ENCODING_DER\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eOPENSSL_ENCODING_SMIME\u003c/code\u003e\u003c/strong\u003e та\n\u003cstrong\u003e\u003ccode\u003eOPENSSL_ENCODING_PEM\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.openssl-cms-encrypt.md\"\u003eopenssl_cms_encrypt()\u003c/a\u003e шифрує\nповідомлення у файлі з сертифікатами та виводить результат у\nнаданий файл.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.openssl-cms-decrypt.md\"\u003eopenssl_cms_decrypt()\u003c/a\u003e\nрозшифровує повідомлення S/MIME у файлі та виводить результати в\nнаданий файл.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.openssl-cms-read.md\"\u003eopenssl_cms_read()\u003c/a\u003e експортує\nфайл CMS у масив сертифікатів PEM.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.openssl-cms-sign.md\"\u003eopenssl_cms_sign()\u003c/a\u003e підписує\nповідомлення MIME у файлі сертифікатом та ключем і виводить результат у\nнаданий файл.\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.openssl-cms-verify.md\"\u003eopenssl_cms_verify()\u003c/a\u003e перевіряє,\nщо блок даних не пошкоджений, сторона, що підписує, є тим,\nким вона є і повертає сертифікати сторін, що підписують.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eРегулярні вирази (сумісні з Perl)\u003c/h3\u003e\n\u003cp\u003eДодана функція\n\u003ca href=\"function.preg-last-error-msg.md\"\u003epreg_last_error_msg()\u003c/a\u003e, яка\nповертає людяне повідомлення про останню помилку PCRE. Вона\nдоповнює \u003ca href=\"function.preg-last-error.md\"\u003epreg_last_error()\u003c/a\u003e, яка\nповертає ціле значення перерахування.\u003c/p\u003e\n\u003ch3\u003eReflection\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eНаступні методи тепер можуть повертати інформацію про значення\nпараметрів внутрішніх функцій за замовчуванням:\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reflectionparameter.isdefaultvalueavailable.md\"\u003eReflectionParameter::isDefaultValueAvailable()\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reflectionparameter.getdefaultvalue.md\"\u003eReflectionParameter::getDefaultValue()\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reflectionparameter.isdefaultvalueconstant.md\"\u003eReflectionParameter::isDefaultValueConstant()\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reflectionparameter.getdefaultvalueconstantname.md\"\u003eReflectionParameter::getDefaultValueConstantName()\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eSQLite3\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"sqlite3.setauthorizer.md\"\u003eSQLite3::setAuthorizer()\u003c/a\u003e та відповідні\nконстанти класів були додані, за допомогою яких можна поставити\nвласну callback-функцію для авторизації чи заборони дії у базі\nданих.\u003c/p\u003e\n\u003ch3\u003eБібліотека стандартних функцій\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eДодані функції \u003ca href=\"function.str-contains.md\"\u003estr_contains()\u003c/a\u003e,\n\u003ca href=\"function.str-starts-with.md\"\u003estr_starts_with()\u003c/a\u003e та\n\u003ca href=\"function.str-ends-with.md\"\u003estr_ends_with()\u003c/a\u003e, які перевіряють,\nчи містить \u003ccode\u003ehaystack\u003c/code\u003e, починається або закінчується \u003ccode\u003eneedle\u003c/code\u003e\nвідповідно.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДодано функцію \u003ca href=\"function.fdiv.md\"\u003efdiv()\u003c/a\u003e, яка виконує\nрозподіл з плаваючою точкою відповідно до IEEE 754.\nнуль суворо визначено і повертає одне із значень: \u003ccode\u003eInf\u003c/code\u003e, \u003ccode\u003e-Inf\u003c/code\u003e\nабо \u003ccode\u003eNaN\u003c/code\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДодана функція \u003ca href=\"function.get-debug-type.md\"\u003eget_debug_type()\u003c/a\u003e,\nяка повертає тип, який може використовуватись для генерацій\nповідомлень про помилки. На відміну від\n\u003ca href=\"function.gettype.md\"\u003egettype()\u003c/a\u003e, вона використовує канонічні\nімена типів, повертає імена класів об'єктів та повідомляє про тип\nресурсів.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.printf.md\"\u003eprintf()\u003c/a\u003e та її похідні тепер\nпідтримують специфікатори формату '%h' та '%H'. Вони працюють як\n\u003ccode\u003e%g\u003c/code\u003e та \u003ccode\u003e%G\u003c/code\u003e, але завжди використовують \u003ccode\u003e\".\"\u003c/code\u003e як десятковий\nрозділювача, а не визначають його за допомогою локалі \u003cstrong\u003e\u003ccode\u003eLC_NUMERIC\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.printf.md\"\u003eprintf()\u003c/a\u003e та її похідні тепер\nпідтримують використання ``*'' як ширини або точності, і в\nу цьому випадку ширина/точність передається як аргумент printf.\nЦе також дозволяє використовувати точність \u003ccode\u003e-1\u003c/code\u003e з \u003ccode\u003e%g\u003c/code\u003e, \u003ccode\u003e%G\u003c/code\u003e, \u003ccode\u003e%h\u003c/code\u003e і\n\u003ccode\u003e%H\u003c/code\u003e. Наприклад, наступний код можна використовувати для відтворення\nформатування з плаваючою точкою за промовчанням PHP:\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpprintf(\"%.*H\", (int) ini_get(\"precision\"), $float);printf(\"%.*H\", (int) ini_get(\"serialize_precision\"), $float);? \u003e\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.proc-open.md\"\u003eproc_open()\u003c/a\u003e тепер підтримує\nдескриптори псевдотерміналу (PTY) Наступний код приєднує\n\u003ccode\u003estdin\u003c/code\u003e, \u003ccode\u003estdout\u003c/code\u003e і \u003ccode\u003estderr\u003c/code\u003e до одного і того ж PTY:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$proc = proc_open($command, [['pty'], ['pty'], ['pty']], $pipes);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.proc-open.md\"\u003eproc_open()\u003c/a\u003e тепер підтримує\nдескриптори пари сокетів. Наступний код приєднує окрему пару\nсокетів до \u003ccode\u003estdin\u003c/code\u003e, \u003ccode\u003estdout\u003c/code\u003e та \u003ccode\u003estderr\u003c/code\u003e:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$proc = proc_open($command, [['socket'], ['socket'], ['socket']], $pipes);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eНа відміну від каналів, у сокетів немає проблем із блокуванням\nвведення-виводу у Windows. Проте чи всі програми можуть коректно\nпрацювати з сокетами stdio.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eФункції сортування тепер використовують стійке сортування, це\nозначає, що елементи, що порівнюються, збережуть вихідний порядок.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.array-diff.md\"\u003earray_diff()\u003c/a\u003e,\n\u003ca href=\"function.array-intersect.md\"\u003earray_intersect()\u003c/a\u003e та їх похідні\nтепер можуть використовуватися з одним масивом як аргумент.\nЦе означає, що тепер можливе таке:\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Працює, навіть якщо $excludes порожній:array_diff($array, ...$excludes);// Працює, навіть якщо$array містить тільки один масив:array_intersect;?$\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eПараметр \u003ccode\u003eflag\u003c/code\u003e у функції\n\u003ca href=\"function.ob-implicit-flush.md\"\u003eob_implicit_flush()\u003c/a\u003e було змінено,\nі тепер набуває логічного значення (bool), а не ціле число\n(int).\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eЛексер (Tokenizer)\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"class.phptoken.md\"\u003ePhpToken\u003c/a\u003e додає об'єктно-орієнтований\nінтерфейс до PHP-лексера (tokenizer). Він забезпечує більш одноманітне\nі ергономічне уявлення, водночас ефективніше та швидше.\u003c/p\u003e\n\u003ch3\u003eZip\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eМодуль Zip оновлено до версії 1.19.1.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНові методи\n\u003ca href=\"ziparchive.setmtimename.md\"\u003eZipArchive::setMtimeName()\u003c/a\u003e та\n\u003ca href=\"ziparchive.setmtimeindex.md\"\u003eZipArchive::setMtimeIndex()\u003c/a\u003e для\nвстановлення часу зміни запису.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНовий метод\n\u003ca href=\"ziparchive.registerprogresscallback.md\"\u003eZipArchive::registerProgressCallback()\u003c/a\u003e\nдля надання оновлень під час закриття архіву.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНовий метод\n\u003ca href=\"ziparchive.registercancelcallback.md\"\u003eZipArchive::registerCancelCallback()\u003c/a\u003e,\nщоб дозволити скасування під час закриття архіву.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНовий метод \u003ca href=\"ziparchive.replacefile.md\"\u003eZipArchive::replaceFile()\u003c/a\u003e\nзамінити вміст запису.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНовий метод\n\u003ca href=\"ziparchive.iscompressionmethoddupported.md\"\u003eZipArchive::isCompressionMethodSupported()\u003c/a\u003e,\nщоб перевірити додаткові можливості стиснення.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНовий метод\n\u003ca href=\"ziparchive.isencryptionmethoddupported.md\"\u003eZipArchive::isEncryptionMethodSupported()\u003c/a\u003e,\nщоб перевірити додаткові функції шифрування.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДодано властивість \u003ccode\u003eZipArchive::lastId\u003c/code\u003e для отримання значення\nіндексу останнього доданого запису.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eТепер помилки можна перевірити після закриття та за допомогою властивостей\n\u003ccode\u003eZipArchive::status\u003c/code\u003e та \u003ccode\u003eZipArchive::statusSys\u003c/code\u003e або методу\n\u003ca href=\"ziparchive.getstatusstring.md\"\u003eZipArchive::getStatusString()\u003c/a\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПараметр \u003ccode\u003eremove_path'` в [ZipArchive::addGlob()](ziparchive.addglob.md) та [ZipArchive::addPattern()](ziparchive.addpattern.md) тепер обробляється як довільний рядковий префікс (для узгодженості з \u003c/code\u003eadd_path'`), тоді як раніше він\nінтерпретувався як ім'я каталогу.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДодаткові функції стиснення/шифрування тепер перераховані в\nphpinfo.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration80.new-features.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

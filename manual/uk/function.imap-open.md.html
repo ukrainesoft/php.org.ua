@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.imap-open | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.imap-num-recent.md">« imap_num_recent</a></p>
+</li>
+<li>
+<p><a href="function.imap-ping.md">imap_ping»</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.imap.md">Функції IMAP</a></p>
+</li>
+<li>
+<p>Відкриває потік IMAP до поштової скриньки</p>
+</li>
+</ul>
+<p>#imap_open</p>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>imap_open — Відкриває потік IMAP до поштової скриньки</p>
+<h3>Опис</h3>
+<p><strong>imap_open</strong>(
+string <code>$mailbox</code>,
+string <code>$user</code>,
+string <code>$password</code>,
+int <code>$flags</code> = 0,
+int <code>$retries</code> = 0,
+array <code>$options</code> = [] ): <a href="class.imap-connection.md">IMAP\Connection</a>|false</p>
+<p>Відкриває потік IMAP до mailbox.</p>
+<p>Ця функція також може використовуватися для відкриття потоку до серверів
+POP3 і NNTP, але частина функцій та особливостей буде працювати тільки з
+серверами IMAP.</p>
+<h3>Список параметрів</h3>
+<p><code>mailbox</code>
+Ім'я поштової скриньки складається із сервера та шляху до поштової скриньки на ньому.
+Спеціальне ім'я <code>INBOX</code> використовується для поштової скриньки поточного
+користувача. Імена поштових скриньок, що містять міжнародні
+символи крім входять у друкований простір ASCII, мають бути
+закодовані за допомогою
+<a href="function.imap-utf7-encode.md">imap_utf7_encode()</a>.</p>
+<p><strong>Увага</strong>
+Якщо
+<a href="imap.configuration.md#ini.imap.enable-insecure-rsh">imap.enable_insecure_rsh</a>
+не вимкнено, то передача в цей параметр не перевірених даних <em>не
+безпечна</em>.</p>
+<p>Серверна частина, укладена у фігурні дужки '{' і '}', складається з
+імені або IP-адреси сервера, опціонального порту (попереднього
+двокрапкою) та опціональних специфікацій протоколу (попереджених слідом)
+'/').</p>
+<p>Серверна частина є обов'язковою у всіх параметрах поштового
+ящика.</p>
+<p>Всі імена, що починаються з <code>{</code> є віддаленими іменами і мають такий
+синтаксис
+<code>"{" remote_system_name [":" port] [flags] "}" [mailbox_name]</code>
+де:</p>
+<ul>
+<li><code>remote_system_name</code> - повне доменне ім'я сервера, або IP-адреса в
+квадратних дужках.</li>
+<li><code>port</code> - необов'язковий параметр. Визначає порт сервера</li>
+<li><code>flags</code> - опціональні прапори, дивись таблицю нижче</li>
+<li><code>mailbox_name</code> - ім'я поштової скриньки. Типово INBOX</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Підкреслити</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/service=<em>service</em></td>
+<td>сервіс доступу до поштової скриньки. Типово "imap"</td>
+</tr>
+<tr>
+<td>/user=<em>user</em></td>
+<td>Ім'я користувача для входу на сервер</td>
+</tr>
+<tr>
+<td>/authuser=<em>user</em></td>
+<td>віддалений користувач для автентифікації; якщо зазначено, це буде той користувач, чий пароль використовується (наприклад administrator)</td>
+</tr>
+<tr>
+<td>/anonymous</td>
+<td>віддалений доступ під анонімним користувачем</td>
+</tr>
+<tr>
+<td>/debug</td>
+<td>записувати телеметрію протоколу до спеціального лог-файлу програми</td>
+</tr>
+<tr>
+<td>/secure</td>
+<td>не передавати пароль через мережу у вигляді нешифрованого тексту</td>
+</tr>
+<tr>
+<td>/imap, /imap2, /imap2bis, /imap4, /imap4rev1</td>
+<td>еквівалентно /service=imap</td>
+</tr>
+<tr>
+<td>/pop3</td>
+<td>еквівалентно /service=pop3</td>
+</tr>
+<tr>
+<td>/nntp</td>
+<td>еквівалентно /service=nntp</td>
+</tr>
+<tr>
+<td>'/norsh'</td>
+<td>не використовувати rsh чи ssh для встановлення переавторизованої сесії IMAP</td>
+</tr>
+<tr>
+<td>/ssl</td>
+<td>використовувати SSL для шифрування сесії</td>
+</tr>
+<tr>
+<td>/validate-cert</td>
+<td>перевіряти сертифікати серверів TLS/SSL (стандартна поведінка)</td>
+</tr>
+<tr>
+<td>/novalidate-cert</td>
+<td>не перевіряти сертифікати від серверів TLS/SSL. корисно для серверів із самопідписаним сертифікатом</td>
+</tr>
+<tr>
+<td>/tls</td>
+<td>примусово використовувати start-TLS для шифрування сесії та відкидати з'єднання з серверами, що його не підтримують</td>
+</tr>
+<tr>
+<td>/notls</td>
+<td>не застосовувати start-TLS для шифрування сесії, навіть якщо сервер підтримує</td>
+</tr>
+<tr>
+<td>'/readonly'</td>
+<td>запит відкриття в режимі "тільки читання" (тільки IMAP; ігнорується для NNTP та видає помилку для SMTP та POP3)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Опціональні прапори</strong></p>
+<p><code>user</code>
+Ім'я користувача</p>
+<p><code>password</code>
+Пароль користувача <code>user</code></p>
+<p><code>flags</code>
+<code>flags</code> - бітова маска з однієї або кількох констант:</p>
+<ul>
+<li><strong><code>OP_READONLY</code></strong> - відкрити поштову скриньку тільки для читання</li>
+<li><strong><code>OP_ANONYMOUS</code></strong> - не використовувати та не оновлювати <code>.newsrc</code> для
+новин (тільки NNTP)</li>
+<li><strong><code>OP_HALFOPEN</code></strong> - відкрити з'єднання, але не підключатися до
+поштову скриньку для ім'я IMAP та NNTP.</li>
+<li><strong><code>CL_EXPUNGE</code></strong> - автоматично видаляти всі позначені для
+видалення повідомлення при закритті поштової скриньки (див.
+<a href="function.imap-delete.md">imap_delete()</a> та
+<a href="function.imap-expunge.md">imap_expunge()</a>)</li>
+<li><strong><code>OP_DEBUG</code></strong> - домовленості щодо протоколу налагодження</li>
+<li><strong><code>OP_SHORTCACHE</code></strong> - коротке кешування (тільки <code>elt</code>)</li>
+<li><strong><code>OP_SILENT</code></strong> - не передавати події (внутрішнє використання)</li>
+<li><strong><code>OP_PROTOTYPE</code></strong> - повернути прототип драйвера</li>
+<li><strong><code>OP_SECURE</code></strong> - не здійснювати безпечну автентифікацію</li>
+</ul>
+<p><code>retries</code>
+Максимальна кількість спроб з'єднання</p>
+<p><code>options</code>
+Параметри для підключення. Для встановлення одного або кількох параметрів
+з'єднання можна використовувати такі (рядки) ключі:</p>
+<ul>
+<li><code>DISABLE_AUTHENTICATOR</code> - забороняє властивості автентифікації</li>
+</ul>
+<h3>Значення, що повертаються</h3>
+<p>У разі успішного виконання повертає екземпляр
+<a href="class.imap-connection.md">IMAP\Connection</a> або <strong><code>false</code></strong> у випадку
+виникнення помилки.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.1.0</td>
+<td>Повертає екземпляр <a href="class.imap-connection.md">IMAP\Connection</a>; раніше повертався ресурс (<a href="language.types.resource.md">resource</a>).</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Різні способи використання <strong>imap_open()</strong></strong></p>
+<p><code>&#x3C;?php// Для підключення к серверу IMAP, працюючому на порту 143 на локальній машині, зробити наступне:$mbox = imap_open("{localhost:143}INBOX" до серверу POP3, працюючому на порту 110 на локальній машині, використовувати:$mbox = imap_open ("{localhost:110/pop3}INBOX", "user_id", P   додати /ssl після протоколу// specification:$mbox = imap_open ("{localhost:993/imap/ssl}INBOX", "user_id", "password");// Для підключення к серверу // додати /ssl/novalidate-cert після специфікації протоколу:$mbox = imap_open ("{localhost:995/pop3/ssl/novalidate-cert}", "user_id", "password");// Д| , працюючому на порту 119 на локальній машині, використовувати:$nntp = imap_open ("{localhost:119/nntp}comp.test", "", ""); або// IP-адреса сервера, до якого ви хочете п відключитися.?> </code></p>
+<p><strong>Приклад #2 Приклад використання <strong>imap_open()</strong></strong></p>
+<p><code>&#x3C;?php$mbox = imap_open("{imap.example.org:143}", "username", "password");echo "&#x3C;h1>Поштові ящики&#x3C;/h1> ";$folders = imap_listmailbox($mbox, "{imap.example.org:143}", "*");if ($folders == false) {    echo "Невдалий  виклик&#x3C;br /> ";} else {    foreach ($folders as $val) {       echo $val . "&#x3C;br /> ";    }}echo "&#x3C;h1>Заголовки в INBOX&#x3C;/h1> ";$headers = imap_headers($mbox);if ($headers == false) {    echo "Невдалий виклик&#x3C;br /> ";} else {    foreach ($headers as $val) {       echo $val . "&#x3C;br /> ";   }}imap_close($mbox);?></code></p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.imap-close.md">imap_close()</a> - Закрити потік IMAP</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.imap-open.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.imap-open.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.imap-open","slug":"function.imap-open.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.imap-num-recent.md\"\u003e« imap_num_recent\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.imap-ping.md\"\u003eimap_ping»\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.imap.md\"\u003eФункції IMAP\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВідкриває потік IMAP до поштової скриньки\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#imap_open\u003c/p\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eimap_open — Відкриває потік IMAP до поштової скриньки\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eimap_open\u003c/strong\u003e(\nstring \u003ccode\u003e$mailbox\u003c/code\u003e,\nstring \u003ccode\u003e$user\u003c/code\u003e,\nstring \u003ccode\u003e$password\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0,\nint \u003ccode\u003e$retries\u003c/code\u003e = 0,\narray \u003ccode\u003e$options\u003c/code\u003e = [] ): \u003ca href=\"class.imap-connection.md\"\u003eIMAP\\Connection\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003eВідкриває потік IMAP до mailbox.\u003c/p\u003e\n\u003cp\u003eЦя функція також може використовуватися для відкриття потоку до серверів\nPOP3 і NNTP, але частина функцій та особливостей буде працювати тільки з\nсерверами IMAP.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003emailbox\u003c/code\u003e\nІм'я поштової скриньки складається із сервера та шляху до поштової скриньки на ньому.\nСпеціальне ім'я \u003ccode\u003eINBOX\u003c/code\u003e використовується для поштової скриньки поточного\nкористувача. Імена поштових скриньок, що містять міжнародні\nсимволи крім входять у друкований простір ASCII, мають бути\nзакодовані за допомогою\n\u003ca href=\"function.imap-utf7-encode.md\"\u003eimap_utf7_encode()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\nЯкщо\n\u003ca href=\"imap.configuration.md#ini.imap.enable-insecure-rsh\"\u003eimap.enable_insecure_rsh\u003c/a\u003e\nне вимкнено, то передача в цей параметр не перевірених даних \u003cem\u003eне\nбезпечна\u003c/em\u003e.\u003c/p\u003e\n\u003cp\u003eСерверна частина, укладена у фігурні дужки '{' і '}', складається з\nімені або IP-адреси сервера, опціонального порту (попереднього\nдвокрапкою) та опціональних специфікацій протоколу (попереджених слідом)\n'/').\u003c/p\u003e\n\u003cp\u003eСерверна частина є обов'язковою у всіх параметрах поштового\nящика.\u003c/p\u003e\n\u003cp\u003eВсі імена, що починаються з \u003ccode\u003e{\u003c/code\u003e є віддаленими іменами і мають такий\nсинтаксис\n\u003ccode\u003e\"{\" remote_system_name [\":\" port] [flags] \"}\" [mailbox_name]\u003c/code\u003e\nде:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eremote_system_name\u003c/code\u003e - повне доменне ім'я сервера, або IP-адреса в\nквадратних дужках.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eport\u003c/code\u003e - необов'язковий параметр. Визначає порт сервера\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eflags\u003c/code\u003e - опціональні прапори, дивись таблицю нижче\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003emailbox_name\u003c/code\u003e - ім'я поштової скриньки. Типово INBOX\u003c/li\u003e\n\u003c/ul\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eПідкреслити\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e/service=\u003cem\u003eservice\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003eсервіс доступу до поштової скриньки. Типово \"imap\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/user=\u003cem\u003euser\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003eІм'я користувача для входу на сервер\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/authuser=\u003cem\u003euser\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003eвіддалений користувач для автентифікації; якщо зазначено, це буде той користувач, чий пароль використовується (наприклад administrator)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/anonymous\u003c/td\u003e\n\u003ctd\u003eвіддалений доступ під анонімним користувачем\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/debug\u003c/td\u003e\n\u003ctd\u003eзаписувати телеметрію протоколу до спеціального лог-файлу програми\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/secure\u003c/td\u003e\n\u003ctd\u003eне передавати пароль через мережу у вигляді нешифрованого тексту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/imap, /imap2, /imap2bis, /imap4, /imap4rev1\u003c/td\u003e\n\u003ctd\u003eеквівалентно /service=imap\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/pop3\u003c/td\u003e\n\u003ctd\u003eеквівалентно /service=pop3\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/nntp\u003c/td\u003e\n\u003ctd\u003eеквівалентно /service=nntp\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e'/norsh'\u003c/td\u003e\n\u003ctd\u003eне використовувати rsh чи ssh для встановлення переавторизованої сесії IMAP\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/ssl\u003c/td\u003e\n\u003ctd\u003eвикористовувати SSL для шифрування сесії\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/validate-cert\u003c/td\u003e\n\u003ctd\u003eперевіряти сертифікати серверів TLS/SSL (стандартна поведінка)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/novalidate-cert\u003c/td\u003e\n\u003ctd\u003eне перевіряти сертифікати від серверів TLS/SSL. корисно для серверів із самопідписаним сертифікатом\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/tls\u003c/td\u003e\n\u003ctd\u003eпримусово використовувати start-TLS для шифрування сесії та відкидати з'єднання з серверами, що його не підтримують\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e/notls\u003c/td\u003e\n\u003ctd\u003eне застосовувати start-TLS для шифрування сесії, навіть якщо сервер підтримує\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e'/readonly'\u003c/td\u003e\n\u003ctd\u003eзапит відкриття в режимі \"тільки читання\" (тільки IMAP; ігнорується для NNTP та видає помилку для SMTP та POP3)\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОпціональні прапори\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euser\u003c/code\u003e\nІм'я користувача\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epassword\u003c/code\u003e\nПароль користувача \u003ccode\u003euser\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eflags\u003c/code\u003e\n\u003ccode\u003eflags\u003c/code\u003e - бітова маска з однієї або кількох констант:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eOP_READONLY\u003c/code\u003e\u003c/strong\u003e - відкрити поштову скриньку тільки для читання\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eOP_ANONYMOUS\u003c/code\u003e\u003c/strong\u003e - не використовувати та не оновлювати \u003ccode\u003e.newsrc\u003c/code\u003e для\nновин (тільки NNTP)\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eOP_HALFOPEN\u003c/code\u003e\u003c/strong\u003e - відкрити з'єднання, але не підключатися до\nпоштову скриньку для ім'я IMAP та NNTP.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eCL_EXPUNGE\u003c/code\u003e\u003c/strong\u003e - автоматично видаляти всі позначені для\nвидалення повідомлення при закритті поштової скриньки (див.\n\u003ca href=\"function.imap-delete.md\"\u003eimap_delete()\u003c/a\u003e та\n\u003ca href=\"function.imap-expunge.md\"\u003eimap_expunge()\u003c/a\u003e)\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eOP_DEBUG\u003c/code\u003e\u003c/strong\u003e - домовленості щодо протоколу налагодження\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eOP_SHORTCACHE\u003c/code\u003e\u003c/strong\u003e - коротке кешування (тільки \u003ccode\u003eelt\u003c/code\u003e)\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eOP_SILENT\u003c/code\u003e\u003c/strong\u003e - не передавати події (внутрішнє використання)\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eOP_PROTOTYPE\u003c/code\u003e\u003c/strong\u003e - повернути прототип драйвера\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eOP_SECURE\u003c/code\u003e\u003c/strong\u003e - не здійснювати безпечну автентифікацію\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003eretries\u003c/code\u003e\nМаксимальна кількість спроб з'єднання\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoptions\u003c/code\u003e\nПараметри для підключення. Для встановлення одного або кількох параметрів\nз'єднання можна використовувати такі (рядки) ключі:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eDISABLE_AUTHENTICATOR\u003c/code\u003e - забороняє властивості автентифікації\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eУ разі успішного виконання повертає екземпляр\n\u003ca href=\"class.imap-connection.md\"\u003eIMAP\\Connection\u003c/a\u003e або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у випадку\nвиникнення помилки.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.1.0\u003c/td\u003e\n\u003ctd\u003eПовертає екземпляр \u003ca href=\"class.imap-connection.md\"\u003eIMAP\\Connection\u003c/a\u003e; раніше повертався ресурс (\u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e).\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Різні способи використання \u003cstrong\u003eimap_open()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Для підключення к серверу IMAP, працюючому на порту 143 на локальній машині, зробити наступне:$mbox = imap_open(\"{localhost:143}INBOX\" до серверу POP3, працюючому на порту 110 на локальній машині, використовувати:$mbox = imap_open (\"{localhost:110/pop3}INBOX\", \"user_id\", P   додати /ssl після протоколу// specification:$mbox = imap_open (\"{localhost:993/imap/ssl}INBOX\", \"user_id\", \"password\");// Для підключення к серверу // додати /ssl/novalidate-cert після специфікації протоколу:$mbox = imap_open (\"{localhost:995/pop3/ssl/novalidate-cert}\", \"user_id\", \"password\");// Д| , працюючому на порту 119 на локальній машині, використовувати:$nntp = imap_open (\"{localhost:119/nntp}comp.test\", \"\", \"\"); або// IP-адреса сервера, до якого ви хочете п відключитися.?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклад використання \u003cstrong\u003eimap_open()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$mbox = imap_open(\"{imap.example.org:143}\", \"username\", \"password\");echo \"\u0026#x3C;h1\u003eПоштові ящики\u0026#x3C;/h1\u003e \";$folders = imap_listmailbox($mbox, \"{imap.example.org:143}\", \"*\");if ($folders == false) {    echo \"Невдалий  виклик\u0026#x3C;br /\u003e \";} else {    foreach ($folders as $val) {       echo $val . \"\u0026#x3C;br /\u003e \";    }}echo \"\u0026#x3C;h1\u003eЗаголовки в INBOX\u0026#x3C;/h1\u003e \";$headers = imap_headers($mbox);if ($headers == false) {    echo \"Невдалий виклик\u0026#x3C;br /\u003e \";} else {    foreach ($headers as $val) {       echo $val . \"\u0026#x3C;br /\u003e \";   }}imap_close($mbox);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.imap-close.md\"\u003eimap_close()\u003c/a\u003e - Закрити потік IMAP\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.imap-open.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

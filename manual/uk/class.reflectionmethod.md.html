@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.reflectionmethod | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="reflectionfunctionabstract.tostring.md">« ReflectionFunctionAbstract::__toString</a></p>
+</li>
+<li>
+<p><a href="reflectionmethod.construct.md">ReflectionMethod::__construct »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.reflection.md">Reflection</a></p>
+</li>
+<li>
+<p>Клас ReflectionMethod</p>
+</li>
+</ul>
+<h1>Клас ReflectionMethod</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<h2>Вступ</h2>
+<p>Клас <strong>ReflectionMethod</strong> повідомляє інформацію про методи.</p>
+<h2>Огляд класів</h2>
+<p>class <strong>ReflectionMethod</strong> extends
+<a href="class.reflectionfunctionabstract.md">ReflectionFunctionAbstract</a> {</p>
+<p>/* Константи */</p>
+<p>const int <code>IS_STATIC</code> = 16;</p>
+<p>const int <code>IS_PUBLIC</code> = 1;</p>
+<p>const int <code>IS_PROTECTED</code> = 2;</p>
+<p>const int <code>IS_PRIVATE</code> = 4;</p>
+<p>const int <code>IS_ABSTRACT</code> = 64;</p>
+<p>const int <code>IS_FINAL</code> = 32;</p>
+<p>/* Властивості */</p>
+<p>public string <code>$class</code>;</p>
+<p>/* Наслідувані властивості */</p>
+<p>public string <code>$name</code>;</p>
+<p>/* Методи */</p>
+<p>public <a href="reflectionmethod.construct.md">__construct</a>(object|string
+<code>$objectOrMethod</code>, string <code>$method</code>)</p>
+<p>public <a href="reflectionmethod.construct.md">__construct</a>(string
+<code>$classMethod</code>)</p>
+<p>public static <a href="reflectionmethod.export.md">export</a>(string <code>$class</code>,
+string <code>$name</code>, bool <code>$return</code> = <strong><code>false</code></strong>): string</p>
+<p>public <a href="reflectionmethod.getclosure.md">getClosure</a>(?object <code>$object</code>
+= <strong><code>null</code></strong>): <a href="class.closure.md">Closure</a></p>
+<p>public <a href="reflectionmethod.getdeclaringclass.md">getDeclaringClass</a>():
+<a href="class.reflectionclass.md">ReflectionClass</a></p>
+<p>public <a href="reflectionmethod.getmodifiers.md">getModifiers</a>(): int</p>
+<p>public <a href="reflectionmethod.getprototype.md">getPrototype</a>():
+<a href="class.reflectionmethod.md">ReflectionMethod</a></p>
+<p>public <a href="reflectionmethod.invoke.md">invoke</a>(?object <code>$object</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>...$args</code>):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="reflectionmethod.invokeargs.md">invokeArgs</a>(?object <code>$object</code>,
+array <code>$args</code>):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="reflectionmethod.isabstract.md">isAbstract</a>(): bool</p>
+<p>public <a href="reflectionmethod.isconstructor.md">isConstructor</a>(): bool</p>
+<p>public <a href="reflectionmethod.isdestructor.md">isDestructor</a>(): bool</p>
+<p>public <a href="reflectionmethod.isfinal.md">isFinal</a>(): bool</p>
+<p>public <a href="reflectionmethod.isprivate.md">isPrivate</a>(): bool</p>
+<p>public <a href="reflectionmethod.isprotected.md">isProtected</a>(): bool</p>
+<p>public <a href="reflectionmethod.ispublic.md">isPublic</a>(): bool</p>
+<p>public <a href="reflectionmethod.isstatic.md">isStatic</a>(): bool</p>
+<p>public <a href="reflectionmethod.setaccessible.md">setAccessible</a>(bool
+<code>$accessible</code>): void</p>
+<p>public <a href="reflectionmethod.tostring.md">__toString</a>(): string</p>
+<p>/* Наслідувані методи */</p>
+<p>private
+<a href="reflectionfunctionabstract.clone.md">ReflectionFunctionAbstract::__clone</a>():
+void</p>
+<p>public
+<a href="reflectionfunctionabstract.getattributes.md">ReflectionFunctionAbstract::getAttributes</a>(?string
+<code>$name</code> = <strong><code>null</code></strong>, int <code>$flags</code> = 0): array</p>
+<p>public
+<a href="reflectionfunctionabstract.getclosurescopeclass.md">ReflectionFunctionAbstract::getClosureScopeClass</a>():
+?<a href="class.reflectionclass.md">ReflectionClass</a></p>
+<p>public
+<a href="reflectionfunctionabstract.getclosurethis.md">ReflectionFunctionAbstract::getClosureThis</a>():
+?object</p>
+<p>public
+<a href="reflectionfunctionabstract.getclosureusedvariables.md">ReflectionFunctionAbstract::getClosureUsedVariables</a>():
+array</p>
+<p>public
+<a href="reflectionfunctionabstract.getdoccomment.md">ReflectionFunctionAbstract::getDocComment</a>():
+string|false</p>
+<p>public
+<a href="reflectionfunctionabstract.getendline.md">ReflectionFunctionAbstract::getEndLine</a>():
+int|false</p>
+<p>public
+<a href="reflectionfunctionabstract.getextension.md">ReflectionFunctionAbstract::getExtension</a>():
+?<a href="class.reflectionextension.md">ReflectionExtension</a></p>
+<p>public
+<a href="reflectionfunctionabstract.getextensionname.md">ReflectionFunctionAbstract::getExtensionName</a>():
+string|false</p>
+<p>public
+<a href="reflectionfunctionabstract.getfilename.md">ReflectionFunctionAbstract::getFileName</a>():
+string|false</p>
+<p>public
+<a href="reflectionfunctionabstract.getname.md">ReflectionFunctionAbstract::getName</a>():
+string</p>
+<p>public
+<a href="reflectionfunctionabstract.getnamespacename.md">ReflectionFunctionAbstract::getNamespaceName</a>():
+string</p>
+<p>public
+<a href="reflectionfunctionabstract.getnumberofparameters.md">ReflectionFunctionAbstract::getNumberOfParameters</a>():
+int</p>
+<p>public
+<a href="reflectionfunctionabstract.getnumberofrequiredparameters.md">ReflectionFunctionAbstract::getNumberOfRequiredParameters</a>():
+int</p>
+<p>public
+<a href="reflectionfunctionabstract.getparameters.md">ReflectionFunctionAbstract::getParameters</a>():
+array</p>
+<p>public
+<a href="reflectionfunctionabstract.getreturntype.md">ReflectionFunctionAbstract::getReturnType</a>():
+?<a href="class.reflectiontype.md">ReflectionType</a></p>
+<p>public
+<a href="reflectionfunctionabstract.getshortname.md">ReflectionFunctionAbstract::getShortName</a>():
+string</p>
+<p>public
+<a href="reflectionfunctionabstract.getstartline.md">ReflectionFunctionAbstract::getStartLine</a>():
+int|false</p>
+<p>public
+<a href="reflectionfunctionabstract.getstaticvariables.md">ReflectionFunctionAbstract::getStaticVariables</a>():
+array</p>
+<p>public
+<a href="reflectionfunctionabstract.gettentativereturntype.md">ReflectionFunctionAbstract::getTentativeReturnType</a>():
+?<a href="class.reflectiontype.md">ReflectionType</a></p>
+<p>public
+<a href="reflectionfunctionabstract.hasreturntype.md">ReflectionFunctionAbstract::hasReturnType</a>():
+bool</p>
+<p>public
+<a href="reflectionfunctionabstract.hastentativereturntype.md">ReflectionFunctionAbstract::hasTentativeReturnType</a>():
+bool</p>
+<p>public
+<a href="reflectionfunctionabstract.innamespace.md">ReflectionFunctionAbstract::inNamespace</a>():
+bool</p>
+<p>public
+<a href="reflectionfunctionabstract.isclosure.md">ReflectionFunctionAbstract::isClosure</a>():
+bool</p>
+<p>public
+<a href="reflectionfunctionabstract.isdeprecated.md">ReflectionFunctionAbstract::isDeprecated</a>():
+bool</p>
+<p>public
+<a href="reflectionfunctionabstract.isgenerator.md">ReflectionFunctionAbstract::isGenerator</a>():
+bool</p>
+<p>public
+<a href="reflectionfunctionabstract.isinternal.md">ReflectionFunctionAbstract::isInternal</a>():
+bool</p>
+<p>public
+<a href="reflectionfunctionabstract.isuserdefined.md">ReflectionFunctionAbstract::isUserDefined</a>():
+bool</p>
+<p>public
+<a href="reflectionfunctionabstract.isvariadic.md">ReflectionFunctionAbstract::isVariadic</a>():
+bool</p>
+<p>public
+<a href="reflectionfunctionabstract.returnsreference.md">ReflectionFunctionAbstract::returnsReference</a>():
+bool</p>
+<p>abstract public
+<a href="reflectionfunctionabstract.tostring.md">ReflectionFunctionAbstract::__toString</a>():
+void</p>
+<p>}</p>
+<h2>Властивості</h2>
+<p><code>name</code>
+Ім'я методу</p>
+<p><code>class</code>
+Ім'я класу</p>
+<h2>Зумовлені константи</h2>
+<h2>Модифікатори ReflectionMethod</h2>
+<p><strong><code>ReflectionMethod::IS_STATIC</code></strong>
+Вказує, що це статичний метод. До PHP 7.4.0, значення було
+<code>1</code>.</p>
+<p><strong><code>ReflectionMethod::IS_PUBLIC</code></strong>
+Вказує, що це загальнодоступний метод. До PHP 7.4.0, значення
+було <code>256</code>.</p>
+<p><strong><code>ReflectionMethod::IS_PROTECTED</code></strong>
+Вказує, що це захищений метод. До PHP 7.4.0, значення було
+<code>512</code>.</p>
+<p><strong><code>ReflectionMethod::IS_PRIVATE</code></strong>
+Вказує, що це закритий метод. До PHP 7.4.0, значення було
+<code>1024</code>.</p>
+<p><strong><code>ReflectionMethod::IS_ABSTRACT</code></strong>
+Вказує, що це абстрактний метод. До PHP 7.4.0, значення було
+<code>2</code>.</p>
+<p><strong><code>ReflectionMethod::IS_FINAL</code></strong>
+Вказує, що це остаточний метод. До PHP 7.4.0, значення
+було <code>4</code>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ці константи можуть змінюватися від версії до версії PHP.
+Рекомендується завжди використовувати константи і не покладатися безпосередньо
+на значення.</p>
+</blockquote>
+<h2>Зміст</h2>
+<ul>
+<li><a href="reflectionmethod.construct.md">ReflectionMethod::__construct</a> -
+Конструктор класу ReflectionMethod</li>
+<li><a href="reflectionmethod.export.md">ReflectionMethod::export</a> — Експорт
+відбитого методу</li>
+<li><a href="reflectionmethod.getclosure.md">ReflectionMethod::getClosure</a> -
+Повертає динамічно створене замикання для методу</li>
+<li><a href="reflectionmethod.getdeclaringclass.md">ReflectionMethod::getDeclaringClass</a>
+— Отримує клас, який оголошує відбитий метод</li>
+<li><a href="reflectionmethod.getmodifiers.md">ReflectionMethod::getModifiers</a>
+— Отримує модифікатори методу</li>
+<li><a href="reflectionmethod.getprototype.md">ReflectionMethod::getPrototype</a>
+— Отримує прототип методу (якщо такий є)</li>
+<li><a href="reflectionmethod.invoke.md">ReflectionMethod::invoke</a> — Виклик</li>
+<li><a href="reflectionmethod.invokeargs.md">ReflectionMethod::invokeArgs</a>
+Виклик методу з передачею аргументів масивом</li>
+<li><a href="reflectionmethod.isabstract.md">ReflectionMethod::isAbstract</a>
+Перевіряє, чи є метод абстрактним</li>
+<li><a href="reflectionmethod.isconstructor.md">ReflectionMethod::isConstructor</a>
+— Перевіряє, чи є метод конструктором</li>
+<li><a href="reflectionmethod.isdestructor.md">ReflectionMethod::isDestructor</a>
+— Перевіряє, чи є метод деструктором</li>
+<li><a href="reflectionmethod.isfinal.md">ReflectionMethod::isFinal</a> -
+Перевіряє, чи є метод остаточним</li>
+<li><a href="reflectionmethod.isprivate.md">ReflectionMethod::isPrivate</a> -
+Перевіряє, чи є метод закритим</li>
+<li><a href="reflectionmethod.isprotected.md">ReflectionMethod::isProtected</a> -
+Перевіряє, чи є метод захищеним</li>
+<li><a href="reflectionmethod.ispublic.md">ReflectionMethod::isPublic</a> -
+Перевіряє, чи є метод загальнодоступним</li>
+<li><a href="reflectionmethod.isstatic.md">ReflectionMethod::isStatic</a> -
+Перевіряє, чи є метод статичним</li>
+<li><a href="reflectionmethod.setaccessible.md">ReflectionMethod::setAccessible</a>
+— Робить метод доступним</li>
+<li><a href="reflectionmethod.tostring.md">ReflectionMethod::__toString</a> -
+Повертає строкове представлення об'єкту ReflectionMethod</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.reflectionmethod.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.reflectionmethod.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.reflectionmethod","slug":"class.reflectionmethod.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reflectionfunctionabstract.tostring.md\"\u003e« ReflectionFunctionAbstract::__toString\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reflectionmethod.construct.md\"\u003eReflectionMethod::__construct »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.reflection.md\"\u003eReflection\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас ReflectionMethod\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас ReflectionMethod\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003eКлас \u003cstrong\u003eReflectionMethod\u003c/strong\u003e повідомляє інформацію про методи.\u003c/p\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eReflectionMethod\u003c/strong\u003e extends\n\u003ca href=\"class.reflectionfunctionabstract.md\"\u003eReflectionFunctionAbstract\u003c/a\u003e {\u003c/p\u003e\n\u003cp\u003e/* Константи */\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eIS_STATIC\u003c/code\u003e = 16;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eIS_PUBLIC\u003c/code\u003e = 1;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eIS_PROTECTED\u003c/code\u003e = 2;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eIS_PRIVATE\u003c/code\u003e = 4;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eIS_ABSTRACT\u003c/code\u003e = 64;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eIS_FINAL\u003c/code\u003e = 32;\u003c/p\u003e\n\u003cp\u003e/* Властивості */\u003c/p\u003e\n\u003cp\u003epublic string \u003ccode\u003e$class\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003e/* Наслідувані властивості */\u003c/p\u003e\n\u003cp\u003epublic string \u003ccode\u003e$name\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.construct.md\"\u003e__construct\u003c/a\u003e(object|string\n\u003ccode\u003e$objectOrMethod\u003c/code\u003e, string \u003ccode\u003e$method\u003c/code\u003e)\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.construct.md\"\u003e__construct\u003c/a\u003e(string\n\u003ccode\u003e$classMethod\u003c/code\u003e)\u003c/p\u003e\n\u003cp\u003epublic static \u003ca href=\"reflectionmethod.export.md\"\u003eexport\u003c/a\u003e(string \u003ccode\u003e$class\u003c/code\u003e,\nstring \u003ccode\u003e$name\u003c/code\u003e, bool \u003ccode\u003e$return\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.getclosure.md\"\u003egetClosure\u003c/a\u003e(?object \u003ccode\u003e$object\u003c/code\u003e\n= \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e): \u003ca href=\"class.closure.md\"\u003eClosure\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.getdeclaringclass.md\"\u003egetDeclaringClass\u003c/a\u003e():\n\u003ca href=\"class.reflectionclass.md\"\u003eReflectionClass\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.getmodifiers.md\"\u003egetModifiers\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.getprototype.md\"\u003egetPrototype\u003c/a\u003e():\n\u003ca href=\"class.reflectionmethod.md\"\u003eReflectionMethod\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.invoke.md\"\u003einvoke\u003c/a\u003e(?object \u003ccode\u003e$object\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e...$args\u003c/code\u003e):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.invokeargs.md\"\u003einvokeArgs\u003c/a\u003e(?object \u003ccode\u003e$object\u003c/code\u003e,\narray \u003ccode\u003e$args\u003c/code\u003e):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.isabstract.md\"\u003eisAbstract\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.isconstructor.md\"\u003eisConstructor\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.isdestructor.md\"\u003eisDestructor\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.isfinal.md\"\u003eisFinal\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.isprivate.md\"\u003eisPrivate\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.isprotected.md\"\u003eisProtected\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.ispublic.md\"\u003eisPublic\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.isstatic.md\"\u003eisStatic\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.setaccessible.md\"\u003esetAccessible\u003c/a\u003e(bool\n\u003ccode\u003e$accessible\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"reflectionmethod.tostring.md\"\u003e__toString\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003e/* Наслідувані методи */\u003c/p\u003e\n\u003cp\u003eprivate\n\u003ca href=\"reflectionfunctionabstract.clone.md\"\u003eReflectionFunctionAbstract::__clone\u003c/a\u003e():\nvoid\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getattributes.md\"\u003eReflectionFunctionAbstract::getAttributes\u003c/a\u003e(?string\n\u003ccode\u003e$name\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, int \u003ccode\u003e$flags\u003c/code\u003e = 0): array\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getclosurescopeclass.md\"\u003eReflectionFunctionAbstract::getClosureScopeClass\u003c/a\u003e():\n?\u003ca href=\"class.reflectionclass.md\"\u003eReflectionClass\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getclosurethis.md\"\u003eReflectionFunctionAbstract::getClosureThis\u003c/a\u003e():\n?object\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getclosureusedvariables.md\"\u003eReflectionFunctionAbstract::getClosureUsedVariables\u003c/a\u003e():\narray\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getdoccomment.md\"\u003eReflectionFunctionAbstract::getDocComment\u003c/a\u003e():\nstring|false\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getendline.md\"\u003eReflectionFunctionAbstract::getEndLine\u003c/a\u003e():\nint|false\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getextension.md\"\u003eReflectionFunctionAbstract::getExtension\u003c/a\u003e():\n?\u003ca href=\"class.reflectionextension.md\"\u003eReflectionExtension\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getextensionname.md\"\u003eReflectionFunctionAbstract::getExtensionName\u003c/a\u003e():\nstring|false\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getfilename.md\"\u003eReflectionFunctionAbstract::getFileName\u003c/a\u003e():\nstring|false\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getname.md\"\u003eReflectionFunctionAbstract::getName\u003c/a\u003e():\nstring\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getnamespacename.md\"\u003eReflectionFunctionAbstract::getNamespaceName\u003c/a\u003e():\nstring\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getnumberofparameters.md\"\u003eReflectionFunctionAbstract::getNumberOfParameters\u003c/a\u003e():\nint\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getnumberofrequiredparameters.md\"\u003eReflectionFunctionAbstract::getNumberOfRequiredParameters\u003c/a\u003e():\nint\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getparameters.md\"\u003eReflectionFunctionAbstract::getParameters\u003c/a\u003e():\narray\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getreturntype.md\"\u003eReflectionFunctionAbstract::getReturnType\u003c/a\u003e():\n?\u003ca href=\"class.reflectiontype.md\"\u003eReflectionType\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getshortname.md\"\u003eReflectionFunctionAbstract::getShortName\u003c/a\u003e():\nstring\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getstartline.md\"\u003eReflectionFunctionAbstract::getStartLine\u003c/a\u003e():\nint|false\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.getstaticvariables.md\"\u003eReflectionFunctionAbstract::getStaticVariables\u003c/a\u003e():\narray\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.gettentativereturntype.md\"\u003eReflectionFunctionAbstract::getTentativeReturnType\u003c/a\u003e():\n?\u003ca href=\"class.reflectiontype.md\"\u003eReflectionType\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.hasreturntype.md\"\u003eReflectionFunctionAbstract::hasReturnType\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.hastentativereturntype.md\"\u003eReflectionFunctionAbstract::hasTentativeReturnType\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.innamespace.md\"\u003eReflectionFunctionAbstract::inNamespace\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.isclosure.md\"\u003eReflectionFunctionAbstract::isClosure\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.isdeprecated.md\"\u003eReflectionFunctionAbstract::isDeprecated\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.isgenerator.md\"\u003eReflectionFunctionAbstract::isGenerator\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.isinternal.md\"\u003eReflectionFunctionAbstract::isInternal\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.isuserdefined.md\"\u003eReflectionFunctionAbstract::isUserDefined\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.isvariadic.md\"\u003eReflectionFunctionAbstract::isVariadic\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"reflectionfunctionabstract.returnsreference.md\"\u003eReflectionFunctionAbstract::returnsReference\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003eabstract public\n\u003ca href=\"reflectionfunctionabstract.tostring.md\"\u003eReflectionFunctionAbstract::__toString\u003c/a\u003e():\nvoid\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eВластивості\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003ename\u003c/code\u003e\nІм'я методу\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eclass\u003c/code\u003e\nІм'я класу\u003c/p\u003e\n\u003ch2\u003eЗумовлені константи\u003c/h2\u003e\n\u003ch2\u003eМодифікатори ReflectionMethod\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eReflectionMethod::IS_STATIC\u003c/code\u003e\u003c/strong\u003e\nВказує, що це статичний метод. До PHP 7.4.0, значення було\n\u003ccode\u003e1\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eReflectionMethod::IS_PUBLIC\u003c/code\u003e\u003c/strong\u003e\nВказує, що це загальнодоступний метод. До PHP 7.4.0, значення\nбуло \u003ccode\u003e256\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eReflectionMethod::IS_PROTECTED\u003c/code\u003e\u003c/strong\u003e\nВказує, що це захищений метод. До PHP 7.4.0, значення було\n\u003ccode\u003e512\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eReflectionMethod::IS_PRIVATE\u003c/code\u003e\u003c/strong\u003e\nВказує, що це закритий метод. До PHP 7.4.0, значення було\n\u003ccode\u003e1024\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eReflectionMethod::IS_ABSTRACT\u003c/code\u003e\u003c/strong\u003e\nВказує, що це абстрактний метод. До PHP 7.4.0, значення було\n\u003ccode\u003e2\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eReflectionMethod::IS_FINAL\u003c/code\u003e\u003c/strong\u003e\nВказує, що це остаточний метод. До PHP 7.4.0, значення\nбуло \u003ccode\u003e4\u003c/code\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЦі константи можуть змінюватися від версії до версії PHP.\nРекомендується завжди використовувати константи і не покладатися безпосередньо\nна значення.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.construct.md\"\u003eReflectionMethod::__construct\u003c/a\u003e -\nКонструктор класу ReflectionMethod\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.export.md\"\u003eReflectionMethod::export\u003c/a\u003e — Експорт\nвідбитого методу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.getclosure.md\"\u003eReflectionMethod::getClosure\u003c/a\u003e -\nПовертає динамічно створене замикання для методу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.getdeclaringclass.md\"\u003eReflectionMethod::getDeclaringClass\u003c/a\u003e\n— Отримує клас, який оголошує відбитий метод\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.getmodifiers.md\"\u003eReflectionMethod::getModifiers\u003c/a\u003e\n— Отримує модифікатори методу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.getprototype.md\"\u003eReflectionMethod::getPrototype\u003c/a\u003e\n— Отримує прототип методу (якщо такий є)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.invoke.md\"\u003eReflectionMethod::invoke\u003c/a\u003e — Виклик\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.invokeargs.md\"\u003eReflectionMethod::invokeArgs\u003c/a\u003e\nВиклик методу з передачею аргументів масивом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.isabstract.md\"\u003eReflectionMethod::isAbstract\u003c/a\u003e\nПеревіряє, чи є метод абстрактним\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.isconstructor.md\"\u003eReflectionMethod::isConstructor\u003c/a\u003e\n— Перевіряє, чи є метод конструктором\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.isdestructor.md\"\u003eReflectionMethod::isDestructor\u003c/a\u003e\n— Перевіряє, чи є метод деструктором\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.isfinal.md\"\u003eReflectionMethod::isFinal\u003c/a\u003e -\nПеревіряє, чи є метод остаточним\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.isprivate.md\"\u003eReflectionMethod::isPrivate\u003c/a\u003e -\nПеревіряє, чи є метод закритим\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.isprotected.md\"\u003eReflectionMethod::isProtected\u003c/a\u003e -\nПеревіряє, чи є метод захищеним\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.ispublic.md\"\u003eReflectionMethod::isPublic\u003c/a\u003e -\nПеревіряє, чи є метод загальнодоступним\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.isstatic.md\"\u003eReflectionMethod::isStatic\u003c/a\u003e -\nПеревіряє, чи є метод статичним\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.setaccessible.md\"\u003eReflectionMethod::setAccessible\u003c/a\u003e\n— Робить метод доступним\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reflectionmethod.tostring.md\"\u003eReflectionMethod::__toString\u003c/a\u003e -\nПовертає строкове представлення об'єкту ReflectionMethod\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.reflectionmethod.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

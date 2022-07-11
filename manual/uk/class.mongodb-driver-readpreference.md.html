@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.mongodb-driver-readpreference | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mongodb-driver-writeconcern.unserialize.md">« MongoDB\Driver\WriteConcern::unserialize</a></p>
+</li>
+<li>
+<p><a href="mongodb-driver-readpreference.bsonserialize.md">MongoDB\Driver\ReadPreference::bsonSerialize »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.mongodb.md">MongoDB\Driver</a></p>
+</li>
+<li>
+<p>Клас MongoDB\Driver\ReadPreference</p>
+</li>
+</ul>
+<h1>Клас MongoDB\Driver\ReadPreference</h1>
+<p>(mongodb >=1.0.0)</p>
+<h2>Вступ</h2>
+<h2>Огляд класів</h2>
+<p>final class <strong>MongoDB\Driver\ReadPreference</strong> implements
+<a href="class.mongodb-bson-serializable.md">MongoDB\BSON\Serializable</a>,
+<a href="class.serializable.md">Serializable</a> {</p>
+<p>/* Константи */</p>
+<p>const int <code>RP_PRIMARY</code> = 1;</p>
+<p>const int <code>RP_PRIMARY_PREFERRED</code> = 5;</p>
+<p>const int <code>RP_SECONDARY</code> = 2;</p>
+<p>const int <code>RP_SECONDARY_PREFERRED</code> = 6;</p>
+<p>const int <code>RP_NEAREST</code> = 10;</p>
+<p>const string <code>PRIMARY</code> = primary;</p>
+<p>const string <code>PRIMARY_PREFERRED</code> = primaryPreferred;</p>
+<p>const string <code>SECONDARY</code> = secondary;</p>
+<p>const string <code>SECONDARY_PREFERRED</code> = secondaryPreferred;</p>
+<p>const string <code>NEAREST</code> = nearest;</p>
+<p>const int <code>NO_MAX_STALENESS</code> = -1;</p>
+<p>const int <code>SMALLEST_MAX_STALENESS_SECONDS</code> = 90;</p>
+<p>/* Методи */</p>
+<p>final public
+<a href="mongodb-driver-readpreference.bsonserialize.md">bsonSerialize</a>():
+object</p>
+<p>final public
+<a href="mongodb-driver-readpreference.construct.md">__construct</a>(string|int
+<code>$mode</code>, array <code>$tagSets</code> = <strong><code>null</code></strong>, array <code>$options</code> = array())</p>
+<p>final public <a href="mongodb-driver-readpreference.gethedge.md">getHedge</a>():
+?object</p>
+<p>final public
+<a href="mongodb-driver-readpreference.getmaxstalenessseconds.md">getMaxStalenessSeconds</a>():
+int</p>
+<p>final public <a href="mongodb-driver-readpreference.getmode.md">getMode</a>():
+int</p>
+<p>final public
+<a href="mongodb-driver-readpreference.getmodestring.md">getModeString</a>():
+string</p>
+<p>final public
+<a href="mongodb-driver-readpreference.gettagsets.md">getTagSets</a>(): array</p>
+<p>final public
+<a href="mongodb-driver-readpreference.serialize.md">serialize</a>(): string</p>
+<p>final public
+<a href="mongodb-driver-readpreference.unserialize.md">unserialize</a>(string
+<code>$serialized</code>): void</p>
+<p>}</p>
+<h2>Зумовлені константи</h2>
+<p><strong><code>MongoDB\Driver\ReadPreference::RP_PRIMARY</code></strong>
+Усі операції зчитуються з первинного вузла набору реплік. Це
+перевага читання за промовчанням для MongoDB.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::RP_PRIMARY_PREFERRED</code></strong>
+У більшості ситуація операції зчитуються з первинного вузла, але якщо
+він недоступний, операції зчитуються із вторинних членів.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::RP_SECONDARY</code></strong>
+Усі операції зчитуються із вторинних членів набору реплік.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::RP_SECONDARY_PREFERRED</code></strong>
+У більшості ситуація операції зчитуються з вторинних вузлів, але якщо
+вони недоступні, операції зчитуються із первинного вузла.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::RP_NEAREST</code></strong>
+Операції зчитуються з члена набору реплік із найменшою затримкою мережі,
+незалежно від типу члена.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::PRIMARY</code></strong>
+Усі операції з поточної репліки встановлені первинними. Це
+перевага читання за промовчанням для MongoDB.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::PRIMARY_PREFERRED</code></strong>
+У більшості випадків операції читаються з первинного вузла, але якщо він
+недоступний, операції читаються із вторинних вузлів.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::SECONDARY</code></strong>
+Усі операції читаються із вторинних вузлів набору реплік.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::SECONDARY_PREFERRED</code></strong>
+Найчастіше операції читаються з вторинних вузлів, але якщо вони
+недоступні, операції читаються із первинного.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::NEAREST</code></strong>
+Операції зчитуються з вузла набору реплік з найменшою затримкою в
+мережі, незалежно від типу.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::NO_MAX_STALENESS</code></strong>
+Значення за замовчуванням для параметра ``maxStalenessSeconds'' щоб
+вказати на обмеження на максимальне запізнення (staleness), що
+означає, що драйвер не враховуватиме затримку вторинних вузлів при
+вибір напряму для операції читання.</p>
+<p><strong><code>MongoDB\Driver\ReadPreference::SMALLEST_MAX_STALENESS_SECONDS</code></strong>
+Мінімальне значення для параметра ``maxStalenessSeconds'` дорівнює 90
+секунд. Драйвер оцінює запізнення (staleness) вторинних вузлів,
+періодично перевіряючи останню дату запису кожного члена набору реплік.
+Оскільки ці перевірки є нечастими, оцінка запізнення є
+грубою. Таким чином, драйвер не може забезпечити максимальну величину
+запізнення менше 90 секунд.</p>
+<h2>Список змін</h2>
+<p>[TABLE]</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="mongodb-driver-readpreference.bsonserialize.md">MongoDB\Driver\ReadPreference::bsonSerialize</a>
+— Повертає об'єкт серіалізації BSON</li>
+<li><a href="mongodb-driver-readpreference.construct.md">MongoDB\Driver\ReadPreference::__construct</a>
+— Створити новий ReadPreference</li>
+<li><a href="mongodb-driver-readpreference.gethedge.md">MongoDB\Driver\ReadPreference::getHedge</a>
+— Повертає опцію "hedge" із ReadPreference</li>
+<li><a href="mongodb-driver-readpreference.getmaxstalenessseconds.md">MongoDB\Driver\ReadPreference::getMaxStalenessSeconds</a>
+— Повертає параметр "maxStalenessSeconds" ReadPreference</li>
+<li><a href="mongodb-driver-readpreference.getmode.md">MongoDB\Driver\ReadPreference::getMode</a>
+— Повертає параметр "mode" ReadPreference</li>
+<li><a href="mongodb-driver-readpreference.getmodestring.md">MongoDB\Driver\ReadPreference::getModeString</a></li>
+<li>Повертає опцію "mode" об'єкта ReadPreference у вигляді рядка</li>
+<li><a href="mongodb-driver-readpreference.gettagsets.md">MongoDB\Driver\ReadPreference::getTagSets</a></li>
+<li>Повертає параметр "tagSets" ReadPreference</li>
+<li><a href="mongodb-driver-readpreference.serialize.md">MongoDB\Driver\ReadPreference::serialize</a>
+— Серіалізація ReadPreference</li>
+<li><a href="mongodb-driver-readpreference.unserialize.md">MongoDB\Driver\ReadPreference::unserialize</a></li>
+<li>Десеріалізація ReadPreference</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.mongodb-driver-readpreference.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.mongodb-driver-readpreference.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.mongodb-driver-readpreference","slug":"class.mongodb-driver-readpreference.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb-driver-writeconcern.unserialize.md\"\u003e« MongoDB\\Driver\\WriteConcern::unserialize\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb-driver-readpreference.bsonserialize.md\"\u003eMongoDB\\Driver\\ReadPreference::bsonSerialize »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.mongodb.md\"\u003eMongoDB\\Driver\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас MongoDB\\Driver\\ReadPreference\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас MongoDB\\Driver\\ReadPreference\u003c/h1\u003e\n\u003cp\u003e(mongodb \u003e=1.0.0)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003efinal class \u003cstrong\u003eMongoDB\\Driver\\ReadPreference\u003c/strong\u003e implements\n\u003ca href=\"class.mongodb-bson-serializable.md\"\u003eMongoDB\\BSON\\Serializable\u003c/a\u003e,\n\u003ca href=\"class.serializable.md\"\u003eSerializable\u003c/a\u003e {\u003c/p\u003e\n\u003cp\u003e/* Константи */\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eRP_PRIMARY\u003c/code\u003e = 1;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eRP_PRIMARY_PREFERRED\u003c/code\u003e = 5;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eRP_SECONDARY\u003c/code\u003e = 2;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eRP_SECONDARY_PREFERRED\u003c/code\u003e = 6;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eRP_NEAREST\u003c/code\u003e = 10;\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003ePRIMARY\u003c/code\u003e = primary;\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003ePRIMARY_PREFERRED\u003c/code\u003e = primaryPreferred;\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eSECONDARY\u003c/code\u003e = secondary;\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eSECONDARY_PREFERRED\u003c/code\u003e = secondaryPreferred;\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eNEAREST\u003c/code\u003e = nearest;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eNO_MAX_STALENESS\u003c/code\u003e = -1;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSMALLEST_MAX_STALENESS_SECONDS\u003c/code\u003e = 90;\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003efinal public\n\u003ca href=\"mongodb-driver-readpreference.bsonserialize.md\"\u003ebsonSerialize\u003c/a\u003e():\nobject\u003c/p\u003e\n\u003cp\u003efinal public\n\u003ca href=\"mongodb-driver-readpreference.construct.md\"\u003e__construct\u003c/a\u003e(string|int\n\u003ccode\u003e$mode\u003c/code\u003e, array \u003ccode\u003e$tagSets\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, array \u003ccode\u003e$options\u003c/code\u003e = array())\u003c/p\u003e\n\u003cp\u003efinal public \u003ca href=\"mongodb-driver-readpreference.gethedge.md\"\u003egetHedge\u003c/a\u003e():\n?object\u003c/p\u003e\n\u003cp\u003efinal public\n\u003ca href=\"mongodb-driver-readpreference.getmaxstalenessseconds.md\"\u003egetMaxStalenessSeconds\u003c/a\u003e():\nint\u003c/p\u003e\n\u003cp\u003efinal public \u003ca href=\"mongodb-driver-readpreference.getmode.md\"\u003egetMode\u003c/a\u003e():\nint\u003c/p\u003e\n\u003cp\u003efinal public\n\u003ca href=\"mongodb-driver-readpreference.getmodestring.md\"\u003egetModeString\u003c/a\u003e():\nstring\u003c/p\u003e\n\u003cp\u003efinal public\n\u003ca href=\"mongodb-driver-readpreference.gettagsets.md\"\u003egetTagSets\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003efinal public\n\u003ca href=\"mongodb-driver-readpreference.serialize.md\"\u003eserialize\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003efinal public\n\u003ca href=\"mongodb-driver-readpreference.unserialize.md\"\u003eunserialize\u003c/a\u003e(string\n\u003ccode\u003e$serialized\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗумовлені константи\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::RP_PRIMARY\u003c/code\u003e\u003c/strong\u003e\nУсі операції зчитуються з первинного вузла набору реплік. Це\nперевага читання за промовчанням для MongoDB.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::RP_PRIMARY_PREFERRED\u003c/code\u003e\u003c/strong\u003e\nУ більшості ситуація операції зчитуються з первинного вузла, але якщо\nвін недоступний, операції зчитуються із вторинних членів.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::RP_SECONDARY\u003c/code\u003e\u003c/strong\u003e\nУсі операції зчитуються із вторинних членів набору реплік.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::RP_SECONDARY_PREFERRED\u003c/code\u003e\u003c/strong\u003e\nУ більшості ситуація операції зчитуються з вторинних вузлів, але якщо\nвони недоступні, операції зчитуються із первинного вузла.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::RP_NEAREST\u003c/code\u003e\u003c/strong\u003e\nОперації зчитуються з члена набору реплік із найменшою затримкою мережі,\nнезалежно від типу члена.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::PRIMARY\u003c/code\u003e\u003c/strong\u003e\nУсі операції з поточної репліки встановлені первинними. Це\nперевага читання за промовчанням для MongoDB.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::PRIMARY_PREFERRED\u003c/code\u003e\u003c/strong\u003e\nУ більшості випадків операції читаються з первинного вузла, але якщо він\nнедоступний, операції читаються із вторинних вузлів.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::SECONDARY\u003c/code\u003e\u003c/strong\u003e\nУсі операції читаються із вторинних вузлів набору реплік.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::SECONDARY_PREFERRED\u003c/code\u003e\u003c/strong\u003e\nНайчастіше операції читаються з вторинних вузлів, але якщо вони\nнедоступні, операції читаються із первинного.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::NEAREST\u003c/code\u003e\u003c/strong\u003e\nОперації зчитуються з вузла набору реплік з найменшою затримкою в\nмережі, незалежно від типу.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::NO_MAX_STALENESS\u003c/code\u003e\u003c/strong\u003e\nЗначення за замовчуванням для параметра ``maxStalenessSeconds'' щоб\nвказати на обмеження на максимальне запізнення (staleness), що\nозначає, що драйвер не враховуватиме затримку вторинних вузлів при\nвибір напряму для операції читання.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadPreference::SMALLEST_MAX_STALENESS_SECONDS\u003c/code\u003e\u003c/strong\u003e\nМінімальне значення для параметра ``maxStalenessSeconds'` дорівнює 90\nсекунд. Драйвер оцінює запізнення (staleness) вторинних вузлів,\nперіодично перевіряючи останню дату запису кожного члена набору реплік.\nОскільки ці перевірки є нечастими, оцінка запізнення є\nгрубою. Таким чином, драйвер не може забезпечити максимальну величину\nзапізнення менше 90 секунд.\u003c/p\u003e\n\u003ch2\u003eСписок змін\u003c/h2\u003e\n\u003cp\u003e[TABLE]\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readpreference.bsonserialize.md\"\u003eMongoDB\\Driver\\ReadPreference::bsonSerialize\u003c/a\u003e\n— Повертає об'єкт серіалізації BSON\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readpreference.construct.md\"\u003eMongoDB\\Driver\\ReadPreference::__construct\u003c/a\u003e\n— Створити новий ReadPreference\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readpreference.gethedge.md\"\u003eMongoDB\\Driver\\ReadPreference::getHedge\u003c/a\u003e\n— Повертає опцію \"hedge\" із ReadPreference\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readpreference.getmaxstalenessseconds.md\"\u003eMongoDB\\Driver\\ReadPreference::getMaxStalenessSeconds\u003c/a\u003e\n— Повертає параметр \"maxStalenessSeconds\" ReadPreference\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readpreference.getmode.md\"\u003eMongoDB\\Driver\\ReadPreference::getMode\u003c/a\u003e\n— Повертає параметр \"mode\" ReadPreference\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readpreference.getmodestring.md\"\u003eMongoDB\\Driver\\ReadPreference::getModeString\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПовертає опцію \"mode\" об'єкта ReadPreference у вигляді рядка\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readpreference.gettagsets.md\"\u003eMongoDB\\Driver\\ReadPreference::getTagSets\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПовертає параметр \"tagSets\" ReadPreference\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readpreference.serialize.md\"\u003eMongoDB\\Driver\\ReadPreference::serialize\u003c/a\u003e\n— Серіалізація ReadPreference\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readpreference.unserialize.md\"\u003eMongoDB\\Driver\\ReadPreference::unserialize\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eДесеріалізація ReadPreference\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.mongodb-driver-readpreference.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

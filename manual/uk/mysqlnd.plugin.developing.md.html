@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqlnd.plugin.developing | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqlnd.plugin.api.md">«API плагінів mysqlnd</a></p>
+</li>
+<li>
+<p><a href="book.oci8.md">OCI8 »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mysqlnd.plugin.md">API для плагінів до вбудованого драйвера MySQL</a></p>
+</li>
+<li>
+<p>Починаємо розробку плагіна mysqlnd</p>
+</li>
+</ul>
+<h2>Починаємо розробку плагіна mysqlnd</h2>
+<p>Важливо пам'ятати, що плагін <code>mysqlnd</code> сам є модулем PHP.</p>
+<p>Наступний приклад показує базову структуру функції MINIT,
+що використовується в типовому плагіні <code>mysqlnd</code>:</p>
+<p>/* my_php_mysqlnd_plugin.c */</p>
+<p>static PHP_MINIT_FUNCTION(mysqlnd_plugin) {
+/* глобальні змінні, ini-налаштування, ресурси, класи */</p>
+<p>/* реєструємо плагін mysqlnd */
+mysqlnd_plugin_id = mysqlnd_plugin_register();</p>
+<p>conn_m = mysqlnd_get_conn_methods();
+memcpy(org_conn_m, conn_m,
+sizeof(struct st_mysqlnd_conn_methods));</p>
+<p>conn_m->query = MYSQLND_METHOD(mysqlnd_plugin_conn, query);
+conn_m->connect = MYSQLND_METHOD(mysqlnd_plugin_conn, connect);
+}</p>
+<p>/* my_mysqlnd_plugin.c */</p>
+<p>enum_func_status MYSQLND_METHOD(mysqlnd_plugin_conn, query)(/*... <em>/) {
+/</em> ... <em>/
+}
+enum_func_status MYSQLND_METHOD(mysqlnd_plugin_conn, connect)(/</em>... <em>/) {
+/</em> ... */
+}</p>
+<p><em>Аналіз задачі: від C до користувальницького простору</em></p>
+<p>class proxy extends mysqlnd_plugin_connection {
+public function connect($host, ...) { .. }
+}
+mysqlnd_plugin_set_conn_proxy(new proxy());</p>
+<p>Процес:</p>
+<ol>
+<li>
+<p>PHP: користувач реєструє callback-функцію плагіна</p>
+</li>
+<li>
+<p>PHP: користувач викликає PHP MySQL API для з'єднання з MySQL</p>
+</li>
+<li>
+<p>C: ext/*mysql* викликає метод mysqlnd</p>
+</li>
+<li>
+<p>C: mysqlnd обривається в ext/mysqlnd_plugin</p>
+</li>
+<li>
+<p>C: ext/mysqlnd_plugin</p>
+</li>
+<li>
+<p>Викликає користувацьку callback-функцію</p>
+</li>
+<li>
+<p>Або оригінальний метод <code>mysqlnd</code>, якщо вона не задана</p>
+</li>
+</ol>
+<p>Вам необхідно виконати такі дії:</p>
+<ol>
+<li>
+<p>Створіть у С клас "mysqlnd_plugin_connection"</p>
+</li>
+<li>
+<p>Прийміть та зареєструйте проксі об'єкт за допомогою
+"mysqlnd_plugin_set_conn_proxy()"</p>
+</li>
+<li>
+<p>Викличте проксі методи простору користувача з C (оптимізація -
+zend_interfaces.h)</p>
+</li>
+</ol>
+<p>Методи об'єкта простору користувача мають бути викликані за допомогою
+<code>call_user_function()</code> або на рівень нижче, за допомогою
+<code>zend_call_method()</code>.</p>
+<p><em>Оптимізація: викликайте методи З за допомогою zend_call_method</em></p>
+<p>Наступний шмат коду демонструє прототип функції <code>zend_call_method</code>,
+взятий із <code>zend_interfaces.h</code>.</p>
+<p>ZEND_API zval* zend_call_method(
+zval **object_pp, zend_class_entry *obj_ce,
+zend_function **fn_proxy, char *function_name,
+int function_name_len, zval <em><em>retval_ptr_ptr,
+int param_count, zval</em> arg1, zval</em> arg2 TSRMLS_DC
+);</p>
+<p>Zend API підтримує лише два аргументи. Вам може знадобитися
+більше. Наприклад:</p>
+<p>enum_func_status (*func_mysqlnd_conn__connect)(
+MYSQLND <em>conn, const char <em>host,
+const char</em>user, const char</em>passwd,
+unsigned int passwd_len, const char * db,
+unsigned int db_len, unsigned int port,
+const char * socket, unsigned int mysql_flags TSRMLS_DC
+);</p>
+<p>Для обходу цієї проблеми вам необхідно зробити копію
+<code>zend_call_method()</code> та додати необхідні параметри. Ви можете зробити
+це створивши набір макросів MY_ZEND_CALL_METHOD_WRAPPER.</p>
+<p><em>Звернення до простору користувача PHP</em></p>
+<p>Цей шматок коду демонструє оптимізований метод виклику функцій
+простору користувача з:</p>
+<p>/* my_mysqlnd_plugin.c */</p>
+<p>MYSQLND_METHOD(my_conn_class,connect)(
+MYSQLND <em>conn, const char <em>host /</em> ... <em>/ TSRMLS_DC) {
+enum_func_status ret=FAIL;
+zval * global_user_conn_proxy = fetch_userspace_proxy();
+if (global_user_conn_proxy) {
+/</em> виклик проксі простору користувача <em>/
+ret = MY_ZEND_CALL_METHOD_WRAPPER(global_user_conn_proxy, host, /</em>...</em>/);
+} else {
+/* або оригінальний метод mysqlnd = нічого не робити, бути прозорим */
+ret = org_methods.connect(conn, host, user, passwd,
+passwd_len, db, db_len, port,
+socket, mysql_flags (TSRMLS_CC);
+}
+return ret;
+}</p>
+<p><em>Звернення до простору користувача: прості аргументи</em></p>
+<p>/* my_mysqlnd_plugin.c */</p>
+<p>MYSQLND_METHOD(my_conn_class,connect)(
+/* ... <em>/, const char <em>host, /</em> ...</em>/) {
+/* ... <em>/
+if (global_user_conn_proxy) {
+/</em> ... <em>/
+zval * zv_host;
+MAKE_STD_ZVAL(zv_host);
+ZVAL_STRING(zv_host, host, 1);
+MY_ZEND_CALL_METHOD_WRAPPER(global_user_conn_proxy, zv_retval, zv_host /</em>, ...<em>/);
+zval_ptr_dtor(&#x26;zv_host);
+/</em> ... <em>/
+}
+/</em> ... */
+}</p>
+<p><em>Звернення до простору користувача: структури як аргументи</em></p>
+<p>/* my_mysqlnd_plugin.c */</p>
+<p>MYSQLND_METHOD(my_conn_class, connect)(
+MYSQLND <em>conn, /</em> ...<em>/) {
+/</em> ... <em>/
+if (global_user_conn_proxy) {
+/</em> ... <em>/
+zval * zv_conn;
+ZEND_REGISTER_RESOURCE(zv_conn, (void <em>)conn, le_mysqlnd_plugin_conn);
+MY_ZEND_CALL_METHOD_WRAPPER(global_user_conn_proxy, zv_retval, zv_conn, zv_host /</em>, ...</em>/);
+zval_ptr_dtor(&#x26;zv_conn);
+/* ... <em>/
+}
+/</em> ... */
+}</p>
+<p>Перший аргумент багатьох методів <code>mysqlnd</code> - це "об'єкти" С. Наприклад,
+перший аргумент методу connect() є вказівником на MYSQLND.
+Структура MYSQLND є об'єктом з'єднання <code>mysqlnd</code>.</p>
+<p>Вказівник на об'єкт з'єднання mysqlnd можна порівняти зі стандартним
+обробником файлового введення/виводу. Як і він, об'єкт з'єднання
+<code>mysqlnd</code> повинен бути пов'язаний з простором користувача з
+використанням PHP типом "resource".</p>
+<p><em>З C в простір користувача і назад</em></p>
+<p>class proxy extends mysqlnd_plugin_connection {
+public function connect($conn, $host, ...) {
+/* до впровадження */
+printf("Підключення до = '%s'
+", $ host);
+debug_print_backtrace();
+return parent::connect($conn);
+}</p>
+<p>public function query($conn, $query) {
+/* після впровадження */
+$ret = parent::query($conn, $query);
+printf("Запит = '%s'
+", $ Query);
+return $ret;
+}
+}
+mysqlnd_plugin_set_conn_proxy(new proxy());</p>
+<p>Користувачі PHP повинні мати можливість викликати батьківські
+реалізації перевизначених методів.</p>
+<p>В результаті успадкування можна "уточнити" лише вибрані методи та
+ви можете вибрати, коли виконувати ваш код до або після батьківського.</p>
+<p><em>Вбудований клас: mysqlnd_plugin_connection::connect()</em></p>
+<p>/* my_mysqlnd_plugin_classes.c */</p>
+<p>PHP_METHOD("mysqlnd_plugin_connection", connect) {
+/* ... спрощений! ... <em>/
+zval</em> mysqlnd_rsrc;
+MYSQLND * conn;
+char* host; int host_len;
+if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "rs",
+&#x26;mysqlnd_rsrc, &#x26;host, &#x26;host_len) == FAILURE) {
+RETURN_NULL();
+}
+ZEND_FETCH_RESOURCE(conn, MYSQLND* conn, &#x26;mysqlnd_rsrc, -1,
+"Mysqlnd Connection", le_mysqlnd_plugin_conn);
+if (PASS == org_methods.connect(conn, host, /* simplified! */ TSRMLS_CC))
+RETVAL_TRUE;
+else
+RETVAL_FALSE;
+}</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqlnd.plugin.developing.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqlnd.plugin.developing.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqlnd.plugin.developing","slug":"mysqlnd.plugin.developing.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqlnd.plugin.api.md\"\u003e«API плагінів mysqlnd\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.oci8.md\"\u003eOCI8 »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqlnd.plugin.md\"\u003eAPI для плагінів до вбудованого драйвера MySQL\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПочинаємо розробку плагіна mysqlnd\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eПочинаємо розробку плагіна mysqlnd\u003c/h2\u003e\n\u003cp\u003eВажливо пам'ятати, що плагін \u003ccode\u003emysqlnd\u003c/code\u003e сам є модулем PHP.\u003c/p\u003e\n\u003cp\u003eНаступний приклад показує базову структуру функції MINIT,\nщо використовується в типовому плагіні \u003ccode\u003emysqlnd\u003c/code\u003e:\u003c/p\u003e\n\u003cp\u003e/* my_php_mysqlnd_plugin.c */\u003c/p\u003e\n\u003cp\u003estatic PHP_MINIT_FUNCTION(mysqlnd_plugin) {\n/* глобальні змінні, ini-налаштування, ресурси, класи */\u003c/p\u003e\n\u003cp\u003e/* реєструємо плагін mysqlnd */\nmysqlnd_plugin_id = mysqlnd_plugin_register();\u003c/p\u003e\n\u003cp\u003econn_m = mysqlnd_get_conn_methods();\nmemcpy(org_conn_m, conn_m,\nsizeof(struct st_mysqlnd_conn_methods));\u003c/p\u003e\n\u003cp\u003econn_m-\u003equery = MYSQLND_METHOD(mysqlnd_plugin_conn, query);\nconn_m-\u003econnect = MYSQLND_METHOD(mysqlnd_plugin_conn, connect);\n}\u003c/p\u003e\n\u003cp\u003e/* my_mysqlnd_plugin.c */\u003c/p\u003e\n\u003cp\u003eenum_func_status MYSQLND_METHOD(mysqlnd_plugin_conn, query)(/*... \u003cem\u003e/) {\n/\u003c/em\u003e ... \u003cem\u003e/\n}\nenum_func_status MYSQLND_METHOD(mysqlnd_plugin_conn, connect)(/\u003c/em\u003e... \u003cem\u003e/) {\n/\u003c/em\u003e ... */\n}\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eАналіз задачі: від C до користувальницького простору\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eclass proxy extends mysqlnd_plugin_connection {\npublic function connect($host, ...) { .. }\n}\nmysqlnd_plugin_set_conn_proxy(new proxy());\u003c/p\u003e\n\u003cp\u003eПроцес:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003ePHP: користувач реєструє callback-функцію плагіна\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ePHP: користувач викликає PHP MySQL API для з'єднання з MySQL\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eC: ext/*mysql* викликає метод mysqlnd\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eC: mysqlnd обривається в ext/mysqlnd_plugin\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eC: ext/mysqlnd_plugin\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВикликає користувацьку callback-функцію\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eАбо оригінальний метод \u003ccode\u003emysqlnd\u003c/code\u003e, якщо вона не задана\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eВам необхідно виконати такі дії:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003eСтворіть у С клас \"mysqlnd_plugin_connection\"\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПрийміть та зареєструйте проксі об'єкт за допомогою\n\"mysqlnd_plugin_set_conn_proxy()\"\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВикличте проксі методи простору користувача з C (оптимізація -\nzend_interfaces.h)\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eМетоди об'єкта простору користувача мають бути викликані за допомогою\n\u003ccode\u003ecall_user_function()\u003c/code\u003e або на рівень нижче, за допомогою\n\u003ccode\u003ezend_call_method()\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eОптимізація: викликайте методи З за допомогою zend_call_method\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eНаступний шмат коду демонструє прототип функції \u003ccode\u003ezend_call_method\u003c/code\u003e,\nвзятий із \u003ccode\u003ezend_interfaces.h\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eZEND_API zval* zend_call_method(\nzval **object_pp, zend_class_entry *obj_ce,\nzend_function **fn_proxy, char *function_name,\nint function_name_len, zval \u003cem\u003e\u003cem\u003eretval_ptr_ptr,\nint param_count, zval\u003c/em\u003e arg1, zval\u003c/em\u003e arg2 TSRMLS_DC\n);\u003c/p\u003e\n\u003cp\u003eZend API підтримує лише два аргументи. Вам може знадобитися\nбільше. Наприклад:\u003c/p\u003e\n\u003cp\u003eenum_func_status (*func_mysqlnd_conn__connect)(\nMYSQLND \u003cem\u003econn, const char \u003cem\u003ehost,\nconst char\u003c/em\u003euser, const char\u003c/em\u003epasswd,\nunsigned int passwd_len, const char * db,\nunsigned int db_len, unsigned int port,\nconst char * socket, unsigned int mysql_flags TSRMLS_DC\n);\u003c/p\u003e\n\u003cp\u003eДля обходу цієї проблеми вам необхідно зробити копію\n\u003ccode\u003ezend_call_method()\u003c/code\u003e та додати необхідні параметри. Ви можете зробити\nце створивши набір макросів MY_ZEND_CALL_METHOD_WRAPPER.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЗвернення до простору користувача PHP\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eЦей шматок коду демонструє оптимізований метод виклику функцій\nпростору користувача з:\u003c/p\u003e\n\u003cp\u003e/* my_mysqlnd_plugin.c */\u003c/p\u003e\n\u003cp\u003eMYSQLND_METHOD(my_conn_class,connect)(\nMYSQLND \u003cem\u003econn, const char \u003cem\u003ehost /\u003c/em\u003e ... \u003cem\u003e/ TSRMLS_DC) {\nenum_func_status ret=FAIL;\nzval * global_user_conn_proxy = fetch_userspace_proxy();\nif (global_user_conn_proxy) {\n/\u003c/em\u003e виклик проксі простору користувача \u003cem\u003e/\nret = MY_ZEND_CALL_METHOD_WRAPPER(global_user_conn_proxy, host, /\u003c/em\u003e...\u003c/em\u003e/);\n} else {\n/* або оригінальний метод mysqlnd = нічого не робити, бути прозорим */\nret = org_methods.connect(conn, host, user, passwd,\npasswd_len, db, db_len, port,\nsocket, mysql_flags (TSRMLS_CC);\n}\nreturn ret;\n}\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЗвернення до простору користувача: прості аргументи\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003e/* my_mysqlnd_plugin.c */\u003c/p\u003e\n\u003cp\u003eMYSQLND_METHOD(my_conn_class,connect)(\n/* ... \u003cem\u003e/, const char \u003cem\u003ehost, /\u003c/em\u003e ...\u003c/em\u003e/) {\n/* ... \u003cem\u003e/\nif (global_user_conn_proxy) {\n/\u003c/em\u003e ... \u003cem\u003e/\nzval * zv_host;\nMAKE_STD_ZVAL(zv_host);\nZVAL_STRING(zv_host, host, 1);\nMY_ZEND_CALL_METHOD_WRAPPER(global_user_conn_proxy, zv_retval, zv_host /\u003c/em\u003e, ...\u003cem\u003e/);\nzval_ptr_dtor(\u0026#x26;zv_host);\n/\u003c/em\u003e ... \u003cem\u003e/\n}\n/\u003c/em\u003e ... */\n}\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЗвернення до простору користувача: структури як аргументи\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003e/* my_mysqlnd_plugin.c */\u003c/p\u003e\n\u003cp\u003eMYSQLND_METHOD(my_conn_class, connect)(\nMYSQLND \u003cem\u003econn, /\u003c/em\u003e ...\u003cem\u003e/) {\n/\u003c/em\u003e ... \u003cem\u003e/\nif (global_user_conn_proxy) {\n/\u003c/em\u003e ... \u003cem\u003e/\nzval * zv_conn;\nZEND_REGISTER_RESOURCE(zv_conn, (void \u003cem\u003e)conn, le_mysqlnd_plugin_conn);\nMY_ZEND_CALL_METHOD_WRAPPER(global_user_conn_proxy, zv_retval, zv_conn, zv_host /\u003c/em\u003e, ...\u003c/em\u003e/);\nzval_ptr_dtor(\u0026#x26;zv_conn);\n/* ... \u003cem\u003e/\n}\n/\u003c/em\u003e ... */\n}\u003c/p\u003e\n\u003cp\u003eПерший аргумент багатьох методів \u003ccode\u003emysqlnd\u003c/code\u003e - це \"об'єкти\" С. Наприклад,\nперший аргумент методу connect() є вказівником на MYSQLND.\nСтруктура MYSQLND є об'єктом з'єднання \u003ccode\u003emysqlnd\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eВказівник на об'єкт з'єднання mysqlnd можна порівняти зі стандартним\nобробником файлового введення/виводу. Як і він, об'єкт з'єднання\n\u003ccode\u003emysqlnd\u003c/code\u003e повинен бути пов'язаний з простором користувача з\nвикористанням PHP типом \"resource\".\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЗ C в простір користувача і назад\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eclass proxy extends mysqlnd_plugin_connection {\npublic function connect($conn, $host, ...) {\n/* до впровадження */\nprintf(\"Підключення до = '%s'\n\", $ host);\ndebug_print_backtrace();\nreturn parent::connect($conn);\n}\u003c/p\u003e\n\u003cp\u003epublic function query($conn, $query) {\n/* після впровадження */\n$ret = parent::query($conn, $query);\nprintf(\"Запит = '%s'\n\", $ Query);\nreturn $ret;\n}\n}\nmysqlnd_plugin_set_conn_proxy(new proxy());\u003c/p\u003e\n\u003cp\u003eКористувачі PHP повинні мати можливість викликати батьківські\nреалізації перевизначених методів.\u003c/p\u003e\n\u003cp\u003eВ результаті успадкування можна \"уточнити\" лише вибрані методи та\nви можете вибрати, коли виконувати ваш код до або після батьківського.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eВбудований клас: mysqlnd_plugin_connection::connect()\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003e/* my_mysqlnd_plugin_classes.c */\u003c/p\u003e\n\u003cp\u003ePHP_METHOD(\"mysqlnd_plugin_connection\", connect) {\n/* ... спрощений! ... \u003cem\u003e/\nzval\u003c/em\u003e mysqlnd_rsrc;\nMYSQLND * conn;\nchar* host; int host_len;\nif (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, \"rs\",\n\u0026#x26;mysqlnd_rsrc, \u0026#x26;host, \u0026#x26;host_len) == FAILURE) {\nRETURN_NULL();\n}\nZEND_FETCH_RESOURCE(conn, MYSQLND* conn, \u0026#x26;mysqlnd_rsrc, -1,\n\"Mysqlnd Connection\", le_mysqlnd_plugin_conn);\nif (PASS == org_methods.connect(conn, host, /* simplified! */ TSRMLS_CC))\nRETVAL_TRUE;\nelse\nRETVAL_FALSE;\n}\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqlnd.plugin.developing.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

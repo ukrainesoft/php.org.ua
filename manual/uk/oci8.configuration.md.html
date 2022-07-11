@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>oci8.configuration | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="oci8.test.md">«Тестування</a></p>
+</li>
+<li>
+<p><a href="oci8.constants.md">Предвизначені константи »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="oci8.setup.md">Встановлення та налаштування</a></p>
+</li>
+<li>
+<p>Налаштування під час виконання</p>
+</li>
+</ul>
+<h2>Налаштування під час виконання</h2>
+<p>Поведінка цих функцій залежить від установок <code>php.ini</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Ім'я За замовчуванням</th>
+<th>Місце зміни</th>
+<th>Список змін</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="oci8.configuration.md#ini.oci8.connection-class">oci8.connection_class</a></td>
+<td>""</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="oci8.configuration.md#ini.oci8.default-prefetch">oci8.default_prefetch</a></td>
+<td>"100"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="oci8.configuration.md#ini.oci8.events">oci8.events</a></td>
+<td>Off</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="oci8.configuration.md#ini.oci8.max-persistent">oci8.max_persistent</a></td>
+<td>"-1"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="oci8.configuration.md#ini.oci8.old-oci-close-semantics">oci8.old_oci_close_semantics</a></td>
+<td>Off</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="oci8.configuration.md#ini.oci8.persistent-timeout">oci8.persistent_timeout</a></td>
+<td>"-1"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="oci8.configuration.md#ini.oci8.ping-interval">oci8.ping_interval</a></td>
+<td>"60"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="oci8.configuration.md#ini.oci8.prefetch-lob-size">oci8.prefetch_lob_size</a></td>
+<td>"0"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="oci8.configuration.md#ini.oci8.privileged-connect">oci8.privileged_connect</a></td>
+<td>Off</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="oci8.configuration.md#ini.oci8.statement-cache-size">oci8.statement_cache_size</a></td>
+<td>"20"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Параметри конфігурації OCI8</strong></p>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>oci8.connection_class</code> string
+Цей текст, що визначається користувачем, обов'язково повинен бути заданий при
+використання резидентного пулу з'єднань бази даних Oracle (Database
+Resident Connection Pooling (DRCP). Це дозволяє субпартіонування
+пула з'єднань DRCP, що дозволяє постійним з'єднанням OCI8 з
+програми наново використовувати сесії бази даних від попереднього
+PHP-скрипта, покращуючи масштабованість. Якщо програма використовує
+процес з пулу бази даних, що раніше використовується з іншим класом
+з'єднань, налаштування сесії, такі як формат дати Oracle, будуть
+скинуті. Це запобігає випадковому обміну інформацією між різними
+додатками.</p>
+<p>Значення може бути встановлене під час виконання скрипту за допомогою
+<a href="function.ini-set.md">ini_set()</a> до встановлення з'єднання.</p>
+<p>Для використання DRCP, OCI8 має бути зібрана з бібліотеками Oracle
+11<em>g</em> чи новіше і база даних має бути Oracle 11<em>g</em> чи новіше. Пул
+з'єднань DRCP у базі даних має бути включений,
+<code>oci8.connection_class</code> має бути встановлене в те саме рядкове
+значення для всіх веб-серверів, що виконують одну і ту ж програму, а
+рядок з'єднання OCI8 повинен вказувати на сервер із пула. додаток
+Повинне використовувати постійні з'єднання.</p>
+<p><code>oci8.default_prefetch</code> int
+Ця опція встановлює значення за замовчуванням для кількості екстра
+рядів, які будуть повернуті та автоматично закешовані при
+низькорівневий запит даних з бази даних. Встановлення значення <code>0</code>
+вимикає попередню вибірку (prefetching).</p>
+<p>Значення попередньої вибірки не змінює кількість повертаних
+користувачеві рядів такими функціями як
+<a href="function.oci-fetch-array.md">oci_fetch_array()</a>; OCI8 внутрішньо
+обробляє попередню вибірку та кешування рядів.</p>
+<p>Значення може бути встановлене окремо для кожного виразу
+(per-statement) за допомогою
+<a href="function.oci-set-prefetch.md">oci_set_prefetch()</a> до виконання
+самого виразу.</p>
+<p>У PHP 5.3 (PECL OCI8 1.3.4) значення за промовчанням було збільшено з <code>10</code>
+до <code>100</code>.</p>
+<p>У PHP 5.3.2 (PECL OCI8 1.4) мінімально встановлене значення було
+зменшено з <code>1</code> до <code>0</code>, дозволяючи таким чином вимкнення
+попередньої вибірки.</p>
+<p>При використанні Oracle Database 12<em>c</em> або новіше, попереднє
+значення, задане PHP, може бути перевизначено клієнтським
+конфігураційним файлом Oracle <code>oraaccess.xml</code>. Зверніться до
+документації Oracle.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Велика попередня вибірка може покращити
+продуктивність рахунок деякого збільшеного використання
+пам'яті. Для запитів, що повертають великі масиви даних, вигода у
+продуктивність буде значною.</p>
+</blockquote>
+<p><code>oci8.events</code> bool
+Включення (<code>On</code>) дозволяє повідомити PHP про події Швидкого Повідомлення
+Програми бази даних (FAN).</p>
+<p>Без FAN, якщо екземпляр бази даних або вузол машини зненацька дасть
+збій, PHP програми можуть бути заблоковані, чекаючи відповіді від бази
+даних до перевищення часу очікування TCP. За допомогою подій FAN PHP
+програми швидко будуть повідомлені про збої, які впливають на
+встановлені ними з'єднання бази даних. Модуль OCI8 підчистить
+з'єднання, що не використовуються, в кеші постійних з'єднань.</p>
+<p>При використанні директиви (<code>On</code>), база даних також має бути
+настроєна на відправлення подій FAN.</p>
+<p>Підтримка FAN доступна, якщо OCI8 була злінкована з бібліотеками Oracle
+10<em>g</em>R2 (або пізнішими) та з'єднання було здійснено до Oracle
+Database 10<em>g</em>R2 (або пізнішої версії).</p>
+<p><code>oci8.max_persistent</code> int
+Максимальна кількість постійних з'єднань OCI8 на один процес PHP.
+Установка цієї опції -1 означає відсутність ліміту.</p>
+<p><code>oci8.old_oci_close_semantics</code> bool
+Ця опція контролює поведінку функції
+<a href="function.oci-close.md">oci_close()</a>. Її включення означає, що
+<a href="function.oci-close.md">oci_close()</a> не робить нічого; з'єднання не
+буде закрито, доки не закінчиться виконання скрипта. Це зроблено тільки
+з метою зворотної сумісності. Якщо ви відчуваєте потребу в цьому
+налаштування, <em>суворо рекомендується</em> налаштувати виклики
+<a href="function.oci-close.md">oci_close()</a> у ваших скриптах замість включення
+цієї опції.</p>
+<p><code>oci8.persistent_timeout</code> int
+Максимальна кількість секунд, яку дозволяється PHP-процесу тримати
+постійне з'єднання, що не використовується, відкритим. Встановлення цієї опції -1
+означає, що з'єднання, що не використовуються, будуть утримані, поки PHP-процес
+не завершить виконання або з'єднання не буде примусово
+закрито за допомогою функції <a href="function.oci-close.md">oci_close()</a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>: У PHP закінчення терміну дії невикористовуваних ресурсів
+не ґрунтується на повідомленнях. Воно трапляється коли PHP завершує
+обробку скрипта та перевіряє позначку часу останніх використаних
+Ресурсів. Звідси виникає наступний парадокс: невикористовувані
+з'єднання можуть бути закриті лише коли є деяка активність
+(хоч і не обов'язково пов'язана з OCI8) у PHP-процесі. Якщо
+є більше одного PHP-процесу, то кожен з них окремо
+має бути приведений у дію для того, щоб ініціювати закінчення
+терміну дії ресурсів, що простоюють. Введення резидентного пулу
+з'єднань бази даних (DRCP) в Oracle 11<em>g</em> вирішує проблеми з
+пам'яттю та ресурсами, які раніше намагалися вирішити
+<code>oci8.max_persistent</code> та <code>oci8.persistent_timeout</code>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>: У PHP 5.3 (PECL OCI8 1.3), постійні з'єднання можуть
+закрити за допомогою <a href="function.oci-close.md">oci_close()</a>.</p>
+</blockquote>
+<p><code>oci8.ping_interval</code> int
+Кількість секунд, що має пройти до пінгу протягом
+виконання <a href="function.oci-pconnect.md">oci_pconnect()</a>. Пінг
+забезпечує коректність з'єднання бази даних. Якщо встановлено в 0,
+постійні з'єднання пінгуватимуться при кожному виклику
+<a href="function.oci-pconnect.md">oci_pconnect()</a>. Для повного відключення
+пінгів встановіть цю опцію -1.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Вимкнення пінгів дозволяє
+<a href="function.oci-pconnect.md">oci_pconnect()</a> діяти з
+максимальною ефективністю, але PHP може бути нездатним визначити
+непридатні з'єднання, наприклад, при обриві мережі або при вимкненні
+бази даних Oracle після того, як PHP встановив з'єднання, поки
+З'єднання знову не буде використано у скрипті. Проконсультуйтесь
+з документацією функції <a href="function.oci-pconnect.md">oci_pconnect()</a>
+для більш детальної інформації.</p>
+</blockquote>
+<p><code>oci8.prefetch_lob_size</code> int
+Параметр налаштування, що впливає на внутрішню буферизацію даних LOB.
+Збільшення цього значення може покращити продуктивність вибірки
+менших LOB за рахунок скорочення кругових обходів між PHP та базою
+даних. Використання пам'яті зміниться.</p>
+<p>Значення впливає на LOB, що повертаються як екземпляри OCILob, а також на
+ті, що повертаються за допомогою <strong><code>OCI_RETURN_LOBS</code></strong>.</p>
+<p>Значення може бути встановлене для кожного оператора за допомогою функції
+<a href="function.oci-set-prefetch-lob.md">oci_set_prefetch_lob()</a> до
+виконання оператора.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Використовуйте Oracle Database 12.2 або новіше.</p>
+</blockquote>
+<p><code>oci8.privileged_connect</code> bool
+Ця опція дозволяє з'єднанням використовувати привілейовані зовнішні
+облікові записи <strong><code>OCI_SYSOPER</code></strong> або <strong><code>OCI_SYSDBA</code></strong>.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Встановлення цієї директиви в <code>On</code> дозволить скриптам,
+запущених з відповідними користувальницькими привілеями
+операційної системи, з'єднуватися з базою даних як
+привілейованих користувачів бази даних без вимог пароля. Це
+може бути ломом системи безпеки.</p>
+</blockquote>
+<p><code>oci8.statement_cache_size</code> int
+Ця опція включає кешування виразів, а також вказує скільки
+виразів необхідно кешувати. Для відключення кешування виразів
+просто встановіть значення цієї опції 0.</p>
+<p>Кешування виразів прибирає необхідність передавати текст виразу до
+базі даних, а також зворотну передачу різних метаданих про це
+виразі назад до PHP. Це може значно покращити загальну
+продуктивність системи у додатках, які повторно використовують
+висловлювання протягом життя однієї сполуки. Деякі додаткові
+"курсори" баз даних можуть залишитися відкритими, маючи на увазі, що дані
+вирази будуть використані повторно.</p>
+<p>Встановіть це значення розміром робочого набору виразів, які використовуються
+вашим додатком. Встановлення занадто малого значення може спричинити
+викид виразів із кешу до їх повторного використання.</p>
+<p>Ця опція найчастіше використовується із постійними з'єднаннями.</p>
+<p>При використанні Oracle Database 12<em>c</em> або вище, попереднє
+значення, задане PHP, може бути перевизначено клієнтським
+конфігураційним файлом Oracle <code>oraaccess.xml</code>. Зверніться до
+документації Oracle.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/oci8.configuration.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/oci8.configuration.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"oci8.configuration","slug":"oci8.configuration.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"oci8.test.md\"\u003e«Тестування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"oci8.constants.md\"\u003eПредвизначені константи »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"oci8.setup.md\"\u003eВстановлення та налаштування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНалаштування під час виконання\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНалаштування під час виконання\u003c/h2\u003e\n\u003cp\u003eПоведінка цих функцій залежить від установок \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІм'я За замовчуванням\u003c/th\u003e\n\u003cth\u003eМісце зміни\u003c/th\u003e\n\u003cth\u003eСписок змін\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"oci8.configuration.md#ini.oci8.connection-class\"\u003eoci8.connection_class\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"oci8.configuration.md#ini.oci8.default-prefetch\"\u003eoci8.default_prefetch\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"100\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"oci8.configuration.md#ini.oci8.events\"\u003eoci8.events\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOff\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"oci8.configuration.md#ini.oci8.max-persistent\"\u003eoci8.max_persistent\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"-1\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"oci8.configuration.md#ini.oci8.old-oci-close-semantics\"\u003eoci8.old_oci_close_semantics\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOff\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"oci8.configuration.md#ini.oci8.persistent-timeout\"\u003eoci8.persistent_timeout\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"-1\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"oci8.configuration.md#ini.oci8.ping-interval\"\u003eoci8.ping_interval\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"60\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"oci8.configuration.md#ini.oci8.prefetch-lob-size\"\u003eoci8.prefetch_lob_size\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"oci8.configuration.md#ini.oci8.privileged-connect\"\u003eoci8.privileged_connect\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOff\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"oci8.configuration.md#ini.oci8.statement-cache-size\"\u003eoci8.statement_cache_size\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"20\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eПараметри конфігурації OCI8\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eКоротке пояснення конфігураційних директив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoci8.connection_class\u003c/code\u003e string\nЦей текст, що визначається користувачем, обов'язково повинен бути заданий при\nвикористання резидентного пулу з'єднань бази даних Oracle (Database\nResident Connection Pooling (DRCP). Це дозволяє субпартіонування\nпула з'єднань DRCP, що дозволяє постійним з'єднанням OCI8 з\nпрограми наново використовувати сесії бази даних від попереднього\nPHP-скрипта, покращуючи масштабованість. Якщо програма використовує\nпроцес з пулу бази даних, що раніше використовується з іншим класом\nз'єднань, налаштування сесії, такі як формат дати Oracle, будуть\nскинуті. Це запобігає випадковому обміну інформацією між різними\nдодатками.\u003c/p\u003e\n\u003cp\u003eЗначення може бути встановлене під час виконання скрипту за допомогою\n\u003ca href=\"function.ini-set.md\"\u003eini_set()\u003c/a\u003e до встановлення з'єднання.\u003c/p\u003e\n\u003cp\u003eДля використання DRCP, OCI8 має бути зібрана з бібліотеками Oracle\n11\u003cem\u003eg\u003c/em\u003e чи новіше і база даних має бути Oracle 11\u003cem\u003eg\u003c/em\u003e чи новіше. Пул\nз'єднань DRCP у базі даних має бути включений,\n\u003ccode\u003eoci8.connection_class\u003c/code\u003e має бути встановлене в те саме рядкове\nзначення для всіх веб-серверів, що виконують одну і ту ж програму, а\nрядок з'єднання OCI8 повинен вказувати на сервер із пула. додаток\nПовинне використовувати постійні з'єднання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoci8.default_prefetch\u003c/code\u003e int\nЦя опція встановлює значення за замовчуванням для кількості екстра\nрядів, які будуть повернуті та автоматично закешовані при\nнизькорівневий запит даних з бази даних. Встановлення значення \u003ccode\u003e0\u003c/code\u003e\nвимикає попередню вибірку (prefetching).\u003c/p\u003e\n\u003cp\u003eЗначення попередньої вибірки не змінює кількість повертаних\nкористувачеві рядів такими функціями як\n\u003ca href=\"function.oci-fetch-array.md\"\u003eoci_fetch_array()\u003c/a\u003e; OCI8 внутрішньо\nобробляє попередню вибірку та кешування рядів.\u003c/p\u003e\n\u003cp\u003eЗначення може бути встановлене окремо для кожного виразу\n(per-statement) за допомогою\n\u003ca href=\"function.oci-set-prefetch.md\"\u003eoci_set_prefetch()\u003c/a\u003e до виконання\nсамого виразу.\u003c/p\u003e\n\u003cp\u003eУ PHP 5.3 (PECL OCI8 1.3.4) значення за промовчанням було збільшено з \u003ccode\u003e10\u003c/code\u003e\nдо \u003ccode\u003e100\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eУ PHP 5.3.2 (PECL OCI8 1.4) мінімально встановлене значення було\nзменшено з \u003ccode\u003e1\u003c/code\u003e до \u003ccode\u003e0\u003c/code\u003e, дозволяючи таким чином вимкнення\nпопередньої вибірки.\u003c/p\u003e\n\u003cp\u003eПри використанні Oracle Database 12\u003cem\u003ec\u003c/em\u003e або новіше, попереднє\nзначення, задане PHP, може бути перевизначено клієнтським\nконфігураційним файлом Oracle \u003ccode\u003eoraaccess.xml\u003c/code\u003e. Зверніться до\nдокументації Oracle.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Велика попередня вибірка може покращити\nпродуктивність рахунок деякого збільшеного використання\nпам'яті. Для запитів, що повертають великі масиви даних, вигода у\nпродуктивність буде значною.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eoci8.events\u003c/code\u003e bool\nВключення (\u003ccode\u003eOn\u003c/code\u003e) дозволяє повідомити PHP про події Швидкого Повідомлення\nПрограми бази даних (FAN).\u003c/p\u003e\n\u003cp\u003eБез FAN, якщо екземпляр бази даних або вузол машини зненацька дасть\nзбій, PHP програми можуть бути заблоковані, чекаючи відповіді від бази\nданих до перевищення часу очікування TCP. За допомогою подій FAN PHP\nпрограми швидко будуть повідомлені про збої, які впливають на\nвстановлені ними з'єднання бази даних. Модуль OCI8 підчистить\nз'єднання, що не використовуються, в кеші постійних з'єднань.\u003c/p\u003e\n\u003cp\u003eПри використанні директиви (\u003ccode\u003eOn\u003c/code\u003e), база даних також має бути\nнастроєна на відправлення подій FAN.\u003c/p\u003e\n\u003cp\u003eПідтримка FAN доступна, якщо OCI8 була злінкована з бібліотеками Oracle\n10\u003cem\u003eg\u003c/em\u003eR2 (або пізнішими) та з'єднання було здійснено до Oracle\nDatabase 10\u003cem\u003eg\u003c/em\u003eR2 (або пізнішої версії).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoci8.max_persistent\u003c/code\u003e int\nМаксимальна кількість постійних з'єднань OCI8 на один процес PHP.\nУстановка цієї опції -1 означає відсутність ліміту.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoci8.old_oci_close_semantics\u003c/code\u003e bool\nЦя опція контролює поведінку функції\n\u003ca href=\"function.oci-close.md\"\u003eoci_close()\u003c/a\u003e. Її включення означає, що\n\u003ca href=\"function.oci-close.md\"\u003eoci_close()\u003c/a\u003e не робить нічого; з'єднання не\nбуде закрито, доки не закінчиться виконання скрипта. Це зроблено тільки\nз метою зворотної сумісності. Якщо ви відчуваєте потребу в цьому\nналаштування, \u003cem\u003eсуворо рекомендується\u003c/em\u003e налаштувати виклики\n\u003ca href=\"function.oci-close.md\"\u003eoci_close()\u003c/a\u003e у ваших скриптах замість включення\nцієї опції.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoci8.persistent_timeout\u003c/code\u003e int\nМаксимальна кількість секунд, яку дозволяється PHP-процесу тримати\nпостійне з'єднання, що не використовується, відкритим. Встановлення цієї опції -1\nозначає, що з'єднання, що не використовуються, будуть утримані, поки PHP-процес\nне завершить виконання або з'єднання не буде примусово\nзакрито за допомогою функції \u003ca href=\"function.oci-close.md\"\u003eoci_close()\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: У PHP закінчення терміну дії невикористовуваних ресурсів\nне ґрунтується на повідомленнях. Воно трапляється коли PHP завершує\nобробку скрипта та перевіряє позначку часу останніх використаних\nРесурсів. Звідси виникає наступний парадокс: невикористовувані\nз'єднання можуть бути закриті лише коли є деяка активність\n(хоч і не обов'язково пов'язана з OCI8) у PHP-процесі. Якщо\nє більше одного PHP-процесу, то кожен з них окремо\nмає бути приведений у дію для того, щоб ініціювати закінчення\nтерміну дії ресурсів, що простоюють. Введення резидентного пулу\nз'єднань бази даних (DRCP) в Oracle 11\u003cem\u003eg\u003c/em\u003e вирішує проблеми з\nпам'яттю та ресурсами, які раніше намагалися вирішити\n\u003ccode\u003eoci8.max_persistent\u003c/code\u003e та \u003ccode\u003eoci8.persistent_timeout\u003c/code\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: У PHP 5.3 (PECL OCI8 1.3), постійні з'єднання можуть\nзакрити за допомогою \u003ca href=\"function.oci-close.md\"\u003eoci_close()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eoci8.ping_interval\u003c/code\u003e int\nКількість секунд, що має пройти до пінгу протягом\nвиконання \u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e. Пінг\nзабезпечує коректність з'єднання бази даних. Якщо встановлено в 0,\nпостійні з'єднання пінгуватимуться при кожному виклику\n\u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e. Для повного відключення\nпінгів встановіть цю опцію -1.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Вимкнення пінгів дозволяє\n\u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e діяти з\nмаксимальною ефективністю, але PHP може бути нездатним визначити\nнепридатні з'єднання, наприклад, при обриві мережі або при вимкненні\nбази даних Oracle після того, як PHP встановив з'єднання, поки\nЗ'єднання знову не буде використано у скрипті. Проконсультуйтесь\nз документацією функції \u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e\nдля більш детальної інформації.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eoci8.prefetch_lob_size\u003c/code\u003e int\nПараметр налаштування, що впливає на внутрішню буферизацію даних LOB.\nЗбільшення цього значення може покращити продуктивність вибірки\nменших LOB за рахунок скорочення кругових обходів між PHP та базою\nданих. Використання пам'яті зміниться.\u003c/p\u003e\n\u003cp\u003eЗначення впливає на LOB, що повертаються як екземпляри OCILob, а також на\nті, що повертаються за допомогою \u003cstrong\u003e\u003ccode\u003eOCI_RETURN_LOBS\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eЗначення може бути встановлене для кожного оператора за допомогою функції\n\u003ca href=\"function.oci-set-prefetch-lob.md\"\u003eoci_set_prefetch_lob()\u003c/a\u003e до\nвиконання оператора.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Використовуйте Oracle Database 12.2 або новіше.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eoci8.privileged_connect\u003c/code\u003e bool\nЦя опція дозволяє з'єднанням використовувати привілейовані зовнішні\nоблікові записи \u003cstrong\u003e\u003ccode\u003eOCI_SYSOPER\u003c/code\u003e\u003c/strong\u003e або \u003cstrong\u003e\u003ccode\u003eOCI_SYSDBA\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Встановлення цієї директиви в \u003ccode\u003eOn\u003c/code\u003e дозволить скриптам,\nзапущених з відповідними користувальницькими привілеями\nопераційної системи, з'єднуватися з базою даних як\nпривілейованих користувачів бази даних без вимог пароля. Це\nможе бути ломом системи безпеки.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eoci8.statement_cache_size\u003c/code\u003e int\nЦя опція включає кешування виразів, а також вказує скільки\nвиразів необхідно кешувати. Для відключення кешування виразів\nпросто встановіть значення цієї опції 0.\u003c/p\u003e\n\u003cp\u003eКешування виразів прибирає необхідність передавати текст виразу до\nбазі даних, а також зворотну передачу різних метаданих про це\nвиразі назад до PHP. Це може значно покращити загальну\nпродуктивність системи у додатках, які повторно використовують\nвисловлювання протягом життя однієї сполуки. Деякі додаткові\n\"курсори\" баз даних можуть залишитися відкритими, маючи на увазі, що дані\nвирази будуть використані повторно.\u003c/p\u003e\n\u003cp\u003eВстановіть це значення розміром робочого набору виразів, які використовуються\nвашим додатком. Встановлення занадто малого значення може спричинити\nвикид виразів із кешу до їх повторного використання.\u003c/p\u003e\n\u003cp\u003eЦя опція найчастіше використовується із постійними з'єднаннями.\u003c/p\u003e\n\u003cp\u003eПри використанні Oracle Database 12\u003cem\u003ec\u003c/em\u003e або вище, попереднє\nзначення, задане PHP, може бути перевизначено клієнтським\nконфігураційним файлом Oracle \u003ccode\u003eoraaccess.xml\u003c/code\u003e. Зверніться до\nдокументації Oracle.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"oci8.configuration.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

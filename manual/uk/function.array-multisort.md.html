@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.array-multisort | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.array-merge.md">«array_merge</a></p>
+</li>
+<li>
+<p><a href="function.array-pad.md">array_pad »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.array.md">Функції для роботи з масивами</a></p>
+</li>
+<li>
+<p>Сортує кілька масивів або багатовимірні масиви</p>
+</li>
+</ul>
+<p>#array_multisort</p>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>array_multisort — Сортує кілька масивів або багатовимірні масиви</p>
+<h3>Опис</h3>
+<p><strong>array_multisort</strong>(
+array <code>&#x26;$array1</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$array1_sort_order</code> = SORT_ASC,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$array1_sort_flags</code> = SORT_REGULAR,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>...$rest</code>
+): bool</p>
+<p>Функція <strong>array_multisort()</strong> може бути використана для сортування
+відразу декількох масивів або одного багатовимірного масиву відповідно
+з однією чи декількома розмірностями.</p>
+<p>Асоціативні (string) ключі будуть збережені, але числові ключі будуть
+переіндексовані.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо обидва порівнювані значення еквівалентні, вони зберігають свій
+Початковий порядок. До PHP 8.0.0 їх відносний порядок
+відсортованому масиві був визначений.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Скидає внутрішній покажчик масиву перший елемент.</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>array1</code>
+Сортується масив (array).</p>
+<p><code>array1_sort_order</code>
+Порядок для сортування вищезгаданого аргументу типу array. Або
+<strong><code>SORT_ASC</code></strong> для сортування за зростанням, або <strong><code>SORT_DESC</code></strong> для
+сортування за спаданням.</p>
+<p>Цей аргумент може змінюватися місцями з <code>array1_sort_flags</code> або взагалі
+бути пропущеним. В цьому випадку мається на увазі значення <strong><code>SORT_ASC</code></strong>.</p>
+<p><code>array1_sort_flags</code>
+Налаштування сортування для вищезгаданого аргументу array:</p>
+<p>Прапор способу сортування:</p>
+<ul>
+<li><strong><code>SORT_REGULAR</code></strong> - звичайне порівняння елементів (без зміни
+типів)</li>
+<li><strong><code>SORT_NUMERIC</code></strong> - порівняння елементів як чисел</li>
+<li><strong><code>SORT_STRING</code></strong> - порівняння елементів як рядків</li>
+<li><strong><code>SORT_LOCALE_STRING</code></strong> - порівняння елементів як рядків, враховуючи
+поточний локаль. Використовується локаль, яку можна міняти за допомогою
+функції <a href="function.setlocale.md">setlocale()</a></li>
+<li><strong><code>SORT_NATURAL</code></strong> - порівняння елементів як рядків з використанням
+алгоритму "natural order", як у функції
+<a href="function.natsort.md">natsort()</a></li>
+<li><strong><code>SORT_FLAG_CASE</code></strong> - може бути об'єднаний (бінарне АБО) з
+<strong><code>SORT_STRING</code></strong> або <strong><code>SORT_NATURAL</code></strong> для сортування без урахування
+регістру</li>
+</ul>
+<p>Цей аргумент може змінюватися місцями з <code>array1_sort_order</code> або взагалі
+бути пропущеним. У цьому випадку мається на увазі значення
+<strong><code>SORT_REGULAR</code></strong>.</p>
+<p><code>rest</code>
+Додаткові масиви, необов'язково наступні після порядку сортування
+та прапори. Порівнюються тільки елементи відповідні таким же
+елементам у попередніх масивах. Іншими словами, проводиться
+сортування у лексикографічному порядку.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Сортування кількох масивів</strong></p>
+<p><code>&#x3C;?php$ar1 = array(10, 100, 100, 0);$ar2 = array(1, 3, 2, 4);array_multisort($ar1, $ar2);var_dump($ar1);var_dump($ ar2);?></code></p>
+<p>У наведеному вище прикладі, після того, як буде здійснена
+сортування, перший масив міститиме 0, 10, 100, 100. Другий - 4,
+1, 2, 3. Елементи другого масиву, що відповідають ідентичним елементам
+першого (100 та 100), також будуть відсортовані.</p>
+<p>array(4) {
+[0]=> int(0)
+[1]=> int(10)
+[2]=> int(100)
+[3]=> int(100)
+}
+array(4) {
+[0]=> int(4)
+[1]=> int(1)
+[2]=> int(2)
+[3]=> int(3)
+}</p>
+<p><strong>Приклад #2 Сортування багатовимірного масиву</strong></p>
+<p><code>&#x3C;?php$ar = array(                                               SORT_ASC, SORT_STRING,                 $ar[1], SORT_NUMERIC, SORT_DESC);var_dump($ar);?> </code></p>
+<p>У наведеному вище прикладі, після сортування, перший масив буде
+містити "10", 100, 100, 11, "a" (його елементи були відсортовані в
+зростаючому порядку), а другий масив міститиме 1, 3, "2", 2, 1
+(Елементи відсортовані як числа, у порядку зменшення).</p>
+<p>array(2) {
+[0]=> array(5) {
+[0]=> string(2) "10"
+[1]=> int(100)
+[2]=> int(100)
+[3]=> int(11)
+[4]=> string(1) "a"
+}
+[1]=> array(5) {
+[0]=> int(1)
+[1]=> int(3)
+[2]=> string(1) "2"
+[3]=> int(2)
+[4]=> int(1)
+}
+}</p>
+<p><strong>Приклад #3 Сортування результатів із бази даних</strong></p>
+<p>У цьому прикладі, кожен елемент масиву <code>data</code> є рядом
+таблиці. Такий тип даних типовий записів бази даних.</p>
+<p>Зразкові дані:</p>
+<h1>том | видання</h1>
+<p>volume | edition
+-------+--------
+67 | 2
+86 | 1
+85 | 6
+98 | 2
+86 | 6
+67 | 7</p>
+<p>Дані представлені як масиву з ім'ям <code>data</code>. Зазвичай їх можна
+отримати, наприклад, за допомогою циклу з функції
+<a href="mysqli-result.fetch-assoc.md">mysqli_fetch_assoc()</a>.</p>
+<p><code>&#x3C;?php$data[] = array('volume' => 67, 'edition' => 2);$data[] = array('volume' => 86, 'edition' => 1);$data [] = array('volume' => 85, 'edition' => 6);$data[] = array('volume' => 98, 'edition' => 2);$data[] = array(' volume' => 86, 'edition' => 6);$data[] = array('volume' => 67, 'edition' => 7);?></code></p>
+<p>У нашому прикладі ми будемо сортувати по <code>volume</code> у спадному порядку, а
+по <code>edition</code> - у зростаючому.</p>
+<p>У нас є масив рядків, але <strong>array_multisort()</strong> потрібен масив
+стовпців, тому спочатку ми використовуємо наступний код для отримання
+стовпців, а потім виконаємо сортування.</p>
+<p>` &#x3C;?php// Отримання списку стовпцівforeach ($data as $key => $row) {    $volume[$key]  = $row['volume']; $edition[$key] = $row['edition'];}// Ви можете використовувати array_column() замість вказаного вище коду$volume = array_column($data, 'volume');$edition ='day ');// Сортуємо дані по volume по зменшенню і по edition по зростанню// Добавляємо $data в якості останнього параметра, для Сортування по C|</p>
+<p>Тепер дані відсортовані і виглядатимуть так:</p>
+<p>volume | edition
+-------+--------
+98 | 2
+86 | 1
+86 | 6
+85 | 6
+67 | 2
+67 | 7</p>
+<p><strong>Приклад #4 Сортування без урахування регістру</strong></p>
+<p>Обидві константи <strong><code>SORT_STRING</code></strong> та <strong><code>SORT_REGULAR</code></strong> враховують регістр
+при сортуванні, рядки, що починаються з великої літери, будуть виставлені
+раніше рядків, що починаються з малої літери.</p>
+<p>Для виконання реєстронезалежного сортування, необхідно використовувати
+копію вихідного масиву приведену до нижнього регістру.</p>
+<p><code>&#x3C;?php$array = array('Alpha', 'atomic', 'Beta', 'bank');$array_lowercase = array_map('strtolower', $array);array_multisort($array_lowercase, SORT_AS );print_r($array);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Array
+(
+[0] => Alpha
+[1] => atomic
+[2] => bank
+[3] => Beta
+)</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.usort.md">usort()</a> - Сортує масив за значеннями
+використовуючи функцію користувача для порівняння елементів</li>
+<li><a href="array.sorting.md">Порівняння функцій сортування масивів</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.array-multisort.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.array-multisort.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.array-multisort","slug":"function.array-multisort.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.array-merge.md\"\u003e«array_merge\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.array-pad.md\"\u003earray_pad »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.array.md\"\u003eФункції для роботи з масивами\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eСортує кілька масивів або багатовимірні масиви\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#array_multisort\u003c/p\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003earray_multisort — Сортує кілька масивів або багатовимірні масиви\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003earray_multisort\u003c/strong\u003e(\narray \u003ccode\u003e\u0026#x26;$array1\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$array1_sort_order\u003c/code\u003e = SORT_ASC,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$array1_sort_flags\u003c/code\u003e = SORT_REGULAR,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e...$rest\u003c/code\u003e\n): bool\u003c/p\u003e\n\u003cp\u003eФункція \u003cstrong\u003earray_multisort()\u003c/strong\u003e може бути використана для сортування\nвідразу декількох масивів або одного багатовимірного масиву відповідно\nз однією чи декількома розмірностями.\u003c/p\u003e\n\u003cp\u003eАсоціативні (string) ключі будуть збережені, але числові ключі будуть\nпереіндексовані.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо обидва порівнювані значення еквівалентні, вони зберігають свій\nПочатковий порядок. До PHP 8.0.0 їх відносний порядок\nвідсортованому масиві був визначений.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eСкидає внутрішній покажчик масиву перший елемент.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003earray1\u003c/code\u003e\nСортується масив (array).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003earray1_sort_order\u003c/code\u003e\nПорядок для сортування вищезгаданого аргументу типу array. Або\n\u003cstrong\u003e\u003ccode\u003eSORT_ASC\u003c/code\u003e\u003c/strong\u003e для сортування за зростанням, або \u003cstrong\u003e\u003ccode\u003eSORT_DESC\u003c/code\u003e\u003c/strong\u003e для\nсортування за спаданням.\u003c/p\u003e\n\u003cp\u003eЦей аргумент може змінюватися місцями з \u003ccode\u003earray1_sort_flags\u003c/code\u003e або взагалі\nбути пропущеним. В цьому випадку мається на увазі значення \u003cstrong\u003e\u003ccode\u003eSORT_ASC\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003earray1_sort_flags\u003c/code\u003e\nНалаштування сортування для вищезгаданого аргументу array:\u003c/p\u003e\n\u003cp\u003eПрапор способу сортування:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eSORT_REGULAR\u003c/code\u003e\u003c/strong\u003e - звичайне порівняння елементів (без зміни\nтипів)\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eSORT_NUMERIC\u003c/code\u003e\u003c/strong\u003e - порівняння елементів як чисел\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eSORT_STRING\u003c/code\u003e\u003c/strong\u003e - порівняння елементів як рядків\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eSORT_LOCALE_STRING\u003c/code\u003e\u003c/strong\u003e - порівняння елементів як рядків, враховуючи\nпоточний локаль. Використовується локаль, яку можна міняти за допомогою\nфункції \u003ca href=\"function.setlocale.md\"\u003esetlocale()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eSORT_NATURAL\u003c/code\u003e\u003c/strong\u003e - порівняння елементів як рядків з використанням\nалгоритму \"natural order\", як у функції\n\u003ca href=\"function.natsort.md\"\u003enatsort()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003eSORT_FLAG_CASE\u003c/code\u003e\u003c/strong\u003e - може бути об'єднаний (бінарне АБО) з\n\u003cstrong\u003e\u003ccode\u003eSORT_STRING\u003c/code\u003e\u003c/strong\u003e або \u003cstrong\u003e\u003ccode\u003eSORT_NATURAL\u003c/code\u003e\u003c/strong\u003e для сортування без урахування\nрегістру\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eЦей аргумент може змінюватися місцями з \u003ccode\u003earray1_sort_order\u003c/code\u003e або взагалі\nбути пропущеним. У цьому випадку мається на увазі значення\n\u003cstrong\u003e\u003ccode\u003eSORT_REGULAR\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erest\u003c/code\u003e\nДодаткові масиви, необов'язково наступні після порядку сортування\nта прапори. Порівнюються тільки елементи відповідні таким же\nелементам у попередніх масивах. Іншими словами, проводиться\nсортування у лексикографічному порядку.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Сортування кількох масивів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$ar1 = array(10, 100, 100, 0);$ar2 = array(1, 3, 2, 4);array_multisort($ar1, $ar2);var_dump($ar1);var_dump($ ar2);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eУ наведеному вище прикладі, після того, як буде здійснена\nсортування, перший масив міститиме 0, 10, 100, 100. Другий - 4,\n1, 2, 3. Елементи другого масиву, що відповідають ідентичним елементам\nпершого (100 та 100), також будуть відсортовані.\u003c/p\u003e\n\u003cp\u003earray(4) {\n[0]=\u003e int(0)\n[1]=\u003e int(10)\n[2]=\u003e int(100)\n[3]=\u003e int(100)\n}\narray(4) {\n[0]=\u003e int(4)\n[1]=\u003e int(1)\n[2]=\u003e int(2)\n[3]=\u003e int(3)\n}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Сортування багатовимірного масиву\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$ar = array(                                               SORT_ASC, SORT_STRING,                 $ar[1], SORT_NUMERIC, SORT_DESC);var_dump($ar);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eУ наведеному вище прикладі, після сортування, перший масив буде\nмістити \"10\", 100, 100, 11, \"a\" (його елементи були відсортовані в\nзростаючому порядку), а другий масив міститиме 1, 3, \"2\", 2, 1\n(Елементи відсортовані як числа, у порядку зменшення).\u003c/p\u003e\n\u003cp\u003earray(2) {\n[0]=\u003e array(5) {\n[0]=\u003e string(2) \"10\"\n[1]=\u003e int(100)\n[2]=\u003e int(100)\n[3]=\u003e int(11)\n[4]=\u003e string(1) \"a\"\n}\n[1]=\u003e array(5) {\n[0]=\u003e int(1)\n[1]=\u003e int(3)\n[2]=\u003e string(1) \"2\"\n[3]=\u003e int(2)\n[4]=\u003e int(1)\n}\n}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Сортування результатів із бази даних\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eУ цьому прикладі, кожен елемент масиву \u003ccode\u003edata\u003c/code\u003e є рядом\nтаблиці. Такий тип даних типовий записів бази даних.\u003c/p\u003e\n\u003cp\u003eЗразкові дані:\u003c/p\u003e\n\u003ch1\u003eтом | видання\u003c/h1\u003e\n\u003cp\u003evolume | edition\n-------+--------\n67 | 2\n86 | 1\n85 | 6\n98 | 2\n86 | 6\n67 | 7\u003c/p\u003e\n\u003cp\u003eДані представлені як масиву з ім'ям \u003ccode\u003edata\u003c/code\u003e. Зазвичай їх можна\nотримати, наприклад, за допомогою циклу з функції\n\u003ca href=\"mysqli-result.fetch-assoc.md\"\u003emysqli_fetch_assoc()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$data[] = array('volume' =\u003e 67, 'edition' =\u003e 2);$data[] = array('volume' =\u003e 86, 'edition' =\u003e 1);$data [] = array('volume' =\u003e 85, 'edition' =\u003e 6);$data[] = array('volume' =\u003e 98, 'edition' =\u003e 2);$data[] = array(' volume' =\u003e 86, 'edition' =\u003e 6);$data[] = array('volume' =\u003e 67, 'edition' =\u003e 7);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eУ нашому прикладі ми будемо сортувати по \u003ccode\u003evolume\u003c/code\u003e у спадному порядку, а\nпо \u003ccode\u003eedition\u003c/code\u003e - у зростаючому.\u003c/p\u003e\n\u003cp\u003eУ нас є масив рядків, але \u003cstrong\u003earray_multisort()\u003c/strong\u003e потрібен масив\nстовпців, тому спочатку ми використовуємо наступний код для отримання\nстовпців, а потім виконаємо сортування.\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php// Отримання списку стовпцівforeach ($data as $key =\u003e $row) {    $volume[$key]  = $row['volume']; $edition[$key] = $row['edition'];}// Ви можете використовувати array_column() замість вказаного вище коду$volume = array_column($data, 'volume');$edition ='day ');// Сортуємо дані по volume по зменшенню і по edition по зростанню// Добавляємо $data в якості останнього параметра, для Сортування по C|\u003c/p\u003e\n\u003cp\u003eТепер дані відсортовані і виглядатимуть так:\u003c/p\u003e\n\u003cp\u003evolume | edition\n-------+--------\n98 | 2\n86 | 1\n86 | 6\n85 | 6\n67 | 2\n67 | 7\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Сортування без урахування регістру\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОбидві константи \u003cstrong\u003e\u003ccode\u003eSORT_STRING\u003c/code\u003e\u003c/strong\u003e та \u003cstrong\u003e\u003ccode\u003eSORT_REGULAR\u003c/code\u003e\u003c/strong\u003e враховують регістр\nпри сортуванні, рядки, що починаються з великої літери, будуть виставлені\nраніше рядків, що починаються з малої літери.\u003c/p\u003e\n\u003cp\u003eДля виконання реєстронезалежного сортування, необхідно використовувати\nкопію вихідного масиву приведену до нижнього регістру.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array = array('Alpha', 'atomic', 'Beta', 'bank');$array_lowercase = array_map('strtolower', $array);array_multisort($array_lowercase, SORT_AS );print_r($array);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eArray\n(\n[0] =\u003e Alpha\n[1] =\u003e atomic\n[2] =\u003e bank\n[3] =\u003e Beta\n)\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.usort.md\"\u003eusort()\u003c/a\u003e - Сортує масив за значеннями\nвикористовуючи функцію користувача для порівняння елементів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"array.sorting.md\"\u003eПорівняння функцій сортування масивів\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.array-multisort.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

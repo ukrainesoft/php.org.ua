@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>wincache.configuration | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="wincache.installation.md">« Встановлення</a></p>
+</li>
+<li>
+<p><a href="wincache.stats.md">Скрипт статистики WinCache »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="wincache.setup.md">Встановлення та налаштування</a></p>
+</li>
+<li>
+<p>Налаштування під час виконання</p>
+</li>
+</ul>
+<h2>Налаштування під час виконання</h2>
+<p>Поведінка цих функцій залежить від установок <code>php.ini</code>.</p>
+<p>У таблиці наведено список конфігураційних параметрів модуля
+WinCache:</p>
+<table>
+<thead>
+<tr>
+<th>Ім'я За замовчуванням</th>
+<th>Мінімум</th>
+<th>Максимум Місце зміни</th>
+<th>Список змін</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.fcenabled">wincache.fcenabled</a></td>
+<td>"1"</td>
+<td>"0"</td>
+<td>"1"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.fcenabledfilter">wincache.fcenabledfilter</a></td>
+<td>"NULL"</td>
+<td>"NULL"</td>
+<td>"NULL"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.fcachesize">wincache.fcachesize</a></td>
+<td>"24"</td>
+<td>"5"</td>
+<td>"255"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.fcndetect">wincache.fcndetect</a></td>
+<td>"1"</td>
+<td>"0"</td>
+<td>"1"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.maxfilesize">wincache.maxfilesize</a></td>
+<td>"256"</td>
+<td>"10"</td>
+<td>"2048"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.ocenabled">wincache.ocenabled</a></td>
+<td>"1"</td>
+<td>"0"</td>
+<td>"1"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.ocenabledfilter">wincache.ocenabledfilter</a></td>
+<td>"NULL"</td>
+<td>"NULL"</td>
+<td>"NULL"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.ocachesize">wincache.ocachesize</a></td>
+<td>"96"</td>
+<td>"15"</td>
+<td>"255"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.filecount">wincache.filecount</a></td>
+<td>"4096"</td>
+<td>"1024"</td>
+<td>"16384"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.chkinterval">wincache.chkinterval</a></td>
+<td>"30"</td>
+<td>"0"</td>
+<td>"300"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.ttlmax">wincache.ttlmax</a></td>
+<td>"1200"</td>
+<td>"0"</td>
+<td>"7200"</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.enablecli">wincache.enablecli</a></td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.ignorelist">wincache.ignorelist</a></td>
+<td>NULL</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.namesalt">wincache.namesalt</a></td>
+<td>NULL</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.ucenabled">wincache.ucenabled</a></td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.ucachesize">wincache.ucachesize</a></td>
+<td>8</td>
+<td>5</td>
+<td>85</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.scachesize">wincache.scachesize</a></td>
+<td>8</td>
+<td>5</td>
+<td>85</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.rerouteini">wincache.rerouteini</a></td>
+<td>NULL</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.reroute_enabled">wincache.reroute_enabled</a></td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.srwlocks">wincache.srwlocks</a></td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="wincache.configuration.md#ini.wincache.filemapdir">wincache.filemapdir</a> NULL</td>
+<td>NULL</td>
+<td>NULL</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Конфігураційні параметри WinCache</strong></p>
+<p>Для детального опису констант PHP_INI_*, зверніться до розділу <a href="configuration.changes.modes.md">Де
+можуть бути встановлені параметри конфігурації</a>.</p>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>wincache.fcenabled</code> bool
+Включає/вимикає файлове кешування.</p>
+<p><code>wincache.fcenabledfilter</code> string
+Визначає список ідентифікаторів IIS веб-серверів, розділених комою,
+для яких має бути дозволено/заборонено файлове кешування. Ця
+налаштування працює в парі з <code>wincache.fcenabled</code>: якщо
+<code>wincache.fcenabled</code> встановлено в 1, то для серверів, перерахованих у
+<code>wincache.fcenabledfilter</code> файлове кешування буде відключено; якщо
+<code>wincache.fcenabled</code> встановлено як 0, то для серверів, перерахованих у
+<code>wincache.fcenabledfilter</code> файлове кешування буде увімкнено.</p>
+<p><code>wincache.fcachesize</code> int
+Визначає максимальний розмір пам'яті (мегабайт) для файлового кеша.
+Коли розмір всіх закешованих файлів перевищить це значення, з кешу
+будуть видалені найзастаріліші файли.</p>
+<p><code>wincache.fcndetect</code> bool
+Вмикає/вимикає функцію сповіщення про зміну файлу. Якщо
+функціонал оповіщення про зміни файлу підтримується, то він може
+бути використаний для оновлення кеша опкодів та файлового кешу при
+отримання відповідних оповіщень. Якщо такий механізм не
+підтримується, наприклад, при використанні мережевих папок, wincache
+самостійно перевірятиме файли на предмет зміни через задані
+в налаштуванні <code>wincache.chkinterval</code> інтервали часу.</p>
+<p><code>wincache.maxfilesize</code> int
+Визначає максимальний розмір одного файлу (у кілобайтах) для файлового
+кеша. Якщо розмір файлу перевищує задане значення, він не буде
+закешований. Ця установка застосовується лише до файлового кешу.</p>
+<p><code>wincache.ocenabled</code> bool
+<strong>Увага</strong>
+Ця опція була <em>Видалена</em> у версії 2.0.0.0</p>
+<p>Включає/вимикає кешування опкодів</p>
+<p><code>wincache.ocenabledfilter</code> string
+<strong>Увага</strong>
+Ця опція була <em>Видалена</em> у версії 2.0.0.0</p>
+<p>Визначає список ідентифікаторів IIS веб-серверів, розділених комою,
+для яких має бути дозволено/заборонено кешування опкодів. Ця
+налаштування працює в парі з <code>wincache.ocenabled</code>: якщо
+<code>wincache.ocenabled</code> встановлено в 1, то для серверів, перерахованих у
+<code>wincache.ocenabledfilter</code> файлове кешування буде відключено; якщо
+<code>wincache.ocenabled</code> встановлено як 0, то для серверів, перерахованих у
+<code>wincache.ocenabledfilter</code> файлове кешування буде дозволено.</p>
+<p><code>wincache.ocachesize</code> int
+<strong>Увага</strong>
+Ця опція була <em>Видалена</em> у версії 2.0.0.0</p>
+<p>Визначає максимальний розмір пам'яті (мегабайт) для кеша опкодів.
+Коли розмір всіх закешованих опкодів перевищить це значення, з кеша
+будуть видалені найстаріші з них. Зверніть увагу, що кеш
+опкодів повинен бути як мінімум у 3 рази більшим за файловий кеш. Якщо це
+не так, то розмір кеша опкодів буде автоматично збільшено.</p>
+<p><code>wincache.filecount</code> int
+Визначає, скільки приблизно файлів буде закешовано модулем, щоб
+при старті було виділено відповідний шматок пам'яті. Якщо кількість
+файлів перевищить задане значення, то WinCache зробить переаллокацію
+пам'яті.</p>
+<p><code>wincache.chkinterval</code> int
+Визначає наскільки часто (в секундах) модуль перевірятиме файли на
+предмет їх зміни оновлення кешей. Значення 0 відключає цей
+функціонал. Зміни файлів не будуть відображені в кеші, доки
+закешований запис не буде видалено з кешу збирачем застарілих
+записів, або поки не буде перероблено пул додатків IIS, або не
+буде викликано функцію wincache_refresh_if_changed.</p>
+<p><code>wincache.ttlmax</code> int
+Визначає максимальний час (у секундах) незатребуваності для запису
+у кеші. Установка 0 відключає процес видалення застарілих записів, що
+призведе до того, що запис буде лежати в кеші, поки сервер IIS не буде
+зупинено.</p>
+<p><code>wincache.enablecli</code> bool
+Визначає, чи дозволено кешування під час роботи PHP з командного рядка
+(CLI).</p>
+<p><code>wincache.ignorelist</code> string
+Визначає список файлів, які не потрібно кешувати. Вказуються
+лише імена файлів. Символ роздільника - вертикальна характеристика "|".</p>
+<p><strong>Приклад #1 Приклад використання <code>wincache.ignorelist</code></strong></p>
+<p>`` inicode
+wincache.ignorelist = "index.php|misc.php|admin.php"</p>
+<pre><code>
+`wincache.namesalt` string
+Визначає рядок, який використовуватиметься при іменуванні об'єктів,
+поміщаються в пам'ять, що розділяється. Це необхідно для запобігання
+колізій, коли кілька процесів працюють з пам'яттю, що розділяється.
+Довжина цього рядка не повинна перевищувати 8 символів.
+
+`wincache.ucenabled` bool
+Вмикає/вимикає кеш користувача.
+
+`wincache.ucachesize` int
+Визначає максимальний розмір пам'яті (у мегабайтах)
+кешу користувача. Коли розмір всіх закешованих змінних
+перевищить це значення, з кеша будуть видалені найзастаріліші
+змінні.
+
+`wincache.scachesize` int
+Визначає максимальний розмір пам'яті (у мегабайтах) для сесійного
+кеша. Коли розмір всіх закешованих даних перевищить це значення,
+кеша будуть видалені найзастаріліші дані.
+
+`wincache.rerouteini` string
+**Увага**
+Ця опція була *Видалена* у версії 1.3.7. Починаючи з 1.3.7. замість неї
+використовуйте `wincache.reroute_enabled`.
+
+Задає абсолютний чи відносний шлях до reroute.ini, який містить
+список функцій PHP, чия реалізація має бути підмінена реалізацією з
+модуля WinCache Якщо заданий відносний шлях, він вирішуватиметься
+щодо розташування файлу php-cgi.exe.
+
+`wincache.reroute_enabled` bool
+Вмикає/вимикає перенаправлення деяких функцій файлового
+введення/виводу для роботи через файловий кеш.
+
+`wincache.srwlocks` bool
+**Увага**
+Ця опція була *Видалена* у версії 2.0.0.0
+
+Вмикає/вимикає використання блокувань читання/запису, що розділяються.
+Вимкнення корисне при налагодженні ситуацій взаємних блокувань WinCache.
+
+`wincache.filemapdir` string
+Задає абсолютний шлях до директорії, де WinCache триматиметься
+тимчасові файли для сегментів пам'яті, що розділяється. Ця директорія має
+розташовуватися на локальній машині і в жодному разі не на мережевий
+файлової системи. Якщо директорія не вказана, WinCache буде
+використовувати Windows System Page File.
+</code></pre>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/wincache.configuration.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/wincache.configuration.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"wincache.configuration","slug":"wincache.configuration.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"wincache.installation.md\"\u003e« Встановлення\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"wincache.stats.md\"\u003eСкрипт статистики WinCache »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"wincache.setup.md\"\u003eВстановлення та налаштування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНалаштування під час виконання\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНалаштування під час виконання\u003c/h2\u003e\n\u003cp\u003eПоведінка цих функцій залежить від установок \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eУ таблиці наведено список конфігураційних параметрів модуля\nWinCache:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІм'я За замовчуванням\u003c/th\u003e\n\u003cth\u003eМінімум\u003c/th\u003e\n\u003cth\u003eМаксимум Місце зміни\u003c/th\u003e\n\u003cth\u003eСписок змін\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.fcenabled\"\u003ewincache.fcenabled\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"1\"\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003e\"1\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.fcenabledfilter\"\u003ewincache.fcenabledfilter\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"NULL\"\u003c/td\u003e\n\u003ctd\u003e\"NULL\"\u003c/td\u003e\n\u003ctd\u003e\"NULL\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.fcachesize\"\u003ewincache.fcachesize\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"24\"\u003c/td\u003e\n\u003ctd\u003e\"5\"\u003c/td\u003e\n\u003ctd\u003e\"255\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.fcndetect\"\u003ewincache.fcndetect\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"1\"\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003e\"1\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.maxfilesize\"\u003ewincache.maxfilesize\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"256\"\u003c/td\u003e\n\u003ctd\u003e\"10\"\u003c/td\u003e\n\u003ctd\u003e\"2048\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.ocenabled\"\u003ewincache.ocenabled\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"1\"\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003e\"1\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.ocenabledfilter\"\u003ewincache.ocenabledfilter\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"NULL\"\u003c/td\u003e\n\u003ctd\u003e\"NULL\"\u003c/td\u003e\n\u003ctd\u003e\"NULL\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.ocachesize\"\u003ewincache.ocachesize\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"96\"\u003c/td\u003e\n\u003ctd\u003e\"15\"\u003c/td\u003e\n\u003ctd\u003e\"255\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.filecount\"\u003ewincache.filecount\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"4096\"\u003c/td\u003e\n\u003ctd\u003e\"1024\"\u003c/td\u003e\n\u003ctd\u003e\"16384\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.chkinterval\"\u003ewincache.chkinterval\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"30\"\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003e\"300\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.ttlmax\"\u003ewincache.ttlmax\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"1200\"\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003e\"7200\"\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.enablecli\"\u003ewincache.enablecli\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.ignorelist\"\u003ewincache.ignorelist\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.namesalt\"\u003ewincache.namesalt\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.ucenabled\"\u003ewincache.ucenabled\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.ucachesize\"\u003ewincache.ucachesize\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e8\u003c/td\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003ctd\u003e85\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.scachesize\"\u003ewincache.scachesize\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e8\u003c/td\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003ctd\u003e85\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.rerouteini\"\u003ewincache.rerouteini\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.reroute_enabled\"\u003ewincache.reroute_enabled\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.srwlocks\"\u003ewincache.srwlocks\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"wincache.configuration.md#ini.wincache.filemapdir\"\u003ewincache.filemapdir\u003c/a\u003e NULL\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eКонфігураційні параметри WinCache\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля детального опису констант PHP_INI_*, зверніться до розділу \u003ca href=\"configuration.changes.modes.md\"\u003eДе\nможуть бути встановлені параметри конфігурації\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eКоротке пояснення конфігураційних директив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.fcenabled\u003c/code\u003e bool\nВключає/вимикає файлове кешування.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.fcenabledfilter\u003c/code\u003e string\nВизначає список ідентифікаторів IIS веб-серверів, розділених комою,\nдля яких має бути дозволено/заборонено файлове кешування. Ця\nналаштування працює в парі з \u003ccode\u003ewincache.fcenabled\u003c/code\u003e: якщо\n\u003ccode\u003ewincache.fcenabled\u003c/code\u003e встановлено в 1, то для серверів, перерахованих у\n\u003ccode\u003ewincache.fcenabledfilter\u003c/code\u003e файлове кешування буде відключено; якщо\n\u003ccode\u003ewincache.fcenabled\u003c/code\u003e встановлено як 0, то для серверів, перерахованих у\n\u003ccode\u003ewincache.fcenabledfilter\u003c/code\u003e файлове кешування буде увімкнено.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.fcachesize\u003c/code\u003e int\nВизначає максимальний розмір пам'яті (мегабайт) для файлового кеша.\nКоли розмір всіх закешованих файлів перевищить це значення, з кешу\nбудуть видалені найзастаріліші файли.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.fcndetect\u003c/code\u003e bool\nВмикає/вимикає функцію сповіщення про зміну файлу. Якщо\nфункціонал оповіщення про зміни файлу підтримується, то він може\nбути використаний для оновлення кеша опкодів та файлового кешу при\nотримання відповідних оповіщень. Якщо такий механізм не\nпідтримується, наприклад, при використанні мережевих папок, wincache\nсамостійно перевірятиме файли на предмет зміни через задані\nв налаштуванні \u003ccode\u003ewincache.chkinterval\u003c/code\u003e інтервали часу.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.maxfilesize\u003c/code\u003e int\nВизначає максимальний розмір одного файлу (у кілобайтах) для файлового\nкеша. Якщо розмір файлу перевищує задане значення, він не буде\nзакешований. Ця установка застосовується лише до файлового кешу.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.ocenabled\u003c/code\u003e bool\n\u003cstrong\u003eУвага\u003c/strong\u003e\nЦя опція була \u003cem\u003eВидалена\u003c/em\u003e у версії 2.0.0.0\u003c/p\u003e\n\u003cp\u003eВключає/вимикає кешування опкодів\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.ocenabledfilter\u003c/code\u003e string\n\u003cstrong\u003eУвага\u003c/strong\u003e\nЦя опція була \u003cem\u003eВидалена\u003c/em\u003e у версії 2.0.0.0\u003c/p\u003e\n\u003cp\u003eВизначає список ідентифікаторів IIS веб-серверів, розділених комою,\nдля яких має бути дозволено/заборонено кешування опкодів. Ця\nналаштування працює в парі з \u003ccode\u003ewincache.ocenabled\u003c/code\u003e: якщо\n\u003ccode\u003ewincache.ocenabled\u003c/code\u003e встановлено в 1, то для серверів, перерахованих у\n\u003ccode\u003ewincache.ocenabledfilter\u003c/code\u003e файлове кешування буде відключено; якщо\n\u003ccode\u003ewincache.ocenabled\u003c/code\u003e встановлено як 0, то для серверів, перерахованих у\n\u003ccode\u003ewincache.ocenabledfilter\u003c/code\u003e файлове кешування буде дозволено.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.ocachesize\u003c/code\u003e int\n\u003cstrong\u003eУвага\u003c/strong\u003e\nЦя опція була \u003cem\u003eВидалена\u003c/em\u003e у версії 2.0.0.0\u003c/p\u003e\n\u003cp\u003eВизначає максимальний розмір пам'яті (мегабайт) для кеша опкодів.\nКоли розмір всіх закешованих опкодів перевищить це значення, з кеша\nбудуть видалені найстаріші з них. Зверніть увагу, що кеш\nопкодів повинен бути як мінімум у 3 рази більшим за файловий кеш. Якщо це\nне так, то розмір кеша опкодів буде автоматично збільшено.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.filecount\u003c/code\u003e int\nВизначає, скільки приблизно файлів буде закешовано модулем, щоб\nпри старті було виділено відповідний шматок пам'яті. Якщо кількість\nфайлів перевищить задане значення, то WinCache зробить переаллокацію\nпам'яті.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.chkinterval\u003c/code\u003e int\nВизначає наскільки часто (в секундах) модуль перевірятиме файли на\nпредмет їх зміни оновлення кешей. Значення 0 відключає цей\nфункціонал. Зміни файлів не будуть відображені в кеші, доки\nзакешований запис не буде видалено з кешу збирачем застарілих\nзаписів, або поки не буде перероблено пул додатків IIS, або не\nбуде викликано функцію wincache_refresh_if_changed.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.ttlmax\u003c/code\u003e int\nВизначає максимальний час (у секундах) незатребуваності для запису\nу кеші. Установка 0 відключає процес видалення застарілих записів, що\nпризведе до того, що запис буде лежати в кеші, поки сервер IIS не буде\nзупинено.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.enablecli\u003c/code\u003e bool\nВизначає, чи дозволено кешування під час роботи PHP з командного рядка\n(CLI).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewincache.ignorelist\u003c/code\u003e string\nВизначає список файлів, які не потрібно кешувати. Вказуються\nлише імена файлів. Символ роздільника - вертикальна характеристика \"|\".\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003ccode\u003ewincache.ignorelist\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e`` inicode\nwincache.ignorelist = \"index.php|misc.php|admin.php\"\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e\n`wincache.namesalt` string\nВизначає рядок, який використовуватиметься при іменуванні об'єктів,\nпоміщаються в пам'ять, що розділяється. Це необхідно для запобігання\nколізій, коли кілька процесів працюють з пам'яттю, що розділяється.\nДовжина цього рядка не повинна перевищувати 8 символів.\n\n`wincache.ucenabled` bool\nВмикає/вимикає кеш користувача.\n\n`wincache.ucachesize` int\nВизначає максимальний розмір пам'яті (у мегабайтах)\nкешу користувача. Коли розмір всіх закешованих змінних\nперевищить це значення, з кеша будуть видалені найзастаріліші\nзмінні.\n\n`wincache.scachesize` int\nВизначає максимальний розмір пам'яті (у мегабайтах) для сесійного\nкеша. Коли розмір всіх закешованих даних перевищить це значення,\nкеша будуть видалені найзастаріліші дані.\n\n`wincache.rerouteini` string\n**Увага**\nЦя опція була *Видалена* у версії 1.3.7. Починаючи з 1.3.7. замість неї\nвикористовуйте `wincache.reroute_enabled`.\n\nЗадає абсолютний чи відносний шлях до reroute.ini, який містить\nсписок функцій PHP, чия реалізація має бути підмінена реалізацією з\nмодуля WinCache Якщо заданий відносний шлях, він вирішуватиметься\nщодо розташування файлу php-cgi.exe.\n\n`wincache.reroute_enabled` bool\nВмикає/вимикає перенаправлення деяких функцій файлового\nвведення/виводу для роботи через файловий кеш.\n\n`wincache.srwlocks` bool\n**Увага**\nЦя опція була *Видалена* у версії 2.0.0.0\n\nВмикає/вимикає використання блокувань читання/запису, що розділяються.\nВимкнення корисне при налагодженні ситуацій взаємних блокувань WinCache.\n\n`wincache.filemapdir` string\nЗадає абсолютний шлях до директорії, де WinCache триматиметься\nтимчасові файли для сегментів пам'яті, що розділяється. Ця директорія має\nрозташовуватися на локальній машині і в жодному разі не на мережевий\nфайлової системи. Якщо директорія не вказана, WinCache буде\nвикористовувати Windows System Page File.\n\u003c/code\u003e\u003c/pre\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"wincache.configuration.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

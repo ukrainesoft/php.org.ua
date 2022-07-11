@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.simplexml-load-file | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.simplexml-import-dom.md">« simplexml_import_dom</a></p>
+</li>
+<li>
+<p><a href="function.simplexml-load-string.md">simplexml_load_string »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.simplexml.md">Функції SimpleXML</a></p>
+</li>
+<li>
+<p>Інтерпретує XML-файл у об'єкт</p>
+</li>
+</ul>
+<h1>simplexml_load_file</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<p>simplexml_load_file - Інтерпретує XML-файл в об'єкт</p>
+<h3>Опис</h3>
+<p><strong>simplexml_load_file</strong>(
+string <code>$filename</code>,
+?string <code>$class_name</code> = SimpleXMLElement::class,
+int <code>$options</code> = 0,
+string <code>$namespace_or_prefix</code> = "",
+bool <code>$is_prefix</code> = <strong><code>false</code></strong>
+): <a href="class.simplexmlelement.md">SimpleXMLElement</a>|false</p>
+<p>Перетворює правильно сформований XML-документ у вказаному файлі
+об'єкт.</p>
+<h3>Список параметрів</h3>
+<p><code>filename</code>
+Шлях до XML-файлу</p>
+<p><code>class_name</code>
+Ви можете використовувати цей необов'язковий параметр для того, щоб
+функція <strong>simplexml_load_file()</strong> повертала об'єкт зазначеного класу.
+Цей клас має розширювати клас
+<a href="class.simplexmlelement.md">SimpleXMLElement</a>.</p>
+<p><code>options</code>
+Починаючи з Libxml 2.6.0, ви можете використовувати параметр <code>options</code>,
+щоб вказати <a href="libxml.constants.md">додаткові параметри Libxml</a>.</p>
+<p><code>namespace_or_prefix</code>
+Префікс простору імен або URI.</p>
+<p><code>is_prefix</code>
+<strong><code>true</code></strong>, якщо <code>namespace_or_prefix</code> є префіксом, та
+<strong><code>false</code></strong>, якщо URI; за умовчанням дорівнює <strong><code>false</code></strong>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає об'єкт (object) класу
+<a href="class.simplexmlelement.md">SimpleXMLElement</a> з властивостями,
+містять дані, які зберігаються всередині XML-документу або
+<strong><code>false</code></strong> у разі виникнення помилки.</p>
+<p><strong>Увага</strong></p>
+<p>Ця функція може повертати як логічне значення <strong><code>false</code></strong>, так і
+значення не типу boolean, яке наводиться до <strong><code>false</code></strong>. Більше
+Детальну інформацію див. у розділі <a href="language.types.boolean.md">Булев тип</a>. Використовуйте <a href="language.operators.comparison.md">оператор ===</a> для перевірки значення,
+повертається цією функцією.</p>
+<h3>Помилки</h3>
+<p>Генерує повідомлення про помилку рівня <strong><code>E_WARNING</code></strong> для кожної помилки,
+знайденої в XML-даних.</p>
+<p><strong>Підказка</strong></p>
+<p>Використовуйте функцію
+<a href="function.libxml-use-internal-errors.md">libxml_use_internal_errors()</a>
+для того, щоб придушити всі помилки XML, і функцію
+<a href="function.libxml-get-errors.md">libxml_get_errors()</a> для проходу по
+ним згодом.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Інтерпретація XML-документа</strong></p>
+<p><code>&#x3C;?php// Файл test.xml містить XML-документ з кореневим елементом// і за меншою мірою елемент /[root]/title.if (file_exists('test.xml') ml   .xml'); print_r($xml);} else {   exit('Не удалося відкрити файл test.xml.');}?></code></p>
+<p>Цей скрипт виведе наступне у разі успішного завершення:</p>
+<p>SimpleXMLElement Object
+(
+[title] => Приклад заголовка
+...
+)</p>
+<p>Тут ви можете використовувати <code>$xml->title</code> та будь-які інші елементи.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.simplexml-load-string.md">simplexml_load_string()</a> -
+Інтерпретує рядок із XML в об'єкт</li>
+<li><a href="simplexmlelement.construct.md">SimpleXMLElement::__construct()</a> -
+Створення нового об'єкта SimpleXMLElement</li>
+<li><a href="simplexml.examples-errors.md">Робота з помилками XML</a></li>
+<li><a href="function.libxml-use-internal-errors.md">libxml_use_internal_errors()</a> -
+Відключення помилок libxml та передача повноважень щодо вибірки та
+обробці інформації про помилки користувачеві</li>
+<li><a href="simplexml.examples-basic.md">Базове використання SimpleXML</a></li>
+<li><a href="function.libxml-set-streams-context.md">libxml_set_streams_context()</a> -
+Встановлення контексту потоків для наступного завантаження чи запису
+документа за допомогою libxml</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.simplexml-load-file.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.simplexml-load-file.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.simplexml-load-file","slug":"function.simplexml-load-file.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.simplexml-import-dom.md\"\u003e« simplexml_import_dom\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.simplexml-load-string.md\"\u003esimplexml_load_string »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.simplexml.md\"\u003eФункції SimpleXML\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eІнтерпретує XML-файл у об'єкт\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003esimplexml_load_file\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003esimplexml_load_file - Інтерпретує XML-файл в об'єкт\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003esimplexml_load_file\u003c/strong\u003e(\nstring \u003ccode\u003e$filename\u003c/code\u003e,\n?string \u003ccode\u003e$class_name\u003c/code\u003e = SimpleXMLElement::class,\nint \u003ccode\u003e$options\u003c/code\u003e = 0,\nstring \u003ccode\u003e$namespace_or_prefix\u003c/code\u003e = \"\",\nbool \u003ccode\u003e$is_prefix\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\n): \u003ca href=\"class.simplexmlelement.md\"\u003eSimpleXMLElement\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003eПеретворює правильно сформований XML-документ у вказаному файлі\nоб'єкт.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003efilename\u003c/code\u003e\nШлях до XML-файлу\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eclass_name\u003c/code\u003e\nВи можете використовувати цей необов'язковий параметр для того, щоб\nфункція \u003cstrong\u003esimplexml_load_file()\u003c/strong\u003e повертала об'єкт зазначеного класу.\nЦей клас має розширювати клас\n\u003ca href=\"class.simplexmlelement.md\"\u003eSimpleXMLElement\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoptions\u003c/code\u003e\nПочинаючи з Libxml 2.6.0, ви можете використовувати параметр \u003ccode\u003eoptions\u003c/code\u003e,\nщоб вказати \u003ca href=\"libxml.constants.md\"\u003eдодаткові параметри Libxml\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003enamespace_or_prefix\u003c/code\u003e\nПрефікс простору імен або URI.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eis_prefix\u003c/code\u003e\n\u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, якщо \u003ccode\u003enamespace_or_prefix\u003c/code\u003e є префіксом, та\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, якщо URI; за умовчанням дорівнює \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає об'єкт (object) класу\n\u003ca href=\"class.simplexmlelement.md\"\u003eSimpleXMLElement\u003c/a\u003e з властивостями,\nмістять дані, які зберігаються всередині XML-документу або\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЦя функція може повертати як логічне значення \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, так і\nзначення не типу boolean, яке наводиться до \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e. Більше\nДетальну інформацію див. у розділі \u003ca href=\"language.types.boolean.md\"\u003eБулев тип\u003c/a\u003e. Використовуйте \u003ca href=\"language.operators.comparison.md\"\u003eоператор ===\u003c/a\u003e для перевірки значення,\nповертається цією функцією.\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cp\u003eГенерує повідомлення про помилку рівня \u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e для кожної помилки,\nзнайденої в XML-даних.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПідказка\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eВикористовуйте функцію\n\u003ca href=\"function.libxml-use-internal-errors.md\"\u003elibxml_use_internal_errors()\u003c/a\u003e\nдля того, щоб придушити всі помилки XML, і функцію\n\u003ca href=\"function.libxml-get-errors.md\"\u003elibxml_get_errors()\u003c/a\u003e для проходу по\nним згодом.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Інтерпретація XML-документа\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Файл test.xml містить XML-документ з кореневим елементом// і за меншою мірою елемент /[root]/title.if (file_exists('test.xml') ml   .xml'); print_r($xml);} else {   exit('Не удалося відкрити файл test.xml.');}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eЦей скрипт виведе наступне у разі успішного завершення:\u003c/p\u003e\n\u003cp\u003eSimpleXMLElement Object\n(\n[title] =\u003e Приклад заголовка\n...\n)\u003c/p\u003e\n\u003cp\u003eТут ви можете використовувати \u003ccode\u003e$xml-\u003etitle\u003c/code\u003e та будь-які інші елементи.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.simplexml-load-string.md\"\u003esimplexml_load_string()\u003c/a\u003e -\nІнтерпретує рядок із XML в об'єкт\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"simplexmlelement.construct.md\"\u003eSimpleXMLElement::__construct()\u003c/a\u003e -\nСтворення нового об'єкта SimpleXMLElement\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"simplexml.examples-errors.md\"\u003eРобота з помилками XML\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.libxml-use-internal-errors.md\"\u003elibxml_use_internal_errors()\u003c/a\u003e -\nВідключення помилок libxml та передача повноважень щодо вибірки та\nобробці інформації про помилки користувачеві\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"simplexml.examples-basic.md\"\u003eБазове використання SimpleXML\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.libxml-set-streams-context.md\"\u003elibxml_set_streams_context()\u003c/a\u003e -\nВстановлення контексту потоків для наступного завантаження чи запису\nдокумента за допомогою libxml\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.simplexml-load-file.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

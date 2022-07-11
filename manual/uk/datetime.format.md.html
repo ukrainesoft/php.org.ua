@@ -1,0 +1,403 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>datetime.format | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="datetime.diff.md">« DateTime::diff</a></p>
+</li>
+<li>
+<p><a href="datetime.getoffset.md">DateTime::getOffset »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.datetimeinterface.md">DateTimeInterface</a></p>
+</li>
+<li>
+<p>Повертає дату, відформатовану згідно з переданим форматом</p>
+</li>
+</ul>
+<h1>DateTime::format</h1>
+<h1>DateTimeImmutable::format</h1>
+<h1>DateTimeInterface::format</h1>
+<h1>date_format</h1>
+<p>(PHP 5 >= 5.2.1, PHP 7, PHP 8)</p>
+<p>DateTime::format -- DateTimeImmutable::format --
+DateTimeInterface::format -- date_format — Повертає дату,
+відформатовану згідно з переданим форматом</p>
+<h3>Опис</h3>
+<p>Об'єктно-орієнтований стиль</p>
+<p>public <strong>DateTime::format</strong>(string <code>$format</code>): string</p>
+<p>public <strong>DateTimeImmutable::format</strong>(string <code>$format</code>): string</p>
+<p>public <strong>DateTimeInterface::format</strong>(string <code>$format</code>): string</p>
+<p>Процедурний стиль</p>
+<p><a href="function.date-format.md">date_format</a>(<a href="class.datetimeinterface.md">DateTimeInterface</a>
+<code>$object</code>, string <code>$format</code>): string</p>
+<p>Повертає рядок дати, перетвореної відповідно до переданого формату.</p>
+<h3>Список параметрів</h3>
+<p><code>object</code>
+Тільки для процедурного стилю: об'єкт <a href="class.datetime.md">DateTime</a>,
+повертається <a href="function.date-create.md">date_create()</a>.</p>
+<p><code>format</code>
+Шаблон результуючого рядка (string) з датою. Дивіться настройки
+форматування нижче. Також існує кілька <a href="class.datetimeinterface.md#datetime.constants.types">визначених
+констант дати/часу</a>,
+які можуть бути використані замість цих параметрів. Наприклад:
+<strong><code>DATE_RSS</code></strong> замінює шаблон ``D, d M Y H:i:s'`.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Символ у рядку format</th>
+<th>Опис</th>
+<th>Приклад значення, що повертається</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>День</em></td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td align="center">d</td>
+<td>День місяця, 2 цифри із провідним нулем</td>
+<td>від 01 до 31</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td>Текстова вистава дня тижня, 3 символи</td>
+<td>від Mon до Sun</td>
+</tr>
+<tr>
+<td align="center">j</td>
+<td>День місяця без провідного нуля від 1 до 31</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">l (рядкова 'L')</td>
+<td>Повне найменування дня тижня від Sunday до Saturday</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">N</td>
+<td>Порядковий номер дня тижня у відповідності до стандарту ISO 8601</td>
+<td>від 1 (понеділок) до 7 (неділя)</td>
+</tr>
+<tr>
+<td align="center">S</td>
+<td>Англійський суфікс порядкового числа місяця, 2 символи</td>
+<td>st, nd, rd або th. Застосовується разом із j</td>
+</tr>
+<tr>
+<td align="center">w</td>
+<td>Порядковий номер дня тижня від 0 (неділя) до 6 (субота)</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">z</td>
+<td>Порядковий номер дня року (починаючи з 0)</td>
+<td>Від 0 до 365</td>
+</tr>
+<tr>
+<td align="center"><em>Тиждень</em></td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td align="center">W</td>
+<td>Порядковий номер тижня року відповідно до стандарту ISO 8601; тижні розпочинаються з понеділка</td>
+<td>Наприклад: 42 (42-й тиждень року)</td>
+</tr>
+<tr>
+<td align="center"><em>Місяць</em></td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td align="center">F</td>
+<td>Повне найменування місяця, наприклад January або March</td>
+<td>від January до December</td>
+</tr>
+<tr>
+<td align="center">m</td>
+<td>Порядковий номер місяця із провідним нулем</td>
+<td>від 01 до 12</td>
+</tr>
+<tr>
+<td align="center">M</td>
+<td>Скорочене найменування місяця, 3 символи</td>
+<td>від Jan до Dec</td>
+</tr>
+<tr>
+<td align="center">n</td>
+<td>Порядковий номер місяця без провідного нуля від 1 до 12</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">t</td>
+<td>Кількість днів у вказаному місяці</td>
+<td>від 28 до 31</td>
+</tr>
+<tr>
+<td align="center"><em>Рік</em></td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td>Ознака високосного року 1, якщо рік високосний, інакше 0.</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">o</td>
+<td>Номер року відповідно до стандарту ISO 8601. Має те саме значення, що і Y, крім випадку, коли номер тижня ISO (W) належить попередньому або наступному році; тоді буде використано рік цього тижня.</td>
+<td>Приклади: 1999 або 2003</td>
+</tr>
+<tr>
+<td align="center">'Y'</td>
+<td>Повне числове уявлення року, щонайменше 4 цифр, з - для років до нашої ери.</td>
+<td>Приклади: -0055, 0787, 1999, 2003</td>
+</tr>
+<tr>
+<td align="center">y</td>
+<td>Номер року, 2 цифри</td>
+<td>Приклади: 99, 03</td>
+</tr>
+<tr>
+<td align="center">* Час *</td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td>Ante meridiem (лат. "до полудня") або Post meridiem (лат. "після полудня") у нижньому регістрі</td>
+<td>am або pm</td>
+</tr>
+<tr>
+<td align="center">'A'</td>
+<td>Ante meridiem або Post meridiem у верхньому регістрі AM або PM</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td>Час у форматі Інтернет-часу (альтернативної системи відліку доби)</td>
+<td>від 000 до 999</td>
+</tr>
+<tr>
+<td align="center">g</td>
+<td>Годинник у 12-годинному форматі без провідного нуля</td>
+<td>від 1 до 12</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td>Годинник у 24-годинному форматі без провідного нуля</td>
+<td>від 0 до 23</td>
+</tr>
+<tr>
+<td align="center">h</td>
+<td>Годинник у 12-годинному форматі з провідним нулем</td>
+<td>від 01 до 12</td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td>Годинник у 24-годинному форматі з провідним нулем</td>
+<td>від 00 до 23</td>
+</tr>
+<tr>
+<td align="center">i</td>
+<td>Хвилини з провідним нулем від 00 до 59</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">s</td>
+<td>Секунди з провідним нулем від 00 до 59</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">u</td>
+<td>Мікросекунди. Врахуйте, що <a href="function.date.md">date()</a> завжди повертатиме 000000, т.к. вона приймає цілий (int) параметр, тоді як <strong>DateTime::format()</strong> підтримує мікросекунди, якщо <a href="class.datetime.md">DateTime</a> створено з ними.</td>
+<td>Наприклад: 654321</td>
+</tr>
+<tr>
+<td align="center">v</td>
+<td>Мілісекунди. Зауваження таке саме як і для u.</td>
+<td>Приклад: 654</td>
+</tr>
+<tr>
+<td align="center"><em>Годинний пояс</em></td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td align="center">e</td>
+<td>Ідентифікатор часового поясу Приклади: UTC, GMT, Atlantic/Azores</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">I (заголовна i)</td>
+<td>Ознака літнього часу</td>
+<td>1, якщо дата відповідає літньому часу, 0 інакше.</td>
+</tr>
+<tr>
+<td align="center">O</td>
+<td>Різниця з часом за Гринвічем без двокрапки між годинами та хвилинами</td>
+<td>Наприклад: +0200</td>
+</tr>
+<tr>
+<td align="center">P</td>
+<td>Різниця з часом за Гринвічем з двокрапкою між годинами та хвилинами</td>
+<td>Наприклад: +02:00</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td>Те ж, що і P, але повертає Z замість +00:00 (доступний починаючи з PHP 8.0.0)</td>
+<td>Наприклад: +02:00</td>
+</tr>
+<tr>
+<td align="center">T</td>
+<td>Абревіатура часового поясу, якщо відома; інакше усунення за Грінвічем.</td>
+<td>Приклади: EST, MDT, +05</td>
+</tr>
+<tr>
+<td align="center">Z</td>
+<td>Зміщення часового поясу за секунди. Для часових поясів, розташованих на захід від UTC, повертаються негативні числа, а для розташованих на схід від UTC - позитивні.</td>
+<td>від -43200 до 50400</td>
+</tr>
+<tr>
+<td align="center"><em>Повна дата/час</em></td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td align="center">c</td>
+<td>Дата у форматі стандарту ISO 8601</td>
+<td>2004-02-12T15:19:21+00:00</td>
+</tr>
+<tr>
+<td align="center">r</td>
+<td>Дата у форматі <a href="http://www.faqs.org/rfcs/rfc2822">»RFC 222</a>/<a href="http://www.faqs.org/rfcs/rfc5322">»RFC 5322</a></td>
+<td>Наприклад: Thu, 21 Dec 2000 16:01:07 +0200</td>
+</tr>
+<tr>
+<td align="center">U</td>
+<td>Кількість секунд, що минули від початку Епохи Unix (1 січня 1970 00:00:00 GMT)</td>
+<td>Дивіться також <a href="function.time.md">time()</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>У параметрі <code>format</code> розпізнаються наступні символи</strong></p>
+<p>Будь-які інші символи, зустрінуті в рядку-шаблоні, будуть виведені в
+результуючий рядок без змін. <code>Z</code> завжди повертає <code>0</code> при
+використання <a href="function.gmdate.md">gmdate()</a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Оскільки функція, що розглядається, приймає як параметр
+тимчасові мітки типу int, форматуючий символ <code>u</code> буде корисним
+тільки при використанні функції
+<a href="function.date-format.md">date_format()</a> та користувацьких тегів
+часу, створені за допомогою функції
+<a href="function.date-create.md">date_create()</a>.</p>
+</blockquote>
+<h3>Значення, що повертаються</h3>
+<p>Повертає рядок з відформатованою датою у разі успішного
+виконання.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>До цієї версії, у разі виникнення помилки поверталося <strong>false</strong>.</td>
+</tr>
+<tr>
+<td>8.0.0</td>
+<td>Доданий символ форматування p.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>DateTime::format()</strong></strong></p>
+<p>Об'єктно-орієнтований стиль</p>
+<p><code>&#x3C;?php$date = new DateTime('2000-01-01');echo $date->format('Y-m-d H:i:s');?></code></p>
+<p>Процедурний стиль</p>
+<p><code>&#x3C;?php$date = date_create('2000-01-01');echo date_format($date, 'Y-m-d H:i:s');?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>2000-01-01 00:00:00</p>
+<h3>Примітки</h3>
+<p>Цей метод не використовує налаштування локалі. Висновок проводиться на
+англійській мові.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.date.md">date()</a> - Форматує тимчасову мітку Unix</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/datetime.format.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/datetime.format.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"datetime.format","slug":"datetime.format.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"datetime.diff.md\"\u003e« DateTime::diff\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"datetime.getoffset.md\"\u003eDateTime::getOffset »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.datetimeinterface.md\"\u003eDateTimeInterface\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПовертає дату, відформатовану згідно з переданим форматом\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eDateTime::format\u003c/h1\u003e\n\u003ch1\u003eDateTimeImmutable::format\u003c/h1\u003e\n\u003ch1\u003eDateTimeInterface::format\u003c/h1\u003e\n\u003ch1\u003edate_format\u003c/h1\u003e\n\u003cp\u003e(PHP 5 \u003e= 5.2.1, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eDateTime::format -- DateTimeImmutable::format --\nDateTimeInterface::format -- date_format — Повертає дату,\nвідформатовану згідно з переданим форматом\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003eDateTime::format\u003c/strong\u003e(string \u003ccode\u003e$format\u003c/code\u003e): string\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003eDateTimeImmutable::format\u003c/strong\u003e(string \u003ccode\u003e$format\u003c/code\u003e): string\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003eDateTimeInterface::format\u003c/strong\u003e(string \u003ccode\u003e$format\u003c/code\u003e): string\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"function.date-format.md\"\u003edate_format\u003c/a\u003e(\u003ca href=\"class.datetimeinterface.md\"\u003eDateTimeInterface\u003c/a\u003e\n\u003ccode\u003e$object\u003c/code\u003e, string \u003ccode\u003e$format\u003c/code\u003e): string\u003c/p\u003e\n\u003cp\u003eПовертає рядок дати, перетвореної відповідно до переданого формату.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eobject\u003c/code\u003e\nТільки для процедурного стилю: об'єкт \u003ca href=\"class.datetime.md\"\u003eDateTime\u003c/a\u003e,\nповертається \u003ca href=\"function.date-create.md\"\u003edate_create()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eformat\u003c/code\u003e\nШаблон результуючого рядка (string) з датою. Дивіться настройки\nформатування нижче. Також існує кілька \u003ca href=\"class.datetimeinterface.md#datetime.constants.types\"\u003eвизначених\nконстант дати/часу\u003c/a\u003e,\nякі можуть бути використані замість цих параметрів. Наприклад:\n\u003cstrong\u003e\u003ccode\u003eDATE_RSS\u003c/code\u003e\u003c/strong\u003e замінює шаблон ``D, d M Y H:i:s'`.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth align=\"center\"\u003eСимвол у рядку format\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003cth\u003eПриклад значення, що повертається\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003e\u003cem\u003eДень\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ed\u003c/td\u003e\n\u003ctd\u003eДень місяця, 2 цифри із провідним нулем\u003c/td\u003e\n\u003ctd\u003eвід 01 до 31\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eD\u003c/td\u003e\n\u003ctd\u003eТекстова вистава дня тижня, 3 символи\u003c/td\u003e\n\u003ctd\u003eвід Mon до Sun\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ej\u003c/td\u003e\n\u003ctd\u003eДень місяця без провідного нуля від 1 до 31\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003el (рядкова 'L')\u003c/td\u003e\n\u003ctd\u003eПовне найменування дня тижня від Sunday до Saturday\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eN\u003c/td\u003e\n\u003ctd\u003eПорядковий номер дня тижня у відповідності до стандарту ISO 8601\u003c/td\u003e\n\u003ctd\u003eвід 1 (понеділок) до 7 (неділя)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eS\u003c/td\u003e\n\u003ctd\u003eАнглійський суфікс порядкового числа місяця, 2 символи\u003c/td\u003e\n\u003ctd\u003est, nd, rd або th. Застосовується разом із j\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ew\u003c/td\u003e\n\u003ctd\u003eПорядковий номер дня тижня від 0 (неділя) до 6 (субота)\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ez\u003c/td\u003e\n\u003ctd\u003eПорядковий номер дня року (починаючи з 0)\u003c/td\u003e\n\u003ctd\u003eВід 0 до 365\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003e\u003cem\u003eТиждень\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eW\u003c/td\u003e\n\u003ctd\u003eПорядковий номер тижня року відповідно до стандарту ISO 8601; тижні розпочинаються з понеділка\u003c/td\u003e\n\u003ctd\u003eНаприклад: 42 (42-й тиждень року)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003e\u003cem\u003eМісяць\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eF\u003c/td\u003e\n\u003ctd\u003eПовне найменування місяця, наприклад January або March\u003c/td\u003e\n\u003ctd\u003eвід January до December\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003em\u003c/td\u003e\n\u003ctd\u003eПорядковий номер місяця із провідним нулем\u003c/td\u003e\n\u003ctd\u003eвід 01 до 12\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eM\u003c/td\u003e\n\u003ctd\u003eСкорочене найменування місяця, 3 символи\u003c/td\u003e\n\u003ctd\u003eвід Jan до Dec\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003en\u003c/td\u003e\n\u003ctd\u003eПорядковий номер місяця без провідного нуля від 1 до 12\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003et\u003c/td\u003e\n\u003ctd\u003eКількість днів у вказаному місяці\u003c/td\u003e\n\u003ctd\u003eвід 28 до 31\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003e\u003cem\u003eРік\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eL\u003c/td\u003e\n\u003ctd\u003eОзнака високосного року 1, якщо рік високосний, інакше 0.\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eo\u003c/td\u003e\n\u003ctd\u003eНомер року відповідно до стандарту ISO 8601. Має те саме значення, що і Y, крім випадку, коли номер тижня ISO (W) належить попередньому або наступному році; тоді буде використано рік цього тижня.\u003c/td\u003e\n\u003ctd\u003eПриклади: 1999 або 2003\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003e'Y'\u003c/td\u003e\n\u003ctd\u003eПовне числове уявлення року, щонайменше 4 цифр, з - для років до нашої ери.\u003c/td\u003e\n\u003ctd\u003eПриклади: -0055, 0787, 1999, 2003\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ey\u003c/td\u003e\n\u003ctd\u003eНомер року, 2 цифри\u003c/td\u003e\n\u003ctd\u003eПриклади: 99, 03\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003e* Час *\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ea\u003c/td\u003e\n\u003ctd\u003eAnte meridiem (лат. \"до полудня\") або Post meridiem (лат. \"після полудня\") у нижньому регістрі\u003c/td\u003e\n\u003ctd\u003eam або pm\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003e'A'\u003c/td\u003e\n\u003ctd\u003eAnte meridiem або Post meridiem у верхньому регістрі AM або PM\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eB\u003c/td\u003e\n\u003ctd\u003eЧас у форматі Інтернет-часу (альтернативної системи відліку доби)\u003c/td\u003e\n\u003ctd\u003eвід 000 до 999\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eg\u003c/td\u003e\n\u003ctd\u003eГодинник у 12-годинному форматі без провідного нуля\u003c/td\u003e\n\u003ctd\u003eвід 1 до 12\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eG\u003c/td\u003e\n\u003ctd\u003eГодинник у 24-годинному форматі без провідного нуля\u003c/td\u003e\n\u003ctd\u003eвід 0 до 23\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eh\u003c/td\u003e\n\u003ctd\u003eГодинник у 12-годинному форматі з провідним нулем\u003c/td\u003e\n\u003ctd\u003eвід 01 до 12\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eH\u003c/td\u003e\n\u003ctd\u003eГодинник у 24-годинному форматі з провідним нулем\u003c/td\u003e\n\u003ctd\u003eвід 00 до 23\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ei\u003c/td\u003e\n\u003ctd\u003eХвилини з провідним нулем від 00 до 59\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003es\u003c/td\u003e\n\u003ctd\u003eСекунди з провідним нулем від 00 до 59\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eu\u003c/td\u003e\n\u003ctd\u003eМікросекунди. Врахуйте, що \u003ca href=\"function.date.md\"\u003edate()\u003c/a\u003e завжди повертатиме 000000, т.к. вона приймає цілий (int) параметр, тоді як \u003cstrong\u003eDateTime::format()\u003c/strong\u003e підтримує мікросекунди, якщо \u003ca href=\"class.datetime.md\"\u003eDateTime\u003c/a\u003e створено з ними.\u003c/td\u003e\n\u003ctd\u003eНаприклад: 654321\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ev\u003c/td\u003e\n\u003ctd\u003eМілісекунди. Зауваження таке саме як і для u.\u003c/td\u003e\n\u003ctd\u003eПриклад: 654\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003e\u003cem\u003eГодинний пояс\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ee\u003c/td\u003e\n\u003ctd\u003eІдентифікатор часового поясу Приклади: UTC, GMT, Atlantic/Azores\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eI (заголовна i)\u003c/td\u003e\n\u003ctd\u003eОзнака літнього часу\u003c/td\u003e\n\u003ctd\u003e1, якщо дата відповідає літньому часу, 0 інакше.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eO\u003c/td\u003e\n\u003ctd\u003eРізниця з часом за Гринвічем без двокрапки між годинами та хвилинами\u003c/td\u003e\n\u003ctd\u003eНаприклад: +0200\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eP\u003c/td\u003e\n\u003ctd\u003eРізниця з часом за Гринвічем з двокрапкою між годинами та хвилинами\u003c/td\u003e\n\u003ctd\u003eНаприклад: +02:00\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ep\u003c/td\u003e\n\u003ctd\u003eТе ж, що і P, але повертає Z замість +00:00 (доступний починаючи з PHP 8.0.0)\u003c/td\u003e\n\u003ctd\u003eНаприклад: +02:00\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eT\u003c/td\u003e\n\u003ctd\u003eАбревіатура часового поясу, якщо відома; інакше усунення за Грінвічем.\u003c/td\u003e\n\u003ctd\u003eПриклади: EST, MDT, +05\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eZ\u003c/td\u003e\n\u003ctd\u003eЗміщення часового поясу за секунди. Для часових поясів, розташованих на захід від UTC, повертаються негативні числа, а для розташованих на схід від UTC - позитивні.\u003c/td\u003e\n\u003ctd\u003eвід -43200 до 50400\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003e\u003cem\u003eПовна дата/час\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003ctd\u003e---\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003ec\u003c/td\u003e\n\u003ctd\u003eДата у форматі стандарту ISO 8601\u003c/td\u003e\n\u003ctd\u003e2004-02-12T15:19:21+00:00\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003er\u003c/td\u003e\n\u003ctd\u003eДата у форматі \u003ca href=\"http://www.faqs.org/rfcs/rfc2822\"\u003e»RFC 222\u003c/a\u003e/\u003ca href=\"http://www.faqs.org/rfcs/rfc5322\"\u003e»RFC 5322\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eНаприклад: Thu, 21 Dec 2000 16:01:07 +0200\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd align=\"center\"\u003eU\u003c/td\u003e\n\u003ctd\u003eКількість секунд, що минули від початку Епохи Unix (1 січня 1970 00:00:00 GMT)\u003c/td\u003e\n\u003ctd\u003eДивіться також \u003ca href=\"function.time.md\"\u003etime()\u003c/a\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eУ параметрі \u003ccode\u003eformat\u003c/code\u003e розпізнаються наступні символи\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eБудь-які інші символи, зустрінуті в рядку-шаблоні, будуть виведені в\nрезультуючий рядок без змін. \u003ccode\u003eZ\u003c/code\u003e завжди повертає \u003ccode\u003e0\u003c/code\u003e при\nвикористання \u003ca href=\"function.gmdate.md\"\u003egmdate()\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eОскільки функція, що розглядається, приймає як параметр\nтимчасові мітки типу int, форматуючий символ \u003ccode\u003eu\u003c/code\u003e буде корисним\nтільки при використанні функції\n\u003ca href=\"function.date-format.md\"\u003edate_format()\u003c/a\u003e та користувацьких тегів\nчасу, створені за допомогою функції\n\u003ca href=\"function.date-create.md\"\u003edate_create()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає рядок з відформатованою датою у разі успішного\nвиконання.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eДо цієї версії, у разі виникнення помилки поверталося \u003cstrong\u003efalse\u003c/strong\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eДоданий символ форматування p.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003eDateTime::format()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$date = new DateTime('2000-01-01');echo $date-\u003eformat('Y-m-d H:i:s');?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$date = date_create('2000-01-01');echo date_format($date, 'Y-m-d H:i:s');?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e2000-01-01 00:00:00\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cp\u003eЦей метод не використовує налаштування локалі. Висновок проводиться на\nанглійській мові.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.date.md\"\u003edate()\u003c/a\u003e - Форматує тимчасову мітку Unix\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"datetime.format.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.mongodb-driver-readconcern | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mongodb-driver-readpreference.unserialize.md">« MongoDB\Driver\ReadPreference::unserialize</a></p>
+</li>
+<li>
+<p><a href="mongodb-driver-readconcern.bsonserialize.md">MongoDB\Driver\ReadConcern::bsonSerialize »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.mongodb.md">MongoDB\Driver</a></p>
+</li>
+<li>
+<p>Клас MongoDB\Driver\ReadConcern</p>
+</li>
+</ul>
+<h1>Клас MongoDB\Driver\ReadConcern</h1>
+<p>(mongodb >=1.1.0)</p>
+<h2>Вступ</h2>
+<p><strong>MongoDB\Driver\ReadConcern</strong> контролює рівень ізоляції для
+операцій читання для наборів реплік та сегментів наборів реплік. Ця опція
+вимагає MongoDB 3.2 чи новіше.</p>
+<h2>Огляд класів</h2>
+<p>final class <strong>MongoDB\Driver\ReadConcern</strong> implements
+<a href="class.mongodb-bson-serializable.md">MongoDB\BSON\Serializable</a>,
+<a href="class.serializable.md">Serializable</a> {</p>
+<p>/* Константи */</p>
+<p>const string <code>AVAILABLE</code> = "available";</p>
+<p>const string <code>LINEARIZABLE</code> = "linearizable";</p>
+<p>const string <code>LOCAL</code> = "local";</p>
+<p>const string <code>MAJORITY</code> = "majority";</p>
+<p>const string <code>SNAPSHOT</code> = "snapshot";</p>
+<p>/* Методи */</p>
+<p>final public
+<a href="mongodb-driver-readconcern.bsonserialize.md">bsonSerialize</a>(): object</p>
+<p>final public
+<a href="mongodb-driver-readconcern.construct.md">__construct</a>(string
+<code>$level</code> = ?)</p>
+<p>final public <a href="mongodb-driver-readconcern.getlevel.md">getLevel</a>():
+?string</p>
+<p>final public <a href="mongodb-driver-readconcern.isdefault.md">isDefault</a>():
+bool</p>
+<p>final public <a href="mongodb-driver-readconcern.serialize.md">serialize</a>():
+string</p>
+<p>final public
+<a href="mongodb-driver-readconcern.unserialize.md">unserialize</a>(string
+<code>$serialized</code>): void</p>
+<p>}</p>
+<h2>Зумовлені константи</h2>
+<p><strong><code>MongoDB\Driver\ReadConcern::AVAILABLE</code></strong>
+За промовчанням для читання проти вторинних, коли <code>afterClusterTime</code> і
+<code>level</code> не вказано.</p>
+<p>Запит повертає останні дані екземпляра. Не гарантує, що
+дані були записані більшості членів набору реплік (тобто можуть
+бути відкати).</p>
+<p>Для колекцій, що не охороняються (включаючи колекції в автономному розгортанні
+або розгортання набору реплік), <code>local'` і </code>available'' гарантії
+Читання поводяться однаково.</p>
+<p>Для сегментованого кластера <code>available'' гарантії читання забезпечує велику терпимість для розділів, оскільки вона не очікує гарантій узгодженості. Проте запит з </code>available'' гарантіями
+читання може повернути втрачені документи, якщо у сегменті виконується
+міграція фрагментів, оскільки "available" гарантій читання, на відміну
+від ``local'` гарантій читання, не пов'язується з первинним сервером
+сегменту або серверами конфігурації для отримання оновлених
+метаданих.</p>
+<p><strong><code>MongoDB\Driver\ReadConcern::LINEARIZABLE</code></strong>
+Запит повертає дані, що відображають усі успішні записи,
+випущені з гарантіями записи ``majority'<code>*і* підтверджені до початку операції читання. Для наборів реплік, що виконуються з параметром</code>writeConcernMajorityJournalDefault<code>, встановленим у значення **</code>true`**, лінеаризовані гарантії читання повертають дані, які
+ніколи не будуть відкочуватися.</p>
+<p>Якщо для <code>writeConcernMajorityJournalDefault</code> встановлено значення
+<strong><code>false</code></strong>, MongoDB не буде очікувати, що <code>w: "majority"</code> записів буде
+стійким, перш ніж підтвердити запис. Таким чином, операції
+записи ``majority'` можуть відкочуватися у разі втрати члена набору
+реплік.</p>
+<p>Ви можете вказати лінеаризовані гарантії читання для операцій читання
+лише на основному сервері.</p>
+<p>Лінеаризовані гарантії читання застосовуються тільки в тому випадку, якщо в
+операціях читання вказано фільтр запиту, який однозначно
+ідентифікує один документ.</p>
+<p><strong>Підказка</strong>
+Завжди використовуйте <code>maxTimeMS</code> з лінеаризованими гарантіями читання, якщо
+більшість елементів, що несуть дані, недоступні. <code>maxTimeMS</code>
+гарантує, що операція не блокується нескінченно, і натомість
+гарантує, що операція повертає помилку, якщо проблема читання не
+може бути виконана.</p>
+<p>Для лінеаризованих гарантій читання потрібен MongoDB 3.4.</p>
+<p><strong><code>MongoDB\Driver\ReadConcern::LOCAL</code></strong>
+За промовчанням для читання по первинному, якщо <code>level</code> не вказано, і для
+читання з вторинного, якщо 'level' не вказано, але задано
+<code>afterClusterTime</code>.</p>
+<p>Запит повертає останні дані екземпляра. Не гарантує, що
+дані були записані більшості членів набору реплік (тобто можуть
+бути відкати).</p>
+<p><strong><code>MongoDB\Driver\ReadConcern::MAJORITY</code></strong>
+Запит повертає останні дані екземпляра, які були
+визнані записаними більшості членів набору реплік.</p>
+<p>Щоб використати рівень гарантій читання ``majority'`, набори реплік
+повинні використовувати механізм зберігання WiredTiger та протокол вибору
+Версія 1.</p>
+<p><strong><code>MongoDB\Driver\ReadConcern::SNAPSHOT</code></strong>
+Гарантія читання "snapshot" доступна для транзакцій з декількома
+документами, а починаючи з MongoDB 5.0, також доступна для деяких
+операцій читання як для транзакцій з кількома документами.</p>
+<p>Якщо транзакція не є частиною причинно-узгодженого сесії, після
+фіксації транзакції з проблемою запису ``majority'`, операції транзакції
+гарантовано прочитають із моментального знімку зафіксованих
+більшістю даних.</p>
+<p>Якщо транзакція є частиною причинно-узгодженої сесії,
+фіксації транзакції з проблемою запису ``majority'`, операції транзакції
+гарантовано зчитують із моментального знімку дані, підтверджені
+більшістю, що забезпечує причинну узгодженість з операцій,
+безпосередньо попередньої початку транзакції.</p>
+<p>Поза транзакціями з кількома документами, проблема читання ``snapshot'<code>доступна на первинних та вторинних серверах для наступних операцій читання:</code>find<code>, </code>aggregate<code>та</code>distinct` (для необроблених колекцій).
+Всі інші команди читання забороняють "snapshot".</p>
+<h2>Список змін</h2>
+<p>[TABLE]</p>
+<h2>Дивіться також</h2>
+<ul>
+<li><a href="https://www.mongodb.com/docs/manual/reference/read-concern/">» Довідка за гарантіями читання</a></li>
+</ul>
+<h2>Зміст</h2>
+<ul>
+<li><a href="mongodb-driver-readconcern.bsonserialize.md">MongoDB\Driver\ReadConcern::bsonSerialize</a>
+— Повертає об'єкт для серіалізації BSON</li>
+<li><a href="mongodb-driver-readconcern.construct.md">MongoDB\Driver\ReadConcern::__construct</a></li>
+<li>Створює новий ReadConcern</li>
+<li><a href="mongodb-driver-readconcern.getlevel.md">MongoDB\Driver\ReadConcern::getLevel</a></li>
+<li>Повертає опцію "level" ReadConcern</li>
+<li><a href="mongodb-driver-readconcern.isdefault.md">MongoDB\Driver\ReadConcern::isDefault</a>
+— Перевіряє, чи є гарантією прочитання за замовчуванням</li>
+<li><a href="mongodb-driver-readconcern.serialize.md">MongoDB\Driver\ReadConcern::serialize</a></li>
+<li>Серіалізація ReadConcern</li>
+<li><a href="mongodb-driver-readconcern.unserialize.md">MongoDB\Driver\ReadConcern::unserialize</a></li>
+<li>Десеріалізація ReadConcern</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.mongodb-driver-readconcern.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.mongodb-driver-readconcern.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.mongodb-driver-readconcern","slug":"class.mongodb-driver-readconcern.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb-driver-readpreference.unserialize.md\"\u003e« MongoDB\\Driver\\ReadPreference::unserialize\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb-driver-readconcern.bsonserialize.md\"\u003eMongoDB\\Driver\\ReadConcern::bsonSerialize »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.mongodb.md\"\u003eMongoDB\\Driver\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас MongoDB\\Driver\\ReadConcern\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас MongoDB\\Driver\\ReadConcern\u003c/h1\u003e\n\u003cp\u003e(mongodb \u003e=1.1.0)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eMongoDB\\Driver\\ReadConcern\u003c/strong\u003e контролює рівень ізоляції для\nоперацій читання для наборів реплік та сегментів наборів реплік. Ця опція\nвимагає MongoDB 3.2 чи новіше.\u003c/p\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003efinal class \u003cstrong\u003eMongoDB\\Driver\\ReadConcern\u003c/strong\u003e implements\n\u003ca href=\"class.mongodb-bson-serializable.md\"\u003eMongoDB\\BSON\\Serializable\u003c/a\u003e,\n\u003ca href=\"class.serializable.md\"\u003eSerializable\u003c/a\u003e {\u003c/p\u003e\n\u003cp\u003e/* Константи */\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eAVAILABLE\u003c/code\u003e = \"available\";\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eLINEARIZABLE\u003c/code\u003e = \"linearizable\";\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eLOCAL\u003c/code\u003e = \"local\";\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eMAJORITY\u003c/code\u003e = \"majority\";\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eSNAPSHOT\u003c/code\u003e = \"snapshot\";\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003efinal public\n\u003ca href=\"mongodb-driver-readconcern.bsonserialize.md\"\u003ebsonSerialize\u003c/a\u003e(): object\u003c/p\u003e\n\u003cp\u003efinal public\n\u003ca href=\"mongodb-driver-readconcern.construct.md\"\u003e__construct\u003c/a\u003e(string\n\u003ccode\u003e$level\u003c/code\u003e = ?)\u003c/p\u003e\n\u003cp\u003efinal public \u003ca href=\"mongodb-driver-readconcern.getlevel.md\"\u003egetLevel\u003c/a\u003e():\n?string\u003c/p\u003e\n\u003cp\u003efinal public \u003ca href=\"mongodb-driver-readconcern.isdefault.md\"\u003eisDefault\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003efinal public \u003ca href=\"mongodb-driver-readconcern.serialize.md\"\u003eserialize\u003c/a\u003e():\nstring\u003c/p\u003e\n\u003cp\u003efinal public\n\u003ca href=\"mongodb-driver-readconcern.unserialize.md\"\u003eunserialize\u003c/a\u003e(string\n\u003ccode\u003e$serialized\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗумовлені константи\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadConcern::AVAILABLE\u003c/code\u003e\u003c/strong\u003e\nЗа промовчанням для читання проти вторинних, коли \u003ccode\u003eafterClusterTime\u003c/code\u003e і\n\u003ccode\u003elevel\u003c/code\u003e не вказано.\u003c/p\u003e\n\u003cp\u003eЗапит повертає останні дані екземпляра. Не гарантує, що\nдані були записані більшості членів набору реплік (тобто можуть\nбути відкати).\u003c/p\u003e\n\u003cp\u003eДля колекцій, що не охороняються (включаючи колекції в автономному розгортанні\nабо розгортання набору реплік), \u003ccode\u003elocal'` і \u003c/code\u003eavailable'' гарантії\nЧитання поводяться однаково.\u003c/p\u003e\n\u003cp\u003eДля сегментованого кластера \u003ccode\u003eavailable'' гарантії читання забезпечує велику терпимість для розділів, оскільки вона не очікує гарантій узгодженості. Проте запит з \u003c/code\u003eavailable'' гарантіями\nчитання може повернути втрачені документи, якщо у сегменті виконується\nміграція фрагментів, оскільки \"available\" гарантій читання, на відміну\nвід ``local'` гарантій читання, не пов'язується з первинним сервером\nсегменту або серверами конфігурації для отримання оновлених\nметаданих.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadConcern::LINEARIZABLE\u003c/code\u003e\u003c/strong\u003e\nЗапит повертає дані, що відображають усі успішні записи,\nвипущені з гарантіями записи ``majority'\u003ccode\u003e*і* підтверджені до початку операції читання. Для наборів реплік, що виконуються з параметром\u003c/code\u003ewriteConcernMajorityJournalDefault\u003ccode\u003e, встановленим у значення **\u003c/code\u003etrue`**, лінеаризовані гарантії читання повертають дані, які\nніколи не будуть відкочуватися.\u003c/p\u003e\n\u003cp\u003eЯкщо для \u003ccode\u003ewriteConcernMajorityJournalDefault\u003c/code\u003e встановлено значення\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, MongoDB не буде очікувати, що \u003ccode\u003ew: \"majority\"\u003c/code\u003e записів буде\nстійким, перш ніж підтвердити запис. Таким чином, операції\nзаписи ``majority'` можуть відкочуватися у разі втрати члена набору\nреплік.\u003c/p\u003e\n\u003cp\u003eВи можете вказати лінеаризовані гарантії читання для операцій читання\nлише на основному сервері.\u003c/p\u003e\n\u003cp\u003eЛінеаризовані гарантії читання застосовуються тільки в тому випадку, якщо в\nопераціях читання вказано фільтр запиту, який однозначно\nідентифікує один документ.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПідказка\u003c/strong\u003e\nЗавжди використовуйте \u003ccode\u003emaxTimeMS\u003c/code\u003e з лінеаризованими гарантіями читання, якщо\nбільшість елементів, що несуть дані, недоступні. \u003ccode\u003emaxTimeMS\u003c/code\u003e\nгарантує, що операція не блокується нескінченно, і натомість\nгарантує, що операція повертає помилку, якщо проблема читання не\nможе бути виконана.\u003c/p\u003e\n\u003cp\u003eДля лінеаризованих гарантій читання потрібен MongoDB 3.4.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadConcern::LOCAL\u003c/code\u003e\u003c/strong\u003e\nЗа промовчанням для читання по первинному, якщо \u003ccode\u003elevel\u003c/code\u003e не вказано, і для\nчитання з вторинного, якщо 'level' не вказано, але задано\n\u003ccode\u003eafterClusterTime\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЗапит повертає останні дані екземпляра. Не гарантує, що\nдані були записані більшості членів набору реплік (тобто можуть\nбути відкати).\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadConcern::MAJORITY\u003c/code\u003e\u003c/strong\u003e\nЗапит повертає останні дані екземпляра, які були\nвизнані записаними більшості членів набору реплік.\u003c/p\u003e\n\u003cp\u003eЩоб використати рівень гарантій читання ``majority'`, набори реплік\nповинні використовувати механізм зберігання WiredTiger та протокол вибору\nВерсія 1.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eMongoDB\\Driver\\ReadConcern::SNAPSHOT\u003c/code\u003e\u003c/strong\u003e\nГарантія читання \"snapshot\" доступна для транзакцій з декількома\nдокументами, а починаючи з MongoDB 5.0, також доступна для деяких\nоперацій читання як для транзакцій з кількома документами.\u003c/p\u003e\n\u003cp\u003eЯкщо транзакція не є частиною причинно-узгодженого сесії, після\nфіксації транзакції з проблемою запису ``majority'`, операції транзакції\nгарантовано прочитають із моментального знімку зафіксованих\nбільшістю даних.\u003c/p\u003e\n\u003cp\u003eЯкщо транзакція є частиною причинно-узгодженої сесії,\nфіксації транзакції з проблемою запису ``majority'`, операції транзакції\nгарантовано зчитують із моментального знімку дані, підтверджені\nбільшістю, що забезпечує причинну узгодженість з операцій,\nбезпосередньо попередньої початку транзакції.\u003c/p\u003e\n\u003cp\u003eПоза транзакціями з кількома документами, проблема читання ``snapshot'\u003ccode\u003eдоступна на первинних та вторинних серверах для наступних операцій читання:\u003c/code\u003efind\u003ccode\u003e, \u003c/code\u003eaggregate\u003ccode\u003eта\u003c/code\u003edistinct` (для необроблених колекцій).\nВсі інші команди читання забороняють \"snapshot\".\u003c/p\u003e\n\u003ch2\u003eСписок змін\u003c/h2\u003e\n\u003cp\u003e[TABLE]\u003c/p\u003e\n\u003ch2\u003eДивіться також\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://www.mongodb.com/docs/manual/reference/read-concern/\"\u003e» Довідка за гарантіями читання\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readconcern.bsonserialize.md\"\u003eMongoDB\\Driver\\ReadConcern::bsonSerialize\u003c/a\u003e\n— Повертає об'єкт для серіалізації BSON\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readconcern.construct.md\"\u003eMongoDB\\Driver\\ReadConcern::__construct\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eСтворює новий ReadConcern\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readconcern.getlevel.md\"\u003eMongoDB\\Driver\\ReadConcern::getLevel\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПовертає опцію \"level\" ReadConcern\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readconcern.isdefault.md\"\u003eMongoDB\\Driver\\ReadConcern::isDefault\u003c/a\u003e\n— Перевіряє, чи є гарантією прочитання за замовчуванням\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readconcern.serialize.md\"\u003eMongoDB\\Driver\\ReadConcern::serialize\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eСеріалізація ReadConcern\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mongodb-driver-readconcern.unserialize.md\"\u003eMongoDB\\Driver\\ReadConcern::unserialize\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eДесеріалізація ReadConcern\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.mongodb-driver-readconcern.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>reference.pcre.pattern.differences | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="reference.pcre.pattern.modifiers.md">« Описує можливі модифікатори шаблонів Perl-сумісних
+регулярних виразів (PCRE)</a></p>
+</li>
+<li>
+<p><a href="ref.pcre.md">Функції PCRE»</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="pcre.pattern.md">Регулярні висловлювання PCRE</a></p>
+</li>
+<li>
+<p>Відмінність від Perl</p>
+</li>
+</ul>
+<h1>Відмінності від Perl</h1>
+<p>Наведені тут відмінності відносяться до версії Perl 5.005.</p>
+<ol>
+<li>
+<p>За замовчуванням пробельний символ - це будь-який символ, який має функцію
+isspace() з бібліотеки C упізнає таким, хоча можливо
+скомпілювати PCRE з альтернативними таблицями символів. Функція
+isspace() визначає як пробільний наступні символи: пробіл, кінець
+сторінки (formfeed), переклад рядка, повернення каретки, горизонтальну
+табуляцію та вертикальну табуляцію. Perl 5 не включає
+вертикальну табуляцію до списку пробільних символів. Екранування
+довгий час присутнє в документації Perl насправді
+ніколи не розпізнавалася. Проте, символ як такий, вважався за
+пробільний до версії 5.002. У 5.004 та 5.005 він не визначається як
+\s.</p>
+</li>
+<li>
+<p>PCRE не дозволяє використовувати квантифікатори повторення в
+випереджальних припущеннях. Perl дозволяє, але вони не означають того,
+про що ви могли б подумати. Наприклад, (?! a) {3} не перевіряє, що
+наступні три символи не є "a". Перевіряється лише те, що наступний
+символ не "a" тричі.</p>
+</li>
+<li>
+<p>Захоплюючі підшаблони, що виникають у негативних
+випереджальних перевірок вважаються, але їх записи у векторі зсувів
+ніколи не встановлюються. Perl встановлює числові змінні
+з будь-яких подібних масок, які збіглися до моменту, коли
+припущення не підтвердилося під час перевірки чогось, але тільки
+якщо випереджаюче припущення містить лише одну гілку.</p>
+</li>
+<li>
+<p>Хоча бінарні нульові символи підтримуються в рядку, що перевіряється,
+вони неприпустимі в рядку шаблону, тому що вона передається як
+нормальний рядок C, в якому цей символ позначає кінець рядка.
+Для його використання в рядку шаблону необхідно скористатися
+конструкцією "x00".</p>
+</li>
+<li>
+<p>Наступні екрануючі послідовності Perl не підтримуються:
+\l, \u, \L, \U. Фактично вони реалізовані стандартним обробником
+рядків Perl і не є частиною модуля обробки регулярних
+виразів.</p>
+</li>
+<li>
+<p>Припущення \G із Perl також не підтримується, оскільки не
+має відношення до окремо взятої схеми збігів.</p>
+</li>
+<li>
+<p>Досить очевидно, що PCRE не підтримує конструкції (?{code}) та
+(?? {code}). Проте є підтримка рекурсивних шаблонів.</p>
+</li>
+<li>
+<p>Є ще дивний момент при Perl 5.005_02, пов'язаний з
+встановленням захоплених рядків, коли частина шаблону повторюється. До
+Наприклад, перевірка "aba" шаблоном /^(a(b)?)+$/, встановлює $2 в
+значення "b", але перевірка "aabbaa" шаблоном /^(aa(bb)?)+$/,
+залишає $2 не виставленою. Хоча, якщо шаблон поміняти на
+/^(aa(b(b))?)+$/, то $2 (і $3) буде встановлено. У Perl 5.004, $2
+встановиться в обох випадках, і це також істинно для PCRE. Якщо в
+майбутньому Perl якось зафіксує цю поведінку, PRCE буде йому
+дотримуватися.</p>
+</li>
+<li>
+<p>Інша досі невирішена суперечність у тому, що Perl
+5.005_02, шаблоном /^(a)?(?(1)a|b)+$/ розпізнає рядок "a", а PCRE
+ні. Хоча і в Perl і PCRE, /^(a)?a/ розпізнає "a" і залишає $1
+не виставленої.</p>
+</li>
+<li>
+<p>PCRE надає деякі розширення регулярних виразів Perl:</p>
+</li>
+<li>
+<p>Незважаючи на те, що випереджальні припущення мають
+розпізнавати рядки фіксованої довжини, кожне альтернативне
+ретроспективне припущення може розпізнавати рядки різного
+довжини. Perl 5.005 вимагає, щоб вони були однією довжиною.</p>
+</li>
+<li>
+<p>Якщо встановлено
+<a href="reference.pcre.pattern.modifiers.md">PCRE_DOLLAR_ENDONLY</a> та
+не встановлена
+<a href="reference.pcre.pattern.modifiers.md">PCRE_MULTILINE</a>,
+метасимвол $ розпізнається лише наприкінці рядка.</p>
+</li>
+<li>
+<p>Якщо встановлено
+<a href="reference.pcre.pattern.modifiers.md">PCRE_EXTRA</a>, зворотний
+сліш з наступною за ним літерою, що не має спеціального
+значення, що призводить до помилки.</p>
+</li>
+<li>
+<p>Якщо встановлено
+<a href="reference.pcre.pattern.modifiers.md">PCRE_UNGREEDY</a>, жадібність
+Квантифікатори повторення інвертовані. Тобто за умовчанням
+вони не жадібні, поки їх не буде знак питання.</p>
+</li>
+</ol>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/reference.pcre.pattern.differences.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/reference.pcre.pattern.differences.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"reference.pcre.pattern.differences","slug":"reference.pcre.pattern.differences.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003e« Описує можливі модифікатори шаблонів Perl-сумісних\nрегулярних виразів (PCRE)\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.pcre.md\"\u003eФункції PCRE»\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"pcre.pattern.md\"\u003eРегулярні висловлювання PCRE\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВідмінність від Perl\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eВідмінності від Perl\u003c/h1\u003e\n\u003cp\u003eНаведені тут відмінності відносяться до версії Perl 5.005.\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003eЗа замовчуванням пробельний символ - це будь-який символ, який має функцію\nisspace() з бібліотеки C упізнає таким, хоча можливо\nскомпілювати PCRE з альтернативними таблицями символів. Функція\nisspace() визначає як пробільний наступні символи: пробіл, кінець\nсторінки (formfeed), переклад рядка, повернення каретки, горизонтальну\nтабуляцію та вертикальну табуляцію. Perl 5 не включає\nвертикальну табуляцію до списку пробільних символів. Екранування\nдовгий час присутнє в документації Perl насправді\nніколи не розпізнавалася. Проте, символ як такий, вважався за\nпробільний до версії 5.002. У 5.004 та 5.005 він не визначається як\n\\s.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ePCRE не дозволяє використовувати квантифікатори повторення в\nвипереджальних припущеннях. Perl дозволяє, але вони не означають того,\nпро що ви могли б подумати. Наприклад, (?! a) {3} не перевіряє, що\nнаступні три символи не є \"a\". Перевіряється лише те, що наступний\nсимвол не \"a\" тричі.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗахоплюючі підшаблони, що виникають у негативних\nвипереджальних перевірок вважаються, але їх записи у векторі зсувів\nніколи не встановлюються. Perl встановлює числові змінні\nз будь-яких подібних масок, які збіглися до моменту, коли\nприпущення не підтвердилося під час перевірки чогось, але тільки\nякщо випереджаюче припущення містить лише одну гілку.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eХоча бінарні нульові символи підтримуються в рядку, що перевіряється,\nвони неприпустимі в рядку шаблону, тому що вона передається як\nнормальний рядок C, в якому цей символ позначає кінець рядка.\nДля його використання в рядку шаблону необхідно скористатися\nконструкцією \"x00\".\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНаступні екрануючі послідовності Perl не підтримуються:\n\\l, \\u, \\L, \\U. Фактично вони реалізовані стандартним обробником\nрядків Perl і не є частиною модуля обробки регулярних\nвиразів.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПрипущення \\G із Perl також не підтримується, оскільки не\nмає відношення до окремо взятої схеми збігів.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДосить очевидно, що PCRE не підтримує конструкції (?{code}) та\n(?? {code}). Проте є підтримка рекурсивних шаблонів.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЄ ще дивний момент при Perl 5.005_02, пов'язаний з\nвстановленням захоплених рядків, коли частина шаблону повторюється. До\nНаприклад, перевірка \"aba\" шаблоном /^(a(b)?)+$/, встановлює $2 в\nзначення \"b\", але перевірка \"aabbaa\" шаблоном /^(aa(bb)?)+$/,\nзалишає $2 не виставленою. Хоча, якщо шаблон поміняти на\n/^(aa(b(b))?)+$/, то $2 (і $3) буде встановлено. У Perl 5.004, $2\nвстановиться в обох випадках, і це також істинно для PCRE. Якщо в\nмайбутньому Perl якось зафіксує цю поведінку, PRCE буде йому\nдотримуватися.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eІнша досі невирішена суперечність у тому, що Perl\n5.005_02, шаблоном /^(a)?(?(1)a|b)+$/ розпізнає рядок \"a\", а PCRE\nні. Хоча і в Perl і PCRE, /^(a)?a/ розпізнає \"a\" і залишає $1\nне виставленої.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ePCRE надає деякі розширення регулярних виразів Perl:\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНезважаючи на те, що випереджальні припущення мають\nрозпізнавати рядки фіксованої довжини, кожне альтернативне\nретроспективне припущення може розпізнавати рядки різного\nдовжини. Perl 5.005 вимагає, щоб вони були однією довжиною.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЯкщо встановлено\n\u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003ePCRE_DOLLAR_ENDONLY\u003c/a\u003e та\nне встановлена\n\u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003ePCRE_MULTILINE\u003c/a\u003e,\nметасимвол $ розпізнається лише наприкінці рядка.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЯкщо встановлено\n\u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003ePCRE_EXTRA\u003c/a\u003e, зворотний\nсліш з наступною за ним літерою, що не має спеціального\nзначення, що призводить до помилки.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЯкщо встановлено\n\u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003ePCRE_UNGREEDY\u003c/a\u003e, жадібність\nКвантифікатори повторення інвертовані. Тобто за умовчанням\nвони не жадібні, поки їх не буде знак питання.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"reference.pcre.pattern.differences.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

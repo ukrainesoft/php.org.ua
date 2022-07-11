@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.dns-get-record | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.dns-get-mx.md">« dns_get_mx</a></p>
+</li>
+<li>
+<p><a href="function.fsockopen.md">fsockopen »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.network.md">Мережні функції</a></p>
+</li>
+<li>
+<p>Отримання ресурсних записів DNS хоста</p>
+</li>
+</ul>
+<h1>dns_get_record</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<p>dns_get_record — Отримання ресурсних записів DNS хоста</p>
+<h3>Опис</h3>
+<p><strong>dns_get_record</strong>(
+string <code>$hostname</code>,
+int <code>$type</code> = <strong><code>DNS_ANY</code></strong>,
+array <code>&#x26;$authoritative_name_servers</code> = <strong><code>null</code></strong>,
+array <code>&#x26;$additional_records</code> = <strong><code>null</code></strong>,
+bool <code>$raw</code> = <strong><code>false</code></strong>
+): array|false</p>
+<p>Здійснює вибірку DNS-записів, що відповідають властивостям хоста
+<code>hostname</code>.</p>
+<h3>Список параметрів</h3>
+<p><code>hostname</code>
+Параметр <code>hostname</code> має бути коректним DNS-іменем таким, як
+"<a href="http://www.example.com">www.example.com</a>". Зворотний дозвіл назв хостів може бути
+зроблено з використанням нотації <code>in-addr.arpa</code>, однак, для цієї
+мети краще скористатися функцією
+<a href="function.gethostbyaddr.md">gethostbyaddr()</a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Відповідно до стандартів DNS, адреси електронної пошти задаються в
+форматі <code>user.host</code> (наприклад, <code>hostmaster.example.com</code> на відміну від
+<code>hostmaster@example.com</code>), тому будьте уважні та додатково
+Перевірте це значення, перш ніж використовувати його в таких функціях,
+як <a href="function.mail.md">mail()</a>.</p>
+</blockquote>
+<p><code>type</code>
+За замовчуванням <strong>dns_get_record()</strong> шукатиме всі можливі записи,
+відповідні заданому імені хоста <code>hostname</code>. Щоб звузити коло
+пошуку можна задати необов'язковий параметр <code>type</code>. Цей параметр може
+приймати наступні значення: <strong><code>DNS_A</code></strong>, <strong><code>DNS_CNAME</code></strong>,
+<strong><code>DNS_HINFO</code></strong>, <strong><code>DNS_CAA</code></strong>, <strong><code>DNS_MX</code></strong>, <strong><code>DNS_NS</code></strong>,
+<strong><code>DNS_PTR</code></strong>, <strong><code>DNS_SOA</code></strong>, <strong><code>DNS_TXT</code></strong>, <strong><code>DNS_AAAA</code></strong>,
+<strong><code>DNS_SRV</code></strong>, <strong><code>DNS_NAPTR</code></strong>, <strong><code>DNS_A6</code></strong>, <strong><code>DNS_ALL</code></strong> або
+<strong><code>DNS_ANY</code></strong>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Через неоднозначну поведінку libresolv на різних платформах,
+<strong><code>DNS_ANY</code></strong> може повернути не всі записи, повільніший
+<strong><code>DNS_ALL</code></strong> поверне всі записи надійніше.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Windows: <strong><code>DNS_CAA</code></strong> не підтримується. Підтримка <strong><code>DNS_A6</code></strong> не
+реалізована.</p>
+</blockquote>
+<p><code>authoritative_name_servers</code>
+Передається за посиланням і, якщо передано, заповнюватиметься ресурсними
+записами для <em>засвідчувальних серверів імен</em> (Authoritative Name
+Servers).</p>
+<p><code>additional_records</code>
+Передається за посиланням і, якщо передано, буде заповнюватися <em>додатковими
+записами</em> (Additional Records).</p>
+<p><code>raw</code>
+<code>type</code> буде інтерпретований як необроблений ідентифікатор типу DNS
+(не можна використовувати константи <code>DNS_*</code>). Значення, що повертається буде
+містити ключ <code>data</code>, який потрібно проаналізувати вручну.</p>
+<h3>Значення, що повертаються</h3>
+<p>Ця функція повертає масив асоціативних масивів або <strong><code>false</code></strong>
+у разі виникнення помилки. Кожен асоціативний масив містить *
+щонайменше* наступні ключі:</p>
+<table>
+<thead>
+<tr>
+<th>Атрибут Опис</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>host</td>
+<td>Запис у просторі імен DNS, на яку посилається решта даних.</td>
+</tr>
+<tr>
+<td>class</td>
+<td><strong>dns_get_record()</strong> повертає тільки записи класу Internet, відповідно цей параметр завжди прийматиме значення IN.</td>
+</tr>
+<tr>
+<td>тип</td>
+<td>Рядок, що містить тип запису. Додаткові атрибути також містяться в результуючому масиві в залежності від типу. По одному вкладеному масиву за кожен тип. Дивіться таблицю нижче.</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>Час життя (Time To Live'), що залишився для цього запису. Це <em>не</em> вихідне ttl запису. Воно дорівнює вихідному за вирахуванням часу, що минув з моменту відправки запиту на сервер.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Основні атрибути DNS</strong></p>
+<table>
+<thead>
+<tr>
+<th>Тип запису Додаткові дані</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'A'</td>
+<td>ip: адреси IPv4 у десятковому форматі з роздільниками.</td>
+</tr>
+<tr>
+<td>MX</td>
+<td>pri: Пріоритет поштового сервера. Чим нижче число, тим вищий пріоритет. target: FQDN поштового сервера Також дивіться <a href="function.dns-get-mx.md">dns_get_mx()</a>.</td>
+</tr>
+<tr>
+<td>CNAME</td>
+<td>target: FQDN розташування в просторі імен DNS, на яке вказує запис.</td>
+</tr>
+<tr>
+<td>NS</td>
+<td>target: FQDN - ім'я сервера, який є авторитетним для цього імені хоста.</td>
+</tr>
+<tr>
+<td>PTR</td>
+<td>target: Розташування без вказівки простору імен DNS, на яке вказує запис.</td>
+</tr>
+<tr>
+<td>TXT</td>
+<td>txt: Рядок даних, пов'язаних із цим записом.</td>
+</tr>
+<tr>
+<td>HINFO</td>
+<td>cpu: число IANA, що позначає модель процесора комп'ютера, який вказує цей запис. os: число IANA, що означає операційну систему комп'ютера, який вказує цей запис. Дивіться додатково IANA <a href="http://www.iana.org/assignments/operating-system-names">» Operating System Names</a>.</td>
+</tr>
+<tr>
+<td>CAA</td>
+<td>flags: Однобайтове бітове поле; в даний момент визначено лише біт номер 0, що називається 'critical'; інші біти зарезервовані та повинні ігноруватися. tag: Ім'я тега CAA (літерно-числовий рядок ASCII). value: Значення тега CAA (бінарний рядок, можна використовувати підформати). Докладніше читайте тут: <a href="http://www.faqs.org/rfcs/rfc6844">» RFC 6844</a></td>
+</tr>
+<tr>
+<td>'SOA'</td>
+<td>mname: FQDN початкового комп'ютера, з якого отримані ресурсні записи. rname: Адреса електронної пошти адміністратора домену. serial: Порядковий номер цієї ревізії домена, що запитується. refresh: Інтервал часу (в секундах), який мають використовувати вторинні сервери під час оновлення видалених копій цього домену. retry: Час очікування (у секундах) після невдалого оновлення до наступної спроби. expire: Максимальний час (у секундах), протягом якого вторинний DNS-сервер повинен тримати в пам'яті дані віддалених копій доменної зони, перш ніж відповісти, коли не вдається оновити дані. minimum-ttl: Мінімальний час (у секундах), протягом якого клієнт може працювати з поточною DNS-роздільною здатністю, перш ніж йому доведеться повторно запитувати цей дозвіл. Значення може бути замінено окремими ресурсними записами.</td>
+</tr>
+<tr>
+<td>AAAA</td>
+<td>ipv6: адреса IPv6</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>masklen: Довжина (у бітах), яку потрібно успадкувати від цільової адреси chain. ipv6: Адреса для цього конкретного запису, який потрібно об'єднати з chain. chain: Запис, який потрібно доповнити даними ipv6.</td>
+</tr>
+<tr>
+<td>SRV</td>
+<td>pri: (Пріоритет) менші значення мають використовуватися першими. weight: Ранжування. Записам з великою вагою віддається перевага. targets має вибиратися випадково. target та port: ім'я хоста та номер порту, на якому можна знайти запитану службу. Додаткову інформацію можна отримати за посиланням: <a href="http://www.faqs.org/rfcs/rfc2782">»RFC 2782</a></td>
+</tr>
+<tr>
+<td>NAPTR</td>
+<td>order та pref: Еквівалентні pri та weight наведеним вище. flags, services, regex та replacement: Параметри, визначені в <a href="http://www.faqs.org/rfcs/rfc2915">»RFC 2915</a>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Інші ключі асоціативного масиву, що відповідають типу 'type'</strong></p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.0.16, 7.1.2</td>
+<td>Додано підтримку записів типу CAA.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>dns_get_record()</strong></strong></p>
+<p><code>&#x3C;?php$result = dns_get_record("php.net");print_r($result);?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Array
+(
+[0] => Array
+(
+[host] => php.net
+[type] => MX
+[pri] => 5
+[target] => pair2.php.net
+[class] => IN
+[ttl] => 6765
+)</p>
+<p>[1] => Array
+(
+[host] => php.net
+[type] => A
+[ip] => 64.246.30.37
+[class] => IN
+[ttl] => 8125
+)</p>
+<p>)</p>
+<p><strong>Приклад #2 Використання <strong>dns_get_record()</strong> з DNS_ANY</strong></p>
+<p>Оскільки часто потрібно визначити IP-адресу поштового сервера,
+після того, як запис MX був дозволений, <strong>dns_get_record()</strong> повертає
+масив <code>additional_records</code> із відповідними записами. Масив
+<code>authoritative_name_servers</code> міститиме список свідоцтв
+DNS серверів.</p>
+<p><code>&#x3C;?php/* Отправим "ANY" запрос к php.net,   создадим массивы $authns и $addtl,   в которые будут помещён список серверов   имён и дополнительные записи,   соответствующие этим серверам*/$result = dns_get_record("php.net" , DNS_ANY, $authns, $addtl);echo "Результат = ";print_r($result);echo "Посвідчуючі сервери = ";print_r($authns);echo "Додаткові записи = ></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Результат = Array
+(
+[0] => Array
+(
+[host] => php.net
+[type] => MX
+[pri] => 5
+[target] => pair2.php.net
+[class] => IN
+[ttl] => 6765
+)</p>
+<p>[1] => Array
+(
+[host] => php.net
+[type] => A
+[ip] => 64.246.30.37
+[class] => IN
+[ttl] => 8125
+)</p>
+<p>)
+Сервіси, що засвідчують = Array
+(
+[0] => Array
+(
+[host] => php.net
+[type] => NS
+[target] => remote1.easydns.com
+[class] => IN
+[ttl] => 10722
+)</p>
+<p>[1] => Array
+(
+[host] => php.net
+[type] => NS
+[target] => remote2.easydns.com
+[class] => IN
+[ttl] => 10722
+)</p>
+<p>[2] => Array
+(
+[host] => php.net
+[type] => NS
+[target] => ns1.easydns.com
+[class] => IN
+[ttl] => 10722
+)</p>
+<p>[3] => Array
+(
+[host] => php.net
+[type] => NS
+[target] => ns2.easydns.com
+[class] => IN
+[ttl] => 10722
+)</p>
+<p>)
+Додаткові записи = Array
+(
+[0] => Array
+(
+[host] => pair2.php.net
+[type] => A
+[ip] => 216.92.131.5
+[class] => IN
+[ttl] => 6766
+)</p>
+<p>[1] => Array
+(
+[host] => remote1.easydns.com
+[type] => A
+[ip] => 64.39.29.212
+[class] => IN
+[ttl] => 100384
+)</p>
+<p>[2] => Array
+(
+[host] => remote2.easydns.com
+[type] => A
+[ip] => 212.100.224.80
+[class] => IN
+[ttl] => 81241
+)</p>
+<p>[3] => Array
+(
+[host] => ns1.easydns.com
+[type] => A
+[ip] => 216.220.40.243
+[class] => IN
+[ttl] => 81241
+)</p>
+<p>[4] => Array
+(
+[host] => ns2.easydns.com
+[type] => A
+[ip] => 216.220.40.244
+[class] => IN
+[ttl] => 81241
+)</p>
+<p>)</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.dns-get-mx.md">dns_get_mx()</a> - Псевдонім getmxrr</li>
+<li><a href="function.dns-check-record.md">dns_check_record()</a> - Псевдонім
+checkdnsrr</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.dns-get-record.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.dns-get-record.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.dns-get-record","slug":"function.dns-get-record.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.dns-get-mx.md\"\u003e« dns_get_mx\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.fsockopen.md\"\u003efsockopen »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.network.md\"\u003eМережні функції\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОтримання ресурсних записів DNS хоста\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003edns_get_record\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003edns_get_record — Отримання ресурсних записів DNS хоста\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003edns_get_record\u003c/strong\u003e(\nstring \u003ccode\u003e$hostname\u003c/code\u003e,\nint \u003ccode\u003e$type\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003eDNS_ANY\u003c/code\u003e\u003c/strong\u003e,\narray \u003ccode\u003e\u0026#x26;$authoritative_name_servers\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\narray \u003ccode\u003e\u0026#x26;$additional_records\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\nbool \u003ccode\u003e$raw\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\n): array|false\u003c/p\u003e\n\u003cp\u003eЗдійснює вибірку DNS-записів, що відповідають властивостям хоста\n\u003ccode\u003ehostname\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ehostname\u003c/code\u003e\nПараметр \u003ccode\u003ehostname\u003c/code\u003e має бути коректним DNS-іменем таким, як\n\"\u003ca href=\"http://www.example.com\"\u003ewww.example.com\u003c/a\u003e\". Зворотний дозвіл назв хостів може бути\nзроблено з використанням нотації \u003ccode\u003ein-addr.arpa\u003c/code\u003e, однак, для цієї\nмети краще скористатися функцією\n\u003ca href=\"function.gethostbyaddr.md\"\u003egethostbyaddr()\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eВідповідно до стандартів DNS, адреси електронної пошти задаються в\nформаті \u003ccode\u003euser.host\u003c/code\u003e (наприклад, \u003ccode\u003ehostmaster.example.com\u003c/code\u003e на відміну від\n\u003ccode\u003ehostmaster@example.com\u003c/code\u003e), тому будьте уважні та додатково\nПеревірте це значення, перш ніж використовувати його в таких функціях,\nяк \u003ca href=\"function.mail.md\"\u003email()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003etype\u003c/code\u003e\nЗа замовчуванням \u003cstrong\u003edns_get_record()\u003c/strong\u003e шукатиме всі можливі записи,\nвідповідні заданому імені хоста \u003ccode\u003ehostname\u003c/code\u003e. Щоб звузити коло\nпошуку можна задати необов'язковий параметр \u003ccode\u003etype\u003c/code\u003e. Цей параметр може\nприймати наступні значення: \u003cstrong\u003e\u003ccode\u003eDNS_A\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eDNS_CNAME\u003c/code\u003e\u003c/strong\u003e,\n\u003cstrong\u003e\u003ccode\u003eDNS_HINFO\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eDNS_CAA\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eDNS_MX\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eDNS_NS\u003c/code\u003e\u003c/strong\u003e,\n\u003cstrong\u003e\u003ccode\u003eDNS_PTR\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eDNS_SOA\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eDNS_TXT\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eDNS_AAAA\u003c/code\u003e\u003c/strong\u003e,\n\u003cstrong\u003e\u003ccode\u003eDNS_SRV\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eDNS_NAPTR\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eDNS_A6\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eDNS_ALL\u003c/code\u003e\u003c/strong\u003e або\n\u003cstrong\u003e\u003ccode\u003eDNS_ANY\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЧерез неоднозначну поведінку libresolv на різних платформах,\n\u003cstrong\u003e\u003ccode\u003eDNS_ANY\u003c/code\u003e\u003c/strong\u003e може повернути не всі записи, повільніший\n\u003cstrong\u003e\u003ccode\u003eDNS_ALL\u003c/code\u003e\u003c/strong\u003e поверне всі записи надійніше.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eWindows: \u003cstrong\u003e\u003ccode\u003eDNS_CAA\u003c/code\u003e\u003c/strong\u003e не підтримується. Підтримка \u003cstrong\u003e\u003ccode\u003eDNS_A6\u003c/code\u003e\u003c/strong\u003e не\nреалізована.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eauthoritative_name_servers\u003c/code\u003e\nПередається за посиланням і, якщо передано, заповнюватиметься ресурсними\nзаписами для \u003cem\u003eзасвідчувальних серверів імен\u003c/em\u003e (Authoritative Name\nServers).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eadditional_records\u003c/code\u003e\nПередається за посиланням і, якщо передано, буде заповнюватися \u003cem\u003eдодатковими\nзаписами\u003c/em\u003e (Additional Records).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eraw\u003c/code\u003e\n\u003ccode\u003etype\u003c/code\u003e буде інтерпретований як необроблений ідентифікатор типу DNS\n(не можна використовувати константи \u003ccode\u003eDNS_*\u003c/code\u003e). Значення, що повертається буде\nмістити ключ \u003ccode\u003edata\u003c/code\u003e, який потрібно проаналізувати вручну.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eЦя функція повертає масив асоціативних масивів або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\nу разі виникнення помилки. Кожен асоціативний масив містить *\nщонайменше* наступні ключі:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eАтрибут Опис\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ehost\u003c/td\u003e\n\u003ctd\u003eЗапис у просторі імен DNS, на яку посилається решта даних.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eclass\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003edns_get_record()\u003c/strong\u003e повертає тільки записи класу Internet, відповідно цей параметр завжди прийматиме значення IN.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eтип\u003c/td\u003e\n\u003ctd\u003eРядок, що містить тип запису. Додаткові атрибути також містяться в результуючому масиві в залежності від типу. По одному вкладеному масиву за кожен тип. Дивіться таблицю нижче.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ettl\u003c/td\u003e\n\u003ctd\u003eЧас життя (Time To Live'), що залишився для цього запису. Це \u003cem\u003eне\u003c/em\u003e вихідне ttl запису. Воно дорівнює вихідному за вирахуванням часу, що минув з моменту відправки запиту на сервер.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОсновні атрибути DNS\u003c/strong\u003e\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eТип запису Додаткові дані\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e'A'\u003c/td\u003e\n\u003ctd\u003eip: адреси IPv4 у десятковому форматі з роздільниками.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eMX\u003c/td\u003e\n\u003ctd\u003epri: Пріоритет поштового сервера. Чим нижче число, тим вищий пріоритет. target: FQDN поштового сервера Також дивіться \u003ca href=\"function.dns-get-mx.md\"\u003edns_get_mx()\u003c/a\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCNAME\u003c/td\u003e\n\u003ctd\u003etarget: FQDN розташування в просторі імен DNS, на яке вказує запис.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eNS\u003c/td\u003e\n\u003ctd\u003etarget: FQDN - ім'я сервера, який є авторитетним для цього імені хоста.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePTR\u003c/td\u003e\n\u003ctd\u003etarget: Розташування без вказівки простору імен DNS, на яке вказує запис.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eTXT\u003c/td\u003e\n\u003ctd\u003etxt: Рядок даних, пов'язаних із цим записом.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eHINFO\u003c/td\u003e\n\u003ctd\u003ecpu: число IANA, що позначає модель процесора комп'ютера, який вказує цей запис. os: число IANA, що означає операційну систему комп'ютера, який вказує цей запис. Дивіться додатково IANA \u003ca href=\"http://www.iana.org/assignments/operating-system-names\"\u003e» Operating System Names\u003c/a\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCAA\u003c/td\u003e\n\u003ctd\u003eflags: Однобайтове бітове поле; в даний момент визначено лише біт номер 0, що називається 'critical'; інші біти зарезервовані та повинні ігноруватися. tag: Ім'я тега CAA (літерно-числовий рядок ASCII). value: Значення тега CAA (бінарний рядок, можна використовувати підформати). Докладніше читайте тут: \u003ca href=\"http://www.faqs.org/rfcs/rfc6844\"\u003e» RFC 6844\u003c/a\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e'SOA'\u003c/td\u003e\n\u003ctd\u003emname: FQDN початкового комп'ютера, з якого отримані ресурсні записи. rname: Адреса електронної пошти адміністратора домену. serial: Порядковий номер цієї ревізії домена, що запитується. refresh: Інтервал часу (в секундах), який мають використовувати вторинні сервери під час оновлення видалених копій цього домену. retry: Час очікування (у секундах) після невдалого оновлення до наступної спроби. expire: Максимальний час (у секундах), протягом якого вторинний DNS-сервер повинен тримати в пам'яті дані віддалених копій доменної зони, перш ніж відповісти, коли не вдається оновити дані. minimum-ttl: Мінімальний час (у секундах), протягом якого клієнт може працювати з поточною DNS-роздільною здатністю, перш ніж йому доведеться повторно запитувати цей дозвіл. Значення може бути замінено окремими ресурсними записами.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAAAA\u003c/td\u003e\n\u003ctd\u003eipv6: адреса IPv6\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eA6\u003c/td\u003e\n\u003ctd\u003emasklen: Довжина (у бітах), яку потрібно успадкувати від цільової адреси chain. ipv6: Адреса для цього конкретного запису, який потрібно об'єднати з chain. chain: Запис, який потрібно доповнити даними ipv6.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eSRV\u003c/td\u003e\n\u003ctd\u003epri: (Пріоритет) менші значення мають використовуватися першими. weight: Ранжування. Записам з великою вагою віддається перевага. targets має вибиратися випадково. target та port: ім'я хоста та номер порту, на якому можна знайти запитану службу. Додаткову інформацію можна отримати за посиланням: \u003ca href=\"http://www.faqs.org/rfcs/rfc2782\"\u003e»RFC 2782\u003c/a\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eNAPTR\u003c/td\u003e\n\u003ctd\u003eorder та pref: Еквівалентні pri та weight наведеним вище. flags, services, regex та replacement: Параметри, визначені в \u003ca href=\"http://www.faqs.org/rfcs/rfc2915\"\u003e»RFC 2915\u003c/a\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eІнші ключі асоціативного масиву, що відповідають типу 'type'\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.0.16, 7.1.2\u003c/td\u003e\n\u003ctd\u003eДодано підтримку записів типу CAA.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003edns_get_record()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$result = dns_get_record(\"php.net\");print_r($result);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eArray\n(\n[0] =\u003e Array\n(\n[host] =\u003e php.net\n[type] =\u003e MX\n[pri] =\u003e 5\n[target] =\u003e pair2.php.net\n[class] =\u003e IN\n[ttl] =\u003e 6765\n)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e Array\n(\n[host] =\u003e php.net\n[type] =\u003e A\n[ip] =\u003e 64.246.30.37\n[class] =\u003e IN\n[ttl] =\u003e 8125\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Використання \u003cstrong\u003edns_get_record()\u003c/strong\u003e з DNS_ANY\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОскільки часто потрібно визначити IP-адресу поштового сервера,\nпісля того, як запис MX був дозволений, \u003cstrong\u003edns_get_record()\u003c/strong\u003e повертає\nмасив \u003ccode\u003eadditional_records\u003c/code\u003e із відповідними записами. Масив\n\u003ccode\u003eauthoritative_name_servers\u003c/code\u003e міститиме список свідоцтв\nDNS серверів.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Отправим \"ANY\" запрос к php.net,   создадим массивы $authns и $addtl,   в которые будут помещён список серверов   имён и дополнительные записи,   соответствующие этим серверам*/$result = dns_get_record(\"php.net\" , DNS_ANY, $authns, $addtl);echo \"Результат = \";print_r($result);echo \"Посвідчуючі сервери = \";print_r($authns);echo \"Додаткові записи = \u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eРезультат = Array\n(\n[0] =\u003e Array\n(\n[host] =\u003e php.net\n[type] =\u003e MX\n[pri] =\u003e 5\n[target] =\u003e pair2.php.net\n[class] =\u003e IN\n[ttl] =\u003e 6765\n)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e Array\n(\n[host] =\u003e php.net\n[type] =\u003e A\n[ip] =\u003e 64.246.30.37\n[class] =\u003e IN\n[ttl] =\u003e 8125\n)\u003c/p\u003e\n\u003cp\u003e)\nСервіси, що засвідчують = Array\n(\n[0] =\u003e Array\n(\n[host] =\u003e php.net\n[type] =\u003e NS\n[target] =\u003e remote1.easydns.com\n[class] =\u003e IN\n[ttl] =\u003e 10722\n)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e Array\n(\n[host] =\u003e php.net\n[type] =\u003e NS\n[target] =\u003e remote2.easydns.com\n[class] =\u003e IN\n[ttl] =\u003e 10722\n)\u003c/p\u003e\n\u003cp\u003e[2] =\u003e Array\n(\n[host] =\u003e php.net\n[type] =\u003e NS\n[target] =\u003e ns1.easydns.com\n[class] =\u003e IN\n[ttl] =\u003e 10722\n)\u003c/p\u003e\n\u003cp\u003e[3] =\u003e Array\n(\n[host] =\u003e php.net\n[type] =\u003e NS\n[target] =\u003e ns2.easydns.com\n[class] =\u003e IN\n[ttl] =\u003e 10722\n)\u003c/p\u003e\n\u003cp\u003e)\nДодаткові записи = Array\n(\n[0] =\u003e Array\n(\n[host] =\u003e pair2.php.net\n[type] =\u003e A\n[ip] =\u003e 216.92.131.5\n[class] =\u003e IN\n[ttl] =\u003e 6766\n)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e Array\n(\n[host] =\u003e remote1.easydns.com\n[type] =\u003e A\n[ip] =\u003e 64.39.29.212\n[class] =\u003e IN\n[ttl] =\u003e 100384\n)\u003c/p\u003e\n\u003cp\u003e[2] =\u003e Array\n(\n[host] =\u003e remote2.easydns.com\n[type] =\u003e A\n[ip] =\u003e 212.100.224.80\n[class] =\u003e IN\n[ttl] =\u003e 81241\n)\u003c/p\u003e\n\u003cp\u003e[3] =\u003e Array\n(\n[host] =\u003e ns1.easydns.com\n[type] =\u003e A\n[ip] =\u003e 216.220.40.243\n[class] =\u003e IN\n[ttl] =\u003e 81241\n)\u003c/p\u003e\n\u003cp\u003e[4] =\u003e Array\n(\n[host] =\u003e ns2.easydns.com\n[type] =\u003e A\n[ip] =\u003e 216.220.40.244\n[class] =\u003e IN\n[ttl] =\u003e 81241\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.dns-get-mx.md\"\u003edns_get_mx()\u003c/a\u003e - Псевдонім getmxrr\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.dns-check-record.md\"\u003edns_check_record()\u003c/a\u003e - Псевдонім\ncheckdnsrr\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.dns-get-record.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

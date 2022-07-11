@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.openssl-csr-sign | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.openssl-csr-new.md">« openssl_csr_new</a></p>
+</li>
+<li>
+<p><a href="function.openssl-decrypt.md">openssl_decrypt »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.openssl.md">Функції OpenSSL</a></p>
+</li>
+<li>
+<p>Підписати CSR за допомогою іншого сертифіката (або їм же) та створити
+сертифікат</p>
+</li>
+</ul>
+<h1>openssl_csr_sign</h1>
+<p>(PHP 4 >= 4.2.0, PHP 5, PHP 7, PHP 8)</p>
+<p>openssl_csr_sign — Підписати CSR за допомогою іншого сертифіката (або їм)
+ж) та створити сертифікат</p>
+<h3>Опис</h3>
+<p><strong>openssl_csr_sign</strong>(
+<a href="class.opensslcertificatesigningrequest.md">OpenSSLCertificateSigningRequest</a>|string
+<code>$csr</code>,
+<a href="class.opensslcertificate.md">OpenSSLCertificate</a>|string|null
+<code>$ca_certificate</code>,
+<a href="class.opensslasymmetrickey.md">OpenSSLAsymmetricKey</a>|<a href="class.opensslcertificate.md">OpenSSLCertificate</a>|array|string
+<code>$private_key</code>,
+int <code>$days</code>,
+?array <code>$options</code> = <strong><code>null</code></strong>,
+int <code>$serial</code> = 0
+): <a href="class.opensslcertificate.md">OpenSSLCertificate</a>|false</p>
+<p><strong>openssl_csr_sign()</strong> створює сертифікат x509 із заданого CSR.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Для коректної роботи цієї функції має існувати
+правильний <code>openssl.cnf</code>. Для більш детальної інформації дивіться
+зауваження під розділом установки (openssl.installation.md).</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>csr</code>
+Створений за допомогою <a href="function.openssl-csr-new.md">openssl_csr_new()</a>
+CSR. Також може бути шляхом кодованого в PEM CSR, якщо задано як
+<code>file://path/to/csr</code> або експортованим рядком, створеним за допомогою
+<a href="function.openssl-csr-export.md">openssl_csr_export()</a>.</p>
+<p><code>ca_certificate</code>
+Сертифікат, що створюється, буде підписаний <code>ca_certificate</code>. Якщо
+<code>ca_certificate</code> заданий як <strong><code>null</code></strong>, то буде згенеровано
+самопідписаний сертифікат.</p>
+<p><code>private_key</code>
+<code>private_key</code> - секретний ключ, що відповідає <code>ca_certificate</code>.</p>
+<p><code>days</code>
+<code>days</code> - час життя сертифіката, що створюється, в днях.</p>
+<p><code>options</code>
+Можна тонко настроїти підпис CSR за допомогою options. Деталі
+дивіться в описі функції
+<a href="function.openssl-csr-new.md">openssl_csr_new()</a>, у розділі
+присвяченому параметру <code>options</code>.</p>
+<p><code>serial</code>
+Опціональний серійний номер сертифіката. Якщо не вказано,
+то за умовчанням буде використано 0.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <a href="class.opensslcertificate.md">OpenSSLCertificate</a> у випадку
+успішного виконання або <strong><code>false</code></strong> у разі виникнення помилки.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>On success, this function returns an <a href="class.opensslcertificate.md">OpenSSLCertificate</a> instance now; previously, a <a href="language.types.resource.md">resource</a> of type OpenSSL X.509 був відновлений.</td>
+</tr>
+<tr>
+<td>8.0.0</td>
+<td>csr тепер приймає екземпляр <a href="class.opensslcertificatesigningrequest.md">OpenSSLCertificateSigningRequest</a>; раніше приймався ресурс (<a href="language.types.resource.md">resource</a>) типу OpenSSL X.509 CSR.</td>
+</tr>
+<tr>
+<td>8.0.0</td>
+<td>ca_certificate тепер приймає екземпляр <a href="class.opensslcertificate.md">OpenSSLCertificate</a>; раніше приймався ресурс (<a href="language.types.resource.md">resource</a>) типу OpenSSL X.509 CSR.</td>
+</tr>
+<tr>
+<td>8.0.0</td>
+<td>private_key тепер приймає екземпляр <a href="class.opensslasymmetrickey.md">OpenSSLAsymmetricKey</a>; раніше приймався ресурс (<a href="language.types.resource.md">resource</a>) типу OpenSSL X.509 CSR.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад <strong>openssl_csr_sign()</strong> - підпис CSR (як зробити
+свій власний CA)</strong></p>
+<p><code>&#x3C;?php//Припустимо, що CSR отриманий з поля textarea з веб-сторінки$csrdata = $_POST["CSR"];// Ми підпишемо запрос з допомогою сертифіка сертифікат, но цей процес безкорисний, якщо// сертифікат не є є довіреним для ПО або користувачів, будуть його// використовувати// Нам потрібний власний  crt";$privkey = array("file://path/to/ca.key", "your_ca_key_passphrase");$usercert = openssl_csr_sign($csrdata, $cacert, $privkey, 365, array('digest 'sha256') );// Теперь напечатаем сертификат, чтобы пользователь мог его скопировать// и внести в свою локальную конфигурацию (например в файл хранилища SSL сертификатов)openssl_x509_export($usercert, $certout);echo $certout;// Покажем возникшие помилки, якщо вони булиwhile (($e = openssl_error_string()) !== false) {    echo $e . " ";}?> </code></p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.openssl-csr-sign.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.openssl-csr-sign.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.openssl-csr-sign","slug":"function.openssl-csr-sign.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.openssl-csr-new.md\"\u003e« openssl_csr_new\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.openssl-decrypt.md\"\u003eopenssl_decrypt »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.openssl.md\"\u003eФункції OpenSSL\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПідписати CSR за допомогою іншого сертифіката (або їм же) та створити\nсертифікат\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eopenssl_csr_sign\u003c/h1\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.2.0, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eopenssl_csr_sign — Підписати CSR за допомогою іншого сертифіката (або їм)\nж) та створити сертифікат\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eopenssl_csr_sign\u003c/strong\u003e(\n\u003ca href=\"class.opensslcertificatesigningrequest.md\"\u003eOpenSSLCertificateSigningRequest\u003c/a\u003e|string\n\u003ccode\u003e$csr\u003c/code\u003e,\n\u003ca href=\"class.opensslcertificate.md\"\u003eOpenSSLCertificate\u003c/a\u003e|string|null\n\u003ccode\u003e$ca_certificate\u003c/code\u003e,\n\u003ca href=\"class.opensslasymmetrickey.md\"\u003eOpenSSLAsymmetricKey\u003c/a\u003e|\u003ca href=\"class.opensslcertificate.md\"\u003eOpenSSLCertificate\u003c/a\u003e|array|string\n\u003ccode\u003e$private_key\u003c/code\u003e,\nint \u003ccode\u003e$days\u003c/code\u003e,\n?array \u003ccode\u003e$options\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\nint \u003ccode\u003e$serial\u003c/code\u003e = 0\n): \u003ca href=\"class.opensslcertificate.md\"\u003eOpenSSLCertificate\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eopenssl_csr_sign()\u003c/strong\u003e створює сертифікат x509 із заданого CSR.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Для коректної роботи цієї функції має існувати\nправильний \u003ccode\u003eopenssl.cnf\u003c/code\u003e. Для більш детальної інформації дивіться\nзауваження під розділом установки (openssl.installation.md).\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ecsr\u003c/code\u003e\nСтворений за допомогою \u003ca href=\"function.openssl-csr-new.md\"\u003eopenssl_csr_new()\u003c/a\u003e\nCSR. Також може бути шляхом кодованого в PEM CSR, якщо задано як\n\u003ccode\u003efile://path/to/csr\u003c/code\u003e або експортованим рядком, створеним за допомогою\n\u003ca href=\"function.openssl-csr-export.md\"\u003eopenssl_csr_export()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eca_certificate\u003c/code\u003e\nСертифікат, що створюється, буде підписаний \u003ccode\u003eca_certificate\u003c/code\u003e. Якщо\n\u003ccode\u003eca_certificate\u003c/code\u003e заданий як \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, то буде згенеровано\nсамопідписаний сертифікат.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eprivate_key\u003c/code\u003e\n\u003ccode\u003eprivate_key\u003c/code\u003e - секретний ключ, що відповідає \u003ccode\u003eca_certificate\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edays\u003c/code\u003e\n\u003ccode\u003edays\u003c/code\u003e - час життя сертифіката, що створюється, в днях.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoptions\u003c/code\u003e\nМожна тонко настроїти підпис CSR за допомогою options. Деталі\nдивіться в описі функції\n\u003ca href=\"function.openssl-csr-new.md\"\u003eopenssl_csr_new()\u003c/a\u003e, у розділі\nприсвяченому параметру \u003ccode\u003eoptions\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eserial\u003c/code\u003e\nОпціональний серійний номер сертифіката. Якщо не вказано,\nто за умовчанням буде використано 0.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003ca href=\"class.opensslcertificate.md\"\u003eOpenSSLCertificate\u003c/a\u003e у випадку\nуспішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eOn success, this function returns an \u003ca href=\"class.opensslcertificate.md\"\u003eOpenSSLCertificate\u003c/a\u003e instance now; previously, a \u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e of type OpenSSL X.509 був відновлений.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003ecsr тепер приймає екземпляр \u003ca href=\"class.opensslcertificatesigningrequest.md\"\u003eOpenSSLCertificateSigningRequest\u003c/a\u003e; раніше приймався ресурс (\u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e) типу OpenSSL X.509 CSR.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eca_certificate тепер приймає екземпляр \u003ca href=\"class.opensslcertificate.md\"\u003eOpenSSLCertificate\u003c/a\u003e; раніше приймався ресурс (\u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e) типу OpenSSL X.509 CSR.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eprivate_key тепер приймає екземпляр \u003ca href=\"class.opensslasymmetrickey.md\"\u003eOpenSSLAsymmetricKey\u003c/a\u003e; раніше приймався ресурс (\u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e) типу OpenSSL X.509 CSR.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад \u003cstrong\u003eopenssl_csr_sign()\u003c/strong\u003e - підпис CSR (як зробити\nсвій власний CA)\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php//Припустимо, що CSR отриманий з поля textarea з веб-сторінки$csrdata = $_POST[\"CSR\"];// Ми підпишемо запрос з допомогою сертифіка сертифікат, но цей процес безкорисний, якщо// сертифікат не є є довіреним для ПО або користувачів, будуть його// використовувати// Нам потрібний власний  crt\";$privkey = array(\"file://path/to/ca.key\", \"your_ca_key_passphrase\");$usercert = openssl_csr_sign($csrdata, $cacert, $privkey, 365, array('digest 'sha256') );// Теперь напечатаем сертификат, чтобы пользователь мог его скопировать// и внести в свою локальную конфигурацию (например в файл хранилища SSL сертификатов)openssl_x509_export($usercert, $certout);echo $certout;// Покажем возникшие помилки, якщо вони булиwhile (($e = openssl_error_string()) !== false) {    echo $e . \" \";}?\u003e \u003c/code\u003e\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.openssl-csr-sign.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

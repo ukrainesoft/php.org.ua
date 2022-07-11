@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>regexp.reference.character-classes | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="regexp.reference.dot.md">« Метасимвол крапка</a></p>
+</li>
+<li>
+<p><a href="regexp.reference.alternation.md">Альтернативний вибір»</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="reference.pcre.pattern.syntax.md">Опис синтаксису Perl-сумісних регулярних виразів</a></p>
+</li>
+<li>
+<p>Символьні класи</p>
+</li>
+</ul>
+<h2>Символьні класи</h2>
+<p>Відкриваюча квадратна дужка оголошує початок символьного класу,
+завершується закриває квадратною дужкою. Символ '] не має
+спеціального значення, і у випадку, якщо квадратна дужка, що закриває
+необхідна як член символьного класу, вона має бути першим символом
+безпосередньо після відкриття квадратної дужки (якщо використовується
+метасимвол '^', то безпосередньо після нього), або екрануватися при
+допомоги зворотного сліша.</p>
+<p>Символьний клас відповідає одиночному символу рядка, що обробляється,
+причому сам символ повинен утримуватися в наборі, що визначається класом. В
+у випадку, якщо першим символом опису класу є '^', логіка роботи
+інвертується: клас відповідає одиночному символу, який не
+міститься в наборі, що визначається класом. Якщо символ '^' необхідний як
+член класу, його не слід поміщати першим символом в описі класу
+або необхідно екранувати за допомогою зворотного сліша.</p>
+<p>Наприклад, символьний клас [aeiou] відповідає будь-який голосної літери
+у нижньому регістрі, тоді як [^aeiou] відповідає будь-якому
+символу, який не є голосною літерою нижнього регістру. Слід
+розуміти, що символ '^' лише зручний інструмент для опису
+символів, не використовуваних у зіставленні, це твердження, оскільки
+він все ж таки займає символ в оброблюваному рядку, і не збігається, якщо
+Поточна позиція порівняння знаходиться в кінці рядка.</p>
+<p>У випадку, якщо реєструється незалежне зіставлення, будь-яка
+літера символьного класу відповідає як своєму верхньому, так і
+нижнього регістру. Таким чином, символьний клас [aeiou] відповідає
+як 'A', і 'a'. Аналогічно, клас [^aeiou] не відповідає
+'A', ні 'a', тоді як у реєстрозалежному режимі збіг би
+відбулося.</p>
+<p>Усередині символьного класу символ перекладу рядка "
+" не має
+спеціального значення, незалежно від наявності модифікаторів <a href="reference.pcre.pattern.modifiers.md">PCRE_DOTALL</a> та
+<a href="reference.pcre.pattern.modifiers.md">PCRE_MULTILINE</a>. Символьні
+класи, побудовані на запереченні, наприклад [^a], завжди відповідають
+символ перекладу рядка.</p>
+<p>Символ мінус '-' (дефіс) усередині класу використовується для завдання
+символьний діапазон. Наприклад, [d-m] відповідає будь-якому символу,
+що знаходиться між 'd' і 'm', включаючи самі символи 'd' та 'm'. В разі,
+якщо '-' необхідний, як член класу, він повинен перебувати в такій
+позиції, в якій він не може інтерпретуватися як діапазон (як
+правило, це перший і останній символ опису класу), або
+екрануватися за допомогою зворотного сліша.</p>
+<p>Неприпустимо використовувати закриваючу квадратну дужку "" як
+межі символьного діапазону. Наприклад шаблон '[W-]46]' буде
+інтерпретований як символьний клас, що складається з двох символів ("W" та
+"-"), за якими слідує рядок "46]", таким чином шаблон буде
+відповідати рядкам "W46]" або "-46]". Щоб все ж таки використовувати
+символ ']' в описі діапазону, його необхідно екранувати за допомогою
+зворотного слєша, наприклад шаблон [W-]46] буде інтерпретований як
+символьний клас, що складається із символьного діапазону разом із двома
+наступними символами '4' та '6'. Такого ж результату можна досягти
+використовуючи шістнадцяткове або вісімкове уявлення символу ']'.</p>
+<p>Для побудови символьних діапазонів використовується ASCII уявлення
+символів. Таким чином, прикордонні символи можна задавати
+безпосередньо у числовому поданні, наприклад, [-]. В
+у випадку, якщо виконується реєстронезалежний пошук, символи, описані в
+діапазоні, також будуть відповідати символам обох регістрів. До
+Наприклад, діапазони [W-c] і [][^_`wxyzabc] еквівалентні (в
+у разі реєстронезалежного пошуку). Наприклад, якщо встановлено локаль
+"fr" (Франція) можна використовувати [\xc8-\xcb] для завдання відповідності
+ударному 'E' в обох регістрах.</p>
+<p>Загальні типи символів \d, \D, \s, \S, \w, і W також можуть використовуватися
+у символьних класах, додаючи при цьому до класу ті символи, яким
+відповідають. Наприклад, клас [dABCDEF] відповідає будь-який
+шістнадцятковій цифрі. Символ '^' може використовуватися спільно з
+загальним типом, взятим у верхньому регістрі, для вказівки більш вузького набору
+символів. Наприклад, клас [^\W_] відповідає будь-якій літері або цифрі,
+але не символу підкреслення.</p>
+<p>Усі не буквенно-цифрові символи, крім , -, ^ (спочатку) і
+завершального ']', не є спеціальними символами, але використання
+екрануючого слюша перед ними не нашкодить. Символ кінця шаблону завжди
+є особливим випадком і завжди повинен бути проекранований усередині
+вирази.</p>
+<p>Perl підтримує нотацію POSIX для класів символів. Це включає
+використання імен, укладених у <code>[:</code> та <code>:]</code>, у свою чергу
+укладених у квадратні дужки. PCRE також підтримує цей запис.
+Наприклад, <code>[01[:alpha:]%]</code> збігається з "0", "1", будь-яким алфавітним
+символом або "%". Підтримуються такі імена класів:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alnum</td>
+<td>літери та цифри</td>
+</tr>
+<tr>
+<td>'alpha'</td>
+<td>літери</td>
+</tr>
+<tr>
+<td>ascii</td>
+<td>символи з кодами 0 - 127</td>
+</tr>
+<tr>
+<td>blank</td>
+<td>тільки пропуск або символ табуляції</td>
+</tr>
+<tr>
+<td>cntrl</td>
+<td>керуючі символи</td>
+</tr>
+<tr>
+<td>digit</td>
+<td>десяткові цифри (те саме, що і d)</td>
+</tr>
+<tr>
+<td>graph</td>
+<td>друковані символи, крім пропуску</td>
+</tr>
+<tr>
+<td>Lower</td>
+<td>малі літери</td>
+</tr>
+<tr>
+<td>print</td>
+<td>друковані символи, включаючи пробіл</td>
+</tr>
+<tr>
+<td>Punct</td>
+<td>друковані символи, крім літер та цифр</td>
+</tr>
+<tr>
+<td>space</td>
+<td>пробельные символи(майже те, що й \s)</td>
+</tr>
+<tr>
+<td>upper</td>
+<td>великі літери</td>
+</tr>
+<tr>
+<td>word</td>
+<td>символи "слова" (те саме, що і \w)</td>
+</tr>
+<tr>
+<td>xdigit</td>
+<td>шістнадцяткові цифри</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Символьні класи</strong></p>
+<p>Клас пробельних символів (space) - це горизонтальна табуляція (HT,
+9), переведення рядка (LF, 10), вертикальна табуляція (VT, 11), розрив
+сторінки (FF, 12), повернення каретки (CR, 13) та пробіл (32). Врахуйте, що
+цей список включає вертикальну табуляцію (VT, код 11). Це відрізняє
+"space" від <code>\s</code>, який не включає цей символ (для сумісності з
+Perl).</p>
+<p>Назва <code>word</code> - це модуль Perl, а <code>blank</code> - модуль GNU, починаючи з
+Версія Perl 5.8. Інший модуль Perl – це заперечення, яке вказується
+символом <code>^</code> після двокрапки. Наприклад, <code>[12[:^digit:]]</code> збігається з "1",
+"2", або з будь-якою нецифрою.</p>
+<p>У режимі UTF-8, символи зі значеннями, що перевищують 128, не збігатимуться
+з одним із символьних класів POSIX. Починаючи з libpcre 8.10 деякі
+символьні класи змінені, щоб використовувати властивості символів
+Unicode, у разі згадане обмеження не застосовується. Читайте
+<a href="http://www.pcre.org/pcre.txt">» Керівництво PCRE(3)</a> для подробиць.</p>
+<p>Властивості символів Unicode можуть виникнути всередині класу.
+Вони можуть бути частиною діапазону. Символ мінус (дефіс), після
+символьний клас Unicode буде збігатися буквально. Спроба закінчити
+діапазон за допомогою властивості символу Unicode викликає попередження.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/regexp.reference.character-classes.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/regexp.reference.character-classes.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"regexp.reference.character-classes","slug":"regexp.reference.character-classes.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.dot.md\"\u003e« Метасимвол крапка\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.alternation.md\"\u003eАльтернативний вибір»\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reference.pcre.pattern.syntax.md\"\u003eОпис синтаксису Perl-сумісних регулярних виразів\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eСимвольні класи\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eСимвольні класи\u003c/h2\u003e\n\u003cp\u003eВідкриваюча квадратна дужка оголошує початок символьного класу,\nзавершується закриває квадратною дужкою. Символ '] не має\nспеціального значення, і у випадку, якщо квадратна дужка, що закриває\nнеобхідна як член символьного класу, вона має бути першим символом\nбезпосередньо після відкриття квадратної дужки (якщо використовується\nметасимвол '^', то безпосередньо після нього), або екрануватися при\nдопомоги зворотного сліша.\u003c/p\u003e\n\u003cp\u003eСимвольний клас відповідає одиночному символу рядка, що обробляється,\nпричому сам символ повинен утримуватися в наборі, що визначається класом. В\nу випадку, якщо першим символом опису класу є '^', логіка роботи\nінвертується: клас відповідає одиночному символу, який не\nміститься в наборі, що визначається класом. Якщо символ '^' необхідний як\nчлен класу, його не слід поміщати першим символом в описі класу\nабо необхідно екранувати за допомогою зворотного сліша.\u003c/p\u003e\n\u003cp\u003eНаприклад, символьний клас [aeiou] відповідає будь-який голосної літери\nу нижньому регістрі, тоді як [^aeiou] відповідає будь-якому\nсимволу, який не є голосною літерою нижнього регістру. Слід\nрозуміти, що символ '^' лише зручний інструмент для опису\nсимволів, не використовуваних у зіставленні, це твердження, оскільки\nвін все ж таки займає символ в оброблюваному рядку, і не збігається, якщо\nПоточна позиція порівняння знаходиться в кінці рядка.\u003c/p\u003e\n\u003cp\u003eУ випадку, якщо реєструється незалежне зіставлення, будь-яка\nлітера символьного класу відповідає як своєму верхньому, так і\nнижнього регістру. Таким чином, символьний клас [aeiou] відповідає\nяк 'A', і 'a'. Аналогічно, клас [^aeiou] не відповідає\n'A', ні 'a', тоді як у реєстрозалежному режимі збіг би\nвідбулося.\u003c/p\u003e\n\u003cp\u003eУсередині символьного класу символ перекладу рядка \"\n\" не має\nспеціального значення, незалежно від наявності модифікаторів \u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003ePCRE_DOTALL\u003c/a\u003e та\n\u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003ePCRE_MULTILINE\u003c/a\u003e. Символьні\nкласи, побудовані на запереченні, наприклад [^a], завжди відповідають\nсимвол перекладу рядка.\u003c/p\u003e\n\u003cp\u003eСимвол мінус '-' (дефіс) усередині класу використовується для завдання\nсимвольний діапазон. Наприклад, [d-m] відповідає будь-якому символу,\nщо знаходиться між 'd' і 'm', включаючи самі символи 'd' та 'm'. В разі,\nякщо '-' необхідний, як член класу, він повинен перебувати в такій\nпозиції, в якій він не може інтерпретуватися як діапазон (як\nправило, це перший і останній символ опису класу), або\nекрануватися за допомогою зворотного сліша.\u003c/p\u003e\n\u003cp\u003eНеприпустимо використовувати закриваючу квадратну дужку \"\" як\nмежі символьного діапазону. Наприклад шаблон '[W-]46]' буде\nінтерпретований як символьний клас, що складається з двох символів (\"W\" та\n\"-\"), за якими слідує рядок \"46]\", таким чином шаблон буде\nвідповідати рядкам \"W46]\" або \"-46]\". Щоб все ж таки використовувати\nсимвол ']' в описі діапазону, його необхідно екранувати за допомогою\nзворотного слєша, наприклад шаблон [W-]46] буде інтерпретований як\nсимвольний клас, що складається із символьного діапазону разом із двома\nнаступними символами '4' та '6'. Такого ж результату можна досягти\nвикористовуючи шістнадцяткове або вісімкове уявлення символу ']'.\u003c/p\u003e\n\u003cp\u003eДля побудови символьних діапазонів використовується ASCII уявлення\nсимволів. Таким чином, прикордонні символи можна задавати\nбезпосередньо у числовому поданні, наприклад, [-]. В\nу випадку, якщо виконується реєстронезалежний пошук, символи, описані в\nдіапазоні, також будуть відповідати символам обох регістрів. До\nНаприклад, діапазони [W-c] і [][^_`wxyzabc] еквівалентні (в\nу разі реєстронезалежного пошуку). Наприклад, якщо встановлено локаль\n\"fr\" (Франція) можна використовувати [\\xc8-\\xcb] для завдання відповідності\nударному 'E' в обох регістрах.\u003c/p\u003e\n\u003cp\u003eЗагальні типи символів \\d, \\D, \\s, \\S, \\w, і W також можуть використовуватися\nу символьних класах, додаючи при цьому до класу ті символи, яким\nвідповідають. Наприклад, клас [dABCDEF] відповідає будь-який\nшістнадцятковій цифрі. Символ '^' може використовуватися спільно з\nзагальним типом, взятим у верхньому регістрі, для вказівки більш вузького набору\nсимволів. Наприклад, клас [^\\W_] відповідає будь-якій літері або цифрі,\nале не символу підкреслення.\u003c/p\u003e\n\u003cp\u003eУсі не буквенно-цифрові символи, крім , -, ^ (спочатку) і\nзавершального ']', не є спеціальними символами, але використання\nекрануючого слюша перед ними не нашкодить. Символ кінця шаблону завжди\nє особливим випадком і завжди повинен бути проекранований усередині\nвирази.\u003c/p\u003e\n\u003cp\u003ePerl підтримує нотацію POSIX для класів символів. Це включає\nвикористання імен, укладених у \u003ccode\u003e[:\u003c/code\u003e та \u003ccode\u003e:]\u003c/code\u003e, у свою чергу\nукладених у квадратні дужки. PCRE також підтримує цей запис.\nНаприклад, \u003ccode\u003e[01[:alpha:]%]\u003c/code\u003e збігається з \"0\", \"1\", будь-яким алфавітним\nсимволом або \"%\". Підтримуються такі імена класів:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ealnum\u003c/td\u003e\n\u003ctd\u003eлітери та цифри\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e'alpha'\u003c/td\u003e\n\u003ctd\u003eлітери\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eascii\u003c/td\u003e\n\u003ctd\u003eсимволи з кодами 0 - 127\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eblank\u003c/td\u003e\n\u003ctd\u003eтільки пропуск або символ табуляції\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecntrl\u003c/td\u003e\n\u003ctd\u003eкеруючі символи\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edigit\u003c/td\u003e\n\u003ctd\u003eдесяткові цифри (те саме, що і d)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003egraph\u003c/td\u003e\n\u003ctd\u003eдруковані символи, крім пропуску\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLower\u003c/td\u003e\n\u003ctd\u003eмалі літери\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eprint\u003c/td\u003e\n\u003ctd\u003eдруковані символи, включаючи пробіл\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePunct\u003c/td\u003e\n\u003ctd\u003eдруковані символи, крім літер та цифр\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003espace\u003c/td\u003e\n\u003ctd\u003eпробельные символи(майже те, що й \\s)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eupper\u003c/td\u003e\n\u003ctd\u003eвеликі літери\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eword\u003c/td\u003e\n\u003ctd\u003eсимволи \"слова\" (те саме, що і \\w)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003exdigit\u003c/td\u003e\n\u003ctd\u003eшістнадцяткові цифри\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eСимвольні класи\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eКлас пробельних символів (space) - це горизонтальна табуляція (HT,\n9), переведення рядка (LF, 10), вертикальна табуляція (VT, 11), розрив\nсторінки (FF, 12), повернення каретки (CR, 13) та пробіл (32). Врахуйте, що\nцей список включає вертикальну табуляцію (VT, код 11). Це відрізняє\n\"space\" від \u003ccode\u003e\\s\u003c/code\u003e, який не включає цей символ (для сумісності з\nPerl).\u003c/p\u003e\n\u003cp\u003eНазва \u003ccode\u003eword\u003c/code\u003e - це модуль Perl, а \u003ccode\u003eblank\u003c/code\u003e - модуль GNU, починаючи з\nВерсія Perl 5.8. Інший модуль Perl – це заперечення, яке вказується\nсимволом \u003ccode\u003e^\u003c/code\u003e після двокрапки. Наприклад, \u003ccode\u003e[12[:^digit:]]\u003c/code\u003e збігається з \"1\",\n\"2\", або з будь-якою нецифрою.\u003c/p\u003e\n\u003cp\u003eУ режимі UTF-8, символи зі значеннями, що перевищують 128, не збігатимуться\nз одним із символьних класів POSIX. Починаючи з libpcre 8.10 деякі\nсимвольні класи змінені, щоб використовувати властивості символів\nUnicode, у разі згадане обмеження не застосовується. Читайте\n\u003ca href=\"http://www.pcre.org/pcre.txt\"\u003e» Керівництво PCRE(3)\u003c/a\u003e для подробиць.\u003c/p\u003e\n\u003cp\u003eВластивості символів Unicode можуть виникнути всередині класу.\nВони можуть бути частиною діапазону. Символ мінус (дефіс), після\nсимвольний клас Unicode буде збігатися буквально. Спроба закінчити\nдіапазон за допомогою властивості символу Unicode викликає попередження.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"regexp.reference.character-classes.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

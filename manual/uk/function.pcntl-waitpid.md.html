@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.pcntl-waitpid | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.pcntl-wait.md">« pcntl_wait</a></p>
+</li>
+<li>
+<p><a href="function.pcntl-wexitstatus.md">pcntl_wexitstatus »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.pcntl.md">Функції PCNTL</a></p>
+</li>
+<li>
+<p>Очікує чи повертає статус породженого дочірнього процесу</p>
+</li>
+</ul>
+<p>#pcntl_waitpid</p>
+<p>(PHP 4 >= 4.1.0, PHP 5, PHP 7, PHP 8)</p>
+<p>pcntl_waitpid — Очікує або повертає статус породженого дочірнього
+процесу</p>
+<h3>Опис</h3>
+<p><strong>pcntl_waitpid</strong>(
+int <code>$process_id</code>,
+int <code>&#x26;$status</code>,
+int <code>$flags</code> = 0,
+array <code>&#x26;$resource_usage</code> = []
+): int</p>
+<p>Функція очікування призупиняє виконання поточного процесу
+поки дочірній процес, вказаний в аргументі <code>process_id</code>, не
+завершиться або поки не буде отримано сигнал, який завершує поточний
+процес чи викликає функцію обробки сигналу.</p>
+<p>Якщо дочірній процес, зазначений у аргументі <code>process_id</code>, вже
+завершився на час виклику (так звані "зомбі" процеси), функція
+негайно поверне управління. Будь-які системні ресурси, що використовуються
+дочірнім процесом буде звільнено. Зверніться до вашого системного
+керівництву waitpid(2) для уточнення специфіки роботи waitpid у вашій
+системі.</p>
+<h3>Список параметрів</h3>
+<p><code>process_id</code>
+Аргумент <code>process_id</code> може приймати одне з наступних значень:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x3C;-1</td>
+<td>очікувати на будь-який дочірній процес, у якого значення ідентифікатор групи процесів (group ID) дорівнює модулю значення аргументу |process_id|.</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>чекати на будь-який дочірній процес; це така ж поведінка, що й у функції wait.</td>
+</tr>
+<tr>
+<td>0</td>
+<td>очікувати будь-який дочірній процес, ідентифікатор групи процесів (group ID) якого дорівнює ідентифікатору поточного процесу.</td>
+</tr>
+<tr>
+<td>>0</td>
+<td>чекати дочірній процес ID якого дорівнює process_id.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>можливі значення аргументу <code>process_id</code></strong></p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Вказівка <code>-1</code> як <code>process_id</code> - це аналог функції
+<a href="function.pcntl-wait.md">pcntl_wait()</a> (мінус <code>flags</code>).</p>
+</blockquote>
+<p><code>status</code>
+<strong>pcntl_waitpid()</strong> розмістить інформацію про статус за посиланням у аргументі
+<code>status</code>, який може бути переданий у такі функції:
+<a href="function.pcntl-wifexited.md">pcntl_wifexited()</a>,
+<a href="function.pcntl-wifstopped.md">pcntl_wifstopped()</a>,
+<a href="function.pcntl-wifsignaled.md">pcntl_wifsignaled()</a>,
+<a href="function.pcntl-wexitstatus.md">pcntl_wexitstatus()</a>,
+<a href="function.pcntl-wtermsig.md">pcntl_wtermsig()</a> та
+<a href="function.pcntl-wstopsig.md">pcntl_wstopsig()</a>.</p>
+<p><code>flags</code>
+Значення аргументу <code>flags</code> – це бітова маска, яка може приймати
+значення нуль або більше шляхом логічного об'єднання наступних
+констант:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WNOHANG</td>
+<td>Негайно повернути управління, якщо жоден із дочірніх процесів не завершено</td>
+</tr>
+<tr>
+<td>WUNTRACED</td>
+<td>Повернути управління для зупинених дочірніх процесів, статус яких ще не повідомлено</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Можливі значення для <code>flags</code></strong></p>
+<h3>Значення, що повертаються</h3>
+<p><a href="function.pcntl-wait.md">pcntl_wait()</a> повертає ID завершеного
+дочірнього процесу, -1 у разі виникнення помилки або нуль, якщо
+<strong><code>WNOHANG</code></strong> було передано в аргумент <code>flags</code> і не було доступних
+дочірніх процесів.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.pcntl-fork.md">pcntl_fork()</a> - Розгалужити (fork) поточний
+запущений процес</li>
+<li><a href="function.pcntl-signal.md">pcntl_signal()</a> - Встановлення обробника
+сигналу</li>
+<li><a href="function.pcntl-wifexited.md">pcntl_wifexited()</a> - Перевіряє,
+чи відповідає код завершення процесу нормальному завершенню</li>
+<li><a href="function.pcntl-wifstopped.md">pcntl_wifstopped()</a> - Перевірити,
+чи зупинено дочірній процес</li>
+<li><a href="function.pcntl-wifsignaled.md">pcntl_wifsignaled()</a> - Перевірити,
+чи відповідає код завершення процесу завершення сигналу</li>
+<li><a href="function.pcntl-wexitstatus.md">pcntl_wexitstatus()</a> - Отримати
+код повернення завершеного дочірнього процесу</li>
+<li><a href="function.pcntl-wtermsig.md">pcntl_wtermsig()</a> - Отримати сигнал,
+через який було примусово завершено дочірній процес</li>
+<li><a href="function.pcntl-wstopsig.md">pcntl_wstopsig()</a> - Отримати сигнал,
+через який було зупинено дочірній процес</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.pcntl-waitpid.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.pcntl-waitpid.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.pcntl-waitpid","slug":"function.pcntl-waitpid.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.pcntl-wait.md\"\u003e« pcntl_wait\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.pcntl-wexitstatus.md\"\u003epcntl_wexitstatus »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.pcntl.md\"\u003eФункції PCNTL\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОчікує чи повертає статус породженого дочірнього процесу\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#pcntl_waitpid\u003c/p\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.1.0, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003epcntl_waitpid — Очікує або повертає статус породженого дочірнього\nпроцесу\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003epcntl_waitpid\u003c/strong\u003e(\nint \u003ccode\u003e$process_id\u003c/code\u003e,\nint \u003ccode\u003e\u0026#x26;$status\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0,\narray \u003ccode\u003e\u0026#x26;$resource_usage\u003c/code\u003e = []\n): int\u003c/p\u003e\n\u003cp\u003eФункція очікування призупиняє виконання поточного процесу\nпоки дочірній процес, вказаний в аргументі \u003ccode\u003eprocess_id\u003c/code\u003e, не\nзавершиться або поки не буде отримано сигнал, який завершує поточний\nпроцес чи викликає функцію обробки сигналу.\u003c/p\u003e\n\u003cp\u003eЯкщо дочірній процес, зазначений у аргументі \u003ccode\u003eprocess_id\u003c/code\u003e, вже\nзавершився на час виклику (так звані \"зомбі\" процеси), функція\nнегайно поверне управління. Будь-які системні ресурси, що використовуються\nдочірнім процесом буде звільнено. Зверніться до вашого системного\nкерівництву waitpid(2) для уточнення специфіки роботи waitpid у вашій\nсистемі.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eprocess_id\u003c/code\u003e\nАргумент \u003ccode\u003eprocess_id\u003c/code\u003e може приймати одне з наступних значень:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u0026#x3C;-1\u003c/td\u003e\n\u003ctd\u003eочікувати на будь-який дочірній процес, у якого значення ідентифікатор групи процесів (group ID) дорівнює модулю значення аргументу |process_id|.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e-1\u003c/td\u003e\n\u003ctd\u003eчекати на будь-який дочірній процес; це така ж поведінка, що й у функції wait.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003eочікувати будь-який дочірній процес, ідентифікатор групи процесів (group ID) якого дорівнює ідентифікатору поточного процесу.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003e0\u003c/td\u003e\n\u003ctd\u003eчекати дочірній процес ID якого дорівнює process_id.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eможливі значення аргументу \u003ccode\u003eprocess_id\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eВказівка \u003ccode\u003e-1\u003c/code\u003e як \u003ccode\u003eprocess_id\u003c/code\u003e - це аналог функції\n\u003ca href=\"function.pcntl-wait.md\"\u003epcntl_wait()\u003c/a\u003e (мінус \u003ccode\u003eflags\u003c/code\u003e).\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003estatus\u003c/code\u003e\n\u003cstrong\u003epcntl_waitpid()\u003c/strong\u003e розмістить інформацію про статус за посиланням у аргументі\n\u003ccode\u003estatus\u003c/code\u003e, який може бути переданий у такі функції:\n\u003ca href=\"function.pcntl-wifexited.md\"\u003epcntl_wifexited()\u003c/a\u003e,\n\u003ca href=\"function.pcntl-wifstopped.md\"\u003epcntl_wifstopped()\u003c/a\u003e,\n\u003ca href=\"function.pcntl-wifsignaled.md\"\u003epcntl_wifsignaled()\u003c/a\u003e,\n\u003ca href=\"function.pcntl-wexitstatus.md\"\u003epcntl_wexitstatus()\u003c/a\u003e,\n\u003ca href=\"function.pcntl-wtermsig.md\"\u003epcntl_wtermsig()\u003c/a\u003e та\n\u003ca href=\"function.pcntl-wstopsig.md\"\u003epcntl_wstopsig()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eflags\u003c/code\u003e\nЗначення аргументу \u003ccode\u003eflags\u003c/code\u003e – це бітова маска, яка може приймати\nзначення нуль або більше шляхом логічного об'єднання наступних\nконстант:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eWNOHANG\u003c/td\u003e\n\u003ctd\u003eНегайно повернути управління, якщо жоден із дочірніх процесів не завершено\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eWUNTRACED\u003c/td\u003e\n\u003ctd\u003eПовернути управління для зупинених дочірніх процесів, статус яких ще не повідомлено\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eМожливі значення для \u003ccode\u003eflags\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"function.pcntl-wait.md\"\u003epcntl_wait()\u003c/a\u003e повертає ID завершеного\nдочірнього процесу, -1 у разі виникнення помилки або нуль, якщо\n\u003cstrong\u003e\u003ccode\u003eWNOHANG\u003c/code\u003e\u003c/strong\u003e було передано в аргумент \u003ccode\u003eflags\u003c/code\u003e і не було доступних\nдочірніх процесів.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.pcntl-fork.md\"\u003epcntl_fork()\u003c/a\u003e - Розгалужити (fork) поточний\nзапущений процес\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pcntl-signal.md\"\u003epcntl_signal()\u003c/a\u003e - Встановлення обробника\nсигналу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pcntl-wifexited.md\"\u003epcntl_wifexited()\u003c/a\u003e - Перевіряє,\nчи відповідає код завершення процесу нормальному завершенню\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pcntl-wifstopped.md\"\u003epcntl_wifstopped()\u003c/a\u003e - Перевірити,\nчи зупинено дочірній процес\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pcntl-wifsignaled.md\"\u003epcntl_wifsignaled()\u003c/a\u003e - Перевірити,\nчи відповідає код завершення процесу завершення сигналу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pcntl-wexitstatus.md\"\u003epcntl_wexitstatus()\u003c/a\u003e - Отримати\nкод повернення завершеного дочірнього процесу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pcntl-wtermsig.md\"\u003epcntl_wtermsig()\u003c/a\u003e - Отримати сигнал,\nчерез який було примусово завершено дочірній процес\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.pcntl-wstopsig.md\"\u003epcntl_wstopsig()\u003c/a\u003e - Отримати сигнал,\nчерез який було зупинено дочірній процес\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.pcntl-waitpid.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.mb-send-mail | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.mb-scrub.md">«mb_scrub</a></p>
+</li>
+<li>
+<p><a href="function.mb-split.md">mb_split »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.mbstring.md">Функції для роботи з багатобайтовими рядками</a></p>
+</li>
+<li>
+<p>Надсилання закодованого повідомлення</p>
+</li>
+</ul>
+<p>#mb_send_mail</p>
+<p>(PHP 4 >= 4.0.6, PHP 5, PHP 7, PHP 8)</p>
+<p>mb_send_mail — Надіслати закодоване повідомлення</p>
+<h3>Опис</h3>
+<p><strong>mb_send_mail</strong>(
+string <code>$to</code>,
+string <code>$subject</code>,
+string <code>$message</code>,
+array|string <code>$additional_headers</code> = [],
+?string <code>$additional_params</code> = <strong><code>null</code></strong>
+): bool</p>
+<p>Надсилає повідомлення електронної пошти. Заголовки та повідомлення
+перетворюються та кодуються відповідно до налаштування
+<a href="function.mb-language.md">mb_language()</a>. Це обгортка для функції
+<a href="function.mail.md">mail()</a>, тому варто ознайомитися і з описом
+функції <a href="function.mail.md">mail()</a>.</p>
+<h3>Список параметрів</h3>
+<p><code>to</code>
+Електронні адреси отримувачів. Декілька адрес в аргументі <code>to</code>
+перераховуються через кому. Значення цього аргументу не кодується
+автоматично.</p>
+<p><code>subject</code>
+Тема листа.</p>
+<p><code>message</code>
+Текст листа.</p>
+<p><code>additional_headers</code> (необов'язковий)
+Рядок або масив, що вставляються в кінець заголовка листа.</p>
+<p>Зазвичай використовується додавання додаткових заголовків (From, Cc,
+та Bcc). Декілька додаткових заголовків повинні розділятися за допомогою
+CRLF (
+). Перевірте цей параметр, щоб не допустити ін'єкції
+небажаних заголовків.</p>
+<p>Якщо передано масив, його ключі будуть іменами заголовків, а значення
+відповідними значеннями заголовка.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>При надсиланні листа, лист * зобов'язаний * містити заголовок <code>From</code>. Його
+можна задати за допомогою параметра <code>additional_headers</code> або через
+опцію в php.ini.</p>
+<p>Якщо цього не зробити, це призведе до повідомлення про помилку, приблизно
+такого змісту:
+<code>Warning: mail(): "sendmail_from" немає в php.ini або custom "From:" header missing</code>.
+Заголовок <code>From</code> також встановлює і заголовок <code>Return-Path</code> в
+Windows.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо лист не діставався, спробуйте використати тільки LF (
+).
+Деякі Unix поштові агенти (насамперед
+<a href="http://cr.yp.to/qmail.md">»qmail</a>) замінюють LF на CRLF
+автоматично (що призводить до дублювання CR під час використання CRLF).
+Це єдине рішення, оскільки це поведінка відповідає
+<a href="http://www.faqs.org/rfcs/rfc2822">» RFC 2822</a>.</p>
+</blockquote>
+<p><code>additional_params</code>
+Значенням additional_params є параметр командного рядка MTA. Він
+корисний для завдання коректного заголовка Return-Path під час використання
+функції sendmail.</p>
+<p>Цей параметр екранується функцією
+<a href="function.escapeshellcmd.md">escapeshellcmd()</a> автоматично, щоб
+запобігти запуску інших команд.
+<a href="function.escapeshellcmd.md">escapeshellcmd()</a> запобігає запуску
+команд, але допускає додавання додаткових аргументів, тому для
+забезпечення безпеки потрібно перевіряти цю опцію.</p>
+<p>Оскільки <a href="function.escapeshellcmd.md">escapeshellcmd()</a> застосовується
+автоматично, то не можна використовувати деякі символи, допустимі в
+email-адресах. Неможливо використовувати функцію <a href="function.mail.md">mail()</a>
+для програм, які потребують використання таких символів.</p>
+<p>Користувач, під яким запущений веб-сервер, має бути доданим до
+довірені користувачі в конфігурації sendmail, щоб запобігти
+додавання заголовка X-Warning до повідомлення, якщо відправник листа
+заданий за допомогою цього параметра (-f). Для користувачів sendmail це
+файл <code>/etc/mail/trusted-users</code>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>8.0.0</th>
+<th>Тепер параметр additional_params може приймати значення null.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Версія</td>
+<td>Опис</td>
+</tr>
+<tr>
+<td>7.2.0</td>
+<td>Тепер параметр "additional_headers" можна передавати масив.</td>
+</tr>
+</tbody>
+</table>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.mail.md">mail()</a> - Надсилає електронну пошту</li>
+<li><a href="function.mb-encode-mimeheader.md">mb_encode_mimeheader()</a> -
+Кодує рядок для MIME-заголовка</li>
+<li><a href="function.mb-language.md">mb_language()</a> - Встановлює/отримує
+поточна мова</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.mb-send-mail.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.mb-send-mail.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.mb-send-mail","slug":"function.mb-send-mail.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mb-scrub.md\"\u003e«mb_scrub\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mb-split.md\"\u003emb_split »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.mbstring.md\"\u003eФункції для роботи з багатобайтовими рядками\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНадсилання закодованого повідомлення\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#mb_send_mail\u003c/p\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.0.6, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emb_send_mail — Надіслати закодоване повідомлення\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003emb_send_mail\u003c/strong\u003e(\nstring \u003ccode\u003e$to\u003c/code\u003e,\nstring \u003ccode\u003e$subject\u003c/code\u003e,\nstring \u003ccode\u003e$message\u003c/code\u003e,\narray|string \u003ccode\u003e$additional_headers\u003c/code\u003e = [],\n?string \u003ccode\u003e$additional_params\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\n): bool\u003c/p\u003e\n\u003cp\u003eНадсилає повідомлення електронної пошти. Заголовки та повідомлення\nперетворюються та кодуються відповідно до налаштування\n\u003ca href=\"function.mb-language.md\"\u003emb_language()\u003c/a\u003e. Це обгортка для функції\n\u003ca href=\"function.mail.md\"\u003email()\u003c/a\u003e, тому варто ознайомитися і з описом\nфункції \u003ca href=\"function.mail.md\"\u003email()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eto\u003c/code\u003e\nЕлектронні адреси отримувачів. Декілька адрес в аргументі \u003ccode\u003eto\u003c/code\u003e\nперераховуються через кому. Значення цього аргументу не кодується\nавтоматично.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esubject\u003c/code\u003e\nТема листа.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emessage\u003c/code\u003e\nТекст листа.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eadditional_headers\u003c/code\u003e (необов'язковий)\nРядок або масив, що вставляються в кінець заголовка листа.\u003c/p\u003e\n\u003cp\u003eЗазвичай використовується додавання додаткових заголовків (From, Cc,\nта Bcc). Декілька додаткових заголовків повинні розділятися за допомогою\nCRLF (\n). Перевірте цей параметр, щоб не допустити ін'єкції\nнебажаних заголовків.\u003c/p\u003e\n\u003cp\u003eЯкщо передано масив, його ключі будуть іменами заголовків, а значення\nвідповідними значеннями заголовка.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПри надсиланні листа, лист * зобов'язаний * містити заголовок \u003ccode\u003eFrom\u003c/code\u003e. Його\nможна задати за допомогою параметра \u003ccode\u003eadditional_headers\u003c/code\u003e або через\nопцію в php.ini.\u003c/p\u003e\n\u003cp\u003eЯкщо цього не зробити, це призведе до повідомлення про помилку, приблизно\nтакого змісту:\n\u003ccode\u003eWarning: mail(): \"sendmail_from\" немає в php.ini або custom \"From:\" header missing\u003c/code\u003e.\nЗаголовок \u003ccode\u003eFrom\u003c/code\u003e також встановлює і заголовок \u003ccode\u003eReturn-Path\u003c/code\u003e в\nWindows.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо лист не діставався, спробуйте використати тільки LF (\n).\nДеякі Unix поштові агенти (насамперед\n\u003ca href=\"http://cr.yp.to/qmail.md\"\u003e»qmail\u003c/a\u003e) замінюють LF на CRLF\nавтоматично (що призводить до дублювання CR під час використання CRLF).\nЦе єдине рішення, оскільки це поведінка відповідає\n\u003ca href=\"http://www.faqs.org/rfcs/rfc2822\"\u003e» RFC 2822\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eadditional_params\u003c/code\u003e\nЗначенням additional_params є параметр командного рядка MTA. Він\nкорисний для завдання коректного заголовка Return-Path під час використання\nфункції sendmail.\u003c/p\u003e\n\u003cp\u003eЦей параметр екранується функцією\n\u003ca href=\"function.escapeshellcmd.md\"\u003eescapeshellcmd()\u003c/a\u003e автоматично, щоб\nзапобігти запуску інших команд.\n\u003ca href=\"function.escapeshellcmd.md\"\u003eescapeshellcmd()\u003c/a\u003e запобігає запуску\nкоманд, але допускає додавання додаткових аргументів, тому для\nзабезпечення безпеки потрібно перевіряти цю опцію.\u003c/p\u003e\n\u003cp\u003eОскільки \u003ca href=\"function.escapeshellcmd.md\"\u003eescapeshellcmd()\u003c/a\u003e застосовується\nавтоматично, то не можна використовувати деякі символи, допустимі в\nemail-адресах. Неможливо використовувати функцію \u003ca href=\"function.mail.md\"\u003email()\u003c/a\u003e\nдля програм, які потребують використання таких символів.\u003c/p\u003e\n\u003cp\u003eКористувач, під яким запущений веб-сервер, має бути доданим до\nдовірені користувачі в конфігурації sendmail, щоб запобігти\nдодавання заголовка X-Warning до повідомлення, якщо відправник листа\nзаданий за допомогою цього параметра (-f). Для користувачів sendmail це\nфайл \u003ccode\u003e/etc/mail/trusted-users\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e8.0.0\u003c/th\u003e\n\u003cth\u003eТепер параметр additional_params може приймати значення null.\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eВерсія\u003c/td\u003e\n\u003ctd\u003eОпис\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.2.0\u003c/td\u003e\n\u003ctd\u003eТепер параметр \"additional_headers\" можна передавати масив.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.mail.md\"\u003email()\u003c/a\u003e - Надсилає електронну пошту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mb-encode-mimeheader.md\"\u003emb_encode_mimeheader()\u003c/a\u003e -\nКодує рядок для MIME-заголовка\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mb-language.md\"\u003emb_language()\u003c/a\u003e - Встановлює/отримує\nпоточна мова\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.mb-send-mail.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

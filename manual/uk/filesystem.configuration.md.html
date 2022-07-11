@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>filesystem.configuration | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="filesystem.installation.md">« Установка</a></p>
+</li>
+<li>
+<p><a href="filesystem.resources.md">Типи ресурсів»</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="filesystem.setup.md">Встановлення та налаштування</a></p>
+</li>
+<li>
+<p>Налаштування під час виконання</p>
+</li>
+</ul>
+<h2>Налаштування під час виконання</h2>
+<p>Поведінка цих функцій залежить від установок <code>php.ini</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Ім'я За замовчуванням</th>
+<th>Місце зміни</th>
+<th>Список змін</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="filesystem.configuration.md#ini.allow-url-fopen">allow_url_fopen</a></td>
+<td>"1"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="filesystem.configuration.md#ini.allow-url-include">allow_url_include</a></td>
+<td>"0"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="filesystem.configuration.md#ini.user-agent">user_agent</a></td>
+<td>NULL</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="filesystem.configuration.md#ini.default-socket-timeout">default_socket_timeout</a></td>
+<td>"60"</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="filesystem.configuration.md#ini.from">from</a></td>
+<td>""</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="filesystem.configuration.md#ini.auto-detect-line-endings">auto_detect_line_endings</a></td>
+<td>"0"</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="filesystem.configuration.md#ini.sys-temp-dir">sys_temp_dir</a></td>
+<td>""</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Директиви конфігурації файлової системи та потоків</strong></p>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>allow_url_fopen</code> bool
+Ця директива включає підтримку обгорток URL (URL wrappers), які
+дозволяють працювати з об'єктами URL як із звичайними файлами. Обгортки,
+доступні за замовчуванням, служать для роботи з <a href="features.remote-files.md">віддаленими файлами</a> з використанням ftp або http
+протоколу. Деякі модулі, наприклад <a href="ref.zlib.md">zlib</a>, можуть
+реєструвати власні обгортки.</p>
+<p><code>allow_url_include</code> bool
+Ця опція дозволяє використовувати обгортки fopen, які підтримують
+роботу з URL, у функціях <a href="function.include.md">include</a>,
+<a href="function.include-once.md">include_once</a>,
+<a href="function.require.md">require</a>,
+<a href="function.require-once.md">require_once</a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ця опція вимагає увімкнення опції allow_url_fopen.</p>
+</blockquote>
+<p><code>user_agent</code> string
+Встановлює рядок, що відсилається PHP, "User-Agent".</p>
+<p><code>default_socket_timeout</code> int
+Значення часу очікування за промовчанням (у секундах) для потоків,
+що використовують сокети. Негативне значення означає нескінченний час
+очікування.</p>
+<p><code>from</code> string
+Адреса електронної пошти, яка використовується у з'єднаннях FTP без авторизації, а також у
+як значення заголовка From у HTTP з'єднаннях при використанні
+ftp і http обгорток, відповідно.</p>
+<p><code>auto_detect_line_endings</code> bool
+Коли ця директива включена, PHP перевіряє дані, які отримують
+функціями <a href="function.fgets.md">fgets()</a> та <a href="function.file.md">file()</a>
+для того, щоб визначити спосіб завершення рядків (Unix, MS-Dos або
+Macintosh).</p>
+<p>Ця директива дозволяє PHP взаємодіяти з системами Macintosh,
+однак, за умовчанням ця директива вимкнена, оскільки за її
+використання виникає (несуттєва) потреба у додаткових
+ресурси для визначення символу закінчення першого рядка, а також
+тому, що програмісти, що використовують у системах Unix символи повернення
+каретки як роздільники, зіткнуться зі зворотно-несумісним
+поведінкою PHP.</p>
+<p><code>sys_temp_dir</code> string</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/filesystem.configuration.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/filesystem.configuration.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"filesystem.configuration","slug":"filesystem.configuration.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"filesystem.installation.md\"\u003e« Установка\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"filesystem.resources.md\"\u003eТипи ресурсів»\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"filesystem.setup.md\"\u003eВстановлення та налаштування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНалаштування під час виконання\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНалаштування під час виконання\u003c/h2\u003e\n\u003cp\u003eПоведінка цих функцій залежить від установок \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІм'я За замовчуванням\u003c/th\u003e\n\u003cth\u003eМісце зміни\u003c/th\u003e\n\u003cth\u003eСписок змін\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"filesystem.configuration.md#ini.allow-url-fopen\"\u003eallow_url_fopen\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"1\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"filesystem.configuration.md#ini.allow-url-include\"\u003eallow_url_include\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"filesystem.configuration.md#ini.user-agent\"\u003euser_agent\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"filesystem.configuration.md#ini.default-socket-timeout\"\u003edefault_socket_timeout\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"60\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"filesystem.configuration.md#ini.from\"\u003efrom\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"filesystem.configuration.md#ini.auto-detect-line-endings\"\u003eauto_detect_line_endings\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"filesystem.configuration.md#ini.sys-temp-dir\"\u003esys_temp_dir\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eДирективи конфігурації файлової системи та потоків\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eКоротке пояснення конфігураційних директив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eallow_url_fopen\u003c/code\u003e bool\nЦя директива включає підтримку обгорток URL (URL wrappers), які\nдозволяють працювати з об'єктами URL як із звичайними файлами. Обгортки,\nдоступні за замовчуванням, служать для роботи з \u003ca href=\"features.remote-files.md\"\u003eвіддаленими файлами\u003c/a\u003e з використанням ftp або http\nпротоколу. Деякі модулі, наприклад \u003ca href=\"ref.zlib.md\"\u003ezlib\u003c/a\u003e, можуть\nреєструвати власні обгортки.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eallow_url_include\u003c/code\u003e bool\nЦя опція дозволяє використовувати обгортки fopen, які підтримують\nроботу з URL, у функціях \u003ca href=\"function.include.md\"\u003einclude\u003c/a\u003e,\n\u003ca href=\"function.include-once.md\"\u003einclude_once\u003c/a\u003e,\n\u003ca href=\"function.require.md\"\u003erequire\u003c/a\u003e,\n\u003ca href=\"function.require-once.md\"\u003erequire_once\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЦя опція вимагає увімкнення опції allow_url_fopen.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003euser_agent\u003c/code\u003e string\nВстановлює рядок, що відсилається PHP, \"User-Agent\".\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edefault_socket_timeout\u003c/code\u003e int\nЗначення часу очікування за промовчанням (у секундах) для потоків,\nщо використовують сокети. Негативне значення означає нескінченний час\nочікування.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003efrom\u003c/code\u003e string\nАдреса електронної пошти, яка використовується у з'єднаннях FTP без авторизації, а також у\nяк значення заголовка From у HTTP з'єднаннях при використанні\nftp і http обгорток, відповідно.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eauto_detect_line_endings\u003c/code\u003e bool\nКоли ця директива включена, PHP перевіряє дані, які отримують\nфункціями \u003ca href=\"function.fgets.md\"\u003efgets()\u003c/a\u003e та \u003ca href=\"function.file.md\"\u003efile()\u003c/a\u003e\nдля того, щоб визначити спосіб завершення рядків (Unix, MS-Dos або\nMacintosh).\u003c/p\u003e\n\u003cp\u003eЦя директива дозволяє PHP взаємодіяти з системами Macintosh,\nоднак, за умовчанням ця директива вимкнена, оскільки за її\nвикористання виникає (несуттєва) потреба у додаткових\nресурси для визначення символу закінчення першого рядка, а також\nтому, що програмісти, що використовують у системах Unix символи повернення\nкаретки як роздільники, зіткнуться зі зворотно-несумісним\nповедінкою PHP.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esys_temp_dir\u003c/code\u003e string\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"filesystem.configuration.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mongodb.persistence.deserialization | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mongodb.persistence.serialization.md">« Серіалізація в BSON</a></p>
+</li>
+<li>
+<p><a href="mongodb.security.md">Безпека »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mongodb.persistence.md">Постійні дані</a></p>
+</li>
+<li>
+<p>Десеріалізація з BSON</p>
+</li>
+</ul>
+<h2>Десеріалізація з BSON</h2>
+<p><strong>Увага</strong></p>
+<p>Документи BSON технічно можуть містити ключі, що повторюються, оскільки
+документи зберігаються у вигляді списку пар ключ-значення; однак додаткам
+слід утримуватися від створення документів із дублікатами ключів,
+оскільки поведінка сервера та драйвера може бути невизначеною.
+Оскільки об'єкти і масиви PHP не можуть мати ключів, що повторюються,
+дані також можуть бути втрачені при декодуванні документа BSON з
+ключами, що повторюються.</p>
+<p>Застарілий модуль <code>mongo</code> десеріалізував як документи, так і масиви
+BSON як масиви PHP. Хоча з PHP масивами зручно працювати,
+така поведінка була проблематичною, оскільки різні типи BSON можуть
+десеріалізуватися до одного і того ж значення PHP (наприклад,
+<code>{"0": "foo"}</code> і <code>["foo"]</code>) і неможливо буде вивести оригінальний тип
+BSON. За промовчанням поточний драйвер вирішує цю проблему, забезпечуючи
+перетворення масивів та документів BSON на масиви та об'єкти PHP
+відповідно.</p>
+<p>Для складових типів існує три типи даних:</p>
+<p>root
+відноситься <em>лише</em> до документа верхнього рівня BSON</p>
+<p>document
+відноситься <em>лише</em> до вбудованих документів BSON</p>
+<p>array
+відноситься до масивів BSON</p>
+<p>Крім трьох групових типів, також можна налаштувати певні поля в
+документ для порівняння з типами даних, зазначеними нижче. В якості
+Наприклад, наступна карта типів дозволяє порівняти кожен вбудований
+документ у масиві ``addresses'<code>з класом **Address**, *а* кожне поле</code>'city'' у цих документах з вбудованою адресою класу <strong>City</strong>:</p>
+<pre><code>[
+'fieldPaths' => [
+'addresses.$' => 'MyProject\Address',
+'addresses.$.city' => 'MyProject\City',
+],
+]
+</code></pre>
+<p>Кожен із цих трьох типів даних, а також зіставлення для конкретних
+полів можна порівняти з різними типами PHP. Можливі
+значення зіставлення:</p>
+<p><em>не вказано</em> або NULL (за замовчуванням)</p>
+<ul>
+<li>
+<p>Масив BSON буде десеріалізовано, як PHP array.</p>
+</li>
+<li>
+<p>Документ BSON (кореневий або впроваджений) без властивості __pclass
+<a href="#fnidmongodb.pclass">^([1])</a> стає об'єктом PHP
+<strong>stdClass</strong>, причому кожен ключ документа BSON встановлюється в
+якість відкритої властивості <strong>stdClass</strong>.</p>
+</li>
+<li>
+<p>Документ BSON (кореневий або вбудований) з властивістю __pclass
+<a href="#fnidmongodb.pclass">^([1])</a> стає об'єктом PHP імені
+класу, як визначено властивістю __pclass.</p>
+</li>
+</ul>
+<p>Якщо вказаний клас реалізує інтерфейс
+M<a href="class.mongodb-bson-persistable.md">MongoDB\BSON\Persistable</a>, то
+властивості документа BSON, включаючи властивість __pclass, відправляються в
+вигляді асоціативного масиву на функцію
+<a href="mongodb-bson-unserializable.bsonunserialize.md">MongoDB\BSON\Unserializable::bsonUnserialize()</a>
+для ініціалізації властивостей об'єкта</p>
+<p>Якщо названий клас не існує або не реалізує інтерфейс
+<a href="class.mongodb-bson-persistable.md">MongoDB\BSON\Persistable</a>,
+буде використовуватися <strong>stdClass</strong>, і кожен ключ документа BSON
+(включаючи __pclass) буде встановлено як відкриту властивість
+<strong>stdClass</strong>.</p>
+<p>Функціональність __pclass залежить від того, чи є властивість
+частиною витягнутого документа MongoDB. Якщо ви використовуєте
+<a href="mongodb-driver-query.construct.md#mongodb-driver-query.construct-queryOptions">проекцію</a>
+при запиті документів, потрібно включити поле __pclass в
+проекцію, щоб ця функція працювала.</p>
+<p>``array'`
+Перетворює масив BSON або документ BSON на масив PHP. Не буде
+спеціальної обробки властивості __pclass
+<a href="#fnidmongodb.pclass">^([1])</a>, але його можна встановити, як елемент у
+повертається масиві, якщо він був присутній у документі BSON.</p>
+<p><code>object'' або </code>stdClass'`
+Перетворює масив BSON або документ BSON на об'єкт <strong>stdClass</strong>. Не буде
+спеціальної обробки властивості __pclass
+<a href="#fnidmongodb.pclass">^([1])</a>, але воно може бути встановлене, як
+відкрита властивість у об'єкті, що повертається, якщо вона була присутня в
+документі BSON.</p>
+<p>будь-який інший рядок
+Визначає ім'я класу, який має десеріалізувати масив BSON або
+об'єкт BSON. Для об'єктів BSON, які містять властивості __pclass,
+цей клас матиме пріоритет.</p>
+<p>Якщо названий клас не існує, не є конкретним (тобто
+є абстрактним або інтерфейсом) або не реалізує
+<a href="class.mongodb-bson-unserializable.md">MongoDB\BSON\Unserializable</a>,
+то видається виняток
+<a href="class.mongodb-driver-exception-invalidargumentexception.md">MongoDB\Driver\Exception\InvalidArgumentException</a>.</p>
+<p>Якщо об'єкт BSON має властивість __pclass, і цей клас існує і
+реалізує
+<a href="class.mongodb-bson-persistable.md">MongoDB\BSON\Persistable</a>, він
+замінить клас, поданий у карті типів.</p>
+<p>Властивості документа BSON, <em>включаючи</em> властивість __pclass, якщо воно
+існує, будуть відправлені у вигляді асоціативного масиву у функцію
+<a href="mongodb-bson-unserializable.bsonunserialize.md">MongoDB\BSON\Unserializable::bsonUnserialize()</a>
+для ініціалізації властивостей об'єкта</p>
+<h2>TypeMaps</h2>
+<p>TypeMaps можна встановити за допомогою методу
+<a href="mongodb-driver-cursor.settypemap.md">MongoDB\Driver\Cursor::setTypeMap()</a>
+для об'єкта <a href="class.mongodb-driver-cursor.md">MongoDB\Driver\Cursor</a>
+або аргументу <code>$typeMap</code> в
+<a href="function.mongodb.bson-tophp.md">MongoDB\BSON oPHP()</a>. Кожен із трьох
+класів (<em>root</em>, <em>document</em>, і <em>array</em>) може бути заданий індивідуально,
+на додаток до типів полів.</p>
+<p>Якщо значення на карті дорівнює NULL, це означає те саме, що і
+значення <em>за замовчуванням</em> для цього елемента.</p>
+<h2>Приклади</h2>
+<p>У цих прикладах використовуються такі класи:</p>
+<p>MyClass
+який <em>не</em> реалізує інтерфейс</p>
+<p>YourClass
+який реалізує
+<a href="class.mongodb-bson-unserializable.md">MongoDB\BSON\Unserializable</a></p>
+<p>OurClass
+який реалізує
+<a href="class.mongodb-bson-persistable.md">MongoDB\BSON\Persistable</a></p>
+<p>TheirClass
+який розширює OurClass</p>
+<p>Метод
+<a href="mongodb-bson-unserializable.bsonunserialize.md">MongoDB\BSON\Unserializable::bsonUnserialize()</a>
+класу YourClass, OurClass, OurClass виконує ітерацію за масивом та
+встановлює властивості без змін. Він <em>також</em> встановлює для
+властивості <code>$unserialized</code> значення <code>true</code>:</p>
+<p><code>&#x3C;?phpfunction bsonUnserialize( array $map ){   foreach ( $map as $k => $value )    {        $this-$$$; }   $this->unserialized = true;}</code></p>
+<pre><code>/* typemap: [](усі значення за замовчуванням) */
+{"foo": "yes", "bar": false}
+-> stdClass { $foo => 'yes', $bar => false }
+
+{ "foo": "no", "array": [5, 6]}
+-> stdClass { $foo => 'no', $array => [ 5, 6 ] }
+
+{ "foo": "no", "obj" : { "embedded" : 3.14 } }
+-> stdClass { $foo => 'no', $obj => stdClass { $embedded => 3.14 } }
+
+{ "foo": "yes", "__pclass": "MyClass"}
+-> stdClass { $foo => 'yes', $__pclass => 'MyClass' }
+
+{ "foo": "yes", "__pclass": { "$type" : "80", "$binary" : "MyClass" } }
+-> stdClass { $foo => 'yes', $__pclass => Binary(0x80, 'MyClass') }
+
+{ "foo": "yes", "__pclass": { "$type" : "80", "$binary" : "YourClass") }
+-> stdClass { $foo => 'yes', $__pclass => Binary(0x80, 'YourClass') }
+
+{ "foo": "yes", "__pclass": { "$type" : "80", "$binary" : "OurClass") }
+-> OurClass { $foo => 'yes', $__pclass => Binary(0x80, 'OurClass'), $unserialized => true }
+
+{ "foo": "yes", "__pclass": { "$type" : "44", "$binary" : "YourClass") }
+-> stdClass { $foo => 'yes', $__pclass => Binary(0x44, 'YourClass') }
+</code></pre>
+<pre><code>/* typemap: [ "root" => "MissingClass" ] */
+{ "foo": "yes" }
+-> MongoDB\Driver\Exception\InvalidArgumentException("MissingClass does not exist")
+
+/* typemap: [ "root" => "MyClass" ] */
+{ "foo": "yes", "__pclass" : { "$type": "80", "$binary": "MyClass" } }
+-> MongoDB\Driver\Exception\InvalidArgumentException("MyClass не implementує Unserializable interface")
+
+/* typemap: [ "root" => "MongoDB\BSON\Unserializable" ] */
+{ "foo": "yes" }
+-> MongoDB\Driver\Exception\InvalidArgumentException("Unserializable is not a concrete class")
+
+/* typemap: [ "root" => "YourClass" ] */
+{ "foo": "yes", "__pclass" : { "$type": "80", "$binary": "MongoDB\BSON\Unserializable" } }
+-> YourClass { $foo => "yes", $__pclass => Binary(0x80, "MongoDB\BSON\Unserializable"), $unserialized => true }
+
+/* typemap: [ "root" => "YourClass" ] */
+{ "foo": "yes", "__pclass" : { "$type": "80", "$binary": "MyClass" } }
+-> YourClass { $foo => "yes", $__pclass => Binary(0x80, "MyClass"), $unserialized => true }
+
+/* typemap: [ "root" => "YourClass" ] */
+{ "foo": "yes", "__pclass" : { "$type": "80", "$binary": "OurClass" } }
+-> OurClass { $foo => "yes", $__pclass => Binary(0x80, "OurClass"), $unserialized => true }
+
+/* typemap: [ "root" => "YourClass" ] */
+{ "foo": "yes", "__pclass" : { "$type": "80", "$binary": "TheirClass" } }
+-> TheirClass { $foo => "yes", $__pclass => Binary(0x80, "TheirClass"), $unserialized => true }
+
+/* typemap: [ "root" => "OurClass" ] */
+{ foo: "yes", "__pclass" : { "$type": "80", "$binary": "TheirClass" } }
+-> TheirClass { $foo => "yes", $__pclass => Binary(0x80, "TheirClass"), $unserialized => true }
+</code></pre>
+<pre><code>/* typemap: [ 'root' => 'YourClass' ] */
+{ foo: "yes", "__pclass" : { "$type": "80", "$binary": "YourClass" } }
+-> YourClass { $foo => 'yes', $__pclass => Binary(0x80, 'YourClass'), $unserialized => true }
+</code></pre>
+<pre><code>/* typemap: [ 'root' => 'array', 'document' => 'array' ] */
+{"foo": "yes", "bar": false}
+-> [ "foo" => "yes", "bar" => false ]
+
+{ "foo": "no", "array": [5, 6]}
+-> [ "foo" => "no", "array" => [ 5, 6 ] ]
+
+{ "foo": "no", "obj" : { "embedded" : 3.14 } }
+-> [ "foo" => "no", "obj" => [ "embedded => 3.14 ] ]
+
+{ "foo": "yes", "__pclass": "MyClass"}
+-> [ "foo" => "yes", "__pclass" => "MyClass" ]
+
+{ "foo": "yes", "__pclass" : { "$type": "80", "$binary": "MyClass" } }
+-> [ "foo" => "yes", "__pclass" => Binary(0x80, "MyClass") ]
+
+{ "foo": "yes", "__pclass" : { "$type": "80", "$binary": "OurClass" } }
+-> [ "foo" => "yes", "__pclass" => Binary(0x80, "OurClass") ]
+</code></pre>
+<pre><code>/* typemap: [ 'root' => 'object', 'document' => 'object' ] */
+{ "foo": "yes", "__pclass": { "$type": "80", "$binary": "MyClass" } }
+-> stdClass { $foo => "yes", "__pclass" => Binary(0x80, "MyClass") }
+</code></pre>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mongodb.persistence.deserialization.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mongodb.persistence.deserialization.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mongodb.persistence.deserialization","slug":"mongodb.persistence.deserialization.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb.persistence.serialization.md\"\u003e« Серіалізація в BSON\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb.security.md\"\u003eБезпека »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb.persistence.md\"\u003eПостійні дані\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДесеріалізація з BSON\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eДесеріалізація з BSON\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДокументи BSON технічно можуть містити ключі, що повторюються, оскільки\nдокументи зберігаються у вигляді списку пар ключ-значення; однак додаткам\nслід утримуватися від створення документів із дублікатами ключів,\nоскільки поведінка сервера та драйвера може бути невизначеною.\nОскільки об'єкти і масиви PHP не можуть мати ключів, що повторюються,\nдані також можуть бути втрачені при декодуванні документа BSON з\nключами, що повторюються.\u003c/p\u003e\n\u003cp\u003eЗастарілий модуль \u003ccode\u003emongo\u003c/code\u003e десеріалізував як документи, так і масиви\nBSON як масиви PHP. Хоча з PHP масивами зручно працювати,\nтака поведінка була проблематичною, оскільки різні типи BSON можуть\nдесеріалізуватися до одного і того ж значення PHP (наприклад,\n\u003ccode\u003e{\"0\": \"foo\"}\u003c/code\u003e і \u003ccode\u003e[\"foo\"]\u003c/code\u003e) і неможливо буде вивести оригінальний тип\nBSON. За промовчанням поточний драйвер вирішує цю проблему, забезпечуючи\nперетворення масивів та документів BSON на масиви та об'єкти PHP\nвідповідно.\u003c/p\u003e\n\u003cp\u003eДля складових типів існує три типи даних:\u003c/p\u003e\n\u003cp\u003eroot\nвідноситься \u003cem\u003eлише\u003c/em\u003e до документа верхнього рівня BSON\u003c/p\u003e\n\u003cp\u003edocument\nвідноситься \u003cem\u003eлише\u003c/em\u003e до вбудованих документів BSON\u003c/p\u003e\n\u003cp\u003earray\nвідноситься до масивів BSON\u003c/p\u003e\n\u003cp\u003eКрім трьох групових типів, також можна налаштувати певні поля в\nдокумент для порівняння з типами даних, зазначеними нижче. В якості\nНаприклад, наступна карта типів дозволяє порівняти кожен вбудований\nдокумент у масиві ``addresses'\u003ccode\u003eз класом **Address**, *а* кожне поле\u003c/code\u003e'city'' у цих документах з вбудованою адресою класу \u003cstrong\u003eCity\u003c/strong\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e[\n'fieldPaths' =\u003e [\n'addresses.$' =\u003e 'MyProject\\Address',\n'addresses.$.city' =\u003e 'MyProject\\City',\n],\n]\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eКожен із цих трьох типів даних, а також зіставлення для конкретних\nполів можна порівняти з різними типами PHP. Можливі\nзначення зіставлення:\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eне вказано\u003c/em\u003e або NULL (за замовчуванням)\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eМасив BSON буде десеріалізовано, як PHP array.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДокумент BSON (кореневий або впроваджений) без властивості __pclass\n\u003ca href=\"#fnidmongodb.pclass\"\u003e^([1])\u003c/a\u003e стає об'єктом PHP\n\u003cstrong\u003estdClass\u003c/strong\u003e, причому кожен ключ документа BSON встановлюється в\nякість відкритої властивості \u003cstrong\u003estdClass\u003c/strong\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eДокумент BSON (кореневий або вбудований) з властивістю __pclass\n\u003ca href=\"#fnidmongodb.pclass\"\u003e^([1])\u003c/a\u003e стає об'єктом PHP імені\nкласу, як визначено властивістю __pclass.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eЯкщо вказаний клас реалізує інтерфейс\nM\u003ca href=\"class.mongodb-bson-persistable.md\"\u003eMongoDB\\BSON\\Persistable\u003c/a\u003e, то\nвластивості документа BSON, включаючи властивість __pclass, відправляються в\nвигляді асоціативного масиву на функцію\n\u003ca href=\"mongodb-bson-unserializable.bsonunserialize.md\"\u003eMongoDB\\BSON\\Unserializable::bsonUnserialize()\u003c/a\u003e\nдля ініціалізації властивостей об'єкта\u003c/p\u003e\n\u003cp\u003eЯкщо названий клас не існує або не реалізує інтерфейс\n\u003ca href=\"class.mongodb-bson-persistable.md\"\u003eMongoDB\\BSON\\Persistable\u003c/a\u003e,\nбуде використовуватися \u003cstrong\u003estdClass\u003c/strong\u003e, і кожен ключ документа BSON\n(включаючи __pclass) буде встановлено як відкриту властивість\n\u003cstrong\u003estdClass\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eФункціональність __pclass залежить від того, чи є властивість\nчастиною витягнутого документа MongoDB. Якщо ви використовуєте\n\u003ca href=\"mongodb-driver-query.construct.md#mongodb-driver-query.construct-queryOptions\"\u003eпроекцію\u003c/a\u003e\nпри запиті документів, потрібно включити поле __pclass в\nпроекцію, щоб ця функція працювала.\u003c/p\u003e\n\u003cp\u003e``array'`\nПеретворює масив BSON або документ BSON на масив PHP. Не буде\nспеціальної обробки властивості __pclass\n\u003ca href=\"#fnidmongodb.pclass\"\u003e^([1])\u003c/a\u003e, але його можна встановити, як елемент у\nповертається масиві, якщо він був присутній у документі BSON.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eobject'' або \u003c/code\u003estdClass'`\nПеретворює масив BSON або документ BSON на об'єкт \u003cstrong\u003estdClass\u003c/strong\u003e. Не буде\nспеціальної обробки властивості __pclass\n\u003ca href=\"#fnidmongodb.pclass\"\u003e^([1])\u003c/a\u003e, але воно може бути встановлене, як\nвідкрита властивість у об'єкті, що повертається, якщо вона була присутня в\nдокументі BSON.\u003c/p\u003e\n\u003cp\u003eбудь-який інший рядок\nВизначає ім'я класу, який має десеріалізувати масив BSON або\nоб'єкт BSON. Для об'єктів BSON, які містять властивості __pclass,\nцей клас матиме пріоритет.\u003c/p\u003e\n\u003cp\u003eЯкщо названий клас не існує, не є конкретним (тобто\nє абстрактним або інтерфейсом) або не реалізує\n\u003ca href=\"class.mongodb-bson-unserializable.md\"\u003eMongoDB\\BSON\\Unserializable\u003c/a\u003e,\nто видається виняток\n\u003ca href=\"class.mongodb-driver-exception-invalidargumentexception.md\"\u003eMongoDB\\Driver\\Exception\\InvalidArgumentException\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо об'єкт BSON має властивість __pclass, і цей клас існує і\nреалізує\n\u003ca href=\"class.mongodb-bson-persistable.md\"\u003eMongoDB\\BSON\\Persistable\u003c/a\u003e, він\nзамінить клас, поданий у карті типів.\u003c/p\u003e\n\u003cp\u003eВластивості документа BSON, \u003cem\u003eвключаючи\u003c/em\u003e властивість __pclass, якщо воно\nіснує, будуть відправлені у вигляді асоціативного масиву у функцію\n\u003ca href=\"mongodb-bson-unserializable.bsonunserialize.md\"\u003eMongoDB\\BSON\\Unserializable::bsonUnserialize()\u003c/a\u003e\nдля ініціалізації властивостей об'єкта\u003c/p\u003e\n\u003ch2\u003eTypeMaps\u003c/h2\u003e\n\u003cp\u003eTypeMaps можна встановити за допомогою методу\n\u003ca href=\"mongodb-driver-cursor.settypemap.md\"\u003eMongoDB\\Driver\\Cursor::setTypeMap()\u003c/a\u003e\nдля об'єкта \u003ca href=\"class.mongodb-driver-cursor.md\"\u003eMongoDB\\Driver\\Cursor\u003c/a\u003e\nабо аргументу \u003ccode\u003e$typeMap\u003c/code\u003e в\n\u003ca href=\"function.mongodb.bson-tophp.md\"\u003eMongoDB\\BSON oPHP()\u003c/a\u003e. Кожен із трьох\nкласів (\u003cem\u003eroot\u003c/em\u003e, \u003cem\u003edocument\u003c/em\u003e, і \u003cem\u003earray\u003c/em\u003e) може бути заданий індивідуально,\nна додаток до типів полів.\u003c/p\u003e\n\u003cp\u003eЯкщо значення на карті дорівнює NULL, це означає те саме, що і\nзначення \u003cem\u003eза замовчуванням\u003c/em\u003e для цього елемента.\u003c/p\u003e\n\u003ch2\u003eПриклади\u003c/h2\u003e\n\u003cp\u003eУ цих прикладах використовуються такі класи:\u003c/p\u003e\n\u003cp\u003eMyClass\nякий \u003cem\u003eне\u003c/em\u003e реалізує інтерфейс\u003c/p\u003e\n\u003cp\u003eYourClass\nякий реалізує\n\u003ca href=\"class.mongodb-bson-unserializable.md\"\u003eMongoDB\\BSON\\Unserializable\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eOurClass\nякий реалізує\n\u003ca href=\"class.mongodb-bson-persistable.md\"\u003eMongoDB\\BSON\\Persistable\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eTheirClass\nякий розширює OurClass\u003c/p\u003e\n\u003cp\u003eМетод\n\u003ca href=\"mongodb-bson-unserializable.bsonunserialize.md\"\u003eMongoDB\\BSON\\Unserializable::bsonUnserialize()\u003c/a\u003e\nкласу YourClass, OurClass, OurClass виконує ітерацію за масивом та\nвстановлює властивості без змін. Він \u003cem\u003eтакож\u003c/em\u003e встановлює для\nвластивості \u003ccode\u003e$unserialized\u003c/code\u003e значення \u003ccode\u003etrue\u003c/code\u003e:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction bsonUnserialize( array $map ){   foreach ( $map as $k =\u003e $value )    {        $this-$$$; }   $this-\u003eunserialized = true;}\u003c/code\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e/* typemap: [](усі значення за замовчуванням) */\n{\"foo\": \"yes\", \"bar\": false}\n-\u003e stdClass { $foo =\u003e 'yes', $bar =\u003e false }\n\n{ \"foo\": \"no\", \"array\": [5, 6]}\n-\u003e stdClass { $foo =\u003e 'no', $array =\u003e [ 5, 6 ] }\n\n{ \"foo\": \"no\", \"obj\" : { \"embedded\" : 3.14 } }\n-\u003e stdClass { $foo =\u003e 'no', $obj =\u003e stdClass { $embedded =\u003e 3.14 } }\n\n{ \"foo\": \"yes\", \"__pclass\": \"MyClass\"}\n-\u003e stdClass { $foo =\u003e 'yes', $__pclass =\u003e 'MyClass' }\n\n{ \"foo\": \"yes\", \"__pclass\": { \"$type\" : \"80\", \"$binary\" : \"MyClass\" } }\n-\u003e stdClass { $foo =\u003e 'yes', $__pclass =\u003e Binary(0x80, 'MyClass') }\n\n{ \"foo\": \"yes\", \"__pclass\": { \"$type\" : \"80\", \"$binary\" : \"YourClass\") }\n-\u003e stdClass { $foo =\u003e 'yes', $__pclass =\u003e Binary(0x80, 'YourClass') }\n\n{ \"foo\": \"yes\", \"__pclass\": { \"$type\" : \"80\", \"$binary\" : \"OurClass\") }\n-\u003e OurClass { $foo =\u003e 'yes', $__pclass =\u003e Binary(0x80, 'OurClass'), $unserialized =\u003e true }\n\n{ \"foo\": \"yes\", \"__pclass\": { \"$type\" : \"44\", \"$binary\" : \"YourClass\") }\n-\u003e stdClass { $foo =\u003e 'yes', $__pclass =\u003e Binary(0x44, 'YourClass') }\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode\u003e/* typemap: [ \"root\" =\u003e \"MissingClass\" ] */\n{ \"foo\": \"yes\" }\n-\u003e MongoDB\\Driver\\Exception\\InvalidArgumentException(\"MissingClass does not exist\")\n\n/* typemap: [ \"root\" =\u003e \"MyClass\" ] */\n{ \"foo\": \"yes\", \"__pclass\" : { \"$type\": \"80\", \"$binary\": \"MyClass\" } }\n-\u003e MongoDB\\Driver\\Exception\\InvalidArgumentException(\"MyClass не implementує Unserializable interface\")\n\n/* typemap: [ \"root\" =\u003e \"MongoDB\\BSON\\Unserializable\" ] */\n{ \"foo\": \"yes\" }\n-\u003e MongoDB\\Driver\\Exception\\InvalidArgumentException(\"Unserializable is not a concrete class\")\n\n/* typemap: [ \"root\" =\u003e \"YourClass\" ] */\n{ \"foo\": \"yes\", \"__pclass\" : { \"$type\": \"80\", \"$binary\": \"MongoDB\\BSON\\Unserializable\" } }\n-\u003e YourClass { $foo =\u003e \"yes\", $__pclass =\u003e Binary(0x80, \"MongoDB\\BSON\\Unserializable\"), $unserialized =\u003e true }\n\n/* typemap: [ \"root\" =\u003e \"YourClass\" ] */\n{ \"foo\": \"yes\", \"__pclass\" : { \"$type\": \"80\", \"$binary\": \"MyClass\" } }\n-\u003e YourClass { $foo =\u003e \"yes\", $__pclass =\u003e Binary(0x80, \"MyClass\"), $unserialized =\u003e true }\n\n/* typemap: [ \"root\" =\u003e \"YourClass\" ] */\n{ \"foo\": \"yes\", \"__pclass\" : { \"$type\": \"80\", \"$binary\": \"OurClass\" } }\n-\u003e OurClass { $foo =\u003e \"yes\", $__pclass =\u003e Binary(0x80, \"OurClass\"), $unserialized =\u003e true }\n\n/* typemap: [ \"root\" =\u003e \"YourClass\" ] */\n{ \"foo\": \"yes\", \"__pclass\" : { \"$type\": \"80\", \"$binary\": \"TheirClass\" } }\n-\u003e TheirClass { $foo =\u003e \"yes\", $__pclass =\u003e Binary(0x80, \"TheirClass\"), $unserialized =\u003e true }\n\n/* typemap: [ \"root\" =\u003e \"OurClass\" ] */\n{ foo: \"yes\", \"__pclass\" : { \"$type\": \"80\", \"$binary\": \"TheirClass\" } }\n-\u003e TheirClass { $foo =\u003e \"yes\", $__pclass =\u003e Binary(0x80, \"TheirClass\"), $unserialized =\u003e true }\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode\u003e/* typemap: [ 'root' =\u003e 'YourClass' ] */\n{ foo: \"yes\", \"__pclass\" : { \"$type\": \"80\", \"$binary\": \"YourClass\" } }\n-\u003e YourClass { $foo =\u003e 'yes', $__pclass =\u003e Binary(0x80, 'YourClass'), $unserialized =\u003e true }\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode\u003e/* typemap: [ 'root' =\u003e 'array', 'document' =\u003e 'array' ] */\n{\"foo\": \"yes\", \"bar\": false}\n-\u003e [ \"foo\" =\u003e \"yes\", \"bar\" =\u003e false ]\n\n{ \"foo\": \"no\", \"array\": [5, 6]}\n-\u003e [ \"foo\" =\u003e \"no\", \"array\" =\u003e [ 5, 6 ] ]\n\n{ \"foo\": \"no\", \"obj\" : { \"embedded\" : 3.14 } }\n-\u003e [ \"foo\" =\u003e \"no\", \"obj\" =\u003e [ \"embedded =\u003e 3.14 ] ]\n\n{ \"foo\": \"yes\", \"__pclass\": \"MyClass\"}\n-\u003e [ \"foo\" =\u003e \"yes\", \"__pclass\" =\u003e \"MyClass\" ]\n\n{ \"foo\": \"yes\", \"__pclass\" : { \"$type\": \"80\", \"$binary\": \"MyClass\" } }\n-\u003e [ \"foo\" =\u003e \"yes\", \"__pclass\" =\u003e Binary(0x80, \"MyClass\") ]\n\n{ \"foo\": \"yes\", \"__pclass\" : { \"$type\": \"80\", \"$binary\": \"OurClass\" } }\n-\u003e [ \"foo\" =\u003e \"yes\", \"__pclass\" =\u003e Binary(0x80, \"OurClass\") ]\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode\u003e/* typemap: [ 'root' =\u003e 'object', 'document' =\u003e 'object' ] */\n{ \"foo\": \"yes\", \"__pclass\": { \"$type\": \"80\", \"$binary\": \"MyClass\" } }\n-\u003e stdClass { $foo =\u003e \"yes\", \"__pclass\" =\u003e Binary(0x80, \"MyClass\") }\n\u003c/code\u003e\u003c/pre\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mongodb.persistence.deserialization.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

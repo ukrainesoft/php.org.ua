@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.socket-recvfrom | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.socket-recv.md">«socket_recv</a></p>
+</li>
+<li>
+<p><a href="function.socket-recvmsg.md">socket_recvmsg »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.sockets.md">Функції сокету</a></p>
+</li>
+<li>
+<p>Отримує дані із сокету, незалежно від того, під'єднаний він чи
+ні</p>
+</li>
+</ul>
+<h1>socket_recvfrom</h1>
+<p>(PHP 4 >= 4.1.0, PHP 5, PHP 7, PHP 8)</p>
+<p>socket_recvfrom — Отримує дані із сокету, незалежно від того,
+під'єднаний він чи ні</p>
+<h3>Опис</h3>
+<p><strong>socket_recvfrom</strong>(
+<a href="class.socket.md">Socket</a> <code>$socket</code>,
+string <code>&#x26;$data</code>,
+int <code>$length</code>,
+int <code>$flags</code>,
+string <code>&#x26;$address</code>,
+int <code>&#x26;$port</code> = <strong><code>null</code></strong>
+): int|false</p>
+<p>Функція <strong>socket_recvfrom()</strong> отримує <code>length</code> байт даних у <code>data</code> з
+адреси <code>address</code> на порту <code>port</code> (якщо сокет не типу <strong><code>AF_UNIX</code></strong>)
+використовуючи сокет <code>socket</code>. Функція <strong>socket_recvfrom()</strong> може бути
+використана для вилучення даних як з підключених, так і не
+підключених сокетів. Додатково, один або більше прапорів можуть бути
+вказано для того, щоб змінити поведінку функції.</p>
+<p>Параметри address і port повинні бути передані за посиланням. Якщо сокет
+не орієнтований на з'єднання, <code>address</code> повинен бути встановлений як
+адресу інтернет-протоколу віддаленого хоста, або як шлях до сокету UNIX.
+Якщо сокет не орієнтований на з'єднання, <code>address</code> має бути
+<strong><code>null</code></strong>. Додатково <code>port</code> повинен містити порт віддаленого хоста
+для не підключених сокетів типу <strong><code>AF_INET</code></strong> та <strong><code>AF_INET6</code></strong>.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Ця функція безпечна для обробки даних у двійковій
+Формі.</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>socket</code>
+Параметр <code>socket</code> має бути екземпляром <a href="class.socket.md">Socket</a>,
+попередньо створеним з допомогою функції socket_create().</p>
+<p><code>data</code>
+Отримані дані будуть передані до змінної, вказаної за допомогою
+параметра 'data'.</p>
+<p><code>length</code>
+З віддаленого хоста буде отримано до length байт.</p>
+<p><code>flags</code>
+Значення параметра <code>flags</code> може бути будь-якою комбінацією наступних
+прапорів, об'єднаних за допомогою бінарного оператора OR (<code>|</code>) operator.</p>
+<table>
+<thead>
+<tr>
+<th>Підкреслити</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MSG_OOB</strong></td>
+<td>Обробляти позасмугові (out-of-band) дані.</td>
+</tr>
+<tr>
+<td><strong>MSG_PEEK</strong></td>
+<td>Отримувати дані із початку черги, не видаляючи їх.</td>
+</tr>
+<tr>
+<td><strong>MSG_WAITALL</strong></td>
+<td>Блокувати виконання скрипту доти, доки щонайменше length не буде отримано. Однак, якщо буде отримано сигнал або віддалений хост від'єднається, функція може повернути менше даних.</td>
+</tr>
+<tr>
+<td><strong>MSG_DONTWAIT</strong></td>
+<td>Якщо цей прапор встановлений, функція повернеться навіть якщо зазвичай блокуватиме виконання скрипта.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Можливі значення для параметра <code>flags</code></strong></p>
+<p><code>address</code>
+Якщо сокет типу <strong><code>AF_UNIX</code></strong>, <code>address</code> - це шлях до файлу. В іншому
+випадку, для неприєднаних сокетів, параметр <code>address</code> - це IP-адреса,
+віддаленого хоста, або <strong><code>null</code></strong>, якщо сокет орієнтований на з'єднання.</p>
+<p><code>port</code>
+Цей аргумент застосовний тільки до сокетів <strong><code>AF_INET</code></strong> та <strong><code>AF_INET6</code></strong>,
+та вказує віддалений порт, з якого будуть отримані дані. Якщо
+сокет орієнтований на з'єднання, <code>port</code> буде <strong><code>null</code></strong>.</p>
+<h3>Значення, що повертаються</h3>
+<p><strong>socket_recvfrom()</strong> повертає кількість отриманих байт або
+<strong><code>false</code></strong>, якщо сталася помилка. Фактичний код помилки може бути
+отримано за допомогою виклику функції
+<a href="function.socket-last-error.md">socket_last_error()</a>. Цей код помилки
+може бути переданий функції
+<a href="function.socket-strerror.md">socket_strerror()</a> для отримання
+текстового опису помилки.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>socket тепер екземпляр класу <a href="class.socket.md">Socket</a>; раніше був ресурсом (resource).</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>socket_recvfrom()</strong></strong></p>
+<p><code>&#x3C;?php$socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);socket_bind($socket, '127.0.0.1', 1223);$from = '';$port = 0;so$_rec , 0, $from, $port);echo "Отримано $buf з віддаленої адреси $from і віддаленого порту $port" . PHP_EOL;?></code></p>
+<p>Цей приклад відкриє UDP-сокет на порту 1223 за адресою 127.0.0.1 та
+виведе максимум 12 символів, отриманих із віддаленого хоста.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.socket-recv.md">socket_recv()</a> - Отримує дані з
+приєднаного сокету</li>
+<li><a href="function.socket-send.md">socket_send()</a> - Надсилає дані в
+приєднаний сокет</li>
+<li><a href="function.socket-sendto.md">socket_sendto()</a> - Відправляє
+повідомлення в сокет, незалежно від того, під'єднаний він чи ні</li>
+<li><a href="function.socket-create.md">socket_create()</a> - Створює сокет
+(кінцеву точку для обміну інформацією)</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.socket-recvfrom.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.socket-recvfrom.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.socket-recvfrom","slug":"function.socket-recvfrom.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.socket-recv.md\"\u003e«socket_recv\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.socket-recvmsg.md\"\u003esocket_recvmsg »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.sockets.md\"\u003eФункції сокету\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОтримує дані із сокету, незалежно від того, під'єднаний він чи\nні\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003esocket_recvfrom\u003c/h1\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.1.0, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003esocket_recvfrom — Отримує дані із сокету, незалежно від того,\nпід'єднаний він чи ні\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003esocket_recvfrom\u003c/strong\u003e(\n\u003ca href=\"class.socket.md\"\u003eSocket\u003c/a\u003e \u003ccode\u003e$socket\u003c/code\u003e,\nstring \u003ccode\u003e\u0026#x26;$data\u003c/code\u003e,\nint \u003ccode\u003e$length\u003c/code\u003e,\nint \u003ccode\u003e$flags\u003c/code\u003e,\nstring \u003ccode\u003e\u0026#x26;$address\u003c/code\u003e,\nint \u003ccode\u003e\u0026#x26;$port\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\n): int|false\u003c/p\u003e\n\u003cp\u003eФункція \u003cstrong\u003esocket_recvfrom()\u003c/strong\u003e отримує \u003ccode\u003elength\u003c/code\u003e байт даних у \u003ccode\u003edata\u003c/code\u003e з\nадреси \u003ccode\u003eaddress\u003c/code\u003e на порту \u003ccode\u003eport\u003c/code\u003e (якщо сокет не типу \u003cstrong\u003e\u003ccode\u003eAF_UNIX\u003c/code\u003e\u003c/strong\u003e)\nвикористовуючи сокет \u003ccode\u003esocket\u003c/code\u003e. Функція \u003cstrong\u003esocket_recvfrom()\u003c/strong\u003e може бути\nвикористана для вилучення даних як з підключених, так і не\nпідключених сокетів. Додатково, один або більше прапорів можуть бути\nвказано для того, щоб змінити поведінку функції.\u003c/p\u003e\n\u003cp\u003eПараметри address і port повинні бути передані за посиланням. Якщо сокет\nне орієнтований на з'єднання, \u003ccode\u003eaddress\u003c/code\u003e повинен бути встановлений як\nадресу інтернет-протоколу віддаленого хоста, або як шлях до сокету UNIX.\nЯкщо сокет не орієнтований на з'єднання, \u003ccode\u003eaddress\u003c/code\u003e має бути\n\u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e. Додатково \u003ccode\u003eport\u003c/code\u003e повинен містити порт віддаленого хоста\nдля не підключених сокетів типу \u003cstrong\u003e\u003ccode\u003eAF_INET\u003c/code\u003e\u003c/strong\u003e та \u003cstrong\u003e\u003ccode\u003eAF_INET6\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Ця функція безпечна для обробки даних у двійковій\nФормі.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003esocket\u003c/code\u003e\nПараметр \u003ccode\u003esocket\u003c/code\u003e має бути екземпляром \u003ca href=\"class.socket.md\"\u003eSocket\u003c/a\u003e,\nпопередньо створеним з допомогою функції socket_create().\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edata\u003c/code\u003e\nОтримані дані будуть передані до змінної, вказаної за допомогою\nпараметра 'data'.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elength\u003c/code\u003e\nЗ віддаленого хоста буде отримано до length байт.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eflags\u003c/code\u003e\nЗначення параметра \u003ccode\u003eflags\u003c/code\u003e може бути будь-якою комбінацією наступних\nпрапорів, об'єднаних за допомогою бінарного оператора OR (\u003ccode\u003e|\u003c/code\u003e) operator.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eПідкреслити\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eMSG_OOB\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eОбробляти позасмугові (out-of-band) дані.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eMSG_PEEK\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eОтримувати дані із початку черги, не видаляючи їх.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eMSG_WAITALL\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eБлокувати виконання скрипту доти, доки щонайменше length не буде отримано. Однак, якщо буде отримано сигнал або віддалений хост від'єднається, функція може повернути менше даних.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eMSG_DONTWAIT\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eЯкщо цей прапор встановлений, функція повернеться навіть якщо зазвичай блокуватиме виконання скрипта.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eМожливі значення для параметра \u003ccode\u003eflags\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eaddress\u003c/code\u003e\nЯкщо сокет типу \u003cstrong\u003e\u003ccode\u003eAF_UNIX\u003c/code\u003e\u003c/strong\u003e, \u003ccode\u003eaddress\u003c/code\u003e - це шлях до файлу. В іншому\nвипадку, для неприєднаних сокетів, параметр \u003ccode\u003eaddress\u003c/code\u003e - це IP-адреса,\nвіддаленого хоста, або \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, якщо сокет орієнтований на з'єднання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eport\u003c/code\u003e\nЦей аргумент застосовний тільки до сокетів \u003cstrong\u003e\u003ccode\u003eAF_INET\u003c/code\u003e\u003c/strong\u003e та \u003cstrong\u003e\u003ccode\u003eAF_INET6\u003c/code\u003e\u003c/strong\u003e,\nта вказує віддалений порт, з якого будуть отримані дані. Якщо\nсокет орієнтований на з'єднання, \u003ccode\u003eport\u003c/code\u003e буде \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003esocket_recvfrom()\u003c/strong\u003e повертає кількість отриманих байт або\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, якщо сталася помилка. Фактичний код помилки може бути\nотримано за допомогою виклику функції\n\u003ca href=\"function.socket-last-error.md\"\u003esocket_last_error()\u003c/a\u003e. Цей код помилки\nможе бути переданий функції\n\u003ca href=\"function.socket-strerror.md\"\u003esocket_strerror()\u003c/a\u003e для отримання\nтекстового опису помилки.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003esocket тепер екземпляр класу \u003ca href=\"class.socket.md\"\u003eSocket\u003c/a\u003e; раніше був ресурсом (resource).\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003esocket_recvfrom()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);socket_bind($socket, '127.0.0.1', 1223);$from = '';$port = 0;so$_rec , 0, $from, $port);echo \"Отримано $buf з віддаленої адреси $from і віддаленого порту $port\" . PHP_EOL;?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eЦей приклад відкриє UDP-сокет на порту 1223 за адресою 127.0.0.1 та\nвиведе максимум 12 символів, отриманих із віддаленого хоста.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.socket-recv.md\"\u003esocket_recv()\u003c/a\u003e - Отримує дані з\nприєднаного сокету\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.socket-send.md\"\u003esocket_send()\u003c/a\u003e - Надсилає дані в\nприєднаний сокет\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.socket-sendto.md\"\u003esocket_sendto()\u003c/a\u003e - Відправляє\nповідомлення в сокет, незалежно від того, під'єднаний він чи ні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.socket-create.md\"\u003esocket_create()\u003c/a\u003e - Створює сокет\n(кінцеву точку для обміну інформацією)\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.socket-recvfrom.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

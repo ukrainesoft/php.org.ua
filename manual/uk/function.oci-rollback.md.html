@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.oci-rollback | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.oci-result.md">«oci_result</a></p>
+</li>
+<li>
+<p><a href="function.oci-server-version.md">oci_server_version »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.oci8.md">OCI8 Функції</a></p>
+</li>
+<li>
+<p>Відкочує транзакції, що очікують на обробку</p>
+</li>
+</ul>
+<p>#oci_rollback</p>
+<p>(PHP 5, PHP 7, PHP 8, PECL OCI8 >= 1.1.0)</p>
+<p>oci_rollback - Відкочує транзакції, що очікують обробки</p>
+<h3>Опис</h3>
+<p><strong>oci_rollback</strong>(resource <code>$connection</code>): bool</p>
+<p>Ця функція відкочує всі незафіксовані зміни з'єднання
+Oracle <code>connection</code> і завершує транзакцію. Вона також звільняє все
+встановлені блокування. Видаляються всі Oracle <code>SAVEPOINTS</code>.</p>
+<p>Транзакція починається при першому SQL-запиті, який змінює дані, який
+був запущений за допомогою функції <a href="function.oci-execute.md">oci_execute()</a>
+та прапора <strong><code>OCI_NO_AUTO_COMMIT</code></strong>. Наступні зміни даних від інших
+запити також стають частиною цієї транзакції. Зміни, зроблені
+у транзакції, є тимчасовими доти, доки транзакція не буде
+зафіксовано або буде здійснено її відкат. Інші користувачі бази
+даних не зможуть побачити зміни до їхньої фіксації.</p>
+<p>При вставці або оновленні даних рекомендується використовувати транзакції
+для збереження цілісності даних та збільшення продуктивності.</p>
+<h3>Список параметрів</h3>
+<p><code>connection</code>
+Ідентифікатор з'єднання Oracle, отриманий із функцій
+<a href="function.oci-connect.md">oci_connect()</a>,
+<a href="function.oci-pconnect.md">oci_pconnect()</a> або
+<a href="function.oci-new-connect.md">oci_new_connect()</a>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>oci_rollback()</strong></strong></p>
+<p><code>&#x3C;?php// Вставка в кілька таблиць, відкат змін в випадку виникнення помилки$conn = oci_connect('hr', 'welcome', 'localhost/XE');$stid = id, name) VALUES (1, 'Chris')");// Прапор OCI_NO_AUTO_COMMIT повідомляє Oracle не фіксувати запит INSERT при його надходженні// Для і_HP| stid, OCI_NO_AUTO_COMMIT);if (!$r) {    $e = oci_error($stid); trigger_error(htmlentities($e['message']), E_USER_ERROR);}$stid = oci_parse($conn, 'INSERT INTO myschedule (startday) VALUES (12)')_O; if (!$r) {    $e = oci_error($stid); oci_rollback($conn); // відкат змін із двох таблиць    trigger_error(htmlentities($e['message']), E_USER_ERROR);}// Фіксація змін в   ¦                      Ях ($ Conn); trigger_error(htmlentities($e['message']), E_USER_ERROR);}?> </code></p>
+<p><strong>Приклад #2 Приклад використання відкату до <code>SAVEPOINT</code></strong></p>
+<p><code>&#x3C;?php$stid = oci_parse($conn, 'UPDATE mytab SET id = 1111');oci_execute($stid, OCI_NO_AUTO_COMMIT);// Створюємо точку збереження$stid ' ($stid, OCI_NO_AUTO_COMMIT);$stid = oci_parse($conn, 'UPDATE mytab SET id = 2222');oci_execute($stid, OCI_NO_AUTO_COMMIT); $conn, 'ROLLBACK TO SAVEPOINT mysavepoint');oci_execute($stid, OCI_NO_AUTO_COMMIT);oci_commit($conn); // mytab тепер містить id рівні 1111?></code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Транзакції будуть автоматично відкачені під час закриття з'єднання або
+закінчення скрипта (залежно від того, що станеться раніше). Для
+фіксації транзакції необхідно явно викликати функцію
+<a href="function.oci-commit.md">oci_commit()</a>.</p>
+<p>Всі виклики <a href="function.oci-execute.md">oci_execute()</a>, явно або через
+за замовчуванням, що використовують режим <strong><code>OCI_COMMIT_ON_SUCCESS</code></strong> зафіксують
+будь-яку попередню незафіксовану транзакцію.</p>
+<p>Будь-який DDL-запит Oracle, такий як <code>CREATE</code> або <code>DROP</code> автоматично
+фіксує будь-яку незафіксовану транзакцію.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.oci-commit.md">oci_commit()</a> - Підтверджує транзакцію
+бази даних</li>
+<li><a href="function.oci-execute.md">oci_execute()</a> - Виконує
+підготовлений вираз</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.oci-rollback.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.oci-rollback.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.oci-rollback","slug":"function.oci-rollback.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.oci-result.md\"\u003e«oci_result\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.oci-server-version.md\"\u003eoci_server_version »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.oci8.md\"\u003eOCI8 Функції\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВідкочує транзакції, що очікують на обробку\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#oci_rollback\u003c/p\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8, PECL OCI8 \u003e= 1.1.0)\u003c/p\u003e\n\u003cp\u003eoci_rollback - Відкочує транзакції, що очікують обробки\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eoci_rollback\u003c/strong\u003e(resource \u003ccode\u003e$connection\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eЦя функція відкочує всі незафіксовані зміни з'єднання\nOracle \u003ccode\u003econnection\u003c/code\u003e і завершує транзакцію. Вона також звільняє все\nвстановлені блокування. Видаляються всі Oracle \u003ccode\u003eSAVEPOINTS\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eТранзакція починається при першому SQL-запиті, який змінює дані, який\nбув запущений за допомогою функції \u003ca href=\"function.oci-execute.md\"\u003eoci_execute()\u003c/a\u003e\nта прапора \u003cstrong\u003e\u003ccode\u003eOCI_NO_AUTO_COMMIT\u003c/code\u003e\u003c/strong\u003e. Наступні зміни даних від інших\nзапити також стають частиною цієї транзакції. Зміни, зроблені\nу транзакції, є тимчасовими доти, доки транзакція не буде\nзафіксовано або буде здійснено її відкат. Інші користувачі бази\nданих не зможуть побачити зміни до їхньої фіксації.\u003c/p\u003e\n\u003cp\u003eПри вставці або оновленні даних рекомендується використовувати транзакції\nдля збереження цілісності даних та збільшення продуктивності.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003econnection\u003c/code\u003e\nІдентифікатор з'єднання Oracle, отриманий із функцій\n\u003ca href=\"function.oci-connect.md\"\u003eoci_connect()\u003c/a\u003e,\n\u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e або\n\u003ca href=\"function.oci-new-connect.md\"\u003eoci_new_connect()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003eoci_rollback()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Вставка в кілька таблиць, відкат змін в випадку виникнення помилки$conn = oci_connect('hr', 'welcome', 'localhost/XE');$stid = id, name) VALUES (1, 'Chris')\");// Прапор OCI_NO_AUTO_COMMIT повідомляє Oracle не фіксувати запит INSERT при його надходженні// Для і_HP| stid, OCI_NO_AUTO_COMMIT);if (!$r) {    $e = oci_error($stid); trigger_error(htmlentities($e['message']), E_USER_ERROR);}$stid = oci_parse($conn, 'INSERT INTO myschedule (startday) VALUES (12)')_O; if (!$r) {    $e = oci_error($stid); oci_rollback($conn); // відкат змін із двох таблиць    trigger_error(htmlentities($e['message']), E_USER_ERROR);}// Фіксація змін в   ¦                      Ях ($ Conn); trigger_error(htmlentities($e['message']), E_USER_ERROR);}?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклад використання відкату до \u003ccode\u003eSAVEPOINT\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$stid = oci_parse($conn, 'UPDATE mytab SET id = 1111');oci_execute($stid, OCI_NO_AUTO_COMMIT);// Створюємо точку збереження$stid ' ($stid, OCI_NO_AUTO_COMMIT);$stid = oci_parse($conn, 'UPDATE mytab SET id = 2222');oci_execute($stid, OCI_NO_AUTO_COMMIT); $conn, 'ROLLBACK TO SAVEPOINT mysavepoint');oci_execute($stid, OCI_NO_AUTO_COMMIT);oci_commit($conn); // mytab тепер містить id рівні 1111?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eТранзакції будуть автоматично відкачені під час закриття з'єднання або\nзакінчення скрипта (залежно від того, що станеться раніше). Для\nфіксації транзакції необхідно явно викликати функцію\n\u003ca href=\"function.oci-commit.md\"\u003eoci_commit()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eВсі виклики \u003ca href=\"function.oci-execute.md\"\u003eoci_execute()\u003c/a\u003e, явно або через\nза замовчуванням, що використовують режим \u003cstrong\u003e\u003ccode\u003eOCI_COMMIT_ON_SUCCESS\u003c/code\u003e\u003c/strong\u003e зафіксують\nбудь-яку попередню незафіксовану транзакцію.\u003c/p\u003e\n\u003cp\u003eБудь-який DDL-запит Oracle, такий як \u003ccode\u003eCREATE\u003c/code\u003e або \u003ccode\u003eDROP\u003c/code\u003e автоматично\nфіксує будь-яку незафіксовану транзакцію.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.oci-commit.md\"\u003eoci_commit()\u003c/a\u003e - Підтверджує транзакцію\nбази даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.oci-execute.md\"\u003eoci_execute()\u003c/a\u003e - Виконує\nпідготовлений вираз\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.oci-rollback.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

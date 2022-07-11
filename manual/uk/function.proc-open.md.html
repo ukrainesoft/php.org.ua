@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.proc-open | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.proc-nice.md">«proc_nice</a></p>
+</li>
+<li>
+<p><a href="function.proc-terminate.md">proc_terminate »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.exec.md">Функції запуску програм</a></p>
+</li>
+<li>
+<p>Виконати команду та відкрити покажчик на файл для введення/виводу</p>
+</li>
+</ul>
+<p>#proc_open</p>
+<p>(PHP 4 >= 4.3.0, PHP 5, PHP 7, PHP 8)</p>
+<p>proc_open — Виконати команду та відкрити покажчик на файл для
+введення/виводу</p>
+<h3>Опис</h3>
+<p><strong>proc_open</strong>(
+array|string <code>$command</code>,
+array <code>$descriptor_spec</code>,
+array <code>&#x26;$pipes</code>,
+?string <code>$cwd</code> = <strong><code>null</code></strong>,
+?array <code>$env_vars</code> = <strong><code>null</code></strong>,
+?array <code>$options</code> = <strong><code>null</code></strong>
+): resource \ | false</p>
+<p><strong>proc_open()</strong> аналогічна <a href="function.popen.md">popen()</a>, але
+надає набагато більше контролю за виконанням програми.</p>
+<h3>Список параметрів</h3>
+<p><code>command</code>
+Командна до виконання, зазначена як рядок (string). Спеціальні
+символи повинні бути належним чином екрановані, та повинні застосовуватися
+правильні лапки.</p>
+<blockquote>
+<p><strong>Примітка</strong>: У <em>Windows</em>, якщо для <code>bypass_shell</code> не встановлено
+значення <strong><code>true</code></strong> у <code>options</code>, <code>command</code> передається у <strong>cmd.exe</strong>
+(точніше, <code>%ComSpec%</code>) з прапором <code>/c</code> як рядки <em>без лапок</em> (тобто.
+точно так, як було встановлено в <strong>proc_open()</strong>). Це може призвести до
+тому, що <strong>cmd.exe</strong> видалить тих, хто укладає з <code>command</code> (подробиці
+дивіться у документації <strong>cmd.exe</strong>), приводячи до несподіваного та
+потенційно навіть небезпечної поведінки, тому що повідомлення про помилки
+<strong>cmd.exe</strong> можуть містити (частково) переданий параметр <code>command</code>
+(дивіться приклад нижче).</p>
+</blockquote>
+<p>Починаючи з PHP 7.4.0, command може передаватися як масив (array)
+параметрів команди. У цьому випадку процес буде відкритий безпосередньо (не
+проходячи через оболонку) і PHP подбає про екранування будь-якого
+необхідного аргументу.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>У Windows екранування аргументу масиву (array) елементів
+припускає, що синтаксичний аналіз виконаної команди сумісний
+з синтаксичним аналізом аргументів командного рядка, виконуваних
+середовищем виконання VC.</p>
+</blockquote>
+<p><code>descriptor_spec</code>
+Масив, ключі якого є номер дескриптора, а значення
+описує, як PHP має передати цей дескриптор дочірньому процесу.
+0 - stdin, 1 - stdout і 2 - stderr.</p>
+<p>Кожен елемент може бути:</p>
+<ul>
+<li>Масивом, що описує канал (pipe) передачі процесу. Перший
+елемент – це дескриптор типу, другий – налаштування для вибраного
+типу. Можливі типи: <code>pipe</code> (другий елемент або <code>r</code> для передачі
+процесу сторони каналу для читання, або <code>w</code> для передачі сторони
+записи) та <code>file</code> (другий елемент - ім'я файлу). Зверніть увагу,
+що все, крім <code>w</code>, обробляється як <code>r</code>.</li>
+<li>ресурс потоку, що представляє дескриптор файлу (наприклад, відкритий
+файл, сокет, <strong><code>STDIN</code></strong>).</li>
+</ul>
+<p>Номери дескрипторів не обмежені лише 0, 1 та 2 - ви можете призначити
+будь-який дійсний номер дескриптора і його буде передано дочірньому
+процесу. Це дозволяє скрипту взаємодіяти з іншими скриптами,
+працюючими, як паралельні процеси. Зокрема, таким чином можна
+передавати дані, що вимагають захисту, у програми на зразок PGP, GPG та
+openssl безпечніше. Також це може бути корисним для читання
+статусної інформації, що надається цими програмами на
+допоміжні файлові дескриптори.</p>
+<p><code>pipes</code>
+Буде заданий масивом покажчиків на файли, що відповідають створеним
+каналів передачі PHP.</p>
+<p><code>cwd</code>
+Робоча директорія команди. Це має бути <em>абсолютний</em> шлях до
+директорії або <strong><code>null</code></strong>, якщо потрібно використовувати директорію з
+замовчуванням (робоча директорія поточного процесу PHP).</p>
+<p><code>env_vars</code>
+Масив змінних оточення для команди, що запускається, або <strong><code>null</code></strong>, якщо
+потрібно використовувати те саме оточення, що й у поточного
+PHP-процес.</p>
+<p><code>options</code>
+Дозволяє встановити додаткові налаштування. На даний момент
+підтримуються такі настройки:</p>
+<ul>
+<li><code>suppress_errors</code> (тільки для Windows): при установці в <strong><code>true</code></strong>
+не будуть показуватися помилки, що виникають під час роботи функції</li>
+<li><code>bypass_shell</code> (тільки для Windows): при установці в <strong><code>true</code></strong>
+процес буде запущений в обхід оболонки <code>cmd.exe</code></li>
+<li><code>blocking_pipes</code> (тільки для Windows): примусово блокувати
+потік при значенні <strong><code>true</code></strong></li>
+<li><code>create_process_group</code> (тільки для Windows): дозволити дочірньому
+процесу обробляти <code>CTRL</code> події, якщо встановлено значення
+<strong><code>true</code></strong></li>
+<li><code>create_new_console</code> (тільки для Windows): новий процес використовує
+нову консоль, а не успадковує консоль свого батька</li>
+</ul>
+<h3>Значення, що повертаються</h3>
+<p>Повертає ресурс, який представляє процес. Цей ресурс необхідний
+звільняти функцією <a href="function.proc-close.md">proc_close()</a> за
+завершення роботи з ним. У разі виникнення помилки повертає
+<strong><code>false</code></strong>.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.4.4</td>
+<td>Додана опція create_new_console у параметр options.</td>
+</tr>
+<tr>
+<td>7.4.0</td>
+<td><strong>proc_open()</strong> тепер також приймає масив (array) у command.</td>
+</tr>
+<tr>
+<td>7.4.0</td>
+<td>Додана опція create_process_group у параметр options.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>proc_open()</strong></strong></p>
+<p><code>&#x3C;?php$descriptorspec = array(  0 => array("pipe", "r"), // stdin - канал, з якого дочірній процесс буде читати   1 > > / stdout - канал, в який дочірній процес буде записувати   2 => array("file", "/tmp/error-output.txt", "a") // записи|||| ';$env = array('some_option' => 'aeiou');$process = proc_open('php', $descriptorspec, $pipes, $cwd, $env);if (is_resource($process))   | $pipes теперь выглядит так:    // 0 => записывающий обработчик, подключённый к дочернему stdin    // 1 => читающий обработчик, подключённый к дочернему stdout    // Вывод сообщений об ошибках будет добавляться в /tmp/error-output.txt    fwrite($ pipes[0], '&#x3C;?php print_r($_ENV); ?>'); fclose($pipes[0]); echo stream_get_contents($pipes[1]); fclose($pipes[1]); // Важливо закривати всі канали перед| echo "команда вернула $return_value ";}?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Array
+(
+[some_option] => aeiou
+[PWD] => /tmp
+[SHLVL] => 1
+[_] => /usr/local/bin/php
+)
+команда повернула 0</p>
+<p><strong>Приклад #2 <strong>proc_open()</strong> примхи в Windows</strong></p>
+<p>Хоча можна очікувати, що наступна програма шукатиме у файлі
+<code>filename.txt</code> текст <code>search</code> і виводити результати, вона веде себе
+трохи інакше.</p>
+<p><code>&#x3C;?php$descriptorspec = [STDIN, STDOUT, STDOUT];$cmd = '"findstr" "search" "filename.txt"';$proc = proc_open($cmd, $descriptorspec, $pipes); proc);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>'findstr" "search" "filename.txt' не розпізнається як внутрішня або зовнішня команда,
+працююча програма чи пакетний файл.</p>
+<p>Щоб обійти цю поведінку, зазвичай достатньо передати <code>command</code> у
+додаткових лапках:</p>
+<p><code> $cmd =''""findstr" "search" "filename.txt""';</code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Сумісність із Windows: Дескриптори далі 2 (stderr) успадковуються
+дочірніми процесами, однак відколи Windows не асоціює
+номери файлових дескрипторів із низькорівневими обробниками, дочірні
+процеси немає (поки) до них доступу. Це не відноситься до stdin,
+stdout та stderr.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо потрібний однонаправлений канал процесу, використовуйте функцію
+<a href="function.popen.md">popen()</a>, так як вона значно простіше в
+використання.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.popen.md">popen()</a> - Відкриває файловий покажчик
+процесу</li>
+<li><a href="function.exec.md">exec()</a> - Виконати зовнішню програму</li>
+<li><a href="function.system.md">system()</a> - Виконати зовнішню програму та
+відобразити висновок</li>
+<li><a href="function.passthru.md">passthru()</a> - Виконати зовнішню програму та
+відобразити необроблений висновок</li>
+<li><a href="function.stream-select.md">stream_select()</a> - Запускає
+еквівалент системного виклику select() на заданих масивах потоків
+з часом очікування, вказаним параметрами seconds та microseconds</li>
+<li><a href="language.operators.execution.md">Оператор зворотний апостроф</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.proc-open.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.proc-open.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.proc-open","slug":"function.proc-open.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.proc-nice.md\"\u003e«proc_nice\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.proc-terminate.md\"\u003eproc_terminate »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.exec.md\"\u003eФункції запуску програм\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВиконати команду та відкрити покажчик на файл для введення/виводу\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#proc_open\u003c/p\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.3.0, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eproc_open — Виконати команду та відкрити покажчик на файл для\nвведення/виводу\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eproc_open\u003c/strong\u003e(\narray|string \u003ccode\u003e$command\u003c/code\u003e,\narray \u003ccode\u003e$descriptor_spec\u003c/code\u003e,\narray \u003ccode\u003e\u0026#x26;$pipes\u003c/code\u003e,\n?string \u003ccode\u003e$cwd\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\n?array \u003ccode\u003e$env_vars\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\n?array \u003ccode\u003e$options\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\n): resource \\ | false\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eproc_open()\u003c/strong\u003e аналогічна \u003ca href=\"function.popen.md\"\u003epopen()\u003c/a\u003e, але\nнадає набагато більше контролю за виконанням програми.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ecommand\u003c/code\u003e\nКомандна до виконання, зазначена як рядок (string). Спеціальні\nсимволи повинні бути належним чином екрановані, та повинні застосовуватися\nправильні лапки.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: У \u003cem\u003eWindows\u003c/em\u003e, якщо для \u003ccode\u003ebypass_shell\u003c/code\u003e не встановлено\nзначення \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у \u003ccode\u003eoptions\u003c/code\u003e, \u003ccode\u003ecommand\u003c/code\u003e передається у \u003cstrong\u003ecmd.exe\u003c/strong\u003e\n(точніше, \u003ccode\u003e%ComSpec%\u003c/code\u003e) з прапором \u003ccode\u003e/c\u003c/code\u003e як рядки \u003cem\u003eбез лапок\u003c/em\u003e (тобто.\nточно так, як було встановлено в \u003cstrong\u003eproc_open()\u003c/strong\u003e). Це може призвести до\nтому, що \u003cstrong\u003ecmd.exe\u003c/strong\u003e видалить тих, хто укладає з \u003ccode\u003ecommand\u003c/code\u003e (подробиці\nдивіться у документації \u003cstrong\u003ecmd.exe\u003c/strong\u003e), приводячи до несподіваного та\nпотенційно навіть небезпечної поведінки, тому що повідомлення про помилки\n\u003cstrong\u003ecmd.exe\u003c/strong\u003e можуть містити (частково) переданий параметр \u003ccode\u003ecommand\u003c/code\u003e\n(дивіться приклад нижче).\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eПочинаючи з PHP 7.4.0, command може передаватися як масив (array)\nпараметрів команди. У цьому випадку процес буде відкритий безпосередньо (не\nпроходячи через оболонку) і PHP подбає про екранування будь-якого\nнеобхідного аргументу.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eУ Windows екранування аргументу масиву (array) елементів\nприпускає, що синтаксичний аналіз виконаної команди сумісний\nз синтаксичним аналізом аргументів командного рядка, виконуваних\nсередовищем виконання VC.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003edescriptor_spec\u003c/code\u003e\nМасив, ключі якого є номер дескриптора, а значення\nописує, як PHP має передати цей дескриптор дочірньому процесу.\n0 - stdin, 1 - stdout і 2 - stderr.\u003c/p\u003e\n\u003cp\u003eКожен елемент може бути:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eМасивом, що описує канал (pipe) передачі процесу. Перший\nелемент – це дескриптор типу, другий – налаштування для вибраного\nтипу. Можливі типи: \u003ccode\u003epipe\u003c/code\u003e (другий елемент або \u003ccode\u003er\u003c/code\u003e для передачі\nпроцесу сторони каналу для читання, або \u003ccode\u003ew\u003c/code\u003e для передачі сторони\nзаписи) та \u003ccode\u003efile\u003c/code\u003e (другий елемент - ім'я файлу). Зверніть увагу,\nщо все, крім \u003ccode\u003ew\u003c/code\u003e, обробляється як \u003ccode\u003er\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003eресурс потоку, що представляє дескриптор файлу (наприклад, відкритий\nфайл, сокет, \u003cstrong\u003e\u003ccode\u003eSTDIN\u003c/code\u003e\u003c/strong\u003e).\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eНомери дескрипторів не обмежені лише 0, 1 та 2 - ви можете призначити\nбудь-який дійсний номер дескриптора і його буде передано дочірньому\nпроцесу. Це дозволяє скрипту взаємодіяти з іншими скриптами,\nпрацюючими, як паралельні процеси. Зокрема, таким чином можна\nпередавати дані, що вимагають захисту, у програми на зразок PGP, GPG та\nopenssl безпечніше. Також це може бути корисним для читання\nстатусної інформації, що надається цими програмами на\nдопоміжні файлові дескриптори.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epipes\u003c/code\u003e\nБуде заданий масивом покажчиків на файли, що відповідають створеним\nканалів передачі PHP.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ecwd\u003c/code\u003e\nРобоча директорія команди. Це має бути \u003cem\u003eабсолютний\u003c/em\u003e шлях до\nдиректорії або \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, якщо потрібно використовувати директорію з\nзамовчуванням (робоча директорія поточного процесу PHP).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eenv_vars\u003c/code\u003e\nМасив змінних оточення для команди, що запускається, або \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, якщо\nпотрібно використовувати те саме оточення, що й у поточного\nPHP-процес.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoptions\u003c/code\u003e\nДозволяє встановити додаткові налаштування. На даний момент\nпідтримуються такі настройки:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003esuppress_errors\u003c/code\u003e (тільки для Windows): при установці в \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e\nне будуть показуватися помилки, що виникають під час роботи функції\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003ebypass_shell\u003c/code\u003e (тільки для Windows): при установці в \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e\nпроцес буде запущений в обхід оболонки \u003ccode\u003ecmd.exe\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eblocking_pipes\u003c/code\u003e (тільки для Windows): примусово блокувати\nпотік при значенні \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003ecreate_process_group\u003c/code\u003e (тільки для Windows): дозволити дочірньому\nпроцесу обробляти \u003ccode\u003eCTRL\u003c/code\u003e події, якщо встановлено значення\n\u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003ecreate_new_console\u003c/code\u003e (тільки для Windows): новий процес використовує\nнову консоль, а не успадковує консоль свого батька\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає ресурс, який представляє процес. Цей ресурс необхідний\nзвільняти функцією \u003ca href=\"function.proc-close.md\"\u003eproc_close()\u003c/a\u003e за\nзавершення роботи з ним. У разі виникнення помилки повертає\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.4.4\u003c/td\u003e\n\u003ctd\u003eДодана опція create_new_console у параметр options.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.4.0\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003eproc_open()\u003c/strong\u003e тепер також приймає масив (array) у command.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.4.0\u003c/td\u003e\n\u003ctd\u003eДодана опція create_process_group у параметр options.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003eproc_open()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$descriptorspec = array(  0 =\u003e array(\"pipe\", \"r\"), // stdin - канал, з якого дочірній процесс буде читати   1 \u003e \u003e / stdout - канал, в який дочірній процес буде записувати   2 =\u003e array(\"file\", \"/tmp/error-output.txt\", \"a\") // записи|||| ';$env = array('some_option' =\u003e 'aeiou');$process = proc_open('php', $descriptorspec, $pipes, $cwd, $env);if (is_resource($process))   | $pipes теперь выглядит так:    // 0 =\u003e записывающий обработчик, подключённый к дочернему stdin    // 1 =\u003e читающий обработчик, подключённый к дочернему stdout    // Вывод сообщений об ошибках будет добавляться в /tmp/error-output.txt    fwrite($ pipes[0], '\u0026#x3C;?php print_r($_ENV); ?\u003e'); fclose($pipes[0]); echo stream_get_contents($pipes[1]); fclose($pipes[1]); // Важливо закривати всі канали перед| echo \"команда вернула $return_value \";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eArray\n(\n[some_option] =\u003e aeiou\n[PWD] =\u003e /tmp\n[SHLVL] =\u003e 1\n[_] =\u003e /usr/local/bin/php\n)\nкоманда повернула 0\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 \u003cstrong\u003eproc_open()\u003c/strong\u003e примхи в Windows\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eХоча можна очікувати, що наступна програма шукатиме у файлі\n\u003ccode\u003efilename.txt\u003c/code\u003e текст \u003ccode\u003esearch\u003c/code\u003e і виводити результати, вона веде себе\nтрохи інакше.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$descriptorspec = [STDIN, STDOUT, STDOUT];$cmd = '\"findstr\" \"search\" \"filename.txt\"';$proc = proc_open($cmd, $descriptorspec, $pipes); proc);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e'findstr\" \"search\" \"filename.txt' не розпізнається як внутрішня або зовнішня команда,\nпрацююча програма чи пакетний файл.\u003c/p\u003e\n\u003cp\u003eЩоб обійти цю поведінку, зазвичай достатньо передати \u003ccode\u003ecommand\u003c/code\u003e у\nдодаткових лапках:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e $cmd =''\"\"findstr\" \"search\" \"filename.txt\"\"';\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eСумісність із Windows: Дескриптори далі 2 (stderr) успадковуються\nдочірніми процесами, однак відколи Windows не асоціює\nномери файлових дескрипторів із низькорівневими обробниками, дочірні\nпроцеси немає (поки) до них доступу. Це не відноситься до stdin,\nstdout та stderr.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо потрібний однонаправлений канал процесу, використовуйте функцію\n\u003ca href=\"function.popen.md\"\u003epopen()\u003c/a\u003e, так як вона значно простіше в\nвикористання.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.popen.md\"\u003epopen()\u003c/a\u003e - Відкриває файловий покажчик\nпроцесу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.exec.md\"\u003eexec()\u003c/a\u003e - Виконати зовнішню програму\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.system.md\"\u003esystem()\u003c/a\u003e - Виконати зовнішню програму та\nвідобразити висновок\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.passthru.md\"\u003epassthru()\u003c/a\u003e - Виконати зовнішню програму та\nвідобразити необроблений висновок\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.stream-select.md\"\u003estream_select()\u003c/a\u003e - Запускає\nеквівалент системного виклику select() на заданих масивах потоків\nз часом очікування, вказаним параметрами seconds та microseconds\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"language.operators.execution.md\"\u003eОператор зворотний апостроф\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.proc-open.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqlnd.config | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqlnd.install.md">« Установка</a></p>
+</li>
+<li>
+<p><a href="mysqlnd.incompatibilities.md">Несумісності »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.mysqlnd.md">Mysqlnd</a></p>
+</li>
+<li>
+<p>Налаштування під час виконання</p>
+</li>
+</ul>
+<h1>Налаштування під час виконання</h1>
+<p>Поведінка цих функцій залежить від установок <code>php.ini</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Ім'я За замовчуванням</th>
+<th>Місце зміни</th>
+<th>Список змін</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.collect-statistics">mysqlnd.collect_statistics</a></td>
+<td>"1"</td>
+<td>PHP_INI_SYSTEM</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.collect-memory-statistics">mysqlnd.collect_memory_statistics</a></td>
+<td>"0"</td>
+<td>PHP_INI_SYSTEM</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.debug">mysqlnd.debug</a></td>
+<td>""</td>
+<td>PHP_INI_SYSTEM</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.log-mask">mysqlnd.log_mask</a></td>
+<td>0</td>
+<td>PHP_INI_ALL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.mempool-default-size">mysqlnd.mempool_default_size</a></td>
+<td>16000</td>
+<td>PHP_INI_ALL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.net-read-timeout">mysqlnd.net_read_timeout</a></td>
+<td>"86400"</td>
+<td>PHP_INI_ALL</td>
+<td>До PHP 7.2.0 значенням "31536000", а місцем зміни було <strong>PHP_INI_SYSTEM</strong></td>
+</tr>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.net-cmd-buffer-size">mysqlnd.net_cmd_buffer_size</a></td>
+<td>5.3.0 – "2048", 5.3.1 – "4096"</td>
+<td>PHP_INI_SYSTEM</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.net-read-buffer-size">mysqlnd.net_read_buffer_size</a></td>
+<td>"32768"</td>
+<td>PHP_INI_SYSTEM</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.sha256-server-public-key">mysqlnd.sha256_server_public_key</a></td>
+<td>""</td>
+<td>PHP_INI_PERDIR</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.trace-alloc">mysqlnd.trace_alloc</a></td>
+<td>""</td>
+<td>PHP_INI_SYSTEM</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqlnd.config.md#ini.mysqlnd.fetch_data_copy">mysqlnd.fetch_data_copy</a></td>
+<td>0</td>
+<td>PHP_INI_ALL</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Параметри конфігурації вбудованого драйвера MySQL</strong></p>
+<p>Для детального опису констант PHP_INI_*, зверніться до розділу <a href="configuration.changes.modes.md">Де
+можуть бути встановлені параметри конфігурації</a>.</p>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>mysqlnd.collect_statistics</code> bool
+Включає в себе збір різної статистики клієнта, доступ до якої можна
+отримати за допомогою
+<a href="function.mysqli-get-client-stats.md">mysqli_get_client_stats()</a>,
+<a href="mysqli.get-connection-stats.md">mysqli_get_connection_stats()</a>, та
+яка відображається у розділі <code>mysqlnd</code> виведення функції
+<a href="function.phpinfo.md">phpinfo()</a>.</p>
+<p>Цей параметр конфігурації включає всю <a href="mysqlnd.stats.md">статистику вбудованого драйвера MySQL</a>, крім що стосується роботи з оперативною
+пам'яттю.</p>
+<p><code>mysqlnd.collect_memory_statistics</code> bool
+Включає в себе збір різної статистики оперативної пам'яті, доступ до якої
+можна отримати за допомогою
+<a href="function.mysqli-get-client-stats.md">mysqli_get_client_stats()</a>,
+<a href="mysqli.get-connection-stats.md">mysqli_get_connection_stats()</a>, та
+яка відображається у розділі <code>mysqlnd</code> виведення функції
+<a href="function.phpinfo.md">phpinfo()</a>.</p>
+<p>Цей параметр конфігурації включає всю статистику, що стосується роботи
+з оперативною пам'яттю, до загального набору даних <a href="mysqlnd.stats.md">статистики вбудованого драйвера MySQL</a>.</p>
+<p><code>mysqlnd.debug</code> string
+Записує команди з усіх модулів, що використовують <code>mysqlnd</code>, у вказаний
+файл із логами.</p>
+<p>Формат параметра наступний:
+<code>mysqlnd.debug = "option1[,parameter_option1][:option2[,parameter_option2]]"</code>.</p>
+<p>Можливі нижченаведені значення для рядка форматування:</p>
+<ul>
+<li>
+<p>A[,file] - додає виведення трасування у вказаний файл. Також
+щоразу перевіряє успішність запису даних. Це реалізовано шляхом
+закриття та повторного відкриття файлу (що досить повільно). Дає
+гарантію цілісності файлу з логами у разі виникнення помилки
+програми.</p>
+</li>
+<li>
+<p>a[,file] - додає виведення трасування у вказаний файл.</p>
+</li>
+<li>
+<p>d - Включає виведення з макросу DBUG_&#x3C;N> для поточного стану.
+Може бути доповнено списком ключових слів, щоб вибрати висновок
+тільки що містить ці ключові слова макросів DBUG. Порожній список
+Ключових слів має на увазі виведення всіх макросів.</p>
+</li>
+<li>
+<p>f[,functions] - обмежує дії відладчика вказаним списком
+функцій. Порожній список функцій має на увазі вибір усіх функцій.</p>
+</li>
+<li>
+<p>F - позначає виведення кожного рядка відладчика назвою вихідного
+файлу, що містить код, що спричинив висновок.</p>
+</li>
+<li>
+<p>i - позначає виведення кожного рядка відладчика PID поточного процесу.</p>
+</li>
+<li>
+<p>L - позначає виведення кожного рядка відладчика назвою вихідного
+файлу, що викликав висновок, та номером рядка у ній.</p>
+</li>
+<li>
+<p>n - позначає виведення кожного рядка відладчика рівнем вкладеності
+поточної функції.</p>
+</li>
+<li>
+<p>o[,file] - подібно до a[,file], але перезаписує старий файл, а
+не дописує його.</p>
+</li>
+<li>
+<p>O[,file] - подібно до A[,file] але перезаписує старий файл, а не
+дописує його.</p>
+</li>
+<li>
+<p>t[,N] - включає контроль функцій під час трасування.
+Максимальний рівень вкладеності визначено N і за замовчуванням дорівнює</p>
+</li>
+</ul>
+<ol start="200">
+<li></li>
+</ol>
+<ul>
+<li>
+<p>x – цей параметр активує профіль.</p>
+</li>
+<li>
+<p>m - відслідковувати виклики, пов'язані з виділеннями та вивільненням
+пам'яті.</p>
+</li>
+</ul>
+<p>Приклад:</p>
+<p>d:t:x:O,/tmp/mysqlnd.trace</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ця можливість доступна лише для налагоджувального складання PHP. Працює на
+Microsoft Windows при використанні налагоджувального складання PHP, якщо PHP
+був зібраний за допомогою Microsoft Visual C версії 9 та вище.</p>
+</blockquote>
+<p><code>mysqlnd.log_mask</code> int
+Визначає, які запити журналюватимуться. Значення за замовчуванням -
+0, що вимикає журнал. Значення параметра – тільки ціле
+число, константи PHP використовувати не можна. Наприклад, при значенні 48
+(16 + 32) в журнал будуть записуватися повільні запити, які або
+використовують невідповідні індекси (SERVER_QUERY_NO_GOOD_INDEX_USED = 16),
+або використовують їх взагалі SERVER_QUERY_NO_INDEX_USED = 32). При
+значенні 2043 (1 + 2 + 8 + ... + 1024) в журнал записуватимуться всі
+типи повільних запитів.</p>
+<p>Використовуються такі типи запитів: SERVER_STATUS_IN_TRANS=1,
+SERVER_STATUS_AUTOCOMMIT=2, SERVER_MORE_RESULTS_EXISTS=8,
+SERVER_QUERY_NO_GOOD_INDEX_USED=16, SERVER_QUERY_NO_INDEX_USED=32,
+SERVER_STATUS_CURSOR_EXISTS=64, SERVER_STATUS_LAST_ROW_SENT=128,
+SERVER_STATUS_DB_DROPPED=256, SERVER_STATUS_NO_BACKSLASH_ESCAPES=512,
+and SERVER_QUERY_WAS_SLOW=1024.</p>
+<p><code>mysqlnd.mempool_default_size</code> int
+Більшість розміру mysqlnd memory pool, which is used by result sets.</p>
+<p><code>mysqlnd.net_read_timeout</code> int
+<code>mysqlnd</code> та клієнтська бібліотека MySQL, <code>libmysqlclient</code>, використовують
+різні мережеві API. <code>mysqlnd</code> використовує потоки PHP, тоді як
+<code>libmysqlclient</code> - власну обгортку над мережевими викликами
+ОС. У PHP за замовчуванням виставлено 60-секундний час
+очікування потоків. Цей параметр виставляється в <code>php.ini</code> директивою
+<code>default_socket_timeout</code>. За умовчанням це стосується всіх потоків,
+яким не встановлено інше значення часу очікування. <code>mysqlnd</code> не
+встановлював інших значень, тому підключення довго виконуються
+запитів можуть бути відключені після <code>default_socket_timeout</code> секунд з
+помилкою "2006 - MySQL Server has gone away". Клієнтська бібліотека MySQL
+встановлює час очікування за замовчуванням, що дорівнює 24 * 3600 секунд (1
+день) і чекає на виникнення іншого часу очікування, такого як час
+очікування TCP/IP. Тепер <code>mysqlnd</code> використовує такий самий дуже довгий час
+очікування. Це значення можна змінити через нову директиву <code>php.ini</code> -
+<code>mysqlnd.net_read_timeout</code>. <code>mysqlnd.net_read_timeout</code> буде
+використовуватись будь-яким модулем (<code>ext/mysql</code>, <code>ext/mysqli</code>, <code>PDO_MySQL</code>),
+які використовують <code>mysqlnd</code>. <code>mysqlnd</code> вказує потокам PHP використовувати
+<code>mysqlnd.net_read_timeout</code>. Будь ласка, зверніть увагу, що можуть
+бути невеликі відмінності між <code>MYSQL_OPT_READ_TIMEOUT</code> у клієнтській
+бібліотеці MySQL і потоках PHP, наприклад, судячи з документації,
+<code>MYSQL_OPT_READ_TIMEOUT</code> працює тільки для TCP/IP-підключень та,
+аж до MySQL 5.1.2, лише під Windows. Потоки PHP можуть не мати
+подібних обмежень. У разі сумнівів прохання звірятися з
+документації потоків.</p>
+<p><code>mysqlnd.net_cmd_buffer_size</code> int
+<code>mysqlnd</code> резервує внутрішній командно-мережевий буфер розміром
+<code>mysqlnd.net_cmd_buffer_size</code> (в <code>php.ini</code>) байт для кожного з'єднання.
+Якщо команда клієнт-серверного протоколу MySQL, наприклад, <code>COM_QUERY</code>
+("звичайний" запит), не вміщується в буфер, <code>mysqlnd</code> збільшить буфер до
+розміру, необхідного для надсилання команди. Щоразу, коли буфер був
+збільшено, змінна статистика <code>command_buffer_too_small</code> буде
+збільшено на один.</p>
+<p>Якщо <code>mysqlnd</code> доводиться збільшувати буфер понад його заданий розмір
+в <code>mysqlnd.net_cmd_buffer_size</code> байт для більшості з'єднань, вам
+слід обміркувати необхідність збільшення розміру за замовчуванням, щоб
+уникнути повторних резервацій буфера.</p>
+<p>Розмір за замовчуванням буфера складає 4096 байт, що є найменшим
+можливим значенням.</p>
+<p>Це значення також може бути встановлене функцією
+<code>mysqli_options(link, MYSQLI_OPT_NET_CMD_BUFFER_SIZE, size)</code>.</p>
+<p><code>mysqlnd.net_read_buffer_size</code> int
+Максимальний розмір частини даних при зчитуванні, у байтах, при обробці
+тіла командного пакета MySQL Клієнт-серверний протокол MySQL
+обертає всі свої команди у пакети. Пакет складається з невеликого
+заголовка та тіла, що містить безпосередньо дані команди. Розмір
+тіла закодований у заголовку. <code>mysqlnd</code> зчитує тіло частинами по
+<code>MIN(header.size, mysqlnd.net_read_buffer_size)</code> байт. Якщо розмір тіла
+пакету більше, ніж <code>mysqlnd.net_read_buffer_size</code> байт, <code>mysqlnd</code> буде
+викликати <code>read()</code> кілька разів.</p>
+<p>Це значення також може бути встановлене функцією
+<code>mysqli_options(link, MYSQLI_OPT_NET_READ_BUFFER_SIZE, size)</code>.</p>
+<p><code>mysqlnd.sha256_server_public_key</code> string
+Ця опція відноситься до плагіна автентифікації SHA-256 і містить шлях
+до файлу з публічним ключем RSA MySQL-сервера.</p>
+<p>Клієнт може як не вказувати публічний ключ RSA, вказати його за допомогою
+даної опції, або встановити ключ під час виконання за допомогою функції
+<a href="mysqli.options.md">mysqli_options()</a>. Якщо публічний ключ RSA не був
+переданий клієнтом, то ключ буде отримано в результаті стандартної
+процедури аутентифікації плагіна аутентифікації SHA-256</p>
+<p><code>mysqlnd.trace_alloc</code> string</p>
+<p><code>mysqlnd.fetch_data_copy</code> int
+Примушує копіювати набори з внутрішнього буфера наборів PHP
+змінні замість використання логіки з посиланнями та "копіюванням при
+запису" за замовчуванням. Дивіться <a href="mysqlnd.memory.md">Реалізація управління пам'яттю</a> для отримання більшої інформації.</p>
+<p>Копіювання результуючих наборів замість PHP змінних посилаються на
+Їх дозволяють виділяти пам'ять для PHP змінних заздалегідь. В залежності
+від коду користувача, реальних запитів до бази даних та розмірів їх
+результатів можна знизити споживання пам'яті mysqlnd.</p>
+<p>Не використовуйте, якщо використовується PDO_MySQL. У PDO_MySQL ще не додана
+підтримка нового режиму.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqlnd.config.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqlnd.config.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqlnd.config","slug":"mysqlnd.config.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqlnd.install.md\"\u003e« Установка\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqlnd.incompatibilities.md\"\u003eНесумісності »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.mysqlnd.md\"\u003eMysqlnd\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНалаштування під час виконання\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eНалаштування під час виконання\u003c/h1\u003e\n\u003cp\u003eПоведінка цих функцій залежить від установок \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІм'я За замовчуванням\u003c/th\u003e\n\u003cth\u003eМісце зміни\u003c/th\u003e\n\u003cth\u003eСписок змін\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.collect-statistics\"\u003emysqlnd.collect_statistics\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"1\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.collect-memory-statistics\"\u003emysqlnd.collect_memory_statistics\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.debug\"\u003emysqlnd.debug\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.log-mask\"\u003emysqlnd.log_mask\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.mempool-default-size\"\u003emysqlnd.mempool_default_size\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e16000\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.net-read-timeout\"\u003emysqlnd.net_read_timeout\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"86400\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003eДо PHP 7.2.0 значенням \"31536000\", а місцем зміни було \u003cstrong\u003ePHP_INI_SYSTEM\u003c/strong\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.net-cmd-buffer-size\"\u003emysqlnd.net_cmd_buffer_size\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e5.3.0 – \"2048\", 5.3.1 – \"4096\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.net-read-buffer-size\"\u003emysqlnd.net_read_buffer_size\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"32768\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.sha256-server-public-key\"\u003emysqlnd.sha256_server_public_key\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_PERDIR\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.trace-alloc\"\u003emysqlnd.trace_alloc\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqlnd.config.md#ini.mysqlnd.fetch_data_copy\"\u003emysqlnd.fetch_data_copy\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eПараметри конфігурації вбудованого драйвера MySQL\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля детального опису констант PHP_INI_*, зверніться до розділу \u003ca href=\"configuration.changes.modes.md\"\u003eДе\nможуть бути встановлені параметри конфігурації\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eКоротке пояснення конфігураційних директив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.collect_statistics\u003c/code\u003e bool\nВключає в себе збір різної статистики клієнта, доступ до якої можна\nотримати за допомогою\n\u003ca href=\"function.mysqli-get-client-stats.md\"\u003emysqli_get_client_stats()\u003c/a\u003e,\n\u003ca href=\"mysqli.get-connection-stats.md\"\u003emysqli_get_connection_stats()\u003c/a\u003e, та\nяка відображається у розділі \u003ccode\u003emysqlnd\u003c/code\u003e виведення функції\n\u003ca href=\"function.phpinfo.md\"\u003ephpinfo()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЦей параметр конфігурації включає всю \u003ca href=\"mysqlnd.stats.md\"\u003eстатистику вбудованого драйвера MySQL\u003c/a\u003e, крім що стосується роботи з оперативною\nпам'яттю.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.collect_memory_statistics\u003c/code\u003e bool\nВключає в себе збір різної статистики оперативної пам'яті, доступ до якої\nможна отримати за допомогою\n\u003ca href=\"function.mysqli-get-client-stats.md\"\u003emysqli_get_client_stats()\u003c/a\u003e,\n\u003ca href=\"mysqli.get-connection-stats.md\"\u003emysqli_get_connection_stats()\u003c/a\u003e, та\nяка відображається у розділі \u003ccode\u003emysqlnd\u003c/code\u003e виведення функції\n\u003ca href=\"function.phpinfo.md\"\u003ephpinfo()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЦей параметр конфігурації включає всю статистику, що стосується роботи\nз оперативною пам'яттю, до загального набору даних \u003ca href=\"mysqlnd.stats.md\"\u003eстатистики вбудованого драйвера MySQL\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.debug\u003c/code\u003e string\nЗаписує команди з усіх модулів, що використовують \u003ccode\u003emysqlnd\u003c/code\u003e, у вказаний\nфайл із логами.\u003c/p\u003e\n\u003cp\u003eФормат параметра наступний:\n\u003ccode\u003emysqlnd.debug = \"option1[,parameter_option1][:option2[,parameter_option2]]\"\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eМожливі нижченаведені значення для рядка форматування:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eA[,file] - додає виведення трасування у вказаний файл. Також\nщоразу перевіряє успішність запису даних. Це реалізовано шляхом\nзакриття та повторного відкриття файлу (що досить повільно). Дає\nгарантію цілісності файлу з логами у разі виникнення помилки\nпрограми.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ea[,file] - додає виведення трасування у вказаний файл.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ed - Включає виведення з макросу DBUG_\u0026#x3C;N\u003e для поточного стану.\nМоже бути доповнено списком ключових слів, щоб вибрати висновок\nтільки що містить ці ключові слова макросів DBUG. Порожній список\nКлючових слів має на увазі виведення всіх макросів.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ef[,functions] - обмежує дії відладчика вказаним списком\nфункцій. Порожній список функцій має на увазі вибір усіх функцій.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eF - позначає виведення кожного рядка відладчика назвою вихідного\nфайлу, що містить код, що спричинив висновок.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ei - позначає виведення кожного рядка відладчика PID поточного процесу.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eL - позначає виведення кожного рядка відладчика назвою вихідного\nфайлу, що викликав висновок, та номером рядка у ній.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003en - позначає виведення кожного рядка відладчика рівнем вкладеності\nпоточної функції.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eo[,file] - подібно до a[,file], але перезаписує старий файл, а\nне дописує його.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eO[,file] - подібно до A[,file] але перезаписує старий файл, а не\nдописує його.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003et[,N] - включає контроль функцій під час трасування.\nМаксимальний рівень вкладеності визначено N і за замовчуванням дорівнює\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003col start=\"200\"\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003ex – цей параметр активує профіль.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003em - відслідковувати виклики, пов'язані з виділеннями та вивільненням\nпам'яті.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eПриклад:\u003c/p\u003e\n\u003cp\u003ed:t:x:O,/tmp/mysqlnd.trace\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЦя можливість доступна лише для налагоджувального складання PHP. Працює на\nMicrosoft Windows при використанні налагоджувального складання PHP, якщо PHP\nбув зібраний за допомогою Microsoft Visual C версії 9 та вище.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.log_mask\u003c/code\u003e int\nВизначає, які запити журналюватимуться. Значення за замовчуванням -\n0, що вимикає журнал. Значення параметра – тільки ціле\nчисло, константи PHP використовувати не можна. Наприклад, при значенні 48\n(16 + 32) в журнал будуть записуватися повільні запити, які або\nвикористовують невідповідні індекси (SERVER_QUERY_NO_GOOD_INDEX_USED = 16),\nабо використовують їх взагалі SERVER_QUERY_NO_INDEX_USED = 32). При\nзначенні 2043 (1 + 2 + 8 + ... + 1024) в журнал записуватимуться всі\nтипи повільних запитів.\u003c/p\u003e\n\u003cp\u003eВикористовуються такі типи запитів: SERVER_STATUS_IN_TRANS=1,\nSERVER_STATUS_AUTOCOMMIT=2, SERVER_MORE_RESULTS_EXISTS=8,\nSERVER_QUERY_NO_GOOD_INDEX_USED=16, SERVER_QUERY_NO_INDEX_USED=32,\nSERVER_STATUS_CURSOR_EXISTS=64, SERVER_STATUS_LAST_ROW_SENT=128,\nSERVER_STATUS_DB_DROPPED=256, SERVER_STATUS_NO_BACKSLASH_ESCAPES=512,\nand SERVER_QUERY_WAS_SLOW=1024.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.mempool_default_size\u003c/code\u003e int\nБільшість розміру mysqlnd memory pool, which is used by result sets.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.net_read_timeout\u003c/code\u003e int\n\u003ccode\u003emysqlnd\u003c/code\u003e та клієнтська бібліотека MySQL, \u003ccode\u003elibmysqlclient\u003c/code\u003e, використовують\nрізні мережеві API. \u003ccode\u003emysqlnd\u003c/code\u003e використовує потоки PHP, тоді як\n\u003ccode\u003elibmysqlclient\u003c/code\u003e - власну обгортку над мережевими викликами\nОС. У PHP за замовчуванням виставлено 60-секундний час\nочікування потоків. Цей параметр виставляється в \u003ccode\u003ephp.ini\u003c/code\u003e директивою\n\u003ccode\u003edefault_socket_timeout\u003c/code\u003e. За умовчанням це стосується всіх потоків,\nяким не встановлено інше значення часу очікування. \u003ccode\u003emysqlnd\u003c/code\u003e не\nвстановлював інших значень, тому підключення довго виконуються\nзапитів можуть бути відключені після \u003ccode\u003edefault_socket_timeout\u003c/code\u003e секунд з\nпомилкою \"2006 - MySQL Server has gone away\". Клієнтська бібліотека MySQL\nвстановлює час очікування за замовчуванням, що дорівнює 24 * 3600 секунд (1\nдень) і чекає на виникнення іншого часу очікування, такого як час\nочікування TCP/IP. Тепер \u003ccode\u003emysqlnd\u003c/code\u003e використовує такий самий дуже довгий час\nочікування. Це значення можна змінити через нову директиву \u003ccode\u003ephp.ini\u003c/code\u003e -\n\u003ccode\u003emysqlnd.net_read_timeout\u003c/code\u003e. \u003ccode\u003emysqlnd.net_read_timeout\u003c/code\u003e буде\nвикористовуватись будь-яким модулем (\u003ccode\u003eext/mysql\u003c/code\u003e, \u003ccode\u003eext/mysqli\u003c/code\u003e, \u003ccode\u003ePDO_MySQL\u003c/code\u003e),\nякі використовують \u003ccode\u003emysqlnd\u003c/code\u003e. \u003ccode\u003emysqlnd\u003c/code\u003e вказує потокам PHP використовувати\n\u003ccode\u003emysqlnd.net_read_timeout\u003c/code\u003e. Будь ласка, зверніть увагу, що можуть\nбути невеликі відмінності між \u003ccode\u003eMYSQL_OPT_READ_TIMEOUT\u003c/code\u003e у клієнтській\nбібліотеці MySQL і потоках PHP, наприклад, судячи з документації,\n\u003ccode\u003eMYSQL_OPT_READ_TIMEOUT\u003c/code\u003e працює тільки для TCP/IP-підключень та,\nаж до MySQL 5.1.2, лише під Windows. Потоки PHP можуть не мати\nподібних обмежень. У разі сумнівів прохання звірятися з\nдокументації потоків.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.net_cmd_buffer_size\u003c/code\u003e int\n\u003ccode\u003emysqlnd\u003c/code\u003e резервує внутрішній командно-мережевий буфер розміром\n\u003ccode\u003emysqlnd.net_cmd_buffer_size\u003c/code\u003e (в \u003ccode\u003ephp.ini\u003c/code\u003e) байт для кожного з'єднання.\nЯкщо команда клієнт-серверного протоколу MySQL, наприклад, \u003ccode\u003eCOM_QUERY\u003c/code\u003e\n(\"звичайний\" запит), не вміщується в буфер, \u003ccode\u003emysqlnd\u003c/code\u003e збільшить буфер до\nрозміру, необхідного для надсилання команди. Щоразу, коли буфер був\nзбільшено, змінна статистика \u003ccode\u003ecommand_buffer_too_small\u003c/code\u003e буде\nзбільшено на один.\u003c/p\u003e\n\u003cp\u003eЯкщо \u003ccode\u003emysqlnd\u003c/code\u003e доводиться збільшувати буфер понад його заданий розмір\nв \u003ccode\u003emysqlnd.net_cmd_buffer_size\u003c/code\u003e байт для більшості з'єднань, вам\nслід обміркувати необхідність збільшення розміру за замовчуванням, щоб\nуникнути повторних резервацій буфера.\u003c/p\u003e\n\u003cp\u003eРозмір за замовчуванням буфера складає 4096 байт, що є найменшим\nможливим значенням.\u003c/p\u003e\n\u003cp\u003eЦе значення також може бути встановлене функцією\n\u003ccode\u003emysqli_options(link, MYSQLI_OPT_NET_CMD_BUFFER_SIZE, size)\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.net_read_buffer_size\u003c/code\u003e int\nМаксимальний розмір частини даних при зчитуванні, у байтах, при обробці\nтіла командного пакета MySQL Клієнт-серверний протокол MySQL\nобертає всі свої команди у пакети. Пакет складається з невеликого\nзаголовка та тіла, що містить безпосередньо дані команди. Розмір\nтіла закодований у заголовку. \u003ccode\u003emysqlnd\u003c/code\u003e зчитує тіло частинами по\n\u003ccode\u003eMIN(header.size, mysqlnd.net_read_buffer_size)\u003c/code\u003e байт. Якщо розмір тіла\nпакету більше, ніж \u003ccode\u003emysqlnd.net_read_buffer_size\u003c/code\u003e байт, \u003ccode\u003emysqlnd\u003c/code\u003e буде\nвикликати \u003ccode\u003eread()\u003c/code\u003e кілька разів.\u003c/p\u003e\n\u003cp\u003eЦе значення також може бути встановлене функцією\n\u003ccode\u003emysqli_options(link, MYSQLI_OPT_NET_READ_BUFFER_SIZE, size)\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.sha256_server_public_key\u003c/code\u003e string\nЦя опція відноситься до плагіна автентифікації SHA-256 і містить шлях\nдо файлу з публічним ключем RSA MySQL-сервера.\u003c/p\u003e\n\u003cp\u003eКлієнт може як не вказувати публічний ключ RSA, вказати його за допомогою\nданої опції, або встановити ключ під час виконання за допомогою функції\n\u003ca href=\"mysqli.options.md\"\u003emysqli_options()\u003c/a\u003e. Якщо публічний ключ RSA не був\nпереданий клієнтом, то ключ буде отримано в результаті стандартної\nпроцедури аутентифікації плагіна аутентифікації SHA-256\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.trace_alloc\u003c/code\u003e string\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqlnd.fetch_data_copy\u003c/code\u003e int\nПримушує копіювати набори з внутрішнього буфера наборів PHP\nзмінні замість використання логіки з посиланнями та \"копіюванням при\nзапису\" за замовчуванням. Дивіться \u003ca href=\"mysqlnd.memory.md\"\u003eРеалізація управління пам'яттю\u003c/a\u003e для отримання більшої інформації.\u003c/p\u003e\n\u003cp\u003eКопіювання результуючих наборів замість PHP змінних посилаються на\nЇх дозволяють виділяти пам'ять для PHP змінних заздалегідь. В залежності\nвід коду користувача, реальних запитів до бази даних та розмірів їх\nрезультатів можна знизити споживання пам'яті mysqlnd.\u003c/p\u003e\n\u003cp\u003eНе використовуйте, якщо використовується PDO_MySQL. У PDO_MySQL ще не додана\nпідтримка нового режиму.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqlnd.config.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

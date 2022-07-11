@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.db2-connect | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.db2-conn-errormsg.md">«db2_conn_errormsg</a></p>
+</li>
+<li>
+<p><a href="function.db2-cursor-type.md">db2_cursor_type »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.ibm-db2.md">Функції IBM DB2</a></p>
+</li>
+<li>
+<p>Повертає з'єднання з базою даних</p>
+</li>
+</ul>
+<p>#db2_connect</p>
+<p>(PECL ibm_db2 >= 1.0.0)</p>
+<p>db2_connect — Повертає з'єднання з базою даних</p>
+<h3>Опис</h3>
+<p><strong>db2_connect</strong>(
+string <code>$database</code>,
+string <code>$username</code>,
+string <code>$password</code>,
+array <code>$options</code> = ?
+): resource</p>
+<p>Створює нове з'єднання з базою даних IBM DB2 Universal Database, IBM
+Cloudscape чи Apache Derby database.</p>
+<h3>Список параметрів</h3>
+<p><code>database</code>
+Для каталогізованого з'єднання з базою даних <code>database</code>
+є псевдонім бази даних у клієнтському каталозі DB2.</p>
+<p>Для некаталогізованого підключення до бази даних <code>database</code>
+є повним рядком підключення в наступному форматі:</p>
+<pre><code>DATABASE=database;HOSTNAME=hostname;PORT=port;PROTOCOL=TCPIP;UID=username;PWD=password;
+</code></pre>
+<p>де параметри становлять такі значення:</p>
+<p><code>database</code>
+Назва бази даних.</p>
+<p><code>hostname</code>
+Ім'я хоста або IP-адреса сервера бази даних.</p>
+<p><code>port</code>
+Порт TCP/IP, який використовується базою даних для прийняття запитів.</p>
+<p><code>username</code>
+Ім'я користувача, під яким відбувається підключення до бази даних.</p>
+<p><code>password</code>
+Пароль, з яким відбувається підключення до бази даних.</p>
+<p><code>username</code>
+Ім'я користувача, під яким відбувається підключення до бази даних.</p>
+<p>Для некаталогізованих з'єднань необхідно передати значення
+<strong><code>null</code></strong> або порожній рядок.</p>
+<p><code>password</code>
+Пароль, з яким відбувається підключення до бази даних.</p>
+<p>Для некаталогізованих з'єднань необхідно передати значення
+<strong><code>null</code></strong> або порожній рядок.</p>
+<p><code>options</code>
+Асоціативний масив параметрів підключення, які впливають на поведінку
+підключення, де допустимі ключі масиву включають:</p>
+<p><code>autocommit</code>
+Передача значення DB2_AUTOCOMMIT_ON включає автоматичну фіксацію
+(Autocommit) для цього дескриптора з'єднання.</p>
+<p>Передача значення <code>DB2_AUTOCOMMIT_OFF</code> вимикає автоматичну фіксацію
+(Autocommit) для цього дескриптора з'єднання.</p>
+<p><code>DB2_ATTR_CASE</code>
+Передача значення DB2_CASE_NATURAL вказує, що імена стовпців
+повертаються у природному регістрі.</p>
+<p>Передача значення DB2_CASE_LOWER вказує, що імена стовпців
+повертаються у нижньому регістрі.</p>
+<p>Передача значення DB2_CASE_UPPER вказує, що імена стовпців
+повертаються у верхньому регістрі.</p>
+<p><code>CURSOR</code>
+Передача значення DB2_FORWARD_ONLY задає курсор, який рухається
+тільки вперед для ресурсу оператора. Цей тип курсору використовується по
+замовчуванням, він підтримується усіма серверами баз даних.</p>
+<p>Передача значення <code>DB2_SCROLLABLE</code> задає курсор, що прокручується
+ресурс оператора. Цей режим включає довільний доступ до рядків
+набір результатів, але в даний час підтримується лише IBM DB2
+Universal Database.</p>
+<p>Ця нова опція доступна в ibm_db2 версії 1.7.0 та новішої.</p>
+<p><code>trustedcontext</code>
+Передача значення DB2_TRUSTED_CONTEXT_ENABLE містить довірений
+контекст для цього дескриптора з'єднання. Цей параметр не можна
+встановити за допомогою <a href="function.db2-set-option.md">db2_set_option()</a>.</p>
+<p>Цей ключ працює тільки в тому випадку, якщо база даних
+каталогізована (навіть якщо база даних є локальною) або якщо
+буде вказано повний DSN під час створення з'єднання.</p>
+<p>Щоб каталогізувати базу даних, використовуйте такі команди:</p>
+<pre><code>db2 catalog tcpip node loopback remote &#x3C;SERVERNAME> server &#x3C;SERVICENAME>
+db2 catalog database &#x3C;LOCALDBNAME> as &#x3C;REMOTEDBNAME> at node loopback
+db2 "update dbm cfg using svcename &#x3C;SERVICENAME>"
+db2set DB2COMM=TCPIP
+</code></pre>
+<p>Дані нові опції i5/OS доступні в ibm_db2 версії 1.5.1 та новіші.</p>
+<p><code>i5_lib</code>
+Символьне значення, яке вказує бібліотеку за умовчанням, яка буде
+використовуватись для дозволу некваліфікованих посилань на файли. Це
+неприпустимо, якщо з'єднання використовує режим назви системи.</p>
+<p><code>i5_naming</code>
+Значення <code>DB2_I5_NAMING_ON</code> включає режим іменування системи DB2 UDB
+CLI iSeries. Файли кваліфікуються за допомогою косої риси (/) як
+роздільника. Некваліфіковані файли дозволяються за допомогою
+список бібліотек для роботи.</p>
+<p>Значення DB2_I5_NAMING_OFF вимикає режим іменування за замовчуванням DB2
+UDB CLI, який є іменем SQL. Файли кваліфікуються з
+використанням точки (.) як роздільник. Некваліфіковані
+файли дозволяються з використанням бібліотеки за замовчуванням, або
+поточний ідентифікатор користувача.</p>
+<p><code>i5_commit</code>
+Атрибут <code>i5_commit</code> має бути встановлений перед викликом
+<strong>db2_connect()</strong>. Якщо значення змінюється після з'єднання
+було встановлено, і з'єднання встановлено з віддаленим джерелом
+даних, зміна не набуде чинності до наступного успішного виклику
+<strong>db2_connect()</strong> для дескриптора з'єднання.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Параметр php.ini <code>ibm_db2.i5_allow_commit</code>==0 або
+<code>DB2_I5_TXN_NO_COMMIT</code> використовується за замовчуванням, але може бути
+змінено за допомогою параметра i5_commit.</p>
+</blockquote>
+<p><code>DB2_I5_TXN_NO_COMMIT</code> - Контроль транзакцій не використовується.</p>
+<p><code>DB2_I5_TXN_READ_UNCOMMITTED</code> - Можливі брудні читання, що не повторюються
+читання та фантоми.</p>
+<p><code>DB2_I5_TXN_READ_COMMITTED</code> - Брудне читання неможливе. Можливі
+неповторні читання та фантоми</p>
+<p><code>DB2_I5_TXN_REPEATABLE_READ</code> - Брудні читання та неповторні читання
+неможливі. Можливі фантоми.</p>
+<p><code>DB2_I5_TXN_SERIALIZABLE</code> - Транзакції серіалізуються. Брудні читання,
+неповторні читання і фантоми неможливі.</p>
+<p><code>i5_query_optimize</code>
+<code>DB2_FIRST_IO</code> - Всі запити оптимізовані з метою максимально швидкого
+повернення першої сторінки виводу. Ця мета добре працює, коли висновок
+контролюється користувачем, який, швидше за все, скасує запит
+після перегляду першої сторінки вихідних даних. Запити, закодовані
+з пропозицією OPTIMIZE FOR nnn ROWS, враховують мету, вказану в
+реченні.</p>
+<p>DB2_ALL_IO - Всі запити оптимізовані з метою виконати весь запит
+до завершення у найкоротші терміни. Це гарний варіант, коли вихідні
+дані запиту записуються у файл або звіт, або коли інтерфейс ставить
+вихідні дані у чергу. Запити, закодовані з пропозицією
+OPTIMIZE FOR nnn ROWS, враховують мету, вказану у реченні. Це
+значення за замовчуванням.</p>
+<p><code>i5_dbcs_alloc</code>
+Значення <code>DB2_I5_DBCS_ALLOC_ON</code> включає схему розподілу DB2 6X для
+збільшення розміру шпальти перетворення DBCS.</p>
+<p>Значення DB2_I5_DBCS_ALLOC_OFF відключає схему розподілу DB2 6X
+збільшення розміру стовпця перетворення DBCS.</p>
+<p>Примітка: параметр php.ini <code>ibm_db2.i5_dbcs_alloc</code>== 0 або
+DB2_I5_DBCS_ALLOC_OFF є значенням за замовчуванням, але його можна
+змінити за допомогою параметра i5_dbcs_alloc.</p>
+<p><code>i5_date_fmt</code>
+<code>DB2_I5_FMT_ISO</code> - Використовується формат дати Міжнародної організації з
+стандартизації (ISO) (yyyy-mm-dd). Це значення за промовчанням.</p>
+<p><code>DB2_I5_FMT_USA</code> - Використовується формат дати США (mm/dd/yyyy).</p>
+<p><code>DB2_I5_FMT_EUR</code> - Використовується європейський формат дати (dd.mm.yyyy).</p>
+<p><code>DB2_I5_FMT_JIS</code> - Використовується формат дати японського промислового
+стандарту (yyyy-mm-dd).</p>
+<p><code>DB2_I5_FMT_MDY</code> - Використовується формат дати mm/dd/yyyy.</p>
+<p><code>DB2_I5_FMT_DMY</code> - Використовується формат дати dd/mm/yyyy.</p>
+<p><code>DB2_I5_FMT_YMD</code> - Використовується формат дати yy/mm/dd.</p>
+<p><code>DB2_I5_FMT_JUL</code> - Використовується юліанський формат дати (yy/ddd).</p>
+<p><code>DB2_I5_FMT_JOB</code> - Використовується стандартне завдання.</p>
+<p><code>i5_date_sep</code>
+<code>DB2_I5_SEP_SLASH</code> - Як роздільник дати використовується коса
+характеристика (/). Це значення за промовчанням.</p>
+<p><code>DB2_I5_SEP_DASH</code> - Як роздільник дати використовується тире ( - ).</p>
+<p><code>DB2_I5_SEP_PERIOD</code> - Як роздільник дати використовується точка ( .
+).</p>
+<p><code>DB2_I5_SEP_COMMA</code> - Як роздільник дати використовується кома (
+, ).</p>
+<p><code>DB2_I5_SEP_BLANK</code> - В якості роздільника дати використовується пробіл.</p>
+<p><code>DB2_I5_SEP_JOB</code> - Використовується стандартне завдання.</p>
+<p><code>i5_time_fmt</code>
+<code>DB2_I5_FMT_ISO</code> - Використовується формат часу Міжнародної організації
+стандартизації (ISO) (hh.mm.ss). Це значення за промовчанням.</p>
+<p><code>DB2_I5_FMT_USA</code> - Використовується формат часу США (hh:mmxx, де xx -
+це AM чи PM).</p>
+<p><code>DB2_I5_FMT_EUR</code> - Використовується європейський формат часу (hh.mm.ss).</p>
+<p><code>DB2_I5_FMT_JIS</code> - Використовується японський промисловий стандартний формат
+часу (hh: mm: ss).</p>
+<p><code>DB2_I5_FMT_HMS</code> - Використовується формат hh:mm:ss.</p>
+<p><code>i5_time_sep</code>
+<code>DB2_I5_SEP_COLON</code> - Як розділювач часу використовується
+двокрапка ( : ). Це значення за промовчанням.</p>
+<p><code>DB2_I5_SEP_PERIOD</code> - Як розділювач часу використовується точка
+( . ).</p>
+<p><code>DB2_I5_SEP_COMMA</code> - Як роздільник часу використовується кома
+( , ).</p>
+<p><code>DB2_I5_SEP_BLANK</code> - Як розділювач часу використовується пробіл.</p>
+<p><code>DB2_I5_SEP_JOB</code> - Використовується стандартне завдання.</p>
+<p><code>i5_decimal_sep</code>
+<code>DB2_I5_SEP_PERIOD</code> - Як десятковий роздільник використовується
+крапка ( . ). Це значення за промовчанням.</p>
+<p><code>DB2_I5_SEP_COMMA</code> - Як десятковий роздільник використовується
+кома ( , ).</p>
+<p><code>DB2_I5_SEP_JOB</code> - Використовується стандартне завдання.</p>
+<p>Ця нова опція i5/OS доступна в ibm_db2 версії 1.8.0 та новішої.</p>
+<p><code>i5_libl</code>
+Символьне значення, що вказує на список бібліотек, який буде
+використовуватись для дозволу некваліфікованих посилань на файли.
+Вкажіть елементи списку бібліотек, розділені пробілами
+'i5_libl'=>"MYLIB YOURLIB ANYLIB".</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p><code>i5_libl</code> викликає qsys2/qcmdexc('cmd',cmdlen), який доступний
+тільки в i5/OS V5R4 і більше.</p>
+</blockquote>
+<h3>Значення, що повертаються</h3>
+<p>Повертає ресурс дескриптора підключення, якщо спроба підключення
+успішна. Якщо спроба підключення зазнала невдачі, <strong>db2_connect()</strong>
+повертає <strong><code>false</code></strong>.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Створення каталогізованого з'єднання</strong></p>
+<p>Каталогізовані з'єднання вимагають, щоб цільова база даних була
+попередньо каталогізована за допомогою DB2 Command Line Processor
+(CLP) або DB2 Configuration Assistant.</p>
+<p><code>&#x3C;?php$database = 'SAMPLE';$user = 'db2inst1';$password = 'ibmdb2';$conn = db2_connect($database, $user, $password);if ($conn) {    ."; db2_close($conn);}else {    echo "Connection failed.";}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Connection succeeded.</p>
+<p><strong>Приклад #2 Створення некаталогізованого з'єднання</strong></p>
+<p>Некаталогізоване з'єднання дозволяє динамічно підключатися до
+базі даних.</p>
+<p><code>&#x3C;?php$database = 'SAMPLE';$user = 'db2inst1';$password = 'ibmdb2';$hostname = 'localhost';$port = 50000;$conn_string = "DRIVER={IBM DB DATABASE=$database;" . "HOSTNAME=$hostname;PORT=$port;PROTOCOL=TCPIP;UID=$user;PWD=$password;";$conn = db2_connect($conn_string, '', '');if ($conn) {    echo " Connection succeeded."; db2_close($conn);}else {    echo "Connection failed.";}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Connection succeeded.</p>
+<p><strong>Приклад #3 Створення з'єднання з відключеним автокоммітом по
+замовчуванням</strong></p>
+<p>Передача масиву параметрів <strong>db2_connect()</strong> дозволяє змінювати
+поведінка дескриптора з'єднання за умовчанням.</p>
+<p><code>&#x3C;?php$database = 'SAMPLE';$user = 'db2inst1';$password = 'ibmdb2';$options = array('autocommit' => DB2_AUTOCOMMIT_OFF);$conn = db2_connect$ password, $options);if ($conn) {   echo "Connection succeeded. ";    if (db2_autocommit($conn)) {         echo "Autocommit is on. ";    }   else {         echo "Autocommit is off. ";    }    db2_close($conn);}else {   echo "Connection failed.";}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Connection succeeded.
+Autocommit is off.</p>
+<p><strong>Приклад #4 Найкраща продуктивність i5/OS</strong></p>
+<p>Для досягнення максимальної продуктивності вашої програми PHP
+i5/OS ibm_db2 1.5.1 використовуйте стандартний хост, ідентифікатор
+користувача та пароль для <strong>db2_connect()</strong>.</p>
+<p><code>&#x3C;?php $library=="ADC"; $i5 = db2_connect("", "", "", array("i5_lib"=>"qsys2")); $result = db2_exec($i5,        "select * from systables where table_schema = '$library'"); while($row = db2_fetch_both($result)) {    echo $row['TABLE_NAME']."&#x3C;/br>"; }  db2_close($i5);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>ANIMALS
+NAMES
+PICTURES</p>
+<p><strong>Приклад #5 Використання довіреного контексту</strong></p>
+<p>У цьому прикладі показано, як увімкнути довірений контекст, переключити
+користувачів та отримати поточний ідентифікатор користувача.</p>
+<p><code>&#x3C;?php$database = "SAMPLE";$hostname = "localhost";$port = 50000;$authID = "db2inst1";$auth_pass = "ibmdb2";$tc_user = "tcuser"; ;$dsn=="DATABASE=$database;HOSTNAME=$hostname;PORT=$port; PROTOCOL=TCPIP;UID=$authID;PWD=$auth_pass;";$options = array ("trustedcontext" =DDB2_TR tc_conn==db2_connect($dsn, "", "", $options);if($tc_conn) {    echo "Explicit trusted connection succeeded. ";    if(db2_get_option($tc_conn, "trustedcontext")) {        $userBefore = db2_get_option($tc_conn, "trusted_user");        // Выполнение работы в качестве пользователя 1        // Переключение на доверенного пользователя        $parameters = array("trusted_user" => $tc_user,          "trusted_password" => $tcuser_pass);        $res = db2_set_option ($tc_conn, $parameters, 1);        $userAfter = db2_get_option($tc_conn, "trusted_user");        // Продолжение выполнения работы в качестве доверенного пользователя if($userBefore != $userAfter) {            echo "User has been switched." . " ";        }    }}   db2_close($tc_conn);}else {   echo "Explicit trusted connection failed. ";}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Відповідний trusted connection succeeded.
+User has been switched.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.db2-close.md">db2_close()</a> - Закриває з'єднання з
+базою даних</li>
+<li><a href="function.db2-pconnect.md">db2_pconnect()</a> - Повертає постійне
+з'єднання з базою даних</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.db2-connect.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.db2-connect.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.db2-connect","slug":"function.db2-connect.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.db2-conn-errormsg.md\"\u003e«db2_conn_errormsg\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.db2-cursor-type.md\"\u003edb2_cursor_type »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.ibm-db2.md\"\u003eФункції IBM DB2\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПовертає з'єднання з базою даних\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#db2_connect\u003c/p\u003e\n\u003cp\u003e(PECL ibm_db2 \u003e= 1.0.0)\u003c/p\u003e\n\u003cp\u003edb2_connect — Повертає з'єднання з базою даних\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003edb2_connect\u003c/strong\u003e(\nstring \u003ccode\u003e$database\u003c/code\u003e,\nstring \u003ccode\u003e$username\u003c/code\u003e,\nstring \u003ccode\u003e$password\u003c/code\u003e,\narray \u003ccode\u003e$options\u003c/code\u003e = ?\n): resource\u003c/p\u003e\n\u003cp\u003eСтворює нове з'єднання з базою даних IBM DB2 Universal Database, IBM\nCloudscape чи Apache Derby database.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003edatabase\u003c/code\u003e\nДля каталогізованого з'єднання з базою даних \u003ccode\u003edatabase\u003c/code\u003e\nє псевдонім бази даних у клієнтському каталозі DB2.\u003c/p\u003e\n\u003cp\u003eДля некаталогізованого підключення до бази даних \u003ccode\u003edatabase\u003c/code\u003e\nє повним рядком підключення в наступному форматі:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eDATABASE=database;HOSTNAME=hostname;PORT=port;PROTOCOL=TCPIP;UID=username;PWD=password;\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eде параметри становлять такі значення:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edatabase\u003c/code\u003e\nНазва бази даних.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ehostname\u003c/code\u003e\nІм'я хоста або IP-адреса сервера бази даних.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eport\u003c/code\u003e\nПорт TCP/IP, який використовується базою даних для прийняття запитів.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eusername\u003c/code\u003e\nІм'я користувача, під яким відбувається підключення до бази даних.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epassword\u003c/code\u003e\nПароль, з яким відбувається підключення до бази даних.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eusername\u003c/code\u003e\nІм'я користувача, під яким відбувається підключення до бази даних.\u003c/p\u003e\n\u003cp\u003eДля некаталогізованих з'єднань необхідно передати значення\n\u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e або порожній рядок.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epassword\u003c/code\u003e\nПароль, з яким відбувається підключення до бази даних.\u003c/p\u003e\n\u003cp\u003eДля некаталогізованих з'єднань необхідно передати значення\n\u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e або порожній рядок.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoptions\u003c/code\u003e\nАсоціативний масив параметрів підключення, які впливають на поведінку\nпідключення, де допустимі ключі масиву включають:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eautocommit\u003c/code\u003e\nПередача значення DB2_AUTOCOMMIT_ON включає автоматичну фіксацію\n(Autocommit) для цього дескриптора з'єднання.\u003c/p\u003e\n\u003cp\u003eПередача значення \u003ccode\u003eDB2_AUTOCOMMIT_OFF\u003c/code\u003e вимикає автоматичну фіксацію\n(Autocommit) для цього дескриптора з'єднання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_ATTR_CASE\u003c/code\u003e\nПередача значення DB2_CASE_NATURAL вказує, що імена стовпців\nповертаються у природному регістрі.\u003c/p\u003e\n\u003cp\u003eПередача значення DB2_CASE_LOWER вказує, що імена стовпців\nповертаються у нижньому регістрі.\u003c/p\u003e\n\u003cp\u003eПередача значення DB2_CASE_UPPER вказує, що імена стовпців\nповертаються у верхньому регістрі.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eCURSOR\u003c/code\u003e\nПередача значення DB2_FORWARD_ONLY задає курсор, який рухається\nтільки вперед для ресурсу оператора. Цей тип курсору використовується по\nзамовчуванням, він підтримується усіма серверами баз даних.\u003c/p\u003e\n\u003cp\u003eПередача значення \u003ccode\u003eDB2_SCROLLABLE\u003c/code\u003e задає курсор, що прокручується\nресурс оператора. Цей режим включає довільний доступ до рядків\nнабір результатів, але в даний час підтримується лише IBM DB2\nUniversal Database.\u003c/p\u003e\n\u003cp\u003eЦя нова опція доступна в ibm_db2 версії 1.7.0 та новішої.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003etrustedcontext\u003c/code\u003e\nПередача значення DB2_TRUSTED_CONTEXT_ENABLE містить довірений\nконтекст для цього дескриптора з'єднання. Цей параметр не можна\nвстановити за допомогою \u003ca href=\"function.db2-set-option.md\"\u003edb2_set_option()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЦей ключ працює тільки в тому випадку, якщо база даних\nкаталогізована (навіть якщо база даних є локальною) або якщо\nбуде вказано повний DSN під час створення з'єднання.\u003c/p\u003e\n\u003cp\u003eЩоб каталогізувати базу даних, використовуйте такі команди:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003edb2 catalog tcpip node loopback remote \u0026#x3C;SERVERNAME\u003e server \u0026#x3C;SERVICENAME\u003e\ndb2 catalog database \u0026#x3C;LOCALDBNAME\u003e as \u0026#x3C;REMOTEDBNAME\u003e at node loopback\ndb2 \"update dbm cfg using svcename \u0026#x3C;SERVICENAME\u003e\"\ndb2set DB2COMM=TCPIP\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eДані нові опції i5/OS доступні в ibm_db2 версії 1.5.1 та новіші.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_lib\u003c/code\u003e\nСимвольне значення, яке вказує бібліотеку за умовчанням, яка буде\nвикористовуватись для дозволу некваліфікованих посилань на файли. Це\nнеприпустимо, якщо з'єднання використовує режим назви системи.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_naming\u003c/code\u003e\nЗначення \u003ccode\u003eDB2_I5_NAMING_ON\u003c/code\u003e включає режим іменування системи DB2 UDB\nCLI iSeries. Файли кваліфікуються за допомогою косої риси (/) як\nроздільника. Некваліфіковані файли дозволяються за допомогою\nсписок бібліотек для роботи.\u003c/p\u003e\n\u003cp\u003eЗначення DB2_I5_NAMING_OFF вимикає режим іменування за замовчуванням DB2\nUDB CLI, який є іменем SQL. Файли кваліфікуються з\nвикористанням точки (.) як роздільник. Некваліфіковані\nфайли дозволяються з використанням бібліотеки за замовчуванням, або\nпоточний ідентифікатор користувача.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_commit\u003c/code\u003e\nАтрибут \u003ccode\u003ei5_commit\u003c/code\u003e має бути встановлений перед викликом\n\u003cstrong\u003edb2_connect()\u003c/strong\u003e. Якщо значення змінюється після з'єднання\nбуло встановлено, і з'єднання встановлено з віддаленим джерелом\nданих, зміна не набуде чинності до наступного успішного виклику\n\u003cstrong\u003edb2_connect()\u003c/strong\u003e для дескриптора з'єднання.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПараметр php.ini \u003ccode\u003eibm_db2.i5_allow_commit\u003c/code\u003e==0 або\n\u003ccode\u003eDB2_I5_TXN_NO_COMMIT\u003c/code\u003e використовується за замовчуванням, але може бути\nзмінено за допомогою параметра i5_commit.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_TXN_NO_COMMIT\u003c/code\u003e - Контроль транзакцій не використовується.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_TXN_READ_UNCOMMITTED\u003c/code\u003e - Можливі брудні читання, що не повторюються\nчитання та фантоми.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_TXN_READ_COMMITTED\u003c/code\u003e - Брудне читання неможливе. Можливі\nнеповторні читання та фантоми\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_TXN_REPEATABLE_READ\u003c/code\u003e - Брудні читання та неповторні читання\nнеможливі. Можливі фантоми.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_TXN_SERIALIZABLE\u003c/code\u003e - Транзакції серіалізуються. Брудні читання,\nнеповторні читання і фантоми неможливі.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_query_optimize\u003c/code\u003e\n\u003ccode\u003eDB2_FIRST_IO\u003c/code\u003e - Всі запити оптимізовані з метою максимально швидкого\nповернення першої сторінки виводу. Ця мета добре працює, коли висновок\nконтролюється користувачем, який, швидше за все, скасує запит\nпісля перегляду першої сторінки вихідних даних. Запити, закодовані\nз пропозицією OPTIMIZE FOR nnn ROWS, враховують мету, вказану в\nреченні.\u003c/p\u003e\n\u003cp\u003eDB2_ALL_IO - Всі запити оптимізовані з метою виконати весь запит\nдо завершення у найкоротші терміни. Це гарний варіант, коли вихідні\nдані запиту записуються у файл або звіт, або коли інтерфейс ставить\nвихідні дані у чергу. Запити, закодовані з пропозицією\nOPTIMIZE FOR nnn ROWS, враховують мету, вказану у реченні. Це\nзначення за замовчуванням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_dbcs_alloc\u003c/code\u003e\nЗначення \u003ccode\u003eDB2_I5_DBCS_ALLOC_ON\u003c/code\u003e включає схему розподілу DB2 6X для\nзбільшення розміру шпальти перетворення DBCS.\u003c/p\u003e\n\u003cp\u003eЗначення DB2_I5_DBCS_ALLOC_OFF відключає схему розподілу DB2 6X\nзбільшення розміру стовпця перетворення DBCS.\u003c/p\u003e\n\u003cp\u003eПримітка: параметр php.ini \u003ccode\u003eibm_db2.i5_dbcs_alloc\u003c/code\u003e== 0 або\nDB2_I5_DBCS_ALLOC_OFF є значенням за замовчуванням, але його можна\nзмінити за допомогою параметра i5_dbcs_alloc.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_date_fmt\u003c/code\u003e\n\u003ccode\u003eDB2_I5_FMT_ISO\u003c/code\u003e - Використовується формат дати Міжнародної організації з\nстандартизації (ISO) (yyyy-mm-dd). Це значення за промовчанням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_USA\u003c/code\u003e - Використовується формат дати США (mm/dd/yyyy).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_EUR\u003c/code\u003e - Використовується європейський формат дати (dd.mm.yyyy).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_JIS\u003c/code\u003e - Використовується формат дати японського промислового\nстандарту (yyyy-mm-dd).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_MDY\u003c/code\u003e - Використовується формат дати mm/dd/yyyy.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_DMY\u003c/code\u003e - Використовується формат дати dd/mm/yyyy.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_YMD\u003c/code\u003e - Використовується формат дати yy/mm/dd.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_JUL\u003c/code\u003e - Використовується юліанський формат дати (yy/ddd).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_JOB\u003c/code\u003e - Використовується стандартне завдання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_date_sep\u003c/code\u003e\n\u003ccode\u003eDB2_I5_SEP_SLASH\u003c/code\u003e - Як роздільник дати використовується коса\nхарактеристика (/). Це значення за промовчанням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_DASH\u003c/code\u003e - Як роздільник дати використовується тире ( - ).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_PERIOD\u003c/code\u003e - Як роздільник дати використовується точка ( .\n).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_COMMA\u003c/code\u003e - Як роздільник дати використовується кома (\n, ).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_BLANK\u003c/code\u003e - В якості роздільника дати використовується пробіл.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_JOB\u003c/code\u003e - Використовується стандартне завдання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_time_fmt\u003c/code\u003e\n\u003ccode\u003eDB2_I5_FMT_ISO\u003c/code\u003e - Використовується формат часу Міжнародної організації\nстандартизації (ISO) (hh.mm.ss). Це значення за промовчанням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_USA\u003c/code\u003e - Використовується формат часу США (hh:mmxx, де xx -\nце AM чи PM).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_EUR\u003c/code\u003e - Використовується європейський формат часу (hh.mm.ss).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_JIS\u003c/code\u003e - Використовується японський промисловий стандартний формат\nчасу (hh: mm: ss).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_FMT_HMS\u003c/code\u003e - Використовується формат hh:mm:ss.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_time_sep\u003c/code\u003e\n\u003ccode\u003eDB2_I5_SEP_COLON\u003c/code\u003e - Як розділювач часу використовується\nдвокрапка ( : ). Це значення за промовчанням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_PERIOD\u003c/code\u003e - Як розділювач часу використовується точка\n( . ).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_COMMA\u003c/code\u003e - Як роздільник часу використовується кома\n( , ).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_BLANK\u003c/code\u003e - Як розділювач часу використовується пробіл.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_JOB\u003c/code\u003e - Використовується стандартне завдання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_decimal_sep\u003c/code\u003e\n\u003ccode\u003eDB2_I5_SEP_PERIOD\u003c/code\u003e - Як десятковий роздільник використовується\nкрапка ( . ). Це значення за промовчанням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_COMMA\u003c/code\u003e - Як десятковий роздільник використовується\nкома ( , ).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eDB2_I5_SEP_JOB\u003c/code\u003e - Використовується стандартне завдання.\u003c/p\u003e\n\u003cp\u003eЦя нова опція i5/OS доступна в ibm_db2 версії 1.8.0 та новішої.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_libl\u003c/code\u003e\nСимвольне значення, що вказує на список бібліотек, який буде\nвикористовуватись для дозволу некваліфікованих посилань на файли.\nВкажіть елементи списку бібліотек, розділені пробілами\n'i5_libl'=\u003e\"MYLIB YOURLIB ANYLIB\".\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ei5_libl\u003c/code\u003e викликає qsys2/qcmdexc('cmd',cmdlen), який доступний\nтільки в i5/OS V5R4 і більше.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає ресурс дескриптора підключення, якщо спроба підключення\nуспішна. Якщо спроба підключення зазнала невдачі, \u003cstrong\u003edb2_connect()\u003c/strong\u003e\nповертає \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Створення каталогізованого з'єднання\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eКаталогізовані з'єднання вимагають, щоб цільова база даних була\nпопередньо каталогізована за допомогою DB2 Command Line Processor\n(CLP) або DB2 Configuration Assistant.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$database = 'SAMPLE';$user = 'db2inst1';$password = 'ibmdb2';$conn = db2_connect($database, $user, $password);if ($conn) {    .\"; db2_close($conn);}else {    echo \"Connection failed.\";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eConnection succeeded.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Створення некаталогізованого з'єднання\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eНекаталогізоване з'єднання дозволяє динамічно підключатися до\nбазі даних.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$database = 'SAMPLE';$user = 'db2inst1';$password = 'ibmdb2';$hostname = 'localhost';$port = 50000;$conn_string = \"DRIVER={IBM DB DATABASE=$database;\" . \"HOSTNAME=$hostname;PORT=$port;PROTOCOL=TCPIP;UID=$user;PWD=$password;\";$conn = db2_connect($conn_string, '', '');if ($conn) {    echo \" Connection succeeded.\"; db2_close($conn);}else {    echo \"Connection failed.\";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eConnection succeeded.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Створення з'єднання з відключеним автокоммітом по\nзамовчуванням\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПередача масиву параметрів \u003cstrong\u003edb2_connect()\u003c/strong\u003e дозволяє змінювати\nповедінка дескриптора з'єднання за умовчанням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$database = 'SAMPLE';$user = 'db2inst1';$password = 'ibmdb2';$options = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF);$conn = db2_connect$ password, $options);if ($conn) {   echo \"Connection succeeded. \";    if (db2_autocommit($conn)) {         echo \"Autocommit is on. \";    }   else {         echo \"Autocommit is off. \";    }    db2_close($conn);}else {   echo \"Connection failed.\";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eConnection succeeded.\nAutocommit is off.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Найкраща продуктивність i5/OS\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля досягнення максимальної продуктивності вашої програми PHP\ni5/OS ibm_db2 1.5.1 використовуйте стандартний хост, ідентифікатор\nкористувача та пароль для \u003cstrong\u003edb2_connect()\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php $library==\"ADC\"; $i5 = db2_connect(\"\", \"\", \"\", array(\"i5_lib\"=\u003e\"qsys2\")); $result = db2_exec($i5,        \"select * from systables where table_schema = '$library'\"); while($row = db2_fetch_both($result)) {    echo $row['TABLE_NAME'].\"\u0026#x3C;/br\u003e\"; }  db2_close($i5);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eANIMALS\nNAMES\nPICTURES\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Використання довіреного контексту\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eУ цьому прикладі показано, як увімкнути довірений контекст, переключити\nкористувачів та отримати поточний ідентифікатор користувача.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$database = \"SAMPLE\";$hostname = \"localhost\";$port = 50000;$authID = \"db2inst1\";$auth_pass = \"ibmdb2\";$tc_user = \"tcuser\"; ;$dsn==\"DATABASE=$database;HOSTNAME=$hostname;PORT=$port; PROTOCOL=TCPIP;UID=$authID;PWD=$auth_pass;\";$options = array (\"trustedcontext\" =DDB2_TR tc_conn==db2_connect($dsn, \"\", \"\", $options);if($tc_conn) {    echo \"Explicit trusted connection succeeded. \";    if(db2_get_option($tc_conn, \"trustedcontext\")) {        $userBefore = db2_get_option($tc_conn, \"trusted_user\");        // Выполнение работы в качестве пользователя 1        // Переключение на доверенного пользователя        $parameters = array(\"trusted_user\" =\u003e $tc_user,          \"trusted_password\" =\u003e $tcuser_pass);        $res = db2_set_option ($tc_conn, $parameters, 1);        $userAfter = db2_get_option($tc_conn, \"trusted_user\");        // Продолжение выполнения работы в качестве доверенного пользователя if($userBefore != $userAfter) {            echo \"User has been switched.\" . \" \";        }    }}   db2_close($tc_conn);}else {   echo \"Explicit trusted connection failed. \";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eВідповідний trusted connection succeeded.\nUser has been switched.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.db2-close.md\"\u003edb2_close()\u003c/a\u003e - Закриває з'єднання з\nбазою даних\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.db2-pconnect.md\"\u003edb2_pconnect()\u003c/a\u003e - Повертає постійне\nз'єднання з базою даних\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.db2-connect.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

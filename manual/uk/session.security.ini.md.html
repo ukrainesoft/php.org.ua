@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>session.security.ini | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="features.session.security.management.md">« Базові засади управління сесіями</a></p>
+</li>
+<li>
+<p><a href="ref.session.md">Функції для роботи із сесіями »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="session.security.md">Безпека сесій</a></p>
+</li>
+<li>
+<p>INI-налаштування безпеки сесій</p>
+</li>
+</ul>
+<h2>INI-налаштування безпеки сесій</h2>
+<p>Надаючи INI-налаштування, пов'язані з сесіями, ви можете покращити
+безпека сесій. Деякі важливі параметри безпеки не мають
+рекомендованих значень. Ви самі відповідальні за вибір необхідних
+значень.</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.cookie-lifetime">session.cookie_lifetime</a>=0</li>
+</ul>
+<p><code>0</code> має особливе значення. Він повідомляє браузеру не зберігати cookie
+у постійне сховище. Отже, коли браузер закривається,
+сесійні cookie одразу ж віддаляються. Якщо задати значення відмінне
+від 0, це може дозволити іншим користувачам використовувати ці
+cookie. Найчастіше найкраще використовувати "<code>0</code>".</p>
+<p>Якщо потрібна функціональність автологіна, реалізовуйте його
+самостійно і ніколи не використовуйте для цього довгоживучі
+сесії. Докладніше викладено вище у відповідних розділах.</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.use-cookies">session.use_cookies</a>=On</li>
+</ul>
+<p><a href="session.configuration.md#ini.session.use-only-cookies">session.use_only_cookies</a>=On</p>
+<p>Незважаючи на те, що HTTP-cookie мають деякі проблеми, все ж вони
+найкращі для зберігання ідентифікатора сесії. Коли
+це можливо, для управління ідентифікаторами сесій необхідно
+використовувати "cookie". Більшість програм повинні використовувати
+cookie для сесії ідентифікатора.</p>
+<p>Якщо <code>session.use_only_cookies</code>=Off, модуль сесії буде
+використовувати ідентифікатор, встановлений через GET/POST/URL, якщо
+"cookie" не було виставлено заздалегідь.</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.use-strict-mode">session.use_strict_mode</a>=On</li>
+</ul>
+<p>Вкрай рекомендується включати <code>session.use_strict_mode</code>. за
+замовчуванням не увімкнено.</p>
+<p>Це не дозволить сесійному модулю використовувати неініціалізовані
+ідентифікатори сесій. Іншими словами, сесійний модуль буде
+приймати тільки коректні ідентифікатори, згенеровані ним же
+ігноруватиме ідентифікатори створені на стороні користувача.</p>
+<p>Через особливості специфікації cookie атакуючий може зробити
+cookie з ідентифікатором сесії, що не видаляється за допомогою локальної бази
+cookie або JavaScript-ін'єкцією. <code>session.use_strict_mode</code> може не
+дати атакуючому використати цей ідентифікатор.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Атакуючі можуть ініціалізувати ідентифікатор сесії на своєму
+пристрої та виставити його жертві. Вони повинні будуть підтримувати
+сесію в активному стані для зловживань. Атакуючим
+знадобиться вчинити додаткові дії для проведення атаки
+за цим сценарієм. Тому <code>session.use_strict_mode</code> служить як
+запобігання цьому.</p>
+</blockquote>
+<ul>
+<li><a href="session.configuration.md#ini.session.cookie-httponly">session.cookie_httponly</a>=On</li>
+</ul>
+<p>Забороняє доступ до сесійної cookie для JavaScript. Ця опція
+запобігає крадіжці cookie за допомогою JavaScript-ін'єкції.</p>
+<p>Можна використовувати сесійний ID як захисний ключ CSRF, але не
+рекомендується. Наприклад, HTML може бути збережений та надісланий
+іншому користувачеві. Розробник не повинен записувати сесійний ID
+всередині сторінки для підвищення безпеки. Майже всі програми
+повинні використовувати атрибут httponly для сесійної cookie.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Захисний ключ CSRF повинен періодично оновлюватися, як і
+ідентифікатор сесії.</p>
+</blockquote>
+<ul>
+<li><a href="session.configuration.md#ini.session.cookie-secure">session.cookie_secure</a>=On</li>
+</ul>
+<p>Дозволяє отримувати доступ до cookie ідентифікатора сесії тільки за
+використання протоколу HTTPS. Якщо ваш сайт використовує тільки
+протоколу HTTPS, вам необхідно включити цю опцію.</p>
+<p>Для таких сайтів слід також розглядати використання HSTS.</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.cookie-samesite">session.cookie_samesite</a>="Lax"
+або
+<a href="session.configuration.md#ini.session.cookie-samesite">session.cookie_samesite</a>="Strict"</li>
+</ul>
+<p>Починаючи з PHP 7.3, ви можете встановити cookie-прапор ``SameSite'` для
+ідентифікатор cookie сесії. Цей прапор є способом пом'якшення
+атак CSRF (міжсайтова підробка запиту).</p>
+<p>Різниця між Lax і Strict полягає в доступності cookie в
+запити, що виходять з іншого реєстрованого домену з
+використанням HTTP-методу GET. Cookie, які використовують Lax, будуть
+доступні в GET-запиті, що виходить з іншого домену, що реєструється,
+тоді як cookie, які використовують Strict, не будуть.</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.gc-maxlifetime">session.gc_maxlifetime</a>=[вибрати
+найменший із можливих]</li>
+</ul>
+<p><code>session.gc_maxlifetime</code> налаштування для видалення застарілих
+ідентифікаторів сесій. Покладатись на цю опцію категорично <em>не</em>
+рекомендується. Ви повинні керувати життєвим циклом сесії
+самостійно.</p>
+<p>Сесійний збирач сміття GC (garbage collection) краще використовувати
+за допомогою <a href="function.session-gc.md">session_gc()</a>. Функцію
+<a href="function.session-gc.md">session_gc()</a> найкраще запускати через
+планувальник, наприклад, cron на nix-системах.</p>
+<p>За замовчуванням GC працює на принципі імовірності. Це налаштування
+<em>не</em> гарантує видалення старих сесій. Розробнику не слід
+покладатися на це налаштування, але все одно, рекомендується виставити
+її мінімально можливим значенням. Налаштовуйте
+<a href="session.configuration.md#ini.session.gc-probability">session.gc_probability</a>
+і
+<a href="session.configuration.md#ini.session.gc-divisor">session.gc_divisor</a>
+так, щоб застарілі сесії віддалялися досить часто. Якщо
+потрібна функціональність автологіна, реалізуйте його самостійно
+і ніколи не використовуйте для цього довготривалі сесії.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Деякі обробники збереження сесій не використовують механізм
+старіння сесій на основі ймовірностей. Наприклад memcached,
+memcache. Читайте відповідну документацію для повнішої
+інформації.</p>
+</blockquote>
+<ul>
+<li><a href="session.configuration.md#ini.session.use-trans-sid">session.use_trans_sid</a>=Off</li>
+</ul>
+<p>Використання прозорого керування сесійним ID не рекомендується.
+Ви можете використовувати його, якщо потрібно. Однак, вимкнення
+прозорого управління підвищує безпеку сесій загалом, прибираючи
+можливість ін'єкції сесійного ID та його крадіжки.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ідентифікатор сесії може витекти через закладку в браузері, URL
+надісланий поштою, збережений вихідний HTML.</p>
+</blockquote>
+<ul>
+<li><a href="session.configuration.md#ini.session.trans-sid-tags">session.trans_sid_tags</a>=[ігноровані
+теги]</li>
+</ul>
+<p>(PHP 7.1.0 >=) Ви не повинні перезаписувати непотрібні HTML-теги.
+Значення за замовчуванням має бути достатньою для більшості
+випадків. Старі версії PHP для цього використовують
+<a href="outcontrol.configuration.md#ini.url-rewriter.tags">url_rewriter.tags</a>.</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.trans-sid-hosts">session.trans_sid_hosts</a>=[список
+хостів]</li>
+</ul>
+<p>(PHP 7.1.0 >=) Ця установка визначає білий список хостів, для
+яких дозволено прозоре керування ідентифікаторами сесій.
+Ніколи не додавайте недовірені хости. Якщо це налаштування
+порожня, то буде дозволено тільки $_SERVER['HTTP_HOST'].</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.referer-check">session.referer_check</a>=[ваш
+вихідний URL]</li>
+</ul>
+<p>Якщо <a href="session.configuration.md#ini.session.use-trans-sid">session.use_trans_sid</a>
+увімкнено, то рекомендується використовувати цю опцію, якщо це можливо.
+Це зменшує ризик ін'єкції сесійного ID. Якщо ваш сайт
+знаходиться за адресою <a href="http://example.com/">http://example.com/</a>, то встановіть цю опцію
+значення <a href="http://example.com/">http://example.com/</a>. Зверніть увагу, що при
+використовуючи HTTPS, браузер не надсилає referrer заголовок. Таким
+Таким чином, цей параметр не є достатньо надійним показником
+безпеки, але, все ж таки, рекомендується його використовувати.</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.cache-limiter">session.cache_limiter</a>=nocache</li>
+</ul>
+<p>Переконайтеся, що вміст HTTP не кешується для автентифікації
+сесії. Допускається кешувати лише неконфіденційний контент.
+Інакше вмістом можуть користуватися. Можна використовувати значення
+"private", якщо вміст HTTP не містить чутливих до
+безпеки дані. Врахуйте, що "private" може залишати
+конфіденційні дані у загальному кеші клієнтів. Значення "public"
+можна використовувати тільки якщо HTTP-контент взагалі не містить
+жодних конфіденційних даних.</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.sid-length">session.sid_length</a>="48"</li>
+</ul>
+<p>(PHP 7.1.0 >=) Чим довший ідентифікатор сесії, тим він надійніший.
+Довжина, що рекомендується, - 32 символи і більше. У будь-якому випадку, не менше
+26 символів потрібно для
+<a href="session.configuration.md#ini.session.sid-bits-per-character">session.sid_bits_per_character</a>="5".</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.sid-bits-per-character">session.sid_bits_per_character</a>="6"</li>
+</ul>
+<p>(PHP 7.1.0 >=) Чим більше біт використовується для символів
+ідентифікатор сесії, тим більше надійні ідентифікатори будуть
+створено для тієї ж довжини ідентифікатора сесії.</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.hash-function">session.hash_function</a>="sha256"</li>
+</ul>
+<p>(PHP 7.1.0 &#x3C;) Більш складна хеш-функція буде створювати більше
+складний сесійний ID. Хоча колізії з хеш майже не відбуваються і з
+MD5-хешом, проте розробнику краще використовувати функції
+SHA-2 або новіший. Розробники також можуть використати складні
+функції sha384 та sha512. Переконайтеся, що ви використовуєте
+достатньо
+<a href="session.configuration.md#ini.session.entropy-length">ентропії</a>
+для цих функцій.</p>
+<ul>
+<li><a href="session.configuration.md#ini.session.save-path">session.save_path</a>=[загальнодоступний
+каталог для читання]</li>
+</ul>
+<p>Якщо встановлено у загальнодоступний каталог для читання всім, такий як
+<code>/tmp</code> (за замовчуванням), інші користувачі на сервері можуть
+захопити сеанси, отримавши список файлів у цьому каталозі.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/session.security.ini.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/session.security.ini.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"session.security.ini","slug":"session.security.ini.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"features.session.security.management.md\"\u003e« Базові засади управління сесіями\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.session.md\"\u003eФункції для роботи із сесіями »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"session.security.md\"\u003eБезпека сесій\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eINI-налаштування безпеки сесій\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eINI-налаштування безпеки сесій\u003c/h2\u003e\n\u003cp\u003eНадаючи INI-налаштування, пов'язані з сесіями, ви можете покращити\nбезпека сесій. Деякі важливі параметри безпеки не мають\nрекомендованих значень. Ви самі відповідальні за вибір необхідних\nзначень.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cookie-lifetime\"\u003esession.cookie_lifetime\u003c/a\u003e=0\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003e0\u003c/code\u003e має особливе значення. Він повідомляє браузеру не зберігати cookie\nу постійне сховище. Отже, коли браузер закривається,\nсесійні cookie одразу ж віддаляються. Якщо задати значення відмінне\nвід 0, це може дозволити іншим користувачам використовувати ці\ncookie. Найчастіше найкраще використовувати \"\u003ccode\u003e0\u003c/code\u003e\".\u003c/p\u003e\n\u003cp\u003eЯкщо потрібна функціональність автологіна, реалізовуйте його\nсамостійно і ніколи не використовуйте для цього довгоживучі\nсесії. Докладніше викладено вище у відповідних розділах.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.use-cookies\"\u003esession.use_cookies\u003c/a\u003e=On\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ca href=\"session.configuration.md#ini.session.use-only-cookies\"\u003esession.use_only_cookies\u003c/a\u003e=On\u003c/p\u003e\n\u003cp\u003eНезважаючи на те, що HTTP-cookie мають деякі проблеми, все ж вони\nнайкращі для зберігання ідентифікатора сесії. Коли\nце можливо, для управління ідентифікаторами сесій необхідно\nвикористовувати \"cookie\". Більшість програм повинні використовувати\ncookie для сесії ідентифікатора.\u003c/p\u003e\n\u003cp\u003eЯкщо \u003ccode\u003esession.use_only_cookies\u003c/code\u003e=Off, модуль сесії буде\nвикористовувати ідентифікатор, встановлений через GET/POST/URL, якщо\n\"cookie\" не було виставлено заздалегідь.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.use-strict-mode\"\u003esession.use_strict_mode\u003c/a\u003e=On\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eВкрай рекомендується включати \u003ccode\u003esession.use_strict_mode\u003c/code\u003e. за\nзамовчуванням не увімкнено.\u003c/p\u003e\n\u003cp\u003eЦе не дозволить сесійному модулю використовувати неініціалізовані\nідентифікатори сесій. Іншими словами, сесійний модуль буде\nприймати тільки коректні ідентифікатори, згенеровані ним же\nігноруватиме ідентифікатори створені на стороні користувача.\u003c/p\u003e\n\u003cp\u003eЧерез особливості специфікації cookie атакуючий може зробити\ncookie з ідентифікатором сесії, що не видаляється за допомогою локальної бази\ncookie або JavaScript-ін'єкцією. \u003ccode\u003esession.use_strict_mode\u003c/code\u003e може не\nдати атакуючому використати цей ідентифікатор.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eАтакуючі можуть ініціалізувати ідентифікатор сесії на своєму\nпристрої та виставити його жертві. Вони повинні будуть підтримувати\nсесію в активному стані для зловживань. Атакуючим\nзнадобиться вчинити додаткові дії для проведення атаки\nза цим сценарієм. Тому \u003ccode\u003esession.use_strict_mode\u003c/code\u003e служить як\nзапобігання цьому.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cookie-httponly\"\u003esession.cookie_httponly\u003c/a\u003e=On\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eЗабороняє доступ до сесійної cookie для JavaScript. Ця опція\nзапобігає крадіжці cookie за допомогою JavaScript-ін'єкції.\u003c/p\u003e\n\u003cp\u003eМожна використовувати сесійний ID як захисний ключ CSRF, але не\nрекомендується. Наприклад, HTML може бути збережений та надісланий\nіншому користувачеві. Розробник не повинен записувати сесійний ID\nвсередині сторінки для підвищення безпеки. Майже всі програми\nповинні використовувати атрибут httponly для сесійної cookie.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЗахисний ключ CSRF повинен періодично оновлюватися, як і\nідентифікатор сесії.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cookie-secure\"\u003esession.cookie_secure\u003c/a\u003e=On\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eДозволяє отримувати доступ до cookie ідентифікатора сесії тільки за\nвикористання протоколу HTTPS. Якщо ваш сайт використовує тільки\nпротоколу HTTPS, вам необхідно включити цю опцію.\u003c/p\u003e\n\u003cp\u003eДля таких сайтів слід також розглядати використання HSTS.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cookie-samesite\"\u003esession.cookie_samesite\u003c/a\u003e=\"Lax\"\nабо\n\u003ca href=\"session.configuration.md#ini.session.cookie-samesite\"\u003esession.cookie_samesite\u003c/a\u003e=\"Strict\"\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eПочинаючи з PHP 7.3, ви можете встановити cookie-прапор ``SameSite'` для\nідентифікатор cookie сесії. Цей прапор є способом пом'якшення\nатак CSRF (міжсайтова підробка запиту).\u003c/p\u003e\n\u003cp\u003eРізниця між Lax і Strict полягає в доступності cookie в\nзапити, що виходять з іншого реєстрованого домену з\nвикористанням HTTP-методу GET. Cookie, які використовують Lax, будуть\nдоступні в GET-запиті, що виходить з іншого домену, що реєструється,\nтоді як cookie, які використовують Strict, не будуть.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.gc-maxlifetime\"\u003esession.gc_maxlifetime\u003c/a\u003e=[вибрати\nнайменший із можливих]\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003esession.gc_maxlifetime\u003c/code\u003e налаштування для видалення застарілих\nідентифікаторів сесій. Покладатись на цю опцію категорично \u003cem\u003eне\u003c/em\u003e\nрекомендується. Ви повинні керувати життєвим циклом сесії\nсамостійно.\u003c/p\u003e\n\u003cp\u003eСесійний збирач сміття GC (garbage collection) краще використовувати\nза допомогою \u003ca href=\"function.session-gc.md\"\u003esession_gc()\u003c/a\u003e. Функцію\n\u003ca href=\"function.session-gc.md\"\u003esession_gc()\u003c/a\u003e найкраще запускати через\nпланувальник, наприклад, cron на nix-системах.\u003c/p\u003e\n\u003cp\u003eЗа замовчуванням GC працює на принципі імовірності. Це налаштування\n\u003cem\u003eне\u003c/em\u003e гарантує видалення старих сесій. Розробнику не слід\nпокладатися на це налаштування, але все одно, рекомендується виставити\nїї мінімально можливим значенням. Налаштовуйте\n\u003ca href=\"session.configuration.md#ini.session.gc-probability\"\u003esession.gc_probability\u003c/a\u003e\nі\n\u003ca href=\"session.configuration.md#ini.session.gc-divisor\"\u003esession.gc_divisor\u003c/a\u003e\nтак, щоб застарілі сесії віддалялися досить часто. Якщо\nпотрібна функціональність автологіна, реалізуйте його самостійно\nі ніколи не використовуйте для цього довготривалі сесії.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eДеякі обробники збереження сесій не використовують механізм\nстаріння сесій на основі ймовірностей. Наприклад memcached,\nmemcache. Читайте відповідну документацію для повнішої\nінформації.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.use-trans-sid\"\u003esession.use_trans_sid\u003c/a\u003e=Off\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eВикористання прозорого керування сесійним ID не рекомендується.\nВи можете використовувати його, якщо потрібно. Однак, вимкнення\nпрозорого управління підвищує безпеку сесій загалом, прибираючи\nможливість ін'єкції сесійного ID та його крадіжки.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eІдентифікатор сесії може витекти через закладку в браузері, URL\nнадісланий поштою, збережений вихідний HTML.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.trans-sid-tags\"\u003esession.trans_sid_tags\u003c/a\u003e=[ігноровані\nтеги]\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e(PHP 7.1.0 \u003e=) Ви не повинні перезаписувати непотрібні HTML-теги.\nЗначення за замовчуванням має бути достатньою для більшості\nвипадків. Старі версії PHP для цього використовують\n\u003ca href=\"outcontrol.configuration.md#ini.url-rewriter.tags\"\u003eurl_rewriter.tags\u003c/a\u003e.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.trans-sid-hosts\"\u003esession.trans_sid_hosts\u003c/a\u003e=[список\nхостів]\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e(PHP 7.1.0 \u003e=) Ця установка визначає білий список хостів, для\nяких дозволено прозоре керування ідентифікаторами сесій.\nНіколи не додавайте недовірені хости. Якщо це налаштування\nпорожня, то буде дозволено тільки $_SERVER['HTTP_HOST'].\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.referer-check\"\u003esession.referer_check\u003c/a\u003e=[ваш\nвихідний URL]\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eЯкщо \u003ca href=\"session.configuration.md#ini.session.use-trans-sid\"\u003esession.use_trans_sid\u003c/a\u003e\nувімкнено, то рекомендується використовувати цю опцію, якщо це можливо.\nЦе зменшує ризик ін'єкції сесійного ID. Якщо ваш сайт\nзнаходиться за адресою \u003ca href=\"http://example.com/\"\u003ehttp://example.com/\u003c/a\u003e, то встановіть цю опцію\nзначення \u003ca href=\"http://example.com/\"\u003ehttp://example.com/\u003c/a\u003e. Зверніть увагу, що при\nвикористовуючи HTTPS, браузер не надсилає referrer заголовок. Таким\nТаким чином, цей параметр не є достатньо надійним показником\nбезпеки, але, все ж таки, рекомендується його використовувати.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cache-limiter\"\u003esession.cache_limiter\u003c/a\u003e=nocache\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eПереконайтеся, що вміст HTTP не кешується для автентифікації\nсесії. Допускається кешувати лише неконфіденційний контент.\nІнакше вмістом можуть користуватися. Можна використовувати значення\n\"private\", якщо вміст HTTP не містить чутливих до\nбезпеки дані. Врахуйте, що \"private\" може залишати\nконфіденційні дані у загальному кеші клієнтів. Значення \"public\"\nможна використовувати тільки якщо HTTP-контент взагалі не містить\nжодних конфіденційних даних.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.sid-length\"\u003esession.sid_length\u003c/a\u003e=\"48\"\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e(PHP 7.1.0 \u003e=) Чим довший ідентифікатор сесії, тим він надійніший.\nДовжина, що рекомендується, - 32 символи і більше. У будь-якому випадку, не менше\n26 символів потрібно для\n\u003ca href=\"session.configuration.md#ini.session.sid-bits-per-character\"\u003esession.sid_bits_per_character\u003c/a\u003e=\"5\".\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.sid-bits-per-character\"\u003esession.sid_bits_per_character\u003c/a\u003e=\"6\"\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e(PHP 7.1.0 \u003e=) Чим більше біт використовується для символів\nідентифікатор сесії, тим більше надійні ідентифікатори будуть\nстворено для тієї ж довжини ідентифікатора сесії.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.hash-function\"\u003esession.hash_function\u003c/a\u003e=\"sha256\"\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e(PHP 7.1.0 \u0026#x3C;) Більш складна хеш-функція буде створювати більше\nскладний сесійний ID. Хоча колізії з хеш майже не відбуваються і з\nMD5-хешом, проте розробнику краще використовувати функції\nSHA-2 або новіший. Розробники також можуть використати складні\nфункції sha384 та sha512. Переконайтеся, що ви використовуєте\nдостатньо\n\u003ca href=\"session.configuration.md#ini.session.entropy-length\"\u003eентропії\u003c/a\u003e\nдля цих функцій.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.save-path\"\u003esession.save_path\u003c/a\u003e=[загальнодоступний\nкаталог для читання]\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eЯкщо встановлено у загальнодоступний каталог для читання всім, такий як\n\u003ccode\u003e/tmp\u003c/code\u003e (за замовчуванням), інші користувачі на сервері можуть\nзахопити сеанси, отримавши список файлів у цьому каталозі.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"session.security.ini.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

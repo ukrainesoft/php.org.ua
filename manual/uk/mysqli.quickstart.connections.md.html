@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli.quickstart.connections | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli.quickstart.dual-interface.md">« Процедурний та об'єктно-орієнтований интерфейс</a></p>
+</li>
+<li>
+<p><a href="mysqli.quickstart.statements.md">Виконання запитів »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mysqli.quickstart.md">Короткий посібник</a></p>
+</li>
+<li>
+<p>З'єднання</p>
+</li>
+</ul>
+<h2>З'єднання</h2>
+<p>Сервер MySQL підтримує різні методи передачі. З'єднання
+можуть використовувати протоколи TCP/IP, сокети Unix-доменів або іменовані
+пайпи Windows.</p>
+<p>Ім'я хоста <code>localhost</code> має особливе значення. Воно використовується тільки в
+сокетів Unix доменів. Щоб відкрити TCP/IP з'єднання з локальним
+хостом, необхідно використовувати <code>127.0.0.1</code> замість імені хоста
+<code>localhost</code>.</p>
+<p><strong>Приклад #1 Спеціальне призначення localhost</strong></p>
+<p>` &#x3C;?php$mysqli = new mysqli("localhost", "user", "password", "database");echo $mysqli->host_info . "
+";$mysqli = new mysqli("127.0.0.1", "user", "password", "database", 3306);echo $mysqli->host_info . "
+";</p>
+<p>Результат виконання цього прикладу:</p>
+<p>Localhost via UNIX socket
+127.0.0.1 via TCP/IP</p>
+<p><em>Змовчання для параметрів з'єднань</em></p>
+<p>Залежно від функції, що здійснює підключення, якісь параметри
+можна не ставити. Якщо параметр не заданий, модуль спробує
+використовувати значення за замовчуванням для цього параметра, яке встановлено
+конфігураційному файлі PHP.</p>
+<p><strong>Приклад #2 Завдання значень за замовчуванням</strong></p>
+<p>`` inicode
+mysqli.default_host=192.168.2.27
+mysqli.default_user=root
+mysqli.default_pw=""
+mysqli.default_port=3306
+mysqli.default_socket=/tmp/mysql.sock</p>
+<pre><code>
+Далі, щоб встановити з'єднання, функція передає параметри
+клієнтську бібліотеку, якою користується модуль. Якщо бібліотека
+виявить порожні або відсутні параметри, вона може підставити
+замість них свої вбудовані значення за промовчанням.
+
+*Вбудовані бібліотечні значення за замовчуванням для параметрів
+з'єднання*
+
+Якщо ім'я хоста не задано або передано порожній рядок, клієнтська
+бібліотека використовує для підключення до Unix-сокету хоста `localhost`.
+Якщо сокет не заданий або передано порожній рядок, і при цьому запрошено
+підключення до Unix-сокету, бібліотека спробує підключитися до сокету
+`/tmp/mysql.sock`.
+
+У Windows-системах, якщо як ім'я хоста передається `.`,
+бібліотека спробує відкрити з'єднання з урахуванням іменованого пайпа. В
+У цьому випадку ім'я сокета буде сприйнято як ім'я пайпа. Якщо ім'я сокету
+не задано, то буде використано значення `\.\pipe\MySQL`.
+
+Якщо з'єднання не використовує ні сокет домену Unix, ні іменований пайп
+Windows, і при цьому не заданий порт для підключення, бібліотека використовує
+номер порту `3306`.
+
+У драйвері [mysqlnd](mysqlnd.overview.md) та клієнтській бібліотеці
+MySQL (libmysqlclient) закладена та сама логіка визначення умовчань.
+
+*Налаштування з'єднання*
+
+Налаштування з'єднання дозволяють, наприклад, задати якісь команди,
+які потрібно виконати одразу після підключення, або віддати розпорядження
+використовувати певний набір символів. Налаштування повинні бути задані
+до підключення до сервера.
+
+Коли потрібно встановити налаштування з'єднання, операція підключення
+виконується в три етапи: функцією [mysqli_init()](mysqli.init.md) або
+[mysqli::\_\_construct()](mysqli.construct.md) створюється дескриптор
+підключення, потім підключення налаштовується за допомогою функції
+[mysqli::options()](mysqli.options.md), і нарешті встановлюється
+мережеве з'єднання з сервером за допомогою функції
+[mysqli::real_connect()](mysqli.real-connect.md).
+
+*Об'єднання підключень у пул*
+
+Модуль mysqli підтримує постійні з'єднання з базою даних, які
+являють собою спеціальний вид об'єднаних сполук. за
+замовчуванням кожне відкрите скриптом з'єднання закривається або самим
+скриптом під час виконання, або автоматично після завершення роботи
+скрипт. Постійні з'єднання відрізняються тим, що не закриваються, а
+поміщаються в пул для повторного використання надалі. Якщо
+потрібно підключитися до того ж сервера та бази даних, з тим же ім'ям
+користувача, паролем, сокетом та портом, то замість створення нового
+підключення з пулу виймається вже існуюче. Повторне
+використання підключень дозволяє уникнути накладних витрат на
+створення нових з'єднань.
+
+Кожен PHP процес використовує свій пул підключень mysqli. В залежності
+від конфігурації веб-сервера, PHP-процес може обслуговувати один або
+кілька запитів. Відповідно, з'єднання з пулу можуть
+послідовно використати кілька скриптів.
+
+*Постійне з'єднання*
+
+Нове підключення створюється, тільки якщо в кулі не знайдеться вільного
+підключення з тими ж даними хоста, імені користувача, пароля, сокету,
+порту та бази даних за замовчуванням. Механізм постійних з'єднань можна
+включати та вимикати PHP директивою
+[mysqli.allow_persistent](mysqli.configuration.md#ini.mysqli.allow-persistent).
+Максимальна кількість з'єднань, які може відкрити скрипт,
+обмежено значенням
+[mysqli.max_links](mysqli.configuration.md#ini.mysqli.max-links).
+Максимальна кількість з'єднань, які може відкрити один
+PHP-процес, обмежений значенням
+[mysqli.max_persistent](mysqli.configuration.md#ini.mysqli.max-persistent).
+Слід зазначити, що веб-сервер може породжувати багато PHP
+процесів.
+
+Головний недолік постійних підключень полягає в тому, що перед
+повторним використанням їхній стан не скидається до первісного.
+Наприклад, відкриті та незавершені транзакції не будуть автоматично.
+відкочуватися. Також, якщо під час знаходження з'єднання в пулі для
+процесу змінилися будь-які дозволи або рівні доступу, цей факт
+ніяк не позначиться на підключенні при витягуванні з пулу. Таке
+поведінка може призвести до небажаних результатів. Хоча, з іншого
+сторони, назву `постійний` можна розглядати, як обіцянку, що
+підключення і справді залишиться в тому стані, в якому воно було
+поміщено у пул.
+
+Модуль mysqli підтримує обидві інтерпретації терміну постійне
+з'єднання: стан з'єднання може зберігатися, а може і
+скидатися у початкове. За замовчуванням під час вилучення з пулу,
+з'єднання скидається. mysqli робить це неявним викликом функції
+[mysqli::change_user()](mysqli.change-user.md) щоразу, коли
+підключення використовується повторно. З погляду користувача
+підключення виглядає, як щойно створене.
+
+Однак, виклик функції [mysqli::change_user()](mysqli.change-user.md)
+Досить дорога операція. Для покращення швидкодії можна
+перекомпілювати модуль із встановленим прапором
+**`MYSQLI_NO_CHANGE_USER_ON_PCONNECT`**.
+
+Вибір між безпечною поведінкою підключень та найкращим
+швидкодією залишається за користувачем. Тут не можна дати
+однозначної поради. Для простоти використання, за замовчуванням увімкнено
+безпечний режим із очищенням з'єднань.
+
+*Дивіться також*
+
+- [mysqli::\_\_construct()](mysqli.construct.md)
+- [mysqli_init()](mysqli.init.md)
+- [mysqli::options()](mysqli.options.md)
+- [mysqli::real_connect()](mysqli.real-connect.md)
+- [mysqli::change_user()](mysqli.change-user.md)
+- [$mysqli::host_info](mysqli.get-host-info.md)
+- [MySQLi Configuration Options](mysqli.configuration.md)
+- [Persistent Database Connections](features.persistent-connections.md)
+</code></pre>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli.quickstart.connections.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli.quickstart.connections.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli.quickstart.connections","slug":"mysqli.quickstart.connections.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.quickstart.dual-interface.md\"\u003e« Процедурний та об'єктно-орієнтований интерфейс\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.quickstart.statements.md\"\u003eВиконання запитів »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.quickstart.md\"\u003eКороткий посібник\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗ'єднання\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eЗ'єднання\u003c/h2\u003e\n\u003cp\u003eСервер MySQL підтримує різні методи передачі. З'єднання\nможуть використовувати протоколи TCP/IP, сокети Unix-доменів або іменовані\nпайпи Windows.\u003c/p\u003e\n\u003cp\u003eІм'я хоста \u003ccode\u003elocalhost\u003c/code\u003e має особливе значення. Воно використовується тільки в\nсокетів Unix доменів. Щоб відкрити TCP/IP з'єднання з локальним\nхостом, необхідно використовувати \u003ccode\u003e127.0.0.1\u003c/code\u003e замість імені хоста\n\u003ccode\u003elocalhost\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Спеціальне призначення localhost\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$mysqli = new mysqli(\"localhost\", \"user\", \"password\", \"database\");echo $mysqli-\u003ehost_info . \"\n\";$mysqli = new mysqli(\"127.0.0.1\", \"user\", \"password\", \"database\", 3306);echo $mysqli-\u003ehost_info . \"\n\";\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eLocalhost via UNIX socket\n127.0.0.1 via TCP/IP\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЗмовчання для параметрів з'єднань\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eЗалежно від функції, що здійснює підключення, якісь параметри\nможна не ставити. Якщо параметр не заданий, модуль спробує\nвикористовувати значення за замовчуванням для цього параметра, яке встановлено\nконфігураційному файлі PHP.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Завдання значень за замовчуванням\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e`` inicode\nmysqli.default_host=192.168.2.27\nmysqli.default_user=root\nmysqli.default_pw=\"\"\nmysqli.default_port=3306\nmysqli.default_socket=/tmp/mysql.sock\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e\nДалі, щоб встановити з'єднання, функція передає параметри\nклієнтську бібліотеку, якою користується модуль. Якщо бібліотека\nвиявить порожні або відсутні параметри, вона може підставити\nзамість них свої вбудовані значення за промовчанням.\n\n*Вбудовані бібліотечні значення за замовчуванням для параметрів\nз'єднання*\n\nЯкщо ім'я хоста не задано або передано порожній рядок, клієнтська\nбібліотека використовує для підключення до Unix-сокету хоста `localhost`.\nЯкщо сокет не заданий або передано порожній рядок, і при цьому запрошено\nпідключення до Unix-сокету, бібліотека спробує підключитися до сокету\n`/tmp/mysql.sock`.\n\nУ Windows-системах, якщо як ім'я хоста передається `.`,\nбібліотека спробує відкрити з'єднання з урахуванням іменованого пайпа. В\nУ цьому випадку ім'я сокета буде сприйнято як ім'я пайпа. Якщо ім'я сокету\nне задано, то буде використано значення `\\.\\pipe\\MySQL`.\n\nЯкщо з'єднання не використовує ні сокет домену Unix, ні іменований пайп\nWindows, і при цьому не заданий порт для підключення, бібліотека використовує\nномер порту `3306`.\n\nУ драйвері [mysqlnd](mysqlnd.overview.md) та клієнтській бібліотеці\nMySQL (libmysqlclient) закладена та сама логіка визначення умовчань.\n\n*Налаштування з'єднання*\n\nНалаштування з'єднання дозволяють, наприклад, задати якісь команди,\nякі потрібно виконати одразу після підключення, або віддати розпорядження\nвикористовувати певний набір символів. Налаштування повинні бути задані\nдо підключення до сервера.\n\nКоли потрібно встановити налаштування з'єднання, операція підключення\nвиконується в три етапи: функцією [mysqli_init()](mysqli.init.md) або\n[mysqli::\\_\\_construct()](mysqli.construct.md) створюється дескриптор\nпідключення, потім підключення налаштовується за допомогою функції\n[mysqli::options()](mysqli.options.md), і нарешті встановлюється\nмережеве з'єднання з сервером за допомогою функції\n[mysqli::real_connect()](mysqli.real-connect.md).\n\n*Об'єднання підключень у пул*\n\nМодуль mysqli підтримує постійні з'єднання з базою даних, які\nявляють собою спеціальний вид об'єднаних сполук. за\nзамовчуванням кожне відкрите скриптом з'єднання закривається або самим\nскриптом під час виконання, або автоматично після завершення роботи\nскрипт. Постійні з'єднання відрізняються тим, що не закриваються, а\nпоміщаються в пул для повторного використання надалі. Якщо\nпотрібно підключитися до того ж сервера та бази даних, з тим же ім'ям\nкористувача, паролем, сокетом та портом, то замість створення нового\nпідключення з пулу виймається вже існуюче. Повторне\nвикористання підключень дозволяє уникнути накладних витрат на\nстворення нових з'єднань.\n\nКожен PHP процес використовує свій пул підключень mysqli. В залежності\nвід конфігурації веб-сервера, PHP-процес може обслуговувати один або\nкілька запитів. Відповідно, з'єднання з пулу можуть\nпослідовно використати кілька скриптів.\n\n*Постійне з'єднання*\n\nНове підключення створюється, тільки якщо в кулі не знайдеться вільного\nпідключення з тими ж даними хоста, імені користувача, пароля, сокету,\nпорту та бази даних за замовчуванням. Механізм постійних з'єднань можна\nвключати та вимикати PHP директивою\n[mysqli.allow_persistent](mysqli.configuration.md#ini.mysqli.allow-persistent).\nМаксимальна кількість з'єднань, які може відкрити скрипт,\nобмежено значенням\n[mysqli.max_links](mysqli.configuration.md#ini.mysqli.max-links).\nМаксимальна кількість з'єднань, які може відкрити один\nPHP-процес, обмежений значенням\n[mysqli.max_persistent](mysqli.configuration.md#ini.mysqli.max-persistent).\nСлід зазначити, що веб-сервер може породжувати багато PHP\nпроцесів.\n\nГоловний недолік постійних підключень полягає в тому, що перед\nповторним використанням їхній стан не скидається до первісного.\nНаприклад, відкриті та незавершені транзакції не будуть автоматично.\nвідкочуватися. Також, якщо під час знаходження з'єднання в пулі для\nпроцесу змінилися будь-які дозволи або рівні доступу, цей факт\nніяк не позначиться на підключенні при витягуванні з пулу. Таке\nповедінка може призвести до небажаних результатів. Хоча, з іншого\nсторони, назву `постійний` можна розглядати, як обіцянку, що\nпідключення і справді залишиться в тому стані, в якому воно було\nпоміщено у пул.\n\nМодуль mysqli підтримує обидві інтерпретації терміну постійне\nз'єднання: стан з'єднання може зберігатися, а може і\nскидатися у початкове. За замовчуванням під час вилучення з пулу,\nз'єднання скидається. mysqli робить це неявним викликом функції\n[mysqli::change_user()](mysqli.change-user.md) щоразу, коли\nпідключення використовується повторно. З погляду користувача\nпідключення виглядає, як щойно створене.\n\nОднак, виклик функції [mysqli::change_user()](mysqli.change-user.md)\nДосить дорога операція. Для покращення швидкодії можна\nперекомпілювати модуль із встановленим прапором\n**`MYSQLI_NO_CHANGE_USER_ON_PCONNECT`**.\n\nВибір між безпечною поведінкою підключень та найкращим\nшвидкодією залишається за користувачем. Тут не можна дати\nоднозначної поради. Для простоти використання, за замовчуванням увімкнено\nбезпечний режим із очищенням з'єднань.\n\n*Дивіться також*\n\n- [mysqli::\\_\\_construct()](mysqli.construct.md)\n- [mysqli_init()](mysqli.init.md)\n- [mysqli::options()](mysqli.options.md)\n- [mysqli::real_connect()](mysqli.real-connect.md)\n- [mysqli::change_user()](mysqli.change-user.md)\n- [$mysqli::host_info](mysqli.get-host-info.md)\n- [MySQLi Configuration Options](mysqli.configuration.md)\n- [Persistent Database Connections](features.persistent-connections.md)\n\u003c/code\u003e\u003c/pre\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli.quickstart.connections.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

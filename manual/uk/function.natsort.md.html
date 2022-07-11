@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.natsort | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.natcasesort.md">« natcasesort</a></p>
+</li>
+<li>
+<p><a href="function.next.md">next »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.array.md">Функції для роботи з масивами</a></p>
+</li>
+<li>
+<p>Сортує масив, використовуючи алгоритм "natural order"</p>
+</li>
+</ul>
+<h1>natsort</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>natsort - Сортує масив, використовуючи алгоритм "natural order"</p>
+<h3>Опис</h3>
+<p><strong>natsort</strong>(array <code>&#x26;$array</code>): bool</p>
+<p>Ця функція реалізує алгоритм сортування, за якого порядок
+буквено-цифрових рядків буде звичним для людини. Такий алгоритм
+називається "natural ordering". Відмінність алгоритму "natural ordering" від
+звичайних алгоритмів сортування, що застосовуються, наприклад, функцією
+<a href="function.sort.md">sort()</a> можна побачити на прикладі нижче.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо обидва порівнювані значення еквівалентні, вони зберігають свій
+Початковий порядок. До PHP 8.0.0 їх відносний порядок
+відсортованому масиві був визначений.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Скидає внутрішній покажчик масиву перший елемент.</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>array</code>
+Вхідний масив.</p>
+<h3>Значення, що повертаються</h3>
+<p>Функція завжди повертає <strong><code>true</code></strong>.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Простий приклад використання <strong>natsort()</strong></strong></p>
+<p><code>&#x3C;?php$array1 = $array2 = array("img12.png", "img10.png", "img2.png", "img1.png");asort($array1);echo "Звичайне сортування ";print_r($array1);natsort($array2);echo " Сортування natural order ";print_r($array2);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Звичайне сортування
+Array
+(
+[3] => img1.png
+[1] => img10.png
+[0] => img12.png
+[2] => img2.png
+)</p>
+<p>Сортування ордер
+Array
+(
+[3] => img1.png
+[2] => img2.png
+[1] => img10.png
+[0] => img12.png
+)</p>
+<p>Детальніше дивіться статтю Martin Pool <a href="https://github.com/sourcefrog/natsort">» Natural Order String Comparison</a>.</p>
+<p><strong>Приклад #2 Приклади використання різних трюків з <strong>natsort()</strong></strong></p>
+<p><code>&#x3C;?phpecho "Негативні числа ";$negative = array('-5','3','-2','0','-1000','9','1');print_r($negative);natsort($negative) ;print_r($negative);echo "Відбивка нулями $zeros==array('09', '8', '10', '009', '011', '0');print_r($zeros);natsort($zeros);print_r($zeros); ?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Негативні числа
+Array
+(
+[0] => -5
+[1] => 3
+[2] => -2
+[3] => 0
+[4] => -1000
+[5] => 9
+[6] => 1
+)
+Array
+(
+[2] => -2
+[0] => -5
+[4] => -1000
+[3] => 0
+[6] => 1
+[1] => 3
+[5] => 9
+)</p>
+<p>Відбиття нулями
+Array
+(
+[0] => 09
+[1] => 8
+[2] => 10
+[3] => 009
+[4] => 011
+[5] => 0
+)
+Array
+(
+[5] => 0
+[1] => 8
+[3] => 009
+[0] => 09
+[2] => 10
+[4] => 011
+)</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.natcasesort.md">natcasesort()</a> - Сортує масив,
+використовуючи алгоритм "natural order" без урахування регістру символів</li>
+<li><a href="array.sorting.md">Порівняння функцій сортування масивів</a></li>
+<li><a href="function.strnatcmp.md">strnatcmp()</a> - Порівняння рядків з
+використанням алгоритму "natural order"</li>
+<li><a href="function.strnatcasecmp.md">strnatcasecmp()</a> - Порівняння рядків без
+обліку регістру з використанням алгоритму "natural order"</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.natsort.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.natsort.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.natsort","slug":"function.natsort.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.natcasesort.md\"\u003e« natcasesort\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.next.md\"\u003enext »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.array.md\"\u003eФункції для роботи з масивами\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eСортує масив, використовуючи алгоритм \"natural order\"\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003enatsort\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003enatsort - Сортує масив, використовуючи алгоритм \"natural order\"\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003enatsort\u003c/strong\u003e(array \u003ccode\u003e\u0026#x26;$array\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eЦя функція реалізує алгоритм сортування, за якого порядок\nбуквено-цифрових рядків буде звичним для людини. Такий алгоритм\nназивається \"natural ordering\". Відмінність алгоритму \"natural ordering\" від\nзвичайних алгоритмів сортування, що застосовуються, наприклад, функцією\n\u003ca href=\"function.sort.md\"\u003esort()\u003c/a\u003e можна побачити на прикладі нижче.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо обидва порівнювані значення еквівалентні, вони зберігають свій\nПочатковий порядок. До PHP 8.0.0 їх відносний порядок\nвідсортованому масиві був визначений.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eСкидає внутрішній покажчик масиву перший елемент.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003earray\u003c/code\u003e\nВхідний масив.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eФункція завжди повертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Простий приклад використання \u003cstrong\u003enatsort()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array1 = $array2 = array(\"img12.png\", \"img10.png\", \"img2.png\", \"img1.png\");asort($array1);echo \"Звичайне сортування \";print_r($array1);natsort($array2);echo \" Сортування natural order \";print_r($array2);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eЗвичайне сортування\nArray\n(\n[3] =\u003e img1.png\n[1] =\u003e img10.png\n[0] =\u003e img12.png\n[2] =\u003e img2.png\n)\u003c/p\u003e\n\u003cp\u003eСортування ордер\nArray\n(\n[3] =\u003e img1.png\n[2] =\u003e img2.png\n[1] =\u003e img10.png\n[0] =\u003e img12.png\n)\u003c/p\u003e\n\u003cp\u003eДетальніше дивіться статтю Martin Pool \u003ca href=\"https://github.com/sourcefrog/natsort\"\u003e» Natural Order String Comparison\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклади використання різних трюків з \u003cstrong\u003enatsort()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpecho \"Негативні числа \";$negative = array('-5','3','-2','0','-1000','9','1');print_r($negative);natsort($negative) ;print_r($negative);echo \"Відбивка нулями $zeros==array('09', '8', '10', '009', '011', '0');print_r($zeros);natsort($zeros);print_r($zeros); ?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eНегативні числа\nArray\n(\n[0] =\u003e -5\n[1] =\u003e 3\n[2] =\u003e -2\n[3] =\u003e 0\n[4] =\u003e -1000\n[5] =\u003e 9\n[6] =\u003e 1\n)\nArray\n(\n[2] =\u003e -2\n[0] =\u003e -5\n[4] =\u003e -1000\n[3] =\u003e 0\n[6] =\u003e 1\n[1] =\u003e 3\n[5] =\u003e 9\n)\u003c/p\u003e\n\u003cp\u003eВідбиття нулями\nArray\n(\n[0] =\u003e 09\n[1] =\u003e 8\n[2] =\u003e 10\n[3] =\u003e 009\n[4] =\u003e 011\n[5] =\u003e 0\n)\nArray\n(\n[5] =\u003e 0\n[1] =\u003e 8\n[3] =\u003e 009\n[0] =\u003e 09\n[2] =\u003e 10\n[4] =\u003e 011\n)\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.natcasesort.md\"\u003enatcasesort()\u003c/a\u003e - Сортує масив,\nвикористовуючи алгоритм \"natural order\" без урахування регістру символів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"array.sorting.md\"\u003eПорівняння функцій сортування масивів\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.strnatcmp.md\"\u003estrnatcmp()\u003c/a\u003e - Порівняння рядків з\nвикористанням алгоритму \"natural order\"\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.strnatcasecmp.md\"\u003estrnatcasecmp()\u003c/a\u003e - Порівняння рядків без\nобліку регістру з використанням алгоритму \"natural order\"\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.natsort.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

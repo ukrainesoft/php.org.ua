@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>simplexml.examples-basic | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="simplexml.examples.md">« Приклади</a></p>
+</li>
+<li>
+<p><a href="simplexml.examples-errors.md">Робота з помилками XML »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="simplexml.examples.md">Приклади</a></p>
+</li>
+<li>
+<p>Базове використання SimpleXML</p>
+</li>
+</ul>
+<h2>Базове використання SimpleXML</h2>
+<p>Деякі приклади цього посібника включають рядок XML. Замість того,
+щоб повторювати її в кожному прикладі, покладіть цей рядок у файл, який
+і включайте у кожному прикладі. Цей рядок наведено у наступному прикладі.
+Крім цього, можна створити XML-документ і зчитувати його функцією
+<a href="function.simplexml-load-file.md">simplexml_load_file()</a>.</p>
+<p><strong>Приклад #1 Файл example.php з рядком XML</strong></p>
+<p><code>&#x3C;?php$xmlstr = &#x3C;&#x3C;&#x3C;&#x3C;XML&#x3C;?xml version='1.0' standalone='yes'?>&#x3C;movies> &#x3C;movie>  &#x3C;title>PHP: Поява Парсера&#x3C;/title>  &#x3C;characters>  &#x3C;character> name>Ms. Coder&#x3C;/name>    &#x3C;actor>Onlivia Actora&#x3C;/actor>   &#x3C;/character>   &#x3C;character>    &#x3C;name>Mr. Coder&#x3C;/name>    &#x3C;actor>El ActÓr&#x3C;/actor>   &#x3C;/character>  &#x3C;/characters>  &#x3C;plot>   Таким образом, мова. Це все рівно мова програмування. Чи    це скриптова мова? Все розкривається в цьому документальному фільмі, схожому на фільм жахів. &#x3C;/plot>  &#x3C;great-lines>   &#x3C;line>PHP вирішує всі мої проблеми в вебе&#x3C;/line>  &#x3C;/great-lines>  &#x3C;rating type="thumbs">7&#x3C;/rating>  &#x3C;rating type= 5&#x3C;/rating> &#x3C;/movie>&#x3C;/movies>XML;?> </code></p>
+<p>SimpleXML користуватися дуже просто! Спробуйте отримати якусь
+рядок або число базового XML-документа.</p>
+<p><strong>Приклад #2 Отримання частини документа <code>&#x3C;plot></code></strong></p>
+<p><code>&#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);echo $movies->movie[0]->plot;?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Отже, це мова. Це все одно мова програмування. Або
+це скриптова мова? Все розкривається у цьому документальному фільмі,
+схожим на фільм жахів.</p>
+<p>У PHP отримати доступ до елемента в XML документі, що міститься в назві
+неприпустимі символи (наприклад, дефіс), можна шляхом укладання даного
+імені елемента у фігурні дужки та апострофи.</p>
+<p><strong>Приклад #3 Отримання рядка <code>&#x3C;line></code></strong></p>
+<p><code>&#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);echo $movies->movie->{'great-lines'}->line;?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>PHP вирішує всі мої проблеми в Інтернеті</p>
+<p><strong>Приклад #4 Доступ до неунікальних елементів у SimpleXML</strong></p>
+<p>У тому випадку, якщо існує кілька екземплярів дочірніх елементів у
+одному батьківському елементі, то потрібно застосовувати стандартні методи
+ітерації.</p>
+<p><code>&#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);/* Для кожного вузла &#x3C;character>, ми окремо виведемо ім'я&#x3C;name>. */foreach ($movies->movie->characters->character as $character) {   echo $character->name, ' грає ', $character->actor, PHP_EOL;}?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Ms. Coder грає Onlivia Actora
+Mr. Coder грає El ActÓr</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Властивості (<code>$movies->movie</code> у попередньому прикладі) не є
+масивами. Це <a href="class.iterator.md">об'єкт, що ітерується</a> об'єкт <a href="class.arrayaccess.md">у вигляді > масиву</a>.</p>
+</blockquote>
+<p><strong>Приклад #5 Використання атрибутів</strong></p>
+<p>Досі ми лише отримували назви та значення елементів. SimpleXML
+може також отримати доступ до атрибутів елемента. Отримати доступ до
+атрибут елемента можна так само, як до елементів масиву (array).</p>
+<p><code>&#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);/* Доступ до вузла &#x3C;rating> першого фільму. * Так же виведемо шкалу оцінок. */foreach ($movies->movie[0]->rating as $rating) {    switch((string) $rating['type']) { // Отримання атрибутів елементу по індексу                                      ' thumbs up'; break; case 'stars':        echo $rating, ' stars'; break; }}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>7 thumbs up5 stars</p>
+<p><strong>Приклад #6 Порівняння елементів та атрибутів із текстом</strong></p>
+<p>Для порівняння елемента або атрибута з рядком або для передачі
+функцію як текст, необхідно привести його до рядка, використовуючи
+<code>(string)</code>. В іншому випадку, PHP розглядатиме елемент як
+об'єкт.</p>
+<p><code>&#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);if ((string) $movies->movie->title == 'PHP: Поява Парсера') { м           ;}echo htmlentities((string) $movies->movie->title);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Мій улюблений фільм. PHP: Поява Парсера</p>
+<p><strong>Приклад #7 Порівняння двох елементів</strong></p>
+<p>Два елементи SimpleXMLElements вважаються різними, навіть якщо вони
+вказують на той самий об'єкт.</p>
+<p><code>&#x3C;?phpinclude 'example.php';$movies1 = new SimpleXMLElement($xmlstr);$movies2 = new SimpleXMLElement($xmlstr);var_dump($movies1 ===$movies2); // false?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>bool(false)</p>
+<p><strong>Приклад #8 Використання XPath</strong></p>
+<p>SimpleXML включає вбудовану підтримку XPath. Пошук усіх
+елементів <code>&#x3C;character></code>:</p>
+<p><code>&#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);foreach ($movies->xpath('//character') as $character) {    echo $character->name| $character->actor, PHP_EOL;}?></code></p>
+<p>'<code>//</code>' служить як шаблон. Для вказівки абсолютного шляху,
+опустіть одну з косих рис.</p>
+<p>Результат виконання цього прикладу:</p>
+<p>Ms. Coder грає Onlivia Actora
+Mr. Coder грає by El ActÓr</p>
+<p><strong>Приклад #9 Встановлення значень</strong></p>
+<p>Дані SimpleXML не обов'язково повинні бути незмінними. Об'єкт
+дозволяє маніпулювати усіма елементами.</p>
+<p><code>&#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);$movies->movie[0]->characters->character[0]->name = 'Miss Coder';echo $movies- >asXML();?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p><strong>Приклад #10 Додавання елементів та атрибутів</strong></p>
+<p>SimpleXML має можливість легко додавати дочірні елементи та
+атрибути.</p>
+<p><code>&#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);$character = $movies->movie[0]->characters->addChild('character');$character->addChild(' name', 'Mr. Parser');$character->addChild('actor', 'John Doe');$rating = $movies->movie[0]->addChild('rating', 'PG'); $rating->addAttribute('type', 'mpaa');echo $movies->asXML();?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p><strong>Приклад #11 Взаємодія з DOM</strong></p>
+<p>PHP може перетворювати XML-вузли з SimpleXML у формат DOM та навпаки.
+Цей приклад показує, як можна змінити DOM-елемент у SimpleXML.</p>
+<p><code>&#x3C;?php$dom = new DOMDocument;$dom->loadXML('&#x3C;books>&#x3C;book>&#x3C;title>дурниця&#x3C;/title>&#x3C;/book>&#x3C;/books>');if (!$dom) {    echo 'Помилка при розборі документа'; exit;}$books = simplexml_import_dom($dom);echo $books->book[0]->title;?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>нісенітниця</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/simplexml.examples-basic.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/simplexml.examples-basic.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"simplexml.examples-basic","slug":"simplexml.examples-basic.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"simplexml.examples.md\"\u003e« Приклади\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"simplexml.examples-errors.md\"\u003eРобота з помилками XML »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"simplexml.examples.md\"\u003eПриклади\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eБазове використання SimpleXML\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eБазове використання SimpleXML\u003c/h2\u003e\n\u003cp\u003eДеякі приклади цього посібника включають рядок XML. Замість того,\nщоб повторювати її в кожному прикладі, покладіть цей рядок у файл, який\nі включайте у кожному прикладі. Цей рядок наведено у наступному прикладі.\nКрім цього, можна створити XML-документ і зчитувати його функцією\n\u003ca href=\"function.simplexml-load-file.md\"\u003esimplexml_load_file()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Файл example.php з рядком XML\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$xmlstr = \u0026#x3C;\u0026#x3C;\u0026#x3C;\u0026#x3C;XML\u0026#x3C;?xml version='1.0' standalone='yes'?\u003e\u0026#x3C;movies\u003e \u0026#x3C;movie\u003e  \u0026#x3C;title\u003ePHP: Поява Парсера\u0026#x3C;/title\u003e  \u0026#x3C;characters\u003e  \u0026#x3C;character\u003e name\u003eMs. Coder\u0026#x3C;/name\u003e    \u0026#x3C;actor\u003eOnlivia Actora\u0026#x3C;/actor\u003e   \u0026#x3C;/character\u003e   \u0026#x3C;character\u003e    \u0026#x3C;name\u003eMr. Coder\u0026#x3C;/name\u003e    \u0026#x3C;actor\u003eEl ActÓr\u0026#x3C;/actor\u003e   \u0026#x3C;/character\u003e  \u0026#x3C;/characters\u003e  \u0026#x3C;plot\u003e   Таким образом, мова. Це все рівно мова програмування. Чи    це скриптова мова? Все розкривається в цьому документальному фільмі, схожому на фільм жахів. \u0026#x3C;/plot\u003e  \u0026#x3C;great-lines\u003e   \u0026#x3C;line\u003ePHP вирішує всі мої проблеми в вебе\u0026#x3C;/line\u003e  \u0026#x3C;/great-lines\u003e  \u0026#x3C;rating type=\"thumbs\"\u003e7\u0026#x3C;/rating\u003e  \u0026#x3C;rating type= 5\u0026#x3C;/rating\u003e \u0026#x3C;/movie\u003e\u0026#x3C;/movies\u003eXML;?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eSimpleXML користуватися дуже просто! Спробуйте отримати якусь\nрядок або число базового XML-документа.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Отримання частини документа \u003ccode\u003e\u0026#x3C;plot\u003e\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);echo $movies-\u003emovie[0]-\u003eplot;?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eОтже, це мова. Це все одно мова програмування. Або\nце скриптова мова? Все розкривається у цьому документальному фільмі,\nсхожим на фільм жахів.\u003c/p\u003e\n\u003cp\u003eУ PHP отримати доступ до елемента в XML документі, що міститься в назві\nнеприпустимі символи (наприклад, дефіс), можна шляхом укладання даного\nімені елемента у фігурні дужки та апострофи.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Отримання рядка \u003ccode\u003e\u0026#x3C;line\u003e\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);echo $movies-\u003emovie-\u003e{'great-lines'}-\u003eline;?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003ePHP вирішує всі мої проблеми в Інтернеті\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Доступ до неунікальних елементів у SimpleXML\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eУ тому випадку, якщо існує кілька екземплярів дочірніх елементів у\nодному батьківському елементі, то потрібно застосовувати стандартні методи\nітерації.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);/* Для кожного вузла \u0026#x3C;character\u003e, ми окремо виведемо ім'я\u0026#x3C;name\u003e. */foreach ($movies-\u003emovie-\u003echaracters-\u003echaracter as $character) {   echo $character-\u003ename, ' грає ', $character-\u003eactor, PHP_EOL;}?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eMs. Coder грає Onlivia Actora\nMr. Coder грає El ActÓr\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eВластивості (\u003ccode\u003e$movies-\u003emovie\u003c/code\u003e у попередньому прикладі) не є\nмасивами. Це \u003ca href=\"class.iterator.md\"\u003eоб'єкт, що ітерується\u003c/a\u003e об'єкт \u003ca href=\"class.arrayaccess.md\"\u003eу вигляді \u003e масиву\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Використання атрибутів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДосі ми лише отримували назви та значення елементів. SimpleXML\nможе також отримати доступ до атрибутів елемента. Отримати доступ до\nатрибут елемента можна так само, як до елементів масиву (array).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);/* Доступ до вузла \u0026#x3C;rating\u003e першого фільму. * Так же виведемо шкалу оцінок. */foreach ($movies-\u003emovie[0]-\u003erating as $rating) {    switch((string) $rating['type']) { // Отримання атрибутів елементу по індексу                                      ' thumbs up'; break; case 'stars':        echo $rating, ' stars'; break; }}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e7 thumbs up5 stars\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #6 Порівняння елементів та атрибутів із текстом\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля порівняння елемента або атрибута з рядком або для передачі\nфункцію як текст, необхідно привести його до рядка, використовуючи\n\u003ccode\u003e(string)\u003c/code\u003e. В іншому випадку, PHP розглядатиме елемент як\nоб'єкт.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);if ((string) $movies-\u003emovie-\u003etitle == 'PHP: Поява Парсера') { м           ;}echo htmlentities((string) $movies-\u003emovie-\u003etitle);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eМій улюблений фільм. PHP: Поява Парсера\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #7 Порівняння двох елементів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДва елементи SimpleXMLElements вважаються різними, навіть якщо вони\nвказують на той самий об'єкт.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude 'example.php';$movies1 = new SimpleXMLElement($xmlstr);$movies2 = new SimpleXMLElement($xmlstr);var_dump($movies1 ===$movies2); // false?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003ebool(false)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #8 Використання XPath\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eSimpleXML включає вбудовану підтримку XPath. Пошук усіх\nелементів \u003ccode\u003e\u0026#x3C;character\u003e\u003c/code\u003e:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);foreach ($movies-\u003expath('//character') as $character) {    echo $character-\u003ename| $character-\u003eactor, PHP_EOL;}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e'\u003ccode\u003e//\u003c/code\u003e' служить як шаблон. Для вказівки абсолютного шляху,\nопустіть одну з косих рис.\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eMs. Coder грає Onlivia Actora\nMr. Coder грає by El ActÓr\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #9 Встановлення значень\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДані SimpleXML не обов'язково повинні бути незмінними. Об'єкт\nдозволяє маніпулювати усіма елементами.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);$movies-\u003emovie[0]-\u003echaracters-\u003echaracter[0]-\u003ename = 'Miss Coder';echo $movies- \u003easXML();?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #10 Додавання елементів та атрибутів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eSimpleXML має можливість легко додавати дочірні елементи та\nатрибути.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude 'example.php';$movies = new SimpleXMLElement($xmlstr);$character = $movies-\u003emovie[0]-\u003echaracters-\u003eaddChild('character');$character-\u003eaddChild(' name', 'Mr. Parser');$character-\u003eaddChild('actor', 'John Doe');$rating = $movies-\u003emovie[0]-\u003eaddChild('rating', 'PG'); $rating-\u003eaddAttribute('type', 'mpaa');echo $movies-\u003easXML();?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #11 Взаємодія з DOM\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003ePHP може перетворювати XML-вузли з SimpleXML у формат DOM та навпаки.\nЦей приклад показує, як можна змінити DOM-елемент у SimpleXML.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$dom = new DOMDocument;$dom-\u003eloadXML('\u0026#x3C;books\u003e\u0026#x3C;book\u003e\u0026#x3C;title\u003eдурниця\u0026#x3C;/title\u003e\u0026#x3C;/book\u003e\u0026#x3C;/books\u003e');if (!$dom) {    echo 'Помилка при розборі документа'; exit;}$books = simplexml_import_dom($dom);echo $books-\u003ebook[0]-\u003etitle;?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eнісенітниця\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"simplexml.examples-basic.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

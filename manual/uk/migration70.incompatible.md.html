@@ -1,0 +1,604 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration70.incompatible | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration70.md">« Міграція з PHP 5.6.x на PHP 7.0.x</a></p>
+</li>
+<li>
+<p><a href="migration70.new-features.md">Нова функціональність »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration70.md">Міграція з PHP 5.6.x на PHP 7.0.x</a></p>
+</li>
+<li>
+<p>Зміни, що ламають зворотну сумісність</p>
+</li>
+</ul>
+<h2>Зміни, що ламають зворотну сумісність</h2>
+<h3>Зміни в обробці помилок та винятків</h3>
+<p>Багато фатальних і поправних фатальних помилок було перероблено в
+винятки в PHP 7. Ці винятки успадковують клас
+<a href="class.error.md">Error</a>, який, у свою чергу, реалізує інтерфейс
+<a href="class.throwable.md">Throwable</a> (новий базовий інтерфейс, який
+успадковують усі винятки).</p>
+<p>Це означає, що користувальницькі обробники помилок можуть не бути викликані,
+тому що замість виклику помилки буде викинуто виняток (породжуючи
+нові фатальні помилки через неперехоплені винятки класу
+<a href="class.error.md">Error</a>).</p>
+<p>Докладніше опис того, як помилки працюють у PHP 7, можна знайти
+на сторінці <a href="language.errors.php7.md">помилки PHP 7</a>. Це керівництво
+лише перераховує зміни, які можуть призвести до зворотної
+несумісності.</p>
+<h4><a href="function.set-exception-handler.md">set_exception_handler()</a> більше не гарантує отримання об'єкта класу <a href="class.exception.md">Exception</a></h4>
+<p>Код, що реалізує реєстрацію обробника виключень за допомогою
+<a href="function.set-exception-handler.md">set_exception_handler()</a>,
+використовуючи декларацію типу <a href="class.exception.md">Exception</a>, викличе
+фатальну помилку, якщо буде викинуто виняток
+<a href="class.error.md">Error</a>.</p>
+<p>Якщо потрібна робота обробника в PHP 5 та 7, ви повинні прибрати
+оголошення класу з оброблювача. Якщо код передбачається використовувати
+тільки в PHP 7, то можна просто змінити тип з
+<a href="class.exception.md">Exception</a> на <a href="class.throwable.md">Throwable</a>.</p>
+<p><code>&#x3C;?php// Тільки PHP 5. У PHP 7 може викликати фатальну помилку.function handler(Exception $e) { ... }set_exception_handler('handler');//   e) { ... }// Тільки PHP 7.function handler(Throwable $e) { ... }?> </code></p>
+<h4>Вбудовані конструктори завжди викликають винятки у разі невдачі</h4>
+<p>Раніше деякі внутрішні класи повертали <strong><code>null</code></strong> або марний
+об'єкт, коли конструктор зазнав невдачі. Всі вбудовані класи тепер
+такому разі викидатимуть виняток
+<a href="class.exception.md">Exception</a>, як це вже роблять
+користувальницькі класи.</p>
+<h4>Помилки аналізу кидають виняток класу <a href="class.parseerror.md">ParseError</a></h4>
+<p>Помилки розбору кидають виняток класу
+<a href="class.parseerror.md">ParseError</a>. Обробка помилок
+<a href="function.eval.md">eval()</a> повинна включати блок
+<a href="language.exceptions.md#language.exceptions.catch"><code>catch</code></a>, який
+ловитиме цю помилку.</p>
+<h4>Зміна суворості повідомлень E_STRICT</h4>
+<p>Всі повідомлення <strong><code>E_STRICT</code></strong> перекваліфіковані за іншими рівнями.
+Константа <strong><code>E_STRICT</code></strong> збережена, так що
+<code>error_reporting(E_ALL|E_STRICT)</code> не викликає помилки.</p>
+<table>
+<thead>
+<tr>
+<th>Ситуація Новий рівень/поведінка</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Індексування ресурсом <strong>E_NOTICE</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Анотація статичних методів</td>
+<td>Повідомлення прибрано, не викликає помилок</td>
+</tr>
+<tr>
+<td>"Перевизначення" конструктора</td>
+<td>Повідомлення прибрано, не викликає помилок</td>
+</tr>
+<tr>
+<td>Недотримання сигнатури під час успадкування</td>
+<td><strong>E_WARNING</strong></td>
+</tr>
+<tr>
+<td>Поодинокі (сумісні) властивості у двох різних трейтах Повідомлення прибрано, не викликає помилок</td>
+<td></td>
+</tr>
+<tr>
+<td>Нестатичний доступ до статичної властивості <strong>E_NOTICE</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Тільки змінні може бути присвоєно за посиланням</td>
+<td><strong>E_NOTICE</strong></td>
+</tr>
+<tr>
+<td>Тільки змінні може бути передані за посиланням</td>
+<td><strong>E_NOTICE</strong></td>
+</tr>
+<tr>
+<td>Виклик нестатичного методу статично <strong>E_DEPRECATED</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Зміна суворості повідомлень <strong><code>E_STRICT</code></strong></strong></p>
+<h3>Зміни в обробці змінних</h3>
+<p>PHP 7 використовує абстрактне синтаксичне дерево при розборі файлів з
+вихідним кодом. Це дозволило внести безліч покращень у мову, які
+раніше були неможливі через обмеження парсера, що використовувався в
+попередніх версіях PHP, але призвело до видалення деяких особливих
+можливостей з міркувань узгодженості та порушило зворотну
+сумісність. Опис цих особливих випадків наведено у цій секції.</p>
+<h4>Зміни в обробці непрямих змінних, властивостей та методів</h4>
+<p>Непрямий доступ до змінних, властивостей та методів тепер розкривається
+суворо зліва-направо, на противагу попередньому поєднанню зі спеціальних
+правил. У таблиці представлені зміни у порядку розкриття.</p>
+<table>
+<thead>
+<tr>
+<th>Вираз</th>
+<th>Інтерпретація PHP 5 Інтерпретація PHP 7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$foo['bar']['baz']</td>
+<td>${$foo['bar']['baz']}</td>
+</tr>
+<tr>
+<td>$foo->$bar['baz']</td>
+<td>$foo->{$bar['baz']}</td>
+</tr>
+<tr>
+<td>Foo::$bar<a href="">'baz'</a></td>
+<td>Foo::{$bar['baz']}()</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Стара і нова оцінка непрямих виразів</strong></p>
+<p>Код, що використовує старий порядок розкриття праворуч-ліворуч, має бути
+переписаний з використанням фігурних дужок (дивіться середній стовпець у
+таблиці вище). Це зробить код робітником як у PHP 5.x, так і в PHP 7.x.</p>
+<p>Також це стосується і ключового слова
+<a href="language.variables.scope.md#language.variables.scope.global"><code>global</code></a>.
+Для емуляції старої поведінки необхідно використовувати фігурні дужки:</p>
+<p><code>&#x3C;?phpfunction f() {    // Коректно тільки в PHP 5.   global$$$foo->bar; // Коректно в PHP 5 і 7.   global ${$foo->bar};}?></code></p>
+<h4>Зміна в обробці <a href="function.list.md">list()</a></h4>
+<h5><a href="function.list.md">list()</a> більше не привласнює змінні у зворотному порядку</h5>
+<p>Тепер <a href="function.list.md">list()</a> надає змінні в тому
+порядку, як вони перераховані, а чи не у протилежному. Загалом це впливає
+тільки на випадки, коли <a href="function.list.md">list()</a> використовується
+спільно з оператором масиву <code>[]</code>, як показано нижче:</p>
+<p><code>&#x3C;?phplist($a[], $a[], $a[]) = [1, 2, 3];var_dump($a);?></code></p>
+<p>Результат виконання цього прикладу в PHP 5:</p>
+<p>array(3) {
+[0]=>
+int(3)
+[1]=>
+int(2)
+[2]=>
+int(1)
+}</p>
+<p>Результат виконання цього прикладу в PHP 7:</p>
+<p>array(3) {
+[0]=>
+int(1)
+[1]=>
+int(2)
+[2]=>
+int(3)
+}</p>
+<p>Також хочеться відзначити, що покладатись на порядок присвоєння оператором
+<a href="function.list.md">list()</a> - не найрозумніше рішення, оскільки він
+знову може змінитися у майбутньому.</p>
+<h5>Порожнє присвоєння <a href="function.list.md">list()</a> більше не дозволено</h5>
+<p>Конструкція <a href="function.list.md">list()</a> не може бути порожньою.
+Наступні приклади неприпустимі:</p>
+<p><code>&#x3C;?phplist() = $a;list(,,) = $a;list($x, list(), $y) = $a;?></code></p>
+<h5><a href="function.list.md">list()</a> не може розкривати рядки</h5>
+<p><a href="function.list.md">list()</a> більше не може розкривати рядки.
+Використовуйте <a href="function.str-split.md">str_split()</a>.</p>
+<h4>Змінено порядок масиву при автоматичному створенні через присвоєння за посиланням</h4>
+<p>Порядок створення елементів у масиві було змінено, коли елемент
+створюється шляхом присвоєння значення змінної, яку посилається
+цей елемент. Приклад:</p>
+<p><code>&#x3C;?php$array = [];$array["a"] =&#x26; $array["b"];$array["b"] = 1;var_dump($array);?></code></p>
+<p>Результат виконання цього прикладу в PHP 5:</p>
+<p>array(2) {
+["b"]=>
+&#x26;int(1)
+["a"]=>
+&#x26;int(1)
+}</p>
+<p>Результат виконання цього прикладу в PHP 7:</p>
+<p>array(2) {
+["a"]=>
+&#x26;int(1)
+["b"]=>
+&#x26;int(1)
+}</p>
+<h4>Дужки навколо аргументів функції більше ні на що не впливають</h4>
+<p>У PHP 5 при використанні надлишкових дужок навколо аргументів функції не
+виводилося попередження, коли аргумент передавався за посиланням. Тепер
+попередження виводиться завжди.</p>
+<p><code>&#x3C;?phpfunction getArray() {    return [1, 2, 3];}function squareArray(array &#x26;$a) {   foreach ($a as &#x26;$v) {    }}// Виведе попередження в PHP 7.squareArray((getArray()));?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Notice: Лише variables should be passed by reference in /tmp/test.php on line 13</p>
+<h3>Зміни <a href="control-structures.foreach.md">foreach</a></h3>
+<p>Невеликі зміни були внесені до поведінки керуючої структури
+<a href="control-structures.foreach.md">foreach</a>. Основна зміна стосується
+модифікації ітерованого масиву та обробки його внутрішнього покажчика.</p>
+<h4><a href="control-structures.foreach.md">foreach</a> більше не змінює внутрішній покажчик масиву</h4>
+<p>До PHP 7 в процесі ітерації масиву
+<a href="control-structures.foreach.md">foreach</a>, його внутрішній покажчик
+змінювався. У прикладі нижче показано, що це поведінка змінено:</p>
+<p><code>&#x3C;?php$array = [0, 1, 2];foreach ($array as &#x26;$val) {    var_dump(current($array));}?></code></p>
+<p>Результат виконання цього прикладу в PHP 5:</p>
+<p>int(1)
+int(2)
+bool(false)</p>
+<p>Результат виконання цього прикладу в PHP 7:</p>
+<p>int(0)
+int(0)
+int(0)</p>
+<h4><a href="control-structures.foreach.md">foreach</a> за значеннями оперує копією масиву</h4>
+<p>Якщо <a href="control-structures.foreach.md">foreach</a> використовується для
+стандартного перебору за значенням, він оперує копією масиву, а чи не
+самим масивом. Це означає, що зміни внесені до масиву всередині
+циклу не торкнуться значення, що перебираються.</p>
+<h4>Для <a href="control-structures.foreach.md">foreach</a> за посиланням покращили поведінку при ітерації</h4>
+<p>Коли <a href="control-structures.foreach.md">foreach</a> використовується для
+перебору за посиланням, він краще відстежуватиме зміни, що вносяться в
+масив у процесі ітерації. Наприклад, додавання елементів до
+ітерованого масиву призведе до того, що ці нові елементи потраплять у
+перебір:</p>
+<p><code>&#x3C;?php$array = [0];foreach ($array as &#x26;$val) {    var_dump($val); $array[1]== 1;}?></code></p>
+<p>Результат виконання цього прикладу в PHP 5:</p>
+<p>int(0)</p>
+<p>Результат виконання цього прикладу в PHP 7:</p>
+<p>int(0)
+int(1)</p>
+<h4>Ітерація об'єктів, що не реалізують <a href="class.traversable.md">Traversable</a></h4>
+<p>Ітерація об'єктів, що не реалізують <a href="class.traversable.md">Traversable</a>
+тепер відбувається так само, як і ітерація масиву за посиланням. Так
+виходить внаслідок того, що <a href="migration70.incompatible.md#migration70.incompatible.foreach.by-ref">покращення поведінки при зміні
+масиву під час ітерації</a>
+також впливає при додаванні або видаленні властивостей об'єкта.</p>
+<h3>Зміна в обробці значень типу int</h3>
+<h4>Некоректна вісімкова нотація</h4>
+<p>Раніше вісімкові літерали, що містять некоректні числа мовчки
+обрізалися (<code>0128</code> вважалися за <code>012</code>). Зараз у таких випадках буде
+видана помилка аналізу.</p>
+<h4>Негативні побітові зсуви</h4>
+<p>Тепер побитові зсуви на негативну величину кидатимуть
+виняток <a href="class.arithmeticerror.md">ArithmeticError</a>:</p>
+<p><code>&#x3C;?phpvar_dump(1 >> -1);?> </code></p>
+<p>Результат виконання цього прикладу в PHP 5:</p>
+<p>int(0)</p>
+<p>Результат виконання цього прикладу в PHP 7:</p>
+<p>Fatal error: Uncaught ArithmeticError: Bit shift by negative number in /tmp/test.php:2
+Stack trace:
+#0 {main}
+thrown in /tmp/test.php on line 2</p>
+<h4>Побітові зсуви з виходом із допустимого діапазону</h4>
+<p>Побітові усунення (в обох напрямках) за межі ширини типу int
+завжди повертатимуть 0. Раніше поведінка залежала від архітектури.</p>
+<h4>Зміна в розподілі на нуль</h4>
+<p>Раніше використання нуля як дільника в операціях поділу (/) або
+розподілу за модулем (%) призводило до помилки рівня E_WARNING та повернення
+значення <strong><code>false</code></strong>. Тепер оператор поділу повертає число з
+плаваючою точкою, що дорівнює +INF, -INF або NAN, як визначено в IEEE 754.
+Поділ за модулем замість помилки рівня E_WARNING викидатиме
+виняток <a href="class.divisionbyzeroerror.md">DivisionByZeroError</a>.</p>
+<p><code>&#x3C;?phpvar_dump(3/0);var_dump(0/0);var_dump(0%0);?></code></p>
+<p>Результат виконання цього прикладу в PHP 5:</p>
+<p>Warning: Division by zero in %s on line %d
+bool(false)</p>
+<p>Warning: Division by zero in %s on line %d
+bool(false)</p>
+<p>Warning: Division by zero in %s on line %d
+bool(false)</p>
+<p>Результат виконання цього прикладу в PHP 7:</p>
+<p>Warning: Division by zero in %s on line %d
+float(INF)</p>
+<p>Warning: Division by zero in %s on line %d
+float(NAN)</p>
+<p>PHP Fatal error: Uncaught DivisionByZeroError: Modulo by zero in %s line %d</p>
+<h3>Зміни в обробці рядків</h3>
+<h4>Шістнадцяткові рядки більше не рахуються за числові</h4>
+<p>Рядки, що містять шістнадцяткові символи більше не вважаються за
+числові. Приклад:</p>
+<p><code>&#x3C;?phpvar_dump("0x123" == "291");var_dump(is_numeric("0x123"));var_dump("0xe" + "0x1");var_dump(substr("foo", "0x1")); ?></code></p>
+<p>Результат виконання цього прикладу в PHP 5:</p>
+<p>bool(true)
+bool(true)
+int(15)
+string(2) "oo"</p>
+<p>Результат виконання цього прикладу в PHP 7:</p>
+<p>bool(false)
+bool(false)
+int(0)</p>
+<p>Notice: A non well formed numeric value encountered in /tmp/test.php on line 5
+string(3) "foo"</p>
+<p>Використовуйте функцію <a href="function.filter-var.md">filter_var()</a> для
+перевірки рядка на утримання шістнадцяткового числа та перетворення
+цього рядка до значення типу int:</p>
+<p>` &#x3C;?php$str = "0xffff";$int = filter_var($str, FILTER_VALIDATE_INT, FILTER_FLAG_ALLOW_HEX);if (false === $int) {                  ¦¦¦ int); // int (65535)?</p>
+<h4><code>\u{</code> може викликати помилки</h4>
+<p>У зв'язку з додаванням нового <a href="migration70.new-features.md#migration70.new-features.unicode-codepoint-escape-syntax">синтаксису екранування кодів Unicode</a>,
+рядки, що містять рядок <code>\u{</code>, що передує некоректному
+послідовність може призвести до фатальної помилки. Для того щоб
+цього уникнути, необхідно екранувати перший зворотний сліш.</p>
+<h3>Віддалені функції</h3>
+<h4><strong>call_user_method()</strong> та <strong>call_user_method_array()</strong></h4>
+<p>Функції, оголошені застарілими в PHP 4.1.0
+<a href="function.call-user-func.md">call_user_func()</a> та
+<a href="function.call-user-func-array.md">call_user_func_array()</a>. можливо
+вам також буде цікаво розглянути можливість <a href="functions.variable-functions.md">звернення до функцій через змінні</a> та/або оператор
+<a href="functions.arguments.md#functions.variable-arg-list"><code>...</code></a>.</p>
+<h4>Всі функції ereg*</h4>
+<p>Усі функції <code>ereg</code> видалені. Рекомендована альтернатива -
+<a href="book.pcre.md">PCRE</a>.</p>
+<h4>Псевдоніми <a href="book.mcrypt.md">mcrypt</a></h4>
+<p>Застаріла функція <strong>mcrypt_generic_end()</strong> була видалена на користь
+функції <a href="function.mcrypt-generic-deinit.md">mcrypt_generic_deinit()</a>.</p>
+<p>Крім цього, застарілі функції <strong>mcrypt_ecb()</strong>, <strong>mcrypt_cbc()</strong>,
+<strong>mcrypt_cfb()</strong> та <strong>mcrypt_ofb()</strong> були видалені на користь використання
+<a href="function.mcrypt-decrypt.md">mcrypt_decrypt()</a> з відповідною
+константою <strong><code>MCRYPT_MODE_*</code></strong>.</p>
+<h4>Всі функції модуля mysql</h4>
+<p>Усі функції <a href="book.mysql.md">ext/mysql</a> було видалено. Для вибору
+іншого MySQL API дивіться розділ <a href="mysqlinfo.api.choosing.md">Вибір MySQL API</a>.</p>
+<h4>Всі функції модуля mssql</h4>
+<p>Усі функції <code>ext/mssql</code> було видалено.</p>
+<ul>
+<li><a href="ref.pdo-sqlsrv.md">PDO_SQLSRV</a></li>
+<li><a href="ref.pdo-odbc.md">PDO_ODBC</a></li>
+<li><a href="book.sqlsrv.md">SQLSRV</a></li>
+<li><a href="book.uodbc.md">Unified ODBC API</a></li>
+</ul>
+<h4>Псевдоніми <a href="book.intl.md">intl</a></h4>
+<p>Застарілі псевдоніми <strong>datefmt_set_timezone_id()</strong> та
+<strong>IntlDateFormatter::setTimeZoneID()</strong> були видалені на користь
+<a href="intldateformatter.settimezone.md">datefmt_set_timezone()</a> та
+<a href="intldateformatter.settimezone.md">IntlDateFormatter::setTimeZone()</a>
+відповідно.</p>
+<h4><strong>set_magic_quotes_runtime()</strong></h4>
+<p><strong>set_magic_quotes_runtime()</strong> та її псевдонім <strong>magic_quotes_runtime()</strong>
+були вилучені. Вони були оголошені застарілими в PHP 5.3.0 та повністю
+втратили свій сенс з відмовою від магічних лапок у PHP 5.4.0.</p>
+<h4><strong>set_socket_blocking()</strong></h4>
+<p>Застарілий псевдонім <strong>set_socket_blocking()</strong> був видалений на користь
+<a href="function.stream-set-blocking.md">stream_set_blocking()</a>.</p>
+<h4><a href="function.dl.md">dl()</a> в PHP-FPM</h4>
+<p>Функція <a href="function.dl.md">dl()</a> більше не може використовуватись у
+PHP-FPM. Однак вона збереглася в CLI і вбудованих SAPI.</p>
+<h4>Функції <a href="book.image.md">GD</a> Type1</h4>
+<p>Підтримка шрифтів PostScript Type1 видалена із модуля GD. Відповідно
+були видалені такі функції:</p>
+<ul>
+<li><strong>imagepsbbox()</strong></li>
+<li><strong>imagepsencodefont()</strong></li>
+<li><strong>imagepsextendfont()</strong></li>
+<li><strong>imagepsfreefont()</strong></li>
+<li><strong>imagepsloadfont()</strong></li>
+<li><strong>imagepsslantfont()</strong></li>
+<li><strong>imagepstext()</strong></li>
+</ul>
+<p>Замість них рекомендується використовувати шрифти TrueType та пов'язані з ними
+функції.</p>
+<h3>Видалені директиви INI-файлу</h3>
+<h4>Віддалені можливості</h4>
+<p>Наступні INI-директиви були видалені, оскільки пов'язані з ними функції
+також були видалені:</p>
+<ul>
+<li><code>always_populate_raw_post_data</code></li>
+<li><code>asp_tags</code></li>
+</ul>
+<h4><code>xsl.security_prefs</code></h4>
+<p>Директива <code>xsl.security_prefs</code> була вилучена. Замість неї для контролю
+налаштувань безпеки повинен викликатися метод
+<a href="xsltprocessor.setsecurityprefs.md">XsltProcessor::setSecurityPrefs()</a>
+лише на рівні кожного процесора.</p>
+<h3>Інші зміни, що стосуються зворотної сумісності</h3>
+<h4>Нові об'єкти не можуть присвоюватися за посиланням</h4>
+<p>Результат оператора
+<a href="language.oop5.basic.md#language.oop5.basic.new"><code>new</code></a> більше не
+може бути присвоєний змінною за посиланням:</p>
+<p><code>&#x3C;?phpclass C {}$c =&#x26; new C;?></code></p>
+<p>Результат виконання цього прикладу в PHP 5:</p>
+<p>Deprecated: Assigning the return value of new by reference is deprecated in /tmp/test.php on line 3</p>
+<p>Результат виконання цього прикладу в PHP 7:</p>
+<p>Пірс error: syntax error, unexpected 'new' (T_NEW) in /tmp/test.php on line 3</p>
+<h4>Некоректні імена класів, інтерфейсів та трейтів</h4>
+<p>Наступні імена не можна використовувати для класів, інтерфейсів та трейтів:</p>
+<ul>
+<li>bool</li>
+<li>int</li>
+<li>float</li>
+<li>string</li>
+<li><strong><code>null</code></strong></li>
+<li><strong><code>true</code></strong></li>
+<li><strong><code>false</code></strong></li>
+</ul>
+<p>Більше того, такі імена не повинні використовуватися. Вони не приведуть до
+помилки в PHP 7.0, але вони зарезервовані на майбутнє і повинні рахуватися
+застарілими.</p>
+<ul>
+<li>resource</li>
+<li>object</li>
+<li><a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></li>
+<li>numeric</li>
+</ul>
+<h4>Видалені PHP-теги ASP та script</h4>
+<p>Видалено підтримку використання тегів ASP та script для визначення коду
+PHP.</p>
+<table>
+<thead>
+<tr>
+<th>Відкриваючи тег</th>
+<th>Закриває тег</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'&#x3C;%'</td>
+<td>%></td>
+</tr>
+<tr>
+<td>&#x3C;%=</td>
+<td>%></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Видалені теги ASP та script</strong></p>
+<h4>Видалені виклики з невідповідного контексту</h4>
+<p><a href="migration56.deprecated.md#migration56.deprecated.incompatible-context">Раніше визнані застарілими у PHP 5.6</a>
+статичні виклики нестатичних методів з невідповідного контексту
+тепер призведуть до того, що для методу, що викликається, змінна <code>$this</code>
+буде не визначено та буде виведено попередження.</p>
+<p><code>&#x3C;?phpclass A {    public function test() { var_dump($this); }}// Зверніть вимання: НЕ розширює клас Aclass B {    public function callNonStaticMethodOfA() { A::test(); }}(new B)->callNonStaticMethodOfA();?> </code></p>
+<p>Результат виконання цього прикладу в PHP 5.6:</p>
+<p>Deprecated: Non-static method A::test() не повинен бути названий статічним, оцінюваним $this from incompatible context in /tmp/test.php on line 8
+object(B)#1 (0) {
+}</p>
+<p>Результат виконання цього прикладу в PHP 7:</p>
+<p>Deprecated: Non-static method A::test() не повинен бути названий статичне в /tmp/test.php on line 8</p>
+<p>Notice: Undefined variable: this in /tmp/test.php on line 3
+NULL</p>
+<h4><a href="language.generators.syntax.md#control-structures.yield">yield</a> тепер право-асоціативний оператор</h4>
+<p>Конструкція
+<a href="language.generators.syntax.md#control-structures.yield">yield</a> більше
+не вимагає обертання у дужки та є право-асоціативним
+оператором з пріоритетом між <code>print</code> та <code>=></code>. Це може призвести до
+зміни поведінки:</p>
+<p><code>&#x3C;?phpecho yield -1;// Раніше інтерпретувалося такecho (yield) - 1;// А тепер такecho yield (-1);yield $foo or die;// Р  А тепер так(yield $foo) or die;?> </code></p>
+<p>Дужки можуть бути використані для усунення неоднозначності в таких
+випадках.</p>
+<h4>Функції не можуть мати кілька параметрів з однаковими іменами</h4>
+<p>Більше не можна визначити кілька параметрів функції з однаковими
+іменами. Наприклад, така функція видасть помилку рівня
+<strong><code>E_COMPILE_ERROR</code></strong>:</p>
+<p><code>&#x3C;?phpfunction foo($a, $b, $unused, $unused) {    //}?></code></p>
+<h4>Функції, що працюють з аргументами, тепер повертають їх <em>поточні</em> значення</h4>
+<p><strong>func_get_arg()</strong>, <a href="function.func-get-args.md">func_get_args()</a>,
+<a href="function.debug-backtrace.md">debug_backtrace()</a> та трасування
+винятків повертають не вихідні передані значення, а поточні
+значення, які можуть бути змінені.</p>
+<p><code>&#x3C;?phpfunction foo($x) {    $x++; var_dump(func_get_arg(0));}foo(1);?> </code></p>
+<p>Результат виконання цього прикладу в PHP 5:</p>
+<p>1</p>
+<p>Результат виконання цього прикладу в PHP 7:</p>
+<p>2</p>
+<h4>Оператор switch більше не може мати кілька блоків default</h4>
+<p>Більше неможливо встановити більше одного блоку default в операторі switch.
+Наприклад, така конструкція видасть помилку <strong><code>E_COMPILE_ERROR</code></strong>:</p>
+<p><code>&#x3C;?phpswitch (1) {    default:    break; default:   break;}?> </code></p>
+<h4>Видалена <code>$HTTP_RAW_POST_DATA</code></h4>
+<p><code>$HTTP_RAW_POST_DATA</code> більше недоступне. Замість нього використовуйте потік
+<a href="wrappers.php.md#wrappers.php.input"><code>php://input</code></a>.</p>
+<h4>Заборонені коментарі <code>#</code> в INI-файлах</h4>
+<p>Підтримка префіксу коментаря <code>#</code> в INI-файлах видалена. Використовуйте
+префікс <code>;</code> замість нього. Ця зміна стосується як <code>php.ini</code>, так і
+файлів, що обробляються функціями
+<a href="function.parse-ini-file.md">parse_ini_file()</a> та
+<a href="function.parse-ini-string.md">parse_ini_string()</a>.</p>
+<h4>Модуль JSON замінено на JSOND</h4>
+<p>Модуль JSON замінено на JSOND, що породжує три невеликі зворотні
+несумісності. Перше - числа не повинні закінчуватися на точку (то
+є <code>34.</code> має бути замінено на <code>34.0</code> або <code>34</code>). Друге - при
+використання наукової нотації, експонента <code>e</code> не повинна слідувати відразу
+за десятковою точкою (тобто <code>3.e3</code> потрібно поміняти на <code>3.0e3</code> або
+<code>3e3</code>). Третє - порожній рядок більше не вважається коректним JSON.</p>
+<h4>Помилки внутрішніх функцій при переповненні</h4>
+<p>Раніше вбудовані функції могли тихо обрізати числа, отримані за
+приведенні типу float до integer, якщо float був більшим, ніж здатний
+вмістити integer. Тепер же видаватиметься помилка E_WARNING та
+повертатися <strong><code>null</code></strong>.</p>
+<h4>Виправлення для повертаних значень користувальницького обробника сесії</h4>
+<p>Будь-які предикатні функції, реалізовані за допомогою користувацьких
+обробників сесії та повертаючі <strong><code>false</code></strong> або <code>-1</code>, викличуть
+фатальну помилку. Якщо ці функції повернуть будь-яке значення, крім
+логічного, <code>-1</code> або <code>0</code>, вони будуть вважатися завершеними з помилкою та
+викликатиме попередження E_WARNING.</p>
+<h4>Порядок сортування однакових елементів</h4>
+<p>Внутрішній алгоритм сортування був змінений, що може позначитися на
+відмінному від попереднього відсортованому порядку елементів, визначених
+як однакові.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Не покладайтеся на порядок однакових елементів, оскільки він може в
+Будь-який час змінити.</p>
+</blockquote>
+<h4>Зміна порядку обробки операторів break та switch</h4>
+<p>Оператори <code>break</code> і <code>continue</code> поза циклом або керуючою структурою
+<code>switch</code> тепер обробляються під час компіляції, а не під час
+виконання, як це було раніше, тому видають помилки рівня
+<strong><code>E_COMPILE_ERROR</code></strong>.</p>
+<h4>Mhash більше не є модулем</h4>
+<p>Модуль Mhash повністю інтегрований модуль <a href="book.hash.md">Hash</a>.
+Таким чином, тепер не можна визначити доступність підтримки Mhash з
+за допомогою функції <a href="function.extension-loaded.md">extension_loaded()</a>;
+замість неї використовуйте
+<a href="function.function-exists.md">function_exists()</a>. Крім того, Mhash
+більше не виводитиме за допомогою
+<a href="function.get-loaded-extensions.md">get_loaded_extensions()</a> та
+подібних функцій.</p>
+<h4>declare(ticks)</h4>
+<p>Директива
+<a href="control-structures.declare.md#control-structures.declare.ticks">declare(ticks)</a>
+більше не проникає у різні модулі компіляції.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration70.incompatible.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration70.incompatible.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration70.incompatible","slug":"migration70.incompatible.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration70.md\"\u003e« Міграція з PHP 5.6.x на PHP 7.0.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration70.new-features.md\"\u003eНова функціональність »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration70.md\"\u003eМіграція з PHP 5.6.x на PHP 7.0.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗміни, що ламають зворотну сумісність\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eЗміни, що ламають зворотну сумісність\u003c/h2\u003e\n\u003ch3\u003eЗміни в обробці помилок та винятків\u003c/h3\u003e\n\u003cp\u003eБагато фатальних і поправних фатальних помилок було перероблено в\nвинятки в PHP 7. Ці винятки успадковують клас\n\u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e, який, у свою чергу, реалізує інтерфейс\n\u003ca href=\"class.throwable.md\"\u003eThrowable\u003c/a\u003e (новий базовий інтерфейс, який\nуспадковують усі винятки).\u003c/p\u003e\n\u003cp\u003eЦе означає, що користувальницькі обробники помилок можуть не бути викликані,\nтому що замість виклику помилки буде викинуто виняток (породжуючи\nнові фатальні помилки через неперехоплені винятки класу\n\u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e).\u003c/p\u003e\n\u003cp\u003eДокладніше опис того, як помилки працюють у PHP 7, можна знайти\nна сторінці \u003ca href=\"language.errors.php7.md\"\u003eпомилки PHP 7\u003c/a\u003e. Це керівництво\nлише перераховує зміни, які можуть призвести до зворотної\nнесумісності.\u003c/p\u003e\n\u003ch4\u003e\u003ca href=\"function.set-exception-handler.md\"\u003eset_exception_handler()\u003c/a\u003e більше не гарантує отримання об'єкта класу \u003ca href=\"class.exception.md\"\u003eException\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eКод, що реалізує реєстрацію обробника виключень за допомогою\n\u003ca href=\"function.set-exception-handler.md\"\u003eset_exception_handler()\u003c/a\u003e,\nвикористовуючи декларацію типу \u003ca href=\"class.exception.md\"\u003eException\u003c/a\u003e, викличе\nфатальну помилку, якщо буде викинуто виняток\n\u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо потрібна робота обробника в PHP 5 та 7, ви повинні прибрати\nоголошення класу з оброблювача. Якщо код передбачається використовувати\nтільки в PHP 7, то можна просто змінити тип з\n\u003ca href=\"class.exception.md\"\u003eException\u003c/a\u003e на \u003ca href=\"class.throwable.md\"\u003eThrowable\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Тільки PHP 5. У PHP 7 може викликати фатальну помилку.function handler(Exception $e) { ... }set_exception_handler('handler');//   e) { ... }// Тільки PHP 7.function handler(Throwable $e) { ... }?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eВбудовані конструктори завжди викликають винятки у разі невдачі\u003c/h4\u003e\n\u003cp\u003eРаніше деякі внутрішні класи повертали \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e або марний\nоб'єкт, коли конструктор зазнав невдачі. Всі вбудовані класи тепер\nтакому разі викидатимуть виняток\n\u003ca href=\"class.exception.md\"\u003eException\u003c/a\u003e, як це вже роблять\nкористувальницькі класи.\u003c/p\u003e\n\u003ch4\u003eПомилки аналізу кидають виняток класу \u003ca href=\"class.parseerror.md\"\u003eParseError\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eПомилки розбору кидають виняток класу\n\u003ca href=\"class.parseerror.md\"\u003eParseError\u003c/a\u003e. Обробка помилок\n\u003ca href=\"function.eval.md\"\u003eeval()\u003c/a\u003e повинна включати блок\n\u003ca href=\"language.exceptions.md#language.exceptions.catch\"\u003e\u003ccode\u003ecatch\u003c/code\u003e\u003c/a\u003e, який\nловитиме цю помилку.\u003c/p\u003e\n\u003ch4\u003eЗміна суворості повідомлень E_STRICT\u003c/h4\u003e\n\u003cp\u003eВсі повідомлення \u003cstrong\u003e\u003ccode\u003eE_STRICT\u003c/code\u003e\u003c/strong\u003e перекваліфіковані за іншими рівнями.\nКонстанта \u003cstrong\u003e\u003ccode\u003eE_STRICT\u003c/code\u003e\u003c/strong\u003e збережена, так що\n\u003ccode\u003eerror_reporting(E_ALL|E_STRICT)\u003c/code\u003e не викликає помилки.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eСитуація Новий рівень/поведінка\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eІндексування ресурсом \u003cstrong\u003eE_NOTICE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eАнотація статичних методів\u003c/td\u003e\n\u003ctd\u003eПовідомлення прибрано, не викликає помилок\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\"Перевизначення\" конструктора\u003c/td\u003e\n\u003ctd\u003eПовідомлення прибрано, не викликає помилок\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eНедотримання сигнатури під час успадкування\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003eE_WARNING\u003c/strong\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eПоодинокі (сумісні) властивості у двох різних трейтах Повідомлення прибрано, не викликає помилок\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eНестатичний доступ до статичної властивості \u003cstrong\u003eE_NOTICE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eТільки змінні може бути присвоєно за посиланням\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003eE_NOTICE\u003c/strong\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eТільки змінні може бути передані за посиланням\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003eE_NOTICE\u003c/strong\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eВиклик нестатичного методу статично \u003cstrong\u003eE_DEPRECATED\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eЗміна суворості повідомлень \u003cstrong\u003e\u003ccode\u003eE_STRICT\u003c/code\u003e\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eЗміни в обробці змінних\u003c/h3\u003e\n\u003cp\u003ePHP 7 використовує абстрактне синтаксичне дерево при розборі файлів з\nвихідним кодом. Це дозволило внести безліч покращень у мову, які\nраніше були неможливі через обмеження парсера, що використовувався в\nпопередніх версіях PHP, але призвело до видалення деяких особливих\nможливостей з міркувань узгодженості та порушило зворотну\nсумісність. Опис цих особливих випадків наведено у цій секції.\u003c/p\u003e\n\u003ch4\u003eЗміни в обробці непрямих змінних, властивостей та методів\u003c/h4\u003e\n\u003cp\u003eНепрямий доступ до змінних, властивостей та методів тепер розкривається\nсуворо зліва-направо, на противагу попередньому поєднанню зі спеціальних\nправил. У таблиці представлені зміни у порядку розкриття.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВираз\u003c/th\u003e\n\u003cth\u003eІнтерпретація PHP 5 Інтерпретація PHP 7\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e$foo['bar']['baz']\u003c/td\u003e\n\u003ctd\u003e${$foo['bar']['baz']}\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e$foo-\u003e$bar['baz']\u003c/td\u003e\n\u003ctd\u003e$foo-\u003e{$bar['baz']}\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eFoo::$bar\u003ca href=\"\"\u003e'baz'\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eFoo::{$bar['baz']}()\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eСтара і нова оцінка непрямих виразів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eКод, що використовує старий порядок розкриття праворуч-ліворуч, має бути\nпереписаний з використанням фігурних дужок (дивіться середній стовпець у\nтаблиці вище). Це зробить код робітником як у PHP 5.x, так і в PHP 7.x.\u003c/p\u003e\n\u003cp\u003eТакож це стосується і ключового слова\n\u003ca href=\"language.variables.scope.md#language.variables.scope.global\"\u003e\u003ccode\u003eglobal\u003c/code\u003e\u003c/a\u003e.\nДля емуляції старої поведінки необхідно використовувати фігурні дужки:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction f() {    // Коректно тільки в PHP 5.   global$$$foo-\u003ebar; // Коректно в PHP 5 і 7.   global ${$foo-\u003ebar};}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eЗміна в обробці \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e\u003c/h4\u003e\n\u003ch5\u003e\u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e більше не привласнює змінні у зворотному порядку\u003c/h5\u003e\n\u003cp\u003eТепер \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e надає змінні в тому\nпорядку, як вони перераховані, а чи не у протилежному. Загалом це впливає\nтільки на випадки, коли \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e використовується\nспільно з оператором масиву \u003ccode\u003e[]\u003c/code\u003e, як показано нижче:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phplist($a[], $a[], $a[]) = [1, 2, 3];var_dump($a);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 5:\u003c/p\u003e\n\u003cp\u003earray(3) {\n[0]=\u003e\nint(3)\n[1]=\u003e\nint(2)\n[2]=\u003e\nint(1)\n}\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7:\u003c/p\u003e\n\u003cp\u003earray(3) {\n[0]=\u003e\nint(1)\n[1]=\u003e\nint(2)\n[2]=\u003e\nint(3)\n}\u003c/p\u003e\n\u003cp\u003eТакож хочеться відзначити, що покладатись на порядок присвоєння оператором\n\u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e - не найрозумніше рішення, оскільки він\nзнову може змінитися у майбутньому.\u003c/p\u003e\n\u003ch5\u003eПорожнє присвоєння \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e більше не дозволено\u003c/h5\u003e\n\u003cp\u003eКонструкція \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e не може бути порожньою.\nНаступні приклади неприпустимі:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phplist() = $a;list(,,) = $a;list($x, list(), $y) = $a;?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch5\u003e\u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e не може розкривати рядки\u003c/h5\u003e\n\u003cp\u003e\u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e більше не може розкривати рядки.\nВикористовуйте \u003ca href=\"function.str-split.md\"\u003estr_split()\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eЗмінено порядок масиву при автоматичному створенні через присвоєння за посиланням\u003c/h4\u003e\n\u003cp\u003eПорядок створення елементів у масиві було змінено, коли елемент\nстворюється шляхом присвоєння значення змінної, яку посилається\nцей елемент. Приклад:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array = [];$array[\"a\"] =\u0026#x26; $array[\"b\"];$array[\"b\"] = 1;var_dump($array);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 5:\u003c/p\u003e\n\u003cp\u003earray(2) {\n[\"b\"]=\u003e\n\u0026#x26;int(1)\n[\"a\"]=\u003e\n\u0026#x26;int(1)\n}\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7:\u003c/p\u003e\n\u003cp\u003earray(2) {\n[\"a\"]=\u003e\n\u0026#x26;int(1)\n[\"b\"]=\u003e\n\u0026#x26;int(1)\n}\u003c/p\u003e\n\u003ch4\u003eДужки навколо аргументів функції більше ні на що не впливають\u003c/h4\u003e\n\u003cp\u003eУ PHP 5 при використанні надлишкових дужок навколо аргументів функції не\nвиводилося попередження, коли аргумент передавався за посиланням. Тепер\nпопередження виводиться завжди.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction getArray() {    return [1, 2, 3];}function squareArray(array \u0026#x26;$a) {   foreach ($a as \u0026#x26;$v) {    }}// Виведе попередження в PHP 7.squareArray((getArray()));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eNotice: Лише variables should be passed by reference in /tmp/test.php on line 13\u003c/p\u003e\n\u003ch3\u003eЗміни \u003ca href=\"control-structures.foreach.md\"\u003eforeach\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eНевеликі зміни були внесені до поведінки керуючої структури\n\u003ca href=\"control-structures.foreach.md\"\u003eforeach\u003c/a\u003e. Основна зміна стосується\nмодифікації ітерованого масиву та обробки його внутрішнього покажчика.\u003c/p\u003e\n\u003ch4\u003e\u003ca href=\"control-structures.foreach.md\"\u003eforeach\u003c/a\u003e більше не змінює внутрішній покажчик масиву\u003c/h4\u003e\n\u003cp\u003eДо PHP 7 в процесі ітерації масиву\n\u003ca href=\"control-structures.foreach.md\"\u003eforeach\u003c/a\u003e, його внутрішній покажчик\nзмінювався. У прикладі нижче показано, що це поведінка змінено:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array = [0, 1, 2];foreach ($array as \u0026#x26;$val) {    var_dump(current($array));}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 5:\u003c/p\u003e\n\u003cp\u003eint(1)\nint(2)\nbool(false)\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7:\u003c/p\u003e\n\u003cp\u003eint(0)\nint(0)\nint(0)\u003c/p\u003e\n\u003ch4\u003e\u003ca href=\"control-structures.foreach.md\"\u003eforeach\u003c/a\u003e за значеннями оперує копією масиву\u003c/h4\u003e\n\u003cp\u003eЯкщо \u003ca href=\"control-structures.foreach.md\"\u003eforeach\u003c/a\u003e використовується для\nстандартного перебору за значенням, він оперує копією масиву, а чи не\nсамим масивом. Це означає, що зміни внесені до масиву всередині\nциклу не торкнуться значення, що перебираються.\u003c/p\u003e\n\u003ch4\u003eДля \u003ca href=\"control-structures.foreach.md\"\u003eforeach\u003c/a\u003e за посиланням покращили поведінку при ітерації\u003c/h4\u003e\n\u003cp\u003eКоли \u003ca href=\"control-structures.foreach.md\"\u003eforeach\u003c/a\u003e використовується для\nперебору за посиланням, він краще відстежуватиме зміни, що вносяться в\nмасив у процесі ітерації. Наприклад, додавання елементів до\nітерованого масиву призведе до того, що ці нові елементи потраплять у\nперебір:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array = [0];foreach ($array as \u0026#x26;$val) {    var_dump($val); $array[1]== 1;}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 5:\u003c/p\u003e\n\u003cp\u003eint(0)\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7:\u003c/p\u003e\n\u003cp\u003eint(0)\nint(1)\u003c/p\u003e\n\u003ch4\u003eІтерація об'єктів, що не реалізують \u003ca href=\"class.traversable.md\"\u003eTraversable\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eІтерація об'єктів, що не реалізують \u003ca href=\"class.traversable.md\"\u003eTraversable\u003c/a\u003e\nтепер відбувається так само, як і ітерація масиву за посиланням. Так\nвиходить внаслідок того, що \u003ca href=\"migration70.incompatible.md#migration70.incompatible.foreach.by-ref\"\u003eпокращення поведінки при зміні\nмасиву під час ітерації\u003c/a\u003e\nтакож впливає при додаванні або видаленні властивостей об'єкта.\u003c/p\u003e\n\u003ch3\u003eЗміна в обробці значень типу int\u003c/h3\u003e\n\u003ch4\u003eНекоректна вісімкова нотація\u003c/h4\u003e\n\u003cp\u003eРаніше вісімкові літерали, що містять некоректні числа мовчки\nобрізалися (\u003ccode\u003e0128\u003c/code\u003e вважалися за \u003ccode\u003e012\u003c/code\u003e). Зараз у таких випадках буде\nвидана помилка аналізу.\u003c/p\u003e\n\u003ch4\u003eНегативні побітові зсуви\u003c/h4\u003e\n\u003cp\u003eТепер побитові зсуви на негативну величину кидатимуть\nвиняток \u003ca href=\"class.arithmeticerror.md\"\u003eArithmeticError\u003c/a\u003e:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpvar_dump(1 \u003e\u003e -1);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 5:\u003c/p\u003e\n\u003cp\u003eint(0)\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7:\u003c/p\u003e\n\u003cp\u003eFatal error: Uncaught ArithmeticError: Bit shift by negative number in /tmp/test.php:2\nStack trace:\n#0 {main}\nthrown in /tmp/test.php on line 2\u003c/p\u003e\n\u003ch4\u003eПобітові зсуви з виходом із допустимого діапазону\u003c/h4\u003e\n\u003cp\u003eПобітові усунення (в обох напрямках) за межі ширини типу int\nзавжди повертатимуть 0. Раніше поведінка залежала від архітектури.\u003c/p\u003e\n\u003ch4\u003eЗміна в розподілі на нуль\u003c/h4\u003e\n\u003cp\u003eРаніше використання нуля як дільника в операціях поділу (/) або\nрозподілу за модулем (%) призводило до помилки рівня E_WARNING та повернення\nзначення \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e. Тепер оператор поділу повертає число з\nплаваючою точкою, що дорівнює +INF, -INF або NAN, як визначено в IEEE 754.\nПоділ за модулем замість помилки рівня E_WARNING викидатиме\nвиняток \u003ca href=\"class.divisionbyzeroerror.md\"\u003eDivisionByZeroError\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpvar_dump(3/0);var_dump(0/0);var_dump(0%0);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 5:\u003c/p\u003e\n\u003cp\u003eWarning: Division by zero in %s on line %d\nbool(false)\u003c/p\u003e\n\u003cp\u003eWarning: Division by zero in %s on line %d\nbool(false)\u003c/p\u003e\n\u003cp\u003eWarning: Division by zero in %s on line %d\nbool(false)\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7:\u003c/p\u003e\n\u003cp\u003eWarning: Division by zero in %s on line %d\nfloat(INF)\u003c/p\u003e\n\u003cp\u003eWarning: Division by zero in %s on line %d\nfloat(NAN)\u003c/p\u003e\n\u003cp\u003ePHP Fatal error: Uncaught DivisionByZeroError: Modulo by zero in %s line %d\u003c/p\u003e\n\u003ch3\u003eЗміни в обробці рядків\u003c/h3\u003e\n\u003ch4\u003eШістнадцяткові рядки більше не рахуються за числові\u003c/h4\u003e\n\u003cp\u003eРядки, що містять шістнадцяткові символи більше не вважаються за\nчислові. Приклад:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpvar_dump(\"0x123\" == \"291\");var_dump(is_numeric(\"0x123\"));var_dump(\"0xe\" + \"0x1\");var_dump(substr(\"foo\", \"0x1\")); ?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 5:\u003c/p\u003e\n\u003cp\u003ebool(true)\nbool(true)\nint(15)\nstring(2) \"oo\"\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7:\u003c/p\u003e\n\u003cp\u003ebool(false)\nbool(false)\nint(0)\u003c/p\u003e\n\u003cp\u003eNotice: A non well formed numeric value encountered in /tmp/test.php on line 5\nstring(3) \"foo\"\u003c/p\u003e\n\u003cp\u003eВикористовуйте функцію \u003ca href=\"function.filter-var.md\"\u003efilter_var()\u003c/a\u003e для\nперевірки рядка на утримання шістнадцяткового числа та перетворення\nцього рядка до значення типу int:\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$str = \"0xffff\";$int = filter_var($str, FILTER_VALIDATE_INT, FILTER_FLAG_ALLOW_HEX);if (false === $int) {                  ¦¦¦ int); // int (65535)?\u003c/p\u003e\n\u003ch4\u003e\u003ccode\u003e\\u{\u003c/code\u003e може викликати помилки\u003c/h4\u003e\n\u003cp\u003eУ зв'язку з додаванням нового \u003ca href=\"migration70.new-features.md#migration70.new-features.unicode-codepoint-escape-syntax\"\u003eсинтаксису екранування кодів Unicode\u003c/a\u003e,\nрядки, що містять рядок \u003ccode\u003e\\u{\u003c/code\u003e, що передує некоректному\nпослідовність може призвести до фатальної помилки. Для того щоб\nцього уникнути, необхідно екранувати перший зворотний сліш.\u003c/p\u003e\n\u003ch3\u003eВіддалені функції\u003c/h3\u003e\n\u003ch4\u003e\u003cstrong\u003ecall_user_method()\u003c/strong\u003e та \u003cstrong\u003ecall_user_method_array()\u003c/strong\u003e\u003c/h4\u003e\n\u003cp\u003eФункції, оголошені застарілими в PHP 4.1.0\n\u003ca href=\"function.call-user-func.md\"\u003ecall_user_func()\u003c/a\u003e та\n\u003ca href=\"function.call-user-func-array.md\"\u003ecall_user_func_array()\u003c/a\u003e. можливо\nвам також буде цікаво розглянути можливість \u003ca href=\"functions.variable-functions.md\"\u003eзвернення до функцій через змінні\u003c/a\u003e та/або оператор\n\u003ca href=\"functions.arguments.md#functions.variable-arg-list\"\u003e\u003ccode\u003e...\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eВсі функції ereg*\u003c/h4\u003e\n\u003cp\u003eУсі функції \u003ccode\u003eereg\u003c/code\u003e видалені. Рекомендована альтернатива -\n\u003ca href=\"book.pcre.md\"\u003ePCRE\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eПсевдоніми \u003ca href=\"book.mcrypt.md\"\u003emcrypt\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eЗастаріла функція \u003cstrong\u003emcrypt_generic_end()\u003c/strong\u003e була видалена на користь\nфункції \u003ca href=\"function.mcrypt-generic-deinit.md\"\u003emcrypt_generic_deinit()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eКрім цього, застарілі функції \u003cstrong\u003emcrypt_ecb()\u003c/strong\u003e, \u003cstrong\u003emcrypt_cbc()\u003c/strong\u003e,\n\u003cstrong\u003emcrypt_cfb()\u003c/strong\u003e та \u003cstrong\u003emcrypt_ofb()\u003c/strong\u003e були видалені на користь використання\n\u003ca href=\"function.mcrypt-decrypt.md\"\u003emcrypt_decrypt()\u003c/a\u003e з відповідною\nконстантою \u003cstrong\u003e\u003ccode\u003eMCRYPT_MODE_*\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch4\u003eВсі функції модуля mysql\u003c/h4\u003e\n\u003cp\u003eУсі функції \u003ca href=\"book.mysql.md\"\u003eext/mysql\u003c/a\u003e було видалено. Для вибору\nіншого MySQL API дивіться розділ \u003ca href=\"mysqlinfo.api.choosing.md\"\u003eВибір MySQL API\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eВсі функції модуля mssql\u003c/h4\u003e\n\u003cp\u003eУсі функції \u003ccode\u003eext/mssql\u003c/code\u003e було видалено.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"ref.pdo-sqlsrv.md\"\u003ePDO_SQLSRV\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ref.pdo-odbc.md\"\u003ePDO_ODBC\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"book.sqlsrv.md\"\u003eSQLSRV\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"book.uodbc.md\"\u003eUnified ODBC API\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4\u003eПсевдоніми \u003ca href=\"book.intl.md\"\u003eintl\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eЗастарілі псевдоніми \u003cstrong\u003edatefmt_set_timezone_id()\u003c/strong\u003e та\n\u003cstrong\u003eIntlDateFormatter::setTimeZoneID()\u003c/strong\u003e були видалені на користь\n\u003ca href=\"intldateformatter.settimezone.md\"\u003edatefmt_set_timezone()\u003c/a\u003e та\n\u003ca href=\"intldateformatter.settimezone.md\"\u003eIntlDateFormatter::setTimeZone()\u003c/a\u003e\nвідповідно.\u003c/p\u003e\n\u003ch4\u003e\u003cstrong\u003eset_magic_quotes_runtime()\u003c/strong\u003e\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003eset_magic_quotes_runtime()\u003c/strong\u003e та її псевдонім \u003cstrong\u003emagic_quotes_runtime()\u003c/strong\u003e\nбули вилучені. Вони були оголошені застарілими в PHP 5.3.0 та повністю\nвтратили свій сенс з відмовою від магічних лапок у PHP 5.4.0.\u003c/p\u003e\n\u003ch4\u003e\u003cstrong\u003eset_socket_blocking()\u003c/strong\u003e\u003c/h4\u003e\n\u003cp\u003eЗастарілий псевдонім \u003cstrong\u003eset_socket_blocking()\u003c/strong\u003e був видалений на користь\n\u003ca href=\"function.stream-set-blocking.md\"\u003estream_set_blocking()\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003e\u003ca href=\"function.dl.md\"\u003edl()\u003c/a\u003e в PHP-FPM\u003c/h4\u003e\n\u003cp\u003eФункція \u003ca href=\"function.dl.md\"\u003edl()\u003c/a\u003e більше не може використовуватись у\nPHP-FPM. Однак вона збереглася в CLI і вбудованих SAPI.\u003c/p\u003e\n\u003ch4\u003eФункції \u003ca href=\"book.image.md\"\u003eGD\u003c/a\u003e Type1\u003c/h4\u003e\n\u003cp\u003eПідтримка шрифтів PostScript Type1 видалена із модуля GD. Відповідно\nбули видалені такі функції:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eimagepsbbox()\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eimagepsencodefont()\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eimagepsextendfont()\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eimagepsfreefont()\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eimagepsloadfont()\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eimagepsslantfont()\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eimagepstext()\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eЗамість них рекомендується використовувати шрифти TrueType та пов'язані з ними\nфункції.\u003c/p\u003e\n\u003ch3\u003eВидалені директиви INI-файлу\u003c/h3\u003e\n\u003ch4\u003eВіддалені можливості\u003c/h4\u003e\n\u003cp\u003eНаступні INI-директиви були видалені, оскільки пов'язані з ними функції\nтакож були видалені:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003ealways_populate_raw_post_data\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003easp_tags\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4\u003e\u003ccode\u003exsl.security_prefs\u003c/code\u003e\u003c/h4\u003e\n\u003cp\u003eДиректива \u003ccode\u003exsl.security_prefs\u003c/code\u003e була вилучена. Замість неї для контролю\nналаштувань безпеки повинен викликатися метод\n\u003ca href=\"xsltprocessor.setsecurityprefs.md\"\u003eXsltProcessor::setSecurityPrefs()\u003c/a\u003e\nлише на рівні кожного процесора.\u003c/p\u003e\n\u003ch3\u003eІнші зміни, що стосуються зворотної сумісності\u003c/h3\u003e\n\u003ch4\u003eНові об'єкти не можуть присвоюватися за посиланням\u003c/h4\u003e\n\u003cp\u003eРезультат оператора\n\u003ca href=\"language.oop5.basic.md#language.oop5.basic.new\"\u003e\u003ccode\u003enew\u003c/code\u003e\u003c/a\u003e більше не\nможе бути присвоєний змінною за посиланням:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass C {}$c =\u0026#x26; new C;?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 5:\u003c/p\u003e\n\u003cp\u003eDeprecated: Assigning the return value of new by reference is deprecated in /tmp/test.php on line 3\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7:\u003c/p\u003e\n\u003cp\u003eПірс error: syntax error, unexpected 'new' (T_NEW) in /tmp/test.php on line 3\u003c/p\u003e\n\u003ch4\u003eНекоректні імена класів, інтерфейсів та трейтів\u003c/h4\u003e\n\u003cp\u003eНаступні імена не можна використовувати для класів, інтерфейсів та трейтів:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003ebool\u003c/li\u003e\n\u003cli\u003eint\u003c/li\u003e\n\u003cli\u003efloat\u003c/li\u003e\n\u003cli\u003estring\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eБільше того, такі імена не повинні використовуватися. Вони не приведуть до\nпомилки в PHP 7.0, але вони зарезервовані на майбутнє і повинні рахуватися\nзастарілими.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eresource\u003c/li\u003e\n\u003cli\u003eobject\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003enumeric\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4\u003eВидалені PHP-теги ASP та script\u003c/h4\u003e\n\u003cp\u003eВидалено підтримку використання тегів ASP та script для визначення коду\nPHP.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВідкриваючи тег\u003c/th\u003e\n\u003cth\u003eЗакриває тег\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e'\u0026#x3C;%'\u003c/td\u003e\n\u003ctd\u003e%\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u0026#x3C;%=\u003c/td\u003e\n\u003ctd\u003e%\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eВидалені теги ASP та script\u003c/strong\u003e\u003c/p\u003e\n\u003ch4\u003eВидалені виклики з невідповідного контексту\u003c/h4\u003e\n\u003cp\u003e\u003ca href=\"migration56.deprecated.md#migration56.deprecated.incompatible-context\"\u003eРаніше визнані застарілими у PHP 5.6\u003c/a\u003e\nстатичні виклики нестатичних методів з невідповідного контексту\nтепер призведуть до того, що для методу, що викликається, змінна \u003ccode\u003e$this\u003c/code\u003e\nбуде не визначено та буде виведено попередження.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass A {    public function test() { var_dump($this); }}// Зверніть вимання: НЕ розширює клас Aclass B {    public function callNonStaticMethodOfA() { A::test(); }}(new B)-\u003ecallNonStaticMethodOfA();?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 5.6:\u003c/p\u003e\n\u003cp\u003eDeprecated: Non-static method A::test() не повинен бути названий статічним, оцінюваним $this from incompatible context in /tmp/test.php on line 8\nobject(B)#1 (0) {\n}\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7:\u003c/p\u003e\n\u003cp\u003eDeprecated: Non-static method A::test() не повинен бути названий статичне в /tmp/test.php on line 8\u003c/p\u003e\n\u003cp\u003eNotice: Undefined variable: this in /tmp/test.php on line 3\nNULL\u003c/p\u003e\n\u003ch4\u003e\u003ca href=\"language.generators.syntax.md#control-structures.yield\"\u003eyield\u003c/a\u003e тепер право-асоціативний оператор\u003c/h4\u003e\n\u003cp\u003eКонструкція\n\u003ca href=\"language.generators.syntax.md#control-structures.yield\"\u003eyield\u003c/a\u003e більше\nне вимагає обертання у дужки та є право-асоціативним\nоператором з пріоритетом між \u003ccode\u003eprint\u003c/code\u003e та \u003ccode\u003e=\u003e\u003c/code\u003e. Це може призвести до\nзміни поведінки:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpecho yield -1;// Раніше інтерпретувалося такecho (yield) - 1;// А тепер такecho yield (-1);yield $foo or die;// Р  А тепер так(yield $foo) or die;?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eДужки можуть бути використані для усунення неоднозначності в таких\nвипадках.\u003c/p\u003e\n\u003ch4\u003eФункції не можуть мати кілька параметрів з однаковими іменами\u003c/h4\u003e\n\u003cp\u003eБільше не можна визначити кілька параметрів функції з однаковими\nіменами. Наприклад, така функція видасть помилку рівня\n\u003cstrong\u003e\u003ccode\u003eE_COMPILE_ERROR\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction foo($a, $b, $unused, $unused) {    //}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eФункції, що працюють з аргументами, тепер повертають їх \u003cem\u003eпоточні\u003c/em\u003e значення\u003c/h4\u003e\n\u003cp\u003e\u003cstrong\u003efunc_get_arg()\u003c/strong\u003e, \u003ca href=\"function.func-get-args.md\"\u003efunc_get_args()\u003c/a\u003e,\n\u003ca href=\"function.debug-backtrace.md\"\u003edebug_backtrace()\u003c/a\u003e та трасування\nвинятків повертають не вихідні передані значення, а поточні\nзначення, які можуть бути змінені.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction foo($x) {    $x++; var_dump(func_get_arg(0));}foo(1);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 5:\u003c/p\u003e\n\u003cp\u003e1\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7:\u003c/p\u003e\n\u003cp\u003e2\u003c/p\u003e\n\u003ch4\u003eОператор switch більше не може мати кілька блоків default\u003c/h4\u003e\n\u003cp\u003eБільше неможливо встановити більше одного блоку default в операторі switch.\nНаприклад, така конструкція видасть помилку \u003cstrong\u003e\u003ccode\u003eE_COMPILE_ERROR\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpswitch (1) {    default:    break; default:   break;}?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eВидалена \u003ccode\u003e$HTTP_RAW_POST_DATA\u003c/code\u003e\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003e$HTTP_RAW_POST_DATA\u003c/code\u003e більше недоступне. Замість нього використовуйте потік\n\u003ca href=\"wrappers.php.md#wrappers.php.input\"\u003e\u003ccode\u003ephp://input\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eЗаборонені коментарі \u003ccode\u003e#\u003c/code\u003e в INI-файлах\u003c/h4\u003e\n\u003cp\u003eПідтримка префіксу коментаря \u003ccode\u003e#\u003c/code\u003e в INI-файлах видалена. Використовуйте\nпрефікс \u003ccode\u003e;\u003c/code\u003e замість нього. Ця зміна стосується як \u003ccode\u003ephp.ini\u003c/code\u003e, так і\nфайлів, що обробляються функціями\n\u003ca href=\"function.parse-ini-file.md\"\u003eparse_ini_file()\u003c/a\u003e та\n\u003ca href=\"function.parse-ini-string.md\"\u003eparse_ini_string()\u003c/a\u003e.\u003c/p\u003e\n\u003ch4\u003eМодуль JSON замінено на JSOND\u003c/h4\u003e\n\u003cp\u003eМодуль JSON замінено на JSOND, що породжує три невеликі зворотні\nнесумісності. Перше - числа не повинні закінчуватися на точку (то\nє \u003ccode\u003e34.\u003c/code\u003e має бути замінено на \u003ccode\u003e34.0\u003c/code\u003e або \u003ccode\u003e34\u003c/code\u003e). Друге - при\nвикористання наукової нотації, експонента \u003ccode\u003ee\u003c/code\u003e не повинна слідувати відразу\nза десятковою точкою (тобто \u003ccode\u003e3.e3\u003c/code\u003e потрібно поміняти на \u003ccode\u003e3.0e3\u003c/code\u003e або\n\u003ccode\u003e3e3\u003c/code\u003e). Третє - порожній рядок більше не вважається коректним JSON.\u003c/p\u003e\n\u003ch4\u003eПомилки внутрішніх функцій при переповненні\u003c/h4\u003e\n\u003cp\u003eРаніше вбудовані функції могли тихо обрізати числа, отримані за\nприведенні типу float до integer, якщо float був більшим, ніж здатний\nвмістити integer. Тепер же видаватиметься помилка E_WARNING та\nповертатися \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch4\u003eВиправлення для повертаних значень користувальницького обробника сесії\u003c/h4\u003e\n\u003cp\u003eБудь-які предикатні функції, реалізовані за допомогою користувацьких\nобробників сесії та повертаючі \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e або \u003ccode\u003e-1\u003c/code\u003e, викличуть\nфатальну помилку. Якщо ці функції повернуть будь-яке значення, крім\nлогічного, \u003ccode\u003e-1\u003c/code\u003e або \u003ccode\u003e0\u003c/code\u003e, вони будуть вважатися завершеними з помилкою та\nвикликатиме попередження E_WARNING.\u003c/p\u003e\n\u003ch4\u003eПорядок сортування однакових елементів\u003c/h4\u003e\n\u003cp\u003eВнутрішній алгоритм сортування був змінений, що може позначитися на\nвідмінному від попереднього відсортованому порядку елементів, визначених\nяк однакові.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eНе покладайтеся на порядок однакових елементів, оскільки він може в\nБудь-який час змінити.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch4\u003eЗміна порядку обробки операторів break та switch\u003c/h4\u003e\n\u003cp\u003eОператори \u003ccode\u003ebreak\u003c/code\u003e і \u003ccode\u003econtinue\u003c/code\u003e поза циклом або керуючою структурою\n\u003ccode\u003eswitch\u003c/code\u003e тепер обробляються під час компіляції, а не під час\nвиконання, як це було раніше, тому видають помилки рівня\n\u003cstrong\u003e\u003ccode\u003eE_COMPILE_ERROR\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch4\u003eMhash більше не є модулем\u003c/h4\u003e\n\u003cp\u003eМодуль Mhash повністю інтегрований модуль \u003ca href=\"book.hash.md\"\u003eHash\u003c/a\u003e.\nТаким чином, тепер не можна визначити доступність підтримки Mhash з\nза допомогою функції \u003ca href=\"function.extension-loaded.md\"\u003eextension_loaded()\u003c/a\u003e;\nзамість неї використовуйте\n\u003ca href=\"function.function-exists.md\"\u003efunction_exists()\u003c/a\u003e. Крім того, Mhash\nбільше не виводитиме за допомогою\n\u003ca href=\"function.get-loaded-extensions.md\"\u003eget_loaded_extensions()\u003c/a\u003e та\nподібних функцій.\u003c/p\u003e\n\u003ch4\u003edeclare(ticks)\u003c/h4\u003e\n\u003cp\u003eДиректива\n\u003ca href=\"control-structures.declare.md#control-structures.declare.ticks\"\u003edeclare(ticks)\u003c/a\u003e\nбільше не проникає у різні модулі компіляції.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration70.incompatible.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

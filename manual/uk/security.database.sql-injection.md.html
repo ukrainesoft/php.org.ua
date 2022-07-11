@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>security.database.sql-injection | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="security.database.storage.md">«Шифрування сховища бази даних</a></p>
+</li>
+<li>
+<p><a href="security.errors.md">Повідомлення про помилки »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="security.database.md">Безпека баз даних</a></p>
+</li>
+<li>
+<p>SQL-ін'єкції</p>
+</li>
+</ul>
+<h2>SQL-ін'єкції</h2>
+<p>Багато веб-розробників навіть не здогадуються, що SQL-запити можуть бути
+підроблені і вважають, що SQL-запити завжди достовірні. Насправді
+підроблені запити можуть обійти обмеження доступу, стандартну
+перевірку авторизації, а деякі види запитів можуть дати можливість
+виконувати команди операційної системи.</p>
+<p>Пряме впровадження шкідливих інструкцій у SQL-запити - це методика,
+якої зломщик створює або змінює поточні SQL-запити для
+відображення прихованих даних, їх зміни або навіть виконання небезпечних
+команд операційної системи на сервері бази даних Атака виконується на
+базі програми, що будує SQL-запити з введення користувача і
+статичних властивостей. Наступні приклади, на жаль, побудовані на
+реальні факти.</p>
+<p>Завдяки відсутності перевірки користувальницького введення та з'єднання з
+базою даних під обліковим записом суперкористувача (або будь-якого іншого
+користувача, наділеного відповідними привілеями), зломщик може
+створити ще одного користувача БД із правами суперкористувача.</p>
+<p><strong>Приклад #1 Посторінковий висновок результату... та створення
+суперкористувача в PostgreSQL</strong></p>
+<p>`&#x3C;?php$offset==$argv[0]; // увага, ні ні перевірки введених даних!$query = "SELECT id, name FROM products ORDER BY name LIMIT 20 OFFSET $offset;";$result = pg_query</p>
+<p>Зазвичай користувачі клацають за посиланням 'вперед' і 'назад', внаслідок
+чого значення змінної <code>$offset</code> заноситься до URL. Скрипт очікує, що
+$offset - десяткове число. Проте, зломщик може спробувати зламати
+систему, приєднавши до URL додатковий рядок, оброблений функцією
+<a href="function.urlencode.md">urlencode()</a>:</p>
+<p>`` sqlcode
+0;
+insert into pg_shadow(usename,usesysid,usesuper,usecatupd,passwd)
+select 'crack', usesysid, 't', 't', 'crack'
+from pg_shadow where usename='postgres';</p>
+<ul>
+<li></li>
+</ul>
+<pre><code>
+Якщо це станеться, скрипт надасть зломщику доступ до бази
+правами суперкористувача. Зауважимо, що значення `0;` використане для
+того, щоб задати правильне зміщення для першого запиту та коректно
+його завершити.
+
+> **Примітка**:
+>
+> Часто використовуваною технікою для ігнорування SQL-парсером
+> Частини запиту є використання `--`, що означає коментар.
+
+Ще один ймовірний спосіб отримати паролі облікових записів у БД - атака
+сторінок, які надають пошук по базі. Зломщику потрібно лише перевірити,
+чи використовується в запиті, що передається на сервер і необроблювана
+належним чином змінна. Це може бути один з встановлюваних на
+на попередній сторінці фільтрів, таких як `WHERE, ORDER BY, LIMIT` та
+`OFFSET`, які використовуються при побудові запитів `SELECT`. У разі якщо
+база даних, що використовується вами, підтримує конструкцію `UNION`, зломщик
+може приєднати до оригінального запиту ще один додатковий
+вилучення паролів користувача. Настійно рекомендуємо
+використовувати лише зашифровані паролі.
+
+**Приклад #2 Лістинг статей... та деяких паролів (для будь-якої бази
+даних)**
+
+` &#x3C;?php$query  = "SELECT id, name, inserted, size FROM products           WHERE size = '$size'";$result = odbc_;
+
+Статична частина запиту може комбінуватися з іншим
+`SELECT`-запитом, який виведе всі паролі:
+
+`` sqlcode
+'
+union select '1', concat(uname||'-'||passwd) as name, '1971-01-01', '0' from usertable;
+-
+</code></pre>
+<p>Якщо цей запит (що використовує ``` та <code>--</code>) приєднати до значення однієї
+зі змінних, що використовуються для формування $query, то запит помітно
+зміниться.</p>
+<p>Команди UPDATE можуть також використовуватися для атаки. Знову ж таки, є
+загроза поділу інструкції на кілька частин та приєднання
+додатковий запит. Також зломщик може видозмінити вираз
+<code>SET</code>. У цьому випадку потенційному зломщику необхідно мати
+деякою додатковою інформацією про структуру бази даних для
+успішного маніпулювання запитами. Цю інформацію можна отримати,
+проаналізувавши імена змінних, що використовуються у формі, або просто
+перебираючи всі найпоширеніші варіанти назви
+відповідних полів (а їх не так вже й багато).</p>
+<p><strong>Приклад #3 Від відновлення пароля... до отримання додаткових
+привілеїв (для будь-якої бази даних)</strong></p>
+<p><code>&#x3C;?php$query = "UPDATE usertable SET pwd='$pwd' WHERE uid='$uid';";?></code></p>
+<p>Але зловмисник може ввести значення 'or uid like'%admin%'' для
+змінною <code>$uid</code> для зміни пароля адміністратора або просто
+присвоїти змінній <code>$pwd</code> значення <code>hehehe', trusted=100, admin='yes</code>
+для отримання додаткових привілеїв. Під час виконання запитів
+переплітаються:</p>
+<p><code>&#x3C;?php// $uid: ' or uid like '%admin%$query = "UPDATE usertable SET pwd='...' WHERE uid='' or uid like '%admin%';";// pwd: hehehe', trusted=100, admin='yes$query = "UPDATE usertable SET pwd='hehehe', trusted=100, admin='yes' WHERE...;";?></code></p>
+<p>Страхітливий приклад того, як на сервері баз даних можуть виконуватися
+команди операційної системи.</p>
+<p><strong>Приклад #4 Виконання команд операційної системи на сервері (для бази
+MSSQL)</strong></p>
+<p><code>&#x3C;?php$query  = "SELECT * FROM products WHERE id LIKE '%$prod%'";$result = mssql_query($query);?></code></p>
+<p>Якщо зломщик введе значення
+<code>a%' exec master..xp_cmdshell 'net user test testpass /ADD' --</code> для
+змінною <code>$prod</code>, тоді запит <code>$query</code> виглядатиме так:</p>
+<p><code>&#x3C;?php$query  = "SELECT * FROM products           WHERE id LIKE '%a%'           exec master..xp_cmdshell 'net user test testpass /ADD' --%'";$result = mssql_query($query);?></code></p>
+<p>MSSQL сервер виконує SQL-команди в пакетному режимі, у тому числі
+операції із закладу локальних облікових записів бази даних. В разі,
+якщо програма працює з привілеями адміністратора <code>sa</code> та сервіс
+MSSQL запущений з необхідними привілеями, то виконавши наведені вище
+дії, зломщик отримає обліковий запис для доступу до сервера.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Деякі наведені у цьому розділі приклади стосуються конкретної бази
+даних. Це не означає, що аналогічні атаки на інші програмні
+Продукти неможливі. Працездатність вашої бази даних може бути
+порушена будь-яким іншим способом.</p>
+</blockquote>
+<p><img src="images/fa7c5b5f326e3c4a6cc9db19e7edbaf0-xkcd-bobby-tables.png" alt="Робочий приклад проблем, що викликаються SQL-ін&#x27;єкцією"></p>
+<p>Авторство зображення належить <a href="http://xkcd.com/327">»xkcd</a></p>
+<h3>Способи захисту</h3>
+<p>Хоча, як і раніше, очевидно, що зломщик повинен мати принаймні
+деякими знаннями про структуру бази даних, щоб провести успішну
+атаку, отримати цю інформацію часто дуже просто. Наприклад, якщо
+база даних є частиною open-source або іншого публічно доступного
+програмного пакета з інсталяцією за замовчуванням, ця інформація є
+повністю відкритої та доступної. Ці дані також можуть бути отримані з
+закритого проекту, навіть якщо він закодований, ускладнений, або
+скомпілюваний, і навіть з вашого особистого коду через відображення повідомлень
+про помилки. До інших методів відноситься використання поширених
+(легко вгадуваних) назв таблиць та стовпців. Наприклад, форма логіну,
+яка використовує таблицю 'users' з назвами стовпців 'id',
+'username' та 'password'.</p>
+<p>Більшість успішних атак ґрунтується на коді, написаному без урахування
+відповідних вимог безпеки. Не довіряйте жодним введеним
+особливо якщо вони надходять з боку клієнта, навіть якщо це
+списки у формі, приховані поля або куки. Перший наведений приклад
+показують, як такі запити можуть призвести до катастрофи.</p>
+<ul>
+<li>
+<p>Ніколи не з'єднуйтесь з базою даних, використовуючи обліковий запис
+власника бази даних або суперкористувача. Завжди намагайтеся
+використовувати спеціально створених користувачів з максимально
+обмеженими правами.</p>
+</li>
+<li>
+<p>використовуйте підготовлені вирази із прив'язаними змінними.
+Ця можливість надається модулями
+<a href="pdo.prepared-statements.md">PDO</a>,
+<a href="mysqli.quickstart.prepared-statements.md">MySQLi</a> та іншими
+бібліотеками.</p>
+</li>
+<li>
+<p>Завжди перевіряйте введені дані на відповідність очікуваного типу.
+У PHP є безліч функцій для перевірки даних: починаючи від
+найпростіших <a href="ref.var.md">функцій для роботи зі змінними</a> та
+<a href="ref.ctype.md">функцій визначення типу символів</a> (таких як
+<a href="function.is-numeric.md">is_numeric()</a> та
+<a href="function.ctype-digit.md">ctype_digit()</a> відповідно) та
+закінчуючи <a href="ref.pcre.md">Perl-сумісними регулярними виразами</a>.</p>
+</li>
+<li>
+<p>Якщо програма очікує цифрове введення, застосуйте функцію
+<a href="function.ctype-digit.md">ctype_digit()</a> для перевірки введених
+даних, або примусово вкажіть їх тип за допомогою
+<a href="function.settype.md">settype()</a>, або просто використовуйте числове
+представлення за допомогою функції <a href="function.sprintf.md">sprintf()</a>.</p>
+</li>
+</ul>
+<p><strong>Приклад #5 Більш безпечна реалізація посторінкової навігації</strong></p>
+<p>` &#x3C;?phpsettype($offset, 'integer');$query = "SELECT id, name FROM products ORDER BY name LIMIT 20 OFFSET $offset;";// зверніть увагу на форм    query = sprintf("SELECT id, name FROM products ORDER BY name LIMIT 20 OFFSET %d;",                 $set)</p>
+<ul>
+<li>
+<p>Якщо на рівні бази даних не підтримуються прив'язані
+змінні, то завжди екрануйте будь-які нечислові дані,
+використовуваний у запитах до БД за допомогою спеціальних екрануючих
+функцій, специфічних для вашої бази даних (наприклад,
+<a href="function.mysql-real-escape-string.md">mysql_real_escape_string()</a>,
+<strong>sqlite_escape_string()</strong> і т.д.). Загальні функції, такі як
+<a href="function.addslashes.md">addslashes()</a> корисні тільки в
+певних випадках (наприклад MySQL в однобайтному кодуванні з
+відключеним <code>NO_BACKSLASH_ESCAPES</code>), тому краще уникати їх
+використання.</p>
+</li>
+<li>
+<p>У жодному разі не виводьте жодної інформації про БД, особливо про її
+структуру. Також ознайомтесь із відповідними розділами
+документації: "<a href="security.errors.md">Повідомлення про помилки</a>" та
+"<a href="ref.errorfunc.md">Функції обробки та логування помилок</a>".</p>
+</li>
+<li>
+<p>Ви можете використовувати процедури, що зберігаються, і заздалегідь визначені
+курсори для абстрагованої роботи з даними, не надаючи
+користувачам прямого доступу до даних та уявлень, але це
+Рішення має свої особливості.</p>
+</li>
+</ul>
+<p>Крім всього вищесказаного, ви можете логувати запити у вашому
+скрипт або на рівні бази даних, якщо вона це підтримує. Очевидно,
+що логування не може запобігти завданню шкоди, але може допомогти
+при трасуванні зламаної програми. Лог-файл корисний не сам собою,
+а інформацією, що міститься в ньому. Причому, здебільшого
+корисно логувати усі можливі деталі.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/security.database.sql-injection.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/security.database.sql-injection.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"security.database.sql-injection","slug":"security.database.sql-injection.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"security.database.storage.md\"\u003e«Шифрування сховища бази даних\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"security.errors.md\"\u003eПовідомлення про помилки »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"security.database.md\"\u003eБезпека баз даних\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eSQL-ін'єкції\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eSQL-ін'єкції\u003c/h2\u003e\n\u003cp\u003eБагато веб-розробників навіть не здогадуються, що SQL-запити можуть бути\nпідроблені і вважають, що SQL-запити завжди достовірні. Насправді\nпідроблені запити можуть обійти обмеження доступу, стандартну\nперевірку авторизації, а деякі види запитів можуть дати можливість\nвиконувати команди операційної системи.\u003c/p\u003e\n\u003cp\u003eПряме впровадження шкідливих інструкцій у SQL-запити - це методика,\nякої зломщик створює або змінює поточні SQL-запити для\nвідображення прихованих даних, їх зміни або навіть виконання небезпечних\nкоманд операційної системи на сервері бази даних Атака виконується на\nбазі програми, що будує SQL-запити з введення користувача і\nстатичних властивостей. Наступні приклади, на жаль, побудовані на\nреальні факти.\u003c/p\u003e\n\u003cp\u003eЗавдяки відсутності перевірки користувальницького введення та з'єднання з\nбазою даних під обліковим записом суперкористувача (або будь-якого іншого\nкористувача, наділеного відповідними привілеями), зломщик може\nстворити ще одного користувача БД із правами суперкористувача.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Посторінковий висновок результату... та створення\nсуперкористувача в PostgreSQL\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?php$offset==$argv[0]; // увага, ні ні перевірки введених даних!$query = \"SELECT id, name FROM products ORDER BY name LIMIT 20 OFFSET $offset;\";$result = pg_query\u003c/p\u003e\n\u003cp\u003eЗазвичай користувачі клацають за посиланням 'вперед' і 'назад', внаслідок\nчого значення змінної \u003ccode\u003e$offset\u003c/code\u003e заноситься до URL. Скрипт очікує, що\n$offset - десяткове число. Проте, зломщик може спробувати зламати\nсистему, приєднавши до URL додатковий рядок, оброблений функцією\n\u003ca href=\"function.urlencode.md\"\u003eurlencode()\u003c/a\u003e:\u003c/p\u003e\n\u003cp\u003e`` sqlcode\n0;\ninsert into pg_shadow(usename,usesysid,usesuper,usecatupd,passwd)\nselect 'crack', usesysid, 't', 't', 'crack'\nfrom pg_shadow where usename='postgres';\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode\u003e\nЯкщо це станеться, скрипт надасть зломщику доступ до бази\nправами суперкористувача. Зауважимо, що значення `0;` використане для\nтого, щоб задати правильне зміщення для першого запиту та коректно\nйого завершити.\n\n\u003e **Примітка**:\n\u003e\n\u003e Часто використовуваною технікою для ігнорування SQL-парсером\n\u003e Частини запиту є використання `--`, що означає коментар.\n\nЩе один ймовірний спосіб отримати паролі облікових записів у БД - атака\nсторінок, які надають пошук по базі. Зломщику потрібно лише перевірити,\nчи використовується в запиті, що передається на сервер і необроблювана\nналежним чином змінна. Це може бути один з встановлюваних на\nна попередній сторінці фільтрів, таких як `WHERE, ORDER BY, LIMIT` та\n`OFFSET`, які використовуються при побудові запитів `SELECT`. У разі якщо\nбаза даних, що використовується вами, підтримує конструкцію `UNION`, зломщик\nможе приєднати до оригінального запиту ще один додатковий\nвилучення паролів користувача. Настійно рекомендуємо\nвикористовувати лише зашифровані паролі.\n\n**Приклад #2 Лістинг статей... та деяких паролів (для будь-якої бази\nданих)**\n\n` \u0026#x3C;?php$query  = \"SELECT id, name, inserted, size FROM products           WHERE size = '$size'\";$result = odbc_;\n\nСтатична частина запиту може комбінуватися з іншим\n`SELECT`-запитом, який виведе всі паролі:\n\n`` sqlcode\n'\nunion select '1', concat(uname||'-'||passwd) as name, '1971-01-01', '0' from usertable;\n-\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eЯкщо цей запит (що використовує ``` та \u003ccode\u003e--\u003c/code\u003e) приєднати до значення однієї\nзі змінних, що використовуються для формування $query, то запит помітно\nзміниться.\u003c/p\u003e\n\u003cp\u003eКоманди UPDATE можуть також використовуватися для атаки. Знову ж таки, є\nзагроза поділу інструкції на кілька частин та приєднання\nдодатковий запит. Також зломщик може видозмінити вираз\n\u003ccode\u003eSET\u003c/code\u003e. У цьому випадку потенційному зломщику необхідно мати\nдеякою додатковою інформацією про структуру бази даних для\nуспішного маніпулювання запитами. Цю інформацію можна отримати,\nпроаналізувавши імена змінних, що використовуються у формі, або просто\nперебираючи всі найпоширеніші варіанти назви\nвідповідних полів (а їх не так вже й багато).\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Від відновлення пароля... до отримання додаткових\nпривілеїв (для будь-якої бази даних)\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$query = \"UPDATE usertable SET pwd='$pwd' WHERE uid='$uid';\";?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eАле зловмисник може ввести значення 'or uid like'%admin%'' для\nзмінною \u003ccode\u003e$uid\u003c/code\u003e для зміни пароля адміністратора або просто\nприсвоїти змінній \u003ccode\u003e$pwd\u003c/code\u003e значення \u003ccode\u003ehehehe', trusted=100, admin='yes\u003c/code\u003e\nдля отримання додаткових привілеїв. Під час виконання запитів\nпереплітаються:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// $uid: ' or uid like '%admin%$query = \"UPDATE usertable SET pwd='...' WHERE uid='' or uid like '%admin%';\";// pwd: hehehe', trusted=100, admin='yes$query = \"UPDATE usertable SET pwd='hehehe', trusted=100, admin='yes' WHERE...;\";?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eСтрахітливий приклад того, як на сервері баз даних можуть виконуватися\nкоманди операційної системи.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Виконання команд операційної системи на сервері (для бази\nMSSQL)\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$query  = \"SELECT * FROM products WHERE id LIKE '%$prod%'\";$result = mssql_query($query);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eЯкщо зломщик введе значення\n\u003ccode\u003ea%' exec master..xp_cmdshell 'net user test testpass /ADD' --\u003c/code\u003e для\nзмінною \u003ccode\u003e$prod\u003c/code\u003e, тоді запит \u003ccode\u003e$query\u003c/code\u003e виглядатиме так:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$query  = \"SELECT * FROM products           WHERE id LIKE '%a%'           exec master..xp_cmdshell 'net user test testpass /ADD' --%'\";$result = mssql_query($query);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eMSSQL сервер виконує SQL-команди в пакетному режимі, у тому числі\nоперації із закладу локальних облікових записів бази даних. В разі,\nякщо програма працює з привілеями адміністратора \u003ccode\u003esa\u003c/code\u003e та сервіс\nMSSQL запущений з необхідними привілеями, то виконавши наведені вище\nдії, зломщик отримає обліковий запис для доступу до сервера.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eДеякі наведені у цьому розділі приклади стосуються конкретної бази\nданих. Це не означає, що аналогічні атаки на інші програмні\nПродукти неможливі. Працездатність вашої бази даних може бути\nпорушена будь-яким іншим способом.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cimg src=\"images/fa7c5b5f326e3c4a6cc9db19e7edbaf0-xkcd-bobby-tables.png\" alt=\"Робочий приклад проблем, що викликаються SQL-ін\u0026#x27;єкцією\"\u003e\u003c/p\u003e\n\u003cp\u003eАвторство зображення належить \u003ca href=\"http://xkcd.com/327\"\u003e»xkcd\u003c/a\u003e\u003c/p\u003e\n\u003ch3\u003eСпособи захисту\u003c/h3\u003e\n\u003cp\u003eХоча, як і раніше, очевидно, що зломщик повинен мати принаймні\nдеякими знаннями про структуру бази даних, щоб провести успішну\nатаку, отримати цю інформацію часто дуже просто. Наприклад, якщо\nбаза даних є частиною open-source або іншого публічно доступного\nпрограмного пакета з інсталяцією за замовчуванням, ця інформація є\nповністю відкритої та доступної. Ці дані також можуть бути отримані з\nзакритого проекту, навіть якщо він закодований, ускладнений, або\nскомпілюваний, і навіть з вашого особистого коду через відображення повідомлень\nпро помилки. До інших методів відноситься використання поширених\n(легко вгадуваних) назв таблиць та стовпців. Наприклад, форма логіну,\nяка використовує таблицю 'users' з назвами стовпців 'id',\n'username' та 'password'.\u003c/p\u003e\n\u003cp\u003eБільшість успішних атак ґрунтується на коді, написаному без урахування\nвідповідних вимог безпеки. Не довіряйте жодним введеним\nособливо якщо вони надходять з боку клієнта, навіть якщо це\nсписки у формі, приховані поля або куки. Перший наведений приклад\nпоказують, як такі запити можуть призвести до катастрофи.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eНіколи не з'єднуйтесь з базою даних, використовуючи обліковий запис\nвласника бази даних або суперкористувача. Завжди намагайтеся\nвикористовувати спеціально створених користувачів з максимально\nобмеженими правами.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eвикористовуйте підготовлені вирази із прив'язаними змінними.\nЦя можливість надається модулями\n\u003ca href=\"pdo.prepared-statements.md\"\u003ePDO\u003c/a\u003e,\n\u003ca href=\"mysqli.quickstart.prepared-statements.md\"\u003eMySQLi\u003c/a\u003e та іншими\nбібліотеками.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗавжди перевіряйте введені дані на відповідність очікуваного типу.\nУ PHP є безліч функцій для перевірки даних: починаючи від\nнайпростіших \u003ca href=\"ref.var.md\"\u003eфункцій для роботи зі змінними\u003c/a\u003e та\n\u003ca href=\"ref.ctype.md\"\u003eфункцій визначення типу символів\u003c/a\u003e (таких як\n\u003ca href=\"function.is-numeric.md\"\u003eis_numeric()\u003c/a\u003e та\n\u003ca href=\"function.ctype-digit.md\"\u003ectype_digit()\u003c/a\u003e відповідно) та\nзакінчуючи \u003ca href=\"ref.pcre.md\"\u003ePerl-сумісними регулярними виразами\u003c/a\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЯкщо програма очікує цифрове введення, застосуйте функцію\n\u003ca href=\"function.ctype-digit.md\"\u003ectype_digit()\u003c/a\u003e для перевірки введених\nданих, або примусово вкажіть їх тип за допомогою\n\u003ca href=\"function.settype.md\"\u003esettype()\u003c/a\u003e, або просто використовуйте числове\nпредставлення за допомогою функції \u003ca href=\"function.sprintf.md\"\u003esprintf()\u003c/a\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Більш безпечна реалізація посторінкової навігації\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?phpsettype($offset, 'integer');$query = \"SELECT id, name FROM products ORDER BY name LIMIT 20 OFFSET $offset;\";// зверніть увагу на форм    query = sprintf(\"SELECT id, name FROM products ORDER BY name LIMIT 20 OFFSET %d;\",                 $set)\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eЯкщо на рівні бази даних не підтримуються прив'язані\nзмінні, то завжди екрануйте будь-які нечислові дані,\nвикористовуваний у запитах до БД за допомогою спеціальних екрануючих\nфункцій, специфічних для вашої бази даних (наприклад,\n\u003ca href=\"function.mysql-real-escape-string.md\"\u003emysql_real_escape_string()\u003c/a\u003e,\n\u003cstrong\u003esqlite_escape_string()\u003c/strong\u003e і т.д.). Загальні функції, такі як\n\u003ca href=\"function.addslashes.md\"\u003eaddslashes()\u003c/a\u003e корисні тільки в\nпевних випадках (наприклад MySQL в однобайтному кодуванні з\nвідключеним \u003ccode\u003eNO_BACKSLASH_ESCAPES\u003c/code\u003e), тому краще уникати їх\nвикористання.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eУ жодному разі не виводьте жодної інформації про БД, особливо про її\nструктуру. Також ознайомтесь із відповідними розділами\nдокументації: \"\u003ca href=\"security.errors.md\"\u003eПовідомлення про помилки\u003c/a\u003e\" та\n\"\u003ca href=\"ref.errorfunc.md\"\u003eФункції обробки та логування помилок\u003c/a\u003e\".\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВи можете використовувати процедури, що зберігаються, і заздалегідь визначені\nкурсори для абстрагованої роботи з даними, не надаючи\nкористувачам прямого доступу до даних та уявлень, але це\nРішення має свої особливості.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eКрім всього вищесказаного, ви можете логувати запити у вашому\nскрипт або на рівні бази даних, якщо вона це підтримує. Очевидно,\nщо логування не може запобігти завданню шкоди, але може допомогти\nпри трасуванні зламаної програми. Лог-файл корисний не сам собою,\nа інформацією, що міститься в ньому. Причому, здебільшого\nкорисно логувати усі можливі деталі.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"security.database.sql-injection.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

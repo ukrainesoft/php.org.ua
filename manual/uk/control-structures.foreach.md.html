@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>control-structures.foreach | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="control-structures.for.md">«for</a></p>
+</li>
+<li>
+<p><a href="control-structures.break.md">break »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="language.control-structures.md">Керування конструкції</a></p>
+</li>
+<li>
+<p>foreach</p>
+</li>
+</ul>
+<h2>foreach</h2>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>Конструкція <code>foreach</code> надає простий спосіб перебору масивів.
+<code>foreach</code> працює тільки з масивами та об'єктами, і буде генерувати
+помилку при спробі використання зі змінними інших типів або
+неініціалізованими змінними. Існує два види синтаксису:</p>
+<p>foreach (iterable_expression as $value)
+statement
+foreach (iterable_expression as $key => $value)
+statement</p>
+<p>Перший цикл перебирає масив, що задається за допомогою
+<code>iterable_expression</code>. На кожній ітерації значення поточного елемента
+привласнюється змінної $value.</p>
+<p>Другий цикл додатково надасть ключ поточного елемента змінної
+$ key на кожній ітерації.</p>
+<p>Зверніть увагу, що <code>foreach</code> не змінює покажчик внутрішнього
+масиву, який використовується такими функціями, як
+<a href="function.current.md">current()</a> та <a href="function.key.md">key()</a>.</p>
+<p>Можливо <a href="language.oop5.iterations.md">налаштувати ітератори об'єктів</a>.</p>
+<p>Для того, щоб безпосередньо змінювати елементи масиву всередині циклу,
+змінної <code>$value</code> має передувати знак &#x26;. У цьому випадку значення
+буде присвоєно за посиланням (language.references.md).</p>
+<p><code>&#x3C;?php$arr = array(1, 2, 3, 4);foreach ($arr as &#x26;$value) {    $value = $value * 2;}// масив $arr , 6, 8)unset($value); // розірвати посилання на останній елемент?></code></p>
+<p><strong>Увага</strong></p>
+<p>Посилання <code>$value</code> на останній елемент масиву залишиться після закінчення
+циклу <code>foreach</code>. Рекомендується знищувати її за допомогою
+<a href="function.unset.md">unset()</a>. В іншому випадку ви можете зіткнутися
+з такою поведінкою:</p>
+<p><code>&#x3C;?php$arr = array(1, 2, 3, 4);foreach ($arr as &#x26;$value) {    $value = $value * 2;}// $arr = array 8)// Без unset($value), $value все ще посилається на останній елемент: $arr[3]foreach ($arr as $key => $value)          при кожній ітерації циклу   echo "{$key} => {$value} "; print_r($arr);}// ...І в кінці кінців передостаннє значення визначить остаточний вміст $arr[3]// вихід:// 0 => 2 Array ( [0] =>> 4, [2] => 6, [3] => 2 )// 1 => 4 Array ( [0] => 2, [1] => 4, [2] => 6, [3] > 4 )// 2 => 6 Array ( [0] => 2, [1] => 4, [2] => 6, [3] => 6 )// 3 => 6 Array (| > 2, [1] => 4, [2] => 6, [3] => 6 )?></code></p>
+<p>Можна перебирати значення постійного масиву за посиланням:</p>
+<p><code>&#x3C;?phpforeach (array(1, 2, 3, 4) as &#x26;$value) {   $value = $value * 2;}?></code></p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Оператор <code>foreach</code> не підтримує можливість придушення повідомлень про
+помилки за допомогою префікса <code>@</code>.</p>
+</blockquote>
+<p>Ще кілька прикладів, що демонструють використання оператора:</p>
+<p><code>&#x3C;?php/* Приклад 1: тільки значення */$a = array(1, 2, 3, 17);foreach ($a as $v) {    echo "Поточне значення $. ";}/* Приклад 2: значення (для ілюстрації масив виводиться в виді значення з ключом) */$a = array(1,2,3,17); $a as $v) {   echo "\$a[$i] => $v. ";|  $i++;}/* Приклад 3: ключ і значення */$a = array(    "one" => 1,    "two" => e, "| foreach ($a as $k => $v) {   echo "\$a[$k] => $v. ";}/* Приклад 4: багатомірні масиви */$a = array();$a[0][0] = "a";$a[0][1] = "b";$a[1] [0] = "y";$a[1][1] = "z";foreach ($a as $v1) {    foreach ($v1 as $v2) {        ech ";    }}/* Приклад 5: динамічні масиви */foreach (array(1, 2, 3, 4, 5) as $v) {    echo "$v ";}?></code></p>
+<h3>Розпакування вкладених масивів за допомогою list()</h3>
+<p>(PHP 5 >= 5.5.0, PHP 7, PHP 8)</p>
+<p>Можна перебрати масив масивів і розпакувати вкладений масив у
+змінні циклу, передавши <a href="function.list.md">list()</a> як
+значення.</p>
+<p>Наприклад:</p>
+<p><code>&#x3C;?php$array = [    [1, 2],   [3, 4],];foreach ($array as list($a, $b)) {    // $a вмісту  $b містить другий елемент. echo "A: $a; B: $b ";}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>A: 1; B: 2
+A: 3; B: 4</p>
+<p>Можна передавати меншу кількість елементів у
+<a href="function.list.md">list()</a>, чим знаходиться у вкладеному масиві, в цьому
+у разі решти значення масиву будуть проігноровані:</p>
+<p><code>&#x3C;?php$array = [    [1, 2],   [3, 4],];foreach ($array as list($a)) {    // Зверніть увагу на$ echo "$a ";}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>1
+3</p>
+<p>Якщо масив містить недостатньо елементів для заповнення всіх
+змінних з <a href="function.list.md">list()</a>, то буде згенеровано
+зауваження про помилку:</p>
+<p><code>&#x3C;?php$array = [    [1, 2],   [3, 4],];foreach ($array as list($a, $b, $c)) {    echo "$:| b; C: $c ";}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Notice: Undefined offset: 2 in example.php on line 7
+A: 1; B: 2; C:</p>
+<p>Notice: Undefined offset: 2 in example.php on line 7
+A: 3; B: 4; C:</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/control-structures.foreach.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/control-structures.foreach.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"control-structures.foreach","slug":"control-structures.foreach.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"control-structures.for.md\"\u003e«for\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"control-structures.break.md\"\u003ebreak »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"language.control-structures.md\"\u003eКерування конструкції\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eforeach\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eforeach\u003c/h2\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eКонструкція \u003ccode\u003eforeach\u003c/code\u003e надає простий спосіб перебору масивів.\n\u003ccode\u003eforeach\u003c/code\u003e працює тільки з масивами та об'єктами, і буде генерувати\nпомилку при спробі використання зі змінними інших типів або\nнеініціалізованими змінними. Існує два види синтаксису:\u003c/p\u003e\n\u003cp\u003eforeach (iterable_expression as $value)\nstatement\nforeach (iterable_expression as $key =\u003e $value)\nstatement\u003c/p\u003e\n\u003cp\u003eПерший цикл перебирає масив, що задається за допомогою\n\u003ccode\u003eiterable_expression\u003c/code\u003e. На кожній ітерації значення поточного елемента\nпривласнюється змінної $value.\u003c/p\u003e\n\u003cp\u003eДругий цикл додатково надасть ключ поточного елемента змінної\n$ key на кожній ітерації.\u003c/p\u003e\n\u003cp\u003eЗверніть увагу, що \u003ccode\u003eforeach\u003c/code\u003e не змінює покажчик внутрішнього\nмасиву, який використовується такими функціями, як\n\u003ca href=\"function.current.md\"\u003ecurrent()\u003c/a\u003e та \u003ca href=\"function.key.md\"\u003ekey()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eМожливо \u003ca href=\"language.oop5.iterations.md\"\u003eналаштувати ітератори об'єктів\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eДля того, щоб безпосередньо змінювати елементи масиву всередині циклу,\nзмінної \u003ccode\u003e$value\u003c/code\u003e має передувати знак \u0026#x26;. У цьому випадку значення\nбуде присвоєно за посиланням (language.references.md).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$arr = array(1, 2, 3, 4);foreach ($arr as \u0026#x26;$value) {    $value = $value * 2;}// масив $arr , 6, 8)unset($value); // розірвати посилання на останній елемент?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПосилання \u003ccode\u003e$value\u003c/code\u003e на останній елемент масиву залишиться після закінчення\nциклу \u003ccode\u003eforeach\u003c/code\u003e. Рекомендується знищувати її за допомогою\n\u003ca href=\"function.unset.md\"\u003eunset()\u003c/a\u003e. В іншому випадку ви можете зіткнутися\nз такою поведінкою:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$arr = array(1, 2, 3, 4);foreach ($arr as \u0026#x26;$value) {    $value = $value * 2;}// $arr = array 8)// Без unset($value), $value все ще посилається на останній елемент: $arr[3]foreach ($arr as $key =\u003e $value)          при кожній ітерації циклу   echo \"{$key} =\u003e {$value} \"; print_r($arr);}// ...І в кінці кінців передостаннє значення визначить остаточний вміст $arr[3]// вихід:// 0 =\u003e 2 Array ( [0] =\u003e\u003e 4, [2] =\u003e 6, [3] =\u003e 2 )// 1 =\u003e 4 Array ( [0] =\u003e 2, [1] =\u003e 4, [2] =\u003e 6, [3] \u003e 4 )// 2 =\u003e 6 Array ( [0] =\u003e 2, [1] =\u003e 4, [2] =\u003e 6, [3] =\u003e 6 )// 3 =\u003e 6 Array (| \u003e 2, [1] =\u003e 4, [2] =\u003e 6, [3] =\u003e 6 )?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eМожна перебирати значення постійного масиву за посиланням:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpforeach (array(1, 2, 3, 4) as \u0026#x26;$value) {   $value = $value * 2;}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eОператор \u003ccode\u003eforeach\u003c/code\u003e не підтримує можливість придушення повідомлень про\nпомилки за допомогою префікса \u003ccode\u003e@\u003c/code\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eЩе кілька прикладів, що демонструють використання оператора:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Приклад 1: тільки значення */$a = array(1, 2, 3, 17);foreach ($a as $v) {    echo \"Поточне значення $. \";}/* Приклад 2: значення (для ілюстрації масив виводиться в виді значення з ключом) */$a = array(1,2,3,17); $a as $v) {   echo \"\\$a[$i] =\u003e $v. \";|  $i++;}/* Приклад 3: ключ і значення */$a = array(    \"one\" =\u003e 1,    \"two\" =\u003e e, \"| foreach ($a as $k =\u003e $v) {   echo \"\\$a[$k] =\u003e $v. \";}/* Приклад 4: багатомірні масиви */$a = array();$a[0][0] = \"a\";$a[0][1] = \"b\";$a[1] [0] = \"y\";$a[1][1] = \"z\";foreach ($a as $v1) {    foreach ($v1 as $v2) {        ech \";    }}/* Приклад 5: динамічні масиви */foreach (array(1, 2, 3, 4, 5) as $v) {    echo \"$v \";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eРозпакування вкладених масивів за допомогою list()\u003c/h3\u003e\n\u003cp\u003e(PHP 5 \u003e= 5.5.0, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eМожна перебрати масив масивів і розпакувати вкладений масив у\nзмінні циклу, передавши \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e як\nзначення.\u003c/p\u003e\n\u003cp\u003eНаприклад:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array = [    [1, 2],   [3, 4],];foreach ($array as list($a, $b)) {    // $a вмісту  $b містить другий елемент. echo \"A: $a; B: $b \";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eA: 1; B: 2\nA: 3; B: 4\u003c/p\u003e\n\u003cp\u003eМожна передавати меншу кількість елементів у\n\u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e, чим знаходиться у вкладеному масиві, в цьому\nу разі решти значення масиву будуть проігноровані:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array = [    [1, 2],   [3, 4],];foreach ($array as list($a)) {    // Зверніть увагу на$ echo \"$a \";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e1\n3\u003c/p\u003e\n\u003cp\u003eЯкщо масив містить недостатньо елементів для заповнення всіх\nзмінних з \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e, то буде згенеровано\nзауваження про помилку:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array = [    [1, 2],   [3, 4],];foreach ($array as list($a, $b, $c)) {    echo \"$:| b; C: $c \";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eNotice: Undefined offset: 2 in example.php on line 7\nA: 1; B: 2; C:\u003c/p\u003e\n\u003cp\u003eNotice: Undefined offset: 2 in example.php on line 7\nA: 3; B: 4; C:\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"control-structures.foreach.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

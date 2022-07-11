@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>pdo.transactions | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="pdo.connections.md">«Підключення та керування підключеннями</a></p>
+</li>
+<li>
+<p><a href="pdo.prepared-statements.md">Підготовлені запити та процедури, що зберігаються »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.pdo.md">PDO</a></p>
+</li>
+<li>
+<p>транзакції та автоматична фіксація змін</p>
+</li>
+</ul>
+<h1>Транзакції та автоматична фіксація змін</h1>
+<p>Тепер ви знаєте, як підключатися до баз даних за допомогою PDO. Але
+перед тим, як виконувати запити, вам необхідно зрозуміти, як PDO
+керує транзакціями. Якщо ви раніше не стикалися з транзакціями,
+вони володіють чотирма головними властивостями, це Атомарність,
+Узгодженість, ізольованість і довговічність (ACID). Говорячи простим
+мовою, будь-які дії, вчинені в рамках транзакції, гарантовано
+будуть виконані безпечно для бази даних, і на них не вплинуть інші
+підключення до цієї бази, навіть якщо ці дії здійснюються в кілька
+етапів. Транзакційні операції можна скасовувати на запит (якщо
+транзакція ще не зафіксована), що спрощує обробку помилок у
+скриптів.</p>
+<p>Механізм транзакцій реалізований шляхом "тимчасового збереження" всіх
+змін та подальшого застосування цих змін, як єдиного цілого.
+Це дозволяє досягти різкого збільшення ефективності подібних
+змін. Іншими словами, транзакції можуть зробити ваші скрипти.
+швидкими та потенційно більш стабільними (але для цього необхідно
+коректно використати цей механізм.</p>
+<p>На жаль, не всі бази даних підтримують транзакції, тому PDO при
+створення підключення працює в режимі так званої "автоматичної"
+фіксації". Режим автофіксації означає, що кожен запит до бази даних,
+який ви виконуєте, неявно полягає в транзакції, якщо СУБД їх
+підтримує. Якщо база даних не підтримує цей механізм, запит
+обробляється без транзакції. Щоб явно позначити початок транзакції,
+ви повинні використовувати метод
+<a href="pdo.begintransaction.md">PDO::beginTransaction()</a>. Якщо драйвер не
+підтримує механізм транзакцій, буде викинуто виключення
+PDOException (незалежно від обраного способу обробки помилок:
+подібні ситуації - це завжди серйозна недоробка). Після того як
+ви здійсните транзакцію, ви можете зафіксувати її методом
+<a href="pdo.commit.md">PDO::commit()</a> або відкотити методом
+<a href="pdo.rollback.md">PDO::rollBack()</a>, в залежності від того, успішно
+виконано ваш код усередині транзакції чи ні.</p>
+<p><strong>Увага</strong></p>
+<p>PDO перевіряє можливість використання транзакцій лише на рівні
+драйвера. Якщо з якихось причин механізм транзакцій недоступний, але
+сервер баз даних прийняв запит на відкриття транзакції,
+<a href="pdo.begintransaction.md">PDO::beginTransaction()</a> поверне <strong><code>true</code></strong>
+без помилок.</p>
+<p>Як приклад може бути спроба використання транзакцій у
+таблиці MyISAM бази даних MySQL.</p>
+<p>При завершенні роботи скрипта або при закритті з'єднання PDO
+автоматично відкочує всі незавершені транзакції. Це робиться,
+щоб запобігти порушенням цілісності бази даних у випадках, коли
+скрипт несподівано перериває роботу. Якщо ви явно не зафіксували
+Зміна передбачається, що щось пішло не так. Тому відкат
+змін - найбезпечніший вихід із ситуації.</p>
+<p><strong>Увага</strong></p>
+<p>Зміни будуть відкачані автоматично, тільки якщо транзакція відкрита
+методом <a href="pdo.begintransaction.md">PDO::beginTransaction()</a>. Якщо
+транзакцію відкрити вручну в тексті запиту, PDO про це не
+дізнається, і, відповідно, не зможе вжити заходів, якщо станеться щось
+погане.</p>
+<p><strong>Приклад #1 Виконання пакета змін у рамках транзакції</strong></p>
+<p>У наступному прикладі припустимо, що ми створюємо кілька записів для
+нового співробітника з номером ID 23. Крім введення основної інформації
+необхідно записати його зарплатню. Досить просто зробити два окремі
+оновлення таблиць, однак шляхом укладання цих запитів у рамки
+<a href="pdo.begintransaction.md">PDO::beginTransaction()</a> та
+<a href="pdo.commit.md">PDO::commit()</a> ми зможемо гарантувати, що ніхто не
+побачить цих змін, доки всі вони не будуть завершені. Якщо щось
+піде не так, catch-блок відкотить усі зміни з початку транзакції та
+друкує повідомлення про помилку.</p>
+<p><code>&#x3C;?phptry { $dbh = new PDO('odbc:SAMPLE', 'db2inst1', 'ibmdb2',      array(PDO::ATTR_PERSISTENT => true)); echo "Підключилися ";} catch (Exception $e) { die("Не удалося підключитися: " . $e->getMessage());}try { $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO: $: ->beginTransaction();$dbh->exec("insert into staff (id, first, last) values (23, 'Joe', 'Bloggs')"); $dbh->exec("insert , amount, changedate)       values (23, 50000, NOW())"); $dbh->commit();} catch (Exception $e) { о"d| ->getMessage();}?></code></p>
+<p>Ви не обмежені у кількості запитів у рамках транзакції; ви
+також можете виконувати складні запити, щоб отримати дані, а потім
+використовувати їх для створення інших запитів на оновлення та вилучення
+даних; якщо транзакція активна, ви можете бути впевнені, що ніхто не
+зможе змінити ваші дані, доки ви з ними працюєте. За додатковою
+інформацією про транзакції звертайтесь до документації до вашого сервера
+баз даних.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/pdo.transactions.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/pdo.transactions.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"pdo.transactions","slug":"pdo.transactions.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"pdo.connections.md\"\u003e«Підключення та керування підключеннями\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"pdo.prepared-statements.md\"\u003eПідготовлені запити та процедури, що зберігаються »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.pdo.md\"\u003ePDO\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eтранзакції та автоматична фіксація змін\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eТранзакції та автоматична фіксація змін\u003c/h1\u003e\n\u003cp\u003eТепер ви знаєте, як підключатися до баз даних за допомогою PDO. Але\nперед тим, як виконувати запити, вам необхідно зрозуміти, як PDO\nкерує транзакціями. Якщо ви раніше не стикалися з транзакціями,\nвони володіють чотирма головними властивостями, це Атомарність,\nУзгодженість, ізольованість і довговічність (ACID). Говорячи простим\nмовою, будь-які дії, вчинені в рамках транзакції, гарантовано\nбудуть виконані безпечно для бази даних, і на них не вплинуть інші\nпідключення до цієї бази, навіть якщо ці дії здійснюються в кілька\nетапів. Транзакційні операції можна скасовувати на запит (якщо\nтранзакція ще не зафіксована), що спрощує обробку помилок у\nскриптів.\u003c/p\u003e\n\u003cp\u003eМеханізм транзакцій реалізований шляхом \"тимчасового збереження\" всіх\nзмін та подальшого застосування цих змін, як єдиного цілого.\nЦе дозволяє досягти різкого збільшення ефективності подібних\nзмін. Іншими словами, транзакції можуть зробити ваші скрипти.\nшвидкими та потенційно більш стабільними (але для цього необхідно\nкоректно використати цей механізм.\u003c/p\u003e\n\u003cp\u003eНа жаль, не всі бази даних підтримують транзакції, тому PDO при\nстворення підключення працює в режимі так званої \"автоматичної\"\nфіксації\". Режим автофіксації означає, що кожен запит до бази даних,\nякий ви виконуєте, неявно полягає в транзакції, якщо СУБД їх\nпідтримує. Якщо база даних не підтримує цей механізм, запит\nобробляється без транзакції. Щоб явно позначити початок транзакції,\nви повинні використовувати метод\n\u003ca href=\"pdo.begintransaction.md\"\u003ePDO::beginTransaction()\u003c/a\u003e. Якщо драйвер не\nпідтримує механізм транзакцій, буде викинуто виключення\nPDOException (незалежно від обраного способу обробки помилок:\nподібні ситуації - це завжди серйозна недоробка). Після того як\nви здійсните транзакцію, ви можете зафіксувати її методом\n\u003ca href=\"pdo.commit.md\"\u003ePDO::commit()\u003c/a\u003e або відкотити методом\n\u003ca href=\"pdo.rollback.md\"\u003ePDO::rollBack()\u003c/a\u003e, в залежності від того, успішно\nвиконано ваш код усередині транзакції чи ні.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003ePDO перевіряє можливість використання транзакцій лише на рівні\nдрайвера. Якщо з якихось причин механізм транзакцій недоступний, але\nсервер баз даних прийняв запит на відкриття транзакції,\n\u003ca href=\"pdo.begintransaction.md\"\u003ePDO::beginTransaction()\u003c/a\u003e поверне \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e\nбез помилок.\u003c/p\u003e\n\u003cp\u003eЯк приклад може бути спроба використання транзакцій у\nтаблиці MyISAM бази даних MySQL.\u003c/p\u003e\n\u003cp\u003eПри завершенні роботи скрипта або при закритті з'єднання PDO\nавтоматично відкочує всі незавершені транзакції. Це робиться,\nщоб запобігти порушенням цілісності бази даних у випадках, коли\nскрипт несподівано перериває роботу. Якщо ви явно не зафіксували\nЗміна передбачається, що щось пішло не так. Тому відкат\nзмін - найбезпечніший вихід із ситуації.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЗміни будуть відкачані автоматично, тільки якщо транзакція відкрита\nметодом \u003ca href=\"pdo.begintransaction.md\"\u003ePDO::beginTransaction()\u003c/a\u003e. Якщо\nтранзакцію відкрити вручну в тексті запиту, PDO про це не\nдізнається, і, відповідно, не зможе вжити заходів, якщо станеться щось\nпогане.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Виконання пакета змін у рамках транзакції\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eУ наступному прикладі припустимо, що ми створюємо кілька записів для\nнового співробітника з номером ID 23. Крім введення основної інформації\nнеобхідно записати його зарплатню. Досить просто зробити два окремі\nоновлення таблиць, однак шляхом укладання цих запитів у рамки\n\u003ca href=\"pdo.begintransaction.md\"\u003ePDO::beginTransaction()\u003c/a\u003e та\n\u003ca href=\"pdo.commit.md\"\u003ePDO::commit()\u003c/a\u003e ми зможемо гарантувати, що ніхто не\nпобачить цих змін, доки всі вони не будуть завершені. Якщо щось\nпіде не так, catch-блок відкотить усі зміни з початку транзакції та\nдрукує повідомлення про помилку.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phptry { $dbh = new PDO('odbc:SAMPLE', 'db2inst1', 'ibmdb2',      array(PDO::ATTR_PERSISTENT =\u003e true)); echo \"Підключилися \";} catch (Exception $e) { die(\"Не удалося підключитися: \" . $e-\u003egetMessage());}try { $dbh-\u003esetAttribute(PDO::ATTR_ERRMODE, PDO: $: -\u003ebeginTransaction();$dbh-\u003eexec(\"insert into staff (id, first, last) values (23, 'Joe', 'Bloggs')\"); $dbh-\u003eexec(\"insert , amount, changedate)       values (23, 50000, NOW())\"); $dbh-\u003ecommit();} catch (Exception $e) { о\"d| -\u003egetMessage();}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eВи не обмежені у кількості запитів у рамках транзакції; ви\nтакож можете виконувати складні запити, щоб отримати дані, а потім\nвикористовувати їх для створення інших запитів на оновлення та вилучення\nданих; якщо транзакція активна, ви можете бути впевнені, що ніхто не\nзможе змінити ваші дані, доки ви з ними працюєте. За додатковою\nінформацією про транзакції звертайтесь до документації до вашого сервера\nбаз даних.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"pdo.transactions.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

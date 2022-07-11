@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.yaf-request-abstract | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="yaf-registry.set.md">« Yaf_Registry::set</a></p>
+</li>
+<li>
+<p><a href="yaf-request-abstract.clearparams.md">Yaf_Request_Abstract::clearParams »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.yaf.md">Yaf</a></p>
+</li>
+<li>
+<p>Клас Yaf_Request_Abstract</p>
+</li>
+</ul>
+<h1>Клас Yaf_Request_Abstract</h1>
+<p>(Yaf >=1.0.0)</p>
+<h2>Вступ</h2>
+<h2>Огляд класів</h2>
+<p>class <strong>Yaf_Request_Abstract</strong> {</p>
+<p>/* Константи */</p>
+<p>const string <code>SCHEME_HTTP</code> = http;</p>
+<p>const string <code>SCHEME_HTTPS</code> = https;</p>
+<p>/* Властивості */</p>
+<p>public <code>$module</code>;</p>
+<p>public <code>$controller</code>;</p>
+<p>public <code>$action</code>;</p>
+<p>public <code>$method</code>;</p>
+<p>protected <code>$params</code>;</p>
+<p>protected <code>$language</code>;</p>
+<p>protected <code>$_exception</code>;</p>
+<p>protected <code>$_base_uri</code>;</p>
+<p>protected <code>$uri</code>;</p>
+<p>protected <code>$dispatched</code>;</p>
+<p>protected <code>$routed</code>;</p>
+<p>/* Методи */</p>
+<p>public <a href="yaf-request-abstract.clearparams.md">clearParams</a>(): bool</p>
+<p>public <a href="yaf-request-abstract.getactionname.md">getActionName</a>(): void</p>
+<p>public <a href="yaf-request-abstract.getbaseuri.md">getBaseUri</a>(): void</p>
+<p>public
+<a href="yaf-request-abstract.getcontrollername.md">getControllerName</a>(): void</p>
+<p>public <a href="yaf-request-abstract.getenv.md">getEnv</a>(string <code>$name</code>, string
+<code>$default</code> = ?): void</p>
+<p>public <a href="yaf-request-abstract.getexception.md">getException</a>(): void</p>
+<p>public <a href="yaf-request-abstract.getlanguage.md">getLanguage</a>(): void</p>
+<p>public <a href="yaf-request-abstract.getmethod.md">getMethod</a>(): string</p>
+<p>public <a href="yaf-request-abstract.getmodulename.md">getModuleName</a>(): void</p>
+<p>public <a href="yaf-request-abstract.getparam.md">getParam</a>(string <code>$name</code>,
+string <code>$default</code> = ?):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="yaf-request-abstract.getparams.md">getParams</a>(): array</p>
+<p>public <a href="yaf-request-abstract.getrequesturi.md">getRequestUri</a>(): void</p>
+<p>public <a href="yaf-request-abstract.getserver.md">getServer</a>(string <code>$name</code>,
+string <code>$default</code> = ?): void</p>
+<p>public <a href="yaf-request-abstract.iscli.md">isCli</a>(): bool</p>
+<p>public <a href="yaf-request-abstract.isdispatched.md">isDispatched</a>(): bool</p>
+<p>public <a href="yaf-request-abstract.isget.md">isGet</a>(): bool</p>
+<p>public <a href="yaf-request-abstract.ishead.md">isHead</a>(): bool</p>
+<p>public <a href="yaf-request-abstract.isoptions.md">isOptions</a>(): bool</p>
+<p>public <a href="yaf-request-abstract.ispost.md">isPost</a>(): bool</p>
+<p>public <a href="yaf-request-abstract.isput.md">isPut</a>(): bool</p>
+<p>public <a href="yaf-request-abstract.isrouted.md">isRouted</a>(): bool</p>
+<p>public <a href="yaf-request-abstract.isxmlhttprequest.md">isXmlHttpRequest</a>():
+bool</p>
+<p>public <a href="yaf-request-abstract.setactionname.md">setActionName</a>(string
+<code>$action</code>, bool <code>$format_name</code> = true): void</p>
+<p>public <a href="yaf-request-abstract.setbaseuri.md">setBaseUri</a>(string
+<code>$uir</code>): bool</p>
+<p>public
+<a href="yaf-request-abstract.setcontrollername.md">setControllerName</a>(string
+<code>$controller</code>, bool <code>$format_name</code> = true): void</p>
+<p>public <a href="yaf-request-abstract.setdispatched.md">setDispatched</a>(): void</p>
+<p>public <a href="yaf-request-abstract.setmodulename.md">setModuleName</a>(string
+<code>$module</code>, bool <code>$format_name</code> = true): void</p>
+<p>public <a href="yaf-request-abstract.setparam.md">setParam</a>(string <code>$name</code>,
+string <code>$value</code> = ?): bool</p>
+<p>public <a href="yaf-request-abstract.setrequesturi.md">setRequestUri</a>(string
+<code>$uir</code>): void</p>
+<p>public <a href="yaf-request-abstract.setrouted.md">setRouted</a>(string <code>$flag</code> =
+?): void</p>
+<p>}</p>
+<h2>Властивості</h2>
+<p><code>module</code></p>
+<p><code>controller</code></p>
+<p><code>action</code></p>
+<p><code>method</code></p>
+<p><code>params</code></p>
+<p><code>language</code></p>
+<p><code>_exception</code></p>
+<p><code>_base_uri</code></p>
+<p><code>uri</code></p>
+<p><code>dispatched</code></p>
+<p><code>routed</code></p>
+<h2>Зумовлені константи</h2>
+<p><strong><code>Yaf_Request_Abstract::SCHEME_HTTP</code></strong></p>
+<p><strong><code>Yaf_Request_Abstract::SCHEME_HTTPS</code></strong></p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="yaf-request-abstract.clearparams.md">Yaf_Request_Abstract::clearParams</a>
+— Видаляє всі параметри</li>
+<li><a href="yaf-request-abstract.getactionname.md">Yaf_Request_Abstract::getActionName</a>
+— Призначення getActionName</li>
+<li><a href="yaf-request-abstract.getbaseuri.md">Yaf_Request_Abstract::getBaseUri</a></li>
+<li>Призначення getBaseUri</li>
+<li><a href="yaf-request-abstract.getcontrollername.md">Yaf_Request_Abstract::getControllerName</a>
+— Призначення getControllerName</li>
+<li><a href="yaf-request-abstract.getenv.md">Yaf_Request_Abstract::getEnv</a> -
+Отримує змінну ENV</li>
+<li><a href="yaf-request-abstract.getexception.md">Yaf_Request_Abstract::getException</a></li>
+<li>Призначення getException</li>
+<li><a href="yaf-request-abstract.getlanguage.md">Yaf_Request_Abstract::getLanguage</a>
+— Отримує кращу мову клієнта</li>
+<li><a href="yaf-request-abstract.getmethod.md">Yaf_Request_Abstract::getMethod</a>
+— Отримує метод запиту</li>
+<li><a href="yaf-request-abstract.getmodulename.md">Yaf_Request_Abstract::getModuleName</a>
+— Призначення getModuleName</li>
+<li><a href="yaf-request-abstract.getparam.md">Yaf_Request_Abstract::getParam</a>
+— Отримує параметр дзвінка</li>
+<li><a href="yaf-request-abstract.getparams.md">Yaf_Request_Abstract::getParams</a>
+— Отримує всі настройки виклику</li>
+<li><a href="yaf-request-abstract.getrequesturi.md">Yaf_Request_Abstract::getRequestUri</a></li>
+<li>Призначення getRequestUri</li>
+<li><a href="yaf-request-abstract.getserver.md">Yaf_Request_Abstract::getServer</a>
+— Отримує змінну SERVER</li>
+<li><a href="yaf-request-abstract.iscli.md">Yaf_Request_Abstract::isCli</a>
+Визначає, чи є запит CLI-запитом</li>
+<li><a href="yaf-request-abstract.isdispatched.md">Yaf_Request_Abstract::isDispatched</a>
+— Визначає, чи надіслано запит</li>
+<li><a href="yaf-request-abstract.isget.md">Yaf_Request_Abstract::isGet</a> -
+Визначає, чи є запит GET-запитом</li>
+<li><a href="yaf-request-abstract.ishead.md">Yaf_Request_Abstract::isHead</a>
+Визначає, чи є запит HEAD-запитом</li>
+<li><a href="yaf-request-abstract.isoptions.md">Yaf_Request_Abstract::isOptions</a>
+— Визначає, чи є запит OPTIONS-запитом</li>
+<li><a href="yaf-request-abstract.ispost.md">Yaf_Request_Abstract::isPost</a> -
+Визначає, чи запит POST-запитом</li>
+<li><a href="yaf-request-abstract.isput.md">Yaf_Request_Abstract::isPut</a> -
+Визначає, чи запит PUT-запитом</li>
+<li><a href="yaf-request-abstract.isrouted.md">Yaf_Request_Abstract::isRouted</a>
+— Визначає, чи запит надіслано</li>
+<li><a href="yaf-request-abstract.isxmlhttprequest.md">Yaf_Request_Abstract::isXmlHttpRequest</a></li>
+<li>Визначає, чи є запит AJAX-запитом</li>
+<li><a href="yaf-request-abstract.setactionname.md">Yaf_Request_Abstract::setActionName</a></li>
+<li>Встановлює ім'я дії</li>
+<li><a href="yaf-request-abstract.setbaseuri.md">Yaf_Request_Abstract::setBaseUri</a></li>
+<li>Встановлює базовий URI</li>
+<li><a href="yaf-request-abstract.setcontrollername.md">Yaf_Request_Abstract::setControllerName</a></li>
+<li>Встановлює ім'я контролера</li>
+<li><a href="yaf-request-abstract.setdispatched.md">Yaf_Request_Abstract::setDispatched</a></li>
+<li>Призначення setDispatched</li>
+<li><a href="yaf-request-abstract.setmodulename.md">Yaf_Request_Abstract::setModuleName</a></li>
+<li>Встановлює ім'я модуля</li>
+<li><a href="yaf-request-abstract.setparam.md">Yaf_Request_Abstract::setParam</a>
+— Встановлює дзвінок для запиту</li>
+<li><a href="yaf-request-abstract.setrequesturi.md">Yaf_Request_Abstract::setRequestUri</a></li>
+<li>Призначення setRequestUri</li>
+<li><a href="yaf-request-abstract.setrouted.md">Yaf_Request_Abstract::setRouted</a>
+— Призначення setRouted</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.yaf-request-abstract.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.yaf-request-abstract.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.yaf-request-abstract","slug":"class.yaf-request-abstract.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"yaf-registry.set.md\"\u003e« Yaf_Registry::set\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"yaf-request-abstract.clearparams.md\"\u003eYaf_Request_Abstract::clearParams »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.yaf.md\"\u003eYaf\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас Yaf_Request_Abstract\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас Yaf_Request_Abstract\u003c/h1\u003e\n\u003cp\u003e(Yaf \u003e=1.0.0)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eYaf_Request_Abstract\u003c/strong\u003e {\u003c/p\u003e\n\u003cp\u003e/* Константи */\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eSCHEME_HTTP\u003c/code\u003e = http;\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eSCHEME_HTTPS\u003c/code\u003e = https;\u003c/p\u003e\n\u003cp\u003e/* Властивості */\u003c/p\u003e\n\u003cp\u003epublic \u003ccode\u003e$module\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic \u003ccode\u003e$controller\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic \u003ccode\u003e$action\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003epublic \u003ccode\u003e$method\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003eprotected \u003ccode\u003e$params\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003eprotected \u003ccode\u003e$language\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003eprotected \u003ccode\u003e$_exception\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003eprotected \u003ccode\u003e$_base_uri\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003eprotected \u003ccode\u003e$uri\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003eprotected \u003ccode\u003e$dispatched\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003eprotected \u003ccode\u003e$routed\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.clearparams.md\"\u003eclearParams\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getactionname.md\"\u003egetActionName\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getbaseuri.md\"\u003egetBaseUri\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"yaf-request-abstract.getcontrollername.md\"\u003egetControllerName\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getenv.md\"\u003egetEnv\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e, string\n\u003ccode\u003e$default\u003c/code\u003e = ?): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getexception.md\"\u003egetException\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getlanguage.md\"\u003egetLanguage\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getmethod.md\"\u003egetMethod\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getmodulename.md\"\u003egetModuleName\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getparam.md\"\u003egetParam\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e,\nstring \u003ccode\u003e$default\u003c/code\u003e = ?):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getparams.md\"\u003egetParams\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getrequesturi.md\"\u003egetRequestUri\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.getserver.md\"\u003egetServer\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e,\nstring \u003ccode\u003e$default\u003c/code\u003e = ?): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.iscli.md\"\u003eisCli\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.isdispatched.md\"\u003eisDispatched\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.isget.md\"\u003eisGet\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.ishead.md\"\u003eisHead\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.isoptions.md\"\u003eisOptions\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.ispost.md\"\u003eisPost\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.isput.md\"\u003eisPut\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.isrouted.md\"\u003eisRouted\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.isxmlhttprequest.md\"\u003eisXmlHttpRequest\u003c/a\u003e():\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.setactionname.md\"\u003esetActionName\u003c/a\u003e(string\n\u003ccode\u003e$action\u003c/code\u003e, bool \u003ccode\u003e$format_name\u003c/code\u003e = true): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.setbaseuri.md\"\u003esetBaseUri\u003c/a\u003e(string\n\u003ccode\u003e$uir\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"yaf-request-abstract.setcontrollername.md\"\u003esetControllerName\u003c/a\u003e(string\n\u003ccode\u003e$controller\u003c/code\u003e, bool \u003ccode\u003e$format_name\u003c/code\u003e = true): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.setdispatched.md\"\u003esetDispatched\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.setmodulename.md\"\u003esetModuleName\u003c/a\u003e(string\n\u003ccode\u003e$module\u003c/code\u003e, bool \u003ccode\u003e$format_name\u003c/code\u003e = true): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.setparam.md\"\u003esetParam\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e,\nstring \u003ccode\u003e$value\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.setrequesturi.md\"\u003esetRequestUri\u003c/a\u003e(string\n\u003ccode\u003e$uir\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-request-abstract.setrouted.md\"\u003esetRouted\u003c/a\u003e(string \u003ccode\u003e$flag\u003c/code\u003e =\n?): void\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eВластивості\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003emodule\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003econtroller\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eaction\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emethod\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eparams\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elanguage\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e_exception\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e_base_uri\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euri\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edispatched\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erouted\u003c/code\u003e\u003c/p\u003e\n\u003ch2\u003eЗумовлені константи\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eYaf_Request_Abstract::SCHEME_HTTP\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eYaf_Request_Abstract::SCHEME_HTTPS\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.clearparams.md\"\u003eYaf_Request_Abstract::clearParams\u003c/a\u003e\n— Видаляє всі параметри\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getactionname.md\"\u003eYaf_Request_Abstract::getActionName\u003c/a\u003e\n— Призначення getActionName\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getbaseuri.md\"\u003eYaf_Request_Abstract::getBaseUri\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПризначення getBaseUri\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getcontrollername.md\"\u003eYaf_Request_Abstract::getControllerName\u003c/a\u003e\n— Призначення getControllerName\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getenv.md\"\u003eYaf_Request_Abstract::getEnv\u003c/a\u003e -\nОтримує змінну ENV\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getexception.md\"\u003eYaf_Request_Abstract::getException\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПризначення getException\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getlanguage.md\"\u003eYaf_Request_Abstract::getLanguage\u003c/a\u003e\n— Отримує кращу мову клієнта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getmethod.md\"\u003eYaf_Request_Abstract::getMethod\u003c/a\u003e\n— Отримує метод запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getmodulename.md\"\u003eYaf_Request_Abstract::getModuleName\u003c/a\u003e\n— Призначення getModuleName\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getparam.md\"\u003eYaf_Request_Abstract::getParam\u003c/a\u003e\n— Отримує параметр дзвінка\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getparams.md\"\u003eYaf_Request_Abstract::getParams\u003c/a\u003e\n— Отримує всі настройки виклику\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getrequesturi.md\"\u003eYaf_Request_Abstract::getRequestUri\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПризначення getRequestUri\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.getserver.md\"\u003eYaf_Request_Abstract::getServer\u003c/a\u003e\n— Отримує змінну SERVER\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.iscli.md\"\u003eYaf_Request_Abstract::isCli\u003c/a\u003e\nВизначає, чи є запит CLI-запитом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.isdispatched.md\"\u003eYaf_Request_Abstract::isDispatched\u003c/a\u003e\n— Визначає, чи надіслано запит\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.isget.md\"\u003eYaf_Request_Abstract::isGet\u003c/a\u003e -\nВизначає, чи є запит GET-запитом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.ishead.md\"\u003eYaf_Request_Abstract::isHead\u003c/a\u003e\nВизначає, чи є запит HEAD-запитом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.isoptions.md\"\u003eYaf_Request_Abstract::isOptions\u003c/a\u003e\n— Визначає, чи є запит OPTIONS-запитом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.ispost.md\"\u003eYaf_Request_Abstract::isPost\u003c/a\u003e -\nВизначає, чи запит POST-запитом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.isput.md\"\u003eYaf_Request_Abstract::isPut\u003c/a\u003e -\nВизначає, чи запит PUT-запитом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.isrouted.md\"\u003eYaf_Request_Abstract::isRouted\u003c/a\u003e\n— Визначає, чи запит надіслано\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.isxmlhttprequest.md\"\u003eYaf_Request_Abstract::isXmlHttpRequest\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВизначає, чи є запит AJAX-запитом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.setactionname.md\"\u003eYaf_Request_Abstract::setActionName\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВстановлює ім'я дії\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.setbaseuri.md\"\u003eYaf_Request_Abstract::setBaseUri\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВстановлює базовий URI\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.setcontrollername.md\"\u003eYaf_Request_Abstract::setControllerName\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВстановлює ім'я контролера\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.setdispatched.md\"\u003eYaf_Request_Abstract::setDispatched\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПризначення setDispatched\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.setmodulename.md\"\u003eYaf_Request_Abstract::setModuleName\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВстановлює ім'я модуля\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.setparam.md\"\u003eYaf_Request_Abstract::setParam\u003c/a\u003e\n— Встановлює дзвінок для запиту\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.setrequesturi.md\"\u003eYaf_Request_Abstract::setRequestUri\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПризначення setRequestUri\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-request-abstract.setrouted.md\"\u003eYaf_Request_Abstract::setRouted\u003c/a\u003e\n— Призначення setRouted\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.yaf-request-abstract.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

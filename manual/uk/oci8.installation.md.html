@@ -1,0 +1,347 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>oci8.installation | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="oci8.requirements.md">« Вимоги</a></p>
+</li>
+<li>
+<p><a href="oci8.test.md">Тестування »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="oci8.setup.md">Встановлення та налаштування</a></p>
+</li>
+<li>
+<p>Встановлення</p>
+</li>
+</ul>
+<h2>Установка</h2>
+<h2>Складання PHP спільно з OCI8</h2>
+<p>Перед збиранням OCI8 вивчіть попередній розділ
+"<a href="oci8.requirements.md">Вимоги</a>".</p>
+<p>Перед стартом веб-сервера, OCI8 зазвичай потрібно кілька змінних
+оточення Oracle (дивіться нижче) для виявлення бібліотек,
+конфігураційних файлів та встановлення деяких базових властивостей, таких як
+кодування, яке використовується бібліотеками Oracle. Ці змінні мають бути
+встановлені <em>перед</em> запуском будь-якого PHP-процесу.</p>
+<p>Бінарний файл PHP повинен використовувати ту ж, або свіжу основну
+версію бібліотек Oracle, ніж ту, з якою він був зібраний. Наприклад, якщо
+ви зібрали OCI8 з бібліотеками Oracle 19, то PHP також повинен працювати з
+бібліотеками Oracle 19. Програми PHP можуть підключатися до інших
+версіям Oracle Database, оскільки Oracle має клієнт-серверну
+сумісність різних версій.</p>
+<h2>Установка OCI8 з PECL</h2>
+<p>Модуль OCI8 може бути включений до поточної установки PHP як
+автоматично, так і вручну за допомогою
+<a href="https://pecl.php.net/package/oci8">»PECL</a>.</p>
+<ul>
+<li>Якщо ваш комп'ютер знаходиться за фаєрволом, встановіть проксі для
+PEAR, наприклад:</li>
+</ul>
+<p>pear config-set http_proxy <a href="http://my-proxy.example.com:80/">http://my-proxy.example.com:80/</a></p>
+<ul>
+<li>Запустіть</li>
+</ul>
+<p>pecl install oci8</p>
+<p>Для PHP 7, використовуйте <code>pecl install oci8-2.2.0</code></p>
+<p>При запиті введіть значення $ORACLE_HOME або
+<code>instantclient,/path/to/instant/client/lib</code>.</p>
+<p>Зверніть увагу: Не вводьте ім'я змінної, такої як
+<code>$ORACLE_HOME</code> або <code>$HOME</code> вона не буде розгорнута. Замість
+цього введіть повний шлях. Наприклад
+<code>/opt/oracle/product/19c/dbhome_1</code> або
+<code>instantclient,/Users/myname/Downloads/instantclient_19_8</code>.</p>
+<ul>
+<li>Помилка <code>oci8_dtrace_gen.h: No such file or directory</code>
+означає, що PHP було зібрано з підтримкою <a href="features.dtrace.md">DTrace Dynamic Tracing</a>. У такому разі встановлюйте так:</li>
+</ul>
+<p>$ export PHP_DTRACE=yes
+$ pecl install oci8</p>
+<ul>
+<li>Додайте в <code>php.ini</code> наступний рядок:</li>
+</ul>
+<p>extension=oci8.so</p>
+<p>Переконайтеся, що <code>oci8.so</code> встановлено в директорію, задану в
+директиві <a href="ini.core.md#ini.extension-dir">extension_dir</a> файлу
+<code>php.ini</code>.</p>
+<h2>Установка OCI8 із PECL за допомогою phpize</h2>
+<p>Якщо з якихось причин немає можливості скористатися командою
+<code>pecl</code>, можна самостійно завантажити пакет із сайту
+<a href="https://pecl.php.net/package/oci8">»PECL</a>. Наприклад <code>oci8-3.0.0.tgz</code>.</p>
+<ul>
+<li>Розархівуйте пакет:</li>
+</ul>
+<p>tar-zxf oci8-3.0.0.tgz
+cd oci8-3.0.0</p>
+<ul>
+<li>Підготуйте його:</li>
+</ul>
+<p>phpize</p>
+<ul>
+<li>Конфігуруйте використовуючи <code>$ORACLE_HOME</code> або Instant Client</li>
+</ul>
+<p>./configure -with-oci8=shared,$ORACLE_HOME</p>
+<p>or</p>
+<p>./configure -with-oci8=shared,instantclient,/path/to/instant/client/lib</p>
+<ul>
+<li>Проінсталюйте:</li>
+</ul>
+<p>make install</p>
+<ul>
+<li>Помилка <code>oci8_dtrace_gen.h: No such file or directory</code> означає,
+що PHP був зібраний за допомогою <a href="features.dtrace.md">DTrace Dynamic Tracing</a>. У такому разі перезапустіть
+<code>configure</code> та <code>make</code>, попередньо встановивши змінну оточення:</li>
+</ul>
+<p>$ export PHP_DTRACE=yes</p>
+<ul>
+<li>Додайте в <code>php.ini</code> наступний рядок:</li>
+</ul>
+<p>extension=oci8.so</p>
+<p>Переконайтеся, що <code>oci8.so</code> встановлено в директорію, задану в
+директиві <a href="ini.core.md#ini.extension-dir">extension_dir</a> файлу
+<code>php.ini</code>.</p>
+<h2>Установка OCI8 у вигляді модуля, що підвантажується (shared) під час складання PHP</h2>
+<p>Вказівка опції конфігурації <code>shared</code> дозволяє зібрати OCI8 у вигляді
+динамічно підвантажується бібліотеки. Складання у вигляді модуля, що підвантажується.
+дозволяє легко оновлювати OCI8 без перескладання PHP.</p>
+<p>Зберіть OCI8 за допомогою однієї з наведених нижче опцій.</p>
+<ul>
+<li>При використанні безкоштовних бібліотек <a href="https://www.oracle.com/database/technologies/instant-client.md">» Oracle Instant Client</a>:</li>
+</ul>
+<p>./configure --with-oci8=shared,instantclient,/шлях/до/instant/client/lib</p>
+<p>Якщо Instant Client 12.2 (або раніше) встановлено з
+ZIP-архіву, не забудьте насамперед створити символічну
+посилання на бібліотеку, наприклад, так:
+<code>ln -s libclntsh.so.12.1 libclntsh.so</code>.</p>
+<p>Якщо Oracle Instant Client було встановлено за допомогою RPM, команда
+конфігурації виглядатиме так:</p>
+<p>./configure --with-oci8=shared,instantclient,/usr/lib/oracle//client/lib</p>
+<p>Наприклад,
+<strong>--with-oci8=shared,instantclient,/usr/lib/oracle/19.9/client/lib</strong></p>
+<p>Врахуйте, що підтримка Oracle Instant Client з'явилася лише починаючи
+з версій PHP 4.3.11 та 5.0.4 і раніше використовувалася з опцією
+<strong>--with-oci8-instant-client</strong>.</p>
+<ul>
+<li>При використанні бази даних Oracle database або повної установки
+Oracle Client:</li>
+</ul>
+<p>./configure --with-oci8=shared,$ORACLE_HOME</p>
+<p>Переконайтеся, що користувач, під яким запущено веб-сервер,
+(<code>nobody</code>, <code>www</code>) має доступ до бібліотек, файлів ініціалізації та
+<code>tnsnames.ora</code> (якщо використовується) у папці <code>$ORACLE_HOME</code>. При
+використання Oracle 10<em>g</em>R2, може знадобитися запуск утиліти
+<code>$ORACLE_HOME/install/changePerm.sh</code> для отримання доступу до цієї
+папці.</p>
+<p>Після налаштування дотримуйтесь звичайної процедури складання PHP, наприклад <em>make
+install</em>, після чого буде створено бібліотеку <code>oci8.so</code>.
+Можливо, вам потрібно буде вручну перенести її в папку модулів PHP,
+вказану опцією <a href="ini.core.md#ini.extension-dir">extension_dir</a> вашого
+<code>php.ini</code>.</p>
+<p>Для завершення установки OCI8 додайте наступний рядок у <code>php.ini</code>:</p>
+<p>extension=oci8.so</p>
+<h2>Установка OCI8 у вигляді статично скомпілюваного модуля</h2>
+<p>Складання PHP зі статичним підключенням OCI8, використовуючи одну з наступних
+конфігураційних опцій.</p>
+<ul>
+<li>При використанні Oracle Instant Client:</li>
+</ul>
+<p>./configure --with-oci8=instantclient,/шлях/до/instant/client/lib</p>
+<ul>
+<li>У разі використання бази даних Oracle або повної установки Oracle
+Client:</li>
+</ul>
+<p>./configure --with-oci8=$ORACLE_HOME</p>
+<p>Після налаштування дотримуйтесь звичайної процедури встановлення PHP, наприклад,
+<em>make install</em>. Після успішного складання немає необхідності додавати
+<code>oci8.so</code> у файл <code>php.ini</code>. Ніяких додаткових кроків збирання більше
+не вимагається.</p>
+<h2>Встановлення OCI8 у Windows</h2>
+<p>Модуль OCI8 можна додати до PHP за допомогою бібліотек з репозиторію
+<a href="https://pecl.php.net/package/oci8">»PECL</a> або з директорії <code>ext</code>,
+що міститься у вашій інсталяції PHP.</p>
+<p>Для бібліотек Oracle 12<em>c</em> (і вище), розкоментуйте відповідну
+рядок в <code>php.ini</code>: <code>extension=php_oci8_12c.dll</code>,
+<code>extension=php_oci8_11g.dll</code> або <code>extension=php_oci8.dll</code>. Одноразово
+можна використовувати лише одну з цих бібліотек. Нові бібліотеки
+можуть містити більш сучасний функціонал. Склад доступних бібліотек
+може змінюватись в залежності від версії PHP. Впевніться, що
+<a href="ini.core.md#ini.extension-dir">extension_dir</a> вказує на
+директорію, що містить бібліотеки модулів PHP.</p>
+<p>При використанні Instant Client, встановіть системну змінну
+оточення <code>PATH</code> на папку з бібліотекою Oracle.</p>
+<h2>Встановлення оточення Oracle</h2>
+<p>Перед використанням цього модуля переконайтеся, що змінні оточення
+Oracle правильно налаштовані для користувача, під яким працює
+веб-сервер. Якщо ваш веб-сервер автоматично стартує під час завантаження, то
+переконайтеся, що оточення завантаження також налаштовано коректно.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Не встановлюйте змінні оточення Oracle через
+<a href="function.putenv.md">putenv()</a> у PHP-скрипті, тому що бібліотеки
+Oracle можуть бути завантажені та проініціалізовані до запуску вашого
+Скрипт. Змінні, встановлені через
+<a href="function.putenv.md">putenv()</a> можуть викликати конфлікти,
+падіння та інше непередбачуване поведінка. Деякі функції можуть
+працювати, у той час як інші дають дрібні помилки. Необхідно
+встановлювати ці змінні <em>до</em> запуску веб-сервера.</p>
+</blockquote>
+<p>У Red Hat Linux та його варіантах експортуйте змінні в кінці файлу
+<code>/etc/sysconfig/httpd</code>. Інші системи з Apache 2 можуть використовувати
+скрипт <code>envvars</code> з папки <code>bin</code> у дистрибутиві Apache. Третім варіантом
+є директива Apache <code>SetEnv</code> у файлі <code>httpd.conf</code>, на якихось
+системах вона може працювати, однак відомо, що на деяких її
+недостатньо.</p>
+<p>Щоб переконатися в коректному налаштуванні змінних оточення,
+використовуйте функцію <a href="function.phpinfo.md">phpinfo()</a> та перевірте, що
+розділ <em>Environment</em> (не <em>Apache Environment</em>) містить очікувані
+змінні.</p>
+<p>Наступна таблиця містить змінні, які можуть знадобитися.
+За подробицями про всі доступні змінні звертайтесь до
+документації Oracle.</p>
+<table>
+<thead>
+<tr>
+<th>Назва</th>
+<th>Ціль</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ORACLE_HOME</td>
+<td>Вказує на папку з повністю встановленою базою даних Oracle. Не встановлюйте цю змінну, використовуючи Oracle Instant Client, т.к. в цьому немає потреби і може викликати проблеми при встановленні.</td>
+</tr>
+<tr>
+<td>ORACLE_SID</td>
+<td>Містить назву бази даних на локальній машині, до якої йде підключення. Немає необхідності встановлювати цю змінну під час використання Oracle Instant Client або завжди передавати у параметрах з'єднання у функцію <a href="function.oci-connect.md">oci_connect()</a>.</td>
+</tr>
+<tr>
+<td>LD_LIBRARY_PATH</td>
+<td>Встановіть цю змінну (або її еквівалент на використовуваній платформі, наприклад, LIBPATH або SHLIB_PATH) у місцезнаходження бібліотек Oracle, наприклад, $ORACLE_HOME/lib або /usr/lib/oracle/18.5/client/lib. Зверніть увагу, що для ZIP архівів Instant Client в Linux надійніше використовувати ldconfig. Зверніться до інструкції з встановлення Instant Client. Для RPM пакетів Instant Client 19 (і старше), ldconfig, буде запущено автоматично. Хтось використовує LD_PRELOAD замість LD_LIBRARY_PATH.</td>
+</tr>
+<tr>
+<td>NLS_LANG</td>
+<td>Це основна змінна, яка використовується для вказівки кодування та настроювання глобалізації в бібліотеках Oracle.</td>
+</tr>
+<tr>
+<td>ORA_SDTZ</td>
+<td>Встановлює часовий пояс сесії Oracle.</td>
+</tr>
+<tr>
+<td>TNS_ADMIN</td>
+<td>Містить папку, в якій зберігаються конфігураційні файли Oracle Net Services, такі як tnsnames.ora і sqlnet.ora. У ній немає необхідності, якщо рядок з'єднання функції <a href="function.oci-connect.md">oci_connect()</a> використовує синтаксис Easy Connect, такий як, наприклад, localhost/XE. У ній також немає необхідності, якщо мережні конфігураційні файли містяться в місцях зберігання за промовчанням, таких як /usr/lib/oracle/VERSION/client/lib/network/admin, $ORACLE_HOME/network/admin або /etc .</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Загальні змінні оточення Oracle</strong></p>
+<p>Менш використовувані змінні оточення Oracle включають
+<code>TWO_TASK</code>, <code>ORA_TZFILE</code>, а також різні установки глобалізації
+Oracle на кшталт змінних <code>NLS*</code> та <code>ORA_NLS_*</code>.</p>
+<h2>Вирішення проблем</h2>
+<p>Найчастішою проблемою при встановленні OCI8 є неправильна
+встановлення оточення Oracle. Зазвичай це виявляється у проблемі при
+використання функцій <a href="function.oci-connect.md">oci_connect()</a> або
+<a href="function.oci-pconnect.md">oci_pconnect()</a>. Помилка може виявлятися в
+вигляді помилок PHP, наприклад, <em>Call to undefined function oci_connect()</em>,
+помилок Oracle, таких як ORA-12705, або навіть аварії Apache. Перевірте
+лог-файли Apache на наявність помилок запуску та вищеописані розділи для
+вирішення цієї проблеми.</p>
+<p>Незважаючи на те, що мережеві помилки, на кшталт ORA-12154 або ORA-12514
+сигналізують про помилку в іменуванні або конфігурації мережі Oracle,
+реальною причиною може бути некоректно встановлене оточення PHP,
+через що бібліотеки Oracle не можуть знайти конфігураційний файл
+<code>tnsnames.ora</code>.</p>
+<p>У Windows використання кількох версій Oracle на одній машині може
+легко викликати їх конфлікти, яких можна уникнути при дотриманні особливих
+запобіжних заходів, що передбачають, що PHP використовує коректну
+версія Oracle.</p>
+<p>Утиліта, що допомагає визначити шукані та завантажені в результаті бібліотеки,
+може допомогти у разі проблем при відсутніх або конфліктуючих
+бібліотеки, особливо в Windows.</p>
+<blockquote>
+<p><strong>Примітка</strong>: <strong>Якщо веб-сервер не стартує або падає під час старту</strong></p>
+<p>Перевірте, що Apache зібрано з бібліотекою pthread:</p>
+<h1>ldd /www/apache/bin/httpd</h1>
+<p>libpthread.so.0 => /lib/libpthread.so.0 (0x4001c000)
+libm.so.6 => /lib/libm.so.6 (0x4002f000)
+libcrypt.so.1 => /lib/libcrypt.so.1 (0x4004c000)
+libdl.so.2 => /lib/libdl.so.2 (0x4007a000)
+libc.so.6 => /lib/libc.so.6 (0x4007e000)
+/lib/ld-linux.so.2 => /lib/ld-linux.so.2 (0x40000000)</p>
+<p>Якщо libpthread немає у списку, переустановіть Apache:</p>
+<h1>cd /usr/src/apache_1.3.xx</h1>
+<h1>make clean</h1>
+<h1>LIBS=-lpthread ./config.status</h1>
+<h1>make</h1>
+<h1>make install</h1>
+<p>Майте на увазі, що на деяких системах, як UnixWare,
+libpthread називається libthread. Таким чином, PHP та Apache повинні
+бути настроєні за допомогою EXTRA_LIBS=-lthread.</p>
+</blockquote>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/oci8.installation.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/oci8.installation.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"oci8.installation","slug":"oci8.installation.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"oci8.requirements.md\"\u003e« Вимоги\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"oci8.test.md\"\u003eТестування »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"oci8.setup.md\"\u003eВстановлення та налаштування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВстановлення\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eУстановка\u003c/h2\u003e\n\u003ch2\u003eСкладання PHP спільно з OCI8\u003c/h2\u003e\n\u003cp\u003eПеред збиранням OCI8 вивчіть попередній розділ\n\"\u003ca href=\"oci8.requirements.md\"\u003eВимоги\u003c/a\u003e\".\u003c/p\u003e\n\u003cp\u003eПеред стартом веб-сервера, OCI8 зазвичай потрібно кілька змінних\nоточення Oracle (дивіться нижче) для виявлення бібліотек,\nконфігураційних файлів та встановлення деяких базових властивостей, таких як\nкодування, яке використовується бібліотеками Oracle. Ці змінні мають бути\nвстановлені \u003cem\u003eперед\u003c/em\u003e запуском будь-якого PHP-процесу.\u003c/p\u003e\n\u003cp\u003eБінарний файл PHP повинен використовувати ту ж, або свіжу основну\nверсію бібліотек Oracle, ніж ту, з якою він був зібраний. Наприклад, якщо\nви зібрали OCI8 з бібліотеками Oracle 19, то PHP також повинен працювати з\nбібліотеками Oracle 19. Програми PHP можуть підключатися до інших\nверсіям Oracle Database, оскільки Oracle має клієнт-серверну\nсумісність різних версій.\u003c/p\u003e\n\u003ch2\u003eУстановка OCI8 з PECL\u003c/h2\u003e\n\u003cp\u003eМодуль OCI8 може бути включений до поточної установки PHP як\nавтоматично, так і вручну за допомогою\n\u003ca href=\"https://pecl.php.net/package/oci8\"\u003e»PECL\u003c/a\u003e.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eЯкщо ваш комп'ютер знаходиться за фаєрволом, встановіть проксі для\nPEAR, наприклад:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003epear config-set http_proxy \u003ca href=\"http://my-proxy.example.com:80/\"\u003ehttp://my-proxy.example.com:80/\u003c/a\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eЗапустіть\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003epecl install oci8\u003c/p\u003e\n\u003cp\u003eДля PHP 7, використовуйте \u003ccode\u003epecl install oci8-2.2.0\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПри запиті введіть значення $ORACLE_HOME або\n\u003ccode\u003einstantclient,/path/to/instant/client/lib\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЗверніть увагу: Не вводьте ім'я змінної, такої як\n\u003ccode\u003e$ORACLE_HOME\u003c/code\u003e або \u003ccode\u003e$HOME\u003c/code\u003e вона не буде розгорнута. Замість\nцього введіть повний шлях. Наприклад\n\u003ccode\u003e/opt/oracle/product/19c/dbhome_1\u003c/code\u003e або\n\u003ccode\u003einstantclient,/Users/myname/Downloads/instantclient_19_8\u003c/code\u003e.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eПомилка \u003ccode\u003eoci8_dtrace_gen.h: No such file or directory\u003c/code\u003e\nозначає, що PHP було зібрано з підтримкою \u003ca href=\"features.dtrace.md\"\u003eDTrace Dynamic Tracing\u003c/a\u003e. У такому разі встановлюйте так:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e$ export PHP_DTRACE=yes\n$ pecl install oci8\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eДодайте в \u003ccode\u003ephp.ini\u003c/code\u003e наступний рядок:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eextension=oci8.so\u003c/p\u003e\n\u003cp\u003eПереконайтеся, що \u003ccode\u003eoci8.so\u003c/code\u003e встановлено в директорію, задану в\nдирективі \u003ca href=\"ini.core.md#ini.extension-dir\"\u003eextension_dir\u003c/a\u003e файлу\n\u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003ch2\u003eУстановка OCI8 із PECL за допомогою phpize\u003c/h2\u003e\n\u003cp\u003eЯкщо з якихось причин немає можливості скористатися командою\n\u003ccode\u003epecl\u003c/code\u003e, можна самостійно завантажити пакет із сайту\n\u003ca href=\"https://pecl.php.net/package/oci8\"\u003e»PECL\u003c/a\u003e. Наприклад \u003ccode\u003eoci8-3.0.0.tgz\u003c/code\u003e.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eРозархівуйте пакет:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003etar-zxf oci8-3.0.0.tgz\ncd oci8-3.0.0\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eПідготуйте його:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003ephpize\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eКонфігуруйте використовуючи \u003ccode\u003e$ORACLE_HOME\u003c/code\u003e або Instant Client\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e./configure -with-oci8=shared,$ORACLE_HOME\u003c/p\u003e\n\u003cp\u003eor\u003c/p\u003e\n\u003cp\u003e./configure -with-oci8=shared,instantclient,/path/to/instant/client/lib\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eПроінсталюйте:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003emake install\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eПомилка \u003ccode\u003eoci8_dtrace_gen.h: No such file or directory\u003c/code\u003e означає,\nщо PHP був зібраний за допомогою \u003ca href=\"features.dtrace.md\"\u003eDTrace Dynamic Tracing\u003c/a\u003e. У такому разі перезапустіть\n\u003ccode\u003econfigure\u003c/code\u003e та \u003ccode\u003emake\u003c/code\u003e, попередньо встановивши змінну оточення:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e$ export PHP_DTRACE=yes\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eДодайте в \u003ccode\u003ephp.ini\u003c/code\u003e наступний рядок:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eextension=oci8.so\u003c/p\u003e\n\u003cp\u003eПереконайтеся, що \u003ccode\u003eoci8.so\u003c/code\u003e встановлено в директорію, задану в\nдирективі \u003ca href=\"ini.core.md#ini.extension-dir\"\u003eextension_dir\u003c/a\u003e файлу\n\u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003ch2\u003eУстановка OCI8 у вигляді модуля, що підвантажується (shared) під час складання PHP\u003c/h2\u003e\n\u003cp\u003eВказівка опції конфігурації \u003ccode\u003eshared\u003c/code\u003e дозволяє зібрати OCI8 у вигляді\nдинамічно підвантажується бібліотеки. Складання у вигляді модуля, що підвантажується.\nдозволяє легко оновлювати OCI8 без перескладання PHP.\u003c/p\u003e\n\u003cp\u003eЗберіть OCI8 за допомогою однієї з наведених нижче опцій.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eПри використанні безкоштовних бібліотек \u003ca href=\"https://www.oracle.com/database/technologies/instant-client.md\"\u003e» Oracle Instant Client\u003c/a\u003e:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e./configure --with-oci8=shared,instantclient,/шлях/до/instant/client/lib\u003c/p\u003e\n\u003cp\u003eЯкщо Instant Client 12.2 (або раніше) встановлено з\nZIP-архіву, не забудьте насамперед створити символічну\nпосилання на бібліотеку, наприклад, так:\n\u003ccode\u003eln -s libclntsh.so.12.1 libclntsh.so\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо Oracle Instant Client було встановлено за допомогою RPM, команда\nконфігурації виглядатиме так:\u003c/p\u003e\n\u003cp\u003e./configure --with-oci8=shared,instantclient,/usr/lib/oracle//client/lib\u003c/p\u003e\n\u003cp\u003eНаприклад,\n\u003cstrong\u003e--with-oci8=shared,instantclient,/usr/lib/oracle/19.9/client/lib\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eВрахуйте, що підтримка Oracle Instant Client з'явилася лише починаючи\nз версій PHP 4.3.11 та 5.0.4 і раніше використовувалася з опцією\n\u003cstrong\u003e--with-oci8-instant-client\u003c/strong\u003e.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eПри використанні бази даних Oracle database або повної установки\nOracle Client:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e./configure --with-oci8=shared,$ORACLE_HOME\u003c/p\u003e\n\u003cp\u003eПереконайтеся, що користувач, під яким запущено веб-сервер,\n(\u003ccode\u003enobody\u003c/code\u003e, \u003ccode\u003ewww\u003c/code\u003e) має доступ до бібліотек, файлів ініціалізації та\n\u003ccode\u003etnsnames.ora\u003c/code\u003e (якщо використовується) у папці \u003ccode\u003e$ORACLE_HOME\u003c/code\u003e. При\nвикористання Oracle 10\u003cem\u003eg\u003c/em\u003eR2, може знадобитися запуск утиліти\n\u003ccode\u003e$ORACLE_HOME/install/changePerm.sh\u003c/code\u003e для отримання доступу до цієї\nпапці.\u003c/p\u003e\n\u003cp\u003eПісля налаштування дотримуйтесь звичайної процедури складання PHP, наприклад \u003cem\u003emake\ninstall\u003c/em\u003e, після чого буде створено бібліотеку \u003ccode\u003eoci8.so\u003c/code\u003e.\nМожливо, вам потрібно буде вручну перенести її в папку модулів PHP,\nвказану опцією \u003ca href=\"ini.core.md#ini.extension-dir\"\u003eextension_dir\u003c/a\u003e вашого\n\u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eДля завершення установки OCI8 додайте наступний рядок у \u003ccode\u003ephp.ini\u003c/code\u003e:\u003c/p\u003e\n\u003cp\u003eextension=oci8.so\u003c/p\u003e\n\u003ch2\u003eУстановка OCI8 у вигляді статично скомпілюваного модуля\u003c/h2\u003e\n\u003cp\u003eСкладання PHP зі статичним підключенням OCI8, використовуючи одну з наступних\nконфігураційних опцій.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eПри використанні Oracle Instant Client:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e./configure --with-oci8=instantclient,/шлях/до/instant/client/lib\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eУ разі використання бази даних Oracle або повної установки Oracle\nClient:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e./configure --with-oci8=$ORACLE_HOME\u003c/p\u003e\n\u003cp\u003eПісля налаштування дотримуйтесь звичайної процедури встановлення PHP, наприклад,\n\u003cem\u003emake install\u003c/em\u003e. Після успішного складання немає необхідності додавати\n\u003ccode\u003eoci8.so\u003c/code\u003e у файл \u003ccode\u003ephp.ini\u003c/code\u003e. Ніяких додаткових кроків збирання більше\nне вимагається.\u003c/p\u003e\n\u003ch2\u003eВстановлення OCI8 у Windows\u003c/h2\u003e\n\u003cp\u003eМодуль OCI8 можна додати до PHP за допомогою бібліотек з репозиторію\n\u003ca href=\"https://pecl.php.net/package/oci8\"\u003e»PECL\u003c/a\u003e або з директорії \u003ccode\u003eext\u003c/code\u003e,\nщо міститься у вашій інсталяції PHP.\u003c/p\u003e\n\u003cp\u003eДля бібліотек Oracle 12\u003cem\u003ec\u003c/em\u003e (і вище), розкоментуйте відповідну\nрядок в \u003ccode\u003ephp.ini\u003c/code\u003e: \u003ccode\u003eextension=php_oci8_12c.dll\u003c/code\u003e,\n\u003ccode\u003eextension=php_oci8_11g.dll\u003c/code\u003e або \u003ccode\u003eextension=php_oci8.dll\u003c/code\u003e. Одноразово\nможна використовувати лише одну з цих бібліотек. Нові бібліотеки\nможуть містити більш сучасний функціонал. Склад доступних бібліотек\nможе змінюватись в залежності від версії PHP. Впевніться, що\n\u003ca href=\"ini.core.md#ini.extension-dir\"\u003eextension_dir\u003c/a\u003e вказує на\nдиректорію, що містить бібліотеки модулів PHP.\u003c/p\u003e\n\u003cp\u003eПри використанні Instant Client, встановіть системну змінну\nоточення \u003ccode\u003ePATH\u003c/code\u003e на папку з бібліотекою Oracle.\u003c/p\u003e\n\u003ch2\u003eВстановлення оточення Oracle\u003c/h2\u003e\n\u003cp\u003eПеред використанням цього модуля переконайтеся, що змінні оточення\nOracle правильно налаштовані для користувача, під яким працює\nвеб-сервер. Якщо ваш веб-сервер автоматично стартує під час завантаження, то\nпереконайтеся, що оточення завантаження також налаштовано коректно.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eНе встановлюйте змінні оточення Oracle через\n\u003ca href=\"function.putenv.md\"\u003eputenv()\u003c/a\u003e у PHP-скрипті, тому що бібліотеки\nOracle можуть бути завантажені та проініціалізовані до запуску вашого\nСкрипт. Змінні, встановлені через\n\u003ca href=\"function.putenv.md\"\u003eputenv()\u003c/a\u003e можуть викликати конфлікти,\nпадіння та інше непередбачуване поведінка. Деякі функції можуть\nпрацювати, у той час як інші дають дрібні помилки. Необхідно\nвстановлювати ці змінні \u003cem\u003eдо\u003c/em\u003e запуску веб-сервера.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eУ Red Hat Linux та його варіантах експортуйте змінні в кінці файлу\n\u003ccode\u003e/etc/sysconfig/httpd\u003c/code\u003e. Інші системи з Apache 2 можуть використовувати\nскрипт \u003ccode\u003eenvvars\u003c/code\u003e з папки \u003ccode\u003ebin\u003c/code\u003e у дистрибутиві Apache. Третім варіантом\nє директива Apache \u003ccode\u003eSetEnv\u003c/code\u003e у файлі \u003ccode\u003ehttpd.conf\u003c/code\u003e, на якихось\nсистемах вона може працювати, однак відомо, що на деяких її\nнедостатньо.\u003c/p\u003e\n\u003cp\u003eЩоб переконатися в коректному налаштуванні змінних оточення,\nвикористовуйте функцію \u003ca href=\"function.phpinfo.md\"\u003ephpinfo()\u003c/a\u003e та перевірте, що\nрозділ \u003cem\u003eEnvironment\u003c/em\u003e (не \u003cem\u003eApache Environment\u003c/em\u003e) містить очікувані\nзмінні.\u003c/p\u003e\n\u003cp\u003eНаступна таблиця містить змінні, які можуть знадобитися.\nЗа подробицями про всі доступні змінні звертайтесь до\nдокументації Oracle.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eНазва\u003c/th\u003e\n\u003cth\u003eЦіль\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eORACLE_HOME\u003c/td\u003e\n\u003ctd\u003eВказує на папку з повністю встановленою базою даних Oracle. Не встановлюйте цю змінну, використовуючи Oracle Instant Client, т.к. в цьому немає потреби і може викликати проблеми при встановленні.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eORACLE_SID\u003c/td\u003e\n\u003ctd\u003eМістить назву бази даних на локальній машині, до якої йде підключення. Немає необхідності встановлювати цю змінну під час використання Oracle Instant Client або завжди передавати у параметрах з'єднання у функцію \u003ca href=\"function.oci-connect.md\"\u003eoci_connect()\u003c/a\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLD_LIBRARY_PATH\u003c/td\u003e\n\u003ctd\u003eВстановіть цю змінну (або її еквівалент на використовуваній платформі, наприклад, LIBPATH або SHLIB_PATH) у місцезнаходження бібліотек Oracle, наприклад, $ORACLE_HOME/lib або /usr/lib/oracle/18.5/client/lib. Зверніть увагу, що для ZIP архівів Instant Client в Linux надійніше використовувати ldconfig. Зверніться до інструкції з встановлення Instant Client. Для RPM пакетів Instant Client 19 (і старше), ldconfig, буде запущено автоматично. Хтось використовує LD_PRELOAD замість LD_LIBRARY_PATH.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eNLS_LANG\u003c/td\u003e\n\u003ctd\u003eЦе основна змінна, яка використовується для вказівки кодування та настроювання глобалізації в бібліотеках Oracle.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eORA_SDTZ\u003c/td\u003e\n\u003ctd\u003eВстановлює часовий пояс сесії Oracle.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eTNS_ADMIN\u003c/td\u003e\n\u003ctd\u003eМістить папку, в якій зберігаються конфігураційні файли Oracle Net Services, такі як tnsnames.ora і sqlnet.ora. У ній немає необхідності, якщо рядок з'єднання функції \u003ca href=\"function.oci-connect.md\"\u003eoci_connect()\u003c/a\u003e використовує синтаксис Easy Connect, такий як, наприклад, localhost/XE. У ній також немає необхідності, якщо мережні конфігураційні файли містяться в місцях зберігання за промовчанням, таких як /usr/lib/oracle/VERSION/client/lib/network/admin, $ORACLE_HOME/network/admin або /etc .\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eЗагальні змінні оточення Oracle\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eМенш використовувані змінні оточення Oracle включають\n\u003ccode\u003eTWO_TASK\u003c/code\u003e, \u003ccode\u003eORA_TZFILE\u003c/code\u003e, а також різні установки глобалізації\nOracle на кшталт змінних \u003ccode\u003eNLS*\u003c/code\u003e та \u003ccode\u003eORA_NLS_*\u003c/code\u003e.\u003c/p\u003e\n\u003ch2\u003eВирішення проблем\u003c/h2\u003e\n\u003cp\u003eНайчастішою проблемою при встановленні OCI8 є неправильна\nвстановлення оточення Oracle. Зазвичай це виявляється у проблемі при\nвикористання функцій \u003ca href=\"function.oci-connect.md\"\u003eoci_connect()\u003c/a\u003e або\n\u003ca href=\"function.oci-pconnect.md\"\u003eoci_pconnect()\u003c/a\u003e. Помилка може виявлятися в\nвигляді помилок PHP, наприклад, \u003cem\u003eCall to undefined function oci_connect()\u003c/em\u003e,\nпомилок Oracle, таких як ORA-12705, або навіть аварії Apache. Перевірте\nлог-файли Apache на наявність помилок запуску та вищеописані розділи для\nвирішення цієї проблеми.\u003c/p\u003e\n\u003cp\u003eНезважаючи на те, що мережеві помилки, на кшталт ORA-12154 або ORA-12514\nсигналізують про помилку в іменуванні або конфігурації мережі Oracle,\nреальною причиною може бути некоректно встановлене оточення PHP,\nчерез що бібліотеки Oracle не можуть знайти конфігураційний файл\n\u003ccode\u003etnsnames.ora\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eУ Windows використання кількох версій Oracle на одній машині може\nлегко викликати їх конфлікти, яких можна уникнути при дотриманні особливих\nзапобіжних заходів, що передбачають, що PHP використовує коректну\nверсія Oracle.\u003c/p\u003e\n\u003cp\u003eУтиліта, що допомагає визначити шукані та завантажені в результаті бібліотеки,\nможе допомогти у разі проблем при відсутніх або конфліктуючих\nбібліотеки, особливо в Windows.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: \u003cstrong\u003eЯкщо веб-сервер не стартує або падає під час старту\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПеревірте, що Apache зібрано з бібліотекою pthread:\u003c/p\u003e\n\u003ch1\u003eldd /www/apache/bin/httpd\u003c/h1\u003e\n\u003cp\u003elibpthread.so.0 =\u003e /lib/libpthread.so.0 (0x4001c000)\nlibm.so.6 =\u003e /lib/libm.so.6 (0x4002f000)\nlibcrypt.so.1 =\u003e /lib/libcrypt.so.1 (0x4004c000)\nlibdl.so.2 =\u003e /lib/libdl.so.2 (0x4007a000)\nlibc.so.6 =\u003e /lib/libc.so.6 (0x4007e000)\n/lib/ld-linux.so.2 =\u003e /lib/ld-linux.so.2 (0x40000000)\u003c/p\u003e\n\u003cp\u003eЯкщо libpthread немає у списку, переустановіть Apache:\u003c/p\u003e\n\u003ch1\u003ecd /usr/src/apache_1.3.xx\u003c/h1\u003e\n\u003ch1\u003emake clean\u003c/h1\u003e\n\u003ch1\u003eLIBS=-lpthread ./config.status\u003c/h1\u003e\n\u003ch1\u003emake\u003c/h1\u003e\n\u003ch1\u003emake install\u003c/h1\u003e\n\u003cp\u003eМайте на увазі, що на деяких системах, як UnixWare,\nlibpthread називається libthread. Таким чином, PHP та Apache повинні\nбути настроєні за допомогою EXTRA_LIBS=-lthread.\u003c/p\u003e\n\u003c/blockquote\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"oci8.installation.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

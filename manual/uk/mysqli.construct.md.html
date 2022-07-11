@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli.construct | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli.connect-error.md">« mysqli::$connect_error</a></p>
+</li>
+<li>
+<p><a href="mysqli.debug.md">mysqli::debug »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.mysqli.md">mysqli</a></p>
+</li>
+<li>
+<p>Встановлює нове з'єднання із сервером MySQL</p>
+</li>
+</ul>
+<h1>mysqli::__construct</h1>
+<h1>mysqli::connect</h1>
+<h1>mysqli_connect</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<p>mysqli::__construct -- mysqli::connect -- mysqli_connect --
+Встановлює нове з'єднання із сервером MySQL</p>
+<h3>Опис</h3>
+<p>Об'єктно-орієнтований стиль</p>
+<p>public <strong>mysqli::__construct</strong>(
+string <code>$hostname</code> = ini_get("mysqli.default_host"),
+string <code>$username</code> = ini_get("mysqli.default_user"),
+string <code>$password</code> = ini_get("mysqli.default_pw"),
+string <code>$database</code> = "",
+int <code>$port</code> = ini_get("mysqli.default_port"),
+string <code>$socket</code> = ini_get("mysqli.default_socket")
+)</p>
+<p>public <a href="function.mysqli-connect.md">mysqli::connect</a>(
+string <code>$hostname</code> = ini_get("mysqli.default_host"),
+string <code>$username</code> = ini_get("mysqli.default_user"),
+string <code>$password</code> = ini_get("mysqli.default_pw"),
+string <code>$database</code> = "",
+int <code>$port</code> = ini_get("mysqli.default_port"),
+string <code>$socket</code> = ini_get("mysqli.default_socket")
+): void</p>
+<p>Процедурний стиль</p>
+<p><a href="function.mysqli-connect.md">mysqli_connect</a>(
+string <code>$hostname</code> = ini_get("mysqli.default_host"),
+string <code>$username</code> = ini_get("mysqli.default_user"),
+string <code>$password</code> = ini_get("mysqli.default_pw"),
+string <code>$database</code> = "",
+int <code>$port</code> = ini_get("mysqli.default_port"),
+string <code>$socket</code> = ini_get("mysqli.default_socket")
+): <a href="class.mysqli.md">mysqli</a>|false</p>
+<p>Встановлює з'єднання з сервером MySQL.</p>
+<h3>Список параметрів</h3>
+<p><code>hostname</code>
+Може бути або ім'ям хоста, або IP-адресою. Передбачається
+використання локального хоста при вказівці цього параметра <strong><code>null</code></strong>
+або рядка "localhost". По можливості замість протоколу TCP/IP будуть
+використовувати канали. Протокол TCP/IP використовується, якщо вказано ім'я
+хоста та номер порту, наприклад, <code>localhost:3308</code>.</p>
+<p>Якщо перед ім'ям хоста встановити рядок <code>p:</code>, то буде відкрито постійне
+з'єднання. Якщо з'єднання відкрито з пулу підключень, буде
+автоматично викликана функція
+<a href="mysqli.change-user.md">mysqli_change_user()</a>.</p>
+<p><code>username</code>
+Ім'я користувача MySQL.</p>
+<p><code>password</code>
+Якщо не заданий або дорівнює <strong><code>null</code></strong>, MySQL-сервер насамперед
+спробує автентифікувати користувача в принципі того, хто має пароль, а
+потім шукатиме серед користувачів, які не мають пароля. Такий
+підхід дозволяє одному користувачеві призначати різні права (у
+залежно від того, заданий пароль чи ні).</p>
+<p><code>database</code>
+Якщо параметр заданий, його значення буде використовуватись як ім'я
+бази даних за замовчуванням під час виконання запитів.</p>
+<p><code>port</code>
+Визначає номер порту для підключення до сервера MySQL.</p>
+<p><code>socket</code>
+Задає сокет або іменований пайп, який потрібно використовувати.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Передача параметра <code>socket</code> не явно задаватиме тип з'єднання при
+підключення до сервера MySQL. Як встановлюватиметься з'єднання
+з MySQL-сервером визначається параметром <code>hostname</code>.</p>
+</blockquote>
+<h3>Значення, що повертаються</h3>
+<p><strong>mysqli::__construct()</strong> завжди повертає об'єкт, який
+представляє з'єднання з сервером MySQL, незалежно від того, було воно
+успішним чи ні.</p>
+<p><a href="function.mysqli-connect.md">mysqli_connect()</a> повертає об'єкт,
+який представляє з'єднання з сервером MySQL або <strong><code>false</code></strong>
+у разі виникнення помилки.</p>
+<p><a href="function.mysqli-connect.md">mysqli::connect()</a> повертає <strong><code>null</code></strong>
+у разі успішного виконання або <strong><code>false</code></strong> у разі виникнення
+помилки.</p>
+<h3>Помилки</h3>
+<p>Якщо <strong><code>MYSQLI_REPORT_STRICT</code></strong> включено і під час підключення до бази
+даних сталася помилка, викидається
+<a href="class.mysqli-sql-exception.md">mysqli_sql_exception</a>.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>mysqli::__construct()</strong></strong></p>
+<p>Об'єктно-орієнтований стиль</p>
+<p><code>&#x3C;?php/* Вы должны включить отчёт об ошибках для mysqli, прежде чем пытаться установить соединение */mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'my_db' );/* Встановіть бажане кодування після встановлення з'єднання*/$mysqli->set_charset('utf8mb4');printf("Успішно... %s ", $mysqli->host_info);?></code></p>
+<p>Процедурний стиль</p>
+<p><code>&#x3C;?php/* Вы должны включить отчёт об ошибках для mysqli, прежде чем пытаться установить соединение */mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = mysqli_connect('localhost', 'my_user', 'my_password', 'my_db') ;/* Встановіть бажане кодування після встановлення з'єднання*/mysqli_set_charset($mysqli, 'utf8mb4');printf("Успішно... %s ", mysqli_get_host_info($mysqli));</code></p>
+<p>Результатом виконання даних прикладів буде щось подібне:</p>
+<p>Успішно... localhost via TCP/IP</p>
+<p><strong>Приклад #2 Розширення класу mysqli</strong></p>
+<p><code>&#x3C;?phpclass FooMysqli extends mysqli {    public function __construct($host, $user, $pass, $db, $port, $socket, $charset) { RE| parent::__construct($host, $user, $pass, $db, $port, $socket); $this->set_charset($charset); }}$db = new FooMysqli('localhost', 'my_user', 'my_password', 'my_db', 3306, null, 'utf8mb4'); </code></p>
+<p><strong>Приклад #3 Ручне оброблення помилок</strong></p>
+<p>Якщо звіти про помилки вимкнуто, розробник відповідає за
+перевірку та обробку помилок</p>
+<p>Об'єктно-орієнтований стиль</p>
+<p><code>&#x3C;?phperror_reporting(0);mysqli_report(MYSQLI_REPORT_OFF);$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'my_db');if ($mysqli->connect_errno)   помилка з'єднання mysqli: ' . $mysqli->connect_error);}/* Встановіть бажане кодування після встановлення з'єднання */$mysqli->set_charset('utf8mb4');if про$mysqli- mysqli: ' . $mysqli->error);}</code></p>
+<p>Процедурний стиль</p>
+<p><code>&#x3C;?phperror_reporting(0);mysqli_report(MYSQLI_REPORT_OFF);$mysqli = mysqli_connect('localhost', 'my_user', 'my_password', 'my_db');if (mysqli_connect_errno() : ' . mysqli_connect_error());}/* Установите желаемую кодировку после установления соединения */mysqli_set_charset($mysqli, 'utf8mb4');if (mysqli_errno($mysqli)) {    throw new RuntimeException('ошибка mysqli: ' . mysqli_error( $ mysqli));} </code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>MySQLnd завжди має на увазі кодування, яке використовує по
+За замовчуванням сервер. Це кодування передається під час встановлення
+з'єднання/авторизації, які використовує mysqlnd.</p>
+<p>Libmysqlclient за замовчуванням використовує кодування, встановлене в
+<code>my.cnf</code> або спеціальним викликом
+<a href="mysqli.options.md">mysqli_options()</a> до використання
+<a href="mysqli.real-connect.md">mysqli_real_connect()</a>, але після
+<a href="mysqli.init.md">mysqli_init()</a>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо використовується Об'єктно-орієнтований стиль: Якщо підключення
+Встановити не вдалося, метод все одно поверне об'єкт. Перевірити
+успішність створення підключення можна або функцією
+<a href="mysqli.connect-error.md">mysqli_connect_error()</a> або за допомогою
+властивості <a href="mysqli.connect-error.md">mysqli->connect_error</a>, як
+показано у прикладах.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо потрібно встановити додаткові параметри підключення, начебто
+часу очікування тощо, тоді замість цього методу необхідно
+використовувати функцію
+<a href="mysqli.real-connect.md">mysqli_real_connect()</a>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Виклик конструктора без параметрів ідентичний виклику функції
+<a href="mysqli.init.md">mysqli_init()</a>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Помилка "Can't create TCP/IP socket (10106)" зазвичай означає, що
+Директива конфігурації
+<a href="ini.core.md#ini.variables-order">variables_order</a> не містить
+Символ <code>E</code>. У Windows системах, якщо оточення не скопійоване,
+змінне середовище <code>SYSTEMROOT</code> буде недоступне, і у PHP виникнуть
+проблеми із завантаженням Winsock.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="mysqli.real-connect.md">mysqli_real_connect()</a> - Встановлює
+з'єднання з сервером mysql</li>
+<li><a href="mysqli.options.md">mysqli_options()</a> - Встановлення установок</li>
+<li><a href="mysqli.connect-errno.md">mysqli_connect_errno()</a> - Повертає код
+помилки останньої спроби з'єднання</li>
+<li><a href="mysqli.connect-error.md">mysqli_connect_error()</a> - Повертає
+опис останньої помилки підключення</li>
+<li><a href="mysqli.close.md">mysqli_close()</a> - Закриває раніше відкрите
+з'єднання з базою даних</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli.construct.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli.construct.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli.construct","slug":"mysqli.construct.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.connect-error.md\"\u003e« mysqli::$connect_error\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.debug.md\"\u003emysqli::debug »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mysqli.md\"\u003emysqli\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВстановлює нове з'єднання із сервером MySQL\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003emysqli::__construct\u003c/h1\u003e\n\u003ch1\u003emysqli::connect\u003c/h1\u003e\n\u003ch1\u003emysqli_connect\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emysqli::__construct -- mysqli::connect -- mysqli_connect --\nВстановлює нове з'єднання із сервером MySQL\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003emysqli::__construct\u003c/strong\u003e(\nstring \u003ccode\u003e$hostname\u003c/code\u003e = ini_get(\"mysqli.default_host\"),\nstring \u003ccode\u003e$username\u003c/code\u003e = ini_get(\"mysqli.default_user\"),\nstring \u003ccode\u003e$password\u003c/code\u003e = ini_get(\"mysqli.default_pw\"),\nstring \u003ccode\u003e$database\u003c/code\u003e = \"\",\nint \u003ccode\u003e$port\u003c/code\u003e = ini_get(\"mysqli.default_port\"),\nstring \u003ccode\u003e$socket\u003c/code\u003e = ini_get(\"mysqli.default_socket\")\n)\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"function.mysqli-connect.md\"\u003emysqli::connect\u003c/a\u003e(\nstring \u003ccode\u003e$hostname\u003c/code\u003e = ini_get(\"mysqli.default_host\"),\nstring \u003ccode\u003e$username\u003c/code\u003e = ini_get(\"mysqli.default_user\"),\nstring \u003ccode\u003e$password\u003c/code\u003e = ini_get(\"mysqli.default_pw\"),\nstring \u003ccode\u003e$database\u003c/code\u003e = \"\",\nint \u003ccode\u003e$port\u003c/code\u003e = ini_get(\"mysqli.default_port\"),\nstring \u003ccode\u003e$socket\u003c/code\u003e = ini_get(\"mysqli.default_socket\")\n): void\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"function.mysqli-connect.md\"\u003emysqli_connect\u003c/a\u003e(\nstring \u003ccode\u003e$hostname\u003c/code\u003e = ini_get(\"mysqli.default_host\"),\nstring \u003ccode\u003e$username\u003c/code\u003e = ini_get(\"mysqli.default_user\"),\nstring \u003ccode\u003e$password\u003c/code\u003e = ini_get(\"mysqli.default_pw\"),\nstring \u003ccode\u003e$database\u003c/code\u003e = \"\",\nint \u003ccode\u003e$port\u003c/code\u003e = ini_get(\"mysqli.default_port\"),\nstring \u003ccode\u003e$socket\u003c/code\u003e = ini_get(\"mysqli.default_socket\")\n): \u003ca href=\"class.mysqli.md\"\u003emysqli\u003c/a\u003e|false\u003c/p\u003e\n\u003cp\u003eВстановлює з'єднання з сервером MySQL.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ehostname\u003c/code\u003e\nМоже бути або ім'ям хоста, або IP-адресою. Передбачається\nвикористання локального хоста при вказівці цього параметра \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\nабо рядка \"localhost\". По можливості замість протоколу TCP/IP будуть\nвикористовувати канали. Протокол TCP/IP використовується, якщо вказано ім'я\nхоста та номер порту, наприклад, \u003ccode\u003elocalhost:3308\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо перед ім'ям хоста встановити рядок \u003ccode\u003ep:\u003c/code\u003e, то буде відкрито постійне\nз'єднання. Якщо з'єднання відкрито з пулу підключень, буде\nавтоматично викликана функція\n\u003ca href=\"mysqli.change-user.md\"\u003emysqli_change_user()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eusername\u003c/code\u003e\nІм'я користувача MySQL.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epassword\u003c/code\u003e\nЯкщо не заданий або дорівнює \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, MySQL-сервер насамперед\nспробує автентифікувати користувача в принципі того, хто має пароль, а\nпотім шукатиме серед користувачів, які не мають пароля. Такий\nпідхід дозволяє одному користувачеві призначати різні права (у\nзалежно від того, заданий пароль чи ні).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edatabase\u003c/code\u003e\nЯкщо параметр заданий, його значення буде використовуватись як ім'я\nбази даних за замовчуванням під час виконання запитів.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eport\u003c/code\u003e\nВизначає номер порту для підключення до сервера MySQL.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esocket\u003c/code\u003e\nЗадає сокет або іменований пайп, який потрібно використовувати.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПередача параметра \u003ccode\u003esocket\u003c/code\u003e не явно задаватиме тип з'єднання при\nпідключення до сервера MySQL. Як встановлюватиметься з'єднання\nз MySQL-сервером визначається параметром \u003ccode\u003ehostname\u003c/code\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003emysqli::__construct()\u003c/strong\u003e завжди повертає об'єкт, який\nпредставляє з'єднання з сервером MySQL, незалежно від того, було воно\nуспішним чи ні.\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"function.mysqli-connect.md\"\u003emysqli_connect()\u003c/a\u003e повертає об'єкт,\nякий представляє з'єднання з сервером MySQL або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\nу разі виникнення помилки.\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"function.mysqli-connect.md\"\u003emysqli::connect()\u003c/a\u003e повертає \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\nу разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення\nпомилки.\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cp\u003eЯкщо \u003cstrong\u003e\u003ccode\u003eMYSQLI_REPORT_STRICT\u003c/code\u003e\u003c/strong\u003e включено і під час підключення до бази\nданих сталася помилка, викидається\n\u003ca href=\"class.mysqli-sql-exception.md\"\u003emysqli_sql_exception\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003emysqli::__construct()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Вы должны включить отчёт об ошибках для mysqli, прежде чем пытаться установить соединение */mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'my_db' );/* Встановіть бажане кодування після встановлення з'єднання*/$mysqli-\u003eset_charset('utf8mb4');printf(\"Успішно... %s \", $mysqli-\u003ehost_info);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Вы должны включить отчёт об ошибках для mysqli, прежде чем пытаться установить соединение */mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);$mysqli = mysqli_connect('localhost', 'my_user', 'my_password', 'my_db') ;/* Встановіть бажане кодування після встановлення з'єднання*/mysqli_set_charset($mysqli, 'utf8mb4');printf(\"Успішно... %s \", mysqli_get_host_info($mysqli));\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання даних прикладів буде щось подібне:\u003c/p\u003e\n\u003cp\u003eУспішно... localhost via TCP/IP\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Розширення класу mysqli\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass FooMysqli extends mysqli {    public function __construct($host, $user, $pass, $db, $port, $socket, $charset) { RE| parent::__construct($host, $user, $pass, $db, $port, $socket); $this-\u003eset_charset($charset); }}$db = new FooMysqli('localhost', 'my_user', 'my_password', 'my_db', 3306, null, 'utf8mb4'); \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Ручне оброблення помилок\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЯкщо звіти про помилки вимкнуто, розробник відповідає за\nперевірку та обробку помилок\u003c/p\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phperror_reporting(0);mysqli_report(MYSQLI_REPORT_OFF);$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'my_db');if ($mysqli-\u003econnect_errno)   помилка з'єднання mysqli: ' . $mysqli-\u003econnect_error);}/* Встановіть бажане кодування після встановлення з'єднання */$mysqli-\u003eset_charset('utf8mb4');if про$mysqli- mysqli: ' . $mysqli-\u003eerror);}\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phperror_reporting(0);mysqli_report(MYSQLI_REPORT_OFF);$mysqli = mysqli_connect('localhost', 'my_user', 'my_password', 'my_db');if (mysqli_connect_errno() : ' . mysqli_connect_error());}/* Установите желаемую кодировку после установления соединения */mysqli_set_charset($mysqli, 'utf8mb4');if (mysqli_errno($mysqli)) {    throw new RuntimeException('ошибка mysqli: ' . mysqli_error( $ mysqli));} \u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eMySQLnd завжди має на увазі кодування, яке використовує по\nЗа замовчуванням сервер. Це кодування передається під час встановлення\nз'єднання/авторизації, які використовує mysqlnd.\u003c/p\u003e\n\u003cp\u003eLibmysqlclient за замовчуванням використовує кодування, встановлене в\n\u003ccode\u003emy.cnf\u003c/code\u003e або спеціальним викликом\n\u003ca href=\"mysqli.options.md\"\u003emysqli_options()\u003c/a\u003e до використання\n\u003ca href=\"mysqli.real-connect.md\"\u003emysqli_real_connect()\u003c/a\u003e, але після\n\u003ca href=\"mysqli.init.md\"\u003emysqli_init()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо використовується Об'єктно-орієнтований стиль: Якщо підключення\nВстановити не вдалося, метод все одно поверне об'єкт. Перевірити\nуспішність створення підключення можна або функцією\n\u003ca href=\"mysqli.connect-error.md\"\u003emysqli_connect_error()\u003c/a\u003e або за допомогою\nвластивості \u003ca href=\"mysqli.connect-error.md\"\u003emysqli-\u003econnect_error\u003c/a\u003e, як\nпоказано у прикладах.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо потрібно встановити додаткові параметри підключення, начебто\nчасу очікування тощо, тоді замість цього методу необхідно\nвикористовувати функцію\n\u003ca href=\"mysqli.real-connect.md\"\u003emysqli_real_connect()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eВиклик конструктора без параметрів ідентичний виклику функції\n\u003ca href=\"mysqli.init.md\"\u003emysqli_init()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПомилка \"Can't create TCP/IP socket (10106)\" зазвичай означає, що\nДиректива конфігурації\n\u003ca href=\"ini.core.md#ini.variables-order\"\u003evariables_order\u003c/a\u003e не містить\nСимвол \u003ccode\u003eE\u003c/code\u003e. У Windows системах, якщо оточення не скопійоване,\nзмінне середовище \u003ccode\u003eSYSTEMROOT\u003c/code\u003e буде недоступне, і у PHP виникнуть\nпроблеми із завантаженням Winsock.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mysqli.real-connect.md\"\u003emysqli_real_connect()\u003c/a\u003e - Встановлює\nз'єднання з сервером mysql\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.options.md\"\u003emysqli_options()\u003c/a\u003e - Встановлення установок\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.connect-errno.md\"\u003emysqli_connect_errno()\u003c/a\u003e - Повертає код\nпомилки останньої спроби з'єднання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.connect-error.md\"\u003emysqli_connect_error()\u003c/a\u003e - Повертає\nопис останньої помилки підключення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.close.md\"\u003emysqli_close()\u003c/a\u003e - Закриває раніше відкрите\nз'єднання з базою даних\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli.construct.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.yaf-response-abstract | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="yaf-request-simple.isxmlhttprequest.md">« Yaf_Request_Simple::isXmlHttpRequest</a></p>
+</li>
+<li>
+<p><a href="yaf-response-abstract.appendbody.md">Yaf_Response_Abstract::appendBody »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.yaf.md">Yaf</a></p>
+</li>
+<li>
+<p>Клас Yaf_Response_Abstract</p>
+</li>
+</ul>
+<h1>Клас Yaf_Response_Abstract</h1>
+<p>(Yaf >=1.0.0)</p>
+<h2>Вступ</h2>
+<h2>Огляд класів</h2>
+<p>class <strong>Yaf_Response_Abstract</strong> {</p>
+<p>/* Константи */</p>
+<p>const string <code>DEFAULT_BODY</code> = "content";</p>
+<p>/* Властивості */</p>
+<p>protected <code>$_header</code>;</p>
+<p>protected <code>$_body</code>;</p>
+<p>protected <code>$_sendheader</code>;</p>
+<p>/* Методи */</p>
+<p>public <a href="yaf-response-abstract.construct.md">__construct</a>()</p>
+<p>public <a href="yaf-response-abstract.appendbody.md">appendBody</a>(string
+<code>$content</code>, string <code>$key</code> = ?): bool</p>
+<p>public <a href="yaf-response-abstract.clearbody.md">clearBody</a>(string <code>$key</code> =
+?): bool</p>
+<p>public <a href="yaf-response-abstract.clearheaders.md">clearHeaders</a>(): void</p>
+<p>public <a href="yaf-response-abstract.getbody.md">getBody</a>(string <code>$key</code> = ?):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="yaf-response-abstract.getheader.md">getHeader</a>(): void</p>
+<p>public <a href="yaf-response-abstract.prependbody.md">prependBody</a>(string
+<code>$content</code>, string <code>$key</code> = ?): bool</p>
+<p>public <a href="yaf-response-abstract.response.md">response</a>(): void</p>
+<p>protected <a href="yaf-response-abstract.setallheaders.md">setAllHeaders</a>():
+void</p>
+<p>public <a href="yaf-response-abstract.setbody.md">setBody</a>(string <code>$content</code>,
+string <code>$key</code> = ?): bool</p>
+<p>public <a href="yaf-response-abstract.setheader.md">setHeader</a>(string <code>$name</code>,
+string <code>$value</code>, bool <code>$replace</code> = ?): bool</p>
+<p>public <a href="yaf-response-abstract.setredirect.md">setRedirect</a>(string
+<code>$url</code>): bool</p>
+<p>private <a href="yaf-response-abstract.tostring.md">__toString</a>(): string</p>
+<p>public <a href="yaf-response-abstract.destruct.md">__destruct</a>()</p>
+<p>}</p>
+<h2>Властивості</h2>
+<p><code>_header</code></p>
+<p><code>_body</code></p>
+<p><code>_sendheader</code></p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="yaf-response-abstract.appendbody.md">Yaf_Response_Abstract::appendBody</a>
+— Додає вміст до тіла відповіді</li>
+<li><a href="yaf-response-abstract.clearbody.md">Yaf_Response_Abstract::clearBody</a></li>
+<li>Скидає все існуюче тіло відповіді</li>
+<li><a href="yaf-response-abstract.clearheaders.md">Yaf_Response_Abstract::clearHeaders</a></li>
+<li>Скидає всі встановлені заголовки</li>
+<li><a href="yaf-response-abstract.construct.md">Yaf_Response_Abstract::__construct</a></li>
+<li>Конструктор класу Yaf_Response_Abstract</li>
+<li><a href="yaf-response-abstract.destruct.md">Yaf_Response_Abstract::__destruct</a></li>
+<li>Деструктор класу Yaf_Response_Abstract</li>
+<li><a href="yaf-response-abstract.getbody.md">Yaf_Response_Abstract::getBody</a>
+— Отримує наявний вміст</li>
+<li><a href="yaf-response-abstract.getheader.md">Yaf_Response_Abstract::getHeader</a></li>
+<li>Призначення getHeader</li>
+<li><a href="yaf-response-abstract.prependbody.md">Yaf_Response_Abstract::prependBody</a></li>
+<li>Призначення prependBody</li>
+<li><a href="yaf-response-abstract.response.md">Yaf_Response_Abstract::response</a></li>
+<li>Відправляє відповідь</li>
+<li><a href="yaf-response-abstract.setallheaders.md">Yaf_Response_Abstract::setAllHeaders</a></li>
+<li>Призначення setAllHeaders</li>
+<li><a href="yaf-response-abstract.setbody.md">Yaf_Response_Abstract::setBody</a></li>
+<li>Встановлює вміст відповіді</li>
+<li><a href="yaf-response-abstract.setheader.md">Yaf_Response_Abstract::setHeader</a></li>
+<li>Встановлює заголовок відповіді</li>
+<li><a href="yaf-response-abstract.setredirect.md">Yaf_Response_Abstract::setRedirect</a></li>
+<li>Призначення setRedirect</li>
+<li><a href="yaf-response-abstract.tostring.md">Yaf_Response_Abstract::__toString</a>
+— Отримує все тіло у вигляді рядка</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.yaf-response-abstract.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.yaf-response-abstract.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.yaf-response-abstract","slug":"class.yaf-response-abstract.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"yaf-request-simple.isxmlhttprequest.md\"\u003e« Yaf_Request_Simple::isXmlHttpRequest\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"yaf-response-abstract.appendbody.md\"\u003eYaf_Response_Abstract::appendBody »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.yaf.md\"\u003eYaf\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас Yaf_Response_Abstract\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас Yaf_Response_Abstract\u003c/h1\u003e\n\u003cp\u003e(Yaf \u003e=1.0.0)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eYaf_Response_Abstract\u003c/strong\u003e {\u003c/p\u003e\n\u003cp\u003e/* Константи */\u003c/p\u003e\n\u003cp\u003econst string \u003ccode\u003eDEFAULT_BODY\u003c/code\u003e = \"content\";\u003c/p\u003e\n\u003cp\u003e/* Властивості */\u003c/p\u003e\n\u003cp\u003eprotected \u003ccode\u003e$_header\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003eprotected \u003ccode\u003e$_body\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003eprotected \u003ccode\u003e$_sendheader\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.construct.md\"\u003e__construct\u003c/a\u003e()\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.appendbody.md\"\u003eappendBody\u003c/a\u003e(string\n\u003ccode\u003e$content\u003c/code\u003e, string \u003ccode\u003e$key\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.clearbody.md\"\u003eclearBody\u003c/a\u003e(string \u003ccode\u003e$key\u003c/code\u003e =\n?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.clearheaders.md\"\u003eclearHeaders\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.getbody.md\"\u003egetBody\u003c/a\u003e(string \u003ccode\u003e$key\u003c/code\u003e = ?):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.getheader.md\"\u003egetHeader\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.prependbody.md\"\u003eprependBody\u003c/a\u003e(string\n\u003ccode\u003e$content\u003c/code\u003e, string \u003ccode\u003e$key\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.response.md\"\u003eresponse\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003eprotected \u003ca href=\"yaf-response-abstract.setallheaders.md\"\u003esetAllHeaders\u003c/a\u003e():\nvoid\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.setbody.md\"\u003esetBody\u003c/a\u003e(string \u003ccode\u003e$content\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.setheader.md\"\u003esetHeader\u003c/a\u003e(string \u003ccode\u003e$name\u003c/code\u003e,\nstring \u003ccode\u003e$value\u003c/code\u003e, bool \u003ccode\u003e$replace\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.setredirect.md\"\u003esetRedirect\u003c/a\u003e(string\n\u003ccode\u003e$url\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eprivate \u003ca href=\"yaf-response-abstract.tostring.md\"\u003e__toString\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"yaf-response-abstract.destruct.md\"\u003e__destruct\u003c/a\u003e()\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eВластивості\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003e_header\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e_body\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e_sendheader\u003c/code\u003e\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.appendbody.md\"\u003eYaf_Response_Abstract::appendBody\u003c/a\u003e\n— Додає вміст до тіла відповіді\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.clearbody.md\"\u003eYaf_Response_Abstract::clearBody\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eСкидає все існуюче тіло відповіді\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.clearheaders.md\"\u003eYaf_Response_Abstract::clearHeaders\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eСкидає всі встановлені заголовки\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.construct.md\"\u003eYaf_Response_Abstract::__construct\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eКонструктор класу Yaf_Response_Abstract\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.destruct.md\"\u003eYaf_Response_Abstract::__destruct\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eДеструктор класу Yaf_Response_Abstract\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.getbody.md\"\u003eYaf_Response_Abstract::getBody\u003c/a\u003e\n— Отримує наявний вміст\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.getheader.md\"\u003eYaf_Response_Abstract::getHeader\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПризначення getHeader\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.prependbody.md\"\u003eYaf_Response_Abstract::prependBody\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПризначення prependBody\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.response.md\"\u003eYaf_Response_Abstract::response\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВідправляє відповідь\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.setallheaders.md\"\u003eYaf_Response_Abstract::setAllHeaders\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПризначення setAllHeaders\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.setbody.md\"\u003eYaf_Response_Abstract::setBody\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВстановлює вміст відповіді\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.setheader.md\"\u003eYaf_Response_Abstract::setHeader\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eВстановлює заголовок відповіді\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.setredirect.md\"\u003eYaf_Response_Abstract::setRedirect\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eПризначення setRedirect\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"yaf-response-abstract.tostring.md\"\u003eYaf_Response_Abstract::__toString\u003c/a\u003e\n— Отримує все тіло у вигляді рядка\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.yaf-response-abstract.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

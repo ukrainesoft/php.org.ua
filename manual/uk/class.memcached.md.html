@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.memcached | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="memcached.sessions.md">«Підтримка сесій</a></p>
+</li>
+<li>
+<p><a href="memcached.add.md">Memcached::add »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.memcached.md">Memcached</a></p>
+</li>
+<li>
+<p>Клас Memcached</p>
+</li>
+</ul>
+<h1>Клас Memcached</h1>
+<p>(PECL memcached >= 0.1.0)</p>
+<h2>Вступ</h2>
+<p>Представляє підключення до набору серверів memcached.</p>
+<h2>Огляд класів</h2>
+<p>class <strong>Memcached</strong> {</p>
+<p>public <a href="memcached.construct.md">__construct</a>(string <code>$persistent_id</code>
+=?)</p>
+<p>public <a href="memcached.add.md">add</a>(string <code>$key</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$value</code>, int <code>$expiration</code> = ?): bool</p>
+<p>public <a href="memcached.addbykey.md">addByKey</a>(
+string <code>$server_key</code>,
+string <code>$key</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+$value,
+int <code>$expiration</code> = ?
+): bool</p>
+<p>public <a href="memcached.addserver.md">addServer</a>(string <code>$host</code>, int
+<code>$port</code>, int <code>$weight</code> = 0): bool</p>
+<p>public <a href="memcached.addservers.md">addServers</a>(array <code>$servers</code>): bool</p>
+<p>public <a href="memcached.append.md">append</a>(string <code>$key</code>, string <code>$value</code>):
+bool</p>
+<p>public <a href="memcached.appendbykey.md">appendByKey</a>(string <code>$server_key</code>,
+string <code>$key</code>, string <code>$value</code>): bool</p>
+<p>public <a href="memcached.cas.md">cas</a>(
+float <code>$cas_token</code>,
+string <code>$key</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+$value,
+int <code>$expiration</code> = ?
+): bool</p>
+<p>public <a href="memcached.casbykey.md">casByKey</a>(
+float <code>$cas_token</code>,
+string <code>$server_key</code>,
+string <code>$key</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+$value,
+int <code>$expiration</code> = ?
+): bool</p>
+<p>public <a href="memcached.decrement.md">decrement</a>(
+string <code>$key</code>,
+int <code>$offset</code> = 1,
+int <code>$initial_value</code> = 0,
+int <code>$expiry</code> = 0
+): int|false</p>
+<p>public <a href="memcached.decrementbykey.md">decrementByKey</a>(
+string <code>$server_key</code>,
+string <code>$key</code>,
+int <code>$offset</code> = 1,
+int <code>$initial_value</code> = 0,
+int <code>$expiry</code> = 0
+): int|false</p>
+<p>public <a href="memcached.delete.md">delete</a>(string <code>$key</code>, int <code>$time</code> = 0):
+bool</p>
+<p>public <a href="memcached.deletebykey.md">deleteByKey</a>(string <code>$server_key</code>,
+string <code>$key</code>, int <code>$time</code> = 0): bool</p>
+<p>public <a href="memcached.deletemulti.md">deleteMulti</a>(array <code>$keys</code>, int
+<code>$time</code> = 0): array</p>
+<p>public <a href="memcached.deletemultibykey.md">deleteMultiByKey</a>(string
+<code>$server_key</code>, array <code>$keys</code>, int <code>$time</code> = 0): bool</p>
+<p>public <a href="memcached.fetch.md">fetch</a>(): array</p>
+<p>public <a href="memcached.fetchall.md">fetchAll</a>(): array|false</p>
+<p>public <a href="memcached.flush.md">flush</a>(int <code>$delay</code> = 0): bool</p>
+<p>public <a href="memcached.get.md">get</a>(string <code>$key</code>,
+<a href="language.types.callable.md">callable</a> <code>$cache_cb</code> = ?, int <code>$flags</code> =
+?):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="memcached.getallkeys.md">getAllKeys</a>(): array|false</p>
+<p>public <a href="memcached.getbykey.md">getByKey</a>(
+string <code>$server_key</code>,
+string <code>$key</code>,
+<a href="language.types.callable.md">callable</a> <code>$cache_cb</code> = ?,
+int <code>$flags</code> = ?
+):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="memcached.getdelayed.md">getDelayed</a>(array <code>$keys</code>, bool
+<code>$with_cas</code> = ?, <a href="language.types.callable.md">callable</a> <code>$value_cb</code> =
+?): bool</p>
+<p>public <a href="memcached.getdelayedbykey.md">getDelayedByKey</a>(
+string <code>$server_key</code>,
+array <code>$keys</code>,
+bool <code>$with_cas</code> = ?,
+<a href="language.types.callable.md">callable</a> <code>$value_cb</code> = ?
+): bool</p>
+<p>public <a href="memcached.getmulti.md">getMulti</a>(array <code>$keys</code>, int <code>$flags</code> =
+?):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="memcached.getmultibykey.md">getMultiByKey</a>(string
+<code>$server_key</code>, array <code>$keys</code>, int <code>$flags</code> = ?): array|false</p>
+<p>public <a href="memcached.getoption.md">getOption</a>(int <code>$option</code>):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="memcached.getresultcode.md">getResultCode</a>(): int</p>
+<p>public <a href="memcached.getresultmessage.md">getResultMessage</a>(): string</p>
+<p>public <a href="memcached.getserverbykey.md">getServerByKey</a>(string
+<code>$server_key</code>): array</p>
+<p>public <a href="memcached.getserverlist.md">getServerList</a>(): array</p>
+<p>public <a href="memcached.getstats.md">getStats</a>(): array|false</p>
+<p>public <a href="memcached.getversion.md">getVersion</a>(): array</p>
+<p>public <a href="memcached.increment.md">increment</a>(
+string <code>$key</code>,
+int <code>$offset</code> = 1,
+int <code>$initial_value</code> = 0,
+int <code>$expiry</code> = 0
+): int|false</p>
+<p>public <a href="memcached.incrementbykey.md">incrementByKey</a>(
+string <code>$server_key</code>,
+string <code>$key</code>,
+int <code>$offset</code> = 1,
+int <code>$initial_value</code> = 0,
+int <code>$expiry</code> = 0
+): int|false</p>
+<p>public <a href="memcached.ispersistent.md">isPersistent</a>(): bool</p>
+<p>public <a href="memcached.ispristine.md">isPristine</a>(): bool</p>
+<p>public <a href="memcached.prepend.md">prepend</a>(string <code>$key</code>, string
+<code>$value</code>): bool</p>
+<p>public <a href="memcached.prependbykey.md">prependByKey</a>(string <code>$server_key</code>,
+string <code>$key</code>, string <code>$value</code>): bool</p>
+<p>public <a href="memcached.quit.md">quit</a>(): bool</p>
+<p>public <a href="memcached.replace.md">replace</a>(string <code>$key</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$value</code>, int <code>$expiration</code> = ?): bool</p>
+<p>public <a href="memcached.replacebykey.md">replaceByKey</a>(
+string <code>$server_key</code>,
+string <code>$key</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+$value,
+int <code>$expiration</code> = ?
+): bool</p>
+<p>public <a href="memcached.resetserverlist.md">resetServerList</a>(): bool</p>
+<p>public <a href="memcached.set.md">set</a>(string <code>$key</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$value</code>, int <code>$expiration</code> = ?): bool</p>
+<p>public <a href="memcached.setbykey.md">setByKey</a>(
+string <code>$server_key</code>,
+string <code>$key</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+$value,
+int <code>$expiration</code> = ?
+): bool</p>
+<p>public <a href="memcached.setmulti.md">setMulti</a>(array <code>$items</code>, int
+<code>$expiration</code> = ?): bool</p>
+<p>public <a href="memcached.setmultibykey.md">setMultiByKey</a>(string
+<code>$server_key</code>, array <code>$items</code>, int <code>$expiration</code> = ?): bool</p>
+<p>public <a href="memcached.setoption.md">setOption</a>(int <code>$option</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$value</code>): bool</p>
+<p>public <a href="memcached.setoptions.md">setOptions</a>(array <code>$options</code>): bool</p>
+<p>public <a href="memcached.setsaslauthdata.md">setSaslAuthData</a>(string
+<code>$username</code>, string <code>$password</code>): void</p>
+<p>public <a href="memcached.touch.md">touch</a>(string <code>$key</code>, int <code>$expiration</code>):
+bool</p>
+<p>public <a href="memcached.touchbykey.md">touchByKey</a>(string <code>$server_key</code>,
+string <code>$key</code>, int <code>$expiration</code>): bool</p>
+<p>}</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="memcached.add.md">Memcached::add</a> — Додає елемент із новим
+ключем</li>
+<li><a href="memcached.addbykey.md">Memcached::addByKey</a> — Додає новий
+елемент на заданий сервер</li>
+<li><a href="memcached.addserver.md">Memcached::addServer</a> — Додає сервер
+в пул</li>
+<li><a href="memcached.addservers.md">Memcached::addServers</a> — Додає
+кілька серверів у пул</li>
+<li><a href="memcached.append.md">Memcached::append</a> — Додає дані до
+існуючого запису</li>
+<li><a href="memcached.appendbykey.md">Memcached::appendByKey</a> — Додає
+дані до існуючого запису на заданому сервері</li>
+<li><a href="memcached.cas.md">Memcached::cas</a> — Порівнює та встановлює
+значення для запису</li>
+<li><a href="memcached.casbykey.md">Memcached::casByKey</a> — Порівнює та
+встановлює значення для запису на конкретному сервері</li>
+<li><a href="memcached.construct.md">Memcached::__construct</a> - Створює
+екземпляр класу Memcached</li>
+<li><a href="memcached.decrement.md">Memcached::decrement</a> — Зменшує
+числове значення запису</li>
+<li><a href="memcached.decrementbykey.md">Memcached::decrementByKey</a> -
+Зменшує числове значення запису, що зберігається на певному
+сервері</li>
+<li><a href="memcached.delete.md">Memcached::delete</a> — Видалення запису</li>
+<li><a href="memcached.deletebykey.md">Memcached::deleteByKey</a> — Видаляє
+запис із зазначеного сервера</li>
+<li><a href="memcached.deletemulti.md">Memcached::deleteMulti</a> — Видаляє
+кілька записів</li>
+<li><a href="memcached.deletemultibykey.md">Memcached::deleteMultiByKey</a> -
+Видаляє кілька записів із вказаного сервера</li>
+<li><a href="memcached.fetch.md">Memcached::fetch</a> — Витягує наступний
+результат</li>
+<li><a href="memcached.fetchall.md">Memcached::fetchAll</a> — Витягує все
+отримані записи</li>
+<li><a href="memcached.flush.md">Memcached::flush</a> — Анулює всі записи в
+кеші</li>
+<li><a href="memcached.get.md">Memcached::get</a> — Отримання запису</li>
+<li><a href="memcached.getallkeys.md">Memcached::getAllKeys</a> — Отримує все
+ключі, що зберігаються на серверах</li>
+<li><a href="memcached.getbykey.md">Memcached::getByKey</a> — Отримує запис з
+певного сервера</li>
+<li><a href="memcached.getdelayed.md">Memcached::getDelayed</a> — Запитує
+кілька записів</li>
+<li><a href="memcached.getdelayedbykey.md">Memcached::getDelayedByKey</a> -
+Запитує кілька записів із вказаного сервера</li>
+<li><a href="memcached.getmulti.md">Memcached::getMulti</a> — Отримує декілька
+записів</li>
+<li><a href="memcached.getmultibykey.md">Memcached::getMultiByKey</a> — Отримує
+кілька записів із вказаного сервера</li>
+<li><a href="memcached.getoption.md">Memcached::getOption</a> — Отримує значення
+Memcached параметр</li>
+<li><a href="memcached.getresultcode.md">Memcached::getResultCode</a>
+Повертає результуючий код останньої виконаної операції</li>
+<li><a href="memcached.getresultmessage.md">Memcached::getResultMessage</a> -
+Повертає повідомлення, що описує результат виконання останньої
+операції</li>
+<li><a href="memcached.getserverbykey.md">Memcached::getServerByKey</a> -
+Отримує інформацію про сервер по ключу</li>
+<li><a href="memcached.getserverlist.md">Memcached::getServerList</a> — Отримує
+список серверів у пулі</li>
+<li><a href="memcached.getstats.md">Memcached::getStats</a> — Отримує статистику
+про сервери в пулі</li>
+<li><a href="memcached.getversion.md">Memcached::getVersion</a> — Отримує
+інформацію про версію серверів у пулі</li>
+<li><a href="memcached.increment.md">Memcached::increment</a> — Збільшує
+числове значення запису</li>
+<li><a href="memcached.incrementbykey.md">Memcached::incrementByKey</a> -
+Збільшує числове значення запису, що зберігається на вказаному сервері</li>
+<li><a href="memcached.ispersistent.md">Memcached::isPersistent</a> — Перевіряє
+чи використовується стійке з'єднання з сервером memcache</li>
+<li><a href="memcached.ispristine.md">Memcached::isPristine</a> — Перевіряє
+чи вже створено екземпляр класу Memcached</li>
+<li><a href="memcached.prepend.md">Memcached::prepend</a> — Додає дані до
+початок існуючого запису</li>
+<li><a href="memcached.prependbykey.md">Memcached::prependByKey</a> — Додає
+дані на початок існуючого запису на вказаному сервері</li>
+<li><a href="memcached.quit.md">Memcached::quit</a> — Закриває всі відкриті
+з'єднання</li>
+<li><a href="memcached.replace.md">Memcached::replace</a> — Замінює наявну
+запис із зазначеним ключем</li>
+<li><a href="memcached.replacebykey.md">Memcached::replaceByKey</a> — Замінює
+існуючий запис із заданим ключем на вказаному сервері</li>
+<li><a href="memcached.resetserverlist.md">Memcached::resetServerList</a>
+Очищає список серверів</li>
+<li><a href="memcached.set.md">Memcached::set</a> — Зберігає запис</li>
+<li><a href="memcached.setbykey.md">Memcached::setByKey</a> — Зберігає запис на
+вказаному сервері</li>
+<li><a href="memcached.setmulti.md">Memcached::setMulti</a> — Зберігає кілька
+записів</li>
+<li><a href="memcached.setmultibykey.md">Memcached::setMultiByKey</a> — Зберігає
+кілька записів на вказаному сервері</li>
+<li><a href="memcached.setoption.md">Memcached::setOption</a> — Встановлює
+значення параметра для Memcached</li>
+<li><a href="memcached.setoptions.md">Memcached::setOptions</a> — Встановлює
+кілька Memcached параметрів</li>
+<li><a href="memcached.setsaslauthdata.md">Memcached::setSaslAuthData</a>
+Встановлює облікові дані для автентифікації</li>
+<li><a href="memcached.touch.md">Memcached::touch</a> — Встановлює новий термін
+зберігання для запису</li>
+<li><a href="memcached.touchbykey.md">Memcached::touchByKey</a> — Встановлює
+новий термін зберігання для запису на вказаному сервері</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.memcached.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.memcached.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.memcached","slug":"class.memcached.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"memcached.sessions.md\"\u003e«Підтримка сесій\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"memcached.add.md\"\u003eMemcached::add »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.memcached.md\"\u003eMemcached\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас Memcached\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас Memcached\u003c/h1\u003e\n\u003cp\u003e(PECL memcached \u003e= 0.1.0)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003eПредставляє підключення до набору серверів memcached.\u003c/p\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eMemcached\u003c/strong\u003e {\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.construct.md\"\u003e__construct\u003c/a\u003e(string \u003ccode\u003e$persistent_id\u003c/code\u003e\n=?)\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.add.md\"\u003eadd\u003c/a\u003e(string \u003ccode\u003e$key\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$value\u003c/code\u003e, int \u003ccode\u003e$expiration\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.addbykey.md\"\u003eaddByKey\u003c/a\u003e(\nstring \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n$value,\nint \u003ccode\u003e$expiration\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.addserver.md\"\u003eaddServer\u003c/a\u003e(string \u003ccode\u003e$host\u003c/code\u003e, int\n\u003ccode\u003e$port\u003c/code\u003e, int \u003ccode\u003e$weight\u003c/code\u003e = 0): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.addservers.md\"\u003eaddServers\u003c/a\u003e(array \u003ccode\u003e$servers\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.append.md\"\u003eappend\u003c/a\u003e(string \u003ccode\u003e$key\u003c/code\u003e, string \u003ccode\u003e$value\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.appendbykey.md\"\u003eappendByKey\u003c/a\u003e(string \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e, string \u003ccode\u003e$value\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.cas.md\"\u003ecas\u003c/a\u003e(\nfloat \u003ccode\u003e$cas_token\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n$value,\nint \u003ccode\u003e$expiration\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.casbykey.md\"\u003ecasByKey\u003c/a\u003e(\nfloat \u003ccode\u003e$cas_token\u003c/code\u003e,\nstring \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n$value,\nint \u003ccode\u003e$expiration\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.decrement.md\"\u003edecrement\u003c/a\u003e(\nstring \u003ccode\u003e$key\u003c/code\u003e,\nint \u003ccode\u003e$offset\u003c/code\u003e = 1,\nint \u003ccode\u003e$initial_value\u003c/code\u003e = 0,\nint \u003ccode\u003e$expiry\u003c/code\u003e = 0\n): int|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.decrementbykey.md\"\u003edecrementByKey\u003c/a\u003e(\nstring \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e,\nint \u003ccode\u003e$offset\u003c/code\u003e = 1,\nint \u003ccode\u003e$initial_value\u003c/code\u003e = 0,\nint \u003ccode\u003e$expiry\u003c/code\u003e = 0\n): int|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.delete.md\"\u003edelete\u003c/a\u003e(string \u003ccode\u003e$key\u003c/code\u003e, int \u003ccode\u003e$time\u003c/code\u003e = 0):\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.deletebykey.md\"\u003edeleteByKey\u003c/a\u003e(string \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e, int \u003ccode\u003e$time\u003c/code\u003e = 0): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.deletemulti.md\"\u003edeleteMulti\u003c/a\u003e(array \u003ccode\u003e$keys\u003c/code\u003e, int\n\u003ccode\u003e$time\u003c/code\u003e = 0): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.deletemultibykey.md\"\u003edeleteMultiByKey\u003c/a\u003e(string\n\u003ccode\u003e$server_key\u003c/code\u003e, array \u003ccode\u003e$keys\u003c/code\u003e, int \u003ccode\u003e$time\u003c/code\u003e = 0): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.fetch.md\"\u003efetch\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.fetchall.md\"\u003efetchAll\u003c/a\u003e(): array|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.flush.md\"\u003eflush\u003c/a\u003e(int \u003ccode\u003e$delay\u003c/code\u003e = 0): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.get.md\"\u003eget\u003c/a\u003e(string \u003ccode\u003e$key\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$cache_cb\u003c/code\u003e = ?, int \u003ccode\u003e$flags\u003c/code\u003e =\n?):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getallkeys.md\"\u003egetAllKeys\u003c/a\u003e(): array|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getbykey.md\"\u003egetByKey\u003c/a\u003e(\nstring \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$cache_cb\u003c/code\u003e = ?,\nint \u003ccode\u003e$flags\u003c/code\u003e = ?\n):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getdelayed.md\"\u003egetDelayed\u003c/a\u003e(array \u003ccode\u003e$keys\u003c/code\u003e, bool\n\u003ccode\u003e$with_cas\u003c/code\u003e = ?, \u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$value_cb\u003c/code\u003e =\n?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getdelayedbykey.md\"\u003egetDelayedByKey\u003c/a\u003e(\nstring \u003ccode\u003e$server_key\u003c/code\u003e,\narray \u003ccode\u003e$keys\u003c/code\u003e,\nbool \u003ccode\u003e$with_cas\u003c/code\u003e = ?,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$value_cb\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getmulti.md\"\u003egetMulti\u003c/a\u003e(array \u003ccode\u003e$keys\u003c/code\u003e, int \u003ccode\u003e$flags\u003c/code\u003e =\n?):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getmultibykey.md\"\u003egetMultiByKey\u003c/a\u003e(string\n\u003ccode\u003e$server_key\u003c/code\u003e, array \u003ccode\u003e$keys\u003c/code\u003e, int \u003ccode\u003e$flags\u003c/code\u003e = ?): array|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getoption.md\"\u003egetOption\u003c/a\u003e(int \u003ccode\u003e$option\u003c/code\u003e):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getresultcode.md\"\u003egetResultCode\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getresultmessage.md\"\u003egetResultMessage\u003c/a\u003e(): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getserverbykey.md\"\u003egetServerByKey\u003c/a\u003e(string\n\u003ccode\u003e$server_key\u003c/code\u003e): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getserverlist.md\"\u003egetServerList\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getstats.md\"\u003egetStats\u003c/a\u003e(): array|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.getversion.md\"\u003egetVersion\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.increment.md\"\u003eincrement\u003c/a\u003e(\nstring \u003ccode\u003e$key\u003c/code\u003e,\nint \u003ccode\u003e$offset\u003c/code\u003e = 1,\nint \u003ccode\u003e$initial_value\u003c/code\u003e = 0,\nint \u003ccode\u003e$expiry\u003c/code\u003e = 0\n): int|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.incrementbykey.md\"\u003eincrementByKey\u003c/a\u003e(\nstring \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e,\nint \u003ccode\u003e$offset\u003c/code\u003e = 1,\nint \u003ccode\u003e$initial_value\u003c/code\u003e = 0,\nint \u003ccode\u003e$expiry\u003c/code\u003e = 0\n): int|false\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.ispersistent.md\"\u003eisPersistent\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.ispristine.md\"\u003eisPristine\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.prepend.md\"\u003eprepend\u003c/a\u003e(string \u003ccode\u003e$key\u003c/code\u003e, string\n\u003ccode\u003e$value\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.prependbykey.md\"\u003eprependByKey\u003c/a\u003e(string \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e, string \u003ccode\u003e$value\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.quit.md\"\u003equit\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.replace.md\"\u003ereplace\u003c/a\u003e(string \u003ccode\u003e$key\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$value\u003c/code\u003e, int \u003ccode\u003e$expiration\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.replacebykey.md\"\u003ereplaceByKey\u003c/a\u003e(\nstring \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n$value,\nint \u003ccode\u003e$expiration\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.resetserverlist.md\"\u003eresetServerList\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.set.md\"\u003eset\u003c/a\u003e(string \u003ccode\u003e$key\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$value\u003c/code\u003e, int \u003ccode\u003e$expiration\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.setbykey.md\"\u003esetByKey\u003c/a\u003e(\nstring \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n$value,\nint \u003ccode\u003e$expiration\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.setmulti.md\"\u003esetMulti\u003c/a\u003e(array \u003ccode\u003e$items\u003c/code\u003e, int\n\u003ccode\u003e$expiration\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.setmultibykey.md\"\u003esetMultiByKey\u003c/a\u003e(string\n\u003ccode\u003e$server_key\u003c/code\u003e, array \u003ccode\u003e$items\u003c/code\u003e, int \u003ccode\u003e$expiration\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.setoption.md\"\u003esetOption\u003c/a\u003e(int \u003ccode\u003e$option\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$value\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.setoptions.md\"\u003esetOptions\u003c/a\u003e(array \u003ccode\u003e$options\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.setsaslauthdata.md\"\u003esetSaslAuthData\u003c/a\u003e(string\n\u003ccode\u003e$username\u003c/code\u003e, string \u003ccode\u003e$password\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.touch.md\"\u003etouch\u003c/a\u003e(string \u003ccode\u003e$key\u003c/code\u003e, int \u003ccode\u003e$expiration\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"memcached.touchbykey.md\"\u003etouchByKey\u003c/a\u003e(string \u003ccode\u003e$server_key\u003c/code\u003e,\nstring \u003ccode\u003e$key\u003c/code\u003e, int \u003ccode\u003e$expiration\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"memcached.add.md\"\u003eMemcached::add\u003c/a\u003e — Додає елемент із новим\nключем\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.addbykey.md\"\u003eMemcached::addByKey\u003c/a\u003e — Додає новий\nелемент на заданий сервер\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.addserver.md\"\u003eMemcached::addServer\u003c/a\u003e — Додає сервер\nв пул\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.addservers.md\"\u003eMemcached::addServers\u003c/a\u003e — Додає\nкілька серверів у пул\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.append.md\"\u003eMemcached::append\u003c/a\u003e — Додає дані до\nіснуючого запису\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.appendbykey.md\"\u003eMemcached::appendByKey\u003c/a\u003e — Додає\nдані до існуючого запису на заданому сервері\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.cas.md\"\u003eMemcached::cas\u003c/a\u003e — Порівнює та встановлює\nзначення для запису\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.casbykey.md\"\u003eMemcached::casByKey\u003c/a\u003e — Порівнює та\nвстановлює значення для запису на конкретному сервері\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.construct.md\"\u003eMemcached::__construct\u003c/a\u003e - Створює\nекземпляр класу Memcached\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.decrement.md\"\u003eMemcached::decrement\u003c/a\u003e — Зменшує\nчислове значення запису\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.decrementbykey.md\"\u003eMemcached::decrementByKey\u003c/a\u003e -\nЗменшує числове значення запису, що зберігається на певному\nсервері\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.delete.md\"\u003eMemcached::delete\u003c/a\u003e — Видалення запису\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.deletebykey.md\"\u003eMemcached::deleteByKey\u003c/a\u003e — Видаляє\nзапис із зазначеного сервера\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.deletemulti.md\"\u003eMemcached::deleteMulti\u003c/a\u003e — Видаляє\nкілька записів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.deletemultibykey.md\"\u003eMemcached::deleteMultiByKey\u003c/a\u003e -\nВидаляє кілька записів із вказаного сервера\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.fetch.md\"\u003eMemcached::fetch\u003c/a\u003e — Витягує наступний\nрезультат\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.fetchall.md\"\u003eMemcached::fetchAll\u003c/a\u003e — Витягує все\nотримані записи\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.flush.md\"\u003eMemcached::flush\u003c/a\u003e — Анулює всі записи в\nкеші\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.get.md\"\u003eMemcached::get\u003c/a\u003e — Отримання запису\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getallkeys.md\"\u003eMemcached::getAllKeys\u003c/a\u003e — Отримує все\nключі, що зберігаються на серверах\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getbykey.md\"\u003eMemcached::getByKey\u003c/a\u003e — Отримує запис з\nпевного сервера\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getdelayed.md\"\u003eMemcached::getDelayed\u003c/a\u003e — Запитує\nкілька записів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getdelayedbykey.md\"\u003eMemcached::getDelayedByKey\u003c/a\u003e -\nЗапитує кілька записів із вказаного сервера\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getmulti.md\"\u003eMemcached::getMulti\u003c/a\u003e — Отримує декілька\nзаписів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getmultibykey.md\"\u003eMemcached::getMultiByKey\u003c/a\u003e — Отримує\nкілька записів із вказаного сервера\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getoption.md\"\u003eMemcached::getOption\u003c/a\u003e — Отримує значення\nMemcached параметр\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getresultcode.md\"\u003eMemcached::getResultCode\u003c/a\u003e\nПовертає результуючий код останньої виконаної операції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getresultmessage.md\"\u003eMemcached::getResultMessage\u003c/a\u003e -\nПовертає повідомлення, що описує результат виконання останньої\nоперації\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getserverbykey.md\"\u003eMemcached::getServerByKey\u003c/a\u003e -\nОтримує інформацію про сервер по ключу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getserverlist.md\"\u003eMemcached::getServerList\u003c/a\u003e — Отримує\nсписок серверів у пулі\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getstats.md\"\u003eMemcached::getStats\u003c/a\u003e — Отримує статистику\nпро сервери в пулі\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.getversion.md\"\u003eMemcached::getVersion\u003c/a\u003e — Отримує\nінформацію про версію серверів у пулі\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.increment.md\"\u003eMemcached::increment\u003c/a\u003e — Збільшує\nчислове значення запису\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.incrementbykey.md\"\u003eMemcached::incrementByKey\u003c/a\u003e -\nЗбільшує числове значення запису, що зберігається на вказаному сервері\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.ispersistent.md\"\u003eMemcached::isPersistent\u003c/a\u003e — Перевіряє\nчи використовується стійке з'єднання з сервером memcache\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.ispristine.md\"\u003eMemcached::isPristine\u003c/a\u003e — Перевіряє\nчи вже створено екземпляр класу Memcached\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.prepend.md\"\u003eMemcached::prepend\u003c/a\u003e — Додає дані до\nпочаток існуючого запису\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.prependbykey.md\"\u003eMemcached::prependByKey\u003c/a\u003e — Додає\nдані на початок існуючого запису на вказаному сервері\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.quit.md\"\u003eMemcached::quit\u003c/a\u003e — Закриває всі відкриті\nз'єднання\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.replace.md\"\u003eMemcached::replace\u003c/a\u003e — Замінює наявну\nзапис із зазначеним ключем\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.replacebykey.md\"\u003eMemcached::replaceByKey\u003c/a\u003e — Замінює\nіснуючий запис із заданим ключем на вказаному сервері\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.resetserverlist.md\"\u003eMemcached::resetServerList\u003c/a\u003e\nОчищає список серверів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.set.md\"\u003eMemcached::set\u003c/a\u003e — Зберігає запис\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.setbykey.md\"\u003eMemcached::setByKey\u003c/a\u003e — Зберігає запис на\nвказаному сервері\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.setmulti.md\"\u003eMemcached::setMulti\u003c/a\u003e — Зберігає кілька\nзаписів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.setmultibykey.md\"\u003eMemcached::setMultiByKey\u003c/a\u003e — Зберігає\nкілька записів на вказаному сервері\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.setoption.md\"\u003eMemcached::setOption\u003c/a\u003e — Встановлює\nзначення параметра для Memcached\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.setoptions.md\"\u003eMemcached::setOptions\u003c/a\u003e — Встановлює\nкілька Memcached параметрів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.setsaslauthdata.md\"\u003eMemcached::setSaslAuthData\u003c/a\u003e\nВстановлює облікові дані для автентифікації\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.touch.md\"\u003eMemcached::touch\u003c/a\u003e — Встановлює новий термін\nзберігання для запису\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"memcached.touchbykey.md\"\u003eMemcached::touchByKey\u003c/a\u003e — Встановлює\nновий термін зберігання для запису на вказаному сервері\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.memcached.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

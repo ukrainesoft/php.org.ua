@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.ds-deque | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="ds-vector.unshift.md">Ds\Vector::unshift</a></p>
+</li>
+<li>
+<p><a href="ds-deque.allocate.md">Ds\Deque::allocate »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.ds.md">Структури даних</a></p>
+</li>
+<li>
+<p>Клас Deque</p>
+</li>
+</ul>
+<h1>Клас Deque</h1>
+<p>(No version information available, might only be in Git)</p>
+<h2>Вступ</h2>
+<p>Двостороння черга - це послідовність значень у безперервному
+буфер, який росте і зменшується автоматично. Deque (вимовляється
+як "deck") є абревіатурою від "double-ended queue" та
+використовується всередині <strong>Ds\Queue</strong>.</p>
+<p>Два вказівники використовуються для відстеження початку та кінця. Вказівники
+можуть "обернути" кінець черги, що дозволяє уникнути переміщення
+значень для визволення місця. Це робить операції shift та unshift
+такими швидкими, що <strong>Ds\Vector</strong> не може з цим змагатися.</p>
+<p>Доступ до елемента за індексом вимагає перерахунку залежно від нього
+індексу у буфері: <code>((head + position) % capacity)</code>.</p>
+<h2>Сильні сторони</h2>
+<ul>
+<li>Підтримує синтаксис масиву (квадратні дужки).</li>
+<li>вимагає менше пам'яті, ніж масив (array) з тією ж кількістю
+значень.</li>
+<li>Автоматично звільняє пам'ять, коли кількість елементів
+зменшується.</li>
+<li><strong>get()</strong>, <strong>set()</strong>, <strong>push()</strong>, <strong>pop()</strong>, <strong>shift()</strong> та
+<strong>unshift()</strong> мають складність O(1).</li>
+</ul>
+<h2>Слабкі сторони</h2>
+<ul>
+<li>Місткість обмежена ступенями двійки.</li>
+<li><strong>insert()</strong> і <strong>remove()</strong> мають складність O(n).</li>
+</ul>
+<h2>Огляд класів</h2>
+<p>class <strong>Ds\Deque</strong> implements <strong>Ds\Sequence</strong>,
+<a href="class.arrayaccess.md">ArrayAccess</a> {</p>
+<p>/* Константи */</p>
+<p>const int <code>MIN_CAPACITY</code> = 8;</p>
+<p>/* Методи */</p>
+<p>public <a href="ds-deque.allocate.md">allocate</a>(int <code>$capacity</code>): void</p>
+<p>public
+<a href="ds-deque.apply.md">apply</a>(<a href="language.types.callable.md">callable</a>
+<code>$callback</code>): void</p>
+<p>public <a href="ds-deque.capacity.md">capacity</a>(): int</p>
+<p>public <a href="ds-deque.clear.md">clear</a>(): void</p>
+<p>public
+<a href="ds-deque.contains.md">contains</a>(<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>...$values</code>): bool</p>
+<p>public <a href="ds-deque.copy.md">copy</a>(): <a href="class.ds-deque.md">Ds\Deque</a></p>
+<p>public
+<a href="ds-deque.filter.md">filter</a>(<a href="language.types.callable.md">callable</a>
+<code>$callback</code> = ?): <a href="class.ds-deque.md">Ds\Deque</a></p>
+<p>public
+<a href="ds-deque.find.md">find</a>(<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$value</code>):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="ds-deque.first.md">first</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="ds-deque.get.md">get</a>(int <code>$index</code>):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="ds-deque.insert.md">insert</a>(int <code>$index</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>...$values</code>): void</p>
+<p>public <a href="ds-deque.isempty.md">isEmpty</a>(): bool</p>
+<p>public <a href="ds-deque.join.md">join</a>(string <code>$glue</code> = ?): string</p>
+<p>public <a href="ds-deque.last.md">last</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="ds-deque.map.md">map</a>(<a href="language.types.callable.md">callable</a>
+<code>$callback</code>): <a href="class.ds-deque.md">Ds\Deque</a></p>
+<p>public
+<a href="ds-deque.merge.md">merge</a>(<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$values</code>): <a href="class.ds-deque.md">Ds\Deque</a></p>
+<p>public <a href="ds-deque.pop.md">pop</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public
+<a href="ds-deque.push.md">push</a>(<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>...$values</code>): void</p>
+<p>public
+<a href="ds-deque.reduce.md">reduce</a>(<a href="language.types.callable.md">callable</a>
+<code>$callback</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$initial</code> = ?):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="ds-deque.remove.md">remove</a>(int <code>$index</code>):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="ds-deque.reverse.md">reverse</a>(): void</p>
+<p>public <a href="ds-deque.reversed.md">reversed</a>():
+<a href="class.ds-deque.md">Ds\Deque</a></p>
+<p>public <a href="ds-deque.rotate.md">rotate</a>(int <code>$rotations</code>): void</p>
+<p>public <a href="ds-deque.set.md">set</a>(int <code>$index</code>,
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$value</code>): void</p>
+<p>public <a href="ds-deque.shift.md">shift</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="ds-deque.slice.md">slice</a>(int <code>$index</code>, int <code>$length</code> = ?):
+<a href="class.ds-deque.md">Ds\Deque</a></p>
+<p>public
+<a href="ds-deque.sort.md">sort</a>(<a href="language.types.callable.md">callable</a>
+<code>$comparator</code> = ?): void</p>
+<p>public
+<a href="ds-deque.sorted.md">sorted</a>(<a href="language.types.callable.md">callable</a>
+<code>$comparator</code> = ?): <a href="class.ds-deque.md">Ds\Deque</a></p>
+<p>public <a href="ds-deque.sum.md">sum</a>(): int|float</p>
+<p>public <a href="ds-deque.toarray.md">toArray</a>(): array</p>
+<p>public
+<a href="ds-deque.unshift.md">unshift</a>(<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+$values = ?): void</p>
+<p>}</p>
+<h2>Зумовлені константи</h2>
+<p><strong><code>Ds\Deque::MIN_CAPACITY</code></strong></p>
+<h2>Список змін</h2>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PECL DS 1.3.0</td>
+<td>Тепер клас продає <a href="class.arrayaccess.md">ArrayAccess</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2>Зміст</h2>
+<ul>
+<li><a href="ds-deque.allocate.md">Ds\Deque::allocate</a> — Виділяє пам'ять під
+зазначену місткість</li>
+<li><a href="ds-deque.apply.md">Ds\Deque::apply</a> — Оновлює всі значення,
+застосовуючи callback-функцію до кожного значення</li>
+<li><a href="ds-deque.capacity.md">Ds\Deque::capacity</a> — Повертає поточну
+місткість</li>
+<li><a href="ds-deque.clear.md">Ds\Deque::clear</a> — Видаляє всі значення з
+двосторонньої черги</li>
+<li><a href="ds-deque.construct.md">Ds\Deque::__construct</a> — Створює новий
+екземпляр</li>
+<li><a href="ds-deque.contains.md">Ds\Deque::contains</a> — Перевіряє, чи міститься
+чи у двосторонній черзі задані значення</li>
+<li><a href="ds-deque.copy.md">Ds\Deque::copy</a> — Повертає поверхневу
+копію колекції</li>
+<li><a href="ds-deque.count.md">Ds\Deque::count</a> — Повертає кількість
+елементів двосторонньої черги</li>
+<li><a href="ds-deque.filter.md">Ds\Deque::filter</a> — Створює нову
+двосторонню чергу з елементів, вибраних за допомогою заданої
+callback-функції</li>
+<li><a href="ds-deque.find.md">Ds\Deque::find</a> — Пошук індексу за значенням</li>
+<li><a href="ds-deque.first.md">Ds\Deque::first</a> — Повертає перший елемент
+двосторонньої черги</li>
+<li><a href="ds-deque.get.md">Ds\Deque::get</a> — Повертає значення за індексом</li>
+<li><a href="ds-deque.insert.md">Ds\Deque::insert</a> — Вставляє значення за
+зазначеному індексу</li>
+<li><a href="ds-deque.isempty.md">Ds\Deque::isEmpty</a> — Перевіряє, чи пуста
+двостороння черга</li>
+<li><a href="ds-deque.join.md">Ds\Deque::join</a> — Склеює всі значення в
+рядок</li>
+<li><a href="ds-deque.jsonserialize.md">Ds\Deque::jsonSerialize</a> — Повертає
+колекцію в JSON-представленні</li>
+<li><a href="ds-deque.last.md">Ds\Deque::last</a> — Повертає останнє значення
+двосторонньої черги</li>
+<li><a href="ds-deque.map.md">Ds\Deque::map</a> — Повертає результат застосування
+callback-функції до всіх значень двосторонньої черги</li>
+<li><a href="ds-deque.merge.md">Ds\Deque::merge</a> — Повертає результат
+додавання всіх заданих значень у двосторонню чергу</li>
+<li><a href="ds-deque.pop.md">Ds\Deque::pop</a> — Видаляє та повертає останнє
+значення</li>
+<li><a href="ds-deque.push.md">Ds\Deque::push</a> — Додає значення до кінця
+двосторонньої черги</li>
+<li><a href="ds-deque.reduce.md">Ds\Deque::reduce</a> — Зменшує колекцію до
+одного значення, використовуючи callback-функцію</li>
+<li><a href="ds-deque.remove.md">Ds\Deque::remove</a> — Видаляє та повертає
+значення за індексом</li>
+<li><a href="ds-deque.reverse.md">Ds\Deque::reverse</a> — Перевертає поточну
+двосторонню чергу</li>
+<li><a href="ds-deque.reversed.md">Ds\Deque::reversed</a> - Повертає
+перегорнуту копію двосторонньої черги</li>
+<li><a href="ds-deque.rotate.md">Ds\Deque::rotate</a> — Перемотує
+двосторонню чергу на задану кількість значень</li>
+<li><a href="ds-deque.set.md">Ds\Deque::set</a> — Замінює значення вказаного
+індексу</li>
+<li><a href="ds-deque.shift.md">Ds\Deque::shift</a> — Видаляє та повертає перше
+значення</li>
+<li><a href="ds-deque.slice.md">Ds\Deque::slice</a> — Повертає почергово з
+заданого діапазону</li>
+<li><a href="ds-deque.sort.md">Ds\Deque::sort</a> — Сортує двосторонню
+черга</li>
+<li><a href="ds-deque.sorted.md">Ds\Deque::sorted</a> — Повертає
+відсортовану за значенням копію двосторонньої черги</li>
+<li><a href="ds-deque.sum.md">Ds\Deque::sum</a> — Повертає суму всіх значень
+двосторонньої черги</li>
+<li><a href="ds-deque.toarray.md">Ds\Deque::toArray</a> - Перетворює
+двосторонню чергу в масив (array)</li>
+<li><a href="ds-deque.unshift.md">Ds\Deque::unshift</a> — Додає значення до
+початок двосторонньої черги</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.ds-deque.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.ds-deque.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.ds-deque","slug":"class.ds-deque.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ds-vector.unshift.md\"\u003eDs\\Vector::unshift\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ds-deque.allocate.md\"\u003eDs\\Deque::allocate »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.ds.md\"\u003eСтруктури даних\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас Deque\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас Deque\u003c/h1\u003e\n\u003cp\u003e(No version information available, might only be in Git)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003eДвостороння черга - це послідовність значень у безперервному\nбуфер, який росте і зменшується автоматично. Deque (вимовляється\nяк \"deck\") є абревіатурою від \"double-ended queue\" та\nвикористовується всередині \u003cstrong\u003eDs\\Queue\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eДва вказівники використовуються для відстеження початку та кінця. Вказівники\nможуть \"обернути\" кінець черги, що дозволяє уникнути переміщення\nзначень для визволення місця. Це робить операції shift та unshift\nтакими швидкими, що \u003cstrong\u003eDs\\Vector\u003c/strong\u003e не може з цим змагатися.\u003c/p\u003e\n\u003cp\u003eДоступ до елемента за індексом вимагає перерахунку залежно від нього\nіндексу у буфері: \u003ccode\u003e((head + position) % capacity)\u003c/code\u003e.\u003c/p\u003e\n\u003ch2\u003eСильні сторони\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eПідтримує синтаксис масиву (квадратні дужки).\u003c/li\u003e\n\u003cli\u003eвимагає менше пам'яті, ніж масив (array) з тією ж кількістю\nзначень.\u003c/li\u003e\n\u003cli\u003eАвтоматично звільняє пам'ять, коли кількість елементів\nзменшується.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eget()\u003c/strong\u003e, \u003cstrong\u003eset()\u003c/strong\u003e, \u003cstrong\u003epush()\u003c/strong\u003e, \u003cstrong\u003epop()\u003c/strong\u003e, \u003cstrong\u003eshift()\u003c/strong\u003e та\n\u003cstrong\u003eunshift()\u003c/strong\u003e мають складність O(1).\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eСлабкі сторони\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eМісткість обмежена ступенями двійки.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003einsert()\u003c/strong\u003e і \u003cstrong\u003eremove()\u003c/strong\u003e мають складність O(n).\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eDs\\Deque\u003c/strong\u003e implements \u003cstrong\u003eDs\\Sequence\u003c/strong\u003e,\n\u003ca href=\"class.arrayaccess.md\"\u003eArrayAccess\u003c/a\u003e {\u003c/p\u003e\n\u003cp\u003e/* Константи */\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eMIN_CAPACITY\u003c/code\u003e = 8;\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.allocate.md\"\u003eallocate\u003c/a\u003e(int \u003ccode\u003e$capacity\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-deque.apply.md\"\u003eapply\u003c/a\u003e(\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\n\u003ccode\u003e$callback\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.capacity.md\"\u003ecapacity\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.clear.md\"\u003eclear\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-deque.contains.md\"\u003econtains\u003c/a\u003e(\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e...$values\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.copy.md\"\u003ecopy\u003c/a\u003e(): \u003ca href=\"class.ds-deque.md\"\u003eDs\\Deque\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-deque.filter.md\"\u003efilter\u003c/a\u003e(\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\n\u003ccode\u003e$callback\u003c/code\u003e = ?): \u003ca href=\"class.ds-deque.md\"\u003eDs\\Deque\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-deque.find.md\"\u003efind\u003c/a\u003e(\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$value\u003c/code\u003e):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.first.md\"\u003efirst\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.get.md\"\u003eget\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.insert.md\"\u003einsert\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e...$values\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.isempty.md\"\u003eisEmpty\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.join.md\"\u003ejoin\u003c/a\u003e(string \u003ccode\u003e$glue\u003c/code\u003e = ?): string\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.last.md\"\u003elast\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.map.md\"\u003emap\u003c/a\u003e(\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\n\u003ccode\u003e$callback\u003c/code\u003e): \u003ca href=\"class.ds-deque.md\"\u003eDs\\Deque\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-deque.merge.md\"\u003emerge\u003c/a\u003e(\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$values\u003c/code\u003e): \u003ca href=\"class.ds-deque.md\"\u003eDs\\Deque\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.pop.md\"\u003epop\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-deque.push.md\"\u003epush\u003c/a\u003e(\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e...$values\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-deque.reduce.md\"\u003ereduce\u003c/a\u003e(\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\n\u003ccode\u003e$callback\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$initial\u003c/code\u003e = ?):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.remove.md\"\u003eremove\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.reverse.md\"\u003ereverse\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.reversed.md\"\u003ereversed\u003c/a\u003e():\n\u003ca href=\"class.ds-deque.md\"\u003eDs\\Deque\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.rotate.md\"\u003erotate\u003c/a\u003e(int \u003ccode\u003e$rotations\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.set.md\"\u003eset\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e,\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$value\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.shift.md\"\u003eshift\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.slice.md\"\u003eslice\u003c/a\u003e(int \u003ccode\u003e$index\u003c/code\u003e, int \u003ccode\u003e$length\u003c/code\u003e = ?):\n\u003ca href=\"class.ds-deque.md\"\u003eDs\\Deque\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-deque.sort.md\"\u003esort\u003c/a\u003e(\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\n\u003ccode\u003e$comparator\u003c/code\u003e = ?): void\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-deque.sorted.md\"\u003esorted\u003c/a\u003e(\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\n\u003ccode\u003e$comparator\u003c/code\u003e = ?): \u003ca href=\"class.ds-deque.md\"\u003eDs\\Deque\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.sum.md\"\u003esum\u003c/a\u003e(): int|float\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-deque.toarray.md\"\u003etoArray\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-deque.unshift.md\"\u003eunshift\u003c/a\u003e(\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n$values = ?): void\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗумовлені константи\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eDs\\Deque::MIN_CAPACITY\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ch2\u003eСписок змін\u003c/h2\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ePECL DS 1.3.0\u003c/td\u003e\n\u003ctd\u003eТепер клас продає \u003ca href=\"class.arrayaccess.md\"\u003eArrayAccess\u003c/a\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.allocate.md\"\u003eDs\\Deque::allocate\u003c/a\u003e — Виділяє пам'ять під\nзазначену місткість\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.apply.md\"\u003eDs\\Deque::apply\u003c/a\u003e — Оновлює всі значення,\nзастосовуючи callback-функцію до кожного значення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.capacity.md\"\u003eDs\\Deque::capacity\u003c/a\u003e — Повертає поточну\nмісткість\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.clear.md\"\u003eDs\\Deque::clear\u003c/a\u003e — Видаляє всі значення з\nдвосторонньої черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.construct.md\"\u003eDs\\Deque::__construct\u003c/a\u003e — Створює новий\nекземпляр\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.contains.md\"\u003eDs\\Deque::contains\u003c/a\u003e — Перевіряє, чи міститься\nчи у двосторонній черзі задані значення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.copy.md\"\u003eDs\\Deque::copy\u003c/a\u003e — Повертає поверхневу\nкопію колекції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.count.md\"\u003eDs\\Deque::count\u003c/a\u003e — Повертає кількість\nелементів двосторонньої черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.filter.md\"\u003eDs\\Deque::filter\u003c/a\u003e — Створює нову\nдвосторонню чергу з елементів, вибраних за допомогою заданої\ncallback-функції\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.find.md\"\u003eDs\\Deque::find\u003c/a\u003e — Пошук індексу за значенням\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.first.md\"\u003eDs\\Deque::first\u003c/a\u003e — Повертає перший елемент\nдвосторонньої черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.get.md\"\u003eDs\\Deque::get\u003c/a\u003e — Повертає значення за індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.insert.md\"\u003eDs\\Deque::insert\u003c/a\u003e — Вставляє значення за\nзазначеному індексу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.isempty.md\"\u003eDs\\Deque::isEmpty\u003c/a\u003e — Перевіряє, чи пуста\nдвостороння черга\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.join.md\"\u003eDs\\Deque::join\u003c/a\u003e — Склеює всі значення в\nрядок\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.jsonserialize.md\"\u003eDs\\Deque::jsonSerialize\u003c/a\u003e — Повертає\nколекцію в JSON-представленні\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.last.md\"\u003eDs\\Deque::last\u003c/a\u003e — Повертає останнє значення\nдвосторонньої черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.map.md\"\u003eDs\\Deque::map\u003c/a\u003e — Повертає результат застосування\ncallback-функції до всіх значень двосторонньої черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.merge.md\"\u003eDs\\Deque::merge\u003c/a\u003e — Повертає результат\nдодавання всіх заданих значень у двосторонню чергу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.pop.md\"\u003eDs\\Deque::pop\u003c/a\u003e — Видаляє та повертає останнє\nзначення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.push.md\"\u003eDs\\Deque::push\u003c/a\u003e — Додає значення до кінця\nдвосторонньої черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.reduce.md\"\u003eDs\\Deque::reduce\u003c/a\u003e — Зменшує колекцію до\nодного значення, використовуючи callback-функцію\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.remove.md\"\u003eDs\\Deque::remove\u003c/a\u003e — Видаляє та повертає\nзначення за індексом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.reverse.md\"\u003eDs\\Deque::reverse\u003c/a\u003e — Перевертає поточну\nдвосторонню чергу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.reversed.md\"\u003eDs\\Deque::reversed\u003c/a\u003e - Повертає\nперегорнуту копію двосторонньої черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.rotate.md\"\u003eDs\\Deque::rotate\u003c/a\u003e — Перемотує\nдвосторонню чергу на задану кількість значень\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.set.md\"\u003eDs\\Deque::set\u003c/a\u003e — Замінює значення вказаного\nіндексу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.shift.md\"\u003eDs\\Deque::shift\u003c/a\u003e — Видаляє та повертає перше\nзначення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.slice.md\"\u003eDs\\Deque::slice\u003c/a\u003e — Повертає почергово з\nзаданого діапазону\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.sort.md\"\u003eDs\\Deque::sort\u003c/a\u003e — Сортує двосторонню\nчерга\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.sorted.md\"\u003eDs\\Deque::sorted\u003c/a\u003e — Повертає\nвідсортовану за значенням копію двосторонньої черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.sum.md\"\u003eDs\\Deque::sum\u003c/a\u003e — Повертає суму всіх значень\nдвосторонньої черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.toarray.md\"\u003eDs\\Deque::toArray\u003c/a\u003e - Перетворює\nдвосторонню чергу в масив (array)\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-deque.unshift.md\"\u003eDs\\Deque::unshift\u003c/a\u003e — Додає значення до\nпочаток двосторонньої черги\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.ds-deque.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

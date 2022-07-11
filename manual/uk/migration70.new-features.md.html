@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration70.new-features | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration70.incompatible.md">« Зміни, що ламають зворотну сумісність</a></p>
+</li>
+<li>
+<p><a href="migration70.deprecated.md">Функціональність, оголошена застарілою в PHP 7.0.x »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration70.md">Міграція з PHP 5.6.x на PHP 7.0.x</a></p>
+</li>
+<li>
+<p>Нова функціональність</p>
+</li>
+</ul>
+<h2>Нова функціональність</h2>
+<h3>Оголошення скалярних типів</h3>
+<p><a href="language.types.declarations.md">Оголошення скалярних типів</a> введено в
+двох варіантах: примусовий (за умовчанням) та строгий. наступні типи
+можуть використовуватися для оголошення параметрів (в обох варіантах):
+рядки (string), цілі (<code>int</code>), числа з плаваючою точкою (float) та
+логічні значення (bool). Вони доповнюють аргументи інших типів,
+введених у PHP 5: імена класів, інтерфейсів, array та
+<a href="language.types.callable.md">callable</a>.</p>
+<p><code>&#x3C;?php// Примусовий режимfunction sumOfInts(int ...$ints){    return array_sum($ints);}var_dump(sumOfInts(2, '3', 4.1));</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>int(9)</p>
+<p>Для встановлення строгого режиму, на початку файлу необхідно помістити
+одну директиву <a href="control-structures.declare.md"><code>declare</code></a>. Це
+означає, що строгість оголошення скалярних типів працює на рівні
+файлу і не торкається решти коду. Ця директива зачіпає не
+тільки оголошення параметрів, але й значення функцій, що повертаються
+(дивіться <a href="language.types.declarations.md">оголошення повертається типу</a>), вбудовані функції PHP та
+функції завантажених модулів.</p>
+<p>Детальну документацію та приклади використання читайте у розділі
+<a href="language.types.declarations.md">декларація типів</a>.</p>
+<h3>Оголошення значень, що повертаються</h3>
+<p>У PHP 7 додано підтримку <a href="language.types.declarations.md">оголошення повертається типу</a>. Аналогічно як і <a href="language.types.declarations.md">оголошення типів аргументів</a>, оголошення типу
+значення, що повертається вказує, значення якого типу повинна повернути
+функція. Для оголошення типу значення, що повертається доступні всі ті ж
+<a href="language.types.declarations.md">типи</a>, що й для оголошення типів
+аргументів.</p>
+<p><code>&#x3C;?phpfunction arraysSum(array ...$arrays): array{  return array_map(function(array $array): int {         return array_sum($r) ,3], [4,5,6], [7,8,9])); </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Array
+(
+[0] => 6
+[1] => 15
+[2] => 24
+)</p>
+<p>Повну документацію та приклади використання читайте у розділі про <a href="language.types.declarations.md">Оголошення типу, що повертається</a>.</p>
+<h3>Оператор об'єднання з null</h3>
+<p>Було додано оператор об'єднання з null (<code>??</code>), що є
+синтаксичним цукром для досить поширеної дії, коли
+спільно використовуються тернарний оператор та функція
+<a href="function.isset.md">isset()</a>. Він повертає перший операнд, якщо він
+заданий і не дорівнює <strong><code>null</code></strong>, а у протилежному випадку повертає другий
+операнд.</p>
+<p><code>&#x3C;?php// Вилучаємо значення $_GET['user'], а якщо воно не задано,// то повертаємо 'nobody'$username = $_GET['user'] ?? 'nobody';// Це ідентичному наступному коду:$username = isset($_GET['user']) ? $_GET['user'] : 'nobody';// Даний оператор можна використовувати в ланцюжку. 'user'], і якщо він також не заданий, то привласнюємо 'nobody'.$username = $_GET['user'] ?? $_POST['user'] ?? 'nobody';?></code></p>
+<h3>Оператор spaceship (космічний корабель)</h3>
+<p>Цей оператор призначений для порівняння двох виразів. Він повертає
+-1, 0 або 1 якщо <code>$a</code>, відповідно, менше, одно або більше ніж
+<code>$b</code>. Порівняння проводиться відповідно до <a href="types.comparisons.md">правил порівняння типів</a> PHP.</p>
+<p><code>&#x3C;?php// Цілі числаecho 1 &#x3C;=> 1; // 0echo 1 &#x3C;=> 2; // -1echo 2 &#x3C;=> 1; // 1// Числа з плаваючою точкоюecho 1.5 &#x3C;=> 1.5; // 0echo 1.5 &#x3C;=> 2.5; // -1echo 2.5 &#x3C;=> 1.5; // 1//Рядокecho "a" &#x3C;=> "a"; // 0echo "a" &#x3C;=> "b"; // -1echo "b" &#x3C;=> "a"; // 1?> </code></p>
+<h3>Визначення констант масивів за допомогою <a href="function.define.md">define()</a></h3>
+<p>Можна визначити константу типу array за допомогою функції
+<a href="function.define.md">define()</a>. У PHP 5.6 такі константи можна було
+задавати лише за допомогою <a href="language.constants.syntax.md"><code>const</code></a>.</p>
+<p><code>&#x3C;?phpdefine('ANIMALS', [   'dog',   ''cat',   ''bird']);echo ANIMALS[1]; // виводить "cat"?></code></p>
+<h3>Анонімні класи</h3>
+<p>Було додано підтримку анонімних класів за допомогою <code>new class</code>. Їх
+можна використовувати тоді, коли потрібен одноразовий клас та створювати
+повноцінний клас, а потім його об'єкт не має сенсу:</p>
+<p>`&#x3C;?phpinterface Logger {    public function log(string $msg);}class Application {    private $logger; public function getLogger(): Logger {         return $this->logger; }    public function setLogger(Logger $logger) {         $this->logger = $logger; }}$app = new Application;$app->setLogger(new class implements Logger {    public function log(string $msg) {          echo $msg; |);</p>
+<p>Результат виконання цього прикладу:</p>
+<p>object(class@anonymous)#2 (0) {
+}</p>
+<p>Детальну документацію та приклади використання читайте у розділі про
+<a href="language.oop5.anonymous.md">Анонімні класи</a>.</p>
+<h3>Синтаксис кодування Unicode</h3>
+<p>Він приймає шістнадцятковий код Unicode і записуємо його у форматі
+UTF-8 у подвійних лапках або форматі heredoc. Будь-який коректний код буде
+прийнятий. Ведучі нулі за бажанням.</p>
+<p><code> echo "\u{aa}";echo "\u{0000aa}";echo "\u{9999}";</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>ª
+ª (Те саме, що й перший варіант, але з провідними нулями)
+향</p>
+<h3><a href="closure.call.md">Closure::call()</a></h3>
+<p><a href="closure.call.md">Closure::call()</a> є більш продуктивним і
+коротким способом тимчасового зв'язування області дії об'єкта з
+замиканням та його викликом.</p>
+<p><code>&#x3C;?phpclass A {private $x = 1;}// До PHP 7$getX = function() {return $this->x;};$getXCB = $getX->bindTo(new A, '' ; // проміжне замиканняecho $getXCB();// PHP 7+$getX = function() {return $this->x;};echo $getX->call(new A);</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>1
+1</p>
+<h3><a href="function.unserialize.md">unserialize()</a> з фільтрацією</h3>
+<p>Ця функціональність забезпечує більш високий рівень безпеки при
+десеріалізації об'єктів із неперевіреними даними. Це дозволяє
+запобігти можливій ін'єкції коду, дозволяючи розробнику
+використовувати білий список класів для десеріалізації.</p>
+<p><code>&#x3C;?php// Преобразование всех объектов в __PHP_Incomplete_Class$data = unserialize($foo, ["allowed_classes" => false]);// Преобразование всех объектов, кроме MyClass и MyClass2 в __PHP_Incomplete_Class$data = unserialize($foo, [ "allowed_classes" => ["MyClass", "MyClass2"]]);// Поведінка за замовчуванням приймає всі класи (можна просто не задавати другий аргумент)$data = unseria ;</code></p>
+<h3><a href="class.intlchar.md">IntlChar</a></h3>
+<p>Новий клас <a href="class.intlchar.md">IntlChar</a> додає нову
+функціональність у ICU. Клас визначає кілька статичних методів та
+констант маніпулювання символами Unicode.</p>
+<p><code>&#x3C;?phpprintf('%x', IntlChar::CODEPOINT_MAX);echo IntlChar::charName('@');var_dump(IntlChar::ispunct('!'));</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>10ffff
+COMMERCIAL AT
+bool(true)</p>
+<p>Для використання цього класу необхідно встановити модуль
+<a href="book.intl.md">Intl</a>.</p>
+<h3>Очікування</h3>
+<p><a href="function.assert.md#function.assert.expectations">Очікування</a>
+покращеною, обернено сумісною версією старої функції
+<a href="function.assert.md">assert()</a>. Вони дозволяють робити припущення з
+нульовою вартістю у промисловому коді та надають можливість
+викидати користувацькі винятки у разі провалу очікування.</p>
+<p>Разом з тим, що старе API підтримується,
+<a href="function.assert.md">assert()</a> тепер є мовною конструкцією,
+приймає першим аргументом висловлювання, а не тільки рядки (string) для
+оцінки чи логічні значення (bool) для перевірки.</p>
+<p><code>&#x3C;?phpini_set('assert.exception', 1);class CustomError extends AssertionError {}assert(false, new CustomError('Повідомлення про помилку'));?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Fatal error: Uncaught CustomError: Повідомлення про помилку</p>
+<p>Детальний опис цього функціоналу, а також інструкції
+конфігурування для тестових та промислових середовищ, читайте у секції
+<a href="function.assert.md#function.assert.expectations">Очікування</a> розділу,
+присвяченому <a href="function.assert.md">assert()</a>.</p>
+<h3>Групові оголошення <code>use</code></h3>
+<p>Класи, функції та константи імпортовані з одного і того ж
+<a href="language.namespaces.definition.md"><code>namespace</code></a>, тепер можна
+групувати в одному операторі
+<a href="language.namespaces.importing.md"><code>use</code></a>.</p>
+<p><code>&#x3C;?php// До PHP 7use some amespace\ClassA;use some amespace\ClassB;use some amespace\ClassC as C;use function some amespace n_a;use function some amespace n_b;use function some amespace n_c;use const some amespace\ConstA;use const some amespace\ConstB;use const some amespace\ConstC;// PHP 7+use some amespace\{ClassA, ClassB, ClassC as C};use function some amespace\{fn_a, fn_b, fn_c};use const some amespace\{ConstA, ConstB, ConstC};?></code></p>
+<h3>Вираз return в генераторах</h3>
+<p>Ця функціональність додана до генераторів, введених у PHP 5.5. Вона
+дозволяє використовувати оператор <code>return</code> у генераторах як
+остаточного значення, що повертається (повернення за посиланням неприпустимо).
+Це значення можна отримати за допомогою нового методу
+<code>Generator::getReturn()</code>, який можна використовувати тільки після того,
+як генератор повернув усі згенеровані значення.</p>
+<p><code>&#x3C;?php$gen = (function() {    yield 1;    yield 2;   return 3;})();foreach ($gen as $val) { P|$| , PHP_EOL; </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>1
+2
+3</p>
+<p>Можливість явно отримувати остаточне значення генератора є
+дуже корисною, оскільки дозволяє клієнтському коду, що використовує
+генератор, отримувати та обробити останнє значення генератора,
+після якого точно нічого більше не буде. Це дуже простіше, ніж
+змушувати розробника перевіряти, чи останнє значення повернулося і
+якось особливого його обробляти.</p>
+<h3>Делегація генератора</h3>
+<p>Тепер генератор може автоматично делегувати іншому генератору,
+об'єкту класу, що реалізує <a href="class.traversable.md">Traversable</a> або
+масиву без необхідності писати в ньому додаткову обробку
+отриманих значень. Досягається це за допомогою конструкції
+<a href="language.generators.syntax.md#control-structures.yield.from"><code>yield from</code></a>.</p>
+<p><code>&#x3C;?phpfunction gen(){   yield 1; yield 2; yield from gen2();}function gen2(){   yield 3; yield 4;}foreach (gen() as $val){   echo $val, PHP_EOL;}?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>1
+2
+3
+4</p>
+<h3>Функція цілісного поділу <a href="function.intdiv.md">intdiv()</a></h3>
+<p>Нова функція <a href="function.intdiv.md">intdiv()</a> виробляє ціле чисельне
+розподіл операндів і повертає його результат.</p>
+<p><code>&#x3C;?phpvar_dump(intdiv(10, 3));?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>int(3)</p>
+<h3>Опції сесій</h3>
+<p>Тепер <a href="function.session-start.md">session_start()</a> приймає масив
+опцій, які перевизначать <a href="session.configuration.md">конфігураційні директиви сесії</a> встановлені у php.ini.</p>
+<p>Також опції були розширені включеною за замовчуванням опцією
+<a href="session.configuration.md#ini.session.lazy-write">session.lazy_write</a>,
+яка говорить PHP про те, що файл сесії треба перезаписувати, тільки
+якщо змінилися дані сесії, та опцією <code>read_and_close</code>, яку можна
+встановити тільки через <a href="function.session-start.md">session_start()</a> для
+того, щоб PHP закривав сесію відразу як прочитає її дані і не
+вносив до неї будь-яких змін.</p>
+<p>Наприклад, для встановлення
+<a href="session.configuration.md#ini.session.cache-limiter">session.cache_limiter</a>
+рівним <code>private</code> та негайному закриття сесії після читання її даних:</p>
+<p><code>&#x3C;?phpsession_start([   'cache_limiter' => 'private',   'read_and_close' => true,]);?></code></p>
+<h3><a href="function.preg-replace-callback-array.md">preg_replace_callback_array()</a></h3>
+<p>Нова функція
+<a href="function.preg-replace-callback-array.md">preg_replace_callback_array()</a>
+дозволяє писати чистіший код, коли потрібно використовувати функцію
+<a href="function.preg-replace-callback.md">preg_replace_callback()</a>. До PHP 7
+при необхідності обробити різні регулярні вирази різними
+функціями доводилося для кожної такої обробки писати окремий виклик
+функції.</p>
+<p>Тепер можна використовувати одну функцію, передаючи до неї асоціативний
+масив, ключами якого є регулярні вирази, а значеннями -
+функції зворотного дзвінка.</p>
+<h3>Функції <a href="book.csprng.md">CSPRNG</a></h3>
+<p>Було додано дві нові кросплатформні функції для генерації.
+криптографічно безпечних рядків та цілих чисел:
+<a href="function.random-bytes.md">random_bytes()</a> та
+<a href="function.random-int.md">random_int()</a>.</p>
+<h3>Тепер функція <a href="function.list.md">list()</a> завжди може розпаковувати об'єкти, що реалізують <a href="class.arrayaccess.md">ArrayAccess</a></h3>
+<p>Раніше функція <a href="function.list.md">list()</a> не гарантувала коректну
+обробку об'єктів, що реалізують <a href="class.arrayaccess.md">ArrayAccess</a>.
+Тепер це виправлено.</p>
+<h3>Інші зміни</h3>
+<ul>
+<li>Додана можливість доступу до методів та властивостей класу при
+клонування, тобто <code>(clone $ foo) -> bar () </code>.</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration70.new-features.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration70.new-features.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration70.new-features","slug":"migration70.new-features.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration70.incompatible.md\"\u003e« Зміни, що ламають зворотну сумісність\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration70.deprecated.md\"\u003eФункціональність, оголошена застарілою в PHP 7.0.x »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration70.md\"\u003eМіграція з PHP 5.6.x на PHP 7.0.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНова функціональність\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНова функціональність\u003c/h2\u003e\n\u003ch3\u003eОголошення скалярних типів\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"language.types.declarations.md\"\u003eОголошення скалярних типів\u003c/a\u003e введено в\nдвох варіантах: примусовий (за умовчанням) та строгий. наступні типи\nможуть використовуватися для оголошення параметрів (в обох варіантах):\nрядки (string), цілі (\u003ccode\u003eint\u003c/code\u003e), числа з плаваючою точкою (float) та\nлогічні значення (bool). Вони доповнюють аргументи інших типів,\nвведених у PHP 5: імена класів, інтерфейсів, array та\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Примусовий режимfunction sumOfInts(int ...$ints){    return array_sum($ints);}var_dump(sumOfInts(2, '3', 4.1));\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eint(9)\u003c/p\u003e\n\u003cp\u003eДля встановлення строгого режиму, на початку файлу необхідно помістити\nодну директиву \u003ca href=\"control-structures.declare.md\"\u003e\u003ccode\u003edeclare\u003c/code\u003e\u003c/a\u003e. Це\nозначає, що строгість оголошення скалярних типів працює на рівні\nфайлу і не торкається решти коду. Ця директива зачіпає не\nтільки оголошення параметрів, але й значення функцій, що повертаються\n(дивіться \u003ca href=\"language.types.declarations.md\"\u003eоголошення повертається типу\u003c/a\u003e), вбудовані функції PHP та\nфункції завантажених модулів.\u003c/p\u003e\n\u003cp\u003eДетальну документацію та приклади використання читайте у розділі\n\u003ca href=\"language.types.declarations.md\"\u003eдекларація типів\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eОголошення значень, що повертаються\u003c/h3\u003e\n\u003cp\u003eУ PHP 7 додано підтримку \u003ca href=\"language.types.declarations.md\"\u003eоголошення повертається типу\u003c/a\u003e. Аналогічно як і \u003ca href=\"language.types.declarations.md\"\u003eоголошення типів аргументів\u003c/a\u003e, оголошення типу\nзначення, що повертається вказує, значення якого типу повинна повернути\nфункція. Для оголошення типу значення, що повертається доступні всі ті ж\n\u003ca href=\"language.types.declarations.md\"\u003eтипи\u003c/a\u003e, що й для оголошення типів\nаргументів.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction arraysSum(array ...$arrays): array{  return array_map(function(array $array): int {         return array_sum($r) ,3], [4,5,6], [7,8,9])); \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eArray\n(\n[0] =\u003e 6\n[1] =\u003e 15\n[2] =\u003e 24\n)\u003c/p\u003e\n\u003cp\u003eПовну документацію та приклади використання читайте у розділі про \u003ca href=\"language.types.declarations.md\"\u003eОголошення типу, що повертається\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eОператор об'єднання з null\u003c/h3\u003e\n\u003cp\u003eБуло додано оператор об'єднання з null (\u003ccode\u003e??\u003c/code\u003e), що є\nсинтаксичним цукром для досить поширеної дії, коли\nспільно використовуються тернарний оператор та функція\n\u003ca href=\"function.isset.md\"\u003eisset()\u003c/a\u003e. Він повертає перший операнд, якщо він\nзаданий і не дорівнює \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, а у протилежному випадку повертає другий\nоперанд.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Вилучаємо значення $_GET['user'], а якщо воно не задано,// то повертаємо 'nobody'$username = $_GET['user'] ?? 'nobody';// Це ідентичному наступному коду:$username = isset($_GET['user']) ? $_GET['user'] : 'nobody';// Даний оператор можна використовувати в ланцюжку. 'user'], і якщо він також не заданий, то привласнюємо 'nobody'.$username = $_GET['user'] ?? $_POST['user'] ?? 'nobody';?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eОператор spaceship (космічний корабель)\u003c/h3\u003e\n\u003cp\u003eЦей оператор призначений для порівняння двох виразів. Він повертає\n-1, 0 або 1 якщо \u003ccode\u003e$a\u003c/code\u003e, відповідно, менше, одно або більше ніж\n\u003ccode\u003e$b\u003c/code\u003e. Порівняння проводиться відповідно до \u003ca href=\"types.comparisons.md\"\u003eправил порівняння типів\u003c/a\u003e PHP.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Цілі числаecho 1 \u0026#x3C;=\u003e 1; // 0echo 1 \u0026#x3C;=\u003e 2; // -1echo 2 \u0026#x3C;=\u003e 1; // 1// Числа з плаваючою точкоюecho 1.5 \u0026#x3C;=\u003e 1.5; // 0echo 1.5 \u0026#x3C;=\u003e 2.5; // -1echo 2.5 \u0026#x3C;=\u003e 1.5; // 1//Рядокecho \"a\" \u0026#x3C;=\u003e \"a\"; // 0echo \"a\" \u0026#x3C;=\u003e \"b\"; // -1echo \"b\" \u0026#x3C;=\u003e \"a\"; // 1?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eВизначення констант масивів за допомогою \u003ca href=\"function.define.md\"\u003edefine()\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eМожна визначити константу типу array за допомогою функції\n\u003ca href=\"function.define.md\"\u003edefine()\u003c/a\u003e. У PHP 5.6 такі константи можна було\nзадавати лише за допомогою \u003ca href=\"language.constants.syntax.md\"\u003e\u003ccode\u003econst\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpdefine('ANIMALS', [   'dog',   ''cat',   ''bird']);echo ANIMALS[1]; // виводить \"cat\"?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eАнонімні класи\u003c/h3\u003e\n\u003cp\u003eБуло додано підтримку анонімних класів за допомогою \u003ccode\u003enew class\u003c/code\u003e. Їх\nможна використовувати тоді, коли потрібен одноразовий клас та створювати\nповноцінний клас, а потім його об'єкт не має сенсу:\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?phpinterface Logger {    public function log(string $msg);}class Application {    private $logger; public function getLogger(): Logger {         return $this-\u003elogger; }    public function setLogger(Logger $logger) {         $this-\u003elogger = $logger; }}$app = new Application;$app-\u003esetLogger(new class implements Logger {    public function log(string $msg) {          echo $msg; |);\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eobject(class@anonymous)#2 (0) {\n}\u003c/p\u003e\n\u003cp\u003eДетальну документацію та приклади використання читайте у розділі про\n\u003ca href=\"language.oop5.anonymous.md\"\u003eАнонімні класи\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eСинтаксис кодування Unicode\u003c/h3\u003e\n\u003cp\u003eВін приймає шістнадцятковий код Unicode і записуємо його у форматі\nUTF-8 у подвійних лапках або форматі heredoc. Будь-який коректний код буде\nприйнятий. Ведучі нулі за бажанням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e echo \"\\u{aa}\";echo \"\\u{0000aa}\";echo \"\\u{9999}\";\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eª\nª (Те саме, що й перший варіант, але з провідними нулями)\n향\u003c/p\u003e\n\u003ch3\u003e\u003ca href=\"closure.call.md\"\u003eClosure::call()\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"closure.call.md\"\u003eClosure::call()\u003c/a\u003e є більш продуктивним і\nкоротким способом тимчасового зв'язування області дії об'єкта з\nзамиканням та його викликом.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass A {private $x = 1;}// До PHP 7$getX = function() {return $this-\u003ex;};$getXCB = $getX-\u003ebindTo(new A, '' ; // проміжне замиканняecho $getXCB();// PHP 7+$getX = function() {return $this-\u003ex;};echo $getX-\u003ecall(new A);\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e1\n1\u003c/p\u003e\n\u003ch3\u003e\u003ca href=\"function.unserialize.md\"\u003eunserialize()\u003c/a\u003e з фільтрацією\u003c/h3\u003e\n\u003cp\u003eЦя функціональність забезпечує більш високий рівень безпеки при\nдесеріалізації об'єктів із неперевіреними даними. Це дозволяє\nзапобігти можливій ін'єкції коду, дозволяючи розробнику\nвикористовувати білий список класів для десеріалізації.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Преобразование всех объектов в __PHP_Incomplete_Class$data = unserialize($foo, [\"allowed_classes\" =\u003e false]);// Преобразование всех объектов, кроме MyClass и MyClass2 в __PHP_Incomplete_Class$data = unserialize($foo, [ \"allowed_classes\" =\u003e [\"MyClass\", \"MyClass2\"]]);// Поведінка за замовчуванням приймає всі класи (можна просто не задавати другий аргумент)$data = unseria ;\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003e\u003ca href=\"class.intlchar.md\"\u003eIntlChar\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eНовий клас \u003ca href=\"class.intlchar.md\"\u003eIntlChar\u003c/a\u003e додає нову\nфункціональність у ICU. Клас визначає кілька статичних методів та\nконстант маніпулювання символами Unicode.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpprintf('%x', IntlChar::CODEPOINT_MAX);echo IntlChar::charName('@');var_dump(IntlChar::ispunct('!'));\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e10ffff\nCOMMERCIAL AT\nbool(true)\u003c/p\u003e\n\u003cp\u003eДля використання цього класу необхідно встановити модуль\n\u003ca href=\"book.intl.md\"\u003eIntl\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eОчікування\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"function.assert.md#function.assert.expectations\"\u003eОчікування\u003c/a\u003e\nпокращеною, обернено сумісною версією старої функції\n\u003ca href=\"function.assert.md\"\u003eassert()\u003c/a\u003e. Вони дозволяють робити припущення з\nнульовою вартістю у промисловому коді та надають можливість\nвикидати користувацькі винятки у разі провалу очікування.\u003c/p\u003e\n\u003cp\u003eРазом з тим, що старе API підтримується,\n\u003ca href=\"function.assert.md\"\u003eassert()\u003c/a\u003e тепер є мовною конструкцією,\nприймає першим аргументом висловлювання, а не тільки рядки (string) для\nоцінки чи логічні значення (bool) для перевірки.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpini_set('assert.exception', 1);class CustomError extends AssertionError {}assert(false, new CustomError('Повідомлення про помилку'));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eFatal error: Uncaught CustomError: Повідомлення про помилку\u003c/p\u003e\n\u003cp\u003eДетальний опис цього функціоналу, а також інструкції\nконфігурування для тестових та промислових середовищ, читайте у секції\n\u003ca href=\"function.assert.md#function.assert.expectations\"\u003eОчікування\u003c/a\u003e розділу,\nприсвяченому \u003ca href=\"function.assert.md\"\u003eassert()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eГрупові оголошення \u003ccode\u003euse\u003c/code\u003e\u003c/h3\u003e\n\u003cp\u003eКласи, функції та константи імпортовані з одного і того ж\n\u003ca href=\"language.namespaces.definition.md\"\u003e\u003ccode\u003enamespace\u003c/code\u003e\u003c/a\u003e, тепер можна\nгрупувати в одному операторі\n\u003ca href=\"language.namespaces.importing.md\"\u003e\u003ccode\u003euse\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// До PHP 7use some amespace\\ClassA;use some amespace\\ClassB;use some amespace\\ClassC as C;use function some amespace n_a;use function some amespace n_b;use function some amespace n_c;use const some amespace\\ConstA;use const some amespace\\ConstB;use const some amespace\\ConstC;// PHP 7+use some amespace\\{ClassA, ClassB, ClassC as C};use function some amespace\\{fn_a, fn_b, fn_c};use const some amespace\\{ConstA, ConstB, ConstC};?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eВираз return в генераторах\u003c/h3\u003e\n\u003cp\u003eЦя функціональність додана до генераторів, введених у PHP 5.5. Вона\nдозволяє використовувати оператор \u003ccode\u003ereturn\u003c/code\u003e у генераторах як\nостаточного значення, що повертається (повернення за посиланням неприпустимо).\nЦе значення можна отримати за допомогою нового методу\n\u003ccode\u003eGenerator::getReturn()\u003c/code\u003e, який можна використовувати тільки після того,\nяк генератор повернув усі згенеровані значення.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$gen = (function() {    yield 1;    yield 2;   return 3;})();foreach ($gen as $val) { P|$| , PHP_EOL; \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e1\n2\n3\u003c/p\u003e\n\u003cp\u003eМожливість явно отримувати остаточне значення генератора є\nдуже корисною, оскільки дозволяє клієнтському коду, що використовує\nгенератор, отримувати та обробити останнє значення генератора,\nпісля якого точно нічого більше не буде. Це дуже простіше, ніж\nзмушувати розробника перевіряти, чи останнє значення повернулося і\nякось особливого його обробляти.\u003c/p\u003e\n\u003ch3\u003eДелегація генератора\u003c/h3\u003e\n\u003cp\u003eТепер генератор може автоматично делегувати іншому генератору,\nоб'єкту класу, що реалізує \u003ca href=\"class.traversable.md\"\u003eTraversable\u003c/a\u003e або\nмасиву без необхідності писати в ньому додаткову обробку\nотриманих значень. Досягається це за допомогою конструкції\n\u003ca href=\"language.generators.syntax.md#control-structures.yield.from\"\u003e\u003ccode\u003eyield from\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction gen(){   yield 1; yield 2; yield from gen2();}function gen2(){   yield 3; yield 4;}foreach (gen() as $val){   echo $val, PHP_EOL;}?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e1\n2\n3\n4\u003c/p\u003e\n\u003ch3\u003eФункція цілісного поділу \u003ca href=\"function.intdiv.md\"\u003eintdiv()\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eНова функція \u003ca href=\"function.intdiv.md\"\u003eintdiv()\u003c/a\u003e виробляє ціле чисельне\nрозподіл операндів і повертає його результат.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpvar_dump(intdiv(10, 3));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eint(3)\u003c/p\u003e\n\u003ch3\u003eОпції сесій\u003c/h3\u003e\n\u003cp\u003eТепер \u003ca href=\"function.session-start.md\"\u003esession_start()\u003c/a\u003e приймає масив\nопцій, які перевизначать \u003ca href=\"session.configuration.md\"\u003eконфігураційні директиви сесії\u003c/a\u003e встановлені у php.ini.\u003c/p\u003e\n\u003cp\u003eТакож опції були розширені включеною за замовчуванням опцією\n\u003ca href=\"session.configuration.md#ini.session.lazy-write\"\u003esession.lazy_write\u003c/a\u003e,\nяка говорить PHP про те, що файл сесії треба перезаписувати, тільки\nякщо змінилися дані сесії, та опцією \u003ccode\u003eread_and_close\u003c/code\u003e, яку можна\nвстановити тільки через \u003ca href=\"function.session-start.md\"\u003esession_start()\u003c/a\u003e для\nтого, щоб PHP закривав сесію відразу як прочитає її дані і не\nвносив до неї будь-яких змін.\u003c/p\u003e\n\u003cp\u003eНаприклад, для встановлення\n\u003ca href=\"session.configuration.md#ini.session.cache-limiter\"\u003esession.cache_limiter\u003c/a\u003e\nрівним \u003ccode\u003eprivate\u003c/code\u003e та негайному закриття сесії після читання її даних:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpsession_start([   'cache_limiter' =\u003e 'private',   'read_and_close' =\u003e true,]);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003e\u003ca href=\"function.preg-replace-callback-array.md\"\u003epreg_replace_callback_array()\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eНова функція\n\u003ca href=\"function.preg-replace-callback-array.md\"\u003epreg_replace_callback_array()\u003c/a\u003e\nдозволяє писати чистіший код, коли потрібно використовувати функцію\n\u003ca href=\"function.preg-replace-callback.md\"\u003epreg_replace_callback()\u003c/a\u003e. До PHP 7\nпри необхідності обробити різні регулярні вирази різними\nфункціями доводилося для кожної такої обробки писати окремий виклик\nфункції.\u003c/p\u003e\n\u003cp\u003eТепер можна використовувати одну функцію, передаючи до неї асоціативний\nмасив, ключами якого є регулярні вирази, а значеннями -\nфункції зворотного дзвінка.\u003c/p\u003e\n\u003ch3\u003eФункції \u003ca href=\"book.csprng.md\"\u003eCSPRNG\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eБуло додано дві нові кросплатформні функції для генерації.\nкриптографічно безпечних рядків та цілих чисел:\n\u003ca href=\"function.random-bytes.md\"\u003erandom_bytes()\u003c/a\u003e та\n\u003ca href=\"function.random-int.md\"\u003erandom_int()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eТепер функція \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e завжди може розпаковувати об'єкти, що реалізують \u003ca href=\"class.arrayaccess.md\"\u003eArrayAccess\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eРаніше функція \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e не гарантувала коректну\nобробку об'єктів, що реалізують \u003ca href=\"class.arrayaccess.md\"\u003eArrayAccess\u003c/a\u003e.\nТепер це виправлено.\u003c/p\u003e\n\u003ch3\u003eІнші зміни\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eДодана можливість доступу до методів та властивостей класу при\nклонування, тобто \u003ccode\u003e(clone $ foo) -\u003e bar () \u003c/code\u003e.\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration70.new-features.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

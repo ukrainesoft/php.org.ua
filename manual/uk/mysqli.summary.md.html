@@ -1,0 +1,754 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli.summary | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli.constants.md">«Зумовлені константи</a></p>
+</li>
+<li>
+<p><a href="class.mysqli.md">mysqli »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.mysqli.md">MySQLi</a></p>
+</li>
+<li>
+<p>Основна інформація про функції модуля MySQLi</p>
+</li>
+</ul>
+<h1>Основна інформація про функції модуля MySQLi</h1>
+<table>
+<thead>
+<tr>
+<th>Клас mysqli</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ООП-інтерфейс Процедурний інтерфейс Синонім (не використовуйте!) Опис</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>Властивості</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqli.affected-rows.md">$mysqli::affected_rows</a></td>
+<td><a href="mysqli.affected-rows.md">mysqli_affected_rows()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-client-info.md">$mysqli::client_info</a></td>
+<td><a href="mysqli.get-client-info.md">mysqli_get_client_info()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-client-version.md">$mysqli::client_version</a></td>
+<td><a href="mysqli.get-client-version.md">mysqli_get_client_version()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.connect-errno.md">$mysqli::connect_errno</a></td>
+<td><a href="mysqli.connect-errno.md">mysqli_connect_errno()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.connect-error.md">$mysqli::connect_error</a></td>
+<td><a href="mysqli.connect-error.md">mysqli_connect_error()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.errno.md">$mysqli::errno</a></td>
+<td><a href="mysqli.errno.md">mysqli_errno()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.error.md">$mysqli::error</a></td>
+<td><a href="mysqli.error.md">mysqli_error()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.field-count.md">$mysqli::field_count</a></td>
+<td><a href="mysqli.field-count.md">mysqli_field_count()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-host-info.md">$mysqli::host_info</a></td>
+<td><a href="mysqli.get-host-info.md">mysqli_get_host_info()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-proto-info.md">$mysqli::protocol_version</a></td>
+<td><a href="mysqli.get-proto-info.md">mysqli_get_proto_info()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-server-info.md">$mysqli::server_info</a></td>
+<td><a href="mysqli.get-server-info.md">mysqli_get_server_info()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-server-version.md">$mysqli::server_version</a></td>
+<td><a href="mysqli.get-server-version.md">mysqli_get_server_version()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.info.md">$mysqli::info</a></td>
+<td><a href="mysqli.info.md">mysqli_info()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.insert-id.md">$mysqli::insert_id</a></td>
+<td><a href="mysqli.insert-id.md">mysqli_insert_id()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.sqlstate.md">$mysqli::sqlstate</a></td>
+<td><a href="mysqli.sqlstate.md">mysqli_sqlstate()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.warning-count.md">$mysqli::warning_count</a></td>
+<td><a href="mysqli.warning-count.md">mysqli_warning_count()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><em>Методи</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqli.autocommit.md">mysqli::autocommit()</a></td>
+<td><a href="mysqli.autocommit.md">mysqli_autocommit()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.change-user.md">mysqli::change_user()</a></td>
+<td><a href="mysqli.change-user.md">mysqli_change_user()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.character-set-name.md">mysqli::character_set_name()</a></td>
+<td><a href="mysqli.character-set-name.md">mysqli_character_set_name()</a></td>
+<td>Н/Д</td>
+</tr>
+<tr>
+<td><a href="mysqli.close.md">mysqli::close()</a></td>
+<td><a href="mysqli.close.md">mysqli_close()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.commit.md">mysqli::commit()</a></td>
+<td><a href="mysqli.commit.md">mysqli_commit()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.construct.md">mysqli::__construct()</a></td>
+<td><a href="function.mysqli-connect.md">mysqli_connect()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.debug.md">mysqli::debug()</a></td>
+<td><a href="mysqli.debug.md">mysqli_debug()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.dump-debug-info.md">mysqli::dump_debug_info()</a></td>
+<td><a href="mysqli.dump-debug-info.md">mysqli_dump_debug_info()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-charset.md">mysqli::get_charset()</a></td>
+<td><a href="mysqli.get-charset.md">mysqli_get_charset()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-connection-stats.md">mysqli::get_connection_stats()</a></td>
+<td><a href="mysqli.get-connection-stats.md">mysqli_get_connection_stats()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-client-info.md">mysqli::get_client_info()</a></td>
+<td><a href="mysqli.get-client-info.md">mysqli_get_client_info()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>Н/Д</td>
+<td><a href="function.mysqli-get-client-stats.md">mysqli_get_client_stats()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-server-info.md">mysqli::get_server_info()</a></td>
+<td><a href="mysqli.get-server-info.md">mysqli_get_server_info()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.get-warnings.md">mysqli::get_warnings()</a></td>
+<td><a href="mysqli.get-warnings.md">mysqli_get_warnings()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.init.md">mysqli::init()</a></td>
+<td><a href="mysqli.init.md">mysqli_init()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.kill.md">mysqli::kill()</a></td>
+<td><a href="mysqli.kill.md">mysqli_kill()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.more-results.md">mysqli::more_results()</a></td>
+<td><a href="mysqli.more-results.md">mysqli_more_results()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.multi-query.md">mysqli::multi_query()</a></td>
+<td><a href="mysqli.multi-query.md">mysqli_multi_query()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.next-result.md">mysqli::next_result()</a></td>
+<td><a href="mysqli.next-result.md">mysqli_next_result()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.options.md">mysqli::options()</a></td>
+<td><a href="mysqli.options.md">mysqli_options()</a></td>
+<td><a href="function.mysqli-set-opt.md">mysqli_set_opt()</a></td>
+</tr>
+<tr>
+<td><a href="mysqli.ping.md">mysqli::ping()</a></td>
+<td><a href="mysqli.ping.md">mysqli_ping()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.prepare.md">mysqli::prepare()</a></td>
+<td><a href="mysqli.prepare.md">mysqli_prepare()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.query.md">mysqli::query()</a></td>
+<td><a href="mysqli.query.md">mysqli_query()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.real-connect.md">mysqli::real_connect()</a></td>
+<td><a href="mysqli.real-connect.md">mysqli_real_connect()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.real-escape-string.md">mysqli::real_escape_string()</a>, <a href="function.mysqli-escape-string.md">mysqli::escape_string()</a></td>
+<td><a href="mysqli.real-escape-string.md">mysqli_real_escape_string()</a></td>
+<td><a href="function.mysqli-escape-string.md">mysqli_escape_string()</a></td>
+</tr>
+<tr>
+<td><a href="mysqli.real-query.md">mysqli::real_query()</a></td>
+<td><a href="mysqli.real-query.md">mysqli_real_query()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.refresh.md">mysqli::refresh()</a></td>
+<td><a href="mysqli.refresh.md">mysqli_refresh()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.rollback.md">mysqli::rollback()</a></td>
+<td><a href="mysqli.rollback.md">mysqli_rollback()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.select-db.md">mysqli::select_db()</a></td>
+<td><a href="mysqli.select-db.md">mysqli_select_db()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.set-charset.md">mysqli::set_charset()</a></td>
+<td><a href="mysqli.set-charset.md">mysqli_set_charset()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.ssl-set.md">mysqli::ssl_set()</a></td>
+<td><a href="mysqli.ssl-set.md">mysqli_ssl_set()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.stat.md">mysqli::stat()</a></td>
+<td><a href="mysqli.stat.md">mysqli_stat()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.stmt-init.md">mysqli::stmt_init()</a></td>
+<td><a href="mysqli.stmt-init.md">mysqli_stmt_init()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.store-result.md">mysqli::store_result()</a></td>
+<td><a href="mysqli.store-result.md">mysqli_store_result()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.thread-id.md">mysqli::thread_id()</a></td>
+<td><a href="mysqli.thread-id.md">mysqli_thread_id()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.thread-safe.md">mysqli::thread_safe()</a></td>
+<td><a href="mysqli.thread-safe.md">mysqli_thread_safe()</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="mysqli.use-result.md">mysqli::use_result()</a></td>
+<td><a href="mysqli.use-result.md">mysqli_use_result()</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Основна інформація про методи <a href="class.mysqli.md">mysqli</a></strong></p>
+<table>
+<thead>
+<tr>
+<th>MySQL_STMT</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ООП-інтерфейс Процедурний інтерфейс Синонім (не використовуйте!) Опис</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>Властивості</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.affected-rows.md">$mysqli_stmt::affected_rows</a></td>
+<td><a href="mysqli-stmt.affected-rows.md">mysqli_stmt_affected_rows()</a></td>
+<td>-</td>
+<td>Повертає число рядків, змінених, віддалених або вставлених під час виконання останньої інструкції</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.errno.md">$mysqli_stmt::errno</a></td>
+<td><a href="mysqli-stmt.errno.md">mysqli_stmt_errno()</a></td>
+<td>-</td>
+<td>Повертає код помилки останнього виконаного запиту</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.error.md">$mysqli_stmt::error</a></td>
+<td><a href="mysqli-stmt.error.md">mysqli_stmt_error()</a></td>
+<td>-</td>
+<td>Повертає рядковий опис помилки останнього запиту</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.field-count.md">$mysqli_stmt::field_count</a></td>
+<td><a href="mysqli-stmt.field-count.md">mysqli_stmt_field_count()</a></td>
+<td>-</td>
+<td>Повертає кількість полів у заданому запиті – не документовано</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.insert-id.md">$mysqli_stmt::insert_id</a></td>
+<td><a href="mysqli-stmt.insert-id.md">mysqli_stmt_insert_id()</a></td>
+<td>-</td>
+<td>Отримує ID, згенероване останньою операцією INSERT</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.num-rows.md">$mysqli_stmt::num_rows</a></td>
+<td><a href="mysqli-stmt.num-rows.md">mysqli_stmt_num_rows()</a></td>
+<td>-</td>
+<td>Повертає кількість рядків у результаті виконання запиту</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.param-count.md">$mysqli_stmt::param_count</a></td>
+<td><a href="mysqli-stmt.param-count.md">mysqli_stmt_param_count()</a></td>
+<td>Н/Д</td>
+<td>Повертає кількість параметрів для заданого запиту</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.sqlstate.md">$mysqli_stmt::sqlstate</a></td>
+<td><a href="mysqli-stmt.sqlstate.md">mysqli_stmt_sqlstate()</a></td>
+<td>-</td>
+<td>Повертає помилку SQLSTATE на останній виконаний запит</td>
+</tr>
+<tr>
+<td><em>Методи</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.attr-get.md">mysqli_stmt::attr_get()</a></td>
+<td><a href="mysqli-stmt.attr-get.md">mysqli_stmt_attr_get()</a></td>
+<td>-</td>
+<td>Використовується для отримання поточного атрибуту запиту</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.attr-set.md">mysqli_stmt::attr_set()</a></td>
+<td><a href="mysqli-stmt.attr-set.md">mysqli_stmt_attr_set()</a></td>
+<td>-</td>
+<td>використовується для модифікації поведінки підготовленого запиту</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.bind-param.md">mysqli_stmt::bind_param()</a></td>
+<td><a href="mysqli-stmt.bind-param.md">mysqli_stmt_bind_param()</a></td>
+<td>Н/Д</td>
+<td>Передається змінні на підготовлений запит як параметри</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.bind-result.md">mysqli_stmt::bind_result()</a></td>
+<td><a href="mysqli-stmt.bind-result.md">mysqli_stmt_bind_result()</a></td>
+<td>Н/Д</td>
+<td>Передає змінні до підготовленого запиту для збереження результатів</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.close.md">mysqli_stmt::close()</a></td>
+<td><a href="mysqli-stmt.close.md">mysqli_stmt_close()</a></td>
+<td>-</td>
+<td>Закриває підготовлений запит</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.data-seek.md">mysqli_stmt::data_seek()</a></td>
+<td><a href="mysqli-stmt.data-seek.md">mysqli_stmt_data_seek()</a></td>
+<td>-</td>
+<td>Виконує пошук довільного рядка у результатах запиту</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.execute.md">mysqli_stmt::execute()</a></td>
+<td><a href="mysqli-stmt.execute.md">mysqli_stmt_execute()</a></td>
+<td><a href="function.mysqli-execute.md">mysqli_execute()</a></td>
+<td>Виконує підготовлений запит</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.fetch.md">mysqli_stmt::fetch()</a></td>
+<td><a href="mysqli-stmt.fetch.md">mysqli_stmt_fetch()</a></td>
+<td>Н/Д</td>
+<td>Вибір результатів підготовленого запиту у зв'язані змінні</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.free-result.md">mysqli_stmt::free_result()</a></td>
+<td><a href="mysqli-stmt.free-result.md">mysqli_stmt_free_result()</a></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.get-result.md">mysqli_stmt::get_result()</a></td>
+<td><a href="mysqli-stmt.get-result.md">mysqli_stmt_get_result()</a></td>
+<td>-</td>
+<td>Отримує результат підготовленого запиту. Доступно лише з модулем <a href="book.mysqlnd.md">mysqlnd</a>.</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.get-warnings.md">mysqli_stmt::get_warnings()</a></td>
+<td><a href="mysqli-stmt.get-warnings.md">mysqli_stmt_get_warnings()</a></td>
+<td>-</td>
+<td>Чи не документовано</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.more-results.md">mysqli_stmt::more_results()</a></td>
+<td><a href="mysqli-stmt.more-results.md">mysqli_stmt_more_results()</a></td>
+<td>-</td>
+<td>Перевіряє наявність додаткових результатів запиту у разі множини</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.next-result.md">mysqli_stmt::next_result()</a></td>
+<td><a href="mysqli-stmt.next-result.md">mysqli_stmt_next_result()</a></td>
+<td>-</td>
+<td>Читає наступний результат із множинного запиту</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.num-rows.md">mysqli_stmt::num_rows()</a></td>
+<td><a href="mysqli-stmt.num-rows.md">mysqli_stmt_num_rows()</a></td>
+<td>-</td>
+<td>Дивіться також <a href="mysqli-stmt.num-rows.md">$mysqli_stmt::num_rows</a></td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.prepare.md">mysqli_stmt::prepare()</a></td>
+<td><a href="mysqli-stmt.prepare.md">mysqli_stmt_prepare()</a></td>
+<td>-</td>
+<td>Підготовка SQL запиту для запуску</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.reset.md">mysqli_stmt::reset()</a></td>
+<td><a href="mysqli-stmt.reset.md">mysqli_stmt_reset()</a></td>
+<td>-</td>
+<td>Скидає підготовлений запит</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.result-metadata.md">mysqli_stmt::result_metadata()</a></td>
+<td><a href="mysqli-stmt.result-metadata.md">mysqli_stmt_result_metadata()</a></td>
+<td>Н/Д</td>
+<td>Повертає метадані результатів підготовленого запиту</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.send-long-data.md">mysqli_stmt::send_long_data()</a></td>
+<td><a href="mysqli-stmt.send-long-data.md">mysqli_stmt_send_long_data()</a></td>
+<td>Н/Д</td>
+<td>Передача даних блоками</td>
+</tr>
+<tr>
+<td><a href="mysqli-stmt.store-result.md">mysqli_stmt::store_result()</a></td>
+<td><a href="mysqli-stmt.store-result.md">mysqli_stmt_store_result()</a></td>
+<td>-</td>
+<td>Передає результат із підготовленого запиту</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Основна інформація про методи <a href="class.mysqli-stmt.md">mysqli_stmt</a></strong></p>
+<table>
+<thead>
+<tr>
+<th>mysqli_result</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ООП-інтерфейс Процедурний інтерфейс Синонім (не використовуйте!) Опис</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>Властивості</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqli-result.current-field.md">$mysqli_result::current_field</a></td>
+<td><a href="mysqli-result.current-field.md">mysqli_field_tell()</a></td>
+<td>-</td>
+<td>Отримати усунення вказівника на результат для поточного поля</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.field-count.md">$mysqli_result::field_count</a></td>
+<td><a href="mysqli-result.field-count.md">mysqli_num_fields()</a></td>
+<td>-</td>
+<td>Отримати кількість полів у результаті</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.lengths.md">$mysqli_result::lengths</a></td>
+<td><a href="mysqli-result.lengths.md">mysqli_fetch_lengths()</a></td>
+<td>-</td>
+<td>Повертає довжини стовпців поточного рядка у наборі результатів</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.num-rows.md">$mysqli_result::num_rows</a></td>
+<td><a href="mysqli-result.num-rows.md">mysqli_num_rows()</a></td>
+<td>-</td>
+<td>Отримує число рядків у результаті</td>
+</tr>
+<tr>
+<td><em>Методи</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqli-result.data-seek.md">mysqli_result::data_seek()</a></td>
+<td><a href="mysqli-result.data-seek.md">mysqli_data_seek()</a></td>
+<td>-</td>
+<td>Встановлює покажчик результату на довільний рядок у результаті</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.fetch-all.md">mysqli_result::fetch_all()</a></td>
+<td><a href="mysqli-result.fetch-all.md">mysqli_fetch_all()</a></td>
+<td>-</td>
+<td>Отримує всі результуючі рядки та повертає масив з рядками у вигляді асоціативного масиву та/або нумерованого масиву. Доступно лише з модулем <a href="book.mysqlnd.md">mysqlnd</a>.</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.fetch-array.md">mysqli_result::fetch_array()</a></td>
+<td><a href="mysqli-result.fetch-array.md">mysqli_fetch_array()</a></td>
+<td>-</td>
+<td>Отримує результуючий рядок у вигляді асоціативного масиву та/або нумерованого масиву</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.fetch-assoc.md">mysqli_result::fetch_assoc()</a></td>
+<td><a href="mysqli-result.fetch-assoc.md">mysqli_fetch_assoc()</a></td>
+<td>-</td>
+<td>Отримує результуючий рядок у вигляді асоціативного масиву</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.fetch-column.md">mysqli_result::fetch_column()</a></td>
+<td><a href="mysqli-result.fetch-column.md">mysqli_fetch_column()</a></td>
+<td>N/A</td>
+<td>Отримує один стовпець наступного рядка набору результатів</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.fetch-field-direct.md">mysqli_result::fetch_field_direct()</a></td>
+<td><a href="mysqli-result.fetch-field-direct.md">mysqli_fetch_field_direct()</a></td>
+<td>-</td>
+<td>Отримує метадані одного поля</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.fetch-field.md">mysqli_result::fetch_field()</a></td>
+<td><a href="mysqli-result.fetch-field.md">mysqli_fetch_field()</a></td>
+<td>-</td>
+<td>Повертає з результату наступне поле</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.fetch-fields.md">mysqli_result::fetch_fields()</a></td>
+<td><a href="mysqli-result.fetch-fields.md">mysqli_fetch_fields()</a></td>
+<td>-</td>
+<td>Повертає масив об'єктів із полів результату</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.fetch-object.md">mysqli_result::fetch_object()</a></td>
+<td><a href="mysqli-result.fetch-object.md">mysqli_fetch_object()</a></td>
+<td>-</td>
+<td>Повертає поточний рядок результату як об'єкт</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.fetch-row.md">mysqli_result::fetch_row()</a></td>
+<td><a href="mysqli-result.fetch-row.md">mysqli_fetch_row()</a></td>
+<td>-</td>
+<td>Отримує рядок результату як нумерований масив</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.field-seek.md">mysqli_result::field_seek()</a></td>
+<td><a href="mysqli-result.field-seek.md">mysqli_field_seek()</a></td>
+<td>-</td>
+<td>Встановлює усунення вказівника результату на певне поле</td>
+</tr>
+<tr>
+<td><a href="mysqli-result.free.md">mysqli_result::free()</a>, <a href="mysqli-result.free.md">mysqli_result::close</a>, <a href="mysqli-result.free.md">mysqli_result::free_result</a></td>
+<td><a href="mysqli-result.free.md">mysqli_free_result()</a></td>
+<td>-</td>
+<td>Визволяє пам'ять, пов'язану з результатом</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Основна інформація про методи
+<a href="class.mysqli-result.md">mysqli_result</a></strong></p>
+<table>
+<thead>
+<tr>
+<th>MySQL_Driver</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ООП-інтерфейс Процедурний інтерфейс Синонім (не використовуйте!) Опис</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>Властивості</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqli-driver.report-mode.md">$mysqli_driver::mysqli_report</a></td>
+<td><a href="function.mysqli-report.md">mysqli_report()</a></td>
+<td>Чи не документовано</td>
+<td>Встановлює режим звіту про помилки mysqli</td>
+</tr>
+<tr>
+<td><em>Методи</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mysqli-driver.embedded-server-end.md">mysqli_driver::embedded_server_end()</a></td>
+<td><a href="mysqli-driver.embedded-server-end.md">mysqli_embedded_server_end()</a></td>
+<td>-</td>
+<td>Чи не документовано</td>
+</tr>
+<tr>
+<td><a href="mysqli-driver.embedded-server-start.md">mysqli_driver::embedded_server_start()</a></td>
+<td><a href="mysqli-driver.embedded-server-start.md">mysqli_embedded_server_start()</a></td>
+<td>-</td>
+<td>Чи не документовано</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Основна інформація про методи
+<a href="class.mysqli-driver.md">mysqli_driver</a></strong></p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Псевдоніми функцій призначені лише для забезпечення зворотного
+сумісності. Не використовуйте їх у нових проектах.</p>
+</blockquote>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli.summary.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli.summary.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli.summary","slug":"mysqli.summary.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.constants.md\"\u003e«Зумовлені константи\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mysqli.md\"\u003emysqli »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.mysqli.md\"\u003eMySQLi\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОсновна інформація про функції модуля MySQLi\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eОсновна інформація про функції модуля MySQLi\u003c/h1\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eКлас mysqli\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eООП-інтерфейс Процедурний інтерфейс Синонім (не використовуйте!) Опис\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cem\u003eВластивості\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.affected-rows.md\"\u003e$mysqli::affected_rows\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.affected-rows.md\"\u003emysqli_affected_rows()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-client-info.md\"\u003e$mysqli::client_info\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-client-info.md\"\u003emysqli_get_client_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-client-version.md\"\u003e$mysqli::client_version\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-client-version.md\"\u003emysqli_get_client_version()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.connect-errno.md\"\u003e$mysqli::connect_errno\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.connect-errno.md\"\u003emysqli_connect_errno()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.connect-error.md\"\u003e$mysqli::connect_error\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.connect-error.md\"\u003emysqli_connect_error()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.errno.md\"\u003e$mysqli::errno\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.errno.md\"\u003emysqli_errno()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.error.md\"\u003e$mysqli::error\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.error.md\"\u003emysqli_error()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.field-count.md\"\u003e$mysqli::field_count\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.field-count.md\"\u003emysqli_field_count()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-host-info.md\"\u003e$mysqli::host_info\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-host-info.md\"\u003emysqli_get_host_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-proto-info.md\"\u003e$mysqli::protocol_version\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-proto-info.md\"\u003emysqli_get_proto_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-server-info.md\"\u003e$mysqli::server_info\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-server-info.md\"\u003emysqli_get_server_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-server-version.md\"\u003e$mysqli::server_version\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-server-version.md\"\u003emysqli_get_server_version()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.info.md\"\u003e$mysqli::info\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.info.md\"\u003emysqli_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.insert-id.md\"\u003e$mysqli::insert_id\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.insert-id.md\"\u003emysqli_insert_id()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.sqlstate.md\"\u003e$mysqli::sqlstate\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.sqlstate.md\"\u003emysqli_sqlstate()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.warning-count.md\"\u003e$mysqli::warning_count\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.warning-count.md\"\u003emysqli_warning_count()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cem\u003eМетоди\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.autocommit.md\"\u003emysqli::autocommit()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.autocommit.md\"\u003emysqli_autocommit()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.change-user.md\"\u003emysqli::change_user()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.change-user.md\"\u003emysqli_change_user()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.character-set-name.md\"\u003emysqli::character_set_name()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.character-set-name.md\"\u003emysqli_character_set_name()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eН/Д\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.close.md\"\u003emysqli::close()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.close.md\"\u003emysqli_close()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.commit.md\"\u003emysqli::commit()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.commit.md\"\u003emysqli_commit()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.construct.md\"\u003emysqli::__construct()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"function.mysqli-connect.md\"\u003emysqli_connect()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.debug.md\"\u003emysqli::debug()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.debug.md\"\u003emysqli_debug()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.dump-debug-info.md\"\u003emysqli::dump_debug_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.dump-debug-info.md\"\u003emysqli_dump_debug_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-charset.md\"\u003emysqli::get_charset()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-charset.md\"\u003emysqli_get_charset()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-connection-stats.md\"\u003emysqli::get_connection_stats()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-connection-stats.md\"\u003emysqli_get_connection_stats()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-client-info.md\"\u003emysqli::get_client_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-client-info.md\"\u003emysqli_get_client_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eН/Д\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"function.mysqli-get-client-stats.md\"\u003emysqli_get_client_stats()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-server-info.md\"\u003emysqli::get_server_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-server-info.md\"\u003emysqli_get_server_info()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-warnings.md\"\u003emysqli::get_warnings()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.get-warnings.md\"\u003emysqli_get_warnings()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.init.md\"\u003emysqli::init()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.init.md\"\u003emysqli_init()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.kill.md\"\u003emysqli::kill()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.kill.md\"\u003emysqli_kill()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.more-results.md\"\u003emysqli::more_results()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.more-results.md\"\u003emysqli_more_results()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.multi-query.md\"\u003emysqli::multi_query()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.multi-query.md\"\u003emysqli_multi_query()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.next-result.md\"\u003emysqli::next_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.next-result.md\"\u003emysqli_next_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.options.md\"\u003emysqli::options()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.options.md\"\u003emysqli_options()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"function.mysqli-set-opt.md\"\u003emysqli_set_opt()\u003c/a\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.ping.md\"\u003emysqli::ping()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.ping.md\"\u003emysqli_ping()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.prepare.md\"\u003emysqli::prepare()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.prepare.md\"\u003emysqli_prepare()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.query.md\"\u003emysqli::query()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.query.md\"\u003emysqli_query()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.real-connect.md\"\u003emysqli::real_connect()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.real-connect.md\"\u003emysqli_real_connect()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.real-escape-string.md\"\u003emysqli::real_escape_string()\u003c/a\u003e, \u003ca href=\"function.mysqli-escape-string.md\"\u003emysqli::escape_string()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.real-escape-string.md\"\u003emysqli_real_escape_string()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"function.mysqli-escape-string.md\"\u003emysqli_escape_string()\u003c/a\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.real-query.md\"\u003emysqli::real_query()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.real-query.md\"\u003emysqli_real_query()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.refresh.md\"\u003emysqli::refresh()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.refresh.md\"\u003emysqli_refresh()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.rollback.md\"\u003emysqli::rollback()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.rollback.md\"\u003emysqli_rollback()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.select-db.md\"\u003emysqli::select_db()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.select-db.md\"\u003emysqli_select_db()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.set-charset.md\"\u003emysqli::set_charset()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.set-charset.md\"\u003emysqli_set_charset()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.ssl-set.md\"\u003emysqli::ssl_set()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.ssl-set.md\"\u003emysqli_ssl_set()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.stat.md\"\u003emysqli::stat()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.stat.md\"\u003emysqli_stat()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.stmt-init.md\"\u003emysqli::stmt_init()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.stmt-init.md\"\u003emysqli_stmt_init()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.store-result.md\"\u003emysqli::store_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.store-result.md\"\u003emysqli_store_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.thread-id.md\"\u003emysqli::thread_id()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.thread-id.md\"\u003emysqli_thread_id()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.thread-safe.md\"\u003emysqli::thread_safe()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.thread-safe.md\"\u003emysqli_thread_safe()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.use-result.md\"\u003emysqli::use_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli.use-result.md\"\u003emysqli_use_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОсновна інформація про методи \u003ca href=\"class.mysqli.md\"\u003emysqli\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eMySQL_STMT\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eООП-інтерфейс Процедурний інтерфейс Синонім (не використовуйте!) Опис\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cem\u003eВластивості\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.affected-rows.md\"\u003e$mysqli_stmt::affected_rows\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.affected-rows.md\"\u003emysqli_stmt_affected_rows()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПовертає число рядків, змінених, віддалених або вставлених під час виконання останньої інструкції\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.errno.md\"\u003e$mysqli_stmt::errno\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.errno.md\"\u003emysqli_stmt_errno()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПовертає код помилки останнього виконаного запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.error.md\"\u003e$mysqli_stmt::error\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.error.md\"\u003emysqli_stmt_error()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПовертає рядковий опис помилки останнього запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.field-count.md\"\u003e$mysqli_stmt::field_count\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.field-count.md\"\u003emysqli_stmt_field_count()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПовертає кількість полів у заданому запиті – не документовано\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.insert-id.md\"\u003e$mysqli_stmt::insert_id\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.insert-id.md\"\u003emysqli_stmt_insert_id()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eОтримує ID, згенероване останньою операцією INSERT\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.num-rows.md\"\u003e$mysqli_stmt::num_rows\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.num-rows.md\"\u003emysqli_stmt_num_rows()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПовертає кількість рядків у результаті виконання запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.param-count.md\"\u003e$mysqli_stmt::param_count\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.param-count.md\"\u003emysqli_stmt_param_count()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eН/Д\u003c/td\u003e\n\u003ctd\u003eПовертає кількість параметрів для заданого запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.sqlstate.md\"\u003e$mysqli_stmt::sqlstate\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.sqlstate.md\"\u003emysqli_stmt_sqlstate()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПовертає помилку SQLSTATE на останній виконаний запит\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cem\u003eМетоди\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.attr-get.md\"\u003emysqli_stmt::attr_get()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.attr-get.md\"\u003emysqli_stmt_attr_get()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eВикористовується для отримання поточного атрибуту запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.attr-set.md\"\u003emysqli_stmt::attr_set()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.attr-set.md\"\u003emysqli_stmt_attr_set()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eвикористовується для модифікації поведінки підготовленого запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.bind-param.md\"\u003emysqli_stmt::bind_param()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.bind-param.md\"\u003emysqli_stmt_bind_param()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eН/Д\u003c/td\u003e\n\u003ctd\u003eПередається змінні на підготовлений запит як параметри\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.bind-result.md\"\u003emysqli_stmt::bind_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.bind-result.md\"\u003emysqli_stmt_bind_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eН/Д\u003c/td\u003e\n\u003ctd\u003eПередає змінні до підготовленого запиту для збереження результатів\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.close.md\"\u003emysqli_stmt::close()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.close.md\"\u003emysqli_stmt_close()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eЗакриває підготовлений запит\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.data-seek.md\"\u003emysqli_stmt::data_seek()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.data-seek.md\"\u003emysqli_stmt_data_seek()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eВиконує пошук довільного рядка у результатах запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.execute.md\"\u003emysqli_stmt::execute()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.execute.md\"\u003emysqli_stmt_execute()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"function.mysqli-execute.md\"\u003emysqli_execute()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eВиконує підготовлений запит\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.fetch.md\"\u003emysqli_stmt::fetch()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.fetch.md\"\u003emysqli_stmt_fetch()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eН/Д\u003c/td\u003e\n\u003ctd\u003eВибір результатів підготовленого запиту у зв'язані змінні\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.free-result.md\"\u003emysqli_stmt::free_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.free-result.md\"\u003emysqli_stmt_free_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.get-result.md\"\u003emysqli_stmt::get_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.get-result.md\"\u003emysqli_stmt_get_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eОтримує результат підготовленого запиту. Доступно лише з модулем \u003ca href=\"book.mysqlnd.md\"\u003emysqlnd\u003c/a\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.get-warnings.md\"\u003emysqli_stmt::get_warnings()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.get-warnings.md\"\u003emysqli_stmt_get_warnings()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eЧи не документовано\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.more-results.md\"\u003emysqli_stmt::more_results()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.more-results.md\"\u003emysqli_stmt_more_results()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПеревіряє наявність додаткових результатів запиту у разі множини\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.next-result.md\"\u003emysqli_stmt::next_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.next-result.md\"\u003emysqli_stmt_next_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eЧитає наступний результат із множинного запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.num-rows.md\"\u003emysqli_stmt::num_rows()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.num-rows.md\"\u003emysqli_stmt_num_rows()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eДивіться також \u003ca href=\"mysqli-stmt.num-rows.md\"\u003e$mysqli_stmt::num_rows\u003c/a\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.prepare.md\"\u003emysqli_stmt::prepare()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.prepare.md\"\u003emysqli_stmt_prepare()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПідготовка SQL запиту для запуску\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.reset.md\"\u003emysqli_stmt::reset()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.reset.md\"\u003emysqli_stmt_reset()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eСкидає підготовлений запит\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.result-metadata.md\"\u003emysqli_stmt::result_metadata()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.result-metadata.md\"\u003emysqli_stmt_result_metadata()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eН/Д\u003c/td\u003e\n\u003ctd\u003eПовертає метадані результатів підготовленого запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.send-long-data.md\"\u003emysqli_stmt::send_long_data()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.send-long-data.md\"\u003emysqli_stmt_send_long_data()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eН/Д\u003c/td\u003e\n\u003ctd\u003eПередача даних блоками\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.store-result.md\"\u003emysqli_stmt::store_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-stmt.store-result.md\"\u003emysqli_stmt_store_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПередає результат із підготовленого запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОсновна інформація про методи \u003ca href=\"class.mysqli-stmt.md\"\u003emysqli_stmt\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003emysqli_result\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eООП-інтерфейс Процедурний інтерфейс Синонім (не використовуйте!) Опис\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cem\u003eВластивості\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.current-field.md\"\u003e$mysqli_result::current_field\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.current-field.md\"\u003emysqli_field_tell()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eОтримати усунення вказівника на результат для поточного поля\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.field-count.md\"\u003e$mysqli_result::field_count\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.field-count.md\"\u003emysqli_num_fields()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eОтримати кількість полів у результаті\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.lengths.md\"\u003e$mysqli_result::lengths\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.lengths.md\"\u003emysqli_fetch_lengths()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПовертає довжини стовпців поточного рядка у наборі результатів\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.num-rows.md\"\u003e$mysqli_result::num_rows\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.num-rows.md\"\u003emysqli_num_rows()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eОтримує число рядків у результаті\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cem\u003eМетоди\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.data-seek.md\"\u003emysqli_result::data_seek()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.data-seek.md\"\u003emysqli_data_seek()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eВстановлює покажчик результату на довільний рядок у результаті\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-all.md\"\u003emysqli_result::fetch_all()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-all.md\"\u003emysqli_fetch_all()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eОтримує всі результуючі рядки та повертає масив з рядками у вигляді асоціативного масиву та/або нумерованого масиву. Доступно лише з модулем \u003ca href=\"book.mysqlnd.md\"\u003emysqlnd\u003c/a\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-array.md\"\u003emysqli_result::fetch_array()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-array.md\"\u003emysqli_fetch_array()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eОтримує результуючий рядок у вигляді асоціативного масиву та/або нумерованого масиву\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-assoc.md\"\u003emysqli_result::fetch_assoc()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-assoc.md\"\u003emysqli_fetch_assoc()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eОтримує результуючий рядок у вигляді асоціативного масиву\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-column.md\"\u003emysqli_result::fetch_column()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-column.md\"\u003emysqli_fetch_column()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eN/A\u003c/td\u003e\n\u003ctd\u003eОтримує один стовпець наступного рядка набору результатів\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-field-direct.md\"\u003emysqli_result::fetch_field_direct()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-field-direct.md\"\u003emysqli_fetch_field_direct()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eОтримує метадані одного поля\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-field.md\"\u003emysqli_result::fetch_field()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-field.md\"\u003emysqli_fetch_field()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПовертає з результату наступне поле\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-fields.md\"\u003emysqli_result::fetch_fields()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-fields.md\"\u003emysqli_fetch_fields()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПовертає масив об'єктів із полів результату\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-object.md\"\u003emysqli_result::fetch_object()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-object.md\"\u003emysqli_fetch_object()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eПовертає поточний рядок результату як об'єкт\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-row.md\"\u003emysqli_result::fetch_row()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.fetch-row.md\"\u003emysqli_fetch_row()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eОтримує рядок результату як нумерований масив\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.field-seek.md\"\u003emysqli_result::field_seek()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.field-seek.md\"\u003emysqli_field_seek()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eВстановлює усунення вказівника результату на певне поле\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.free.md\"\u003emysqli_result::free()\u003c/a\u003e, \u003ca href=\"mysqli-result.free.md\"\u003emysqli_result::close\u003c/a\u003e, \u003ca href=\"mysqli-result.free.md\"\u003emysqli_result::free_result\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-result.free.md\"\u003emysqli_free_result()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eВизволяє пам'ять, пов'язану з результатом\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОсновна інформація про методи\n\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eMySQL_Driver\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eООП-інтерфейс Процедурний інтерфейс Синонім (не використовуйте!) Опис\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cem\u003eВластивості\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-driver.report-mode.md\"\u003e$mysqli_driver::mysqli_report\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"function.mysqli-report.md\"\u003emysqli_report()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eЧи не документовано\u003c/td\u003e\n\u003ctd\u003eВстановлює режим звіту про помилки mysqli\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cem\u003eМетоди\u003c/em\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-driver.embedded-server-end.md\"\u003emysqli_driver::embedded_server_end()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-driver.embedded-server-end.md\"\u003emysqli_embedded_server_end()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eЧи не документовано\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-driver.embedded-server-start.md\"\u003emysqli_driver::embedded_server_start()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mysqli-driver.embedded-server-start.md\"\u003emysqli_embedded_server_start()\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e-\u003c/td\u003e\n\u003ctd\u003eЧи не документовано\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОсновна інформація про методи\n\u003ca href=\"class.mysqli-driver.md\"\u003emysqli_driver\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПсевдоніми функцій призначені лише для забезпечення зворотного\nсумісності. Не використовуйте їх у нових проектах.\u003c/p\u003e\n\u003c/blockquote\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli.summary.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

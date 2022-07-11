@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration74.new-features | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration74.md">« Міграція з PHP 7.3.x на PHP 7.4.x</a></p>
+</li>
+<li>
+<p><a href="migration74.new-classes.md">Нові класи та інтерфейси »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration74.md">Міграція з PHP 7.3.x на PHP 7.4.x</a></p>
+</li>
+<li>
+<p>Нові можливості</p>
+</li>
+</ul>
+<h2>Нові можливості</h2>
+<h3>Ядро PHP</h3>
+<h4>Типізовані властивості</h4>
+<p>Властивості класу підтримують оголошення типів.</p>
+<p><code>&#x3C;?phpclass User {    public int $id; public string $name;}?> </code></p>
+<p>У наведеному прикладі вище показано, що $user->id можна присвоїти
+тільки значення типу int, коли як $user->name - виключно
+Значення типу string.</p>
+<h4>Стрілочні функції</h4>
+<p><a href="functions.arrow.md">Стрілкові функції</a> - це скорочений запис для
+визначення функцій із неявною прив'язкою батьківської області видимості
+за значенням.</p>
+<p><code>&#x3C;?php$factor = 10;$nums = array_map(fn($n) => $n * $factor, [1, 2, 3, 4]);// $nums = array(10, 20, 30 , 40);?></code></p>
+<h4>Обмежена коваріація типу, що повертається, і контраваріантність типу аргументу</h4>
+<p>Наступний код тепер працюватиме:</p>
+<p>`&#x3C;?phpclass A {}class B extends A {}class Producer {    public function method(): A {}}class ChildProducer extends Producer {       </p>
+<p>Повна підтримка варіантності доступна лише за умови використання
+автозавантаження. Всередині одного файлу можуть бути лише нециклічні
+посилання, оскільки всі класи повинні бути визначені, перед тим як на
+них посилатися.</p>
+<h4>Присвоює оператор об'єднання з null</h4>
+<p><code>&#x3C;?php$array['key'] ??= computeDefault();// приблизно то ж самеif (!isset($array['key'])) {   $array['key'] = computeDefault(); }?></code></p>
+<h4>Розпакування всередині масивів</h4>
+<p><code>&#x3C;?php$parts = ['apple', 'pear'];$fruits = ['banana', 'orange', ...$parts, 'watermelon'];// ['banana', 'orange' , 'apple', 'pear', 'watermelon'];?></code></p>
+<h4>Розділювач у числових літералах</h4>
+<p>Тепер у числових літералах між знаками можуть бути символи
+підкреслення.</p>
+<p><code>&#x3C;?php6.674_083e-11; // число з плаваючою точкою299_792_458; // десяткове число0xCAFE_F00D; // шістнадцяткове число0b0101_1111; // двійкове число?> </code></p>
+<h4>Слабкі посилання</h4>
+<p><a href="class.weakreference.md">Слабкі посилання</a> дозволяють програмісту
+зберегти посилання на об'єкт, який не завадить збирачеві сміття видалити
+цей об'єкт.</p>
+<h4>Обробка винятків із методу __toString()</h4>
+<p>Викидання винятків із методу
+<a href="language.oop5.magic.md#object.tostring">__toString()</a> тепер
+дозволено. Раніше це призводило до фатальної помилки. Існуючі
+фатальні помилки, що відловлюються при перетворенні об'єкта в рядок будуть
+доступні як виняток класу <a href="class.error.md">Error</a>.</p>
+<h3>CURL</h3>
+<p>Крім звичайних імен файлів, клас <a href="class.curlfile.md">CURLFile</a> тепер
+підтримує потокові обгортки, якщо модуль зібрано з версією libcurl
+>= 7.56.0.</p>
+<h3>Фільтрування</h3>
+<p>Фільтр <strong><code>FILTER_VALIDATE_FLOAT</code></strong> тепер підтримує параметри
+<code>min_range</code> і <code>max_range</code>, з тим самим змістом, що і для
+<strong><code>FILTER_VALIDATE_INT</code></strong>.</p>
+<h3>FFI</h3>
+<p>FFI - новий модуль, який пропонує простий спосіб виклику вбудованих
+функцій, доступу до вбудованих змінних, а також створювати або
+звертатися до структур даних у бібліотеках мовою Сі.</p>
+<h3>GD</h3>
+<p>Додано константу <strong><code>IMG_FILTER_SCATTER</code></strong> для застосування
+фільтра, що розсіюється, до зображень.</p>
+<h3>Хешування</h3>
+<p>Доданий хеш <code>crc32c</code>, який використовує поліном Кастанолі. Ця реалізація
+алгоритм CRC32 використовується системами зберігання, такими як iSCSI, SCTP,
+Btrfs та ext4.</p>
+<h3>Багатобайтові рядки</h3>
+<p>Додано функцію <a href="function.mb-str-split.md">mb_str_split()</a>, яка
+виконує те ж саме, що і <a href="function.str-split.md">str_split()</a>, але
+працює з кодовими точками, а чи не з байтами.</p>
+<h3>OPcache</h3>
+<p>Додано підтримку <a href="opcache.preloading.md">попереднього завантаження коду</a>.</p>
+<h3>Регулярні вирази (сумісні з Perl)</h3>
+<p>Функції <a href="function.preg-replace-callback.md">preg_replace_callback()</a> та
+<a href="function.preg-replace-callback-array.md">preg_replace_callback_array()</a>
+тепер приймають додатковий аргумент <code>flags</code> з підтримкою прапорів
+<strong><code>PREG_OFFSET_CAPTURE</code></strong> та <strong><code>PREG_UNMATCHED_AS_NULL</code></strong>. Він вплине на
+формат масиву збіглих значень, що передається в callback-функцію.</p>
+<h3>PDO</h3>
+<p>Ім'я користувача та пароль тепер можна вказати як частину DSN для
+драйверів mysql, mssql, sybase, dblib, firebird та oci. Раніше підтримка
+це була тільки для драйвера pgsql. Якщо ім'я користувача/пароль
+вказано і в конструкторі і в DSN, то конструктор матиме пріоритет.</p>
+<p>Також тепер можна екранувати знаки запитання в SQL-запитах,
+щоб вони сприймалися як іменовані параметри. Використання
+<code>??</code> відправить один знак питання до бази даних, і, наприклад, у разі
+використання PostgreSQL, буде використаний оператор перевірки
+існування ключа в JSON (<code>?</code>).</p>
+<h3>PDO_OCI</h3>
+<p>Для даного драйвера тепер доступний метод
+<a href="pdostatement.getcolumnmeta.md">PDOStatement::getColumnMeta()</a>.</p>
+<h3>PDO_SQLite</h3>
+<p>Вираз
+<code>PDOStatement::getAttribute(PDO::SQLITE_ATTR_READONLY_STATEMENT)</code>
+дозволяє перевірити, чи доступний підготовлений запит тільки для
+читання, тобто. чи не змінює він базу даних.</p>
+<p><code>PDO::setAttribute(PDO::SQLITE_ATTR_EXTENDED_RESULT_CODES, true)</code>
+дозволяє використовувати розширені коди результату SQLite3
+<a href="pdostatement.errorinfo.md">PDOStatement::errorInfo()</a>.</p>
+<h3>SQLite3</h3>
+<p>Доданий метод <strong>SQLite3::lastExtendedErrorCode()</strong> для отримання
+останнього розширеного коду результату.</p>
+<p>Доданий метод <code>SQLite3::enableExtendedResultCodes($enable = true)</code>,
+який змусить метод
+<a href="sqlite3.lasterrorcode.md">SQLite3::lastErrorCode()</a> повертати
+розширені коди результатів.</p>
+<h3>Стандартне</h3>
+<h4>strip_tags() з масивом імен тегів</h4>
+<p>Функція <a href="function.strip-tags.md">strip_tags()</a> тепер також приймає
+масив дозволених тегів: замість <code>strip_tags($str, '&#x3C;a>&#x3C;p>')</code> тепер
+можна написати <code>strip_tags($str, ['a', 'p'])</code>.</p>
+<h4>Користувальницька серіалізація об'єктів</h4>
+<p>Додано новий механізм серіалізації об'єктів,
+використовує два нові магічні методи: <code>__serialize</code> та
+<code>__unserialize</code>.</p>
+<p>`&#x3C;?php// Повертає масив, містить все необхідний стан об'єкта.public function __serialize(): array;// Відновлює стан об'єкту з вказаного масиву¸</p>
+<p>Новий механізм серіалізації замінює інтерфейс
+<a href="class.serializable.md">Serializable</a>, який у майбутньому буде
+оголошено застарілим.</p>
+<h4>Функції злиття масивів без аргументів</h4>
+<p>Функції <a href="function.array-merge.md">array_merge()</a> та
+<a href="function.array-merge-recursive.md">array_merge_recursive()</a> тепер
+можуть викликатися без жодних аргументів, і тоді вони повернуть порожній
+масив. Це корисно у поєднанні з оператором розширення, наприклад,
+<code>array_merge(...$arrays)</code>.</p>
+<h4>Функція <a href="function.proc-open.md">proc_open()</a></h4>
+<p><a href="function.proc-open.md">proc_open()</a> тепер приймає масив замість
+рядки для виконання команди. У цьому випадку процес буде відкрито
+безпосередньо (без командної оболонки), а PHP екранує будь-який необхідний
+аргумент.</p>
+<p><code>&#x3C;?phpproc_open(['php', '-r', 'echo "Привіт, світ ";'], $descriptors, $pipes);?></code></p>
+<p>Функція <a href="function.proc-open.md">proc_open()</a> тепер підтримує
+дескриптори <code>redirect</code> та <code>null</code>.</p>
+<p><code>&#x3C;?php// То ж саме, що і 2>&#x26;1 в командній оболонціproc_open($cmd, [1 => ['pipe', 'w'], 2 => ['redirect', 1 );// То що, що і 2>/dev/null або 2>nul в командній оболонціproc_open($cmd, [1 => ['pipe', 'w'], 2 =>' , $pipes);?></code></p>
+<h4>argon2i(d) без libargon</h4>
+<p>Функція <a href="function.password-hash.md">password_hash()</a> тепер
+підтримує варіанти хешування argon2i та argon2id з модуля sodium,
+коли PHP зібраний без libargon.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration74.new-features.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration74.new-features.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration74.new-features","slug":"migration74.new-features.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration74.md\"\u003e« Міграція з PHP 7.3.x на PHP 7.4.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration74.new-classes.md\"\u003eНові класи та інтерфейси »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration74.md\"\u003eМіграція з PHP 7.3.x на PHP 7.4.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНові можливості\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНові можливості\u003c/h2\u003e\n\u003ch3\u003eЯдро PHP\u003c/h3\u003e\n\u003ch4\u003eТипізовані властивості\u003c/h4\u003e\n\u003cp\u003eВластивості класу підтримують оголошення типів.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass User {    public int $id; public string $name;}?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eУ наведеному прикладі вище показано, що $user-\u003eid можна присвоїти\nтільки значення типу int, коли як $user-\u003ename - виключно\nЗначення типу string.\u003c/p\u003e\n\u003ch4\u003eСтрілочні функції\u003c/h4\u003e\n\u003cp\u003e\u003ca href=\"functions.arrow.md\"\u003eСтрілкові функції\u003c/a\u003e - це скорочений запис для\nвизначення функцій із неявною прив'язкою батьківської області видимості\nза значенням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$factor = 10;$nums = array_map(fn($n) =\u003e $n * $factor, [1, 2, 3, 4]);// $nums = array(10, 20, 30 , 40);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eОбмежена коваріація типу, що повертається, і контраваріантність типу аргументу\u003c/h4\u003e\n\u003cp\u003eНаступний код тепер працюватиме:\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?phpclass A {}class B extends A {}class Producer {    public function method(): A {}}class ChildProducer extends Producer {       \u003c/p\u003e\n\u003cp\u003eПовна підтримка варіантності доступна лише за умови використання\nавтозавантаження. Всередині одного файлу можуть бути лише нециклічні\nпосилання, оскільки всі класи повинні бути визначені, перед тим як на\nних посилатися.\u003c/p\u003e\n\u003ch4\u003eПрисвоює оператор об'єднання з null\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array['key'] ??= computeDefault();// приблизно то ж самеif (!isset($array['key'])) {   $array['key'] = computeDefault(); }?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eРозпакування всередині масивів\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$parts = ['apple', 'pear'];$fruits = ['banana', 'orange', ...$parts, 'watermelon'];// ['banana', 'orange' , 'apple', 'pear', 'watermelon'];?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eРозділювач у числових літералах\u003c/h4\u003e\n\u003cp\u003eТепер у числових літералах між знаками можуть бути символи\nпідкреслення.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php6.674_083e-11; // число з плаваючою точкою299_792_458; // десяткове число0xCAFE_F00D; // шістнадцяткове число0b0101_1111; // двійкове число?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eСлабкі посилання\u003c/h4\u003e\n\u003cp\u003e\u003ca href=\"class.weakreference.md\"\u003eСлабкі посилання\u003c/a\u003e дозволяють програмісту\nзберегти посилання на об'єкт, який не завадить збирачеві сміття видалити\nцей об'єкт.\u003c/p\u003e\n\u003ch4\u003eОбробка винятків із методу __toString()\u003c/h4\u003e\n\u003cp\u003eВикидання винятків із методу\n\u003ca href=\"language.oop5.magic.md#object.tostring\"\u003e__toString()\u003c/a\u003e тепер\nдозволено. Раніше це призводило до фатальної помилки. Існуючі\nфатальні помилки, що відловлюються при перетворенні об'єкта в рядок будуть\nдоступні як виняток класу \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eCURL\u003c/h3\u003e\n\u003cp\u003eКрім звичайних імен файлів, клас \u003ca href=\"class.curlfile.md\"\u003eCURLFile\u003c/a\u003e тепер\nпідтримує потокові обгортки, якщо модуль зібрано з версією libcurl\n\u003e= 7.56.0.\u003c/p\u003e\n\u003ch3\u003eФільтрування\u003c/h3\u003e\n\u003cp\u003eФільтр \u003cstrong\u003e\u003ccode\u003eFILTER_VALIDATE_FLOAT\u003c/code\u003e\u003c/strong\u003e тепер підтримує параметри\n\u003ccode\u003emin_range\u003c/code\u003e і \u003ccode\u003emax_range\u003c/code\u003e, з тим самим змістом, що і для\n\u003cstrong\u003e\u003ccode\u003eFILTER_VALIDATE_INT\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eFFI\u003c/h3\u003e\n\u003cp\u003eFFI - новий модуль, який пропонує простий спосіб виклику вбудованих\nфункцій, доступу до вбудованих змінних, а також створювати або\nзвертатися до структур даних у бібліотеках мовою Сі.\u003c/p\u003e\n\u003ch3\u003eGD\u003c/h3\u003e\n\u003cp\u003eДодано константу \u003cstrong\u003e\u003ccode\u003eIMG_FILTER_SCATTER\u003c/code\u003e\u003c/strong\u003e для застосування\nфільтра, що розсіюється, до зображень.\u003c/p\u003e\n\u003ch3\u003eХешування\u003c/h3\u003e\n\u003cp\u003eДоданий хеш \u003ccode\u003ecrc32c\u003c/code\u003e, який використовує поліном Кастанолі. Ця реалізація\nалгоритм CRC32 використовується системами зберігання, такими як iSCSI, SCTP,\nBtrfs та ext4.\u003c/p\u003e\n\u003ch3\u003eБагатобайтові рядки\u003c/h3\u003e\n\u003cp\u003eДодано функцію \u003ca href=\"function.mb-str-split.md\"\u003emb_str_split()\u003c/a\u003e, яка\nвиконує те ж саме, що і \u003ca href=\"function.str-split.md\"\u003estr_split()\u003c/a\u003e, але\nпрацює з кодовими точками, а чи не з байтами.\u003c/p\u003e\n\u003ch3\u003eOPcache\u003c/h3\u003e\n\u003cp\u003eДодано підтримку \u003ca href=\"opcache.preloading.md\"\u003eпопереднього завантаження коду\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eРегулярні вирази (сумісні з Perl)\u003c/h3\u003e\n\u003cp\u003eФункції \u003ca href=\"function.preg-replace-callback.md\"\u003epreg_replace_callback()\u003c/a\u003e та\n\u003ca href=\"function.preg-replace-callback-array.md\"\u003epreg_replace_callback_array()\u003c/a\u003e\nтепер приймають додатковий аргумент \u003ccode\u003eflags\u003c/code\u003e з підтримкою прапорів\n\u003cstrong\u003e\u003ccode\u003ePREG_OFFSET_CAPTURE\u003c/code\u003e\u003c/strong\u003e та \u003cstrong\u003e\u003ccode\u003ePREG_UNMATCHED_AS_NULL\u003c/code\u003e\u003c/strong\u003e. Він вплине на\nформат масиву збіглих значень, що передається в callback-функцію.\u003c/p\u003e\n\u003ch3\u003ePDO\u003c/h3\u003e\n\u003cp\u003eІм'я користувача та пароль тепер можна вказати як частину DSN для\nдрайверів mysql, mssql, sybase, dblib, firebird та oci. Раніше підтримка\nце була тільки для драйвера pgsql. Якщо ім'я користувача/пароль\nвказано і в конструкторі і в DSN, то конструктор матиме пріоритет.\u003c/p\u003e\n\u003cp\u003eТакож тепер можна екранувати знаки запитання в SQL-запитах,\nщоб вони сприймалися як іменовані параметри. Використання\n\u003ccode\u003e??\u003c/code\u003e відправить один знак питання до бази даних, і, наприклад, у разі\nвикористання PostgreSQL, буде використаний оператор перевірки\nіснування ключа в JSON (\u003ccode\u003e?\u003c/code\u003e).\u003c/p\u003e\n\u003ch3\u003ePDO_OCI\u003c/h3\u003e\n\u003cp\u003eДля даного драйвера тепер доступний метод\n\u003ca href=\"pdostatement.getcolumnmeta.md\"\u003ePDOStatement::getColumnMeta()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003ePDO_SQLite\u003c/h3\u003e\n\u003cp\u003eВираз\n\u003ccode\u003ePDOStatement::getAttribute(PDO::SQLITE_ATTR_READONLY_STATEMENT)\u003c/code\u003e\nдозволяє перевірити, чи доступний підготовлений запит тільки для\nчитання, тобто. чи не змінює він базу даних.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ePDO::setAttribute(PDO::SQLITE_ATTR_EXTENDED_RESULT_CODES, true)\u003c/code\u003e\nдозволяє використовувати розширені коди результату SQLite3\n\u003ca href=\"pdostatement.errorinfo.md\"\u003ePDOStatement::errorInfo()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eSQLite3\u003c/h3\u003e\n\u003cp\u003eДоданий метод \u003cstrong\u003eSQLite3::lastExtendedErrorCode()\u003c/strong\u003e для отримання\nостаннього розширеного коду результату.\u003c/p\u003e\n\u003cp\u003eДоданий метод \u003ccode\u003eSQLite3::enableExtendedResultCodes($enable = true)\u003c/code\u003e,\nякий змусить метод\n\u003ca href=\"sqlite3.lasterrorcode.md\"\u003eSQLite3::lastErrorCode()\u003c/a\u003e повертати\nрозширені коди результатів.\u003c/p\u003e\n\u003ch3\u003eСтандартне\u003c/h3\u003e\n\u003ch4\u003estrip_tags() з масивом імен тегів\u003c/h4\u003e\n\u003cp\u003eФункція \u003ca href=\"function.strip-tags.md\"\u003estrip_tags()\u003c/a\u003e тепер також приймає\nмасив дозволених тегів: замість \u003ccode\u003estrip_tags($str, '\u0026#x3C;a\u003e\u0026#x3C;p\u003e')\u003c/code\u003e тепер\nможна написати \u003ccode\u003estrip_tags($str, ['a', 'p'])\u003c/code\u003e.\u003c/p\u003e\n\u003ch4\u003eКористувальницька серіалізація об'єктів\u003c/h4\u003e\n\u003cp\u003eДодано новий механізм серіалізації об'єктів,\nвикористовує два нові магічні методи: \u003ccode\u003e__serialize\u003c/code\u003e та\n\u003ccode\u003e__unserialize\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?php// Повертає масив, містить все необхідний стан об'єкта.public function __serialize(): array;// Відновлює стан об'єкту з вказаного масиву¸\u003c/p\u003e\n\u003cp\u003eНовий механізм серіалізації замінює інтерфейс\n\u003ca href=\"class.serializable.md\"\u003eSerializable\u003c/a\u003e, який у майбутньому буде\nоголошено застарілим.\u003c/p\u003e\n\u003ch4\u003eФункції злиття масивів без аргументів\u003c/h4\u003e\n\u003cp\u003eФункції \u003ca href=\"function.array-merge.md\"\u003earray_merge()\u003c/a\u003e та\n\u003ca href=\"function.array-merge-recursive.md\"\u003earray_merge_recursive()\u003c/a\u003e тепер\nможуть викликатися без жодних аргументів, і тоді вони повернуть порожній\nмасив. Це корисно у поєднанні з оператором розширення, наприклад,\n\u003ccode\u003earray_merge(...$arrays)\u003c/code\u003e.\u003c/p\u003e\n\u003ch4\u003eФункція \u003ca href=\"function.proc-open.md\"\u003eproc_open()\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003e\u003ca href=\"function.proc-open.md\"\u003eproc_open()\u003c/a\u003e тепер приймає масив замість\nрядки для виконання команди. У цьому випадку процес буде відкрито\nбезпосередньо (без командної оболонки), а PHP екранує будь-який необхідний\nаргумент.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpproc_open(['php', '-r', 'echo \"Привіт, світ \";'], $descriptors, $pipes);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eФункція \u003ca href=\"function.proc-open.md\"\u003eproc_open()\u003c/a\u003e тепер підтримує\nдескриптори \u003ccode\u003eredirect\u003c/code\u003e та \u003ccode\u003enull\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// То ж саме, що і 2\u003e\u0026#x26;1 в командній оболонціproc_open($cmd, [1 =\u003e ['pipe', 'w'], 2 =\u003e ['redirect', 1 );// То що, що і 2\u003e/dev/null або 2\u003enul в командній оболонціproc_open($cmd, [1 =\u003e ['pipe', 'w'], 2 =\u003e' , $pipes);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch4\u003eargon2i(d) без libargon\u003c/h4\u003e\n\u003cp\u003eФункція \u003ca href=\"function.password-hash.md\"\u003epassword_hash()\u003c/a\u003e тепер\nпідтримує варіанти хешування argon2i та argon2id з модуля sodium,\nколи PHP зібраний без libargon.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration74.new-features.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

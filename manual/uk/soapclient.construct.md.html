@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>soapclient.construct | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="soapclient.call.md">« SoapClient::__call</a></p>
+</li>
+<li>
+<p><a href="soapclient.dorequest.md">SoapClient::__doRequest »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.soapclient.md">SoapClient</a></p>
+</li>
+<li>
+<p>Конструктор класу SoapClient</p>
+</li>
+</ul>
+<h1>SoapClient::__construct</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<p>SoapClient::__construct - Конструктор класу SoapClient</p>
+<h3>Опис</h3>
+<p>public <strong>SoapClient::__construct</strong>(?string <code>$wsdl</code>, array <code>$options</code> =
+[])
+Створює об'єкт <a href="class.soapclient.md">SoapClient</a> для підключення до
+служби SOAP.</p>
+<h3>Список параметрів</h3>
+<p><code>wsdl</code>
+URI WSDL-файлу, який описує сервіс, який використовується для
+автоматичного налаштування клієнта. Якщо він не вказано, клієнт буде
+працювати у режимі без WSDL. mode.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>За замовчуванням WSDL-файл кешуватиметься для підвищення
+продуктивність. Щоб вимкнути або налаштувати кешування,
+дивіться розділ <a href="soap.configuration.md#soap.configuration.list">Опції налаштування > SOAP</a> та <a href="soapclient.construct.md#soapclient.construct.options.cache-wsdl">параметр > <code>cache_wsdl</code></a>.</p>
+</blockquote>
+<p><code>options</code>
+Асоціативний масив, який визначає додаткові параметри для клієнта
+SOAP. Якщо вказано параметр <code>wsdl</code>, це необов'язково, інакше
+у випадку, принаймні параметри <code>location</code> та <code>url</code> повинні бути
+вказані.</p>
+<p><code>location</code> string
+URL-адреса сервера SOAP для надсилання запиту.</p>
+<p>Обов'язковий, якщо параметр wsdl не вказаний. Якщо надані та
+параметр <code>wsdl</code> і <code>location</code>, параметр <code>location</code> буде пріоритетнішим
+розташування, вказаного у файлі WSDL.</p>
+<p><code>uri</code> string
+Цільовий простір імен служби SOAP.</p>
+<p>Обов'язковий, якщо параметр wsdl не вказаний; в іншому випадку
+ігнорується.</p>
+<p><code>style</code> int
+Визначає стиль зв'язування, який використовуватиме клієнт,
+використовуючи константи <strong><code>SOAP_RPC</code></strong> та <strong><code>SOAP_DOCUMENT</code></strong>. Константа
+<strong><code>SOAP_RPC</code></strong> вказує на прив'язку в стилі RPC, де тіло запиту SOAP
+містить стандартне кодування виклику функції. Константа
+<strong><code>SOAP_DOCUMENT</code></strong> вказує на прив'язку у стилі документа, де тіло
+запит SOAP містить XML-документ з певним значенням служби.</p>
+<p>Якщо вказано параметр <code>wsdl</code>, цей параметр ігнорується, а стиль
+зчитується із WSDL-файлу.</p>
+<p>Якщо ні цей параметр, ні параметр wsdl не вказано, використовується
+RPC стиль.</p>
+<p><code>use</code> int
+Визначає стиль кодування, який використовуватиметься клієнтом,
+використовуючи константи <strong><code>SOAP_ENCODED</code></strong> або <strong><code>SOAP_LITERAL</code></strong>. Константа
+<strong><code>SOAP_ENCODED</code></strong> вказує на кодування з використанням типів
+визначених у специфікації SOAP. Константа <strong><code>SOAP_LITERAL</code></strong> вказує
+кодування з використанням схеми певною службою.</p>
+<p>Якщо вказано параметр <code>wsdl</code>, цей параметр ігнорується, а кодування
+зчитується із файлу WSDL.</p>
+<p>Якщо ні цей параметр, ні параметр wsdl не вказані, використовується стиль
+"encoded".</p>
+<p><code>soap_version</code> int
+Визначає версію протоколу SOAP: Константа <strong><code>SOAP_1_1</code></strong> для SOAP 1.1,
+або <strong><code>SOAP_1_2</code></strong> для SOAP 1.2.</p>
+<p>Якщо опущено, використовується SOAP 1.1.</p>
+<p><code>authentication</code> int
+Вказує метод аутентифікації при використанні HTTP-аутентифікації
+запити. Значення може бути або <strong><code>SOAP_AUTHENTICATION_BASIC</code></strong>, або
+<strong><code>SOAP_AUTHENTICATION_DIGEST</code></strong>.</p>
+<p>Якщо параметр не вказано, але вказано параметр <code>login</code>, використовується Basic
+Authentication.</p>
+<p><code>login</code> string
+Ім'я користувача для використання під час аутентифікації HTTP Basic або
+Digest.</p>
+<p><code>password</code> string
+Пароль для використання під час аутентифікації HTTP Basic або Digest.</p>
+<p>Не слід плутати з параметром <code>passphrase</code>, який використовується при
+автентифікації сертифіката клієнта HTTPS.</p>
+<p><code>local_cert</code> string
+Шлях до сертифіката клієнта для використання з аутентифікацією
+HTTPS. Повинен бути файл у кодуванні PEM, що містить сертифікат та
+закритий ключ.</p>
+<p>Файл також може включати ланцюжок емітентів, який повинен йти після
+сертифікат клієнта.</p>
+<p>Також може бути заданий за допомогою параметра
+<a href="soapclient.construct.md#soapclient.construct.options.stream-context"><code>stream_context</code></a>,
+який також підтримує вказівку окремого файлу закритого ключа.</p>
+<p><code>passphrase</code> string
+Ключова фраза для сертифіката клієнта, вказаного у параметрі
+<code>local_cert</code>.</p>
+<p>Не слід плутати з параметром <code>password</code>, який використовується для
+автентифікації Basic чи Digest.</p>
+<p>Можна також встановити за допомогою параметра
+<a href="soapclient.construct.md#soapclient.construct.options.stream-context"><code>stream_context</code></a>.</p>
+<p><code>proxy_host</code> string
+Ім'я хоста для використання як проксі-сервер для HTTP-запитів.</p>
+<p>Також має бути вказано параметр <code>proxy_port</code>.</p>
+<p><code>proxy_port</code> int
+TCP-порт для використання під час підключення до проксі-сервера, вказаного
+у параметрі <code>proxy_host</code>.</p>
+<p><code>proxy_login</code> string
+Необов'язкове ім'я користувача для аутентифікації на проксі-сервері,
+вказаному у параметрі <code>proxy_host</code>, використовуючи HTTP Basic Authentication.</p>
+<p><code>proxy_password</code> string
+Необов'язковий пароль для аутентифікації на проксі-сервері, зазначеному в
+параметрі <code>proxy_host</code>, використовуючи HTTP Basic Authentication</p>
+<p><code>compression</code> int
+Включає стиснення HTTP SOAP запитів та відповідей.</p>
+<p>Значення має бути побітовим АБО з трьох частин: необов'язкова
+<strong><code>SOAP_COMPRESSION_ACCEPT</code></strong>, для надсилання заголовка "Accept-Encoding";
+або константа <strong><code>SOAP_COMPRESSION_GZIP</code></strong> або
+<strong><code>SOAP_COMPRESSION_DEFLATE</code></strong> для вказівки використовуваного алгоритму
+стискування; число від 1 до 9, щоб вказати рівень стиснення, який буде
+використовуватись у запиті. Наприклад, щоб увімкнути двосторонній стиск
+gzip з максимальним рівнем стиснення, використовуйте
+<code>SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 9</code>.</p>
+<p>'encoding' string
+Визначає внутрішнє кодування символів. Запити завжди відправляються в
+UTF-8 і перетворюються на це кодування і назад.</p>
+<p><code>trace</code> bool
+Захоплює інформацію про запит та відповідь, яка потім може бути
+доступна за допомогою методів: <strong>SoapClient::getLastRequest()</strong>,
+<strong>SoapClient::getLastRequestHeaders()</strong>,
+<strong>SoapClient::getLastResponse()</strong>, або
+<strong>SoapClient::getLastResponseHeaders()</strong>.</p>
+<p>Якщо опущено, використовується значення <strong><code>false</code></strong>.</p>
+<p><code>classmap</code> array
+Використовується для порівняння типів, визначених у WSDL із класами
+PHP. Має бути асоціативний масив (array) з іменами типів з
+WSDL як ключі та імена класів PHP як значення.
+Зверніть увагу, що ім'я типу елемента не обов'язково збігається з
+іменем елемента (тега).</p>
+<p>Надані імена класів завжди повинні бути повністю визначені з
+за допомогою будь-яких <a href="language.namespaces.md">простір імен</a> і ніколи не
+повинні починатися з ведучого сліша (<code>\</code>). Правильна форма може бути
+вказана за допомогою
+<a href="language.oop5.basic.md#language.oop5.basic.class.class">::class</a>.</p>
+<p>Зверніть увагу, що при створенні класу конструктор не викликається
+буде, але магічні методи
+<a href="language.oop5.overloading.md#object.set">__set()</a> та
+<a href="language.oop5.overloading.md#object.get">__get()</a> будуть викликатися
+для окремих властивостей.</p>
+<p><code>typemap</code> array
+Використовується для визначення зіставлень типів за допомогою визначених
+Користувачем callback-функцій. Кожне зіставлення типів має
+являти собою масив з ключами <code>type_name</code> (рядок (string),
+визначальна тип елемента XML); <code>type_ns</code> (рядок (string), що містить
+простір імен URI); <code>from_xml</code>
+(<a href="language.types.callable.md">callable</a>, що приймає один рядковий
+параметр і об'єкт, що повертає) і <code>to_xml</code>
+(<a href="language.types.callable.md">callable</a>, що приймає один об'єктний
+параметр і повертає рядок).</p>
+<p><code>exceptions</code> bool
+Визначає, чи помилки викидатимуть виняток типу
+<a href="class.soapfault.md">SoapFault</a>.</p>
+<p>За промовчанням значення <strong><code>true</code></strong></p>
+<p><code>connection_timeout</code> int
+Визначає час очікування в секундах для підключення до сервісу SOAP.
+Параметр не визначає час очікування служб із повільними відповідями. Щоб
+обмежити час очікування завершення дзвінків, можна використовувати
+параметр конфігурації
+<a href="filesystem.configuration.md#ini.default-socket-timeout">default_socket_timeout</a>.</p>
+<p><code>cache_wsdl</code> int
+Якщо вказано параметр <code>wsdl</code>, а також параметр
+<a href="soap.configuration.md#ini.soap.wsdl-cache-enabled">soap.wsdl_cache_enabled</a>
+Увімкнено, цей параметр визначає тип кешування. Одне із значень:
+<strong><code>WSDL_CACHE_NONE</code></strong>, <strong><code>WSDL_CACHE_DISK</code></strong>, <strong><code>WSDL_CACHE_MEMORY</code></strong>
+або <strong><code>WSDL_CACHE_BOTH</code></strong>.</p>
+<p>Доступні два типи кешу: кешування в пам'яті, яке кешує WSDL
+пам'яті поточного процесу та дискове кешування, яке кешує WSDL в
+файл на диску, що розділяється між усіма процесами. Каталог, який
+буде використовуватися для дискового кешу, що визначається параметром
+<a href="soap.configuration.md#ini.soap.wsdl-cache-dir">soap.wsdl_cache_dir</a>.
+Обидва кеші використовують однаковий час життя, що визначається параметром
+<a href="soap.configuration.md#ini.soap.wsdl-cache-ttl">soap.wsdl_cache_ttl</a>.
+У кеша в пам'яті також є максимальна кількість записів, що визначається
+параметром
+<a href="soap.configuration.md#ini.soap.wsdl-cache-limit">soap.wsdl_cache_limit</a>.</p>
+<p>Якщо не вказано, використовуватиметься параметр конфігурації
+<a href="soap.configuration.md#ini.soap.wsdl-cache">soap.wsdl_cache</a>.</p>
+<p><code>user_agent</code> string
+Значення для використання в заголовку HTTP <code>User-Agent</code> при виконанні
+запитів.</p>
+<p>Можна також встановити за допомогою параметра
+<a href="soapclient.construct.md#soapclient.construct.options.stream-context"><code>stream_context</code></a>.</p>
+<p>Якщо не вказано, User-Agent буде ``PHP-SOAP/'<code> за яким слідує значення **</code>PHP_VERSION`**.</p>
+<p><code>stream_context</code> resource
+Контекст <a href="context.md">stream context</a> створений за допомогою функції
+<a href="function.stream-context-create.md">stream_context_create()</a>, яка
+дає змогу встановити додаткові параметри.</p>
+<p>Контекст може містити <a href="context.socket.md">параметри контексту сокета</a>, <a href="context.ssl.md">параметри контексту SSL</a>, а також вибрані <a href="context.http.md">опції контексту HTTP</a>: <code>content_type</code>, <code>header</code>, <code>max_redirects</code>,
+<code>protocol_version</code>, та <code>user_agent</code>.</p>
+<p>Зверніть увагу, що наступні заголовки HTTP генеруються
+автоматично або на основі інших параметрів і ігноруватимуться,
+якщо вказано в параметрі контексту ``header'<code>: </code>host<code>, </code>connection<code>, </code>user-agent<code>, </code>content-length<code>, </code>content-type<code>, </code>cookie`,
+'authorization' і 'proxy-authorization'</p>
+<p><code>features</code> int
+Бітова маска для включення однієї або кількох таких функцій:</p>
+<p><strong><code>SOAP_SINGLE_ELEMENT_ARRAYS</code></strong>
+При декодуванні відповіді масив за замовчуванням визначається, з'являється
+чи ім'я елемента один або кілька разів у певному батьківському
+елемент. Для елементів, які з'являються лише один раз, властивість
+об'єкта дозволяє отримати прямий доступ до вмісту; для елементів,
+які з'являються більше одного разу, властивість містить масив з
+вміст кожного відповідного елемента.</p>
+<p>Якщо увімкнено функцію <strong><code>SOAP_SINGLE_ELEMENT_ARRAYS</code></strong>, елементи,
+які з'являються лише один раз, поміщаються в одноелементний масив,
+щоб доступ був послідовним всім елементів. Це буде працювати
+тільки при використанні WSDL, що містить схему відповіді. Для
+демонстрації дивіться розділ із прикладами.</p>
+<p><strong><code>SOAP_USE_XSI_ARRAY_TYPE</code></strong>
+Якщо <a href="soapclient.construct.md#soapclient.construct.options.use">параметру <code>use</code></a> або
+властивості WSDL передано значення <code>encoded</code>, масиви примусово
+використовують тип <code>SOAP-ENC: Array</code>, а не специфічний для схеми.</p>
+<p><strong><code>SOAP_WAIT_ONE_WAY_CALLS</code></strong>
+Очікування відповіді, навіть якщо WSDL вказує на односторонній запит.</p>
+<p><code>keep_alive</code> bool
+Логічне значення, яке визначає, чи слід надсилати заголовок
+<code>Connection: Keep-Alive</code> або <code>Connection: close</code>.</p>
+<p>Типово <strong><code>true</code></strong></p>
+<p><code>ssl_method</code> string
+Визначає версію протоколу SSL або TLS для використання у захищених
+HTTP-з'єднання замість узгодження за промовчанням. Вказівка
+<strong><code>SOAP_SSL_METHOD_SSLv2</code></strong> або <strong><code>SOAP_SSL_METHOD_SSLv3</code></strong> змусить
+використовувати SSL 2 або SSL 3 відповідно. Вказівка константи
+<strong><code>SOAP_SSL_METHOD_SSLv23</code></strong> не має жодного сенсу; константа
+існує лише зворотної сумісності. Починаючи з PHP 7.2,
+вказівка константи <strong><code>SOAP_SSL_METHOD_TLS</code></strong> також не має жодного
+сенсу; у ранніх версіях константа визначала примусове
+Використання TLS 1.0.</p>
+<p>Зверніть увагу, що SSL версій 2 та 3 вважаються небезпечними та можуть
+не підтримувати встановлену бібліотеку OpenSSL.</p>
+<p>Параметр оголошений <em>УСТАРШИМ</em>, починаючи з PHP 8.1.0. Більш гнучкою
+альтернативою, що дозволяє вказувати окремі версії TLS, можна
+використовувати параметр
+<a href="soapclient.construct.md#soapclient.construct.options.stream-context"><code>stream_context</code></a>
+з параметром 'crypto_method'.</p>
+<p><strong>Приклад #1 Вказівка використання тільки TLS 1.3</strong></p>
+<p><code>&#x3C;?php$context = stream_context_create([    'ssl' => [        'crypto_method' => STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT     ]];$client = new SoapClient("some.wsdl", ['context' => $context]);</code></p>
+<h3>Помилки</h3>
+<p>Метод <strong>SoapClient::__construct()</strong> виводить помилку рівня
+<strong><code>E_ERROR</code></strong>, якщо параметри <code>location</code> та <code>uri</code> не вказані в режимі
+не-WSDL.</p>
+<p>Викидається виняток <a href="class.soapfault.md">SoapFault</a>, якщо
+параметр <code>wsdl</code> URI не може бути завантажений.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #2 Приклад використання <strong>SoapClient::__construct()</strong></strong></p>
+<p><code>&#x3C;?php$client = new SoapClient("some.wsdl");$client = new SoapClient("some.wsdl", array('soap_version'   => SOAP_1_2));$Clent = ", array('login'          => "some_name",                                            'password'       => "some_password"));$client = new SoapClient("some.wsdl", array('proxy_host'     => "localhost",                                            'proxy_port' => 8080));$client = new SoapClient("some.wsdl", array('proxy_host'     => "localhost",                                            'proxy_port'     => 8080,                                            'proxy_login'    => "some_name",                                            'proxy_password' => "some_password"));$client==new SoapClient("some.wsdl", array('local_cert'     => "cert_key.pem"));$client = new SoapClient(null, y ¦                                                                                   | cation' => "http://localhost/soap.php",                                     'uri'      => "http://test-uri/",                                     'style'    => SOAP_DOCUMENT,                                     'use'      => SOAP_LITERAL));$client = new SoapClient("some.wsdl", array('compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP|| 9));$client = new SoapClient("some.wsdl", array('encoding'=>'ISO-8859-1'));class MyBook {    public $title; public $author;}$client = new SoapClient("books.wsdl", array('classmap' => array('book' => "MyBook")));$typemap = array(    array("type_ "http://schemas.example.com",         "type_name" => "book",         "from_xml"  => "unserialize_book",         "to_xml"    => "serialize_book"));$client = new SoapClient("books. wsdl", array('typemap' => $typemap));?></code></p>
+<p><strong>Приклад #3 Приклад використання <strong><code>SOAP_SINGLE_ELEMENT_ARRAYS</code></strong></strong></p>
+<p><code> /* Припускаючи, що відповідь, подібний цьому, і відповідний WSDL:&#x3C;?xml version="1.0" encoding="UTF-8"?>&#x3C;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://sche .xmlsoap.org/soap/envelope/" xmlns="urn:example">    &#x3C;SOAP-ENV:Body>        &#x3C;response>            &#x3C;collection>                &#x3C;item>Single&#x3C;/item>            &#x3C;/collection>            &#x3C;collection>                &#x3C;item>First &#x3C;/item>                         ¦¦¦¦                ¦         ¦       &#x3C;br> ";$client = new TestSoapClient(__DIR__ . '/temp.wsdl');$response = $client->exampleRequest();var_dump( $response->collection[0]->item );var_dump(>$ collection[1]->item );echo " За допомогою SOAP_SINGLE_ELEMENT_ARRAYS: ";$client = new TestSoapClient(__DIR__ . '/temp.wsdl', ['features' => SOAP_SINGLE_ELEMENT_ARRAYS]);$response = $client->exampleRequest()>$_ item );var_dump( $response->collection[1]->item );</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>За замовчуванням:
+string(6) "Single"
+array(2) {
+[0] =>
+string(5) "First"
+[1] =>
+string(6) "Second"
+}</p>
+<p>За допомогою SOAP_SINGLE_ELEMENT_ARRAYS:
+array(1) {
+[0] =>
+string(6) "Single"
+}
+array(2) {
+[0] =>
+string(5) "First"
+[1] =>
+string(6) "Second"
+}</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/soapclient.construct.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/soapclient.construct.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"soapclient.construct","slug":"soapclient.construct.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"soapclient.call.md\"\u003e« SoapClient::__call\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"soapclient.dorequest.md\"\u003eSoapClient::__doRequest »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.soapclient.md\"\u003eSoapClient\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКонструктор класу SoapClient\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eSoapClient::__construct\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eSoapClient::__construct - Конструктор класу SoapClient\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003epublic \u003cstrong\u003eSoapClient::__construct\u003c/strong\u003e(?string \u003ccode\u003e$wsdl\u003c/code\u003e, array \u003ccode\u003e$options\u003c/code\u003e =\n[])\nСтворює об'єкт \u003ca href=\"class.soapclient.md\"\u003eSoapClient\u003c/a\u003e для підключення до\nслужби SOAP.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ewsdl\u003c/code\u003e\nURI WSDL-файлу, який описує сервіс, який використовується для\nавтоматичного налаштування клієнта. Якщо він не вказано, клієнт буде\nпрацювати у режимі без WSDL. mode.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЗа замовчуванням WSDL-файл кешуватиметься для підвищення\nпродуктивність. Щоб вимкнути або налаштувати кешування,\nдивіться розділ \u003ca href=\"soap.configuration.md#soap.configuration.list\"\u003eОпції налаштування \u003e SOAP\u003c/a\u003e та \u003ca href=\"soapclient.construct.md#soapclient.construct.options.cache-wsdl\"\u003eпараметр \u003e \u003ccode\u003ecache_wsdl\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eoptions\u003c/code\u003e\nАсоціативний масив, який визначає додаткові параметри для клієнта\nSOAP. Якщо вказано параметр \u003ccode\u003ewsdl\u003c/code\u003e, це необов'язково, інакше\nу випадку, принаймні параметри \u003ccode\u003elocation\u003c/code\u003e та \u003ccode\u003eurl\u003c/code\u003e повинні бути\nвказані.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elocation\u003c/code\u003e string\nURL-адреса сервера SOAP для надсилання запиту.\u003c/p\u003e\n\u003cp\u003eОбов'язковий, якщо параметр wsdl не вказаний. Якщо надані та\nпараметр \u003ccode\u003ewsdl\u003c/code\u003e і \u003ccode\u003elocation\u003c/code\u003e, параметр \u003ccode\u003elocation\u003c/code\u003e буде пріоритетнішим\nрозташування, вказаного у файлі WSDL.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euri\u003c/code\u003e string\nЦільовий простір імен служби SOAP.\u003c/p\u003e\n\u003cp\u003eОбов'язковий, якщо параметр wsdl не вказаний; в іншому випадку\nігнорується.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003estyle\u003c/code\u003e int\nВизначає стиль зв'язування, який використовуватиме клієнт,\nвикористовуючи константи \u003cstrong\u003e\u003ccode\u003eSOAP_RPC\u003c/code\u003e\u003c/strong\u003e та \u003cstrong\u003e\u003ccode\u003eSOAP_DOCUMENT\u003c/code\u003e\u003c/strong\u003e. Константа\n\u003cstrong\u003e\u003ccode\u003eSOAP_RPC\u003c/code\u003e\u003c/strong\u003e вказує на прив'язку в стилі RPC, де тіло запиту SOAP\nмістить стандартне кодування виклику функції. Константа\n\u003cstrong\u003e\u003ccode\u003eSOAP_DOCUMENT\u003c/code\u003e\u003c/strong\u003e вказує на прив'язку у стилі документа, де тіло\nзапит SOAP містить XML-документ з певним значенням служби.\u003c/p\u003e\n\u003cp\u003eЯкщо вказано параметр \u003ccode\u003ewsdl\u003c/code\u003e, цей параметр ігнорується, а стиль\nзчитується із WSDL-файлу.\u003c/p\u003e\n\u003cp\u003eЯкщо ні цей параметр, ні параметр wsdl не вказано, використовується\nRPC стиль.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euse\u003c/code\u003e int\nВизначає стиль кодування, який використовуватиметься клієнтом,\nвикористовуючи константи \u003cstrong\u003e\u003ccode\u003eSOAP_ENCODED\u003c/code\u003e\u003c/strong\u003e або \u003cstrong\u003e\u003ccode\u003eSOAP_LITERAL\u003c/code\u003e\u003c/strong\u003e. Константа\n\u003cstrong\u003e\u003ccode\u003eSOAP_ENCODED\u003c/code\u003e\u003c/strong\u003e вказує на кодування з використанням типів\nвизначених у специфікації SOAP. Константа \u003cstrong\u003e\u003ccode\u003eSOAP_LITERAL\u003c/code\u003e\u003c/strong\u003e вказує\nкодування з використанням схеми певною службою.\u003c/p\u003e\n\u003cp\u003eЯкщо вказано параметр \u003ccode\u003ewsdl\u003c/code\u003e, цей параметр ігнорується, а кодування\nзчитується із файлу WSDL.\u003c/p\u003e\n\u003cp\u003eЯкщо ні цей параметр, ні параметр wsdl не вказані, використовується стиль\n\"encoded\".\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esoap_version\u003c/code\u003e int\nВизначає версію протоколу SOAP: Константа \u003cstrong\u003e\u003ccode\u003eSOAP_1_1\u003c/code\u003e\u003c/strong\u003e для SOAP 1.1,\nабо \u003cstrong\u003e\u003ccode\u003eSOAP_1_2\u003c/code\u003e\u003c/strong\u003e для SOAP 1.2.\u003c/p\u003e\n\u003cp\u003eЯкщо опущено, використовується SOAP 1.1.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eauthentication\u003c/code\u003e int\nВказує метод аутентифікації при використанні HTTP-аутентифікації\nзапити. Значення може бути або \u003cstrong\u003e\u003ccode\u003eSOAP_AUTHENTICATION_BASIC\u003c/code\u003e\u003c/strong\u003e, або\n\u003cstrong\u003e\u003ccode\u003eSOAP_AUTHENTICATION_DIGEST\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо параметр не вказано, але вказано параметр \u003ccode\u003elogin\u003c/code\u003e, використовується Basic\nAuthentication.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elogin\u003c/code\u003e string\nІм'я користувача для використання під час аутентифікації HTTP Basic або\nDigest.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epassword\u003c/code\u003e string\nПароль для використання під час аутентифікації HTTP Basic або Digest.\u003c/p\u003e\n\u003cp\u003eНе слід плутати з параметром \u003ccode\u003epassphrase\u003c/code\u003e, який використовується при\nавтентифікації сертифіката клієнта HTTPS.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elocal_cert\u003c/code\u003e string\nШлях до сертифіката клієнта для використання з аутентифікацією\nHTTPS. Повинен бути файл у кодуванні PEM, що містить сертифікат та\nзакритий ключ.\u003c/p\u003e\n\u003cp\u003eФайл також може включати ланцюжок емітентів, який повинен йти після\nсертифікат клієнта.\u003c/p\u003e\n\u003cp\u003eТакож може бути заданий за допомогою параметра\n\u003ca href=\"soapclient.construct.md#soapclient.construct.options.stream-context\"\u003e\u003ccode\u003estream_context\u003c/code\u003e\u003c/a\u003e,\nякий також підтримує вказівку окремого файлу закритого ключа.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epassphrase\u003c/code\u003e string\nКлючова фраза для сертифіката клієнта, вказаного у параметрі\n\u003ccode\u003elocal_cert\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eНе слід плутати з параметром \u003ccode\u003epassword\u003c/code\u003e, який використовується для\nавтентифікації Basic чи Digest.\u003c/p\u003e\n\u003cp\u003eМожна також встановити за допомогою параметра\n\u003ca href=\"soapclient.construct.md#soapclient.construct.options.stream-context\"\u003e\u003ccode\u003estream_context\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eproxy_host\u003c/code\u003e string\nІм'я хоста для використання як проксі-сервер для HTTP-запитів.\u003c/p\u003e\n\u003cp\u003eТакож має бути вказано параметр \u003ccode\u003eproxy_port\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eproxy_port\u003c/code\u003e int\nTCP-порт для використання під час підключення до проксі-сервера, вказаного\nу параметрі \u003ccode\u003eproxy_host\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eproxy_login\u003c/code\u003e string\nНеобов'язкове ім'я користувача для аутентифікації на проксі-сервері,\nвказаному у параметрі \u003ccode\u003eproxy_host\u003c/code\u003e, використовуючи HTTP Basic Authentication.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eproxy_password\u003c/code\u003e string\nНеобов'язковий пароль для аутентифікації на проксі-сервері, зазначеному в\nпараметрі \u003ccode\u003eproxy_host\u003c/code\u003e, використовуючи HTTP Basic Authentication\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ecompression\u003c/code\u003e int\nВключає стиснення HTTP SOAP запитів та відповідей.\u003c/p\u003e\n\u003cp\u003eЗначення має бути побітовим АБО з трьох частин: необов'язкова\n\u003cstrong\u003e\u003ccode\u003eSOAP_COMPRESSION_ACCEPT\u003c/code\u003e\u003c/strong\u003e, для надсилання заголовка \"Accept-Encoding\";\nабо константа \u003cstrong\u003e\u003ccode\u003eSOAP_COMPRESSION_GZIP\u003c/code\u003e\u003c/strong\u003e або\n\u003cstrong\u003e\u003ccode\u003eSOAP_COMPRESSION_DEFLATE\u003c/code\u003e\u003c/strong\u003e для вказівки використовуваного алгоритму\nстискування; число від 1 до 9, щоб вказати рівень стиснення, який буде\nвикористовуватись у запиті. Наприклад, щоб увімкнути двосторонній стиск\ngzip з максимальним рівнем стиснення, використовуйте\n\u003ccode\u003eSOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 9\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e'encoding' string\nВизначає внутрішнє кодування символів. Запити завжди відправляються в\nUTF-8 і перетворюються на це кодування і назад.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003etrace\u003c/code\u003e bool\nЗахоплює інформацію про запит та відповідь, яка потім може бути\nдоступна за допомогою методів: \u003cstrong\u003eSoapClient::getLastRequest()\u003c/strong\u003e,\n\u003cstrong\u003eSoapClient::getLastRequestHeaders()\u003c/strong\u003e,\n\u003cstrong\u003eSoapClient::getLastResponse()\u003c/strong\u003e, або\n\u003cstrong\u003eSoapClient::getLastResponseHeaders()\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо опущено, використовується значення \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eclassmap\u003c/code\u003e array\nВикористовується для порівняння типів, визначених у WSDL із класами\nPHP. Має бути асоціативний масив (array) з іменами типів з\nWSDL як ключі та імена класів PHP як значення.\nЗверніть увагу, що ім'я типу елемента не обов'язково збігається з\nіменем елемента (тега).\u003c/p\u003e\n\u003cp\u003eНадані імена класів завжди повинні бути повністю визначені з\nза допомогою будь-яких \u003ca href=\"language.namespaces.md\"\u003eпростір імен\u003c/a\u003e і ніколи не\nповинні починатися з ведучого сліша (\u003ccode\u003e\\\u003c/code\u003e). Правильна форма може бути\nвказана за допомогою\n\u003ca href=\"language.oop5.basic.md#language.oop5.basic.class.class\"\u003e::class\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЗверніть увагу, що при створенні класу конструктор не викликається\nбуде, але магічні методи\n\u003ca href=\"language.oop5.overloading.md#object.set\"\u003e__set()\u003c/a\u003e та\n\u003ca href=\"language.oop5.overloading.md#object.get\"\u003e__get()\u003c/a\u003e будуть викликатися\nдля окремих властивостей.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003etypemap\u003c/code\u003e array\nВикористовується для визначення зіставлень типів за допомогою визначених\nКористувачем callback-функцій. Кожне зіставлення типів має\nявляти собою масив з ключами \u003ccode\u003etype_name\u003c/code\u003e (рядок (string),\nвизначальна тип елемента XML); \u003ccode\u003etype_ns\u003c/code\u003e (рядок (string), що містить\nпростір імен URI); \u003ccode\u003efrom_xml\u003c/code\u003e\n(\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e, що приймає один рядковий\nпараметр і об'єкт, що повертає) і \u003ccode\u003eto_xml\u003c/code\u003e\n(\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e, що приймає один об'єктний\nпараметр і повертає рядок).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eexceptions\u003c/code\u003e bool\nВизначає, чи помилки викидатимуть виняток типу\n\u003ca href=\"class.soapfault.md\"\u003eSoapFault\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЗа промовчанням значення \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003econnection_timeout\u003c/code\u003e int\nВизначає час очікування в секундах для підключення до сервісу SOAP.\nПараметр не визначає час очікування служб із повільними відповідями. Щоб\nобмежити час очікування завершення дзвінків, можна використовувати\nпараметр конфігурації\n\u003ca href=\"filesystem.configuration.md#ini.default-socket-timeout\"\u003edefault_socket_timeout\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ecache_wsdl\u003c/code\u003e int\nЯкщо вказано параметр \u003ccode\u003ewsdl\u003c/code\u003e, а також параметр\n\u003ca href=\"soap.configuration.md#ini.soap.wsdl-cache-enabled\"\u003esoap.wsdl_cache_enabled\u003c/a\u003e\nУвімкнено, цей параметр визначає тип кешування. Одне із значень:\n\u003cstrong\u003e\u003ccode\u003eWSDL_CACHE_NONE\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eWSDL_CACHE_DISK\u003c/code\u003e\u003c/strong\u003e, \u003cstrong\u003e\u003ccode\u003eWSDL_CACHE_MEMORY\u003c/code\u003e\u003c/strong\u003e\nабо \u003cstrong\u003e\u003ccode\u003eWSDL_CACHE_BOTH\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eДоступні два типи кешу: кешування в пам'яті, яке кешує WSDL\nпам'яті поточного процесу та дискове кешування, яке кешує WSDL в\nфайл на диску, що розділяється між усіма процесами. Каталог, який\nбуде використовуватися для дискового кешу, що визначається параметром\n\u003ca href=\"soap.configuration.md#ini.soap.wsdl-cache-dir\"\u003esoap.wsdl_cache_dir\u003c/a\u003e.\nОбидва кеші використовують однаковий час життя, що визначається параметром\n\u003ca href=\"soap.configuration.md#ini.soap.wsdl-cache-ttl\"\u003esoap.wsdl_cache_ttl\u003c/a\u003e.\nУ кеша в пам'яті також є максимальна кількість записів, що визначається\nпараметром\n\u003ca href=\"soap.configuration.md#ini.soap.wsdl-cache-limit\"\u003esoap.wsdl_cache_limit\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо не вказано, використовуватиметься параметр конфігурації\n\u003ca href=\"soap.configuration.md#ini.soap.wsdl-cache\"\u003esoap.wsdl_cache\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euser_agent\u003c/code\u003e string\nЗначення для використання в заголовку HTTP \u003ccode\u003eUser-Agent\u003c/code\u003e при виконанні\nзапитів.\u003c/p\u003e\n\u003cp\u003eМожна також встановити за допомогою параметра\n\u003ca href=\"soapclient.construct.md#soapclient.construct.options.stream-context\"\u003e\u003ccode\u003estream_context\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо не вказано, User-Agent буде ``PHP-SOAP/'\u003ccode\u003e за яким слідує значення **\u003c/code\u003ePHP_VERSION`**.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003estream_context\u003c/code\u003e resource\nКонтекст \u003ca href=\"context.md\"\u003estream context\u003c/a\u003e створений за допомогою функції\n\u003ca href=\"function.stream-context-create.md\"\u003estream_context_create()\u003c/a\u003e, яка\nдає змогу встановити додаткові параметри.\u003c/p\u003e\n\u003cp\u003eКонтекст може містити \u003ca href=\"context.socket.md\"\u003eпараметри контексту сокета\u003c/a\u003e, \u003ca href=\"context.ssl.md\"\u003eпараметри контексту SSL\u003c/a\u003e, а також вибрані \u003ca href=\"context.http.md\"\u003eопції контексту HTTP\u003c/a\u003e: \u003ccode\u003econtent_type\u003c/code\u003e, \u003ccode\u003eheader\u003c/code\u003e, \u003ccode\u003emax_redirects\u003c/code\u003e,\n\u003ccode\u003eprotocol_version\u003c/code\u003e, та \u003ccode\u003euser_agent\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЗверніть увагу, що наступні заголовки HTTP генеруються\nавтоматично або на основі інших параметрів і ігноруватимуться,\nякщо вказано в параметрі контексту ``header'\u003ccode\u003e: \u003c/code\u003ehost\u003ccode\u003e, \u003c/code\u003econnection\u003ccode\u003e, \u003c/code\u003euser-agent\u003ccode\u003e, \u003c/code\u003econtent-length\u003ccode\u003e, \u003c/code\u003econtent-type\u003ccode\u003e, \u003c/code\u003ecookie`,\n'authorization' і 'proxy-authorization'\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003efeatures\u003c/code\u003e int\nБітова маска для включення однієї або кількох таких функцій:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eSOAP_SINGLE_ELEMENT_ARRAYS\u003c/code\u003e\u003c/strong\u003e\nПри декодуванні відповіді масив за замовчуванням визначається, з'являється\nчи ім'я елемента один або кілька разів у певному батьківському\nелемент. Для елементів, які з'являються лише один раз, властивість\nоб'єкта дозволяє отримати прямий доступ до вмісту; для елементів,\nякі з'являються більше одного разу, властивість містить масив з\nвміст кожного відповідного елемента.\u003c/p\u003e\n\u003cp\u003eЯкщо увімкнено функцію \u003cstrong\u003e\u003ccode\u003eSOAP_SINGLE_ELEMENT_ARRAYS\u003c/code\u003e\u003c/strong\u003e, елементи,\nякі з'являються лише один раз, поміщаються в одноелементний масив,\nщоб доступ був послідовним всім елементів. Це буде працювати\nтільки при використанні WSDL, що містить схему відповіді. Для\nдемонстрації дивіться розділ із прикладами.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eSOAP_USE_XSI_ARRAY_TYPE\u003c/code\u003e\u003c/strong\u003e\nЯкщо \u003ca href=\"soapclient.construct.md#soapclient.construct.options.use\"\u003eпараметру \u003ccode\u003euse\u003c/code\u003e\u003c/a\u003e або\nвластивості WSDL передано значення \u003ccode\u003eencoded\u003c/code\u003e, масиви примусово\nвикористовують тип \u003ccode\u003eSOAP-ENC: Array\u003c/code\u003e, а не специфічний для схеми.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eSOAP_WAIT_ONE_WAY_CALLS\u003c/code\u003e\u003c/strong\u003e\nОчікування відповіді, навіть якщо WSDL вказує на односторонній запит.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ekeep_alive\u003c/code\u003e bool\nЛогічне значення, яке визначає, чи слід надсилати заголовок\n\u003ccode\u003eConnection: Keep-Alive\u003c/code\u003e або \u003ccode\u003eConnection: close\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eТипово \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003essl_method\u003c/code\u003e string\nВизначає версію протоколу SSL або TLS для використання у захищених\nHTTP-з'єднання замість узгодження за промовчанням. Вказівка\n\u003cstrong\u003e\u003ccode\u003eSOAP_SSL_METHOD_SSLv2\u003c/code\u003e\u003c/strong\u003e або \u003cstrong\u003e\u003ccode\u003eSOAP_SSL_METHOD_SSLv3\u003c/code\u003e\u003c/strong\u003e змусить\nвикористовувати SSL 2 або SSL 3 відповідно. Вказівка константи\n\u003cstrong\u003e\u003ccode\u003eSOAP_SSL_METHOD_SSLv23\u003c/code\u003e\u003c/strong\u003e не має жодного сенсу; константа\nіснує лише зворотної сумісності. Починаючи з PHP 7.2,\nвказівка константи \u003cstrong\u003e\u003ccode\u003eSOAP_SSL_METHOD_TLS\u003c/code\u003e\u003c/strong\u003e також не має жодного\nсенсу; у ранніх версіях константа визначала примусове\nВикористання TLS 1.0.\u003c/p\u003e\n\u003cp\u003eЗверніть увагу, що SSL версій 2 та 3 вважаються небезпечними та можуть\nне підтримувати встановлену бібліотеку OpenSSL.\u003c/p\u003e\n\u003cp\u003eПараметр оголошений \u003cem\u003eУСТАРШИМ\u003c/em\u003e, починаючи з PHP 8.1.0. Більш гнучкою\nальтернативою, що дозволяє вказувати окремі версії TLS, можна\nвикористовувати параметр\n\u003ca href=\"soapclient.construct.md#soapclient.construct.options.stream-context\"\u003e\u003ccode\u003estream_context\u003c/code\u003e\u003c/a\u003e\nз параметром 'crypto_method'.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Вказівка використання тільки TLS 1.3\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$context = stream_context_create([    'ssl' =\u003e [        'crypto_method' =\u003e STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT     ]];$client = new SoapClient(\"some.wsdl\", ['context' =\u003e $context]);\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cp\u003eМетод \u003cstrong\u003eSoapClient::__construct()\u003c/strong\u003e виводить помилку рівня\n\u003cstrong\u003e\u003ccode\u003eE_ERROR\u003c/code\u003e\u003c/strong\u003e, якщо параметри \u003ccode\u003elocation\u003c/code\u003e та \u003ccode\u003euri\u003c/code\u003e не вказані в режимі\nне-WSDL.\u003c/p\u003e\n\u003cp\u003eВикидається виняток \u003ca href=\"class.soapfault.md\"\u003eSoapFault\u003c/a\u003e, якщо\nпараметр \u003ccode\u003ewsdl\u003c/code\u003e URI не може бути завантажений.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклад використання \u003cstrong\u003eSoapClient::__construct()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$client = new SoapClient(\"some.wsdl\");$client = new SoapClient(\"some.wsdl\", array('soap_version'   =\u003e SOAP_1_2));$Clent = \", array('login'          =\u003e \"some_name\",                                            'password'       =\u003e \"some_password\"));$client = new SoapClient(\"some.wsdl\", array('proxy_host'     =\u003e \"localhost\",                                            'proxy_port' =\u003e 8080));$client = new SoapClient(\"some.wsdl\", array('proxy_host'     =\u003e \"localhost\",                                            'proxy_port'     =\u003e 8080,                                            'proxy_login'    =\u003e \"some_name\",                                            'proxy_password' =\u003e \"some_password\"));$client==new SoapClient(\"some.wsdl\", array('local_cert'     =\u003e \"cert_key.pem\"));$client = new SoapClient(null, y ¦                                                                                   | cation' =\u003e \"http://localhost/soap.php\",                                     'uri'      =\u003e \"http://test-uri/\",                                     'style'    =\u003e SOAP_DOCUMENT,                                     'use'      =\u003e SOAP_LITERAL));$client = new SoapClient(\"some.wsdl\", array('compression' =\u003e SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP|| 9));$client = new SoapClient(\"some.wsdl\", array('encoding'=\u003e'ISO-8859-1'));class MyBook {    public $title; public $author;}$client = new SoapClient(\"books.wsdl\", array('classmap' =\u003e array('book' =\u003e \"MyBook\")));$typemap = array(    array(\"type_ \"http://schemas.example.com\",         \"type_name\" =\u003e \"book\",         \"from_xml\"  =\u003e \"unserialize_book\",         \"to_xml\"    =\u003e \"serialize_book\"));$client = new SoapClient(\"books. wsdl\", array('typemap' =\u003e $typemap));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Приклад використання \u003cstrong\u003e\u003ccode\u003eSOAP_SINGLE_ELEMENT_ARRAYS\u003c/code\u003e\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e /* Припускаючи, що відповідь, подібний цьому, і відповідний WSDL:\u0026#x3C;?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\u0026#x3C;SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://sche .xmlsoap.org/soap/envelope/\" xmlns=\"urn:example\"\u003e    \u0026#x3C;SOAP-ENV:Body\u003e        \u0026#x3C;response\u003e            \u0026#x3C;collection\u003e                \u0026#x3C;item\u003eSingle\u0026#x3C;/item\u003e            \u0026#x3C;/collection\u003e            \u0026#x3C;collection\u003e                \u0026#x3C;item\u003eFirst \u0026#x3C;/item\u003e                         ¦¦¦¦                ¦         ¦       \u0026#x3C;br\u003e \";$client = new TestSoapClient(__DIR__ . '/temp.wsdl');$response = $client-\u003eexampleRequest();var_dump( $response-\u003ecollection[0]-\u003eitem );var_dump(\u003e$ collection[1]-\u003eitem );echo \" За допомогою SOAP_SINGLE_ELEMENT_ARRAYS: \";$client = new TestSoapClient(__DIR__ . '/temp.wsdl', ['features' =\u003e SOAP_SINGLE_ELEMENT_ARRAYS]);$response = $client-\u003eexampleRequest()\u003e$_ item );var_dump( $response-\u003ecollection[1]-\u003eitem );\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eЗа замовчуванням:\nstring(6) \"Single\"\narray(2) {\n[0] =\u003e\nstring(5) \"First\"\n[1] =\u003e\nstring(6) \"Second\"\n}\u003c/p\u003e\n\u003cp\u003eЗа допомогою SOAP_SINGLE_ELEMENT_ARRAYS:\narray(1) {\n[0] =\u003e\nstring(6) \"Single\"\n}\narray(2) {\n[0] =\u003e\nstring(5) \"First\"\n[1] =\u003e\nstring(6) \"Second\"\n}\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"soapclient.construct.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

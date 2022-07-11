@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>memcached.configuration | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="memcached.installation.md">« Установка</a></p>
+</li>
+<li>
+<p><a href="memcached.resources.md">Типи ресурсів »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="memcached.setup.md">Встановлення та налаштування</a></p>
+</li>
+<li>
+<p>Налаштування під час виконання</p>
+</li>
+</ul>
+<h2>Налаштування під час виконання</h2>
+<p>Поведінка цих функцій залежить від установок <code>php.ini</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Ім'я За замовчуванням</th>
+<th>Місце зміни</th>
+<th>Список змін</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-locking">memcached.sess_locking</a></td>
+<td>On</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-consistent-hash">memcached.sess_consistent_hash</a></td>
+<td>On</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-binary">memcached.sess_binary</a></td>
+<td>Off</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-lock-wait">memcached.sess_lock_wait</a></td>
+<td>150000</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-prefix">memcached.sess_prefix</a></td>
+<td>memc.sess.key.</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-number-of-replicas">memcached.sess_number_of_replicas</a></td>
+<td>0</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-randomize-replica-read">memcached.sess_randomize_replica_read</a></td>
+<td>Off</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-remove-failed">memcached.sess_remove_failed</a></td>
+<td>On</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.compression-type">memcached.compression_type</a></td>
+<td>fastlz</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.compression-factor">memcached.compression_factor</a></td>
+<td>1.3</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.compression-threshold">memcached.compression_threshold</a></td>
+<td>2000</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.serializer">memcached.serializer</a></td>
+<td>igbinary</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.use-sasl">memcached.use_sasl</a></td>
+<td>Off</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.default-binary-protocol">memcached.default_binary_protocol</a></td>
+<td>Off</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.default-connect-timeout">memcached.default_connect_timeout</a></td>
+<td>0</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.default-consistent-hash">memcached.default_consistent_hash</a></td>
+<td>Off</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-binary-protocol">memcached.sess_binary_protocol</a></td>
+<td>On</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-connect-timeout">memcached.sess_connect_timeout</a></td>
+<td>1000</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-consistent-hash-type">memcached.sess_consistent_hash_type</a></td>
+<td>ketama</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-lock-expire">memcached.sess_lock_expire</a></td>
+<td>0</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-lock-retries">memcached.sess_lock_retries</a></td>
+<td>5</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-lock-wait-max">memcached.sess_lock_wait_max</a></td>
+<td>150</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-lock-wait-min">memcached.sess_lock_wait_min</a></td>
+<td>150</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-persistent">memcached.sess_persistent</a></td>
+<td>Off</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-remove-failed-servers">memcached.sess_remove_failed_servers</a></td>
+<td>Off</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-server-failure-limit">memcached.sess_server_failure_limit</a></td>
+<td>0</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-sasl-password">memcached.sess_sasl_password</a></td>
+<td>null</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.sess-sasl-username">memcached.sess_sasl_username</a></td>
+<td>null</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="memcached.configuration.md#ini.memcached.store-retry-count">memcached.store_retry_count</a></td>
+<td>2</td>
+<td>PHP_INI_ALL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Опції налаштування Memcached</strong></p>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>memcached.sess_locking</code> bool
+Використовувати блокування сесій. Допустимі значення: On, Off. за
+замовчуванням</p>
+<p><code>memcached.sess_consistent_hash</code> bool
+Якщо увімкнено, то для обробки сесій буде використано узгоджене
+хешування. При використанні узгодженого хешування можна
+додавати або видаляти вузли кешування без великих втрат кешованих
+ключів. За промовчанням On.</p>
+<p><code>memcached.sess_binary</code> bool
+Використовувати бінарний режим сесії.Репліки libmemcached працюють тільки
+якщо активовано цей режим. За замовчуванням Off.</p>
+<p><code>memcached.sess_lock_wait</code> int
+Час очікування повторної синхронізації сесії у мікросекундах. При
+встановлення цього значення будьте обережні. Допустимі цілочисленні
+значення. Якщо встановлено як 0, використовується значення за промовчанням.
+Негативні значення зменшують блокування спроб блокування. за
+замовчуванням 150000.</p>
+<p><code>memcached.sess_prefix</code> string
+Префікс ключ сесії. Рядок довжиною трохи більше 219 байт. За замовчуванням
+"memc.sess.key."</p>
+<p><code>memcached.sess_number_of_replicas</code> int
+Записувати дані на ряд додаткових серверів memcached. Це "висока
+доступність для бідняків", як її називає libmemcached. Якщо це
+значення позитивне, та активований режим
+sessions_remove_failed_servers, коли сервер memcached виходить з ладу,
+сесія буде, як і раніше, доступна з репліки. Однак якщо відмовив
+сервер memcache знову стає доступним, він читатиме сесію
+звідти, яка може мати старі дані чи взагалі не мати даних. за
+замовчуванням 0.</p>
+<p><code>memcached.sess_randomize_replica_read</code> bool
+Випадкове читання репліки memcached сесією.</p>
+<p><code>memcached.sess_remove_failed</code> int
+Дозволити автоматичне видалення недоступних серверів memcached.</p>
+<p><code>memcached.compression_type</code> string
+Настроювання типу стиснення, коректні значення: fastlz, zlib. За замовчуванням
+fastlz.</p>
+<p><code>memcached.compression_factor</code> float
+Коефіцієнт стиснення. Зберігати значення стиснутими лише якщо коефіцієнт
+стиснення перевищує заданий. Зберігаємо стислим якщо:
+<code>plain_len> comp_len* factor</code>. 1.3 (економія місця 23%).</p>
+<p><code>memcached.compression_threshold</code> int
+Поріг стиснення. Не стискати серіалізовані значення менше вказаного
+розміру. Типово 2000 bytes.</p>
+<p><code>memcached.serializer</code> string
+Налаштування стандартного серіалізатора для нових об'єктів memcached.
+Допустимі значення: php, igbinary, json, json_array, msgpack.</p>
+<p>json
+Стандартне кодування JSON. Цей серіалізатор швидкий та компактний, але
+працює тільки з даними у UTF-8 і не повністю реалізує серіалізацію.
+Подробиці див. у описі модуля JSON. Доступно з memcached 0.2.0.</p>
+<p>json_array
+Той-таки json, але розкодується в масиви. Доступно з memcached 2.0.0.</p>
+<p>php
+Стандартний серіалізатор PHP.</p>
+<p>igbinary
+Бінарний серіалізатор. Доступно з memcached 0.1.4</p>
+<p>msgpack
+Міжмовний двійковий серіалізатор. Доступно з memcached 2.2.0.</p>
+<p>За замовчуванням igbinary, якщо доступний, потім igbinary, якщо доступний,
+інакше PHP.</p>
+<p><code>memcached.use_sasl</code> bool
+Використовувати автентифікацію SASL під час з'єднання. Допустимі значення:
+On, Off. За замовчуванням Off.</p>
+<p><code>memcached.default_binary_protocol</code> bool
+Встановлює протокол memcached за промовчанням для нових підключень.
+(Щоб налаштувати протокол memcached для з'єднань, що використовуються
+сесіями, використовуйте замість нього memcached.sess_binary_protocol) Якщо
+встановлено значення On, за замовчуванням використовується двійковий протокол
+memcached. Якщо встановлено значення Off, використовується текстовий
+протокол memcached. За замовчуванням Off</p>
+<p><code>memcached.default_connect_timeout</code> int
+Встановлює час очікування з'єднання memcached за замовчуванням для нових
+з'єднань. (Щоб налаштувати час очікування з'єднання memcached для
+сесій, використовуйте замість цього memcached.sess_connect_timeout)
+неблокуючому режимі це змінює значення часу очікування під час
+підключення до сокету у мілісекундах. Вказівка -1 означає нескінченне
+час очікування. Вказівка 0 означає використання часу очікування
+стандартні з'єднання для бібліотеки memcached. Типово 0.</p>
+<p><code>memcached.default_consistent_hash</code> bool
+Встановлює значення за замовчуванням для узгодженого хешування для
+нових підключень. (Щоб налаштувати узгоджене хешування для
+сесій, використовуйте замість цього memcached.sess_consistent_hash) Якщо
+встановлено значення On, для обробки сесії використовується узгоджене
+хешування (libketama). Коли використовується узгоджене хешування,
+можна додавати або видаляти вузли кешу, не турбуючись про те, що
+існуючі ключі за замовчуванням вимкнено.</p>
+<p><code>memcached.sess_binary_protocol</code> bool
+Використовуйте двійковий протокол memcached для сесій memcached (замість
+текстового протоколу). Репліки libmemcached працюють, тільки якщо
+увімкнено двійковий режим. Однак деякі проксі (наприклад, twemproxy)
+будуть працювати, тільки якщо двійковий протокол вимкнено. У старіших
+версіях php-memcached цей параметр був вимкнений і називався
+memcached.sess_binary. За замовчуванням включено з libmemcached 1.0.18 або
+новіше. За замовчуванням у старій версії вимкнено.</p>
+<p><code>memcached.sess_connect_timeout</code> int
+Значення часу очікування з'єднання memcached У режимі неблокування
+це змінює значення часу очікування під час з'єднання сокету в
+мілісекундах. Вказівка -1 означає нескінченний час очікування.</p>
+<p><code>memcached.sess_consistent_hash_type</code> string
+Тип узгодженого хешування сесії Memcached. Якщо встановлено
+значення 'ketama' (за замовчуванням для php-memcached 3.x), для обробки
+сесії використовується узгоджене хешування libketama, якщо
+встановлено значення 'ketama_weighted' (за замовчуванням для php-memcached
+2.x) для обробки сесії використовується зважене узгоджене
+хешування (libketama). За замовчуванням – "ketama".</p>
+<p><code>memcached.sess_lock_expire</code> int
+Час у секундах до того, як має спрацювати блокування. Установка 0
+призводить до поведінки за умовчанням, яке полягає у використанні
+PHP max_execution_time Типово 0.</p>
+<p><code>memcached.sess_lock_retries</code> int
+Кількість спроб повторного блокування блокування сесії, не включаючи
+першу спробу. Типово 5.</p>
+<p><code>memcached.sess_lock_wait_max</code> int
+Максимальний час очікування у мілісекундах між спробами блокування
+сесії. Типово 150.</p>
+<p><code>memcached.sess_lock_wait_min</code> int
+Мінімальний час очікування у мілісекундах між спробами блокування
+сесії. Це значення подвоюється при кожній спробі блокування до тих
+доки не буде досягнуто memcached.sess_lock_wait_max, після чого
+будь-які подальші спроби займатимуть sessions_lock_wait_max секунд.
+Типово 150.</p>
+<p><code>memcached.sess_persistent</code> bool
+Чи слід повторно використовувати з'єднання memcached, відповідні
+значенням (значенням) session.save_path після завершення виконання
+скрипт. Не використовуйте це, якщо певні установки (наприклад,
+налаштування SASL, sess_binary_protocol) будуть перевизначені між
+запитами. За замовчуванням Off.</p>
+<p><code>memcached.sess_remove_failed_servers</code> bool
+Дозволити автоматичне видалення сервера, що відмовив memcached. за
+замовчуванням Off. (У попередніх версіях цей параметр називався
+memcached.sess_remove_failed)</p>
+<p><code>memcached.sess_server_failure_limit</code> int
+Встановіть це значення, щоб дозволити видалення сервера після
+заданої кількості безперервних збоїв підключення. Типово 0.</p>
+<p><code>memcached.sess_sasl_password</code> string
+Пароль сесії SASL Для включення SASL необхідно вказати ім'я
+користувача та пароль.</p>
+<p><code>memcached.sess_sasl_username</code> string
+Ім'я користувача сесії SASL Для включення SASL необхідно вказати ім'я
+користувача та пароль.</p>
+<p><code>memcached.store_retry_count</code> int
+Кількість повторних спроб невдалих команд збереження. Цей
+механізм забезпечує прозоре перемикання на вторинні сервери при
+збої операцій set/increment/decrement/setMulti на бажаному сервері в
+середовищі з безліччю серверів. за замовчуванням - 2</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/memcached.configuration.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/memcached.configuration.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"memcached.configuration","slug":"memcached.configuration.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"memcached.installation.md\"\u003e« Установка\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"memcached.resources.md\"\u003eТипи ресурсів »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"memcached.setup.md\"\u003eВстановлення та налаштування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНалаштування під час виконання\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНалаштування під час виконання\u003c/h2\u003e\n\u003cp\u003eПоведінка цих функцій залежить від установок \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІм'я За замовчуванням\u003c/th\u003e\n\u003cth\u003eМісце зміни\u003c/th\u003e\n\u003cth\u003eСписок змін\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-locking\"\u003ememcached.sess_locking\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOn\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-consistent-hash\"\u003ememcached.sess_consistent_hash\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOn\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-binary\"\u003ememcached.sess_binary\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOff\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-lock-wait\"\u003ememcached.sess_lock_wait\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e150000\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-prefix\"\u003ememcached.sess_prefix\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003ememc.sess.key.\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-number-of-replicas\"\u003ememcached.sess_number_of_replicas\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-randomize-replica-read\"\u003ememcached.sess_randomize_replica_read\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOff\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-remove-failed\"\u003ememcached.sess_remove_failed\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOn\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.compression-type\"\u003ememcached.compression_type\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003efastlz\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.compression-factor\"\u003ememcached.compression_factor\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e1.3\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.compression-threshold\"\u003ememcached.compression_threshold\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e2000\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.serializer\"\u003ememcached.serializer\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eigbinary\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.use-sasl\"\u003ememcached.use_sasl\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOff\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.default-binary-protocol\"\u003ememcached.default_binary_protocol\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOff\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.default-connect-timeout\"\u003ememcached.default_connect_timeout\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.default-consistent-hash\"\u003ememcached.default_consistent_hash\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOff\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-binary-protocol\"\u003ememcached.sess_binary_protocol\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOn\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-connect-timeout\"\u003ememcached.sess_connect_timeout\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e1000\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-consistent-hash-type\"\u003ememcached.sess_consistent_hash_type\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eketama\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-lock-expire\"\u003ememcached.sess_lock_expire\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-lock-retries\"\u003ememcached.sess_lock_retries\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-lock-wait-max\"\u003ememcached.sess_lock_wait_max\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e150\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-lock-wait-min\"\u003ememcached.sess_lock_wait_min\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e150\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-persistent\"\u003ememcached.sess_persistent\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOff\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-remove-failed-servers\"\u003ememcached.sess_remove_failed_servers\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eOff\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-server-failure-limit\"\u003ememcached.sess_server_failure_limit\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-sasl-password\"\u003ememcached.sess_sasl_password\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003enull\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.sess-sasl-username\"\u003ememcached.sess_sasl_username\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003enull\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"memcached.configuration.md#ini.memcached.store-retry-count\"\u003ememcached.store_retry_count\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e2\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОпції налаштування Memcached\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eКоротке пояснення конфігураційних директив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_locking\u003c/code\u003e bool\nВикористовувати блокування сесій. Допустимі значення: On, Off. за\nзамовчуванням\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_consistent_hash\u003c/code\u003e bool\nЯкщо увімкнено, то для обробки сесій буде використано узгоджене\nхешування. При використанні узгодженого хешування можна\nдодавати або видаляти вузли кешування без великих втрат кешованих\nключів. За промовчанням On.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_binary\u003c/code\u003e bool\nВикористовувати бінарний режим сесії.Репліки libmemcached працюють тільки\nякщо активовано цей режим. За замовчуванням Off.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_lock_wait\u003c/code\u003e int\nЧас очікування повторної синхронізації сесії у мікросекундах. При\nвстановлення цього значення будьте обережні. Допустимі цілочисленні\nзначення. Якщо встановлено як 0, використовується значення за промовчанням.\nНегативні значення зменшують блокування спроб блокування. за\nзамовчуванням 150000.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_prefix\u003c/code\u003e string\nПрефікс ключ сесії. Рядок довжиною трохи більше 219 байт. За замовчуванням\n\"memc.sess.key.\"\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_number_of_replicas\u003c/code\u003e int\nЗаписувати дані на ряд додаткових серверів memcached. Це \"висока\nдоступність для бідняків\", як її називає libmemcached. Якщо це\nзначення позитивне, та активований режим\nsessions_remove_failed_servers, коли сервер memcached виходить з ладу,\nсесія буде, як і раніше, доступна з репліки. Однак якщо відмовив\nсервер memcache знову стає доступним, він читатиме сесію\nзвідти, яка може мати старі дані чи взагалі не мати даних. за\nзамовчуванням 0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_randomize_replica_read\u003c/code\u003e bool\nВипадкове читання репліки memcached сесією.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_remove_failed\u003c/code\u003e int\nДозволити автоматичне видалення недоступних серверів memcached.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.compression_type\u003c/code\u003e string\nНастроювання типу стиснення, коректні значення: fastlz, zlib. За замовчуванням\nfastlz.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.compression_factor\u003c/code\u003e float\nКоефіцієнт стиснення. Зберігати значення стиснутими лише якщо коефіцієнт\nстиснення перевищує заданий. Зберігаємо стислим якщо:\n\u003ccode\u003eplain_len\u003e comp_len* factor\u003c/code\u003e. 1.3 (економія місця 23%).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.compression_threshold\u003c/code\u003e int\nПоріг стиснення. Не стискати серіалізовані значення менше вказаного\nрозміру. Типово 2000 bytes.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.serializer\u003c/code\u003e string\nНалаштування стандартного серіалізатора для нових об'єктів memcached.\nДопустимі значення: php, igbinary, json, json_array, msgpack.\u003c/p\u003e\n\u003cp\u003ejson\nСтандартне кодування JSON. Цей серіалізатор швидкий та компактний, але\nпрацює тільки з даними у UTF-8 і не повністю реалізує серіалізацію.\nПодробиці див. у описі модуля JSON. Доступно з memcached 0.2.0.\u003c/p\u003e\n\u003cp\u003ejson_array\nТой-таки json, але розкодується в масиви. Доступно з memcached 2.0.0.\u003c/p\u003e\n\u003cp\u003ephp\nСтандартний серіалізатор PHP.\u003c/p\u003e\n\u003cp\u003eigbinary\nБінарний серіалізатор. Доступно з memcached 0.1.4\u003c/p\u003e\n\u003cp\u003emsgpack\nМіжмовний двійковий серіалізатор. Доступно з memcached 2.2.0.\u003c/p\u003e\n\u003cp\u003eЗа замовчуванням igbinary, якщо доступний, потім igbinary, якщо доступний,\nінакше PHP.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.use_sasl\u003c/code\u003e bool\nВикористовувати автентифікацію SASL під час з'єднання. Допустимі значення:\nOn, Off. За замовчуванням Off.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.default_binary_protocol\u003c/code\u003e bool\nВстановлює протокол memcached за промовчанням для нових підключень.\n(Щоб налаштувати протокол memcached для з'єднань, що використовуються\nсесіями, використовуйте замість нього memcached.sess_binary_protocol) Якщо\nвстановлено значення On, за замовчуванням використовується двійковий протокол\nmemcached. Якщо встановлено значення Off, використовується текстовий\nпротокол memcached. За замовчуванням Off\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.default_connect_timeout\u003c/code\u003e int\nВстановлює час очікування з'єднання memcached за замовчуванням для нових\nз'єднань. (Щоб налаштувати час очікування з'єднання memcached для\nсесій, використовуйте замість цього memcached.sess_connect_timeout)\nнеблокуючому режимі це змінює значення часу очікування під час\nпідключення до сокету у мілісекундах. Вказівка -1 означає нескінченне\nчас очікування. Вказівка 0 означає використання часу очікування\nстандартні з'єднання для бібліотеки memcached. Типово 0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.default_consistent_hash\u003c/code\u003e bool\nВстановлює значення за замовчуванням для узгодженого хешування для\nнових підключень. (Щоб налаштувати узгоджене хешування для\nсесій, використовуйте замість цього memcached.sess_consistent_hash) Якщо\nвстановлено значення On, для обробки сесії використовується узгоджене\nхешування (libketama). Коли використовується узгоджене хешування,\nможна додавати або видаляти вузли кешу, не турбуючись про те, що\nіснуючі ключі за замовчуванням вимкнено.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_binary_protocol\u003c/code\u003e bool\nВикористовуйте двійковий протокол memcached для сесій memcached (замість\nтекстового протоколу). Репліки libmemcached працюють, тільки якщо\nувімкнено двійковий режим. Однак деякі проксі (наприклад, twemproxy)\nбудуть працювати, тільки якщо двійковий протокол вимкнено. У старіших\nверсіях php-memcached цей параметр був вимкнений і називався\nmemcached.sess_binary. За замовчуванням включено з libmemcached 1.0.18 або\nновіше. За замовчуванням у старій версії вимкнено.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_connect_timeout\u003c/code\u003e int\nЗначення часу очікування з'єднання memcached У режимі неблокування\nце змінює значення часу очікування під час з'єднання сокету в\nмілісекундах. Вказівка -1 означає нескінченний час очікування.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_consistent_hash_type\u003c/code\u003e string\nТип узгодженого хешування сесії Memcached. Якщо встановлено\nзначення 'ketama' (за замовчуванням для php-memcached 3.x), для обробки\nсесії використовується узгоджене хешування libketama, якщо\nвстановлено значення 'ketama_weighted' (за замовчуванням для php-memcached\n2.x) для обробки сесії використовується зважене узгоджене\nхешування (libketama). За замовчуванням – \"ketama\".\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_lock_expire\u003c/code\u003e int\nЧас у секундах до того, як має спрацювати блокування. Установка 0\nпризводить до поведінки за умовчанням, яке полягає у використанні\nPHP max_execution_time Типово 0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_lock_retries\u003c/code\u003e int\nКількість спроб повторного блокування блокування сесії, не включаючи\nпершу спробу. Типово 5.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_lock_wait_max\u003c/code\u003e int\nМаксимальний час очікування у мілісекундах між спробами блокування\nсесії. Типово 150.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_lock_wait_min\u003c/code\u003e int\nМінімальний час очікування у мілісекундах між спробами блокування\nсесії. Це значення подвоюється при кожній спробі блокування до тих\nдоки не буде досягнуто memcached.sess_lock_wait_max, після чого\nбудь-які подальші спроби займатимуть sessions_lock_wait_max секунд.\nТипово 150.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_persistent\u003c/code\u003e bool\nЧи слід повторно використовувати з'єднання memcached, відповідні\nзначенням (значенням) session.save_path після завершення виконання\nскрипт. Не використовуйте це, якщо певні установки (наприклад,\nналаштування SASL, sess_binary_protocol) будуть перевизначені між\nзапитами. За замовчуванням Off.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_remove_failed_servers\u003c/code\u003e bool\nДозволити автоматичне видалення сервера, що відмовив memcached. за\nзамовчуванням Off. (У попередніх версіях цей параметр називався\nmemcached.sess_remove_failed)\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_server_failure_limit\u003c/code\u003e int\nВстановіть це значення, щоб дозволити видалення сервера після\nзаданої кількості безперервних збоїв підключення. Типово 0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_sasl_password\u003c/code\u003e string\nПароль сесії SASL Для включення SASL необхідно вказати ім'я\nкористувача та пароль.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.sess_sasl_username\u003c/code\u003e string\nІм'я користувача сесії SASL Для включення SASL необхідно вказати ім'я\nкористувача та пароль.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ememcached.store_retry_count\u003c/code\u003e int\nКількість повторних спроб невдалих команд збереження. Цей\nмеханізм забезпечує прозоре перемикання на вторинні сервери при\nзбої операцій set/increment/decrement/setMulti на бажаному сервері в\nсередовищі з безліччю серверів. за замовчуванням - 2\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"memcached.configuration.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

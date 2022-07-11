@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>regexp.reference.repetition | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="regexp.reference.subpatterns.md">«Підмаски</a></p>
+</li>
+<li>
+<p><a href="regexp.reference.back-references.md">Зворотні посилання »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="reference.pcre.pattern.syntax.md">Опис синтаксису Perl-сумісних регулярних виразів</a></p>
+</li>
+<li>
+<p>повторення</p>
+</li>
+</ul>
+<h2>Повторення</h2>
+<p>Повторення задається за допомогою квантифікаторів, що йдуть за будь-яким з
+наведених нижче елементів:</p>
+<ul>
+<li>довільним, можливо екранованим символом</li>
+<li>метасимволом "крапка"</li>
+<li>символьним класом</li>
+<li>Посиланням на попередній фрагмент шаблону (дивіться наступний розділ)</li>
+<li>взятої в круглий дужки підмаскою (якщо це не твердження -
+дивіться далі)</li>
+</ul>
+<p>Загальний квантифікатор повторення вказує мінімальне та максимальне
+допустима кількість збігів, згідно з двома числами, укладеними в
+фігурні дужки та розділені коми. Числа повинні бути меншими ніж
+65536, і перше число не повинне перевищувати друге за значенням. Наприклад:
+<code>z{2,4}</code> відповідає "zz", "zzz" або "zzzz". Закриваюча фігурна
+дужка сама собою не є спеціальним символом. У разі якщо
+друге число опущено, але кома присутня, немає верхньої межі; в
+у випадку, якщо і друге число і кома опущені, потрібно точне число
+повторень. Таким чином <code>[aeiou]{3,}</code> відповідає як мінімум трьом
+послідовним голосним (а також будь-якій їх кількості вище трьох),
+час як <code>\d{8}</code> відповідає рівно восьми цифрам. Відкриваюча
+фігурна дужка, розташована в неприпустимій для квантифікатора
+позиції, яка не відповідає синтаксису квантифікатора,
+інтерпретується як звичайний символьний рядок. Наприклад, {,6} не
+є квантифікатором, а інтерпретується як символьний рядок з
+чотири символи.</p>
+<p>Квантифікатор {0} є допустимим і поводиться таким чином, ніби
+б сам квантифікатор і попередній елемент відсутні.</p>
+<p>Для зручності (а також зворотної сумісності) три найбільш
+поширених квантифікаторів мають односимвольні абревіатури:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>еквівалентний {0,}</td>
+</tr>
+<tr>
+<td>+</td>
+<td>еквівалентний {1,}</td>
+</tr>
+<tr>
+<td>? еквівалентний {0,1}</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Односимвольні квантифікатори</strong></p>
+<p>Можна конструювати нескінченні цикли, вказавши після шаблону,
+збігається з порожнім рядком, квантифікатор, який не має верхнього
+межі, наприклад: <code>(a?)*</code></p>
+<p>Ранні версії Perl та PCRE видавали помилку під час компіляції для таких
+шаблонів. Однак, оскільки бувають випадки, коли такі шаблони могли
+було б корисно, була додана підтримка таких шаблонів. Але якщо будь-яке
+повторення такої підмаски практично не збігається з жодними символами,
+цикл примусово переривається.</p>
+<p>За замовчуванням, всі квантифікатори є "жадібними", це означає, що
+вони збігаються максимально можливу кількість разів (але не більше, ніж
+максимально допустима кількість разів), не призводячи до неможливості
+зіставлення інших елементів шаблона. Класичний приклад проблем,
+які можуть виникнути у зв'язку з такою особливістю квантифікаторів -
+знаходження коментарів у C-програмах. Коментар вважається
+довільний текст, що знаходиться всередині символьних комбінацій /* та */
+(при цьому символи '/' і '*' також можуть бути частиною коментаря).
+Спроба знайти коментарі за допомогою шаблону <code>/\*.*\*/</code> у рядку
+<code>/* перший коментар */ не коментар /* другий коментар */</code>
+закінчиться невдачею, оскільки зазначений шаблон відповідає всій
+рядку цілком (через жадібність квантифікатора '*').</p>
+<p>Однак, якщо відразу після квантифікатора йде запитальний знак, він
+стає "лінивим" і відповідає мінімально допустимій кількості
+разів. Таким чином, шаблон <code>/\*.*?\*/</code> коректно знаходить усі коментарі
+мови Сі. Використання символу '?' після квантифікатора впливає
+виключно на його жадібність, і не зачіпає жодних інших властивостей.
+Не слід плутати використання символу '?' як, власне,
+квантифікатора (нуль або одна відповідність) і як обмежувача
+жадібності. Також внаслідок його двоїстої функціональності може
+використовуватися наступний запис: <code>\d??\d</code>, який насамперед
+відповідає одній цифрі, але може відповідати і двом цифрам,
+якщо це необхідно для відповідності інших елементів шаблону.</p>
+<p>У випадку, якщо встановлено опцію
+<a href="reference.pcre.pattern.modifiers.md">PCRE_UNGREEDY</a> (відсутня у
+Perl), квантифікатори не є жадібними за промовчанням, але можуть
+ставати такими, якщо за ними слідує символ '?'. Говорячи іншими
+словами, знак питання інвертує жадібність квантифікаторів.</p>
+<p>Квантифікатори, за якими слідує <code>+</code>, є "захоплюючими". Вони
+поглинають стільки символів, скільки можуть і не повертаються назад
+збігу залишку шаблону. Таким чином <code>.*abc</code> збігається з "aabc", а
+<code>.*+abc</code> - ні, тому що <code>.*+</code> захопить весь рядок цілком.
+Захоплюючі квантифікатори можуть бути використані для прискорення
+обробки.</p>
+<p>Якщо використовується підмаска з квантифікатором, для якого
+задано мінімальну кількість повторень (більше одного), або задано
+максимальну кількість повторень, то для відкомпілюваного шаблону
+потрібно більше пам'яті (пропорційно мінімуму або максимуму
+відповідно).</p>
+<p>Якщо шаблон починається з .* або .{0,}, і встановлено
+модифікатор <a href="reference.pcre.pattern.modifiers.md">PCRE_DOTALL</a>
+(є аналогом Perl-опції /s), який дозволяє метасимволу
+"точка" відповідатиме перекладам рядків, шаблон неявно заякорюється.
+Це відбувається оскільки всі наступні конструкції будуть
+зіставлятися з кожною символьною позицією в тексті, що обробляється, і,
+як наслідок, початок рядка - єдина позиція, що дає найбільше
+повний збіг. PCRE розглядає кожен такий шаблон, якби
+йому передувала послідовність \A. Якщо відомо, що
+дані не містять перекладів рядків, а сам шаблон починається на .*,
+рекомендується використовувати
+<a href="reference.pcre.pattern.modifiers.md">PCRE_DOTALL</a> для оптимізації
+шаблону, або використовувати метасимвол '^' для вказівки явного
+заякорювання.</p>
+<p>Якщо захоплююча підмаска повторюється, результуючим
+значенням підмаски буде підрядок, що збігається з результатом останньої
+ітерації. Наприклад, після того, як <code>(tweedle[dume]{3}\s*)+</code> співпаде з
+"tweedledum tweedledee", результуючим значенням підмаски буде
+"tweedledee". Однак, якщо присутні вкладені захоплюючі
+підмаски, відповідні значення можуть бути встановлені у попередніх
+ітераціях. Наприклад, після того, як <code>/(a|(b))+/</code> співпаде з "aba",
+значенням другого захопленого підрядка буде "b".</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/regexp.reference.repetition.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/regexp.reference.repetition.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"regexp.reference.repetition","slug":"regexp.reference.repetition.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.subpatterns.md\"\u003e«Підмаски\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.back-references.md\"\u003eЗворотні посилання »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reference.pcre.pattern.syntax.md\"\u003eОпис синтаксису Perl-сумісних регулярних виразів\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eповторення\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eПовторення\u003c/h2\u003e\n\u003cp\u003eПовторення задається за допомогою квантифікаторів, що йдуть за будь-яким з\nнаведених нижче елементів:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eдовільним, можливо екранованим символом\u003c/li\u003e\n\u003cli\u003eметасимволом \"крапка\"\u003c/li\u003e\n\u003cli\u003eсимвольним класом\u003c/li\u003e\n\u003cli\u003eПосиланням на попередній фрагмент шаблону (дивіться наступний розділ)\u003c/li\u003e\n\u003cli\u003eвзятої в круглий дужки підмаскою (якщо це не твердження -\nдивіться далі)\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eЗагальний квантифікатор повторення вказує мінімальне та максимальне\nдопустима кількість збігів, згідно з двома числами, укладеними в\nфігурні дужки та розділені коми. Числа повинні бути меншими ніж\n65536, і перше число не повинне перевищувати друге за значенням. Наприклад:\n\u003ccode\u003ez{2,4}\u003c/code\u003e відповідає \"zz\", \"zzz\" або \"zzzz\". Закриваюча фігурна\nдужка сама собою не є спеціальним символом. У разі якщо\nдруге число опущено, але кома присутня, немає верхньої межі; в\nу випадку, якщо і друге число і кома опущені, потрібно точне число\nповторень. Таким чином \u003ccode\u003e[aeiou]{3,}\u003c/code\u003e відповідає як мінімум трьом\nпослідовним голосним (а також будь-якій їх кількості вище трьох),\nчас як \u003ccode\u003e\\d{8}\u003c/code\u003e відповідає рівно восьми цифрам. Відкриваюча\nфігурна дужка, розташована в неприпустимій для квантифікатора\nпозиції, яка не відповідає синтаксису квантифікатора,\nінтерпретується як звичайний символьний рядок. Наприклад, {,6} не\nє квантифікатором, а інтерпретується як символьний рядок з\nчотири символи.\u003c/p\u003e\n\u003cp\u003eКвантифікатор {0} є допустимим і поводиться таким чином, ніби\nб сам квантифікатор і попередній елемент відсутні.\u003c/p\u003e\n\u003cp\u003eДля зручності (а також зворотної сумісності) три найбільш\nпоширених квантифікаторів мають односимвольні абревіатури:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e*\u003c/td\u003e\n\u003ctd\u003eеквівалентний {0,}\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e+\u003c/td\u003e\n\u003ctd\u003eеквівалентний {1,}\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e? еквівалентний {0,1}\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОдносимвольні квантифікатори\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eМожна конструювати нескінченні цикли, вказавши після шаблону,\nзбігається з порожнім рядком, квантифікатор, який не має верхнього\nмежі, наприклад: \u003ccode\u003e(a?)*\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРанні версії Perl та PCRE видавали помилку під час компіляції для таких\nшаблонів. Однак, оскільки бувають випадки, коли такі шаблони могли\nбуло б корисно, була додана підтримка таких шаблонів. Але якщо будь-яке\nповторення такої підмаски практично не збігається з жодними символами,\nцикл примусово переривається.\u003c/p\u003e\n\u003cp\u003eЗа замовчуванням, всі квантифікатори є \"жадібними\", це означає, що\nвони збігаються максимально можливу кількість разів (але не більше, ніж\nмаксимально допустима кількість разів), не призводячи до неможливості\nзіставлення інших елементів шаблона. Класичний приклад проблем,\nякі можуть виникнути у зв'язку з такою особливістю квантифікаторів -\nзнаходження коментарів у C-програмах. Коментар вважається\nдовільний текст, що знаходиться всередині символьних комбінацій /* та */\n(при цьому символи '/' і '*' також можуть бути частиною коментаря).\nСпроба знайти коментарі за допомогою шаблону \u003ccode\u003e/\\*.*\\*/\u003c/code\u003e у рядку\n\u003ccode\u003e/* перший коментар */ не коментар /* другий коментар */\u003c/code\u003e\nзакінчиться невдачею, оскільки зазначений шаблон відповідає всій\nрядку цілком (через жадібність квантифікатора '*').\u003c/p\u003e\n\u003cp\u003eОднак, якщо відразу після квантифікатора йде запитальний знак, він\nстає \"лінивим\" і відповідає мінімально допустимій кількості\nразів. Таким чином, шаблон \u003ccode\u003e/\\*.*?\\*/\u003c/code\u003e коректно знаходить усі коментарі\nмови Сі. Використання символу '?' після квантифікатора впливає\nвиключно на його жадібність, і не зачіпає жодних інших властивостей.\nНе слід плутати використання символу '?' як, власне,\nквантифікатора (нуль або одна відповідність) і як обмежувача\nжадібності. Також внаслідок його двоїстої функціональності може\nвикористовуватися наступний запис: \u003ccode\u003e\\d??\\d\u003c/code\u003e, який насамперед\nвідповідає одній цифрі, але може відповідати і двом цифрам,\nякщо це необхідно для відповідності інших елементів шаблону.\u003c/p\u003e\n\u003cp\u003eУ випадку, якщо встановлено опцію\n\u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003ePCRE_UNGREEDY\u003c/a\u003e (відсутня у\nPerl), квантифікатори не є жадібними за промовчанням, але можуть\nставати такими, якщо за ними слідує символ '?'. Говорячи іншими\nсловами, знак питання інвертує жадібність квантифікаторів.\u003c/p\u003e\n\u003cp\u003eКвантифікатори, за якими слідує \u003ccode\u003e+\u003c/code\u003e, є \"захоплюючими\". Вони\nпоглинають стільки символів, скільки можуть і не повертаються назад\nзбігу залишку шаблону. Таким чином \u003ccode\u003e.*abc\u003c/code\u003e збігається з \"aabc\", а\n\u003ccode\u003e.*+abc\u003c/code\u003e - ні, тому що \u003ccode\u003e.*+\u003c/code\u003e захопить весь рядок цілком.\nЗахоплюючі квантифікатори можуть бути використані для прискорення\nобробки.\u003c/p\u003e\n\u003cp\u003eЯкщо використовується підмаска з квантифікатором, для якого\nзадано мінімальну кількість повторень (більше одного), або задано\nмаксимальну кількість повторень, то для відкомпілюваного шаблону\nпотрібно більше пам'яті (пропорційно мінімуму або максимуму\nвідповідно).\u003c/p\u003e\n\u003cp\u003eЯкщо шаблон починається з .* або .{0,}, і встановлено\nмодифікатор \u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003ePCRE_DOTALL\u003c/a\u003e\n(є аналогом Perl-опції /s), який дозволяє метасимволу\n\"точка\" відповідатиме перекладам рядків, шаблон неявно заякорюється.\nЦе відбувається оскільки всі наступні конструкції будуть\nзіставлятися з кожною символьною позицією в тексті, що обробляється, і,\nяк наслідок, початок рядка - єдина позиція, що дає найбільше\nповний збіг. PCRE розглядає кожен такий шаблон, якби\nйому передувала послідовність \\A. Якщо відомо, що\nдані не містять перекладів рядків, а сам шаблон починається на .*,\nрекомендується використовувати\n\u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003ePCRE_DOTALL\u003c/a\u003e для оптимізації\nшаблону, або використовувати метасимвол '^' для вказівки явного\nзаякорювання.\u003c/p\u003e\n\u003cp\u003eЯкщо захоплююча підмаска повторюється, результуючим\nзначенням підмаски буде підрядок, що збігається з результатом останньої\nітерації. Наприклад, після того, як \u003ccode\u003e(tweedle[dume]{3}\\s*)+\u003c/code\u003e співпаде з\n\"tweedledum tweedledee\", результуючим значенням підмаски буде\n\"tweedledee\". Однак, якщо присутні вкладені захоплюючі\nпідмаски, відповідні значення можуть бути встановлені у попередніх\nітераціях. Наприклад, після того, як \u003ccode\u003e/(a|(b))+/\u003c/code\u003e співпаде з \"aba\",\nзначенням другого захопленого підрядка буде \"b\".\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"regexp.reference.repetition.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

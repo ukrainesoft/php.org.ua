@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>regexp.reference.assertions | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="regexp.reference.back-references.md">«Зворотні посилання</a></p>
+</li>
+<li>
+<p><a href="regexp.reference.onlyonce.md">Одноразові підмаски »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="reference.pcre.pattern.syntax.md">Опис синтаксису Perl-сумісних регулярних виразів</a></p>
+</li>
+<li>
+<p>Затвердження</p>
+</li>
+</ul>
+<h2>Затвердження</h2>
+<p>Затвердження - це перевірки щодо символів, що йдуть до або після
+поточної позиції зіставлення, нічого при цьому не поглинаючи (ніякі
+символи вихідного тексту не ставляться у відповідність до тверджень).
+Найбільш прості варіанти тверджень, такі як , \B, \A, \Z, \z, ^ і
+$ розглянуті в
+<a href="regexp.reference.escape.md">escape-послідовності</a>. Більш складні
+твердження записуються як підмаски. Затвердження бувають двох видів:
+ті, що аналізують текст, наступний <em>після поточної позиції</em> (look
+ahead), і той, що йде <em>перед нею</em> (look behind).</p>
+<p>Зіставлення підмаски, що містить твердження, відбувається звичайним
+чином, крім того, що поточна позиція не змінюється.
+Твердження щодо <em>наступного тексту</em> починаються з (?= для
+позитивних тверджень і с (?! для заперечних тверджень. Наприклад,
+<code>\w+(?=;)</code> збігається зі словом, за яким слідує символ ';', але при
+При цьому сама точка з комою в збіг не включається. А <code>foo(?!bar)</code>
+відповідає будь-якій появі "foo", після якої не йде "bar".
+Зауважимо, що схожий шаблон <code>(?!foo)bar</code> не шукатиме входження
+"bar", якому передує будь-який рядок за винятком "foo". Але тим
+не менше, він буде відповідати будь-яким входженням підрядки "bar",
+оскільки умова (?!foo) завжди <strong><code>true</code></strong>, якщо наступні три
+символ - "bar". Для отримання бажаного результату необхідно
+скористатися другою категорією тверджень.</p>
+<p>Затвердження щодо <em>попереднього тексту</em> починаються з (?&#x3C;= для
+позитивних тверджень і (?&#x3C;! для заперечників. Наприклад,
+<code>(?&#x3C;!foo)bar</code> знайде входження "bar", яким не передує "foo".
+Самі твердження 'назад' обмежені так, щоб усі підрядки, яким
+вони відповідають, мали фіксовану довжину. Але, у випадку, якщо
+використовуються кілька альтернатив, вони повинні мати однакову
+довжину. Таким чином шаблон <code>(?&#x3C;=bullock|donkey)</code> коректний, але
+<code>(?&#x3C;!dogs?|cats?)</code> викликає помилку під час компіляції. Гілки, які
+відповідають рядкам різної довжини, дозволені лише на верхньому рівні
+тверджень щодо попереднього тексту. Це розширення
+щодо Perl 5.005, який вимагає, щоб усі гілки відповідали
+рядків однакової довжини. Таке твердження як <code>(?&#x3C;=ab(c|de))</code> не
+коректно, оскільки верхній рівень маски може відповідати рядкам
+різної довжини, але його можна перетворити до коректного шаблону,
+використовуючи альтернативи на верхньому рівні: <code>(?&#x3C;=abc|abde)</code> Затвердження
+щодо попереднього тексту реалізовані так, що для кожної
+альтернативи поточна позиція тимчасово переноситься назад,
+фіксовану ширину, після чого виконується пошук відповідності умові.
+Якщо перед поточною позицією недостатньо символів, пошук
+відповідності зазнає невдачі. Затвердження назад у поєднанні з
+одноразовими підмасками можуть бути особливо зручні для пошуку в кінці
+рядки; відповідний приклад наведено в кінці розділу "Одноразові
+підмаски".</p>
+<p>Декілька тверджень (різних типів) можуть бути присутніми у твердженні,
+наприклад: <code>(?&#x3C;=\d{3})(?&#x3C;!999)foo</code> збігається з підрядком "foo", якою
+передують три цифри, відмінні від "999". Слід розуміти, що кожне
+на підставі тверджень перевіряється щодо однієї і тієї ж позиції в
+оброблюваному тексті. Спочатку виконується перевірка того, що
+попередні три символи - це цифри, потім перевіряється, щоб ці ж
+цифри не були числом 999. Наведений вище шаблон відповідає
+підрядку "foo", якій передують шість символів, перші три з
+яких - цифри, а останні три не утворюють "999". Наприклад, він не
+відповідає рядку "123abcfoo", тоді як шаблон
+<code>(?&#x3C;=\d{3}...)(?&#x3C;!999)foo</code> відповідає.</p>
+<p>У цьому випадку аналізуються попередні шість символів на предмет
+того, щоб перші три з них були цифрами, а останні три не
+утворили "999".</p>
+<p>Затвердження можуть бути вкладеними, причому у довільних поєднаннях:
+<code>(?&#x3C;=(?&#x3C;!foo)bar)baz</code> відповідає підрядку "baz", якій
+передує "bar", перед якою, у свою чергу, немає "foo", а
+<code>(?&#x3C;=\d{3}...(?&#x3C;!999))foo</code> - зовсім інший шаблон, відповідний
+підрядку "foo", якому передують три цифри і три довільні
+символ, відмінний від "999".</p>
+<p>Тверді підмаски є незахоплюючими і неповторними,
+оскільки безглуздо повторювати те саме кілька разів. Якщо в
+твердженні довільного типу знаходиться захоплююча підмаска, вона
+нумерується в тій же послідовності, що й інші
+захоплюючі підмаски, але захоплення відповідних значень відбувається
+тільки для позитивних тверджень, оскільки для тих, хто заперечує це
+має сенсу.</p>
+<p>У твердженнях обробляється трохи більше, ніж 200 захоплюючих підмасок.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/regexp.reference.assertions.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/regexp.reference.assertions.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"regexp.reference.assertions","slug":"regexp.reference.assertions.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.back-references.md\"\u003e«Зворотні посилання\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.onlyonce.md\"\u003eОдноразові підмаски »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reference.pcre.pattern.syntax.md\"\u003eОпис синтаксису Perl-сумісних регулярних виразів\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗатвердження\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eЗатвердження\u003c/h2\u003e\n\u003cp\u003eЗатвердження - це перевірки щодо символів, що йдуть до або після\nпоточної позиції зіставлення, нічого при цьому не поглинаючи (ніякі\nсимволи вихідного тексту не ставляться у відповідність до тверджень).\nНайбільш прості варіанти тверджень, такі як , \\B, \\A, \\Z, \\z, ^ і\n$ розглянуті в\n\u003ca href=\"regexp.reference.escape.md\"\u003eescape-послідовності\u003c/a\u003e. Більш складні\nтвердження записуються як підмаски. Затвердження бувають двох видів:\nті, що аналізують текст, наступний \u003cem\u003eпісля поточної позиції\u003c/em\u003e (look\nahead), і той, що йде \u003cem\u003eперед нею\u003c/em\u003e (look behind).\u003c/p\u003e\n\u003cp\u003eЗіставлення підмаски, що містить твердження, відбувається звичайним\nчином, крім того, що поточна позиція не змінюється.\nТвердження щодо \u003cem\u003eнаступного тексту\u003c/em\u003e починаються з (?= для\nпозитивних тверджень і с (?! для заперечних тверджень. Наприклад,\n\u003ccode\u003e\\w+(?=;)\u003c/code\u003e збігається зі словом, за яким слідує символ ';', але при\nПри цьому сама точка з комою в збіг не включається. А \u003ccode\u003efoo(?!bar)\u003c/code\u003e\nвідповідає будь-якій появі \"foo\", після якої не йде \"bar\".\nЗауважимо, що схожий шаблон \u003ccode\u003e(?!foo)bar\u003c/code\u003e не шукатиме входження\n\"bar\", якому передує будь-який рядок за винятком \"foo\". Але тим\nне менше, він буде відповідати будь-яким входженням підрядки \"bar\",\nоскільки умова (?!foo) завжди \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, якщо наступні три\nсимвол - \"bar\". Для отримання бажаного результату необхідно\nскористатися другою категорією тверджень.\u003c/p\u003e\n\u003cp\u003eЗатвердження щодо \u003cem\u003eпопереднього тексту\u003c/em\u003e починаються з (?\u0026#x3C;= для\nпозитивних тверджень і (?\u0026#x3C;! для заперечників. Наприклад,\n\u003ccode\u003e(?\u0026#x3C;!foo)bar\u003c/code\u003e знайде входження \"bar\", яким не передує \"foo\".\nСамі твердження 'назад' обмежені так, щоб усі підрядки, яким\nвони відповідають, мали фіксовану довжину. Але, у випадку, якщо\nвикористовуються кілька альтернатив, вони повинні мати однакову\nдовжину. Таким чином шаблон \u003ccode\u003e(?\u0026#x3C;=bullock|donkey)\u003c/code\u003e коректний, але\n\u003ccode\u003e(?\u0026#x3C;!dogs?|cats?)\u003c/code\u003e викликає помилку під час компіляції. Гілки, які\nвідповідають рядкам різної довжини, дозволені лише на верхньому рівні\nтверджень щодо попереднього тексту. Це розширення\nщодо Perl 5.005, який вимагає, щоб усі гілки відповідали\nрядків однакової довжини. Таке твердження як \u003ccode\u003e(?\u0026#x3C;=ab(c|de))\u003c/code\u003e не\nкоректно, оскільки верхній рівень маски може відповідати рядкам\nрізної довжини, але його можна перетворити до коректного шаблону,\nвикористовуючи альтернативи на верхньому рівні: \u003ccode\u003e(?\u0026#x3C;=abc|abde)\u003c/code\u003e Затвердження\nщодо попереднього тексту реалізовані так, що для кожної\nальтернативи поточна позиція тимчасово переноситься назад,\nфіксовану ширину, після чого виконується пошук відповідності умові.\nЯкщо перед поточною позицією недостатньо символів, пошук\nвідповідності зазнає невдачі. Затвердження назад у поєднанні з\nодноразовими підмасками можуть бути особливо зручні для пошуку в кінці\nрядки; відповідний приклад наведено в кінці розділу \"Одноразові\nпідмаски\".\u003c/p\u003e\n\u003cp\u003eДекілька тверджень (різних типів) можуть бути присутніми у твердженні,\nнаприклад: \u003ccode\u003e(?\u0026#x3C;=\\d{3})(?\u0026#x3C;!999)foo\u003c/code\u003e збігається з підрядком \"foo\", якою\nпередують три цифри, відмінні від \"999\". Слід розуміти, що кожне\nна підставі тверджень перевіряється щодо однієї і тієї ж позиції в\nоброблюваному тексті. Спочатку виконується перевірка того, що\nпопередні три символи - це цифри, потім перевіряється, щоб ці ж\nцифри не були числом 999. Наведений вище шаблон відповідає\nпідрядку \"foo\", якій передують шість символів, перші три з\nяких - цифри, а останні три не утворюють \"999\". Наприклад, він не\nвідповідає рядку \"123abcfoo\", тоді як шаблон\n\u003ccode\u003e(?\u0026#x3C;=\\d{3}...)(?\u0026#x3C;!999)foo\u003c/code\u003e відповідає.\u003c/p\u003e\n\u003cp\u003eУ цьому випадку аналізуються попередні шість символів на предмет\nтого, щоб перші три з них були цифрами, а останні три не\nутворили \"999\".\u003c/p\u003e\n\u003cp\u003eЗатвердження можуть бути вкладеними, причому у довільних поєднаннях:\n\u003ccode\u003e(?\u0026#x3C;=(?\u0026#x3C;!foo)bar)baz\u003c/code\u003e відповідає підрядку \"baz\", якій\nпередує \"bar\", перед якою, у свою чергу, немає \"foo\", а\n\u003ccode\u003e(?\u0026#x3C;=\\d{3}...(?\u0026#x3C;!999))foo\u003c/code\u003e - зовсім інший шаблон, відповідний\nпідрядку \"foo\", якому передують три цифри і три довільні\nсимвол, відмінний від \"999\".\u003c/p\u003e\n\u003cp\u003eТверді підмаски є незахоплюючими і неповторними,\nоскільки безглуздо повторювати те саме кілька разів. Якщо в\nтвердженні довільного типу знаходиться захоплююча підмаска, вона\nнумерується в тій же послідовності, що й інші\nзахоплюючі підмаски, але захоплення відповідних значень відбувається\nтільки для позитивних тверджень, оскільки для тих, хто заперечує це\nмає сенсу.\u003c/p\u003e\n\u003cp\u003eУ твердженнях обробляється трохи більше, ніж 200 захоплюючих підмасок.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"regexp.reference.assertions.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

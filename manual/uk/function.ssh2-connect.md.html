@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.ssh2-connect | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.ssh2-auth-pubkey-file.md">« ssh2_auth_pubkey_file</a></p>
+</li>
+<li>
+<p><a href="function.ssh2-disconnect.md">ssh2_disconnect »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.ssh2.md">Функції SSH2</a></p>
+</li>
+<li>
+<p>Підключення до SSH-сервера</p>
+</li>
+</ul>
+<h1>ssh2_connect</h1>
+<p>(PECL ssh2 >= 0.9.0)</p>
+<p>ssh2_connect — Підключення до SSH-сервера</p>
+<h3>Опис</h3>
+<p><strong>ssh2_connect</strong>(
+string <code>$host</code>,
+int <code>$port</code> = 22,
+array <code>$methods</code> = ?,
+array <code>$callbacks</code> = ?
+): resource</p>
+<p>Встановлює з'єднання з сервером SSH.</p>
+<p>Після з'єднання користувач повинен перевірити ключ сервера, використовуючи
+функцію <a href="function.ssh2-fingerprint.md">ssh2_fingerprint()</a>, та після
+цього авторизуватись, використовуючи пароль або відкритий ключ.</p>
+<h3>Список параметрів</h3>
+<p><code>host</code></p>
+<p><code>port</code></p>
+<p><code>methods</code>
+Параметр <code>methods</code> може бути асоціативним масивом, що містить до
+чотирьох записів, наведених нижче.</p>
+<table>
+<thead>
+<tr>
+<th>Індекс Що означає</th>
+<th>Допустимі значення *</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kex</td>
+<td>Список методів обміну ключами, розділених комою, як перевагу.</td>
+<td>diffie-hellman-group1-sha1, diffie-hellman-group14-sha1, та diffie-hellman-group-exchange-sha1</td>
+</tr>
+<tr>
+<td>hostkey</td>
+<td>Список методів ключів хоста, розділених комою, як перевагу.</td>
+<td>ssh-rsa та ssh-dss</td>
+</tr>
+<tr>
+<td>client_to_server</td>
+<td>Асоціативний масив, що містить налаштування шифрування, стиснення та методу імітівставки ("message authentication code" або MAC) для повідомлень, надісланих клієнтом серверу.</td>
+<td></td>
+</tr>
+<tr>
+<td>server_to_client</td>
+<td>Асоціативний масив, що містить налаштування шифрування, стиснення та методу імітівставки ("message authentication code" або MAC) для повідомлень, надісланих сервером клієнту.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Параметр <code>methods</code> може бути асоціативним масивом, що містить від
+одного до чотирьох параметрів</strong></p>
+<p>* - Підтримувані значення залежать від методів, що підтримуються базовою
+бібліотекою. Докладніше читайте документацію з
+<a href="http://libssh2.org/">» libssh2</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Індекс Що означає</th>
+<th>Допустимі значення *</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>crypt</td>
+<td>Список методів шифрування, розділених комою, як перевагу.</td>
+<td><a href="mailto:rijndael-cbc@lysator.liu.se">rijndael-cbc@lysator.liu.se</a>, aes256-cbc, aes192-cbc, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, arcfour і none**</td>
+</tr>
+<tr>
+<td>comp</td>
+<td>Список методів стиснення, розділених комою, як перевагу.</td>
+<td>zlib та none</td>
+</tr>
+<tr>
+<td>mac</td>
+<td>Список методів MAC, розділених комою, як перевагу.</td>
+<td>hmac-sha1, hmac-sha1-96, hmac-ripemd160, <a href="mailto:hmac-ripemd160@openssh.com">hmac-ripemd160@openssh.com</a> та none**</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>client_to_server</code> та <code>server_to_client</code> можуть бути асоціативними
+масивами, що містять будь-які або всі нижченаведені параметри.</strong></p>
+<blockquote>
+<p><strong>Примітка</strong>: <strong>Метод шифрування "<code>none</code>" та MAC</strong></p>
+<p>З метою безпеки <code>none</code> відключено в базовій бібліотеці
+<a href="http://libssh2.org/">» libssh2</a>, якщо ви не дозволили його
+самостійно на етапі збирання, використовуючи відповідні ключі
+./configure. Дивіться документацію по базовій бібліотеці для більш
+Докладна інформація.</p>
+</blockquote>
+<p>callbacks
+callbacks може бути асоціативним масивом, що містить будь-який або ж
+всі нижчеперелічені параметри</p>
+<table>
+<thead>
+<tr>
+<th>Індекс Що означає</th>
+<th>Прототип</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ignore</td>
+<td>Ім'я функції після отримання пакета <strong>SSH2_MSG_IGNORE</strong></td>
+<td>void ignore_cb($message)</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>Ім'я функції після отримання пакета <strong>SSH2_MSG_DEBUG</strong></td>
+<td>void debug_cb($message, $language, $always_display)</td>
+</tr>
+<tr>
+<td>macerror</td>
+<td>Ім'я функції, викликаної, якщо пакет отримано, але MAC не вдалося. Якщо callback-функція поверне <strong>true</strong>, розбіжність буде проігнорована, інакше з'єднання буде обірвано.</td>
+<td>bool macerror_cb($packet)</td>
+</tr>
+<tr>
+<td>disconnect</td>
+<td>Ім'я функції, що викликається після одержання пакета <strong>SSH2_MSG_DISCONNECT</strong></td>
+<td>void disconnect_cb($reason, $message, $language)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Параметри callback-функції</strong></p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає ресурс у разі успішного виконання або <strong><code>false</code></strong> у разі
+виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад <strong>ssh2_connect()</strong></strong></p>
+<p>Відкриємо з'єднання, примусово використовуючи такі настройки: 3des-cbc
+при відправленні пакетів, шифр aes будь-якої сили при отриманні пакетів, без
+стиснення в обох напрямках та обмін ключами Group1.</p>
+<p><code>&#x3C;?php/* Повідомляємо користувача, якщо сервер перервав з'єднання */function my_ssh_disconnect($reason, $message, $language) {  printf("Сервер відключився с кодом | ",         $reason, $message);}$methods = array( 'kex' => 'diffie-hellman-group1-sha1',  'client_to_server' => array(' c| c| ' => 'none'), 'server_to_client' => array(   'crypt' => 'aes256-cbc,aes192-cbc,aes128-cbc',| 'disconnect' => 'my_ssh_disconnect');$connection = ssh2_connect('shell.example.com', 22, $methods, $callbacks);if (!$connection) die('Не удалося встановити з'єднання');</code></p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.ssh2-fingerprint.md">ssh2_fingerprint()</a> - Отримання
+відбиток віддаленого сервера</li>
+<li><a href="function.ssh2-auth-none.md">ssh2_auth_none()</a> - Аутентифікація
+як "none"</li>
+<li><a href="function.ssh2-auth-password.md">ssh2_auth_password()</a> -
+Аутентифікація через SSH за допомогою звичайного пароля</li>
+<li><a href="function.ssh2-auth-pubkey-file.md">ssh2_auth_pubkey_file()</a> -
+Аутентифікація з відкритим ключем</li>
+<li><a href="function.ssh2-disconnect.md">ssh2_disconnect()</a> - Закрити
+з'єднання з віддаленим сервером SSH</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.ssh2-connect.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.ssh2-connect.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.ssh2-connect","slug":"function.ssh2-connect.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.ssh2-auth-pubkey-file.md\"\u003e« ssh2_auth_pubkey_file\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.ssh2-disconnect.md\"\u003essh2_disconnect »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.ssh2.md\"\u003eФункції SSH2\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПідключення до SSH-сервера\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003essh2_connect\u003c/h1\u003e\n\u003cp\u003e(PECL ssh2 \u003e= 0.9.0)\u003c/p\u003e\n\u003cp\u003essh2_connect — Підключення до SSH-сервера\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003essh2_connect\u003c/strong\u003e(\nstring \u003ccode\u003e$host\u003c/code\u003e,\nint \u003ccode\u003e$port\u003c/code\u003e = 22,\narray \u003ccode\u003e$methods\u003c/code\u003e = ?,\narray \u003ccode\u003e$callbacks\u003c/code\u003e = ?\n): resource\u003c/p\u003e\n\u003cp\u003eВстановлює з'єднання з сервером SSH.\u003c/p\u003e\n\u003cp\u003eПісля з'єднання користувач повинен перевірити ключ сервера, використовуючи\nфункцію \u003ca href=\"function.ssh2-fingerprint.md\"\u003essh2_fingerprint()\u003c/a\u003e, та після\nцього авторизуватись, використовуючи пароль або відкритий ключ.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ehost\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eport\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emethods\u003c/code\u003e\nПараметр \u003ccode\u003emethods\u003c/code\u003e може бути асоціативним масивом, що містить до\nчотирьох записів, наведених нижче.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІндекс Що означає\u003c/th\u003e\n\u003cth\u003eДопустимі значення *\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ekex\u003c/td\u003e\n\u003ctd\u003eСписок методів обміну ключами, розділених комою, як перевагу.\u003c/td\u003e\n\u003ctd\u003ediffie-hellman-group1-sha1, diffie-hellman-group14-sha1, та diffie-hellman-group-exchange-sha1\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ehostkey\u003c/td\u003e\n\u003ctd\u003eСписок методів ключів хоста, розділених комою, як перевагу.\u003c/td\u003e\n\u003ctd\u003essh-rsa та ssh-dss\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eclient_to_server\u003c/td\u003e\n\u003ctd\u003eАсоціативний масив, що містить налаштування шифрування, стиснення та методу імітівставки (\"message authentication code\" або MAC) для повідомлень, надісланих клієнтом серверу.\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eserver_to_client\u003c/td\u003e\n\u003ctd\u003eАсоціативний масив, що містить налаштування шифрування, стиснення та методу імітівставки (\"message authentication code\" або MAC) для повідомлень, надісланих сервером клієнту.\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eПараметр \u003ccode\u003emethods\u003c/code\u003e може бути асоціативним масивом, що містить від\nодного до чотирьох параметрів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e* - Підтримувані значення залежать від методів, що підтримуються базовою\nбібліотекою. Докладніше читайте документацію з\n\u003ca href=\"http://libssh2.org/\"\u003e» libssh2\u003c/a\u003e.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІндекс Що означає\u003c/th\u003e\n\u003cth\u003eДопустимі значення *\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ecrypt\u003c/td\u003e\n\u003ctd\u003eСписок методів шифрування, розділених комою, як перевагу.\u003c/td\u003e\n\u003ctd\u003e\u003ca href=\"mailto:rijndael-cbc@lysator.liu.se\"\u003erijndael-cbc@lysator.liu.se\u003c/a\u003e, aes256-cbc, aes192-cbc, aes128-cbc, 3des-cbc, blowfish-cbc, cast128-cbc, arcfour і none**\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecomp\u003c/td\u003e\n\u003ctd\u003eСписок методів стиснення, розділених комою, як перевагу.\u003c/td\u003e\n\u003ctd\u003ezlib та none\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003emac\u003c/td\u003e\n\u003ctd\u003eСписок методів MAC, розділених комою, як перевагу.\u003c/td\u003e\n\u003ctd\u003ehmac-sha1, hmac-sha1-96, hmac-ripemd160, \u003ca href=\"mailto:hmac-ripemd160@openssh.com\"\u003ehmac-ripemd160@openssh.com\u003c/a\u003e та none**\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eclient_to_server\u003c/code\u003e та \u003ccode\u003eserver_to_client\u003c/code\u003e можуть бути асоціативними\nмасивами, що містять будь-які або всі нижченаведені параметри.\u003c/strong\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: \u003cstrong\u003eМетод шифрування \"\u003ccode\u003enone\u003c/code\u003e\" та MAC\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЗ метою безпеки \u003ccode\u003enone\u003c/code\u003e відключено в базовій бібліотеці\n\u003ca href=\"http://libssh2.org/\"\u003e» libssh2\u003c/a\u003e, якщо ви не дозволили його\nсамостійно на етапі збирання, використовуючи відповідні ключі\n./configure. Дивіться документацію по базовій бібліотеці для більш\nДокладна інформація.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003ecallbacks\ncallbacks може бути асоціативним масивом, що містить будь-який або ж\nвсі нижчеперелічені параметри\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІндекс Що означає\u003c/th\u003e\n\u003cth\u003eПрототип\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eignore\u003c/td\u003e\n\u003ctd\u003eІм'я функції після отримання пакета \u003cstrong\u003eSSH2_MSG_IGNORE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003evoid ignore_cb($message)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edebug\u003c/td\u003e\n\u003ctd\u003eІм'я функції після отримання пакета \u003cstrong\u003eSSH2_MSG_DEBUG\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003evoid debug_cb($message, $language, $always_display)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003emacerror\u003c/td\u003e\n\u003ctd\u003eІм'я функції, викликаної, якщо пакет отримано, але MAC не вдалося. Якщо callback-функція поверне \u003cstrong\u003etrue\u003c/strong\u003e, розбіжність буде проігнорована, інакше з'єднання буде обірвано.\u003c/td\u003e\n\u003ctd\u003ebool macerror_cb($packet)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edisconnect\u003c/td\u003e\n\u003ctd\u003eІм'я функції, що викликається після одержання пакета \u003cstrong\u003eSSH2_MSG_DISCONNECT\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003evoid disconnect_cb($reason, $message, $language)\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eПараметри callback-функції\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає ресурс у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі\nвиникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад \u003cstrong\u003essh2_connect()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eВідкриємо з'єднання, примусово використовуючи такі настройки: 3des-cbc\nпри відправленні пакетів, шифр aes будь-якої сили при отриманні пакетів, без\nстиснення в обох напрямках та обмін ключами Group1.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/* Повідомляємо користувача, якщо сервер перервав з'єднання */function my_ssh_disconnect($reason, $message, $language) {  printf(\"Сервер відключився с кодом | \",         $reason, $message);}$methods = array( 'kex' =\u003e 'diffie-hellman-group1-sha1',  'client_to_server' =\u003e array(' c| c| ' =\u003e 'none'), 'server_to_client' =\u003e array(   'crypt' =\u003e 'aes256-cbc,aes192-cbc,aes128-cbc',| 'disconnect' =\u003e 'my_ssh_disconnect');$connection = ssh2_connect('shell.example.com', 22, $methods, $callbacks);if (!$connection) die('Не удалося встановити з'єднання');\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.ssh2-fingerprint.md\"\u003essh2_fingerprint()\u003c/a\u003e - Отримання\nвідбиток віддаленого сервера\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.ssh2-auth-none.md\"\u003essh2_auth_none()\u003c/a\u003e - Аутентифікація\nяк \"none\"\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.ssh2-auth-password.md\"\u003essh2_auth_password()\u003c/a\u003e -\nАутентифікація через SSH за допомогою звичайного пароля\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.ssh2-auth-pubkey-file.md\"\u003essh2_auth_pubkey_file()\u003c/a\u003e -\nАутентифікація з відкритим ключем\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.ssh2-disconnect.md\"\u003essh2_disconnect()\u003c/a\u003e - Закрити\nз'єднання з віддаленим сервером SSH\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.ssh2-connect.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

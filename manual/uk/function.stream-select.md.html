@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.stream-select | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.stream-resolve-include-path.md">« stream_resolve_include_path</a></p>
+</li>
+<li>
+<p><a href="function.stream-set-blocking.md">stream_set_blocking »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.stream.md">Функції для роботи з потоками</a></p>
+</li>
+<li>
+<p>Запускає еквівалент системного виклику select() на заданих масивах
+потоків з часом очікування, вказаним параметрами seconds та
+microseconds</p>
+</li>
+</ul>
+<p>#stream_select</p>
+<p>(PHP 4 >= 4.3.0, PHP 5, PHP 7, PHP 8)</p>
+<p>stream_select — Запускає еквівалент системного виклику select()
+заданих масивах потоків з часом очікування, вказаним параметрами
+seconds та microseconds</p>
+<h3>Опис</h3>
+<p><strong>stream_select</strong>(
+?array <code>&#x26;$read</code>,
+?array <code>&#x26;$write</code>,
+?array <code>&#x26;$except</code>,
+?int <code>$seconds</code>,
+?int <code>$microseconds</code> = <strong><code>null</code></strong>
+): int|false</p>
+<p>Функція <strong>stream_select()</strong> отримує масиви потоків і чекає зміни їх
+статусу. Її робота еквівалентна роботі функції
+<a href="function.socket-select.md">socket_select()</a>, за винятком того, що
+вона працює із потоками.</p>
+<h3>Список параметрів</h3>
+<p><code>read</code>
+Потоки, перелічені в масиві <code>read</code> будуть відстежуватись на предмет
+появи символів, доступних для читання (точніше, щоб переконатися, що
+читання не блокуватиметься - зокрема, потоковий ресурс також
+готовий для читання в кінці файлу, але в цьому випадку функція
+<a href="function.fread.md">fread()</a> повертатиме рядок нульової довжини).</p>
+<p><code>write</code>
+Потоки, перелічені в масиві <code>write</code>, будуть відстежуватись на предмет
+того, що запис у них не блокуватиметься.</p>
+<p><code>except</code>
+Потоки, перелічені в масиві <code>except</code>, будуть відстежуватись на предмет
+надходження високопріоритетних виняткових (неполосних або
+"out-of-band") даних.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Коли <strong>stream_select()</strong> повертається, масиви <code>read</code>, <code>write</code> і
+<code>except</code> змінюються для того, щоб вказати, які потокові ресурси
+насправді змінили статус. Вихідні ключі масивів (array)
+зберігаються.</p>
+</blockquote>
+<p><code>seconds</code>
+Параметри <code>seconds</code> та <code>microseconds</code> разом формують параметр
+<em>timeout</em>, <code>seconds</code> вказує число секунд, а <code>microseconds</code> - число
+мікросекунд. Параметр <code>timeout</code> - це верхня межа часу, що
+функція <strong>stream_select()</strong> чекатиме до повернення. Якщо параметри
+<code>seconds</code> та <code>microseconds</code> обидва встановлені в <code>0</code>, то функція
+<strong>stream_select()</strong> не буде очікувати даних - натомість вона повернеться
+негайно вказуючи поточний статус потоків.</p>
+<p>Якщо параметр <code>seconds</code> дорівнює <strong><code>null</code></strong>, то функція <strong>stream_select()</strong>
+може виконуватися невизначений час, повертаючись лише тоді, коли
+відбувається подія на одному з потоків, що відстежуються (або якщо системний
+виклик переривається сигналом).</p>
+<p><strong>Увага</strong>
+Використання значення часу очікування <code>0</code> дозволяє вам миттєво
+опитати статус потоків, однак погана ідея використовувати значення
+часу очікування <code>0</code> у циклі, тому що це змусить ваш скрипт споживати
+надто багато процесорного часу.</p>
+<p>Набагато краще вказати значення часу очікування за кілька секунд, хоча
+якщо вам потрібно перевіряти та одночасно запускати інший код,
+використання часу очікування як мінімум <code>200000</code> мікросекунд допоможе
+зменшити використання процесорного часу вашим скриптом.</p>
+<p>Запам'ятайте, що значення часу очікування – це максимальний час,
+яке буде витрачено. Функція <strong>stream_select()</strong> повернеться як тільки
+запитані потоки будуть готові до використання.</p>
+<p><code>microseconds</code>
+Дивіться опис параметра <code>seconds</code>.</p>
+<h3>Значення, що повертаються</h3>
+<p>У разі успішного виконання функція <strong>stream_select()</strong> повертає
+кількість потокових ресурсів, що міститься в змінених масивах,
+яке може дорівнювати нулю, якщо перевищено час очікування до того, як
+сталося щось цікаве. У разі виникнення помилки повертається
+<strong><code>false</code></strong> і виникає попередження (це може статися, якщо
+системний виклик переривається вхідним сигналом.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.1.0</td>
+<td>Параметр microseconds тепер допускає значення <strong>null</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>stream_select()</strong></strong></p>
+<p>Цей приклад перевіряє, що отримано дані для читання на потоках
+<code>$stream1</code> або <code>$stream2</code>. Оскільки значення часу очікування дорівнює <code>0</code>,
+функція повернеться негайно:</p>
+<p>` &#x3C;?php/* Підготувати масив для читання <em>/$read   = array($stream1, $stream2);$write  = NULL;$except = NULL;if (false === $$ write, $except, 0))) {    /</em> Обробка помилок <em>/} elseif ($num_changed_streams > 0) {    /</em> Як мінімум на       </p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Через обмеження в поточному Zend Engine неможливо передати
+постійну <strong><code>null</code></strong> безпосередньо як параметр у функцію, яка
+очікує, що цей параметр буде надіслано за посиланням. Замість цього
+використовуйте тимчасову змінну або вираз, у якому крайній
+лівий член буде тимчасовою змінною:</p>
+<p><code>&#x3C;?php$e = NULL;stream_select($r, $w, $e, 0);?></code></p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Перевірте, чи використовуєте оператор <code>===</code> під час перевірки помилки. Так
+як функція <strong>stream_select()</strong> може повертати 0 порівняння з
+використанням <code>==</code> може повертати <strong><code>true</code></strong>:</p>
+<p><code>&#x3C;?php$e = NULL;if (false === stream_select($r, $w, $e, 0)) {    echo "Сталася помилка при виклику stream_select() ";}?></code></p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо ви читаєте/пишете в потік, що повертається в масивах, знайте, що
+вони не обов'язково читають/пишуть повну кількість даних, яку ви
+запитали. Будьте готові до того, щоб мати можливість читати/писати
+навіть по одному байту.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Деякі потоки (наприклад, <code>zlib</code>) не можуть бути обрані цієї
+функцією.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>: <strong>Сумісність із Windows</strong></p>
+<p>Використання функції <strong>stream_select()</strong> на файлових дескрипторах,
+повернутих функцією <a href="function.proc-open.md">proc_open()</a> не
+вдасться та поверне <strong><code>false</code></strong> під Windows.</p>
+<p><strong><code>STDIN</code></strong> з консолі змінює статус, як тільки стають доступними
+<em>які</em> вхідні події, але читання з потоку все ще може
+блокувати.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.stream-set-blocking.md">stream_set_blocking()</a> -
+Встановити блокуючий/неблокуючий режим у потоці</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.stream-select.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.stream-select.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.stream-select","slug":"function.stream-select.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.stream-resolve-include-path.md\"\u003e« stream_resolve_include_path\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.stream-set-blocking.md\"\u003estream_set_blocking »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.stream.md\"\u003eФункції для роботи з потоками\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗапускає еквівалент системного виклику select() на заданих масивах\nпотоків з часом очікування, вказаним параметрами seconds та\nmicroseconds\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#stream_select\u003c/p\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.3.0, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003estream_select — Запускає еквівалент системного виклику select()\nзаданих масивах потоків з часом очікування, вказаним параметрами\nseconds та microseconds\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003estream_select\u003c/strong\u003e(\n?array \u003ccode\u003e\u0026#x26;$read\u003c/code\u003e,\n?array \u003ccode\u003e\u0026#x26;$write\u003c/code\u003e,\n?array \u003ccode\u003e\u0026#x26;$except\u003c/code\u003e,\n?int \u003ccode\u003e$seconds\u003c/code\u003e,\n?int \u003ccode\u003e$microseconds\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\n): int|false\u003c/p\u003e\n\u003cp\u003eФункція \u003cstrong\u003estream_select()\u003c/strong\u003e отримує масиви потоків і чекає зміни їх\nстатусу. Її робота еквівалентна роботі функції\n\u003ca href=\"function.socket-select.md\"\u003esocket_select()\u003c/a\u003e, за винятком того, що\nвона працює із потоками.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eread\u003c/code\u003e\nПотоки, перелічені в масиві \u003ccode\u003eread\u003c/code\u003e будуть відстежуватись на предмет\nпояви символів, доступних для читання (точніше, щоб переконатися, що\nчитання не блокуватиметься - зокрема, потоковий ресурс також\nготовий для читання в кінці файлу, але в цьому випадку функція\n\u003ca href=\"function.fread.md\"\u003efread()\u003c/a\u003e повертатиме рядок нульової довжини).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ewrite\u003c/code\u003e\nПотоки, перелічені в масиві \u003ccode\u003ewrite\u003c/code\u003e, будуть відстежуватись на предмет\nтого, що запис у них не блокуватиметься.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eexcept\u003c/code\u003e\nПотоки, перелічені в масиві \u003ccode\u003eexcept\u003c/code\u003e, будуть відстежуватись на предмет\nнадходження високопріоритетних виняткових (неполосних або\n\"out-of-band\") даних.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eКоли \u003cstrong\u003estream_select()\u003c/strong\u003e повертається, масиви \u003ccode\u003eread\u003c/code\u003e, \u003ccode\u003ewrite\u003c/code\u003e і\n\u003ccode\u003eexcept\u003c/code\u003e змінюються для того, щоб вказати, які потокові ресурси\nнасправді змінили статус. Вихідні ключі масивів (array)\nзберігаються.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eseconds\u003c/code\u003e\nПараметри \u003ccode\u003eseconds\u003c/code\u003e та \u003ccode\u003emicroseconds\u003c/code\u003e разом формують параметр\n\u003cem\u003etimeout\u003c/em\u003e, \u003ccode\u003eseconds\u003c/code\u003e вказує число секунд, а \u003ccode\u003emicroseconds\u003c/code\u003e - число\nмікросекунд. Параметр \u003ccode\u003etimeout\u003c/code\u003e - це верхня межа часу, що\nфункція \u003cstrong\u003estream_select()\u003c/strong\u003e чекатиме до повернення. Якщо параметри\n\u003ccode\u003eseconds\u003c/code\u003e та \u003ccode\u003emicroseconds\u003c/code\u003e обидва встановлені в \u003ccode\u003e0\u003c/code\u003e, то функція\n\u003cstrong\u003estream_select()\u003c/strong\u003e не буде очікувати даних - натомість вона повернеться\nнегайно вказуючи поточний статус потоків.\u003c/p\u003e\n\u003cp\u003eЯкщо параметр \u003ccode\u003eseconds\u003c/code\u003e дорівнює \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, то функція \u003cstrong\u003estream_select()\u003c/strong\u003e\nможе виконуватися невизначений час, повертаючись лише тоді, коли\nвідбувається подія на одному з потоків, що відстежуються (або якщо системний\nвиклик переривається сигналом).\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\nВикористання значення часу очікування \u003ccode\u003e0\u003c/code\u003e дозволяє вам миттєво\nопитати статус потоків, однак погана ідея використовувати значення\nчасу очікування \u003ccode\u003e0\u003c/code\u003e у циклі, тому що це змусить ваш скрипт споживати\nнадто багато процесорного часу.\u003c/p\u003e\n\u003cp\u003eНабагато краще вказати значення часу очікування за кілька секунд, хоча\nякщо вам потрібно перевіряти та одночасно запускати інший код,\nвикористання часу очікування як мінімум \u003ccode\u003e200000\u003c/code\u003e мікросекунд допоможе\nзменшити використання процесорного часу вашим скриптом.\u003c/p\u003e\n\u003cp\u003eЗапам'ятайте, що значення часу очікування – це максимальний час,\nяке буде витрачено. Функція \u003cstrong\u003estream_select()\u003c/strong\u003e повернеться як тільки\nзапитані потоки будуть готові до використання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emicroseconds\u003c/code\u003e\nДивіться опис параметра \u003ccode\u003eseconds\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eУ разі успішного виконання функція \u003cstrong\u003estream_select()\u003c/strong\u003e повертає\nкількість потокових ресурсів, що міститься в змінених масивах,\nяке може дорівнювати нулю, якщо перевищено час очікування до того, як\nсталося щось цікаве. У разі виникнення помилки повертається\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e і виникає попередження (це може статися, якщо\nсистемний виклик переривається вхідним сигналом.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.1.0\u003c/td\u003e\n\u003ctd\u003eПараметр microseconds тепер допускає значення \u003cstrong\u003enull\u003c/strong\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003estream_select()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЦей приклад перевіряє, що отримано дані для читання на потоках\n\u003ccode\u003e$stream1\u003c/code\u003e або \u003ccode\u003e$stream2\u003c/code\u003e. Оскільки значення часу очікування дорівнює \u003ccode\u003e0\u003c/code\u003e,\nфункція повернеться негайно:\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php/* Підготувати масив для читання \u003cem\u003e/$read   = array($stream1, $stream2);$write  = NULL;$except = NULL;if (false === $$ write, $except, 0))) {    /\u003c/em\u003e Обробка помилок \u003cem\u003e/} elseif ($num_changed_streams \u003e 0) {    /\u003c/em\u003e Як мінімум на       \u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЧерез обмеження в поточному Zend Engine неможливо передати\nпостійну \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e безпосередньо як параметр у функцію, яка\nочікує, що цей параметр буде надіслано за посиланням. Замість цього\nвикористовуйте тимчасову змінну або вираз, у якому крайній\nлівий член буде тимчасовою змінною:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$e = NULL;stream_select($r, $w, $e, 0);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПеревірте, чи використовуєте оператор \u003ccode\u003e===\u003c/code\u003e під час перевірки помилки. Так\nяк функція \u003cstrong\u003estream_select()\u003c/strong\u003e може повертати 0 порівняння з\nвикористанням \u003ccode\u003e==\u003c/code\u003e може повертати \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$e = NULL;if (false === stream_select($r, $w, $e, 0)) {    echo \"Сталася помилка при виклику stream_select() \";}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо ви читаєте/пишете в потік, що повертається в масивах, знайте, що\nвони не обов'язково читають/пишуть повну кількість даних, яку ви\nзапитали. Будьте готові до того, щоб мати можливість читати/писати\nнавіть по одному байту.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eДеякі потоки (наприклад, \u003ccode\u003ezlib\u003c/code\u003e) не можуть бути обрані цієї\nфункцією.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: \u003cstrong\u003eСумісність із Windows\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eВикористання функції \u003cstrong\u003estream_select()\u003c/strong\u003e на файлових дескрипторах,\nповернутих функцією \u003ca href=\"function.proc-open.md\"\u003eproc_open()\u003c/a\u003e не\nвдасться та поверне \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e під Windows.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eSTDIN\u003c/code\u003e\u003c/strong\u003e з консолі змінює статус, як тільки стають доступними\n\u003cem\u003eякі\u003c/em\u003e вхідні події, але читання з потоку все ще може\nблокувати.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.stream-set-blocking.md\"\u003estream_set_blocking()\u003c/a\u003e -\nВстановити блокуючий/неблокуючий режим у потоці\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.stream-select.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

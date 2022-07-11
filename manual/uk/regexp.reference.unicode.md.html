@@ -1,0 +1,480 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>regexp.reference.unicode | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="regexp.reference.escape.md">« Екрануючі послідовності</a></p>
+</li>
+<li>
+<p><a href="regexp.reference.anchors.md">Якоря »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="reference.pcre.pattern.syntax.md">Опис синтаксису Perl-сумісних регулярних виразів</a></p>
+</li>
+<li>
+<p>Властивості Unicode-символів</p>
+</li>
+</ul>
+<h2>Властивості Unicode-символів</h2>
+<p>Починаючи з версії 5.1.0, було додано три додаткові керуючі
+послідовності, що збігаються з деякими загальними символьними типами
+<em>В режимі UTF-8</em>. Ось вони:</p>
+<p><em>\p{xx}</em>
+символ із властивістю xx</p>
+<p><em>\P{xx}</em>
+символ без якості xx</p>
+<p><em>\X</em>
+розширена послідовність Unicode</p>
+<p>Імена властивостей, представлені вище як <code>xx</code>, обмежені загальними
+категоріями властивостей Unicode Кожен символ має рівно одне таке
+властивість, що вказується дволітерною абревіатурою. Для сумісності з
+Perl також можна вказати заперечення додаванням знака "^" між
+відкриває дужкою та ім'ям властивості. Наприклад, <code>\p{^Lu}</code> - це те саме
+саме, що й <code>\P{Lu}</code>.</p>
+<p>Якщо з <code>\p</code> або <code>\P</code> вказана лише одна літера, вона включає все
+властивості, що починаються з цієї літери. В цьому випадку, якщо не
+використовується заперечення, фігурні дужки необов'язкові; наступні два
+приклади еквівалентні:</p>
+<p>\p{L}
+\pL</p>
+<table>
+<thead>
+<tr>
+<th>Властивість Збіг</th>
+<th>Зауваження</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>Інше</td>
+</tr>
+<tr>
+<td>Cc</td>
+<td>Control</td>
+</tr>
+<tr>
+<td>Cf</td>
+<td>Формат</td>
+</tr>
+<tr>
+<td>Cn</td>
+<td>Чи не присвоєно</td>
+</tr>
+<tr>
+<td>Co</td>
+<td>Приватне використання</td>
+</tr>
+<tr>
+<td>Cs</td>
+<td>Сурогат</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Літера</td>
+</tr>
+<tr>
+<td>Ll</td>
+<td>Рядкова літера</td>
+</tr>
+<tr>
+<td>Lm</td>
+<td>Модифікатор</td>
+</tr>
+<tr>
+<td>Lo</td>
+<td>Інша літера</td>
+</tr>
+<tr>
+<td>Lt</td>
+<td>Велика літера</td>
+</tr>
+<tr>
+<td>Lu</td>
+<td>Велика літера</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Знак</td>
+</tr>
+<tr>
+<td>Mc</td>
+<td>Пробільний знак</td>
+</tr>
+<tr>
+<td>Me</td>
+<td>Навколишній знак</td>
+</tr>
+<tr>
+<td>Mn</td>
+<td>Чи не пробельний знак</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Число</td>
+</tr>
+<tr>
+<td>Nd</td>
+<td>десяткове число</td>
+</tr>
+<tr>
+<td>Nl</td>
+<td>Літерне число</td>
+</tr>
+<tr>
+<td>No</td>
+<td>Інше</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Пунктуація</td>
+</tr>
+<tr>
+<td>PC</td>
+<td>Поєднувальна пунктуація</td>
+</tr>
+<tr>
+<td>Pd</td>
+<td>Знаки тире</td>
+</tr>
+<tr>
+<td>Pe</td>
+<td>Закриваюча пунктуація</td>
+</tr>
+<tr>
+<td>Pf</td>
+<td>Заключна пунктуація</td>
+</tr>
+<tr>
+<td>Pi</td>
+<td>Початкова пунктуація</td>
+</tr>
+<tr>
+<td>Po</td>
+<td>Інша пунктуація</td>
+</tr>
+<tr>
+<td>Ps</td>
+<td>Відкриваюча пунктуація</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Символ</td>
+</tr>
+<tr>
+<td>Sc</td>
+<td>Фінансовий знак</td>
+</tr>
+<tr>
+<td>Sk</td>
+<td>Модифікатор</td>
+</tr>
+<tr>
+<td>Sm</td>
+<td>Математичний символ</td>
+</tr>
+<tr>
+<td>So</td>
+<td>Інший символ</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Розділювач</td>
+</tr>
+<tr>
+<td>Zl</td>
+<td>Розділювач рядка</td>
+</tr>
+<tr>
+<td>Zp</td>
+<td>Розділювач абзацу</td>
+</tr>
+<tr>
+<td>Zs</td>
+<td>Пробільний роздільник</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Підтримувані коди властивостей</strong></p>
+<p>Розширені властивості, такі як музичні символи (InMusicalSymbols)
+не підтримуються у PCRE.</p>
+<p>Вказування реєстронезалежного (безреєстрового) режиму не впливає на
+ці керуючі послідовності. Наприклад, <code>\p{Lu}</code> завжди збігається
+тільки з великими літерами.</p>
+<p>Підмножини Unicode символів описуються як такі, що належать певним
+сценарії. Будь-який символ з цих підмножин може бути знайдений з
+використанням імені сценарію. Наприклад:</p>
+<ul>
+<li><code>\p{Greek}</code></li>
+<li><code>\P{Han}</code></li>
+</ul>
+<p>Також ті символи, які не є частиною конкретного сценарію
+об'єднані разом у сценарій <code>Common</code>. Поточний список сценаріїв:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'Arabic'</td>
+<td>Armenian</td>
+<td>'Avestan'</td>
+<td>Balinese</td>
+<td>Bamum</td>
+<td></td>
+</tr>
+<tr>
+<td>Batak</td>
+<td>'Bengali'</td>
+<td>Bopomofo</td>
+<td>'Brahmi'</td>
+<td>'Braille'</td>
+<td></td>
+</tr>
+<tr>
+<td>Buginese</td>
+<td>Buhid</td>
+<td>Canadian_Aboriginal</td>
+<td>Carian</td>
+<td>Chakma</td>
+<td></td>
+</tr>
+<tr>
+<td>Cham</td>
+<td>Cherokee</td>
+<td>Common</td>
+<td>Coptic</td>
+<td>Cuneiform</td>
+<td></td>
+</tr>
+<tr>
+<td>Cypriot</td>
+<td>Cyrillic</td>
+<td>Deseret</td>
+<td>Devanagari</td>
+<td>Egyptian_Hieroglyphs</td>
+<td></td>
+</tr>
+<tr>
+<td>'Ethiopic'</td>
+<td>Georgian</td>
+<td>Glagolitic</td>
+<td>Gothic</td>
+<td>Greek</td>
+<td></td>
+</tr>
+<tr>
+<td>Gujarati</td>
+<td>Gurmukhi</td>
+<td>Han</td>
+<td>Hangul</td>
+<td>Hanunoo</td>
+<td></td>
+</tr>
+<tr>
+<td>Hebrew</td>
+<td>Hiragana</td>
+<td>Imperial_Aramaic</td>
+<td>Inherited</td>
+<td>Inscriptional_Pahlavi</td>
+<td></td>
+</tr>
+<tr>
+<td>Inscriptional_Parthian</td>
+<td>Javanese</td>
+<td>Kaithi</td>
+<td>Kannada</td>
+<td>Katakana</td>
+<td></td>
+</tr>
+<tr>
+<td>Kayah_Li</td>
+<td>Kharoshthi</td>
+<td>Khmer</td>
+<td>Lao</td>
+<td>Latin</td>
+<td></td>
+</tr>
+<tr>
+<td>Lepcha</td>
+<td>Limbu</td>
+<td>Linear_B</td>
+<td>Lisu</td>
+<td>Lycian</td>
+<td></td>
+</tr>
+<tr>
+<td>Lydian</td>
+<td>Malayalam</td>
+<td>Mandaic</td>
+<td>Meetei_Mayek</td>
+<td>Meroitic_Cursive</td>
+<td></td>
+</tr>
+<tr>
+<td>Meroitic_Hieroglyphs</td>
+<td>Miao</td>
+<td>Mongolian</td>
+<td>Myanmar</td>
+<td>New_Tai_Lue</td>
+<td></td>
+</tr>
+<tr>
+<td>Nko</td>
+<td>Ogham</td>
+<td>Old_Italic</td>
+<td>Old_Persian</td>
+<td>Old_South_Arabian</td>
+<td></td>
+</tr>
+<tr>
+<td>Old_Turkic</td>
+<td>Ol_Chiki</td>
+<td>'Oriya'</td>
+<td>Osmanya</td>
+<td>Phags_Pa</td>
+<td></td>
+</tr>
+<tr>
+<td>Phoenician</td>
+<td>Rejang</td>
+<td>Runic</td>
+<td>Samaritan</td>
+<td>Saurashtra</td>
+<td></td>
+</tr>
+<tr>
+<td>Sharada</td>
+<td>Shavian</td>
+<td>Sinhala</td>
+<td>Sora_Sompeng</td>
+<td>Sundanese</td>
+<td></td>
+</tr>
+<tr>
+<td>Syloti_Nagri</td>
+<td>Syriac</td>
+<td>Tagalog</td>
+<td>Tagbanwa</td>
+<td>Tai_Le</td>
+<td></td>
+</tr>
+<tr>
+<td>Tai_Tham</td>
+<td>Tai_Viet</td>
+<td>Takri</td>
+<td>Tamil</td>
+<td>Telugu</td>
+<td></td>
+</tr>
+<tr>
+<td>Thaana</td>
+<td>Thai</td>
+<td>Tibetan</td>
+<td>Tifinagh</td>
+<td>Ugaritic</td>
+<td></td>
+</tr>
+<tr>
+<td>Vai</td>
+<td>'Yi'</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Підтримувані сценарії</strong></p>
+<p><code>\X</code> знаходить розширений Unicode графемний кластер. Розширений
+графемний кластер - це один або кілька символів Unicode, які
+поєднуються в один символьний знак (гліф). Власне, його можна
+розглядати як Unicode еквівалент для <code>.</code>, тому що він знаходить один
+незалежний комплексний символ, незалежно від того, скільки окремих
+символів використовується для його малювання.</p>
+<p>Для версій PCRE до 8.32 (що відповідає версіям PHP до 5.4.14 за
+використання вбудованої бібліотеки (PCRE), <code>\X</code> рівносильний
+<code>(?>\PM\pM*)</code>. Таким чином, він шукає символи без властивості "mark", та
+розглядає послідовність як атомарну групу (див. нижче). Символи
+з властивістю "mark" зазвичай є відмітними ознаками, які
+впливають на попередній символ.</p>
+<p>Збіг символів за Unicode властивістю не є швидкою операцією,
+тому для цієї мети PCRE необхідно здійснити пошук у структурі
+даних з більш ніж п'ятнадцятьма тисячами символів. Тому традиційні
+керуючі послідовності в PCRE, такі як <code>\d</code> та <code>\w</code>, не
+використовують Unicode властивості.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/regexp.reference.unicode.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/regexp.reference.unicode.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"regexp.reference.unicode","slug":"regexp.reference.unicode.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.escape.md\"\u003e« Екрануючі послідовності\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.anchors.md\"\u003eЯкоря »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reference.pcre.pattern.syntax.md\"\u003eОпис синтаксису Perl-сумісних регулярних виразів\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВластивості Unicode-символів\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eВластивості Unicode-символів\u003c/h2\u003e\n\u003cp\u003eПочинаючи з версії 5.1.0, було додано три додаткові керуючі\nпослідовності, що збігаються з деякими загальними символьними типами\n\u003cem\u003eВ режимі UTF-8\u003c/em\u003e. Ось вони:\u003c/p\u003e\n\u003cp\u003e\u003cem\u003e\\p{xx}\u003c/em\u003e\nсимвол із властивістю xx\u003c/p\u003e\n\u003cp\u003e\u003cem\u003e\\P{xx}\u003c/em\u003e\nсимвол без якості xx\u003c/p\u003e\n\u003cp\u003e\u003cem\u003e\\X\u003c/em\u003e\nрозширена послідовність Unicode\u003c/p\u003e\n\u003cp\u003eІмена властивостей, представлені вище як \u003ccode\u003exx\u003c/code\u003e, обмежені загальними\nкатегоріями властивостей Unicode Кожен символ має рівно одне таке\nвластивість, що вказується дволітерною абревіатурою. Для сумісності з\nPerl також можна вказати заперечення додаванням знака \"^\" між\nвідкриває дужкою та ім'ям властивості. Наприклад, \u003ccode\u003e\\p{^Lu}\u003c/code\u003e - це те саме\nсаме, що й \u003ccode\u003e\\P{Lu}\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо з \u003ccode\u003e\\p\u003c/code\u003e або \u003ccode\u003e\\P\u003c/code\u003e вказана лише одна літера, вона включає все\nвластивості, що починаються з цієї літери. В цьому випадку, якщо не\nвикористовується заперечення, фігурні дужки необов'язкові; наступні два\nприклади еквівалентні:\u003c/p\u003e\n\u003cp\u003e\\p{L}\n\\pL\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВластивість Збіг\u003c/th\u003e\n\u003cth\u003eЗауваження\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eC\u003c/td\u003e\n\u003ctd\u003eІнше\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCc\u003c/td\u003e\n\u003ctd\u003eControl\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCf\u003c/td\u003e\n\u003ctd\u003eФормат\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCn\u003c/td\u003e\n\u003ctd\u003eЧи не присвоєно\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCo\u003c/td\u003e\n\u003ctd\u003eПриватне використання\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCs\u003c/td\u003e\n\u003ctd\u003eСурогат\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eL\u003c/td\u003e\n\u003ctd\u003eЛітера\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLl\u003c/td\u003e\n\u003ctd\u003eРядкова літера\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLm\u003c/td\u003e\n\u003ctd\u003eМодифікатор\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLo\u003c/td\u003e\n\u003ctd\u003eІнша літера\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLt\u003c/td\u003e\n\u003ctd\u003eВелика літера\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLu\u003c/td\u003e\n\u003ctd\u003eВелика літера\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eM\u003c/td\u003e\n\u003ctd\u003eЗнак\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eMc\u003c/td\u003e\n\u003ctd\u003eПробільний знак\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eMe\u003c/td\u003e\n\u003ctd\u003eНавколишній знак\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eMn\u003c/td\u003e\n\u003ctd\u003eЧи не пробельний знак\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eN\u003c/td\u003e\n\u003ctd\u003eЧисло\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eNd\u003c/td\u003e\n\u003ctd\u003eдесяткове число\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eNl\u003c/td\u003e\n\u003ctd\u003eЛітерне число\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eNo\u003c/td\u003e\n\u003ctd\u003eІнше\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eP\u003c/td\u003e\n\u003ctd\u003eПунктуація\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePC\u003c/td\u003e\n\u003ctd\u003eПоєднувальна пунктуація\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePd\u003c/td\u003e\n\u003ctd\u003eЗнаки тире\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePe\u003c/td\u003e\n\u003ctd\u003eЗакриваюча пунктуація\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePf\u003c/td\u003e\n\u003ctd\u003eЗаключна пунктуація\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePi\u003c/td\u003e\n\u003ctd\u003eПочаткова пунктуація\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePo\u003c/td\u003e\n\u003ctd\u003eІнша пунктуація\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePs\u003c/td\u003e\n\u003ctd\u003eВідкриваюча пунктуація\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eS\u003c/td\u003e\n\u003ctd\u003eСимвол\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eSc\u003c/td\u003e\n\u003ctd\u003eФінансовий знак\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eSk\u003c/td\u003e\n\u003ctd\u003eМодифікатор\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eSm\u003c/td\u003e\n\u003ctd\u003eМатематичний символ\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eSo\u003c/td\u003e\n\u003ctd\u003eІнший символ\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eZ\u003c/td\u003e\n\u003ctd\u003eРозділювач\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eZl\u003c/td\u003e\n\u003ctd\u003eРозділювач рядка\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eZp\u003c/td\u003e\n\u003ctd\u003eРозділювач абзацу\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eZs\u003c/td\u003e\n\u003ctd\u003eПробільний роздільник\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eПідтримувані коди властивостей\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eРозширені властивості, такі як музичні символи (InMusicalSymbols)\nне підтримуються у PCRE.\u003c/p\u003e\n\u003cp\u003eВказування реєстронезалежного (безреєстрового) режиму не впливає на\nці керуючі послідовності. Наприклад, \u003ccode\u003e\\p{Lu}\u003c/code\u003e завжди збігається\nтільки з великими літерами.\u003c/p\u003e\n\u003cp\u003eПідмножини Unicode символів описуються як такі, що належать певним\nсценарії. Будь-який символ з цих підмножин може бути знайдений з\nвикористанням імені сценарію. Наприклад:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003e\\p{Greek}\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003e\\P{Han}\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eТакож ті символи, які не є частиною конкретного сценарію\nоб'єднані разом у сценарій \u003ccode\u003eCommon\u003c/code\u003e. Поточний список сценаріїв:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e'Arabic'\u003c/td\u003e\n\u003ctd\u003eArmenian\u003c/td\u003e\n\u003ctd\u003e'Avestan'\u003c/td\u003e\n\u003ctd\u003eBalinese\u003c/td\u003e\n\u003ctd\u003eBamum\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eBatak\u003c/td\u003e\n\u003ctd\u003e'Bengali'\u003c/td\u003e\n\u003ctd\u003eBopomofo\u003c/td\u003e\n\u003ctd\u003e'Brahmi'\u003c/td\u003e\n\u003ctd\u003e'Braille'\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eBuginese\u003c/td\u003e\n\u003ctd\u003eBuhid\u003c/td\u003e\n\u003ctd\u003eCanadian_Aboriginal\u003c/td\u003e\n\u003ctd\u003eCarian\u003c/td\u003e\n\u003ctd\u003eChakma\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCham\u003c/td\u003e\n\u003ctd\u003eCherokee\u003c/td\u003e\n\u003ctd\u003eCommon\u003c/td\u003e\n\u003ctd\u003eCoptic\u003c/td\u003e\n\u003ctd\u003eCuneiform\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCypriot\u003c/td\u003e\n\u003ctd\u003eCyrillic\u003c/td\u003e\n\u003ctd\u003eDeseret\u003c/td\u003e\n\u003ctd\u003eDevanagari\u003c/td\u003e\n\u003ctd\u003eEgyptian_Hieroglyphs\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e'Ethiopic'\u003c/td\u003e\n\u003ctd\u003eGeorgian\u003c/td\u003e\n\u003ctd\u003eGlagolitic\u003c/td\u003e\n\u003ctd\u003eGothic\u003c/td\u003e\n\u003ctd\u003eGreek\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eGujarati\u003c/td\u003e\n\u003ctd\u003eGurmukhi\u003c/td\u003e\n\u003ctd\u003eHan\u003c/td\u003e\n\u003ctd\u003eHangul\u003c/td\u003e\n\u003ctd\u003eHanunoo\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eHebrew\u003c/td\u003e\n\u003ctd\u003eHiragana\u003c/td\u003e\n\u003ctd\u003eImperial_Aramaic\u003c/td\u003e\n\u003ctd\u003eInherited\u003c/td\u003e\n\u003ctd\u003eInscriptional_Pahlavi\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eInscriptional_Parthian\u003c/td\u003e\n\u003ctd\u003eJavanese\u003c/td\u003e\n\u003ctd\u003eKaithi\u003c/td\u003e\n\u003ctd\u003eKannada\u003c/td\u003e\n\u003ctd\u003eKatakana\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eKayah_Li\u003c/td\u003e\n\u003ctd\u003eKharoshthi\u003c/td\u003e\n\u003ctd\u003eKhmer\u003c/td\u003e\n\u003ctd\u003eLao\u003c/td\u003e\n\u003ctd\u003eLatin\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLepcha\u003c/td\u003e\n\u003ctd\u003eLimbu\u003c/td\u003e\n\u003ctd\u003eLinear_B\u003c/td\u003e\n\u003ctd\u003eLisu\u003c/td\u003e\n\u003ctd\u003eLycian\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLydian\u003c/td\u003e\n\u003ctd\u003eMalayalam\u003c/td\u003e\n\u003ctd\u003eMandaic\u003c/td\u003e\n\u003ctd\u003eMeetei_Mayek\u003c/td\u003e\n\u003ctd\u003eMeroitic_Cursive\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eMeroitic_Hieroglyphs\u003c/td\u003e\n\u003ctd\u003eMiao\u003c/td\u003e\n\u003ctd\u003eMongolian\u003c/td\u003e\n\u003ctd\u003eMyanmar\u003c/td\u003e\n\u003ctd\u003eNew_Tai_Lue\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eNko\u003c/td\u003e\n\u003ctd\u003eOgham\u003c/td\u003e\n\u003ctd\u003eOld_Italic\u003c/td\u003e\n\u003ctd\u003eOld_Persian\u003c/td\u003e\n\u003ctd\u003eOld_South_Arabian\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eOld_Turkic\u003c/td\u003e\n\u003ctd\u003eOl_Chiki\u003c/td\u003e\n\u003ctd\u003e'Oriya'\u003c/td\u003e\n\u003ctd\u003eOsmanya\u003c/td\u003e\n\u003ctd\u003ePhags_Pa\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ePhoenician\u003c/td\u003e\n\u003ctd\u003eRejang\u003c/td\u003e\n\u003ctd\u003eRunic\u003c/td\u003e\n\u003ctd\u003eSamaritan\u003c/td\u003e\n\u003ctd\u003eSaurashtra\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eSharada\u003c/td\u003e\n\u003ctd\u003eShavian\u003c/td\u003e\n\u003ctd\u003eSinhala\u003c/td\u003e\n\u003ctd\u003eSora_Sompeng\u003c/td\u003e\n\u003ctd\u003eSundanese\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eSyloti_Nagri\u003c/td\u003e\n\u003ctd\u003eSyriac\u003c/td\u003e\n\u003ctd\u003eTagalog\u003c/td\u003e\n\u003ctd\u003eTagbanwa\u003c/td\u003e\n\u003ctd\u003eTai_Le\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eTai_Tham\u003c/td\u003e\n\u003ctd\u003eTai_Viet\u003c/td\u003e\n\u003ctd\u003eTakri\u003c/td\u003e\n\u003ctd\u003eTamil\u003c/td\u003e\n\u003ctd\u003eTelugu\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eThaana\u003c/td\u003e\n\u003ctd\u003eThai\u003c/td\u003e\n\u003ctd\u003eTibetan\u003c/td\u003e\n\u003ctd\u003eTifinagh\u003c/td\u003e\n\u003ctd\u003eUgaritic\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eVai\u003c/td\u003e\n\u003ctd\u003e'Yi'\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eПідтримувані сценарії\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\\X\u003c/code\u003e знаходить розширений Unicode графемний кластер. Розширений\nграфемний кластер - це один або кілька символів Unicode, які\nпоєднуються в один символьний знак (гліф). Власне, його можна\nрозглядати як Unicode еквівалент для \u003ccode\u003e.\u003c/code\u003e, тому що він знаходить один\nнезалежний комплексний символ, незалежно від того, скільки окремих\nсимволів використовується для його малювання.\u003c/p\u003e\n\u003cp\u003eДля версій PCRE до 8.32 (що відповідає версіям PHP до 5.4.14 за\nвикористання вбудованої бібліотеки (PCRE), \u003ccode\u003e\\X\u003c/code\u003e рівносильний\n\u003ccode\u003e(?\u003e\\PM\\pM*)\u003c/code\u003e. Таким чином, він шукає символи без властивості \"mark\", та\nрозглядає послідовність як атомарну групу (див. нижче). Символи\nз властивістю \"mark\" зазвичай є відмітними ознаками, які\nвпливають на попередній символ.\u003c/p\u003e\n\u003cp\u003eЗбіг символів за Unicode властивістю не є швидкою операцією,\nтому для цієї мети PCRE необхідно здійснити пошук у структурі\nданих з більш ніж п'ятнадцятьма тисячами символів. Тому традиційні\nкеруючі послідовності в PCRE, такі як \u003ccode\u003e\\d\u003c/code\u003e та \u003ccode\u003e\\w\u003c/code\u003e, не\nвикористовують Unicode властивості.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"regexp.reference.unicode.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

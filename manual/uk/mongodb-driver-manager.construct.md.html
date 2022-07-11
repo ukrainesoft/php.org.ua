@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mongodb-driver-manager.construct | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mongodb-driver-manager.addsubscriber.md">« MongoDB\Driver\Manager::addSubscriber</a></p>
+</li>
+<li>
+<p><a href="mongodb-driver-manager.createclientencryption.md">MongoDB\Driver\Manager::createClientEncryption »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.mongodb-driver-manager.md">MongoDB\Driver\Manager</a></p>
+</li>
+<li>
+<p>Створює новий Manager MongoDB</p>
+</li>
+</ul>
+<h1>MongoDB\Driver\Manager::__construct</h1>
+<p>(mongodb >=1.0.0)</p>
+<p>MongoDB\Driver\Manager::__construct - Створює новий Manager MongoDB</p>
+<h3>Опис</h3>
+<p>final public <strong>MongoDB\Driver\Manager::__construct</strong>(string <code>$uri</code> =
+"mongodb://127.0.0.1/", array <code>$uriOptions</code> = array(), array
+<code>$driverOptions</code> = array())</p>
+<p>Створює новий об'єкт
+<a href="class.mongodb-driver-manager.md">MongoDB\Driver\Manager</a> з
+переданими параметрами.</p>
+<blockquote>
+<p><strong>Примітка</strong>: У <a href="https://github.com/mongodb/specifications/blob/master/source/server-discovery-and-monitoring/server-discovery-and-monitoring.rst#single-threaded-client-construction">» специфікації з виявлення та моніторингу > сервера</a>,
+цей конструктор не виконує введення-виводу. З'єднання будуть
+ініціалізуватись на вимогу, коли виконується перша операція.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>: Під час передачі будь-яких опцій URI, пов'язаних з SSL або TLS,
+через рядок підключення або параметр uriOptions, драйвер неявно
+включає TLS під час з'єднань. Щоб запобігти цьому, або явно
+вимкніть опцію <code>tls</code>, або не передавайте жодних TLS-опцій.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>: На Unix, драйвер MongoDB чутливий до сценаріїв,
+які використовують системний виклик fork() без наступного exec().
+Користувачам рекомендується не перевикористовувати екземпляр
+<a href="class.mongodb-driver-manager.md">MongoDB\Driver\Manager</a> у дочірньому
+процесі. child process.</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>uri</code>
+URI-адреса підключення
+<a href="https://www.mongodb.com/docs/manual/reference/connection-string/">»mongodb://</a>:</p>
+<pre><code>mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[defaultAuthDb][?options]]
+</code></pre>
+<p>Докладніше про параметри, що підтримуються URI, дивіться розділ <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connections-connection-options">» Параметри
+рядки підключення</a>
+у посібнику MongoDB. <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connection-pool-options">» Параметри пулу підключення</a>
+не підтримуються, т.к. PHP-драйвер не продає пули підключень.</p>
+<p><code>uri</code> - це URL, тому будь-які спеціальні символи у його компонентах
+повинні закодовані відповідно до <a href="http://www.faqs.org/rfcs/rfc3986">» RFC 3986</a>. Це особливо актуально для
+імені користувача та пароля, які часто можуть містити спеціальні
+символи, такі як <code>@</code>, <code>:</code>, або <code>%</code>. При підключенні через доменний
+сокет Unix, шлях сокету може містити спеціальні символи, наприклад
+сліди, які необхідно закодувати. Функція
+<a href="function.rawurlencode.md">rawurlencode()</a> може використовуватися для
+кодування складових частин URI-адреси.</p>
+<p>Компонент <code>defaultAuthDb</code> може використовуватись для вказівки імені бази
+даних, пов'язаних з обліковими даними користувача; однак параметр URI
+<code>authSource</code> матиме пріоритет, якщо він вказаний. Якщо не
+<code>defaultAuthDb</code>, ні <code>authSource</code> не вказані, база даних <code>admin</code> буде
+використовуватися за замовчуванням. Компонент <code>defaultAuthDb</code> не має сенсу
+за відсутності облікових даних користувача.</p>
+<p><code>uriOptions</code>
+Додаткові <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connections-connection-options">» параметри рядка підключення</a>,
+які будуть перезаписувати будь-які параметри з тим самим ім'ям у параметрі
+<code>uri</code>.</p>
+<p>[TABLE]</p>
+<p><strong>uriOptions</strong></p>
+<p><code>driverOptions</code>
+[TABLE]</p>
+<p><strong>driverOptions</strong></p>
+<h3>Помилки</h3>
+<ul>
+<li>При помилці парсингу аргумент кидає виняток <a href="class.mongodb-driver-exception-invalidargumentexception.md">MongoDB\Driver\Exception\InvalidArgumentException</a>.</li>
+<li>При неправильному форматі <code>uri</code> викидає виняток
+<a href="class.mongodb-driver-exception-runtimeexception.md">MongoDB\Driver\Exception\RuntimeException</a>.</li>
+</ul>
+<h3>Список змін</h3>
+<p>[TABLE]</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклади використання
+<strong>MongoDB\Driver\Manager::__construct()</strong></strong></p>
+<p>Підключення до автономного вузла MongoDB:</p>
+<p><code>&#x3C;?php$manager = new MongoDB\Driver\Manager("mongodb://example.com:27017");?></code></p>
+<p>Підключення до автономного сайту MongoDB через доменний сокет Unix. Шлях
+сокет може містити спеціальні символи, наприклад сліші, які
+повинні закодовані за допомогою
+<a href="function.rawurlencode.md">rawurlencode()</a>.</p>
+<p><code>&#x3C;?php$manager = new MongoDB\Driver\Manager("mongodb://" . rawurlencode("/tmp/mongodb-27017.sock"));?></code></p>
+<p>Підключення до набору реплік:</p>
+<p><code>&#x3C;?php$manager = new MongoDB\Driver\Manager("mongodb://rs1.example.com,rs2.example.com/?replicaSet=myReplicaSet");?></code></p>
+<p>Підключення до сегментованого кластера (тобто одну або кілька
+екземплярам mongos):</p>
+<p><code>&#x3C;?php$manager = new MongoDB\Driver\Manager("mongodb://mongos1.example.com,mongos2.example.com/");?></code></p>
+<p>Підключення до MongoDB з обліковими даними аутентифікації для конкретного
+користувача та бази даних:</p>
+<p><code>&#x3C;?php$manager = new MongoDB\Driver\Manager("mongodb://myusername:mypassword@example.com/?authSource=databaseName");?></code></p>
+<p>Підключення до MongoDB з обліковими даними аутентифікації для конкретного
+користувача та бази даних, де ім'я користувача або пароль містять
+спеціальні символи (наприклад, <code>@</code>, <code>:</code>, <code>%</code>). У наступному прикладі,
+рядок з паролем <code>myp@ss:w%rd</code> був вручну екранований; однак
+<a href="function.rawurlencode.md">rawurlencode()</a> може використовуватися для
+екранування URI-компонентів, які можуть містити спеціальні
+символи.</p>
+<p><code>&#x3C;?php$manager = new MongoDB\Driver\Manager("mongodb://myusername:mypassword@example.com/?authSource=databaseName");?></code></p>
+<p>Підключення до MongoDB з автентифікацією X509:</p>
+<p><code>&#x3C;?php$manager = new MongoDB\Driver\Manager(   "mongodb://example.com/?ssl=true&#x26;authMechanism=MONGODB-X509",    []/ | pem",    ]);?> </code></p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="mongodb.connection-handling.md">Обробка підключення та збереження</a></li>
+<li><a href="https://www.mongodb.com/docs/manual/reference/connection-string/">» Формат рядка з'єднання MongoDB</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mongodb-driver-manager.construct.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mongodb-driver-manager.construct.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mongodb-driver-manager.construct","slug":"mongodb-driver-manager.construct.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb-driver-manager.addsubscriber.md\"\u003e« MongoDB\\Driver\\Manager::addSubscriber\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mongodb-driver-manager.createclientencryption.md\"\u003eMongoDB\\Driver\\Manager::createClientEncryption »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mongodb-driver-manager.md\"\u003eMongoDB\\Driver\\Manager\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eСтворює новий Manager MongoDB\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eMongoDB\\Driver\\Manager::__construct\u003c/h1\u003e\n\u003cp\u003e(mongodb \u003e=1.0.0)\u003c/p\u003e\n\u003cp\u003eMongoDB\\Driver\\Manager::__construct - Створює новий Manager MongoDB\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003efinal public \u003cstrong\u003eMongoDB\\Driver\\Manager::__construct\u003c/strong\u003e(string \u003ccode\u003e$uri\u003c/code\u003e =\n\"mongodb://127.0.0.1/\", array \u003ccode\u003e$uriOptions\u003c/code\u003e = array(), array\n\u003ccode\u003e$driverOptions\u003c/code\u003e = array())\u003c/p\u003e\n\u003cp\u003eСтворює новий об'єкт\n\u003ca href=\"class.mongodb-driver-manager.md\"\u003eMongoDB\\Driver\\Manager\u003c/a\u003e з\nпереданими параметрами.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: У \u003ca href=\"https://github.com/mongodb/specifications/blob/master/source/server-discovery-and-monitoring/server-discovery-and-monitoring.rst#single-threaded-client-construction\"\u003e» специфікації з виявлення та моніторингу \u003e сервера\u003c/a\u003e,\nцей конструктор не виконує введення-виводу. З'єднання будуть\nініціалізуватись на вимогу, коли виконується перша операція.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Під час передачі будь-яких опцій URI, пов'язаних з SSL або TLS,\nчерез рядок підключення або параметр uriOptions, драйвер неявно\nвключає TLS під час з'єднань. Щоб запобігти цьому, або явно\nвимкніть опцію \u003ccode\u003etls\u003c/code\u003e, або не передавайте жодних TLS-опцій.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: На Unix, драйвер MongoDB чутливий до сценаріїв,\nякі використовують системний виклик fork() без наступного exec().\nКористувачам рекомендується не перевикористовувати екземпляр\n\u003ca href=\"class.mongodb-driver-manager.md\"\u003eMongoDB\\Driver\\Manager\u003c/a\u003e у дочірньому\nпроцесі. child process.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003euri\u003c/code\u003e\nURI-адреса підключення\n\u003ca href=\"https://www.mongodb.com/docs/manual/reference/connection-string/\"\u003e»mongodb://\u003c/a\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003emongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[defaultAuthDb][?options]]\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eДокладніше про параметри, що підтримуються URI, дивіться розділ \u003ca href=\"https://www.mongodb.com/docs/manual/reference/connection-string/#connections-connection-options\"\u003e» Параметри\nрядки підключення\u003c/a\u003e\nу посібнику MongoDB. \u003ca href=\"https://www.mongodb.com/docs/manual/reference/connection-string/#connection-pool-options\"\u003e» Параметри пулу підключення\u003c/a\u003e\nне підтримуються, т.к. PHP-драйвер не продає пули підключень.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euri\u003c/code\u003e - це URL, тому будь-які спеціальні символи у його компонентах\nповинні закодовані відповідно до \u003ca href=\"http://www.faqs.org/rfcs/rfc3986\"\u003e» RFC 3986\u003c/a\u003e. Це особливо актуально для\nімені користувача та пароля, які часто можуть містити спеціальні\nсимволи, такі як \u003ccode\u003e@\u003c/code\u003e, \u003ccode\u003e:\u003c/code\u003e, або \u003ccode\u003e%\u003c/code\u003e. При підключенні через доменний\nсокет Unix, шлях сокету може містити спеціальні символи, наприклад\nсліди, які необхідно закодувати. Функція\n\u003ca href=\"function.rawurlencode.md\"\u003erawurlencode()\u003c/a\u003e може використовуватися для\nкодування складових частин URI-адреси.\u003c/p\u003e\n\u003cp\u003eКомпонент \u003ccode\u003edefaultAuthDb\u003c/code\u003e може використовуватись для вказівки імені бази\nданих, пов'язаних з обліковими даними користувача; однак параметр URI\n\u003ccode\u003eauthSource\u003c/code\u003e матиме пріоритет, якщо він вказаний. Якщо не\n\u003ccode\u003edefaultAuthDb\u003c/code\u003e, ні \u003ccode\u003eauthSource\u003c/code\u003e не вказані, база даних \u003ccode\u003eadmin\u003c/code\u003e буде\nвикористовуватися за замовчуванням. Компонент \u003ccode\u003edefaultAuthDb\u003c/code\u003e не має сенсу\nза відсутності облікових даних користувача.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euriOptions\u003c/code\u003e\nДодаткові \u003ca href=\"https://www.mongodb.com/docs/manual/reference/connection-string/#connections-connection-options\"\u003e» параметри рядка підключення\u003c/a\u003e,\nякі будуть перезаписувати будь-які параметри з тим самим ім'ям у параметрі\n\u003ccode\u003euri\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e[TABLE]\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003euriOptions\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edriverOptions\u003c/code\u003e\n[TABLE]\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003edriverOptions\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eПри помилці парсингу аргумент кидає виняток \u003ca href=\"class.mongodb-driver-exception-invalidargumentexception.md\"\u003eMongoDB\\Driver\\Exception\\InvalidArgumentException\u003c/a\u003e.\u003c/li\u003e\n\u003cli\u003eПри неправильному форматі \u003ccode\u003euri\u003c/code\u003e викидає виняток\n\u003ca href=\"class.mongodb-driver-exception-runtimeexception.md\"\u003eMongoDB\\Driver\\Exception\\RuntimeException\u003c/a\u003e.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003cp\u003e[TABLE]\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклади використання\n\u003cstrong\u003eMongoDB\\Driver\\Manager::__construct()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПідключення до автономного вузла MongoDB:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$manager = new MongoDB\\Driver\\Manager(\"mongodb://example.com:27017\");?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПідключення до автономного сайту MongoDB через доменний сокет Unix. Шлях\nсокет може містити спеціальні символи, наприклад сліші, які\nповинні закодовані за допомогою\n\u003ca href=\"function.rawurlencode.md\"\u003erawurlencode()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$manager = new MongoDB\\Driver\\Manager(\"mongodb://\" . rawurlencode(\"/tmp/mongodb-27017.sock\"));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПідключення до набору реплік:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$manager = new MongoDB\\Driver\\Manager(\"mongodb://rs1.example.com,rs2.example.com/?replicaSet=myReplicaSet\");?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПідключення до сегментованого кластера (тобто одну або кілька\nекземплярам mongos):\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$manager = new MongoDB\\Driver\\Manager(\"mongodb://mongos1.example.com,mongos2.example.com/\");?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПідключення до MongoDB з обліковими даними аутентифікації для конкретного\nкористувача та бази даних:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$manager = new MongoDB\\Driver\\Manager(\"mongodb://myusername:mypassword@example.com/?authSource=databaseName\");?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПідключення до MongoDB з обліковими даними аутентифікації для конкретного\nкористувача та бази даних, де ім'я користувача або пароль містять\nспеціальні символи (наприклад, \u003ccode\u003e@\u003c/code\u003e, \u003ccode\u003e:\u003c/code\u003e, \u003ccode\u003e%\u003c/code\u003e). У наступному прикладі,\nрядок з паролем \u003ccode\u003emyp@ss:w%rd\u003c/code\u003e був вручну екранований; однак\n\u003ca href=\"function.rawurlencode.md\"\u003erawurlencode()\u003c/a\u003e може використовуватися для\nекранування URI-компонентів, які можуть містити спеціальні\nсимволи.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$manager = new MongoDB\\Driver\\Manager(\"mongodb://myusername:mypassword@example.com/?authSource=databaseName\");?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПідключення до MongoDB з автентифікацією X509:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$manager = new MongoDB\\Driver\\Manager(   \"mongodb://example.com/?ssl=true\u0026#x26;authMechanism=MONGODB-X509\",    []/ | pem\",    ]);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mongodb.connection-handling.md\"\u003eОбробка підключення та збереження\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://www.mongodb.com/docs/manual/reference/connection-string/\"\u003e» Формат рядка з'єднання MongoDB\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mongodb-driver-manager.construct.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

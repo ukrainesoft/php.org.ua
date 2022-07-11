@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>sockets.examples | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="sockets.constants.md">«Зумовлені константи</a></p>
+</li>
+<li>
+<p><a href="sockets.errors.md">Помилки сокетів »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.sockets.md">Сокети</a></p>
+</li>
+<li>
+<p>Приклади</p>
+</li>
+</ul>
+<h1>Приклади</h1>
+<p><strong>Приклад #1 Приклад використання сокетів: Простий сервер TCP/IP</strong></p>
+<p>Цей приклад показує роботу простого сервера. Змініть змінні
+<code>address</code> та <code>port</code> відповідно до ваших налаштувань і виконайте.
+Потім ви можете з'єднатися з сервером із командою, схожою на: <strong>telnet
+192.168.1.53 10000</strong> (де адреса та порт повинні відповідати вашим
+налаштувань). Все, що ви наберете на клавіатурі, буде виведено на
+сервері та відправлено вам назад. Щоб вимкнути, наберіть 'вихід'.</p>
+<p><code>#!/usr/local/bin/php -q&#x3C;?phperror_reporting(E_ALL);/* Дозволяє скрипту чекати з'єднання нескінченно. */set_time_limit(0);/* Включає приховане очищення висновку так, ми ми бачимо дані ** як тільки вони з'являються. */ob_implicit_flush();$address = '192.168.1.53';$port = 10000;if (($sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) =   причина: " . socket_strerror(socket_last_error()) . " ";}if(socket_bind($sock, $address, $port) === false) {   echo "Не удалося виконати socket_bind(): причина: "' . socket_strerror(so$las) ";}if(socket_listen($sock, 5) === false) {    echo "Не удалося виконати socket_listen(): причина: " . socket_strerror(socket_last_error($so) ";}do {    if (($msgsock = socket_accept($sock)) === false) {        echo "Не удалося виконано socket_accept(): | ";        break;    }    /* Відправляємо інструкції. */   $msg = " Ласкаво просимо на тестовий сервер PHP. Щоб відключитися, наберіть вихід. Щоб вимкнути сервер, наберіть вимикання. ";    socket_write($msgsock, $msg, strlen($msg));    do {        if (false === ($buf = socket_read($msgsock, 2048, PHP_NORMAL_READ))) {            echo "Не удалось выполнить socket_read(): причина: " . socket_strerror(socket_last_error($msgsock)) . " ";            break 2;        }        if (!$buf = trim($buf)) {            continue;        }        if ($buf == 'выход') {            break;        }        if ($buf == 'выключение') {            socket_close($ msgsock);             break 2;       }        $talkback = "PHP: Ви сказали '$bu'. ";    socket_write($msgsock, $talkback, strlen($talkback));        echo "$buf ";    } while (true);    socket_close($msgsock);} while (true);socket_close($sock);?></code></p>
+<p><strong>Приклад #2 Приклад використання сокетів: Простий клієнт TCP/IP</strong></p>
+<p>Цей приклад показує використання простого одноразового HTTP-клієнта.
+Він просто з'єднується зі сторінкою, надсилає запит HEAD, виводить
+відповідь та завершує роботу.</p>
+<p>` &#x3C;?phperror_reporting(E_ALL);echo "З'єднанняTCP/IP
+";/* Отримуємо порт сервісу <a href="http://WWW.%C2%A0">WWW. </a><em>/$service_port = getservbyname('www', 'tcp');/</em> Отримуємо IP-адресу цільового хоста. <em>/$address = gethostbyname('www; /</em> Створюємо сокет TCP/IP. */$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);if ($socket === false) {? ) . "
+";} else {    echo "OK.
+";}echo "Намагаємося з'єднатися з '$address' на порту '$service_port'...";$result = socket_connect($socket, $address, $service_port);if ($result === false)      Не вдалося виконати socket_connect ().
+Причина: ($result) " . socket_strerror(socket_last_error($socket)) . "
+";} else {    echo "OK.
+";}$in = "HEAD / HTTP/1.1
+";$in .= "Host: <a href="http://www.example.com">www.example.com</a>
+";$in .= "Connection: Close</p>
+<p>";$out = '';echo "Відправляємо HTTP-запит HEAD...";socket_write($socket, $in, strlen($in));echo "OK.
+";echo "Читаємо відповідь:</p>
+<p>";while ($out = socket_read($socket, 2048)) {    echo $out;}echo "Закриваємо сокет...";socket_close($socket);echo "OK.</p>
+<p>";?> `</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/sockets.examples.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/sockets.examples.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"sockets.examples","slug":"sockets.examples.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"sockets.constants.md\"\u003e«Зумовлені константи\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"sockets.errors.md\"\u003eПомилки сокетів »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.sockets.md\"\u003eСокети\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПриклади\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eПриклади\u003c/h1\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання сокетів: Простий сервер TCP/IP\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЦей приклад показує роботу простого сервера. Змініть змінні\n\u003ccode\u003eaddress\u003c/code\u003e та \u003ccode\u003eport\u003c/code\u003e відповідно до ваших налаштувань і виконайте.\nПотім ви можете з'єднатися з сервером із командою, схожою на: \u003cstrong\u003etelnet\n192.168.1.53 10000\u003c/strong\u003e (де адреса та порт повинні відповідати вашим\nналаштувань). Все, що ви наберете на клавіатурі, буде виведено на\nсервері та відправлено вам назад. Щоб вимкнути, наберіть 'вихід'.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e#!/usr/local/bin/php -q\u0026#x3C;?phperror_reporting(E_ALL);/* Дозволяє скрипту чекати з'єднання нескінченно. */set_time_limit(0);/* Включає приховане очищення висновку так, ми ми бачимо дані ** як тільки вони з'являються. */ob_implicit_flush();$address = '192.168.1.53';$port = 10000;if (($sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) =   причина: \" . socket_strerror(socket_last_error()) . \" \";}if(socket_bind($sock, $address, $port) === false) {   echo \"Не удалося виконати socket_bind(): причина: \"' . socket_strerror(so$las) \";}if(socket_listen($sock, 5) === false) {    echo \"Не удалося виконати socket_listen(): причина: \" . socket_strerror(socket_last_error($so) \";}do {    if (($msgsock = socket_accept($sock)) === false) {        echo \"Не удалося виконано socket_accept(): | \";        break;    }    /* Відправляємо інструкції. */   $msg = \" Ласкаво просимо на тестовий сервер PHP. Щоб відключитися, наберіть вихід. Щоб вимкнути сервер, наберіть вимикання. \";    socket_write($msgsock, $msg, strlen($msg));    do {        if (false === ($buf = socket_read($msgsock, 2048, PHP_NORMAL_READ))) {            echo \"Не удалось выполнить socket_read(): причина: \" . socket_strerror(socket_last_error($msgsock)) . \" \";            break 2;        }        if (!$buf = trim($buf)) {            continue;        }        if ($buf == 'выход') {            break;        }        if ($buf == 'выключение') {            socket_close($ msgsock);             break 2;       }        $talkback = \"PHP: Ви сказали '$bu'. \";    socket_write($msgsock, $talkback, strlen($talkback));        echo \"$buf \";    } while (true);    socket_close($msgsock);} while (true);socket_close($sock);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклад використання сокетів: Простий клієнт TCP/IP\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЦей приклад показує використання простого одноразового HTTP-клієнта.\nВін просто з'єднується зі сторінкою, надсилає запит HEAD, виводить\nвідповідь та завершує роботу.\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?phperror_reporting(E_ALL);echo \"З'єднанняTCP/IP\n\";/* Отримуємо порт сервісу \u003ca href=\"http://WWW.%C2%A0\"\u003eWWW. \u003c/a\u003e\u003cem\u003e/$service_port = getservbyname('www', 'tcp');/\u003c/em\u003e Отримуємо IP-адресу цільового хоста. \u003cem\u003e/$address = gethostbyname('www; /\u003c/em\u003e Створюємо сокет TCP/IP. */$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);if ($socket === false) {? ) . \"\n\";} else {    echo \"OK.\n\";}echo \"Намагаємося з'єднатися з '$address' на порту '$service_port'...\";$result = socket_connect($socket, $address, $service_port);if ($result === false)      Не вдалося виконати socket_connect ().\nПричина: ($result) \" . socket_strerror(socket_last_error($socket)) . \"\n\";} else {    echo \"OK.\n\";}$in = \"HEAD / HTTP/1.1\n\";$in .= \"Host: \u003ca href=\"http://www.example.com\"\u003ewww.example.com\u003c/a\u003e\n\";$in .= \"Connection: Close\u003c/p\u003e\n\u003cp\u003e\";$out = '';echo \"Відправляємо HTTP-запит HEAD...\";socket_write($socket, $in, strlen($in));echo \"OK.\n\";echo \"Читаємо відповідь:\u003c/p\u003e\n\u003cp\u003e\";while ($out = socket_read($socket, 2048)) {    echo $out;}echo \"Закриваємо сокет...\";socket_close($socket);echo \"OK.\u003c/p\u003e\n\u003cp\u003e\";?\u003e `\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"sockets.examples.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

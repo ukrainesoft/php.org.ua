@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.fsockopen | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.dns-get-record.md">« dns_get_record</a></p>
+</li>
+<li>
+<p><a href="function.gethostbyaddr.md">gethostbyaddr »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.network.md">Мережні функції</a></p>
+</li>
+<li>
+<p>Відкриває з'єднання з інтернет-сокетом або доменним сокетом Unix</p>
+</li>
+</ul>
+<h1>fsockopen</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>fsockopen — Відкриває з'єднання з інтернет-сокетом або доменним сокетом
+Unix</p>
+<h3>Опис</h3>
+<p><strong>fsockopen</strong>(
+string <code>$hostname</code>,
+int <code>$port</code> = -1,
+int <code>&#x26;$error_code</code> = <strong><code>null</code></strong>,
+string <code>&#x26;$error_message</code> = <strong><code>null</code></strong>,
+?float <code>$timeout</code> = <strong><code>null</code></strong>
+): resource \ | false</p>
+<p>Встановлює з'єднання із сокетом ресурсу <code>hostname</code>.</p>
+<p>PHP підтримує цільові ресурси в інтернеті та Unix-доменах у тому вигляді,
+як вони описані в <a href="transports.md">Список підтримуваних транспортних протоколів</a>. Список підтримуваних транспортів можна
+отримати за допомогою функції
+<a href="function.stream-get-transports.md">stream_get_transports()</a>.</p>
+<p>За умовчанням сокет буде відкритий у режимі блокування. Переключити його на
+неблокуючий режим можна функцією
+<a href="function.stream-set-blocking.md">stream_set_blocking()</a>.</p>
+<p><a href="function.stream-socket-client.md">stream_socket_client()</a> виконує
+аналогічну функцію, але надає більш широкий вибір налаштувань
+з'єднання, що включає встановлення неблокуючого режиму та можливість
+надання потокового контексту.</p>
+<h3>Список параметрів</h3>
+<p><code>hostname</code>
+Якщо <a href="openssl.installation.md">встановлена</a> підтримка OpenSSL, можна
+використовувати SSL- або TLS-протоколи з'єднань поверх TCP/IP при
+підключення до віддаленого хоста. Для цього перед <code>hostname</code> потрібно
+додати префікс <code>ssl://</code> або <code>tls://</code>.</p>
+<p><code>port</code>
+Номер порту. Його можна не вказувати, передавши <code>-1</code> для тих протоколів,
+які використовують порти, наприклад <code>unix://</code>.</p>
+<p><code>error_code</code>
+Якщо цей параметр надати, то у разі виникнення помилки
+системного виклику функції <code>connect()</code> він прийматиме номер цієї
+помилки.</p>
+<p>Якщо значення параметра <code>error_code</code> дорівнює <code>0</code>, а функція повернула
+<strong><code>false</code></strong>, отже помилка сталася до виклику <code>connect()</code>. В
+в більшості випадків це свідчить про проблеми при ініціалізації
+сокет.</p>
+<p><code>error_message</code>
+Повідомлення про помилку у вигляді рядка.</p>
+<p><code>timeout</code>
+Час очікування з'єднання за секунди. Якщо <strong><code>null</code></strong>, використовується
+налаштування <code>php.ini</code>
+<a href="filesystem.configuration.md#ini.default-socket-timeout">default_socket_timeout</a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо потрібно встановити час очікування/запису даних через
+сокет, використовуйте функцію
+<a href="function.stream-set-timeout.md">stream_set_timeout()</a>, т.к.
+параметр <code>timeout</code> функції <strong>fsockopen()</strong> обмежує лише час
+процесу встановлення з'єднання із сокетом.</p>
+</blockquote>
+<h3>Значення, що повертаються</h3>
+<p><strong>fsockopen()</strong> повертає файловий покажчик, який можна
+використовувати з функціями, що працюють із файлами (такі як
+<a href="function.fgets.md">fgets()</a>, <a href="function.fgetss.md">fgetss()</a>,
+<a href="function.fwrite.md">fwrite()</a>, <a href="function.fclose.md">fclose()</a> та
+<a href="function.feof.md">feof()</a>). Якщо дзвінок завершиться невдало, функція
+поверне <strong><code>false</code></strong>.</p>
+<h3>Помилки</h3>
+<p>Викликає помилку рівня <strong><code>E_WARNING</code></strong>, якщо <code>hostname</code> не є
+допустимим доменом.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>timeout тепер допускає значення null.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>fsockopen()</strong></strong></p>
+<p>` &#x3C;?php$fp = fsockopen("<a href="http://www.example.com%22,%C2%A080,%C2%A0$errno,%C2%A0$errstr,%C2%A030);if%C2%A0(!$fp)%C2%A0%7B%C2%A0%C2%A0%C2%A0echo%C2%A0%22$errstr%C2%A0($errno)%3Cbr%C2%A0/">www.example.com", 80, $errno, $errstr, 30);if (!$fp) {   echo "$errstr ($errno)&#x3C;br /</a>>
+";} else {   $out = "GET//HTTP/1.1
+";   $out .= "Host: <a href="http://www.example.com">www.example.com</a>
+";   $out .= "Connection: Close</p>
+<p>";   fwrite($fp, $out);   while (!feof($fp)) {        echo fgets($fp, 128);    } |</p>
+<p><strong>Приклад #2 Використання UDP-з'єднання</strong></p>
+<p>Приклад нижче демонструє, як отримати день і час від служби UDP
+"daytime" (порт 13) на вашій машині.</p>
+<p><code>&#x3C;?php$fp = fsockopen("udp://127.0.0.1", 13, $errno, $errstr);if (!$fp) {   echo "ERROR: $errno - $rr> ";} else {   fwrite($fp, " ");   echofread($fp, 26);   fclose($fp);}?></code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Залежно від оточення, Unix-домен або час очікування установки
+підключення можуть бути недоступними.</p>
+</blockquote>
+<p><strong>Увага</strong></p>
+<p>Іноді UDP-сокети набувають статусу відкритих, навіть якщо віддалений хост
+недоступний. Помилка проявить себе лише під час читання чи запису даних
+в/з цього сокету. Причина цього полягає в тому, що протокол UDP
+передає дані без встановлення з'єднання, а це означає, що
+операційна система не встановлює та не тримає з'єднання з сокетом,
+поки не розпочнеться передача даних.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Якщо вказувати числову адресу IPv6 (наприклад,
+<code>fe80::1</code>) ви повинні укладати його у квадратні дужки. Наприклад,
+<code>tcp://[fe80::1]:80</code>.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.pfsockopen.md">pfsockopen()</a> - Відкриває постійне
+з'єднання з інтернет-сокетом або доменним сокетом Unix</li>
+<li><a href="function.stream-socket-client.md">stream_socket_client()</a> -
+Відкрити з'єднання з інтернет-сокетом або доменним сокетом Unix</li>
+<li><a href="function.stream-set-blocking.md">stream_set_blocking()</a> -
+Встановити блокуючий/неблокуючий режим у потоці</li>
+<li><a href="function.stream-set-timeout.md">stream_set_timeout()</a> -
+Встановити час очікування для потоку</li>
+<li><a href="function.fgets.md">fgets()</a> - Читає рядок із файлу</li>
+<li><a href="function.fgetss.md">fgetss()</a> - Читає рядок з файлу та видаляє
+HTML-теги</li>
+<li><a href="function.fwrite.md">fwrite()</a> - Бінарно-безпечний запис у файл</li>
+<li><a href="function.fclose.md">fclose()</a> - Закриває відкритий дескриптор
+файлу</li>
+<li><a href="function.feof.md">feof()</a> - Перевіряє, чи кінець файлу досягнуто</li>
+<li><a href="function.socket-connect.md">socket_connect()</a> - Починає
+з'єднання з сокетом</li>
+<li><a href="ref.curl.md">Модуль Curl</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.fsockopen.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.fsockopen.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.fsockopen","slug":"function.fsockopen.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.dns-get-record.md\"\u003e« dns_get_record\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.gethostbyaddr.md\"\u003egethostbyaddr »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.network.md\"\u003eМережні функції\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВідкриває з'єднання з інтернет-сокетом або доменним сокетом Unix\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003efsockopen\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003efsockopen — Відкриває з'єднання з інтернет-сокетом або доменним сокетом\nUnix\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003efsockopen\u003c/strong\u003e(\nstring \u003ccode\u003e$hostname\u003c/code\u003e,\nint \u003ccode\u003e$port\u003c/code\u003e = -1,\nint \u003ccode\u003e\u0026#x26;$error_code\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\nstring \u003ccode\u003e\u0026#x26;$error_message\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\n?float \u003ccode\u003e$timeout\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\n): resource \\ | false\u003c/p\u003e\n\u003cp\u003eВстановлює з'єднання із сокетом ресурсу \u003ccode\u003ehostname\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003ePHP підтримує цільові ресурси в інтернеті та Unix-доменах у тому вигляді,\nяк вони описані в \u003ca href=\"transports.md\"\u003eСписок підтримуваних транспортних протоколів\u003c/a\u003e. Список підтримуваних транспортів можна\nотримати за допомогою функції\n\u003ca href=\"function.stream-get-transports.md\"\u003estream_get_transports()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЗа умовчанням сокет буде відкритий у режимі блокування. Переключити його на\nнеблокуючий режим можна функцією\n\u003ca href=\"function.stream-set-blocking.md\"\u003estream_set_blocking()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"function.stream-socket-client.md\"\u003estream_socket_client()\u003c/a\u003e виконує\nаналогічну функцію, але надає більш широкий вибір налаштувань\nз'єднання, що включає встановлення неблокуючого режиму та можливість\nнадання потокового контексту.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003ehostname\u003c/code\u003e\nЯкщо \u003ca href=\"openssl.installation.md\"\u003eвстановлена\u003c/a\u003e підтримка OpenSSL, можна\nвикористовувати SSL- або TLS-протоколи з'єднань поверх TCP/IP при\nпідключення до віддаленого хоста. Для цього перед \u003ccode\u003ehostname\u003c/code\u003e потрібно\nдодати префікс \u003ccode\u003essl://\u003c/code\u003e або \u003ccode\u003etls://\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eport\u003c/code\u003e\nНомер порту. Його можна не вказувати, передавши \u003ccode\u003e-1\u003c/code\u003e для тих протоколів,\nякі використовують порти, наприклад \u003ccode\u003eunix://\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eerror_code\u003c/code\u003e\nЯкщо цей параметр надати, то у разі виникнення помилки\nсистемного виклику функції \u003ccode\u003econnect()\u003c/code\u003e він прийматиме номер цієї\nпомилки.\u003c/p\u003e\n\u003cp\u003eЯкщо значення параметра \u003ccode\u003eerror_code\u003c/code\u003e дорівнює \u003ccode\u003e0\u003c/code\u003e, а функція повернула\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, отже помилка сталася до виклику \u003ccode\u003econnect()\u003c/code\u003e. В\nв більшості випадків це свідчить про проблеми при ініціалізації\nсокет.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eerror_message\u003c/code\u003e\nПовідомлення про помилку у вигляді рядка.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003etimeout\u003c/code\u003e\nЧас очікування з'єднання за секунди. Якщо \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, використовується\nналаштування \u003ccode\u003ephp.ini\u003c/code\u003e\n\u003ca href=\"filesystem.configuration.md#ini.default-socket-timeout\"\u003edefault_socket_timeout\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо потрібно встановити час очікування/запису даних через\nсокет, використовуйте функцію\n\u003ca href=\"function.stream-set-timeout.md\"\u003estream_set_timeout()\u003c/a\u003e, т.к.\nпараметр \u003ccode\u003etimeout\u003c/code\u003e функції \u003cstrong\u003efsockopen()\u003c/strong\u003e обмежує лише час\nпроцесу встановлення з'єднання із сокетом.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003efsockopen()\u003c/strong\u003e повертає файловий покажчик, який можна\nвикористовувати з функціями, що працюють із файлами (такі як\n\u003ca href=\"function.fgets.md\"\u003efgets()\u003c/a\u003e, \u003ca href=\"function.fgetss.md\"\u003efgetss()\u003c/a\u003e,\n\u003ca href=\"function.fwrite.md\"\u003efwrite()\u003c/a\u003e, \u003ca href=\"function.fclose.md\"\u003efclose()\u003c/a\u003e та\n\u003ca href=\"function.feof.md\"\u003efeof()\u003c/a\u003e). Якщо дзвінок завершиться невдало, функція\nповерне \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cp\u003eВикликає помилку рівня \u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e, якщо \u003ccode\u003ehostname\u003c/code\u003e не є\nдопустимим доменом.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003etimeout тепер допускає значення null.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003efsockopen()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$fp = fsockopen(\"\u003ca href=\"http://www.example.com%22,%C2%A080,%C2%A0$errno,%C2%A0$errstr,%C2%A030);if%C2%A0(!$fp)%C2%A0%7B%C2%A0%C2%A0%C2%A0echo%C2%A0%22$errstr%C2%A0($errno)%3Cbr%C2%A0/\"\u003ewww.example.com\", 80, $errno, $errstr, 30);if (!$fp) {   echo \"$errstr ($errno)\u0026#x3C;br /\u003c/a\u003e\u003e\n\";} else {   $out = \"GET//HTTP/1.1\n\";   $out .= \"Host: \u003ca href=\"http://www.example.com\"\u003ewww.example.com\u003c/a\u003e\n\";   $out .= \"Connection: Close\u003c/p\u003e\n\u003cp\u003e\";   fwrite($fp, $out);   while (!feof($fp)) {        echo fgets($fp, 128);    } |\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Використання UDP-з'єднання\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПриклад нижче демонструє, як отримати день і час від служби UDP\n\"daytime\" (порт 13) на вашій машині.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$fp = fsockopen(\"udp://127.0.0.1\", 13, $errno, $errstr);if (!$fp) {   echo \"ERROR: $errno - $rr\u003e \";} else {   fwrite($fp, \" \");   echofread($fp, 26);   fclose($fp);}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЗалежно від оточення, Unix-домен або час очікування установки\nпідключення можуть бути недоступними.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eІноді UDP-сокети набувають статусу відкритих, навіть якщо віддалений хост\nнедоступний. Помилка проявить себе лише під час читання чи запису даних\nв/з цього сокету. Причина цього полягає в тому, що протокол UDP\nпередає дані без встановлення з'єднання, а це означає, що\nопераційна система не встановлює та не тримає з'єднання з сокетом,\nпоки не розпочнеться передача даних.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Якщо вказувати числову адресу IPv6 (наприклад,\n\u003ccode\u003efe80::1\u003c/code\u003e) ви повинні укладати його у квадратні дужки. Наприклад,\n\u003ccode\u003etcp://[fe80::1]:80\u003c/code\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.pfsockopen.md\"\u003epfsockopen()\u003c/a\u003e - Відкриває постійне\nз'єднання з інтернет-сокетом або доменним сокетом Unix\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.stream-socket-client.md\"\u003estream_socket_client()\u003c/a\u003e -\nВідкрити з'єднання з інтернет-сокетом або доменним сокетом Unix\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.stream-set-blocking.md\"\u003estream_set_blocking()\u003c/a\u003e -\nВстановити блокуючий/неблокуючий режим у потоці\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.stream-set-timeout.md\"\u003estream_set_timeout()\u003c/a\u003e -\nВстановити час очікування для потоку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fgets.md\"\u003efgets()\u003c/a\u003e - Читає рядок із файлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fgetss.md\"\u003efgetss()\u003c/a\u003e - Читає рядок з файлу та видаляє\nHTML-теги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fwrite.md\"\u003efwrite()\u003c/a\u003e - Бінарно-безпечний запис у файл\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fclose.md\"\u003efclose()\u003c/a\u003e - Закриває відкритий дескриптор\nфайлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.feof.md\"\u003efeof()\u003c/a\u003e - Перевіряє, чи кінець файлу досягнуто\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.socket-connect.md\"\u003esocket_connect()\u003c/a\u003e - Починає\nз'єднання з сокетом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ref.curl.md\"\u003eМодуль Curl\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.fsockopen.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

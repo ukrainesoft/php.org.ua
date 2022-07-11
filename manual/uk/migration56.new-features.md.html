@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration56.new-features | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration56.incompatible.md">« Зміни, що ламають зворотну сумісність</a></p>
+</li>
+<li>
+<p><a href="migration56.deprecated.md">Функціонал, оголошений застарілим у PHP 5.6.x »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration56.md">Міграція з PHP 5.5.x на PHP 5.6.x</a></p>
+</li>
+<li>
+<p>Нові можливості</p>
+</li>
+</ul>
+<h2>Нові можливості</h2>
+<h3>Константні вирази</h3>
+<p>Тепер можна надати скалярний вираз, що включає числові та
+строкові літерали та/або константи, коли раніше очікувалося статичне
+значення, наприклад, в оголошеннях констант або значення аргументів
+функцій за промовчанням.</p>
+<p><code>&#x3C;?phpconst ONE = 1;const TWO = ONE * 2;class C {   const THREE = TWO + 1; const ONE_THIRD = ONE / self::THREE; const SENTENCE = 'Значення константи THREE - '.self::THREE; public function f($a = ONE + self::THREE) {        return $a; }}echo (new C)->f()." ";echo C::SENTENCE;?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>4
+Значення константи THREE - 3</p>
+<p>Також можна визначити масив (array) із використанням ключового слова
+<code>const</code>:</p>
+<p><code>&#x3C;?phpconst ARR = ['a', 'b'];echo ARR[0];?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>a</p>
+<h3>Функції зі змінною кількістю аргументів, використовуючи синтаксис <code>...</code></h3>
+<p><a href="functions.arguments.md#functions.variable-arg-list">Функції зі змінною кількістю аргументів</a> тепер
+можна реалізовувати з використанням оператора <code>...</code> замість того, щоб
+покладатися на <a href="function.func-get-args.md">func_get_args()</a>.</p>
+<p><code>&#x3C;?phpfunction f($req, $opt = null, ...$params) {     // $params - масив, містить всі решти аргументи. printf('$req: %d; $opt: %d; кількість параметрів: %d'." ",           $req, $opt, count($params));}f(1);f(1, 2);f(1, 2, 3);f(1, 2, 3, 4);f( 1, 2, 3, 4, 5);?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>$req: 1; $opt: 0; кількість параметрів: 0
+$req: 1; $opt: 2; кількість параметрів: 0
+$req: 1; $opt: 2; кількість параметрів: 1
+$req: 1; $opt: 2; кількість параметрів: 2
+$req: 1; $opt: 2; кількість параметрів: 3</p>
+<h3>Розпакування аргументів за допомогою <code>...</code></h3>
+<p><a href="language.types.array.md">Массивы</a> та об'єкти, що реалізують інтерфейс
+<a href="class.traversable.md">Traversable</a>, можуть бути розпаковані до списку
+аргументів під час передачі у функцію з допомогою оператора <code>...</code>.</p>
+<p><code>&#x3C;?phpfunction add($a, $b, $c) {   return $a + $b + $c;}$operators = [2, 3];echo add(1, ...$operators);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>6</p>
+<h3>Зведення в ступінь за допомогою <code>**</code></h3>
+<p>Доданий право-асоціативний оператор <code>**</code>, що позначає зведення в
+ступінь. Також доступний короткий синтаксис <code>**=</code>.</p>
+<p><code>&#x3C;?phpprintf("2 ** 3 ==      %d ", 2 ** 3);printf("2 ** 3 ** 2 == %d ", 2 ** 3 ** 2);$a = 2;$a **= 3;printf("a ==            %d ", $a);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>2 ** 3 == 8
+2 ** 3 ** 2 == 512
+a == 8</p>
+<h3><code>use function</code> та <code>use const</code></h3>
+<p>Оператор <a href="language.namespaces.importing.md"><code>use</code></a> був розширений
+підтримки імпорту функцій та констант на додаток до класів. Це
+досягається за допомогою конструкцій <code>use function</code> та <code>use const</code>,
+відповідно.</p>
+<p><code>&#x3C;?phpnamespace Name\Space {    const FOO = 42; function f() { echo __FUNCTION__." "; }}namespace {    use const Name\Space\FOO;    useuse function Name\Space ;    echo FOO." ";   f();}?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>42
+Name\Space</p>
+<h3>phpdbg</h3>
+<p>Тепер PHP містить інтерактивний дебаггер, що називається "phpdbg" і
+реалізований як модуль SAPI. Подробиці дивіться в <a href="book.phpdbg.md">документації phpdbg</a>.</p>
+<h3>Кодування за замовчуванням</h3>
+<p>Доданий ini-параметр
+<a href="ini.core.md#ini.default-charset">default_charset</a>, у якому можна
+вказати кодування за замовчуванням для використання у функціях
+<a href="function.mdentities.md">htmlentities()</a>,
+<a href="function.md-entity-decode.md">html_entity_decode()</a> та
+<a href="function.mdspecialchars.md">htmlspecialchars()</a>. Зверніть увагу,
+якщо (зараз вважається застарілим) задані параметри кодування iconv
+і mbstring, вони будуть мати перевагу перед default_charset для iconv
+та mbstring.</p>
+<p>Значення цієї настройки за замовчуванням дорівнює UTF-8.</p>
+<h3>Перевикористання <a href="wrappers.php.md#wrappers.php.input"><code>php://input</code></a></h3>
+<p><a href="wrappers.php.md#wrappers.php.input"><code>php://input</code></a> тепер можна
+перевідкривати та зчитувати стільки разів, скільки потрібно. Це також спричинило
+до значного зменшення обсягу пам'яті, необхідної для роботи з
+даними POST.</p>
+<h3>Завантаження великих файлів</h3>
+<p>Тепер можна завантажувати файли більше 2ГБ.</p>
+<h3><a href="book.gmp.md">GMP</a> підтримує навантаження операторів</h3>
+<p>Об'єкти <a href="book.gmp.md">GMP</a> тепер підтримують навантаження операторів та
+приведення до скалярних типів. Це дозволяє використовувати GMP у вашому
+коді більш виразно:</p>
+<p><code>&#x3C;?php$a = gmp_init(42);$b = gmp_init(17);if (version_compare(PHP_VERSION, '5.6', '&#x3C;')) {    echo gmp_intval(gmp_add$ ; echo gmp_intval(gmp_add($a, 17)), PHP_EOL; echo gmp_intval(gmp_add(42, $b)), PHP_EOL;} else {    echo $a + $b, PHP_EOL; echo $a + 17, PHP_EOL; echo 42 + $b, PHP_EOL;}?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>59
+59
+59</p>
+<h3><a href="function.hash-equals.md">hash_equals()</a> для запобігання атакам у часі при порівнянні рядків</h3>
+<p>Додано функцію <a href="function.hash-equals.md">hash_equals()</a> для
+порівняння двох рядків за постійний час. Це має допомогти уникнути
+атак за часом; наприклад, під час тестування хешування паролів
+функцією <a href="function.crypt.md">crypt()</a> (за умови, що ви не можете
+використовувати <a href="function.password-hash.md">password_hash()</a> та
+<a href="function.password-verify.md">password_verify()</a>, які не
+схильні до атак).</p>
+<p><code>&#x3C;?php$expected  = crypt('12345', '$2a$07$usesomesillystringforsalt$');$correct   = crypt('12345', '$2a$07$usesomesillystringforsalt$'' , '$2a$07$usesomesillystringforsalt$');var_dump(hash_equals($expected, $correct));var_dump(hash_equals($expected, $incorrect));?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>bool(true)
+bool(false)</p>
+<h3><code>__debugInfo()</code></h3>
+<p>Було додано магічний метод
+<a href="language.oop5.magic.md#language.oop5.magic.debuginfo">__debugInfo()</a>
+для того, щоб дозволити об'єкту змінювати значення властивостей, що виводяться
+під час використання <a href="function.var-dump.md">var_dump()</a>.</p>
+<p><code>&#x3C;?phpclass C {    private $prop; public function __construct($val) {         $this->prop = $val; }   publicfunction __debugInfo() {        return [            'propSquared' => $this->prop **   }}var_dump(new C(42));?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>object(C)#1 (1) {
+["propSquared"]=>
+int(1764)
+}</p>
+<h3>Алгоритм хешування gost-crypto</h3>
+<p>Доданий алгоритм хешування <code>gost-crypto</code>. Він реалізує функцію
+хешування GOST, що використовується в таблицях CryptoPro S-box, визначених
+<a href="http://www.faqs.org/rfcs/rfc4357">RFC 4357, секція 11.2</a>.</p>
+<h3>Поліпшення SSL/TLS</h3>
+<p>Дуже багато було зроблено для покращення підтримки SSL/TLS у PHP 5.6.
+Включно з <a href="migration56.incompatible.md#migration56.incompatible.peer-verification">дозвіл перевірки бенкетів по замовчуванням</a>,
+підтримка звірки відбитків сертифікатів, зниження впливу атаки
+переєднання TLS і безлічі нових <a href="context.ssl.md">опцій контексту SSL</a> для більш точного контролю за параметрами
+протоколу та перевірок при використанні зашифрованих потоків.</p>
+<p>Докладніше всі ці зміни описані в розділі цього посібника
+<a href="migration56.openssl.md">Зміни OpenSSL у PHP 5.6.x</a></p>
+<h3>Підтримка асинхронності <a href="book.pgsql.md">pgsql</a></h3>
+<p>Модуль <a href="book.pgsql.md">pgsql</a> тепер підтримує асинхронні
+з'єднання та запити, тим самим дозволяючи неблокуючу взаємодію з
+базами даних PostgreSQL. Асинхронні з'єднання можуть бути встановлені
+за допомогою константи <strong><code>PGSQL_CONNECT_ASYNC</code></strong>, та нові функції
+<a href="function.pg-connect-poll.md">pg_connect_poll()</a>,
+<a href="function.pg-socket.md">pg_socket()</a>,
+<a href="function.pg-consume-input.md">pg_consume_input()</a> та
+<a href="function.pg-flush.md">pg_flush()</a> можуть бути використані для
+обробки асинхронних з'єднань та запитів.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration56.new-features.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration56.new-features.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration56.new-features","slug":"migration56.new-features.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration56.incompatible.md\"\u003e« Зміни, що ламають зворотну сумісність\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration56.deprecated.md\"\u003eФункціонал, оголошений застарілим у PHP 5.6.x »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration56.md\"\u003eМіграція з PHP 5.5.x на PHP 5.6.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНові можливості\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНові можливості\u003c/h2\u003e\n\u003ch3\u003eКонстантні вирази\u003c/h3\u003e\n\u003cp\u003eТепер можна надати скалярний вираз, що включає числові та\nстрокові літерали та/або константи, коли раніше очікувалося статичне\nзначення, наприклад, в оголошеннях констант або значення аргументів\nфункцій за промовчанням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpconst ONE = 1;const TWO = ONE * 2;class C {   const THREE = TWO + 1; const ONE_THIRD = ONE / self::THREE; const SENTENCE = 'Значення константи THREE - '.self::THREE; public function f($a = ONE + self::THREE) {        return $a; }}echo (new C)-\u003ef().\" \";echo C::SENTENCE;?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e4\nЗначення константи THREE - 3\u003c/p\u003e\n\u003cp\u003eТакож можна визначити масив (array) із використанням ключового слова\n\u003ccode\u003econst\u003c/code\u003e:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpconst ARR = ['a', 'b'];echo ARR[0];?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003ea\u003c/p\u003e\n\u003ch3\u003eФункції зі змінною кількістю аргументів, використовуючи синтаксис \u003ccode\u003e...\u003c/code\u003e\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"functions.arguments.md#functions.variable-arg-list\"\u003eФункції зі змінною кількістю аргументів\u003c/a\u003e тепер\nможна реалізовувати з використанням оператора \u003ccode\u003e...\u003c/code\u003e замість того, щоб\nпокладатися на \u003ca href=\"function.func-get-args.md\"\u003efunc_get_args()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction f($req, $opt = null, ...$params) {     // $params - масив, містить всі решти аргументи. printf('$req: %d; $opt: %d; кількість параметрів: %d'.\" \",           $req, $opt, count($params));}f(1);f(1, 2);f(1, 2, 3);f(1, 2, 3, 4);f( 1, 2, 3, 4, 5);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e$req: 1; $opt: 0; кількість параметрів: 0\n$req: 1; $opt: 2; кількість параметрів: 0\n$req: 1; $opt: 2; кількість параметрів: 1\n$req: 1; $opt: 2; кількість параметрів: 2\n$req: 1; $opt: 2; кількість параметрів: 3\u003c/p\u003e\n\u003ch3\u003eРозпакування аргументів за допомогою \u003ccode\u003e...\u003c/code\u003e\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"language.types.array.md\"\u003eМассивы\u003c/a\u003e та об'єкти, що реалізують інтерфейс\n\u003ca href=\"class.traversable.md\"\u003eTraversable\u003c/a\u003e, можуть бути розпаковані до списку\nаргументів під час передачі у функцію з допомогою оператора \u003ccode\u003e...\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction add($a, $b, $c) {   return $a + $b + $c;}$operators = [2, 3];echo add(1, ...$operators);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e6\u003c/p\u003e\n\u003ch3\u003eЗведення в ступінь за допомогою \u003ccode\u003e**\u003c/code\u003e\u003c/h3\u003e\n\u003cp\u003eДоданий право-асоціативний оператор \u003ccode\u003e**\u003c/code\u003e, що позначає зведення в\nступінь. Також доступний короткий синтаксис \u003ccode\u003e**=\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpprintf(\"2 ** 3 ==      %d \", 2 ** 3);printf(\"2 ** 3 ** 2 == %d \", 2 ** 3 ** 2);$a = 2;$a **= 3;printf(\"a ==            %d \", $a);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e2 ** 3 == 8\n2 ** 3 ** 2 == 512\na == 8\u003c/p\u003e\n\u003ch3\u003e\u003ccode\u003euse function\u003c/code\u003e та \u003ccode\u003euse const\u003c/code\u003e\u003c/h3\u003e\n\u003cp\u003eОператор \u003ca href=\"language.namespaces.importing.md\"\u003e\u003ccode\u003euse\u003c/code\u003e\u003c/a\u003e був розширений\nпідтримки імпорту функцій та констант на додаток до класів. Це\nдосягається за допомогою конструкцій \u003ccode\u003euse function\u003c/code\u003e та \u003ccode\u003euse const\u003c/code\u003e,\nвідповідно.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpnamespace Name\\Space {    const FOO = 42; function f() { echo __FUNCTION__.\" \"; }}namespace {    use const Name\\Space\\FOO;    useuse function Name\\Space ;    echo FOO.\" \";   f();}?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e42\nName\\Space\u003c/p\u003e\n\u003ch3\u003ephpdbg\u003c/h3\u003e\n\u003cp\u003eТепер PHP містить інтерактивний дебаггер, що називається \"phpdbg\" і\nреалізований як модуль SAPI. Подробиці дивіться в \u003ca href=\"book.phpdbg.md\"\u003eдокументації phpdbg\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eКодування за замовчуванням\u003c/h3\u003e\n\u003cp\u003eДоданий ini-параметр\n\u003ca href=\"ini.core.md#ini.default-charset\"\u003edefault_charset\u003c/a\u003e, у якому можна\nвказати кодування за замовчуванням для використання у функціях\n\u003ca href=\"function.mdentities.md\"\u003ehtmlentities()\u003c/a\u003e,\n\u003ca href=\"function.md-entity-decode.md\"\u003ehtml_entity_decode()\u003c/a\u003e та\n\u003ca href=\"function.mdspecialchars.md\"\u003ehtmlspecialchars()\u003c/a\u003e. Зверніть увагу,\nякщо (зараз вважається застарілим) задані параметри кодування iconv\nі mbstring, вони будуть мати перевагу перед default_charset для iconv\nта mbstring.\u003c/p\u003e\n\u003cp\u003eЗначення цієї настройки за замовчуванням дорівнює UTF-8.\u003c/p\u003e\n\u003ch3\u003eПеревикористання \u003ca href=\"wrappers.php.md#wrappers.php.input\"\u003e\u003ccode\u003ephp://input\u003c/code\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"wrappers.php.md#wrappers.php.input\"\u003e\u003ccode\u003ephp://input\u003c/code\u003e\u003c/a\u003e тепер можна\nперевідкривати та зчитувати стільки разів, скільки потрібно. Це також спричинило\nдо значного зменшення обсягу пам'яті, необхідної для роботи з\nданими POST.\u003c/p\u003e\n\u003ch3\u003eЗавантаження великих файлів\u003c/h3\u003e\n\u003cp\u003eТепер можна завантажувати файли більше 2ГБ.\u003c/p\u003e\n\u003ch3\u003e\u003ca href=\"book.gmp.md\"\u003eGMP\u003c/a\u003e підтримує навантаження операторів\u003c/h3\u003e\n\u003cp\u003eОб'єкти \u003ca href=\"book.gmp.md\"\u003eGMP\u003c/a\u003e тепер підтримують навантаження операторів та\nприведення до скалярних типів. Це дозволяє використовувати GMP у вашому\nкоді більш виразно:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$a = gmp_init(42);$b = gmp_init(17);if (version_compare(PHP_VERSION, '5.6', '\u0026#x3C;')) {    echo gmp_intval(gmp_add$ ; echo gmp_intval(gmp_add($a, 17)), PHP_EOL; echo gmp_intval(gmp_add(42, $b)), PHP_EOL;} else {    echo $a + $b, PHP_EOL; echo $a + 17, PHP_EOL; echo 42 + $b, PHP_EOL;}?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003e59\n59\n59\u003c/p\u003e\n\u003ch3\u003e\u003ca href=\"function.hash-equals.md\"\u003ehash_equals()\u003c/a\u003e для запобігання атакам у часі при порівнянні рядків\u003c/h3\u003e\n\u003cp\u003eДодано функцію \u003ca href=\"function.hash-equals.md\"\u003ehash_equals()\u003c/a\u003e для\nпорівняння двох рядків за постійний час. Це має допомогти уникнути\nатак за часом; наприклад, під час тестування хешування паролів\nфункцією \u003ca href=\"function.crypt.md\"\u003ecrypt()\u003c/a\u003e (за умови, що ви не можете\nвикористовувати \u003ca href=\"function.password-hash.md\"\u003epassword_hash()\u003c/a\u003e та\n\u003ca href=\"function.password-verify.md\"\u003epassword_verify()\u003c/a\u003e, які не\nсхильні до атак).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$expected  = crypt('12345', '$2a$07$usesomesillystringforsalt$');$correct   = crypt('12345', '$2a$07$usesomesillystringforsalt$'' , '$2a$07$usesomesillystringforsalt$');var_dump(hash_equals($expected, $correct));var_dump(hash_equals($expected, $incorrect));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003ebool(true)\nbool(false)\u003c/p\u003e\n\u003ch3\u003e\u003ccode\u003e__debugInfo()\u003c/code\u003e\u003c/h3\u003e\n\u003cp\u003eБуло додано магічний метод\n\u003ca href=\"language.oop5.magic.md#language.oop5.magic.debuginfo\"\u003e__debugInfo()\u003c/a\u003e\nдля того, щоб дозволити об'єкту змінювати значення властивостей, що виводяться\nпід час використання \u003ca href=\"function.var-dump.md\"\u003evar_dump()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass C {    private $prop; public function __construct($val) {         $this-\u003eprop = $val; }   publicfunction __debugInfo() {        return [            'propSquared' =\u003e $this-\u003eprop **   }}var_dump(new C(42));?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eobject(C)#1 (1) {\n[\"propSquared\"]=\u003e\nint(1764)\n}\u003c/p\u003e\n\u003ch3\u003eАлгоритм хешування gost-crypto\u003c/h3\u003e\n\u003cp\u003eДоданий алгоритм хешування \u003ccode\u003egost-crypto\u003c/code\u003e. Він реалізує функцію\nхешування GOST, що використовується в таблицях CryptoPro S-box, визначених\n\u003ca href=\"http://www.faqs.org/rfcs/rfc4357\"\u003eRFC 4357, секція 11.2\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eПоліпшення SSL/TLS\u003c/h3\u003e\n\u003cp\u003eДуже багато було зроблено для покращення підтримки SSL/TLS у PHP 5.6.\nВключно з \u003ca href=\"migration56.incompatible.md#migration56.incompatible.peer-verification\"\u003eдозвіл перевірки бенкетів по замовчуванням\u003c/a\u003e,\nпідтримка звірки відбитків сертифікатів, зниження впливу атаки\nпереєднання TLS і безлічі нових \u003ca href=\"context.ssl.md\"\u003eопцій контексту SSL\u003c/a\u003e для більш точного контролю за параметрами\nпротоколу та перевірок при використанні зашифрованих потоків.\u003c/p\u003e\n\u003cp\u003eДокладніше всі ці зміни описані в розділі цього посібника\n\u003ca href=\"migration56.openssl.md\"\u003eЗміни OpenSSL у PHP 5.6.x\u003c/a\u003e\u003c/p\u003e\n\u003ch3\u003eПідтримка асинхронності \u003ca href=\"book.pgsql.md\"\u003epgsql\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eМодуль \u003ca href=\"book.pgsql.md\"\u003epgsql\u003c/a\u003e тепер підтримує асинхронні\nз'єднання та запити, тим самим дозволяючи неблокуючу взаємодію з\nбазами даних PostgreSQL. Асинхронні з'єднання можуть бути встановлені\nза допомогою константи \u003cstrong\u003e\u003ccode\u003ePGSQL_CONNECT_ASYNC\u003c/code\u003e\u003c/strong\u003e, та нові функції\n\u003ca href=\"function.pg-connect-poll.md\"\u003epg_connect_poll()\u003c/a\u003e,\n\u003ca href=\"function.pg-socket.md\"\u003epg_socket()\u003c/a\u003e,\n\u003ca href=\"function.pg-consume-input.md\"\u003epg_consume_input()\u003c/a\u003e та\n\u003ca href=\"function.pg-flush.md\"\u003epg_flush()\u003c/a\u003e можуть бути використані для\nобробки асинхронних з'єднань та запитів.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration56.new-features.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

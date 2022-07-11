@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysql.configuration | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysql.installation.md">« Установка</a></p>
+</li>
+<li>
+<p><a href="mysql.resources.md">Типи ресурсів»</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="mysql.setup.md">Встановлення та налаштування</a></p>
+</li>
+<li>
+<p>Налаштування під час виконання</p>
+</li>
+</ul>
+<h2>Налаштування під час виконання</h2>
+<p>Поведінка цих функцій залежить від установок <code>php.ini</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Ім'я За замовчуванням</th>
+<th>Місце зміни</th>
+<th>Список змін</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.allow-local-infile">mysql.allow_local_infile</a></td>
+<td>"1"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.allow-persistent">mysql.allow_persistent</a></td>
+<td>"1"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.max-persistent">mysql.max_persistent</a></td>
+<td>"-1"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.max-links">mysql.max_links</a></td>
+<td>"-1"</td>
+<td>PHP_INI_SYSTEM</td>
+</tr>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.trace-mode">mysql.trace_mode</a></td>
+<td>"0"</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.default-port">mysql.default_port</a></td>
+<td>NULL</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.default-socket">mysql.default_socket</a></td>
+<td>NULL</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.default-host">mysql.default_host</a></td>
+<td>NULL</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.default-user">mysql.default_user</a></td>
+<td>NULL</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.default-password">mysql.default_password</a></td>
+<td>NULL</td>
+<td>PHP_INI_ALL</td>
+</tr>
+<tr>
+<td><a href="mysql.configuration.md#ini.mysql.connect-timeout">mysql.connect_timeout</a></td>
+<td>"60"</td>
+<td>PHP_INI_ALL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Директиви конфігурації MySQL</strong></p>
+<p>Для детального опису констант PHP_INI_*, зверніться до розділу <a href="configuration.changes.modes.md">Де
+можуть бути встановлені параметри конфігурації</a>.</p>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>mysql.allow_local_infile</code> int
+Дозволяє доступ до локальних файлів, з точки зору PHP, за допомогою
+інструкцій LOAD DATA</p>
+<p><code>mysql.allow_persistent</code> bool
+Чи дозволяти <a href="features.persistent-connections.md">постійні з'єднання</a> з MySQL.</p>
+<p><code>mysql.max_persistent</code> int
+Максимальна кількість постійних з'єднань з MySQL однією процес.</p>
+<p><code>mysql.max_links</code> int
+Максимальна кількість з'єднань з MySQL на один процес, включаючи
+постійні з'єднання.</p>
+<p><code>mysql.trace_mode</code> bool
+Режим трасування. Якщо увімкнено опцію <code>mysql.trace_mode</code>, будуть
+відображатиметься попередження при скануванні таблиць/індексів, непустих
+результуючих наборів (result sets), і навіть помилки SQL. (Додано в
+версії PHP 4.3.0)</p>
+<p><code>mysql.default_port</code> string
+TCP-порт, який використовується для з'єднання з базою даних за замовчуванням (якщо
+не було зазначено інший). Якщо ця директива опущена, порт буде взято з
+змінного середовища <code>MYSQL_TCP_PORT</code>, значення <code>mysql-tcp</code> у файлі
+<code>/etc/services</code> або константи <strong><code>MYSQL_PORT</code></strong>, вказаної при
+компіляції, у вказаному порядку. Win32 використовує лише константу
+<strong><code>MYSQL_PORT</code></strong>.</p>
+<p><code>mysql.default_socket</code> string
+Назва стандартного сокету, що використовується для з'єднання з локальною базою
+даних, якщо не було вказано інший.</p>
+<p><code>mysql.default_host</code> string
+Адреса сервера за замовчуванням, що використовується для підключення до сервера бази
+даних, якщо не вказано інший. Не працює в <a href="ini.core.md#ini.sql.safe-mode">SQL safe mode</a>.</p>
+<p><code>mysql.default_user</code> string
+Стандартне ім'я користувача, яке використовується для підключення до сервера
+бази даних, якщо не зазначено інше. Не працює в <a href="ini.core.md#ini.sql.safe-mode">SQL safe mode</a>.</p>
+<p><code>mysql.default_password</code> string
+Стандартний пароль, який використовується для підключення до сервера бази даних,
+якщо не вказано інший. Не працює в <a href="ini.core.md#ini.sql.safe-mode">SQL safe mode</a>.</p>
+<p><code>mysql.connect_timeout</code> int
+Час очікування на відповідь до розриву з'єднання в секундах. Linux також
+використовує це значення, очікуючи першої відповіді від сервера.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysql.configuration.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysql.configuration.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysql.configuration","slug":"mysql.configuration.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysql.installation.md\"\u003e« Установка\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysql.resources.md\"\u003eТипи ресурсів»\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysql.setup.md\"\u003eВстановлення та налаштування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНалаштування під час виконання\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНалаштування під час виконання\u003c/h2\u003e\n\u003cp\u003eПоведінка цих функцій залежить від установок \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІм'я За замовчуванням\u003c/th\u003e\n\u003cth\u003eМісце зміни\u003c/th\u003e\n\u003cth\u003eСписок змін\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.allow-local-infile\"\u003emysql.allow_local_infile\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"1\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.allow-persistent\"\u003emysql.allow_persistent\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"1\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.max-persistent\"\u003emysql.max_persistent\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"-1\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.max-links\"\u003emysql.max_links\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"-1\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_SYSTEM\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.trace-mode\"\u003emysql.trace_mode\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"0\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.default-port\"\u003emysql.default_port\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.default-socket\"\u003emysql.default_socket\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.default-host\"\u003emysql.default_host\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.default-user\"\u003emysql.default_user\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.default-password\"\u003emysql.default_password\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003eNULL\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003ca href=\"mysql.configuration.md#ini.mysql.connect-timeout\"\u003emysql.connect_timeout\u003c/a\u003e\u003c/td\u003e\n\u003ctd\u003e\"60\"\u003c/td\u003e\n\u003ctd\u003ePHP_INI_ALL\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eДирективи конфігурації MySQL\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля детального опису констант PHP_INI_*, зверніться до розділу \u003ca href=\"configuration.changes.modes.md\"\u003eДе\nможуть бути встановлені параметри конфігурації\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eКоротке пояснення конфігураційних директив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.allow_local_infile\u003c/code\u003e int\nДозволяє доступ до локальних файлів, з точки зору PHP, за допомогою\nінструкцій LOAD DATA\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.allow_persistent\u003c/code\u003e bool\nЧи дозволяти \u003ca href=\"features.persistent-connections.md\"\u003eпостійні з'єднання\u003c/a\u003e з MySQL.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.max_persistent\u003c/code\u003e int\nМаксимальна кількість постійних з'єднань з MySQL однією процес.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.max_links\u003c/code\u003e int\nМаксимальна кількість з'єднань з MySQL на один процес, включаючи\nпостійні з'єднання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.trace_mode\u003c/code\u003e bool\nРежим трасування. Якщо увімкнено опцію \u003ccode\u003emysql.trace_mode\u003c/code\u003e, будуть\nвідображатиметься попередження при скануванні таблиць/індексів, непустих\nрезультуючих наборів (result sets), і навіть помилки SQL. (Додано в\nверсії PHP 4.3.0)\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.default_port\u003c/code\u003e string\nTCP-порт, який використовується для з'єднання з базою даних за замовчуванням (якщо\nне було зазначено інший). Якщо ця директива опущена, порт буде взято з\nзмінного середовища \u003ccode\u003eMYSQL_TCP_PORT\u003c/code\u003e, значення \u003ccode\u003emysql-tcp\u003c/code\u003e у файлі\n\u003ccode\u003e/etc/services\u003c/code\u003e або константи \u003cstrong\u003e\u003ccode\u003eMYSQL_PORT\u003c/code\u003e\u003c/strong\u003e, вказаної при\nкомпіляції, у вказаному порядку. Win32 використовує лише константу\n\u003cstrong\u003e\u003ccode\u003eMYSQL_PORT\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.default_socket\u003c/code\u003e string\nНазва стандартного сокету, що використовується для з'єднання з локальною базою\nданих, якщо не було вказано інший.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.default_host\u003c/code\u003e string\nАдреса сервера за замовчуванням, що використовується для підключення до сервера бази\nданих, якщо не вказано інший. Не працює в \u003ca href=\"ini.core.md#ini.sql.safe-mode\"\u003eSQL safe mode\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.default_user\u003c/code\u003e string\nСтандартне ім'я користувача, яке використовується для підключення до сервера\nбази даних, якщо не зазначено інше. Не працює в \u003ca href=\"ini.core.md#ini.sql.safe-mode\"\u003eSQL safe mode\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.default_password\u003c/code\u003e string\nСтандартний пароль, який використовується для підключення до сервера бази даних,\nякщо не вказано інший. Не працює в \u003ca href=\"ini.core.md#ini.sql.safe-mode\"\u003eSQL safe mode\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysql.connect_timeout\u003c/code\u003e int\nЧас очікування на відповідь до розриву з'єднання в секундах. Linux також\nвикористовує це значення, очікуючи першої відповіді від сервера.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysql.configuration.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

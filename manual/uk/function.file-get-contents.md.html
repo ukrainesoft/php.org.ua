@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.file-get-contents | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.file-exists.md">«file_exists</a></p>
+</li>
+<li>
+<p><a href="function.file-put-contents.md">file_put_contents »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.filesystem.md">Функції файлової системи</a></p>
+</li>
+<li>
+<p>Читає вміст файлу в рядок</p>
+</li>
+</ul>
+<h1>file_get_contents</h1>
+<p>(PHP 4 >= 4.3.0, PHP 5, PHP 7, PHP 8)</p>
+<p>file_get_contents — Читає вміст файлу в рядок</p>
+<h3>Опис</h3>
+<p><strong>file_get_contents</strong>(
+string <code>$filename</code>,
+bool <code>$use_include_path</code> = <strong><code>false</code></strong>,
+?resource <code>$context</code> = <strong><code>null</code></strong>,
+int <code>$offset</code> = 0,
+?int <code>$length</code> = <strong><code>null</code></strong>
+): string|false</p>
+<p>Ця функція схожа на функцію <a href="function.file.md">file()</a> з тієї лише
+різницею, що <strong>file_get_contents()</strong> повертає вміст файлу в
+рядку, починаючи з зазначеного усунення <code>offset</code> і до <code>length</code> байт. В
+у разі невдачі, <strong>file_get_contents()</strong> поверне <strong><code>false</code></strong>.</p>
+<p>Використання функції <strong>file_get_contents()</strong> найбільш переважно в
+у разі необхідності отримати вміст файлу повністю, оскільки
+покращення продуктивності функція використовує техніку відображення
+файлу в пам'ять (memory mapping), якщо вона підтримується вашою
+операційною системою.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Якщо ви відкриваєте URI, що містить спецсимволи, такі як пробіл, вам
+потрібно закодувати URI за допомогою
+<a href="function.urlencode.md">urlencode()</a>.</p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>filename</code>
+Ім'я файлу, що читається.</p>
+<p><code>use_include_path</code></p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Можна використовувати константу <strong><code>FILE_USE_INCLUDE_PATH</code></strong> для пошуку
+файлу <a href="ini.core.md#ini.include-path">include path</a>. Тільки
+пам'ятайте, що якщо ви використовуєте <a href="language.types.declarations.md#language.types.declarations.strict">сувору > типізацію</a>,
+то так зробити не вийде, оскільки <strong><code>FILE_USE_INCLUDE_PATH</code></strong>
+має тип int. У такому разі використовуйте <strong><code>true</code></strong>.</p>
+</blockquote>
+<p><code>context</code>
+Коректний ресурс контексту, створений за допомогою функції
+<a href="function.stream-context-create.md">stream_context_create()</a>. Якщо в
+використання особливого контексту немає необхідності, можна пропустити цей
+параметр передавши до нього значення <strong><code>null</code></strong>.</p>
+<p><code>offset</code>
+Усунення, з якого почнеться читання оригінального потоку. Негативне
+значення зміщення буде відраховуватись з кінця потоку.</p>
+<p>Пошук зміщення (<code>offset</code>) не підтримується під час роботи з віддаленими
+файлами. Спроба пошуку усунення на нелокальних файлах може працювати
+при невеликих усуненнях, але результат буде непередбачуваним, оскільки
+функція працює на буферизованому потоці.</p>
+<p><code>length</code>
+Максимальний розмір даних, що читаються. За промовчанням читання здійснюється
+поки не буде досягнуто кінця файлу. Врахуйте, що цей параметр
+застосовується до потоку з фільтрами.</p>
+<h3>Значення, що повертаються</h3>
+<p>Функція повертає прочитані дані або <strong><code>false</code></strong> у разі
+виникнення помилки.</p>
+<p><strong>Увага</strong></p>
+<p>Ця функція може повертати як логічне значення <strong><code>false</code></strong>, так і
+значення не типу boolean, яке наводиться до <strong><code>false</code></strong>. Більше
+Детальну інформацію див. у розділі <a href="language.types.boolean.md">Булев тип</a>. Використовуйте <a href="language.operators.comparison.md">оператор ===</a> для перевірки значення,
+повертається цією функцією.</p>
+<h3>Помилки</h3>
+<p>Буде згенерована помилка рівня <strong><code>E_WARNING</code></strong> у випадках, якщо не
+вдасться знайти <code>filename</code>, заданий <code>length</code> менше нуля, або пошук по
+зсуву <code>offset</code> у потоці завершиться невдало.</p>
+<p>Коли <strong>file_get_contents()</strong> викликається в каталозі, у Windows помилка
+генерується <strong><code>E_WARNING</code></strong>, а з PHP 7.4 також в інших операційних
+системах.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>Параметр length тепер допускає значення <strong>null</strong>.</td>
+</tr>
+<tr>
+<td>7.1.0</td>
+<td>Додано підтримку негативних значень offset.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Отримати та вивести вихідний код домашньої сторінки сайту</strong></p>
+<p><code>&#x3C;?php$homepage = file_get_contents('http://www.example.com/');echo $homepage;?></code></p>
+<p><strong>Приклад #2 Пошук файлів у include_path</strong></p>
+<p><code>&#x3C;?php// Якщо включені строгі типи, то є оголошено (strict_types=1);$file = file_get_contents('./people.txt', true);// Інакше$file = t| ', FILE_USE_INCLUDE_PATH);?> </code></p>
+<p><strong>Приклад #3 Читання секції файлу</strong></p>
+<p>`&#x3C;?php// Читаємо 14 символів, починаючи з 21 символу$section = file_get_contents('./people.txt', FALSE, NULL, 20, 14);var_dump($section);</p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>string(14) "lle Bjori Ro"</p>
+<p><strong>Приклад #4 Використання потокових контекстів</strong></p>
+<p><code>&#x3C;?php// Створюємо потік$opts = array(  'http'=>array(   'method'=>"GET",   'header'=>"Accept-language: en Cookie:foo=bar "  ));$context = stream_context_create($opts);// Відкриваємо файл за допомогою встановлених вище HTTP-заголовків$file==file_get_contents('http://www.example.com/';>></code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>: Ця функція безпечна для обробки даних у двійковій
+Формі.</p>
+</blockquote>
+<p><strong>Підказка</strong></p>
+<p>Для цієї функції ви можете використовувати URL як ім'я файлу, якщо
+була включена опція <a href="filesystem.configuration.md#ini.allow-url-fopen">fopen wrappers</a>. Дивіться
+докладнішу інформацію про визначення імені файлу в описі функції
+<a href="function.fopen.md">fopen()</a>. Дивіться також список підтримуваних
+оберток URL, їх можливості, зауваження щодо використання та список
+визначених констант у розділі <a href="wrappers.md">Підтримувані протоколи та обертки</a>.</p>
+<p><strong>Увага</strong></p>
+<p>При використанні SSL Microsoft IIS порушує протокол, закриваючи
+з'єднання без надсилання індикатора <code>close_notify</code>. PHP повідомить про це
+як "SSL: Fatal Protocol Error" в той момент, коли ви досягнете кінця
+даних. Щоб обійти це, ви повинні встановити
+<a href="errorfunc.configuration.md#ini.error-reporting">error_reporting</a>
+рівень, що виключає E_WARNING. PHP вміє визначати, що на стороні
+сервера знаходиться проблемний IIS при відкритті потоку за допомогою обгортки
+<code>https://</code> і виводить попередження. Якщо ви використовуєте
+<a href="function.fsockopen.md">fsockopen()</a> для створення <code>ssl://</code> сокету, ви
+самі відповідаєте за визначення та придушення цього попередження.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.file.md">file()</a> - Читає вміст файлу та поміщає
+його в масив</li>
+<li><a href="function.fgets.md">fgets()</a> - Читає рядок із файлу</li>
+<li><a href="function.fread.md">fread()</a> - Бінарно-безпечне читання файлу</li>
+<li><a href="function.readfile.md">readfile()</a> - Виводить файл</li>
+<li><a href="function.file-put-contents.md">file_put_contents()</a> - Пише
+дані у файл</li>
+<li><a href="function.stream-get-contents.md">stream_get_contents()</a> - Читає
+решту потоку в рядок</li>
+<li><a href="function.stream-context-create.md">stream_context_create()</a> -
+Створює контекст потоку</li>
+<li><a href="reserved.variables.httpresponseheader.md">$http_response_header</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.file-get-contents.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.file-get-contents.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.file-get-contents","slug":"function.file-get-contents.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.file-exists.md\"\u003e«file_exists\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.file-put-contents.md\"\u003efile_put_contents »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.filesystem.md\"\u003eФункції файлової системи\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЧитає вміст файлу в рядок\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003efile_get_contents\u003c/h1\u003e\n\u003cp\u003e(PHP 4 \u003e= 4.3.0, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003efile_get_contents — Читає вміст файлу в рядок\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003efile_get_contents\u003c/strong\u003e(\nstring \u003ccode\u003e$filename\u003c/code\u003e,\nbool \u003ccode\u003e$use_include_path\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e,\n?resource \u003ccode\u003e$context\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\nint \u003ccode\u003e$offset\u003c/code\u003e = 0,\n?int \u003ccode\u003e$length\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\n): string|false\u003c/p\u003e\n\u003cp\u003eЦя функція схожа на функцію \u003ca href=\"function.file.md\"\u003efile()\u003c/a\u003e з тієї лише\nрізницею, що \u003cstrong\u003efile_get_contents()\u003c/strong\u003e повертає вміст файлу в\nрядку, починаючи з зазначеного усунення \u003ccode\u003eoffset\u003c/code\u003e і до \u003ccode\u003elength\u003c/code\u003e байт. В\nу разі невдачі, \u003cstrong\u003efile_get_contents()\u003c/strong\u003e поверне \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eВикористання функції \u003cstrong\u003efile_get_contents()\u003c/strong\u003e найбільш переважно в\nу разі необхідності отримати вміст файлу повністю, оскільки\nпокращення продуктивності функція використовує техніку відображення\nфайлу в пам'ять (memory mapping), якщо вона підтримується вашою\nопераційною системою.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЯкщо ви відкриваєте URI, що містить спецсимволи, такі як пробіл, вам\nпотрібно закодувати URI за допомогою\n\u003ca href=\"function.urlencode.md\"\u003eurlencode()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003efilename\u003c/code\u003e\nІм'я файлу, що читається.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euse_include_path\u003c/code\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eМожна використовувати константу \u003cstrong\u003e\u003ccode\u003eFILE_USE_INCLUDE_PATH\u003c/code\u003e\u003c/strong\u003e для пошуку\nфайлу \u003ca href=\"ini.core.md#ini.include-path\"\u003einclude path\u003c/a\u003e. Тільки\nпам'ятайте, що якщо ви використовуєте \u003ca href=\"language.types.declarations.md#language.types.declarations.strict\"\u003eсувору \u003e типізацію\u003c/a\u003e,\nто так зробити не вийде, оскільки \u003cstrong\u003e\u003ccode\u003eFILE_USE_INCLUDE_PATH\u003c/code\u003e\u003c/strong\u003e\nмає тип int. У такому разі використовуйте \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003econtext\u003c/code\u003e\nКоректний ресурс контексту, створений за допомогою функції\n\u003ca href=\"function.stream-context-create.md\"\u003estream_context_create()\u003c/a\u003e. Якщо в\nвикористання особливого контексту немає необхідності, можна пропустити цей\nпараметр передавши до нього значення \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoffset\u003c/code\u003e\nУсунення, з якого почнеться читання оригінального потоку. Негативне\nзначення зміщення буде відраховуватись з кінця потоку.\u003c/p\u003e\n\u003cp\u003eПошук зміщення (\u003ccode\u003eoffset\u003c/code\u003e) не підтримується під час роботи з віддаленими\nфайлами. Спроба пошуку усунення на нелокальних файлах може працювати\nпри невеликих усуненнях, але результат буде непередбачуваним, оскільки\nфункція працює на буферизованому потоці.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elength\u003c/code\u003e\nМаксимальний розмір даних, що читаються. За промовчанням читання здійснюється\nпоки не буде досягнуто кінця файлу. Врахуйте, що цей параметр\nзастосовується до потоку з фільтрами.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eФункція повертає прочитані дані або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі\nвиникнення помилки.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЦя функція може повертати як логічне значення \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e, так і\nзначення не типу boolean, яке наводиться до \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e. Більше\nДетальну інформацію див. у розділі \u003ca href=\"language.types.boolean.md\"\u003eБулев тип\u003c/a\u003e. Використовуйте \u003ca href=\"language.operators.comparison.md\"\u003eоператор ===\u003c/a\u003e для перевірки значення,\nповертається цією функцією.\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cp\u003eБуде згенерована помилка рівня \u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e у випадках, якщо не\nвдасться знайти \u003ccode\u003efilename\u003c/code\u003e, заданий \u003ccode\u003elength\u003c/code\u003e менше нуля, або пошук по\nзсуву \u003ccode\u003eoffset\u003c/code\u003e у потоці завершиться невдало.\u003c/p\u003e\n\u003cp\u003eКоли \u003cstrong\u003efile_get_contents()\u003c/strong\u003e викликається в каталозі, у Windows помилка\nгенерується \u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e, а з PHP 7.4 також в інших операційних\nсистемах.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eПараметр length тепер допускає значення \u003cstrong\u003enull\u003c/strong\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.1.0\u003c/td\u003e\n\u003ctd\u003eДодано підтримку негативних значень offset.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Отримати та вивести вихідний код домашньої сторінки сайту\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$homepage = file_get_contents('http://www.example.com/');echo $homepage;?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Пошук файлів у include_path\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Якщо включені строгі типи, то є оголошено (strict_types=1);$file = file_get_contents('./people.txt', true);// Інакше$file = t| ', FILE_USE_INCLUDE_PATH);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Читання секції файлу\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e`\u0026#x3C;?php// Читаємо 14 символів, починаючи з 21 символу$section = file_get_contents('./people.txt', FALSE, NULL, 20, 14);var_dump($section);\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003estring(14) \"lle Bjori Ro\"\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Використання потокових контекстів\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Створюємо потік$opts = array(  'http'=\u003earray(   'method'=\u003e\"GET\",   'header'=\u003e\"Accept-language: en Cookie:foo=bar \"  ));$context = stream_context_create($opts);// Відкриваємо файл за допомогою встановлених вище HTTP-заголовків$file==file_get_contents('http://www.example.com/';\u003e\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Ця функція безпечна для обробки даних у двійковій\nФормі.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПідказка\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля цієї функції ви можете використовувати URL як ім'я файлу, якщо\nбула включена опція \u003ca href=\"filesystem.configuration.md#ini.allow-url-fopen\"\u003efopen wrappers\u003c/a\u003e. Дивіться\nдокладнішу інформацію про визначення імені файлу в описі функції\n\u003ca href=\"function.fopen.md\"\u003efopen()\u003c/a\u003e. Дивіться також список підтримуваних\nоберток URL, їх можливості, зауваження щодо використання та список\nвизначених констант у розділі \u003ca href=\"wrappers.md\"\u003eПідтримувані протоколи та обертки\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПри використанні SSL Microsoft IIS порушує протокол, закриваючи\nз'єднання без надсилання індикатора \u003ccode\u003eclose_notify\u003c/code\u003e. PHP повідомить про це\nяк \"SSL: Fatal Protocol Error\" в той момент, коли ви досягнете кінця\nданих. Щоб обійти це, ви повинні встановити\n\u003ca href=\"errorfunc.configuration.md#ini.error-reporting\"\u003eerror_reporting\u003c/a\u003e\nрівень, що виключає E_WARNING. PHP вміє визначати, що на стороні\nсервера знаходиться проблемний IIS при відкритті потоку за допомогою обгортки\n\u003ccode\u003ehttps://\u003c/code\u003e і виводить попередження. Якщо ви використовуєте\n\u003ca href=\"function.fsockopen.md\"\u003efsockopen()\u003c/a\u003e для створення \u003ccode\u003essl://\u003c/code\u003e сокету, ви\nсамі відповідаєте за визначення та придушення цього попередження.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.file.md\"\u003efile()\u003c/a\u003e - Читає вміст файлу та поміщає\nйого в масив\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fgets.md\"\u003efgets()\u003c/a\u003e - Читає рядок із файлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.fread.md\"\u003efread()\u003c/a\u003e - Бінарно-безпечне читання файлу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.readfile.md\"\u003ereadfile()\u003c/a\u003e - Виводить файл\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.file-put-contents.md\"\u003efile_put_contents()\u003c/a\u003e - Пише\nдані у файл\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.stream-get-contents.md\"\u003estream_get_contents()\u003c/a\u003e - Читає\nрешту потоку в рядок\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.stream-context-create.md\"\u003estream_context_create()\u003c/a\u003e -\nСтворює контекст потоку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"reserved.variables.httpresponseheader.md\"\u003e$http_response_header\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.file-get-contents.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

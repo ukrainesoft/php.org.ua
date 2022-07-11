@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.ds-priorityqueue | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="ds-queue.toarray.md">« Ds\Queue::toArray</a></p>
+</li>
+<li>
+<p><a href="ds-priorityqueue.allocate.md">Ds\PriorityQueue::allocate »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.ds.md">Структури даних</a></p>
+</li>
+<li>
+<p>Клас PriorityQueue</p>
+</li>
+</ul>
+<h1>Клас PriorityQueue</h1>
+<p>(No version information available, might only be in Git)</p>
+<h2>Вступ</h2>
+<p>Черга із пріоритетом дуже схожа на звичайну чергу. Значення
+додаються в чергу із заданим пріоритетом, та значення з більш високим
+пріоритетом завжди будуть ближче до початку.</p>
+<p>Реалізовано з використанням максимальної купи.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Порядок FIFO зберігається у значень із однаковим пріоритетом.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Ітерація через чергу відбувається із видаленням взятого елемента.
+Еквівалентно використанню оператора pop, доки черга не стане
+порожній.</p>
+</blockquote>
+<h2>Огляд класів</h2>
+<p>class <strong>Ds\PriorityQueue</strong> implements <strong>Ds\Collection</strong> {</p>
+<p>/* Константи */</p>
+<p>const int <code>MIN_CAPACITY</code> = 8;</p>
+<p>/* Методи */</p>
+<p>public <a href="ds-priorityqueue.allocate.md">allocate</a>(int <code>$capacity</code>): void</p>
+<p>public <a href="ds-priorityqueue.capacity.md">capacity</a>(): int</p>
+<p>public <a href="ds-priorityqueue.clear.md">clear</a>(): void</p>
+<p>public <a href="ds-priorityqueue.copy.md">copy</a>():
+<a href="class.ds-priorityqueue.md">Ds\PriorityQueue</a></p>
+<p>public <a href="ds-priorityqueue.isempty.md">isEmpty</a>(): bool</p>
+<p>public <a href="ds-priorityqueue.peek.md">peek</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="ds-priorityqueue.pop.md">pop</a>():
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public
+<a href="ds-priorityqueue.push.md">push</a>(<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+<code>$value</code>, int <code>$priority</code>): void</p>
+<p>public <a href="ds-priorityqueue.toarray.md">toArray</a>(): array</p>
+<p>}</p>
+<h2>Зумовлені константи</h2>
+<p><strong><code>Ds\PriorityQueue::MIN_CAPACITY</code></strong></p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="ds-priorityqueue.allocate.md">Ds\PriorityQueue::allocate</a> -
+Виділяє пам'ять під зазначену місткість</li>
+<li><a href="ds-priorityqueue.capacity.md">Ds\PriorityQueue::capacity</a> -
+Повертає поточну місткість</li>
+<li><a href="ds-priorityqueue.clear.md">Ds\PriorityQueue::clear</a> — Видаляє все
+значення</li>
+<li><a href="ds-priorityqueue.construct.md">Ds\PriorityQueue::__construct</a> -
+Створює новий екземпляр</li>
+<li><a href="ds-priorityqueue.copy.md">Ds\PriorityQueue::copy</a> - Повертає
+поверхневу копію черги</li>
+<li><a href="ds-priorityqueue.count.md">Ds\PriorityQueue::count</a> - Повертає
+кількість елементів у черзі</li>
+<li><a href="ds-priorityqueue.isempty.md">Ds\PriorityQueue::isEmpty</a> -
+Перевіряє, чи порожня колекція</li>
+<li><a href="ds-priorityqueue.jsonserialize.md">Ds\PriorityQueue::jsonSerialize</a>
+— Повертає колекцію в JSON-виставу</li>
+<li><a href="ds-priorityqueue.peek.md">Ds\PriorityQueue::peek</a> - Повертає
+значення з початку черги</li>
+<li><a href="ds-priorityqueue.pop.md">Ds\PriorityQueue::pop</a> — Видаляє та
+повертає значення з найвищим пріоритетом</li>
+<li><a href="ds-priorityqueue.push.md">Ds\PriorityQueue::push</a> - Додає
+значення в чергу</li>
+<li><a href="ds-priorityqueue.toarray.md">Ds\PriorityQueue::toArray</a> -
+Перетворює чергу на масив (array)</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.ds-priorityqueue.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.ds-priorityqueue.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.ds-priorityqueue","slug":"class.ds-priorityqueue.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ds-queue.toarray.md\"\u003e« Ds\\Queue::toArray\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ds-priorityqueue.allocate.md\"\u003eDs\\PriorityQueue::allocate »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.ds.md\"\u003eСтруктури даних\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас PriorityQueue\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас PriorityQueue\u003c/h1\u003e\n\u003cp\u003e(No version information available, might only be in Git)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003cp\u003eЧерга із пріоритетом дуже схожа на звичайну чергу. Значення\nдодаються в чергу із заданим пріоритетом, та значення з більш високим\nпріоритетом завжди будуть ближче до початку.\u003c/p\u003e\n\u003cp\u003eРеалізовано з використанням максимальної купи.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПорядок FIFO зберігається у значень із однаковим пріоритетом.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eІтерація через чергу відбувається із видаленням взятого елемента.\nЕквівалентно використанню оператора pop, доки черга не стане\nпорожній.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eDs\\PriorityQueue\u003c/strong\u003e implements \u003cstrong\u003eDs\\Collection\u003c/strong\u003e {\u003c/p\u003e\n\u003cp\u003e/* Константи */\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eMIN_CAPACITY\u003c/code\u003e = 8;\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-priorityqueue.allocate.md\"\u003eallocate\u003c/a\u003e(int \u003ccode\u003e$capacity\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-priorityqueue.capacity.md\"\u003ecapacity\u003c/a\u003e(): int\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-priorityqueue.clear.md\"\u003eclear\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-priorityqueue.copy.md\"\u003ecopy\u003c/a\u003e():\n\u003ca href=\"class.ds-priorityqueue.md\"\u003eDs\\PriorityQueue\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-priorityqueue.isempty.md\"\u003eisEmpty\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-priorityqueue.peek.md\"\u003epeek\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-priorityqueue.pop.md\"\u003epop\u003c/a\u003e():\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"ds-priorityqueue.push.md\"\u003epush\u003c/a\u003e(\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\n\u003ccode\u003e$value\u003c/code\u003e, int \u003ccode\u003e$priority\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"ds-priorityqueue.toarray.md\"\u003etoArray\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗумовлені константи\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eDs\\PriorityQueue::MIN_CAPACITY\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.allocate.md\"\u003eDs\\PriorityQueue::allocate\u003c/a\u003e -\nВиділяє пам'ять під зазначену місткість\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.capacity.md\"\u003eDs\\PriorityQueue::capacity\u003c/a\u003e -\nПовертає поточну місткість\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.clear.md\"\u003eDs\\PriorityQueue::clear\u003c/a\u003e — Видаляє все\nзначення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.construct.md\"\u003eDs\\PriorityQueue::__construct\u003c/a\u003e -\nСтворює новий екземпляр\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.copy.md\"\u003eDs\\PriorityQueue::copy\u003c/a\u003e - Повертає\nповерхневу копію черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.count.md\"\u003eDs\\PriorityQueue::count\u003c/a\u003e - Повертає\nкількість елементів у черзі\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.isempty.md\"\u003eDs\\PriorityQueue::isEmpty\u003c/a\u003e -\nПеревіряє, чи порожня колекція\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.jsonserialize.md\"\u003eDs\\PriorityQueue::jsonSerialize\u003c/a\u003e\n— Повертає колекцію в JSON-виставу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.peek.md\"\u003eDs\\PriorityQueue::peek\u003c/a\u003e - Повертає\nзначення з початку черги\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.pop.md\"\u003eDs\\PriorityQueue::pop\u003c/a\u003e — Видаляє та\nповертає значення з найвищим пріоритетом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.push.md\"\u003eDs\\PriorityQueue::push\u003c/a\u003e - Додає\nзначення в чергу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"ds-priorityqueue.toarray.md\"\u003eDs\\PriorityQueue::toArray\u003c/a\u003e -\nПеретворює чергу на масив (array)\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.ds-priorityqueue.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

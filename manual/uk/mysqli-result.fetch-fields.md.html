@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli-result.fetch-fields | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli-result.fetch-field.md">« mysqli_result::fetch_field</a></p>
+</li>
+<li>
+<p><a href="mysqli-result.fetch-object.md">mysqli_result::fetch_object »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.mysqli-result.md">mysqli_result</a></p>
+</li>
+<li>
+<p>Повертає масив об'єктів, що становлять поля результуючого
+набору</p>
+</li>
+</ul>
+<h1>mysqli_result::fetch_fields</h1>
+<h1>mysqli_fetch_fields</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<p>mysqli_result::fetch_fields -- mysqli_fetch_fields -- Повертає масив
+об'єктів, що представляють поля результуючого набору</p>
+<h3>Опис</h3>
+<p>Об'єктно-орієнтований стиль</p>
+<p>public <strong>mysqli_result::fetch_fields</strong>(): array</p>
+<p>Процедурний стиль</p>
+<p><strong>mysqli_fetch_fields</strong>(<a href="class.mysqli-result.md">mysqli_result</a>
+<code>$result</code>): array</p>
+<p>Ця функція служить для тих же цілей, що й
+<a href="mysqli-result.fetch-field.md">mysqli_fetch_field()</a>, з тієї лише
+різницею, що повертає не один об'єкт для стовпця, а масив таких
+об'єктів.</p>
+<h3>Список параметрів</h3>
+<p><code>result</code>
+Тільки для процедурного стилю: об'єкт
+<a href="class.mysqli-result.md">mysqli_result</a>, отриманий за допомогою
+<a href="mysqli.query.md">mysqli_query()</a>,
+<a href="mysqli.store-result.md">mysqli_store_result()</a>,
+<a href="mysqli.use-result.md">mysqli_use_result()</a> або
+<a href="mysqli-stmt.get-result.md">mysqli_stmt_get_result()</a>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає масив об'єктів, що містять метадані полів.</p>
+<table>
+<thead>
+<tr>
+<th>Властивість Опис</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Ім'я шпальти</td>
+</tr>
+<tr>
+<td>orgname</td>
+<td>Вихідне ім'я стовпця, якщо він є псевдонім</td>
+</tr>
+<tr>
+<td>table</td>
+<td>Ім'я таблиці, якою належить стовпець (якщо не обчислено)</td>
+</tr>
+<tr>
+<td>orgtable</td>
+<td>Початкове ім'я таблиці, якщо є псевдонім</td>
+</tr>
+<tr>
+<td>max_length</td>
+<td>Максимальна ширина поля результуючого набору.</td>
+</tr>
+<tr>
+<td>length</td>
+<td>Довжина поля в байтах, як вона задана щодо таблиці. Зверніть увагу, що дана величина (в байтах) може відрізнятися від величини символів, зазначеної у визначенні поля таблиці, так як в різних кодуваннях один символ може записуватися кількома байтами. Наприклад, набір символів utf8 має 3 байти на символ, таким чином поле VARCHAR(10) у кодуванні UTF-8 поверне довжину 30 байтів = 10 символів. один символ займає один байт.</td>
+</tr>
+<tr>
+<td>charsetnr</td>
+<td>Числовий ідентифікатор кодування.</td>
+</tr>
+<tr>
+<td>flags</td>
+<td>Ціле число, яке представляє бітові прапори для поля.</td>
+</tr>
+<tr>
+<td>тип</td>
+<td>Тип поля даних</td>
+</tr>
+<tr>
+<td>decimals</td>
+<td>Число знаків після коми (для цілих полів)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Властивості об'єкта</strong></p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Об'єктно-орієнтований стиль</strong></p>
+<p>` &#x3C;?php$mysqli = new mysqli("127.0.0.1", "root", "foofoo", "sakila");/* Перевіряємо з'єднання*/if ($mysqli->connect_errno) { %s
+", $mysqli->connect_error);   exit();}foreach (array('latin1', 'utf8') as $charset) {    // Встановлюємо котирування для| ;   $query = "SELECT actor_id, last_name from actor ORDER BY actor_id";   echo "=======================
+";    echo "Character Set: $charset
+";   echo "======================
+";    if ($result = $mysqli->query($query)) {        /* Читаем информацию по всем столбцам */        $finfo = $result->fetch_fields();        foreach ($finfo as $val) {            printf(" Name:%%s
+",   $val->name);           |
+",   $val->table);             printf("Max. Len:  %d
+",   $val->max_length);             printf("Length:   %%d
+",   $val->length);             printf("charsetnr:%d
+",   $val->charsetnr);           |
+",  $val->flags);             printf("Type:     %d</p>
+<p>", $val->type);        }}$       $result->free();    }}$mysqli->close();?> `</p>
+<p><strong>Приклад #2 Процедурний стиль</strong></p>
+<p>` &#x3C;?php$link = mysqli_connect("127.0.0.1", "my_user", "my_password", "sakila");/* Перевіряємо з'єднання|<em>/if (mysqli_connect_errno()) { s
+", mysqli_connect_error());    exit();}foreach (array('latin1', 'utf8') as $charset) {    // Устанавливаем кодировку для демонстрации её влияния на некоторые    mysqli_set_charset($link, $charset);    $query = "SELECT actor_id, last_name from actor ORDER BY actor_id";   echo "=======================
+";    echo "Character Set: $charset
+";   echo "======================
+";    if ($result = mysqli_query($link, $query)) {        /</em> Читаем информацию по всем столбцам */        $finfo = mysqli_fetch_fields($result);        foreach ($finfo as $val) {            printf("Name:      % s
+",   $val->name);           |
+",   $val->table);             printf("Max. Len:  %d
+",   $val->max_length);             printf("Length:   %%d
+",   $val->length);             printf("charsetnr:%d
+",   $val->charsetnr);           |
+",  $val->flags);             printf("Type:     %d</p>
+<p>", $val->type); |       }}         mysqli_free_result($result);    }}mysqli_close($link);?> `</p>
+<p>Результат виконання даних прикладів:</p>
+<h1>======================
+Character Set: latin1</h1>
+<p>Name: actor_id
+Table: actor
+Max. Len: 3
+Length: 5
+charsetnr: 63
+Flags: 49699
+Тип: 2</p>
+<p>Name: last_name
+Table: actor
+Max. Len: 12
+Length: 45
+charsetnr: 8
+Flags: 20489
+Тип: 253</p>
+<h1>======================
+Character Set: utf8</h1>
+<p>Name: actor_id
+Table: actor
+Max. Len: 3
+Length: 5
+charsetnr: 63
+Flags: 49699
+Тип: 2</p>
+<p>Name: last_name
+Table: actor
+Max. Len: 12
+Length: 135
+charsetnr: 33
+Flags: 20489</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="mysqli-result.field-count.md">mysqli_num_fields()</a> - Отримує
+кількість полів у наборі результатів</li>
+<li><a href="mysqli-result.fetch-field-direct.md">mysqli_fetch_field_direct()</a> -
+Отримання метаданих конкретного поля</li>
+<li><a href="mysqli-result.fetch-field.md">mysqli_fetch_field()</a> - Повертає
+наступне поле результуючого набору</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli-result.fetch-fields.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli-result.fetch-fields.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli-result.fetch-fields","slug":"mysqli-result.fetch-fields.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli-result.fetch-field.md\"\u003e« mysqli_result::fetch_field\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli-result.fetch-object.md\"\u003emysqli_result::fetch_object »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПовертає масив об'єктів, що становлять поля результуючого\nнабору\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003emysqli_result::fetch_fields\u003c/h1\u003e\n\u003ch1\u003emysqli_fetch_fields\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emysqli_result::fetch_fields -- mysqli_fetch_fields -- Повертає масив\nоб'єктів, що представляють поля результуючого набору\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003emysqli_result::fetch_fields\u003c/strong\u003e(): array\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003emysqli_fetch_fields\u003c/strong\u003e(\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e\n\u003ccode\u003e$result\u003c/code\u003e): array\u003c/p\u003e\n\u003cp\u003eЦя функція служить для тих же цілей, що й\n\u003ca href=\"mysqli-result.fetch-field.md\"\u003emysqli_fetch_field()\u003c/a\u003e, з тієї лише\nрізницею, що повертає не один об'єкт для стовпця, а масив таких\nоб'єктів.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eresult\u003c/code\u003e\nТільки для процедурного стилю: об'єкт\n\u003ca href=\"class.mysqli-result.md\"\u003emysqli_result\u003c/a\u003e, отриманий за допомогою\n\u003ca href=\"mysqli.query.md\"\u003emysqli_query()\u003c/a\u003e,\n\u003ca href=\"mysqli.store-result.md\"\u003emysqli_store_result()\u003c/a\u003e,\n\u003ca href=\"mysqli.use-result.md\"\u003emysqli_use_result()\u003c/a\u003e або\n\u003ca href=\"mysqli-stmt.get-result.md\"\u003emysqli_stmt_get_result()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає масив об'єктів, що містять метадані полів.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВластивість Опис\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ename\u003c/td\u003e\n\u003ctd\u003eІм'я шпальти\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eorgname\u003c/td\u003e\n\u003ctd\u003eВихідне ім'я стовпця, якщо він є псевдонім\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003etable\u003c/td\u003e\n\u003ctd\u003eІм'я таблиці, якою належить стовпець (якщо не обчислено)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eorgtable\u003c/td\u003e\n\u003ctd\u003eПочаткове ім'я таблиці, якщо є псевдонім\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003emax_length\u003c/td\u003e\n\u003ctd\u003eМаксимальна ширина поля результуючого набору.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003elength\u003c/td\u003e\n\u003ctd\u003eДовжина поля в байтах, як вона задана щодо таблиці. Зверніть увагу, що дана величина (в байтах) може відрізнятися від величини символів, зазначеної у визначенні поля таблиці, так як в різних кодуваннях один символ може записуватися кількома байтами. Наприклад, набір символів utf8 має 3 байти на символ, таким чином поле VARCHAR(10) у кодуванні UTF-8 поверне довжину 30 байтів = 10 символів. один символ займає один байт.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003echarsetnr\u003c/td\u003e\n\u003ctd\u003eЧисловий ідентифікатор кодування.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eflags\u003c/td\u003e\n\u003ctd\u003eЦіле число, яке представляє бітові прапори для поля.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eтип\u003c/td\u003e\n\u003ctd\u003eТип поля даних\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edecimals\u003c/td\u003e\n\u003ctd\u003eЧисло знаків після коми (для цілих полів)\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eВластивості об'єкта\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Об'єктно-орієнтований стиль\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$mysqli = new mysqli(\"127.0.0.1\", \"root\", \"foofoo\", \"sakila\");/* Перевіряємо з'єднання*/if ($mysqli-\u003econnect_errno) { %s\n\", $mysqli-\u003econnect_error);   exit();}foreach (array('latin1', 'utf8') as $charset) {    // Встановлюємо котирування для| ;   $query = \"SELECT actor_id, last_name from actor ORDER BY actor_id\";   echo \"=======================\n\";    echo \"Character Set: $charset\n\";   echo \"======================\n\";    if ($result = $mysqli-\u003equery($query)) {        /* Читаем информацию по всем столбцам */        $finfo = $result-\u003efetch_fields();        foreach ($finfo as $val) {            printf(\" Name:%%s\n\",   $val-\u003ename);           |\n\",   $val-\u003etable);             printf(\"Max. Len:  %d\n\",   $val-\u003emax_length);             printf(\"Length:   %%d\n\",   $val-\u003elength);             printf(\"charsetnr:%d\n\",   $val-\u003echarsetnr);           |\n\",  $val-\u003eflags);             printf(\"Type:     %d\u003c/p\u003e\n\u003cp\u003e\", $val-\u003etype);        }}$       $result-\u003efree();    }}$mysqli-\u003eclose();?\u003e `\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Процедурний стиль\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$link = mysqli_connect(\"127.0.0.1\", \"my_user\", \"my_password\", \"sakila\");/* Перевіряємо з'єднання|\u003cem\u003e/if (mysqli_connect_errno()) { s\n\", mysqli_connect_error());    exit();}foreach (array('latin1', 'utf8') as $charset) {    // Устанавливаем кодировку для демонстрации её влияния на некоторые    mysqli_set_charset($link, $charset);    $query = \"SELECT actor_id, last_name from actor ORDER BY actor_id\";   echo \"=======================\n\";    echo \"Character Set: $charset\n\";   echo \"======================\n\";    if ($result = mysqli_query($link, $query)) {        /\u003c/em\u003e Читаем информацию по всем столбцам */        $finfo = mysqli_fetch_fields($result);        foreach ($finfo as $val) {            printf(\"Name:      % s\n\",   $val-\u003ename);           |\n\",   $val-\u003etable);             printf(\"Max. Len:  %d\n\",   $val-\u003emax_length);             printf(\"Length:   %%d\n\",   $val-\u003elength);             printf(\"charsetnr:%d\n\",   $val-\u003echarsetnr);           |\n\",  $val-\u003eflags);             printf(\"Type:     %d\u003c/p\u003e\n\u003cp\u003e\", $val-\u003etype); |       }}         mysqli_free_result($result);    }}mysqli_close($link);?\u003e `\u003c/p\u003e\n\u003cp\u003eРезультат виконання даних прикладів:\u003c/p\u003e\n\u003ch1\u003e======================\nCharacter Set: latin1\u003c/h1\u003e\n\u003cp\u003eName: actor_id\nTable: actor\nMax. Len: 3\nLength: 5\ncharsetnr: 63\nFlags: 49699\nТип: 2\u003c/p\u003e\n\u003cp\u003eName: last_name\nTable: actor\nMax. Len: 12\nLength: 45\ncharsetnr: 8\nFlags: 20489\nТип: 253\u003c/p\u003e\n\u003ch1\u003e======================\nCharacter Set: utf8\u003c/h1\u003e\n\u003cp\u003eName: actor_id\nTable: actor\nMax. Len: 3\nLength: 5\ncharsetnr: 63\nFlags: 49699\nТип: 2\u003c/p\u003e\n\u003cp\u003eName: last_name\nTable: actor\nMax. Len: 12\nLength: 135\ncharsetnr: 33\nFlags: 20489\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.field-count.md\"\u003emysqli_num_fields()\u003c/a\u003e - Отримує\nкількість полів у наборі результатів\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-field-direct.md\"\u003emysqli_fetch_field_direct()\u003c/a\u003e -\nОтримання метаданих конкретного поля\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli-result.fetch-field.md\"\u003emysqli_fetch_field()\u003c/a\u003e - Повертає\nнаступне поле результуючого набору\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli-result.fetch-fields.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli.overview | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="intro.mysqli.md">«Вступ</a></p>
+</li>
+<li>
+<p><a href="mysqli.quickstart.md">Короткий посібник »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.mysqli.md">MySQLi</a></p>
+</li>
+<li>
+<p>Короткий огляд</p>
+</li>
+</ul>
+<h1>Короткий огляд</h1>
+<p>Цей розділ присвячений опису інструментів для взаємодії
+PHP-додатків із базами даних MySQL.</p>
+<p><em>Що таке API?</em></p>
+<p>Інтерфейс програмування програм, або API, визначає набір
+класів, методів, функцій та змінних, які можна викликати з вашого
+програми для виконання поставлених завдань. Щодо PHP
+програм, які повинні взаємодіяти з базами даних,
+необхідні для цього API зазвичай представлені PHP-модулями.</p>
+<p>API можуть бути процедурними чи об'єктно-орієнтованими. При
+використання процедурних API ви викликаєте функції для виконання
+будь-яких операцій, а у разі об'єктно-орієнтованих ви
+инстанцируете класи і потім викликає методи створених об'єктів. Другий
+підхід, як правило, краще, оскільки він більш сучасний і
+сприяє написанню організованішого коду.</p>
+<p>API MySQL надає кілька способів підключення до бази даних
+PHP-програми. У цьому документі наводиться опис цих способів і
+даються рекомендації, як вибрати найбільш підходяще рішення
+конкретної ситуації.</p>
+<p><em>Що таке конектор?</em></p>
+<p>У документації MySQL термін <em>конектор (connector)</em> відноситься до частини
+програмне забезпечення, що відповідає за підключення до сервера MySQL.
+MySQL надає безліч конекторів для різних мов
+програмування, зокрема PHP.</p>
+<p>Для забезпечення взаємодії PHP програми із сервером баз даних вам
+необхідно написати PHP-код, який виконує підключення до сервера,
+виконання запитів до бази даних тощо. Від
+програмного забезпечення сервера потрібно надати API, яке
+ваш PHP-додаток зможе використовувати, а також функціонал,
+відповідальний за взаємодію вашої програми з сервером.
+Програмне забезпечення, що реалізує такий функціонал, зазвичай називають
+конектором, так як воно дозволяє вашому додатку підключитися (<em>to
+connect</em>) до сервера бази даних. У ряді випадків конектор для своїх потреб
+може вимагати додаткові бібліотеки.</p>
+<p><em>Що таке драйвер?</em></p>
+<p>Драйвером називається частина програмного забезпечення, що відповідає за
+взаємодія програми з певним типом серверів баз даних.
+Драйвер також може звертатися до зовнішніх бібліотек, таких як
+клієнтська бібліотека MySQL чи нативний драйвер MySQL. Ці бібліотеки
+реалізують низькорівневий протокол взаємодії із сервером MySQL.</p>
+<p>Як приклад можна навести рівень абстракції до роботи з базами
+даних <a href="mysqli.overview.md#mysqli.overview.pdo">Об'єкти даних PHP
+(PDO)</a>, який може
+використовувати один з декількох драйверів, специфічних для конкретних
+баз даних. Як такий драйвер може бути драйвер PDO
+MySQL, який дозволяє PDO взаємодіяти з MySQL-сервером.</p>
+<p>Іноді люди вживають терміни конектор та драйвер, як синоніми, і це
+може збити з пантелику. У документації MySQL термін "драйвер" означає
+ділянку програмного коду, що входить до складу конектора та відповідає за
+зв'язок із конкретною СУБД.</p>
+<p><em>Що таке модуль?</em></p>
+<p>У документації до PHP ви будете неодноразово стикатися з терміном
+<em>модуль</em>. Код PHP як такого складається з ядра та приєднаних до нього
+необов'язкових модулів, які збільшують коло завдань, які можуть
+виконувати ядро. Що стосуються MySQL модулі, такі як mysqli та драйвер
+PDO MySQL, взаємодіють з ядром за допомогою фреймворку PHP модулів.</p>
+<p>Зазвичай модулі надають свій API-інтерфейс PHP-програмісту, щоб
+той міг програмно використати можливості модуля. Однак, деякі
+модулі, що використовують фреймворк PHP-модулі, не надають
+програмістам жодних інтерфейсів.</p>
+<p>Драйвер PDO MySQL, наприклад, не надає API. Він
+надає інтерфейс лише абстрактного шару PDO, що лежить вище.</p>
+<p>Терміни API і модуль не можна сприймати як синоніми, оскільки модуль
+може не надавати API програмісту.</p>
+<p><em>Які інструменти для роботи з MySQL пропонує API PHP?</em></p>
+<p>API надає на вибір два набори інструментів для підключення до
+серверу баз даних MySQL:</p>
+<ul>
+<li>
+<p>Модуль PHP mysqli</p>
+</li>
+<li>
+<p>Об'єкти даних PHP (PDO)</p>
+</li>
+</ul>
+<p>Кожен з них має свої переваги та недоліки. Метою даного огляду
+є коротким описом ключових особливостей кожного API.</p>
+<p>*Що таке PHP-модуль mysqli?</p>
+<p>Модуль <code>mysqli</code>, або як його ще називають <em>покращений (improved)</em> модуль
+MySQL був розроблений, щоб дати можливість програмістам у повній
+мері скористатися функціоналом MySQL-сервера версій 4.1.3 та вище.
+Модуль <code>mysqli</code> включається до постачання PHP версій 5 і вище.</p>
+<p><code>mysqli</code> має ряд переваг та удосконалень у порівнянні з
+<code>mysql</code>, які полягають у наступному:</p>
+<ul>
+<li>
+<p>Об'єктно-орієнтований інтерфейс</p>
+</li>
+<li>
+<p>Підтримка запитів, що готуються.</p>
+</li>
+<li>
+<p>Підтримка мультизапитів</p>
+</li>
+<li>
+<p>Підтримка транзакцій</p>
+</li>
+<li>
+<p>Покращені можливості налагодження</p>
+</li>
+</ul>
+<p>Нарівні з об'єктно-орієнтованим інтерфейсом модуль надає і
+процедурний інтерфейс.</p>
+<p>модуль <code>mysqli</code> збирається за допомогою фреймворку модулів PHP, його
+вихідний код розташований у директорії <code>ext/mysqli</code>.</p>
+<p>За додатковою інформацією про модуль <code>mysqli</code>, звертайтеся до розділу
+<a href="book.mysqli.md">MySQLi</a>.</p>
+<p><em>Що таке PDO?</em></p>
+<p>Об'єкти даних PHP, або PDO, являють собою абстракцію конектора
+баз даних для програм PHP. PDO надає API інтерфейс
+взаємодії з базою даних, який залежить від конкретної СУБД.
+Теоретично, під час використання PDO можна змінити сервер баз даних,
+наприклад з Firebird на MySQL, і це призведе лише до незначних
+змін у PHP-коді.</p>
+<p>Як інші подібні абстракції можна привести JDBC для
+Java-додатків та DBI для Perl.</p>
+<p>Поряд з перевагами PDO, такими як простота та переносимість API,
+є його головний недолік: PDO підтримує не всі можливості сервера
+бази даних, доступні в останніх версіях MySQL. Наприклад, засобами
+PDO не можна створювати множинні запити, хоча MySQL їх і
+підтримує.</p>
+<p>PDO збирається за допомогою фреймворку модулів PHP, його вихідний код
+розташований у директорії <code>ext/pdo</code>.</p>
+<p>Додаткову інформацію про PDO див. у розділі <a href="book.pdo.md">PDO</a>.</p>
+<p><em>Що таке драйвер PDO MYSQL?</em></p>
+<p>Драйвер PDO MYSQL не є API як таким, принаймні з точки
+зору програміста. Драйвер PDO MYSQL розташовується між самим PDO та
+сервером MySQL. Програміст викликає функції інтерфейсу API PDO, а PDO
+свою чергу використовує драйвер PDO MYSQL для обміну даними та командами
+із сервером MySQL.</p>
+<p>Драйвер PDO MYSQL лише один із багатьох PDO-драйверів. Для більшості
+СУБД є свої PDO драйвери, як наприклад драйвери для Firebird або
+PostgreSQL серверів.</p>
+<p>Драйвер PDO MYSQL збирається за допомогою фреймворку модулів PHP, його
+вихідний код розташований у директорії <code>ext/pdo_mysql</code>. Він не
+надає API-інтерфейс програмісту PHP.</p>
+<p>Додатково про драйвер PDO MYSQL можна прочитати в розділі <a href="ref.pdo-mysql.md">MySQL
+(PDO)</a>.</p>
+<p><em>Що таке нативний драйвер MySQL для PHP?</em></p>
+<p>Щоб забезпечити взаємодію з сервером MySQL, модуль <code>mysqli</code> та
+драйвер PDO MYSQL використовують низькорівневу бібліотеку, в якій
+реалізовано необхідні протоколи. У минулому була доступна лише одна
+така бібліотека: Клієнтська бібліотека MySQL (MySQL Client Library),
+також відома як <code>libmysqlclient</code>.</p>
+<p>Проте, інтерфейс, який надавала <code>libmysqlclient</code>, не був
+оптимізований для взаємодії з PHP-додатками, оскільки спочатку
+<code>libmysqlclient</code> розроблялася до роботи з С-додатками. Декілька
+пізніше було розроблено нативний драйвер MySQL (MySQL Native Driver)
+<code>mysqlnd</code>, який є альтернативою <code>libmysqlclient</code> для
+PHP.</p>
+<p>І модуль <code>mysqli</code> та драйвер PDO MySQL можна індивідуально налаштувати для
+роботи або з <code>libmysqlclient</code>, або з <code>mysqlnd</code>. Оскільки <code>mysqlnd</code>
+створювався спеціально для PHP-систем, у нього є перевага
+швидкості та витрати пам'яті перед <code>libmysqlclient</code>. Тому його
+використання краще.</p>
+<p>Нативний драйвер MYSQL збирається за допомогою фреймворку модулів PHP, його
+вихідний код розташований у директорії <code>ext/mysqlnd</code>. Він не надає
+API-інтерфейс програміст PHP.</p>
+<p><em>Порівняння можливостей</em></p>
+<p>У наведеній таблиці наводиться порівняння функціоналу основних методів
+підключення до MySQL з PHP:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Модуль PHP</th>
+<th>PDO (використовуючи драйвер PDO MySQL та нативний драйвер MySQL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Версія PHP, в якій було впроваджено функціонал</td>
+<td>5.0</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>Статус розробки MySQL Розробка продовжується</td>
+<td>Розробка продовжується</td>
+<td></td>
+</tr>
+<tr>
+<td>API підтримує набори символів Так</td>
+<td>Так</td>
+<td></td>
+</tr>
+<tr>
+<td>API підтримує запити, що готуються на стороні сервера</td>
+<td>Так</td>
+<td>Так</td>
+</tr>
+<tr>
+<td>API підтримує запити, що готуються на стороні клієнта</td>
+<td>Ні</td>
+<td>Так</td>
+</tr>
+<tr>
+<td>API підтримує процедури, що зберігаються</td>
+<td>Так</td>
+<td>Так</td>
+</tr>
+<tr>
+<td>API підтримує множинні запити Так</td>
+<td>Здебільшого</td>
+<td></td>
+</tr>
+<tr>
+<td>Підтримка всього функціоналу MySQL 4.1+ Так</td>
+<td>Здебільшого</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Порівняння опцій MySQL API у PHP</strong></p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli.overview.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli.overview.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli.overview","slug":"mysqli.overview.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"intro.mysqli.md\"\u003e«Вступ\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.quickstart.md\"\u003eКороткий посібник »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.mysqli.md\"\u003eMySQLi\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКороткий огляд\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКороткий огляд\u003c/h1\u003e\n\u003cp\u003eЦей розділ присвячений опису інструментів для взаємодії\nPHP-додатків із базами даних MySQL.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЩо таке API?\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eІнтерфейс програмування програм, або API, визначає набір\nкласів, методів, функцій та змінних, які можна викликати з вашого\nпрограми для виконання поставлених завдань. Щодо PHP\nпрограм, які повинні взаємодіяти з базами даних,\nнеобхідні для цього API зазвичай представлені PHP-модулями.\u003c/p\u003e\n\u003cp\u003eAPI можуть бути процедурними чи об'єктно-орієнтованими. При\nвикористання процедурних API ви викликаєте функції для виконання\nбудь-яких операцій, а у разі об'єктно-орієнтованих ви\nинстанцируете класи і потім викликає методи створених об'єктів. Другий\nпідхід, як правило, краще, оскільки він більш сучасний і\nсприяє написанню організованішого коду.\u003c/p\u003e\n\u003cp\u003eAPI MySQL надає кілька способів підключення до бази даних\nPHP-програми. У цьому документі наводиться опис цих способів і\nдаються рекомендації, як вибрати найбільш підходяще рішення\nконкретної ситуації.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЩо таке конектор?\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eУ документації MySQL термін \u003cem\u003eконектор (connector)\u003c/em\u003e відноситься до частини\nпрограмне забезпечення, що відповідає за підключення до сервера MySQL.\nMySQL надає безліч конекторів для різних мов\nпрограмування, зокрема PHP.\u003c/p\u003e\n\u003cp\u003eДля забезпечення взаємодії PHP програми із сервером баз даних вам\nнеобхідно написати PHP-код, який виконує підключення до сервера,\nвиконання запитів до бази даних тощо. Від\nпрограмного забезпечення сервера потрібно надати API, яке\nваш PHP-додаток зможе використовувати, а також функціонал,\nвідповідальний за взаємодію вашої програми з сервером.\nПрограмне забезпечення, що реалізує такий функціонал, зазвичай називають\nконектором, так як воно дозволяє вашому додатку підключитися (\u003cem\u003eto\nconnect\u003c/em\u003e) до сервера бази даних. У ряді випадків конектор для своїх потреб\nможе вимагати додаткові бібліотеки.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЩо таке драйвер?\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eДрайвером називається частина програмного забезпечення, що відповідає за\nвзаємодія програми з певним типом серверів баз даних.\nДрайвер також може звертатися до зовнішніх бібліотек, таких як\nклієнтська бібліотека MySQL чи нативний драйвер MySQL. Ці бібліотеки\nреалізують низькорівневий протокол взаємодії із сервером MySQL.\u003c/p\u003e\n\u003cp\u003eЯк приклад можна навести рівень абстракції до роботи з базами\nданих \u003ca href=\"mysqli.overview.md#mysqli.overview.pdo\"\u003eОб'єкти даних PHP\n(PDO)\u003c/a\u003e, який може\nвикористовувати один з декількох драйверів, специфічних для конкретних\nбаз даних. Як такий драйвер може бути драйвер PDO\nMySQL, який дозволяє PDO взаємодіяти з MySQL-сервером.\u003c/p\u003e\n\u003cp\u003eІноді люди вживають терміни конектор та драйвер, як синоніми, і це\nможе збити з пантелику. У документації MySQL термін \"драйвер\" означає\nділянку програмного коду, що входить до складу конектора та відповідає за\nзв'язок із конкретною СУБД.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЩо таке модуль?\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eУ документації до PHP ви будете неодноразово стикатися з терміном\n\u003cem\u003eмодуль\u003c/em\u003e. Код PHP як такого складається з ядра та приєднаних до нього\nнеобов'язкових модулів, які збільшують коло завдань, які можуть\nвиконувати ядро. Що стосуються MySQL модулі, такі як mysqli та драйвер\nPDO MySQL, взаємодіють з ядром за допомогою фреймворку PHP модулів.\u003c/p\u003e\n\u003cp\u003eЗазвичай модулі надають свій API-інтерфейс PHP-програмісту, щоб\nтой міг програмно використати можливості модуля. Однак, деякі\nмодулі, що використовують фреймворк PHP-модулі, не надають\nпрограмістам жодних інтерфейсів.\u003c/p\u003e\n\u003cp\u003eДрайвер PDO MySQL, наприклад, не надає API. Він\nнадає інтерфейс лише абстрактного шару PDO, що лежить вище.\u003c/p\u003e\n\u003cp\u003eТерміни API і модуль не можна сприймати як синоніми, оскільки модуль\nможе не надавати API програмісту.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЯкі інструменти для роботи з MySQL пропонує API PHP?\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eAPI надає на вибір два набори інструментів для підключення до\nсерверу баз даних MySQL:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eМодуль PHP mysqli\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eОб'єкти даних PHP (PDO)\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eКожен з них має свої переваги та недоліки. Метою даного огляду\nє коротким описом ключових особливостей кожного API.\u003c/p\u003e\n\u003cp\u003e*Що таке PHP-модуль mysqli?\u003c/p\u003e\n\u003cp\u003eМодуль \u003ccode\u003emysqli\u003c/code\u003e, або як його ще називають \u003cem\u003eпокращений (improved)\u003c/em\u003e модуль\nMySQL був розроблений, щоб дати можливість програмістам у повній\nмері скористатися функціоналом MySQL-сервера версій 4.1.3 та вище.\nМодуль \u003ccode\u003emysqli\u003c/code\u003e включається до постачання PHP версій 5 і вище.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emysqli\u003c/code\u003e має ряд переваг та удосконалень у порівнянні з\n\u003ccode\u003emysql\u003c/code\u003e, які полягають у наступному:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eОб'єктно-орієнтований інтерфейс\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПідтримка запитів, що готуються.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПідтримка мультизапитів\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПідтримка транзакцій\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПокращені можливості налагодження\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eНарівні з об'єктно-орієнтованим інтерфейсом модуль надає і\nпроцедурний інтерфейс.\u003c/p\u003e\n\u003cp\u003eмодуль \u003ccode\u003emysqli\u003c/code\u003e збирається за допомогою фреймворку модулів PHP, його\nвихідний код розташований у директорії \u003ccode\u003eext/mysqli\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЗа додатковою інформацією про модуль \u003ccode\u003emysqli\u003c/code\u003e, звертайтеся до розділу\n\u003ca href=\"book.mysqli.md\"\u003eMySQLi\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЩо таке PDO?\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eОб'єкти даних PHP, або PDO, являють собою абстракцію конектора\nбаз даних для програм PHP. PDO надає API інтерфейс\nвзаємодії з базою даних, який залежить від конкретної СУБД.\nТеоретично, під час використання PDO можна змінити сервер баз даних,\nнаприклад з Firebird на MySQL, і це призведе лише до незначних\nзмін у PHP-коді.\u003c/p\u003e\n\u003cp\u003eЯк інші подібні абстракції можна привести JDBC для\nJava-додатків та DBI для Perl.\u003c/p\u003e\n\u003cp\u003eПоряд з перевагами PDO, такими як простота та переносимість API,\nє його головний недолік: PDO підтримує не всі можливості сервера\nбази даних, доступні в останніх версіях MySQL. Наприклад, засобами\nPDO не можна створювати множинні запити, хоча MySQL їх і\nпідтримує.\u003c/p\u003e\n\u003cp\u003ePDO збирається за допомогою фреймворку модулів PHP, його вихідний код\nрозташований у директорії \u003ccode\u003eext/pdo\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eДодаткову інформацію про PDO див. у розділі \u003ca href=\"book.pdo.md\"\u003ePDO\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЩо таке драйвер PDO MYSQL?\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eДрайвер PDO MYSQL не є API як таким, принаймні з точки\nзору програміста. Драйвер PDO MYSQL розташовується між самим PDO та\nсервером MySQL. Програміст викликає функції інтерфейсу API PDO, а PDO\nсвою чергу використовує драйвер PDO MYSQL для обміну даними та командами\nіз сервером MySQL.\u003c/p\u003e\n\u003cp\u003eДрайвер PDO MYSQL лише один із багатьох PDO-драйверів. Для більшості\nСУБД є свої PDO драйвери, як наприклад драйвери для Firebird або\nPostgreSQL серверів.\u003c/p\u003e\n\u003cp\u003eДрайвер PDO MYSQL збирається за допомогою фреймворку модулів PHP, його\nвихідний код розташований у директорії \u003ccode\u003eext/pdo_mysql\u003c/code\u003e. Він не\nнадає API-інтерфейс програмісту PHP.\u003c/p\u003e\n\u003cp\u003eДодатково про драйвер PDO MYSQL можна прочитати в розділі \u003ca href=\"ref.pdo-mysql.md\"\u003eMySQL\n(PDO)\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eЩо таке нативний драйвер MySQL для PHP?\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eЩоб забезпечити взаємодію з сервером MySQL, модуль \u003ccode\u003emysqli\u003c/code\u003e та\nдрайвер PDO MYSQL використовують низькорівневу бібліотеку, в якій\nреалізовано необхідні протоколи. У минулому була доступна лише одна\nтака бібліотека: Клієнтська бібліотека MySQL (MySQL Client Library),\nтакож відома як \u003ccode\u003elibmysqlclient\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eПроте, інтерфейс, який надавала \u003ccode\u003elibmysqlclient\u003c/code\u003e, не був\nоптимізований для взаємодії з PHP-додатками, оскільки спочатку\n\u003ccode\u003elibmysqlclient\u003c/code\u003e розроблялася до роботи з С-додатками. Декілька\nпізніше було розроблено нативний драйвер MySQL (MySQL Native Driver)\n\u003ccode\u003emysqlnd\u003c/code\u003e, який є альтернативою \u003ccode\u003elibmysqlclient\u003c/code\u003e для\nPHP.\u003c/p\u003e\n\u003cp\u003eІ модуль \u003ccode\u003emysqli\u003c/code\u003e та драйвер PDO MySQL можна індивідуально налаштувати для\nроботи або з \u003ccode\u003elibmysqlclient\u003c/code\u003e, або з \u003ccode\u003emysqlnd\u003c/code\u003e. Оскільки \u003ccode\u003emysqlnd\u003c/code\u003e\nстворювався спеціально для PHP-систем, у нього є перевага\nшвидкості та витрати пам'яті перед \u003ccode\u003elibmysqlclient\u003c/code\u003e. Тому його\nвикористання краще.\u003c/p\u003e\n\u003cp\u003eНативний драйвер MYSQL збирається за допомогою фреймворку модулів PHP, його\nвихідний код розташований у директорії \u003ccode\u003eext/mysqlnd\u003c/code\u003e. Він не надає\nAPI-інтерфейс програміст PHP.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eПорівняння можливостей\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eУ наведеній таблиці наводиться порівняння функціоналу основних методів\nпідключення до MySQL з PHP:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003eМодуль PHP\u003c/th\u003e\n\u003cth\u003ePDO (використовуючи драйвер PDO MySQL та нативний драйвер MySQL)\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eВерсія PHP, в якій було впроваджено функціонал\u003c/td\u003e\n\u003ctd\u003e5.0\u003c/td\u003e\n\u003ctd\u003e5.0\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eСтатус розробки MySQL Розробка продовжується\u003c/td\u003e\n\u003ctd\u003eРозробка продовжується\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAPI підтримує набори символів Так\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAPI підтримує запити, що готуються на стороні сервера\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAPI підтримує запити, що готуються на стороні клієнта\u003c/td\u003e\n\u003ctd\u003eНі\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAPI підтримує процедури, що зберігаються\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003ctd\u003eТак\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAPI підтримує множинні запити Так\u003c/td\u003e\n\u003ctd\u003eЗдебільшого\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eПідтримка всього функціоналу MySQL 4.1+ Так\u003c/td\u003e\n\u003ctd\u003eЗдебільшого\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eПорівняння опцій MySQL API у PHP\u003c/strong\u003e\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli.overview.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

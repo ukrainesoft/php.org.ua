@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>apcu.configuration | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="apcu.installation.md">« Встановлення</a></p>
+</li>
+<li>
+<p><a href="apcu.resources.md">Типи ресурсів»</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="apcu.setup.md">Встановлення та налаштування</a></p>
+</li>
+<li>
+<p>Налаштування під час виконання</p>
+</li>
+</ul>
+<h2>Налаштування під час виконання</h2>
+<p>Поведінка цих функцій залежить від установок <code>php.ini</code>.</p>
+<p>Хоча налаштувань APCu за замовчуванням цілком достатньо для більшості завдань,
+але для серйозних проектів необхідно уважно вивчити наступні
+налаштування.</p>
+<p>При налаштуванні APCu необхідно визначитися, скільки пам'яті надати
+у розпорядження APCu. Директива ini-файлу, відповідальна за цю
+налаштування - <code>apc.shm_size</code>. Уважно прочитайте наступний розділ.</p>
+<p>Як тільки сервер запущено, скрипт <code>apc.php</code>, що постачається з цим
+модулем повинен бути скопійований в "docroot" і права на нього повинні
+дозволяти запустити його через браузер. Цей скрипт надає
+детальну інформацію щодо роботи APCu. Якщо PHP підтримується GD, то
+цей скрипт також показуватиме корисні графіки. Звичайно ж перше,
+що буде цікаво, це те, чи кешує APC що-небудь. Якщо APC
+працює, то значення <code>Cache full count</code> (ліворуч) буде показувати,
+скільки разів кеш був повністю заповнений і був змушений примусово
+видалити записи, до яких не зверталися останні <code>apc.ttl</code> секунд. Чим
+менше це число - тим краще налаштований кеш. Якщо це число
+постійно росте, отже APCu доводиться постійно очищати старі записи
+і значить втрачається весь сенс кешування. Найкращий спосіб зменшити
+це число - додати APCu пам'яті. Якщо зробити цього не можна, то треба
+переналаштувати <code>apc.filters</code>, щоб обмежити набір скриптів, що кешуються.</p>
+<p>Якщо APCu зібрано за допомогою mmap (Memory Mapping), він буде
+використовувати лише один сегмент пам'яті, якщо ж навпаки, APC зібраний з
+підтримкою SHM (SysV Shared Memory), він використовуватиме кілька
+сегментів. MMAP не має максимального обмеження, на відміну від SHM,
+який обмежується <code>/proc/sys/kernel/shmmax</code>. Зазвичай рекомендується
+використовувати MMAP, тому що він набагато швидше виділяє пам'ять при
+перезавантаження веб-сервера, що позначається на швидкості запуску сервера.</p>
+<p>| Ім'я За замовчуванням | Місце зміни | Список змін |
+| <a href="apcu.configuration.md#ini.apcu.enabled">apc.enabled</a> | "1" | PHP_INI_SYSTEM | |
+| <a href="apcu.configuration.md#ini.apcu.shm-segments">apc.shm_segments</a> | "1" | PHP_INI_SYSTEM | |
+| <a href="apcu.configuration.md#ini.apcu.shm-size">apc.shm_size</a> | "32M" | PHP_INI_SYSTEM | |
+| <a href="apcu.configuration.md#ini.apcu.entries-hint">apc.entries_hint</a> | "4096" | PHP_INI_SYSTEM | |
+| <a href="apcu.configuration.md#ini.apcu.ttl">apc.ttl</a> | "0" | PHP_INI_SYSTEM | |
+PHP_INI_SYSTEM | || <a href="apcu.configuration.md#ini.apcu.gc-ttl">apc.gc_ttl</a> | "3600" |
+| <a href="apcu.configuration.md#ini.apcu.mmap-file-mask">apc.mmap_file_mask</a> | NULL | PHP_INI_SYSTEM | |
+PHP_INI_SYSTEM | || <a href="apcu.configuration.md#ini.apcu.slam-defense">apc.slam_defense</a> | "1" |
+| <a href="apcu.configuration.md#ini.apcu.enable-cli">apc.enable_cli</a> | "0" | PHP_INI_SYSTEM | |
+| <a href="apcu.configuration.md#ini.apcu.use-request-time">apc.use_request_time</a> | "0" | PHP_INI_ALL | До APCu 5.1.19 значення за промовчанням було "1". |
+| <a href="apcu.configuration.md#ini.apcu.serializer">apc.serializer</a> | "php" | PHP_INI_SYSTEM | До APCu 5.1.19 значення за промовчанням було "default". |
+PHP_INI_SYSTEM | || <a href="apcu.configuration.md#ini.apcu.coredump-unmap">apc.coredump_unmap</a> | "0" |
+| <a href="apcu.configuration.md#ini.apcu.preload-path">apc.preload_path</a> | NULL | PHP_INI_SYSTEM | |</p>
+<p><strong>Опції конфігурації APCu</strong></p>
+<p>Для детального опису констант PHP_INI_*, зверніться до розділу <a href="configuration.changes.modes.md">Де
+можуть бути встановлені параметри конфігурації</a>.</p>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>apc.enabled</code> bool
+Якщо встановити apc.enabled рівним 0, то APCu не буде запущений. Це
+корисно, коли APCu статично включений в PHP і немає інших варіантів,
+заборони його використання. Якщо APC зібрано як DSO, можна просто
+закоментувати рядок <code>extension</code> у <code>php.ini</code>.</p>
+<p><code>apc.shm_segments</code> int
+Кількість сегментів пам'яті, що розділяється, виділеної під кеш. Якщо APC
+використав всю доступну розділювану пам'ять, а <code>apc.shm_size</code> таким
+великим, як дозволяє система, збільшення цього параметра може допомогти.</p>
+<p><code>apc.shm_size</code> string
+Розмір сегмента пам'яті, що розділяється, заданий в короткій нотації
+(дивіться <a href="faq.using.md#faq.using.shorthandbytes">цей FAQ</a>). за
+замовчуванням, деякі системи (включаючи більшість варіантів BSD)
+обмежують це значення украй малим значенням.</p>
+<p><code>apc.entries_hint</code> int
+Це підказка про кількість унікальних змін користувачів,
+які треба кешувати. Встановіть рівним нулю або взагалі не
+вказуйте, якщо не впевнені.</p>
+<p><code>apc.ttl</code> int
+Кількість секунд, які запис може лежати в кеші без звернення до
+ній, як буде дозволено її замінити іншу. Встановлення цього
+параметра рівного нулю може призвести до того, що місце буде забито
+і нові записи не зможуть потрапити до кешу. У цьому випадку, якщо параметр
+дорівнює 0, кеш повністю очищений. Якщо ж ttl буде більшим за нуль, то
+APCu намагатиметься очистити застарілі записи.</p>
+<p><code>apc.gc_ttl</code> int
+Кількість секунд, які запис може перебувати у списку збирача
+сміття. Це значення забезпечує безвідмовність у разі падіння сервера
+у момент виконання закешованого файлу. Якщо виконуваний файл був
+змінено, пам'ять, виділена під кешування його старої версії, не буде
+повернуто до закінчення цього часу. Встановлення в нуль відключає цей
+функціонал.</p>
+<p><code>apc.mmap_file_mask</code> string
+Якщо зібраний за допомогою MMAP, за допомогою опції <code>--enable-mmap</code>, цей
+параметр повинен містити файлову маску типу mktemp-style для передачі
+в модуль MMAP, щоб визначити, чи MMAP використовуватиме файлову
+систему або пам'ять, що розділяється. Для файлової системи задайте опцію як
+<code>/tmp/apc.XXXXXX</code> (рівно 6 <code>X</code>). Для використання shm_open/mmap у стилі
+POSIX, додайте <code>.shm</code> у будь-якому місці маски, наприклад <code>/apc.shm.XXXXXX</code>
+Ви також можете встановити його як <code>/dev/zero</code> для використання
+інтерфейсу ядра <code>/dev/zero</code> для анонімної пам'яті mmap Якщо не поставлено,
+то примусово використовуватиметься анонімний mmap.</p>
+<p><code>apc.slam_defense</code> int
+На дуже завантажених серверах, коли ви запускаєте веб-сервер, відразу
+безліч процесів намагатимуться закешувати один і той же файл
+одночасно. Цією опцією задається можливість, у відсотках, того, що
+спроба одного конкретного процесу закешувати дані буде відхилена.
+Наприклад, якщо <code>apc.slam_defense</code> встановити рівні <code>75</code>, то це
+означає, що можливість закешувати файл, якого в кеші немає, буде
+дорівнює 25% і ймовірність того, що в кешуванні буде відмовлено рівну
+75%. Для заборони даного функціоналу встановіть цей параметр рівним
+<code>0</code>.</p>
+<p><code>apc.enable_cli</code> int
+Більше для тестування та налагодження. Ця установка включає APCu для CLI
+версії PHP. При звичайній роботі, запускати APCu, який буде створювати,
+наповнювати та знищувати кеш при кожному запуску сценарію в консолі, буде
+далеко не найкращою ідеєю. Але з метою тестування та налагодження, можна легко
+увімкнути APCu для CLI.</p>
+<p><code>apc.serializer</code> string
+Вказує APC на використання стороннього серіалізатора.</p>
+<p><code>apc.coredump_unmap</code> bool
+Дозволяє APC перехоплювати сигнали, такі як SIGSEGV, який
+записує coredump, коли подано. Коли ці сигнали будуть отримані, APC
+спробує звільнити всю пам'ять, що розділяється, щоб не включати її в
+coredump. Ця установка може збільшити стабільність системи, коли
+критичний сигнал був отриманий, а APC налаштований на використання
+великого обсягу пам'яті.</p>
+<p><strong>Увага</strong>
+Ця можливість потенційно небезпечна. Визволення сегментів
+пам'яті при отриманні критичного сигналу може призвести до
+непередбачуваної поведінки.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Хоча деякі ядра надають можливість ігнорувати деякі
+сегменти пам'яті при записі core-файлу, ці реалізації
+можуть також ігнорувати важливі сегменти пам'яті, такі як Apache
+scoreboard.</p>
+</blockquote>
+<p><code>apc.preload_path</code> string
+Опціонально. Задає шлях, який використовується APC для завантаження
+кешованих даних під час запуску.</p>
+<p><code>apc.use_request_time</code> bool
+Використовувати час старту запиту SAPI для TTL.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/apcu.configuration.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/apcu.configuration.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"apcu.configuration","slug":"apcu.configuration.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"apcu.installation.md\"\u003e« Встановлення\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"apcu.resources.md\"\u003eТипи ресурсів»\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"apcu.setup.md\"\u003eВстановлення та налаштування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНалаштування під час виконання\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНалаштування під час виконання\u003c/h2\u003e\n\u003cp\u003eПоведінка цих функцій залежить від установок \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eХоча налаштувань APCu за замовчуванням цілком достатньо для більшості завдань,\nале для серйозних проектів необхідно уважно вивчити наступні\nналаштування.\u003c/p\u003e\n\u003cp\u003eПри налаштуванні APCu необхідно визначитися, скільки пам'яті надати\nу розпорядження APCu. Директива ini-файлу, відповідальна за цю\nналаштування - \u003ccode\u003eapc.shm_size\u003c/code\u003e. Уважно прочитайте наступний розділ.\u003c/p\u003e\n\u003cp\u003eЯк тільки сервер запущено, скрипт \u003ccode\u003eapc.php\u003c/code\u003e, що постачається з цим\nмодулем повинен бути скопійований в \"docroot\" і права на нього повинні\nдозволяти запустити його через браузер. Цей скрипт надає\nдетальну інформацію щодо роботи APCu. Якщо PHP підтримується GD, то\nцей скрипт також показуватиме корисні графіки. Звичайно ж перше,\nщо буде цікаво, це те, чи кешує APC що-небудь. Якщо APC\nпрацює, то значення \u003ccode\u003eCache full count\u003c/code\u003e (ліворуч) буде показувати,\nскільки разів кеш був повністю заповнений і був змушений примусово\nвидалити записи, до яких не зверталися останні \u003ccode\u003eapc.ttl\u003c/code\u003e секунд. Чим\nменше це число - тим краще налаштований кеш. Якщо це число\nпостійно росте, отже APCu доводиться постійно очищати старі записи\nі значить втрачається весь сенс кешування. Найкращий спосіб зменшити\nце число - додати APCu пам'яті. Якщо зробити цього не можна, то треба\nпереналаштувати \u003ccode\u003eapc.filters\u003c/code\u003e, щоб обмежити набір скриптів, що кешуються.\u003c/p\u003e\n\u003cp\u003eЯкщо APCu зібрано за допомогою mmap (Memory Mapping), він буде\nвикористовувати лише один сегмент пам'яті, якщо ж навпаки, APC зібраний з\nпідтримкою SHM (SysV Shared Memory), він використовуватиме кілька\nсегментів. MMAP не має максимального обмеження, на відміну від SHM,\nякий обмежується \u003ccode\u003e/proc/sys/kernel/shmmax\u003c/code\u003e. Зазвичай рекомендується\nвикористовувати MMAP, тому що він набагато швидше виділяє пам'ять при\nперезавантаження веб-сервера, що позначається на швидкості запуску сервера.\u003c/p\u003e\n\u003cp\u003e| Ім'я За замовчуванням | Місце зміни | Список змін |\n| \u003ca href=\"apcu.configuration.md#ini.apcu.enabled\"\u003eapc.enabled\u003c/a\u003e | \"1\" | PHP_INI_SYSTEM | |\n| \u003ca href=\"apcu.configuration.md#ini.apcu.shm-segments\"\u003eapc.shm_segments\u003c/a\u003e | \"1\" | PHP_INI_SYSTEM | |\n| \u003ca href=\"apcu.configuration.md#ini.apcu.shm-size\"\u003eapc.shm_size\u003c/a\u003e | \"32M\" | PHP_INI_SYSTEM | |\n| \u003ca href=\"apcu.configuration.md#ini.apcu.entries-hint\"\u003eapc.entries_hint\u003c/a\u003e | \"4096\" | PHP_INI_SYSTEM | |\n| \u003ca href=\"apcu.configuration.md#ini.apcu.ttl\"\u003eapc.ttl\u003c/a\u003e | \"0\" | PHP_INI_SYSTEM | |\nPHP_INI_SYSTEM | || \u003ca href=\"apcu.configuration.md#ini.apcu.gc-ttl\"\u003eapc.gc_ttl\u003c/a\u003e | \"3600\" |\n| \u003ca href=\"apcu.configuration.md#ini.apcu.mmap-file-mask\"\u003eapc.mmap_file_mask\u003c/a\u003e | NULL | PHP_INI_SYSTEM | |\nPHP_INI_SYSTEM | || \u003ca href=\"apcu.configuration.md#ini.apcu.slam-defense\"\u003eapc.slam_defense\u003c/a\u003e | \"1\" |\n| \u003ca href=\"apcu.configuration.md#ini.apcu.enable-cli\"\u003eapc.enable_cli\u003c/a\u003e | \"0\" | PHP_INI_SYSTEM | |\n| \u003ca href=\"apcu.configuration.md#ini.apcu.use-request-time\"\u003eapc.use_request_time\u003c/a\u003e | \"0\" | PHP_INI_ALL | До APCu 5.1.19 значення за промовчанням було \"1\". |\n| \u003ca href=\"apcu.configuration.md#ini.apcu.serializer\"\u003eapc.serializer\u003c/a\u003e | \"php\" | PHP_INI_SYSTEM | До APCu 5.1.19 значення за промовчанням було \"default\". |\nPHP_INI_SYSTEM | || \u003ca href=\"apcu.configuration.md#ini.apcu.coredump-unmap\"\u003eapc.coredump_unmap\u003c/a\u003e | \"0\" |\n| \u003ca href=\"apcu.configuration.md#ini.apcu.preload-path\"\u003eapc.preload_path\u003c/a\u003e | NULL | PHP_INI_SYSTEM | |\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eОпції конфігурації APCu\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля детального опису констант PHP_INI_*, зверніться до розділу \u003ca href=\"configuration.changes.modes.md\"\u003eДе\nможуть бути встановлені параметри конфігурації\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eКоротке пояснення конфігураційних директив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.enabled\u003c/code\u003e bool\nЯкщо встановити apc.enabled рівним 0, то APCu не буде запущений. Це\nкорисно, коли APCu статично включений в PHP і немає інших варіантів,\nзаборони його використання. Якщо APC зібрано як DSO, можна просто\nзакоментувати рядок \u003ccode\u003eextension\u003c/code\u003e у \u003ccode\u003ephp.ini\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.shm_segments\u003c/code\u003e int\nКількість сегментів пам'яті, що розділяється, виділеної під кеш. Якщо APC\nвикористав всю доступну розділювану пам'ять, а \u003ccode\u003eapc.shm_size\u003c/code\u003e таким\nвеликим, як дозволяє система, збільшення цього параметра може допомогти.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.shm_size\u003c/code\u003e string\nРозмір сегмента пам'яті, що розділяється, заданий в короткій нотації\n(дивіться \u003ca href=\"faq.using.md#faq.using.shorthandbytes\"\u003eцей FAQ\u003c/a\u003e). за\nзамовчуванням, деякі системи (включаючи більшість варіантів BSD)\nобмежують це значення украй малим значенням.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.entries_hint\u003c/code\u003e int\nЦе підказка про кількість унікальних змін користувачів,\nякі треба кешувати. Встановіть рівним нулю або взагалі не\nвказуйте, якщо не впевнені.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.ttl\u003c/code\u003e int\nКількість секунд, які запис може лежати в кеші без звернення до\nній, як буде дозволено її замінити іншу. Встановлення цього\nпараметра рівного нулю може призвести до того, що місце буде забито\nі нові записи не зможуть потрапити до кешу. У цьому випадку, якщо параметр\nдорівнює 0, кеш повністю очищений. Якщо ж ttl буде більшим за нуль, то\nAPCu намагатиметься очистити застарілі записи.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.gc_ttl\u003c/code\u003e int\nКількість секунд, які запис може перебувати у списку збирача\nсміття. Це значення забезпечує безвідмовність у разі падіння сервера\nу момент виконання закешованого файлу. Якщо виконуваний файл був\nзмінено, пам'ять, виділена під кешування його старої версії, не буде\nповернуто до закінчення цього часу. Встановлення в нуль відключає цей\nфункціонал.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.mmap_file_mask\u003c/code\u003e string\nЯкщо зібраний за допомогою MMAP, за допомогою опції \u003ccode\u003e--enable-mmap\u003c/code\u003e, цей\nпараметр повинен містити файлову маску типу mktemp-style для передачі\nв модуль MMAP, щоб визначити, чи MMAP використовуватиме файлову\nсистему або пам'ять, що розділяється. Для файлової системи задайте опцію як\n\u003ccode\u003e/tmp/apc.XXXXXX\u003c/code\u003e (рівно 6 \u003ccode\u003eX\u003c/code\u003e). Для використання shm_open/mmap у стилі\nPOSIX, додайте \u003ccode\u003e.shm\u003c/code\u003e у будь-якому місці маски, наприклад \u003ccode\u003e/apc.shm.XXXXXX\u003c/code\u003e\nВи також можете встановити його як \u003ccode\u003e/dev/zero\u003c/code\u003e для використання\nінтерфейсу ядра \u003ccode\u003e/dev/zero\u003c/code\u003e для анонімної пам'яті mmap Якщо не поставлено,\nто примусово використовуватиметься анонімний mmap.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.slam_defense\u003c/code\u003e int\nНа дуже завантажених серверах, коли ви запускаєте веб-сервер, відразу\nбезліч процесів намагатимуться закешувати один і той же файл\nодночасно. Цією опцією задається можливість, у відсотках, того, що\nспроба одного конкретного процесу закешувати дані буде відхилена.\nНаприклад, якщо \u003ccode\u003eapc.slam_defense\u003c/code\u003e встановити рівні \u003ccode\u003e75\u003c/code\u003e, то це\nозначає, що можливість закешувати файл, якого в кеші немає, буде\nдорівнює 25% і ймовірність того, що в кешуванні буде відмовлено рівну\n75%. Для заборони даного функціоналу встановіть цей параметр рівним\n\u003ccode\u003e0\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.enable_cli\u003c/code\u003e int\nБільше для тестування та налагодження. Ця установка включає APCu для CLI\nверсії PHP. При звичайній роботі, запускати APCu, який буде створювати,\nнаповнювати та знищувати кеш при кожному запуску сценарію в консолі, буде\nдалеко не найкращою ідеєю. Але з метою тестування та налагодження, можна легко\nувімкнути APCu для CLI.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.serializer\u003c/code\u003e string\nВказує APC на використання стороннього серіалізатора.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.coredump_unmap\u003c/code\u003e bool\nДозволяє APC перехоплювати сигнали, такі як SIGSEGV, який\nзаписує coredump, коли подано. Коли ці сигнали будуть отримані, APC\nспробує звільнити всю пам'ять, що розділяється, щоб не включати її в\ncoredump. Ця установка може збільшити стабільність системи, коли\nкритичний сигнал був отриманий, а APC налаштований на використання\nвеликого обсягу пам'яті.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eУвага\u003c/strong\u003e\nЦя можливість потенційно небезпечна. Визволення сегментів\nпам'яті при отриманні критичного сигналу може призвести до\nнепередбачуваної поведінки.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eХоча деякі ядра надають можливість ігнорувати деякі\nсегменти пам'яті при записі core-файлу, ці реалізації\nможуть також ігнорувати важливі сегменти пам'яті, такі як Apache\nscoreboard.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eapc.preload_path\u003c/code\u003e string\nОпціонально. Задає шлях, який використовується APC для завантаження\nкешованих даних під час запуску.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapc.use_request_time\u003c/code\u003e bool\nВикористовувати час старту запиту SAPI для TTL.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"apcu.configuration.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

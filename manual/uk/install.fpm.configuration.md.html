@@ -1,0 +1,476 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>install.fpm.configuration | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="install.fpm.install.md">« Установка</a></p>
+</li>
+<li>
+<p><a href="install.pecl.md">Встановлення модулів PECL »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="install.fpm.md">Менеджер процесів FastCGI (FPM)</a></p>
+</li>
+<li>
+<p>Налаштування</p>
+</li>
+</ul>
+<h2>Налаштування</h2>
+<p>FPM використовує синтаксис <code>php.ini</code> для свого конфігураційного файлу
+<code>php-fpm.conf</code> та файлів конфігурації пулів.</p>
+<h3>Список глобальних директив <code>php-fpm.conf</code></h3>
+<p><code>pid</code> string
+Шлях до файлу PID. Типово: none.</p>
+<p><code>error_log</code> string
+Шлях до файлу журналу помилок. За замовчуванням:
+<code>#INSTALL_PREFIX#/log/php-fpm.log</code>. Якщо встановлено як "syslog",
+логування буде проводитися в syslogd, а чи не в локальний файл.</p>
+<p><code>log_level</code> string
+Рівень журналу помилок. Можливі значення: alert, error,
+warning, notice, debug. Типово: notice.</p>
+<p><code>log_limit</code> int
+Обмежити журналування для журнальних ліній, що дозволяє
+записувати повідомлення довжиною понад 1024 символи без упаковки (wrapping).
+Стандартне значення: 1024. Доступно з PHP 7.3.0.</p>
+<p><code>log_buffering</code> bool
+Експериментальне журналування без додаткової буферизації.
+Значення за замовчуванням: yes. Доступно з PHP 7.3.0.</p>
+<p><code>syslog.facility</code> string
+Використовується для вказівки, який тип програм логуватиме
+повідомлення. Типово: daemon.</p>
+<p><code>syslog.ident</code> string
+Передує будь-якому повідомленню. Якщо у вас запущено кілька екземплярів
+FPM, ви можете змінити значення за промовчанням на те, що вам
+необхідно. Типово: php-fpm.</p>
+<p><code>emergency_restart_threshold</code> int
+При цьому числі робочих процесів, завершених з SIGSEGV або SIGBUS за
+проміжок часу, встановлений <code>emergency_restart_interval</code> FPM буде
+перезавантажено. Значення 0 означає 'Off' (вимкнено). Типово: 0
+(Off).</p>
+<p><code>emergency_restart_interval</code> <a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+Інтервал часу, який використовується <code>emergency_restart_interval</code>, щоб
+визначити, коли FPM буде м'яко перезавантажено. Це корисно для
+уникнення випадкових пошкоджень загальної пам'яті прискорювача (accelerator).
+Доступні одиниці вимірювання: s(секунди), m(хвилини), h(години), або d(дні).
+Одиниця виміру за замовчуванням: секунди. Значення за замовчуванням: 0 (Off).</p>
+<p><code>process_control_timeout</code> <a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+Час, протягом якого дочірні процеси чекають на відповідь на сигнали
+майстер-процесу. Доступні одиниці вимірювання: s(секунди), m(хвилини),
+h(годинник) або d(дні). Одиниця виміру за замовчуванням: секунди. Значення по
+замовчуванням: 0.</p>
+<p><code>process.max</code> int
+Максимальна кількість процесів може породити FPM. Це
+зроблено для того, щоб контролювати глобальну кількість процесів,
+коли використовується великий пул динамічного PM. Використовуйте з
+обережністю. Типово: 0.</p>
+<p><code>process.priority</code> int
+Вказує пріоритет (Unix nice(2)) майстер-процесу (тільки якщо
+встановлено). Приймає значення від -19 (максимальний пріоритет) до
+20(мінімальний) За замовчуванням: не встановлено.</p>
+<p><code>daemonize</code> bool
+Запустити FPM у фоновому режимі. Встановіть значення 'no', щоб
+запустити FPM у диспетчері для налагодження. Типово: yes.</p>
+<p><code>rlimit_files</code> int
+Встановлює rlimit відкритих файлових дескрипторів для майстер-процесу.
+Типово: Значення, визначене системою.</p>
+<p><code>rlimit_core</code> int
+Встановлює rlimit максимального розміру ядра для майстер-процесу. за
+замовчуванням 0.</p>
+<p><code>events.mechanism</code> string
+Вказує, який механізм дії буде використаний FPM. Можливі
+такі варіанти: select, pool, epoll, kqueue (BSD), port (Solaris). за
+замовчуванням: не встановлено (автовизначення).</p>
+<p><code>systemd_interval</code> int
+Якщо FPM зібраний з інтеграцією з systemd, вказує інтервал у секундах,
+між оповіщеннями systemd про свій стан. Щоб вимкнути, встановіть 0.
+Типово: 10.</p>
+<h3>Список директив для пулів.</h3>
+<p>За допомогою FPM ви можете запускати кілька пулів процесів з різними
+налаштуваннями. Ці параметри можуть бути передані пулу.</p>
+<p><code>listen</code> string
+Адреса, яка прийматиме FastCGI-запити. Синтаксис:
+'ip.add.re.ss:port', 'port', '/path/to/unix/socket'. Ця опція
+обов'язкова для кожного пулу.</p>
+<p><code>listen.backlog</code> int
+Встановлює listen(2) backlog. Значення <code>-1</code> означає максимум на
+системах BSD. Значення за замовчуванням: <code>-1</code> (FreeBSD або OpenBSD) або
+<code>511</code>. (Linux та інші платформи).</p>
+<p><code>listen.allowed_clients</code> string
+Список адрес IPv4 або IPv6 клієнтів FastCGI, яким дозволено
+підключення. Еквівалент змінної оточення FCGI_WEB_SERVER_ADDRS в
+оригінальний PHP FastCGI (5.2.2+). Має сенс лише з TCP-сокетом.
+Кожна адреса має бути розділена комою. Якщо залишити це значення
+порожнім, з'єднання будуть прийматися з будь-якої IP-адреси. Значення по
+замовчуванням: не задано (приймається будь-яка IP-адреса).</p>
+<p><code>listen.owner</code> string
+Встановлює права для unix-сокету, якщо вони використовуються. У Linux для
+дозволи з'єднань до веб-сервера, повинні бути встановлені права на
+читання/запис. Багато заснованих на BSD-системах можливість
+З'єднання не залежить від прав доступу. Значення за замовчуванням:
+використовується користувач і група, від імені якої запущено сервер,
+встановлений режим 0660.</p>
+<p><code>listen.group</code> string
+Дивіться <code>listen.owner</code>.</p>
+<p><code>listen.mode</code> string
+Дивіться <code>listen.owner</code>.</p>
+<p><code>listen.acl_users</code> string
+Якщо підтримується список керування доступом (ACL) POSIX, ви можете
+налаштувати його за допомогою цієї опції. Якщо поставлено, то <code>listen.owner</code> і
+<code>listen.group</code> будуть проігноровані. Значення задається списком імен,
+розділених комою.</p>
+<p><code>listen.acl_groups</code> string
+Дивіться <code>listen.acl_users</code>. Значення задається списком імен груп,
+розділених комою.</p>
+<p><code>user</code> string
+Unix-користувач FPM-процесів. Цей параметр є обов'язковим.</p>
+<p><code>group</code> string
+Unix-група FPM-процесів. Якщо не встановлено, група за замовчуванням
+дорівнює імені користувача.</p>
+<p><code>pm</code> string
+Вибір того, як менеджер процесів контролюватиме створення
+дочірніх процесів. Можливі значення: 'static', 'ondemand', 'dynamic'.
+Цей параметр є обов'язковим.</p>
+<p><code>static</code> - фіксована кількість дочірніх процесів (<code>pm.max_children</code>).</p>
+<p><code>ondemand</code> - кількість процесів, що породжуються на вимогу (коли
+з'являються запити, на відміну від опції dynamic, коли стартує
+певна кількість процесів, що дорівнює <code>pm.start_servers</code>, разом з
+запуск служби.</p>
+<p><code>dynamic</code> - число дочірніх процесів, що динамічно змінюється, задається
+на підставі наступних директив: <code>pm.max_children</code>, <code>pm.start_servers</code>,
+<code>pm.min_spare_servers</code>, <code>pm.max_spare_servers</code>.</p>
+<p><code>pm.max_children</code> int
+Число дочірніх процесів, які будуть створені, коли <code>pm</code> встановлено в
+<code>static</code>, або максимальна кількість процесів, які будуть створені,
+коли <code>pm</code> встановлений у <code>dynamic</code>. Цей параметр є обов'язковим.</p>
+<p>Цей параметр встановлює обмеження кількості одночасних запитів,
+які обслуговуватимуться. Еквівалент директиви ApacheMaxClients з
+mpm_prefork та змінної оточення середовища <code>PHP_FCGI_CHILDREN</code> в
+оригінальний PHP FastCGI.</p>
+<p><code>pm.start_servers</code> int
+Число дочірніх процесів, створюваних під час запуску. Використовується, тільки
+коли <code>pm</code> встановлений у <code>dynamic</code>. Значення за замовчуванням:
+min_spare_servers+ (max_spare_servers – min_spare_servers)/2.</p>
+<p><code>pm.min_spare_servers</code> int
+Бажана мінімальна кількість неактивних процесів сервера. Використовується,
+тільки коли <code>pm</code> встановлено в <code>dynamic</code>. Крім того, це обов'язковий
+параметр у цьому випадку.</p>
+<p><code>pm.max_spare_servers</code> int
+Бажана максимальна кількість неактивних процесів сервера. Використовується,
+тільки коли <code>pm</code> встановлений у <code>dynamic</code>. Крім того, це обов'язковий
+параметр у цьому випадку.</p>
+<p><code>pm.max_spawn_rate</code> int
+Кількість одночасних породжень дочірніх процесів. Використовується
+тільки тоді, коли у параметра <code>pm</code> встановлено значення <code>dynamic</code>.
+Значення за замовчуванням: 32</p>
+<p><code>pm.process_idle_timeout</code> <a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+Число секунд, після закінчення яких процес, що простоює, буде завершений.
+Використовується лише якщо <code>pm</code> встановлено як <code>ondemand</code>. Допустимі
+одиниці: s(econds)(за замовчуванням), m(inutes), h(ours) або d(ays). за
+замовчуванням: 10s.</p>
+<p><code>pm.max_requests</code> int
+Число запитів дочірнього процесу, після якого процес буде
+перезапущено. Це корисно для запобігання витоку пам'яті під час використання
+сторонніх бібліотек. Для нескінченної обробки запитів вкажіть '0'.
+Еквівалент <code>PHP_FCGI_MAX_REQUESTS</code>. Значення за промовчанням: 0.</p>
+<p><code>pm.status_listen</code> string
+Адреса, за якою прийматиметься запит стану FastCGI. Створює
+новий невидимий пул, який може самостійно обробляти запити.
+Корисно, якщо основний пул зайнятий запитами, що довго виконуються, так як
+все ще можна отримати <a href="fpm.status.md">сторінку стану FPM</a> до
+завершення тривалих запитів. Синтаксис такий самий, як і для
+директиви <a href="install.fpm.configuration.md#listen">listen</a>. Значення по
+замовчуванням: none.</p>
+<p><code>pm.status_path</code> string
+Посилання, за яким можна переглянути <a href="fpm.status.md">сторінку стану FPM</a>. Значення має починатися зі сліша (/). Якщо
+значення не встановлено, сторінка статусу не відображатиметься.
+Значення за замовчуванням: none.</p>
+<p><code>ping.path</code> string
+Посилання на Ping-сторінку моніторингу FPM. Якщо значення не встановлено,
+ping-сторінка не відображатиметься. Може бути використаний для
+тестування ззовні, щоб переконатися, що FPM живий та відповідає. Зверніть
+увагу, що значення має починатися з косої межі (/).</p>
+<p><code>ping.response</code> string
+Ця директива може бути використана для налаштування відповіді на
+ping-запит. Відповідь формується як text/plain з кодом відповіді 200.
+Значення за замовчуванням pong.</p>
+<p><code>process.priority</code> int
+Задає пріоритет nice(2) для працюючого процесу (тільки якщо заданий).
+Значення від -19 (найвищий пріоритет) до 20 (найнижчий). Значення по
+замовчуванням: не встановлено.</p>
+<p><code>process.dumpable</code> bool
+Встановити прапор процесу dumpable (PR_SET_DUMPABLE prctl), навіть якщо the
+користувач процесу або група відрізняється від користувача
+майстер-процесу. Це дозволяє створювати дамп ядра процесу та виконати
+ptrace процесу для користувача пулу. Значення за промовчанням: no.
+Доступно з PHP 7.0.29, 7.1.17 та 7.2.5.</p>
+<p><code>prefix</code> string
+Задає префікс для обчислення колії</p>
+<p><code>request_terminate_timeout</code> <a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+Час очікування обслуговування одного запиту, після чого робочий процес
+буде завершено. Цей варіант слід використовувати, коли опція
+'max_execution_time' у php.ini не зупиняє виконання скрипту за
+якихось причин. Значення '0' означає 'вимкнено'. Доступні одиниці
+вимірювання: s(econds), m(inutes), h(ours) або d(ays). Значення по
+замовчуванням: 0.</p>
+<p><code>request_terminate_timeout_track_finished</code> bool
+Час очікування, встановлений за допомогою
+<a href="install.fpm.configuration.md#request-terminate-timeout">request_terminate_timeout</a>,
+не включається після
+<a href="function.fastcgi-finish-request.md">fastcgi_finish_request</a> або коли
+програма завершена та викликаються внутрішні функції завершення роботи.
+Ця директива дозволить беззастережно застосовувати обмеження часу.
+очікування навіть у таких випадках. Значення за замовчуванням: ні, починаючи з
+Версія PHP 7.3.0.</p>
+<p><code>request_slowlog_timeout</code> <a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a>
+Час очікування обслуговування одного запиту, після чого PHP backtrace
+буде збережено у файл 'slowlog'. Значення '0' означає 'вимкнено'.
+Доступні одиниці вимірювання: s(econds), m(inutes), h(ours) або d(ays).
+Значення за промовчанням: 0.</p>
+<p><code>request_slowlog_trace_depth</code> int
+Глибина трасування стека журналу slowlog. Значення за замовчуванням: 20,
+починаючи з PHP 7.2.0.</p>
+<p><code>slowlog</code> string
+Лог файл для повільних запитів. Значення за замовчуванням:
+<code>#INSTALL_PREFIX#/log/php-fpm.log.slow</code>.</p>
+<p><code>rlimit_files</code> int
+Встановлює ліміт дескрипторів відкритих файлів rlimit для дочірніх
+процесів у цьому пулі. Значення за замовчуванням: визначається значенням
+системи.</p>
+<p><code>rlimit_core</code> int
+Встановлює максимальну кількість використовуваних ядер rlimit для
+дочірніх процесів у цьому пулі. Можливі значення: 'unlimited' або
+ціле число більше або дорівнює 0. Значення за замовчуванням: визначається
+значенням системи.</p>
+<p><code>chroot</code> string
+Директорія chroot оточення у старті. Це значення має бути
+визначено як абсолютний шлях. Якщо значення не встановлено, chroot не
+використовується.</p>
+<p><code>chdir</code> string
+Chdir змінює поточну директорію у старті. Це значення має бути
+визначено як абсолютний шлях. Значення за замовчуванням: поточна
+директорія або при використанні chroot.</p>
+<p><code>catch_workers_output</code> bool
+Перенаправлення STDOUT і STDERR робочого процесу на головний лог помилок.
+Якщо не встановлено, STDOUT і STDERR будуть перенаправлені в /dev/null
+відповідно до специфікації FastCGI. Значення за промовчанням: no.</p>
+<p><code>decorate_workers_output</code> bool
+Увімкніть оформлення виходу (output decoration) для виводу
+worker-процесу коли опція
+<a href="install.fpm.configuration.md#catch-workers-output">catch_workers_output</a>
+увімкнено. Значення за замовчуванням: yes. Доступно з PHP 7.3.0.</p>
+<p><code>clear_env</code> bool
+Очищає оточення у worker-процесах FPM. Запобігає влученню
+довільних змінних оточення в worker-процесах FPM, очищаючи
+оточення у worker-процесах до того, як змінні оточення,
+вказані в цій конфігурації пула будуть додані. Типово: Yes.</p>
+<p><code>security.limit_extensions</code> string
+Обмежує модулі, які FPM аналізуватиме. Це може
+запобігти помилкам конфігурації на стороні веб-сервера. Ви повинні
+обмежити FPM тільки розширеннями .php для запобігання виконанню
+PHP-коду зловмисниками іншими розширеннями. Типово: .php .phar</p>
+<p><code>apparmor_hat</code> string
+Якщо AppArmor увімкнено, дозволяє змінити шапку. Значення за замовчуванням:
+не встановлено</p>
+<p><code>access.log</code> string
+Лог-файл доступу. Значення за замовчуванням: не встановлено</p>
+<p><code>access.format</code> string
+Формат файлу лог-файлу доступу. Значення за замовчуванням:
+``%R - %u %t "%m %r" %s'`:</p>
+<table>
+<thead>
+<tr>
+<th>Заповнювач</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>%C</strong></td>
+<td>%CPU</td>
+</tr>
+<tr>
+<td><strong>%d</strong></td>
+<td>тривалість µs</td>
+</tr>
+<tr>
+<td><strong>%e</strong></td>
+<td>fastcgi env</td>
+</tr>
+<tr>
+<td><strong>%f</strong></td>
+<td>скрипт</td>
+</tr>
+<tr>
+<td><strong>%l</strong></td>
+<td>довжина вмісту</td>
+</tr>
+<tr>
+<td><strong>%m</strong></td>
+<td>метод</td>
+</tr>
+<tr>
+<td><strong>%M</strong></td>
+<td>пам'ять</td>
+</tr>
+<tr>
+<td><strong>%n</strong></td>
+<td>назва пулу</td>
+</tr>
+<tr>
+<td><strong>%o</strong></td>
+<td>виведення заголовка</td>
+</tr>
+<tr>
+<td><strong>%p</strong></td>
+<td>PID</td>
+</tr>
+<tr>
+<td><strong>%q</strong></td>
+<td>строк запиту</td>
+</tr>
+<tr>
+<td><strong>%Q</strong></td>
+<td>GLUE між %q та %r</td>
+</tr>
+<tr>
+<td><strong>%r</strong></td>
+<td>URI запиту</td>
+</tr>
+<tr>
+<td><strong>%R</strong></td>
+<td>віддалена IP-адреса</td>
+</tr>
+<tr>
+<td><strong>%s</strong></td>
+<td>статус</td>
+</tr>
+<tr>
+<td><strong>%T</strong></td>
+<td>час</td>
+</tr>
+<tr>
+<td><strong>%t</strong></td>
+<td>час</td>
+</tr>
+<tr>
+<td><strong>%u</strong></td>
+<td>віддалений користувач</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Допустимі значення</strong></p>
+<p>Можна передати додаткові змінні оточення та оновити налаштування
+PHP для певного пулу. Для цього вам необхідно додати наступні
+параметри в файл налаштування пулу.</p>
+<p><strong>Приклад #1 Передача змінних оточення та налаштувань PHP пулу</strong></p>
+<p>`` inicode
+env[HOSTNAME] = $HOSTNAME
+env[PATH] = /usr/local/bin:/usr/bin:/bin
+env[TMP] = /tmp
+env[TMPDIR] = /tmp
+env[TEMP] = /tmp</p>
+<p>php_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f <a href="mailto:www@my.domain.com">www@my.domain.com</a>
+php_flag[display_errors] = off
+php_admin_value[error_log] = /var/log/fpm-php.<a href="http://www.log">www.log</a>
+php_admin_flag[log_errors] = on
+php_admin_value[memory_limit] = 32M</p>
+<pre><code>
+Налаштування PHP, передані через `php_value` або `php_flag` перезапишуть
+їх попередні значення. Будь ласка, зверніть увагу, що визначення [disable_functions](ini.core.md#ini.disable-functions) або
+[disable_classes](ini.core.md#ini.disable-classes) не будуть
+перезаписувати раніше визначені в php.ini значення, а додадуть нові
+значення.
+
+Налаштування, визначені через `php_admin_value` та `php_admin_flag`, не
+можуть бути перезаписані через [ini_set()](function.ini-set.md).
+
+Установки PHP можна встановити через веб-сервер.
+
+**Приклад #2 Встановлення налаштувань PHP у nginx.conf**
+
+`` inicode
+set $php_value "pcre.backtrack_limit=424242";
+set $php_value "$php_value
+ pcre.recursion_limit=99999";
+fastcgi_param PHP_VALUE $php_value;
+
+fastcgi_param PHP_ADMIN_VALUE "open_basedir=/var/www/htdocs";
+</code></pre>
+<p><strong>Застереження</strong></p>
+<p>Оскільки ці налаштування передаються в php-fpm як FastCGI-заголовки,
+php-fpm не повинен бути прив'язаний до загальнодоступної адреси світу. В
+в іншому випадку будь-який зможе змінити налаштування PHP. Дивіться також
+<a href="install.fpm.configuration.md#listen-allowed-clients">listen.allowed_clients</a>.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Пули не є механізмом безпеки, тому що
+вони забезпечують повного поділу; наприклад всі пули будуть
+використовувати один екземпляр OPcache.</p>
+</blockquote>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/install.fpm.configuration.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/install.fpm.configuration.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"install.fpm.configuration","slug":"install.fpm.configuration.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"install.fpm.install.md\"\u003e« Установка\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"install.pecl.md\"\u003eВстановлення модулів PECL »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"install.fpm.md\"\u003eМенеджер процесів FastCGI (FPM)\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНалаштування\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНалаштування\u003c/h2\u003e\n\u003cp\u003eFPM використовує синтаксис \u003ccode\u003ephp.ini\u003c/code\u003e для свого конфігураційного файлу\n\u003ccode\u003ephp-fpm.conf\u003c/code\u003e та файлів конфігурації пулів.\u003c/p\u003e\n\u003ch3\u003eСписок глобальних директив \u003ccode\u003ephp-fpm.conf\u003c/code\u003e\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003epid\u003c/code\u003e string\nШлях до файлу PID. Типово: none.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eerror_log\u003c/code\u003e string\nШлях до файлу журналу помилок. За замовчуванням:\n\u003ccode\u003e#INSTALL_PREFIX#/log/php-fpm.log\u003c/code\u003e. Якщо встановлено як \"syslog\",\nлогування буде проводитися в syslogd, а чи не в локальний файл.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elog_level\u003c/code\u003e string\nРівень журналу помилок. Можливі значення: alert, error,\nwarning, notice, debug. Типово: notice.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elog_limit\u003c/code\u003e int\nОбмежити журналування для журнальних ліній, що дозволяє\nзаписувати повідомлення довжиною понад 1024 символи без упаковки (wrapping).\nСтандартне значення: 1024. Доступно з PHP 7.3.0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elog_buffering\u003c/code\u003e bool\nЕкспериментальне журналування без додаткової буферизації.\nЗначення за замовчуванням: yes. Доступно з PHP 7.3.0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esyslog.facility\u003c/code\u003e string\nВикористовується для вказівки, який тип програм логуватиме\nповідомлення. Типово: daemon.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esyslog.ident\u003c/code\u003e string\nПередує будь-якому повідомленню. Якщо у вас запущено кілька екземплярів\nFPM, ви можете змінити значення за промовчанням на те, що вам\nнеобхідно. Типово: php-fpm.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eemergency_restart_threshold\u003c/code\u003e int\nПри цьому числі робочих процесів, завершених з SIGSEGV або SIGBUS за\nпроміжок часу, встановлений \u003ccode\u003eemergency_restart_interval\u003c/code\u003e FPM буде\nперезавантажено. Значення 0 означає 'Off' (вимкнено). Типово: 0\n(Off).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eemergency_restart_interval\u003c/code\u003e \u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\nІнтервал часу, який використовується \u003ccode\u003eemergency_restart_interval\u003c/code\u003e, щоб\nвизначити, коли FPM буде м'яко перезавантажено. Це корисно для\nуникнення випадкових пошкоджень загальної пам'яті прискорювача (accelerator).\nДоступні одиниці вимірювання: s(секунди), m(хвилини), h(години), або d(дні).\nОдиниця виміру за замовчуванням: секунди. Значення за замовчуванням: 0 (Off).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eprocess_control_timeout\u003c/code\u003e \u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\nЧас, протягом якого дочірні процеси чекають на відповідь на сигнали\nмайстер-процесу. Доступні одиниці вимірювання: s(секунди), m(хвилини),\nh(годинник) або d(дні). Одиниця виміру за замовчуванням: секунди. Значення по\nзамовчуванням: 0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eprocess.max\u003c/code\u003e int\nМаксимальна кількість процесів може породити FPM. Це\nзроблено для того, щоб контролювати глобальну кількість процесів,\nколи використовується великий пул динамічного PM. Використовуйте з\nобережністю. Типово: 0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eprocess.priority\u003c/code\u003e int\nВказує пріоритет (Unix nice(2)) майстер-процесу (тільки якщо\nвстановлено). Приймає значення від -19 (максимальний пріоритет) до\n20(мінімальний) За замовчуванням: не встановлено.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edaemonize\u003c/code\u003e bool\nЗапустити FPM у фоновому режимі. Встановіть значення 'no', щоб\nзапустити FPM у диспетчері для налагодження. Типово: yes.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erlimit_files\u003c/code\u003e int\nВстановлює rlimit відкритих файлових дескрипторів для майстер-процесу.\nТипово: Значення, визначене системою.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erlimit_core\u003c/code\u003e int\nВстановлює rlimit максимального розміру ядра для майстер-процесу. за\nзамовчуванням 0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eevents.mechanism\u003c/code\u003e string\nВказує, який механізм дії буде використаний FPM. Можливі\nтакі варіанти: select, pool, epoll, kqueue (BSD), port (Solaris). за\nзамовчуванням: не встановлено (автовизначення).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esystemd_interval\u003c/code\u003e int\nЯкщо FPM зібраний з інтеграцією з systemd, вказує інтервал у секундах,\nміж оповіщеннями systemd про свій стан. Щоб вимкнути, встановіть 0.\nТипово: 10.\u003c/p\u003e\n\u003ch3\u003eСписок директив для пулів.\u003c/h3\u003e\n\u003cp\u003eЗа допомогою FPM ви можете запускати кілька пулів процесів з різними\nналаштуваннями. Ці параметри можуть бути передані пулу.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elisten\u003c/code\u003e string\nАдреса, яка прийматиме FastCGI-запити. Синтаксис:\n'ip.add.re.ss:port', 'port', '/path/to/unix/socket'. Ця опція\nобов'язкова для кожного пулу.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elisten.backlog\u003c/code\u003e int\nВстановлює listen(2) backlog. Значення \u003ccode\u003e-1\u003c/code\u003e означає максимум на\nсистемах BSD. Значення за замовчуванням: \u003ccode\u003e-1\u003c/code\u003e (FreeBSD або OpenBSD) або\n\u003ccode\u003e511\u003c/code\u003e. (Linux та інші платформи).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elisten.allowed_clients\u003c/code\u003e string\nСписок адрес IPv4 або IPv6 клієнтів FastCGI, яким дозволено\nпідключення. Еквівалент змінної оточення FCGI_WEB_SERVER_ADDRS в\nоригінальний PHP FastCGI (5.2.2+). Має сенс лише з TCP-сокетом.\nКожна адреса має бути розділена комою. Якщо залишити це значення\nпорожнім, з'єднання будуть прийматися з будь-якої IP-адреси. Значення по\nзамовчуванням: не задано (приймається будь-яка IP-адреса).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elisten.owner\u003c/code\u003e string\nВстановлює права для unix-сокету, якщо вони використовуються. У Linux для\nдозволи з'єднань до веб-сервера, повинні бути встановлені права на\nчитання/запис. Багато заснованих на BSD-системах можливість\nЗ'єднання не залежить від прав доступу. Значення за замовчуванням:\nвикористовується користувач і група, від імені якої запущено сервер,\nвстановлений режим 0660.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elisten.group\u003c/code\u003e string\nДивіться \u003ccode\u003elisten.owner\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elisten.mode\u003c/code\u003e string\nДивіться \u003ccode\u003elisten.owner\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elisten.acl_users\u003c/code\u003e string\nЯкщо підтримується список керування доступом (ACL) POSIX, ви можете\nналаштувати його за допомогою цієї опції. Якщо поставлено, то \u003ccode\u003elisten.owner\u003c/code\u003e і\n\u003ccode\u003elisten.group\u003c/code\u003e будуть проігноровані. Значення задається списком імен,\nрозділених комою.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elisten.acl_groups\u003c/code\u003e string\nДивіться \u003ccode\u003elisten.acl_users\u003c/code\u003e. Значення задається списком імен груп,\nрозділених комою.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003euser\u003c/code\u003e string\nUnix-користувач FPM-процесів. Цей параметр є обов'язковим.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003egroup\u003c/code\u003e string\nUnix-група FPM-процесів. Якщо не встановлено, група за замовчуванням\nдорівнює імені користувача.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epm\u003c/code\u003e string\nВибір того, як менеджер процесів контролюватиме створення\nдочірніх процесів. Можливі значення: 'static', 'ondemand', 'dynamic'.\nЦей параметр є обов'язковим.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003estatic\u003c/code\u003e - фіксована кількість дочірніх процесів (\u003ccode\u003epm.max_children\u003c/code\u003e).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eondemand\u003c/code\u003e - кількість процесів, що породжуються на вимогу (коли\nз'являються запити, на відміну від опції dynamic, коли стартує\nпевна кількість процесів, що дорівнює \u003ccode\u003epm.start_servers\u003c/code\u003e, разом з\nзапуск служби.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edynamic\u003c/code\u003e - число дочірніх процесів, що динамічно змінюється, задається\nна підставі наступних директив: \u003ccode\u003epm.max_children\u003c/code\u003e, \u003ccode\u003epm.start_servers\u003c/code\u003e,\n\u003ccode\u003epm.min_spare_servers\u003c/code\u003e, \u003ccode\u003epm.max_spare_servers\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epm.max_children\u003c/code\u003e int\nЧисло дочірніх процесів, які будуть створені, коли \u003ccode\u003epm\u003c/code\u003e встановлено в\n\u003ccode\u003estatic\u003c/code\u003e, або максимальна кількість процесів, які будуть створені,\nколи \u003ccode\u003epm\u003c/code\u003e встановлений у \u003ccode\u003edynamic\u003c/code\u003e. Цей параметр є обов'язковим.\u003c/p\u003e\n\u003cp\u003eЦей параметр встановлює обмеження кількості одночасних запитів,\nякі обслуговуватимуться. Еквівалент директиви ApacheMaxClients з\nmpm_prefork та змінної оточення середовища \u003ccode\u003ePHP_FCGI_CHILDREN\u003c/code\u003e в\nоригінальний PHP FastCGI.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epm.start_servers\u003c/code\u003e int\nЧисло дочірніх процесів, створюваних під час запуску. Використовується, тільки\nколи \u003ccode\u003epm\u003c/code\u003e встановлений у \u003ccode\u003edynamic\u003c/code\u003e. Значення за замовчуванням:\nmin_spare_servers+ (max_spare_servers – min_spare_servers)/2.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epm.min_spare_servers\u003c/code\u003e int\nБажана мінімальна кількість неактивних процесів сервера. Використовується,\nтільки коли \u003ccode\u003epm\u003c/code\u003e встановлено в \u003ccode\u003edynamic\u003c/code\u003e. Крім того, це обов'язковий\nпараметр у цьому випадку.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epm.max_spare_servers\u003c/code\u003e int\nБажана максимальна кількість неактивних процесів сервера. Використовується,\nтільки коли \u003ccode\u003epm\u003c/code\u003e встановлений у \u003ccode\u003edynamic\u003c/code\u003e. Крім того, це обов'язковий\nпараметр у цьому випадку.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epm.max_spawn_rate\u003c/code\u003e int\nКількість одночасних породжень дочірніх процесів. Використовується\nтільки тоді, коли у параметра \u003ccode\u003epm\u003c/code\u003e встановлено значення \u003ccode\u003edynamic\u003c/code\u003e.\nЗначення за замовчуванням: 32\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epm.process_idle_timeout\u003c/code\u003e \u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\nЧисло секунд, після закінчення яких процес, що простоює, буде завершений.\nВикористовується лише якщо \u003ccode\u003epm\u003c/code\u003e встановлено як \u003ccode\u003eondemand\u003c/code\u003e. Допустимі\nодиниці: s(econds)(за замовчуванням), m(inutes), h(ours) або d(ays). за\nзамовчуванням: 10s.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epm.max_requests\u003c/code\u003e int\nЧисло запитів дочірнього процесу, після якого процес буде\nперезапущено. Це корисно для запобігання витоку пам'яті під час використання\nсторонніх бібліотек. Для нескінченної обробки запитів вкажіть '0'.\nЕквівалент \u003ccode\u003ePHP_FCGI_MAX_REQUESTS\u003c/code\u003e. Значення за промовчанням: 0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epm.status_listen\u003c/code\u003e string\nАдреса, за якою прийматиметься запит стану FastCGI. Створює\nновий невидимий пул, який може самостійно обробляти запити.\nКорисно, якщо основний пул зайнятий запитами, що довго виконуються, так як\nвсе ще можна отримати \u003ca href=\"fpm.status.md\"\u003eсторінку стану FPM\u003c/a\u003e до\nзавершення тривалих запитів. Синтаксис такий самий, як і для\nдирективи \u003ca href=\"install.fpm.configuration.md#listen\"\u003elisten\u003c/a\u003e. Значення по\nзамовчуванням: none.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epm.status_path\u003c/code\u003e string\nПосилання, за яким можна переглянути \u003ca href=\"fpm.status.md\"\u003eсторінку стану FPM\u003c/a\u003e. Значення має починатися зі сліша (/). Якщо\nзначення не встановлено, сторінка статусу не відображатиметься.\nЗначення за замовчуванням: none.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eping.path\u003c/code\u003e string\nПосилання на Ping-сторінку моніторингу FPM. Якщо значення не встановлено,\nping-сторінка не відображатиметься. Може бути використаний для\nтестування ззовні, щоб переконатися, що FPM живий та відповідає. Зверніть\nувагу, що значення має починатися з косої межі (/).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eping.response\u003c/code\u003e string\nЦя директива може бути використана для налаштування відповіді на\nping-запит. Відповідь формується як text/plain з кодом відповіді 200.\nЗначення за замовчуванням pong.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eprocess.priority\u003c/code\u003e int\nЗадає пріоритет nice(2) для працюючого процесу (тільки якщо заданий).\nЗначення від -19 (найвищий пріоритет) до 20 (найнижчий). Значення по\nзамовчуванням: не встановлено.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eprocess.dumpable\u003c/code\u003e bool\nВстановити прапор процесу dumpable (PR_SET_DUMPABLE prctl), навіть якщо the\nкористувач процесу або група відрізняється від користувача\nмайстер-процесу. Це дозволяє створювати дамп ядра процесу та виконати\nptrace процесу для користувача пулу. Значення за промовчанням: no.\nДоступно з PHP 7.0.29, 7.1.17 та 7.2.5.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eprefix\u003c/code\u003e string\nЗадає префікс для обчислення колії\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erequest_terminate_timeout\u003c/code\u003e \u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\nЧас очікування обслуговування одного запиту, після чого робочий процес\nбуде завершено. Цей варіант слід використовувати, коли опція\n'max_execution_time' у php.ini не зупиняє виконання скрипту за\nякихось причин. Значення '0' означає 'вимкнено'. Доступні одиниці\nвимірювання: s(econds), m(inutes), h(ours) або d(ays). Значення по\nзамовчуванням: 0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erequest_terminate_timeout_track_finished\u003c/code\u003e bool\nЧас очікування, встановлений за допомогою\n\u003ca href=\"install.fpm.configuration.md#request-terminate-timeout\"\u003erequest_terminate_timeout\u003c/a\u003e,\nне включається після\n\u003ca href=\"function.fastcgi-finish-request.md\"\u003efastcgi_finish_request\u003c/a\u003e або коли\nпрограма завершена та викликаються внутрішні функції завершення роботи.\nЦя директива дозволить беззастережно застосовувати обмеження часу.\nочікування навіть у таких випадках. Значення за замовчуванням: ні, починаючи з\nВерсія PHP 7.3.0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erequest_slowlog_timeout\u003c/code\u003e \u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\nЧас очікування обслуговування одного запиту, після чого PHP backtrace\nбуде збережено у файл 'slowlog'. Значення '0' означає 'вимкнено'.\nДоступні одиниці вимірювання: s(econds), m(inutes), h(ours) або d(ays).\nЗначення за промовчанням: 0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erequest_slowlog_trace_depth\u003c/code\u003e int\nГлибина трасування стека журналу slowlog. Значення за замовчуванням: 20,\nпочинаючи з PHP 7.2.0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eslowlog\u003c/code\u003e string\nЛог файл для повільних запитів. Значення за замовчуванням:\n\u003ccode\u003e#INSTALL_PREFIX#/log/php-fpm.log.slow\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erlimit_files\u003c/code\u003e int\nВстановлює ліміт дескрипторів відкритих файлів rlimit для дочірніх\nпроцесів у цьому пулі. Значення за замовчуванням: визначається значенням\nсистеми.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003erlimit_core\u003c/code\u003e int\nВстановлює максимальну кількість використовуваних ядер rlimit для\nдочірніх процесів у цьому пулі. Можливі значення: 'unlimited' або\nціле число більше або дорівнює 0. Значення за замовчуванням: визначається\nзначенням системи.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003echroot\u003c/code\u003e string\nДиректорія chroot оточення у старті. Це значення має бути\nвизначено як абсолютний шлях. Якщо значення не встановлено, chroot не\nвикористовується.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003echdir\u003c/code\u003e string\nChdir змінює поточну директорію у старті. Це значення має бути\nвизначено як абсолютний шлях. Значення за замовчуванням: поточна\nдиректорія або при використанні chroot.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ecatch_workers_output\u003c/code\u003e bool\nПеренаправлення STDOUT і STDERR робочого процесу на головний лог помилок.\nЯкщо не встановлено, STDOUT і STDERR будуть перенаправлені в /dev/null\nвідповідно до специфікації FastCGI. Значення за промовчанням: no.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edecorate_workers_output\u003c/code\u003e bool\nУвімкніть оформлення виходу (output decoration) для виводу\nworker-процесу коли опція\n\u003ca href=\"install.fpm.configuration.md#catch-workers-output\"\u003ecatch_workers_output\u003c/a\u003e\nувімкнено. Значення за замовчуванням: yes. Доступно з PHP 7.3.0.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eclear_env\u003c/code\u003e bool\nОчищає оточення у worker-процесах FPM. Запобігає влученню\nдовільних змінних оточення в worker-процесах FPM, очищаючи\nоточення у worker-процесах до того, як змінні оточення,\nвказані в цій конфігурації пула будуть додані. Типово: Yes.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esecurity.limit_extensions\u003c/code\u003e string\nОбмежує модулі, які FPM аналізуватиме. Це може\nзапобігти помилкам конфігурації на стороні веб-сервера. Ви повинні\nобмежити FPM тільки розширеннями .php для запобігання виконанню\nPHP-коду зловмисниками іншими розширеннями. Типово: .php .phar\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eapparmor_hat\u003c/code\u003e string\nЯкщо AppArmor увімкнено, дозволяє змінити шапку. Значення за замовчуванням:\nне встановлено\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eaccess.log\u003c/code\u003e string\nЛог-файл доступу. Значення за замовчуванням: не встановлено\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eaccess.format\u003c/code\u003e string\nФормат файлу лог-файлу доступу. Значення за замовчуванням:\n``%R - %u %t \"%m %r\" %s'`:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eЗаповнювач\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%C\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e%CPU\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%d\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eтривалість µs\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%e\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003efastcgi env\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%f\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eскрипт\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%l\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eдовжина вмісту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%m\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eметод\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%M\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eпам'ять\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%n\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eназва пулу\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%o\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eвиведення заголовка\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%p\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003ePID\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%q\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eстрок запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%Q\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eGLUE між %q та %r\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%r\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eURI запиту\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%R\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eвіддалена IP-адреса\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%s\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eстатус\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%T\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eчас\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%t\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eчас\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e%u\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eвіддалений користувач\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eДопустимі значення\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eМожна передати додаткові змінні оточення та оновити налаштування\nPHP для певного пулу. Для цього вам необхідно додати наступні\nпараметри в файл налаштування пулу.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Передача змінних оточення та налаштувань PHP пулу\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e`` inicode\nenv[HOSTNAME] = $HOSTNAME\nenv[PATH] = /usr/local/bin:/usr/bin:/bin\nenv[TMP] = /tmp\nenv[TMPDIR] = /tmp\nenv[TEMP] = /tmp\u003c/p\u003e\n\u003cp\u003ephp_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f \u003ca href=\"mailto:www@my.domain.com\"\u003ewww@my.domain.com\u003c/a\u003e\nphp_flag[display_errors] = off\nphp_admin_value[error_log] = /var/log/fpm-php.\u003ca href=\"http://www.log\"\u003ewww.log\u003c/a\u003e\nphp_admin_flag[log_errors] = on\nphp_admin_value[memory_limit] = 32M\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e\nНалаштування PHP, передані через `php_value` або `php_flag` перезапишуть\nїх попередні значення. Будь ласка, зверніть увагу, що визначення [disable_functions](ini.core.md#ini.disable-functions) або\n[disable_classes](ini.core.md#ini.disable-classes) не будуть\nперезаписувати раніше визначені в php.ini значення, а додадуть нові\nзначення.\n\nНалаштування, визначені через `php_admin_value` та `php_admin_flag`, не\nможуть бути перезаписані через [ini_set()](function.ini-set.md).\n\nУстановки PHP можна встановити через веб-сервер.\n\n**Приклад #2 Встановлення налаштувань PHP у nginx.conf**\n\n`` inicode\nset $php_value \"pcre.backtrack_limit=424242\";\nset $php_value \"$php_value\n pcre.recursion_limit=99999\";\nfastcgi_param PHP_VALUE $php_value;\n\nfastcgi_param PHP_ADMIN_VALUE \"open_basedir=/var/www/htdocs\";\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cstrong\u003eЗастереження\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОскільки ці налаштування передаються в php-fpm як FastCGI-заголовки,\nphp-fpm не повинен бути прив'язаний до загальнодоступної адреси світу. В\nв іншому випадку будь-який зможе змінити налаштування PHP. Дивіться також\n\u003ca href=\"install.fpm.configuration.md#listen-allowed-clients\"\u003elisten.allowed_clients\u003c/a\u003e.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Пули не є механізмом безпеки, тому що\nвони забезпечують повного поділу; наприклад всі пули будуть\nвикористовувати один екземпляр OPcache.\u003c/p\u003e\n\u003c/blockquote\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"install.fpm.configuration.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

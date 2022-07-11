@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.preg-split | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.preg-replace.md">«preg_replace</a></p>
+</li>
+<li>
+<p><a href="book.ssdeep.md">ssdeep »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.pcre.md">Функції PCRE</a></p>
+</li>
+<li>
+<p>Розбиває рядок за регулярним виразом</p>
+</li>
+</ul>
+<h1>preg_split</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>preg_split — Розбиває рядок за регулярним виразом</p>
+<h3>Опис</h3>
+<p><strong>preg_split</strong>(
+string <code>$pattern</code>,
+string <code>$subject</code>,
+int <code>$limit</code> = -1,
+int <code>$flags</code> = 0
+): array|false</p>
+<p>Розбиває рядок за регулярним виразом.</p>
+<h3>Список параметрів</h3>
+<p><code>pattern</code>
+Рядок містить шаблон пошуку.</p>
+<p><code>subject</code>
+Вхідний рядок.</p>
+<p><code>limit</code>
+Якщо вказано, функція повертає не більше, ніж <code>limit</code> підрядок.
+Частина рядка, що залишилася, буде повернута в останній підрядці.
+Спеціальне значення <code>limit</code>, що дорівнює -1 або 0, має на увазі відсутність
+обмеження.</p>
+<p><code>flags</code>
+<code>flags</code> може бути будь-якою комбінацією наступних прапорів (об'єднаних з
+допомогою побітового оператора <code>|</code>):</p>
+<p><strong><code>PREG_SPLIT_NO_EMPTY</code></strong>
+Якщо вказано цей прапор, функція <strong>preg_split()</strong> поверне лише непусті
+підрядки.</p>
+<p><strong><code>PREG_SPLIT_DELIM_CAPTURE</code></strong>
+Якщо зазначений цей прапор, вираз, укладений у круглі дужки в
+розділяючий шаблон, також витягується із заданого рядка і повертається
+функцією.</p>
+<p><strong><code>PREG_SPLIT_OFFSET_CAPTURE</code></strong>
+Якщо зазначений цей прапор, для кожного знайденого підрядку буде вказано його
+позиція у вихідному рядку. Необхідно пам'ятати, що цей прапор змінює
+формат масиву, що повертається: кожен елемент буде містити масив,
+що містить в індексі з номером <code>0</code> знайдену підрядку, а зміщення цієї
+підстроки в параметрі <code>subject</code> - в індексі <code>1</code>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає масив, що складається з підрядків заданого рядка <code>subject</code>,
+яка розбита за межами, що відповідають шаблону <code>pattern</code> або
+<strong><code>false</code></strong> у разі виникнення помилки.</p>
+<h3>Помилки</h3>
+<p>Якщо переданий шаблон регулярного виразу не компілюється
+допустиме регулярне вираження, видається помилка рівня <strong><code>E_WARNING</code></strong>.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 <strong>preg_split()</strong> приклад: Отримання підрядок із заданого
+тексту</strong></p>
+<p><code>&#x3C;?php// розбиваємо рядок по|довільному числу кома і пробельних символів,// які включають в себе  "" ", ,  ,= і  $keywords = preg_split("/[\s,]+/", "hypertext language, programming");print_r($keywords);?> </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Array
+(=
+[0] => hypertext
+[1] => language
+[2] => programming
+)</p>
+<h1><strong>Приклад #2 Розбиваємо рядок на складові символи</strong></h1>
+<p><code>&#x3C;?php$str = 'string';$chars = preg_split('//', $str, -1, PREG_SPLIT_NO_EMPTY);print_r($chars);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Array
+(=
+[0] => s
+[1] => t
+[2] => r
+[3] => i
+[4] => n
+[5] => g
+)</p>
+<h1><strong>Приклад #3 Розбиваємо рядок із зазначенням усунення для кожної з
+знайдених підрядів</strong></h1>
+<p><code>&#x3C;?php$str = 'hypertext language programming';$chars = preg_split('/ /', $str, -1, PREG_SPLIT_OFFSET_CAPTURE);print_r($chars);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<h1>Array
+(=
+[0] => Array
+(=
+[0] => hypertext
+[1] => 0
+)</h1>
+<h1>[1] => Array
+(=
+[0] => language
+[1] => 10
+)</h1>
+<p>[2] => Array
+(=
+[0] => programming
+[1] => 19
+)</p>
+<p>)</p>
+<h3>Примітки</h3>
+<p><strong>Підказка</strong></p>
+<p>Якщо вам не потрібна потужність регулярних виразів, ви можете вибрати більше
+швидкі (хоч і прості) альтернативи на кшталт
+<a href="function.explode.md">explode()</a> або
+<a href="function.str-split.md">str_split()</a>.</p>
+<p><strong>Підказка</strong></p>
+<p>Якщо відповідностей не знайшлося, то повертається масив із єдиним
+елементом рівним усьому рядку.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li>"<a href="pcre.pattern.md">Регулярні висловлювання PCRE</a>"</li>
+<li><a href="function.preg-quote.md">preg_quote()</a> - Екранує символи в
+регулярних виразах</li>
+<li><a href="function.implode.md">implode()</a> - Об'єднує елементи масиву в
+рядок</li>
+<li><a href="function.preg-match.md">preg_match()</a> - Виконує перевірку на
+відповідність регулярному виразу</li>
+<li><a href="function.preg-match-all.md">preg_match_all()</a> - Виконує
+глобальний пошук шаблону в рядку</li>
+<li><a href="function.preg-replace.md">preg_replace()</a> - Пошук та
+заміну за регулярним виразом</li>
+<li><a href="function.preg-last-error.md">preg_last_error()</a> - Повертає код
+помилки виконання останнього регулярного вираження PCRE</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.preg-split.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.preg-split.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.preg-split","slug":"function.preg-split.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.preg-replace.md\"\u003e«preg_replace\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.ssdeep.md\"\u003essdeep »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.pcre.md\"\u003eФункції PCRE\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eРозбиває рядок за регулярним виразом\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003epreg_split\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003epreg_split — Розбиває рядок за регулярним виразом\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003epreg_split\u003c/strong\u003e(\nstring \u003ccode\u003e$pattern\u003c/code\u003e,\nstring \u003ccode\u003e$subject\u003c/code\u003e,\nint \u003ccode\u003e$limit\u003c/code\u003e = -1,\nint \u003ccode\u003e$flags\u003c/code\u003e = 0\n): array|false\u003c/p\u003e\n\u003cp\u003eРозбиває рядок за регулярним виразом.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003epattern\u003c/code\u003e\nРядок містить шаблон пошуку.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esubject\u003c/code\u003e\nВхідний рядок.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elimit\u003c/code\u003e\nЯкщо вказано, функція повертає не більше, ніж \u003ccode\u003elimit\u003c/code\u003e підрядок.\nЧастина рядка, що залишилася, буде повернута в останній підрядці.\nСпеціальне значення \u003ccode\u003elimit\u003c/code\u003e, що дорівнює -1 або 0, має на увазі відсутність\nобмеження.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eflags\u003c/code\u003e\n\u003ccode\u003eflags\u003c/code\u003e може бути будь-якою комбінацією наступних прапорів (об'єднаних з\nдопомогою побітового оператора \u003ccode\u003e|\u003c/code\u003e):\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ePREG_SPLIT_NO_EMPTY\u003c/code\u003e\u003c/strong\u003e\nЯкщо вказано цей прапор, функція \u003cstrong\u003epreg_split()\u003c/strong\u003e поверне лише непусті\nпідрядки.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ePREG_SPLIT_DELIM_CAPTURE\u003c/code\u003e\u003c/strong\u003e\nЯкщо зазначений цей прапор, вираз, укладений у круглі дужки в\nрозділяючий шаблон, також витягується із заданого рядка і повертається\nфункцією.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ePREG_SPLIT_OFFSET_CAPTURE\u003c/code\u003e\u003c/strong\u003e\nЯкщо зазначений цей прапор, для кожного знайденого підрядку буде вказано його\nпозиція у вихідному рядку. Необхідно пам'ятати, що цей прапор змінює\nформат масиву, що повертається: кожен елемент буде містити масив,\nщо містить в індексі з номером \u003ccode\u003e0\u003c/code\u003e знайдену підрядку, а зміщення цієї\nпідстроки в параметрі \u003ccode\u003esubject\u003c/code\u003e - в індексі \u003ccode\u003e1\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає масив, що складається з підрядків заданого рядка \u003ccode\u003esubject\u003c/code\u003e,\nяка розбита за межами, що відповідають шаблону \u003ccode\u003epattern\u003c/code\u003e або\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПомилки\u003c/h3\u003e\n\u003cp\u003eЯкщо переданий шаблон регулярного виразу не компілюється\nдопустиме регулярне вираження, видається помилка рівня \u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 \u003cstrong\u003epreg_split()\u003c/strong\u003e приклад: Отримання підрядок із заданого\nтексту\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// розбиваємо рядок по|довільному числу кома і пробельних символів,// які включають в себе  \"\" \", ,  ,= і  $keywords = preg_split(\"/[\\s,]+/\", \"hypertext language, programming\");print_r($keywords);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eArray\n(=\n[0] =\u003e hypertext\n[1] =\u003e language\n[2] =\u003e programming\n)\u003c/p\u003e\n\u003ch1\u003e\u003cstrong\u003eПриклад #2 Розбиваємо рядок на складові символи\u003c/strong\u003e\u003c/h1\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$str = 'string';$chars = preg_split('//', $str, -1, PREG_SPLIT_NO_EMPTY);print_r($chars);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eArray\n(=\n[0] =\u003e s\n[1] =\u003e t\n[2] =\u003e r\n[3] =\u003e i\n[4] =\u003e n\n[5] =\u003e g\n)\u003c/p\u003e\n\u003ch1\u003e\u003cstrong\u003eПриклад #3 Розбиваємо рядок із зазначенням усунення для кожної з\nзнайдених підрядів\u003c/strong\u003e\u003c/h1\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$str = 'hypertext language programming';$chars = preg_split('/ /', $str, -1, PREG_SPLIT_OFFSET_CAPTURE);print_r($chars);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003ch1\u003eArray\n(=\n[0] =\u003e Array\n(=\n[0] =\u003e hypertext\n[1] =\u003e 0\n)\u003c/h1\u003e\n\u003ch1\u003e[1] =\u003e Array\n(=\n[0] =\u003e language\n[1] =\u003e 10\n)\u003c/h1\u003e\n\u003cp\u003e[2] =\u003e Array\n(=\n[0] =\u003e programming\n[1] =\u003e 19\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПідказка\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЯкщо вам не потрібна потужність регулярних виразів, ви можете вибрати більше\nшвидкі (хоч і прості) альтернативи на кшталт\n\u003ca href=\"function.explode.md\"\u003eexplode()\u003c/a\u003e або\n\u003ca href=\"function.str-split.md\"\u003estr_split()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПідказка\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЯкщо відповідностей не знайшлося, то повертається масив із єдиним\nелементом рівним усьому рядку.\u003c/p\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\"\u003ca href=\"pcre.pattern.md\"\u003eРегулярні висловлювання PCRE\u003c/a\u003e\"\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.preg-quote.md\"\u003epreg_quote()\u003c/a\u003e - Екранує символи в\nрегулярних виразах\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.implode.md\"\u003eimplode()\u003c/a\u003e - Об'єднує елементи масиву в\nрядок\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.preg-match.md\"\u003epreg_match()\u003c/a\u003e - Виконує перевірку на\nвідповідність регулярному виразу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.preg-match-all.md\"\u003epreg_match_all()\u003c/a\u003e - Виконує\nглобальний пошук шаблону в рядку\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.preg-replace.md\"\u003epreg_replace()\u003c/a\u003e - Пошук та\nзаміну за регулярним виразом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.preg-last-error.md\"\u003epreg_last_error()\u003c/a\u003e - Повертає код\nпомилки виконання останнього регулярного вираження PCRE\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.preg-split.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

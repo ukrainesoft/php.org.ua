@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.mb-ereg-replace-callback | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.mb-ereg-match.md">«mb_ereg_match</a></p>
+</li>
+<li>
+<p><a href="function.mb-ereg-replace.md">mb_ereg_replace »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.mbstring.md">Функції для роботи з багатобайтовими рядками</a></p>
+</li>
+<li>
+<p>Виконує пошук та заміну за регулярним виразом з підтримкою
+багатобайтових кодувань використовуючи callback-функцію</p>
+</li>
+</ul>
+<p>#mb_ereg_replace_callback</p>
+<p>(PHP 5 = 5.4.1, PHP 7, PHP 8)</p>
+<p>mb_ereg_replace_callback — Здійснює пошук та заміну за регулярним
+висловлювання з підтримкою багатобайтових кодувань використовуючи
+callback-функцію</p>
+<h3>Опис</h3>
+<p><strong>mb_ereg_replace_callback</strong>(
+string <code>$pattern</code>,
+<a href="language.types.callable.md">callable</a> <code>$callback</code>,
+string <code>$string</code>,
+?string <code>$options</code> = <strong><code>null</code></strong>
+): string|false|null</p>
+<p>Перевіряє рядок <code>string</code> на збіг із шаблоном <code>pattern</code>, потім
+замінює знайдений текст результатом функції callback.</p>
+<p>Поведінка цієї функції майже ідентична з функцією
+<a href="function.mb-ereg-replace.md">mb_ereg_replace()</a>, за винятком того,
+що замість рядка заміни <code>replacement</code> необхідно визначати функцію
+<code>callback</code>.</p>
+<h3>Список параметрів</h3>
+<p><code>pattern</code>
+Регулярний вираз шаблон.</p>
+<p>Мультибайтові символи можуть використовуватися в pattern.</p>
+<p><code>callback</code>
+Функція, яка буде викликана для отримання та передачі масиву
+збігів у рядок <code>subject</code>. Callback-функція має повертати рядок
+для заміни.</p>
+<p>Часто може знадобитися оголошувати функцію <code>callback</code> для
+<strong>mb_ereg_replace_callback()</strong> лише в одному місці. В такому випадку
+використовуйте <a href="functions.anonymous.md">анонімні функції</a> для
+визначення callback-функції всередині виклику
+<strong>mb_ereg_replace_callback()</strong>. За такого підходу у вас буде вся
+інформація про виклик в одному місці, і ви не забрудните простір імен
+функції ім'ям своєї callback-функції, яке більше ніде не
+використовується.</p>
+<p><code>string</code>
+Рядок (string) для перевірки.</p>
+<p><code>options</code>
+Опція пошуку. Детальніше дивіться
+<a href="function.mb-regex-set-options.md">mb_regex_set_options()</a>.</p>
+<h3>Значення, що повертаються</h3>
+<p>Результуючий рядок у разі успішного виконання або <strong><code>false</code></strong>
+у разі виникнення помилки. Якщо <code>string</code> некоректна для поточної
+кодування, повертається <strong><code>null</code></strong>.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>options тепер припускає значення null.</td>
+</tr>
+<tr>
+<td>7.1.0</td>
+<td>Функція перевіряє, чи коректна string для поточного кодування.</td>
+</tr>
+</tbody>
+</table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад функції <strong>mb_ereg_replace_callback()</strong></strong></p>
+<p><code>&#x3C;?php// цей текст використовувався в 2002// ми хочемо обновити для використання його в 2003$text = "День сміху - 04/01/2002 ";$text.= "Остання Різдво було 12/24/2001 ";// callback-функціяfunction next_year($matches){ // зазвичай: в $matches[0] буде повне збіг  // $matches[1] - збіг для  ' і т.д. return $matches[1].($matches[2]+1);}echo mb_ereg_replace_callback(           "(\d{2}/\d{2}/) ,             "next_year",            $text);?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>День сміху - 04/01/2003
+Останнє Різдво було 12/24/2002</p>
+<p><strong>Приклад #2 <strong>mb_ereg_replace_callback()</strong> використовує анонімну
+функцію</strong></p>
+<p><code>&#x3C;?php// цей текст використовувався в 2002// ми хочемо обновити для використання його в 2003$text = "День сміху - 04/01/2002 ";$text.= "Остання Різдво було 12/24/2001 ";echo mb_ereg_replace_callback(            "(\d{2}/\d{2}/)(\d{4})",            function ($matches) {               return $matches[1].($matches[2]+1 );              },            $text);?></code></p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Для цієї функції буде використано внутрішнє кодування або
+кодування, встановлене функцією
+<a href="function.mb-regex-encoding.md">mb_regex_encoding()</a>.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.mb-regex-encoding.md">mb_regex_encoding()</a> -
+Встановлює/отримує поточне кодування для багатобайтового
+регулярного вираження</li>
+<li><a href="function.mb-ereg-replace.md">mb_ereg_replace()</a> - Здійснює
+заміну за регулярним виразом з підтримкою багатобайтових кодувань</li>
+<li><a href="functions.anonymous.md">Анонімні функції</a></li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.mb-ereg-replace-callback.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.mb-ereg-replace-callback.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.mb-ereg-replace-callback","slug":"function.mb-ereg-replace-callback.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mb-ereg-match.md\"\u003e«mb_ereg_match\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.mb-ereg-replace.md\"\u003emb_ereg_replace »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.mbstring.md\"\u003eФункції для роботи з багатобайтовими рядками\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВиконує пошук та заміну за регулярним виразом з підтримкою\nбагатобайтових кодувань використовуючи callback-функцію\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#mb_ereg_replace_callback\u003c/p\u003e\n\u003cp\u003e(PHP 5 = 5.4.1, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emb_ereg_replace_callback — Здійснює пошук та заміну за регулярним\nвисловлювання з підтримкою багатобайтових кодувань використовуючи\ncallback-функцію\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003emb_ereg_replace_callback\u003c/strong\u003e(\nstring \u003ccode\u003e$pattern\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$callback\u003c/code\u003e,\nstring \u003ccode\u003e$string\u003c/code\u003e,\n?string \u003ccode\u003e$options\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\n): string|false|null\u003c/p\u003e\n\u003cp\u003eПеревіряє рядок \u003ccode\u003estring\u003c/code\u003e на збіг із шаблоном \u003ccode\u003epattern\u003c/code\u003e, потім\nзамінює знайдений текст результатом функції callback.\u003c/p\u003e\n\u003cp\u003eПоведінка цієї функції майже ідентична з функцією\n\u003ca href=\"function.mb-ereg-replace.md\"\u003emb_ereg_replace()\u003c/a\u003e, за винятком того,\nщо замість рядка заміни \u003ccode\u003ereplacement\u003c/code\u003e необхідно визначати функцію\n\u003ccode\u003ecallback\u003c/code\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003epattern\u003c/code\u003e\nРегулярний вираз шаблон.\u003c/p\u003e\n\u003cp\u003eМультибайтові символи можуть використовуватися в pattern.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ecallback\u003c/code\u003e\nФункція, яка буде викликана для отримання та передачі масиву\nзбігів у рядок \u003ccode\u003esubject\u003c/code\u003e. Callback-функція має повертати рядок\nдля заміни.\u003c/p\u003e\n\u003cp\u003eЧасто може знадобитися оголошувати функцію \u003ccode\u003ecallback\u003c/code\u003e для\n\u003cstrong\u003emb_ereg_replace_callback()\u003c/strong\u003e лише в одному місці. В такому випадку\nвикористовуйте \u003ca href=\"functions.anonymous.md\"\u003eанонімні функції\u003c/a\u003e для\nвизначення callback-функції всередині виклику\n\u003cstrong\u003emb_ereg_replace_callback()\u003c/strong\u003e. За такого підходу у вас буде вся\nінформація про виклик в одному місці, і ви не забрудните простір імен\nфункції ім'ям своєї callback-функції, яке більше ніде не\nвикористовується.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003estring\u003c/code\u003e\nРядок (string) для перевірки.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoptions\u003c/code\u003e\nОпція пошуку. Детальніше дивіться\n\u003ca href=\"function.mb-regex-set-options.md\"\u003emb_regex_set_options()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eРезультуючий рядок у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e\nу разі виникнення помилки. Якщо \u003ccode\u003estring\u003c/code\u003e некоректна для поточної\nкодування, повертається \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003eoptions тепер припускає значення null.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.1.0\u003c/td\u003e\n\u003ctd\u003eФункція перевіряє, чи коректна string для поточного кодування.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад функції \u003cstrong\u003emb_ereg_replace_callback()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// цей текст використовувався в 2002// ми хочемо обновити для використання його в 2003$text = \"День сміху - 04/01/2002 \";$text.= \"Остання Різдво було 12/24/2001 \";// callback-функціяfunction next_year($matches){ // зазвичай: в $matches[0] буде повне збіг  // $matches[1] - збіг для  ' і т.д. return $matches[1].($matches[2]+1);}echo mb_ereg_replace_callback(           \"(\\d{2}/\\d{2}/) ,             \"next_year\",            $text);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eДень сміху - 04/01/2003\nОстаннє Різдво було 12/24/2002\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 \u003cstrong\u003emb_ereg_replace_callback()\u003c/strong\u003e використовує анонімну\nфункцію\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// цей текст використовувався в 2002// ми хочемо обновити для використання його в 2003$text = \"День сміху - 04/01/2002 \";$text.= \"Остання Різдво було 12/24/2001 \";echo mb_ereg_replace_callback(            \"(\\d{2}/\\d{2}/)(\\d{4})\",            function ($matches) {               return $matches[1].($matches[2]+1 );              },            $text);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eДля цієї функції буде використано внутрішнє кодування або\nкодування, встановлене функцією\n\u003ca href=\"function.mb-regex-encoding.md\"\u003emb_regex_encoding()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.mb-regex-encoding.md\"\u003emb_regex_encoding()\u003c/a\u003e -\nВстановлює/отримує поточне кодування для багатобайтового\nрегулярного вираження\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mb-ereg-replace.md\"\u003emb_ereg_replace()\u003c/a\u003e - Здійснює\nзаміну за регулярним виразом з підтримкою багатобайтових кодувань\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"functions.anonymous.md\"\u003eАнонімні функції\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.mb-ereg-replace-callback.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.oci-fetch-all | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.oci-execute.md">«oci_execute</a></p>
+</li>
+<li>
+<p><a href="function.oci-fetch-array.md">oci_fetch_array »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.oci8.md">OCI8 Функції</a></p>
+</li>
+<li>
+<p>Вибирає всі рядки з результату запиту до двомірного масиву</p>
+</li>
+</ul>
+<p>#oci_fetch_all</p>
+<p>(PHP 5, PHP 7, PHP 8, PECL OCI8 >= 1.1.0)</p>
+<p>oci_fetch_all — Вибирає всі рядки з результату запиту на двомірний
+масив</p>
+<h3>Опис</h3>
+<p><strong>oci_fetch_all</strong>(
+resource <code>$statement</code>,
+array <code>&#x26;$output</code>,
+int <code>$offset</code> = 0,
+int <code>$limit</code> = -1,
+int <code>$flags</code> = OCI_FETCHSTATEMENT_BY_COLUMN | OCI_ASSOC
+): int</p>
+<p>Вибирає всі рядки з результату запиту двомірний масив. за
+замовчуванням повертає всі рядки.</p>
+<p>Ця функція може викликатися лише один раз для кожного запиту
+запущеного за допомогою <a href="function.oci-execute.md">oci_execute()</a>.</p>
+<h3>Список параметрів</h3>
+<p><code>statement</code>
+Коректний ідентифікатор виразу OCI8, отриманий з
+<a href="function.oci-parse.md">oci_parse()</a> та виконаний функцією
+<a href="function.oci-execute.md">oci_execute()</a>, або ідентифікатор виразу
+<code>REF CURSOR</code>.</p>
+<p><code>output</code>
+Змінна, що містить повернені рядки.</p>
+<p>LOB стовпці повертаються у вигляді рядків, для яких підтримується Oracle
+перетворення.</p>
+<p>Дивіться <a href="function.oci-fetch-array.md">oci_fetch_array()</a> для більш
+детальної інформації про те, як проводиться вибірка даних та типів.</p>
+<p><code>offset</code>
+Число рядків, які необхідно виключити з вибірки. За замовчуванням одно
+0, вибірка повертається з наступного за першим рядом.</p>
+<p><code>limit</code>
+Число рядків, що повертаються. За замовчуванням одно -1, що означає повернення
+всіх рядків, починаючи із зазначених у <code>offset</code> + 1 попередній рядок.</p>
+<p><code>flags</code>
+Параметр <code>flags</code> містить структуру масиву, що відображає необхідність
+використання асоціативних масивів</p>
+<table>
+<thead>
+<tr>
+<th>Константа Опис</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OCI_FETCHSTATEMENT_BY_ROW</strong></td>
+<td>Масив буде містити по одному підмасиву на кожен рядок запиту.</td>
+</tr>
+<tr>
+<td><strong>OCI_FETCHSTATEMENT_BY_COLUMN</strong></td>
+<td>Масив міститиме по одному підмасиву на кожен стовпець. Використовується за замовчуванням.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Структура масиву <strong>oci_fetch_all()</strong></strong></p>
+<p>Масиви можуть бути проіндексовані або заголовками стовпців або
+пронумеровані. Повернеться лише один режим індексації.</p>
+<table>
+<thead>
+<tr>
+<th>Константа Опис</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OCI_NUM</strong></td>
+<td>Для масиву кожного стовпця використовуються числові індекси.</td>
+</tr>
+<tr>
+<td><strong>OCI_ASSOC</strong></td>
+<td>Для масиву кожного стовпця використовують асоціативні індекси. За замовчуванням.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Індексація масиву <strong>oci_fetch_all()</strong></strong></p>
+<p>Використовуйте оператор додавання "+" для вибору певної комбінації
+структури та індексації масиву.</p>
+<p>Регістронезалежні (за замовчуванням у Oracle) імена полів у результуючому
+масиві матимуть асоціативні індекси у верхньому регістрі.
+Реєстрозалежні імена полів матимуть індекси з тими самими регістрами
+символів, що й саме поле. Використовуйте
+<a href="function.var-dump.md">var_dump()</a> на <code>output</code>, щоб перевірити
+відповідність регістрів символів для кожного запиту.</p>
+<p>У запитах у яких є кілька стовпців з однаковими іменами
+необхідно використовувати псевдоніми. Інакше лише один із стовпців
+з'явиться в асоціативному масиві.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає число стовпців в <code>output</code>, який може набувати значення 0
+або більше.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>oci_fetch_all()</strong></strong></p>
+<p><code>&#x3C;?php$conn = oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {    $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$stid = oci_parse($conn, 'SELECT POSTAL_CODE, CITY FROM locations WHERE ROWNUM oci_fetch_all($stid, $res);echo "$nrows рядків отримано&#x3C;br> ";var_dump($res);// Виведення var_dump://   2 рядків отримано//   array(2) {//      ["POSTAL_CODE"]=>/    string(6) "00989x"//        [1]=>//        string(6) "10934x"//      }//      ["CITY"]=>//      array(2) {//        [0]=>/ /                                                                                    ";foreach ($res as $col) {    echo "&#x3C;tr> ";   foreach ($col as $item) {        echo "    &#x3C;td>".($item !== null ? htmlentities($item, ENT_QU) ";    }    echo "&#x3C;/tr> ";}echo "&#x3C;/table> ";oci_free_statement($stid);oci_close($conn);?></code></p>
+<p><strong>Приклад #2 Приклад використання <strong>oci_fetch_all()</strong> з
+<strong><code>OCI_FETCHSTATEMENT_BY_ROW</code></strong></strong></p>
+<p>` &#x3C;?php$conn = oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {    $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$stid = oci_parse($conn, 'SELECT POSTAL_CODE, CITY FROM locations WHERE ROWNUM oci_fetch_all($stid, $res, null, null, OCI_FETCHSTATEMENT_BY_ROW);echo "$nrows рядків отримано
+";var_dump($res);// Виведе://   2 рядків отримано//   array(2) {//     [0]=>//      array(2)                                          стр (6) "00989x"//        ["CITY"]=>//        string(4) "Roma"//      }//      [1]=>//      array(2) {//        ["POSTAL_CODE"]=> //                    ¦                                    ¦ </p>
+<p><strong>Приклад #3 Приклад використання <strong>oci_fetch_all()</strong> з <strong><code>OCI_NUM</code></strong></strong></p>
+<p>` &#x3C;?php$conn = oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {    $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$stid = oci_parse($conn, 'SELECT POSTAL_CODE, CITY FROM locations WHERE ROWNUM oci_fetch_all($stid, $res, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_NUM);echo "$nrows рядків отримано
+";var_dump($res);// Виведе //   2 рядків отримано//   array(2) {//      [0]=>//      array(2)                                   ) "00989x"//        [1]=>//        string(4) "Roma"//      }//      [1]=>//      array(2) {//        [0]=>//        string(6) "10934x"//        [1]=>//        string(6) "Venice"//      }//    }oci_free_statement($d?</p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Використання <code>offset</code> неефективне. Всі ряди, що пропускаються, включаються
+в результат запиту, що повертається базою даних до PHP. Після цього вони
+виключаються. Більш ефективно використовувати SQL для відступу та
+обмеження рядів у запиті. Дивіться
+<a href="function.oci-fetch-array.md">oci_fetch_array()</a> для прикладів.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Запити, що повертають велику кількість рядів, можуть бути більшими
+ефективними, якщо використовується однорядна функція вибірки, така як
+<a href="function.oci-fetch-array.md">oci_fetch_array()</a>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Для запитів, що повертають велику кількість рядів,
+продуктивність може бути значно збільшена за допомогою
+збільшення значення опції
+<a href="oci8.configuration.md#ini.oci8.default-prefetch">oci8.default_prefetch</a>
+або використання
+<a href="function.oci-set-prefetch.md">oci_set_prefetch()</a>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Не повертає ряди для неявних результуючих наборів у Oracle
+Database 12<em>c</em>. Використовуйте замість цієї функції функцію
+<a href="function.oci-fetch-array.md">oci_fetch_array()</a>.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.oci-fetch.md">oci_fetch()</a> - Вибирає наступний рядок
+з результату в буфер</li>
+<li><a href="function.oci-fetch-array.md">oci_fetch_array()</a> - Повертає
+наступний рядок з результату запиту у вигляді асоціативного або
+нумерованого масиву</li>
+<li><a href="function.oci-fetch-assoc.md">oci_fetch_assoc()</a> - Повертає
+наступний рядок з результату запиту у вигляді асоціативного масиву</li>
+<li><a href="function.oci-fetch-object.md">oci_fetch_object()</a> - Повертає
+наступний рядок із результату запиту у вигляді об'єкта</li>
+<li><a href="function.oci-fetch-row.md">oci_fetch_row()</a> - Повертає
+наступний рядок з результату запиту у вигляді нумерованого масиву</li>
+<li><a href="function.oci-set-prefetch.md">oci_set_prefetch()</a> - Встановлює
+кількість рядків, які будуть автоматично вибрані в буфер</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.oci-fetch-all.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.oci-fetch-all.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.oci-fetch-all","slug":"function.oci-fetch-all.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.oci-execute.md\"\u003e«oci_execute\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.oci-fetch-array.md\"\u003eoci_fetch_array »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.oci8.md\"\u003eOCI8 Функції\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВибирає всі рядки з результату запиту до двомірного масиву\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e#oci_fetch_all\u003c/p\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8, PECL OCI8 \u003e= 1.1.0)\u003c/p\u003e\n\u003cp\u003eoci_fetch_all — Вибирає всі рядки з результату запиту на двомірний\nмасив\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eoci_fetch_all\u003c/strong\u003e(\nresource \u003ccode\u003e$statement\u003c/code\u003e,\narray \u003ccode\u003e\u0026#x26;$output\u003c/code\u003e,\nint \u003ccode\u003e$offset\u003c/code\u003e = 0,\nint \u003ccode\u003e$limit\u003c/code\u003e = -1,\nint \u003ccode\u003e$flags\u003c/code\u003e = OCI_FETCHSTATEMENT_BY_COLUMN | OCI_ASSOC\n): int\u003c/p\u003e\n\u003cp\u003eВибирає всі рядки з результату запиту двомірний масив. за\nзамовчуванням повертає всі рядки.\u003c/p\u003e\n\u003cp\u003eЦя функція може викликатися лише один раз для кожного запиту\nзапущеного за допомогою \u003ca href=\"function.oci-execute.md\"\u003eoci_execute()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003estatement\u003c/code\u003e\nКоректний ідентифікатор виразу OCI8, отриманий з\n\u003ca href=\"function.oci-parse.md\"\u003eoci_parse()\u003c/a\u003e та виконаний функцією\n\u003ca href=\"function.oci-execute.md\"\u003eoci_execute()\u003c/a\u003e, або ідентифікатор виразу\n\u003ccode\u003eREF CURSOR\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoutput\u003c/code\u003e\nЗмінна, що містить повернені рядки.\u003c/p\u003e\n\u003cp\u003eLOB стовпці повертаються у вигляді рядків, для яких підтримується Oracle\nперетворення.\u003c/p\u003e\n\u003cp\u003eДивіться \u003ca href=\"function.oci-fetch-array.md\"\u003eoci_fetch_array()\u003c/a\u003e для більш\nдетальної інформації про те, як проводиться вибірка даних та типів.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eoffset\u003c/code\u003e\nЧисло рядків, які необхідно виключити з вибірки. За замовчуванням одно\n0, вибірка повертається з наступного за першим рядом.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003elimit\u003c/code\u003e\nЧисло рядків, що повертаються. За замовчуванням одно -1, що означає повернення\nвсіх рядків, починаючи із зазначених у \u003ccode\u003eoffset\u003c/code\u003e + 1 попередній рядок.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eflags\u003c/code\u003e\nПараметр \u003ccode\u003eflags\u003c/code\u003e містить структуру масиву, що відображає необхідність\nвикористання асоціативних масивів\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eКонстанта Опис\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eOCI_FETCHSTATEMENT_BY_ROW\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eМасив буде містити по одному підмасиву на кожен рядок запиту.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eOCI_FETCHSTATEMENT_BY_COLUMN\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eМасив міститиме по одному підмасиву на кожен стовпець. Використовується за замовчуванням.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eСтруктура масиву \u003cstrong\u003eoci_fetch_all()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eМасиви можуть бути проіндексовані або заголовками стовпців або\nпронумеровані. Повернеться лише один режим індексації.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eКонстанта Опис\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eOCI_NUM\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eДля масиву кожного стовпця використовуються числові індекси.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eOCI_ASSOC\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eДля масиву кожного стовпця використовують асоціативні індекси. За замовчуванням.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eІндексація масиву \u003cstrong\u003eoci_fetch_all()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eВикористовуйте оператор додавання \"+\" для вибору певної комбінації\nструктури та індексації масиву.\u003c/p\u003e\n\u003cp\u003eРегістронезалежні (за замовчуванням у Oracle) імена полів у результуючому\nмасиві матимуть асоціативні індекси у верхньому регістрі.\nРеєстрозалежні імена полів матимуть індекси з тими самими регістрами\nсимволів, що й саме поле. Використовуйте\n\u003ca href=\"function.var-dump.md\"\u003evar_dump()\u003c/a\u003e на \u003ccode\u003eoutput\u003c/code\u003e, щоб перевірити\nвідповідність регістрів символів для кожного запиту.\u003c/p\u003e\n\u003cp\u003eУ запитах у яких є кілька стовпців з однаковими іменами\nнеобхідно використовувати псевдоніми. Інакше лише один із стовпців\nз'явиться в асоціативному масиві.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає число стовпців в \u003ccode\u003eoutput\u003c/code\u003e, який може набувати значення 0\nабо більше.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003eoci_fetch_all()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$conn = oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {    $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$stid = oci_parse($conn, 'SELECT POSTAL_CODE, CITY FROM locations WHERE ROWNUM oci_fetch_all($stid, $res);echo \"$nrows рядків отримано\u0026#x3C;br\u003e \";var_dump($res);// Виведення var_dump://   2 рядків отримано//   array(2) {//      [\"POSTAL_CODE\"]=\u003e/    string(6) \"00989x\"//        [1]=\u003e//        string(6) \"10934x\"//      }//      [\"CITY\"]=\u003e//      array(2) {//        [0]=\u003e/ /                                                                                    \";foreach ($res as $col) {    echo \"\u0026#x3C;tr\u003e \";   foreach ($col as $item) {        echo \"    \u0026#x3C;td\u003e\".($item !== null ? htmlentities($item, ENT_QU) \";    }    echo \"\u0026#x3C;/tr\u003e \";}echo \"\u0026#x3C;/table\u003e \";oci_free_statement($stid);oci_close($conn);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Приклад використання \u003cstrong\u003eoci_fetch_all()\u003c/strong\u003e з\n\u003cstrong\u003e\u003ccode\u003eOCI_FETCHSTATEMENT_BY_ROW\u003c/code\u003e\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$conn = oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {    $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$stid = oci_parse($conn, 'SELECT POSTAL_CODE, CITY FROM locations WHERE ROWNUM oci_fetch_all($stid, $res, null, null, OCI_FETCHSTATEMENT_BY_ROW);echo \"$nrows рядків отримано\n\";var_dump($res);// Виведе://   2 рядків отримано//   array(2) {//     [0]=\u003e//      array(2)                                          стр (6) \"00989x\"//        [\"CITY\"]=\u003e//        string(4) \"Roma\"//      }//      [1]=\u003e//      array(2) {//        [\"POSTAL_CODE\"]=\u003e //                    ¦                                    ¦ \u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Приклад використання \u003cstrong\u003eoci_fetch_all()\u003c/strong\u003e з \u003cstrong\u003e\u003ccode\u003eOCI_NUM\u003c/code\u003e\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$conn = oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {    $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$stid = oci_parse($conn, 'SELECT POSTAL_CODE, CITY FROM locations WHERE ROWNUM oci_fetch_all($stid, $res, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_NUM);echo \"$nrows рядків отримано\n\";var_dump($res);// Виведе //   2 рядків отримано//   array(2) {//      [0]=\u003e//      array(2)                                   ) \"00989x\"//        [1]=\u003e//        string(4) \"Roma\"//      }//      [1]=\u003e//      array(2) {//        [0]=\u003e//        string(6) \"10934x\"//        [1]=\u003e//        string(6) \"Venice\"//      }//    }oci_free_statement($d?\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eВикористання \u003ccode\u003eoffset\u003c/code\u003e неефективне. Всі ряди, що пропускаються, включаються\nв результат запиту, що повертається базою даних до PHP. Після цього вони\nвиключаються. Більш ефективно використовувати SQL для відступу та\nобмеження рядів у запиті. Дивіться\n\u003ca href=\"function.oci-fetch-array.md\"\u003eoci_fetch_array()\u003c/a\u003e для прикладів.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЗапити, що повертають велику кількість рядів, можуть бути більшими\nефективними, якщо використовується однорядна функція вибірки, така як\n\u003ca href=\"function.oci-fetch-array.md\"\u003eoci_fetch_array()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eДля запитів, що повертають велику кількість рядів,\nпродуктивність може бути значно збільшена за допомогою\nзбільшення значення опції\n\u003ca href=\"oci8.configuration.md#ini.oci8.default-prefetch\"\u003eoci8.default_prefetch\u003c/a\u003e\nабо використання\n\u003ca href=\"function.oci-set-prefetch.md\"\u003eoci_set_prefetch()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eНе повертає ряди для неявних результуючих наборів у Oracle\nDatabase 12\u003cem\u003ec\u003c/em\u003e. Використовуйте замість цієї функції функцію\n\u003ca href=\"function.oci-fetch-array.md\"\u003eoci_fetch_array()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.oci-fetch.md\"\u003eoci_fetch()\u003c/a\u003e - Вибирає наступний рядок\nз результату в буфер\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.oci-fetch-array.md\"\u003eoci_fetch_array()\u003c/a\u003e - Повертає\nнаступний рядок з результату запиту у вигляді асоціативного або\nнумерованого масиву\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.oci-fetch-assoc.md\"\u003eoci_fetch_assoc()\u003c/a\u003e - Повертає\nнаступний рядок з результату запиту у вигляді асоціативного масиву\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.oci-fetch-object.md\"\u003eoci_fetch_object()\u003c/a\u003e - Повертає\nнаступний рядок із результату запиту у вигляді об'єкта\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.oci-fetch-row.md\"\u003eoci_fetch_row()\u003c/a\u003e - Повертає\nнаступний рядок з результату запиту у вигляді нумерованого масиву\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.oci-set-prefetch.md\"\u003eoci_set_prefetch()\u003c/a\u003e - Встановлює\nкількість рядків, які будуть автоматично вибрані в буфер\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.oci-fetch-all.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

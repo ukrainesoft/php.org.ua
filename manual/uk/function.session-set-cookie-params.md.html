@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.session-set-cookie-params | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.session-save-path.md">« session_save_path</a></p>
+</li>
+<li>
+<p><a href="function.session-set-save-handler.md">session_set_save_handler »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.session.md">Функції для роботи з сесіями</a></p>
+</li>
+<li>
+<p>Встановлює параметри сесійної cookie</p>
+</li>
+</ul>
+<h1>session_set_cookie_params</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>session_set_cookie_params — Встановлює параметри сесійної cookie</p>
+<h3>Опис</h3>
+<p><strong>session_set_cookie_params</strong>(
+int <code>$lifetime_or_options</code>,
+?string <code>$path</code> = <strong><code>null</code></strong>,
+?string <code>$domain</code> = <strong><code>null</code></strong>,
+?bool <code>$secure</code> = <strong><code>null</code></strong>,
+?bool <code>$httponly</code> = <strong><code>null</code></strong>
+): bool</p>
+<p>Альтернативна сигнатура доступна з PHP 7.3.0:</p>
+<p><strong>session_set_cookie_params</strong>(array <code>$lifetime_or_options</code>): bool</p>
+<p><strong>session_set_cookie_params</strong>(array <code>$options</code>): bool</p>
+<p>Встановлює параметри cookie, визначені у файлі <code>php.ini</code>. Ефект
+ця функція зберігається тільки на час виконання скрипта. Таким
+Таким чином, потрібно викликати <strong>session_set_cookie_params()</strong> для кожного
+запиту та перед кожним викликом
+<a href="function.session-start.md">session_start()</a>.</p>
+<p>Ця функція оновлює поточні ini-значення відповідних ключів
+конфігурації PHP ini, які можна отримати за допомогою
+<a href="function.ini-get.md">ini_get()</a>.</p>
+<h3>Список параметрів</h3>
+<p><code>lifetime_or_options</code>
+Якщо використовувати першу сигнатуру, <a href="session.configuration.md#ini.session.cookie-lifetime">час життя</a>
+сесійної куки, задане в секундах.</p>
+<p>Якщо використовувати другу сигнатуру, асоціативний масив (array),
+який може мати будь-який з ключів <code>lifetime</code>, <code>path</code>, <code>domain</code>,
+<code>secure</code>, <code>httponly</code> та <code>samesite</code>. Значення мають той самий сенс, як
+описано у параметрах із відповідним ім'ям. Значення елемента
+<code>samesite</code> має бути або <code>Lax</code>, або <code>Strict</code>. Якщо якась із
+допустимих опцій не вказано, її значення за умовчанням збігаються з
+значення за промовчанням для явних параметрів. Якщо елемент <code>samesite</code> не
+вказано, cookie-атрибут SameSite не встановлено.</p>
+<p><code>path</code>
+<a href="session.configuration.md#ini.session.cookie-path">Шлях</a> у домені, де
+cookie буде працювати. Використовуйте одну косу рису ('/') для всіх шляхів
+у домені.</p>
+<p><code>domain</code>
+<a href="session.configuration.md#ini.session.cookie-domain">Домен</a> cookie,
+наприклад, '<a href="http://www.php.net">www.php.net</a>'. Щоб зробити cookies видимими для всіх
+піддоменів, перед ім'ям домену потрібно поставити крапку, наприклад
+'.php.net'.</p>
+<p><code>secure</code>
+Якщо <strong><code>true</code></strong>, то cookies будуть передаватися лише через
+<a href="session.configuration.md#ini.session.cookie-secure">захищені</a>
+з'єднання.</p>
+<p><code>httponly</code>
+Якщо встановлено <strong><code>true</code></strong>, то PHP спробує надіслати прапорець
+<a href="session.configuration.md#ini.session.cookie-httponly">httponly</a> при
+налаштування сесійної cookie.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0.0</td>
+<td>path, domain, secure та httponly тепер можуть бути <strong>null</strong>.</td>
+</tr>
+<tr>
+<td>7.3.0</td>
+<td>Доданий альтернативний підпис, що підтримує масив опцій lifetime_or_options. Цей підпис також підтримує налаштування cookie-атрибута SameSite.</td>
+</tr>
+<tr>
+<td>7.2.0</td>
+<td>Повертає <strong>true</strong> у разі успішного виконання або <strong>false</strong> у разі виникнення помилки. Раніше повертала тип void.</td>
+</tr>
+</tbody>
+</table>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="session.configuration.md#ini.session.cookie-lifetime">session.cookie_lifetime</a></li>
+<li><a href="session.configuration.md#ini.session.cookie-path">session.cookie_path</a></li>
+<li><a href="session.configuration.md#ini.session.cookie-domain">session.cookie_domain</a></li>
+<li><a href="session.configuration.md#ini.session.cookie-secure">session.cookie_secure</a></li>
+<li><a href="session.configuration.md#ini.session.cookie-httponly">session.cookie_httponly</a></li>
+<li><a href="session.configuration.md#ini.session.cookie-samesite">session.cookie_samesite</a></li>
+<li><a href="function.session-get-cookie-params.md">session_get_cookie_params()</a> -
+Повертає параметри cookie сесії</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.session-set-cookie-params.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.session-set-cookie-params.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.session-set-cookie-params","slug":"function.session-set-cookie-params.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.session-save-path.md\"\u003e« session_save_path\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.session-set-save-handler.md\"\u003esession_set_save_handler »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.session.md\"\u003eФункції для роботи з сесіями\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВстановлює параметри сесійної cookie\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003esession_set_cookie_params\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003esession_set_cookie_params — Встановлює параметри сесійної cookie\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003esession_set_cookie_params\u003c/strong\u003e(\nint \u003ccode\u003e$lifetime_or_options\u003c/code\u003e,\n?string \u003ccode\u003e$path\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\n?string \u003ccode\u003e$domain\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\n?bool \u003ccode\u003e$secure\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e,\n?bool \u003ccode\u003e$httponly\u003c/code\u003e = \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e\n): bool\u003c/p\u003e\n\u003cp\u003eАльтернативна сигнатура доступна з PHP 7.3.0:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003esession_set_cookie_params\u003c/strong\u003e(array \u003ccode\u003e$lifetime_or_options\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003esession_set_cookie_params\u003c/strong\u003e(array \u003ccode\u003e$options\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003eВстановлює параметри cookie, визначені у файлі \u003ccode\u003ephp.ini\u003c/code\u003e. Ефект\nця функція зберігається тільки на час виконання скрипта. Таким\nТаким чином, потрібно викликати \u003cstrong\u003esession_set_cookie_params()\u003c/strong\u003e для кожного\nзапиту та перед кожним викликом\n\u003ca href=\"function.session-start.md\"\u003esession_start()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eЦя функція оновлює поточні ini-значення відповідних ключів\nконфігурації PHP ini, які можна отримати за допомогою\n\u003ca href=\"function.ini-get.md\"\u003eini_get()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003elifetime_or_options\u003c/code\u003e\nЯкщо використовувати першу сигнатуру, \u003ca href=\"session.configuration.md#ini.session.cookie-lifetime\"\u003eчас життя\u003c/a\u003e\nсесійної куки, задане в секундах.\u003c/p\u003e\n\u003cp\u003eЯкщо використовувати другу сигнатуру, асоціативний масив (array),\nякий може мати будь-який з ключів \u003ccode\u003elifetime\u003c/code\u003e, \u003ccode\u003epath\u003c/code\u003e, \u003ccode\u003edomain\u003c/code\u003e,\n\u003ccode\u003esecure\u003c/code\u003e, \u003ccode\u003ehttponly\u003c/code\u003e та \u003ccode\u003esamesite\u003c/code\u003e. Значення мають той самий сенс, як\nописано у параметрах із відповідним ім'ям. Значення елемента\n\u003ccode\u003esamesite\u003c/code\u003e має бути або \u003ccode\u003eLax\u003c/code\u003e, або \u003ccode\u003eStrict\u003c/code\u003e. Якщо якась із\nдопустимих опцій не вказано, її значення за умовчанням збігаються з\nзначення за промовчанням для явних параметрів. Якщо елемент \u003ccode\u003esamesite\u003c/code\u003e не\nвказано, cookie-атрибут SameSite не встановлено.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epath\u003c/code\u003e\n\u003ca href=\"session.configuration.md#ini.session.cookie-path\"\u003eШлях\u003c/a\u003e у домені, де\ncookie буде працювати. Використовуйте одну косу рису ('/') для всіх шляхів\nу домені.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edomain\u003c/code\u003e\n\u003ca href=\"session.configuration.md#ini.session.cookie-domain\"\u003eДомен\u003c/a\u003e cookie,\nнаприклад, '\u003ca href=\"http://www.php.net\"\u003ewww.php.net\u003c/a\u003e'. Щоб зробити cookies видимими для всіх\nпіддоменів, перед ім'ям домену потрібно поставити крапку, наприклад\n'.php.net'.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esecure\u003c/code\u003e\nЯкщо \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, то cookies будуть передаватися лише через\n\u003ca href=\"session.configuration.md#ini.session.cookie-secure\"\u003eзахищені\u003c/a\u003e\nз'єднання.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ehttponly\u003c/code\u003e\nЯкщо встановлено \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, то PHP спробує надіслати прапорець\n\u003ca href=\"session.configuration.md#ini.session.cookie-httponly\"\u003ehttponly\u003c/a\u003e при\nналаштування сесійної cookie.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.0.0\u003c/td\u003e\n\u003ctd\u003epath, domain, secure та httponly тепер можуть бути \u003cstrong\u003enull\u003c/strong\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.3.0\u003c/td\u003e\n\u003ctd\u003eДоданий альтернативний підпис, що підтримує масив опцій lifetime_or_options. Цей підпис також підтримує налаштування cookie-атрибута SameSite.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e7.2.0\u003c/td\u003e\n\u003ctd\u003eПовертає \u003cstrong\u003etrue\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003efalse\u003c/strong\u003e у разі виникнення помилки. Раніше повертала тип void.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cookie-lifetime\"\u003esession.cookie_lifetime\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cookie-path\"\u003esession.cookie_path\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cookie-domain\"\u003esession.cookie_domain\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cookie-secure\"\u003esession.cookie_secure\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cookie-httponly\"\u003esession.cookie_httponly\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"session.configuration.md#ini.session.cookie-samesite\"\u003esession.cookie_samesite\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.session-get-cookie-params.md\"\u003esession_get_cookie_params()\u003c/a\u003e -\nПовертає параметри cookie сесії\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.session-set-cookie-params.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

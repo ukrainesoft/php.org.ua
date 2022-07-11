@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>function.imap-fetchstructure | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.imap-fetchmime.md">« imap_fetchmime</a></p>
+</li>
+<li>
+<p><a href="function.imap-fetchtext.md">imap_fetchtext »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="ref.imap.md">Функції IMAP</a></p>
+</li>
+<li>
+<p>Прочитати структуру вказаного повідомлення</p>
+</li>
+</ul>
+<h1>imap_fetchstructure</h1>
+<p>(PHP 4, PHP 5, PHP 7, PHP 8)</p>
+<p>imap_fetchstructure — Прочитати структуру вказаного повідомлення</p>
+<h3>Опис</h3>
+<p><strong>imap_fetchstructure</strong>(<a href="class.imap-connection.md">IMAP\Connection</a>
+<code>$imap</code>, int <code>$message_num</code>, int <code>$flags</code> = 0): stdClass|false</p>
+<p>Витягує інформацію про структуру вказаного повідомлення.</p>
+<h3>Список параметрів</h3>
+<p><code>imap</code>
+Примірник <a href="class.imap-connection.md">IMAP\Connection</a>.</p>
+<p><code>message_num</code>
+Номер повідомлення</p>
+<p><code>flags</code>
+Якщо задано як <strong><code>FT_UID</code></strong>, то в <code>message_num</code> повинні бути <code>UID</code>
+повідомлень, а не їх номери.</p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає об'єкт із властивостями, переліченими в таблиці нижче або
+<strong><code>false</code></strong> у разі виникнення помилки.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>тип</td>
+<td>Первинний тип тіла</td>
+</tr>
+<tr>
+<td>encoding</td>
+<td>Кодування тіла</td>
+</tr>
+<tr>
+<td>якщосубтипу</td>
+<td><strong>true</strong>, якщо є рядок підтипу</td>
+</tr>
+<tr>
+<td>subtype</td>
+<td>MIME-підтип</td>
+</tr>
+<tr>
+<td>ifdescription</td>
+<td><strong>true</strong>, якщо є рядок опису</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Контент рядка опису</td>
+</tr>
+<tr>
+<td>ifid</td>
+<td><strong>true</strong>, якщо є рядок ідентифікатор</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>Рядок ідентифікатор</td>
+</tr>
+<tr>
+<td>lines</td>
+<td>Кількість рядків</td>
+</tr>
+<tr>
+<td>bytes</td>
+<td>Кількість байт</td>
+</tr>
+<tr>
+<td>якщорозклад</td>
+<td><strong>true</strong>, якщо є рядок розташування</td>
+</tr>
+<tr>
+<td>disposition</td>
+<td>Рядок розташування</td>
+</tr>
+<tr>
+<td>якщопараметри</td>
+<td><strong>true</strong>, якщо є масив dparameters</td>
+</tr>
+<tr>
+<td>dparameters</td>
+<td>Масив об'єктів, кожен з яких має властивості attribute' та value', що відповідають параметрам Content-disposition заголовка MIME.</td>
+</tr>
+<tr>
+<td>якщопараметри</td>
+<td><strong>true</strong>, якщо є масив параметрів</td>
+</tr>
+<tr>
+<td>параметри</td>
+<td>Масив об'єктів, кожен з яких має властивості attribute' та value'.</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>Масив об'єктів ідентичних структурою з верхньорівневим об'єктом, кожен із яких відповідає MIME частини тіла.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Об'єкт, що повертається <strong>imap_fetchstructure()</strong></strong></p>
+<table>
+<thead>
+<tr>
+<th>Значення</th>
+<th>Тип</th>
+<th>Константа</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Text</td>
+<td>TYPETEXT</td>
+</tr>
+<tr>
+<td>1</td>
+<td>multipart</td>
+<td>TYPEMULTIPART</td>
+</tr>
+<tr>
+<td>2</td>
+<td>message</td>
+<td>TYPEMESSAGE</td>
+</tr>
+<tr>
+<td>3</td>
+<td>application</td>
+<td>TYPEAPPLICATION</td>
+</tr>
+<tr>
+<td>4</td>
+<td>audio</td>
+<td>TYPEAUDIO</td>
+</tr>
+<tr>
+<td>5</td>
+<td>image</td>
+<td>TYPEIMAGE</td>
+</tr>
+<tr>
+<td>6</td>
+<td>відео</td>
+<td>TYPEVIDEO</td>
+</tr>
+<tr>
+<td>7</td>
+<td>model</td>
+<td>TYPEMODEL</td>
+</tr>
+<tr>
+<td>8</td>
+<td>інші</td>
+<td>TYPEOTHER</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Первинний тип тіла (значення можуть відрізнятися залежно від
+використовуваної бібліотеки, тому рекомендується використовувати константи)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Значення</th>
+<th>Тип</th>
+<th>Константа</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>7bit</td>
+<td>ENC7BIT</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8bit</td>
+<td>ENC8BIT</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Binary</td>
+<td>ENCBINARY</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Base64</td>
+<td>ENCBASE64</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quoted-Printable</td>
+<td>ENCQUOTEDPRINTABLE</td>
+</tr>
+<tr>
+<td>5</td>
+<td>інші</td>
+<td>ENCOTHER</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Кодування (значення можуть відрізнятися залежно від використовуваної
+бібліотеки, тому рекомендується використовувати константи)</strong></p>
+<h3>Список змін</h3>
+<table>
+<thead>
+<tr>
+<th>Версія</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.1.0</td>
+<td>Параметр imap тепер чекає на екземпляр <a href="class.imap-connection.md">IMAP\Connection</a>; раніше очікувався ресурс (<a href="language.types.resource.md">resource</a>).</td>
+</tr>
+</tbody>
+</table>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.imap-fetchbody.md">imap_fetchbody()</a> - Вийняти
+конкретну секцію тіла повідомлення</li>
+<li><a href="function.imap-bodystruct.md">imap_bodystruct()</a> - Прочитати
+структуру вказаної секції тіла заданого повідомлення</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/function.imap-fetchstructure.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/function.imap-fetchstructure.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"function.imap-fetchstructure","slug":"function.imap-fetchstructure.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.imap-fetchmime.md\"\u003e« imap_fetchmime\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.imap-fetchtext.md\"\u003eimap_fetchtext »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"ref.imap.md\"\u003eФункції IMAP\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПрочитати структуру вказаного повідомлення\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eimap_fetchstructure\u003c/h1\u003e\n\u003cp\u003e(PHP 4, PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003eimap_fetchstructure — Прочитати структуру вказаного повідомлення\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eimap_fetchstructure\u003c/strong\u003e(\u003ca href=\"class.imap-connection.md\"\u003eIMAP\\Connection\u003c/a\u003e\n\u003ccode\u003e$imap\u003c/code\u003e, int \u003ccode\u003e$message_num\u003c/code\u003e, int \u003ccode\u003e$flags\u003c/code\u003e = 0): stdClass|false\u003c/p\u003e\n\u003cp\u003eВитягує інформацію про структуру вказаного повідомлення.\u003c/p\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eimap\u003c/code\u003e\nПримірник \u003ca href=\"class.imap-connection.md\"\u003eIMAP\\Connection\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003emessage_num\u003c/code\u003e\nНомер повідомлення\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eflags\u003c/code\u003e\nЯкщо задано як \u003cstrong\u003e\u003ccode\u003eFT_UID\u003c/code\u003e\u003c/strong\u003e, то в \u003ccode\u003emessage_num\u003c/code\u003e повинні бути \u003ccode\u003eUID\u003c/code\u003e\nповідомлень, а не їх номери.\u003c/p\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає об'єкт із властивостями, переліченими в таблиці нижче або\n\u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у разі виникнення помилки.\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eтип\u003c/td\u003e\n\u003ctd\u003eПервинний тип тіла\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eencoding\u003c/td\u003e\n\u003ctd\u003eКодування тіла\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eякщосубтипу\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003etrue\u003c/strong\u003e, якщо є рядок підтипу\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003esubtype\u003c/td\u003e\n\u003ctd\u003eMIME-підтип\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eifdescription\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003etrue\u003c/strong\u003e, якщо є рядок опису\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edescription\u003c/td\u003e\n\u003ctd\u003eКонтент рядка опису\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eifid\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003etrue\u003c/strong\u003e, якщо є рядок ідентифікатор\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eID\u003c/td\u003e\n\u003ctd\u003eРядок ідентифікатор\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003elines\u003c/td\u003e\n\u003ctd\u003eКількість рядків\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ebytes\u003c/td\u003e\n\u003ctd\u003eКількість байт\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eякщорозклад\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003etrue\u003c/strong\u003e, якщо є рядок розташування\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edisposition\u003c/td\u003e\n\u003ctd\u003eРядок розташування\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eякщопараметри\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003etrue\u003c/strong\u003e, якщо є масив dparameters\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edparameters\u003c/td\u003e\n\u003ctd\u003eМасив об'єктів, кожен з яких має властивості attribute' та value', що відповідають параметрам Content-disposition заголовка MIME.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eякщопараметри\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003etrue\u003c/strong\u003e, якщо є масив параметрів\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eпараметри\u003c/td\u003e\n\u003ctd\u003eМасив об'єктів, кожен з яких має властивості attribute' та value'.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eparts\u003c/td\u003e\n\u003ctd\u003eМасив об'єктів ідентичних структурою з верхньорівневим об'єктом, кожен із яких відповідає MIME частини тіла.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eОб'єкт, що повертається \u003cstrong\u003eimap_fetchstructure()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eЗначення\u003c/th\u003e\n\u003cth\u003eТип\u003c/th\u003e\n\u003cth\u003eКонстанта\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003eText\u003c/td\u003e\n\u003ctd\u003eTYPETEXT\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003ctd\u003emultipart\u003c/td\u003e\n\u003ctd\u003eTYPEMULTIPART\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e2\u003c/td\u003e\n\u003ctd\u003emessage\u003c/td\u003e\n\u003ctd\u003eTYPEMESSAGE\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e3\u003c/td\u003e\n\u003ctd\u003eapplication\u003c/td\u003e\n\u003ctd\u003eTYPEAPPLICATION\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e4\u003c/td\u003e\n\u003ctd\u003eaudio\u003c/td\u003e\n\u003ctd\u003eTYPEAUDIO\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003ctd\u003eimage\u003c/td\u003e\n\u003ctd\u003eTYPEIMAGE\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e6\u003c/td\u003e\n\u003ctd\u003eвідео\u003c/td\u003e\n\u003ctd\u003eTYPEVIDEO\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e7\u003c/td\u003e\n\u003ctd\u003emodel\u003c/td\u003e\n\u003ctd\u003eTYPEMODEL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e8\u003c/td\u003e\n\u003ctd\u003eінші\u003c/td\u003e\n\u003ctd\u003eTYPEOTHER\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eПервинний тип тіла (значення можуть відрізнятися залежно від\nвикористовуваної бібліотеки, тому рекомендується використовувати константи)\u003c/strong\u003e\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eЗначення\u003c/th\u003e\n\u003cth\u003eТип\u003c/th\u003e\n\u003cth\u003eКонстанта\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e0\u003c/td\u003e\n\u003ctd\u003e7bit\u003c/td\u003e\n\u003ctd\u003eENC7BIT\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e1\u003c/td\u003e\n\u003ctd\u003e8bit\u003c/td\u003e\n\u003ctd\u003eENC8BIT\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e2\u003c/td\u003e\n\u003ctd\u003eBinary\u003c/td\u003e\n\u003ctd\u003eENCBINARY\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e3\u003c/td\u003e\n\u003ctd\u003eBase64\u003c/td\u003e\n\u003ctd\u003eENCBASE64\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e4\u003c/td\u003e\n\u003ctd\u003eQuoted-Printable\u003c/td\u003e\n\u003ctd\u003eENCQUOTEDPRINTABLE\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003ctd\u003eінші\u003c/td\u003e\n\u003ctd\u003eENCOTHER\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eКодування (значення можуть відрізнятися залежно від використовуваної\nбібліотеки, тому рекомендується використовувати константи)\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eСписок змін\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eВерсія\u003c/th\u003e\n\u003cth\u003eОпис\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e8.1.0\u003c/td\u003e\n\u003ctd\u003eПараметр imap тепер чекає на екземпляр \u003ca href=\"class.imap-connection.md\"\u003eIMAP\\Connection\u003c/a\u003e; раніше очікувався ресурс (\u003ca href=\"language.types.resource.md\"\u003eresource\u003c/a\u003e).\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.imap-fetchbody.md\"\u003eimap_fetchbody()\u003c/a\u003e - Вийняти\nконкретну секцію тіла повідомлення\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.imap-bodystruct.md\"\u003eimap_bodystruct()\u003c/a\u003e - Прочитати\nструктуру вказаної секції тіла заданого повідомлення\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.imap-fetchstructure.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

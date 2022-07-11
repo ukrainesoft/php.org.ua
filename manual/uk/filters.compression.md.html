@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>filters.compression | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="filters.convert.md">« Перетворюючі фільтри</a></p>
+</li>
+<li>
+<p><a href="filters.encryption.md">Шифруючі фільтри »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="filters.md">Список доступних фільтрів</a></p>
+</li>
+<li>
+<p>компресійні фільтри</p>
+</li>
+</ul>
+<h2>Компресійні фільтри</h2>
+<p>В той час, як <a href="wrappers.compression.md">Компресійні обгортки</a>
+забезпечують спосіб створення gzip- та bz2-сумісних файлів у локальній
+файлової системи, вони не надають загальних засобів для компресії в
+мережевих потоках, як і не надають коштів для створення потоку без
+компресії з подальшим перетворенням на компресований. Для цих цілей
+до будь-яких потокових ресурсів у будь-який час можуть застосовуватися
+компресійні фільтри.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Компресійні фільтри <em>не</em> генерують заголовки та
+закінчень, які використовують утиліти командного рядка, такі як
+<code>gzip</code>. Вони просто компресують (стискають) та декомпресують
+(розтискають) порції даних у потіку даних, що компресується.</p>
+</blockquote>
+<h2>zlib.deflate та zlib.inflate</h2>
+<p><code>zlib.deflate</code> (компресія) та <code>zlib.inflate</code> (декомпресія) є
+реалізаціями методів стиснення, описаних у <a href="http://www.faqs.org/rfcs/rfc1951">» RFC 1951</a>. Фільтр <code>deflate</code> приймає три
+аргументи, передані у вигляді асоціативного масиву. <code>level</code> визначає,
+який рівень компресії використати (1-9). Підвищення цього значення
+призведе до зменшення обсягів даних за рахунок збільшення часу
+обробки. Існують також два спеціальні рівні компресії: 0 (для
+відключення компресії) та -1 (внутрішнє значення за замовчуванням бібліотеки
+zlib - на даний момент одно 6). <code>window</code> - це логарифм із основою
+2 від розміру вікна діапазону стиснення. Високі значення (аж до 15 -
+32768 байт) призводять до покращення компресії за рахунок зростання необхідної
+пам'яті, у той час як низькі значення (аж до 9 - 512 байт)
+призводять до погіршення компресії рахунок зменшення необхідної пам'яті.
+Значенням аргументу <code>window</code> за замовчуванням на даний момент є
+<strong><code>15</code></strong>. <code>memory</code> визначає масштаб пам'яті, що резервується. Допустимі
+значення знаходяться в діапазоні від 1 (мінімальне резервування) до 9
+(максимальне резервування). Таке резервування пам'яті впливає лише
+на швидкість і не впливає на розмір даних, що генеруються.</p>
+<blockquote>
+<p><strong>Примітка</strong>: Оскільки рівень компресії є найчастіше
+використовуваним аргументом, ви можете передати лише його як
+звичайного цілого числа (integer), замість передавати масив
+з одного елемента.</p>
+</blockquote>
+<p>Компресійні фільтри zlib.* доступні, якщо активовано підтримку
+<a href="ref.zlib.md">zlib</a>.</p>
+<p><strong>Приклад #1 <code>zlib.deflate</code> та <code>zlib.inflate</code></strong></p>
+<p>` </p>
+<p><strong>Приклад #2 Спрощене використання <code>zlib.deflate</code></strong></p>
+<p><code>&#x3C;?php$original_text = "This is a test. This is only a test. This is not an important string. ";echo "Оригінальний текст довжиною " . strlen($original_text) . " символів. ";$fp = fopen('test.deflated', 'w');/* Тут "6" вказує рівень компресії 6 */stream_filter_append($fp, 'zlib.deflate', STREAM_FILTER_$ , $original_text);fclose($fp);echo "Стиснутий файл розміром " . filesize('test.deflated') . " байт. ";/* Генерує висновок:Оригінальний текст довжиною 70 символів.Стиснутий файл розміром 56 байт. */?></code></p>
+<h2>bzip2.compress та bzip2.decompress</h2>
+<p><code>bzip2.compress</code> і <code>bzip2.decompress</code> працюють так само, як і
+фільтри zlib, описані вище. Фільтр <code>bzip2.compress</code> приймає два
+аргументу у вигляді елементів асоціативного масиву: <code>blocks</code> є
+цілим (integer) значенням в діапазоні від 1 до 9 і вказує на
+кількість 100-кілобайтових блоків пам'яті для резервування як
+робочого простору. <code>work</code> - це так само ціле (integer)
+значення в діапазоні від 0 до 250, що визначає скільки зусиль потрібно
+витратити на простий спосіб компресії перед перемиканням на повільний,
+але найбільш надійний спосіб. Зміна цього параметра впливає лише на
+швидкість компресії. Ні розмір стисненого результату, ні обсяг, що використовується
+пам'яті не змінюються за допомогою цієї установки. Значення 0 вказує
+бібліотеці bzip використовувати власне внутрішнє значення по
+замовчуванням. Фільтр <code>bzip2.decompress</code> приймає лише один аргумент,
+який може бути переданий або як звичайне boolean-значення, або як
+елемент <code>small</code> асоціативного масиву. Коли <code>small</code> встановлений у
+<strong><code>true</code></strong>, бібліотека bzip зробить декомпресію з мінімальною витратою
+пам'яті рахунок зниження швидкості.</p>
+<p>Компресійні фільтри bzip2.* доступні, якщо активовано підтримку
+<a href="ref.bzip2.md">bz2</a>.</p>
+<p><strong>Приклад #3 <code>bzip2.compress</code> та <code>bzip2.decompress</code></strong></p>
+<p><code>&#x3C;?php$param = array('blocks' => 9, 'work' => 0);echo "Оригінальний файл розміром " . filesize('LICENSE') . "Байт. ";$fp =fopen('LICENSE.compressed', 'w');stream_filter_append($fp, 'bzip2.compress', STREAM_FILTER_WRITE, $param);fwrite($fp, file_get_contents('LICEN') $fp);echo "Стиснутий файл розміром " . filesize('LICENSE.compressed') . " байт. ";/* Генерує висновок:Оригінальний файл розміром 3288 байт.Стиснутий файл розміром 1488 байт. */?></code></p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/filters.compression.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/filters.compression.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"filters.compression","slug":"filters.compression.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"filters.convert.md\"\u003e« Перетворюючі фільтри\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"filters.encryption.md\"\u003eШифруючі фільтри »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"filters.md\"\u003eСписок доступних фільтрів\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eкомпресійні фільтри\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eКомпресійні фільтри\u003c/h2\u003e\n\u003cp\u003eВ той час, як \u003ca href=\"wrappers.compression.md\"\u003eКомпресійні обгортки\u003c/a\u003e\nзабезпечують спосіб створення gzip- та bz2-сумісних файлів у локальній\nфайлової системи, вони не надають загальних засобів для компресії в\nмережевих потоках, як і не надають коштів для створення потоку без\nкомпресії з подальшим перетворенням на компресований. Для цих цілей\nдо будь-яких потокових ресурсів у будь-який час можуть застосовуватися\nкомпресійні фільтри.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Компресійні фільтри \u003cem\u003eне\u003c/em\u003e генерують заголовки та\nзакінчень, які використовують утиліти командного рядка, такі як\n\u003ccode\u003egzip\u003c/code\u003e. Вони просто компресують (стискають) та декомпресують\n(розтискають) порції даних у потіку даних, що компресується.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch2\u003ezlib.deflate та zlib.inflate\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003ezlib.deflate\u003c/code\u003e (компресія) та \u003ccode\u003ezlib.inflate\u003c/code\u003e (декомпресія) є\nреалізаціями методів стиснення, описаних у \u003ca href=\"http://www.faqs.org/rfcs/rfc1951\"\u003e» RFC 1951\u003c/a\u003e. Фільтр \u003ccode\u003edeflate\u003c/code\u003e приймає три\nаргументи, передані у вигляді асоціативного масиву. \u003ccode\u003elevel\u003c/code\u003e визначає,\nякий рівень компресії використати (1-9). Підвищення цього значення\nпризведе до зменшення обсягів даних за рахунок збільшення часу\nобробки. Існують також два спеціальні рівні компресії: 0 (для\nвідключення компресії) та -1 (внутрішнє значення за замовчуванням бібліотеки\nzlib - на даний момент одно 6). \u003ccode\u003ewindow\u003c/code\u003e - це логарифм із основою\n2 від розміру вікна діапазону стиснення. Високі значення (аж до 15 -\n32768 байт) призводять до покращення компресії за рахунок зростання необхідної\nпам'яті, у той час як низькі значення (аж до 9 - 512 байт)\nпризводять до погіршення компресії рахунок зменшення необхідної пам'яті.\nЗначенням аргументу \u003ccode\u003ewindow\u003c/code\u003e за замовчуванням на даний момент є\n\u003cstrong\u003e\u003ccode\u003e15\u003c/code\u003e\u003c/strong\u003e. \u003ccode\u003ememory\u003c/code\u003e визначає масштаб пам'яті, що резервується. Допустимі\nзначення знаходяться в діапазоні від 1 (мінімальне резервування) до 9\n(максимальне резервування). Таке резервування пам'яті впливає лише\nна швидкість і не впливає на розмір даних, що генеруються.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e: Оскільки рівень компресії є найчастіше\nвикористовуваним аргументом, ви можете передати лише його як\nзвичайного цілого числа (integer), замість передавати масив\nз одного елемента.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eКомпресійні фільтри zlib.* доступні, якщо активовано підтримку\n\u003ca href=\"ref.zlib.md\"\u003ezlib\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 \u003ccode\u003ezlib.deflate\u003c/code\u003e та \u003ccode\u003ezlib.inflate\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Спрощене використання \u003ccode\u003ezlib.deflate\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$original_text = \"This is a test. This is only a test. This is not an important string. \";echo \"Оригінальний текст довжиною \" . strlen($original_text) . \" символів. \";$fp = fopen('test.deflated', 'w');/* Тут \"6\" вказує рівень компресії 6 */stream_filter_append($fp, 'zlib.deflate', STREAM_FILTER_$ , $original_text);fclose($fp);echo \"Стиснутий файл розміром \" . filesize('test.deflated') . \" байт. \";/* Генерує висновок:Оригінальний текст довжиною 70 символів.Стиснутий файл розміром 56 байт. */?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch2\u003ebzip2.compress та bzip2.decompress\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003ebzip2.compress\u003c/code\u003e і \u003ccode\u003ebzip2.decompress\u003c/code\u003e працюють так само, як і\nфільтри zlib, описані вище. Фільтр \u003ccode\u003ebzip2.compress\u003c/code\u003e приймає два\nаргументу у вигляді елементів асоціативного масиву: \u003ccode\u003eblocks\u003c/code\u003e є\nцілим (integer) значенням в діапазоні від 1 до 9 і вказує на\nкількість 100-кілобайтових блоків пам'яті для резервування як\nробочого простору. \u003ccode\u003ework\u003c/code\u003e - це так само ціле (integer)\nзначення в діапазоні від 0 до 250, що визначає скільки зусиль потрібно\nвитратити на простий спосіб компресії перед перемиканням на повільний,\nале найбільш надійний спосіб. Зміна цього параметра впливає лише на\nшвидкість компресії. Ні розмір стисненого результату, ні обсяг, що використовується\nпам'яті не змінюються за допомогою цієї установки. Значення 0 вказує\nбібліотеці bzip використовувати власне внутрішнє значення по\nзамовчуванням. Фільтр \u003ccode\u003ebzip2.decompress\u003c/code\u003e приймає лише один аргумент,\nякий може бути переданий або як звичайне boolean-значення, або як\nелемент \u003ccode\u003esmall\u003c/code\u003e асоціативного масиву. Коли \u003ccode\u003esmall\u003c/code\u003e встановлений у\n\u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e, бібліотека bzip зробить декомпресію з мінімальною витратою\nпам'яті рахунок зниження швидкості.\u003c/p\u003e\n\u003cp\u003eКомпресійні фільтри bzip2.* доступні, якщо активовано підтримку\n\u003ca href=\"ref.bzip2.md\"\u003ebz2\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 \u003ccode\u003ebzip2.compress\u003c/code\u003e та \u003ccode\u003ebzip2.decompress\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$param = array('blocks' =\u003e 9, 'work' =\u003e 0);echo \"Оригінальний файл розміром \" . filesize('LICENSE') . \"Байт. \";$fp =fopen('LICENSE.compressed', 'w');stream_filter_append($fp, 'bzip2.compress', STREAM_FILTER_WRITE, $param);fwrite($fp, file_get_contents('LICEN') $fp);echo \"Стиснутий файл розміром \" . filesize('LICENSE.compressed') . \" байт. \";/* Генерує висновок:Оригінальний файл розміром 3288 байт.Стиснутий файл розміром 1488 байт. */?\u003e\u003c/code\u003e\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"filters.compression.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

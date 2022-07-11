@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.zmq | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="zmq.requirements.md">« Вимоги</a></p>
+</li>
+<li>
+<p><a href="zmq.construct.md">ZMQ::__construct »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.zmq.md">Обмін повідомленнями 0MQ</a></p>
+</li>
+<li>
+<p>Клас ZMQ</p>
+</li>
+</ul>
+<h1>Клас ZMQ</h1>
+<p>(PECL zmq >= 0.5.0)</p>
+<h2>Вступ</h2>
+<h2>Огляд класів</h2>
+<p>class <strong>ZMQ</strong> {</p>
+<p>/* Константи */</p>
+<p>const int <code>SOCKET_PAIR</code>;</p>
+<p>const int <code>SOCKET_PUB</code>;</p>
+<p>const int <code>SOCKET_SUB</code>;</p>
+<p>const int <code>SOCKET_REQ</code>;</p>
+<p>const int <code>SOCKET_REP</code>;</p>
+<p>const int <code>SOCKET_XREQ</code>;</p>
+<p>const int <code>SOCKET_XREP</code>;</p>
+<p>const int <code>SOCKET_PUSH</code>;</p>
+<p>const int <code>SOCKET_PULL</code>;</p>
+<p>const int <code>SOCKET_ROUTER</code>;</p>
+<p>const int <code>SOCKET_DEALER</code>;</p>
+<p>const int <code>SOCKET_XPUB</code>;</p>
+<p>const int <code>SOCKET_XSUB</code>;</p>
+<p>const int <code>SOCKET_STREAM</code>;</p>
+<p>const int <code>SOCKOPT_HWM</code>;</p>
+<p>const int <code>SOCKOPT_SNDHWM</code>;</p>
+<p>const int <code>SOCKOPT_RCVHWM</code>;</p>
+<p>const int <code>SOCKOPT_AFFINITY</code>;</p>
+<p>const int <code>SOCKOPT_IDENTITY</code>;</p>
+<p>const int <code>SOCKOPT_SUBSCRIBE</code>;</p>
+<p>const int <code>SOCKOPT_UNSUBSCRIBE</code>;</p>
+<p>const int <code>SOCKOPT_RATE</code>;</p>
+<p>const int <code>SOCKOPT_RECOVERY_IVL</code>;</p>
+<p>const int <code>SOCKOPT_RECONNECT_IVL</code>;</p>
+<p>const int <code>SOCKOPT_RECONNECT_IVL_MAX</code>;</p>
+<p>const int <code>SOCKOPT_MCAST_LOOP</code>;</p>
+<p>const int <code>SOCKOPT_SNDBUF</code>;</p>
+<p>const int <code>SOCKOPT_RCVBUF</code>;</p>
+<p>const int <code>SOCKOPT_RCVMORE</code>;</p>
+<p>const int <code>SOCKOPT_TYPE</code>;</p>
+<p>const int <code>SOCKOPT_LINGER</code>;</p>
+<p>const int <code>SOCKOPT_BACKLOG</code>;</p>
+<p>const int <code>SOCKOPT_MAXMSGSIZE</code>;</p>
+<p>const int <code>SOCKOPT_SNDTIMEO</code>;</p>
+<p>const int <code>SOCKOPT_RCVTIMEO</code>;</p>
+<p>const int <code>SOCKOPT_IPV4ONLY</code>;</p>
+<p>const int <code>SOCKOPT_LAST_ENDPOINT</code>;</p>
+<p>const int <code>SOCKOPT_TCP_KEEPALIVE_IDLE</code>;</p>
+<p>const int <code>SOCKOPT_TCP_KEEPALIVE_CNT</code>;</p>
+<p>const int <code>SOCKOPT_TCP_KEEPALIVE_INTVL</code>;</p>
+<p>const int <code>SOCKOPT_TCP_ACCEPT_FILTER</code>;</p>
+<p>const int <code>SOCKOPT_TCP_ACCEPT_FILTER</code>;</p>
+<p>const int <code>SOCKOPT_DELAY_ATTACH_ON_CONNECT</code>;</p>
+<p>const int <code>SOCKOPT_XPUB_VERBOSE</code>;</p>
+<p>const int <code>SOCKOPT_ROUTER_RAW</code>;</p>
+<p>const int <code>SOCKOPT_IPV6</code>;</p>
+<p>const int <code>CTXOPT_MAX_SOCKETS</code>;</p>
+<p>const int <code>POLL_IN</code>;</p>
+<p>const int <code>POLL_OUT</code>;</p>
+<p>const int <code>MODE_NOBLOCK</code>;</p>
+<p>const int <code>MODE_DONTWAIT</code>;</p>
+<p>const int <code>MODE_SNDMORE</code>;</p>
+<p>const int <code>ERR_INTERNAL</code>;</p>
+<p>const int <code>ERR_EAGAIN</code>;</p>
+<p>const int <code>ERR_ENOTSUP</code>;</p>
+<p>const int <code>ERR_EFSM</code>;</p>
+<p>const int <code>ERR_ETERM</code>;</p>
+<p>/* Methods */</p>
+<p>private <a href="zmq.construct.md">__construct</a>()</p>
+<p>}</p>
+<h2>Зумовлені константи</h2>
+<h2>Типи констант ZMQ</h2>
+<p><strong><code>ZMQ::SOCKET_PAIR</code></strong>
+Ексклюзивний парний шаблон</p>
+<p><strong><code>ZMQ::SOCKET_PUB</code></strong>
+Сокет джерела</p>
+<p><strong><code>ZMQ::SOCKET_SUB</code></strong>
+Сокет передплатника</p>
+<p><strong><code>ZMQ::SOCKET_REQ</code></strong>
+Сокет запиту</p>
+<p><strong><code>ZMQ::SOCKET_REP</code></strong>
+Сокет відповіді</p>
+<p><strong><code>ZMQ::SOCKET_XREQ</code></strong>
+Псевдонім для SOCKET_DEALER</p>
+<p><strong><code>ZMQ::SOCKET_XREP</code></strong>
+Псевдонім для SOCKET_ROUTER</p>
+<p><strong><code>ZMQ::SOCKET_PUSH</code></strong>
+Сокет конвеєра відправки</p>
+<p><strong><code>ZMQ::SOCKET_PULL</code></strong>
+Сокет конвеєра прийому</p>
+<p><strong><code>ZMQ::SOCKET_ROUTER</code></strong>
+Розширений REP-сокет, що маршрутизує відповіді споживачам</p>
+<p><strong><code>ZMQ::SOCKET_DEALER</code></strong>
+Розширений REP-сокет, що здійснює балансування навантаження для всіх
+пов'язаних пар</p>
+<p><strong><code>ZMQ::SOCKET_XPUB</code></strong>
+Аналогічно SOCKET_PUB, за винятком того, що ви можете отримати
+підписку як повідомлення. Повідомлення про передплату буде 0 (відписатися) або 1
+(підписатися) з наступним вмістом повідомлення</p>
+<p><strong><code>ZMQ::SOCKET_XSUB</code></strong>
+Аналогічно SOCKET_SUB, за винятком того, що ви можете надсилати
+підписку як повідомлення. Дивіться SOCKET_XPUB.</p>
+<p><strong><code>ZMQ::SOCKET_STREAM</code></strong>
+Використовується для відсилання та прийому даних TCP від не-ØMQ клієнтів.
+Доступно, якщо скомпільовано із ZeroMQ 4.x або вище (Значення: int).</p>
+<p><strong><code>ZMQ::SOCKOPT_HWM</code></strong>
+Верхня межа для вхідних та вихідних повідомлень жорстко обмежена
+максимальною кількістю повідомлень, які ØMQ може тримати у пам'яті
+для одного клієнта, пов'язаного із відповідним сокетом. Встановлення
+даної опції для сокету впливатиме лише на з'єднання, встановлені
+після її встановлення. У ZeroMQ 3.x це обгортка для одночасної
+установки SNDHWM та RCVHWM. (Значення: int).</p>
+<p><strong><code>ZMQ::SOCKOPT_SNDHWM</code></strong>
+Опція ZMQ_SNDHWM повинна встановлювати верхню межу для вихідних
+повідомлень на конкретному сокеті. Доступно, якщо зібрано із ZeroMQ 3.x або
+вище (Значення: int).</p>
+<p><strong><code>ZMQ::SOCKOPT_RCVHWM</code></strong>
+Опція SOCKOPT_RCVHWM повинна встановлювати верхню межу для вхідних
+повідомлень на конкретному сокеті. Доступно, якщо зібрано із ZeroMQ 3.x або
+вище (Значення: int).</p>
+<p><strong><code>ZMQ::SOCKOPT_AFFINITY</code></strong>
+Встановити подібність потоку введення/виводу (Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_IDENTITY</code></strong>
+Встановити ідентифікатор сокету (Значення: string)</p>
+<p><strong><code>ZMQ::SOCKOPT_SUBSCRIBE</code></strong>
+Встановити фільтр повідомлень. Коректно для сокету передплатника (Значення:
+string)</p>
+<p><strong><code>ZMQ::SOCKOPT_UNSUBSCRIBE</code></strong>
+Видалити фільтр повідомлень. Коректно для сокету передплатника (Значення:
+string)</p>
+<p><strong><code>ZMQ::SOCKOPT_RATE</code></strong>
+Встановити швидкість для сокетів групового розсилання (pgm) (Значення: int
+>= 0)</p>
+<p><strong><code>ZMQ::SOCKOPT_RECOVERY_IVL</code></strong>
+Встановити інтервал відновлення для сокетів групового розсилання
+(Значення: int >= 0)</p>
+<p><strong><code>ZMQ::SOCKOPT_RECONNECT_IVL</code></strong>
+Встановити початковий інтервал переєднання (Значення: int >= 0)</p>
+<p><strong><code>ZMQ::SOCKOPT_RECONNECT_IVL_MAX</code></strong>
+Встановити максимальний інтервал переєднання (Значення: int >= 0)</p>
+<p><strong><code>ZMQ::SOCKOPT_MCAST_LOOP</code></strong>
+Контроль закольцювання групового розсилання (Значення: int >= 0)</p>
+<p><strong><code>ZMQ::SOCKOPT_SNDBUF</code></strong>
+Встановити розмір буфера передачі ядра (Значення: int = 0)</p>
+<p><strong><code>ZMQ::SOCKOPT_RCVBUF</code></strong>
+Встановити розмір буфера прийому ядра (Значення: int >= 0)</p>
+<p><strong><code>ZMQ::SOCKOPT_RCVMORE</code></strong>
+Отримати багатоскладові повідомлення (Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_TYPE</code></strong>
+Отримати тип сокету. Коректно для getSockOpt (Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_LINGER</code></strong>
+Лінійне значення сокету. Визначає, як довго сокет блокує спроби
+очищення повідомлень після закриття. (Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_BACKLOG</code></strong>
+Опція SOCKOPT_BACKLOG встановлює максимальну довжину черги
+клієнтського з'єднання для зазначеного сокету. Працює тільки з
+транспортом орієнтованим з'єднання. (Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_MAXMSGSIZE</code></strong>
+Обмежує максимальний розмір вхідного повідомлення. -1 означає, що
+обмежень немає. Доступно, якщо зібрано з ZeroMQ 3.x та вище (Значення:
+int)</p>
+<p><strong><code>ZMQ::SOCKOPT_SNDTIMEO</code></strong>
+Встановлює час очікування операції надсилання на сокеті. -1 означає
+відсутність обмежень. Доступно, якщо зібрано із ZeroMQ 3.x і вище
+(Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_RCVTIMEO</code></strong>
+Встановлює час очікування операції на сокеті. -1 означає
+відсутність обмежень. Доступно, якщо зібрано із ZeroMQ 3.x і вище
+(Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_IPV4ONLY</code></strong>
+Якщо одно 1, забороняє IPV6. Доступно, якщо зібрано із ZeroMQ 3.x
+(Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_LAST_ENDPOINT</code></strong>
+Витягує останнього клієнта, що приєднався. Для використання з *
+Wildcard-портами. Доступно, якщо зібрано з ZeroMQ 3.x та вище (Значення:
+string)</p>
+<p><strong><code>ZMQ::SOCKOPT_TCP_KEEPALIVE_IDLE</code></strong>
+Час простою для надсилання TCP-keepalive. Доступно, якщо зібрано з
+ZeroMQ 3.x і вище (Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_TCP_KEEPALIVE_CNT</code></strong>
+Підрахувати час для TCP-keepalive. Доступно, якщо зібрано із ZeroMQ 3.x
+і вище (Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_TCP_KEEPALIVE_INTVL</code></strong>
+Інтервал для TCP-keepalive. Доступно, якщо зібрано із ZeroMQ 3.x і вище
+(Значення: int)</p>
+<p><strong><code>ZMQ::SOCKOPT_DELAY_ATTACH_ON_CONNECT</code></strong>
+Надіслати рядок CIDR для звірки з вхідним з'єднанням TCP. Доступно,
+якщо зібрано з ZeroMQ 3.x і вище (Значення: string)</p>
+<p><strong><code>ZMQ::SOCKOPT_TCP_ACCEPT_FILTER</code></strong>
+Надіслати рядок CIDR для звірки з вхідним з'єднанням TCP. Доступно,
+якщо зібрано з ZeroMQ 3.x і вище (Значення: string)</p>
+<p><strong><code>ZMQ::SOCKOPT_XPUB_VERBOSE</code></strong>
+Встановити XPUB для отримання повідомлення програми для кожного екземпляра
+передплатника. Доступно, якщо зібрано з ZeroMQ 3.x та вище (Значення:
+string)</p>
+<p><strong><code>ZMQ::SOCKOPT_ROUTER_RAW</code></strong>
+Якщо 1, то встановлює ROUTER режим "без обробки". У режимі "без
+обробки", якщо використовується транспорт tcp://, сокет читатиме і
+писати без використання кадрів ZeroMQ. Доступно, якщо зібрано із ZeroMQ
+4.0 і вище (Значення: string)</p>
+<p><strong><code>ZMQ::SOCKOPT_IPV6</code></strong>
+Дозволяє IPV6. Доступно, якщо зібрано з ZeroMQ 4.0 та вище (Значення:
+string)</p>
+<p><strong><code>ZMQ::CTXOPT_MAX_SOCKETS</code></strong>
+Обмеження сокету на контекст. Доступно, якщо зібрано з ZeroMQ 3.x та
+вище (Значення: int)</p>
+<p><strong><code>ZMQ::POLL_IN</code></strong>
+Опитати на предмет вхідних даних</p>
+<p><strong><code>ZMQ::POLL_OUT</code></strong>
+Опитати на предмет вихідних даних</p>
+<p><strong><code>ZMQ::MODE_NOBLOCK</code></strong>
+Неблокуюча робота. Оголошено застарілим, використовуйте
+ZMQ::MODE_DONTWAIT</p>
+<p><strong><code>ZMQ::MODE_DONTWAIT</code></strong>
+Неблокуюча робота</p>
+<p><strong><code>ZMQ::MODE_SNDMORE</code></strong>
+Надіслати багатоскладове повідомлення</p>
+<p><strong><code>ZMQ::DEVICE_FORWARDER</code></strong>
+Пристрій пересилання</p>
+<p><strong><code>ZMQ::DEVICE_QUEUE</code></strong>
+Влаштування черги</p>
+<p><strong><code>ZMQ::DEVICE_STREAMER</code></strong>
+Пристрій потокового мовлення</p>
+<p><strong><code>ZMQ::ERR_INTERNAL</code></strong>
+Внутрішня помилка модуля ZMQ</p>
+<p><strong><code>ZMQ::ERR_EAGAIN</code></strong>
+Має на увазі, що операція блокуватиметься при використанні
+ZMQ::MODE_DONTWAIT</p>
+<p><strong><code>ZMQ::ERR_ENOTSUP</code></strong>
+Операція не підтримується типом сокету</p>
+<p><strong><code>ZMQ::ERR_EFSM</code></strong>
+Операція не буде виконана, оскільки сокет знаходиться у некоректному
+стані</p>
+<p><strong><code>ZMQ::ERR_ETERM</code></strong>
+Контекст було перервано</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="zmq.construct.md">ZMQ::__construct</a> - Конструктор ZMQ</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.zmq.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.zmq.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.zmq","slug":"class.zmq.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"zmq.requirements.md\"\u003e« Вимоги\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"zmq.construct.md\"\u003eZMQ::__construct »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.zmq.md\"\u003eОбмін повідомленнями 0MQ\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас ZMQ\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас ZMQ\u003c/h1\u003e\n\u003cp\u003e(PECL zmq \u003e= 0.5.0)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eZMQ\u003c/strong\u003e {\u003c/p\u003e\n\u003cp\u003e/* Константи */\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_PAIR\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_PUB\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_SUB\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_REQ\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_REP\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_XREQ\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_XREP\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_PUSH\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_PULL\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_ROUTER\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_DEALER\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_XPUB\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_XSUB\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKET_STREAM\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_HWM\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_SNDHWM\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_RCVHWM\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_AFFINITY\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_IDENTITY\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_SUBSCRIBE\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_UNSUBSCRIBE\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_RATE\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_RECOVERY_IVL\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_RECONNECT_IVL\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_RECONNECT_IVL_MAX\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_MCAST_LOOP\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_SNDBUF\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_RCVBUF\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_RCVMORE\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_TYPE\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_LINGER\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_BACKLOG\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_MAXMSGSIZE\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_SNDTIMEO\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_RCVTIMEO\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_IPV4ONLY\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_LAST_ENDPOINT\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_TCP_KEEPALIVE_IDLE\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_TCP_KEEPALIVE_CNT\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_TCP_KEEPALIVE_INTVL\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_TCP_ACCEPT_FILTER\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_TCP_ACCEPT_FILTER\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_DELAY_ATTACH_ON_CONNECT\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_XPUB_VERBOSE\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_ROUTER_RAW\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eSOCKOPT_IPV6\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eCTXOPT_MAX_SOCKETS\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003ePOLL_IN\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003ePOLL_OUT\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eMODE_NOBLOCK\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eMODE_DONTWAIT\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eMODE_SNDMORE\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eERR_INTERNAL\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eERR_EAGAIN\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eERR_ENOTSUP\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eERR_EFSM\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003econst int \u003ccode\u003eERR_ETERM\u003c/code\u003e;\u003c/p\u003e\n\u003cp\u003e/* Methods */\u003c/p\u003e\n\u003cp\u003eprivate \u003ca href=\"zmq.construct.md\"\u003e__construct\u003c/a\u003e()\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗумовлені константи\u003c/h2\u003e\n\u003ch2\u003eТипи констант ZMQ\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_PAIR\u003c/code\u003e\u003c/strong\u003e\nЕксклюзивний парний шаблон\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_PUB\u003c/code\u003e\u003c/strong\u003e\nСокет джерела\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_SUB\u003c/code\u003e\u003c/strong\u003e\nСокет передплатника\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_REQ\u003c/code\u003e\u003c/strong\u003e\nСокет запиту\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_REP\u003c/code\u003e\u003c/strong\u003e\nСокет відповіді\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_XREQ\u003c/code\u003e\u003c/strong\u003e\nПсевдонім для SOCKET_DEALER\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_XREP\u003c/code\u003e\u003c/strong\u003e\nПсевдонім для SOCKET_ROUTER\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_PUSH\u003c/code\u003e\u003c/strong\u003e\nСокет конвеєра відправки\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_PULL\u003c/code\u003e\u003c/strong\u003e\nСокет конвеєра прийому\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_ROUTER\u003c/code\u003e\u003c/strong\u003e\nРозширений REP-сокет, що маршрутизує відповіді споживачам\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_DEALER\u003c/code\u003e\u003c/strong\u003e\nРозширений REP-сокет, що здійснює балансування навантаження для всіх\nпов'язаних пар\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_XPUB\u003c/code\u003e\u003c/strong\u003e\nАналогічно SOCKET_PUB, за винятком того, що ви можете отримати\nпідписку як повідомлення. Повідомлення про передплату буде 0 (відписатися) або 1\n(підписатися) з наступним вмістом повідомлення\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_XSUB\u003c/code\u003e\u003c/strong\u003e\nАналогічно SOCKET_SUB, за винятком того, що ви можете надсилати\nпідписку як повідомлення. Дивіться SOCKET_XPUB.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKET_STREAM\u003c/code\u003e\u003c/strong\u003e\nВикористовується для відсилання та прийому даних TCP від не-ØMQ клієнтів.\nДоступно, якщо скомпільовано із ZeroMQ 4.x або вище (Значення: int).\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_HWM\u003c/code\u003e\u003c/strong\u003e\nВерхня межа для вхідних та вихідних повідомлень жорстко обмежена\nмаксимальною кількістю повідомлень, які ØMQ може тримати у пам'яті\nдля одного клієнта, пов'язаного із відповідним сокетом. Встановлення\nданої опції для сокету впливатиме лише на з'єднання, встановлені\nпісля її встановлення. У ZeroMQ 3.x це обгортка для одночасної\nустановки SNDHWM та RCVHWM. (Значення: int).\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_SNDHWM\u003c/code\u003e\u003c/strong\u003e\nОпція ZMQ_SNDHWM повинна встановлювати верхню межу для вихідних\nповідомлень на конкретному сокеті. Доступно, якщо зібрано із ZeroMQ 3.x або\nвище (Значення: int).\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_RCVHWM\u003c/code\u003e\u003c/strong\u003e\nОпція SOCKOPT_RCVHWM повинна встановлювати верхню межу для вхідних\nповідомлень на конкретному сокеті. Доступно, якщо зібрано із ZeroMQ 3.x або\nвище (Значення: int).\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_AFFINITY\u003c/code\u003e\u003c/strong\u003e\nВстановити подібність потоку введення/виводу (Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_IDENTITY\u003c/code\u003e\u003c/strong\u003e\nВстановити ідентифікатор сокету (Значення: string)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_SUBSCRIBE\u003c/code\u003e\u003c/strong\u003e\nВстановити фільтр повідомлень. Коректно для сокету передплатника (Значення:\nstring)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_UNSUBSCRIBE\u003c/code\u003e\u003c/strong\u003e\nВидалити фільтр повідомлень. Коректно для сокету передплатника (Значення:\nstring)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_RATE\u003c/code\u003e\u003c/strong\u003e\nВстановити швидкість для сокетів групового розсилання (pgm) (Значення: int\n\u003e= 0)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_RECOVERY_IVL\u003c/code\u003e\u003c/strong\u003e\nВстановити інтервал відновлення для сокетів групового розсилання\n(Значення: int \u003e= 0)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_RECONNECT_IVL\u003c/code\u003e\u003c/strong\u003e\nВстановити початковий інтервал переєднання (Значення: int \u003e= 0)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_RECONNECT_IVL_MAX\u003c/code\u003e\u003c/strong\u003e\nВстановити максимальний інтервал переєднання (Значення: int \u003e= 0)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_MCAST_LOOP\u003c/code\u003e\u003c/strong\u003e\nКонтроль закольцювання групового розсилання (Значення: int \u003e= 0)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_SNDBUF\u003c/code\u003e\u003c/strong\u003e\nВстановити розмір буфера передачі ядра (Значення: int = 0)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_RCVBUF\u003c/code\u003e\u003c/strong\u003e\nВстановити розмір буфера прийому ядра (Значення: int \u003e= 0)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_RCVMORE\u003c/code\u003e\u003c/strong\u003e\nОтримати багатоскладові повідомлення (Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_TYPE\u003c/code\u003e\u003c/strong\u003e\nОтримати тип сокету. Коректно для getSockOpt (Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_LINGER\u003c/code\u003e\u003c/strong\u003e\nЛінійне значення сокету. Визначає, як довго сокет блокує спроби\nочищення повідомлень після закриття. (Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_BACKLOG\u003c/code\u003e\u003c/strong\u003e\nОпція SOCKOPT_BACKLOG встановлює максимальну довжину черги\nклієнтського з'єднання для зазначеного сокету. Працює тільки з\nтранспортом орієнтованим з'єднання. (Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_MAXMSGSIZE\u003c/code\u003e\u003c/strong\u003e\nОбмежує максимальний розмір вхідного повідомлення. -1 означає, що\nобмежень немає. Доступно, якщо зібрано з ZeroMQ 3.x та вище (Значення:\nint)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_SNDTIMEO\u003c/code\u003e\u003c/strong\u003e\nВстановлює час очікування операції надсилання на сокеті. -1 означає\nвідсутність обмежень. Доступно, якщо зібрано із ZeroMQ 3.x і вище\n(Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_RCVTIMEO\u003c/code\u003e\u003c/strong\u003e\nВстановлює час очікування операції на сокеті. -1 означає\nвідсутність обмежень. Доступно, якщо зібрано із ZeroMQ 3.x і вище\n(Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_IPV4ONLY\u003c/code\u003e\u003c/strong\u003e\nЯкщо одно 1, забороняє IPV6. Доступно, якщо зібрано із ZeroMQ 3.x\n(Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_LAST_ENDPOINT\u003c/code\u003e\u003c/strong\u003e\nВитягує останнього клієнта, що приєднався. Для використання з *\nWildcard-портами. Доступно, якщо зібрано з ZeroMQ 3.x та вище (Значення:\nstring)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_TCP_KEEPALIVE_IDLE\u003c/code\u003e\u003c/strong\u003e\nЧас простою для надсилання TCP-keepalive. Доступно, якщо зібрано з\nZeroMQ 3.x і вище (Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_TCP_KEEPALIVE_CNT\u003c/code\u003e\u003c/strong\u003e\nПідрахувати час для TCP-keepalive. Доступно, якщо зібрано із ZeroMQ 3.x\nі вище (Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_TCP_KEEPALIVE_INTVL\u003c/code\u003e\u003c/strong\u003e\nІнтервал для TCP-keepalive. Доступно, якщо зібрано із ZeroMQ 3.x і вище\n(Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_DELAY_ATTACH_ON_CONNECT\u003c/code\u003e\u003c/strong\u003e\nНадіслати рядок CIDR для звірки з вхідним з'єднанням TCP. Доступно,\nякщо зібрано з ZeroMQ 3.x і вище (Значення: string)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_TCP_ACCEPT_FILTER\u003c/code\u003e\u003c/strong\u003e\nНадіслати рядок CIDR для звірки з вхідним з'єднанням TCP. Доступно,\nякщо зібрано з ZeroMQ 3.x і вище (Значення: string)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_XPUB_VERBOSE\u003c/code\u003e\u003c/strong\u003e\nВстановити XPUB для отримання повідомлення програми для кожного екземпляра\nпередплатника. Доступно, якщо зібрано з ZeroMQ 3.x та вище (Значення:\nstring)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_ROUTER_RAW\u003c/code\u003e\u003c/strong\u003e\nЯкщо 1, то встановлює ROUTER режим \"без обробки\". У режимі \"без\nобробки\", якщо використовується транспорт tcp://, сокет читатиме і\nписати без використання кадрів ZeroMQ. Доступно, якщо зібрано із ZeroMQ\n4.0 і вище (Значення: string)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::SOCKOPT_IPV6\u003c/code\u003e\u003c/strong\u003e\nДозволяє IPV6. Доступно, якщо зібрано з ZeroMQ 4.0 та вище (Значення:\nstring)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::CTXOPT_MAX_SOCKETS\u003c/code\u003e\u003c/strong\u003e\nОбмеження сокету на контекст. Доступно, якщо зібрано з ZeroMQ 3.x та\nвище (Значення: int)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::POLL_IN\u003c/code\u003e\u003c/strong\u003e\nОпитати на предмет вхідних даних\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::POLL_OUT\u003c/code\u003e\u003c/strong\u003e\nОпитати на предмет вихідних даних\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::MODE_NOBLOCK\u003c/code\u003e\u003c/strong\u003e\nНеблокуюча робота. Оголошено застарілим, використовуйте\nZMQ::MODE_DONTWAIT\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::MODE_DONTWAIT\u003c/code\u003e\u003c/strong\u003e\nНеблокуюча робота\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::MODE_SNDMORE\u003c/code\u003e\u003c/strong\u003e\nНадіслати багатоскладове повідомлення\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::DEVICE_FORWARDER\u003c/code\u003e\u003c/strong\u003e\nПристрій пересилання\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::DEVICE_QUEUE\u003c/code\u003e\u003c/strong\u003e\nВлаштування черги\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::DEVICE_STREAMER\u003c/code\u003e\u003c/strong\u003e\nПристрій потокового мовлення\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::ERR_INTERNAL\u003c/code\u003e\u003c/strong\u003e\nВнутрішня помилка модуля ZMQ\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::ERR_EAGAIN\u003c/code\u003e\u003c/strong\u003e\nМає на увазі, що операція блокуватиметься при використанні\nZMQ::MODE_DONTWAIT\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::ERR_ENOTSUP\u003c/code\u003e\u003c/strong\u003e\nОперація не підтримується типом сокету\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::ERR_EFSM\u003c/code\u003e\u003c/strong\u003e\nОперація не буде виконана, оскільки сокет знаходиться у некоректному\nстані\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eZMQ::ERR_ETERM\u003c/code\u003e\u003c/strong\u003e\nКонтекст було перервано\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"zmq.construct.md\"\u003eZMQ::__construct\u003c/a\u003e - Конструктор ZMQ\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.zmq.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

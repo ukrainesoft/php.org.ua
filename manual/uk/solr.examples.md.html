@@ -1,0 +1,679 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>solr.examples | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="function.solr-get-version.md">«solr_get_version</a></p>
+</li>
+<li>
+<p><a href="class.solrutils.md">SolrUtils »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.solr.md">Solr</a></p>
+</li>
+<li>
+<p>Приклади</p>
+</li>
+</ul>
+<h1>Приклади</h1>
+<p>Приклади використання модуля Apache Solr у PHP</p>
+<p><strong>Приклад #1 Вміст файлу BootStrap</strong></p>
+<p>` &#x3C;?php/* Доменне ім'я сервера Solr <em>/define('SOLR_SERVER_HOSTNAME', 'solr.example.com');/</em> Слід запускати в безпечному режимі*/define('SO порт для підключення <em>/define('SOLR_SERVER_PORT', ((SOLR_SECURE) ? 8443 : 8983));/</em> Ім'я користувача для базової аутентифікаціїHTTP <em>/define('  /define('SOLR_SERVER_PASSWORD', 'changeit');/</em> Час очікування HTTP-з'єднання <em>//</em> Це максимальний час в секундах, дозволений для операції передачі даних http. Значение по умолчанию - 30 секунд <em>/define('SOLR_SERVER_TIMEOUT', 10);/</em> Имя файла для закрытого ключа в формате PEM + закрытый сертификат (объединены в указанном порядке) <em>/define('SOLR_SSL_CERT', 'certs/combo.pem ');/</em> Ім'я файла тільки для приватного сертифіката в форматі PEM <em>/define('SOLR_SSL_CERT_ONLY', 'certs/solr.crt');/</em> Ім'яфайла certs/solr.key');/* Пароль для файла закрытого ключа в формате PEM <em>/define('SOLR_SSL_KEYPASSWORD', 'StrongAndSecurePassword');/</em> Имя файла, содержащего один или несколько сертификатов CA для проверки однорангового узла <em>/define( 'SOLR_SSL_CAINFO', 'certs/cacert.crt');/</em> Ім'я каталога, містить кілька сертифікатів CA для перевірки однорангового вузла */define('SOLR_SSL_CAPATH''''</p>
+<p><strong>Приклад #2 Додавання документа до індексу</strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$options = array(    'hostname' => SOLR_SERVER_HOSTNAME,    'login'    => SOLR_SERVER_USERNAME,    'password' => SOLR_SERVER_PASSWORD,    'port'     => SOLR_SERVER_PORT,);$client = new SolrClient ($options);$doc = new SolrInputDocument();$doc->addField('id', 334455);$doc->addField('cat', 'Software');$doc->addField('cat' , 'Lucene');$updateResponse = $client->addDocument($doc);print_r($updateResponse->getResponse());?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[responseHeader] => SolrObject Object
+(
+[status] => 0
+[QTime] => 446
+)</p>
+<p>)</p>
+<p><strong>Приклад #3 Злиття одного документа з іншим</strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$doc = new SolrDocument();$second_doc = new SolrDocument();$doc->addField('id', 1123);$doc->features = ;$doc->features = "Fast development cycles";$doc['cat'] = 'Software';$doc['cat'] = 'Custom Search';$doc->cat   = 'Information Technology';$ second_doc->addField('cat', 'Lucene Search');$second_doc->merge($doc, true);print_r($second_doc->toArray());?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Array
+(
+[document_boost] => 0
+[field_count] => 3
+[fields] => Array
+(
+[0] => SolrDocumentField Object
+(
+[name] => cat
+[boost] => 0
+[values] => Array
+(
+[0] => Software
+[1] => Custom Search
+[2] => Information Technology
+)</p>
+<p>)</p>
+<p>[1] => SolrDocumentField Object
+(
+[name] => id
+[boost] => 0
+[values] => Array
+(
+[0] => 1123
+)</p>
+<p>)</p>
+<p>[2] => SolrDocumentField Object
+(
+[name] => features
+[boost] => 0
+[values] => Array
+(
+[0] => PHP Client Side
+[1] => Fast development cycles
+)</p>
+<p>)</p>
+<p>)</p>
+<p>)</p>
+<p><strong>Приклад #4 Пошук документів - відповіді SolrObject</strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$options = array(    'hostname' => SOLR_SERVER_HOSTNAME,    'login'    => SOLR_SERVER_USERNAME,    'password' => SOLR_SERVER_PASSWORD,    'port'     => SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery();$query->setQuery('lucene');$query->setStart(0);$query->setRows(50);$query->addField('cat ')->addField('features')->addField('id')->addField('timestamp');$query_response = $client->query($query);$response = $query_response->getResponse() ;print_r($response);?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[responseHeader] => SolrObject Object
+(
+[status] => 0
+[QTime] => 1
+[params] => SolrObject Object
+(
+[wt] => xml
+[rows] => 50
+[start] => 0
+[indent] => on
+[q] => lucene
+[fl] => cat,features,id,timestamp
+[version] => 2.2
+)</p>
+<p>)</p>
+<p>[response] => SolrObject Object
+(
+[numFound] => 3
+[start] => 0
+[docs] => Array
+(
+[0] => SolrObject Object
+(
+[cat] => Array
+(
+[0] => Software
+[1] => Lucene
+)</p>
+<p>[id] => 334456
+)</p>
+<p>[1] => SolrObject Object
+(
+[cat] => Array
+(
+[0] => Software
+[1] => Lucene
+)</p>
+<p>[id] => 334455
+)</p>
+<p>[2] => SolrObject Object
+(
+[cat] => Array
+(
+[0] => software
+[1] => search
+)</p>
+<p>[features] => Array
+(
+[0] => Advanced Full-Text Search Capabilities using Lucene
+[1] => Optimized for High Volume Web Traffic
+[2] => Standards Based Open Interfaces - XML and HTTP
+[3] => Comprehensive HTML Administration Interfaces
+[4] => Scalability - Efficient Replication to other Solr Search Servers
+[5] => Flexible and Adaptable with XML configuration and Schema
+[6] => Good unicode support: héllo (hello with an accent over the e)
+)</p>
+<p>[id] => SOLR1000
+[timestamp] => 2009-09-04T20:38:55.906
+)</p>
+<p>)</p>
+<p>)</p>
+<p>)</p>
+<p><strong>Приклад #5 Пошук документів - відповіді SolrDocument</strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$options = array(    'hostname' => SOLR_SERVER_HOSTNAME,    'login'    => SOLR_SERVER_USERNAME,    'password' => SOLR_SERVER_PASSWORD,    'port'     => SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery();$query->setQuery('lucene');$query->setStart(0);$query->setRows(50);$query->addField('cat ')->addField('features')->addField('id')->addField('timestamp');$query_response = $client->query($query);$query_response->setParseMode(SolrQueryResponse::PARSE_ );$response = $query_response->getResponse();print_r($response);?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[responseHeader] => SolrObject Object
+(
+[status] => 0
+[QTime] => 1
+[params] => SolrObject Object
+(
+[wt] => xml
+[rows] => 50
+[start] => 0
+[indent] => on
+[q] => lucene
+[fl] => cat,features,id,timestamp
+[version] => 2.2
+)</p>
+<p>)</p>
+<p>[response] => SolrObject Object
+(
+[numFound] => 3
+[start] => 0
+[docs] => Array
+(
+[0] => SolrDocument Object
+(
+[_hashtable_index:SolrDocument:private] => 19740
+)</p>
+<p>[1] => SolrDocument Object
+(
+[_hashtable_index:SolrDocument:private] => 25485
+)</p>
+<p>[2] => SolrDocument Object
+(
+[_hashtable_index:SolrDocument:private] => 25052
+)</p>
+<p>)</p>
+<p>)</p>
+<p>)</p>
+<p><strong>Приклад #6 Приклад використання Simple TermsComponent</strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$options = array(    'hostname' => SOLR_SERVER_HOSTNAME,    'login'    => SOLR_SERVER_USERNAME,    'password' => SOLR_SERVER_PASSWORD,    'port'     => SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery();$query->setTerms(true);$query->setTermsField('cat');$updateResponse = $client->query($query);print_r($updateResponse ->getResponse());?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[responseHeader] => SolrObject Object
+(
+[status] => 0
+[QTime] => 2
+)</p>
+<p>[terms] => SolrObject Object
+(
+[cat] => SolrObject Object
+(
+[electronics] => 14
+[Lucene] => 4
+[Software] => 4
+[memory] => 3
+[Кард] => 2
+[connector] => 2
+[drive] => 2
+[graphics] => 2
+[hard] => 2
+[monitor] => 2
+)</p>
+<p>)</p>
+<p>)</p>
+<p><strong>Приклад #7 Приклад використання Simple TermsComponent - використання
+префікса</strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$options = array(    'hostname' => SOLR_SERVER_HOSTNAME,    'login'    => SOLR_SERVER_USERNAME,    'password' => SOLR_SERVER_PASSWORD,    'port'     => SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery();$query->setTerms(true);/* Return only terms starting with $prefix */$prefix = 'c';$query->setTermsField(' ->setTermsPrefix($prefix);$updateResponse = $client->query($query);print_r($updateResponse->getResponse());?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[responseHeader] => SolrObject Object
+(
+[status] => 0
+[QTime] => 1
+)</p>
+<p>[terms] => SolrObject Object
+(
+[cat] => SolrObject Object
+(
+[Кард] => 2
+[connector] => 2
+[camera] => 1
+[copier] => 1
+)</p>
+<p>)</p>
+<p>)</p>
+<p><strong>Приклад #8 Приклад використання Simple TermsComponent - вказівка
+мінімальної частоти</strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$options = array(    'hostname' => SOLR_SERVER_HOSTNAME,    'login'    => SOLR_SERVER_USERNAME,    'password' => SOLR_SERVER_PASSWORD,    'port'     => SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery();$query->setTerms(true);/* Повертати тільки терміни, починаються с $prefix */$prefix = 'c';/* повертати більше */$min_frequency = 2;$query->setTermsField('cat')->setTermsPrefix($prefix)->setTermsMinCount($min_frequency);$updateResponse =$client->query($query);print_r($ ->getResponse());?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[responseHeader] => SolrObject Object
+(
+[status] => 0
+[QTime] => 0
+)</p>
+<p>[terms] => SolrObject Object
+(
+[cat] => SolrObject Object
+(
+[Кард] => 2
+[connector] => 2
+)</p>
+<p>)</p>
+<p>)</p>
+<p><strong>Приклад #9 Приклад використання Simple Facet</strong></p>
+<p>` &#x3C;?phpinclude "bootstrap.php";$options = array(    'hostname' => SOLR_SERVER_HOSTNAME,    'login'    => SOLR_SERVER_USERNAME,    'password' => SOLR_SERVER_PASSWORD,    'port'     => SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery('<em>:</em>');$query->setFacet(true);$query->addFacetField('cat')->addFacetField('name')->setFacetMinCount(2 );$updateResponse =$client->query($query);$response_array = $updateResponse->getResponse();$facet_data = $response_array->facet_counts->facet_fields;_print_r($face)</p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[cat] => SolrObject Object
+(
+[electronics] => 14
+[memory] => 3
+[Lucene] => 2
+[Software] => 2
+[Кард] => 2
+[connector] => 2
+[drive] => 2
+[graphics] => 2
+[hard] => 2
+[monitor] => 2
+[search] => 2
+[software] => 2
+)</p>
+<p>[name] => SolrObject Object
+(
+[gb] => 6
+[1] => 3
+[184] => 3
+[2] => 3
+[3200] => 3
+[400] => 3
+[500] => 3
+[ddr] => 3
+[i] => 3
+[ipod] => 3
+[memori] => 3
+[pc] => 3
+[pin] => 3
+[Pod] => 3
+[sdram] => 3
+[system] => 3
+[unbuff] => 3
+[canon] => 2
+[corsair] => 2
+[drive] => 2
+[hard] => 2
+[mb] => 2
+[n] => 2
+[power] => 2
+[retail] => 2
+[video] => 2
+[x] => 2
+)</p>
+<p>)</p>
+<p><strong>Приклад #10 Приклад використання Simple Facet - з необов'язковим
+перевизначенням поля для mincount</strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$options = array(    'hostname' => SOLR_SERVER_HOSTNAME,    'login'    => SOLR_SERVER_USERNAME,    'password' => SOLR_SERVER_PASSWORD,    'port'     => SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery('*:*');$query->setFacet(true);$query->addFacetField('cat')->addFacetField('name')->setFacetMinCount(2 )->setFacetMinCount(4, 'name');$updateResponse = $client->query($query);$response_array = $updateResponse->getResponse();$facet_data = $response_array-print $facet_data);?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[cat] => SolrObject Object
+(
+[electronics] => 14
+[memory] => 3
+[Lucene] => 2
+[Software] => 2
+[Кард] => 2
+[connector] => 2
+[drive] => 2
+[graphics] => 2
+[hard] => 2
+[monitor] => 2
+[search] => 2
+[software] => 2
+)</p>
+<p>[name] => SolrObject Object
+(
+[gb] => 6
+)</p>
+<p>)</p>
+<p><strong>Приклад #11 Приклад використання Facet Date</strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$options = array(        'hostname' => SOLR_SERVER_HOSTNAME,        'login'    => SOLR_SERVER_USERNAME,        'password' => SOLR_SERVER_PASSWORD,        'port'     => SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery('*:*');$query->setFacet(true);$query->addFacetDateField('manufacturedate_dt');$query->setFacetDateStart('2006-02-13 :00:00Z');$query->setFacetDateEnd('2012-02-13T00:00:00Z');$query->setFacetDateGap('+1YEAR');$query->setFacetDateHardEnd(1);$query- >addFacetDateOther('before');$updateResponse =$$client->query($query);$response_array = $updateResponse->getResponse();$facet_data = $response_array->face_cout ?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[manufacturedate_dt] => SolrObject Object
+(
+[2006-02-13T00:00:00Z] => 9
+[2007-02-13T00:00:00Z] => 0
+[2008-02-13T00:00:00Z] => 0
+[2009-02-13T00:00:00Z] => 0
+[2010-02-13T00:00:00Z] => 0
+[2011-02-13T00:00:00Z] => 0
+[gap] => +1YEAR
+[start] => 2006-02-13T00:00:00Z
+[end] => 2012-02-13T00:00:00Z
+[before] => 2
+)</p>
+<p>)</p>
+<p><strong>Приклад #12 Підключення до сервера з підтримкою SSL</strong></p>
+<p>` &#x3C;?phpinclude "bootstrap.php";$options = array(    'hostname' => SOLR_SERVER_HOSTNAME,    'login'    => SOLR_SERVER_USERNAME,    'password' => SOLR_SERVER_PASSWORD,    'port'     => SOLR_SERVER_PORT,    'timeout'  => SOLR_SERVER_TIMEOUT, 'secure'   => SOLR_SECURE,    'ssl_cert' => SOLR_SSL_CERT_ONLY,    'ssl_key'  => SOLR_SSL_KEY,    'ssl_keypassword' => SOLR_SSL_KEYPASSWORD,    'ssl_cainfo' => SOLR_SSL_CAINFO,);$client = new SolrClient($options);$query = new SolrQuery('<em>:</em>');$query->setFacet(true);$query->addFacetField('cat')->addFacetField('name')->setFacetMinCount(2)->setFacetMinCount(4, ' name');$updateResponse =$client->query($query);$response_array = $updateResponse->getResponse();$facet_data = $response_array->facet_counts->facet_fields;_print_r</p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[cat] => SolrObject Object
+(
+[electronics] => 14
+[memory] => 3
+[Lucene] => 2
+[Software] => 2
+[Кард] => 2
+[connector] => 2
+[drive] => 2
+[graphics] => 2
+[hard] => 2
+[monitor] => 2
+[search] => 2
+[software] => 2
+)</p>
+<p>[name] => SolrObject Object
+(
+[gb] => 6
+)</p>
+<p>)
+<strong>Приклад #13 Згортання <a href="class.solrquery.md">SolrQuery</a></strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$options = array(        'hostname' => SOLR_SERVER_HOSTNAME,        'login'    => SOLR_SERVER_USERNAME,        'password' => SOLR_SERVER_PASSWORD,        'port'     => SOLR_SERVER_PORT,        'path'     => SOLR_SERVER_PATH) ;$client = new SolrClient($options);$query = new SolrQuery('*:*');$collapseFunction = new SolrCollapseFunction('manu_id_s');$collapseFunction-> NULLPOLICY_IGNORE);$query->collapse($collapseFunction)->setRows(4);$queryResponse==$client->query($query);$response = $queryResponse->getResponse();print_r($respon ></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[responseHeader] => SolrObject Object
+(
+[status] => 0
+[QTime] => 1
+[params] => SolrObject Object
+(
+[q] => *: *
+[indent] => on
+[fq] => {!collapse field=manu_id_s size=2 nullPolicy=ignore}
+[rows] => 4
+[version] => 2.2
+[wt] => xml
+)</p>
+<p>)</p>
+<p>[response] => SolrObject Object
+(
+[numFound] => 14
+[start] => 0
+[docs] => Array
+(
+[0] => SolrObject Object
+(
+[id] => SP2514N
+[name] => Array
+(
+[0] => Samsung SpinPoint P120 SP2514N - hard drive - 250 GB - ATA-133
+)</p>
+<p>[manu] => Array
+(
+[0] => Samsung Electronics Co. Ltd.
+)</p>
+<p>[manu_id_s] => samsung
+[cat] => Array
+(
+[0] => electronics
+[1] => hard drive
+)</p>
+<p>[features] => Array
+(
+[0] => 7200RPM, 8MB cache, IDE Ultra ATA-133
+[1] => NoiseGuard, SilentSeek technology, Fluid Dynamic Bearing (FDB) motor
+)</p>
+<p>[price] => Array
+(
+[0] => 92
+)</p>
+<p>[popularity] => Array
+(
+[0] => 6
+)</p>
+<p>[inStock] => Array
+(
+[0] => 1
+)</p>
+<p>[manufacturedate_dt] => 2006-02-13T15:26:37Z
+[store] => Array
+(
+[0] => 35.0752,-97.032
+)</p>
+<p>[<em>version</em>] => 1510294336412057600
+)</p>
+<p>[1] => SolrObject Object
+(
+[id] => 6H500F0
+[name] => Array
+(
+[0] => Maxtor DiamondMax 11 - hard drive - 500 GB - SATA-300
+)</p>
+<p>[manu] => Array
+(
+[0] => Maxtor Corp.
+)</p>
+<p>[manu_id_s] => maxtor
+[cat] => Array
+(
+[0] => electronics
+[1] => hard drive
+)</p>
+<p>[features] => Array
+(
+[0] => SATA 3.0Gb/s, NCQ
+[1] => 8.5ms seek
+[2] => 16MB cache
+)</p>
+<p>[price] => Array
+(
+[0] => 350
+)</p>
+<p>[popularity] => Array
+(
+[0] => 6
+)</p>
+<p>[inStock] => Array
+(
+[0] => 1
+)</p>
+<p>[store] => Array
+(
+[0] => 45.17614,-93.87341
+)</p>
+<p>[manufacturedate_dt] => 2006-02-13T15:26:37Z
+[<em>version</em>] => 1510294336449806336
+)</p>
+<p>[2] => SolrObject Object
+(
+[id] => F8V7067-APL-KIT
+[name] => Array
+(
+[0] => Belkin Mobile Power Cord для iPod w/ Dock
+)</p>
+<p>[manu] => Array
+(
+[0] => Belkin
+)</p>
+<p>[manu_id_s] => belkin
+[cat] => Array
+(
+[0] => electronics
+[1] => connector
+)</p>
+<p>[features] => Array
+(
+[0] => car power adapter, white
+)</p>
+<p>[weight] => Array
+(
+[0] => 4
+)</p>
+<p>[price] => Array
+(
+[0] => 19.95
+)</p>
+<p>[popularity] => Array
+(
+[0] => 1
+)</p>
+<p>[inStock] => Array
+(
+[0] =>
+)</p>
+<p>[store] => Array
+(
+[0] => 45.18014,-93.87741
+)</p>
+<p>[manufacturedate_dt] => 2005-08-01T16:30:25Z
+[<em>version</em>] => 1510294336458194944
+)</p>
+<p>[3] => SolrObject Object
+(
+[id] => MA147LL/A
+[name] => Array
+(
+[0] => Apple 60 GB iPod with Video Playback Black
+)</p>
+<p>[manu] => Array
+(
+[0] => Apple Computer Inc.
+)</p>
+<p>[manu_id_s] => apple
+[cat] => Array
+(
+[0] => electronics
+[1] => music
+)</p>
+<p>[features] => Array
+(
+[0] => iTunes, Podcasts, Audiobooks
+[1] => Stores up to 15,000 songs, 25,000 photos, or 150 hours of video
+[2] => 2.5-inch, 320x240 color TFT LCD display with LED backlight
+[3] => Up to 20 hours of battery life
+[4] => Plays AAC, MP3, WAV, AIFF, Audible, Apple Lossless, H.264
+[5] => Записи, Календар, Довідник, Знижка кнопки, Дата Display, Photo wallet, Built-in games, JPEG photo playback, Upgradeable firmware, USB 2.0 compatibility, Playback speed control, Rechargeable capability, Battery level indication
+)</p>
+<p>[includes] => Array
+(
+[0] => earbud headphones, USB cable
+)</p>
+<p>[weight] => Array
+(
+[0] => 5.5
+)</p>
+<p>[price] => Array
+(
+[0] => 399
+)</p>
+<p>[popularity] => Array
+(
+[0] => 10
+)</p>
+<p>[inStock] => Array
+(
+[0] => 1
+)</p>
+<p>[store] => Array
+(
+[0] => 37.7752,-100.0232
+)</p>
+<p>[manufacturedate_dt] => 2005-10-12T08:00:00Z
+[<em>version</em>] => 1510294336562003968
+)</p>
+<p>)</p>
+<p>)</p>
+<p>)</p>
+<p><strong>Приклад #14 Приклад використання Solr Real Time Get (RTG)
+<a href="solrclient.getbyid.md">SolrClient::getById()</a></strong></p>
+<p><code>&#x3C;?phpinclude "bootstrap.php";$options = array(    'hostname' => SOLR_SERVER_HOSTNAME,    'login'    => SOLR_SERVER_USERNAME,    'password' => SOLR_SERVER_PASSWORD,    'port'     => SOLR_SERVER_PORT,    'path'     => SOLR_SERVER_PATH) ;$client = new SolrClient($options);$response = $client->getById('GB18030TEST');print_r($response->getResponse());?></code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>SolrObject Object
+(
+[doc] => SolrObject Object
+(
+[id] => GB18030TEST
+[name] => Array
+(
+[0] => Test with some GB18030 encoded characters
+)</p>
+<p>[features] => Array
+(
+[0] => No accents here
+[1] => 这是一个功能
+[2] => This is a feature (перекладається)
+[3] => 这份文件是很有光泽
+[4] => Цей документ є дуже shiny (translated)
+)</p>
+<p>[price] => Array
+(
+[0] => 0
+)</p>
+<p>[inStock] => Array
+(
+[0] => 1
+)</p>
+<p>[<em>version</em>] => 1510294336239042560
+)</p>
+<p>)</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/solr.examples.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/solr.examples.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"solr.examples","slug":"solr.examples.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"function.solr-get-version.md\"\u003e«solr_get_version\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.solrutils.md\"\u003eSolrUtils »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.solr.md\"\u003eSolr\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПриклади\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eПриклади\u003c/h1\u003e\n\u003cp\u003eПриклади використання модуля Apache Solr у PHP\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Вміст файлу BootStrap\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php/* Доменне ім'я сервера Solr \u003cem\u003e/define('SOLR_SERVER_HOSTNAME', 'solr.example.com');/\u003c/em\u003e Слід запускати в безпечному режимі*/define('SO порт для підключення \u003cem\u003e/define('SOLR_SERVER_PORT', ((SOLR_SECURE) ? 8443 : 8983));/\u003c/em\u003e Ім'я користувача для базової аутентифікаціїHTTP \u003cem\u003e/define('  /define('SOLR_SERVER_PASSWORD', 'changeit');/\u003c/em\u003e Час очікування HTTP-з'єднання \u003cem\u003e//\u003c/em\u003e Це максимальний час в секундах, дозволений для операції передачі даних http. Значение по умолчанию - 30 секунд \u003cem\u003e/define('SOLR_SERVER_TIMEOUT', 10);/\u003c/em\u003e Имя файла для закрытого ключа в формате PEM + закрытый сертификат (объединены в указанном порядке) \u003cem\u003e/define('SOLR_SSL_CERT', 'certs/combo.pem ');/\u003c/em\u003e Ім'я файла тільки для приватного сертифіката в форматі PEM \u003cem\u003e/define('SOLR_SSL_CERT_ONLY', 'certs/solr.crt');/\u003c/em\u003e Ім'яфайла certs/solr.key');/* Пароль для файла закрытого ключа в формате PEM \u003cem\u003e/define('SOLR_SSL_KEYPASSWORD', 'StrongAndSecurePassword');/\u003c/em\u003e Имя файла, содержащего один или несколько сертификатов CA для проверки однорангового узла \u003cem\u003e/define( 'SOLR_SSL_CAINFO', 'certs/cacert.crt');/\u003c/em\u003e Ім'я каталога, містить кілька сертифікатів CA для перевірки однорангового вузла */define('SOLR_SSL_CAPATH''''\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Додавання документа до індексу\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(    'hostname' =\u003e SOLR_SERVER_HOSTNAME,    'login'    =\u003e SOLR_SERVER_USERNAME,    'password' =\u003e SOLR_SERVER_PASSWORD,    'port'     =\u003e SOLR_SERVER_PORT,);$client = new SolrClient ($options);$doc = new SolrInputDocument();$doc-\u003eaddField('id', 334455);$doc-\u003eaddField('cat', 'Software');$doc-\u003eaddField('cat' , 'Lucene');$updateResponse = $client-\u003eaddDocument($doc);print_r($updateResponse-\u003egetResponse());?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[responseHeader] =\u003e SolrObject Object\n(\n[status] =\u003e 0\n[QTime] =\u003e 446\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Злиття одного документа з іншим\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$doc = new SolrDocument();$second_doc = new SolrDocument();$doc-\u003eaddField('id', 1123);$doc-\u003efeatures = ;$doc-\u003efeatures = \"Fast development cycles\";$doc['cat'] = 'Software';$doc['cat'] = 'Custom Search';$doc-\u003ecat   = 'Information Technology';$ second_doc-\u003eaddField('cat', 'Lucene Search');$second_doc-\u003emerge($doc, true);print_r($second_doc-\u003etoArray());?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eArray\n(\n[document_boost] =\u003e 0\n[field_count] =\u003e 3\n[fields] =\u003e Array\n(\n[0] =\u003e SolrDocumentField Object\n(\n[name] =\u003e cat\n[boost] =\u003e 0\n[values] =\u003e Array\n(\n[0] =\u003e Software\n[1] =\u003e Custom Search\n[2] =\u003e Information Technology\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e SolrDocumentField Object\n(\n[name] =\u003e id\n[boost] =\u003e 0\n[values] =\u003e Array\n(\n[0] =\u003e 1123\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e[2] =\u003e SolrDocumentField Object\n(\n[name] =\u003e features\n[boost] =\u003e 0\n[values] =\u003e Array\n(\n[0] =\u003e PHP Client Side\n[1] =\u003e Fast development cycles\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Пошук документів - відповіді SolrObject\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(    'hostname' =\u003e SOLR_SERVER_HOSTNAME,    'login'    =\u003e SOLR_SERVER_USERNAME,    'password' =\u003e SOLR_SERVER_PASSWORD,    'port'     =\u003e SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery();$query-\u003esetQuery('lucene');$query-\u003esetStart(0);$query-\u003esetRows(50);$query-\u003eaddField('cat ')-\u003eaddField('features')-\u003eaddField('id')-\u003eaddField('timestamp');$query_response = $client-\u003equery($query);$response = $query_response-\u003egetResponse() ;print_r($response);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[responseHeader] =\u003e SolrObject Object\n(\n[status] =\u003e 0\n[QTime] =\u003e 1\n[params] =\u003e SolrObject Object\n(\n[wt] =\u003e xml\n[rows] =\u003e 50\n[start] =\u003e 0\n[indent] =\u003e on\n[q] =\u003e lucene\n[fl] =\u003e cat,features,id,timestamp\n[version] =\u003e 2.2\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e[response] =\u003e SolrObject Object\n(\n[numFound] =\u003e 3\n[start] =\u003e 0\n[docs] =\u003e Array\n(\n[0] =\u003e SolrObject Object\n(\n[cat] =\u003e Array\n(\n[0] =\u003e Software\n[1] =\u003e Lucene\n)\u003c/p\u003e\n\u003cp\u003e[id] =\u003e 334456\n)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e SolrObject Object\n(\n[cat] =\u003e Array\n(\n[0] =\u003e Software\n[1] =\u003e Lucene\n)\u003c/p\u003e\n\u003cp\u003e[id] =\u003e 334455\n)\u003c/p\u003e\n\u003cp\u003e[2] =\u003e SolrObject Object\n(\n[cat] =\u003e Array\n(\n[0] =\u003e software\n[1] =\u003e search\n)\u003c/p\u003e\n\u003cp\u003e[features] =\u003e Array\n(\n[0] =\u003e Advanced Full-Text Search Capabilities using Lucene\n[1] =\u003e Optimized for High Volume Web Traffic\n[2] =\u003e Standards Based Open Interfaces - XML and HTTP\n[3] =\u003e Comprehensive HTML Administration Interfaces\n[4] =\u003e Scalability - Efficient Replication to other Solr Search Servers\n[5] =\u003e Flexible and Adaptable with XML configuration and Schema\n[6] =\u003e Good unicode support: héllo (hello with an accent over the e)\n)\u003c/p\u003e\n\u003cp\u003e[id] =\u003e SOLR1000\n[timestamp] =\u003e 2009-09-04T20:38:55.906\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Пошук документів - відповіді SolrDocument\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(    'hostname' =\u003e SOLR_SERVER_HOSTNAME,    'login'    =\u003e SOLR_SERVER_USERNAME,    'password' =\u003e SOLR_SERVER_PASSWORD,    'port'     =\u003e SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery();$query-\u003esetQuery('lucene');$query-\u003esetStart(0);$query-\u003esetRows(50);$query-\u003eaddField('cat ')-\u003eaddField('features')-\u003eaddField('id')-\u003eaddField('timestamp');$query_response = $client-\u003equery($query);$query_response-\u003esetParseMode(SolrQueryResponse::PARSE_ );$response = $query_response-\u003egetResponse();print_r($response);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[responseHeader] =\u003e SolrObject Object\n(\n[status] =\u003e 0\n[QTime] =\u003e 1\n[params] =\u003e SolrObject Object\n(\n[wt] =\u003e xml\n[rows] =\u003e 50\n[start] =\u003e 0\n[indent] =\u003e on\n[q] =\u003e lucene\n[fl] =\u003e cat,features,id,timestamp\n[version] =\u003e 2.2\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e[response] =\u003e SolrObject Object\n(\n[numFound] =\u003e 3\n[start] =\u003e 0\n[docs] =\u003e Array\n(\n[0] =\u003e SolrDocument Object\n(\n[_hashtable_index:SolrDocument:private] =\u003e 19740\n)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e SolrDocument Object\n(\n[_hashtable_index:SolrDocument:private] =\u003e 25485\n)\u003c/p\u003e\n\u003cp\u003e[2] =\u003e SolrDocument Object\n(\n[_hashtable_index:SolrDocument:private] =\u003e 25052\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #6 Приклад використання Simple TermsComponent\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(    'hostname' =\u003e SOLR_SERVER_HOSTNAME,    'login'    =\u003e SOLR_SERVER_USERNAME,    'password' =\u003e SOLR_SERVER_PASSWORD,    'port'     =\u003e SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery();$query-\u003esetTerms(true);$query-\u003esetTermsField('cat');$updateResponse = $client-\u003equery($query);print_r($updateResponse -\u003egetResponse());?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[responseHeader] =\u003e SolrObject Object\n(\n[status] =\u003e 0\n[QTime] =\u003e 2\n)\u003c/p\u003e\n\u003cp\u003e[terms] =\u003e SolrObject Object\n(\n[cat] =\u003e SolrObject Object\n(\n[electronics] =\u003e 14\n[Lucene] =\u003e 4\n[Software] =\u003e 4\n[memory] =\u003e 3\n[Кард] =\u003e 2\n[connector] =\u003e 2\n[drive] =\u003e 2\n[graphics] =\u003e 2\n[hard] =\u003e 2\n[monitor] =\u003e 2\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #7 Приклад використання Simple TermsComponent - використання\nпрефікса\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(    'hostname' =\u003e SOLR_SERVER_HOSTNAME,    'login'    =\u003e SOLR_SERVER_USERNAME,    'password' =\u003e SOLR_SERVER_PASSWORD,    'port'     =\u003e SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery();$query-\u003esetTerms(true);/* Return only terms starting with $prefix */$prefix = 'c';$query-\u003esetTermsField(' -\u003esetTermsPrefix($prefix);$updateResponse = $client-\u003equery($query);print_r($updateResponse-\u003egetResponse());?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[responseHeader] =\u003e SolrObject Object\n(\n[status] =\u003e 0\n[QTime] =\u003e 1\n)\u003c/p\u003e\n\u003cp\u003e[terms] =\u003e SolrObject Object\n(\n[cat] =\u003e SolrObject Object\n(\n[Кард] =\u003e 2\n[connector] =\u003e 2\n[camera] =\u003e 1\n[copier] =\u003e 1\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #8 Приклад використання Simple TermsComponent - вказівка\nмінімальної частоти\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(    'hostname' =\u003e SOLR_SERVER_HOSTNAME,    'login'    =\u003e SOLR_SERVER_USERNAME,    'password' =\u003e SOLR_SERVER_PASSWORD,    'port'     =\u003e SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery();$query-\u003esetTerms(true);/* Повертати тільки терміни, починаються с $prefix */$prefix = 'c';/* повертати більше */$min_frequency = 2;$query-\u003esetTermsField('cat')-\u003esetTermsPrefix($prefix)-\u003esetTermsMinCount($min_frequency);$updateResponse =$client-\u003equery($query);print_r($ -\u003egetResponse());?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[responseHeader] =\u003e SolrObject Object\n(\n[status] =\u003e 0\n[QTime] =\u003e 0\n)\u003c/p\u003e\n\u003cp\u003e[terms] =\u003e SolrObject Object\n(\n[cat] =\u003e SolrObject Object\n(\n[Кард] =\u003e 2\n[connector] =\u003e 2\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #9 Приклад використання Simple Facet\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(    'hostname' =\u003e SOLR_SERVER_HOSTNAME,    'login'    =\u003e SOLR_SERVER_USERNAME,    'password' =\u003e SOLR_SERVER_PASSWORD,    'port'     =\u003e SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery('\u003cem\u003e:\u003c/em\u003e');$query-\u003esetFacet(true);$query-\u003eaddFacetField('cat')-\u003eaddFacetField('name')-\u003esetFacetMinCount(2 );$updateResponse =$client-\u003equery($query);$response_array = $updateResponse-\u003egetResponse();$facet_data = $response_array-\u003efacet_counts-\u003efacet_fields;_print_r($face)\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[cat] =\u003e SolrObject Object\n(\n[electronics] =\u003e 14\n[memory] =\u003e 3\n[Lucene] =\u003e 2\n[Software] =\u003e 2\n[Кард] =\u003e 2\n[connector] =\u003e 2\n[drive] =\u003e 2\n[graphics] =\u003e 2\n[hard] =\u003e 2\n[monitor] =\u003e 2\n[search] =\u003e 2\n[software] =\u003e 2\n)\u003c/p\u003e\n\u003cp\u003e[name] =\u003e SolrObject Object\n(\n[gb] =\u003e 6\n[1] =\u003e 3\n[184] =\u003e 3\n[2] =\u003e 3\n[3200] =\u003e 3\n[400] =\u003e 3\n[500] =\u003e 3\n[ddr] =\u003e 3\n[i] =\u003e 3\n[ipod] =\u003e 3\n[memori] =\u003e 3\n[pc] =\u003e 3\n[pin] =\u003e 3\n[Pod] =\u003e 3\n[sdram] =\u003e 3\n[system] =\u003e 3\n[unbuff] =\u003e 3\n[canon] =\u003e 2\n[corsair] =\u003e 2\n[drive] =\u003e 2\n[hard] =\u003e 2\n[mb] =\u003e 2\n[n] =\u003e 2\n[power] =\u003e 2\n[retail] =\u003e 2\n[video] =\u003e 2\n[x] =\u003e 2\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #10 Приклад використання Simple Facet - з необов'язковим\nперевизначенням поля для mincount\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(    'hostname' =\u003e SOLR_SERVER_HOSTNAME,    'login'    =\u003e SOLR_SERVER_USERNAME,    'password' =\u003e SOLR_SERVER_PASSWORD,    'port'     =\u003e SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery('*:*');$query-\u003esetFacet(true);$query-\u003eaddFacetField('cat')-\u003eaddFacetField('name')-\u003esetFacetMinCount(2 )-\u003esetFacetMinCount(4, 'name');$updateResponse = $client-\u003equery($query);$response_array = $updateResponse-\u003egetResponse();$facet_data = $response_array-print $facet_data);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[cat] =\u003e SolrObject Object\n(\n[electronics] =\u003e 14\n[memory] =\u003e 3\n[Lucene] =\u003e 2\n[Software] =\u003e 2\n[Кард] =\u003e 2\n[connector] =\u003e 2\n[drive] =\u003e 2\n[graphics] =\u003e 2\n[hard] =\u003e 2\n[monitor] =\u003e 2\n[search] =\u003e 2\n[software] =\u003e 2\n)\u003c/p\u003e\n\u003cp\u003e[name] =\u003e SolrObject Object\n(\n[gb] =\u003e 6\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #11 Приклад використання Facet Date\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(        'hostname' =\u003e SOLR_SERVER_HOSTNAME,        'login'    =\u003e SOLR_SERVER_USERNAME,        'password' =\u003e SOLR_SERVER_PASSWORD,        'port'     =\u003e SOLR_SERVER_PORT,);$client = new SolrClient ($options);$query = new SolrQuery('*:*');$query-\u003esetFacet(true);$query-\u003eaddFacetDateField('manufacturedate_dt');$query-\u003esetFacetDateStart('2006-02-13 :00:00Z');$query-\u003esetFacetDateEnd('2012-02-13T00:00:00Z');$query-\u003esetFacetDateGap('+1YEAR');$query-\u003esetFacetDateHardEnd(1);$query- \u003eaddFacetDateOther('before');$updateResponse =$$client-\u003equery($query);$response_array = $updateResponse-\u003egetResponse();$facet_data = $response_array-\u003eface_cout ?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[manufacturedate_dt] =\u003e SolrObject Object\n(\n[2006-02-13T00:00:00Z] =\u003e 9\n[2007-02-13T00:00:00Z] =\u003e 0\n[2008-02-13T00:00:00Z] =\u003e 0\n[2009-02-13T00:00:00Z] =\u003e 0\n[2010-02-13T00:00:00Z] =\u003e 0\n[2011-02-13T00:00:00Z] =\u003e 0\n[gap] =\u003e +1YEAR\n[start] =\u003e 2006-02-13T00:00:00Z\n[end] =\u003e 2012-02-13T00:00:00Z\n[before] =\u003e 2\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #12 Підключення до сервера з підтримкою SSL\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(    'hostname' =\u003e SOLR_SERVER_HOSTNAME,    'login'    =\u003e SOLR_SERVER_USERNAME,    'password' =\u003e SOLR_SERVER_PASSWORD,    'port'     =\u003e SOLR_SERVER_PORT,    'timeout'  =\u003e SOLR_SERVER_TIMEOUT, 'secure'   =\u003e SOLR_SECURE,    'ssl_cert' =\u003e SOLR_SSL_CERT_ONLY,    'ssl_key'  =\u003e SOLR_SSL_KEY,    'ssl_keypassword' =\u003e SOLR_SSL_KEYPASSWORD,    'ssl_cainfo' =\u003e SOLR_SSL_CAINFO,);$client = new SolrClient($options);$query = new SolrQuery('\u003cem\u003e:\u003c/em\u003e');$query-\u003esetFacet(true);$query-\u003eaddFacetField('cat')-\u003eaddFacetField('name')-\u003esetFacetMinCount(2)-\u003esetFacetMinCount(4, ' name');$updateResponse =$client-\u003equery($query);$response_array = $updateResponse-\u003egetResponse();$facet_data = $response_array-\u003efacet_counts-\u003efacet_fields;_print_r\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[cat] =\u003e SolrObject Object\n(\n[electronics] =\u003e 14\n[memory] =\u003e 3\n[Lucene] =\u003e 2\n[Software] =\u003e 2\n[Кард] =\u003e 2\n[connector] =\u003e 2\n[drive] =\u003e 2\n[graphics] =\u003e 2\n[hard] =\u003e 2\n[monitor] =\u003e 2\n[search] =\u003e 2\n[software] =\u003e 2\n)\u003c/p\u003e\n\u003cp\u003e[name] =\u003e SolrObject Object\n(\n[gb] =\u003e 6\n)\u003c/p\u003e\n\u003cp\u003e)\n\u003cstrong\u003eПриклад #13 Згортання \u003ca href=\"class.solrquery.md\"\u003eSolrQuery\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(        'hostname' =\u003e SOLR_SERVER_HOSTNAME,        'login'    =\u003e SOLR_SERVER_USERNAME,        'password' =\u003e SOLR_SERVER_PASSWORD,        'port'     =\u003e SOLR_SERVER_PORT,        'path'     =\u003e SOLR_SERVER_PATH) ;$client = new SolrClient($options);$query = new SolrQuery('*:*');$collapseFunction = new SolrCollapseFunction('manu_id_s');$collapseFunction-\u003e NULLPOLICY_IGNORE);$query-\u003ecollapse($collapseFunction)-\u003esetRows(4);$queryResponse==$client-\u003equery($query);$response = $queryResponse-\u003egetResponse();print_r($respon \u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[responseHeader] =\u003e SolrObject Object\n(\n[status] =\u003e 0\n[QTime] =\u003e 1\n[params] =\u003e SolrObject Object\n(\n[q] =\u003e *: *\n[indent] =\u003e on\n[fq] =\u003e {!collapse field=manu_id_s size=2 nullPolicy=ignore}\n[rows] =\u003e 4\n[version] =\u003e 2.2\n[wt] =\u003e xml\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e[response] =\u003e SolrObject Object\n(\n[numFound] =\u003e 14\n[start] =\u003e 0\n[docs] =\u003e Array\n(\n[0] =\u003e SolrObject Object\n(\n[id] =\u003e SP2514N\n[name] =\u003e Array\n(\n[0] =\u003e Samsung SpinPoint P120 SP2514N - hard drive - 250 GB - ATA-133\n)\u003c/p\u003e\n\u003cp\u003e[manu] =\u003e Array\n(\n[0] =\u003e Samsung Electronics Co. Ltd.\n)\u003c/p\u003e\n\u003cp\u003e[manu_id_s] =\u003e samsung\n[cat] =\u003e Array\n(\n[0] =\u003e electronics\n[1] =\u003e hard drive\n)\u003c/p\u003e\n\u003cp\u003e[features] =\u003e Array\n(\n[0] =\u003e 7200RPM, 8MB cache, IDE Ultra ATA-133\n[1] =\u003e NoiseGuard, SilentSeek technology, Fluid Dynamic Bearing (FDB) motor\n)\u003c/p\u003e\n\u003cp\u003e[price] =\u003e Array\n(\n[0] =\u003e 92\n)\u003c/p\u003e\n\u003cp\u003e[popularity] =\u003e Array\n(\n[0] =\u003e 6\n)\u003c/p\u003e\n\u003cp\u003e[inStock] =\u003e Array\n(\n[0] =\u003e 1\n)\u003c/p\u003e\n\u003cp\u003e[manufacturedate_dt] =\u003e 2006-02-13T15:26:37Z\n[store] =\u003e Array\n(\n[0] =\u003e 35.0752,-97.032\n)\u003c/p\u003e\n\u003cp\u003e[\u003cem\u003eversion\u003c/em\u003e] =\u003e 1510294336412057600\n)\u003c/p\u003e\n\u003cp\u003e[1] =\u003e SolrObject Object\n(\n[id] =\u003e 6H500F0\n[name] =\u003e Array\n(\n[0] =\u003e Maxtor DiamondMax 11 - hard drive - 500 GB - SATA-300\n)\u003c/p\u003e\n\u003cp\u003e[manu] =\u003e Array\n(\n[0] =\u003e Maxtor Corp.\n)\u003c/p\u003e\n\u003cp\u003e[manu_id_s] =\u003e maxtor\n[cat] =\u003e Array\n(\n[0] =\u003e electronics\n[1] =\u003e hard drive\n)\u003c/p\u003e\n\u003cp\u003e[features] =\u003e Array\n(\n[0] =\u003e SATA 3.0Gb/s, NCQ\n[1] =\u003e 8.5ms seek\n[2] =\u003e 16MB cache\n)\u003c/p\u003e\n\u003cp\u003e[price] =\u003e Array\n(\n[0] =\u003e 350\n)\u003c/p\u003e\n\u003cp\u003e[popularity] =\u003e Array\n(\n[0] =\u003e 6\n)\u003c/p\u003e\n\u003cp\u003e[inStock] =\u003e Array\n(\n[0] =\u003e 1\n)\u003c/p\u003e\n\u003cp\u003e[store] =\u003e Array\n(\n[0] =\u003e 45.17614,-93.87341\n)\u003c/p\u003e\n\u003cp\u003e[manufacturedate_dt] =\u003e 2006-02-13T15:26:37Z\n[\u003cem\u003eversion\u003c/em\u003e] =\u003e 1510294336449806336\n)\u003c/p\u003e\n\u003cp\u003e[2] =\u003e SolrObject Object\n(\n[id] =\u003e F8V7067-APL-KIT\n[name] =\u003e Array\n(\n[0] =\u003e Belkin Mobile Power Cord для iPod w/ Dock\n)\u003c/p\u003e\n\u003cp\u003e[manu] =\u003e Array\n(\n[0] =\u003e Belkin\n)\u003c/p\u003e\n\u003cp\u003e[manu_id_s] =\u003e belkin\n[cat] =\u003e Array\n(\n[0] =\u003e electronics\n[1] =\u003e connector\n)\u003c/p\u003e\n\u003cp\u003e[features] =\u003e Array\n(\n[0] =\u003e car power adapter, white\n)\u003c/p\u003e\n\u003cp\u003e[weight] =\u003e Array\n(\n[0] =\u003e 4\n)\u003c/p\u003e\n\u003cp\u003e[price] =\u003e Array\n(\n[0] =\u003e 19.95\n)\u003c/p\u003e\n\u003cp\u003e[popularity] =\u003e Array\n(\n[0] =\u003e 1\n)\u003c/p\u003e\n\u003cp\u003e[inStock] =\u003e Array\n(\n[0] =\u003e\n)\u003c/p\u003e\n\u003cp\u003e[store] =\u003e Array\n(\n[0] =\u003e 45.18014,-93.87741\n)\u003c/p\u003e\n\u003cp\u003e[manufacturedate_dt] =\u003e 2005-08-01T16:30:25Z\n[\u003cem\u003eversion\u003c/em\u003e] =\u003e 1510294336458194944\n)\u003c/p\u003e\n\u003cp\u003e[3] =\u003e SolrObject Object\n(\n[id] =\u003e MA147LL/A\n[name] =\u003e Array\n(\n[0] =\u003e Apple 60 GB iPod with Video Playback Black\n)\u003c/p\u003e\n\u003cp\u003e[manu] =\u003e Array\n(\n[0] =\u003e Apple Computer Inc.\n)\u003c/p\u003e\n\u003cp\u003e[manu_id_s] =\u003e apple\n[cat] =\u003e Array\n(\n[0] =\u003e electronics\n[1] =\u003e music\n)\u003c/p\u003e\n\u003cp\u003e[features] =\u003e Array\n(\n[0] =\u003e iTunes, Podcasts, Audiobooks\n[1] =\u003e Stores up to 15,000 songs, 25,000 photos, or 150 hours of video\n[2] =\u003e 2.5-inch, 320x240 color TFT LCD display with LED backlight\n[3] =\u003e Up to 20 hours of battery life\n[4] =\u003e Plays AAC, MP3, WAV, AIFF, Audible, Apple Lossless, H.264\n[5] =\u003e Записи, Календар, Довідник, Знижка кнопки, Дата Display, Photo wallet, Built-in games, JPEG photo playback, Upgradeable firmware, USB 2.0 compatibility, Playback speed control, Rechargeable capability, Battery level indication\n)\u003c/p\u003e\n\u003cp\u003e[includes] =\u003e Array\n(\n[0] =\u003e earbud headphones, USB cable\n)\u003c/p\u003e\n\u003cp\u003e[weight] =\u003e Array\n(\n[0] =\u003e 5.5\n)\u003c/p\u003e\n\u003cp\u003e[price] =\u003e Array\n(\n[0] =\u003e 399\n)\u003c/p\u003e\n\u003cp\u003e[popularity] =\u003e Array\n(\n[0] =\u003e 10\n)\u003c/p\u003e\n\u003cp\u003e[inStock] =\u003e Array\n(\n[0] =\u003e 1\n)\u003c/p\u003e\n\u003cp\u003e[store] =\u003e Array\n(\n[0] =\u003e 37.7752,-100.0232\n)\u003c/p\u003e\n\u003cp\u003e[manufacturedate_dt] =\u003e 2005-10-12T08:00:00Z\n[\u003cem\u003eversion\u003c/em\u003e] =\u003e 1510294336562003968\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #14 Приклад використання Solr Real Time Get (RTG)\n\u003ca href=\"solrclient.getbyid.md\"\u003eSolrClient::getById()\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpinclude \"bootstrap.php\";$options = array(    'hostname' =\u003e SOLR_SERVER_HOSTNAME,    'login'    =\u003e SOLR_SERVER_USERNAME,    'password' =\u003e SOLR_SERVER_PASSWORD,    'port'     =\u003e SOLR_SERVER_PORT,    'path'     =\u003e SOLR_SERVER_PATH) ;$client = new SolrClient($options);$response = $client-\u003egetById('GB18030TEST');print_r($response-\u003egetResponse());?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eSolrObject Object\n(\n[doc] =\u003e SolrObject Object\n(\n[id] =\u003e GB18030TEST\n[name] =\u003e Array\n(\n[0] =\u003e Test with some GB18030 encoded characters\n)\u003c/p\u003e\n\u003cp\u003e[features] =\u003e Array\n(\n[0] =\u003e No accents here\n[1] =\u003e 这是一个功能\n[2] =\u003e This is a feature (перекладається)\n[3] =\u003e 这份文件是很有光泽\n[4] =\u003e Цей документ є дуже shiny (translated)\n)\u003c/p\u003e\n\u003cp\u003e[price] =\u003e Array\n(\n[0] =\u003e 0\n)\u003c/p\u003e\n\u003cp\u003e[inStock] =\u003e Array\n(\n[0] =\u003e 1\n)\u003c/p\u003e\n\u003cp\u003e[\u003cem\u003eversion\u003c/em\u003e] =\u003e 1510294336239042560\n)\u003c/p\u003e\n\u003cp\u003e)\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"solr.examples.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration71.new-features | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration71.md">« Міграція з PHP 7.0.x на PHP 7.1.x</a></p>
+</li>
+<li>
+<p><a href="migration71.new-functions.md">Нові функції »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration71.md">Міграція з PHP 7.0.x на PHP 7.1.x</a></p>
+</li>
+<li>
+<p>Нові можливості</p>
+</li>
+</ul>
+<h2>Нові можливості</h2>
+<h3>Обнулювані типи</h3>
+<p>Типи для параметрів і значень, що повертаються, можуть бути позначені як
+обнулювані шляхом додавання префікса як знака питання. Це означає,
+що зазначені параметри та значення, що повертаються, можуть бути як
+зазначеного типу, так і <strong><code>null</code></strong>.</p>
+<p><code>? ){   var_dump($name);}test('elePHPant');test(null);test();</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>string(10) "elePHPant"
+NULL
+string(10) "elePHPant"
+NULL
+Uncaught Error: Too few arguments для функцій test(), 0 passed in...</p>
+<h3>Функції, що нічого не повертають</h3>
+<p>Був доданий тип значення, що повертається void. Функції з таким заданим
+типом значення, що повертається, не повинні нічого повертати. Тобто або
+взагалі не утримувати жодного оператора return, або використовувати його
+без параметра. <strong><code>null</code></strong> не є коректним значенням для повернення
+у таких функціях.</p>
+<p><code>&#x3C;?phpfunction swap(&#x26;$left, &#x26;$right): void{    if ($left === $right) {        return; }   $tmp==$left; $left = $right; $right= $tmp;}$a = 1;$b = 2;var_dump(swap($a, $b), $a, $b);</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>null
+int(2)
+int(1)</p>
+<p>Спроба використовувати такі функції, що повертаються, призведе до
+тому, що це значення вважатиметься за <strong><code>null</code></strong>, без висновку
+попередження. Причина цього в тому, що попередження будуть викликати
+загальних функцій найвищого порядку.</p>
+<h3>Симетрична деструктуризація масиву</h3>
+<p>Можна використовувати короткий синтаксис (<code>[]</code>) для деструктуризації
+масивів з метою присвоєння (у тому числі в <code>foreach</code>), як альтернатива
+функції <a href="function.list.md">list()</a>, яка, втім, все ще
+підтримується.</p>
+<p><code>&#x3C;?php$data = [    [1, 'Tom'],    [2, 'Fred'],];// використовуючи list()list($id1, $name1) = $data[0];// використання [][$id1, $name1] = $data[0];// використовуючи list()foreach ($data as list($id, $name)) {    // код, містить $id і $name}// використовуючи []foreach ($data as [$id, $name]) {    // код, містить $id і $name}</code></p>
+<h3>Видимість констант класу</h3>
+<p>Додано підтримку визначення області видимості для констант класу.</p>
+<p><code>&#x3C;?phpclass ConstDemo{    const PUBLIC_CONST_A = 1; public const PUBLIC_CONST_B = 2; protected const PROTECTED_CONST = 3; private const PRIVATE_CONST = 4;} </code></p>
+<h3>Псевдотип <a href="language.types.iterable.md">iterable</a></h3>
+<p>Було додано новий псевдотип (схожий на
+<a href="language.types.callable.md">callable</a>), названий
+<a href="language.types.iterable.md">iterable</a>. Він може використовуватись як
+параметр, так і як значення, що повертається там, де використовується
+масив або об'єкт, що реалізує інтерфейс
+<a href="class.traversable.md">Traversable</a>. Що стосується підтипів, типи
+параметрів із дочірніх класів можуть розширити декларацію батьків типу
+array або <a href="class.traversable.md">Traversable</a> до
+<a href="language.types.iterable.md">iterable</a>. Для типів повернення, дочірні
+класи можуть звужувати тип значення, що повертається з
+<a href="language.types.iterable.md">iterable</a> до array або об'єкта
+реалізує <a href="class.traversable.md">Traversable</a>.</p>
+<p><code>&#x3C;?phpfunction iterator(iterable $iter){    foreach ($iter as $val) {         //    }}</code></p>
+<h3>Обробка кількох винятків в одному блоці catch</h3>
+<p>У блоці catch тепер можна обробляти кілька винятків, перераховуючи
+їх через символ вертикальної межі (<code>|</code>). Це може бути корисно, якщо
+різні винятки обробляються однаково.</p>
+<p><code>&#x3C;?phptry {    // Який то код} catch (FirstException | SecondException $e) {    // Обробляємо обидва виключення}</code></p>
+<h3>Підтримка ключів у <a href="function.list.md">list()</a></h3>
+<p>Тепер ви можете вказувати ключі оператора
+<a href="function.list.md">list()</a> або в його новому короткому синтаксисі <code>[]</code>.
+Це дозволяє деструктурувати масиви з нечисловими або
+непослідовними ключами.</p>
+<p><code>&#x3C;?php$data == [    ["id" => 1, "name" => 'Tom'],    ["id" => 2, "name" => 'Fred'],];// стиль ()list("id" => $id1, "name" => $name1) = $data[0];// стиль []["id" => $id1, "name" => $name1] = $data[0];// стиль list()foreach ($data aslist("id" => $id, "name" => $name)) {    // logic here/with $id and $name} стиль []foreach ($data as ["id" => $id, "name" => $name]) {     // logic here with $id and$$name}</code></p>
+<h3>Підтримка негативних зсувів для рядків</h3>
+<p>Підтримка негативних зсувів для рядків додано до <a href="book.strings.md">функції для роботи з рядками</a>, а також в <a href="language.types.string.md#language.types.string.substr">індексацію строк</a> з
+допомогою <code>[]</code> або <code>{}</code>. У цих випадках негативні усунення
+інтерпретуються як усунення щодо кінця рядка.</p>
+<p><code>&#x3C;?phpvar_dump("abcdef"[-2]);var_dump(strpos("aabbcc", "b", -3));</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>string (1) "e"
+int(3)</p>
+<p>Тепер підтримуються негативні усунення в простому синтаксисі
+вказівки індексу у рядках та масивах.</p>
+<p><code>&#x3C;?php$string = 'bar';echo "Останній символ '$string' - '$string[-1]'. ";?></code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Останній символ 'bar' – 'r'.</p>
+<h3>Підтримка AEAD в ext/openssl</h3>
+<p>Підтримка AEAD (режими GCM та CCM) була додана шляхом розширення
+функцій <a href="function.openssl-encrypt.md">openssl_encrypt()</a> та
+<a href="function.openssl-decrypt.md">openssl_decrypt()</a> додатковими
+параметрами.</p>
+<h3>Перетворення callable на <a href="class.closure.md">Closure</a> за допомогою <a href="closure.fromcallable.md">Closure::fromCallable()</a></h3>
+<p>До класу <a href="class.closure.md">Closure</a> додано новий статичний метод
+для можливості легко перетворити
+<a href="language.types.callable.md">callable</a> до об'єктів типу
+<a href="class.closure.md">Closure</a>.</p>
+<p><code>&#x3C;?phpclass Test{    public function exposeFunction()    {        return Closure::fromCallable([$this, 'privateFunction']); }   private function privateFunction($param)    {       var_dump($param); }}$privFunc==(new Test)->exposeFunction();$privFunc('значення');</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>string(16) "значення"</p>
+<h3>Асинхронна обробка сигналів</h3>
+<p>Нова функція <a href="function.pcntl-async-signals.md">pcntl_async_signals()</a>
+була додана для дозволу асинхронної обробки сигналів без
+використання тиків (які виробляють багато накладних витрат).</p>
+<p><code>&#x3C;?phppcntl_async_signals(true); // включає асинхронні сигналиpcntl_signal(SIGHUP, function($sig) {   echo "SIGHUP ";});posix_kill(posix_getpid(), SIGHUP); </code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>SIGHUP</p>
+<h3>Підтримка HTTP/2 server push в ext/curl</h3>
+<p>Підтримка "server push" додана в модуль CURL (потрібна версія 7.46 та
+вище). Використовувати можна у функції
+<a href="function.curl-multi-setopt.md">curl_multi_setopt()</a> з новою
+константою <strong><code>CURLMOPT_PUSHFUNCTION</code></strong>. Також додані константи
+<strong><code>CURL_PUSH_OK</code></strong> та <strong><code>CURL_PUSH_DENY</code></strong> для визначення, чи був прийнятий
+або відхилено "server push".</p>
+<h3>Контекстні опції потоку</h3>
+<p>Була додана опція контексту потоку
+<a href="context.socket.md#context.socket.tcp_nodelay">tcp_nodelay</a>.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration71.new-features.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration71.new-features.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration71.new-features","slug":"migration71.new-features.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration71.md\"\u003e« Міграція з PHP 7.0.x на PHP 7.1.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration71.new-functions.md\"\u003eНові функції »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration71.md\"\u003eМіграція з PHP 7.0.x на PHP 7.1.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eНові можливості\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eНові можливості\u003c/h2\u003e\n\u003ch3\u003eОбнулювані типи\u003c/h3\u003e\n\u003cp\u003eТипи для параметрів і значень, що повертаються, можуть бути позначені як\nобнулювані шляхом додавання префікса як знака питання. Це означає,\nщо зазначені параметри та значення, що повертаються, можуть бути як\nзазначеного типу, так і \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e? ){   var_dump($name);}test('elePHPant');test(null);test();\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003estring(10) \"elePHPant\"\nNULL\nstring(10) \"elePHPant\"\nNULL\nUncaught Error: Too few arguments для функцій test(), 0 passed in...\u003c/p\u003e\n\u003ch3\u003eФункції, що нічого не повертають\u003c/h3\u003e\n\u003cp\u003eБув доданий тип значення, що повертається void. Функції з таким заданим\nтипом значення, що повертається, не повинні нічого повертати. Тобто або\nвзагалі не утримувати жодного оператора return, або використовувати його\nбез параметра. \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e не є коректним значенням для повернення\nу таких функціях.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction swap(\u0026#x26;$left, \u0026#x26;$right): void{    if ($left === $right) {        return; }   $tmp==$left; $left = $right; $right= $tmp;}$a = 1;$b = 2;var_dump(swap($a, $b), $a, $b);\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003enull\nint(2)\nint(1)\u003c/p\u003e\n\u003cp\u003eСпроба використовувати такі функції, що повертаються, призведе до\nтому, що це значення вважатиметься за \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, без висновку\nпопередження. Причина цього в тому, що попередження будуть викликати\nзагальних функцій найвищого порядку.\u003c/p\u003e\n\u003ch3\u003eСиметрична деструктуризація масиву\u003c/h3\u003e\n\u003cp\u003eМожна використовувати короткий синтаксис (\u003ccode\u003e[]\u003c/code\u003e) для деструктуризації\nмасивів з метою присвоєння (у тому числі в \u003ccode\u003eforeach\u003c/code\u003e), як альтернатива\nфункції \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e, яка, втім, все ще\nпідтримується.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$data = [    [1, 'Tom'],    [2, 'Fred'],];// використовуючи list()list($id1, $name1) = $data[0];// використання [][$id1, $name1] = $data[0];// використовуючи list()foreach ($data as list($id, $name)) {    // код, містить $id і $name}// використовуючи []foreach ($data as [$id, $name]) {    // код, містить $id і $name}\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eВидимість констант класу\u003c/h3\u003e\n\u003cp\u003eДодано підтримку визначення області видимості для констант класу.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass ConstDemo{    const PUBLIC_CONST_A = 1; public const PUBLIC_CONST_B = 2; protected const PROTECTED_CONST = 3; private const PRIVATE_CONST = 4;} \u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПсевдотип \u003ca href=\"language.types.iterable.md\"\u003eiterable\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eБуло додано новий псевдотип (схожий на\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e), названий\n\u003ca href=\"language.types.iterable.md\"\u003eiterable\u003c/a\u003e. Він може використовуватись як\nпараметр, так і як значення, що повертається там, де використовується\nмасив або об'єкт, що реалізує інтерфейс\n\u003ca href=\"class.traversable.md\"\u003eTraversable\u003c/a\u003e. Що стосується підтипів, типи\nпараметрів із дочірніх класів можуть розширити декларацію батьків типу\narray або \u003ca href=\"class.traversable.md\"\u003eTraversable\u003c/a\u003e до\n\u003ca href=\"language.types.iterable.md\"\u003eiterable\u003c/a\u003e. Для типів повернення, дочірні\nкласи можуть звужувати тип значення, що повертається з\n\u003ca href=\"language.types.iterable.md\"\u003eiterable\u003c/a\u003e до array або об'єкта\nреалізує \u003ca href=\"class.traversable.md\"\u003eTraversable\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction iterator(iterable $iter){    foreach ($iter as $val) {         //    }}\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eОбробка кількох винятків в одному блоці catch\u003c/h3\u003e\n\u003cp\u003eУ блоці catch тепер можна обробляти кілька винятків, перераховуючи\nїх через символ вертикальної межі (\u003ccode\u003e|\u003c/code\u003e). Це може бути корисно, якщо\nрізні винятки обробляються однаково.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phptry {    // Який то код} catch (FirstException | SecondException $e) {    // Обробляємо обидва виключення}\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПідтримка ключів у \u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eТепер ви можете вказувати ключі оператора\n\u003ca href=\"function.list.md\"\u003elist()\u003c/a\u003e або в його новому короткому синтаксисі \u003ccode\u003e[]\u003c/code\u003e.\nЦе дозволяє деструктурувати масиви з нечисловими або\nнепослідовними ключами.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$data == [    [\"id\" =\u003e 1, \"name\" =\u003e 'Tom'],    [\"id\" =\u003e 2, \"name\" =\u003e 'Fred'],];// стиль ()list(\"id\" =\u003e $id1, \"name\" =\u003e $name1) = $data[0];// стиль [][\"id\" =\u003e $id1, \"name\" =\u003e $name1] = $data[0];// стиль list()foreach ($data aslist(\"id\" =\u003e $id, \"name\" =\u003e $name)) {    // logic here/with $id and $name} стиль []foreach ($data as [\"id\" =\u003e $id, \"name\" =\u003e $name]) {     // logic here with $id and$$name}\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eПідтримка негативних зсувів для рядків\u003c/h3\u003e\n\u003cp\u003eПідтримка негативних зсувів для рядків додано до \u003ca href=\"book.strings.md\"\u003eфункції для роботи з рядками\u003c/a\u003e, а також в \u003ca href=\"language.types.string.md#language.types.string.substr\"\u003eіндексацію строк\u003c/a\u003e з\nдопомогою \u003ccode\u003e[]\u003c/code\u003e або \u003ccode\u003e{}\u003c/code\u003e. У цих випадках негативні усунення\nінтерпретуються як усунення щодо кінця рядка.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpvar_dump(\"abcdef\"[-2]);var_dump(strpos(\"aabbcc\", \"b\", -3));\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003estring (1) \"e\"\nint(3)\u003c/p\u003e\n\u003cp\u003eТепер підтримуються негативні усунення в простому синтаксисі\nвказівки індексу у рядках та масивах.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$string = 'bar';echo \"Останній символ '$string' - '$string[-1]'. \";?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eОстанній символ 'bar' – 'r'.\u003c/p\u003e\n\u003ch3\u003eПідтримка AEAD в ext/openssl\u003c/h3\u003e\n\u003cp\u003eПідтримка AEAD (режими GCM та CCM) була додана шляхом розширення\nфункцій \u003ca href=\"function.openssl-encrypt.md\"\u003eopenssl_encrypt()\u003c/a\u003e та\n\u003ca href=\"function.openssl-decrypt.md\"\u003eopenssl_decrypt()\u003c/a\u003e додатковими\nпараметрами.\u003c/p\u003e\n\u003ch3\u003eПеретворення callable на \u003ca href=\"class.closure.md\"\u003eClosure\u003c/a\u003e за допомогою \u003ca href=\"closure.fromcallable.md\"\u003eClosure::fromCallable()\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eДо класу \u003ca href=\"class.closure.md\"\u003eClosure\u003c/a\u003e додано новий статичний метод\nдля можливості легко перетворити\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e до об'єктів типу\n\u003ca href=\"class.closure.md\"\u003eClosure\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass Test{    public function exposeFunction()    {        return Closure::fromCallable([$this, 'privateFunction']); }   private function privateFunction($param)    {       var_dump($param); }}$privFunc==(new Test)-\u003eexposeFunction();$privFunc('значення');\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003estring(16) \"значення\"\u003c/p\u003e\n\u003ch3\u003eАсинхронна обробка сигналів\u003c/h3\u003e\n\u003cp\u003eНова функція \u003ca href=\"function.pcntl-async-signals.md\"\u003epcntl_async_signals()\u003c/a\u003e\nбула додана для дозволу асинхронної обробки сигналів без\nвикористання тиків (які виробляють багато накладних витрат).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phppcntl_async_signals(true); // включає асинхронні сигналиpcntl_signal(SIGHUP, function($sig) {   echo \"SIGHUP \";});posix_kill(posix_getpid(), SIGHUP); \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eSIGHUP\u003c/p\u003e\n\u003ch3\u003eПідтримка HTTP/2 server push в ext/curl\u003c/h3\u003e\n\u003cp\u003eПідтримка \"server push\" додана в модуль CURL (потрібна версія 7.46 та\nвище). Використовувати можна у функції\n\u003ca href=\"function.curl-multi-setopt.md\"\u003ecurl_multi_setopt()\u003c/a\u003e з новою\nконстантою \u003cstrong\u003e\u003ccode\u003eCURLMOPT_PUSHFUNCTION\u003c/code\u003e\u003c/strong\u003e. Також додані константи\n\u003cstrong\u003e\u003ccode\u003eCURL_PUSH_OK\u003c/code\u003e\u003c/strong\u003e та \u003cstrong\u003e\u003ccode\u003eCURL_PUSH_DENY\u003c/code\u003e\u003c/strong\u003e для визначення, чи був прийнятий\nабо відхилено \"server push\".\u003c/p\u003e\n\u003ch3\u003eКонтекстні опції потоку\u003c/h3\u003e\n\u003cp\u003eБула додана опція контексту потоку\n\u003ca href=\"context.socket.md#context.socket.tcp_nodelay\"\u003etcp_nodelay\u003c/a\u003e.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration71.new-features.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

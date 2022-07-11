@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>oci8.examples | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="oci8.constants.md">«Зумовлені константи</a></p>
+</li>
+<li>
+<p><a href="oci8.connection.md">Робота зі з'єднаннями OCI8 та Connection Pooling »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.oci8.md">OCI8</a></p>
+</li>
+<li>
+<p>Приклади</p>
+</li>
+</ul>
+<h1>Приклади</h1>
+<p>Ці приклади виконуються під користувачем <code>HR</code>, який є
+зразком з "Human Resources" схеми, що постачається разом із базою даних
+Oracle. Можливо потрібно буде розблокувати цей обліковий запис і
+перевстановити пароль, щоб використовувати його.</p>
+<p>Приклади підключаються до бази даних <code>XE</code> на комп'ютері. Ви можете
+замінити рядки із підключенням для використання своїх баз даних.</p>
+<p><strong>Приклад #1 Простий запит</strong></p>
+<p>Цей приклад показує запит та результат. Вирази в OCI8 використовують
+послідовність кроків підготовка-виконання-вибірка.</p>
+<p><code>&#x3C;?php$conn = oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {    $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}// Підготовка вираження$stid = oci_parse($conn, 'SELECT ** FROM departments');if ($ Conn); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}// Виконаємо логіку запиту$r = oci_execute($stid);if (!$r) {    $ trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}// Отримаємо результат запитуprint "&#x3C;table border='1'> ";while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {    print ""&#x3C;tr> ";   foreach ($row as $item) {         print "    &#x3C;td>" . ($item !== null ? htmlentities($item, |) ";    }    print "&#x3C;/tr> ";}print "&#x3C;/table> ";oci_free_statement($stid);oci_close($conn);?></code></p>
+<p><strong>Приклад #2 Вставка з використанням прив'язаних змінних</strong></p>
+<p>Прив'язування змінних підвищують продуктивність рахунок повторного
+використання контексту запиту та кешування. Також вони підвищують
+Безпека блокує деякі типи SQL-ін'єкцій.</p>
+<p><code>&#x3C;?php// Створіть таблицю перед виконанням://   CREATE TABLE MYTABLE (mid NUMBER, myd VARCHAR2(20));$conn = oci_connect('hr', 'welcome'; '; $conn) {   $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$stid = oci_parse($conn, 'INSERT INTO MYTABLE (mid, myd) VALUES(:myid, :); 60;$data=='Some data';oci_bind_by_name($stid, ':myid', $id);oci_bind_by_name($stid, ':mydata', $data);$r = oci_execute($stid); // виконання і фіксаціяif ($r) {    print "Було вставлено одне рядок";}oci_free_statement($stid);oci_close($conn);?> </code></p>
+<p><strong>Приклад #3 Прив'язка у WHERE висловленні запиту</strong></p>
+<p>Приклад одиничного прив'язування скаляра.</p>
+<p>` &#x3C;?php$conn = oci_connect("hr", "hrpwd", "localhost/XE");if (!$conn) {    $m = oci_error(); trigger_error(htmlentities($m['message']), E_USER_ERROR);}$sql = 'SELECT last_name FROM employees WHERE department_id = :didbv ORDER BYlast_name'$$; 60;oci_bind_by_name($stid, ':didbv', $didbv);oci_execute($stid);while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {    "
+";}// Виведе//   Austin//   Ernst//   Hunold//   Lorentz//   Pataballaoci_free_statement($stid);oci_close($n</p>
+<p><strong>Приклад #4 Вставка даних у поле типу CLOB</strong></p>
+<p>Для великих даних використовуйте довгі двійкові об'єкти (BLOB) або
+довгі символьні об'єкти (CLOB). Цей приклад використовує тип даних
+CLOB.</p>
+<p><code>&#x3C;?php// Створіть таблицю перед виконанням://    CREATE TABLE MYTABLE (mykey NUMBER, myclob CLOB);$conn = oci_connect('hr', 'welcome', '! {    $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$mykey = 12343; // произвольный ключ для данного примера;$sql = "INSERT INTO mytable (mykey, myclob)        VALUES (:mykey, EMPTY_CLOB())        RETURNING myclob INTO :myclob";$stid = oci_parse($conn, $sql);$clob =oci_new_descriptor($conn,OCI_D_LOB);oci_bind_by_name($stid, ":mykey", $mykey, 5);oci_bind_by_name($stid, ":myclob", $clob, -1, OCI_B_CI ); // використовуйте OCI_DEFAULT для PHP &#x3C;= 5.3.1$clob->save("A very long string");oci_commit($conn);// Отримання CLOB даних$query = 'SELECT myclo my  my| ;$stid = oci_parse ($conn, $query);oci_bind_by_name($stid, ":mykey", $mykey, 5);oci_execute($stid);print '&#x3C;table border="1">';while ($ row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_LOBS)) {    print '&#x3C;tr>&#x3C;td>'.$row['MYCLOB'].'&#x3C;/td>&#x3C;/tr>'; // У циклі, очищення великих змінних перед повторним отриманням даних, зменшує пікове споживання пам'яті PHP    unset($row);}print '&#x3C;/table>';?> </code></p>
+<p><strong>Приклад #5 Використання процедур PL/SQL</strong></p>
+<p>Ви повинні прив'язувати змінну для кожного значення, що повертається і
+опціонально для кожного аргументу функції.</p>
+<p><code>&#x3C;?php/*  До выполнения PHP-скрипта сойздайте хранимую процедуру в  SQL*Plus или SQL Developer:  CREATE OR REPLACE FUNCTION myfunc(p IN NUMBER) RETURN NUMBER AS  BEGIN      RETURN p * 3; END;*/$conn==oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {   $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$p = 8;$stid = oci_parse($conn, begin :r := myfunc(:p); end;'; ($stid, ':p', $p);oci_bind_by_name($stid, ':r', $r, 40);oci_execute($stid);print "$r ";   // виведе 24oci_free_statement($stid);oci_close($conn);?></code></p>
+<p><strong>Приклад #6 Використання процедур PL/SQL</strong></p>
+<p>При використанні процедур, що зберігаються, бажано прив'язувати змінні до
+кожному аргументу.</p>
+<p><code>&#x3C;?php/*  До выполнения PHP-скрипта сойздайте хранимую процедуру в  SQL*Plus или SQL Developer:  CREATE OR REPLACE PROCEDURE myproc(p1 IN NUMBER, p2 OUT NUMBER) AS  BEGIN      p2 := p1 * 2; END;*/$conn==oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {   $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$p1 = 8;$stid = oci_parse($conn, 'begin myproc(:p1, :p2); end;'end;'end;'end;'end; $stid, ':p1', $p1);oci_bind_by_name($stid, ':p2', $p2, 40);oci_execute($stid);print "$p2 ";   // виведе 16oci_free_statement($stid);oci_close($conn);?></code></p>
+<p><strong>Приклад #7 Виклик PL/SQL процедур, що повертають <code>REF CURSOR</code></strong></p>
+<p>Кожне значення, що повертається із запиту є <code>REF CURSOR</code>.</p>
+<p><code>&#x3C;?php/*  Створіть PL/SQL збережену процедуру: CREATE OR REPLACE FUNCTION myfunc(p1 IN NUMBER) RETURN SYS_REFCURSOR AS        BEGIN      OPEN rc FOR SELECT city FROM locations WHERE ROWNUM &#x3C; p1; RETURN rc; END;*/$conn==oci_connect('hr', 'welcome', 'localhost/XE');$stid = oci_parse($conn, 'SELECT myfunc(5) AS mfrc FROM dual');oci_execute ;echo "&#x3C;table border='1'> ";while (($row = oci_fetch_array($stid, OCI_ASSOC))) {    echo "&#x3C;tr> ";    $rc = $row['MFRC'];    oci_execute($rc);  // возвращает значение поля из запроса в виде указателя    while (($rc_row = oci_fetch_array($rc, OCI_ASSOC))) {        echo "    &#x3C;td> " . $rc_row['CITY'] . "&#x3C;/td> ";    }    oci_free_statement($rc);    echo "&#x3C;/tr> ";}echo "&#x3C;/table> ";// Виведе://Beijing//  Bern//  Bombay//   Genevaoci_free_statement($stid);oci_close($conn);?> </code></p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/oci8.examples.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/oci8.examples.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"oci8.examples","slug":"oci8.examples.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"oci8.constants.md\"\u003e«Зумовлені константи\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"oci8.connection.md\"\u003eРобота зі з'єднаннями OCI8 та Connection Pooling »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.oci8.md\"\u003eOCI8\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПриклади\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eПриклади\u003c/h1\u003e\n\u003cp\u003eЦі приклади виконуються під користувачем \u003ccode\u003eHR\u003c/code\u003e, який є\nзразком з \"Human Resources\" схеми, що постачається разом із базою даних\nOracle. Можливо потрібно буде розблокувати цей обліковий запис і\nперевстановити пароль, щоб використовувати його.\u003c/p\u003e\n\u003cp\u003eПриклади підключаються до бази даних \u003ccode\u003eXE\u003c/code\u003e на комп'ютері. Ви можете\nзамінити рядки із підключенням для використання своїх баз даних.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Простий запит\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eЦей приклад показує запит та результат. Вирази в OCI8 використовують\nпослідовність кроків підготовка-виконання-вибірка.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$conn = oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {    $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}// Підготовка вираження$stid = oci_parse($conn, 'SELECT ** FROM departments');if ($ Conn); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}// Виконаємо логіку запиту$r = oci_execute($stid);if (!$r) {    $ trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}// Отримаємо результат запитуprint \"\u0026#x3C;table border='1'\u003e \";while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {    print \"\"\u0026#x3C;tr\u003e \";   foreach ($row as $item) {         print \"    \u0026#x3C;td\u003e\" . ($item !== null ? htmlentities($item, |) \";    }    print \"\u0026#x3C;/tr\u003e \";}print \"\u0026#x3C;/table\u003e \";oci_free_statement($stid);oci_close($conn);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #2 Вставка з використанням прив'язаних змінних\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПрив'язування змінних підвищують продуктивність рахунок повторного\nвикористання контексту запиту та кешування. Також вони підвищують\nБезпека блокує деякі типи SQL-ін'єкцій.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Створіть таблицю перед виконанням://   CREATE TABLE MYTABLE (mid NUMBER, myd VARCHAR2(20));$conn = oci_connect('hr', 'welcome'; '; $conn) {   $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$stid = oci_parse($conn, 'INSERT INTO MYTABLE (mid, myd) VALUES(:myid, :); 60;$data=='Some data';oci_bind_by_name($stid, ':myid', $id);oci_bind_by_name($stid, ':mydata', $data);$r = oci_execute($stid); // виконання і фіксаціяif ($r) {    print \"Було вставлено одне рядок\";}oci_free_statement($stid);oci_close($conn);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #3 Прив'язка у WHERE висловленні запиту\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПриклад одиничного прив'язування скаляра.\u003c/p\u003e\n\u003cp\u003e` \u0026#x3C;?php$conn = oci_connect(\"hr\", \"hrpwd\", \"localhost/XE\");if (!$conn) {    $m = oci_error(); trigger_error(htmlentities($m['message']), E_USER_ERROR);}$sql = 'SELECT last_name FROM employees WHERE department_id = :didbv ORDER BYlast_name'$$; 60;oci_bind_by_name($stid, ':didbv', $didbv);oci_execute($stid);while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {    \"\n\";}// Виведе//   Austin//   Ernst//   Hunold//   Lorentz//   Pataballaoci_free_statement($stid);oci_close($n\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #4 Вставка даних у поле типу CLOB\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eДля великих даних використовуйте довгі двійкові об'єкти (BLOB) або\nдовгі символьні об'єкти (CLOB). Цей приклад використовує тип даних\nCLOB.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php// Створіть таблицю перед виконанням://    CREATE TABLE MYTABLE (mykey NUMBER, myclob CLOB);$conn = oci_connect('hr', 'welcome', '! {    $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$mykey = 12343; // произвольный ключ для данного примера;$sql = \"INSERT INTO mytable (mykey, myclob)        VALUES (:mykey, EMPTY_CLOB())        RETURNING myclob INTO :myclob\";$stid = oci_parse($conn, $sql);$clob =oci_new_descriptor($conn,OCI_D_LOB);oci_bind_by_name($stid, \":mykey\", $mykey, 5);oci_bind_by_name($stid, \":myclob\", $clob, -1, OCI_B_CI ); // використовуйте OCI_DEFAULT для PHP \u0026#x3C;= 5.3.1$clob-\u003esave(\"A very long string\");oci_commit($conn);// Отримання CLOB даних$query = 'SELECT myclo my  my| ;$stid = oci_parse ($conn, $query);oci_bind_by_name($stid, \":mykey\", $mykey, 5);oci_execute($stid);print '\u0026#x3C;table border=\"1\"\u003e';while ($ row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_LOBS)) {    print '\u0026#x3C;tr\u003e\u0026#x3C;td\u003e'.$row['MYCLOB'].'\u0026#x3C;/td\u003e\u0026#x3C;/tr\u003e'; // У циклі, очищення великих змінних перед повторним отриманням даних, зменшує пікове споживання пам'яті PHP    unset($row);}print '\u0026#x3C;/table\u003e';?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #5 Використання процедур PL/SQL\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eВи повинні прив'язувати змінну для кожного значення, що повертається і\nопціонально для кожного аргументу функції.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/*  До выполнения PHP-скрипта сойздайте хранимую процедуру в  SQL*Plus или SQL Developer:  CREATE OR REPLACE FUNCTION myfunc(p IN NUMBER) RETURN NUMBER AS  BEGIN      RETURN p * 3; END;*/$conn==oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {   $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$p = 8;$stid = oci_parse($conn, begin :r := myfunc(:p); end;'; ($stid, ':p', $p);oci_bind_by_name($stid, ':r', $r, 40);oci_execute($stid);print \"$r \";   // виведе 24oci_free_statement($stid);oci_close($conn);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #6 Використання процедур PL/SQL\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eПри використанні процедур, що зберігаються, бажано прив'язувати змінні до\nкожному аргументу.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/*  До выполнения PHP-скрипта сойздайте хранимую процедуру в  SQL*Plus или SQL Developer:  CREATE OR REPLACE PROCEDURE myproc(p1 IN NUMBER, p2 OUT NUMBER) AS  BEGIN      p2 := p1 * 2; END;*/$conn==oci_connect('hr', 'welcome', 'localhost/XE');if (!$conn) {   $e = oci_error(); trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);}$p1 = 8;$stid = oci_parse($conn, 'begin myproc(:p1, :p2); end;'end;'end;'end;'end; $stid, ':p1', $p1);oci_bind_by_name($stid, ':p2', $p2, 40);oci_execute($stid);print \"$p2 \";   // виведе 16oci_free_statement($stid);oci_close($conn);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #7 Виклик PL/SQL процедур, що повертають \u003ccode\u003eREF CURSOR\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eКожне значення, що повертається із запиту є \u003ccode\u003eREF CURSOR\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php/*  Створіть PL/SQL збережену процедуру: CREATE OR REPLACE FUNCTION myfunc(p1 IN NUMBER) RETURN SYS_REFCURSOR AS        BEGIN      OPEN rc FOR SELECT city FROM locations WHERE ROWNUM \u0026#x3C; p1; RETURN rc; END;*/$conn==oci_connect('hr', 'welcome', 'localhost/XE');$stid = oci_parse($conn, 'SELECT myfunc(5) AS mfrc FROM dual');oci_execute ;echo \"\u0026#x3C;table border='1'\u003e \";while (($row = oci_fetch_array($stid, OCI_ASSOC))) {    echo \"\u0026#x3C;tr\u003e \";    $rc = $row['MFRC'];    oci_execute($rc);  // возвращает значение поля из запроса в виде указателя    while (($rc_row = oci_fetch_array($rc, OCI_ASSOC))) {        echo \"    \u0026#x3C;td\u003e \" . $rc_row['CITY'] . \"\u0026#x3C;/td\u003e \";    }    oci_free_statement($rc);    echo \"\u0026#x3C;/tr\u003e \";}echo \"\u0026#x3C;/table\u003e \";// Виведе://Beijing//  Bern//  Bombay//   Genevaoci_free_statement($stid);oci_close($conn);?\u003e \u003c/code\u003e\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"oci8.examples.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

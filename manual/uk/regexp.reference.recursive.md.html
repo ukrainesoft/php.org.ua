@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>regexp.reference.recursive | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="regexp.reference.comments.md">« Коментарі</a></p>
+</li>
+<li>
+<p><a href="regexp.reference.performance.md">Продуктивність »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="reference.pcre.pattern.syntax.md">Опис синтаксису Perl-сумісних регулярних виразів</a></p>
+</li>
+<li>
+<p>Рекурсивні шаблони</p>
+</li>
+</ul>
+<h2>Рекурсивні шаблони</h2>
+<p>Розглянемо задачу пошуку відповідності з рядком, що знаходяться всередині
+необмеженої кількості круглих дужок. Без використання рекурсії
+найкраще, що можна зробити - написати шаблон, який вирішуватиме завдання
+для деякої обмеженої глибини вкладеності, тому що обробити
+необмежену глибину неможливо. У Perl 5.6
+надано деякі експериментальні можливості, які в тому
+числа дозволяють реалізувати рекурсію у шаблонах. Спеціальне позначення
+(R) використовується для вказівки рекурсивної підмаски. Таким чином,
+наведемо PCRE шаблон, що вирішує поставлене завдання (маю на увазі, що
+використовується модифікатор
+<a href="reference.pcre.pattern.modifiers.md">PCRE_EXTENDED</a>, незначні
+пробіли ігноруються): <code>\( ( (?>[^()]+) | (?R) )* \)</code></p>
+<p>Спочатку він відповідає круглій дужці, що відкриває. Далі він
+відповідає будь-якій кількості підрядків, кожна з яких може бути
+послідовністю не-дужок, або рядком, що рекурсивно відповідає
+шаблону (тобто рядком, коректно укладеним у круглі дужки). І, в
+Нарешті, йде закриває кругла дужка.</p>
+<p>Наведений приклад шаблону використовує вкладені необмежені
+повторення, тому використання одноразових шаблонів значно
+прискорює процес зіставлення, особливо у випадках, коли рядок не
+відповідає заданій масці. Наприклад, якщо його застосувати до рядка:
+<code>(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa()</code>, то
+невідповідність буде виявлено досить швидко. Але у випадку, якщо
+одноразові шаблони не використовуються, зіставлення затягуватиметься на
+тривалий час, оскільки існує безліч способів поділу
+рядки між квантифікаторами + та *, і всі вони мають бути перевірені,
+перш ніж буде видано повідомлення про невдачу.</p>
+<p>Значення, яке встановлюється для захоплюючої підмаски буде
+відповідати значенню, захопленому на найглибшому рівні
+рекурсії. У випадку, якщо наведений вище шаблон зіставляється з
+рядком <code>(ab(cd)ef)</code>, захопленим значенням буде 'ef', яке є
+останнім значенням, що приймається на верхньому рівні. У разі якщо
+додати додаткові дужки <code>\( ( ( (?>[^()]+) | (?R) )* ) \)</code>,
+захопленим значенням буде "ab(cd)ef". У випадку, якщо у шаблоні
+зустрічається більш ніж 15 захоплюючих дужок, PCRE потрібно більше
+пам'яті обробки рекурсії, ніж зазвичай. Пам'ять виділяється за допомогою
+функції pcre_malloc, та звільняється відповідно функцією pcre_free.
+Якщо пам'ять може бути виділено, зберігаються дані лише перших
+15 захоплюючих дужок, тому що немає способу видати помилку out-of-memory
+зсередини рекурсії.</p>
+<p><code>(?1)</code>, <code>(?2)</code> і так далі можуть бути використані для рекурсивних
+підмасок. Також можна використовувати іменовані підмаски: <code>(?P>name)</code>
+або <code>(?&#x26;name)</code>.</p>
+<p>Якщо синтаксис посилання на рекурсивну підмаску (як на ім'я, так і на
+числовому індексу) використовується поза дужками, до яких він належить, він
+відпрацьовує аналогічно підпрограмі у мові програмування. Візьмемо
+більш ранній приклад, що вказує, що шаблон
+<code>(sens|respons)e and ibility</code> відповідає "sense and sensibility" та
+"response and responsibility", але не "sense and responsibility". Якщо
+замість цього використовувати шаблон <code>(sens|respons)e and (?1)ibility</code>, він
+збігається з "sense and responsibility" так само, як і з іншими двома
+рядками. Однак, такі посилання повинні бути вказані після підмаски,
+яку вони посилаються.</p>
+<p>Максимальний рядок рядка, що обробляється, не повинен перевищувати
+максимально доступного цілого числа. Однак, так як для обробки
+підмасок і нескінченного повторення PCRE використовує рекурсію, це
+означає, що розмір рядків, що обробляються, в деяких шаблонах також
+може бути обмежений доступним розміром стека.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/regexp.reference.recursive.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/regexp.reference.recursive.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"regexp.reference.recursive","slug":"regexp.reference.recursive.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.comments.md\"\u003e« Коментарі\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"regexp.reference.performance.md\"\u003eПродуктивність »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"reference.pcre.pattern.syntax.md\"\u003eОпис синтаксису Perl-сумісних регулярних виразів\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eРекурсивні шаблони\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eРекурсивні шаблони\u003c/h2\u003e\n\u003cp\u003eРозглянемо задачу пошуку відповідності з рядком, що знаходяться всередині\nнеобмеженої кількості круглих дужок. Без використання рекурсії\nнайкраще, що можна зробити - написати шаблон, який вирішуватиме завдання\nдля деякої обмеженої глибини вкладеності, тому що обробити\nнеобмежену глибину неможливо. У Perl 5.6\nнадано деякі експериментальні можливості, які в тому\nчисла дозволяють реалізувати рекурсію у шаблонах. Спеціальне позначення\n(R) використовується для вказівки рекурсивної підмаски. Таким чином,\nнаведемо PCRE шаблон, що вирішує поставлене завдання (маю на увазі, що\nвикористовується модифікатор\n\u003ca href=\"reference.pcre.pattern.modifiers.md\"\u003ePCRE_EXTENDED\u003c/a\u003e, незначні\nпробіли ігноруються): \u003ccode\u003e\\( ( (?\u003e[^()]+) | (?R) )* \\)\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eСпочатку він відповідає круглій дужці, що відкриває. Далі він\nвідповідає будь-якій кількості підрядків, кожна з яких може бути\nпослідовністю не-дужок, або рядком, що рекурсивно відповідає\nшаблону (тобто рядком, коректно укладеним у круглі дужки). І, в\nНарешті, йде закриває кругла дужка.\u003c/p\u003e\n\u003cp\u003eНаведений приклад шаблону використовує вкладені необмежені\nповторення, тому використання одноразових шаблонів значно\nприскорює процес зіставлення, особливо у випадках, коли рядок не\nвідповідає заданій масці. Наприклад, якщо його застосувати до рядка:\n\u003ccode\u003e(aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa()\u003c/code\u003e, то\nневідповідність буде виявлено досить швидко. Але у випадку, якщо\nодноразові шаблони не використовуються, зіставлення затягуватиметься на\nтривалий час, оскільки існує безліч способів поділу\nрядки між квантифікаторами + та *, і всі вони мають бути перевірені,\nперш ніж буде видано повідомлення про невдачу.\u003c/p\u003e\n\u003cp\u003eЗначення, яке встановлюється для захоплюючої підмаски буде\nвідповідати значенню, захопленому на найглибшому рівні\nрекурсії. У випадку, якщо наведений вище шаблон зіставляється з\nрядком \u003ccode\u003e(ab(cd)ef)\u003c/code\u003e, захопленим значенням буде 'ef', яке є\nостаннім значенням, що приймається на верхньому рівні. У разі якщо\nдодати додаткові дужки \u003ccode\u003e\\( ( ( (?\u003e[^()]+) | (?R) )* ) \\)\u003c/code\u003e,\nзахопленим значенням буде \"ab(cd)ef\". У випадку, якщо у шаблоні\nзустрічається більш ніж 15 захоплюючих дужок, PCRE потрібно більше\nпам'яті обробки рекурсії, ніж зазвичай. Пам'ять виділяється за допомогою\nфункції pcre_malloc, та звільняється відповідно функцією pcre_free.\nЯкщо пам'ять може бути виділено, зберігаються дані лише перших\n15 захоплюючих дужок, тому що немає способу видати помилку out-of-memory\nзсередини рекурсії.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e(?1)\u003c/code\u003e, \u003ccode\u003e(?2)\u003c/code\u003e і так далі можуть бути використані для рекурсивних\nпідмасок. Також можна використовувати іменовані підмаски: \u003ccode\u003e(?P\u003ename)\u003c/code\u003e\nабо \u003ccode\u003e(?\u0026#x26;name)\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eЯкщо синтаксис посилання на рекурсивну підмаску (як на ім'я, так і на\nчисловому індексу) використовується поза дужками, до яких він належить, він\nвідпрацьовує аналогічно підпрограмі у мові програмування. Візьмемо\nбільш ранній приклад, що вказує, що шаблон\n\u003ccode\u003e(sens|respons)e and ibility\u003c/code\u003e відповідає \"sense and sensibility\" та\n\"response and responsibility\", але не \"sense and responsibility\". Якщо\nзамість цього використовувати шаблон \u003ccode\u003e(sens|respons)e and (?1)ibility\u003c/code\u003e, він\nзбігається з \"sense and responsibility\" так само, як і з іншими двома\nрядками. Однак, такі посилання повинні бути вказані після підмаски,\nяку вони посилаються.\u003c/p\u003e\n\u003cp\u003eМаксимальний рядок рядка, що обробляється, не повинен перевищувати\nмаксимально доступного цілого числа. Однак, так як для обробки\nпідмасок і нескінченного повторення PCRE використовує рекурсію, це\nозначає, що розмір рядків, що обробляються, в деяких шаблонах також\nможе бути обмежений доступним розміром стека.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"regexp.reference.recursive.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

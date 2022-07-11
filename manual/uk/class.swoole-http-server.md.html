@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>class.swoole-http-server | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="swoole-http-response.write.md">« Swoole\Http\Response::write</a></p>
+</li>
+<li>
+<p><a href="swoole-http-server.on.md">Swoole\Http\Server::on »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="book.swoole.md">Swoole</a></p>
+</li>
+<li>
+<p>Клас Swoole \ Http \ Server</p>
+</li>
+</ul>
+<h1>Клас Swoole\Http\Server</h1>
+<p>(PECL swoole >= 1.9.0)</p>
+<h2>Вступ</h2>
+<h2>Огляд класів</h2>
+<p>class <strong>Swoole\Http\Server</strong> extends
+<a href="class.swoole-server.md">Swoole\Server</a> {</p>
+<p>/* Методи */</p>
+<p>public <a href="swoole-http-server.on.md">on</a>(string <code>$event_name</code>,
+<a href="language.types.callable.md">callable</a> <code>$callback</code>): void</p>
+<p>public <a href="swoole-http-server.start.md">start</a>(): void</p>
+<p>/* Наслідувані методи */</p>
+<p>public
+<a href="swoole-server.addlistener.md">Swoole\Server::addlistener</a>(string
+<code>$host</code>, int <code>$port</code>, string <code>$socket_type</code>): void</p>
+<p>public
+<a href="swoole-server.addprocess.md">Swoole\Server::addProcess</a>(<a href="class.swoole-process.md">swoole_process</a>
+<code>$process</code>): bool</p>
+<p>public <a href="swoole-server.after.md">Swoole\Server::after</a>(int
+<code>$after_time_ms</code>, <a href="language.types.callable.md">callable</a> <code>$callback</code>,
+string <code>$param</code> = ?): ReturnType</p>
+<p>public <a href="swoole-server.bind.md">Swoole\Server::bind</a>(int <code>$fd</code>, int
+<code>$uid</code>): bool</p>
+<p>public <a href="swoole-server.cleartimer.md">Swoole\Server::clearTimer</a>(int
+<code>$timer_id</code>): void</p>
+<p><strong>swoole_timer_clear</strong>(int <code>$timer_id</code>): void</p>
+<p>public <a href="swoole-server.close.md">Swoole\Server::close</a>(int <code>$fd</code>, bool
+<code>$reset</code> = ?): bool</p>
+<p>public <a href="swoole-server.confirm.md">Swoole\Server::confirm</a>(int <code>$fd</code>):
+bool</p>
+<p>public
+<a href="swoole-server.connection-info.md">Swoole\Server::connection_info</a>(int
+<code>$fd</code>, int <code>$reactor_id</code> = ?): array</p>
+<p>public
+<a href="swoole-server.connection-list.md">Swoole\Server::connection_list</a>(int
+<code>$start_fd</code>, int <code>$pagesize</code> = ?): array</p>
+<p>public
+<a href="swoole-server.defer.md">Swoole\Server::defer</a>(<a href="language.types.callable.md">callable</a>
+<code>$callback</code>): void</p>
+<p>public
+<a href="swoole-server-port.destruct.md">Swoole\Server\Port::__destruct</a>():
+void</p>
+<p>public <a href="swoole-server-port.on.md">Swoole\Server\Port::on</a>(string
+<code>$event_name</code>, <a href="language.types.callable.md">callable</a> <code>$callback</code>):
+ReturnType</p>
+<p>public <a href="swoole-server-port.set.md">Swoole\Server\Port::set</a>(array
+<code>$settings</code>): void</p>
+<p>public <a href="swoole-server.exist.md">Swoole\Server::exist</a>(int <code>$fd</code>): bool</p>
+<p>public <a href="swoole-server.finish.md">Swoole\Server::finish</a>(string
+<code>$data</code>): void</p>
+<p>public
+<a href="swoole-server.getclientinfo.md">Swoole\Server::getClientInfo</a>(int
+<code>$fd</code>, int <code>$reactor_id</code> = ?, bool <code>$ignore_error</code> = ?): array</p>
+<p>public
+<a href="swoole-server.getclientlist.md">Swoole\Server::getClientList</a>(int
+<code>$start_fd</code>, int <code>$pagesize</code> = ?): array</p>
+<p>public <a href="swoole-server.getlasterror.md">Swoole\Server::getLastError</a>():
+int</p>
+<p>public <a href="swoole-server.heartbeat.md">Swoole\Server::heartbeat</a>(bool
+<code>$if_close_connection</code>):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="swoole-server.listen.md">Swoole\Server::listen</a>(string
+<code>$host</code>, int <code>$port</code>, string <code>$socket_type</code>): bool</p>
+<p>public <a href="swoole-server.on.md">Swoole\Server::on</a>(string <code>$event_name</code>,
+<a href="language.types.callable.md">callable</a> <code>$callback</code>): void</p>
+<p>public <a href="swoole-server.pause.md">Swoole\Server::pause</a>(int <code>$fd</code>): void</p>
+<p>public <a href="swoole-server.protect.md">Swoole\Server::protect</a>(int <code>$fd</code>,
+bool <code>$is_protected</code> = ?): void</p>
+<p>public <a href="swoole-server.reload.md">Swoole\Server::reload</a>(): bool</p>
+<p>public <a href="swoole-server.resume.md">Swoole\Server::resume</a>(int <code>$fd</code>):
+void</p>
+<p>public <a href="swoole-server.send.md">Swoole\Server::send</a>(int <code>$fd</code>, string
+<code>$data</code>, int <code>$reactor_id</code> = ?): bool</p>
+<p>public <a href="swoole-server.sendfile.md">Swoole\Server::sendfile</a>(int <code>$fd</code>,
+string <code>$filename</code>, int <code>$offset</code> = ?): bool</p>
+<p>public <a href="swoole-server.sendmessage.md">Swoole\Server::sendMessage</a>(int
+<code>$worker_id</code>, string <code>$data</code>): bool</p>
+<p>public <a href="swoole-server.sendto.md">Swoole\Server::sendto</a>(
+string <code>$ip</code>,
+int <code>$port</code>,
+string <code>$data</code>,
+string <code>$server_socket</code> = ?
+): bool</p>
+<p>public <a href="swoole-server.sendwait.md">Swoole\Server::sendwait</a>(int <code>$fd</code>,
+string <code>$data</code>): bool</p>
+<p>public <a href="swoole-server.set.md">Swoole\Server::set</a>(array <code>$settings</code>):
+ReturnType</p>
+<p>public <a href="swoole-server.shutdown.md">Swoole\Server::shutdown</a>(): void</p>
+<p>public <a href="swoole-server.start.md">Swoole\Server::start</a>(): void</p>
+<p>public <a href="swoole-server.stats.md">Swoole\Server::stats</a>(): array</p>
+<p>public <a href="swoole-server.stop.md">Swoole\Server::stop</a>(int <code>$worker_id</code> =
+?): bool</p>
+<p>public <a href="swoole-server.task.md">Swoole\Server::task</a>(string <code>$data</code>,
+int <code>$dst_worker_id</code> = ?, <a href="language.types.callable.md">callable</a>
+<code>$callback</code> = ?):
+<a href="language.types.declarations.md#language.types.declarations.mixed">mixed</a></p>
+<p>public <a href="swoole-server.taskwait.md">Swoole\Server::taskwait</a>(string
+<code>$data</code>, float <code>$timeout</code> = ?, int <code>$worker_id</code> = ?): void</p>
+<p>public
+<a href="swoole-server.taskwaitmulti.md">Swoole\Server::taskWaitMulti</a>(array
+<code>$tasks</code>, double <code>$timeout_ms</code> = ?): void</p>
+<p>public <a href="swoole-server.tick.md">Swoole\Server::tick</a>(int
+<code>$interval_ms</code>, <a href="language.types.callable.md">callable</a> <code>$callback</code>):
+void</p>
+<p>}</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="swoole-http-server.on.md">Swoole\Http\Server::on</a> - Прив'язує
+callback-функцію до HTTP-серверу на ім'я події</li>
+<li><a href="swoole-http-server.start.md">Swoole\Http\Server::start</a> -
+Запускає http-сервер swoole</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/class.swoole-http-server.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/class.swoole-http-server.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"class.swoole-http-server","slug":"class.swoole-http-server.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"swoole-http-response.write.md\"\u003e« Swoole\\Http\\Response::write\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"swoole-http-server.on.md\"\u003eSwoole\\Http\\Server::on »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"book.swoole.md\"\u003eSwoole\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eКлас Swoole \\ Http \\ Server\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003eКлас Swoole\\Http\\Server\u003c/h1\u003e\n\u003cp\u003e(PECL swoole \u003e= 1.9.0)\u003c/p\u003e\n\u003ch2\u003eВступ\u003c/h2\u003e\n\u003ch2\u003eОгляд класів\u003c/h2\u003e\n\u003cp\u003eclass \u003cstrong\u003eSwoole\\Http\\Server\u003c/strong\u003e extends\n\u003ca href=\"class.swoole-server.md\"\u003eSwoole\\Server\u003c/a\u003e {\u003c/p\u003e\n\u003cp\u003e/* Методи */\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-http-server.on.md\"\u003eon\u003c/a\u003e(string \u003ccode\u003e$event_name\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$callback\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-http-server.start.md\"\u003estart\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003e/* Наслідувані методи */\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"swoole-server.addlistener.md\"\u003eSwoole\\Server::addlistener\u003c/a\u003e(string\n\u003ccode\u003e$host\u003c/code\u003e, int \u003ccode\u003e$port\u003c/code\u003e, string \u003ccode\u003e$socket_type\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"swoole-server.addprocess.md\"\u003eSwoole\\Server::addProcess\u003c/a\u003e(\u003ca href=\"class.swoole-process.md\"\u003eswoole_process\u003c/a\u003e\n\u003ccode\u003e$process\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.after.md\"\u003eSwoole\\Server::after\u003c/a\u003e(int\n\u003ccode\u003e$after_time_ms\u003c/code\u003e, \u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$callback\u003c/code\u003e,\nstring \u003ccode\u003e$param\u003c/code\u003e = ?): ReturnType\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.bind.md\"\u003eSwoole\\Server::bind\u003c/a\u003e(int \u003ccode\u003e$fd\u003c/code\u003e, int\n\u003ccode\u003e$uid\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.cleartimer.md\"\u003eSwoole\\Server::clearTimer\u003c/a\u003e(int\n\u003ccode\u003e$timer_id\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eswoole_timer_clear\u003c/strong\u003e(int \u003ccode\u003e$timer_id\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.close.md\"\u003eSwoole\\Server::close\u003c/a\u003e(int \u003ccode\u003e$fd\u003c/code\u003e, bool\n\u003ccode\u003e$reset\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.confirm.md\"\u003eSwoole\\Server::confirm\u003c/a\u003e(int \u003ccode\u003e$fd\u003c/code\u003e):\nbool\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"swoole-server.connection-info.md\"\u003eSwoole\\Server::connection_info\u003c/a\u003e(int\n\u003ccode\u003e$fd\u003c/code\u003e, int \u003ccode\u003e$reactor_id\u003c/code\u003e = ?): array\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"swoole-server.connection-list.md\"\u003eSwoole\\Server::connection_list\u003c/a\u003e(int\n\u003ccode\u003e$start_fd\u003c/code\u003e, int \u003ccode\u003e$pagesize\u003c/code\u003e = ?): array\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"swoole-server.defer.md\"\u003eSwoole\\Server::defer\u003c/a\u003e(\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\n\u003ccode\u003e$callback\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"swoole-server-port.destruct.md\"\u003eSwoole\\Server\\Port::__destruct\u003c/a\u003e():\nvoid\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server-port.on.md\"\u003eSwoole\\Server\\Port::on\u003c/a\u003e(string\n\u003ccode\u003e$event_name\u003c/code\u003e, \u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$callback\u003c/code\u003e):\nReturnType\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server-port.set.md\"\u003eSwoole\\Server\\Port::set\u003c/a\u003e(array\n\u003ccode\u003e$settings\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.exist.md\"\u003eSwoole\\Server::exist\u003c/a\u003e(int \u003ccode\u003e$fd\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.finish.md\"\u003eSwoole\\Server::finish\u003c/a\u003e(string\n\u003ccode\u003e$data\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"swoole-server.getclientinfo.md\"\u003eSwoole\\Server::getClientInfo\u003c/a\u003e(int\n\u003ccode\u003e$fd\u003c/code\u003e, int \u003ccode\u003e$reactor_id\u003c/code\u003e = ?, bool \u003ccode\u003e$ignore_error\u003c/code\u003e = ?): array\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"swoole-server.getclientlist.md\"\u003eSwoole\\Server::getClientList\u003c/a\u003e(int\n\u003ccode\u003e$start_fd\u003c/code\u003e, int \u003ccode\u003e$pagesize\u003c/code\u003e = ?): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.getlasterror.md\"\u003eSwoole\\Server::getLastError\u003c/a\u003e():\nint\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.heartbeat.md\"\u003eSwoole\\Server::heartbeat\u003c/a\u003e(bool\n\u003ccode\u003e$if_close_connection\u003c/code\u003e):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.listen.md\"\u003eSwoole\\Server::listen\u003c/a\u003e(string\n\u003ccode\u003e$host\u003c/code\u003e, int \u003ccode\u003e$port\u003c/code\u003e, string \u003ccode\u003e$socket_type\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.on.md\"\u003eSwoole\\Server::on\u003c/a\u003e(string \u003ccode\u003e$event_name\u003c/code\u003e,\n\u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$callback\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.pause.md\"\u003eSwoole\\Server::pause\u003c/a\u003e(int \u003ccode\u003e$fd\u003c/code\u003e): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.protect.md\"\u003eSwoole\\Server::protect\u003c/a\u003e(int \u003ccode\u003e$fd\u003c/code\u003e,\nbool \u003ccode\u003e$is_protected\u003c/code\u003e = ?): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.reload.md\"\u003eSwoole\\Server::reload\u003c/a\u003e(): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.resume.md\"\u003eSwoole\\Server::resume\u003c/a\u003e(int \u003ccode\u003e$fd\u003c/code\u003e):\nvoid\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.send.md\"\u003eSwoole\\Server::send\u003c/a\u003e(int \u003ccode\u003e$fd\u003c/code\u003e, string\n\u003ccode\u003e$data\u003c/code\u003e, int \u003ccode\u003e$reactor_id\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.sendfile.md\"\u003eSwoole\\Server::sendfile\u003c/a\u003e(int \u003ccode\u003e$fd\u003c/code\u003e,\nstring \u003ccode\u003e$filename\u003c/code\u003e, int \u003ccode\u003e$offset\u003c/code\u003e = ?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.sendmessage.md\"\u003eSwoole\\Server::sendMessage\u003c/a\u003e(int\n\u003ccode\u003e$worker_id\u003c/code\u003e, string \u003ccode\u003e$data\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.sendto.md\"\u003eSwoole\\Server::sendto\u003c/a\u003e(\nstring \u003ccode\u003e$ip\u003c/code\u003e,\nint \u003ccode\u003e$port\u003c/code\u003e,\nstring \u003ccode\u003e$data\u003c/code\u003e,\nstring \u003ccode\u003e$server_socket\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.sendwait.md\"\u003eSwoole\\Server::sendwait\u003c/a\u003e(int \u003ccode\u003e$fd\u003c/code\u003e,\nstring \u003ccode\u003e$data\u003c/code\u003e): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.set.md\"\u003eSwoole\\Server::set\u003c/a\u003e(array \u003ccode\u003e$settings\u003c/code\u003e):\nReturnType\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.shutdown.md\"\u003eSwoole\\Server::shutdown\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.start.md\"\u003eSwoole\\Server::start\u003c/a\u003e(): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.stats.md\"\u003eSwoole\\Server::stats\u003c/a\u003e(): array\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.stop.md\"\u003eSwoole\\Server::stop\u003c/a\u003e(int \u003ccode\u003e$worker_id\u003c/code\u003e =\n?): bool\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.task.md\"\u003eSwoole\\Server::task\u003c/a\u003e(string \u003ccode\u003e$data\u003c/code\u003e,\nint \u003ccode\u003e$dst_worker_id\u003c/code\u003e = ?, \u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e\n\u003ccode\u003e$callback\u003c/code\u003e = ?):\n\u003ca href=\"language.types.declarations.md#language.types.declarations.mixed\"\u003emixed\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.taskwait.md\"\u003eSwoole\\Server::taskwait\u003c/a\u003e(string\n\u003ccode\u003e$data\u003c/code\u003e, float \u003ccode\u003e$timeout\u003c/code\u003e = ?, int \u003ccode\u003e$worker_id\u003c/code\u003e = ?): void\u003c/p\u003e\n\u003cp\u003epublic\n\u003ca href=\"swoole-server.taskwaitmulti.md\"\u003eSwoole\\Server::taskWaitMulti\u003c/a\u003e(array\n\u003ccode\u003e$tasks\u003c/code\u003e, double \u003ccode\u003e$timeout_ms\u003c/code\u003e = ?): void\u003c/p\u003e\n\u003cp\u003epublic \u003ca href=\"swoole-server.tick.md\"\u003eSwoole\\Server::tick\u003c/a\u003e(int\n\u003ccode\u003e$interval_ms\u003c/code\u003e, \u003ca href=\"language.types.callable.md\"\u003ecallable\u003c/a\u003e \u003ccode\u003e$callback\u003c/code\u003e):\nvoid\u003c/p\u003e\n\u003cp\u003e}\u003c/p\u003e\n\u003ch2\u003eЗміст\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"swoole-http-server.on.md\"\u003eSwoole\\Http\\Server::on\u003c/a\u003e - Прив'язує\ncallback-функцію до HTTP-серверу на ім'я події\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"swoole-http-server.start.md\"\u003eSwoole\\Http\\Server::start\u003c/a\u003e -\nЗапускає http-сервер swoole\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.swoole-http-server.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>mysqli.real-connect | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="mysqli.query.md">« mysqli::query</a></p>
+</li>
+<li>
+<p><a href="mysqli.real-escape-string.md">mysqli::real_escape_string »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="class.mysqli.md">mysqli</a></p>
+</li>
+<li>
+<p>Встановлює з'єднання із сервером mysql</p>
+</li>
+</ul>
+<h1>mysqli::real_connect</h1>
+<h1>mysqli_real_connect</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<p>mysqli::real_connect -- mysqli_real_connect -- Встановлює з'єднання з
+сервером mysql</p>
+<h3>Опис</h3>
+<p>Об'єктно-орієнтований стиль</p>
+<p>public <strong>mysqli::real_connect</strong>(
+string <code>$host</code> = ?,
+string <code>$username</code> = ?,
+string <code>$passwd</code> = ?,
+string <code>$dbname</code> = ?,
+int <code>$port</code> = ?,
+string <code>$socket</code> = ?,
+int <code>$flags</code> = ?
+): bool</p>
+<p>Процедурний стиль</p>
+<p><strong>mysqli_real_connect</strong>(
+<a href="class.mysqli.md">mysqli</a> <code>$link</code>,
+string <code>$host</code> = ?,
+string <code>$username</code> = ?,
+string <code>$passwd</code> = ?,
+string <code>$dbname</code> = ?,
+int <code>$port</code> = ?,
+string <code>$socket</code> = ?,
+int <code>$flags</code> = ?
+): bool</p>
+<p>Встановлює з'єднання із СУБД MySQL.</p>
+<p>Ця функція відрізняється від
+<a href="function.mysqli-connect.md">mysqli_connect()</a>:</p>
+<ul>
+<li>
+<p>Для роботи <strong>mysqli_real_connect()</strong> необхідний дійсний
+об'єкт, створений функцією <a href="mysqli.init.md">mysqli_init()</a>.</p>
+</li>
+<li>
+<p>За допомогою функції <a href="mysqli.options.md">mysqli_options()</a> можна
+встановити різні налаштування підключення.</p>
+</li>
+<li>
+<p>Параметр <code>flags</code>.</p>
+</li>
+</ul>
+<h3>Список параметрів</h3>
+<p><code>mysql</code>
+Тільки для процедурного стилю: об'єкт <a href="class.mysqli.md">mysqli</a>,
+отриманий за допомогою <a href="function.mysqli-connect.md">mysqli_connect()</a>
+або <a href="mysqli.init.md">mysqli_init()</a>.</p>
+<p><code>host</code>
+Може бути ім'ям хоста або IP-адресою. Передача <strong><code>null</code></strong> або рядки
+"localhost" цього параметра означає, що як хост буде
+використовуватись локальна машина, на якій запущено скрипт. Якщо є
+така можливість будуть використовуватися пайпи замість протоколу TCP/IP.</p>
+<p><code>username</code>
+Ім'я користувача MySQL.</p>
+<p><code>passwd</code>
+Якщо не заданий або дорівнює <strong><code>null</code></strong>, MySQL-сервер насамперед
+спробує автентифікувати користувача в принципі того, хто має пароль, а
+потім шукатиме серед користувачів, які не мають пароля. Такий
+підхід дозволяє одному користувачеві призначати різні права (у
+залежно від того, заданий пароль чи ні).</p>
+<p><code>dbname</code>
+Якщо параметр заданий, його значення буде використовуватись як ім'я
+бази даних за замовчуванням під час виконання запитів.</p>
+<p><code>port</code>
+Порт, до якого буде здійснюватись підключення.</p>
+<p><code>socket</code>
+Визначає номер порту для підключення до сервера MySQL.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Передача параметра <code>socket</code> не явно задаватиме тип з'єднання при
+підключення до сервера MySQL. Як встановлюватиметься з'єднання
+з MySQL-сервером визначається параметром <code>host</code>.</p>
+</blockquote>
+<p><code>flags</code>
+За допомогою параметра <code>flags</code> можна встановити деякі налаштування з'єднання:</p>
+<table>
+<thead>
+<tr>
+<th>Ім'я Опис</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MYSQLI_CLIENT_COMPRESS</strong></td>
+<td>Використання протоколу стиснення</td>
+</tr>
+<tr>
+<td><strong>MYSQLI_CLIENT_FOUND_ROWS</strong></td>
+<td>Повертати кількість рядків, що підійшли умовам вибірки замість кількості порушених запитом рядків</td>
+</tr>
+<tr>
+<td><strong>MYSQLI_CLIENT_IGNORE_SPACE</strong></td>
+<td>Допускати пробіли після назв функцій. Робить усі імена функцій зарезервованими словами.</td>
+</tr>
+<tr>
+<td><strong>MYSQLI_CLIENT_INTERACTIVE</strong></td>
+<td>Допускати interactive_timeout секунд (замість wait_timeout) простою, перш ніж закрити з'єднання</td>
+</tr>
+<tr>
+<td><strong>MYSQLI_CLIENT_SSL</strong></td>
+<td>Використання SSL (шифрування)</td>
+</tr>
+<tr>
+<td><strong>MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT</strong></td>
+<td>Аналогічно <strong>MYSQLI_CLIENT_SSL</strong>, але забороняє перевірку SSL сертифікату. Працює тільки з MySQL Native Driver та MySQL 5.6 та вище.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Підтримувані прапори</strong></p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>З причин безпеки, прапор <strong><code>MULTI_STATEMENT</code></strong> не підтримується
+у PHP. Якщо потрібно виконувати мультизапити, використовуйте функцію
+<a href="mysqli.multi-query.md">mysqli_multi_query()</a>.</p>
+</blockquote>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або <strong><code>false</code></strong> у
+у разі виникнення помилки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання <strong>mysqli::real_connect()</strong></strong></p>
+<p>Об'єктно-орієнтований стиль</p>
+<p><code>&#x3C;?php$mysqli = mysqli_init();if (!$mysqli) {    die('mysqli_init завершилася провалом');}if (!$mysqli->options(MYSQLI_INIT_COMMAND, '   'Установка MYSQLI_INIT_COMMAND завершилася провалом');}if (!$mysqli->options(MYSQLI_OPT_CONNECT_TIMEOUT, 5)) {    die('Установка MYSQLI_OPT_CONNECT_TI| ', 'my_password', 'my_db')) {    die('Помилка підключення (' . mysqli_connect_errno() . ')                                                &#x3C;br>&#x3C;br>&#x3C;br>&#x3C;br>&#x3C;br>&#x3C;br>                   &#x3C;br>&#x3C;br>&#x3C;br>&#x3C;br>) $ mysqli->host_info. " ";$mysqli->close();?></code></p>
+<p>Об'єктно-орієнтований стиль при розширенні класу mysqli</p>
+<p><code>&#x3C;?phpclass foo_mysqli extends mysqli {    public function __construct($host, $user, $pass, $db) {        parent::init(); if (!parent::options(MYSQLI_INIT_COMMAND, 'SET AUTOCOMMIT = 0')) {            die('Установка MYSQLI_INIT_COMMAND'завершилася; }        if (!parent::options(MYSQLI_OPT_CONNECT_TIMEOUT, 5)) {            die('Установка MYSQLI_OPT_CONNECT_TI ') }        if (!parent::real_connect($host, $user, $pass, $db)) {            die('Ошибка подключения (' . mysqli_connect_errno() . ') '                    . mysqli_connect_error()); }    }}$db = new foo_mysqli('localhost', 'my_user', 'my_password', 'my_db');echo 'Виконано... ' . $db->host_info . " ";$db->close();?></code></p>
+<p>Процедурний стиль</p>
+<p><code>&#x3C;?php$link = mysqli_init();if (!$link) {    die('mysqli_init завершилася провалом');}if (!mysqli_options($link, MYSQLI_INIT_COMMAND, '   | Установка MYSQLI_INIT_COMMAND завершилась провалом');}if (!mysqli_options($link, MYSQLI_OPT_CONNECT_TIMEOUT, 5)) {    die('Установка MYSQLI_OPT_CONNECT_TIMEOUT завершилась провалом');}if (!mysqli_real_connect($link, 'localhost', 'my_user', ' my_password', 'my_db')) {   die('Помилка підключення (' . mysqli_connect_errno() . ') '              . mysqli'' ми| mysqli_get_host_info($link) . " "; mysqli_close($link);?> </code></p>
+<p>Результат виконання даних прикладів:</p>
+<p>Виконано... MySQL host info: localhost via TCP/IP</p>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>MySQLnd завжди має на увазі кодування, яке використовує по
+За замовчуванням сервер. Це кодування передається під час встановлення
+з'єднання/авторизації, які використовує mysqlnd.</p>
+<p>Libmysqlclient за замовчуванням використовує кодування, встановлене в
+<code>my.cnf</code> або спеціальним викликом
+<a href="mysqli.options.md">mysqli_options()</a> до використання
+<strong>mysqli_real_connect()</strong>, але після <a href="mysqli.init.md">mysqli_init()</a>.</p>
+</blockquote>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.mysqli-connect.md">mysqli_connect()</a> - Псевдонім
+mysqli::__construct</li>
+<li><a href="mysqli.init.md">mysqli_init()</a> - Ініціалізує MySQLi та
+повертає об'єкт для використання у функції mysqli_real_connect()</li>
+<li><a href="mysqli.options.md">mysqli_options()</a> - Встановлення установок</li>
+<li><a href="mysqli.ssl-set.md">mysqli_ssl_set()</a> - Використовується для
+встановлення безпечних з'єднань за допомогою SSL</li>
+<li><a href="mysqli.close.md">mysqli_close()</a> - Закриває раніше відкрите
+з'єднання з базою даних</li>
+</ul>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/mysqli.real-connect.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/mysqli.real-connect.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"mysqli.real-connect","slug":"mysqli.real-connect.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.query.md\"\u003e« mysqli::query\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"mysqli.real-escape-string.md\"\u003emysqli::real_escape_string »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"class.mysqli.md\"\u003emysqli\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВстановлює з'єднання із сервером mysql\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003emysqli::real_connect\u003c/h1\u003e\n\u003ch1\u003emysqli_real_connect\u003c/h1\u003e\n\u003cp\u003e(PHP 5, PHP 7, PHP 8)\u003c/p\u003e\n\u003cp\u003emysqli::real_connect -- mysqli_real_connect -- Встановлює з'єднання з\nсервером mysql\u003c/p\u003e\n\u003ch3\u003eОпис\u003c/h3\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003epublic \u003cstrong\u003emysqli::real_connect\u003c/strong\u003e(\nstring \u003ccode\u003e$host\u003c/code\u003e = ?,\nstring \u003ccode\u003e$username\u003c/code\u003e = ?,\nstring \u003ccode\u003e$passwd\u003c/code\u003e = ?,\nstring \u003ccode\u003e$dbname\u003c/code\u003e = ?,\nint \u003ccode\u003e$port\u003c/code\u003e = ?,\nstring \u003ccode\u003e$socket\u003c/code\u003e = ?,\nint \u003ccode\u003e$flags\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003emysqli_real_connect\u003c/strong\u003e(\n\u003ca href=\"class.mysqli.md\"\u003emysqli\u003c/a\u003e \u003ccode\u003e$link\u003c/code\u003e,\nstring \u003ccode\u003e$host\u003c/code\u003e = ?,\nstring \u003ccode\u003e$username\u003c/code\u003e = ?,\nstring \u003ccode\u003e$passwd\u003c/code\u003e = ?,\nstring \u003ccode\u003e$dbname\u003c/code\u003e = ?,\nint \u003ccode\u003e$port\u003c/code\u003e = ?,\nstring \u003ccode\u003e$socket\u003c/code\u003e = ?,\nint \u003ccode\u003e$flags\u003c/code\u003e = ?\n): bool\u003c/p\u003e\n\u003cp\u003eВстановлює з'єднання із СУБД MySQL.\u003c/p\u003e\n\u003cp\u003eЦя функція відрізняється від\n\u003ca href=\"function.mysqli-connect.md\"\u003emysqli_connect()\u003c/a\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eДля роботи \u003cstrong\u003emysqli_real_connect()\u003c/strong\u003e необхідний дійсний\nоб'єкт, створений функцією \u003ca href=\"mysqli.init.md\"\u003emysqli_init()\u003c/a\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗа допомогою функції \u003ca href=\"mysqli.options.md\"\u003emysqli_options()\u003c/a\u003e можна\nвстановити різні налаштування підключення.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eПараметр \u003ccode\u003eflags\u003c/code\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eСписок параметрів\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003emysql\u003c/code\u003e\nТільки для процедурного стилю: об'єкт \u003ca href=\"class.mysqli.md\"\u003emysqli\u003c/a\u003e,\nотриманий за допомогою \u003ca href=\"function.mysqli-connect.md\"\u003emysqli_connect()\u003c/a\u003e\nабо \u003ca href=\"mysqli.init.md\"\u003emysqli_init()\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003ehost\u003c/code\u003e\nМоже бути ім'ям хоста або IP-адресою. Передача \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e або рядки\n\"localhost\" цього параметра означає, що як хост буде\nвикористовуватись локальна машина, на якій запущено скрипт. Якщо є\nтака можливість будуть використовуватися пайпи замість протоколу TCP/IP.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eusername\u003c/code\u003e\nІм'я користувача MySQL.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003epasswd\u003c/code\u003e\nЯкщо не заданий або дорівнює \u003cstrong\u003e\u003ccode\u003enull\u003c/code\u003e\u003c/strong\u003e, MySQL-сервер насамперед\nспробує автентифікувати користувача в принципі того, хто має пароль, а\nпотім шукатиме серед користувачів, які не мають пароля. Такий\nпідхід дозволяє одному користувачеві призначати різні права (у\nзалежно від того, заданий пароль чи ні).\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edbname\u003c/code\u003e\nЯкщо параметр заданий, його значення буде використовуватись як ім'я\nбази даних за замовчуванням під час виконання запитів.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eport\u003c/code\u003e\nПорт, до якого буде здійснюватись підключення.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esocket\u003c/code\u003e\nВизначає номер порту для підключення до сервера MySQL.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eПередача параметра \u003ccode\u003esocket\u003c/code\u003e не явно задаватиме тип з'єднання при\nпідключення до сервера MySQL. Як встановлюватиметься з'єднання\nз MySQL-сервером визначається параметром \u003ccode\u003ehost\u003c/code\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003eflags\u003c/code\u003e\nЗа допомогою параметра \u003ccode\u003eflags\u003c/code\u003e можна встановити деякі налаштування з'єднання:\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eІм'я Опис\u003c/th\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eMYSQLI_CLIENT_COMPRESS\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eВикористання протоколу стиснення\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eMYSQLI_CLIENT_FOUND_ROWS\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eПовертати кількість рядків, що підійшли умовам вибірки замість кількості порушених запитом рядків\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eMYSQLI_CLIENT_IGNORE_SPACE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eДопускати пробіли після назв функцій. Робить усі імена функцій зарезервованими словами.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eMYSQLI_CLIENT_INTERACTIVE\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eДопускати interactive_timeout секунд (замість wait_timeout) простою, перш ніж закрити з'єднання\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eMYSQLI_CLIENT_SSL\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eВикористання SSL (шифрування)\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eMYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eАналогічно \u003cstrong\u003eMYSQLI_CLIENT_SSL\u003c/strong\u003e, але забороняє перевірку SSL сертифікату. Працює тільки з MySQL Native Driver та MySQL 5.6 та вище.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003eПідтримувані прапори\u003c/strong\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eЗ причин безпеки, прапор \u003cstrong\u003e\u003ccode\u003eMULTI_STATEMENT\u003c/code\u003e\u003c/strong\u003e не підтримується\nу PHP. Якщо потрібно виконувати мультизапити, використовуйте функцію\n\u003ca href=\"mysqli.multi-query.md\"\u003emysqli_multi_query()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eЗначення, що повертаються\u003c/h3\u003e\n\u003cp\u003eПовертає \u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e у разі успішного виконання або \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e у\nу разі виникнення помилки.\u003c/p\u003e\n\u003ch3\u003eПриклади\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eПриклад #1 Приклад використання \u003cstrong\u003emysqli::real_connect()\u003c/strong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$mysqli = mysqli_init();if (!$mysqli) {    die('mysqli_init завершилася провалом');}if (!$mysqli-\u003eoptions(MYSQLI_INIT_COMMAND, '   'Установка MYSQLI_INIT_COMMAND завершилася провалом');}if (!$mysqli-\u003eoptions(MYSQLI_OPT_CONNECT_TIMEOUT, 5)) {    die('Установка MYSQLI_OPT_CONNECT_TI| ', 'my_password', 'my_db')) {    die('Помилка підключення (' . mysqli_connect_errno() . ')                                                \u0026#x3C;br\u003e\u0026#x3C;br\u003e\u0026#x3C;br\u003e\u0026#x3C;br\u003e\u0026#x3C;br\u003e\u0026#x3C;br\u003e                   \u0026#x3C;br\u003e\u0026#x3C;br\u003e\u0026#x3C;br\u003e\u0026#x3C;br\u003e) $ mysqli-\u003ehost_info. \" \";$mysqli-\u003eclose();?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eОб'єктно-орієнтований стиль при розширенні класу mysqli\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpclass foo_mysqli extends mysqli {    public function __construct($host, $user, $pass, $db) {        parent::init(); if (!parent::options(MYSQLI_INIT_COMMAND, 'SET AUTOCOMMIT = 0')) {            die('Установка MYSQLI_INIT_COMMAND'завершилася; }        if (!parent::options(MYSQLI_OPT_CONNECT_TIMEOUT, 5)) {            die('Установка MYSQLI_OPT_CONNECT_TI ') }        if (!parent::real_connect($host, $user, $pass, $db)) {            die('Ошибка подключения (' . mysqli_connect_errno() . ') '                    . mysqli_connect_error()); }    }}$db = new foo_mysqli('localhost', 'my_user', 'my_password', 'my_db');echo 'Виконано... ' . $db-\u003ehost_info . \" \";$db-\u003eclose();?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eПроцедурний стиль\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$link = mysqli_init();if (!$link) {    die('mysqli_init завершилася провалом');}if (!mysqli_options($link, MYSQLI_INIT_COMMAND, '   | Установка MYSQLI_INIT_COMMAND завершилась провалом');}if (!mysqli_options($link, MYSQLI_OPT_CONNECT_TIMEOUT, 5)) {    die('Установка MYSQLI_OPT_CONNECT_TIMEOUT завершилась провалом');}if (!mysqli_real_connect($link, 'localhost', 'my_user', ' my_password', 'my_db')) {   die('Помилка підключення (' . mysqli_connect_errno() . ') '              . mysqli'' ми| mysqli_get_host_info($link) . \" \"; mysqli_close($link);?\u003e \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання даних прикладів:\u003c/p\u003e\n\u003cp\u003eВиконано... MySQL host info: localhost via TCP/IP\u003c/p\u003e\n\u003ch3\u003eПримітки\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eMySQLnd завжди має на увазі кодування, яке використовує по\nЗа замовчуванням сервер. Це кодування передається під час встановлення\nз'єднання/авторизації, які використовує mysqlnd.\u003c/p\u003e\n\u003cp\u003eLibmysqlclient за замовчуванням використовує кодування, встановлене в\n\u003ccode\u003emy.cnf\u003c/code\u003e або спеціальним викликом\n\u003ca href=\"mysqli.options.md\"\u003emysqli_options()\u003c/a\u003e до використання\n\u003cstrong\u003emysqli_real_connect()\u003c/strong\u003e, але після \u003ca href=\"mysqli.init.md\"\u003emysqli_init()\u003c/a\u003e.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eДивіться також\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.mysqli-connect.md\"\u003emysqli_connect()\u003c/a\u003e - Псевдонім\nmysqli::__construct\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.init.md\"\u003emysqli_init()\u003c/a\u003e - Ініціалізує MySQLi та\nповертає об'єкт для використання у функції mysqli_real_connect()\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.options.md\"\u003emysqli_options()\u003c/a\u003e - Встановлення установок\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.ssl-set.md\"\u003emysqli_ssl_set()\u003c/a\u003e - Використовується для\nвстановлення безпечних з'єднань за допомогою SSL\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"mysqli.close.md\"\u003emysqli_close()\u003c/a\u003e - Закриває раніше відкрите\nз'єднання з базою даних\u003c/li\u003e\n\u003c/ul\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli.real-connect.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>migration71.incompatible | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="migration71.constants.md">« Нові глобальні константи</a></p>
+</li>
+<li>
+<p><a href="migration71.deprecated.md">Функціонал, оголошений застарілим у PHP 7.1.x »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="migration71.md">Міграція з PHP 7.0.x на PHP 7.1.x</a></p>
+</li>
+<li>
+<p>Зміни, що ламають зворотну сумісність</p>
+</li>
+</ul>
+<h2>Зміни, що ламають зворотну сумісність</h2>
+<h3>Виклик виключення при передачі функції недостатньої кількості аргументів</h3>
+<p>Раніше, якщо функція користувача викликалася з недостатнім
+кількістю аргументів видавалося попередження. Тепер же, замість
+попередження викликатиметься виняток класу Error. Ця зміна
+зачіпає тільки функції користувача і не впливає на
+вбудовані. Наприклад:</p>
+<p><code>&#x3C;?phpfunction test($param){}test();</code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>Error error: Uncaught ArgumentCountError: Щасливі argumentи до функцій test(), 0 passed in %s on line %d and exactly 1 expected in %s:%d</p>
+<h3>Заборона динамічного виклику функцій інтроспекції області видимості</h3>
+<p>Динамічні виклики певних функцій було заборонено (у вигляді
+<code>$func()</code> або <code>array_map('extract', ...)</code>, і т.д.) Ці функції перевіряють
+або модифікують об'єкти іншої області видимості, ніж викликають
+неоднозначна та невизначена поведінка. Список таких функцій:</p>
+<ul>
+<li><a href="function.assert.md">assert()</a> - з рядком як перший
+аргументу</li>
+<li><a href="function.compact.md">compact()</a></li>
+<li><a href="function.extract.md">extract()</a></li>
+<li><a href="function.func-get-args.md">func_get_args()</a></li>
+<li><a href="function.func-get-arg.md">func_get_arg()</a></li>
+<li><a href="function.func-num-args.md">func_num_args()</a></li>
+<li><a href="function.get-defined-vars.md">get_defined_vars()</a></li>
+<li><a href="function.mb-parse-str.md">mb_parse_str()</a> - з одним аргументом</li>
+<li><a href="function.parse-str.md">parse_str()</a> - з одним аргументом</li>
+</ul>
+<p><code>&#x3C;?php(function () {    $func = 'func_num_args';    $func();})();</code></p>
+<p>Результат виконання цього прикладу:</p>
+<p>Warning: Cannot call func_num_args() dynamically в %s on line %d</p>
+<h3>Некоректні імена класів, інтерфейсів та трейтів</h3>
+<p>Наступні імена не можна використовувати як імена класів, інтерфейсів або
+трейтів:</p>
+<ul>
+<li>void</li>
+<li><a href="language.types.iterable.md">iterable</a></li>
+</ul>
+<h3>Перетворення числових рядків тепер враховує наукову нотацію</h3>
+<p>Цілочисленні операції та конвертації числових рядків тепер враховують
+наукову нотацію, включаючи приведення <code>(int)</code> та такі функції:
+<a href="function.intval.md">intval()</a> (з базою 10),
+<a href="function.settype.md">settype()</a>, <a href="function.decbin.md">decbin()</a>,
+<a href="function.decoct.md">decoct()</a> та <a href="function.dechex.md">dechex()</a>.</p>
+<h3>Виправлення алгоритму <a href="function.mt-rand.md">mt_rand()</a></h3>
+<p><a href="function.mt-rand.md">mt_rand()</a> тепер за замовчуванням використовує
+зафіксовану версію алгоритму "Вихор Мерсена" Якщо ви покладалися на
+детермінований висновок <a href="function.mt-srand.md">mt_srand()</a>, можна
+використовувати константу <strong><code>MT_RAND_PHP</code></strong> як друге,
+необов'язкового параметра <a href="function.mt-srand.md">mt_srand()</a> для
+збереження старої (неправильної) реалізації.</p>
+<h3><a href="function.rand.md">rand()</a> псевдонім для <a href="function.mt-rand.md">mt_rand()</a> та <a href="function.srand.md">srand()</a> псевдонім для <a href="function.mt-srand.md">mt_srand() </a></h3>
+<p><a href="function.rand.md">rand()</a> та <a href="function.srand.md">srand()</a> тепер
+є просто синонімами для <a href="function.mt-rand.md">mt_rand()</a> та
+<a href="function.mt-srand.md">mt_srand()</a>. Це означає, що виведення наступних
+функцій змінився: <a href="function.rand.md">rand()</a>,
+<a href="function.shuffle.md">shuffle()</a>,
+<a href="function.str-shuffle.md">str_shuffle()</a> та
+<a href="function.array-rand.md">array_rand()</a>.</p>
+<h3>Заборона використовувати символ видалення з таблиці ASCII в ідентифікаторах</h3>
+<p>Символ видалення ASCII (<code>0x7F</code>) більше не можна використовувати в
+ідентифікаторах, не обгорнутих у лапки.</p>
+<h3>Значення <code>error_log</code> змінено на <code>syslog</code></h3>
+<p>Якщо ini-параметр <code>error_log</code> встановлений як <code>syslog</code>, то рівні помилок
+PHP проектується на рівні помилок "syslog". Це дозволяє більш тонко
+логувати події, а не як раніше, коли всі вони записувалися з
+рівнем "notice".</p>
+<h3>Деструктори не викликаються на незавершених об'єктах</h3>
+<p>Тепер деструктори ніколи не викликаються, якщо було викликано виключення
+конструктор об'єкта. Раніше ця поведінка залежала від того, чи була
+посилання на об'єкт поза конструктором (наприклад, у трасуванні виключення).</p>
+<h3><a href="function.call-user-func.md">call_user_func()</a> обробляє посилання на аргументи</h3>
+<p>Тепер <a href="function.call-user-func.md">call_user_func()</a> завжди викликає
+попередження, якщо викликається функція, що очікує посилання як
+параметрів. Раніше це залежало від того, чи був виклик повністю
+певним.</p>
+<p>Крім того, <a href="function.call-user-func.md">call_user_func()</a> та
+<a href="function.call-user-func-array.md">call_user_func_array()</a> більше не
+припиняють виконання функції у разі. Попередження "expected
+reference" буде викликано, але сама функція продовжить виконання.</p>
+<h3>Оператор порожнього індексу більше не застосовується до рядків</h3>
+<p>Застосування оператора порожнього індексу до рядка (<code>$str[] = $x</code>) викликає
+фатальну помилку замість тихого перетворення змінної масиву.</p>
+<h3>Присвоєння через механізм доступу до елемента рядка за індексом стосовно порожнього рядка</h3>
+<p>Модифікація символу в порожньому рядку тепер працює так само, як і для не
+порожній. Тобто. запис по неіснуючому зміщенню призведе до
+перетворення не цілого значення зсуву до цілого числа,
+доповнення рядка до потрібної довжини символами пропуску та використання
+тільки першого символу з рядка, що привласнюється. Раніше, в такій
+ситуації, порожній рядок розглядався як порожній масив.</p>
+<p><code>&#x3C;?php$a = '';$a[10] = 'foo';var_dump($a);?></code></p>
+<p>Результат виконання цього прикладу в PHP 7.0:</p>
+<p>array(1) {
+[10] =>
+string(3) "foo"
+}</p>
+<p>Результат виконання цього прикладу в PHP 7.1:</p>
+<p>string(11) " f"</p>
+<h3>Віддалені ini-директиви</h3>
+<p>Наступні ini-директиви були видалені:</p>
+<ul>
+<li><code>session.entropy_file</code></li>
+<li><code>session.entropy_length</code></li>
+<li><code>session.hash_function</code></li>
+<li><code>session.hash_bits_per_character</code></li>
+</ul>
+<h3>Порядок масиву, коли елементи створені автоматично через присвоєння посилання, було змінено</h3>
+<p>Порядок розташування елементів масиву, створюваних присвоєнням по
+посилання не створених на момент присвоєння елементів, було змінено. До
+Наприклад:</p>
+<p><code>&#x3C;?php$array = [];$array["a"] =&#x26; $array["b"];$array["b"] = 1;var_dump($array);?></code></p>
+<p>Результат виконання цього прикладу в PHP 7.0:</p>
+<p>array(2) {
+["a"]=>
+&#x26;int(1)
+["b"]=>
+&#x26;int(1)
+}</p>
+<p>Результат виконання цього прикладу в PHP 7.1:</p>
+<p>array(2) {
+["b"]=>
+&#x26;int(1)
+["a"]=>
+&#x26;int(1)
+}</p>
+<h3>Порядок сортування еквівалентних елементів</h3>
+<p>Внутрішній алгоритм сортування був покращений, що може призвести до відмінності
+у порядку розташування еквівалентних елементів після сортування за
+порівняно з попередніми версіями PHP.</p>
+<blockquote>
+<p><strong>Примітка</strong>:</p>
+<p>Не покладайтеся на порядок розташування еквівалентних елементів, так
+як він може будь-якої миті змінитися.</p>
+</blockquote>
+<h3>Повідомлення для помилок E_RECOVERABLE</h3>
+<p>Повідомлення для помилок E_RECOVERABLE змінено з "Catchable fatal error" на
+"Recoverable fatal error".</p>
+<h3>Параметр $options функції unserialize()</h3>
+<p>Тепер елемент <code>allowed_classes</code> параметра $options функції
+<a href="function.unserialize.md">unserialize()</a> строго типізований, тобто
+якщо передати значення з типом, відмінним від array та bool, то
+unserialize() поверне <strong><code>false</code></strong> та викличе помилку рівня
+<strong><code>E_WARNING</code></strong>.</p>
+<h3>Конструктор DateTime використовує мікросекунди</h3>
+<p>Тепер <a href="class.datetime.md">DateTime</a> та
+<a href="class.datetimeimmutable.md">DateTimeImmutable</a> використовують
+мікросекунди при створенні з поточним часом, або у явному вигляді, або з
+рядком відносного часу (наприклад,
+<code>first day of next month</code>). Це означає, що порівняння двох поспіль
+створених екземплярів класу швидше повертатиме <strong><code>false</code></strong> ніж
+<strong><code>true</code></strong>:</p>
+<p><code>&#x3C;?phpnew DateTime() == new DateTime();?></code></p>
+<h3>Виклик винятків <a href="class.error.md">Error</a> замість фатальних помилок</h3>
+<p>Для модуля Date при некоректних даних серіалізації класів
+<a href="class.datetime.md">DateTime</a> або <a href="class.dateperiod.md">DatePeriod</a>,
+або помилки ініціалізації часового поясу із серіалізованих даних, буде
+викидатися виняток <a href="class.error.md">Error</a> з методів
+<strong>__wakeup()</strong> або <strong>__set_state()</strong>, замість виклику фатальної
+помилки.</p>
+<p>У модулі DBA функції маніпулювання даними (такі як
+<a href="function.dba-insert.md">dba_insert()</a>) тепер будуть викидати
+виняток <a href="class.error.md">Error</a> замість виклику відловлюваного
+фатальної помилки якщо ключ не містить двох елементів.</p>
+<p>У модулі DOM некоректна перевірка контексту схеми або RelaxNG тепер
+викидають виняток <a href="class.error.md">Error</a> замість виклику
+фатальної помилки. Аналогічно, спроби зареєструвати клас
+вузла, який не розширює правильний базовий клас, спроби прочитати
+некоректна властивість або перезаписати властивість доступна тільки для
+Читання будуть викидати виняток <a href="class.error.md">Error</a>.</p>
+<p>У модулі IMAP адреса email довша 16385 байт тепер викидатиме
+виняток <a href="class.error.md">Error</a> замість виклику фатальної помилки.</p>
+<p>Модуль Intl у разі виникнення помилки виклику батьківського
+конструктора в класі, що наслідує <a href="class.collator.md">Collator</a> до
+виклику батьківських методів тепер викидатиме виняток
+<a href="class.error.md">Error</a> замість виклику фатальної помилки. Крім того,
+клонування об'єкта <a href="class.transliterator.md">Transliterator</a> тепер
+буде викидати виняток <a href="class.error.md">Error</a> у разі
+виникнення помилки клонування внутрішнього transliterator замість
+виклику фатальної помилки.</p>
+<p>Модуль LDAP при вказівці невідомого типу модифікації в
+<strong>ldap_batch_modify()</strong> тепер викидатиме виняток
+<a href="class.error.md">Error</a> замість виклику фатальної помилки.</p>
+<p>У модулі mbstring функції <a href="function.mb-ereg.md">mb_ereg()</a> та
+<a href="function.mb-eregi.md">mb_eregi()</a> тепер викидатимуть виняток
+<a href="class.parseerror.md">ParseError</a> у разі некоректного регулярного
+висловлювання чи разі використання опції 'e'.</p>
+<p>У модулі Mcrypt <a href="function.mcrypt-encrypt.md">mcrypt_encrypt()</a> та
+<a href="function.mcrypt-decrypt.md">mcrypt_decrypt()</a> тепер буде
+викидати виняток <a href="class.error.md">Error</a> замість фатального виклику
+помилки, якщо mcrypt не ініціалізовано.</p>
+<p>У модулі mysqli спроби прочитати некоректну властивість або перезаписати
+властивість доступна тільки для читання викидатиме виняток
+<a href="class.error.md">Error</a> замість виклику фатальної помилки.</p>
+<p>У модулі Reflection невдале вилучення відбитого об'єкта або
+властивості об'єкта викидають виняток <a href="class.error.md">Error</a>
+замість виклику фатальної помилки.</p>
+<p>У модулі сесій користувальницькі обробники сесії, які не
+повертають рядок для ідентифікатора сесії, викидатимуть
+виняток <a href="class.error.md">Error</a> замість виклику фатальної помилки,
+коли буде викликано функцію для генерації ідентифікатора.</p>
+<p>У модулі SimpleXML спроба створення безіменного чи дублюючого
+атрибута буде викидати виняток <a href="class.error.md">Error</a> замість
+виклику фатальної помилки.</p>
+<p>У модулі SPL спроба клонувати об'єкт <strong>SplDirectory</strong> буде
+викидати виняток <a href="class.error.md">Error</a> замість фатального виклику
+помилки. Аналогічно, виклик
+<a href="arrayiterator.append.md">ArrayIterator::append()</a> коли ітерація
+об'єкта закінчена буде викидати виняток
+<a href="class.error.md">Error</a>.</p>
+<p>Функція <a href="function.assert.md">assert()</a>, коли їй передано рядковий
+аргумент першим параметром, тепер викидатиме виняток
+<a href="class.parseerror.md">ParseError</a> замість виклику відловлюваного
+фатальної помилки, якщо PHP код некоректний. Аналогічно, виклик
+<a href="function.forward-static-call.md">forward_static_call()</a> за межами
+простору класу викидатиме виняток
+<a href="class.error.md">Error</a>.</p>
+<p>У модулі Tidy ручне створення <a href="class.tidynode.md">tidyNode</a> буде
+викидати виняток <a href="class.error.md">Error</a>.</p>
+<p>У модулі WDDX циклічні посилання під час серіалізації будуть викидати
+виняток <a href="class.error.md">Error</a> замість виклику фатальної помилки.</p>
+<p>У модулі XML-RPC циклічні посилання серіалізації будуть викидати
+виняток <a href="class.error.md">Error</a> замість виклику фатальної помилки.</p>
+<p>У модулі Zip метод <a href="ziparchive.addglob.md">ZipArchive::addGlob()</a>
+викидатиме виняток <a href="class.error.md">Error</a> замість виклику
+фатальної помилки, якщо відсутня підтримка glob.</p>
+<h3>Лексично пов'язані змінні не можуть перевикористовувати імена</h3>
+<p>Змінні, прив'язані до <a href="functions.anonymous.md">замикання</a> через
+конструкцію <code>use</code>, не можуть використовувати ті ж імена, що і будь-які
+<a href="language.variables.predefined.md">superglobals</a>, <code>$this</code> або
+параметри. Наприклад, всі наведені функції викликають фатальну помилку:</p>
+<p><code>&#x3C;?php$f = function () use ($_SERVER) {};$f = function () use ($this) {};$f = function ($param) use ($param) {};</code></p>
+<h3>Змінено тип параметра long2ip()</h3>
+<p>Тепер <a href="function.long2ip.md">long2ip()</a> очікує параметр типу int, а не
+string.</p>
+<h3>Кодування та декодування JSON</h3>
+<p>INI-налаштування <code>serialize_precision</code> визначає точність серіалізації при
+кодування значень типу float.</p>
+<p>Тепер декодування порожнього ключа призводить до появи властивості з
+порожнім ім'ям, раніше ім'я властивості наводилося до значення <code>_empty_</code>.</p>
+<p><code>&#x3C;?phpvar_dump(json_decode(json_encode([''=> 1])))); </code></p>
+<p>Результатом виконання цього прикладу буде щось подібне:</p>
+<p>object(stdClass)#1 (1) {
+[""]=>
+int(1)
+}</p>
+<p>Під час передачі прапора <strong><code>JSON_UNESCAPED_UNICODE</code></strong> у функцію
+<a href="function.json-encode.md">json_encode()</a> послідовності U+2028 та
+U+2029 буде екрановано.</p>
+<h3>Зміна в семантиці параметрів <a href="function.mb-ereg.md">mb_ereg()</a> та <a href="function.mb-eregi.md">mb_eregi()</a></h3>
+<p>Третій параметр функцій <a href="function.mb-ereg.md">mb_ereg()</a> та
+<a href="function.mb-eregi.md">mb_eregi()</a> (<code>regs</code>) тепер встановлюється
+рівним порожньому масиву, якщо не було знайдено збігів. Раніше параметр
+залишався незмінним.</p>
+<h3>Видалена підтримка потоку sslv2</h3>
+<p>Підтримка потоку sslv2 у OpenSSL видалена.</p>
+<h3>Заборонено "return;" для типізованих повернень вже під час компіляції</h3>
+<p>Оператори повернення без аргументів у функціях, які оголошують тип
+значення, що повертається, тепер викликають <strong><code>E_COMPILE_ERROR</code></strong> (якщо тип
+повернення не оголошено як void), навіть якщо оператор ніколи не
+буде досягнуто.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/migration71.incompatible.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/migration71.incompatible.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"migration71.incompatible","slug":"migration71.incompatible.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration71.constants.md\"\u003e« Нові глобальні константи\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration71.deprecated.md\"\u003eФункціонал, оголошений застарілим у PHP 7.1.x »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"migration71.md\"\u003eМіграція з PHP 7.0.x на PHP 7.1.x\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eЗміни, що ламають зворотну сумісність\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eЗміни, що ламають зворотну сумісність\u003c/h2\u003e\n\u003ch3\u003eВиклик виключення при передачі функції недостатньої кількості аргументів\u003c/h3\u003e\n\u003cp\u003eРаніше, якщо функція користувача викликалася з недостатнім\nкількістю аргументів видавалося попередження. Тепер же, замість\nпопередження викликатиметься виняток класу Error. Ця зміна\nзачіпає тільки функції користувача і не впливає на\nвбудовані. Наприклад:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpfunction test($param){}test();\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eError error: Uncaught ArgumentCountError: Щасливі argumentи до функцій test(), 0 passed in %s on line %d and exactly 1 expected in %s:%d\u003c/p\u003e\n\u003ch3\u003eЗаборона динамічного виклику функцій інтроспекції області видимості\u003c/h3\u003e\n\u003cp\u003eДинамічні виклики певних функцій було заборонено (у вигляді\n\u003ccode\u003e$func()\u003c/code\u003e або \u003ccode\u003earray_map('extract', ...)\u003c/code\u003e, і т.д.) Ці функції перевіряють\nабо модифікують об'єкти іншої області видимості, ніж викликають\nнеоднозначна та невизначена поведінка. Список таких функцій:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"function.assert.md\"\u003eassert()\u003c/a\u003e - з рядком як перший\nаргументу\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.compact.md\"\u003ecompact()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.extract.md\"\u003eextract()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.func-get-args.md\"\u003efunc_get_args()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.func-get-arg.md\"\u003efunc_get_arg()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.func-num-args.md\"\u003efunc_num_args()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.get-defined-vars.md\"\u003eget_defined_vars()\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.mb-parse-str.md\"\u003emb_parse_str()\u003c/a\u003e - з одним аргументом\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"function.parse-str.md\"\u003eparse_str()\u003c/a\u003e - з одним аргументом\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php(function () {    $func = 'func_num_args';    $func();})();\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу:\u003c/p\u003e\n\u003cp\u003eWarning: Cannot call func_num_args() dynamically в %s on line %d\u003c/p\u003e\n\u003ch3\u003eНекоректні імена класів, інтерфейсів та трейтів\u003c/h3\u003e\n\u003cp\u003eНаступні імена не можна використовувати як імена класів, інтерфейсів або\nтрейтів:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003evoid\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"language.types.iterable.md\"\u003eiterable\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eПеретворення числових рядків тепер враховує наукову нотацію\u003c/h3\u003e\n\u003cp\u003eЦілочисленні операції та конвертації числових рядків тепер враховують\nнаукову нотацію, включаючи приведення \u003ccode\u003e(int)\u003c/code\u003e та такі функції:\n\u003ca href=\"function.intval.md\"\u003eintval()\u003c/a\u003e (з базою 10),\n\u003ca href=\"function.settype.md\"\u003esettype()\u003c/a\u003e, \u003ca href=\"function.decbin.md\"\u003edecbin()\u003c/a\u003e,\n\u003ca href=\"function.decoct.md\"\u003edecoct()\u003c/a\u003e та \u003ca href=\"function.dechex.md\"\u003edechex()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eВиправлення алгоритму \u003ca href=\"function.mt-rand.md\"\u003emt_rand()\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"function.mt-rand.md\"\u003emt_rand()\u003c/a\u003e тепер за замовчуванням використовує\nзафіксовану версію алгоритму \"Вихор Мерсена\" Якщо ви покладалися на\nдетермінований висновок \u003ca href=\"function.mt-srand.md\"\u003emt_srand()\u003c/a\u003e, можна\nвикористовувати константу \u003cstrong\u003e\u003ccode\u003eMT_RAND_PHP\u003c/code\u003e\u003c/strong\u003e як друге,\nнеобов'язкового параметра \u003ca href=\"function.mt-srand.md\"\u003emt_srand()\u003c/a\u003e для\nзбереження старої (неправильної) реалізації.\u003c/p\u003e\n\u003ch3\u003e\u003ca href=\"function.rand.md\"\u003erand()\u003c/a\u003e псевдонім для \u003ca href=\"function.mt-rand.md\"\u003emt_rand()\u003c/a\u003e та \u003ca href=\"function.srand.md\"\u003esrand()\u003c/a\u003e псевдонім для \u003ca href=\"function.mt-srand.md\"\u003emt_srand() \u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"function.rand.md\"\u003erand()\u003c/a\u003e та \u003ca href=\"function.srand.md\"\u003esrand()\u003c/a\u003e тепер\nє просто синонімами для \u003ca href=\"function.mt-rand.md\"\u003emt_rand()\u003c/a\u003e та\n\u003ca href=\"function.mt-srand.md\"\u003emt_srand()\u003c/a\u003e. Це означає, що виведення наступних\nфункцій змінився: \u003ca href=\"function.rand.md\"\u003erand()\u003c/a\u003e,\n\u003ca href=\"function.shuffle.md\"\u003eshuffle()\u003c/a\u003e,\n\u003ca href=\"function.str-shuffle.md\"\u003estr_shuffle()\u003c/a\u003e та\n\u003ca href=\"function.array-rand.md\"\u003earray_rand()\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eЗаборона використовувати символ видалення з таблиці ASCII в ідентифікаторах\u003c/h3\u003e\n\u003cp\u003eСимвол видалення ASCII (\u003ccode\u003e0x7F\u003c/code\u003e) більше не можна використовувати в\nідентифікаторах, не обгорнутих у лапки.\u003c/p\u003e\n\u003ch3\u003eЗначення \u003ccode\u003eerror_log\u003c/code\u003e змінено на \u003ccode\u003esyslog\u003c/code\u003e\u003c/h3\u003e\n\u003cp\u003eЯкщо ini-параметр \u003ccode\u003eerror_log\u003c/code\u003e встановлений як \u003ccode\u003esyslog\u003c/code\u003e, то рівні помилок\nPHP проектується на рівні помилок \"syslog\". Це дозволяє більш тонко\nлогувати події, а не як раніше, коли всі вони записувалися з\nрівнем \"notice\".\u003c/p\u003e\n\u003ch3\u003eДеструктори не викликаються на незавершених об'єктах\u003c/h3\u003e\n\u003cp\u003eТепер деструктори ніколи не викликаються, якщо було викликано виключення\nконструктор об'єкта. Раніше ця поведінка залежала від того, чи була\nпосилання на об'єкт поза конструктором (наприклад, у трасуванні виключення).\u003c/p\u003e\n\u003ch3\u003e\u003ca href=\"function.call-user-func.md\"\u003ecall_user_func()\u003c/a\u003e обробляє посилання на аргументи\u003c/h3\u003e\n\u003cp\u003eТепер \u003ca href=\"function.call-user-func.md\"\u003ecall_user_func()\u003c/a\u003e завжди викликає\nпопередження, якщо викликається функція, що очікує посилання як\nпараметрів. Раніше це залежало від того, чи був виклик повністю\nпевним.\u003c/p\u003e\n\u003cp\u003eКрім того, \u003ca href=\"function.call-user-func.md\"\u003ecall_user_func()\u003c/a\u003e та\n\u003ca href=\"function.call-user-func-array.md\"\u003ecall_user_func_array()\u003c/a\u003e більше не\nприпиняють виконання функції у разі. Попередження \"expected\nreference\" буде викликано, але сама функція продовжить виконання.\u003c/p\u003e\n\u003ch3\u003eОператор порожнього індексу більше не застосовується до рядків\u003c/h3\u003e\n\u003cp\u003eЗастосування оператора порожнього індексу до рядка (\u003ccode\u003e$str[] = $x\u003c/code\u003e) викликає\nфатальну помилку замість тихого перетворення змінної масиву.\u003c/p\u003e\n\u003ch3\u003eПрисвоєння через механізм доступу до елемента рядка за індексом стосовно порожнього рядка\u003c/h3\u003e\n\u003cp\u003eМодифікація символу в порожньому рядку тепер працює так само, як і для не\nпорожній. Тобто. запис по неіснуючому зміщенню призведе до\nперетворення не цілого значення зсуву до цілого числа,\nдоповнення рядка до потрібної довжини символами пропуску та використання\nтільки першого символу з рядка, що привласнюється. Раніше, в такій\nситуації, порожній рядок розглядався як порожній масив.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$a = '';$a[10] = 'foo';var_dump($a);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7.0:\u003c/p\u003e\n\u003cp\u003earray(1) {\n[10] =\u003e\nstring(3) \"foo\"\n}\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7.1:\u003c/p\u003e\n\u003cp\u003estring(11) \" f\"\u003c/p\u003e\n\u003ch3\u003eВіддалені ini-директиви\u003c/h3\u003e\n\u003cp\u003eНаступні ini-директиви були видалені:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003esession.entropy_file\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003esession.entropy_length\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003esession.hash_function\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003esession.hash_bits_per_character\u003c/code\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eПорядок масиву, коли елементи створені автоматично через присвоєння посилання, було змінено\u003c/h3\u003e\n\u003cp\u003eПорядок розташування елементів масиву, створюваних присвоєнням по\nпосилання не створених на момент присвоєння елементів, було змінено. До\nНаприклад:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$array = [];$array[\"a\"] =\u0026#x26; $array[\"b\"];$array[\"b\"] = 1;var_dump($array);?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7.0:\u003c/p\u003e\n\u003cp\u003earray(2) {\n[\"a\"]=\u003e\n\u0026#x26;int(1)\n[\"b\"]=\u003e\n\u0026#x26;int(1)\n}\u003c/p\u003e\n\u003cp\u003eРезультат виконання цього прикладу в PHP 7.1:\u003c/p\u003e\n\u003cp\u003earray(2) {\n[\"b\"]=\u003e\n\u0026#x26;int(1)\n[\"a\"]=\u003e\n\u0026#x26;int(1)\n}\u003c/p\u003e\n\u003ch3\u003eПорядок сортування еквівалентних елементів\u003c/h3\u003e\n\u003cp\u003eВнутрішній алгоритм сортування був покращений, що може призвести до відмінності\nу порядку розташування еквівалентних елементів після сортування за\nпорівняно з попередніми версіями PHP.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eПримітка\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003eНе покладайтеся на порядок розташування еквівалентних елементів, так\nяк він може будь-якої миті змінитися.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003eПовідомлення для помилок E_RECOVERABLE\u003c/h3\u003e\n\u003cp\u003eПовідомлення для помилок E_RECOVERABLE змінено з \"Catchable fatal error\" на\n\"Recoverable fatal error\".\u003c/p\u003e\n\u003ch3\u003eПараметр $options функції unserialize()\u003c/h3\u003e\n\u003cp\u003eТепер елемент \u003ccode\u003eallowed_classes\u003c/code\u003e параметра $options функції\n\u003ca href=\"function.unserialize.md\"\u003eunserialize()\u003c/a\u003e строго типізований, тобто\nякщо передати значення з типом, відмінним від array та bool, то\nunserialize() поверне \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e та викличе помилку рівня\n\u003cstrong\u003e\u003ccode\u003eE_WARNING\u003c/code\u003e\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eКонструктор DateTime використовує мікросекунди\u003c/h3\u003e\n\u003cp\u003eТепер \u003ca href=\"class.datetime.md\"\u003eDateTime\u003c/a\u003e та\n\u003ca href=\"class.datetimeimmutable.md\"\u003eDateTimeImmutable\u003c/a\u003e використовують\nмікросекунди при створенні з поточним часом, або у явному вигляді, або з\nрядком відносного часу (наприклад,\n\u003ccode\u003efirst day of next month\u003c/code\u003e). Це означає, що порівняння двох поспіль\nстворених екземплярів класу швидше повертатиме \u003cstrong\u003e\u003ccode\u003efalse\u003c/code\u003e\u003c/strong\u003e ніж\n\u003cstrong\u003e\u003ccode\u003etrue\u003c/code\u003e\u003c/strong\u003e:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpnew DateTime() == new DateTime();?\u003e\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eВиклик винятків \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість фатальних помилок\u003c/h3\u003e\n\u003cp\u003eДля модуля Date при некоректних даних серіалізації класів\n\u003ca href=\"class.datetime.md\"\u003eDateTime\u003c/a\u003e або \u003ca href=\"class.dateperiod.md\"\u003eDatePeriod\u003c/a\u003e,\nабо помилки ініціалізації часового поясу із серіалізованих даних, буде\nвикидатися виняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e з методів\n\u003cstrong\u003e__wakeup()\u003c/strong\u003e або \u003cstrong\u003e__set_state()\u003c/strong\u003e, замість виклику фатальної\nпомилки.\u003c/p\u003e\n\u003cp\u003eУ модулі DBA функції маніпулювання даними (такі як\n\u003ca href=\"function.dba-insert.md\"\u003edba_insert()\u003c/a\u003e) тепер будуть викидати\nвиняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість виклику відловлюваного\nфатальної помилки якщо ключ не містить двох елементів.\u003c/p\u003e\n\u003cp\u003eУ модулі DOM некоректна перевірка контексту схеми або RelaxNG тепер\nвикидають виняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість виклику\nфатальної помилки. Аналогічно, спроби зареєструвати клас\nвузла, який не розширює правильний базовий клас, спроби прочитати\nнекоректна властивість або перезаписати властивість доступна тільки для\nЧитання будуть викидати виняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eУ модулі IMAP адреса email довша 16385 байт тепер викидатиме\nвиняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість виклику фатальної помилки.\u003c/p\u003e\n\u003cp\u003eМодуль Intl у разі виникнення помилки виклику батьківського\nконструктора в класі, що наслідує \u003ca href=\"class.collator.md\"\u003eCollator\u003c/a\u003e до\nвиклику батьківських методів тепер викидатиме виняток\n\u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість виклику фатальної помилки. Крім того,\nклонування об'єкта \u003ca href=\"class.transliterator.md\"\u003eTransliterator\u003c/a\u003e тепер\nбуде викидати виняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e у разі\nвиникнення помилки клонування внутрішнього transliterator замість\nвиклику фатальної помилки.\u003c/p\u003e\n\u003cp\u003eМодуль LDAP при вказівці невідомого типу модифікації в\n\u003cstrong\u003eldap_batch_modify()\u003c/strong\u003e тепер викидатиме виняток\n\u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість виклику фатальної помилки.\u003c/p\u003e\n\u003cp\u003eУ модулі mbstring функції \u003ca href=\"function.mb-ereg.md\"\u003emb_ereg()\u003c/a\u003e та\n\u003ca href=\"function.mb-eregi.md\"\u003emb_eregi()\u003c/a\u003e тепер викидатимуть виняток\n\u003ca href=\"class.parseerror.md\"\u003eParseError\u003c/a\u003e у разі некоректного регулярного\nвисловлювання чи разі використання опції 'e'.\u003c/p\u003e\n\u003cp\u003eУ модулі Mcrypt \u003ca href=\"function.mcrypt-encrypt.md\"\u003emcrypt_encrypt()\u003c/a\u003e та\n\u003ca href=\"function.mcrypt-decrypt.md\"\u003emcrypt_decrypt()\u003c/a\u003e тепер буде\nвикидати виняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість фатального виклику\nпомилки, якщо mcrypt не ініціалізовано.\u003c/p\u003e\n\u003cp\u003eУ модулі mysqli спроби прочитати некоректну властивість або перезаписати\nвластивість доступна тільки для читання викидатиме виняток\n\u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість виклику фатальної помилки.\u003c/p\u003e\n\u003cp\u003eУ модулі Reflection невдале вилучення відбитого об'єкта або\nвластивості об'єкта викидають виняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e\nзамість виклику фатальної помилки.\u003c/p\u003e\n\u003cp\u003eУ модулі сесій користувальницькі обробники сесії, які не\nповертають рядок для ідентифікатора сесії, викидатимуть\nвиняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість виклику фатальної помилки,\nколи буде викликано функцію для генерації ідентифікатора.\u003c/p\u003e\n\u003cp\u003eУ модулі SimpleXML спроба створення безіменного чи дублюючого\nатрибута буде викидати виняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість\nвиклику фатальної помилки.\u003c/p\u003e\n\u003cp\u003eУ модулі SPL спроба клонувати об'єкт \u003cstrong\u003eSplDirectory\u003c/strong\u003e буде\nвикидати виняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість фатального виклику\nпомилки. Аналогічно, виклик\n\u003ca href=\"arrayiterator.append.md\"\u003eArrayIterator::append()\u003c/a\u003e коли ітерація\nоб'єкта закінчена буде викидати виняток\n\u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eФункція \u003ca href=\"function.assert.md\"\u003eassert()\u003c/a\u003e, коли їй передано рядковий\nаргумент першим параметром, тепер викидатиме виняток\n\u003ca href=\"class.parseerror.md\"\u003eParseError\u003c/a\u003e замість виклику відловлюваного\nфатальної помилки, якщо PHP код некоректний. Аналогічно, виклик\n\u003ca href=\"function.forward-static-call.md\"\u003eforward_static_call()\u003c/a\u003e за межами\nпростору класу викидатиме виняток\n\u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eУ модулі Tidy ручне створення \u003ca href=\"class.tidynode.md\"\u003etidyNode\u003c/a\u003e буде\nвикидати виняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eУ модулі WDDX циклічні посилання під час серіалізації будуть викидати\nвиняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість виклику фатальної помилки.\u003c/p\u003e\n\u003cp\u003eУ модулі XML-RPC циклічні посилання серіалізації будуть викидати\nвиняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість виклику фатальної помилки.\u003c/p\u003e\n\u003cp\u003eУ модулі Zip метод \u003ca href=\"ziparchive.addglob.md\"\u003eZipArchive::addGlob()\u003c/a\u003e\nвикидатиме виняток \u003ca href=\"class.error.md\"\u003eError\u003c/a\u003e замість виклику\nфатальної помилки, якщо відсутня підтримка glob.\u003c/p\u003e\n\u003ch3\u003eЛексично пов'язані змінні не можуть перевикористовувати імена\u003c/h3\u003e\n\u003cp\u003eЗмінні, прив'язані до \u003ca href=\"functions.anonymous.md\"\u003eзамикання\u003c/a\u003e через\nконструкцію \u003ccode\u003euse\u003c/code\u003e, не можуть використовувати ті ж імена, що і будь-які\n\u003ca href=\"language.variables.predefined.md\"\u003esuperglobals\u003c/a\u003e, \u003ccode\u003e$this\u003c/code\u003e або\nпараметри. Наприклад, всі наведені функції викликають фатальну помилку:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?php$f = function () use ($_SERVER) {};$f = function () use ($this) {};$f = function ($param) use ($param) {};\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eЗмінено тип параметра long2ip()\u003c/h3\u003e\n\u003cp\u003eТепер \u003ca href=\"function.long2ip.md\"\u003elong2ip()\u003c/a\u003e очікує параметр типу int, а не\nstring.\u003c/p\u003e\n\u003ch3\u003eКодування та декодування JSON\u003c/h3\u003e\n\u003cp\u003eINI-налаштування \u003ccode\u003eserialize_precision\u003c/code\u003e визначає точність серіалізації при\nкодування значень типу float.\u003c/p\u003e\n\u003cp\u003eТепер декодування порожнього ключа призводить до появи властивості з\nпорожнім ім'ям, раніше ім'я властивості наводилося до значення \u003ccode\u003e_empty_\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e\u0026#x3C;?phpvar_dump(json_decode(json_encode([''=\u003e 1])))); \u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eРезультатом виконання цього прикладу буде щось подібне:\u003c/p\u003e\n\u003cp\u003eobject(stdClass)#1 (1) {\n[\"\"]=\u003e\nint(1)\n}\u003c/p\u003e\n\u003cp\u003eПід час передачі прапора \u003cstrong\u003e\u003ccode\u003eJSON_UNESCAPED_UNICODE\u003c/code\u003e\u003c/strong\u003e у функцію\n\u003ca href=\"function.json-encode.md\"\u003ejson_encode()\u003c/a\u003e послідовності U+2028 та\nU+2029 буде екрановано.\u003c/p\u003e\n\u003ch3\u003eЗміна в семантиці параметрів \u003ca href=\"function.mb-ereg.md\"\u003emb_ereg()\u003c/a\u003e та \u003ca href=\"function.mb-eregi.md\"\u003emb_eregi()\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eТретій параметр функцій \u003ca href=\"function.mb-ereg.md\"\u003emb_ereg()\u003c/a\u003e та\n\u003ca href=\"function.mb-eregi.md\"\u003emb_eregi()\u003c/a\u003e (\u003ccode\u003eregs\u003c/code\u003e) тепер встановлюється\nрівним порожньому масиву, якщо не було знайдено збігів. Раніше параметр\nзалишався незмінним.\u003c/p\u003e\n\u003ch3\u003eВидалена підтримка потоку sslv2\u003c/h3\u003e\n\u003cp\u003eПідтримка потоку sslv2 у OpenSSL видалена.\u003c/p\u003e\n\u003ch3\u003eЗаборонено \"return;\" для типізованих повернень вже під час компіляції\u003c/h3\u003e\n\u003cp\u003eОператори повернення без аргументів у функціях, які оголошують тип\nзначення, що повертається, тепер викликають \u003cstrong\u003e\u003ccode\u003eE_COMPILE_ERROR\u003c/code\u003e\u003c/strong\u003e (якщо тип\nповернення не оголошено як void), навіть якщо оператор ніколи не\nбуде досягнуто.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration71.incompatible.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

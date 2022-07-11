@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="uk"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="Php.org.ua - документація з PHP Українською."/><title>odbc.installation | Php.org.ua документація з PHP Українською</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/7ec827587c0caa43.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ec827587c0caa43.css" data-n-g=""/><link rel="preload" href="/_next/static/css/3b895c2888dff888.css" as="style"/><link rel="stylesheet" href="/_next/static/css/3b895c2888dff888.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-d7b038a63b619762.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-f65e66e62fc5ca80.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d6350922c4d48aae.js" defer=""></script><script src="/_next/static/chunks/851-3dedaf99f7721f44.js" defer=""></script><script src="/_next/static/chunks/812-ce151e70514541b2.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-f5cf399c3cac85f5.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_buildManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_ssgManifest.js" defer=""></script><script src="/_next/static/Et_upXdD_6v5-RGWMZlWR/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #4f46e5;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #4f46e5;
+        border-left-color: #4f46e5;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><header class="flex items-center justify-between py-10 h-5 border-b border-indigo-800"><a aria-label="php.org.ua" class="text-2xl font-semibold block text-indigo-800" href="/">Php.org.ua</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="/manual/uk/index.md">Документація</a><a class="text-gray-900 dark:text-gray-100 sm:p-4" href="https://github.com/ukrainesoft/php.org.ua">Про проєкт</a><div class="relative -mt-5 self-start"><div class="pointer-events-auto w-[20.625rem] rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10"><div class="flex items-center py-2.5 px-3.5 text-slate-400"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full" placeholder="Пошук..." value=""/></div></div></div></header><main><div class="container mx-auto px-5"><article><div class="mx-auto"><div class="markdown-styles_markdown__h_8de"><ul>
+<li>
+<p><a href="uodbc.requirements.md">« Вимоги</a></p>
+</li>
+<li>
+<p><a href="odbc.configuration.md">Налаштування під час виконання »</a></p>
+</li>
+<li>
+<p><a href="index.md">PHP Manual</a></p>
+</li>
+<li>
+<p><a href="uodbc.setup.md">Встановлення та налаштування</a></p>
+</li>
+<li>
+<p>Встановлення</p>
+</li>
+</ul>
+<h2>Установка</h2>
+<p><strong>--with-adabas[=DIR]</strong>
+Включити підтримку Adabas D. DIR - це каталог установки Adabas,
+замовчуванням <code>/usr/local</code>.</p>
+<p><strong>--with-sapdb[=DIR]</strong>
+Увімкнути підтримку SAP DB. DIR - каталог установки SAP DB, за замовчуванням
+<code>/usr/local</code>.</p>
+<p><strong>--with-solid[=DIR]</strong>
+Увімкнути підтримку Solid. DIR - каталог установки Solid base,
+замовчуванням <code>/usr/local/solid</code>.</p>
+<p><strong>--with-ibm-db2[=DIR]</strong>
+Увімкнути підтримку IBM DB2. DIR - це каталог установки DB2,
+замовчуванням <code>/home/db2inst1/sqllib</code>.</p>
+<p><strong>--with-empress[=DIR]</strong>
+Увімкнути підтримку Empress. DIR - це каталог установки Empress,
+замовчуванням <code>$EMPRESSPATH</code>. Опція підтримується лише Empress версії
+8.60 та вище.</p>
+<p><strong>--with-empress-bcs[=DIR]</strong>
+Включити підтримку <code>Empress Local Access</code>. DIR – це каталог установки
+Empress, за замовчуванням <code>$EMPRESSPATH</code>. Опція підтримується лише
+Empress версії 8.60 та вище.</p>
+<p><strong>--with-birdstep[=DIR]</strong>
+Увімкнути підтримку Birdstep. DIR - це каталог установки Birdstep, по
+замовчуванням <code>/usr/local/birdstep</code>.</p>
+<p><strong>--with-custom-odbc[=DIR]</strong>
+Включити певну підтримку ODBC. DIR – це каталог
+установки ODBC, за замовчуванням <code>/usr/local</code>. Переконайтеся, що ви визначили
+CUSTOM_ODBC_LIBS і у вас є кілька <code>odbc.h</code> у ваших включаються
+каталогах. Наприклад, ви повинні визначити наступне для Sybase SQL
+Anywhere 5.5.00 в QNX перед запуском скрипта налаштування:</p>
+<p>CPPFLAGS="-DODBC_QNX -DSQLANY_BUG"
+LDFLAGS=-lunix
+CUSTOM_ODBC_LIBS="-ldblib-lodbc".</p>
+<p><strong>--with-iodbc[=DIR]</strong>
+Увімкнути підтримку iODBC. DIR - це каталог установки iODBC,
+замовчуванням <code>/usr/local</code>.</p>
+<p><strong>--with-esoob[=DIR]</strong>
+Увімкнути підтримку Easysoft OOB. DIR – це каталог установки Easysoft
+OOB, за замовчуванням <code>/usr/local/easysoft/oob/client</code>.</p>
+<p><strong>--with-unixODBC[=DIR]</strong>
+Включити підтримку unixODBC. DIR - це каталог установки unixODBC,
+замовчуванням <code>/usr/local</code>.</p>
+<p><strong>--with-openlink[=DIR]</strong>
+Увімкнути підтримку OpenLink ODBC. DIR – це каталог установки OpenLink,
+за замовчуванням <code>/usr/local</code>. Це те саме, що і iODBC.</p>
+<p><strong>--with-dbmaker[=DIR]</strong>
+Увімкнути підтримку DBMaker. DIR - це каталог установки DBMaker,
+за промовчанням це місце, де встановлено останню версію DBMaker (наприклад,
+<code>/home/dbmaker/3.6</code>).</p>
+<p>Користувачі Windows повинні включити php_odbc.dll, щоб використовувати
+цей модуль.</p>
+</div></div></article></div></main><footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"><span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua/" class="hover:underline">Php.org.ua</a> <!-- -->© <!-- -->2022<!-- --> </span><ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"><li><a href="https://github.com/ukrainesoft/php.org.ua/blob/master/manual/md/uk/odbc.installation.md" class="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua/edit/master/manual/md/uk/odbc.installation.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></footer></div>;</div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"odbc.installation","slug":"odbc.installation.md","content":"\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"uodbc.requirements.md\"\u003e« Вимоги\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"odbc.configuration.md\"\u003eНалаштування під час виконання »\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"index.md\"\u003ePHP Manual\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\"uodbc.setup.md\"\u003eВстановлення та налаштування\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eВстановлення\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eУстановка\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e--with-adabas[=DIR]\u003c/strong\u003e\nВключити підтримку Adabas D. DIR - це каталог установки Adabas,\nзамовчуванням \u003ccode\u003e/usr/local\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-sapdb[=DIR]\u003c/strong\u003e\nУвімкнути підтримку SAP DB. DIR - каталог установки SAP DB, за замовчуванням\n\u003ccode\u003e/usr/local\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-solid[=DIR]\u003c/strong\u003e\nУвімкнути підтримку Solid. DIR - каталог установки Solid base,\nзамовчуванням \u003ccode\u003e/usr/local/solid\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-ibm-db2[=DIR]\u003c/strong\u003e\nУвімкнути підтримку IBM DB2. DIR - це каталог установки DB2,\nзамовчуванням \u003ccode\u003e/home/db2inst1/sqllib\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-empress[=DIR]\u003c/strong\u003e\nУвімкнути підтримку Empress. DIR - це каталог установки Empress,\nзамовчуванням \u003ccode\u003e$EMPRESSPATH\u003c/code\u003e. Опція підтримується лише Empress версії\n8.60 та вище.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-empress-bcs[=DIR]\u003c/strong\u003e\nВключити підтримку \u003ccode\u003eEmpress Local Access\u003c/code\u003e. DIR – це каталог установки\nEmpress, за замовчуванням \u003ccode\u003e$EMPRESSPATH\u003c/code\u003e. Опція підтримується лише\nEmpress версії 8.60 та вище.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-birdstep[=DIR]\u003c/strong\u003e\nУвімкнути підтримку Birdstep. DIR - це каталог установки Birdstep, по\nзамовчуванням \u003ccode\u003e/usr/local/birdstep\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-custom-odbc[=DIR]\u003c/strong\u003e\nВключити певну підтримку ODBC. DIR – це каталог\nустановки ODBC, за замовчуванням \u003ccode\u003e/usr/local\u003c/code\u003e. Переконайтеся, що ви визначили\nCUSTOM_ODBC_LIBS і у вас є кілька \u003ccode\u003eodbc.h\u003c/code\u003e у ваших включаються\nкаталогах. Наприклад, ви повинні визначити наступне для Sybase SQL\nAnywhere 5.5.00 в QNX перед запуском скрипта налаштування:\u003c/p\u003e\n\u003cp\u003eCPPFLAGS=\"-DODBC_QNX -DSQLANY_BUG\"\nLDFLAGS=-lunix\nCUSTOM_ODBC_LIBS=\"-ldblib-lodbc\".\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-iodbc[=DIR]\u003c/strong\u003e\nУвімкнути підтримку iODBC. DIR - це каталог установки iODBC,\nзамовчуванням \u003ccode\u003e/usr/local\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-esoob[=DIR]\u003c/strong\u003e\nУвімкнути підтримку Easysoft OOB. DIR – це каталог установки Easysoft\nOOB, за замовчуванням \u003ccode\u003e/usr/local/easysoft/oob/client\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-unixODBC[=DIR]\u003c/strong\u003e\nВключити підтримку unixODBC. DIR - це каталог установки unixODBC,\nзамовчуванням \u003ccode\u003e/usr/local\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-openlink[=DIR]\u003c/strong\u003e\nУвімкнути підтримку OpenLink ODBC. DIR – це каталог установки OpenLink,\nза замовчуванням \u003ccode\u003e/usr/local\u003c/code\u003e. Це те саме, що і iODBC.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e--with-dbmaker[=DIR]\u003c/strong\u003e\nУвімкнути підтримку DBMaker. DIR - це каталог установки DBMaker,\nза промовчанням це місце, де встановлено останню версію DBMaker (наприклад,\n\u003ccode\u003e/home/dbmaker/3.6\u003c/code\u003e).\u003c/p\u003e\n\u003cp\u003eКористувачі Windows повинні включити php_odbc.dll, щоб використовувати\nцей модуль.\u003c/p\u003e\n"}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"odbc.installation.md"},"buildId":"Et_upXdD_6v5-RGWMZlWR","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

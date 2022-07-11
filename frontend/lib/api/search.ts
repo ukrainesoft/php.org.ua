@@ -15,7 +15,7 @@ export async function getSearchResult(query: string): Promise<SearchResult[]> {
     result.push({
       name: item.name,
       // TODO refactor
-      path: '/' + item.path.replace('/md/', '/'),
+      path: '/' + item.path.replace('md/', 'manual/'),
       text: item.text_matches[0].fragment,
     })
   }

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import SearchBar from './searchbar'
 
 type Link = {
@@ -32,13 +33,13 @@ export default () => (
     </a>
 
     {links.map(({ title, href }) => (
-      <a
+      <Link
         className="text-gray-900 dark:text-gray-100 sm:p-4"
         href={href}
         key={href}
       >
-        {title}
-      </a>
+        <a>{title}</a>
+      </Link>
     ))}
 
     <SearchBar />

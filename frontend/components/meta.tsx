@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { CMS_TITLE, CMS_WESITE_NAME } from '../lib/constants'
 
 const Meta = () => {
   return (
@@ -32,7 +31,10 @@ const Meta = () => {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content={`${CMS_WESITE_NAME} - ${CMS_TITLE}.`} />
+      <meta
+        name="description"
+        content={`${process.env.NEXT_PUBLIC_WEBSITE_NAME} - ${process.env.NEXT_PUBLIC_WEBSITE_TITLE}.`}
+      />
     </Head>
   )
 }

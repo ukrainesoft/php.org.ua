@@ -4,15 +4,13 @@ type Props = {
   content: string
 }
 
-const PostBody = ({ content }: Props) => {
+export default ({ content }: Props) => {
   return (
-    <div className="mx-auto">
+    <article className="mx-auto">
       <div
         className={markdownStyles['markdown']}
         dangerouslySetInnerHTML={{ __html: content }}
       />
-    </div>
+    </article>
   )
 }
-
-export default PostBody

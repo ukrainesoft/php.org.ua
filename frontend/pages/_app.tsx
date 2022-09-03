@@ -44,7 +44,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <NextNProgress color={PROGRESS_BAR_COLOR} />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   )
 }

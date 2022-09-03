@@ -1,4 +1,3 @@
-import { CMS_WESITE_NAME } from '../lib/constants'
 import SearchBar from './searchbar'
 
 type Link = {
@@ -9,12 +8,16 @@ type Link = {
 // TODO Move to l10n
 const links: Link[] = [
   {
+    title: 'PHP Правильний Шлях',
+    href: '/php-the-right-way',
+  },
+  {
     title: 'Документація',
     href: '/manual/uk/index.md',
   },
   {
     title: 'Про проєкт',
-    href: 'https://github.com/ukrainesoft/php.org.ua',
+    href: '/about',
   },
 ]
 
@@ -25,7 +28,7 @@ export default () => (
       className="text-2xl font-semibold block text-indigo-800"
       href="/"
     >
-      {CMS_WESITE_NAME}
+      {process.env.NEXT_PUBLIC_WEBSITE_NAME}
     </a>
 
     {links.map(({ title, href }) => (

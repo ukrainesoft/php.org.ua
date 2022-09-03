@@ -1,71 +1,34 @@
-import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
-import Container from '../../../components/container'
-import PostBody from '../../../components/post-body'
-import Layout from '../../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../../lib/api/page'
-import PostTitle from '../../../components/post-title'
-import Head from 'next/head'
-import { CMS_TITLE, CMS_WESITE_NAME } from '../../../lib/constants'
-import markdownToHtml from '../../../lib/markdownToHtml'
-import PostType from '../../../types/post'
+import { manualPageRepository } from '../../../lib/api/local/LocalMarkdownPageRepository'
+import { Params } from 'next/dist/server/router'
+import { markdownFormatter } from '../../../lib/formatter/formatters'
+import { PageProps } from '../../../types/pageProps'
+import Page from '../../../components/page'
+import GithubButtons from '../../../components/github-buttons'
 
-type Props = {
-  post: PostType
-  preview?: boolean
-}
-
-const Post = ({ post }: Props) => {
-  const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
-  }
+export default ({ page }: PageProps) => {
   return (
-    <Layout>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>
-                  {post.title} | {CMS_WESITE_NAME} {CMS_TITLE}
-                </title>
-              </Head>
-              <PostBody content={post.content} />
-            </article>
-          </>
-        )}
-      </Container>
-    </Layout>
+    <>
+      <Page page={page}>
+        <GithubButtons />
+      </Page>
+    </>
   )
 }
 
-export default Post
-
-type Params = {
-  params: {
-    slug: string
-  }
-}
-
-export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, ['title', 'slug', 'content'])
-  const content = await markdownToHtml(post.content || '')
+export async function getStaticProps({ params: { slug } }: Params) {
+  const page = await markdownFormatter.format(
+    await manualPageRepository.getPageBySlug(slug)
+  )
 
   return {
     props: {
-      post: {
-        ...post,
-        content,
-      },
+      page,
     },
   }
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = await manualPageRepository.getAllPages()
 
   return {
     paths: posts.map((post) => {

@@ -17,7 +17,7 @@ export default ({ page, children }: PageProps) => {
     <PageTitle>Loading…</PageTitle>
   ) : (
     <Base title={title}>
-      <PageBody content={page.content}></PageBody>
+      <PageBody page={page} />
       {children}
     </Base>
   )

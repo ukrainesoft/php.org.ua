@@ -1,5 +1,5 @@
 import matter from 'gray-matter'
-import Page from '../../../types/page'
+import Page, { PageContentType } from '../../../types/page'
 import { PagesRepositoryInterface } from '../PagesRepositoryInterface'
 import { fetchTextData } from './fetchTextData'
 import { pagesUrls, Url } from './PagesUrls'
@@ -28,6 +28,7 @@ export class WebPageRepository implements PagesRepositoryInterface {
       content,
       title: pageUri.title || data.title || slug.replace(/\.md$/, ''),
       navigation: data.navigation,
+      contentType: PageContentType.md,
     }
   }
 

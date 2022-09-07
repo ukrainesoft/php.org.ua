@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import NextNProgress from 'nextjs-progressbar'
 import '../styles/index.css'
+import 'highlight.js/styles/a11y-dark.css'
+
 import * as gtag from '../lib/gtag'
 import Script from 'next/script'
 

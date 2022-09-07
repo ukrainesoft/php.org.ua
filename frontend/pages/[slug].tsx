@@ -3,7 +3,6 @@ import PageComponent from '../components/page'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Page from '../types/page'
-import { markdownFormatter } from '../lib/formatter/formatters'
 
 export default (props: any) => {
   const router = useRouter()
@@ -12,9 +11,7 @@ export default (props: any) => {
     ;(async () => {
       // TODO Security & page type check for formatter
       try {
-        const page = await markdownFormatter.format(
-          await webPageRepository.getPageBySlug(router.asPath)
-        )
+        const page = await webPageRepository.getPageBySlug(router.asPath)
         setPage(page)
       } catch (err) {
         console.log(err)

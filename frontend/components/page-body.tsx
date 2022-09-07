@@ -1,16 +1,19 @@
+import React from 'react'
+import { ReactElement } from 'rehype-react/lib'
+import markdownToReact from '../lib/markdownToReact'
+import Page, { PageContentType } from '../types/page'
 import markdownStyles from './markdown-styles.module.css'
 
 type Props = {
-  content: string
+  page: Page
 }
 
-export default ({ content }: Props) => {
-  return (
-    <article className="mx-auto">
-      <div
-        className={markdownStyles['markdown']}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </article>
-  )
+export default ({ page }: Props) => {
+  const content: ReactElement =
+    page.contentType === PageContentType.md ? (
+      markdownToReact(page.content)
+    ) : (
+      <>{page.content}</>
+    )
+  return <article className={markdownStyles['markdown']}>{content}</article>
 }

@@ -1,6 +1,5 @@
 import { manualPageRepository } from '../../../lib/api/local/LocalMarkdownPageRepository'
 import { Params } from 'next/dist/server/router'
-import { markdownFormatter } from '../../../lib/formatter/formatters'
 import { PageProps } from '../../../types/pageProps'
 import Page from '../../../components/page'
 import GithubButtons from '../../../components/github-buttons'
@@ -16,9 +15,7 @@ export default ({ page }: PageProps) => {
 }
 
 export async function getStaticProps({ params: { slug } }: Params) {
-  const page = await markdownFormatter.format(
-    await manualPageRepository.getPageBySlug(slug)
-  )
+  const page = await manualPageRepository.getPageBySlug(slug)
 
   return {
     props: {

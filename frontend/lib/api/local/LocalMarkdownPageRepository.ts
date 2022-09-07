@@ -2,7 +2,7 @@ import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 import { PagesRepositoryInterface } from '../PagesRepositoryInterface'
-import Page from '../../../types/page'
+import Page, { PageContentType } from '../../../types/page'
 
 export default class LocalMarkdownPageRepository
   implements PagesRepositoryInterface
@@ -17,11 +17,12 @@ export default class LocalMarkdownPageRepository
     const fullPath = join(this.dir, `${slug}`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
-    const page = {
+    const page: Page = {
       slug,
       content,
       title: data.title || slug.replace(/\.md$/, ''),
       navigation: data.navigation,
+      contentType: PageContentType.md,
     }
 
     return page

@@ -8,7 +8,7 @@ export const getStaticProps = async () => {
   })
 
   props.page.content =
-    props.page.content.replace(/href=\"/gim, 'href="/manual/uk/') || ''
+    props.page.content.replace(/\]\(/gim, '](/manual/uk/') || ''
 
   return { props }
 }

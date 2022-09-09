@@ -64,7 +64,7 @@ const SearchBar = ({ className }: { className?: string }) => {
               </Link>
             ))}
           </div>
-          <div className="border-t border-slate-400/20 py-3 px-3.5"></div>
+          <div className="border-t border-slate-400/20 py-3 px-3.5 overflow-hidden max-w-full"></div>
         </>
       )}
     </div>

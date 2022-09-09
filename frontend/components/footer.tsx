@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-white rounded-tl-lg rounded-tr-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+    <footer className="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800">
       <div className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
         <a
           href={process.env.NEXT_PUBLIC_WEBSITE_HOST}

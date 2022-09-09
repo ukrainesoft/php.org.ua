@@ -1,14 +1,3 @@
-import { getStaticProps as getStaticPropsOfManualPage } from './manual/uk/[slug]'
+import Base from '../components/base'
 
-export { default } from '../components/page'
-
-export const getStaticProps = async () => {
-  const { props } = await getStaticPropsOfManualPage({
-    params: { slug: 'index.md' },
-  })
-
-  props.page.content =
-    props.page.content.replace(/\]\(/gim, '](/manual/uk/') || ''
-
-  return { props }
-}
+export default () => <Base title="PHP Українською">{''}</Base>

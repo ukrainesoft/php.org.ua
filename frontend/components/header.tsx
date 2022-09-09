@@ -7,7 +7,7 @@ type Link = {
 }
 
 // TODO Move to l10n
-const links: Link[] = [
+export const links: Link[] = [
   {
     title: 'PHP Правильний Шлях',
     href: '/php-the-right-way',
@@ -22,26 +22,41 @@ const links: Link[] = [
   },
 ]
 
-export default () => (
-  <header className="flex items-center justify-between py-10 h-5 border-b border-indigo-800">
-    <a
-      aria-label="php.org.ua"
-      className="text-2xl font-semibold block text-indigo-800"
-      href="/"
+type Props = {
+  className: string
+}
+export default ({ className }: Props) => (
+  <div className={'flex flex-col mx-auto ' + className}>
+    <nav
+      className="py-4 bg-white/80
+          backdrop-blur-md shadow-md w-full
+          fixed top-0 left-0 right-0 z-10"
     >
-      {process.env.NEXT_PUBLIC_WEBSITE_NAME}
-    </a>
-
-    {links.map(({ title, href }) => (
-      <Link
-        className="text-gray-900 dark:text-gray-100 sm:p-4"
-        href={href}
-        key={href}
-      >
-        <a>{title}</a>
-      </Link>
-    ))}
-
-    <SearchBar />
-  </header>
+      <div className="flex justify-between mx-auto max-w-3xl xl:max-w-5xl">
+        <div className="flex space-x-10">
+          <div className="flex items-center">
+            <a className="cursor-pointer" href="/">
+              <h3 className="text-2xl font-medium text-sky-600">
+                {process.env.NEXT_PUBLIC_WEBSITE_NAME}
+              </h3>
+            </a>
+          </div>
+          <div className="items-center hidden space-x-8 lg:flex justify-start">
+            {links.map(({ title, href }) => (
+              <Link
+                className="text-gray-900 dark:text-gray-100 sm:p-4"
+                href={href}
+                key={href}
+              >
+                <a>{title}</a>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center space-x-5">
+          <SearchBar />
+        </div>
+      </div>
+    </nav>
+  </div>
 )

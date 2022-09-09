@@ -8,8 +8,8 @@ import 'highlight.js/styles/a11y-dark.css'
 import * as gtag from '../lib/gtag'
 import Script from 'next/script'
 
-// TODO Use Tailwind config, indigo-600
-const PROGRESS_BAR_COLOR = '#4f46e5'
+// TODO Use Tailwind config, sky-600
+const PROGRESS_BAR_COLOR = '#0284c7'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()

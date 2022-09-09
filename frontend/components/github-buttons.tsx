@@ -20,7 +20,7 @@ export default () => {
       <li>
         <a
           href={getGithubUrl('blob', slug)}
-          className="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+          className="mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
           target="_blank"
         >
           {FOOTER_ARTICLE_LINK_TO_VIEW}

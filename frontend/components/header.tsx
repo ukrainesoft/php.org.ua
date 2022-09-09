@@ -36,7 +36,7 @@ export default ({ className }: Props) => (
         <div className="flex space-x-10">
           <div className="flex items-center">
             <a className="cursor-pointer" href="/">
-              <h3 className="text-2xl font-medium text-sky-600">
+              <h3 className="text-2xl font-bold text-sky-600 font-logo italic">
                 {process.env.NEXT_PUBLIC_WEBSITE_NAME}
               </h3>
             </a>

@@ -5,13 +5,14 @@ const resultClasses = [
   'bg-gray-800',
   'p-5',
   'w-full',
-  'rounded',
+  'rounded-lg',
 ]
 const resultClass = [...resultClasses, 'text-left', 'overflow-y-scroll']
 const resultClassLoading = [
   ...resultClasses,
-  // TODO Justify center in block
   'justify-center',
+  'flex',
+  'flex-row',
 ]
 
 type Props = {

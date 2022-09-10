@@ -22,9 +22,12 @@ export default function ({
         defaultLanguage="php"
         theme="vs-dark"
         defaultValue={defaultCode}
-        className="rounded my-2"
+        className="rounded"
         onChange={(value) => {
           setCode(value || '')
+        }}
+        wrapperProps={{
+          className: 'rounded-t-lg rounded-l-lg overflow-hidden',
         }}
       />
       <div className="self-end mb-2">

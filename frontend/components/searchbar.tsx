@@ -48,14 +48,14 @@ const SearchBar = ({ className }: { className?: string }) => {
       </div>
       {result.length > 0 && (
         <>
-          <div className="border-t border-slate-400/20 py-3 px-3.5">
+          <div className="border-t border-slate-400/20 py-3 px-3.5 absolute bg-white left-0 sm:left-auto">
             <div className="mb-1.5 text-[0.6875rem] font-semibold text-slate-500">
               {TEXT_SEARCH_FORM_SEARCH_RESULT_TITLE}
             </div>
             {result.map((item) => (
               <Link href={item.path} key={item.name}>
                 <div
-                  className="rounded-md p-1.5 border-t cursor-pointer hover:bg-indigo-800 hover:text-gray-100"
+                  className="rounded-md p-1.5 border-t cursor-pointer hover:bg-sky-800 hover:text-gray-100"
                   onClick={() => resetForm()}
                 >
                   <div className="font-semibold">{item.name}</div>

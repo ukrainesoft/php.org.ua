@@ -16,7 +16,7 @@ export default ({
 }: PropType) => {
   return (
     <button
-      className="text-white text-xl font-bold text-center bg-sky-500 hover:bg-sky-700 py-2 px-4 rounded"
+      className="sm:mx-3 bg-sky-800 hover:bg-sky-900 font-bold border-sky text-white p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0 rounded-b-lg"
       onClick={async () => {
         onProcessingStart(code)
         onProcessingEnd(await codeRunner(code))

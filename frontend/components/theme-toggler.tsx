@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 // useTheme depends on the localStorage, so there should be handling
 // of the mounting event (useEffect in a functional component)
-export const ThemeToggler = () => {
+export default () => {
   const { setTheme, resolvedTheme } = useTheme()
   const [loaded, setLoaded] = useState(false)
   useEffect(() => setLoaded(true), [])
@@ -24,7 +24,7 @@ export const ThemeToggler = () => {
   return (
     <DarkModeIcon
       onClick={() => setTheme('dark')}
-      className="cursor-pointer text-gray-800"
+      className="cursor-pointer text-gray-600"
     />
   )
 }

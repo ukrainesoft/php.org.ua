@@ -3,7 +3,7 @@ import SearchBar from './searchbar'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import { useState } from 'react'
-import { ThemeToggler } from './theme-changer'
+import ThemeToggler from './theme-toggler'
 
 type Link = {
   title: string
@@ -52,7 +52,7 @@ export default ({ className }: Props) => {
             <ul
               className={
                 (showMenu ? '' : 'hidden') +
-                ' items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative p-5 sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right'
+                ' items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right'
               }
             >
               <li className="sm:hidden items-end p-5 sm:p-0">

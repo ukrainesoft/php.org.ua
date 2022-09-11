@@ -5,7 +5,7 @@ type Props = {
 }
 
 export default ({ children }: Props) => (
-  <div className="container mx-auto p-5 bg-[url('/hero-bg.svg')] bg-opacity-50">
+  <div className="container mx-auto p-5 bg-[url('/hero-bg.svg')]">
     {children}
   </div>
 )

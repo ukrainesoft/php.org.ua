@@ -4,6 +4,8 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeHightlight from 'rehype-highlight'
 import rehypeReact from 'rehype-react'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
 import { ReactElement } from 'rehype-react/lib'
 import CodeRunner from '../editor/CodeRunner'
@@ -25,6 +27,8 @@ export default function markdownToReact(markdown: string): ReactElement {
     })
     .use(remarkParse)
     .use(remarkRehype, { allowDangerousHtml: true })
+    .use(remarkGfm)
+    .use(rehypeRaw)
     .use(rehypeHightlight, { ignoreMissing: true, plainText: ['php'] })
     .processSync(markdown)
 

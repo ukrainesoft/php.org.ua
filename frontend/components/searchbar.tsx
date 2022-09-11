@@ -15,11 +15,11 @@ const SearchBar = ({ className }: { className?: string }) => {
   return (
     <div
       className={
-        'pointer-events-auto w-full rounded-lg bg-white text-[0.8125rem] leading-5 text-slate-700 ring-1 ring-slate-700/10 ' +
+        'pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 ' +
         className
       }
     >
-      <div className="flex items-center py-2.5 px-3.5 text-slate-400">
+      <div className="flex items-center py-2.5 px-3.5">
         <svg
           className="mr-2 h-5 w-5 stroke-slate-500"
           fill="none"
@@ -34,7 +34,7 @@ const SearchBar = ({ className }: { className?: string }) => {
         </svg>
         <input
           type="text"
-          className="outline-none block w-full h-full"
+          className="outline-none block w-full h-full dark:bg-gray-600"
           placeholder={TEXT_SEARCH_FORM_INPUT_PLACEHOLDER}
           value={query}
           onChange={async (e) => {
@@ -48,8 +48,8 @@ const SearchBar = ({ className }: { className?: string }) => {
       </div>
       {result.length > 0 && (
         <>
-          <div className="border-t border-slate-400/20 py-3 px-3.5 absolute bg-white left-0 sm:left-auto">
-            <div className="mb-1.5 text-[0.6875rem] font-semibold text-slate-500">
+          <div className="border-t border-slate-400/20 py-3 px-3.5 absolute bg-white dark:bg-gray-800 left-0 sm:left-auto">
+            <div className="mb-1.5 text-[0.6875rem] font-semibold ">
               {TEXT_SEARCH_FORM_SEARCH_RESULT_TITLE}
             </div>
             {result.map((item) => (

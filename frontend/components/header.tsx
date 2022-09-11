@@ -3,6 +3,7 @@ import SearchBar from './searchbar'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import { useState } from 'react'
+import { ThemeToggler } from './theme-changer'
 
 type Link = {
   title: string
@@ -36,13 +37,14 @@ export default ({ className }: Props) => {
       <nav
         className="py-3 bg-white/80
           backdrop-blur-md shadow-md w-full
+          dark:bg-gray-800
           fixed top-0 left-0 right-0 z-10"
       >
         <div className="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl">
           <div className="flex space-x-10 flex-row">
             <div className="flex items-center">
               <a className="cursor-pointer" href="/">
-                <h3 className="text-2xl font-bold text-sky-600 font-logo italic">
+                <h3 className="text-2xl font-bold font-logo italic">
                   {process.env.NEXT_PUBLIC_WEBSITE_NAME}
                 </h3>
               </a>
@@ -50,7 +52,7 @@ export default ({ className }: Props) => {
             <ul
               className={
                 (showMenu ? '' : 'hidden') +
-                ' items-center md:space-x-8 md:justify-start md:flex bg-white w-full sm:w-auto flex-column fixed sm:relative p-5 sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right'
+                ' items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative p-5 sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right'
               }
             >
               <li className="sm:hidden items-end p-5 sm:p-0">
@@ -72,8 +74,9 @@ export default ({ className }: Props) => {
               ))}
             </ul>
           </div>
-          <div className="flex items-center">
+          <div className="flex justify-end space-x-2 items-center">
             <SearchBar />
+            <ThemeToggler />
           </div>
           <div className="flex items-center sm:hidden">
             <MenuIcon onClick={toggleMenu} />

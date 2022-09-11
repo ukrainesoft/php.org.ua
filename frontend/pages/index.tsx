@@ -15,23 +15,23 @@ echo implode(" ", $words)."\\n";
 
 export default () => (
   <Base title="PHP Українською">
-    <div className="flex flex-col items-center bg-[url('/hero-bg.svg')] bg-repeat">
+    <div className="flex flex-col items-center bg-opacity-10 bg-repeat">
       <div className="flex flex-row text-center items-center justify-center align-bottom">
-        <div className="text-9xl font-logo italic text-sky-600  mt-10 font-bold w-full">
+        <div className="text-9xl font-logo italic text-sky-600 dark:text-sky-500 mt-5 font-bold w-full">
           php
         </div>
       </div>
-      <div className=" text-sky-700 text-center m-5">
+      <div className=" text-sky-700 dark:text-sky-500 text-center m-5 dark:bg-black bg-white p-2">
         Тут ви оволодієте навичками PHP розробника
       </div>
 
-      <div className="flex flex-col w-full bg-white sm:p-5">
-        <div className="text-3xl mb-6 self-center">
+      <div className="flex flex-col w-full bg-white dark:bg-gray-800 sm:p-5 rounded-lg">
+        <div className="text-2xl mb-5 self-center text-center">
           Що тут є, чого немає на офіційному сайті?
         </div>
-        <div className="flex flex-row">
-          <div className="w-1/2 hidden sm:block text-center">
-            <ul className="list-disc text-start">
+        <div className="flex flex-col sm:flex-row">
+          <div className="w-full sm:w-1/2 text-center">
+            <ul className="list-disc text-start p-2">
               <li>Документація Українською 💛💙</li>
               <li>Найкращі практики програмування</li>
               <li>Відповіді на типові питання на співбесідах</li>

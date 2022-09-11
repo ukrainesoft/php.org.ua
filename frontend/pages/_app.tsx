@@ -2,6 +2,8 @@ import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 import NextNProgress from 'nextjs-progressbar'
+import { ThemeProvider } from 'next-themes'
+
 import '../styles/index.css'
 import 'highlight.js/styles/a11y-dark.css'
 
@@ -51,7 +53,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <NextNProgress color={PROGRESS_BAR_COLOR} />
-      <Component {...pageProps} />
+      <ThemeProvider attribute="class" enableSystem={true}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

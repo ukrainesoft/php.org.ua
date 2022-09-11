@@ -24,5 +24,5 @@ export default function ({ result, loading }: Props) {
   if (loading) {
     return <div className={resultClassLoading.join(' ')}>{Spinner}</div>
   }
-  return result ? <div className={resultClass.join(' ')}>{result}</div> : <></>
+  return result ? <pre className={resultClass.join(' ')}>{result}</pre> : <></>
 }

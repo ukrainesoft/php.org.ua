@@ -5,7 +5,11 @@ type Props = {
 }
 
 const Container: FunctionComponent = ({ children }: Props) => {
-  return <div className="container mx-auto py-5">{children}</div>
+  return (
+    <div className="container mx-auto p-5 bg-[url('/hero-bg.svg')]">
+      {children}
+    </div>
+  )
 }
 
 export default Container

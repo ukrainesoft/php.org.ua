@@ -12,16 +12,16 @@ type Link = {
 // TODO Move to l10n
 export const links: Link[] = [
   {
-    title: 'PHP Правильний Шлях',
-    href: '/php-the-right-way',
-  },
-  {
     title: 'Документація',
     href: '/manual/uk/index.md',
   },
   {
     title: 'Про проєкт',
     href: '/about',
+  },
+  {
+    title: 'PHP Правильний Шлях',
+    href: '/php-the-right-way',
   },
 ]
 
@@ -34,7 +34,7 @@ export default ({ className }: Props) => {
   return (
     <div className={'flex flex-col mx-auto ' + className}>
       <nav
-        className="py-4 bg-white/80
+        className="py-3 bg-white/80
           backdrop-blur-md shadow-md w-full
           fixed top-0 left-0 right-0 z-10"
       >
@@ -57,7 +57,10 @@ export default ({ className }: Props) => {
                 <CloseIcon onClick={toggleMenu} />
               </li>
               {links.map(({ title, href }) => (
-                <li className="items-center border-b sm:border-0 justify-center p-5 sm:p-0">
+                <li
+                  className="items-center border-t sm:border-0 justify-center p-5 sm:p-0"
+                  key={href}
+                >
                   <Link
                     className="text-gray-900 dark:text-gray-100 sm:p-4"
                     href={href}

@@ -1,8 +1,8 @@
 import { manualPageRepository } from '../../../lib/api/local/LocalMarkdownPageRepository'
-import { Params } from 'next/dist/server/router'
 import { PageProps } from '../../../types/pageProps'
 import Page from '../../../components/page'
 import GithubButtons from '../../../components/github-buttons'
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher'
 
 export default ({ page }: PageProps) => {
   return (

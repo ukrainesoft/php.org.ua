@@ -3,6 +3,7 @@ import Spinner from './Spinner'
 const resultClasses = [
   'text-gray-300',
   'bg-gray-800',
+  'dark:bg-gray-900',
   'p-5',
   'w-full',
   'rounded-lg',

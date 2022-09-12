@@ -1,15 +1,22 @@
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import NextNProgress from 'nextjs-progressbar'
+import { ThemeProvider } from 'next-themes'
+
 import '../styles/index.css'
 import 'highlight.js/styles/a11y-dark.css'
 
 import * as gtag from '../lib/gtag'
 import Script from 'next/script'
 
-// TODO Use Tailwind config, indigo-600
-const PROGRESS_BAR_COLOR = '#4f46e5'
+// TODO Use Tailwind config, sky-600
+const PROGRESS_BAR_COLOR = '#0284c7'
+
+// Only to handle Xarrow on the main page without errors
+if (typeof document === 'undefined') {
+  React.useLayoutEffect = React.useEffect
+}
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -46,7 +53,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <NextNProgress color={PROGRESS_BAR_COLOR} />
-      <Component {...pageProps} />
+      <ThemeProvider attribute="class" enableSystem={true}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

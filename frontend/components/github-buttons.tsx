@@ -16,11 +16,11 @@ export default () => {
   }
 
   return (
-    <ul className="flex flex-wrap justify-end m-5 text-sm text-gray-500 dark:text-gray-400">
-      <li>
+    <ul className="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400">
+      <li className="w-max-full space-y-5 m-5">
         <a
           href={getGithubUrl('blob', slug)}
-          className="mx-3 bg-indigo-800 hover:bg-white hover:text-indigo-800 border border-indigo text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+          className="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0"
           target="_blank"
         >
           {FOOTER_ARTICLE_LINK_TO_VIEW}

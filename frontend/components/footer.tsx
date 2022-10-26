@@ -17,7 +17,11 @@ const Footer = () => {
         >
           {process.env.NEXT_PUBLIC_WEBSITE_DOMAIN}
         </a>{' '}
-        © {new Date().getFullYear()}{' '}
+        © {new Date().getFullYear()}
+        {' by '}
+        <a href="https://lisdev.com" target="_blank">
+          lisdev
+        </a>
       </div>
 
       <div className="items-center space-x-4">

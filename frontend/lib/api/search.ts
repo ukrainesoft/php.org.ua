@@ -1,4 +1,4 @@
-import { getSearchResult as getSearchResultGitHub } from './github/api'
+import { fetchGithubText } from './external/transport/fetchGithubRawText'
 
 export type SearchResult = {
   name: string
@@ -7,7 +7,7 @@ export type SearchResult = {
 }
 export async function getSearchResult(query: string): Promise<SearchResult[]> {
   let result: SearchResult[] = []
-  let githubResponse = await getSearchResultGitHub(query)
+  let githubResponse = JSON.parse(await fetchGithubText(query))
   if (!githubResponse.items) {
     return result
   }

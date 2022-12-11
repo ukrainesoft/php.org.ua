@@ -52,8 +52,8 @@ const SearchBar = ({ className }: { className?: string }) => {
             <div className="mb-1.5 text-[0.6875rem] font-semibold ">
               {TEXT_SEARCH_FORM_SEARCH_RESULT_TITLE}
             </div>
-            {result.map((item) => (
-              <Link href={item.path} key={item.name}>
+            {result.map((item, i) => (
+              <Link href={item.path} key={i}>
                 <div
                   className="rounded-md p-1.5 border-t cursor-pointer hover:bg-sky-800 hover:text-gray-100"
                   onClick={() => resetForm()}

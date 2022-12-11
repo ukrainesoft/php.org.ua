@@ -1,15 +1,22 @@
 import { EventSourcePolyfill } from 'event-source-polyfill'
 import { v4 as uuidv4 } from 'uuid'
 
-const loginEndpoint = process.env.NEXT_PUBLIC_CODE_RUNNER_LOGIN_ENDPOINT || ''
+type RunnerResponseType = {
+  result: {
+    output: string
+    slug: string
+  }
+}
+
+const loginEndpoint = process.env.NEXT_PUBLIC_CODE_RUNNER_AUTH_ENDPOINT || ''
 const codeRunEndpoint = process.env.NEXT_PUBLIC_CODE_RUNNER_ENDPOINT || ''
 
 /**
  *  Code handling is done by the next way:
  *  1. Anonymous user generate uuid
- *  2. Post it to https://run.php.band/login. Receives 1. from link header mercure hub 2. in jwt body topic to which subscribe to get responses
+ *  2. Post it to VITE_CODE_RUNNER_LOGIN_ENDPOINT. Receives 1. from link header mercure hub 2. in jwt body topic to which subscribe to get responses
  *  3. Subscribe to the getted hub to the particular topic (get from the jwt) with header Authorize: Bearer <jwt> (got earlier, need to authorize on the Mercure hub)
- *  4. Send via POST request body to https://run.php.band/ . This request adds code to the queue to handle
+ *  4. Send via POST request body to VITE_CODE_RUNNER_ENDPOINT . This request adds code to the queue to handle
  *  5. Wait for response from Mercure hub
  */
 export default async function (code: string): Promise<string> {
@@ -42,8 +49,9 @@ export default async function (code: string): Promise<string> {
         }
       }
       eventSource.onmessage = (event: any) => {
-        resolve(event.data)
         console.log(event.data)
+        const data = JSON.parse(event.data) as RunnerResponseType
+        resolve(data.result.output)
         eventSource.close()
       }
     } catch (e) {
@@ -70,9 +78,10 @@ function createEventSourceConnection(jwt: string) {
 async function sendCodeToServer(code: string, jwt: string) {
   await fetch(codeRunEndpoint, {
     method: 'POST',
-    body: code,
+    body: JSON.stringify({ code }),
     headers: {
       Authorization: 'Bearer ' + jwt,
+      'Content-type': 'application/json',
     },
   })
 }

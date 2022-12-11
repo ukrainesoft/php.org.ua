@@ -5,19 +5,16 @@ export type SearchResult = {
   path: string
   text: string
 }
-export async function getSearchResult(query: string): Promise<SearchResult[]> {
-  let result: SearchResult[] = []
-  let githubResponse = JSON.parse(await fetchGithubText(query))
+export async function getSearchResult(text: string): Promise<SearchResult[]> {
+  let githubResponse = JSON.parse(await fetchGithubText(text))
   if (!githubResponse.items) {
-    return result
+    return []
   }
-  for (const item of githubResponse.items) {
-    result.push({
-      name: item.name,
-      // TODO refactor
-      path: '/' + item.path.replace('md/', 'manual/'),
-      text: item.text_matches[0].fragment,
-    })
-  }
-  return result
+
+  return githubResponse.items.map((item: any) => ({
+    name: item.name,
+    // TODO refactor
+    path: '/' + item.path.replace('md/', 'manual/'),
+    text: item.text_matches[0].fragment,
+  }))
 }

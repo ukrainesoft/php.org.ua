@@ -68,7 +68,7 @@ export default () => (
       </div>
       <div className="grid grid-cols-2 bg-white dark:bg-gray-800 sm:p-5 rounded-lg">
         {faqs.map((faq, i) => (
-          <figure className="m-2 flex flex-row items-start">
+          <figure className="m-2 flex flex-row items-start" key={i}>
             <img
               src={faq.imgUrl}
               alt=""

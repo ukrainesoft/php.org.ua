@@ -1,7 +1,7 @@
 import matter from 'gray-matter'
 import Page, { PageContentType } from '../../../../types/page'
 import { Link } from '../PagesLinks'
-import { fetchGithubText } from '../transport/fetchGithubRawText'
+import { fetchGithubMdFile } from '../transport/fetchGithubMdFile'
 import { ClientInterface } from '../ClientInterface'
 
 export class GithubMdPageClient implements ClientInterface {
@@ -27,4 +27,4 @@ export class GithubMdPageClient implements ClientInterface {
   }
 }
 
-export const githubMdPageClient = new GithubMdPageClient(fetchGithubText)
+export const githubMdPageClient = new GithubMdPageClient(fetchGithubMdFile)

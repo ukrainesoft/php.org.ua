@@ -4,6 +4,7 @@ import PageTitle from './page-title'
 import { PageProps } from '../types/pageProps'
 import Base from './base'
 import PageBody from './page-body'
+import PageBreadcrumbs from './page-breadcrumbs'
 
 export default ({ page, children }: PageProps) => {
   const router = useRouter()
@@ -17,6 +18,7 @@ export default ({ page, children }: PageProps) => {
     <PageTitle>Loading…</PageTitle>
   ) : (
     <Base title={title}>
+      <PageBreadcrumbs page={page} />
       <PageBody page={page} />
       {children}
     </Base>

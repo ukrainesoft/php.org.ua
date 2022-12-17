@@ -2,7 +2,7 @@ type Page = {
   slug: string
   title: string
   content: string
-  navigation?: Record<string, string>
+  navigation?: Record<string, string>[]
   contentType: PageContentType
 }
 

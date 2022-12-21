@@ -1,3 +1,5 @@
+import { PageLinkNotFoundError } from './errors/PageLinkNotFoundError'
+
 export type Link = {
   slug: string
   title: string
@@ -25,3 +27,11 @@ export const pagesLinks: Link[] = [
     url: 'https://api.telegra.ph/getPage/Polіtika-konfіdencіjnostі-10-26?return_content=true',
   },
 ]
+
+export const findLinkBySlug = (slug: string) => {
+  const page = pagesLinks.find((link: Link) => link.slug === slug)
+  if (page) {
+    return page
+  }
+  throw new PageLinkNotFoundError(`Page with slug ${slug} not found`)
+}

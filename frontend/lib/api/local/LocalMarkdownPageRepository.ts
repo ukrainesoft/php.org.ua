@@ -21,8 +21,10 @@ export default class LocalMarkdownPageRepository
       slug,
       content,
       title: data.title || slug.replace(/\.md$/, ''),
-      navigation: data.navigation,
       contentType: PageContentType.md,
+    }
+    if (data.navigation) {
+      page.navigation = data.navigation
     }
 
     return page
@@ -38,4 +40,8 @@ export default class LocalMarkdownPageRepository
 
 export const manualPageRepository = new LocalMarkdownPageRepository(
   join(process.cwd(), '../manual/md/uk')
+)
+
+export const releasesPageRepository = new LocalMarkdownPageRepository(
+  join(process.cwd(), '../releases/md/uk')
 )

@@ -3,6 +3,7 @@ import { PageProps } from '../../../types/pageProps'
 import Page from '../../../components/page'
 import GithubButtons from '../../../components/github-buttons'
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher'
+import { createSearchIndex } from '../../../utils/createSearchIndex'
 
 export default ({ page }: PageProps) => {
   return (
@@ -16,6 +17,9 @@ export default ({ page }: PageProps) => {
 
 export async function getStaticProps({ params: { slug } }: Params) {
   const page = await manualPageRepository.getPageBySlug(slug)
+  if (slug === 'indexes.functions.md') {
+    createSearchIndex(page)
+  }
 
   return {
     props: {

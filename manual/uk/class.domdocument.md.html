@@ -1,0 +1,441 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас DOMDocument</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="domcomment.construct.md" class="mx-4">« DOMComment::\_\_construct</a><a href="domdocument.adoptnode.md" class="mx-4">DOMDocument::adoptNode »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.dom.md" class="mx-4">DOM</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас DOMDocument</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<h2>Вступ</h2>
+<p>Подає весь HTML- або XML-документ; корінь дерева документа.</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+    
+     class DOMDocument
+    
+
+    
+     extends
+      DOMNode
+    
+
+    
+     implements
+      DOMParentNode {
+
+    /* Свойства */
+    
+     public
+     readonly
+     ?DOMDocumentType
+      $doctype;
+
+    public
+     readonly
+     DOMImplementation
+      $implementation;
+
+    public
+     readonly
+     ?DOMElement
+      $documentElement;
+
+    public
+     readonly
+     ?string
+      $actualEncoding;
+
+    public
+     ?string
+      $encoding;
+
+    public
+     readonly
+     ?string
+      $xmlEncoding;
+
+    public
+     bool
+      $standalone;
+
+    public
+     bool
+      $xmlStandalone;
+
+    public
+     ?string
+      $version;
+
+    public
+     ?string
+      $xmlVersion;
+
+    public
+     bool
+      $strictErrorChecking;
+
+    public
+     ?string
+      $documentURI;
+
+    public
+     readonly
+     mixed
+      $config;
+
+    public
+     bool
+      $formatOutput;
+
+    public
+     bool
+      $validateOnParse;
+
+    public
+     bool
+      $resolveExternals;
+
+    public
+     bool
+      $preserveWhiteSpace;
+
+    public
+     bool
+      $recover;
+
+    public
+     bool
+      $substituteEntities;
+
+    public
+     readonly
+     ?DOMElement
+      $firstElementChild;
+
+    public
+     readonly
+     ?DOMElement
+      $lastElementChild;
+
+    public
+     readonly
+     int
+      $childElementCount;
+
+
+    /* Наследуемые свойства */
+    public
+     readonly
+     string
+      $nodeName;
+public
+     ?string
+      $nodeValue;
+public
+     readonly
+     int
+      $nodeType;
+public
+     readonly
+     ?DOMNode
+      $parentNode;
+public
+     readonly
+     ?DOMElement
+      $parentElement;
+public
+     readonly
+     DOMNodeList
+      $childNodes;
+public
+     readonly
+     ?DOMNode
+      $firstChild;
+public
+     readonly
+     ?DOMNode
+      $lastChild;
+public
+     readonly
+     ?DOMNode
+      $previousSibling;
+public
+     readonly
+     ?DOMNode
+      $nextSibling;
+public
+     readonly
+     ?DOMNamedNodeMap
+      $attributes;
+public
+     readonly
+     bool
+      $isConnected;
+public
+     readonly
+     ?DOMDocument
+      $ownerDocument;
+public
+     readonly
+     ?string
+      $namespaceURI;
+public
+     string
+      $prefix;
+public
+     readonly
+     ?string
+      $localName;
+public
+     readonly
+     ?string
+      $baseURI;
+public
+     string
+      $textContent;
+
+
+    /* Методы */
+    
+   public __construct(string $version = &quot;1.0&quot;, string $encoding = &quot;&quot;)
+
+    public adoptNode(DOMNode $node): DOMNode|false
+public append(DOMNode|string ...$nodes): void
+public createAttribute(string $localName): DOMAttr|false
+public createAttributeNS(?string $namespace, string $qualifiedName): DOMAttr|false
+public createCDATASection(string $data): DOMCdataSection|false
+public createComment(string $data): DOMComment
+public createDocumentFragment(): DOMDocumentFragment
+public createElement(string $localName, string $value = &quot;&quot;): DOMElement|false
+public createElementNS(?string $namespace, string $qualifiedName, string $value = &quot;&quot;): DOMElement|false
+public createEntityReference(string $name): DOMEntityReference|false
+public createProcessingInstruction(string $target, string $data = &quot;&quot;): DOMProcessingInstruction|false
+public createTextNode(string $data): DOMText
+public getElementById(string $elementId): ?DOMElement
+public getElementsByTagName(string $qualifiedName): DOMNodeList
+public getElementsByTagNameNS(?string $namespace, string $localName): DOMNodeList
+public importNode(DOMNode $node, bool $deep = false): DOMNode|false
+public load(string $filename, int $options = 0): bool
+public loadHTML(string $source, int $options = 0): bool
+public loadHTMLFile(string $filename, int $options = 0): bool
+public loadXML(string $source, int $options = 0): bool
+public normalizeDocument(): void
+public prepend(DOMNode|string ...$nodes): void
+public registerNodeClass(string $baseClass, ?string $extendedClass): bool
+public relaxNGValidate(string $filename): bool
+public relaxNGValidateSource(string $source): bool
+public replaceChildren(DOMNode|string ...$nodes): void
+public save(string $filename, int $options = 0): int|false
+public saveHTML(?DOMNode $node = null): string|false
+public saveHTMLFile(string $filename): int|false
+public saveXML(?DOMNode $node = null, int $options = 0): string|false
+public schemaValidate(string $filename, int $flags = 0): bool
+public schemaValidateSource(string $source, int $flags = 0): bool
+public validate(): bool
+public xinclude(int $options = 0): int|false
+
+
+    /* Наследуемые методы */
+    public DOMNode::appendChild(DOMNode $node): DOMNode|false
+public DOMNode::C14N(    bool $exclusive = false,    bool $withComments = false,    ?array $xpath = null,    ?array $nsPrefixes = null): string|false
+public DOMNode::C14NFile(    string $uri,    bool $exclusive = false,    bool $withComments = false,    ?array $xpath = null,    ?array $nsPrefixes = null): int|false
+public DOMNode::cloneNode(bool $deep = false): DOMNode|false
+public DOMNode::contains(DOMNode|DOMNameSpaceNode|null $other): bool
+public DOMNode::getLineNo(): int
+public DOMNode::getNodePath(): ?string
+public DOMNode::getRootNode(array $options = null): DOMNode
+public DOMNode::hasAttributes(): bool
+public DOMNode::hasChildNodes(): bool
+public DOMNode::insertBefore(DOMNode $node, ?DOMNode $child = null): DOMNode|false
+public DOMNode::isDefaultNamespace(string $namespace): bool
+public DOMNode::isEqualNode(?DOMNode $otherNode): bool
+public DOMNode::isSameNode(DOMNode $otherNode): bool
+public DOMNode::isSupported(string $feature, string $version): bool
+public DOMNode::lookupNamespaceURI(?string $prefix): ?string
+public DOMNode::lookupPrefix(string $namespace): ?string
+public DOMNode::normalize(): void
+public DOMNode::removeChild(DOMNode $child): DOMNode|false
+public DOMNode::replaceChild(DOMNode $node, DOMNode $child): DOMNode|false
+
+   }
+</code></pre>
+<h2>Властивості</h2>
+<p>actualEncoding</p>
+<p><em>Застаріло</em>. Кодування документа – доступний лише для читання еквівалент якості encoding.</p>
+<p>childElementCount</p>
+<p>Кількість дочірніх елементів.</p>
+<p>config</p>
+<p><em>Застаріло</em>. Конфігурація, яка буде використана під час виклику методу <a href="domdocument.normalizedocument.md">DOMDocument::normalizeDocument()</a></p>
+<p>doctype</p>
+<p>Оголошення типу документа, який відповідає цьому документу.</p>
+<p>documentElement</p>
+<p>Об&#x27;єкт <a href="class.domelement.md">DOMElement</a> - Перший елемент документа. Якщо не знайдено, оцінюється як <strong><code>null</code></strong>. Зручний атрибут, який дає прямий доступ до дочірнього вузла як елемент документа. Значення **<code>null</code>**якщо не існує.</p>
+<p>documentURI</p>
+<p>Расположение документа или**<code>null</code>**якщо воно не визначено.</p>
+<p>encoding</p>
+<p>Кодування документа, як зазначено у оголошенні XML. Цього атрибуту немає в останній специфікації DOM Level 3, але він єдиний спосіб маніпулювання кодуванням XML-документа в цій реалізації.</p>
+<p>firstElementChild</p>
+<p>Перший дочірній елемент або <strong><code>null</code></strong></p>
+<p>formatOutput</p>
+<p>Форматує висновок, додаючи відступи та додаткові прогалини. Не працює, якщо документ був завантажений з увімкненою властивістю preservewhitespace.</p>
+<p>implementation</p>
+<p>Об&#x27;єкт класу <a href="class.domimplementation.md">DOMImplementation</a>, що обробляє цей документ.</p>
+<p>lastElementChild</p>
+<p>Останній дочірній елемент або <strong><code>null</code></strong></p>
+<p>preserveWhiteSpace</p>
+<p>Вказівка ​​не прибирати зайві прогалини та відступи. За замовчуванням <strong><code>true</code></strong>. Встановлення цього значення <strong><code>false</code></strong> дає той самий ефект, як і передача константи <strong><code>LIBXML_NOBLANKS</code></strong> як параметр <code>option</code>в метод<a href="domdocument.load.md">DOMDocument::load()</a>и т. д.</p>
+<p>recover</p>
+<p><em>Пропрієтарна властивість</em>. Включає режим відновлення, тобто намагається розібрати некоректно складені документи. Цей атрибут не входить до специфікації DOM і специфічний для модуля libxml.</p>
+<p>resolveExternals</p>
+<p>Устанавливают в**<code>true</code>** для завантаження зовнішніх елементів із оголошення типу документа. Корисний при включенні елементів із символьними даними у документ XML.</p>
+<p>standalone</p>
+<p><em>Застаріло</em>. Вказівка, що документ не залежить від інших документів XML, як зазначено в декларації XML, відповідає властивості xmlStandalone.</p>
+<p>strictErrorChecking</p>
+<p>Викидає виняток <a href="class.domexception.md">DOMException</a>в случае ошибок. По умолчанию**<code>true</code>**</p>
+<p>substituteEntities</p>
+<p><em>Патентована властивість</em>. Вказує, чи замінювати елементи документа. Цей атрибут не входить до специфікації DOM і специфічний для модуля libxml. За замовчуванням <strong><code>false</code></strong></p>
+<p><strong>Застереження</strong></p>
+<p>Увімкнення підміни сутностей сприяє атакам XML External Entity (XXE).</p>
+<p>validateOnParse</p>
+<p>Завантажує DTD та перевіряє документ на відповідність. За замовчуванням <strong><code>false</code></strong></p>
+<p><strong>Застереження</strong></p>
+<p>Увімкнення перевірки DTD сприяє атакам XML External Entity (XXE).</p>
+<p>version</p>
+<p><em>Застаріло</em>. Версія XML відповідає xmlVersion.</p>
+<p>xmlEncoding</p>
+<p>Атрибут визначає як частину XML-оголошення кодування документа. Значення дорівнює <strong><code>null</code></strong>, якщо вона не вказана або коли значення невідоме, наприклад, коли документ було створено у пам&#x27;яті.</p>
+<p>xmlStandalone</p>
+<p>Атрибут визначає як частину XML-оголошення, що документ автономний. Приймає значення <strong><code>false</code></strong>, якщо не вказано.</p>
+<p>xmlVersion</p>
+<p>Атрибут, який визначає як частину XML-оголошення номер версії цього документа. Якщо оголошення в документі немає, але є підтримка всіх особливостей XML, значення дорівнює 1.0.</p>
+<h2>список змін</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>8.0.0</td><td>Класс<strong>DOMDocument</strong> тепер реалізує інтерфейс <a href="class.domparentnode.md">DOMParentNode</a></td></tr><tr><td>8.0.0</td><td>Нереалізований метод **DOMDocument::renameNode()**був видалений.</td></tr></tbody></table>
+<h2>Примітки</h2>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Модуль DOM працює з кодуванням UTF-8. Для роботи з іншими кодуваннями користуються функціями <a href="function.mb-convert-encoding.md">mb_convert_encoding()</a> <a href="uconverter.transcode.md">UConverter::transcode()</a> або <a href="function.iconv.md">iconv()</a></p>
+</blockquote>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>При использовании<a href="function.json-encode.md">json_encode()</a> для об&#x27;єкту <strong>DOMDocument</strong> буде отримано результат кодування порожнього об&#x27;єкта.</p>
+</blockquote>
+<h2>Дивіться також</h2>
+<ul>
+<li><a href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.md#core-i-Document">» Специфікація W3C для інтерфейсу Document</a></li>
+</ul>
+<h2>Зміст</h2>
+<ul>
+<li><a href="domdocument.adoptnode.md">DOMDocument::adoptNode</a>— Переносить вузол із іншого документа</li>
+<li><a href="domdocument.append.md">DOMDocument::append</a>— Додає вузли після останнього дочірнього вузла</li>
+<li><a href="domdocument.construct.md">DOMDocument::__construct</a>— Створює новий об&#x27;єкт DOMDocument</li>
+<li><a href="domdocument.createattribute.md">DOMDocument::createAttribute</a> - Створює новий атрибут</li>
+<li><a href="domdocument.createattributens.md">DOMDocument::createAttributeNS</a>— Створює новий атрибут вузла із відповідним простором імен</li>
+<li><a href="domdocument.createcdatasection.md">DOMDocument::createCDATASection</a> - Створює новий вузол cdata</li>
+<li><a href="domdocument.createcomment.md">DOMDocument::createComment</a> - Створити новий вузол коментаря</li>
+<li><a href="domdocument.createdocumentfragment.md">DOMDocument::createDocumentFragment</a> - Створює новий фрагмент документа</li>
+<li><a href="domdocument.createelement.md">DOMDocument::createElement</a> - Створює новий вузол елемента</li>
+<li><a href="domdocument.createelementns.md">DOMDocument::createElementNS</a>— Створити новий вузол елемента із відповідним простором імен</li>
+<li><a href="domdocument.createentityreference.md">DOMDocument::createEntityReference</a> - Створити новий вузол посилання на сутність</li>
+<li><a href="domdocument.createprocessinginstruction.md">DOMDocument::createProcessingInstruction</a> - Створити новий PI-вузол</li>
+<li><a href="domdocument.createtextnode.md">DOMDocument::createTextNode</a> - Створити новий текстовий вузол</li>
+<li><a href="domdocument.getelementbyid.md">DOMDocument::getElementById</a>— Шукає елемент із певним ідентифікатором</li>
+<li><a href="domdocument.getelementsbytagname.md">DOMDocument::getElementsByTagName</a>— Шукає всі елементи із заданим локальним ім&#x27;ям</li>
+<li><a href="domdocument.getelementsbytagnamens.md">DOMDocument::getElementsByTagNameNS</a>— Шукає всі елементи із заданим ім&#x27;ям у вказаному просторі імен</li>
+<li><a href="domdocument.importnode.md">DOMDocument::importNode</a>— Імпортувати вузол у поточний документ</li>
+<li><a href="domdocument.load.md">DOMDocument::load</a>— Завантаження XML із файлу</li>
+<li><a href="domdocument.loadhtml.md">DOMDocument::loadHTML</a>— Завантаження HTML із рядка</li>
+<li><a href="domdocument.loadhtmlfile.md">DOMDocument::loadHTMLFile</a>— Завантаження HTML із файлу</li>
+<li><a href="domdocument.loadxml.md">DOMDocument::loadXML</a>— Завантаження XML із рядка</li>
+<li><a href="domdocument.normalizedocument.md">DOMDocument::normalizeDocument</a> - Нормалізує документ</li>
+<li><a href="domdocument.prepend.md">DOMDocument::prepend</a> - Додає вузли перед першим дочірнім вузлом</li>
+<li><a href="domdocument.registernodeclass.md">DOMDocument::registerNodeClass</a>— Реєстрація розширеного класу, який використовується для створення типу базового вузла</li>
+<li><a href="domdocument.relaxngvalidate.md">DOMDocument::relaxNGValidate</a> - Здійснює перевірку документа на правильність побудови за допомогою relaxNG</li>
+<li><a href="domdocument.relaxngvalidatesource.md">DOMDocument::relaxNGValidateSource</a> - Перевіряє документ за допомогою relaxNG</li>
+<li><a href="domdocument.replacechildren.md">DOMDocument::replaceChildren</a>— Замінює дочірні вузли у документі</li>
+<li><a href="domdocument.save.md">DOMDocument::save</a>— Зберігає XML-дерево із внутрішнього подання до файлу</li>
+<li><a href="domdocument.savehtml.md">DOMDocument::saveHTML</a>— Зберігає документ із внутрішнього подання до рядка, використовуючи форматування HTML</li>
+<li><a href="domdocument.savehtmlfile.md">DOMDocument::saveHTMLFile</a>— Зберігає документ із внутрішнього подання до файлу, використовуючи форматування HTML</li>
+<li><a href="domdocument.savexml.md">DOMDocument::saveXML</a>— Зберігає XML-дерево з внутрішньої вистави у вигляді рядка</li>
+<li><a href="domdocument.schemavalidate.md">DOMDocument::schemaValidate</a>— Перевіряє дійсність документа, ґрунтуючись на заданій схемі. Підтримується лише XML-схема 1.0.</li>
+<li><a href="domdocument.schemavalidatesource.md">DOMDocument::schemaValidateSource</a>— Перевіряє дійсність документа, ґрунтуючись на схемі</li>
+<li><a href="domdocument.validate.md">DOMDocument::validate</a>— Перевіряє документ на відповідність його DTD</li>
+<li><a href="domdocument.xinclude.md">DOMDocument::xinclude</a>— Вставляє XInclude в об&#x27;єкті DOMDocument.</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.domdocument.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.domdocument.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.domdocument.md","content":"# Клас DOMDocument\n\n(PHP 5, PHP 7, PHP 8)\n\n## Вступ\n\nПодає весь HTML- або XML-документ; корінь дерева документа.\n\n## Огляд класів\n\n```classsynopsis\n\n    \n     class DOMDocument\n    \n\n    \n     extends\n      DOMNode\n    \n\n    \n     implements\n      DOMParentNode {\n\n    /* Свойства */\n    \n     public\n     readonly\n     ?DOMDocumentType\n      $doctype;\n\n    public\n     readonly\n     DOMImplementation\n      $implementation;\n\n    public\n     readonly\n     ?DOMElement\n      $documentElement;\n\n    public\n     readonly\n     ?string\n      $actualEncoding;\n\n    public\n     ?string\n      $encoding;\n\n    public\n     readonly\n     ?string\n      $xmlEncoding;\n\n    public\n     bool\n      $standalone;\n\n    public\n     bool\n      $xmlStandalone;\n\n    public\n     ?string\n      $version;\n\n    public\n     ?string\n      $xmlVersion;\n\n    public\n     bool\n      $strictErrorChecking;\n\n    public\n     ?string\n      $documentURI;\n\n    public\n     readonly\n     mixed\n      $config;\n\n    public\n     bool\n      $formatOutput;\n\n    public\n     bool\n      $validateOnParse;\n\n    public\n     bool\n      $resolveExternals;\n\n    public\n     bool\n      $preserveWhiteSpace;\n\n    public\n     bool\n      $recover;\n\n    public\n     bool\n      $substituteEntities;\n\n    public\n     readonly\n     ?DOMElement\n      $firstElementChild;\n\n    public\n     readonly\n     ?DOMElement\n      $lastElementChild;\n\n    public\n     readonly\n     int\n      $childElementCount;\n\n\n    /* Наследуемые свойства */\n    public\n     readonly\n     string\n      $nodeName;\npublic\n     ?string\n      $nodeValue;\npublic\n     readonly\n     int\n      $nodeType;\npublic\n     readonly\n     ?DOMNode\n      $parentNode;\npublic\n     readonly\n     ?DOMElement\n      $parentElement;\npublic\n     readonly\n     DOMNodeList\n      $childNodes;\npublic\n     readonly\n     ?DOMNode\n      $firstChild;\npublic\n     readonly\n     ?DOMNode\n      $lastChild;\npublic\n     readonly\n     ?DOMNode\n      $previousSibling;\npublic\n     readonly\n     ?DOMNode\n      $nextSibling;\npublic\n     readonly\n     ?DOMNamedNodeMap\n      $attributes;\npublic\n     readonly\n     bool\n      $isConnected;\npublic\n     readonly\n     ?DOMDocument\n      $ownerDocument;\npublic\n     readonly\n     ?string\n      $namespaceURI;\npublic\n     string\n      $prefix;\npublic\n     readonly\n     ?string\n      $localName;\npublic\n     readonly\n     ?string\n      $baseURI;\npublic\n     string\n      $textContent;\n\n\n    /* Методы */\n    \n   public __construct(string $version = \"1.0\", string $encoding = \"\")\n\n    public adoptNode(DOMNode $node): DOMNode|false\npublic append(DOMNode|string ...$nodes): void\npublic createAttribute(string $localName): DOMAttr|false\npublic createAttributeNS(?string $namespace, string $qualifiedName): DOMAttr|false\npublic createCDATASection(string $data): DOMCdataSection|false\npublic createComment(string $data): DOMComment\npublic createDocumentFragment(): DOMDocumentFragment\npublic createElement(string $localName, string $value = \"\"): DOMElement|false\npublic createElementNS(?string $namespace, string $qualifiedName, string $value = \"\"): DOMElement|false\npublic createEntityReference(string $name): DOMEntityReference|false\npublic createProcessingInstruction(string $target, string $data = \"\"): DOMProcessingInstruction|false\npublic createTextNode(string $data): DOMText\npublic getElementById(string $elementId): ?DOMElement\npublic getElementsByTagName(string $qualifiedName): DOMNodeList\npublic getElementsByTagNameNS(?string $namespace, string $localName): DOMNodeList\npublic importNode(DOMNode $node, bool $deep = false): DOMNode|false\npublic load(string $filename, int $options = 0): bool\npublic loadHTML(string $source, int $options = 0): bool\npublic loadHTMLFile(string $filename, int $options = 0): bool\npublic loadXML(string $source, int $options = 0): bool\npublic normalizeDocument(): void\npublic prepend(DOMNode|string ...$nodes): void\npublic registerNodeClass(string $baseClass, ?string $extendedClass): bool\npublic relaxNGValidate(string $filename): bool\npublic relaxNGValidateSource(string $source): bool\npublic replaceChildren(DOMNode|string ...$nodes): void\npublic save(string $filename, int $options = 0): int|false\npublic saveHTML(?DOMNode $node = null): string|false\npublic saveHTMLFile(string $filename): int|false\npublic saveXML(?DOMNode $node = null, int $options = 0): string|false\npublic schemaValidate(string $filename, int $flags = 0): bool\npublic schemaValidateSource(string $source, int $flags = 0): bool\npublic validate(): bool\npublic xinclude(int $options = 0): int|false\n\n\n    /* Наследуемые методы */\n    public DOMNode::appendChild(DOMNode $node): DOMNode|false\npublic DOMNode::C14N(    bool $exclusive = false,    bool $withComments = false,    ?array $xpath = null,    ?array $nsPrefixes = null): string|false\npublic DOMNode::C14NFile(    string $uri,    bool $exclusive = false,    bool $withComments = false,    ?array $xpath = null,    ?array $nsPrefixes = null): int|false\npublic DOMNode::cloneNode(bool $deep = false): DOMNode|false\npublic DOMNode::contains(DOMNode|DOMNameSpaceNode|null $other): bool\npublic DOMNode::getLineNo(): int\npublic DOMNode::getNodePath(): ?string\npublic DOMNode::getRootNode(array $options = null): DOMNode\npublic DOMNode::hasAttributes(): bool\npublic DOMNode::hasChildNodes(): bool\npublic DOMNode::insertBefore(DOMNode $node, ?DOMNode $child = null): DOMNode|false\npublic DOMNode::isDefaultNamespace(string $namespace): bool\npublic DOMNode::isEqualNode(?DOMNode $otherNode): bool\npublic DOMNode::isSameNode(DOMNode $otherNode): bool\npublic DOMNode::isSupported(string $feature, string $version): bool\npublic DOMNode::lookupNamespaceURI(?string $prefix): ?string\npublic DOMNode::lookupPrefix(string $namespace): ?string\npublic DOMNode::normalize(): void\npublic DOMNode::removeChild(DOMNode $child): DOMNode|false\npublic DOMNode::replaceChild(DOMNode $node, DOMNode $child): DOMNode|false\n\n   }\n```\n\n## Властивості\n\nactualEncoding\n\n*Застаріло*. Кодування документа – доступний лише для читання еквівалент якості encoding.\n\nchildElementCount\n\nКількість дочірніх елементів.\n\nconfig\n\n*Застаріло*. Конфігурація, яка буде використана під час виклику методу [DOMDocument::normalizeDocument()](domdocument.normalizedocument.md)\n\ndoctype\n\nОголошення типу документа, який відповідає цьому документу.\n\ndocumentElement\n\nОб'єкт [DOMElement](class.domelement.md) - Перший елемент документа. Якщо не знайдено, оцінюється як **`null`**. Зручний атрибут, який дає прямий доступ до дочірнього вузла як елемент документа. Значення \\*\\*`null`\\*\\*якщо не існує.\n\ndocumentURI\n\nРасположение документа или\\*\\*`null`\\*\\*якщо воно не визначено.\n\nencoding\n\nКодування документа, як зазначено у оголошенні XML. Цього атрибуту немає в останній специфікації DOM Level 3, але він єдиний спосіб маніпулювання кодуванням XML-документа в цій реалізації.\n\nfirstElementChild\n\nПерший дочірній елемент або **`null`**\n\nformatOutput\n\nФорматує висновок, додаючи відступи та додаткові прогалини. Не працює, якщо документ був завантажений з увімкненою властивістю preservewhitespace.\n\nimplementation\n\nОб'єкт класу [DOMImplementation](class.domimplementation.md), що обробляє цей документ.\n\nlastElementChild\n\nОстанній дочірній елемент або **`null`**\n\npreserveWhiteSpace\n\nВказівка ​​не прибирати зайві прогалини та відступи. За замовчуванням **`true`**. Встановлення цього значення **`false`** дає той самий ефект, як і передача константи **`LIBXML_NOBLANKS`** як параметр `option`в метод[DOMDocument::load()](domdocument.load.md)и т. д.\n\nrecover\n\n*Пропрієтарна властивість*. Включає режим відновлення, тобто намагається розібрати некоректно складені документи. Цей атрибут не входить до специфікації DOM і специфічний для модуля libxml.\n\nresolveExternals\n\nУстанавливают в\\*\\*`true`\\*\\* для завантаження зовнішніх елементів із оголошення типу документа. Корисний при включенні елементів із символьними даними у документ XML.\n\nstandalone\n\n*Застаріло*. Вказівка, що документ не залежить від інших документів XML, як зазначено в декларації XML, відповідає властивості xmlStandalone.\n\nstrictErrorChecking\n\nВикидає виняток [DOMException](class.domexception.md)в случае ошибок. По умолчанию\\*\\*`true`\\*\\*\n\nsubstituteEntities\n\n*Патентована властивість*. Вказує, чи замінювати елементи документа. Цей атрибут не входить до специфікації DOM і специфічний для модуля libxml. За замовчуванням **`false`**\n\n**Застереження**\n\nУвімкнення підміни сутностей сприяє атакам XML External Entity (XXE).\n\nvalidateOnParse\n\nЗавантажує DTD та перевіряє документ на відповідність. За замовчуванням **`false`**\n\n**Застереження**\n\nУвімкнення перевірки DTD сприяє атакам XML External Entity (XXE).\n\nversion\n\n*Застаріло*. Версія XML відповідає xmlVersion.\n\nxmlEncoding\n\nАтрибут визначає як частину XML-оголошення кодування документа. Значення дорівнює **`null`**, якщо вона не вказана або коли значення невідоме, наприклад, коли документ було створено у пам'яті.\n\nxmlStandalone\n\nАтрибут визначає як частину XML-оголошення, що документ автономний. Приймає значення **`false`**, якщо не вказано.\n\nxmlVersion\n\nАтрибут, який визначає як частину XML-оголошення номер версії цього документа. Якщо оголошення в документі немає, але є підтримка всіх особливостей XML, значення дорівнює 1.0.\n\n## список змін\n\n| Версия | Опис |\n| --- | --- |\n| 8.0.0 | Класс**DOMDocument** тепер реалізує інтерфейс [DOMParentNode](class.domparentnode.md) |\n| 8.0.0 | Нереалізований метод \\*\\*DOMDocument::renameNode()\\*\\*був видалений. |\n\n## Примітки\n\n\u003e **Зауваження** :\n\u003e \n\u003e Модуль DOM працює з кодуванням UTF-8. Для роботи з іншими кодуваннями користуються функціями [mb\\_convert\\_encoding()](function.mb-convert-encoding.md) [UConverter::transcode()](uconverter.transcode.md) або [iconv()](function.iconv.md)\n\n\u003e **Зауваження** :\n\u003e \n\u003e При использовании[json\\_encode()](function.json-encode.md) для об'єкту **DOMDocument** буде отримано результат кодування порожнього об'єкта.\n\n## Дивіться також\n\n-   [» Специфікація W3C для інтерфейсу Document](http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.md#core-i-Document)\n\n## Зміст\n\n-   [DOMDocument::adoptNode](domdocument.adoptnode.md)— Переносить вузол із іншого документа\n-   [DOMDocument::append](domdocument.append.md)— Додає вузли після останнього дочірнього вузла\n-   [DOMDocument::\\_\\_construct](domdocument.construct.md)— Створює новий об'єкт DOMDocument\n-   [DOMDocument::createAttribute](domdocument.createattribute.md) \\- Створює новий атрибут\n-   [DOMDocument::createAttributeNS](domdocument.createattributens.md)— Створює новий атрибут вузла із відповідним простором імен\n-   [DOMDocument::createCDATASection](domdocument.createcdatasection.md) \\- Створює новий вузол cdata\n-   [DOMDocument::createComment](domdocument.createcomment.md) \\- Створити новий вузол коментаря\n-   [DOMDocument::createDocumentFragment](domdocument.createdocumentfragment.md) \\- Створює новий фрагмент документа\n-   [DOMDocument::createElement](domdocument.createelement.md) \\- Створює новий вузол елемента\n-   [DOMDocument::createElementNS](domdocument.createelementns.md)— Створити новий вузол елемента із відповідним простором імен\n-   [DOMDocument::createEntityReference](domdocument.createentityreference.md) \\- Створити новий вузол посилання на сутність\n-   [DOMDocument::createProcessingInstruction](domdocument.createprocessinginstruction.md) \\- Створити новий PI-вузол\n-   [DOMDocument::createTextNode](domdocument.createtextnode.md) \\- Створити новий текстовий вузол\n-   [DOMDocument::getElementById](domdocument.getelementbyid.md)— Шукає елемент із певним ідентифікатором\n-   [DOMDocument::getElementsByTagName](domdocument.getelementsbytagname.md)— Шукає всі елементи із заданим локальним ім'ям\n-   [DOMDocument::getElementsByTagNameNS](domdocument.getelementsbytagnamens.md)— Шукає всі елементи із заданим ім'ям у вказаному просторі імен\n-   [DOMDocument::importNode](domdocument.importnode.md)— Імпортувати вузол у поточний документ\n-   [DOMDocument::load](domdocument.load.md)— Завантаження XML із файлу\n-   [DOMDocument::loadHTML](domdocument.loadhtml.md)— Завантаження HTML із рядка\n-   [DOMDocument::loadHTMLFile](domdocument.loadhtmlfile.md)— Завантаження HTML із файлу\n-   [DOMDocument::loadXML](domdocument.loadxml.md)— Завантаження XML із рядка\n-   [DOMDocument::normalizeDocument](domdocument.normalizedocument.md) \\- Нормалізує документ\n-   [DOMDocument::prepend](domdocument.prepend.md) \\- Додає вузли перед першим дочірнім вузлом\n-   [DOMDocument::registerNodeClass](domdocument.registernodeclass.md)— Реєстрація розширеного класу, який використовується для створення типу базового вузла\n-   [DOMDocument::relaxNGValidate](domdocument.relaxngvalidate.md) \\- Здійснює перевірку документа на правильність побудови за допомогою relaxNG\n-   [DOMDocument::relaxNGValidateSource](domdocument.relaxngvalidatesource.md) \\- Перевіряє документ за допомогою relaxNG\n-   [DOMDocument::replaceChildren](domdocument.replacechildren.md)— Замінює дочірні вузли у документі\n-   [DOMDocument::save](domdocument.save.md)— Зберігає XML-дерево із внутрішнього подання до файлу\n-   [DOMDocument::saveHTML](domdocument.savehtml.md)— Зберігає документ із внутрішнього подання до рядка, використовуючи форматування HTML\n-   [DOMDocument::saveHTMLFile](domdocument.savehtmlfile.md)— Зберігає документ із внутрішнього подання до файлу, використовуючи форматування HTML\n-   [DOMDocument::saveXML](domdocument.savexml.md)— Зберігає XML-дерево з внутрішньої вистави у вигляді рядка\n-   [DOMDocument::schemaValidate](domdocument.schemavalidate.md)— Перевіряє дійсність документа, ґрунтуючись на заданій схемі. Підтримується лише XML-схема 1.0.\n-   [DOMDocument::schemaValidateSource](domdocument.schemavalidatesource.md)— Перевіряє дійсність документа, ґрунтуючись на схемі\n-   [DOMDocument::validate](domdocument.validate.md)— Перевіряє документ на відповідність його DTD\n-   [DOMDocument::xinclude](domdocument.xinclude.md)— Вставляє XInclude в об'єкті DOMDocument.\n","title":"Клас DOMDocument","contentType":2,"navigation":[{"domcomment.construct.md":"« DOMComment::\\_\\_construct"},{"domdocument.adoptnode.md":"DOMDocument::adoptNode »"},{"index.md":"PHP Manual"},{"book.dom.md":"DOM"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.domdocument.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

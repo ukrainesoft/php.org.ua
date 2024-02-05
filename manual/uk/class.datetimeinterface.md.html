@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Інтерфейс DateTimeInterface</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="datetimeimmutable.sub.md" class="mx-4">« DateTimeImmutable::sub</a><a href="datetime.diff.md" class="mx-4">DateTimeInterface::diff »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.datetime.md" class="mx-4">Дата час</a></div><article class="markdown_markdown__yfc8y"><div><h1>Інтерфейс DateTimeInterface</h1>
+<p>(PHP 5 &gt;= 5.5.0, PHP 7, PHP 8)</p>
+<h2>Вступ</h2>
+<p>Інтерфейс <strong>DateTimeInterface</strong> узагальнює роботу <a href="class.datetimeimmutable.md">DateTimeImmutable</a> або <a href="class.datetime.md">DateTime</a>. Неможливо реалізувати цей інтерфейс з класом користувача.</p>
+<p>Загальні константи, які дозволяють форматувати об&#x27;єкти <a href="class.datetimeimmutable.md">DateTimeImmutable</a> або <a href="class.datetime.md">DateTime</a> за допомогою <a href="datetime.format.md">DateTimeImmutable::format()</a> і <a href="datetime.format.md">DateTime::format()</a> також визначено у цьому інтерфейсі.</p>
+<h2>Огляд інтерфейсів</h2>
+<pre><code class="hljs language-classsynopsis">
+    
+     interface DateTimeInterface {
+
+    /* Константы */
+    
+     public
+     const
+     string
+      ATOM = &quot;Y-m-d\\TH:i:sP&quot;;
+
+    public
+     const
+     string
+      COOKIE = &quot;l, d-M-Y H:i:s T&quot;;
+
+    public
+     const
+     string
+      ISO8601 = &quot;Y-m-d\\TH:i:sO&quot;;
+
+    public
+     const
+     string
+      ISO8601_EXPANDED = &quot;X-m-d\\TH:i:sP&quot;;
+
+    public
+     const
+     string
+      RFC822 = &quot;D, d M y H:i:s O&quot;;
+
+    public
+     const
+     string
+      RFC850 = &quot;l, d-M-y H:i:s T&quot;;
+
+    public
+     const
+     string
+      RFC1036 = &quot;D, d M y H:i:s O&quot;;
+
+    public
+     const
+     string
+      RFC1123 = &quot;D, d M Y H:i:s O&quot;;
+
+    public
+     const
+     string
+      RFC7231 = &quot;D, d M Y H:i:s \\G\\M\\T&quot;;
+
+    public
+     const
+     string
+      RFC2822 = &quot;D, d M Y H:i:s O&quot;;
+
+    public
+     const
+     string
+      RFC3339 = &quot;Y-m-d\\TH:i:sP&quot;;
+
+    public
+     const
+     string
+      RFC3339_EXTENDED = &quot;Y-m-d\\TH:i:s.vP&quot;;
+
+    public
+     const
+     string
+      RSS = &quot;D, d M Y H:i:s O&quot;;
+
+    public
+     const
+     string
+      W3C = &quot;Y-m-d\\TH:i:sP&quot;;
+
+
+    /* Методы */
+    
+   public diff(DateTimeInterface $targetObject, bool $absolute = false): DateInterval
+public format(string $format): string
+public getOffset(): int
+public getTimestamp(): int
+public getTimezone(): DateTimeZone|false
+public __wakeup(): void
+
+   }
+</code></pre>
+<h2>Обумовлені константи</h2>
+<p><strong><code>DateTime::ATOM</code></strong></p>
+<p><strong><code>DATE_ATOM</code></strong></p>
+<p>Atom (приклад: 2005-08-15T15:52:01+00:00)</p>
+<p><strong><code>DateTime::COOKIE</code></strong></p>
+<p><strong><code>DATE_COOKIE</code></strong></p>
+<p>HTTP Cookies (приклад: Monday, 15-Aug-05 15:52:01 UTC)</p>
+<p><strong><code>DateTime::ISO8601</code></strong></p>
+<p><strong><code>DATE_ISO8601</code></strong></p>
+<p>ISO-8601 (приклад: 2005-08-15T15:52:01+0000)</p>
+<blockquote>
+<p><strong>Зауваження</strong>: Цей формат не сумісний із ISO-8601, але залишається для зворотної сумісності. Замість нього використовуйте <strong><code>DateTimeInterface::ISO8601_EXPANDED</code></strong> або <strong><code>DateTimeInterface::ATOM</code></strong> для сумісності із ISO-8601. (посилання на ISO8601:2004 розділ 4.3.3, пункт d)</p>
+</blockquote>
+<p><strong><code>DateTimeInterface::ISO8601_EXPANDED</code></strong></p>
+<p><strong><code>DATE_ISO8601_EXPANDED</code></strong></p>
+<p>ISO-8601 Expanded (приклад: +10191-07-26T08:59:52+01:00)</p>
+<blockquote>
+<p><strong>Зауваження</strong>: Формат дозволяє використовувати діапазони років, що виходять за межі звичайного діапазону ISO-8601 (<code>0000</code>-<code>9999</code>), завжди включаючи знак значок. Він також враховує, що частина часового поясу (<code>+01:00</code>) сумісна з ISO-8601.</p>
+</blockquote>
+<p><strong><code>DateTime::RFC822</code></strong></p>
+<p><strong><code>DATE_RFC822</code></strong></p>
+<p>RFC 822 (приклад: Mon, 15 Aug 05 15:52:01 +0000)</p>
+<p><strong><code>DateTime::RFC850</code></strong></p>
+<p><strong><code>DATE_RFC850</code></strong></p>
+<p>RFC 850 (приклад: Monday, 15-Aug-05 15:52:01 UTC)</p>
+<p><strong><code>DateTime::RFC1036</code></strong></p>
+<p><strong><code>DATE_RFC1036</code></strong></p>
+<p>RFC 1036 (приклад: Mon, 15 Aug 05 15:52:01 +0000)</p>
+<p><strong><code>DateTime::RFC1123</code></strong></p>
+<p><strong><code>DATE_RFC1123</code></strong></p>
+<p>RFC 1123 (приклад: Mon, 15 Aug 2005 15:52:01 +0000)</p>
+<p><strong><code>DateTimeInterface::RFC7231</code></strong></p>
+<p><strong><code>DATE_RFC7231</code></strong></p>
+<p>RFC 7231 (з версії PHP 7.0.19 та 7.1.5) (приклад: Sat, 30 Apr 2016 17:52:13 GMT)</p>
+<p><strong><code>DateTime::RFC2822</code></strong></p>
+<p><strong><code>DATE_RFC2822</code></strong></p>
+<p>RFC 2822 (приклад: Mon, 15 Aug 2005 15:52:01 +0000)</p>
+<p><strong><code>DateTime::RFC3339</code></strong></p>
+<p><strong><code>DATE_RFC3339</code></strong></p>
+<p>Теж, що й <strong><code>DATE_ATOM</code></strong></p>
+<p><strong><code>DateTime::RFC3339_EXTENDED</code></strong></p>
+<p><strong><code>DATE_RFC3339_EXTENDED</code></strong></p>
+<p>Формат RFC 3339 EXTENDED (приклад: 2005-08-15T15:52:01.000+00:00)</p>
+<p><strong><code>DateTime::RSS</code></strong></p>
+<p><strong><code>DATE_RSS</code></strong></p>
+<p>RSS (приклад: Mon, 15 Aug 2005 15:52:01 +0000)</p>
+<p><strong><code>DateTime::W3C</code></strong></p>
+<p><strong><code>DATE_W3C</code></strong></p>
+<p>World Wide Web Consortium (приклад: 2005-08-15T15:52:01+00:00)</p>
+<h2>список змін</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>8.2.0</td><td>Добавлена константа**<code>DateTimeInterface::ISO8601_EXPANDED</code>**</td></tr><tr><td>7.2.0</td><td>Константи класу тепер <a href="class.datetime.md">DateTime</a> визначено в <strong>DateTimeInterface</strong></td></tr></tbody></table>
+<h2>Зміст</h2>
+<ul>
+<li><a href="datetime.diff.md">DateTimeInterface::diff</a>— Повертає різницю між двома об&#x27;єктами DateTime</li>
+<li><a href="datetime.format.md">DateTimeInterface::format</a>— Повертає дату, відформатовану згідно з переданим форматом</li>
+<li><a href="datetime.getoffset.md">DateTimeInterface::getOffset</a>— Повертає усунення часового поясу</li>
+<li><a href="datetime.gettimestamp.md">DateTimeInterface::getTimestamp</a>— Повертає тимчасову мітку Unix</li>
+<li><a href="datetime.gettimezone.md">DateTimeInterface::getTimezone</a>— Повертає часовий пояс щодо поточного значення DateTime</li>
+<li><a href="datetime.wakeup.md">DateTime::__wakeup</a> - Обробник__wakeup</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.datetimeinterface.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.datetimeinterface.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.datetimeinterface.md","content":"# Інтерфейс DateTimeInterface\n\n(PHP 5 \u003e= 5.5.0, PHP 7, PHP 8)\n\n## Вступ\n\nІнтерфейс **DateTimeInterface** узагальнює роботу [DateTimeImmutable](class.datetimeimmutable.md) або [DateTime](class.datetime.md). Неможливо реалізувати цей інтерфейс з класом користувача.\n\nЗагальні константи, які дозволяють форматувати об'єкти [DateTimeImmutable](class.datetimeimmutable.md) або [DateTime](class.datetime.md) за допомогою [DateTimeImmutable::format()](datetime.format.md) і [DateTime::format()](datetime.format.md) також визначено у цьому інтерфейсі.\n\n## Огляд інтерфейсів\n\n```classsynopsis\n\n    \n     interface DateTimeInterface {\n\n    /* Константы */\n    \n     public\n     const\n     string\n      ATOM = \"Y-m-d\\\\TH:i:sP\";\n\n    public\n     const\n     string\n      COOKIE = \"l, d-M-Y H:i:s T\";\n\n    public\n     const\n     string\n      ISO8601 = \"Y-m-d\\\\TH:i:sO\";\n\n    public\n     const\n     string\n      ISO8601_EXPANDED = \"X-m-d\\\\TH:i:sP\";\n\n    public\n     const\n     string\n      RFC822 = \"D, d M y H:i:s O\";\n\n    public\n     const\n     string\n      RFC850 = \"l, d-M-y H:i:s T\";\n\n    public\n     const\n     string\n      RFC1036 = \"D, d M y H:i:s O\";\n\n    public\n     const\n     string\n      RFC1123 = \"D, d M Y H:i:s O\";\n\n    public\n     const\n     string\n      RFC7231 = \"D, d M Y H:i:s \\\\G\\\\M\\\\T\";\n\n    public\n     const\n     string\n      RFC2822 = \"D, d M Y H:i:s O\";\n\n    public\n     const\n     string\n      RFC3339 = \"Y-m-d\\\\TH:i:sP\";\n\n    public\n     const\n     string\n      RFC3339_EXTENDED = \"Y-m-d\\\\TH:i:s.vP\";\n\n    public\n     const\n     string\n      RSS = \"D, d M Y H:i:s O\";\n\n    public\n     const\n     string\n      W3C = \"Y-m-d\\\\TH:i:sP\";\n\n\n    /* Методы */\n    \n   public diff(DateTimeInterface $targetObject, bool $absolute = false): DateInterval\npublic format(string $format): string\npublic getOffset(): int\npublic getTimestamp(): int\npublic getTimezone(): DateTimeZone|false\npublic __wakeup(): void\n\n   }\n```\n\n## Обумовлені константи\n\n**`DateTime::ATOM`**\n\n**`DATE_ATOM`**\n\nAtom (приклад: 2005-08-15T15:52:01+00:00)\n\n**`DateTime::COOKIE`**\n\n**`DATE_COOKIE`**\n\nHTTP Cookies (приклад: Monday, 15-Aug-05 15:52:01 UTC)\n\n**`DateTime::ISO8601`**\n\n**`DATE_ISO8601`**\n\nISO-8601 (приклад: 2005-08-15T15:52:01+0000)\n\n\u003e **Зауваження**: Цей формат не сумісний із ISO-8601, але залишається для зворотної сумісності. Замість нього використовуйте **`DateTimeInterface::ISO8601_EXPANDED`** або **`DateTimeInterface::ATOM`** для сумісності із ISO-8601. (посилання на ISO8601:2004 розділ 4.3.3, пункт d)\n\n**`DateTimeInterface::ISO8601_EXPANDED`**\n\n**`DATE_ISO8601_EXPANDED`**\n\nISO-8601 Expanded (приклад: +10191-07-26T08:59:52+01:00)\n\n\u003e **Зауваження**: Формат дозволяє використовувати діапазони років, що виходять за межі звичайного діапазону ISO-8601 (`0000`\\-`9999`), завжди включаючи знак значок. Він також враховує, що частина часового поясу (`+01:00`) сумісна з ISO-8601.\n\n**`DateTime::RFC822`**\n\n**`DATE_RFC822`**\n\nRFC 822 (приклад: Mon, 15 Aug 05 15:52:01 +0000)\n\n**`DateTime::RFC850`**\n\n**`DATE_RFC850`**\n\nRFC 850 (приклад: Monday, 15-Aug-05 15:52:01 UTC)\n\n**`DateTime::RFC1036`**\n\n**`DATE_RFC1036`**\n\nRFC 1036 (приклад: Mon, 15 Aug 05 15:52:01 +0000)\n\n**`DateTime::RFC1123`**\n\n**`DATE_RFC1123`**\n\nRFC 1123 (приклад: Mon, 15 Aug 2005 15:52:01 +0000)\n\n**`DateTimeInterface::RFC7231`**\n\n**`DATE_RFC7231`**\n\nRFC 7231 (з версії PHP 7.0.19 та 7.1.5) (приклад: Sat, 30 Apr 2016 17:52:13 GMT)\n\n**`DateTime::RFC2822`**\n\n**`DATE_RFC2822`**\n\nRFC 2822 (приклад: Mon, 15 Aug 2005 15:52:01 +0000)\n\n**`DateTime::RFC3339`**\n\n**`DATE_RFC3339`**\n\nТеж, що й **`DATE_ATOM`**\n\n**`DateTime::RFC3339_EXTENDED`**\n\n**`DATE_RFC3339_EXTENDED`**\n\nФормат RFC 3339 EXTENDED (приклад: 2005-08-15T15:52:01.000+00:00)\n\n**`DateTime::RSS`**\n\n**`DATE_RSS`**\n\nRSS (приклад: Mon, 15 Aug 2005 15:52:01 +0000)\n\n**`DateTime::W3C`**\n\n**`DATE_W3C`**\n\nWorld Wide Web Consortium (приклад: 2005-08-15T15:52:01+00:00)\n\n## список змін\n\n| Версия | Опис |\n| --- | --- |\n| 8.2.0 | Добавлена константа\\*\\*`DateTimeInterface::ISO8601_EXPANDED`\\*\\* |\n| 7.2.0 | Константи класу тепер [DateTime](class.datetime.md) визначено в **DateTimeInterface** |\n\n## Зміст\n\n-   [DateTimeInterface::diff](datetime.diff.md)— Повертає різницю між двома об'єктами DateTime\n-   [DateTimeInterface::format](datetime.format.md)— Повертає дату, відформатовану згідно з переданим форматом\n-   [DateTimeInterface::getOffset](datetime.getoffset.md)— Повертає усунення часового поясу\n-   [DateTimeInterface::getTimestamp](datetime.gettimestamp.md)— Повертає тимчасову мітку Unix\n-   [DateTimeInterface::getTimezone](datetime.gettimezone.md)— Повертає часовий пояс щодо поточного значення DateTime\n-   [DateTime::\\_\\_wakeup](datetime.wakeup.md) \\- Обробник\\_\\_wakeup\n","title":"Інтерфейс DateTimeInterface","contentType":2,"navigation":[{"datetimeimmutable.sub.md":"« DateTimeImmutable::sub"},{"datetime.diff.md":"DateTimeInterface::diff »"},{"index.md":"PHP Manual"},{"book.datetime.md":"Дата час"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.datetimeinterface.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

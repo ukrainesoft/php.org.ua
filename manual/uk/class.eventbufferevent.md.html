@@ -1,0 +1,431 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас EventBufferEvent</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="eventbuffer.write.md" class="mx-4">« EventBuffer::write</a><a href="eventbufferevent.close.md" class="mx-4">EventBufferEvent::close »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.event.md" class="mx-4">Event</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас EventBufferEvent</h1>
+<p>(PECL event &gt;= 1.2.6-beta)</p>
+<h2>Вступ</h2>
+<p>Представляє буферизовану подію Libevent.</p>
+<p>Зазвичай додатку потрібно зробити буферизацію певної кількості даних на додаток до того, щоб легко реагувати на події. Коли ми, наприклад, хочемо записувати дані, звичайний алгоритм має такий вигляд:</p>
+<ol>
+<li>
+<p>Вирішуємо, що нам треба записати дані у з&#x27;єднання; складаємо дані у буфер</p>
+</li>
+<li>
+<p>Очікуємо, коли з&#x27;єднання стане доступним для запису</p>
+</li>
+<li>
+<p>Записуємо стільки даних, скільки можемо</p>
+</li>
+<li>
+<p>Запам&#x27;ятовуємо, скільки даних записали і якщо залишилися недозаписані дані, чекаємо, коли з&#x27;єднання знову стане доступним для запису.</p>
+</li>
+</ol>
+<p>Це шаблон буферизованого вводу/виводу настільки поширений, що Libevent надає вбудований механізм для нього. Буферизована подія складається з транспорту (наприклад сокета), буфера читання та буфера запису. На відміну від стандартних подій, які використовують функцію зворотного виклику, коли транспорт стає доступним для читання або запису, буферизована подія викликає функцію зворотного виклику тоді, коли прочитає або запише достатню кількість даних.</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+     
+    
+    
+    
+     
+      final
+      class EventBufferEvent
+     
+     {
+    
+    /* Константы */
+    
+     const
+     int
+      READING = 1;
+
+    const
+     int
+      WRITING = 2;
+
+    const
+     int
+      EOF = 16;
+
+    const
+     int
+      ERROR = 32;
+
+    const
+     int
+      TIMEOUT = 64;
+
+    const
+     int
+      CONNECTED = 128;
+
+    const
+     int
+      OPT_CLOSE_ON_FREE = 1;
+
+    const
+     int
+      OPT_THREADSAFE = 2;
+
+    const
+     int
+      OPT_DEFER_CALLBACKS = 4;
+
+    const
+     int
+      OPT_UNLOCK_CALLBACKS = 8;
+
+    const
+     int
+      SSL_OPEN = 0;
+
+    const
+     int
+      SSL_CONNECTING = 1;
+
+    const
+     int
+      SSL_ACCEPTING = 2;
+
+    /* Свойства */
+    public
+     int
+      $fd;
+
+    public
+     int
+      $priority;
+
+    public
+     readonly
+     EventBuffer
+      $input;
+
+    public
+     readonly
+     EventBuffer
+      $output;
+
+    /* Методы */
+    
+   public
+   close(): void
+public
+   connect(
+    string
+     $addr
+   ): bool
+public
+   connectHost(    
+    EventDnsBase
+     $dns_base
+   ,    
+    string
+     $hostname
+   ,    
+    int
+     $port
+   ,    
+    int
+     $family
+     = EventUtil::AF_UNSPEC
+   ): bool
+public
+   __construct(    
+    EventBase
+     $base
+   ,    
+    mixed
+     $socket
+     = null
+   ,    
+    int
+     $options
+     = 0
+   ,    
+    callable
+     $readcb
+     = null
+   ,    
+    callable
+     $writecb
+     = null
+   ,    
+    callable
+     $eventcb
+     = null
+   ,    
+    mixed
+     $arg
+     = null
+   )
+public
+   static
+   createPair(
+    EventBase
+     $base
+   , 
+    int
+     $options
+     = 0
+   ): array
+public
+   disable(
+    int
+     $events
+   ): bool
+public
+   enable(
+    int
+     $events
+   ): bool
+public
+   free(): void
+public
+   getDnsErrorString(): string
+public
+   getEnabled(): int
+public
+   getInput(): EventBuffer
+public
+   getOutput(): EventBuffer
+public
+   read(
+    int
+     $size
+   ): string
+public
+   readBuffer(
+    EventBuffer
+     $buf
+   ): bool
+public
+   setCallbacks(    
+    callable
+     $readcb
+   ,    
+    callable
+     $writecb
+   ,    
+    callable
+     $eventcb
+   ,    
+    mixed
+     $arg
+    = ?): void
+public
+   setPriority(
+    int
+     $priority
+   ): bool
+public
+   setTimeouts(
+    float
+     $timeout_read
+   , 
+    float
+     $timeout_write
+   ): bool
+public
+   setWatermark(
+    int
+     $events
+   , 
+    int
+     $lowmark
+   , 
+    int
+     $highmark
+   ): void
+public
+   sslError(): string
+public
+   static
+   sslFilter(    
+    EventBase
+     $base
+   ,    
+    EventBufferEvent
+     $underlying
+   ,    
+    EventSslContext
+     $ctx
+   ,    
+    int
+     $state
+   ,    
+    int
+     $options
+     = 0
+   ): EventBufferEvent
+public
+   sslGetCipherInfo(): string
+public
+   sslGetCipherName(): string
+public
+   sslGetCipherVersion(): string
+public
+   sslGetProtocol(): string
+public
+   sslRenegotiate(): void
+public
+   static
+   sslSocket(    
+    EventBase
+     $base
+   ,    
+    mixed
+     $socket
+   ,    
+    EventSslContext
+     $ctx
+   ,    
+    int
+     $state
+   ,    
+    int
+     $options
+    = ?): EventBufferEvent
+public
+   write(
+    string
+     $data
+   ): bool
+public
+   writeBuffer(
+    EventBuffer
+     $buf
+   ): bool
+
+   }
+</code></pre>
+<h2>Властивості</h2>
+<p>fd</p>
+<p>Числовий файловий дескриптор пов&#x27;язаний із буферизованим сокетом. Зазвичай є пов&#x27;язаним сокетом. Рівний **<code>null</code>**якщо відсутній файловий дескриптор (сокет) пов&#x27;язаний з буферизованим подією.</p>
+<p>priority</p>
+<p>Пріоритет подій, які використовуються для буферизованих подій.</p>
+<p>input</p>
+<p>Нижчележачий об&#x27;єкт вхідного буфера ( <a href="class.eventbuffer.md">EventBuffer</a></p>
+<p>output</p>
+<p>Нижчележачий об&#x27;єкт вихідного буфера ( <a href="class.eventbuffer.md">EventBuffer</a></p>
+<h2>Обумовлені константи</h2>
+<p><strong><code>EventBufferEvent::READING</code></strong></p>
+<p>Подія сталася в момент операції читання з буферевенти. Перевірте інші прапори цієї події.</p>
+<p><strong><code>EventBufferEvent::WRITING</code></strong></p>
+<p>Подія сталася в момент операції запису в буферевенті. Перевірте інші прапори цієї події.</p>
+<p><strong><code>EventBufferEvent::EOF</code></strong></p>
+<p>Отримано ознаку кінця файлу для буферизованого події.</p>
+<p><strong><code>EventBufferEvent::ERROR</code></strong></p>
+<p>Відбулася помилка під час операції з буфером. Детальну інформацію про помилку можна отримати за допомогою методів <a href="eventutil.getlastsocketerrno.md">EventUtil::getLastSocketErrno()</a>и/или<a href="eventutil.getlastsocketerror.md">EventUtil::getLastSocketError()</a></p>
+<p><strong><code>EventBufferEvent::TIMEOUT</code></strong></p>
+<p><strong><code>EventBufferEvent::CONNECTED</code></strong></p>
+<p>Запитане з&#x27;єднання з bufferevent встановлено.</p>
+<p><strong><code>EventBufferEvent::OPT_CLOSE_ON_FREE</code></strong></p>
+<p>Закрити транспорт, що знаходиться нижче, коли об&#x27;єкт буферизованої події знищено. Буде закрито сокет, знищено буфер тощо.</p>
+<p><strong><code>EventBufferEvent::OPT_THREADSAFE</code></strong></p>
+<p>Автоматично розміщувати блокування для bufferevent, що дозволяє безпечно використовувати багатопоточність.</p>
+<p><strong><code>EventBufferEvent::OPT_DEFER_CALLBACKS</code></strong></p>
+<p>Коли прапор встановлено, bufferevent відкладає всі функції зворотного виклику. Дивіться <a href="http://www.wangafu.net/~nickm/libevent-book/Ref6_bufferevent.md#_deferred_callbacks">» Швидке, переносне, неблокуюче мережне програмування з Libevent та відкладеними функціями зворотного виклику (Deferred callbacks)</a></p>
+<p><strong><code>EventBufferEvent::OPT_UNLOCK_CALLBACKS</code></strong></p>
+<p>За замовчуванням, коли bufferevent налаштований як потокобезпечний, для буферизованого події будуть зберігатися блокування при запуску будь-яких функцій користувача зворотного виклику. Установка цього прапора каже Libevent прибирати блокування під час виклику цих callback-функцій.</p>
+<p><strong><code>EventBufferEvent::SSL_OPEN</code></strong></p>
+<p>Підтвердження SSL завершено</p>
+<p><strong><code>EventBufferEvent::SSL_CONNECTING</code></strong></p>
+<p>В даний момент SSL бере участь у встановленні з&#x27;єднання як клієнт</p>
+<p><strong><code>EventBufferEvent::SSL_ACCEPTING</code></strong></p>
+<p>В даний момент SSL бере участь у встановленні з&#x27;єднання як сервер</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="eventbufferevent.close.md">EventBufferEvent::close</a>— Закриває дескриптор файлу, пов&#x27;язаний із поточною подією буфера</li>
+<li><a href="eventbufferevent.connect.md">EventBufferEvent::connect</a>— Підключає файловий дескриптор події буфера до вказаної адреси або сокету UNIX</li>
+<li><a href="eventbufferevent.connecthost.md">EventBufferEvent::connectHost</a>— Підключається на ім&#x27;я хоста з можливістю асинхронного дозволу DNS</li>
+<li><a href="eventbufferevent.construct.md">EventBufferEvent::__construct</a>— Створює об&#x27;єкт EventBufferEvent</li>
+<li><a href="eventbufferevent.createpair.md">EventBufferEvent::createPair</a>— Створює дві буферні події, пов&#x27;язані одна з одною</li>
+<li><a href="eventbufferevent.disable.md">EventBufferEvent::disable</a>— Вимикає читання, запис або те й інше у події буфера</li>
+<li><a href="eventbufferevent.enable.md">EventBufferEvent::enable</a>— Включає читання, запис або те й інше у події буфера</li>
+<li><a href="eventbufferevent.free.md">EventBufferEvent::free</a> - Звільняє подію буфера</li>
+<li><a href="eventbufferevent.getdnserrorstring.md">EventBufferEvent::getDnsErrorString</a>— Повертає рядок, який описує останню невдалу спробу пошуку DNS</li>
+<li><a href="eventbufferevent.getenabled.md">EventBufferEvent::getEnabled</a>— Повертає бітову маску подій, які активовані для буферної події.</li>
+<li><a href="eventbufferevent.getinput.md">EventBufferEvent::getInput</a>— Повертає базовий вхідний буфер, пов&#x27;язаний із поточною буферною подією</li>
+<li><a href="eventbufferevent.getoutput.md">EventBufferEvent::getOutput</a>— Повертає базовий вихідний буфер, пов&#x27;язаний із поточною буферною подією</li>
+<li><a href="eventbufferevent.read.md">EventBufferEvent::read</a> - Читає дані буфера</li>
+<li><a href="eventbufferevent.readbuffer.md">EventBufferEvent::readBuffer</a>— Зливає весь вміст буфера введення та поміщає його у буфер.</li>
+<li><a href="eventbufferevent.setcallbacks.md">EventBufferEvent::setCallbacks</a>— Призначає callback-функції для читання, запису та події (стану)</li>
+<li><a href="eventbufferevent.setpriority.md">EventBufferEvent::setPriority</a> - Надає пріоритет bufferevent</li>
+<li><a href="eventbufferevent.settimeouts.md">EventBufferEvent::setTimeouts</a>— Встановлює час очікування читання та запису для події буфера</li>
+<li><a href="eventbufferevent.setwatermark.md">EventBufferEvent::setWatermark</a>— Регулює водяні знаки читання та/або запису</li>
+<li><a href="eventbufferevent.sslerror.md">EventBufferEvent::sslError</a>— Повертає останню помилку OpenSSL, повідомлену буферною подією</li>
+<li><a href="eventbufferevent.sslfilter.md">EventBufferEvent::sslFilter</a>— Створює нову подію буфера SSL для надсилання своїх даних через іншу подію буфера</li>
+<li><a href="eventbufferevent.sslgetcipherinfo.md">EventBufferEvent::sslGetCipherInfo</a>— Повертає текстовий опис шифру</li>
+<li><a href="eventbufferevent.sslgetciphername.md">EventBufferEvent::sslGetCipherName</a>— Повертає поточне ім&#x27;я шифру з&#x27;єднання SSL</li>
+<li><a href="eventbufferevent.sslgetcipherversion.md">EventBufferEvent::sslGetCipherVersion</a>— Повертає версію шифру, який використовується поточним SSL-з&#x27;єднанням.</li>
+<li><a href="eventbufferevent.sslgetprotocol.md">EventBufferEvent::sslGetProtocol</a>— Повертає ім&#x27;я протоколу, який використовується для поточного з&#x27;єднання SSL.</li>
+<li><a href="eventbufferevent.sslrenegotiate.md">EventBufferEvent::sslRenegotiate</a>— Повідомляє буферну подію розпочати перегляд SSL</li>
+<li><a href="eventbufferevent.sslsocket.md">EventBufferEvent::sslSocket</a>— Створює нову буферну подію SSL для надсилання своїх даних через SSL у сокет</li>
+<li><a href="eventbufferevent.write.md">EventBufferEvent::write</a>— Додає дані до буфера виводу буферної події</li>
+<li><a href="eventbufferevent.writebuffer.md">EventBufferEvent::writeBuffer</a>— Додає вміст буфера в буфер виводу буферної події</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.eventbufferevent.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.eventbufferevent.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.eventbufferevent.md","content":"# Клас EventBufferEvent\n\n(PECL event \u003e= 1.2.6-beta)\n\n## Вступ\n\nПредставляє буферизовану подію Libevent.\n\nЗазвичай додатку потрібно зробити буферизацію певної кількості даних на додаток до того, щоб легко реагувати на події. Коли ми, наприклад, хочемо записувати дані, звичайний алгоритм має такий вигляд:\n\n1.  Вирішуємо, що нам треба записати дані у з'єднання; складаємо дані у буфер\n    \n2.  Очікуємо, коли з'єднання стане доступним для запису\n    \n3.  Записуємо стільки даних, скільки можемо\n    \n4.  Запам'ятовуємо, скільки даних записали і якщо залишилися недозаписані дані, чекаємо, коли з'єднання знову стане доступним для запису.\n    \n\nЦе шаблон буферизованого вводу/виводу настільки поширений, що Libevent надає вбудований механізм для нього. Буферизована подія складається з транспорту (наприклад сокета), буфера читання та буфера запису. На відміну від стандартних подій, які використовують функцію зворотного виклику, коли транспорт стає доступним для читання або запису, буферизована подія викликає функцію зворотного виклику тоді, коли прочитає або запише достатню кількість даних.\n\n## Огляд класів\n\n```classsynopsis\n\n     \n    \n    \n    \n     \n      final\n      class EventBufferEvent\n     \n     {\n    \n    /* Константы */\n    \n     const\n     int\n      READING = 1;\n\n    const\n     int\n      WRITING = 2;\n\n    const\n     int\n      EOF = 16;\n\n    const\n     int\n      ERROR = 32;\n\n    const\n     int\n      TIMEOUT = 64;\n\n    const\n     int\n      CONNECTED = 128;\n\n    const\n     int\n      OPT_CLOSE_ON_FREE = 1;\n\n    const\n     int\n      OPT_THREADSAFE = 2;\n\n    const\n     int\n      OPT_DEFER_CALLBACKS = 4;\n\n    const\n     int\n      OPT_UNLOCK_CALLBACKS = 8;\n\n    const\n     int\n      SSL_OPEN = 0;\n\n    const\n     int\n      SSL_CONNECTING = 1;\n\n    const\n     int\n      SSL_ACCEPTING = 2;\n\n    /* Свойства */\n    public\n     int\n      $fd;\n\n    public\n     int\n      $priority;\n\n    public\n     readonly\n     EventBuffer\n      $input;\n\n    public\n     readonly\n     EventBuffer\n      $output;\n\n    /* Методы */\n    \n   public\n   close(): void\npublic\n   connect(\n    string\n     $addr\n   ): bool\npublic\n   connectHost(    \n    EventDnsBase\n     $dns_base\n   ,    \n    string\n     $hostname\n   ,    \n    int\n     $port\n   ,    \n    int\n     $family\n     = EventUtil::AF_UNSPEC\n   ): bool\npublic\n   __construct(    \n    EventBase\n     $base\n   ,    \n    mixed\n     $socket\n     = null\n   ,    \n    int\n     $options\n     = 0\n   ,    \n    callable\n     $readcb\n     = null\n   ,    \n    callable\n     $writecb\n     = null\n   ,    \n    callable\n     $eventcb\n     = null\n   ,    \n    mixed\n     $arg\n     = null\n   )\npublic\n   static\n   createPair(\n    EventBase\n     $base\n   , \n    int\n     $options\n     = 0\n   ): array\npublic\n   disable(\n    int\n     $events\n   ): bool\npublic\n   enable(\n    int\n     $events\n   ): bool\npublic\n   free(): void\npublic\n   getDnsErrorString(): string\npublic\n   getEnabled(): int\npublic\n   getInput(): EventBuffer\npublic\n   getOutput(): EventBuffer\npublic\n   read(\n    int\n     $size\n   ): string\npublic\n   readBuffer(\n    EventBuffer\n     $buf\n   ): bool\npublic\n   setCallbacks(    \n    callable\n     $readcb\n   ,    \n    callable\n     $writecb\n   ,    \n    callable\n     $eventcb\n   ,    \n    mixed\n     $arg\n    = ?): void\npublic\n   setPriority(\n    int\n     $priority\n   ): bool\npublic\n   setTimeouts(\n    float\n     $timeout_read\n   , \n    float\n     $timeout_write\n   ): bool\npublic\n   setWatermark(\n    int\n     $events\n   , \n    int\n     $lowmark\n   , \n    int\n     $highmark\n   ): void\npublic\n   sslError(): string\npublic\n   static\n   sslFilter(    \n    EventBase\n     $base\n   ,    \n    EventBufferEvent\n     $underlying\n   ,    \n    EventSslContext\n     $ctx\n   ,    \n    int\n     $state\n   ,    \n    int\n     $options\n     = 0\n   ): EventBufferEvent\npublic\n   sslGetCipherInfo(): string\npublic\n   sslGetCipherName(): string\npublic\n   sslGetCipherVersion(): string\npublic\n   sslGetProtocol(): string\npublic\n   sslRenegotiate(): void\npublic\n   static\n   sslSocket(    \n    EventBase\n     $base\n   ,    \n    mixed\n     $socket\n   ,    \n    EventSslContext\n     $ctx\n   ,    \n    int\n     $state\n   ,    \n    int\n     $options\n    = ?): EventBufferEvent\npublic\n   write(\n    string\n     $data\n   ): bool\npublic\n   writeBuffer(\n    EventBuffer\n     $buf\n   ): bool\n\n   }\n```\n\n## Властивості\n\nfd\n\nЧисловий файловий дескриптор пов'язаний із буферизованим сокетом. Зазвичай є пов'язаним сокетом. Рівний \\*\\*`null`\\*\\*якщо відсутній файловий дескриптор (сокет) пов'язаний з буферизованим подією.\n\npriority\n\nПріоритет подій, які використовуються для буферизованих подій.\n\ninput\n\nНижчележачий об'єкт вхідного буфера ( [EventBuffer](class.eventbuffer.md)\n\noutput\n\nНижчележачий об'єкт вихідного буфера ( [EventBuffer](class.eventbuffer.md)\n\n## Обумовлені константи\n\n**`EventBufferEvent::READING`**\n\nПодія сталася в момент операції читання з буферевенти. Перевірте інші прапори цієї події.\n\n**`EventBufferEvent::WRITING`**\n\nПодія сталася в момент операції запису в буферевенті. Перевірте інші прапори цієї події.\n\n**`EventBufferEvent::EOF`**\n\nОтримано ознаку кінця файлу для буферизованого події.\n\n**`EventBufferEvent::ERROR`**\n\nВідбулася помилка під час операції з буфером. Детальну інформацію про помилку можна отримати за допомогою методів [EventUtil::getLastSocketErrno()](eventutil.getlastsocketerrno.md)и/или[EventUtil::getLastSocketError()](eventutil.getlastsocketerror.md)\n\n**`EventBufferEvent::TIMEOUT`**\n\n**`EventBufferEvent::CONNECTED`**\n\nЗапитане з'єднання з bufferevent встановлено.\n\n**`EventBufferEvent::OPT_CLOSE_ON_FREE`**\n\nЗакрити транспорт, що знаходиться нижче, коли об'єкт буферизованої події знищено. Буде закрито сокет, знищено буфер тощо.\n\n**`EventBufferEvent::OPT_THREADSAFE`**\n\nАвтоматично розміщувати блокування для bufferevent, що дозволяє безпечно використовувати багатопоточність.\n\n**`EventBufferEvent::OPT_DEFER_CALLBACKS`**\n\nКоли прапор встановлено, bufferevent відкладає всі функції зворотного виклику. Дивіться [» Швидке, переносне, неблокуюче мережне програмування з Libevent та відкладеними функціями зворотного виклику (Deferred callbacks)](http://www.wangafu.net/~nickm/libevent-book/Ref6_bufferevent.md#_deferred_callbacks)\n\n**`EventBufferEvent::OPT_UNLOCK_CALLBACKS`**\n\nЗа замовчуванням, коли bufferevent налаштований як потокобезпечний, для буферизованого події будуть зберігатися блокування при запуску будь-яких функцій користувача зворотного виклику. Установка цього прапора каже Libevent прибирати блокування під час виклику цих callback-функцій.\n\n**`EventBufferEvent::SSL_OPEN`**\n\nПідтвердження SSL завершено\n\n**`EventBufferEvent::SSL_CONNECTING`**\n\nВ даний момент SSL бере участь у встановленні з'єднання як клієнт\n\n**`EventBufferEvent::SSL_ACCEPTING`**\n\nВ даний момент SSL бере участь у встановленні з'єднання як сервер\n\n## Зміст\n\n-   [EventBufferEvent::close](eventbufferevent.close.md)— Закриває дескриптор файлу, пов'язаний із поточною подією буфера\n-   [EventBufferEvent::connect](eventbufferevent.connect.md)— Підключає файловий дескриптор події буфера до вказаної адреси або сокету UNIX\n-   [EventBufferEvent::connectHost](eventbufferevent.connecthost.md)— Підключається на ім'я хоста з можливістю асинхронного дозволу DNS\n-   [EventBufferEvent::\\_\\_construct](eventbufferevent.construct.md)— Створює об'єкт EventBufferEvent\n-   [EventBufferEvent::createPair](eventbufferevent.createpair.md)— Створює дві буферні події, пов'язані одна з одною\n-   [EventBufferEvent::disable](eventbufferevent.disable.md)— Вимикає читання, запис або те й інше у події буфера\n-   [EventBufferEvent::enable](eventbufferevent.enable.md)— Включає читання, запис або те й інше у події буфера\n-   [EventBufferEvent::free](eventbufferevent.free.md) \\- Звільняє подію буфера\n-   [EventBufferEvent::getDnsErrorString](eventbufferevent.getdnserrorstring.md)— Повертає рядок, який описує останню невдалу спробу пошуку DNS\n-   [EventBufferEvent::getEnabled](eventbufferevent.getenabled.md)— Повертає бітову маску подій, які активовані для буферної події.\n-   [EventBufferEvent::getInput](eventbufferevent.getinput.md)— Повертає базовий вхідний буфер, пов'язаний із поточною буферною подією\n-   [EventBufferEvent::getOutput](eventbufferevent.getoutput.md)— Повертає базовий вихідний буфер, пов'язаний із поточною буферною подією\n-   [EventBufferEvent::read](eventbufferevent.read.md) \\- Читає дані буфера\n-   [EventBufferEvent::readBuffer](eventbufferevent.readbuffer.md)— Зливає весь вміст буфера введення та поміщає його у буфер.\n-   [EventBufferEvent::setCallbacks](eventbufferevent.setcallbacks.md)— Призначає callback-функції для читання, запису та події (стану)\n-   [EventBufferEvent::setPriority](eventbufferevent.setpriority.md) \\- Надає пріоритет bufferevent\n-   [EventBufferEvent::setTimeouts](eventbufferevent.settimeouts.md)— Встановлює час очікування читання та запису для події буфера\n-   [EventBufferEvent::setWatermark](eventbufferevent.setwatermark.md)— Регулює водяні знаки читання та/або запису\n-   [EventBufferEvent::sslError](eventbufferevent.sslerror.md)— Повертає останню помилку OpenSSL, повідомлену буферною подією\n-   [EventBufferEvent::sslFilter](eventbufferevent.sslfilter.md)— Створює нову подію буфера SSL для надсилання своїх даних через іншу подію буфера\n-   [EventBufferEvent::sslGetCipherInfo](eventbufferevent.sslgetcipherinfo.md)— Повертає текстовий опис шифру\n-   [EventBufferEvent::sslGetCipherName](eventbufferevent.sslgetciphername.md)— Повертає поточне ім'я шифру з'єднання SSL\n-   [EventBufferEvent::sslGetCipherVersion](eventbufferevent.sslgetcipherversion.md)— Повертає версію шифру, який використовується поточним SSL-з'єднанням.\n-   [EventBufferEvent::sslGetProtocol](eventbufferevent.sslgetprotocol.md)— Повертає ім'я протоколу, який використовується для поточного з'єднання SSL.\n-   [EventBufferEvent::sslRenegotiate](eventbufferevent.sslrenegotiate.md)— Повідомляє буферну подію розпочати перегляд SSL\n-   [EventBufferEvent::sslSocket](eventbufferevent.sslsocket.md)— Створює нову буферну подію SSL для надсилання своїх даних через SSL у сокет\n-   [EventBufferEvent::write](eventbufferevent.write.md)— Додає дані до буфера виводу буферної події\n-   [EventBufferEvent::writeBuffer](eventbufferevent.writebuffer.md)— Додає вміст буфера в буфер виводу буферної події\n","title":"Клас EventBufferEvent","contentType":2,"navigation":[{"eventbuffer.write.md":"« EventBuffer::write"},{"eventbufferevent.close.md":"EventBufferEvent::close »"},{"index.md":"PHP Manual"},{"book.event.md":"Event"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.eventbufferevent.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

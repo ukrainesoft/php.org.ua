@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Розпочинаємо розробку плагіна mysqlnd</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="mysqlnd.plugin.api.md" class="mx-4">« API плагінів mysqlnd</a><a href="book.oci8.md" class="mx-4">OCI8 »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="mysqlnd.plugin.md" class="mx-4">API для плагінів до вбудованого драйвера MySQL</a></div><article class="markdown_markdown__yfc8y"><div><h2>Розпочинаємо розробку плагіна mysqlnd</h2>
+<p>Важливо пам&#x27;ятати, що плагін <code>mysqlnd</code> сам собою є модулем PHP.</p>
+<p>Наступний приклад показує базову структуру функції MINIT, що використовується у типовому плагіні <code>mysqlnd</code> :</p>
+<pre><code class="hljs language-scss"><span class="hljs-comment">/* my_php_mysqlnd_plugin.c */</span>
+
+ static <span class="hljs-built_in">PHP_MINIT_FUNCTION</span>(mysqlnd_plugin) {
+  <span class="hljs-comment">/* глобальные переменные, ini-настройки, ресурсы, классы */</span>
+
+  <span class="hljs-comment">/* регистрируем плагин mysqlnd */</span>
+  mysqlnd_plugin_id = <span class="hljs-built_in">mysqlnd_plugin_register</span>();
+
+  conn_m = <span class="hljs-built_in">mysqlnd_get_conn_methods</span>();
+  <span class="hljs-built_in">memcpy</span>(org_conn_m, conn_m,
+    sizeof(struct st_mysqlnd_conn_methods));
+
+  conn_m-&gt;query = <span class="hljs-built_in">MYSQLND_METHOD</span>(mysqlnd_plugin_conn, query);
+  conn_m-&gt;connect = <span class="hljs-built_in">MYSQLND_METHOD</span>(mysqlnd_plugin_conn, connect);
+}
+</code></pre>
+<pre><code class="hljs language-scss"><span class="hljs-comment">/* my_mysqlnd_plugin.c */</span>
+
+ enum_func_status <span class="hljs-built_in">MYSQLND_METHOD</span>(mysqlnd_plugin_conn, query)(/* ... */) {
+  <span class="hljs-comment">/* ... */</span>
+}
+enum_func_status <span class="hljs-built_in">MYSQLND_METHOD</span>(mysqlnd_plugin_conn, connect)(/* ... */) {
+  <span class="hljs-comment">/* ... */</span>
+}
+</code></pre>
+<p><strong>Аналіз завдання: від C до простору користувача</strong></p>
+<pre><code class="hljs language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">proxy</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">mysqlnd_plugin_connection</span> </span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">connect</span>(<span class="hljs-params"><span class="hljs-variable">$host</span>, ...</span>) </span>{ .. }
+}
+<span class="hljs-title function_ invoke__">mysqlnd_plugin_set_conn_proxy</span>(<span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">proxy</span>());
+</code></pre>
+<p>Процес:</p>
+<ol>
+<li>
+<p>PHP: користувач реєструє callback-функцію плагіна</p>
+</li>
+<li>
+<p>PHP: користувач викликає PHP MySQL API для з&#x27;єднання з MySQL</p>
+</li>
+<li>
+<p>C: ext/*mysql*викликає метод mysqlnd</p>
+</li>
+<li>
+<p>C: mysqlnd обривається в ext/mysqlnd_plugin</p>
+</li>
+<li>
+<p>C: ext/mysqlnd_plugin</p>
+<ol>
+<li>
+<p>Викликає користувацьку callback-функцію</p>
+</li>
+<li>
+<p>Або оригінальний метод<code>mysqlnd</code>якщо вона не задана</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>Вам необхідно виконати такі дії:</p>
+<ol>
+<li>
+<p>Створіть клас клас &quot; mysqlnd_plugin_connection&quot;</p>
+</li>
+<li>
+<p>Прийміть та зареєструйте проксі об&#x27;єкт за допомогою &quot;mysqlnd&quot;_plugin_set_conn_proxy()&quot;</p>
+</li>
+<li>
+<p>Викличте проксі методи простору користувача з C (оптимізація - zend_interfaces.h)</p>
+</li>
+</ol>
+<p>Методи об&#x27;єкта простору користувача мають бути викликані за допомогою <code>call_user_function()</code> або на рівень нижче, за допомогою <code>zend_call_method()</code></p>
+<p><strong>Оптимізація: викликайте методи З за допомогою zend_call_method</strong></p>
+<p>Следующий кусок кода демонстрирует прототип функции<code>zend_call_method</code>взятий з zend_interfaces.h.</p>
+<pre><code class="hljs language-arduino"><span class="hljs-function">ZEND_API zval* <span class="hljs-title">zend_call_method</span><span class="hljs-params">(
+  zval **object_pp, zend_class_entry *obj_ce,
+  zend_function **fn_proxy, <span class="hljs-type">char</span> *function_name,
+  <span class="hljs-type">int</span> function_name_len, zval **retval_ptr_ptr,
+  <span class="hljs-type">int</span> param_count, zval* arg1, zval* arg2 TSRMLS_DC
+)</span></span>;
+</code></pre>
+<p>Zend API підтримує лише два аргументи. Вам може знадобитися більше. Наприклад:</p>
+<pre><code class="hljs language-arduino"><span class="hljs-built_in">enum_func_status</span> (*func_mysqlnd_conn__connect)(
+  MYSQLND *conn, <span class="hljs-type">const</span> <span class="hljs-type">char</span> *host,
+  <span class="hljs-type">const</span> <span class="hljs-type">char</span> * user, <span class="hljs-type">const</span> <span class="hljs-type">char</span> * passwd,
+  <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> passwd_len, <span class="hljs-type">const</span> <span class="hljs-type">char</span> * db,
+  <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> db_len, <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> port,
+  <span class="hljs-type">const</span> <span class="hljs-type">char</span> * socket, <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> mysql_flags TSRMLS_DC
+);
+</code></pre>
+<p>Для обходу цієї проблеми вам необхідно зробити копію <code>zend_call_method()</code> та додати необхідні параметри. Ви можете зробити це створивши набір макросів <code>MY_ZEND_CALL_METHOD_WRAPPER</code></p>
+<p><strong>Звернення до простору користувача PHP</strong></p>
+<p>Цей шматок коду демонструє оптимізований метод виклику функцій простору користувача з:</p>
+<pre><code class="hljs language-ini">/* my_mysqlnd_plugin.c */
+
+MYSQLND_METHOD(my_conn_class,connect)(
+  MYSQLND *conn, const char *host /* ... */ TSRMLS_DC) {
+  enum_func_status <span class="hljs-attr">ret</span> = FAIL<span class="hljs-comment">;</span>
+  zval * <span class="hljs-attr">global_user_conn_proxy</span> = fetch_userspace_proxy()<span class="hljs-comment">;</span>
+  if (global_user_conn_proxy) {
+    /* вызов прокси пространства пользователя */
+    <span class="hljs-attr">ret</span> = MY_ZEND_CALL_METHOD_WRAPPER(global_user_conn_proxy, host, /*...*/)<span class="hljs-comment">;</span>
+  } else {
+    /* или оригинальный метод <span class="hljs-attr">mysqlnd</span> = ничего не делать, быть прозрачным */
+    <span class="hljs-attr">ret</span> = org_methods.connect(conn, host, user, passwd,
+          passwd_len, db, db_len, port,
+          socket, mysql_flags TSRMLS_CC)<span class="hljs-comment">;</span>
+  }
+  return ret<span class="hljs-comment">;</span>
+}
+</code></pre>
+<p><strong>Звернення до простору користувача: прості аргументи</strong></p>
+<pre><code class="hljs language-scss"><span class="hljs-comment">/* my_mysqlnd_plugin.c */</span>
+
+ <span class="hljs-built_in">MYSQLND_METHOD</span>(my_conn_class,connect)(
+  /* ... */, const char *host, /* ...*/) {
+  <span class="hljs-comment">/* ... */</span>
+  if (global_user_conn_proxy) {
+    <span class="hljs-comment">/* ... */</span>
+    zval* zv_host;
+    <span class="hljs-built_in">MAKE_STD_ZVAL</span>(zv_host);
+    <span class="hljs-built_in">ZVAL_STRING</span>(zv_host, host, <span class="hljs-number">1</span>);
+    <span class="hljs-built_in">MY_ZEND_CALL_METHOD_WRAPPER</span>(global_user_conn_proxy, zv_retval, zv_host /*, ...*/);
+    <span class="hljs-built_in">zval_ptr_dtor</span>(&amp;zv_host);
+    <span class="hljs-comment">/* ... */</span>
+  }
+  <span class="hljs-comment">/* ... */</span>
+}
+</code></pre>
+<p><strong>Звернення до простору користувача: структури як аргументи</strong></p>
+<pre><code class="hljs language-scss"><span class="hljs-comment">/* my_mysqlnd_plugin.c */</span>
+
+<span class="hljs-built_in">MYSQLND_METHOD</span>(my_conn_class, connect)(
+  MYSQLND *conn, /* ...*/) {
+  <span class="hljs-comment">/* ... */</span>
+  if (global_user_conn_proxy) {
+    <span class="hljs-comment">/* ... */</span>
+    zval* zv_conn;
+    <span class="hljs-built_in">ZEND_REGISTER_RESOURCE</span>(zv_conn, (void *)conn, le_mysqlnd_plugin_conn);
+    <span class="hljs-built_in">MY_ZEND_CALL_METHOD_WRAPPER</span>(global_user_conn_proxy, zv_retval, zv_conn, zv_host /*, ...*/);
+    <span class="hljs-built_in">zval_ptr_dtor</span>(&amp;zv_conn);
+    <span class="hljs-comment">/* ... */</span>
+  }
+  <span class="hljs-comment">/* ... */</span>
+}
+</code></pre>
+<p>перший аргумент багатьох методів <code>mysqlnd</code> - це &quot;об&#x27;єкти&quot; С. Наприклад, перший аргумент методу connect() є вказівником на <code>MYSQLND</code>. Структура MYSQLND є об&#x27;єктом з&#x27;єднання <code>mysqlnd</code></p>
+<p>Вказівник на об&#x27;єкт з&#x27;єднання <code>mysqlnd</code> можна порівняти зі стандартним обробником файлового вводу/виводу. Так само як і він, об&#x27;єкт з&#x27;єднання <code>mysqlnd</code> повинен бути пов&#x27;язаний із простором користувача з використанням PHP типом &quot;resource&quot;.</p>
+<p><strong>З C в простір користувача і назад</strong></p>
+<pre><code class="hljs language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">proxy</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">mysqlnd_plugin_connection</span> </span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">connect</span>(<span class="hljs-params"><span class="hljs-variable">$conn</span>, <span class="hljs-variable">$host</span>, ...</span>) </span>{
+    <span class="hljs-comment">/* до внедрения */</span>
+    <span class="hljs-title function_ invoke__">printf</span>(<span class="hljs-string">&quot;Подключение к = &#x27;%s&#x27;\n&quot;</span>, <span class="hljs-variable">$host</span>);
+    <span class="hljs-title function_ invoke__">debug_print_backtrace</span>();
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">parent</span>::<span class="hljs-title function_ invoke__">connect</span>(<span class="hljs-variable">$conn</span>);
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">query</span>(<span class="hljs-params"><span class="hljs-variable">$conn</span>, <span class="hljs-variable">$query</span></span>) </span>{
+    <span class="hljs-comment">/* после внедрения */</span>
+    <span class="hljs-variable">$ret</span> = <span class="hljs-built_in">parent</span>::<span class="hljs-title function_ invoke__">query</span>(<span class="hljs-variable">$conn</span>, <span class="hljs-variable">$query</span>);
+    <span class="hljs-title function_ invoke__">printf</span>(<span class="hljs-string">&quot;Запрос = &#x27;%s&#x27;\n&quot;</span>, <span class="hljs-variable">$query</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$ret</span>;
+  }
+}
+<span class="hljs-title function_ invoke__">mysqlnd_plugin_set_conn_proxy</span>(<span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">proxy</span>());
+</code></pre>
+<p>Користувачі PHP повинні мати можливість викликати батьківські реалізації перевизначених методів.</p>
+<p>В результаті успадкування можна &quot;уточнити&quot; лише вибрані методи і ви можете вибрати, коли виконувати ваш код, до або після батьківського.</p>
+<p><strong>Вбудований клас: mysqlnd_plugin_connection::connect()</strong></p>
+<pre><code class="hljs language-scss"><span class="hljs-comment">/*  my_mysqlnd_plugin_classes.c */</span>
+
+ <span class="hljs-built_in">PHP_METHOD</span>(&quot;mysqlnd_plugin_connection&quot;, connect) {
+  <span class="hljs-comment">/* ... упрощённый! ... */</span>
+  zval* mysqlnd_rsrc;
+  MYSQLND* conn;
+  char* host; int host_len;
+  if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, &quot;rs&quot;,
+    &amp;mysqlnd_rsrc, &amp;host, &amp;host_len) == FAILURE) {
+    <span class="hljs-built_in">RETURN_NULL</span>();
+  }
+  <span class="hljs-built_in">ZEND_FETCH_RESOURCE</span>(conn, MYSQLND* conn, &amp;mysqlnd_rsrc, -<span class="hljs-number">1</span>,
+    &quot;Mysqlnd Connection&quot;, le_mysqlnd_plugin_conn);
+  if (PASS == org_methods.connect(conn, host, /* simplified! */ TSRMLS_CC))
+    RETVAL_TRUE;
+  else
+    RETVAL_FALSE;
+}
+</code></pre></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/mysqlnd.plugin.developing.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/mysqlnd.plugin.developing.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"mysqlnd.plugin.developing.md","content":"## Розпочинаємо розробку плагіна mysqlnd\n\nВажливо пам'ятати, що плагін `mysqlnd` сам собою є модулем PHP.\n\nНаступний приклад показує базову структуру функції MINIT, що використовується у типовому плагіні `mysqlnd` :\n\n```\n/* my_php_mysqlnd_plugin.c */\n\n static PHP_MINIT_FUNCTION(mysqlnd_plugin) {\n  /* глобальные переменные, ini-настройки, ресурсы, классы */\n\n  /* регистрируем плагин mysqlnd */\n  mysqlnd_plugin_id = mysqlnd_plugin_register();\n\n  conn_m = mysqlnd_get_conn_methods();\n  memcpy(org_conn_m, conn_m,\n    sizeof(struct st_mysqlnd_conn_methods));\n\n  conn_m-\u003equery = MYSQLND_METHOD(mysqlnd_plugin_conn, query);\n  conn_m-\u003econnect = MYSQLND_METHOD(mysqlnd_plugin_conn, connect);\n}\n```\n\n```\n/* my_mysqlnd_plugin.c */\n\n enum_func_status MYSQLND_METHOD(mysqlnd_plugin_conn, query)(/* ... */) {\n  /* ... */\n}\nenum_func_status MYSQLND_METHOD(mysqlnd_plugin_conn, connect)(/* ... */) {\n  /* ... */\n}\n```\n\n**Аналіз завдання: від C до простору користувача**\n\n```\nclass proxy extends mysqlnd_plugin_connection {\n  public function connect($host, ...) { .. }\n}\nmysqlnd_plugin_set_conn_proxy(new proxy());\n```\n\nПроцес:\n\n1.  PHP: користувач реєструє callback-функцію плагіна\n    \n2.  PHP: користувач викликає PHP MySQL API для з'єднання з MySQL\n    \n3.  C: ext/\\*mysql\\*викликає метод mysqlnd\n    \n4.  C: mysqlnd обривається в ext/mysqlnd\\_plugin\n    \n5.  C: ext/mysqlnd\\_plugin\n    \n    1.  Викликає користувацьку callback-функцію\n        \n    2.  Або оригінальний метод`mysqlnd`якщо вона не задана\n        \n\nВам необхідно виконати такі дії:\n\n1.  Створіть клас клас \" mysqlnd\\_plugin\\_connection\"\n    \n2.  Прийміть та зареєструйте проксі об'єкт за допомогою \"mysqlnd\"\\_plugin\\_set\\_conn\\_proxy()\"\n    \n3.  Викличте проксі методи простору користувача з C (оптимізація - zend\\_interfaces.h)\n    \n\nМетоди об'єкта простору користувача мають бути викликані за допомогою `call_user_function()` або на рівень нижче, за допомогою `zend_call_method()`\n\n**Оптимізація: викликайте методи З за допомогою zend\\_call\\_method**\n\nСледующий кусок кода демонстрирует прототип функции`zend_call_method`взятий з zend\\_interfaces.h.\n\n```\nZEND_API zval* zend_call_method(\n  zval **object_pp, zend_class_entry *obj_ce,\n  zend_function **fn_proxy, char *function_name,\n  int function_name_len, zval **retval_ptr_ptr,\n  int param_count, zval* arg1, zval* arg2 TSRMLS_DC\n);\n```\n\nZend API підтримує лише два аргументи. Вам може знадобитися більше. Наприклад:\n\n```\nenum_func_status (*func_mysqlnd_conn__connect)(\n  MYSQLND *conn, const char *host,\n  const char * user, const char * passwd,\n  unsigned int passwd_len, const char * db,\n  unsigned int db_len, unsigned int port,\n  const char * socket, unsigned int mysql_flags TSRMLS_DC\n);\n```\n\nДля обходу цієї проблеми вам необхідно зробити копію `zend_call_method()` та додати необхідні параметри. Ви можете зробити це створивши набір макросів `MY_ZEND_CALL_METHOD_WRAPPER`\n\n**Звернення до простору користувача PHP**\n\nЦей шматок коду демонструє оптимізований метод виклику функцій простору користувача з:\n\n```\n/* my_mysqlnd_plugin.c */\n\nMYSQLND_METHOD(my_conn_class,connect)(\n  MYSQLND *conn, const char *host /* ... */ TSRMLS_DC) {\n  enum_func_status ret = FAIL;\n  zval * global_user_conn_proxy = fetch_userspace_proxy();\n  if (global_user_conn_proxy) {\n    /* вызов прокси пространства пользователя */\n    ret = MY_ZEND_CALL_METHOD_WRAPPER(global_user_conn_proxy, host, /*...*/);\n  } else {\n    /* или оригинальный метод mysqlnd = ничего не делать, быть прозрачным */\n    ret = org_methods.connect(conn, host, user, passwd,\n          passwd_len, db, db_len, port,\n          socket, mysql_flags TSRMLS_CC);\n  }\n  return ret;\n}\n```\n\n**Звернення до простору користувача: прості аргументи**\n\n```\n/* my_mysqlnd_plugin.c */\n\n MYSQLND_METHOD(my_conn_class,connect)(\n  /* ... */, const char *host, /* ...*/) {\n  /* ... */\n  if (global_user_conn_proxy) {\n    /* ... */\n    zval* zv_host;\n    MAKE_STD_ZVAL(zv_host);\n    ZVAL_STRING(zv_host, host, 1);\n    MY_ZEND_CALL_METHOD_WRAPPER(global_user_conn_proxy, zv_retval, zv_host /*, ...*/);\n    zval_ptr_dtor(\u0026zv_host);\n    /* ... */\n  }\n  /* ... */\n}\n```\n\n**Звернення до простору користувача: структури як аргументи**\n\n```\n/* my_mysqlnd_plugin.c */\n\nMYSQLND_METHOD(my_conn_class, connect)(\n  MYSQLND *conn, /* ...*/) {\n  /* ... */\n  if (global_user_conn_proxy) {\n    /* ... */\n    zval* zv_conn;\n    ZEND_REGISTER_RESOURCE(zv_conn, (void *)conn, le_mysqlnd_plugin_conn);\n    MY_ZEND_CALL_METHOD_WRAPPER(global_user_conn_proxy, zv_retval, zv_conn, zv_host /*, ...*/);\n    zval_ptr_dtor(\u0026zv_conn);\n    /* ... */\n  }\n  /* ... */\n}\n```\n\nперший аргумент багатьох методів `mysqlnd` - це \"об'єкти\" С. Наприклад, перший аргумент методу connect() є вказівником на `MYSQLND`. Структура MYSQLND є об'єктом з'єднання `mysqlnd`\n\nВказівник на об'єкт з'єднання `mysqlnd` можна порівняти зі стандартним обробником файлового вводу/виводу. Так само як і він, об'єкт з'єднання `mysqlnd` повинен бути пов'язаний із простором користувача з використанням PHP типом \"resource\".\n\n**З C в простір користувача і назад**\n\n```\nclass proxy extends mysqlnd_plugin_connection {\n  public function connect($conn, $host, ...) {\n    /* до внедрения */\n    printf(\"Подключение к = '%s'\\n\", $host);\n    debug_print_backtrace();\n    return parent::connect($conn);\n  }\n\n  public function query($conn, $query) {\n    /* после внедрения */\n    $ret = parent::query($conn, $query);\n    printf(\"Запрос = '%s'\\n\", $query);\n    return $ret;\n  }\n}\nmysqlnd_plugin_set_conn_proxy(new proxy());\n```\n\nКористувачі PHP повинні мати можливість викликати батьківські реалізації перевизначених методів.\n\nВ результаті успадкування можна \"уточнити\" лише вибрані методи і ви можете вибрати, коли виконувати ваш код, до або після батьківського.\n\n**Вбудований клас: mysqlnd\\_plugin\\_connection::connect()**\n\n```\n/*  my_mysqlnd_plugin_classes.c */\n\n PHP_METHOD(\"mysqlnd_plugin_connection\", connect) {\n  /* ... упрощённый! ... */\n  zval* mysqlnd_rsrc;\n  MYSQLND* conn;\n  char* host; int host_len;\n  if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, \"rs\",\n    \u0026mysqlnd_rsrc, \u0026host, \u0026host_len) == FAILURE) {\n    RETURN_NULL();\n  }\n  ZEND_FETCH_RESOURCE(conn, MYSQLND* conn, \u0026mysqlnd_rsrc, -1,\n    \"Mysqlnd Connection\", le_mysqlnd_plugin_conn);\n  if (PASS == org_methods.connect(conn, host, /* simplified! */ TSRMLS_CC))\n    RETVAL_TRUE;\n  else\n    RETVAL_FALSE;\n}\n```\n","title":"Розпочинаємо розробку плагіна mysqlnd","contentType":2,"navigation":[{"mysqlnd.plugin.api.md":"« API плагінів mysqlnd"},{"book.oci8.md":"OCI8 »"},{"index.md":"PHP Manual"},{"mysqlnd.plugin.md":"API для плагінів до вбудованого драйвера MySQL"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqlnd.plugin.developing.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

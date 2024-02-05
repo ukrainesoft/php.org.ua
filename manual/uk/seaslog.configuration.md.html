@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Налаштування під час виконання</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="seaslog.installation.md" class="mx-4">« Встановлення</a><a href="seaslog.resources.md" class="mx-4">Типи ресурсів »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="seaslog.setup.md" class="mx-4">Встановлення та налаштування</a></div><article class="markdown_markdown__yfc8y"><div><h2>Налаштування під час виконання</h2>
+<p>Поведінка цих функцій залежить від установок у php.ini.</p>
+<p><strong>Опції налаштування Seaslog</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Имя</th><th>По умолчанию</th><th>Место изменения</th><th>Список изменений</th></tr></thead><tbody><tr><td><a href="seaslog.configuration.md#ini.seaslog.appender">seaslog.appender</a></td><td></td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.appender-retry">seaslog.appender_retry</a></td><td></td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.level">seaslog.level</a></td><td>8</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.remote-host">seaslog.remote_host</a></td><td>127.0.0.1</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.remote-port">seaslog.remote_port</a></td><td>514</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.remote-timeout">seaslog.remote_timeout</a></td><td></td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.default-basepath">seaslog.default_basepath</a></td><td>/var/log/www</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.default-logger">seaslog.default_logger</a></td><td>default</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.default-template">seaslog.default_template</a></td><td>%T</td><td>%L</td><td>%P</td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.default-datetime-format">seaslog.default_datetime_format</a></td><td>Y-m-d H:i:s</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.trace-error">seaslog.trace_error</a></td><td></td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.trace-exception">seaslog.trace_exception</a></td><td></td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.trace-notice">seaslog.trace_notice</a></td><td></td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.trace-warning">seaslog.trace_warning</a></td><td></td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.use-buffer">seaslog.use_buffer</a></td><td></td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.buffer-size">seaslog.buffer_size</a></td><td></td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.buffer-disabled-in-cli">seaslog.buffer_disabled_in_cli</a></td><td></td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.disting-type">seaslog.disting_type</a></td><td></td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.disting-folder">seaslog.disting_folder</a></td><td></td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.disting-by-hour">seaslog.disting_by_hour</a></td><td></td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.recall-depth">seaslog.recall_depth</a></td><td></td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.trim-wrap">seaslog.trim_wrap</a></td><td></td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.ignore-warning">seaslog.ignore_warning</a></td><td></td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="seaslog.configuration.md#ini.seaslog.throw-exception">seaslog.throw_exception</a></td><td></td><td><strong><code>INI_ALL</code></strong></td><td></td></tr></tbody></table>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>seaslog.appender</code>int</p>
+<p>Перемикає сховище журналу записів. 1 – Файл, 2 – TCP, 3 – UDP (за замовчуванням 1)</p>
+<p>SeasLog надішле журнал на сервер tcp://remote_host:remote_port або udp://remote_host:remote_port, якщо <em>seaslog.appender</em> налаштований на <code>2 (TCP)</code>или<code>3 (UDP)</code></p>
+<p>Когда<em>SeasLog</em> відправляє журнал TCP/UDP, стиль відповідає RFC5424 . <code>{logInfo}</code>, на який впливає <em>seaslog.default_template</em></p>
+<pre><code class="hljs language-kotlin">Стиль журнала отформатирован следующим образом:
+&lt;<span class="hljs-number">15</span>&gt;<span class="hljs-number">1</span> <span class="hljs-number">2017</span>-08-27T01:<span class="hljs-number">24</span>:<span class="hljs-number">59</span>+08:<span class="hljs-number">00</span> vagrant-ubuntu-trusty test/logger[<span class="hljs-number">27171</span>]: <span class="hljs-number">2016</span>-<span class="hljs-number">06</span>-<span class="hljs-number">25</span> <span class="hljs-number">00</span>:<span class="hljs-number">59</span>:<span class="hljs-number">43</span> | DEBUG | <span class="hljs-number">21423</span> | 599157af4e937 | <span class="hljs-number">1466787583.322</span> | <span class="hljs-keyword">this</span> <span class="hljs-keyword">is</span> a neeke debug
+&lt;<span class="hljs-number">14</span>&gt;<span class="hljs-number">1</span> <span class="hljs-number">2017</span>-08-27T01:<span class="hljs-number">24</span>:<span class="hljs-number">59</span>+08:<span class="hljs-number">00</span> vagrant-ubuntu-trusty test/logger[<span class="hljs-number">27171</span>]: <span class="hljs-number">2016</span>-<span class="hljs-number">06</span>-<span class="hljs-number">25</span> <span class="hljs-number">00</span>:<span class="hljs-number">59</span>:<span class="hljs-number">43</span> | INFO | <span class="hljs-number">21423</span> | 599157af4e937 | <span class="hljs-number">1466787583.323</span> | <span class="hljs-keyword">this</span> <span class="hljs-keyword">is</span> a info log
+&lt;<span class="hljs-number">13</span>&gt;<span class="hljs-number">1</span> <span class="hljs-number">2017</span>-08-27T01:<span class="hljs-number">24</span>:<span class="hljs-number">59</span>+08:<span class="hljs-number">00</span> vagrant-ubuntu-trusty test/logger[<span class="hljs-number">27171</span>]: <span class="hljs-number">2016</span>-<span class="hljs-number">06</span>-<span class="hljs-number">25</span> <span class="hljs-number">00</span>:<span class="hljs-number">59</span>:<span class="hljs-number">43</span> | NOTICE | <span class="hljs-number">21423</span> | 599157af4e937 | <span class="hljs-number">1466787583.324</span> | <span class="hljs-keyword">this</span> <span class="hljs-keyword">is</span> a notice log
+</code></pre>
+<p><code>seaslog.appender_retry</code>int</p>
+<p>Записує кількість повторних спроб журналу. За замовчуванням 0 (не записує)</p>
+<p><code>seaslog.buffer_disabled_in_cli</code>int</p>
+<p>Вимикає буфер у CLI. 1 - Так, 0 - Ні (за замовчуванням)</p>
+<p>Увімкніть опцію buffer_disabled_in_cli. buffer_disabled_in_cli вимкнено за замовчуванням. Якщо увімкнути buffer_disabled_in_cli і запустити його в CLI, параметр seaslog.use_buffer буде скинутий, Seaslog НЕГАЙНО зробить запис у сховищі даних.</p>
+<p><code>seaslog.buffer_size</code>int</p>
+<p>Вкажіть для параметра buffer_значення size 100. Значення buffer_за замовчуванням 0, це означає, що буфер не використовується. Якщо buffer_size &gt; 0, SeasLog перезапише дані у сховищі, якщо розмір попередньо записаного в пам&#x27;ять журналу &gt;= buffer_size та оновіть опитування пам&#x27;яті.</p>
+<p><code>seaslog.default_basepath</code>string</p>
+<p>Базовий шлях журналу за промовчанням. За промовчанням &quot;/var/log/www&quot;.</p>
+<p><code>seaslog.default_datetime_format</code>string</p>
+<p>Стиль DateTime. За промовчанням &quot;Y-m-d H:i:s&quot;.</p>
+<p><code>seaslog.default_logger</code>string</p>
+<p>Шлях до реєстратора за замовчуванням. За промовчанням &quot;default&quot;.</p>
+<p><code>seaslog.disting_by_hour</code>int</p>
+<p>Перемикає режим реєстратора щогодини. 1 - Так, 0 - Ні (за замовчуванням)</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p><em>seaslog.disting_by_hour = 1</em> перемикає режим використання Logger DisTing щогодини. Це означає, що SeasLog буде створювати файл щогодини.</p>
+</blockquote>
+<p><code>seaslog.disting_folder</code>int</p>
+<p>Перемикає режим використання реєстратора за папками. 1 - Так (за замовчуванням), 0 - Ні.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p><em>seaslog.disting_folder = 1</em> перемикає режим використання Logger DisTing за папками, це означає, що SeasLog буде створювати файли в папках і при цьому налаштуванні закриття SeasLog створить файл з підкресленням, використовуючи тип реєстратора та час, наприклад, default_20180211.log.</p>
+</blockquote>
+<p><code>seaslog.disting_type</code>int</p>
+<p>Перемикає режим використання реєстратора типу. 1 - Так, 0 - Ні (за замовчуванням)</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p><em>seaslog.disting_type = 1</em> перемикає режим використання Logger DisTing за типом, це означає, що SeasLog створить файл info\warn\error чи іншого типу.</p>
+</blockquote>
+<p><code>seaslog.ignore_warning</code>int</p>
+<p>Перемикає режим ігнорування попереджень SeasLog. 1 - Так (за замовчуванням), 0 - Ні.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p><em>seaslog.ignore_warning = 1</em> Відкриває попередження про ігнорування самого SeasLog. Коли права доступу до каталогу або порти сервера прийому заблоковані, вони ігноруються; під час закриття видається попередження.</p>
+</blockquote>
+<p><code>seaslog.level</code>int</p>
+<p>Рівень запису реєстратора. Типово 8 (все). 0 - EMERGENCY, 1 - ALERT, 2 - CRITICAL, 3 - ERROR, 4 - WARNING, 5 - NOTICE, 6 - INFO, 7 - DEBUG, 8-ALL</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Примітка: елемент конфігурації змінено, починаючи з версії 1.7.0. До версії 1.7.0, чим менше значення, тим більше записів ведеться відповідно до рівня: 0 - все, 1 - debug, 2 - info, 3-notice, 4-warning, 5-error, 6-critical, 7-alert 8-емергенці. До версії 1.7.0 значення за промовчанням - 0 (все).</p>
+</blockquote>
+<p><code>seaslog.recall_depth</code>int</p>
+<p>Глибина виклику функції журналу. Буде торкнутися змінної <code>LineNo</code>в<code>%F</code>По умолчанию 0</p>
+<p><code>seaslog.remote_host</code>string</p>
+<p>Якщо ви використовуєте запис TCP або UDP, налаштуйте віддалений IP. За промовчанням &quot;127.0.0.1&quot;.</p>
+<p><code>seaslog.remote_port</code>int</p>
+<p>Якщо ви використовуєте запис TCP або UDP, налаштуйте віддалений порт. Типово 514.</p>
+<p><code>seaslog.remote_timeout</code>int</p>
+<p>Якщо ви використовуєте запис TCP або UDP, налаштуйте віддалений час очікування. За замовчуванням 1 секунда</p>
+<p><code>seaslog.throw_exception</code>int</p>
+<p>Перемикає режим викиду виключення SeasLog. 1 - Так (за замовчуванням), 0 - Ні.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p><em>seaslog.throw_exception = 1</em> Відкриває виняток, який викидає сам SeasLog. Якщо адміністрація каталогу або порт приймаючого сервера заблоковано, викидається виняток; не викидається виняток під час закриття.</p>
+</blockquote>
+<p><code>seaslog.trace_error</code>int</p>
+<p>Автоматичний запис &quot;error&quot; реєстратором за замовчуванням. 1 - Так (за замовчуванням), 0 - Ні.</p>
+<p><code>seaslog.trace_exception</code>int</p>
+<p>Автоматичний запис &quot;exception&quot; реєстратор за замовчуванням. 1 - Так, 0 - Ні (за замовчуванням).</p>
+<p><code>seaslog.trace_notice</code>int</p>
+<p>Автоматичний запис &quot;notice&quot; реєстратором за замовчуванням. 1 - Так, 0 - Ні (за замовчуванням).</p>
+<p><code>seaslog.trace_warning</code>int</p>
+<p>Автоматичний запис &quot;warning&quot; реєстратором за замовчуванням. 1 - Так, 0 - Ні (за замовчуванням).</p>
+<p><code>seaslog.trim_wrap</code>int</p>
+<p>Обрізає \n и\r у повідомленні журналу. 1 - Так, 0 - Ні (за замовчуванням)</p>
+<p><code>seaslog.use_buffer</code>int</p>
+<p>Перемикає режим використання буфера журналу пам&#x27;яті. 1 - Так, 0 - Ні (за замовчуванням)</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p><em>seaslog.use_buffer = 1</em>Включите configure use_buffer. За замовчуванням use_buffer вимкнено. Якщо увімкнути use_buffer, SeasLog попередньо записуватиме журнал у пам&#x27;ять і він буде перезаписаний в сховище даних шляхом завершення запиту або виходу з процесу PHP (PHP RSHUTDOWN або PHP MSHUTDOWN).</p>
+</blockquote>
+<p><code>seaslog.default_template</code>string</p>
+<p>Стандартний шаблон журналу. За замовчуванням &quot;%T | %L | % P | % Q | % t | % M&quot;.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Надаються наступні змінні за замовчуванням, які можна використовувати безпосередньо у шаблоні журналу та замінювати відповідним значенням під час створення журналу.</p>
+<p>Шаблон журнала по умолчанию:<code>seaslog.default_template = &quot;%T | %L | %P | %Q | %t | %M&quot;</code>, це означає, що стиль журналу за промовчанням: <code>{dateTime} | {level} | {pid} | {uniqid} | {timeStamp} | {logInfo}</code></p>
+<p>Якщо ви використовуєте власний шаблон журналу, наприклад: <code>seaslog.default_template = &quot;[%T]:%L %P %Q %t %M&quot;</code>, це означатиме, що стиль журналу був налаштований як: <code>[{dateTime}]:{level} {pid} {uniqid} {timeStamp} {logInfo}</code></p>
+<p><strong>Таблиця змінних за промовчанням Seaslog</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variable Name</th><th>Опис</th></tr></thead><tbody><tr><td>%L</td><td>Рівень.</td></tr><tr><td>%M</td><td>Повідомлення.</td></tr><tr><td>%T</td><td>DateTime. Таке як <code>2017-08-16 19:15:02</code>, порушене <code>seaslog.default_datetime_format</code></td></tr><tr><td>%t</td><td>Timestamp. Таке як <code>1502882102.862</code>з точністю до мілісекунд.</td></tr><tr><td>%Q</td><td>RequestId. Щоб розрізняти один запит, наприклад, не викликати функції <code>SeasLog::setRequestId($string)</code>При ініціалізації запиту використовується унікальне значення, згенероване вбудованою функцією. <code>static char *get_uniqid()</code></td></tr><tr><td>%H</td><td>HostName.</td></tr><tr><td>%P</td><td>ProcessId.</td></tr><tr><td>%D</td><td>Domain:Port. Таке як <code>www.cloudwise.com:80</code>; Якщо CLI, то <code>cli</code></td></tr><tr><td>%R</td><td>URI запиту. Такий як <code>/app/user/signin</code>; Якщо CLI, то, наприклад <code>CliIndex.php</code></td></tr><tr><td>%m</td><td>Спосіб запиту. Такий як <code>Get</code>; Якщо CLI, то використовується команда, наприклад, <code>/bin/bash</code></td></tr><tr><td>%I</td><td>IP-адреса клієнта; Якщо CLI, то <code>local</code>. . Пріоритет значень: HTTP_X_REAL_IP &gt; HTTP_X_FORWARDED_FOR &gt; REMOTE_ADDR</td></tr><tr><td>%F</td><td>FileName:LineNo. Таке як <code>UserService.php:118</code></td></tr><tr><td>%U</td><td>Замовленнявикористання в байтах. Виклик <code>zend_memory_usage</code></td></tr><tr><td>%u</td><td>PeakMemoryUsage в байтах. Виклик <code>zend_memory_peak_usage</code></td></tr><tr><td>%C</td><td><code>TODO</code> Class::Action. Таке як <code>UserService::getUserInfo</code></td></tr></tbody></table>
+</blockquote></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/seaslog.configuration.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/seaslog.configuration.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"seaslog.configuration.md","content":"## Налаштування під час виконання\n\nПоведінка цих функцій залежить від установок у php.ini.\n\n**Опції налаштування Seaslog**\n\n| Имя | По умолчанию | Место изменения | Список изменений |\n| --- | --- | --- | --- |\n| [seaslog.appender](seaslog.configuration.md#ini.seaslog.appender) |  | **`INI_SYSTEM`** |  |\n| [seaslog.appender\\_retry](seaslog.configuration.md#ini.seaslog.appender-retry) |  | **`INI_ALL`** |  |\n| [seaslog.level](seaslog.configuration.md#ini.seaslog.level) | 8 | **`INI_ALL`** |  |\n| [seaslog.remote\\_host](seaslog.configuration.md#ini.seaslog.remote-host) | 127.0.0.1 | **`INI_ALL`** |  |\n| [seaslog.remote\\_port](seaslog.configuration.md#ini.seaslog.remote-port) | 514 | **`INI_ALL`** |  |\n| [seaslog.remote\\_timeout](seaslog.configuration.md#ini.seaslog.remote-timeout) |  | **`INI_SYSTEM`** |  |\n| [seaslog.default\\_basepath](seaslog.configuration.md#ini.seaslog.default-basepath) | /var/log/www | **`INI_SYSTEM`** |  |\n| [seaslog.default\\_logger](seaslog.configuration.md#ini.seaslog.default-logger) | default | **`INI_SYSTEM`** |  |\n| [seaslog.default\\_template](seaslog.configuration.md#ini.seaslog.default-template) | %T | %L | %P |\n| [seaslog.default\\_datetime\\_format](seaslog.configuration.md#ini.seaslog.default-datetime-format) | Y-m-d H:i:s | **`INI_SYSTEM`** |  |\n| [seaslog.trace\\_error](seaslog.configuration.md#ini.seaslog.trace-error) |  | **`INI_ALL`** |  |\n| [seaslog.trace\\_exception](seaslog.configuration.md#ini.seaslog.trace-exception) |  | **`INI_SYSTEM`** |  |\n| [seaslog.trace\\_notice](seaslog.configuration.md#ini.seaslog.trace-notice) |  | **`INI_ALL`** |  |\n| [seaslog.trace\\_warning](seaslog.configuration.md#ini.seaslog.trace-warning) |  | **`INI_ALL`** |  |\n| [seaslog.use\\_buffer](seaslog.configuration.md#ini.seaslog.use-buffer) |  | **`INI_SYSTEM`** |  |\n| [seaslog.buffer\\_size](seaslog.configuration.md#ini.seaslog.buffer-size) |  | **`INI_ALL`** |  |\n| [seaslog.buffer\\_disabled\\_in\\_cli](seaslog.configuration.md#ini.seaslog.buffer-disabled-in-cli) |  | **`INI_SYSTEM`** |  |\n| [seaslog.disting\\_type](seaslog.configuration.md#ini.seaslog.disting-type) |  | **`INI_SYSTEM`** |  |\n| [seaslog.disting\\_folder](seaslog.configuration.md#ini.seaslog.disting-folder) |  | **`INI_SYSTEM`** |  |\n| [seaslog.disting\\_by\\_hour](seaslog.configuration.md#ini.seaslog.disting-by-hour) |  | **`INI_SYSTEM`** |  |\n| [seaslog.recall\\_depth](seaslog.configuration.md#ini.seaslog.recall-depth) |  | **`INI_ALL`** |  |\n| [seaslog.trim\\_wrap](seaslog.configuration.md#ini.seaslog.trim-wrap) |  | **`INI_ALL`** |  |\n| [seaslog.ignore\\_warning](seaslog.configuration.md#ini.seaslog.ignore-warning) |  | **`INI_ALL`** |  |\n| [seaslog.throw\\_exception](seaslog.configuration.md#ini.seaslog.throw-exception) |  | **`INI_ALL`** |  |\n\nКоротке пояснення конфігураційних директив.\n\n`seaslog.appender`int\n\nПеремикає сховище журналу записів. 1 – Файл, 2 – TCP, 3 – UDP (за замовчуванням 1)\n\nSeasLog надішле журнал на сервер tcp://remote\\_host:remote\\_port або udp://remote\\_host:remote\\_port, якщо *seaslog.appender* налаштований на `2 (TCP)`или`3 (UDP)`\n\nКогда*SeasLog* відправляє журнал TCP/UDP, стиль відповідає RFC5424 . `{logInfo}`, на який впливає *seaslog.default\\_template*\n\n```\nСтиль журнала отформатирован следующим образом:\n\u003c15\u003e1 2017-08-27T01:24:59+08:00 vagrant-ubuntu-trusty test/logger[27171]: 2016-06-25 00:59:43 | DEBUG | 21423 | 599157af4e937 | 1466787583.322 | this is a neeke debug\n\u003c14\u003e1 2017-08-27T01:24:59+08:00 vagrant-ubuntu-trusty test/logger[27171]: 2016-06-25 00:59:43 | INFO | 21423 | 599157af4e937 | 1466787583.323 | this is a info log\n\u003c13\u003e1 2017-08-27T01:24:59+08:00 vagrant-ubuntu-trusty test/logger[27171]: 2016-06-25 00:59:43 | NOTICE | 21423 | 599157af4e937 | 1466787583.324 | this is a notice log\n```\n\n`seaslog.appender_retry`int\n\nЗаписує кількість повторних спроб журналу. За замовчуванням 0 (не записує)\n\n`seaslog.buffer_disabled_in_cli`int\n\nВимикає буфер у CLI. 1 - Так, 0 - Ні (за замовчуванням)\n\nУвімкніть опцію buffer\\_disabled\\_in\\_cli. buffer\\_disabled\\_in\\_cli вимкнено за замовчуванням. Якщо увімкнути buffer\\_disabled\\_in\\_cli і запустити його в CLI, параметр seaslog.use\\_buffer буде скинутий, Seaslog НЕГАЙНО зробить запис у сховищі даних.\n\n`seaslog.buffer_size`int\n\nВкажіть для параметра buffer\\_значення size 100. Значення buffer\\_за замовчуванням 0, це означає, що буфер не використовується. Якщо buffer\\_size \u003e 0, SeasLog перезапише дані у сховищі, якщо розмір попередньо записаного в пам'ять журналу \u003e= buffer\\_size та оновіть опитування пам'яті.\n\n`seaslog.default_basepath`string\n\nБазовий шлях журналу за промовчанням. За промовчанням \"/var/log/www\".\n\n`seaslog.default_datetime_format`string\n\nСтиль DateTime. За промовчанням \"Y-m-d H:i:s\".\n\n`seaslog.default_logger`string\n\nШлях до реєстратора за замовчуванням. За промовчанням \"default\".\n\n`seaslog.disting_by_hour`int\n\nПеремикає режим реєстратора щогодини. 1 - Так, 0 - Ні (за замовчуванням)\n\n\u003e **Зауваження** :\n\u003e \n\u003e *seaslog.disting\\_by\\_hour = 1* перемикає режим використання Logger DisTing щогодини. Це означає, що SeasLog буде створювати файл щогодини.\n\n`seaslog.disting_folder`int\n\nПеремикає режим використання реєстратора за папками. 1 - Так (за замовчуванням), 0 - Ні.\n\n\u003e **Зауваження** :\n\u003e \n\u003e *seaslog.disting\\_folder = 1* перемикає режим використання Logger DisTing за папками, це означає, що SeasLog буде створювати файли в папках і при цьому налаштуванні закриття SeasLog створить файл з підкресленням, використовуючи тип реєстратора та час, наприклад, default\\_20180211.log.\n\n`seaslog.disting_type`int\n\nПеремикає режим використання реєстратора типу. 1 - Так, 0 - Ні (за замовчуванням)\n\n\u003e **Зауваження** :\n\u003e \n\u003e *seaslog.disting\\_type = 1* перемикає режим використання Logger DisTing за типом, це означає, що SeasLog створить файл info\\\\warn\\\\error чи іншого типу.\n\n`seaslog.ignore_warning`int\n\nПеремикає режим ігнорування попереджень SeasLog. 1 - Так (за замовчуванням), 0 - Ні.\n\n\u003e **Зауваження** :\n\u003e \n\u003e *seaslog.ignore\\_warning = 1* Відкриває попередження про ігнорування самого SeasLog. Коли права доступу до каталогу або порти сервера прийому заблоковані, вони ігноруються; під час закриття видається попередження.\n\n`seaslog.level`int\n\nРівень запису реєстратора. Типово 8 (все). 0 - EMERGENCY, 1 - ALERT, 2 - CRITICAL, 3 - ERROR, 4 - WARNING, 5 - NOTICE, 6 - INFO, 7 - DEBUG, 8-ALL\n\n\u003e **Зауваження** :\n\u003e \n\u003e Примітка: елемент конфігурації змінено, починаючи з версії 1.7.0. До версії 1.7.0, чим менше значення, тим більше записів ведеться відповідно до рівня: 0 - все, 1 - debug, 2 - info, 3-notice, 4-warning, 5-error, 6-critical, 7-alert 8-емергенці. До версії 1.7.0 значення за промовчанням - 0 (все).\n\n`seaslog.recall_depth`int\n\nГлибина виклику функції журналу. Буде торкнутися змінної `LineNo`в`%F`По умолчанию 0\n\n`seaslog.remote_host`string\n\nЯкщо ви використовуєте запис TCP або UDP, налаштуйте віддалений IP. За промовчанням \"127.0.0.1\".\n\n`seaslog.remote_port`int\n\nЯкщо ви використовуєте запис TCP або UDP, налаштуйте віддалений порт. Типово 514.\n\n`seaslog.remote_timeout`int\n\nЯкщо ви використовуєте запис TCP або UDP, налаштуйте віддалений час очікування. За замовчуванням 1 секунда\n\n`seaslog.throw_exception`int\n\nПеремикає режим викиду виключення SeasLog. 1 - Так (за замовчуванням), 0 - Ні.\n\n\u003e **Зауваження** :\n\u003e \n\u003e *seaslog.throw\\_exception = 1* Відкриває виняток, який викидає сам SeasLog. Якщо адміністрація каталогу або порт приймаючого сервера заблоковано, викидається виняток; не викидається виняток під час закриття.\n\n`seaslog.trace_error`int\n\nАвтоматичний запис \"error\" реєстратором за замовчуванням. 1 - Так (за замовчуванням), 0 - Ні.\n\n`seaslog.trace_exception`int\n\nАвтоматичний запис \"exception\" реєстратор за замовчуванням. 1 - Так, 0 - Ні (за замовчуванням).\n\n`seaslog.trace_notice`int\n\nАвтоматичний запис \"notice\" реєстратором за замовчуванням. 1 - Так, 0 - Ні (за замовчуванням).\n\n`seaslog.trace_warning`int\n\nАвтоматичний запис \"warning\" реєстратором за замовчуванням. 1 - Так, 0 - Ні (за замовчуванням).\n\n`seaslog.trim_wrap`int\n\nОбрізає \\\\n и\\\\r у повідомленні журналу. 1 - Так, 0 - Ні (за замовчуванням)\n\n`seaslog.use_buffer`int\n\nПеремикає режим використання буфера журналу пам'яті. 1 - Так, 0 - Ні (за замовчуванням)\n\n\u003e **Зауваження** :\n\u003e \n\u003e *seaslog.use\\_buffer = 1*Включите configure use\\_buffer. За замовчуванням use\\_buffer вимкнено. Якщо увімкнути use\\_buffer, SeasLog попередньо записуватиме журнал у пам'ять і він буде перезаписаний в сховище даних шляхом завершення запиту або виходу з процесу PHP (PHP RSHUTDOWN або PHP MSHUTDOWN).\n\n`seaslog.default_template`string\n\nСтандартний шаблон журналу. За замовчуванням \"%T | %L | % P | % Q | % t | % M\".\n\n\u003e **Зауваження** :\n\u003e \n\u003e Надаються наступні змінні за замовчуванням, які можна використовувати безпосередньо у шаблоні журналу та замінювати відповідним значенням під час створення журналу.\n\u003e \n\u003e Шаблон журнала по умолчанию:`seaslog.default_template = \"%T | %L | %P | %Q | %t | %M\"`, це означає, що стиль журналу за промовчанням: `{dateTime} | {level} | {pid} | {uniqid} | {timeStamp} | {logInfo}`\n\u003e \n\u003e Якщо ви використовуєте власний шаблон журналу, наприклад: `seaslog.default_template = \"[%T]:%L %P %Q %t %M\"`, це означатиме, що стиль журналу був налаштований як: `[{dateTime}]:{level} {pid} {uniqid} {timeStamp} {logInfo}`\n\u003e \n\u003e **Таблиця змінних за промовчанням Seaslog**\n\u003e \n\u003e | Variable Name | Опис |\n\u003e | --- | --- |\n\u003e | %L | Рівень. |\n\u003e | %M | Повідомлення. |\n\u003e | %T | DateTime. Таке як `2017-08-16 19:15:02`, порушене `seaslog.default_datetime_format` |\n\u003e | %t | Timestamp. Таке як `1502882102.862`з точністю до мілісекунд. |\n\u003e | %Q | RequestId. Щоб розрізняти один запит, наприклад, не викликати функції `SeasLog::setRequestId($string)`При ініціалізації запиту використовується унікальне значення, згенероване вбудованою функцією. `static char *get_uniqid()` |\n\u003e | %H | HostName. |\n\u003e | %P | ProcessId. |\n\u003e | %D | Domain:Port. Таке як `www.cloudwise.com:80`; Якщо CLI, то `cli` |\n\u003e | %R | URI запиту. Такий як `/app/user/signin`; Якщо CLI, то, наприклад `CliIndex.php` |\n\u003e | %m | Спосіб запиту. Такий як `Get`; Якщо CLI, то використовується команда, наприклад, `/bin/bash` |\n\u003e | %I | IP-адреса клієнта; Якщо CLI, то `local`. . Пріоритет значень: HTTP\\_X\\_REAL\\_IP \u003e HTTP\\_X\\_FORWARDED\\_FOR \u003e REMOTE\\_ADDR |\n\u003e | %F | FileName:LineNo. Таке як `UserService.php:118` |\n\u003e | %U | Замовленнявикористання в байтах. Виклик `zend_memory_usage` |\n\u003e | %u | PeakMemoryUsage в байтах. Виклик `zend_memory_peak_usage` |\n\u003e | %C | `TODO` Class::Action. Таке як `UserService::getUserInfo` |\n","title":"Налаштування під час виконання","contentType":2,"navigation":[{"seaslog.installation.md":"« Встановлення"},{"seaslog.resources.md":"Типи ресурсів »"},{"index.md":"PHP Manual"},{"seaslog.setup.md":"Встановлення та налаштування"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"seaslog.configuration.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

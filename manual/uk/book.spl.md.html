@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Стандартна бібліотека PHP (SPL)</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="seaslog.warning.md" class="mx-4">« SeasLog::warning</a><a href="intro.spl.md" class="mx-4">Вступ &quot;</a><a href="index.md" class="mx-4">PHP Manual</a><a href="refs.basic.other.md" class="mx-4">Інші базові модулі</a></div><article class="markdown_markdown__yfc8y"><div><h1>Стандартна бібліотека PHP (SPL)</h1>
+<ul>
+<li><a href="intro.spl.md">Вступ</a></li>
+<li><a href="spl.setup.md">Встановлення та налаштування</a>
+<ul>
+<li><a href="spl.requirements.md">Вимоги</a></li>
+<li><a href="spl.installation.md">Установка</a></li>
+<li><a href="spl.configuration.md">Налаштування під час виконання</a></li>
+<li><a href="spl.resources.md">Типи ресурсів</a></li>
+</ul>
+</li>
+<li><a href="spl.constants.md">Обумовлені константи</a></li>
+<li><a href="spl.datastructures.md">Структури даних</a>
+<ul>
+<li><a href="class.spldoublylinkedlist.md">SplDoublyLinkedList</a> - Клас SplDoublyLinkedList</li>
+<li><a href="class.splstack.md">SplStack</a> - Клас SplStack</li>
+<li><a href="class.splqueue.md">SplQueue</a> - Клас SplQueue</li>
+<li><a href="class.splheap.md">SplHeap</a> - Клас SplHeap</li>
+<li><a href="class.splmaxheap.md">SplMaxHeap</a> - Клас SplMaxHeap</li>
+<li><a href="class.splminheap.md">SplMinHeap</a> - Клас SplMinHeap</li>
+<li><a href="class.splpriorityqueue.md">SplPriorityQueue</a> - Клас SplPriorityQueue</li>
+<li><a href="class.splfixedarray.md">SplFixedArray</a> - Клас SplFixedArray</li>
+<li><a href="class.splobjectstorage.md">SplObjectStorage</a> - Клас SplObjectStorage</li>
+</ul>
+</li>
+<li><a href="spl.iterators.md">Ітератори</a>
+<ul>
+<li><a href="class.appenditerator.md">AppendIterator</a> - Клас AppendIterator</li>
+<li><a href="class.arrayiterator.md">ArrayIterator</a> - Клас ArrayIterator</li>
+<li><a href="class.cachingiterator.md">CachingIterator</a> - Клас CachingIterator</li>
+<li><a href="class.callbackfilteriterator.md">CallbackFilterIterator</a> - Клас CallbackFilterIterator</li>
+<li><a href="class.directoryiterator.md">DirectoryIterator</a> - Клас DirectoryIterator</li>
+<li><a href="class.emptyiterator.md">EmptyIterator</a> - Клас EmptyIterator</li>
+<li><a href="class.filesystemiterator.md">FilesystemIterator</a> - Клас FilesystemIterator</li>
+<li><a href="class.filteriterator.md">FilterIterator</a> - Клас FilterIterator</li>
+<li><a href="class.globiterator.md">GlobIterator</a> - Клас GlobIterator</li>
+<li><a href="class.infiniteiterator.md">InfiniteIterator</a> - Клас InfiniteIterator</li>
+<li><a href="class.iteratoriterator.md">IteratorIterator</a> - Клас IteratorIterator</li>
+<li><a href="class.limititerator.md">LimitIterator</a> - Клас LimitIterator</li>
+<li><a href="class.multipleiterator.md">MultipleIterator</a> - Клас MultipleIterator</li>
+<li><a href="class.norewinditerator.md">NoRewindIterator</a> - Клас NoRewindIterator</li>
+<li><a href="class.parentiterator.md">ParentIterator</a> - Клас ParentIterator</li>
+<li><a href="class.recursivearrayiterator.md">RecursiveArrayIterator</a> - Клас RecursiveArrayIterator</li>
+<li><a href="class.recursivecachingiterator.md">RecursiveCachingIterator</a> - Клас RecursiveCachingIterator</li>
+<li><a href="class.recursivecallbackfilteriterator.md">RecursiveCallbackFilterIterator</a> - Клас RecursiveCallbackFilterIterator</li>
+<li><a href="class.recursivedirectoryiterator.md">RecursiveDirectoryIterator</a>— Клас RecursiveDirectoryIterator</li>
+<li><a href="class.recursivefilteriterator.md">RecursiveFilterIterator</a> - Клас RecursiveFilterIterator</li>
+<li><a href="class.recursiveiteratoriterator.md">RecursiveIteratorIterator</a> - Клас RecursiveIteratorIterator</li>
+<li><a href="class.recursiveregexiterator.md">RecursiveRegexIterator</a> - Клас RecursiveRegexIterator</li>
+<li><a href="class.recursivetreeiterator.md">RecursiveTreeIterator</a> - Клас RecursiveTreeIterator</li>
+<li><a href="class.regexiterator.md">RegexIterator</a> - Клас RegexIterator</li>
+</ul>
+</li>
+<li><a href="spl.interfaces.md">Інтерфейси</a>
+<ul>
+<li><a href="class.countable.md">Countable</a> - Інтерфейс Countable</li>
+<li><a href="class.outeriterator.md">OuterIterator</a> - Інтерфейс OuterIterator</li>
+<li><a href="class.recursiveiterator.md">RecursiveIterator</a> - Інтерфейс RecursiveIterator</li>
+<li><a href="class.seekableiterator.md">SeekableIterator</a> - Інтерфейс SeekableIterator</li>
+</ul>
+</li>
+<li><a href="spl.exceptions.md">Винятки</a>
+<ul>
+<li><a href="class.badfunctioncallexception.md">BadFunctionCallException</a> - Клас BadFunctionCallException</li>
+<li><a href="class.badmethodcallexception.md">BadMethodCallException</a> - Клас BadMethodCallException</li>
+<li><a href="class.domainexception.md">DomainException</a> - Клас DomainException</li>
+<li><a href="class.invalidargumentexception.md">InvalidArgumentException</a> - Клас InvalidArgumentException</li>
+<li><a href="class.lengthexception.md">LengthException</a> - Клас LengthException</li>
+<li><a href="class.logicexception.md">LogicException</a> - Клас LogicException</li>
+<li><a href="class.outofboundsexception.md">OutOfBoundsException</a> - Клас OutOfBoundsException</li>
+<li><a href="class.outofrangeexception.md">OutOfRangeException</a> - Клас OutOfRangeException</li>
+<li><a href="class.overflowexception.md">OverflowException</a> - Клас OverflowException</li>
+<li><a href="class.rangeexception.md">RangeException</a> - Клас RangeException</li>
+<li><a href="class.runtimeexception.md">RuntimeException</a> - Клас RuntimeException</li>
+<li><a href="class.underflowexception.md">UnderflowException</a> - Клас UnderflowException</li>
+<li><a href="class.unexpectedvalueexception.md">UnexpectedValueException</a> - Клас UnexpectedValueException</li>
+</ul>
+</li>
+<li><a href="ref.spl.md">Функції SPL</a>
+<ul>
+<li><a href="function.class-implements.md">class_implements</a>— Повертає список інтерфейсів, реалізованих у заданому класі чи інтерфейсі</li>
+<li><a href="function.class-parents.md">class_parents</a> - Повертає список батьківських класів заданого класу</li>
+<li><a href="function.class-uses.md">class_uses</a>— Повертає список трейтів, які використовуються заданим класом</li>
+<li><a href="function.iterator-apply.md">iterator_apply</a>— Викликає функцію кожного елемента в ітераторі</li>
+<li><a href="function.iterator-count.md">iterator_count</a>— Підраховує кількість елементів в ітераторі</li>
+<li><a href="function.iterator-to-array.md">iterator_to_array</a>— Копіює ітератор у масив</li>
+<li><a href="function.spl-autoload-call.md">spl_autoload_call</a>— Спроба завантажити клас усіма зареєстрованими функціями__autoload()</li>
+<li><a href="function.spl-autoload-extensions.md">spl_autoload_extensions</a>— Реєстрація та виведення розширень файлів для spl_autoload</li>
+<li><a href="function.spl-autoload-functions.md">spl_autoload_functions</a>— Отримання списку всіх зареєстрованих функцій__autoload()</li>
+<li><a href="function.spl-autoload-register.md">spl_autoload_register</a>— Реєструє задану функцію як реалізацію методу__autoload()</li>
+<li><a href="function.spl-autoload-unregister.md">spl_autoload_unregister</a>— Скасування реєстрації функції як реалізацію методу__autoload()</li>
+<li><a href="function.spl-autoload.md">spl_autoload</a> - Реалізація за умовчанням методу__autoload()</li>
+<li><a href="function.spl-classes.md">spl_classes</a>— Повертає доступні класи SPL</li>
+<li><a href="function.spl-object-hash.md">spl_object_hash</a>— Повертає хеш-ідентифікатор об&#x27;єкту</li>
+<li><a href="function.spl-object-id.md">spl_object_id</a>— Отримати цілий ідентифікатор об&#x27;єкта</li>
+</ul>
+</li>
+<li><a href="spl.files.md">Обробка файлів</a>
+<ul>
+<li><a href="class.splfileinfo.md">SplFileInfo</a> - Клас SplFileInfo</li>
+<li><a href="class.splfileobject.md">SplFileObject</a> - Клас SplFileObject</li>
+<li><a href="class.spltempfileobject.md">SplTempFileObject</a> - Клас SplTempFileObject</li>
+</ul>
+</li>
+<li><a href="spl.misc.md">Різні класи та інтерфейси</a>
+<ul>
+<li><a href="class.arrayobject.md">ArrayObject</a> - Клас ArrayObject</li>
+<li><a href="class.splobserver.md">SplObserver</a> - Інтерфейс SplObserver</li>
+<li><a href="class.splsubject.md">SplSubject</a> - Інтерфейс SplSubject</li>
+</ul>
+</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/book.spl.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/book.spl.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"book.spl.md","content":"# Стандартна бібліотека PHP (SPL)\n\n-   [Вступ](intro.spl.md)\n-   [Встановлення та налаштування](spl.setup.md)\n    -   [Вимоги](spl.requirements.md)\n    -   [Установка](spl.installation.md)\n    -   [Налаштування під час виконання](spl.configuration.md)\n    -   [Типи ресурсів](spl.resources.md)\n-   [Обумовлені константи](spl.constants.md)\n-   [Структури даних](spl.datastructures.md)\n    -   [SplDoublyLinkedList](class.spldoublylinkedlist.md) \\- Клас SplDoublyLinkedList\n    -   [SplStack](class.splstack.md) \\- Клас SplStack\n    -   [SplQueue](class.splqueue.md) \\- Клас SplQueue\n    -   [SplHeap](class.splheap.md) \\- Клас SplHeap\n    -   [SplMaxHeap](class.splmaxheap.md) \\- Клас SplMaxHeap\n    -   [SplMinHeap](class.splminheap.md) \\- Клас SplMinHeap\n    -   [SplPriorityQueue](class.splpriorityqueue.md) \\- Клас SplPriorityQueue\n    -   [SplFixedArray](class.splfixedarray.md) \\- Клас SplFixedArray\n    -   [SplObjectStorage](class.splobjectstorage.md) \\- Клас SplObjectStorage\n-   [Ітератори](spl.iterators.md)\n    -   [AppendIterator](class.appenditerator.md) \\- Клас AppendIterator\n    -   [ArrayIterator](class.arrayiterator.md) \\- Клас ArrayIterator\n    -   [CachingIterator](class.cachingiterator.md) \\- Клас CachingIterator\n    -   [CallbackFilterIterator](class.callbackfilteriterator.md) \\- Клас CallbackFilterIterator\n    -   [DirectoryIterator](class.directoryiterator.md) \\- Клас DirectoryIterator\n    -   [EmptyIterator](class.emptyiterator.md) \\- Клас EmptyIterator\n    -   [FilesystemIterator](class.filesystemiterator.md) \\- Клас FilesystemIterator\n    -   [FilterIterator](class.filteriterator.md) \\- Клас FilterIterator\n    -   [GlobIterator](class.globiterator.md) \\- Клас GlobIterator\n    -   [InfiniteIterator](class.infiniteiterator.md) \\- Клас InfiniteIterator\n    -   [IteratorIterator](class.iteratoriterator.md) \\- Клас IteratorIterator\n    -   [LimitIterator](class.limititerator.md) \\- Клас LimitIterator\n    -   [MultipleIterator](class.multipleiterator.md) \\- Клас MultipleIterator\n    -   [NoRewindIterator](class.norewinditerator.md) \\- Клас NoRewindIterator\n    -   [ParentIterator](class.parentiterator.md) \\- Клас ParentIterator\n    -   [RecursiveArrayIterator](class.recursivearrayiterator.md) \\- Клас RecursiveArrayIterator\n    -   [RecursiveCachingIterator](class.recursivecachingiterator.md) \\- Клас RecursiveCachingIterator\n    -   [RecursiveCallbackFilterIterator](class.recursivecallbackfilteriterator.md) \\- Клас RecursiveCallbackFilterIterator\n    -   [RecursiveDirectoryIterator](class.recursivedirectoryiterator.md)— Клас RecursiveDirectoryIterator\n    -   [RecursiveFilterIterator](class.recursivefilteriterator.md) \\- Клас RecursiveFilterIterator\n    -   [RecursiveIteratorIterator](class.recursiveiteratoriterator.md) \\- Клас RecursiveIteratorIterator\n    -   [RecursiveRegexIterator](class.recursiveregexiterator.md) \\- Клас RecursiveRegexIterator\n    -   [RecursiveTreeIterator](class.recursivetreeiterator.md) \\- Клас RecursiveTreeIterator\n    -   [RegexIterator](class.regexiterator.md) \\- Клас RegexIterator\n-   [Інтерфейси](spl.interfaces.md)\n    -   [Countable](class.countable.md) \\- Інтерфейс Countable\n    -   [OuterIterator](class.outeriterator.md) \\- Інтерфейс OuterIterator\n    -   [RecursiveIterator](class.recursiveiterator.md) \\- Інтерфейс RecursiveIterator\n    -   [SeekableIterator](class.seekableiterator.md) \\- Інтерфейс SeekableIterator\n-   [Винятки](spl.exceptions.md)\n    -   [BadFunctionCallException](class.badfunctioncallexception.md) \\- Клас BadFunctionCallException\n    -   [BadMethodCallException](class.badmethodcallexception.md) \\- Клас BadMethodCallException\n    -   [DomainException](class.domainexception.md) \\- Клас DomainException\n    -   [InvalidArgumentException](class.invalidargumentexception.md) \\- Клас InvalidArgumentException\n    -   [LengthException](class.lengthexception.md) \\- Клас LengthException\n    -   [LogicException](class.logicexception.md) \\- Клас LogicException\n    -   [OutOfBoundsException](class.outofboundsexception.md) \\- Клас OutOfBoundsException\n    -   [OutOfRangeException](class.outofrangeexception.md) \\- Клас OutOfRangeException\n    -   [OverflowException](class.overflowexception.md) \\- Клас OverflowException\n    -   [RangeException](class.rangeexception.md) \\- Клас RangeException\n    -   [RuntimeException](class.runtimeexception.md) \\- Клас RuntimeException\n    -   [UnderflowException](class.underflowexception.md) \\- Клас UnderflowException\n    -   [UnexpectedValueException](class.unexpectedvalueexception.md) \\- Клас UnexpectedValueException\n-   [Функції SPL](ref.spl.md)\n    -   [class\\_implements](function.class-implements.md)— Повертає список інтерфейсів, реалізованих у заданому класі чи інтерфейсі\n    -   [class\\_parents](function.class-parents.md) \\- Повертає список батьківських класів заданого класу\n    -   [class\\_uses](function.class-uses.md)— Повертає список трейтів, які використовуються заданим класом\n    -   [iterator\\_apply](function.iterator-apply.md)— Викликає функцію кожного елемента в ітераторі\n    -   [iterator\\_count](function.iterator-count.md)— Підраховує кількість елементів в ітераторі\n    -   [iterator\\_to\\_array](function.iterator-to-array.md)— Копіює ітератор у масив\n    -   [spl\\_autoload\\_call](function.spl-autoload-call.md)— Спроба завантажити клас усіма зареєстрованими функціями\\_\\_autoload()\n    -   [spl\\_autoload\\_extensions](function.spl-autoload-extensions.md)— Реєстрація та виведення розширень файлів для spl\\_autoload\n    -   [spl\\_autoload\\_functions](function.spl-autoload-functions.md)— Отримання списку всіх зареєстрованих функцій\\_\\_autoload()\n    -   [spl\\_autoload\\_register](function.spl-autoload-register.md)— Реєструє задану функцію як реалізацію методу\\_\\_autoload()\n    -   [spl\\_autoload\\_unregister](function.spl-autoload-unregister.md)— Скасування реєстрації функції як реалізацію методу\\_\\_autoload()\n    -   [spl\\_autoload](function.spl-autoload.md) \\- Реалізація за умовчанням методу\\_\\_autoload()\n    -   [spl\\_classes](function.spl-classes.md)— Повертає доступні класи SPL\n    -   [spl\\_object\\_hash](function.spl-object-hash.md)— Повертає хеш-ідентифікатор об'єкту\n    -   [spl\\_object\\_id](function.spl-object-id.md)— Отримати цілий ідентифікатор об'єкта\n-   [Обробка файлів](spl.files.md)\n    -   [SplFileInfo](class.splfileinfo.md) \\- Клас SplFileInfo\n    -   [SplFileObject](class.splfileobject.md) \\- Клас SplFileObject\n    -   [SplTempFileObject](class.spltempfileobject.md) \\- Клас SplTempFileObject\n-   [Різні класи та інтерфейси](spl.misc.md)\n    -   [ArrayObject](class.arrayobject.md) \\- Клас ArrayObject\n    -   [SplObserver](class.splobserver.md) \\- Інтерфейс SplObserver\n    -   [SplSubject](class.splsubject.md) \\- Інтерфейс SplSubject\n","title":"Стандартна бібліотека PHP (SPL)","contentType":2,"navigation":[{"seaslog.warning.md":"« SeasLog::warning"},{"intro.spl.md":"Вступ \""},{"index.md":"PHP Manual"},{"refs.basic.other.md":"Інші базові модулі"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"book.spl.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

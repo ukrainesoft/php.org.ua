@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас DatePeriod</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="dateinterval.format.md" class="mx-4">« DateInterval::format</a><a href="dateperiod.construct.md" class="mx-4">DatePeriod::\_\_construct »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.datetime.md" class="mx-4">Дата час</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас DatePeriod</h1>
+<p>(PHP 5 &gt;= 5.3.0, PHP 7, PHP 8)</p>
+<h2>Вступ</h2>
+<p>Представляє тимчасовий період.</p>
+<p>Дозволяє переміщатися в заданому часовому інтервалі на рівні проміжки часу.</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+    
+     class DatePeriod
+    
+
+    
+     implements
+      IteratorAggregate {
+
+    /* Константы */
+    
+     public
+     const
+     int
+      EXCLUDE_START_DATE;
+
+    public
+     const
+     int
+      INCLUDE_END_DATE;
+
+
+    /* Свойства */
+    public
+     readonly
+     ?DateTimeInterface
+      $start;
+
+    public
+     readonly
+     ?DateTimeInterface
+      $current;
+
+    public
+     readonly
+     ?DateTimeInterface
+      $end;
+
+    public
+     readonly
+     ?DateInterval
+      $interval;
+
+    public
+     readonly
+     int
+      $recurrences;
+
+    public
+     readonly
+     bool
+      $include_start_date;
+
+    public
+     readonly
+     bool
+      $include_end_date;
+
+
+    /* Методы */
+    
+   public __construct(    DateTimeInterface $start,    DateInterval $interval,    int $recurrences,    int $options = 0)
+public __construct(    DateTimeInterface $start,    DateInterval $interval,    DateTimeInterface $end,    int $options = 0)
+public __construct(string $isostr, int $options = 0)
+
+    public static createFromISO8601String(string $specification, int $options = 0): static
+public getDateInterval(): DateInterval
+public getEndDate(): ?DateTimeInterface
+public getRecurrences(): ?int
+public getStartDate(): DateTimeInterface
+
+   }
+</code></pre>
+<h2>Обумовлені константи</h2>
+<p><strong><code>DatePeriod::EXCLUDE_START_DATE</code></strong></p>
+<p>Виключає початкову дату, використовується в <a href="dateperiod.construct.md">DatePeriod::__construct()</a></p>
+<p><strong><code>DatePeriod::INCLUDE_END_DATE</code></strong></p>
+<p>Включає дату закінчення, використовується в <a href="dateperiod.construct.md">DatePeriod::__construct()</a></p>
+<h2>Властивості</h2>
+<p>recurrences</p>
+<p>Мінімальна кількість екземплярів, що повертається ітератором.</p>
+<p>Якщо кількість повторень була явно передана за допомогою параметра recurrences конструктор екземпляра <strong>DatePeriod</strong>, то ця властивість містить це значення, <em>плюс</em> один, якщо дата початку не була відключена за допомогою константи <strong><code>DatePeriod::EXCLUDE_START_DATE</code></strong> <em>плюс</em> один, якщо дата закінчення була включена за допомогою константи <strong><code>DatePeriod::INCLUDE_END_DATE</code></strong></p>
+<p>Якщо кількість повторень не було передано явно, то ця властивість містить мінімальну кількість повернутих екземплярів. Це буде <em>плюс</em> один, якщо дата початку не вимкнена за допомогою константи <strong><code>DatePeriod::EXCLUDE_START_DATE</code></strong> <em>плюс</em> один, якщо дата закінчення була включена за допомогою константи <strong><code>DatePeriod::INCLUDE_END_DATE</code></strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:432px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<p>5<br/>
+6<br/>
+7</p>
+<p>Смотрите также описание метода<a href="dateperiod.getrecurrences.md">DatePeriod::getRecurrences()</a></p>
+<p>include_end_date</p>
+<p>Включати дату закінчення в набір дат, що повторюються, чи ні.</p>
+<p>include_start_date</p>
+<p>Включати початкову дату в набір дат чи ні.</p>
+<p>start</p>
+<p>Дата початку періоду.</p>
+<p>current</p>
+<p>У процесі ітерації міститиме поточну дату періоду.</p>
+<p>end</p>
+<p>Кінцева дата періоду.</p>
+<p>interval</p>
+<p>Специфікація інтервалу, що повторюється згідно ISO 8601.</p>
+<h2>список змін</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>8.2.0</td><td>Були додані константа <strong><code>DatePeriod::INCLUDE_END_DATE</code></strong> та властивість include_end_date.</td></tr><tr><td>8.0.0</td><td>Класс<strong>DatePeriod</strong> тепер реалізує інтерфейс <a href="class.iteratoraggregate.md">IteratorAggregate</a>. . Раніше натомість було реалізовано інтерфейс <a href="class.traversable.md">Traversable</a></td></tr></tbody></table>
+<h2>Зміст</h2>
+<ul>
+<li><a href="dateperiod.construct.md">DatePeriod::__construct</a>— Створює новий об&#x27;єкт DatePeriod</li>
+<li><a href="dateperiod.createfromiso8601string.md">DatePeriod::createFromISO8601String</a>— Створює новий об&#x27;єкт DatePeriod із рядка у форматі стандарту ISO8601</li>
+<li><a href="dateperiod.getdateinterval.md">DatePeriod::getDateInterval</a> - Повертає інтервал</li>
+<li><a href="dateperiod.getenddate.md">DatePeriod::getEndDate</a>— Повертає кінцеву дату періоду</li>
+<li><a href="dateperiod.getrecurrences.md">DatePeriod::getRecurrences</a>— Отримує кількість повторів</li>
+<li><a href="dateperiod.getstartdate.md">DatePeriod::getStartDate</a>— Повертає початкову дату періоду</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.dateperiod.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.dateperiod.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.dateperiod.md","content":"# Клас DatePeriod\n\n(PHP 5 \u003e= 5.3.0, PHP 7, PHP 8)\n\n## Вступ\n\nПредставляє тимчасовий період.\n\nДозволяє переміщатися в заданому часовому інтервалі на рівні проміжки часу.\n\n## Огляд класів\n\n```classsynopsis\n\n    \n     class DatePeriod\n    \n\n    \n     implements\n      IteratorAggregate {\n\n    /* Константы */\n    \n     public\n     const\n     int\n      EXCLUDE_START_DATE;\n\n    public\n     const\n     int\n      INCLUDE_END_DATE;\n\n\n    /* Свойства */\n    public\n     readonly\n     ?DateTimeInterface\n      $start;\n\n    public\n     readonly\n     ?DateTimeInterface\n      $current;\n\n    public\n     readonly\n     ?DateTimeInterface\n      $end;\n\n    public\n     readonly\n     ?DateInterval\n      $interval;\n\n    public\n     readonly\n     int\n      $recurrences;\n\n    public\n     readonly\n     bool\n      $include_start_date;\n\n    public\n     readonly\n     bool\n      $include_end_date;\n\n\n    /* Методы */\n    \n   public __construct(    DateTimeInterface $start,    DateInterval $interval,    int $recurrences,    int $options = 0)\npublic __construct(    DateTimeInterface $start,    DateInterval $interval,    DateTimeInterface $end,    int $options = 0)\npublic __construct(string $isostr, int $options = 0)\n\n    public static createFromISO8601String(string $specification, int $options = 0): static\npublic getDateInterval(): DateInterval\npublic getEndDate(): ?DateTimeInterface\npublic getRecurrences(): ?int\npublic getStartDate(): DateTimeInterface\n\n   }\n```\n\n## Обумовлені константи\n\n**`DatePeriod::EXCLUDE_START_DATE`**\n\nВиключає початкову дату, використовується в [DatePeriod::\\_\\_construct()](dateperiod.construct.md)\n\n**`DatePeriod::INCLUDE_END_DATE`**\n\nВключає дату закінчення, використовується в [DatePeriod::\\_\\_construct()](dateperiod.construct.md)\n\n## Властивості\n\nrecurrences\n\nМінімальна кількість екземплярів, що повертається ітератором.\n\nЯкщо кількість повторень була явно передана за допомогою параметра recurrences конструктор екземпляра **DatePeriod**, то ця властивість містить це значення, *плюс* один, якщо дата початку не була відключена за допомогою константи **`DatePeriod::EXCLUDE_START_DATE`** *плюс* один, якщо дата закінчення була включена за допомогою константи **`DatePeriod::INCLUDE_END_DATE`**\n\nЯкщо кількість повторень не було передано явно, то ця властивість містить мінімальну кількість повернутих екземплярів. Це буде *плюс* один, якщо дата початку не вимкнена за допомогою константи **`DatePeriod::EXCLUDE_START_DATE`** *плюс* один, якщо дата закінчення була включена за допомогою константи **`DatePeriod::INCLUDE_END_DATE`**\n\n```php\n\u003c?php\n$start = new DateTime('2018-12-31 00:00:00');\n$end   = new DateTime('2021-12-31 00:00:00');\n$interval = new DateInterval('P1M');\n$recurrences = 5;\n\n// повторения явно задаются в конструкторе\n$period = new DatePeriod($start, $interval, $recurrences, DatePeriod::EXCLUDE_START_DATE);\necho $period-\u003erecurrences, \"\\n\";\n\n$period = new DatePeriod($start, $interval, $recurrences);\necho $period-\u003erecurrences, \"\\n\";\n\n$period = new DatePeriod($start, $interval, $recurrences, DatePeriod::INCLUDE_END_DATE);\necho $period-\u003erecurrences, \"\\n\";\n\n// повторения не заданы в конструкторе\n$period = new DatePeriod($start, $interval, $end);\necho $period-\u003erecurrences, \"\\n\";\n\n$period = new DatePeriod($start, $interval, $end, DatePeriod::EXCLUDE_START_DATE);\necho $period-\u003erecurrences, \"\\n\";\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n5  \n6  \n7\n\nСмотрите также описание метода[DatePeriod::getRecurrences()](dateperiod.getrecurrences.md)\n\ninclude\\_end\\_date\n\nВключати дату закінчення в набір дат, що повторюються, чи ні.\n\ninclude\\_start\\_date\n\nВключати початкову дату в набір дат чи ні.\n\nstart\n\nДата початку періоду.\n\ncurrent\n\nУ процесі ітерації міститиме поточну дату періоду.\n\nend\n\nКінцева дата періоду.\n\ninterval\n\nСпецифікація інтервалу, що повторюється згідно ISO 8601.\n\n## список змін\n\n| Версия | Опис |\n| --- | --- |\n| 8.2.0 | Були додані константа **`DatePeriod::INCLUDE_END_DATE`** та властивість include\\_end\\_date. |\n| 8.0.0 | Класс**DatePeriod** тепер реалізує інтерфейс [IteratorAggregate](class.iteratoraggregate.md). . Раніше натомість було реалізовано інтерфейс [Traversable](class.traversable.md) |\n\n## Зміст\n\n-   [DatePeriod::\\_\\_construct](dateperiod.construct.md)— Створює новий об'єкт DatePeriod\n-   [DatePeriod::createFromISO8601String](dateperiod.createfromiso8601string.md)— Створює новий об'єкт DatePeriod із рядка у форматі стандарту ISO8601\n-   [DatePeriod::getDateInterval](dateperiod.getdateinterval.md) \\- Повертає інтервал\n-   [DatePeriod::getEndDate](dateperiod.getenddate.md)— Повертає кінцеву дату періоду\n-   [DatePeriod::getRecurrences](dateperiod.getrecurrences.md)— Отримує кількість повторів\n-   [DatePeriod::getStartDate](dateperiod.getstartdate.md)— Повертає початкову дату періоду\n","title":"Клас DatePeriod","contentType":2,"navigation":[{"dateinterval.format.md":"« DateInterval::format"},{"dateperiod.construct.md":"DatePeriod::\\_\\_construct »"},{"index.md":"PHP Manual"},{"book.datetime.md":"Дата час"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.dateperiod.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

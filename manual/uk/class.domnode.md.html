@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас DOMNode</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="class.domnamespacenode.md" class="mx-4">« DOMNameSpaceNode</a><a href="domnode.appendchild.md" class="mx-4">DOMNode::appendChild »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.dom.md" class="mx-4">DOM</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас DOMNode</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+    
+     class DOMNode
+     {
+
+    /* Свойства */
+    
+     public
+     readonly
+     string
+      $nodeName;
+
+    public
+     ?string
+      $nodeValue;
+
+    public
+     readonly
+     int
+      $nodeType;
+
+    public
+     readonly
+     ?DOMNode
+      $parentNode;
+
+    public
+     readonly
+     ?DOMElement
+      $parentElement;
+
+    public
+     readonly
+     DOMNodeList
+      $childNodes;
+
+    public
+     readonly
+     ?DOMNode
+      $firstChild;
+
+    public
+     readonly
+     ?DOMNode
+      $lastChild;
+
+    public
+     readonly
+     ?DOMNode
+      $previousSibling;
+
+    public
+     readonly
+     ?DOMNode
+      $nextSibling;
+
+    public
+     readonly
+     ?DOMNamedNodeMap
+      $attributes;
+
+    public
+     readonly
+     bool
+      $isConnected;
+
+    public
+     readonly
+     ?DOMDocument
+      $ownerDocument;
+
+    public
+     readonly
+     ?string
+      $namespaceURI;
+
+    public
+     string
+      $prefix;
+
+    public
+     readonly
+     ?string
+      $localName;
+
+    public
+     readonly
+     ?string
+      $baseURI;
+
+    public
+     string
+      $textContent;
+
+
+    /* Методы */
+    
+   public appendChild(DOMNode $node): DOMNode|false
+public C14N(    bool $exclusive = false,    bool $withComments = false,    ?array $xpath = null,    ?array $nsPrefixes = null): string|false
+public C14NFile(    string $uri,    bool $exclusive = false,    bool $withComments = false,    ?array $xpath = null,    ?array $nsPrefixes = null): int|false
+public cloneNode(bool $deep = false): DOMNode|false
+public contains(DOMNode|DOMNameSpaceNode|null $other): bool
+public getLineNo(): int
+public getNodePath(): ?string
+public getRootNode(array $options = null): DOMNode
+public hasAttributes(): bool
+public hasChildNodes(): bool
+public insertBefore(DOMNode $node, ?DOMNode $child = null): DOMNode|false
+public isDefaultNamespace(string $namespace): bool
+public isEqualNode(?DOMNode $otherNode): bool
+public isSameNode(DOMNode $otherNode): bool
+public isSupported(string $feature, string $version): bool
+public lookupNamespaceURI(?string $prefix): ?string
+public lookupPrefix(string $namespace): ?string
+public normalize(): void
+public removeChild(DOMNode $child): DOMNode|false
+public replaceChild(DOMNode $node, DOMNode $child): DOMNode|false
+
+   }
+</code></pre>
+<h2>Властивості</h2>
+<p>nodeName</p>
+<p>Повертає найточніше ім&#x27;я для поточного типу вузла</p>
+<p>nodeValue</p>
+<p>Значення цього вузла, залежно з його типу. Значення вузлів <a href="class.domelement.md">DOMElement</a>, на відміну від специфікації W3C, рівні <a href="class.domnode.md#domnode.props.textcontent">DOMNode::textContent</a>, а не**<code>null</code>**</p>
+<p>nodeType</p>
+<p>Повертає тип вузла. Одна з можливих <a href="dom.constants.md">констант XML_xxx_NODE</a></p>
+<p>parentNode</p>
+<p>Батьківський вузол вузла. Якщо такого вузла немає, повертає <strong><code>null</code></strong></p>
+<p>parentElement</p>
+<p>Батьківський елемент поточного елемента. Якщо такого елемента немає, буде повернено значення <strong><code>null</code></strong></p>
+<p>childNodes</p>
+<p>Об&#x27;єкт <a href="class.domnodelist.md">DOMNodeList</a>містить всіх нащадків вузла. Якщо нащадків немає, повертається порожній об&#x27;єкт <a href="class.domnodelist.md">DOMNodeList</a></p>
+<p>firstChild</p>
+<p>Перший дочірній вузол вузла. Якщо такого вузла немає, повертає <strong><code>null</code></strong></p>
+<p>lastChild</p>
+<p>Останній дочірній вузол цього вузла. Якщо такого вузла немає, повертає <strong><code>null</code></strong></p>
+<p>previousSibling</p>
+<p>Вузол, що безпосередньо передує поточному вузлу. Якщо такого вузла немає, повертає <strong><code>null</code></strong></p>
+<p>nextSibling</p>
+<p>Вузол безпосередньо наступний за вузлом. Якщо такого вузла немає, повертає <strong><code>null</code></strong></p>
+<p>attributes</p>
+<p>Об&#x27;єкт <a href="class.domnamednodemap.md">DOMNamedNodeMap</a>, що містить атрибути вузла (тільки якщо це <a href="class.domelement.md">DOMElement</a>), інакше поверне <strong><code>null</code></strong></p>
+<p>isConnected</p>
+<p>Вказує, чи приєднаний вузол до документа</p>
+<p>ownerDocument</p>
+<p>Об&#x27;єкт <a href="class.domdocument.md">DOMDocument</a>, пов&#x27;язаний з вузлом, або <strong><code>null</code></strong>, якщо вузол - об&#x27;єкт класу <a href="class.domdocument.md">DOMDocument</a></p>
+<p>namespaceURI</p>
+<p>URI простір імен вузла або **<code>null</code>**якщо він не вказаний.</p>
+<p>prefix</p>
+<p>Префікс простору імен вузла.</p>
+<p>localName</p>
+<p>Повертає локальну частину кваліфікованого імені вузла.</p>
+<p>baseURI</p>
+<p>Абсолютний базовий URI вузла або **<code>null</code>**якщо реалізація не змогла отримати абсолютний URI.</p>
+<p>textContent</p>
+<p>Текстовий вміст вузла та його нащадків</p>
+<h2>список змін</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>8.3.0</td><td>Додано властивості DOMNode::$parentElement і DOMNode::$isConnected.</td></tr><tr><td>8.0.0</td><td>Нереалізовані методи <strong>DOMNode::compareDocumentPosition()</strong><a href="domnode.isequalnode.md">DOMNode::isEqualNode()</a><strong>DOMNode::getFeature()</strong><strong>DOMNode::setUserData()</strong> і <strong>DOMNode::getUserData()</strong> були вилучені.</td></tr></tbody></table>
+<h2>Примітки</h2>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Модуль DOM працює з кодуванням UTF-8. Для роботи з іншими кодуваннями користуються функціями <a href="function.mb-convert-encoding.md">mb_convert_encoding()</a> <a href="uconverter.transcode.md">UConverter::transcode()</a> або <a href="function.iconv.md">iconv()</a></p>
+</blockquote>
+<h2>Дивіться також</h2>
+<ul>
+<li><a href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.md#core-ID-1950641247">» Специфікація W3C елемента Node</a></li>
+</ul>
+<h2>Зміст</h2>
+<ul>
+<li><a href="domnode.appendchild.md">DOMNode::appendChild</a>— Додає новий дочірній вузол до кінця списку нащадків.</li>
+<li><a href="domnode.c14n.md">DOMNode::C14N</a> - Канонізувати вузли в рядок</li>
+<li><a href="domnode.c14nfile.md">DOMNode::C14NFile</a> - Канонізувати вузли у файл</li>
+<li><a href="domnode.clonenode.md">DOMNode::cloneNode</a> - Клонує вузол</li>
+<li><a href="domnode.contains.md">DOMNode::contains</a>— Перевіряє, чи містить вузол інший вузол</li>
+<li><a href="domnode.getlineno.md">DOMNode::getLineNo</a>— Отримує номер рядка вузла</li>
+<li><a href="domnode.getnodepath.md">DOMNode::getNodePath</a> - Отримання XPath вузла</li>
+<li><a href="domnode.getrootnode.md">DOMNode::getRootNode</a>— Отримує кореневий вузол</li>
+<li><a href="domnode.hasattributes.md">DOMNode::hasAttributes</a>— Перевіряє, чи цей вузол має атрибути.</li>
+<li><a href="domnode.haschildnodes.md">DOMNode::hasChildNodes</a>— Перевіряє, чи цей вузол має нащадків.</li>
+<li><a href="domnode.insertbefore.md">DOMNode::insertBefore</a>— Додає новий дочірній вузол перед вказаним вузлом</li>
+<li><a href="domnode.isdefaultnamespace.md">DOMNode::isDefaultNamespace</a>— Перевіряє, чи вказаний URI простору імен вузла є простором імен за умовчанням чи ні</li>
+<li><a href="domnode.isequalnode.md">DOMNode::isEqualNode</a>— Перевіряє, що обидва вузли ідентичні</li>
+<li><a href="domnode.issamenode.md">DOMNode::isSameNode</a>— Вказує, чи є два вузли одним і тим самим вузлом</li>
+<li><a href="domnode.issupported.md">DOMNode::isSupported</a>— Перевіряє, чи підтримується можливість у певній версії</li>
+<li><a href="domnode.lookupnamespaceuri.md">DOMNode::lookupNamespaceURI</a>— Отримує URI простору імен вузла за префіксом</li>
+<li><a href="domnode.lookupprefix.md">DOMNode::lookupPrefix</a>— Повертає префікс простору імен вузла із URI простору імен</li>
+<li><a href="domnode.normalize.md">DOMNode::normalize</a> - Нормалізує вузол</li>
+<li><a href="domnode.removechild.md">DOMNode::removeChild</a> - Видаляє дочірній вузол зі списку нащадків.</li>
+<li><a href="domnode.replacechild.md">DOMNode::replaceChild</a> - Замінює дочірній вузол</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.domnode.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.domnode.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.domnode.md","content":"# Клас DOMNode\n\n(PHP 5, PHP 7, PHP 8)\n\n## Огляд класів\n\n```classsynopsis\n\n    \n     class DOMNode\n     {\n\n    /* Свойства */\n    \n     public\n     readonly\n     string\n      $nodeName;\n\n    public\n     ?string\n      $nodeValue;\n\n    public\n     readonly\n     int\n      $nodeType;\n\n    public\n     readonly\n     ?DOMNode\n      $parentNode;\n\n    public\n     readonly\n     ?DOMElement\n      $parentElement;\n\n    public\n     readonly\n     DOMNodeList\n      $childNodes;\n\n    public\n     readonly\n     ?DOMNode\n      $firstChild;\n\n    public\n     readonly\n     ?DOMNode\n      $lastChild;\n\n    public\n     readonly\n     ?DOMNode\n      $previousSibling;\n\n    public\n     readonly\n     ?DOMNode\n      $nextSibling;\n\n    public\n     readonly\n     ?DOMNamedNodeMap\n      $attributes;\n\n    public\n     readonly\n     bool\n      $isConnected;\n\n    public\n     readonly\n     ?DOMDocument\n      $ownerDocument;\n\n    public\n     readonly\n     ?string\n      $namespaceURI;\n\n    public\n     string\n      $prefix;\n\n    public\n     readonly\n     ?string\n      $localName;\n\n    public\n     readonly\n     ?string\n      $baseURI;\n\n    public\n     string\n      $textContent;\n\n\n    /* Методы */\n    \n   public appendChild(DOMNode $node): DOMNode|false\npublic C14N(    bool $exclusive = false,    bool $withComments = false,    ?array $xpath = null,    ?array $nsPrefixes = null): string|false\npublic C14NFile(    string $uri,    bool $exclusive = false,    bool $withComments = false,    ?array $xpath = null,    ?array $nsPrefixes = null): int|false\npublic cloneNode(bool $deep = false): DOMNode|false\npublic contains(DOMNode|DOMNameSpaceNode|null $other): bool\npublic getLineNo(): int\npublic getNodePath(): ?string\npublic getRootNode(array $options = null): DOMNode\npublic hasAttributes(): bool\npublic hasChildNodes(): bool\npublic insertBefore(DOMNode $node, ?DOMNode $child = null): DOMNode|false\npublic isDefaultNamespace(string $namespace): bool\npublic isEqualNode(?DOMNode $otherNode): bool\npublic isSameNode(DOMNode $otherNode): bool\npublic isSupported(string $feature, string $version): bool\npublic lookupNamespaceURI(?string $prefix): ?string\npublic lookupPrefix(string $namespace): ?string\npublic normalize(): void\npublic removeChild(DOMNode $child): DOMNode|false\npublic replaceChild(DOMNode $node, DOMNode $child): DOMNode|false\n\n   }\n```\n\n## Властивості\n\nnodeName\n\nПовертає найточніше ім'я для поточного типу вузла\n\nnodeValue\n\nЗначення цього вузла, залежно з його типу. Значення вузлів [DOMElement](class.domelement.md), на відміну від специфікації W3C, рівні [DOMNode::textContent](class.domnode.md#domnode.props.textcontent), а не\\*\\*`null`\\*\\*\n\nnodeType\n\nПовертає тип вузла. Одна з можливих [констант XML\\_xxx\\_NODE](dom.constants.md)\n\nparentNode\n\nБатьківський вузол вузла. Якщо такого вузла немає, повертає **`null`**\n\nparentElement\n\nБатьківський елемент поточного елемента. Якщо такого елемента немає, буде повернено значення **`null`**\n\nchildNodes\n\nОб'єкт [DOMNodeList](class.domnodelist.md)містить всіх нащадків вузла. Якщо нащадків немає, повертається порожній об'єкт [DOMNodeList](class.domnodelist.md)\n\nfirstChild\n\nПерший дочірній вузол вузла. Якщо такого вузла немає, повертає **`null`**\n\nlastChild\n\nОстанній дочірній вузол цього вузла. Якщо такого вузла немає, повертає **`null`**\n\npreviousSibling\n\nВузол, що безпосередньо передує поточному вузлу. Якщо такого вузла немає, повертає **`null`**\n\nnextSibling\n\nВузол безпосередньо наступний за вузлом. Якщо такого вузла немає, повертає **`null`**\n\nattributes\n\nОб'єкт [DOMNamedNodeMap](class.domnamednodemap.md), що містить атрибути вузла (тільки якщо це [DOMElement](class.domelement.md)), інакше поверне **`null`**\n\nisConnected\n\nВказує, чи приєднаний вузол до документа\n\nownerDocument\n\nОб'єкт [DOMDocument](class.domdocument.md), пов'язаний з вузлом, або **`null`**, якщо вузол - об'єкт класу [DOMDocument](class.domdocument.md)\n\nnamespaceURI\n\nURI простір імен вузла або \\*\\*`null`\\*\\*якщо він не вказаний.\n\nprefix\n\nПрефікс простору імен вузла.\n\nlocalName\n\nПовертає локальну частину кваліфікованого імені вузла.\n\nbaseURI\n\nАбсолютний базовий URI вузла або \\*\\*`null`\\*\\*якщо реалізація не змогла отримати абсолютний URI.\n\ntextContent\n\nТекстовий вміст вузла та його нащадків\n\n## список змін\n\n| Версия | Опис |\n| --- | --- |\n| 8.3.0 | Додано властивості DOMNode::$parentElement і DOMNode::$isConnected. |\n| 8.0.0 | Нереалізовані методи **DOMNode::compareDocumentPosition()** [DOMNode::isEqualNode()](domnode.isequalnode.md) **DOMNode::getFeature()** **DOMNode::setUserData()** і **DOMNode::getUserData()** були вилучені. |\n\n## Примітки\n\n\u003e **Зауваження** :\n\u003e \n\u003e Модуль DOM працює з кодуванням UTF-8. Для роботи з іншими кодуваннями користуються функціями [mb\\_convert\\_encoding()](function.mb-convert-encoding.md) [UConverter::transcode()](uconverter.transcode.md) або [iconv()](function.iconv.md)\n\n## Дивіться також\n\n-   [» Специфікація W3C елемента Node](http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.md#core-ID-1950641247)\n\n## Зміст\n\n-   [DOMNode::appendChild](domnode.appendchild.md)— Додає новий дочірній вузол до кінця списку нащадків.\n-   [DOMNode::C14N](domnode.c14n.md) \\- Канонізувати вузли в рядок\n-   [DOMNode::C14NFile](domnode.c14nfile.md) \\- Канонізувати вузли у файл\n-   [DOMNode::cloneNode](domnode.clonenode.md) \\- Клонує вузол\n-   [DOMNode::contains](domnode.contains.md)— Перевіряє, чи містить вузол інший вузол\n-   [DOMNode::getLineNo](domnode.getlineno.md)— Отримує номер рядка вузла\n-   [DOMNode::getNodePath](domnode.getnodepath.md) \\- Отримання XPath вузла\n-   [DOMNode::getRootNode](domnode.getrootnode.md)— Отримує кореневий вузол\n-   [DOMNode::hasAttributes](domnode.hasattributes.md)— Перевіряє, чи цей вузол має атрибути.\n-   [DOMNode::hasChildNodes](domnode.haschildnodes.md)— Перевіряє, чи цей вузол має нащадків.\n-   [DOMNode::insertBefore](domnode.insertbefore.md)— Додає новий дочірній вузол перед вказаним вузлом\n-   [DOMNode::isDefaultNamespace](domnode.isdefaultnamespace.md)— Перевіряє, чи вказаний URI простору імен вузла є простором імен за умовчанням чи ні\n-   [DOMNode::isEqualNode](domnode.isequalnode.md)— Перевіряє, що обидва вузли ідентичні\n-   [DOMNode::isSameNode](domnode.issamenode.md)— Вказує, чи є два вузли одним і тим самим вузлом\n-   [DOMNode::isSupported](domnode.issupported.md)— Перевіряє, чи підтримується можливість у певній версії\n-   [DOMNode::lookupNamespaceURI](domnode.lookupnamespaceuri.md)— Отримує URI простору імен вузла за префіксом\n-   [DOMNode::lookupPrefix](domnode.lookupprefix.md)— Повертає префікс простору імен вузла із URI простору імен\n-   [DOMNode::normalize](domnode.normalize.md) \\- Нормалізує вузол\n-   [DOMNode::removeChild](domnode.removechild.md) \\- Видаляє дочірній вузол зі списку нащадків.\n-   [DOMNode::replaceChild](domnode.replacechild.md) \\- Замінює дочірній вузол\n","title":"Клас DOMNode","contentType":2,"navigation":[{"class.domnamespacenode.md":"« DOMNameSpaceNode"},{"domnode.appendchild.md":"DOMNode::appendChild »"},{"index.md":"PHP Manual"},{"book.dom.md":"DOM"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.domnode.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

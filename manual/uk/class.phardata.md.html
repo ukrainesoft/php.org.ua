@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас PharData</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="phar.webphar.md" class="mx-4">« Phar::webPhar</a><a href="phardata.addemptydir.md" class="mx-4">PharData::addEmptyDir »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.phar.md" class="mx-4">Phar</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас PharData</h1>
+<p>(PHP 5 &gt;= 5.3.0, PHP 7, PHP 8, PECL phar &gt;= 2.0.0)</p>
+<h2>Вступ</h2>
+<p>Клас PharData надає високорівневий інтерфейс доступу і створення tar-і zip-архівів, що не виконуються. Оскільки архіви цих типів не містять заглушку і не можуть бути виконані модулем Phar, є можливість створювати та обробляти звичайні zip- та tar-файли, використовуючи клас PharData, навіть якщо параметр <code>phar.readonly</code>в php.ini равен</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+    
+     class PharData
+    
+
+    
+     extends
+      RecursiveDirectoryIterator
+    
+
+    
+     implements
+      Countable,
+
+     ArrayAccess {
+
+    /* Наследуемые константы */
+    
+     public
+     const
+     int
+      FilesystemIterator::CURRENT_MODE_MASK;
+public
+     const
+     int
+      FilesystemIterator::CURRENT_AS_PATHNAME;
+public
+     const
+     int
+      FilesystemIterator::CURRENT_AS_FILEINFO;
+public
+     const
+     int
+      FilesystemIterator::CURRENT_AS_SELF;
+public
+     const
+     int
+      FilesystemIterator::KEY_MODE_MASK;
+public
+     const
+     int
+      FilesystemIterator::KEY_AS_PATHNAME;
+public
+     const
+     int
+      FilesystemIterator::FOLLOW_SYMLINKS;
+public
+     const
+     int
+      FilesystemIterator::KEY_AS_FILENAME;
+public
+     const
+     int
+      FilesystemIterator::NEW_CURRENT_AND_KEY;
+public
+     const
+     int
+      FilesystemIterator::OTHER_MODE_MASK;
+public
+     const
+     int
+      FilesystemIterator::SKIP_DOTS;
+public
+     const
+     int
+      FilesystemIterator::UNIX_PATHS;
+
+
+    /* Методы */
+    
+   public __construct(    string $filename,    int $flags = FilesystemIterator::SKIP_DOTS | FilesystemIterator::UNIX_PATHS,    ?string $alias = null,    int $format = 0)
+
+    public addEmptyDir(string $directory): void
+public addFile(string $filename, ?string $localName = null): void
+public addFromString(string $localName, string $contents): void
+public buildFromDirectory(string $directory, string $pattern = &quot;&quot;): array
+public buildFromIterator(Traversable $iterator, ?string $baseDirectory = null): array
+public compress(int $compression, ?string $extension = null): ?PharData
+public compressFiles(int $compression): void
+public convertToData(?int $format = null, ?int $compression = null, ?string $extension = null): ?PharData
+public convertToExecutable(?int $format = null, ?int $compression = null, ?string $extension = null): ?Phar
+public copy(string $from, string $to): bool
+public decompress(?string $extension = null): ?PharData
+public decompressFiles(): bool
+public delMetadata(): bool
+public delete(string $localName): bool
+public extractTo(string $directory, array|string|null $files = null, bool $overwrite = false): bool
+public isWritable(): bool
+public offsetSet(string $localName, resource|string $value): void
+public offsetUnset(string $localName): void
+public setAlias(string $alias): bool
+public setDefaultStub(?string $index = null, ?string $webIndex = null): bool
+public setMetadata(mixed $metadata): void
+public setSignatureAlgorithm(int $algo, ?string $privateKey = null): void
+public setStub(string $stub, int $len = -1): bool
+
+    public __destruct()
+
+
+    /* Наследуемые методы */
+    public RecursiveDirectoryIterator::getChildren(): RecursiveDirectoryIterator
+public RecursiveDirectoryIterator::getSubPath(): string
+public RecursiveDirectoryIterator::getSubPathname(): string
+public RecursiveDirectoryIterator::hasChildren(bool $allowLinks = false): bool
+public RecursiveDirectoryIterator::key(): string
+public RecursiveDirectoryIterator::next(): void
+public RecursiveDirectoryIterator::rewind(): void
+
+    public FilesystemIterator::current(): string|SplFileInfo|FilesystemIterator
+public FilesystemIterator::getFlags(): int
+public FilesystemIterator::key(): string
+public FilesystemIterator::next(): void
+public FilesystemIterator::rewind(): void
+public FilesystemIterator::setFlags(int $flags): void
+
+    public DirectoryIterator::current(): mixed
+public DirectoryIterator::getBasename(string $suffix = &quot;&quot;): string
+public DirectoryIterator::getExtension(): string
+public DirectoryIterator::getFilename(): string
+public DirectoryIterator::isDot(): bool
+public DirectoryIterator::key(): mixed
+public DirectoryIterator::next(): void
+public DirectoryIterator::rewind(): void
+public DirectoryIterator::seek(int $offset): void
+public DirectoryIterator::__toString(): string
+public DirectoryIterator::valid(): bool
+
+    public SplFileInfo::getATime(): int|false
+public SplFileInfo::getBasename(string $suffix = &quot;&quot;): string
+public SplFileInfo::getCTime(): int|false
+public SplFileInfo::getExtension(): string
+public SplFileInfo::getFileInfo(?string $class = null): SplFileInfo
+public SplFileInfo::getFilename(): string
+public SplFileInfo::getGroup(): int|false
+public SplFileInfo::getInode(): int|false
+public SplFileInfo::getLinkTarget(): string|false
+public SplFileInfo::getMTime(): int|false
+public SplFileInfo::getOwner(): int|false
+public SplFileInfo::getPath(): string
+public SplFileInfo::getPathInfo(?string $class = null): ?SplFileInfo
+public SplFileInfo::getPathname(): string
+public SplFileInfo::getPerms(): int|false
+public SplFileInfo::getRealPath(): string|false
+public SplFileInfo::getSize(): int|false
+public SplFileInfo::getType(): string|false
+public SplFileInfo::isDir(): bool
+public SplFileInfo::isExecutable(): bool
+public SplFileInfo::isFile(): bool
+public SplFileInfo::isLink(): bool
+public SplFileInfo::isReadable(): bool
+public SplFileInfo::isWritable(): bool
+public SplFileInfo::openFile(string $mode = &quot;r&quot;, bool $useIncludePath = false, ?resource $context = null): SplFileObject
+public SplFileInfo::setFileClass(string $class = SplFileObject::class): void
+public SplFileInfo::setInfoClass(string $class = SplFileInfo::class): void
+public SplFileInfo::__toString(): string
+
+   }
+</code></pre>
+<h2>Зміст</h2>
+<ul>
+<li><a href="phardata.addemptydir.md">PharData::addEmptyDir</a>— Додати порожню директорію до tar/zip-архіву</li>
+<li><a href="phardata.addfile.md">PharData::addFile</a>— Додати існуючі файли до tar/zip-архіву</li>
+<li><a href="phardata.addfromstring.md">PharData::addFromString</a>— Додає файл із рядка до архіву tar/zip</li>
+<li><a href="phardata.buildfromdirectory.md">PharData::buildFromDirectory</a>— Створює tar/zip-архів із файлів у директорії</li>
+<li><a href="phardata.buildfromiterator.md">PharData::buildFromIterator</a>— Створення tar/zip-архіву за допомогою ітератора</li>
+<li><a href="phardata.compress.md">PharData::compress</a>— Стискає весь архів tar/zip, використовуючи стиск Gzip або Bzip2</li>
+<li><a href="phardata.compressfiles.md">PharData::compressFiles</a>— Стиснути всі файли у поточному tar/zip-архіві</li>
+<li><a href="phardata.construct.md">PharData::__construct</a> - Конструктор об&#x27;єкта PharData</li>
+<li><a href="phardata.converttodata.md">PharData::convertToData</a>— Конвертація phar-архіву в tar/zip-архів, що не запускається.</li>
+<li><a href="phardata.converttoexecutable.md">PharData::convertToExecutable</a>— Конвертація tar/zip-архіву з даними в phar-архів, що запускається</li>
+<li><a href="phardata.copy.md">PharData::copy</a>— Скопіювати файл із tar/zip-архіву в новий файл усередині нього ж</li>
+<li><a href="phardata.decompress.md">PharData::decompress</a> - Розпакувати весь Phar-архів</li>
+<li><a href="phardata.decompressfiles.md">PharData::decompressFiles</a>— Розпакувати всі файли у поточному zip-архіві</li>
+<li><a href="phardata.delmetadata.md">PharData::delMetadata</a>— Видалити глобальні метадані для zip-архіву</li>
+<li><a href="phardata.delete.md">PharData::delete</a>— Видалити файл із tar/zip-архіву</li>
+<li><a href="phardata.destruct.md">PharData::__destruct</a>— Знищує об&#x27;єкт архіву tar або zip, що не виконується.</li>
+<li><a href="phardata.extractto.md">PharData::extractTo</a>— Витягти вміст tar/zip-архіву в директорію</li>
+<li><a href="phardata.iswritable.md">PharData::isWritable</a>— Перевірити, чи можна модифікувати tar/zip-архів</li>
+<li><a href="phardata.offsetset.md">PharData::offsetSet</a>— Зміна вмісту файлу</li>
+<li><a href="phardata.offsetunset.md">PharData::offsetUnset</a>— Видалити файл із tar/zip-архіву</li>
+<li><a href="phardata.setalias.md">PharData::setAlias</a>— Функція заглушка (Phar::setAlias ​​не можна використовувати для PharData)</li>
+<li><a href="phardata.setdefaultstub.md">PharData::setDefaultStub</a>— Функція заглушка (Phar::setDefaultStub не можна використовувати для PharData)</li>
+<li><a href="phardata.setmetadata.md">PharData::setMetadata</a>— Встановити метадані phar-архіву</li>
+<li><a href="phardata.setsignaturealgorithm.md">PharData::setSignatureAlgorithm</a>— Встановити алгоритм підписання phar-архіву та застосування його</li>
+<li><a href="phardata.setstub.md">PharData::setStub</a>— Функція заглушка (Phar::setStub не можна використовувати для PharData)</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.phardata.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.phardata.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.phardata.md","content":"# Клас PharData\n\n(PHP 5 \u003e= 5.3.0, PHP 7, PHP 8, PECL phar \u003e= 2.0.0)\n\n## Вступ\n\nКлас PharData надає високорівневий інтерфейс доступу і створення tar-і zip-архівів, що не виконуються. Оскільки архіви цих типів не містять заглушку і не можуть бути виконані модулем Phar, є можливість створювати та обробляти звичайні zip- та tar-файли, використовуючи клас PharData, навіть якщо параметр `phar.readonly`в php.ini равен\n\n## Огляд класів\n\n```classsynopsis\n\n    \n     class PharData\n    \n\n    \n     extends\n      RecursiveDirectoryIterator\n    \n\n    \n     implements\n      Countable,\n\n     ArrayAccess {\n\n    /* Наследуемые константы */\n    \n     public\n     const\n     int\n      FilesystemIterator::CURRENT_MODE_MASK;\npublic\n     const\n     int\n      FilesystemIterator::CURRENT_AS_PATHNAME;\npublic\n     const\n     int\n      FilesystemIterator::CURRENT_AS_FILEINFO;\npublic\n     const\n     int\n      FilesystemIterator::CURRENT_AS_SELF;\npublic\n     const\n     int\n      FilesystemIterator::KEY_MODE_MASK;\npublic\n     const\n     int\n      FilesystemIterator::KEY_AS_PATHNAME;\npublic\n     const\n     int\n      FilesystemIterator::FOLLOW_SYMLINKS;\npublic\n     const\n     int\n      FilesystemIterator::KEY_AS_FILENAME;\npublic\n     const\n     int\n      FilesystemIterator::NEW_CURRENT_AND_KEY;\npublic\n     const\n     int\n      FilesystemIterator::OTHER_MODE_MASK;\npublic\n     const\n     int\n      FilesystemIterator::SKIP_DOTS;\npublic\n     const\n     int\n      FilesystemIterator::UNIX_PATHS;\n\n\n    /* Методы */\n    \n   public __construct(    string $filename,    int $flags = FilesystemIterator::SKIP_DOTS | FilesystemIterator::UNIX_PATHS,    ?string $alias = null,    int $format = 0)\n\n    public addEmptyDir(string $directory): void\npublic addFile(string $filename, ?string $localName = null): void\npublic addFromString(string $localName, string $contents): void\npublic buildFromDirectory(string $directory, string $pattern = \"\"): array\npublic buildFromIterator(Traversable $iterator, ?string $baseDirectory = null): array\npublic compress(int $compression, ?string $extension = null): ?PharData\npublic compressFiles(int $compression): void\npublic convertToData(?int $format = null, ?int $compression = null, ?string $extension = null): ?PharData\npublic convertToExecutable(?int $format = null, ?int $compression = null, ?string $extension = null): ?Phar\npublic copy(string $from, string $to): bool\npublic decompress(?string $extension = null): ?PharData\npublic decompressFiles(): bool\npublic delMetadata(): bool\npublic delete(string $localName): bool\npublic extractTo(string $directory, array|string|null $files = null, bool $overwrite = false): bool\npublic isWritable(): bool\npublic offsetSet(string $localName, resource|string $value): void\npublic offsetUnset(string $localName): void\npublic setAlias(string $alias): bool\npublic setDefaultStub(?string $index = null, ?string $webIndex = null): bool\npublic setMetadata(mixed $metadata): void\npublic setSignatureAlgorithm(int $algo, ?string $privateKey = null): void\npublic setStub(string $stub, int $len = -1): bool\n\n    public __destruct()\n\n\n    /* Наследуемые методы */\n    public RecursiveDirectoryIterator::getChildren(): RecursiveDirectoryIterator\npublic RecursiveDirectoryIterator::getSubPath(): string\npublic RecursiveDirectoryIterator::getSubPathname(): string\npublic RecursiveDirectoryIterator::hasChildren(bool $allowLinks = false): bool\npublic RecursiveDirectoryIterator::key(): string\npublic RecursiveDirectoryIterator::next(): void\npublic RecursiveDirectoryIterator::rewind(): void\n\n    public FilesystemIterator::current(): string|SplFileInfo|FilesystemIterator\npublic FilesystemIterator::getFlags(): int\npublic FilesystemIterator::key(): string\npublic FilesystemIterator::next(): void\npublic FilesystemIterator::rewind(): void\npublic FilesystemIterator::setFlags(int $flags): void\n\n    public DirectoryIterator::current(): mixed\npublic DirectoryIterator::getBasename(string $suffix = \"\"): string\npublic DirectoryIterator::getExtension(): string\npublic DirectoryIterator::getFilename(): string\npublic DirectoryIterator::isDot(): bool\npublic DirectoryIterator::key(): mixed\npublic DirectoryIterator::next(): void\npublic DirectoryIterator::rewind(): void\npublic DirectoryIterator::seek(int $offset): void\npublic DirectoryIterator::__toString(): string\npublic DirectoryIterator::valid(): bool\n\n    public SplFileInfo::getATime(): int|false\npublic SplFileInfo::getBasename(string $suffix = \"\"): string\npublic SplFileInfo::getCTime(): int|false\npublic SplFileInfo::getExtension(): string\npublic SplFileInfo::getFileInfo(?string $class = null): SplFileInfo\npublic SplFileInfo::getFilename(): string\npublic SplFileInfo::getGroup(): int|false\npublic SplFileInfo::getInode(): int|false\npublic SplFileInfo::getLinkTarget(): string|false\npublic SplFileInfo::getMTime(): int|false\npublic SplFileInfo::getOwner(): int|false\npublic SplFileInfo::getPath(): string\npublic SplFileInfo::getPathInfo(?string $class = null): ?SplFileInfo\npublic SplFileInfo::getPathname(): string\npublic SplFileInfo::getPerms(): int|false\npublic SplFileInfo::getRealPath(): string|false\npublic SplFileInfo::getSize(): int|false\npublic SplFileInfo::getType(): string|false\npublic SplFileInfo::isDir(): bool\npublic SplFileInfo::isExecutable(): bool\npublic SplFileInfo::isFile(): bool\npublic SplFileInfo::isLink(): bool\npublic SplFileInfo::isReadable(): bool\npublic SplFileInfo::isWritable(): bool\npublic SplFileInfo::openFile(string $mode = \"r\", bool $useIncludePath = false, ?resource $context = null): SplFileObject\npublic SplFileInfo::setFileClass(string $class = SplFileObject::class): void\npublic SplFileInfo::setInfoClass(string $class = SplFileInfo::class): void\npublic SplFileInfo::__toString(): string\n\n   }\n```\n\n## Зміст\n\n-   [PharData::addEmptyDir](phardata.addemptydir.md)— Додати порожню директорію до tar/zip-архіву\n-   [PharData::addFile](phardata.addfile.md)— Додати існуючі файли до tar/zip-архіву\n-   [PharData::addFromString](phardata.addfromstring.md)— Додає файл із рядка до архіву tar/zip\n-   [PharData::buildFromDirectory](phardata.buildfromdirectory.md)— Створює tar/zip-архів із файлів у директорії\n-   [PharData::buildFromIterator](phardata.buildfromiterator.md)— Створення tar/zip-архіву за допомогою ітератора\n-   [PharData::compress](phardata.compress.md)— Стискає весь архів tar/zip, використовуючи стиск Gzip або Bzip2\n-   [PharData::compressFiles](phardata.compressfiles.md)— Стиснути всі файли у поточному tar/zip-архіві\n-   [PharData::\\_\\_construct](phardata.construct.md) \\- Конструктор об'єкта PharData\n-   [PharData::convertToData](phardata.converttodata.md)— Конвертація phar-архіву в tar/zip-архів, що не запускається.\n-   [PharData::convertToExecutable](phardata.converttoexecutable.md)— Конвертація tar/zip-архіву з даними в phar-архів, що запускається\n-   [PharData::copy](phardata.copy.md)— Скопіювати файл із tar/zip-архіву в новий файл усередині нього ж\n-   [PharData::decompress](phardata.decompress.md) \\- Розпакувати весь Phar-архів\n-   [PharData::decompressFiles](phardata.decompressfiles.md)— Розпакувати всі файли у поточному zip-архіві\n-   [PharData::delMetadata](phardata.delmetadata.md)— Видалити глобальні метадані для zip-архіву\n-   [PharData::delete](phardata.delete.md)— Видалити файл із tar/zip-архіву\n-   [PharData::\\_\\_destruct](phardata.destruct.md)— Знищує об'єкт архіву tar або zip, що не виконується.\n-   [PharData::extractTo](phardata.extractto.md)— Витягти вміст tar/zip-архіву в директорію\n-   [PharData::isWritable](phardata.iswritable.md)— Перевірити, чи можна модифікувати tar/zip-архів\n-   [PharData::offsetSet](phardata.offsetset.md)— Зміна вмісту файлу\n-   [PharData::offsetUnset](phardata.offsetunset.md)— Видалити файл із tar/zip-архіву\n-   [PharData::setAlias](phardata.setalias.md)— Функція заглушка (Phar::setAlias ​​не можна використовувати для PharData)\n-   [PharData::setDefaultStub](phardata.setdefaultstub.md)— Функція заглушка (Phar::setDefaultStub не можна використовувати для PharData)\n-   [PharData::setMetadata](phardata.setmetadata.md)— Встановити метадані phar-архіву\n-   [PharData::setSignatureAlgorithm](phardata.setsignaturealgorithm.md)— Встановити алгоритм підписання phar-архіву та застосування його\n-   [PharData::setStub](phardata.setstub.md)— Функція заглушка (Phar::setStub не можна використовувати для PharData)\n","title":"Клас PharData","contentType":2,"navigation":[{"phar.webphar.md":"« Phar::webPhar"},{"phardata.addemptydir.md":"PharData::addEmptyDir »"},{"index.md":"PHP Manual"},{"book.phar.md":"Phar"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.phardata.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

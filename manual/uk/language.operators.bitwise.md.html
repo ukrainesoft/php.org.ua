@@ -1,0 +1,453 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Побітові оператори</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="language.operators.assignment.md" class="mx-4">« Привласнення</a><a href="language.operators.comparison.md" class="mx-4">Порівняння »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="language.operators.md" class="mx-4">Оператори</a></div><article class="markdown_markdown__yfc8y"><div><h2>Побітові оператори</h2>
+<p>Побітові оператори дозволяють зчитувати та встановлювати конкретні біти цілих чисел.</p>
+<p><strong>Побітові оператори</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Приклад</th><th>Название</th><th>Результат</th></tr></thead><tbody><tr><td><strong><code>$a &amp; $b</code></strong></td><td>І</td><td>Біти, встановлені і в змінній $a, і в змінній $b.</td></tr><tr><td>**`$a</td><td>$b`**</td><td>Або</td></tr><tr><td><strong><code>$a ^ $b</code></strong></td><td>Виключне або</td><td>Будуть задані біти, які встановлені або лише в змінній $a, або тільки в змінній $b, але не в обох одночасно.</td></tr><tr><td><strong><code>~ $a</code></strong></td><td>Заперечення</td><td>Будуть задані біти, які не встановлені у змінній $a, і навпаки.</td></tr><tr><td><strong><code>$a &lt;&lt; $b</code></strong></td><td>Зрушення вліво</td><td>Усі біти змінної $a зсуваються вліво на кількість позицій, зазначених у змінній $b (кожна позиція передбачає «множення на 2»)</td></tr><tr><td><strong><code>$a &gt;&gt; $b</code></strong></td><td>Зсув праворуч</td><td>Усі біти змінної $a зсуваються вправо на кількість позицій, зазначених у змінній $b (кожна позиція передбачає «розподіл на 2»)</td></tr></tbody></table>
+<p>Побітове зрушення в PHP - це арифметична операція. Біти, зрушені межі числа, відкидаються. Зсув вліво доповнює число нулями праворуч, при цьому зсуваючи знаковий біт числа вліво, що означає, що знак операнда не зберігається. Зсув праворуч зберігає копію зрушеного знакового біта зліва, що означає, що знак операнда зберігається.</p>
+<p><a href="language.operators.precedence.md">Пріоритет операторів</a> змінюють дужками. Наприклад, вираз <code>$a &amp; $b == true</code> спочатку перевіряє на рівність, а потім виконує побітове &quot;І&quot;; тоді як вираз <code>($a &amp; $b) == true</code> спочатку виконує побітове &quot;І&quot;, а потім виконує перевірку на рівність.</p>
+<p>Если оба операнда для операторов<code>&amp;</code> и<code>^</code> Рядки, то операція буде проведена з кодами ASCII всіх символів рядка і в результаті поверне рядок. У всіх інших випадках, обидва операнди будуть <a href="language.types.integer.md#language.types.integer.casting">перетворені на ціле</a> і результатом буде ціле число.</p>
+<p>Якщо операнд для оператора <code>~</code> рядок, то операція буде проведена з кодами ASCII всіх символів рядка і в результаті поверне рядок, інакше як операнд, так і результат будуть вважатися цілими.</p>
+<p>І операнди, і результат виконання операторів <code>&lt;&lt;</code>и<code>&gt;&gt;</code> розглядаються як цілі числа.</p>
+<pre><code class="hljs language-go"> В PHP ini-настройка <span class="hljs-type">error</span>\_reporting использует побитовые значения,
+ показывая, как практически снимать значения битов.
+ Чтобы показать все ошибки, кроме замечаний,
+ инструкции в файле php.ini говорят, что нужно указать:
+ **<span class="hljs-string">`E_ALL &amp; ~E_NOTICE`</span>**
+
+
+ Начинаем со значения E\_ALL:
+ <span class="hljs-number">00000000000000000111011111111111</span>
+ Затем берём значение E\_NOTICE...
+ <span class="hljs-number">00000000000000000000000000001000</span>
+ ... и инвертируем его оператором <span class="hljs-string">`~`</span>:
+ <span class="hljs-number">11111111111111111111111111110111</span>
+ Наконец, указываем побитовое И (&amp;), чтобы установить только те биты,
+ которые установлены в единицу в обоих значениях:
+ <span class="hljs-number">00000000000000000111011111110111</span>
+
+
+ Другой способ достичь этого  — использовать ИСКЛЮЧАЮЩЕЕ ИЛИ (XOR, <span class="hljs-string">`^`</span>),
+ чтобы получить только те биты, которые установлены в единицу
+ либо только в одном, либо только в другом значении:
+ **<span class="hljs-string">`E_ALL ^ E_NOTICE`</span>**
+
+
+ Через настройку опции <span class="hljs-type">error</span>\_reporting можно также показать,
+ как устанавливать биты. Показать только ошибки и обрабатываемые ошибки можно
+ так:
+ **<span class="hljs-string">`E_ERROR | E_RECOVERABLE_ERROR`</span>**
+
+
+ Здесь процесс сочетает E\_ERROR
+ <span class="hljs-number">00000000000000000000000000000001</span>
+ и
+ <span class="hljs-number">00000000000000000001000000000000</span>
+ через оператор ИЛИ (<span class="hljs-string">`|`</span>),
+ чтобы получить биты, установленные хотя бы в одном операнде:
+ <span class="hljs-number">00000000000000000001000000000001</span>
+</code></pre>
+<p><strong>Приклад #1 Побітові операції І, АБО і ВИКЛЮЧНЕ АБО (AND, OR і XOR) над цілими числами</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:738px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-scss">---------     ---------  -- ---------
+ result         value     op test
+ ---------     ---------  -- ---------
+ Побитовое И
+( <span class="hljs-number">0</span> = <span class="hljs-number">0000</span>) = ( <span class="hljs-number">0</span> = <span class="hljs-number">0000</span>) &amp; ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+( <span class="hljs-number">1</span> = <span class="hljs-number">0001</span>) = ( <span class="hljs-number">1</span> = <span class="hljs-number">0001</span>) &amp; ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+( <span class="hljs-number">0</span> = <span class="hljs-number">0000</span>) = ( <span class="hljs-number">2</span> = <span class="hljs-number">0010</span>) &amp; ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+( <span class="hljs-number">4</span> = <span class="hljs-number">0100</span>) = ( <span class="hljs-number">4</span> = <span class="hljs-number">0100</span>) &amp; ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+( <span class="hljs-number">0</span> = <span class="hljs-number">0000</span>) = ( <span class="hljs-number">8</span> = <span class="hljs-number">1000</span>) &amp; ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+
+ Побитовое ИЛИ
+( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>) = ( <span class="hljs-number">0</span> = <span class="hljs-number">0000</span>) | ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>) = ( <span class="hljs-number">1</span> = <span class="hljs-number">0001</span>) | ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+( <span class="hljs-number">7</span> = <span class="hljs-number">0111</span>) = ( <span class="hljs-number">2</span> = <span class="hljs-number">0010</span>) | ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>) = ( <span class="hljs-number">4</span> = <span class="hljs-number">0100</span>) | ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+(<span class="hljs-number">13</span> = <span class="hljs-number">1101</span>) = ( <span class="hljs-number">8</span> = <span class="hljs-number">1000</span>) | ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+
+ Побитовое исключающее ИЛИ (XOR)
+( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>) = ( <span class="hljs-number">0</span> = <span class="hljs-number">0000</span>) ^ ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+( <span class="hljs-number">4</span> = <span class="hljs-number">0100</span>) = ( <span class="hljs-number">1</span> = <span class="hljs-number">0001</span>) ^ ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+( <span class="hljs-number">7</span> = <span class="hljs-number">0111</span>) = ( <span class="hljs-number">2</span> = <span class="hljs-number">0010</span>) ^ ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+( <span class="hljs-number">1</span> = <span class="hljs-number">0001</span>) = ( <span class="hljs-number">4</span> = <span class="hljs-number">0100</span>) ^ ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+(<span class="hljs-number">13</span> = <span class="hljs-number">1101</span>) = ( <span class="hljs-number">8</span> = <span class="hljs-number">1000</span>) ^ ( <span class="hljs-number">5</span> = <span class="hljs-number">0101</span>)
+</code></pre>
+<p><strong>Приклад #2 Побітова операція ВИКЛЮЧАЛЬНЕ АБО (XOR) над рядками</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:288px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p><strong>Приклад #3 Зсув бітів у цілих числах</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:1980px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу на 32-бітових машинах:</p>
+<pre><code class="hljs language-ini">--- СДВИГ ВПРАВО НАД ПОЛОЖИТЕЛЬНЫМИ ЦЕЛЫМИ (НАТУРАЛЬНЫМИ) ЧИСЛАМИ ---
+Выражение: <span class="hljs-attr">2</span> = <span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">1</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">2</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">00000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">00000000000000000000000000000010</span>
+ ЗАМЕЧАНИЕ: слева была вставлена копия знакового бита
+
+Выражение: <span class="hljs-attr">1</span> = <span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">2</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">1</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">00000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">00000000000000000000000000000001</span>
+
+Выражение: <span class="hljs-attr">0</span> = <span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">3</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">00000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">00000000000000000000000000000000</span>
+ ЗАМЕЧАНИЕ: биты были выдвинуты за правый край
+
+Выражение: <span class="hljs-attr">0</span> = <span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">4</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">00000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">00000000000000000000000000000000</span>
+ ЗАМЕЧАНИЕ: то же, что и выше<span class="hljs-comment">; нельзя сдвинуть дальше 0</span>
+
+--- СДВИГ ВПРАВО НА ОТРИЦАТЕЛЬНЫХ ЦЕЛЫХ ЧИСЛАХ ---
+Выражение: <span class="hljs-attr">-2</span> = -<span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">1</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">2</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">11111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">11111111111111111111111111111110</span>
+ ЗАМЕЧАНИЕ: слева была вставлена копия знакового бита
+
+Выражение: <span class="hljs-attr">-1</span> = -<span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">2</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">1</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">11111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">11111111111111111111111111111111</span>
+ ЗАМЕЧАНИЕ: биты были выдвинуты за правый край
+
+Выражение: <span class="hljs-attr">-1</span> = -<span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">3</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">1</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">11111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">11111111111111111111111111111111</span>
+ ЗАМЕЧАНИЕ: то же, что и выше<span class="hljs-comment">; нельзя сдвинуть дальше -1</span>
+
+--- СДВИГ ВЛЕВО НАД ПОЛОЖИТЕЛЬНЫМИ ЦЕЛЫМИ (НАТУРАЛЬНЫМИ) ЧИСЛАМИ ---
+Выражение: <span class="hljs-attr">8</span> = <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">1</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">8</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">00000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">00000000000000000000000000001000</span>
+ ЗАМЕЧАНИЕ: правый край был дополнен нулями
+
+Выражение: <span class="hljs-attr">1073741824</span> = <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">28</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">1073741824</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">00000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">01000000000000000000000000000000</span>
+
+Выражение: <span class="hljs-attr">-2147483648</span> = <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">29</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">2147483648</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">00000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">10000000000000000000000000000000</span>
+ ЗАМЕЧАНИЕ: знаковые биты были выдвинуты
+
+Выражение: <span class="hljs-attr">0</span> = <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">30</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">00000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">00000000000000000000000000000000</span>
+ ЗАМЕЧАНИЕ: биты были выдвинуты за левый край
+
+--- СДВИГ ВЛЕВО НАД ОТРИЦАТЕЛЬНЫМИ ЦЕЛЫМИ ЧИСЛАМИ ---
+Выражение: <span class="hljs-attr">-8</span> = -<span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">1</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">8</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">11111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">11111111111111111111111111111000</span>
+ ЗАМЕЧАНИЕ: правый край был дополнен нулями
+
+Выражение: <span class="hljs-attr">-2147483648</span> = -<span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">29</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">2147483648</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">11111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">10000000000000000000000000000000</span>
+
+Выражение: <span class="hljs-attr">0</span> = -<span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">30</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">11111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">00000000000000000000000000000000</span>
+ ЗАМЕЧАНИЕ: биты были выдвинуты за левый край, включая знаковый бит
+</code></pre>
+<p>Результат виконання наведеного прикладу на 64-бітних машинах:</p>
+<pre><code class="hljs language-ini">--- СДВИГ ВПРАВО НАД ПОЛОЖИТЕЛЬНЫМИ ЦЕЛЫМИ (НАТУРАЛЬНЫМИ) ЧИСЛАМИ ---
+Выражение: <span class="hljs-attr">2</span> = <span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">1</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">2</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000010</span>
+ ЗАМЕЧАНИЕ: слева была вставлена копия знакового бита
+
+Выражение: <span class="hljs-attr">1</span> = <span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">2</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">1</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000001</span>
+
+Выражение: <span class="hljs-attr">0</span> = <span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">3</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000000</span>
+ ЗАМЕЧАНИЕ: биты были выдвинуты за правый край
+
+Выражение: <span class="hljs-attr">0</span> = <span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">4</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000000</span>
+ ЗАМЕЧАНИЕ: то же, что и выше<span class="hljs-comment">; нельзя сдвинуть дальше 0</span>
+
+--- СДВИГ ВПРАВО НАД ОТРИЦАТЕЛЬНЫМИ ЦЕЛЫМИ ЧИСЛАМИ ---
+Выражение: <span class="hljs-attr">-2</span> = -<span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">1</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">2</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">1111111111111111111111111111111111111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">1111111111111111111111111111111111111111111111111111111111111110</span>
+ ЗАМЕЧАНИЕ: слева была вставлена копия знакового бита
+
+Выражение: <span class="hljs-attr">-1</span> = -<span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">2</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">1</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">1111111111111111111111111111111111111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">1111111111111111111111111111111111111111111111111111111111111111</span>
+ ЗАМЕЧАНИЕ: биты были выдвинуты за правый край
+
+Выражение: <span class="hljs-attr">-1</span> = -<span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">3</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">1</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">1111111111111111111111111111111111111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">1111111111111111111111111111111111111111111111111111111111111111</span>
+ ЗАМЕЧАНИЕ: то же, что и выше<span class="hljs-comment">; нельзя сдвинуть дальше -1</span>
+
+--- СДВИГ ВЛЕВО НАД ПОЛОЖИТЕЛЬНЫМИ ЦЕЛЫМИ (НАТУРАЛЬНЫМИ) ЧИСЛАМИ ---
+Выражение: <span class="hljs-attr">8</span> = <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">1</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">8</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000001000</span>
+ ЗАМЕЧАНИЕ: правый край был дополнен нулями
+
+Выражение: <span class="hljs-attr">4611686018427387904</span> = <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">60</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">4611686018427387904</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0100000000000000000000000000000000000000000000000000000000000000</span>
+
+Выражение: <span class="hljs-attr">-9223372036854775808</span> = <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">61</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">9223372036854775808</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">1000000000000000000000000000000000000000000000000000000000000000</span>
+ ЗАМЕЧАНИЕ: знаковые биты были выдвинуты
+
+Выражение: <span class="hljs-attr">0</span> = <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">62</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000000</span>
+ ЗАМЕЧАНИЕ: биты были выдвинуты за левый край
+
+--- СДВИГ ВЛЕВО НАД ОТРИЦАТЕЛЬНЫМИ ЦЕЛЫМИ ЧИСЛАМИ ---
+Выражение: <span class="hljs-attr">-8</span> = -<span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">1</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">8</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">1111111111111111111111111111111111111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">1111111111111111111111111111111111111111111111111111111111111000</span>
+ ЗАМЕЧАНИЕ: правый край был дополнен нулями
+
+Выражение: <span class="hljs-attr">-9223372036854775808</span> = -<span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">61</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=-<span class="hljs-number">9223372036854775808</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">1111111111111111111111111111111111111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">1000000000000000000000000000000000000000000000000000000000000000</span>
+
+Выражение: <span class="hljs-attr">0</span> = -<span class="hljs-number">4</span> &lt;&lt; <span class="hljs-number">62</span>
+ Десятичный вид:
+  <span class="hljs-attr">val</span>=-<span class="hljs-number">4</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0</span>
+ Двоичный вид:
+  <span class="hljs-attr">val</span>=<span class="hljs-number">1111111111111111111111111111111111111111111111111111111111111100</span>
+  <span class="hljs-attr">res</span>=<span class="hljs-number">0000000000000000000000000000000000000000000000000000000000000000</span>
+ ЗАМЕЧАНИЕ: биты были выдвинуты за левый край, включая знаковый бит
+</code></pre>
+<p><strong>Увага</strong></p>
+<p>Для побітових операцій над числами, більшими за значення константи <code>PHP_INT_MAX</code>, викликають функції модуля <a href="book.gmp.md">gmp</a></p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.pack.md">pack()</a></li>
+<li><a href="function.unpack.md">unpack()</a></li>
+<li><a href="function.gmp-and.md">gmp_and()</a></li>
+<li><a href="function.gmp-or.md">gmp_or()</a></li>
+<li><a href="function.gmp-xor.md">gmp_xor()</a></li>
+<li><a href="function.gmp-testbit.md">gmp_testbit()</a></li>
+<li><a href="function.gmp-clrbit.md">gmp_clrbit()</a></li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/language.operators.bitwise.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/language.operators.bitwise.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"language.operators.bitwise.md","content":"## Побітові оператори\n\nПобітові оператори дозволяють зчитувати та встановлювати конкретні біти цілих чисел.\n\n**Побітові оператори**\n\n| Приклад | Название | Результат |\n| --- | --- | --- |\n| **`$a \u0026 $b`** | І | Біти, встановлені і в змінній $a, і в змінній $b. |\n| \\*\\*\\`$a | $b\\`\\*\\* | Або |\n| **`$a ^ $b`** | Виключне або | Будуть задані біти, які встановлені або лише в змінній $a, або тільки в змінній $b, але не в обох одночасно. |\n| **`~ $a`** | Заперечення | Будуть задані біти, які не встановлені у змінній $a, і навпаки. |\n| **`$a \u003c\u003c $b`** | Зрушення вліво | Усі біти змінної $a зсуваються вліво на кількість позицій, зазначених у змінній $b (кожна позиція передбачає «множення на 2») |\n| **`$a \u003e\u003e $b`** | Зсув праворуч | Усі біти змінної $a зсуваються вправо на кількість позицій, зазначених у змінній $b (кожна позиція передбачає «розподіл на 2») |\n\nПобітове зрушення в PHP - це арифметична операція. Біти, зрушені межі числа, відкидаються. Зсув вліво доповнює число нулями праворуч, при цьому зсуваючи знаковий біт числа вліво, що означає, що знак операнда не зберігається. Зсув праворуч зберігає копію зрушеного знакового біта зліва, що означає, що знак операнда зберігається.\n\n[Пріоритет операторів](language.operators.precedence.md) змінюють дужками. Наприклад, вираз `$a \u0026 $b == true` спочатку перевіряє на рівність, а потім виконує побітове \"І\"; тоді як вираз `($a \u0026 $b) == true` спочатку виконує побітове \"І\", а потім виконує перевірку на рівність.\n\nЕсли оба операнда для операторов`\u0026` и`^` Рядки, то операція буде проведена з кодами ASCII всіх символів рядка і в результаті поверне рядок. У всіх інших випадках, обидва операнди будуть [перетворені на ціле](language.types.integer.md#language.types.integer.casting) і результатом буде ціле число.\n\nЯкщо операнд для оператора `~` рядок, то операція буде проведена з кодами ASCII всіх символів рядка і в результаті поверне рядок, інакше як операнд, так і результат будуть вважатися цілими.\n\nІ операнди, і результат виконання операторів `\u003c\u003c`и`\u003e\u003e` розглядаються як цілі числа.\n\n```\n В PHP ini-настройка error\\_reporting использует побитовые значения,\n показывая, как практически снимать значения битов.\n Чтобы показать все ошибки, кроме замечаний,\n инструкции в файле php.ini говорят, что нужно указать:\n **`E_ALL \u0026 ~E_NOTICE`**\n\n\n Начинаем со значения E\\_ALL:\n 00000000000000000111011111111111\n Затем берём значение E\\_NOTICE...\n 00000000000000000000000000001000\n ... и инвертируем его оператором `~`:\n 11111111111111111111111111110111\n Наконец, указываем побитовое И (\u0026), чтобы установить только те биты,\n которые установлены в единицу в обоих значениях:\n 00000000000000000111011111110111\n\n\n Другой способ достичь этого  — использовать ИСКЛЮЧАЮЩЕЕ ИЛИ (XOR, `^`),\n чтобы получить только те биты, которые установлены в единицу\n либо только в одном, либо только в другом значении:\n **`E_ALL ^ E_NOTICE`**\n\n\n Через настройку опции error\\_reporting можно также показать,\n как устанавливать биты. Показать только ошибки и обрабатываемые ошибки можно\n так:\n **`E_ERROR | E_RECOVERABLE_ERROR`**\n\n\n Здесь процесс сочетает E\\_ERROR\n 00000000000000000000000000000001\n и\n 00000000000000000001000000000000\n через оператор ИЛИ (`|`),\n чтобы получить биты, установленные хотя бы в одном операнде:\n 00000000000000000001000000000001\n```\n\n**Приклад #1 Побітові операції І, АБО і ВИКЛЮЧНЕ АБО (AND, OR і XOR) над цілими числами**\n\n```php\n\u003c?php\n\n/*\n * Не обращайте внимания на верхний раздел кода,\n * это просто форматирование для более ясного вывода.\n */\n$format = '(%1$2d = %1$04b) = (%2$2d = %2$04b)'\n        . ' %3$s (%4$2d = %4$04b)' . \"\\n\";\n\necho \u003c\u003c\u003cEOH\n ----------  ----------- -- ----------\n результат   значение    оп тест\n ----------  ----------- -- ----------\nEOH;\n\n\n/*\n * Вот сами Приклады.\n */\n\n$values = array(0, 1, 2, 4, 8);\n$test = 1 + 4;\n\necho \"\\n Побитовое И (AND) \\n\";\nforeach ($values as $value) {\n    $result = $value \u0026 $test;\n    printf($format, $result, $value, '\u0026', $test);\n}\n\necho \"\\n Побитовое (включающее) ИЛИ (OR) \\n\";\nforeach ($values as $value) {\n    $result = $value | $test;\n    printf($format, $result, $value, '|', $test);\n}\n\necho \"\\n Побитовое ИСКЛЮЧАЮЩЕЕ ИЛИ (XOR) \\n\";\nforeach ($values as $value) {\n    $result = $value ^ $test;\n    printf($format, $result, $value, '^', $test);\n}\n```\n\nРезультат виконання наведеного прикладу:\n\n```\n---------     ---------  -- ---------\n result         value     op test\n ---------     ---------  -- ---------\n Побитовое И\n( 0 = 0000) = ( 0 = 0000) \u0026 ( 5 = 0101)\n( 1 = 0001) = ( 1 = 0001) \u0026 ( 5 = 0101)\n( 0 = 0000) = ( 2 = 0010) \u0026 ( 5 = 0101)\n( 4 = 0100) = ( 4 = 0100) \u0026 ( 5 = 0101)\n( 0 = 0000) = ( 8 = 1000) \u0026 ( 5 = 0101)\n\n Побитовое ИЛИ\n( 5 = 0101) = ( 0 = 0000) | ( 5 = 0101)\n( 5 = 0101) = ( 1 = 0001) | ( 5 = 0101)\n( 7 = 0111) = ( 2 = 0010) | ( 5 = 0101)\n( 5 = 0101) = ( 4 = 0100) | ( 5 = 0101)\n(13 = 1101) = ( 8 = 1000) | ( 5 = 0101)\n\n Побитовое исключающее ИЛИ (XOR)\n( 5 = 0101) = ( 0 = 0000) ^ ( 5 = 0101)\n( 4 = 0100) = ( 1 = 0001) ^ ( 5 = 0101)\n( 7 = 0111) = ( 2 = 0010) ^ ( 5 = 0101)\n( 1 = 0001) = ( 4 = 0100) ^ ( 5 = 0101)\n(13 = 1101) = ( 8 = 1000) ^ ( 5 = 0101)\n```\n\n**Приклад #2 Побітова операція ВИКЛЮЧАЛЬНЕ АБО (XOR) над рядками**\n\n```php\n\u003c?php\n\necho 12 ^ 9; // Выводит '5'\n\necho \"12\" ^ \"9\"; // Выводит символ Backspace (ascii 8)\n                 // ('1' (ascii 49)) ^ ('9' (ascii 57)) = #8\n\necho \"hallo\" ^ \"hello\"; // Выводит ascii-значения #0 #4 #0 #0 #0\n                        // 'a' ^ 'e' = #4\n\necho 2 ^ \"3\"; // Выводит 1\n              // 2 ^ ((int)\"3\") == 1\n\necho \"2\" ^ 3; // Выводит 1\n              // ((int)\"2\") ^ 3 == 1\n```\n\n**Приклад #3 Зсув бітів у цілих числах**\n\n```php\n\u003c?php\n\n/*\n * Несколько Прикладов.\n */\n\necho \"\\n--- СДВИГ ВПРАВО НАД ПОЛОЖИТЕЛЬНЫМИ ЦЕЛЫМИ (НАТУРАЛЬНЫМИ) ЧИСЛАМИ ---\\n\";\n\n$val = 4;\n$places = 1;\n$res = $val \u003e\u003e $places;\np($res, $val, '\u003e\u003e', $places, 'слева была вставлена копия знакового бита');\n\n$val = 4;\n$places = 2;\n$res = $val \u003e\u003e $places;\np($res, $val, '\u003e\u003e', $places);\n\n$val = 4;\n$places = 3;\n$res = $val \u003e\u003e $places;\np($res, $val, '\u003e\u003e', $places, 'биты были выдвинуты за правый край');\n\n$val = 4;\n$places = 4;\n$res = $val \u003e\u003e $places;\np($res, $val, '\u003e\u003e', $places, 'то же, что и выше; нельзя сдвинуть дальше 0');\n\necho \"\\n--- СДВИГ ВПРАВО НАД ОТРИЦАТЕЛЬНЫМИ ЦЕЛЫМИ ЧИСЛАМИ ---\\n\";\n\n$val = -4;\n$places = 1;\n$res = $val \u003e\u003e $places;\np($res, $val, '\u003e\u003e', $places, 'слева была вставлена копия знакового бита');\n\n$val = -4;\n$places = 2;\n$res = $val \u003e\u003e $places;\np($res, $val, '\u003e\u003e', $places, 'биты были выдвинуты за правый край');\n\n$val = -4;\n$places = 3;\n$res = $val \u003e\u003e $places;\np($res, $val, '\u003e\u003e', $places, 'то же, что и выше; нельзя сдвинуть дальше -1');\n\necho \"\\n--- СДВИГ ВЛЕВО НАД ПОЛОЖИТЕЛЬНЫМИ ЦЕЛЫМИ (НАТУРАЛЬНЫМИ) ЧИСЛАМИ ---\\n\";\n\n$val = 4;\n$places = 1;\n$res = $val \u003c\u003c $places;\np($res, $val, '\u003c\u003c', $places, 'правый край был дополнен нулями');\n\n$val = 4;\n$places = (PHP_INT_SIZE * 8) - 4;\n$res = $val \u003c\u003c $places;\np($res, $val, '\u003c\u003c', $places);\n\n$val = 4;\n$places = (PHP_INT_SIZE * 8) - 3;\n$res = $val \u003c\u003c $places;\np($res, $val, '\u003c\u003c', $places, 'знаковые биты были выдвинуты');\n\n$val = 4;\n$places = (PHP_INT_SIZE * 8) - 2;\n$res = $val \u003c\u003c $places;\np($res, $val, '\u003c\u003c', $places, 'биты были выдвинуты за левый край');\n\necho \"\\n--- СДВИГ ВЛЕВО НАД ОТРИЦАТЕЛЬНЫМИ ЦЕЛЫМИ ЧИСЛАМИ ---\\n\";\n\n$val = -4;\n$places = 1;\n$res = $val \u003c\u003c $places;\np($res, $val, '\u003c\u003c', $places, 'правый край был дополнен нулями');\n\n$val = -4;\n$places = (PHP_INT_SIZE * 8) - 3;\n$res = $val \u003c\u003c $places;\np($res, $val, '\u003c\u003c', $places);\n\n$val = -4;\n$places = (PHP_INT_SIZE * 8) - 2;\n$res = $val \u003c\u003c $places;\np($res, $val, '\u003c\u003c', $places, 'биты были выдвинуты за левый край, включая знаковый бит');\n\n/*\n * Не обращайте внимания на этот нижний раздел кода,\n * это просто форматирование для более ясного вывода.\n */\n\nfunction p($res, $val, $op, $places, $note = '') {\n    $format = '%0' . (PHP_INT_SIZE * 8) . \"b\\n\";\n\n    printf(\"Выражение: %d = %d %s %d\\n\", $res, $val, $op, $places);\n\n    echo \" Десятичный вид:\\n\";\n    printf(\" val=%d\\n\", $val);\n    printf(\" res=%d\\n\", $res);\n\n    echo \" Двоичный вид:\\n\";\n    printf(' val=' . $format, $val);\n    printf(' res=' . $format, $res);\n\n    if ($note) {\n        echo \" ЗАМЕЧАНИЕ: $note\\n\";\n    }\n\n    echo \"\\n\";\n}\n?\u003e\n```\n\nРезультат виконання наведеного прикладу на 32-бітових машинах:\n\n```\n--- СДВИГ ВПРАВО НАД ПОЛОЖИТЕЛЬНЫМИ ЦЕЛЫМИ (НАТУРАЛЬНЫМИ) ЧИСЛАМИ ---\nВыражение: 2 = 4 \u003e\u003e 1\n Десятичный вид:\n  val=4\n  res=2\n Двоичный вид:\n  val=00000000000000000000000000000100\n  res=00000000000000000000000000000010\n ЗАМЕЧАНИЕ: слева была вставлена копия знакового бита\n\nВыражение: 1 = 4 \u003e\u003e 2\n Десятичный вид:\n  val=4\n  res=1\n Двоичный вид:\n  val=00000000000000000000000000000100\n  res=00000000000000000000000000000001\n\nВыражение: 0 = 4 \u003e\u003e 3\n Десятичный вид:\n  val=4\n  res=0\n Двоичный вид:\n  val=00000000000000000000000000000100\n  res=00000000000000000000000000000000\n ЗАМЕЧАНИЕ: биты были выдвинуты за правый край\n\nВыражение: 0 = 4 \u003e\u003e 4\n Десятичный вид:\n  val=4\n  res=0\n Двоичный вид:\n  val=00000000000000000000000000000100\n  res=00000000000000000000000000000000\n ЗАМЕЧАНИЕ: то же, что и выше; нельзя сдвинуть дальше 0\n\n--- СДВИГ ВПРАВО НА ОТРИЦАТЕЛЬНЫХ ЦЕЛЫХ ЧИСЛАХ ---\nВыражение: -2 = -4 \u003e\u003e 1\n Десятичный вид:\n  val=-4\n  res=-2\n Двоичный вид:\n  val=11111111111111111111111111111100\n  res=11111111111111111111111111111110\n ЗАМЕЧАНИЕ: слева была вставлена копия знакового бита\n\nВыражение: -1 = -4 \u003e\u003e 2\n Десятичный вид:\n  val=-4\n  res=-1\n Двоичный вид:\n  val=11111111111111111111111111111100\n  res=11111111111111111111111111111111\n ЗАМЕЧАНИЕ: биты были выдвинуты за правый край\n\nВыражение: -1 = -4 \u003e\u003e 3\n Десятичный вид:\n  val=-4\n  res=-1\n Двоичный вид:\n  val=11111111111111111111111111111100\n  res=11111111111111111111111111111111\n ЗАМЕЧАНИЕ: то же, что и выше; нельзя сдвинуть дальше -1\n\n--- СДВИГ ВЛЕВО НАД ПОЛОЖИТЕЛЬНЫМИ ЦЕЛЫМИ (НАТУРАЛЬНЫМИ) ЧИСЛАМИ ---\nВыражение: 8 = 4 \u003c\u003c 1\n Десятичный вид:\n  val=4\n  res=8\n Двоичный вид:\n  val=00000000000000000000000000000100\n  res=00000000000000000000000000001000\n ЗАМЕЧАНИЕ: правый край был дополнен нулями\n\nВыражение: 1073741824 = 4 \u003c\u003c 28\n Десятичный вид:\n  val=4\n  res=1073741824\n Двоичный вид:\n  val=00000000000000000000000000000100\n  res=01000000000000000000000000000000\n\nВыражение: -2147483648 = 4 \u003c\u003c 29\n Десятичный вид:\n  val=4\n  res=-2147483648\n Двоичный вид:\n  val=00000000000000000000000000000100\n  res=10000000000000000000000000000000\n ЗАМЕЧАНИЕ: знаковые биты были выдвинуты\n\nВыражение: 0 = 4 \u003c\u003c 30\n Десятичный вид:\n  val=4\n  res=0\n Двоичный вид:\n  val=00000000000000000000000000000100\n  res=00000000000000000000000000000000\n ЗАМЕЧАНИЕ: биты были выдвинуты за левый край\n\n--- СДВИГ ВЛЕВО НАД ОТРИЦАТЕЛЬНЫМИ ЦЕЛЫМИ ЧИСЛАМИ ---\nВыражение: -8 = -4 \u003c\u003c 1\n Десятичный вид:\n  val=-4\n  res=-8\n Двоичный вид:\n  val=11111111111111111111111111111100\n  res=11111111111111111111111111111000\n ЗАМЕЧАНИЕ: правый край был дополнен нулями\n\nВыражение: -2147483648 = -4 \u003c\u003c 29\n Десятичный вид:\n  val=-4\n  res=-2147483648\n Двоичный вид:\n  val=11111111111111111111111111111100\n  res=10000000000000000000000000000000\n\nВыражение: 0 = -4 \u003c\u003c 30\n Десятичный вид:\n  val=-4\n  res=0\n Двоичный вид:\n  val=11111111111111111111111111111100\n  res=00000000000000000000000000000000\n ЗАМЕЧАНИЕ: биты были выдвинуты за левый край, включая знаковый бит\n```\n\nРезультат виконання наведеного прикладу на 64-бітних машинах:\n\n```\n--- СДВИГ ВПРАВО НАД ПОЛОЖИТЕЛЬНЫМИ ЦЕЛЫМИ (НАТУРАЛЬНЫМИ) ЧИСЛАМИ ---\nВыражение: 2 = 4 \u003e\u003e 1\n Десятичный вид:\n  val=4\n  res=2\n Двоичный вид:\n  val=0000000000000000000000000000000000000000000000000000000000000100\n  res=0000000000000000000000000000000000000000000000000000000000000010\n ЗАМЕЧАНИЕ: слева была вставлена копия знакового бита\n\nВыражение: 1 = 4 \u003e\u003e 2\n Десятичный вид:\n  val=4\n  res=1\n Двоичный вид:\n  val=0000000000000000000000000000000000000000000000000000000000000100\n  res=0000000000000000000000000000000000000000000000000000000000000001\n\nВыражение: 0 = 4 \u003e\u003e 3\n Десятичный вид:\n  val=4\n  res=0\n Двоичный вид:\n  val=0000000000000000000000000000000000000000000000000000000000000100\n  res=0000000000000000000000000000000000000000000000000000000000000000\n ЗАМЕЧАНИЕ: биты были выдвинуты за правый край\n\nВыражение: 0 = 4 \u003e\u003e 4\n Десятичный вид:\n  val=4\n  res=0\n Двоичный вид:\n  val=0000000000000000000000000000000000000000000000000000000000000100\n  res=0000000000000000000000000000000000000000000000000000000000000000\n ЗАМЕЧАНИЕ: то же, что и выше; нельзя сдвинуть дальше 0\n\n--- СДВИГ ВПРАВО НАД ОТРИЦАТЕЛЬНЫМИ ЦЕЛЫМИ ЧИСЛАМИ ---\nВыражение: -2 = -4 \u003e\u003e 1\n Десятичный вид:\n  val=-4\n  res=-2\n Двоичный вид:\n  val=1111111111111111111111111111111111111111111111111111111111111100\n  res=1111111111111111111111111111111111111111111111111111111111111110\n ЗАМЕЧАНИЕ: слева была вставлена копия знакового бита\n\nВыражение: -1 = -4 \u003e\u003e 2\n Десятичный вид:\n  val=-4\n  res=-1\n Двоичный вид:\n  val=1111111111111111111111111111111111111111111111111111111111111100\n  res=1111111111111111111111111111111111111111111111111111111111111111\n ЗАМЕЧАНИЕ: биты были выдвинуты за правый край\n\nВыражение: -1 = -4 \u003e\u003e 3\n Десятичный вид:\n  val=-4\n  res=-1\n Двоичный вид:\n  val=1111111111111111111111111111111111111111111111111111111111111100\n  res=1111111111111111111111111111111111111111111111111111111111111111\n ЗАМЕЧАНИЕ: то же, что и выше; нельзя сдвинуть дальше -1\n\n--- СДВИГ ВЛЕВО НАД ПОЛОЖИТЕЛЬНЫМИ ЦЕЛЫМИ (НАТУРАЛЬНЫМИ) ЧИСЛАМИ ---\nВыражение: 8 = 4 \u003c\u003c 1\n Десятичный вид:\n  val=4\n  res=8\n Двоичный вид:\n  val=0000000000000000000000000000000000000000000000000000000000000100\n  res=0000000000000000000000000000000000000000000000000000000000001000\n ЗАМЕЧАНИЕ: правый край был дополнен нулями\n\nВыражение: 4611686018427387904 = 4 \u003c\u003c 60\n Десятичный вид:\n  val=4\n  res=4611686018427387904\n Двоичный вид:\n  val=0000000000000000000000000000000000000000000000000000000000000100\n  res=0100000000000000000000000000000000000000000000000000000000000000\n\nВыражение: -9223372036854775808 = 4 \u003c\u003c 61\n Десятичный вид:\n  val=4\n  res=-9223372036854775808\n Двоичный вид:\n  val=0000000000000000000000000000000000000000000000000000000000000100\n  res=1000000000000000000000000000000000000000000000000000000000000000\n ЗАМЕЧАНИЕ: знаковые биты были выдвинуты\n\nВыражение: 0 = 4 \u003c\u003c 62\n Десятичный вид:\n  val=4\n  res=0\n Двоичный вид:\n  val=0000000000000000000000000000000000000000000000000000000000000100\n  res=0000000000000000000000000000000000000000000000000000000000000000\n ЗАМЕЧАНИЕ: биты были выдвинуты за левый край\n\n--- СДВИГ ВЛЕВО НАД ОТРИЦАТЕЛЬНЫМИ ЦЕЛЫМИ ЧИСЛАМИ ---\nВыражение: -8 = -4 \u003c\u003c 1\n Десятичный вид:\n  val=-4\n  res=-8\n Двоичный вид:\n  val=1111111111111111111111111111111111111111111111111111111111111100\n  res=1111111111111111111111111111111111111111111111111111111111111000\n ЗАМЕЧАНИЕ: правый край был дополнен нулями\n\nВыражение: -9223372036854775808 = -4 \u003c\u003c 61\n Десятичный вид:\n  val=-4\n  res=-9223372036854775808\n Двоичный вид:\n  val=1111111111111111111111111111111111111111111111111111111111111100\n  res=1000000000000000000000000000000000000000000000000000000000000000\n\nВыражение: 0 = -4 \u003c\u003c 62\n Десятичный вид:\n  val=-4\n  res=0\n Двоичный вид:\n  val=1111111111111111111111111111111111111111111111111111111111111100\n  res=0000000000000000000000000000000000000000000000000000000000000000\n ЗАМЕЧАНИЕ: биты были выдвинуты за левый край, включая знаковый бит\n```\n\n**Увага**\n\nДля побітових операцій над числами, більшими за значення константи `PHP_INT_MAX`, викликають функції модуля [gmp](book.gmp.md)\n\n### Дивіться також\n\n-   [pack()](function.pack.md)\n-   [unpack()](function.unpack.md)\n-   [gmp\\_and()](function.gmp-and.md)\n-   [gmp\\_or()](function.gmp-or.md)\n-   [gmp\\_xor()](function.gmp-xor.md)\n-   [gmp\\_testbit()](function.gmp-testbit.md)\n-   [gmp\\_clrbit()](function.gmp-clrbit.md)\n","title":"Побітові оператори","contentType":2,"navigation":[{"language.operators.assignment.md":"« Привласнення"},{"language.operators.comparison.md":"Порівняння »"},{"index.md":"PHP Manual"},{"language.operators.md":"Оператори"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"language.operators.bitwise.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

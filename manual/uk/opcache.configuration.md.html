@@ -1,0 +1,618 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Налаштування під час виконання</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="opcache.installation.md" class="mx-4">« Встановлення</a><a href="opcache.resources.md" class="mx-4">Типи ресурсів »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="opcache.setup.md" class="mx-4">Встановлення та налаштування</a></div><article class="markdown_markdown__yfc8y"><div><h2>Налаштування під час виконання</h2>
+<p>Поведінка цих функцій залежить від установок у php.ini.</p>
+<p><strong>Опції налаштування OPcache</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Имя</th><th>По умолчанию</th><th>Место изменения</th><th>Список изменений</th></tr></thead><tbody><tr><td><a href="opcache.configuration.md#ini.opcache.enable">opcache.enable</a></td><td>&quot;1&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.enable-cli">opcache.enable_cli</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>У версіях з PHP 7.1.2 до 7.1.6 включно, значення за замовчуванням &quot;1&quot; (включено)</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.memory-consumption">opcache.memory_consumption</a></td><td>&quot;128&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.interned-strings-buffer">opcache.interned_strings_buffer</a></td><td>&quot;8&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.max-accelerated-files">opcache.max_accelerated_files</a></td><td>&quot;10000&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.max-wasted-percentage">opcache.max_wasted_percentage</a></td><td>&quot;5&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.use-cwd">opcache.use_cwd</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.validate-timestamps">opcache.validate_timestamps</a></td><td>&quot;1&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.revalidate-freq">opcache.revalidate_freq</a></td><td>&quot;2&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.revalidate-path">opcache.revalidate_path</a></td><td>&quot;0&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.save-comments">opcache.save_comments</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.fast-shutdown">opcache.fast_shutdown</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.enable-file-override">opcache.enable_file_override</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.optimization-level">opcache.optimization_level</a></td><td>&quot;0x7FFEBFFF&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>До PHP 7.3.0 було 0x7FFFBFFF</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.inherited-hack">opcache.inherited_hack</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Вилучено у PHP 7.3.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.dups-fix">opcache.dups_fix</a></td><td>&quot;0&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.blacklist-filename">opcache.blacklist_filename</a></td><td>&quot;&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.max-file-size">opcache.max_file_size</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.consistency-checks">opcache.consistency_checks</a></td><td>&quot;0&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Недоступно з PHP 8.1.18 та 8.2.5. Вилучено у PHP 8.3.0.</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.force-restart-timeout">opcache.force_restart_timeout</a></td><td>&quot;180&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.error-log">opcache.error_log</a></td><td>&quot;&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.log-verbosity-level">opcache.log_verbosity_level</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.record-warnings">opcache.record_warnings</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 8.0.0.</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.preferred-memory-model">opcache.preferred_memory_model</a></td><td>&quot;&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.protect-memory">opcache.protect_memory</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.mmap-base">opcache.mmap_base</a></td><td><strong><code>null</code></strong></td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.restrict-api">opcache.restrict_api</a></td><td>&quot;&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.file_update_protection">opcache.file_update_protection</a></td><td>&quot;2&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.huge_code_pages">opcache.huge_code_pages</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.lockfile_path">opcache.lockfile_path</a></td><td>&quot;/tmp&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.opt_debug_level">opcache.opt_debug_level</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 7.1.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.file-cache">opcache.file_cache</a></td><td>NULL</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.file-cache-only">opcache.file_cache_only</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.file-cache-consistency-checks">opcache.file_cache_consistency_checks</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.file-cache-fallback">opcache.file_cache_fallback</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.validate-permission">opcache.validate_permission</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 7.0.14</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.validate-root">opcache.validate_root</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 7.0.14</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.preload">opcache.preload</a></td><td>&quot;&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 7.4.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.preload-user">opcache.preload_user</a></td><td>&quot;&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 7.4.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.cache-id">opcache.cache_id</a></td><td>&quot;&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Тільки Windows. Доступно з PHP 7.4.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit">opcache.jit</a></td><td>&quot;tracing&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-buffer-size">opcache.jit_buffer_size</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-debug">opcache.jit_debug</a></td><td>&quot;0&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-bisect-limit">opcache.jit_bisect_limit</a></td><td>&quot;0&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-prof-threshold">opcache.jit_prof_threshold</a></td><td>&quot;0.005&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-max-root-traces">opcache.jit_max_root_traces</a></td><td>&quot;1024&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-max-side-traces">opcache.jit_max_side_traces</a></td><td>&quot;128&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-max-exit-counters">opcache.jit_max_exit_counters</a></td><td>&quot;8192&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-hot-loop">opcache.jit_hot_loop</a></td><td>&quot;64&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-hot-func">opcache.jit_hot_func</a></td><td>&quot;127&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-hot-return">opcache.jit_hot_return</a></td><td>&quot;8&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-hot-side-exit">opcache.jit_hot_side_exit</a></td><td>&quot;8&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-blacklist-root-trace">opcache.jit_blacklist_root_trace</a></td><td>&quot;16&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-blacklist-side-trace">opcache.jit_blacklist_side_trace</a></td><td>&quot;8&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-max-loop-unrolls">opcache.jit_max_loop_unrolls</a></td><td>&quot;8&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-max-recursive-calls">opcache.jit_max_recursive_calls</a></td><td>&quot;2&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-max-recursive-return">opcache.jit_max_recursive_returns</a></td><td>&quot;2&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0</td></tr><tr><td><a href="opcache.configuration.md#ini.opcache.jit-max-polymorphic-calls">opcache.jit_max_polymorphic_calls</a></td><td>&quot;2&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0</td></tr></tbody></table>
+<p>Додаткова інформація та опис режимів INI_* дано у розділі «<a href="configuration.changes.modes.md">Місця встановлення параметрів конфігурації</a>».</p>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>opcache.enable</code>bool</p>
+<p>Дозволяє кешування опкодів. Якщо заборонено, код не оптимізуватиметься і не кешуватиметься. Опцію <code>opcache.enable</code> не можна увімкнути під час виконання за допомогою <a href="function.ini-set.md">ini_set()</a>, але можна вимкнути. Спроба включити її у такий спосіб призведе до генерації попередження.</p>
+<p><code>opcache.enable_cli</code>bool</p>
+<p>Дозволяє кешування опкодів для CLI-версії PHP.</p>
+<p><code>opcache.memory_consumption</code>int</p>
+<p>Размер разделяемой памяти в мегабайтах для OPcache. Минимально допустимое значение —<code>&quot;8&quot;</code>, яке застосовується, якщо встановлено менше значення.</p>
+<p><code>opcache.interned_strings_buffer</code>int</p>
+<p>Кількість пам&#x27;яті в мегабайтах для зберігання інтернованих рядків.</p>
+<p><code>opcache.max_accelerated_files</code>int</p>
+<p>Максимальна кількість ключів (і, відповідно, скриптів) у хеш-таблиці OPcache. Фактичне значення буде першим числом з набору <code>{ 223, 463, 983, 1979, 3907, 7963, 16229, 32531, 65407, 130987, 262237, 524521, 1048793 }</code>, яке більше або дорівнює заданому в цьому параметрі. Мінімум 200, максимум 1000000. Значення за межами діапазону обмежені до допустимого діапазону.</p>
+<p><code>opcache.max_wasted_percentage</code>int</p>
+<p>Максимальне значення втраченої пам&#x27;яті (у відсотках) після якого планується перезапуск, якщо недостатньо вільної пам&#x27;яті. Максимально допустиме значення: <code>&quot;50&quot;</code>, яка застосовується, якщо встановлено більше значення.</p>
+<p><code>opcache.use_cwd</code>bool</p>
+<p>Якщо увімкнено, OPcache додає поточну робочу директорію до ключа скрипту, тим самим усуваючи можливість колізій для файлів з однаковим ім&#x27;ям. Вимкнення цієї опції підвищує продуктивність, але може призвести до збоїв.</p>
+<p><code>opcache.validate_timestamps</code>bool</p>
+<p>Якщо увімкнено, OPcache перевірятиме актуальність закешованих скриптів кожні <a href="opcache.configuration.md#ini.opcache.revalidate-freq">opcache.revalidate_freq</a> секунд. Коли заборонено, ви можете перезапустити OPcache вручну за допомогою <a href="function.opcache-reset.md">opcache_reset()</a> <a href="function.opcache-invalidate.md">opcache_invalidate()</a> або перезапустити веб-сервер для того, щоб зміни набули чинності.</p>
+<blockquote>
+<p><strong>Зауваження</strong>: OPcache все ще може перевіряти тимчасову мітку файлу під час компіляції, якщо для опцій <a href="opcache.configuration.md#ini.opcache.file_update_protection">opcache.file_update_protection</a> або <a href="opcache.configuration.md#ini.opcache.max-file-size">opcache.max_file_size</a> встановлені ненульові значення.</p>
+</blockquote>
+<p><code>opcache.revalidate_freq</code>int</p>
+<p>Як часто в секундах перевіряти тимчасові мітки файлів . призведе до того, що OPcache проводитиме цю перевірку при кожному запиті.</p>
+<p>Ця директива ігнорується, якщо вимкнено <a href="opcache.configuration.md#ini.opcache.validate-timestamps">opcache.validate_timestamps</a></p>
+<p><code>opcache.revalidate_path</code>bool</p>
+<p>Якщо вимкнено, існуючі закешовані файли, які використовують один і той же <a href="ini.core.md#ini.include-path">include_path</a>, повторно використовуватимуться. Таким чином, якщо файл з тим же ім&#x27;ям знаходиться в іншому місці в include_path, його не буде знайдено.</p>
+<p><code>opcache.save_comments</code>bool</p>
+<p>Якщо вимкнено, всі коментарі будуть відкинуті з кешу опкодів для мінімізації розміру коду. Відключення цієї опції може призвести до того, що деякі фреймворки, що покладаються на анотації в коментарях, перестануть працювати, включаючи Doctrine, Zend Framework 2 та PHPUnit.</p>
+<p><code>opcache.fast_shutdown</code>bool</p>
+<p>Якщо увімкнено, то буде використана швидка послідовність перезавантаження, при якій не відбувається очищення всіх виділених блоків пам&#x27;яті. Натомість для звільнення всього набору змінних використовується стандартний менеджер пам&#x27;яті Zend Engine.</p>
+<p>Ця директива була видалена у PHP 7.2.0. Варіант швидкої послідовності перезавантаження був інтегрований у PHP і автоматично використовуватиметься, якщо це можливо.</p>
+<p><code>opcache.enable_file_override</code>bool</p>
+<p>Якщо увімкнено, то кеш опкодів перевірятиме, чи вже закешовано файл при викликі функцій <a href="function.file-exists.md">file_exists()</a> <a href="function.is-file.md">is_file()</a> і <a href="function.is-readable.md">is_readable()</a>. Це може підвищити продуктивність додатків, які перевіряють присутність і доступність для читання скриптом PHP, але несе ризик повернення застарілих даних, якщо заборонена опція <a href="opcache.configuration.md#ini.opcache.validate-timestamps">opcache.validate_timestamps</a></p>
+<p><code>opcache.optimization_level</code>int</p>
+<p>Бітова маска, яка контролює, які кроки оптимізації виконуються. За промовчанням застосовуються всі безпечні оптимізації. Зміна значення за промовчанням корисна для налагодження/розробки оптимізатора (див. також <a href="opcache.configuration.md#ini.opcache.opt_debug_level">opcache.opt_debug_level</a></p>
+<p><code>opcache.inherited_hack</code>bool</p>
+<p>Ця директива ігнорується.</p>
+<p><code>opcache.dups_fix</code>bool</p>
+<p>Цей хак потрібний лише для обходу помилок &quot;Cannot redeclare class&quot;.</p>
+<p><code>opcache.blacklist_filename</code>string</p>
+<p>Розташування чорного списку OPcache. Файл чорного списку містить імена файлів, які потрібно прискорювати, по одному запису на рядок. Допустимі шаблони пошуку та префікси. Рядки, що починаються з крапки з комою, ігноруються.</p>
+<p>Приклад простого чорного списку:</p>
+<pre><code class="hljs language-bash">; Указываем конкретный файл.
+/var/www/broken.php
+; Префикс, обозначающий все файлы, начинающиеся с x.
+/var/www/x
+; Шаблон поиска.
+/var/www/*-broken.php
+</code></pre>
+<p><code>opcache.max_file_size</code>int</p>
+<p>Максимальний розмір файлу для кешування у байтах. Якщо поставити , то кешуватимуться всі файли.</p>
+<p><code>opcache.consistency_checks</code>int</p>
+<p>Якщо не нуль, OPcache звірятиме контрольну суму кешу кожні N запитів, де N — задане в цій директиві значення. Рекомендується включати лише при налагодженні, оскільки сильно впливає на продуктивність.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Недоступно з PHP 8.1.18 та 8.2.5. Вилучено у PHP 8.3.0.</p>
+</blockquote>
+<p><code>opcache.force_restart_timeout</code>int</p>
+<p>Кількість секунд очікування звільнення кеша, після якого буде примусово здійснено запланований перезапуск. Якщо цей час перевищено, OPcache вважає, що відбувається щось неправильне і вбиває процес блокування кешу.</p>
+<p>Якщо параметр <a href="opcache.configuration.md#ini.opcache.log-verbosity-level">opcache.log_verbosity_level</a> задати рівним 2 або більше, то, при виникненні такої ситуації, у лог помилок буде записано попередження.</p>
+<p>Директива не підтримується у Windows.</p>
+<p><code>opcache.error_log</code>string</p>
+<p>Лог помилок OPcache. Порожній рядок вважається як <code>stderr</code>і помилки будуть виведені в стандартний потік помилок (у більшості випадків це лог помилок веб-сервера).</p>
+<p><code>opcache.log_verbosity_level</code>int</p>
+<p>Рівень подробиці помилок лога. За умовчанням записуватимуться лише фатальні помилки (рівень 0) та помилки (рівень 1). Також значення можуть бути такими: попередження (рівень 2), інформаційні повідомлення (рівень 3) та повідомлення налагодження (рівень 4).</p>
+<p><code>opcache.record_warnings</code>bool</p>
+<p>Якщо увімкнено, OPcache запише попередження під час компіляції та відтворить їх при наступному увімкненні, навіть якщо воно виконується з кеша.</p>
+<p><code>opcache.preferred_memory_model</code>string</p>
+<p>Вподобана модель пам&#x27;яті для OPcache. Якщо залишити порожнім, то OPcache самостійно вибере найбільш підходящу модель, яка поводитиметься коректно практично у будь-яких випадках.</p>
+<p>Можливі значення включають <code>mmap</code> <code>shm</code> <code>posix</code>и<code>win32</code></p>
+<p><code>opcache.protect_memory</code>bool</p>
+<p>Захищає пам&#x27;ять від несподіваного запису під час запуску скриптів. Корисно тільки для внутрішнього налагодження.</p>
+<p><code>opcache.mmap_base</code>string</p>
+<p>Базове значення для сегмента пам&#x27;яті, що розділяється в Windows. Всі процеси PHP повинні відображати пам&#x27;ять, що розділяється, в однаковий адресний простір. Ця опція допомагає полагодити помилки типу &quot;Unable to reattach to base address&quot;.</p>
+<p><code>opcache.restrict_api</code>string</p>
+<p>Дозволяє викликати функції API OPcache лише скриптам, чий шлях починається із зазначеного рядка. Значення за промовчанням означає відсутність обмежень.</p>
+<p><code>opcache.file_update_protection</code>string</p>
+<p>Виключить кешування файлів з моменту зміни яких пройшло менше секунд, ніж зазначено. Це захищає від кешування не повністю оновлених файлів. Якщо всі оновлення файлів атомарні, можна підвищити продуктивність, задавши цей параметр рівним . Це дозволить закешувати файли негайно.</p>
+<p><code>opcache.huge_code_pages</code>bool</p>
+<p>Включає або вимикає копіювання коду PHP (текстового сегмента) у HUGE PAGES. Це може підвищити продуктивність, але потребує відповідних системних налаштувань. Доступно в Linux, починаючи з PHP 7.0.0 і FreeBSD, починаючи з PHP 7.4.0.</p>
+<p><code>opcache.lockfile_path</code>string</p>
+<p>Абсолютний шлях до спільного сховища файлів блокування (лише *nix)</p>
+<p><code>opcache.opt_debug_level</code>string</p>
+<p>Виводить код операції для налагодження різних етапів оптимізації. 0x10000 призведе до виведення кодів операцій, щойно їх згенерує компілятор, перш ніж буде застосовано будь-яку оптимізацію. 0x20000 спричинить виведення кодів операцій після оптимізації.</p>
+<p><code>opcache.file_cache</code>string</p>
+<p>Дозволяє та ставить директорію кеша другого рівня. Це має підвищити продуктивність, якщо пам&#x27;ять SHM заповнена, сервер перезапущено або SHM скинуто. Значення за промовчанням &quot;&quot; забороняє кешування на файловій системі.</p>
+<p><code>opcache.file_cache_only</code>bool</p>
+<p>Включає або вимикає кешування опкодів у пам&#x27;яті, що розділяється.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>До PHP 8.1.0 відключення цієї директиви з вже заповненим файловим кешем вимагало ручного очищення файлового кешу.</p>
+</blockquote>
+<p><code>opcache.file_cache_consistency_checks</code>bool</p>
+<p>Включає або вимикає перевірку контрольної суми під час завантаження скрипта з файлового кешу.</p>
+<p><code>opcache.file_cache_fallback</code>bool</p>
+<p>Застосовує opcache.file_cache_only=1 для деяких процесів, які завершилися помилкою при перепідключенні до пам&#x27;яті, що розділяється (тільки для Windows). Потрібно явно дозволене кешування на файлову систему.</p>
+<p><strong>Застереження</strong></p>
+<p>Вимкнення цієї опції конфігурації може перешкодити запуску процесів, тому не рекомендується.</p>
+<p><code>opcache.validate_permission</code>bool</p>
+<p>Перевірка прав доступу до кешованого файлу для поточного користувача.</p>
+<p><code>opcache.validate_root</code>bool</p>
+<p>Запобігає колізії імен у chroot-оточенні. Повинне бути включено для всіх випадків використання chroot-оточень для запобігання доступу до файлів за межами chroot.</p>
+<p><code>opcache.preload</code>string</p>
+<p>Задає скрипт PHP, який буде скомпільований і запущений при старті сервера і зможе завантажити інші файли, або за допомогою <a href="function.include.md">include</a>, либо используя функцию<a href="function.opcache-compile-file.md">opcache_compile_file()</a>. Усі сутності (наприклад, функції та класи), визначені в цих файлах, автоматично будуть доступні до моменту вимкнення сервера.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Попереднє завантаження не підтримується у Windows.</p>
+</blockquote>
+<p><code>opcache.preload_user</code>string</p>
+<p>Дозволяє запускати попереднє завантаження від імені вказаного користувача системи. Корисно для серверів, які запускаються від імені root перед перемиканням на непривілейованого користувача системи. За промовчанням попереднє завантаження від імені root заборонено з міркувань безпеки, якщо тільки цій директиві явно не встановлено значення <code>root</code></p>
+<p><code>opcache.cache_id</code>string</p>
+<p>У Windows всі процеси, що виконують той самий PHP SAPI під одним і тим же обліковим записом користувача з однаковим ідентифікатором кеша, спільно використовують один екземпляр OPcache. Значення ідентифікатора кешу можна вільно вибрати.</p>
+<p><strong>Підказка</strong></p>
+<p>Для IIS різні пули додатків можуть мати власний екземпляр OPcache, використовуючи змінне середовище APP_POOL_ID як <code>opcache.cache_id</code></p>
+<p><code>opcache.jit</code>string|int</p>
+<p>Для звичайного використання параметр приймає одне із чотирьох рядкових значень:</p>
+<ul>
+<li><code>disable</code>: Повністю вимкнено, не може бути увімкнено під час виконання.</li>
+<li><code>off</code>: Вимкнено, але може бути увімкнено під час виконання.</li>
+<li><code>tracing</code> <code>on</code>: Використовуйте трасування JIT Увімкнено за промовчанням і рекомендується для більшості користувачів.</li>
+<li><code>function</code>: Використовуйте JIT.</li>
+</ul>
+<p>Для розширеного використання параметр приймає 4-значне ціле число <code>CRTO</code>, де цифри означають:</p>
+<p><code>C</code>(Флаги оптимизации для процессора)</p>
+<ul>
+<li>: Вимкнути оптимізацію ЦП.</li>
+<li>: Увімкніть AVX, якщо ЦП підтримує його.</li>
+</ul>
+<p><code>R</code>(распределение регистров)</p>
+<ul>
+<li>: Не виконувати розподіл регістрів.</li>
+<li>: Виконувати виділення локального блокового регістру.</li>
+<li>: Виконувати виділення глобального регістру</li>
+</ul>
+<p><code>T</code>(триггер)</p>
+<ul>
+<li>: Компіляція всіх функцій під час завантаження скрипта.</li>
+<li>: Компіляція функцій під час першого виконання.</li>
+<li>: Профільування функцій при першому запиті, а потім компілювання найпопулярніших функцій.</li>
+<li><code>3</code>: Профілювання на льоту та компіляція гарячих функцій.</li>
+<li><code>4</code>: В даний час не використовується.</li>
+<li><code>5</code>: Використання трасування JIT Профілювання на льоту та компіляція трасування для гарячих сегментів коду.</li>
+</ul>
+<p><code>O</code>(уровень оптимизации)</p>
+<ul>
+<li>: Без JIT</li>
+<li>: Мінімальний JIT (виклик стандартних обробників віртуальних машин).</li>
+<li>: Вбудовані обробники віртуальних машин</li>
+<li><code>3</code>: Використовувати виведення типу.</li>
+<li><code>4</code>: Використовувати графік дзвінків.</li>
+<li><code>5</code>: Оптимізувати весь скрипт</li>
+</ul>
+<p>Режим<code>&quot;tracing&quot;</code> відповідає <code>CRTO = 1254</code>, Режим<code>&quot;function&quot;</code> відповідає <code>CRTO = 1205</code></p>
+<p><code>opcache.jit_buffer_size</code>int</p>
+<p>Об&#x27;єм пам&#x27;яті, що розділяється, резервований для скомпільованого JIT-коду. Нульове значення вимикає JIT.</p>
+<p>Якщо вказано ціле значення (int), обсяг вимірюється байтами. Можна також використовувати скорочений запис, який описано в <a href="faq.using.md#faq.using.shorthandbytes">у цьому розділі FAQ</a></p>
+<p><code>opcache.jit_debug</code>int</p>
+<p>Бітова маска, яка визначає, який висновок налагодження JIT слід увімкнути. Можливі значення дивіться у файлі <a href="https://github.com/php/php-src/blob/master/ext/opcache/jit/zend_jit.h">» zend_jit.h</a> (Пошук макровизначень, що починаються з <code>ZEND_JIT_DEBUG</code></p>
+<p><code>opcache.jit_bisect_limit</code>int</p>
+<p>Опція налагодження, що відключає JIT-компіляцію після компіляції певної кількості функцій. Може бути корисним для поділу джерела неправильної компіляції JIT. Примітка: цей параметр працює, тільки якщо для тригера JIT встановлено значення 0 (компіляція під час завантаження скрипта) або 1 (компіляція при першому виконанні), наприклад, <code>opcache.jit=1215</code>Подробнее смотрите в разделе<a href="opcache.configuration.md#ini.opcache.jit">opcache.jit</a></p>
+<p><code>opcache.jit_prof_threshold</code>float</p>
+<p>При використанні режиму тригера &quot;профілювання функцій при першому запиті&quot; цей поріг визначає, чи функція вважається гарячою. Кількість дзвінків функції, поділена на кількість дзвінків усіх функцій, повинна бути вищою від порогового значення. Наприклад, поріг 0,005 означає, що функції, що становлять більше ніж 0,5% всіх викликів, будуть скомпільовані JIT.</p>
+<p><code>opcache.jit_max_root_traces</code>int</p>
+<p>Максимальна кількість кореневих стеків виклику. Кореневий стек виклику - це потік виконання, що проходить за кодом спочатку одним шляхом, що є одиницею компіляції JIT. JIT не буде компілювати новий код, якщо він досягне цієї межі.</p>
+<p><code>opcache.jit_max_side_traces</code>int</p>
+<p>Максимальна кількість бічних стеків виклику, які можуть мати кореневий стек. Бічний стек виклику - це інший потік виконання, який не слідує шляхом скомпілюваного кореневого стека виклику. Бічні стеки виклику, що належать одному і тому ж кореневому стеку виклику, не компілюватимуться, якщо вони досягають цієї межі.</p>
+<p><code>opcache.jit_max_exit_counters</code>int</p>
+<p>Максимальна кількість лічильників виходу бокового стека виклику. Це обмежує загальну кількість бічних стеків, які можуть бути у всіх кореневих стеках.</p>
+<p><code>opcache.jit_hot_loop</code>int</p>
+<p>Через скільки ітерацій цикл вважається гарячим. Допустимий діапазон значень: <code>[0,255]</code>; для будь-якого значення поза цим діапазоном, наприклад -1 або 256, буде використовуватися значення за замовчуванням. Зокрема, нульове значення відключить JIT для відстеження та компіляції будь-яких циклів.</p>
+<p><code>opcache.jit_hot_func</code>int</p>
+<p>Через скільки дзвінків функція вважається гарячою. Допустимий діапазон значень: <code>[0,255]</code>; для будь-якого значення поза цим діапазоном, наприклад -1 або 256, буде використовуватися значення за замовчуванням. Зокрема, нульове значення відключить JIT для відстеження та компіляції будь-яких функцій.</p>
+<p><code>opcache.jit_hot_return</code>int</p>
+<p>Через скільки повернень повернення вважається гарячим. Допустимий діапазон значень: <code>[0,255]</code>; для будь-якого значення поза цим діапазоном, наприклад -1 або 256, буде використовуватися значення за замовчуванням. Зокрема, нульове значення відключить JIT для відстеження та компіляції будь-яких повернень.</p>
+<p><code>opcache.jit_hot_side_exit</code>int</p>
+<p>Через скільки виходів бічний стек вважається гарячим. Допустимий діапазон значень: <code>[0,255]</code>; для будь-якого значення поза цим діапазоном, наприклад -1 або 256, буде використовуватися значення за замовчуванням. Зокрема, нульове значення відключить JIT для відстеження та компіляції будь-яких побічних виходів.</p>
+<p><code>opcache.jit_blacklist_root_trace</code>int</p>
+<p>Максимальна кількість спроб компіляції кореневого трасування, перш ніж вона буде занесена до чорного списку.</p>
+<p><code>opcache.jit_blacklist_side_trace</code>int</p>
+<p>Максимальна кількість спроб компіляції бокового трасування до того, як вона буде занесена до чорного списку.</p>
+<p><code>opcache.jit_max_loop_unrolls</code>int</p>
+<p>Максимальна кількість спроб розгорнути цикл у бічній трасуванні, намагаючись досягти кореневого трасування та закрити зовнішній цикл.</p>
+<p><code>opcache.jit_max_recursive_calls</code>int</p>
+<p>Максимальна кількість розгорнутих рекурсивних циклів дзвінка.</p>
+<p><code>opcache.jit_max_recursive_returns</code>int</p>
+<p>Максимальна кількість розгорнутих рекурсивних циклів повернення.</p>
+<p><code>opcache.jit_max_polymorphic_calls</code>int</p>
+<p>Максимальна кількість спроб вбудованих поліморфних (динамічних чи методичних) викликів. Виклики вище за цей ліміт обробляються як метаморфічні і не вбудовуються.</p></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/opcache.configuration.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/opcache.configuration.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"opcache.configuration.md","content":"## Налаштування під час виконання\n\nПоведінка цих функцій залежить від установок у php.ini.\n\n**Опції налаштування OPcache**\n\n| Имя | По умолчанию | Место изменения | Список изменений |\n| --- | --- | --- | --- |\n| [opcache.enable](opcache.configuration.md#ini.opcache.enable) | \"1\" | **`INI_ALL`** |  |\n| [opcache.enable\\_cli](opcache.configuration.md#ini.opcache.enable-cli) | \"0\" | **`INI_SYSTEM`** | У версіях з PHP 7.1.2 до 7.1.6 включно, значення за замовчуванням \"1\" (включено) |\n| [opcache.memory\\_consumption](opcache.configuration.md#ini.opcache.memory-consumption) | \"128\" | **`INI_SYSTEM`** |  |\n| [opcache.interned\\_strings\\_buffer](opcache.configuration.md#ini.opcache.interned-strings-buffer) | \"8\" | **`INI_SYSTEM`** |  |\n| [opcache.max\\_accelerated\\_files](opcache.configuration.md#ini.opcache.max-accelerated-files) | \"10000\" | **`INI_SYSTEM`** |  |\n| [opcache.max\\_wasted\\_percentage](opcache.configuration.md#ini.opcache.max-wasted-percentage) | \"5\" | **`INI_SYSTEM`** |  |\n| [opcache.use\\_cwd](opcache.configuration.md#ini.opcache.use-cwd) | \"1\" | **`INI_SYSTEM`** |  |\n| [opcache.validate\\_timestamps](opcache.configuration.md#ini.opcache.validate-timestamps) | \"1\" | **`INI_ALL`** |  |\n| [opcache.revalidate\\_freq](opcache.configuration.md#ini.opcache.revalidate-freq) | \"2\" | **`INI_ALL`** |  |\n| [opcache.revalidate\\_path](opcache.configuration.md#ini.opcache.revalidate-path) | \"0\" | **`INI_ALL`** |  |\n| [opcache.save\\_comments](opcache.configuration.md#ini.opcache.save-comments) | \"1\" | **`INI_SYSTEM`** |  |\n| [opcache.fast\\_shutdown](opcache.configuration.md#ini.opcache.fast-shutdown) | \"0\" | **`INI_SYSTEM`** |  |\n| [opcache.enable\\_file\\_override](opcache.configuration.md#ini.opcache.enable-file-override) | \"0\" | **`INI_SYSTEM`** |  |\n| [opcache.optimization\\_level](opcache.configuration.md#ini.opcache.optimization-level) | \"0x7FFEBFFF\" | **`INI_SYSTEM`** | До PHP 7.3.0 було 0x7FFFBFFF |\n| [opcache.inherited\\_hack](opcache.configuration.md#ini.opcache.inherited-hack) | \"1\" | **`INI_SYSTEM`** | Вилучено у PHP 7.3.0 |\n| [opcache.dups\\_fix](opcache.configuration.md#ini.opcache.dups-fix) | \"0\" | **`INI_ALL`** |  |\n| [opcache.blacklist\\_filename](opcache.configuration.md#ini.opcache.blacklist-filename) | \"\" | **`INI_SYSTEM`** |  |\n| [opcache.max\\_file\\_size](opcache.configuration.md#ini.opcache.max-file-size) | \"0\" | **`INI_SYSTEM`** |  |\n| [opcache.consistency\\_checks](opcache.configuration.md#ini.opcache.consistency-checks) | \"0\" | **`INI_ALL`** | Недоступно з PHP 8.1.18 та 8.2.5. Вилучено у PHP 8.3.0. |\n| [opcache.force\\_restart\\_timeout](opcache.configuration.md#ini.opcache.force-restart-timeout) | \"180\" | **`INI_SYSTEM`** |  |\n| [opcache.error\\_log](opcache.configuration.md#ini.opcache.error-log) | \"\" | **`INI_SYSTEM`** |  |\n| [opcache.log\\_verbosity\\_level](opcache.configuration.md#ini.opcache.log-verbosity-level) | \"1\" | **`INI_SYSTEM`** |  |\n| [opcache.record\\_warnings](opcache.configuration.md#ini.opcache.record-warnings) | \"0\" | **`INI_SYSTEM`** | Доступно з PHP 8.0.0. |\n| [opcache.preferred\\_memory\\_model](opcache.configuration.md#ini.opcache.preferred-memory-model) | \"\" | **`INI_SYSTEM`** |  |\n| [opcache.protect\\_memory](opcache.configuration.md#ini.opcache.protect-memory) | \"0\" | **`INI_SYSTEM`** |  |\n| [opcache.mmap\\_base](opcache.configuration.md#ini.opcache.mmap-base) | **`null`** | **`INI_SYSTEM`** |  |\n| [opcache.restrict\\_api](opcache.configuration.md#ini.opcache.restrict-api) | \"\" | **`INI_SYSTEM`** |  |\n| [opcache.file\\_update\\_protection](opcache.configuration.md#ini.opcache.file_update_protection) | \"2\" | **`INI_ALL`** |  |\n| [opcache.huge\\_code\\_pages](opcache.configuration.md#ini.opcache.huge_code_pages) | \"0\" | **`INI_SYSTEM`** |  |\n| [opcache.lockfile\\_path](opcache.configuration.md#ini.opcache.lockfile_path) | \"/tmp\" | **`INI_SYSTEM`** |  |\n| [opcache.opt\\_debug\\_level](opcache.configuration.md#ini.opcache.opt_debug_level) | \"0\" | **`INI_SYSTEM`** | Доступно з PHP 7.1.0 |\n| [opcache.file\\_cache](opcache.configuration.md#ini.opcache.file-cache) | NULL | **`INI_SYSTEM`** |  |\n| [opcache.file\\_cache\\_only](opcache.configuration.md#ini.opcache.file-cache-only) | \"0\" | **`INI_SYSTEM`** |  |\n| [opcache.file\\_cache\\_consistency\\_checks](opcache.configuration.md#ini.opcache.file-cache-consistency-checks) | \"1\" | **`INI_SYSTEM`** |  |\n| [opcache.file\\_cache\\_fallback](opcache.configuration.md#ini.opcache.file-cache-fallback) | \"1\" | **`INI_SYSTEM`** |  |\n| [opcache.validate\\_permission](opcache.configuration.md#ini.opcache.validate-permission) | \"0\" | **`INI_SYSTEM`** | Доступно з PHP 7.0.14 |\n| [opcache.validate\\_root](opcache.configuration.md#ini.opcache.validate-root) | \"0\" | **`INI_SYSTEM`** | Доступно з PHP 7.0.14 |\n| [opcache.preload](opcache.configuration.md#ini.opcache.preload) | \"\" | **`INI_SYSTEM`** | Доступно з PHP 7.4.0 |\n| [opcache.preload\\_user](opcache.configuration.md#ini.opcache.preload-user) | \"\" | **`INI_SYSTEM`** | Доступно з PHP 7.4.0 |\n| [opcache.cache\\_id](opcache.configuration.md#ini.opcache.cache-id) | \"\" | **`INI_SYSTEM`** | Тільки Windows. Доступно з PHP 7.4.0 |\n| [opcache.jit](opcache.configuration.md#ini.opcache.jit) | \"tracing\" | **`INI_ALL`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_buffer\\_size](opcache.configuration.md#ini.opcache.jit-buffer-size) | \"0\" | **`INI_SYSTEM`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_debug](opcache.configuration.md#ini.opcache.jit-debug) | \"0\" | **`INI_ALL`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_bisect\\_limit](opcache.configuration.md#ini.opcache.jit-bisect-limit) | \"0\" | **`INI_ALL`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_prof\\_threshold](opcache.configuration.md#ini.opcache.jit-prof-threshold) | \"0.005\" | **`INI_ALL`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_max\\_root\\_traces](opcache.configuration.md#ini.opcache.jit-max-root-traces) | \"1024\" | **`INI_SYSTEM`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_max\\_side\\_traces](opcache.configuration.md#ini.opcache.jit-max-side-traces) | \"128\" | **`INI_SYSTEM`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_max\\_exit\\_counters](opcache.configuration.md#ini.opcache.jit-max-exit-counters) | \"8192\" | **`INI_SYSTEM`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_hot\\_loop](opcache.configuration.md#ini.opcache.jit-hot-loop) | \"64\" | **`INI_SYSTEM`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_hot\\_func](opcache.configuration.md#ini.opcache.jit-hot-func) | \"127\" | **`INI_SYSTEM`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_hot\\_return](opcache.configuration.md#ini.opcache.jit-hot-return) | \"8\" | **`INI_SYSTEM`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_hot\\_side\\_exit](opcache.configuration.md#ini.opcache.jit-hot-side-exit) | \"8\" | **`INI_SYSTEM`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_blacklist\\_root\\_trace](opcache.configuration.md#ini.opcache.jit-blacklist-root-trace) | \"16\" | **`INI_ALL`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_blacklist\\_side\\_trace](opcache.configuration.md#ini.opcache.jit-blacklist-side-trace) | \"8\" | **`INI_ALL`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_max\\_loop\\_unrolls](opcache.configuration.md#ini.opcache.jit-max-loop-unrolls) | \"8\" | **`INI_ALL`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_max\\_recursive\\_calls](opcache.configuration.md#ini.opcache.jit-max-recursive-calls) | \"2\" | **`INI_ALL`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_max\\_recursive\\_returns](opcache.configuration.md#ini.opcache.jit-max-recursive-return) | \"2\" | **`INI_ALL`** | Доступно з PHP 8.0.0 |\n| [opcache.jit\\_max\\_polymorphic\\_calls](opcache.configuration.md#ini.opcache.jit-max-polymorphic-calls) | \"2\" | **`INI_ALL`** | Доступно з PHP 8.0.0 |\n\nДодаткова інформація та опис режимів INI\\_\\* дано у розділі «[Місця встановлення параметрів конфігурації](configuration.changes.modes.md)».\n\nКоротке пояснення конфігураційних директив.\n\n`opcache.enable`bool\n\nДозволяє кешування опкодів. Якщо заборонено, код не оптимізуватиметься і не кешуватиметься. Опцію `opcache.enable` не можна увімкнути під час виконання за допомогою [ini\\_set()](function.ini-set.md), але можна вимкнути. Спроба включити її у такий спосіб призведе до генерації попередження.\n\n`opcache.enable_cli`bool\n\nДозволяє кешування опкодів для CLI-версії PHP.\n\n`opcache.memory_consumption`int\n\nРазмер разделяемой памяти в мегабайтах для OPcache. Минимально допустимое значение —`\"8\"`, яке застосовується, якщо встановлено менше значення.\n\n`opcache.interned_strings_buffer`int\n\nКількість пам'яті в мегабайтах для зберігання інтернованих рядків.\n\n`opcache.max_accelerated_files`int\n\nМаксимальна кількість ключів (і, відповідно, скриптів) у хеш-таблиці OPcache. Фактичне значення буде першим числом з набору `{ 223, 463, 983, 1979, 3907, 7963, 16229, 32531, 65407, 130987, 262237, 524521, 1048793 }`, яке більше або дорівнює заданому в цьому параметрі. Мінімум 200, максимум 1000000. Значення за межами діапазону обмежені до допустимого діапазону.\n\n`opcache.max_wasted_percentage`int\n\nМаксимальне значення втраченої пам'яті (у відсотках) після якого планується перезапуск, якщо недостатньо вільної пам'яті. Максимально допустиме значення: `\"50\"`, яка застосовується, якщо встановлено більше значення.\n\n`opcache.use_cwd`bool\n\nЯкщо увімкнено, OPcache додає поточну робочу директорію до ключа скрипту, тим самим усуваючи можливість колізій для файлів з однаковим ім'ям. Вимкнення цієї опції підвищує продуктивність, але може призвести до збоїв.\n\n`opcache.validate_timestamps`bool\n\nЯкщо увімкнено, OPcache перевірятиме актуальність закешованих скриптів кожні [opcache.revalidate\\_freq](opcache.configuration.md#ini.opcache.revalidate-freq) секунд. Коли заборонено, ви можете перезапустити OPcache вручну за допомогою [opcache\\_reset()](function.opcache-reset.md) [opcache\\_invalidate()](function.opcache-invalidate.md) або перезапустити веб-сервер для того, щоб зміни набули чинності.\n\n\u003e **Зауваження**: OPcache все ще може перевіряти тимчасову мітку файлу під час компіляції, якщо для опцій [opcache.file\\_update\\_protection](opcache.configuration.md#ini.opcache.file_update_protection) або [opcache.max\\_file\\_size](opcache.configuration.md#ini.opcache.max-file-size) встановлені ненульові значення.\n\n`opcache.revalidate_freq`int\n\nЯк часто в секундах перевіряти тимчасові мітки файлів . призведе до того, що OPcache проводитиме цю перевірку при кожному запиті.\n\nЦя директива ігнорується, якщо вимкнено [opcache.validate\\_timestamps](opcache.configuration.md#ini.opcache.validate-timestamps)\n\n`opcache.revalidate_path`bool\n\nЯкщо вимкнено, існуючі закешовані файли, які використовують один і той же [include\\_path](ini.core.md#ini.include-path), повторно використовуватимуться. Таким чином, якщо файл з тим же ім'ям знаходиться в іншому місці в include\\_path, його не буде знайдено.\n\n`opcache.save_comments`bool\n\nЯкщо вимкнено, всі коментарі будуть відкинуті з кешу опкодів для мінімізації розміру коду. Відключення цієї опції може призвести до того, що деякі фреймворки, що покладаються на анотації в коментарях, перестануть працювати, включаючи Doctrine, Zend Framework 2 та PHPUnit.\n\n`opcache.fast_shutdown`bool\n\nЯкщо увімкнено, то буде використана швидка послідовність перезавантаження, при якій не відбувається очищення всіх виділених блоків пам'яті. Натомість для звільнення всього набору змінних використовується стандартний менеджер пам'яті Zend Engine.\n\nЦя директива була видалена у PHP 7.2.0. Варіант швидкої послідовності перезавантаження був інтегрований у PHP і автоматично використовуватиметься, якщо це можливо.\n\n`opcache.enable_file_override`bool\n\nЯкщо увімкнено, то кеш опкодів перевірятиме, чи вже закешовано файл при викликі функцій [file\\_exists()](function.file-exists.md) [is\\_file()](function.is-file.md) і [is\\_readable()](function.is-readable.md). Це може підвищити продуктивність додатків, які перевіряють присутність і доступність для читання скриптом PHP, але несе ризик повернення застарілих даних, якщо заборонена опція [opcache.validate\\_timestamps](opcache.configuration.md#ini.opcache.validate-timestamps)\n\n`opcache.optimization_level`int\n\nБітова маска, яка контролює, які кроки оптимізації виконуються. За промовчанням застосовуються всі безпечні оптимізації. Зміна значення за промовчанням корисна для налагодження/розробки оптимізатора (див. також [opcache.opt\\_debug\\_level](opcache.configuration.md#ini.opcache.opt_debug_level)\n\n`opcache.inherited_hack`bool\n\nЦя директива ігнорується.\n\n`opcache.dups_fix`bool\n\nЦей хак потрібний лише для обходу помилок \"Cannot redeclare class\".\n\n`opcache.blacklist_filename`string\n\nРозташування чорного списку OPcache. Файл чорного списку містить імена файлів, які потрібно прискорювати, по одному запису на рядок. Допустимі шаблони пошуку та префікси. Рядки, що починаються з крапки з комою, ігноруються.\n\nПриклад простого чорного списку:\n\n```\n; Указываем конкретный файл.\n/var/www/broken.php\n; Префикс, обозначающий все файлы, начинающиеся с x.\n/var/www/x\n; Шаблон поиска.\n/var/www/*-broken.php\n```\n\n`opcache.max_file_size`int\n\nМаксимальний розмір файлу для кешування у байтах. Якщо поставити , то кешуватимуться всі файли.\n\n`opcache.consistency_checks`int\n\nЯкщо не нуль, OPcache звірятиме контрольну суму кешу кожні N запитів, де N — задане в цій директиві значення. Рекомендується включати лише при налагодженні, оскільки сильно впливає на продуктивність.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Недоступно з PHP 8.1.18 та 8.2.5. Вилучено у PHP 8.3.0.\n\n`opcache.force_restart_timeout`int\n\nКількість секунд очікування звільнення кеша, після якого буде примусово здійснено запланований перезапуск. Якщо цей час перевищено, OPcache вважає, що відбувається щось неправильне і вбиває процес блокування кешу.\n\nЯкщо параметр [opcache.log\\_verbosity\\_level](opcache.configuration.md#ini.opcache.log-verbosity-level) задати рівним 2 або більше, то, при виникненні такої ситуації, у лог помилок буде записано попередження.\n\nДиректива не підтримується у Windows.\n\n`opcache.error_log`string\n\nЛог помилок OPcache. Порожній рядок вважається як `stderr`і помилки будуть виведені в стандартний потік помилок (у більшості випадків це лог помилок веб-сервера).\n\n`opcache.log_verbosity_level`int\n\nРівень подробиці помилок лога. За умовчанням записуватимуться лише фатальні помилки (рівень 0) та помилки (рівень 1). Також значення можуть бути такими: попередження (рівень 2), інформаційні повідомлення (рівень 3) та повідомлення налагодження (рівень 4).\n\n`opcache.record_warnings`bool\n\nЯкщо увімкнено, OPcache запише попередження під час компіляції та відтворить їх при наступному увімкненні, навіть якщо воно виконується з кеша.\n\n`opcache.preferred_memory_model`string\n\nВподобана модель пам'яті для OPcache. Якщо залишити порожнім, то OPcache самостійно вибере найбільш підходящу модель, яка поводитиметься коректно практично у будь-яких випадках.\n\nМожливі значення включають `mmap` `shm` `posix`и`win32`\n\n`opcache.protect_memory`bool\n\nЗахищає пам'ять від несподіваного запису під час запуску скриптів. Корисно тільки для внутрішнього налагодження.\n\n`opcache.mmap_base`string\n\nБазове значення для сегмента пам'яті, що розділяється в Windows. Всі процеси PHP повинні відображати пам'ять, що розділяється, в однаковий адресний простір. Ця опція допомагає полагодити помилки типу \"Unable to reattach to base address\".\n\n`opcache.restrict_api`string\n\nДозволяє викликати функції API OPcache лише скриптам, чий шлях починається із зазначеного рядка. Значення за промовчанням означає відсутність обмежень.\n\n`opcache.file_update_protection`string\n\nВиключить кешування файлів з моменту зміни яких пройшло менше секунд, ніж зазначено. Це захищає від кешування не повністю оновлених файлів. Якщо всі оновлення файлів атомарні, можна підвищити продуктивність, задавши цей параметр рівним . Це дозволить закешувати файли негайно.\n\n`opcache.huge_code_pages`bool\n\nВключає або вимикає копіювання коду PHP (текстового сегмента) у HUGE PAGES. Це може підвищити продуктивність, але потребує відповідних системних налаштувань. Доступно в Linux, починаючи з PHP 7.0.0 і FreeBSD, починаючи з PHP 7.4.0.\n\n`opcache.lockfile_path`string\n\nАбсолютний шлях до спільного сховища файлів блокування (лише \\*nix)\n\n`opcache.opt_debug_level`string\n\nВиводить код операції для налагодження різних етапів оптимізації. 0x10000 призведе до виведення кодів операцій, щойно їх згенерує компілятор, перш ніж буде застосовано будь-яку оптимізацію. 0x20000 спричинить виведення кодів операцій після оптимізації.\n\n`opcache.file_cache`string\n\nДозволяє та ставить директорію кеша другого рівня. Це має підвищити продуктивність, якщо пам'ять SHM заповнена, сервер перезапущено або SHM скинуто. Значення за промовчанням \"\" забороняє кешування на файловій системі.\n\n`opcache.file_cache_only`bool\n\nВключає або вимикає кешування опкодів у пам'яті, що розділяється.\n\n\u003e **Зауваження** :\n\u003e \n\u003e До PHP 8.1.0 відключення цієї директиви з вже заповненим файловим кешем вимагало ручного очищення файлового кешу.\n\n`opcache.file_cache_consistency_checks`bool\n\nВключає або вимикає перевірку контрольної суми під час завантаження скрипта з файлового кешу.\n\n`opcache.file_cache_fallback`bool\n\nЗастосовує opcache.file\\_cache\\_only=1 для деяких процесів, які завершилися помилкою при перепідключенні до пам'яті, що розділяється (тільки для Windows). Потрібно явно дозволене кешування на файлову систему.\n\n**Застереження**\n\nВимкнення цієї опції конфігурації може перешкодити запуску процесів, тому не рекомендується.\n\n`opcache.validate_permission`bool\n\nПеревірка прав доступу до кешованого файлу для поточного користувача.\n\n`opcache.validate_root`bool\n\nЗапобігає колізії імен у chroot-оточенні. Повинне бути включено для всіх випадків використання chroot-оточень для запобігання доступу до файлів за межами chroot.\n\n`opcache.preload`string\n\nЗадає скрипт PHP, який буде скомпільований і запущений при старті сервера і зможе завантажити інші файли, або за допомогою [include](function.include.md), либо используя функцию[opcache\\_compile\\_file()](function.opcache-compile-file.md). Усі сутності (наприклад, функції та класи), визначені в цих файлах, автоматично будуть доступні до моменту вимкнення сервера.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Попереднє завантаження не підтримується у Windows.\n\n`opcache.preload_user`string\n\nДозволяє запускати попереднє завантаження від імені вказаного користувача системи. Корисно для серверів, які запускаються від імені root перед перемиканням на непривілейованого користувача системи. За промовчанням попереднє завантаження від імені root заборонено з міркувань безпеки, якщо тільки цій директиві явно не встановлено значення `root`\n\n`opcache.cache_id`string\n\nУ Windows всі процеси, що виконують той самий PHP SAPI під одним і тим же обліковим записом користувача з однаковим ідентифікатором кеша, спільно використовують один екземпляр OPcache. Значення ідентифікатора кешу можна вільно вибрати.\n\n**Підказка**\n\nДля IIS різні пули додатків можуть мати власний екземпляр OPcache, використовуючи змінне середовище APP\\_POOL\\_ID як `opcache.cache_id`\n\n`opcache.jit`string|int\n\nДля звичайного використання параметр приймає одне із чотирьох рядкових значень:\n\n-   `disable`: Повністю вимкнено, не може бути увімкнено під час виконання.\n-   `off`: Вимкнено, але може бути увімкнено під час виконання.\n-   `tracing` `on`: Використовуйте трасування JIT Увімкнено за промовчанням і рекомендується для більшості користувачів.\n-   `function`: Використовуйте JIT.\n\nДля розширеного використання параметр приймає 4-значне ціле число `CRTO`, де цифри означають:\n\n`C`(Флаги оптимизации для процессора)\n\n-   : Вимкнути оптимізацію ЦП.\n-   : Увімкніть AVX, якщо ЦП підтримує його.\n\n`R`(распределение регистров)\n\n-   : Не виконувати розподіл регістрів.\n-   : Виконувати виділення локального блокового регістру.\n-   : Виконувати виділення глобального регістру\n\n`T`(триггер)\n\n-   : Компіляція всіх функцій під час завантаження скрипта.\n-   : Компіляція функцій під час першого виконання.\n-   : Профільування функцій при першому запиті, а потім компілювання найпопулярніших функцій.\n-   `3`: Профілювання на льоту та компіляція гарячих функцій.\n-   `4`: В даний час не використовується.\n-   `5`: Використання трасування JIT Профілювання на льоту та компіляція трасування для гарячих сегментів коду.\n\n`O`(уровень оптимизации)\n\n-   : Без JIT\n-   : Мінімальний JIT (виклик стандартних обробників віртуальних машин).\n-   : Вбудовані обробники віртуальних машин\n-   `3`: Використовувати виведення типу.\n-   `4`: Використовувати графік дзвінків.\n-   `5`: Оптимізувати весь скрипт\n\nРежим`\"tracing\"` відповідає `CRTO = 1254`, Режим`\"function\"` відповідає `CRTO = 1205`\n\n`opcache.jit_buffer_size`int\n\nОб'єм пам'яті, що розділяється, резервований для скомпільованого JIT-коду. Нульове значення вимикає JIT.\n\nЯкщо вказано ціле значення (int), обсяг вимірюється байтами. Можна також використовувати скорочений запис, який описано в [у цьому розділі FAQ](faq.using.md#faq.using.shorthandbytes)\n\n`opcache.jit_debug`int\n\nБітова маска, яка визначає, який висновок налагодження JIT слід увімкнути. Можливі значення дивіться у файлі [» zend\\_jit.h](https://github.com/php/php-src/blob/master/ext/opcache/jit/zend_jit.h) (Пошук макровизначень, що починаються з `ZEND_JIT_DEBUG`\n\n`opcache.jit_bisect_limit`int\n\nОпція налагодження, що відключає JIT-компіляцію після компіляції певної кількості функцій. Може бути корисним для поділу джерела неправильної компіляції JIT. Примітка: цей параметр працює, тільки якщо для тригера JIT встановлено значення 0 (компіляція під час завантаження скрипта) або 1 (компіляція при першому виконанні), наприклад, `opcache.jit=1215`Подробнее смотрите в разделе[opcache.jit](opcache.configuration.md#ini.opcache.jit)\n\n`opcache.jit_prof_threshold`float\n\nПри використанні режиму тригера \"профілювання функцій при першому запиті\" цей поріг визначає, чи функція вважається гарячою. Кількість дзвінків функції, поділена на кількість дзвінків усіх функцій, повинна бути вищою від порогового значення. Наприклад, поріг 0,005 означає, що функції, що становлять більше ніж 0,5% всіх викликів, будуть скомпільовані JIT.\n\n`opcache.jit_max_root_traces`int\n\nМаксимальна кількість кореневих стеків виклику. Кореневий стек виклику - це потік виконання, що проходить за кодом спочатку одним шляхом, що є одиницею компіляції JIT. JIT не буде компілювати новий код, якщо він досягне цієї межі.\n\n`opcache.jit_max_side_traces`int\n\nМаксимальна кількість бічних стеків виклику, які можуть мати кореневий стек. Бічний стек виклику - це інший потік виконання, який не слідує шляхом скомпілюваного кореневого стека виклику. Бічні стеки виклику, що належать одному і тому ж кореневому стеку виклику, не компілюватимуться, якщо вони досягають цієї межі.\n\n`opcache.jit_max_exit_counters`int\n\nМаксимальна кількість лічильників виходу бокового стека виклику. Це обмежує загальну кількість бічних стеків, які можуть бути у всіх кореневих стеках.\n\n`opcache.jit_hot_loop`int\n\nЧерез скільки ітерацій цикл вважається гарячим. Допустимий діапазон значень: `[0,255]`; для будь-якого значення поза цим діапазоном, наприклад -1 або 256, буде використовуватися значення за замовчуванням. Зокрема, нульове значення відключить JIT для відстеження та компіляції будь-яких циклів.\n\n`opcache.jit_hot_func`int\n\nЧерез скільки дзвінків функція вважається гарячою. Допустимий діапазон значень: `[0,255]`; для будь-якого значення поза цим діапазоном, наприклад -1 або 256, буде використовуватися значення за замовчуванням. Зокрема, нульове значення відключить JIT для відстеження та компіляції будь-яких функцій.\n\n`opcache.jit_hot_return`int\n\nЧерез скільки повернень повернення вважається гарячим. Допустимий діапазон значень: `[0,255]`; для будь-якого значення поза цим діапазоном, наприклад -1 або 256, буде використовуватися значення за замовчуванням. Зокрема, нульове значення відключить JIT для відстеження та компіляції будь-яких повернень.\n\n`opcache.jit_hot_side_exit`int\n\nЧерез скільки виходів бічний стек вважається гарячим. Допустимий діапазон значень: `[0,255]`; для будь-якого значення поза цим діапазоном, наприклад -1 або 256, буде використовуватися значення за замовчуванням. Зокрема, нульове значення відключить JIT для відстеження та компіляції будь-яких побічних виходів.\n\n`opcache.jit_blacklist_root_trace`int\n\nМаксимальна кількість спроб компіляції кореневого трасування, перш ніж вона буде занесена до чорного списку.\n\n`opcache.jit_blacklist_side_trace`int\n\nМаксимальна кількість спроб компіляції бокового трасування до того, як вона буде занесена до чорного списку.\n\n`opcache.jit_max_loop_unrolls`int\n\nМаксимальна кількість спроб розгорнути цикл у бічній трасуванні, намагаючись досягти кореневого трасування та закрити зовнішній цикл.\n\n`opcache.jit_max_recursive_calls`int\n\nМаксимальна кількість розгорнутих рекурсивних циклів дзвінка.\n\n`opcache.jit_max_recursive_returns`int\n\nМаксимальна кількість розгорнутих рекурсивних циклів повернення.\n\n`opcache.jit_max_polymorphic_calls`int\n\nМаксимальна кількість спроб вбудованих поліморфних (динамічних чи методичних) викликів. Виклики вище за цей ліміт обробляються як метаморфічні і не вбудовуються.\n","title":"Налаштування під час виконання","contentType":2,"navigation":[{"opcache.installation.md":"« Встановлення"},{"opcache.resources.md":"Типи ресурсів »"},{"index.md":"PHP Manual"},{"opcache.setup.md":"Встановлення та налаштування"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"opcache.configuration.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

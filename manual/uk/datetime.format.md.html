@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>DateTimeInterface::format</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="datetime.diff.md" class="mx-4">« DateTimeInterface::diff</a><a href="datetime.getoffset.md" class="mx-4">DateTimeInterface::getOffset »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="class.datetimeinterface.md" class="mx-4">DateTimeInterface</a></div><article class="markdown_markdown__yfc8y"><div><h1>DateTimeInterface::format</h1>
+<h1>DateTimeImmutable::format</h1>
+<h1>DateTime::format</h1>
+<h1>date_format</h1>
+<p>(PHP 5 &gt;= 5.2.0, PHP 7, PHP 8)</p>
+<p>DateTimeInterface::format -- DateTimeImmutable::format -- DateTime::format -- date_format — Повертає дату, відформатовану відповідно до переданого формату</p>
+<h3>Опис</h3>
+<p>Об&#x27;єктно-орієнтований стиль</p>
+<pre><code class="hljs language-methodsynopsis">public DateTimeInterface::format(string $format): string
+</code></pre>
+<pre><code class="hljs language-methodsynopsis">public DateTimeImmutable::format(string $format): string
+</code></pre>
+<pre><code class="hljs language-methodsynopsis">public DateTime::format(string $format): string
+</code></pre>
+<p>Процедурний стиль</p>
+<pre><code class="hljs language-methodsynopsis">date_format(DateTimeInterface $object, string $format): string
+</code></pre>
+<p>Повертає рядок дати, перетвореної відповідно до переданого формату.</p>
+<h3>Список параметрів</h3>
+<p><code>object</code></p>
+<p>Тільки для процедурного стилю: об&#x27;єкт <a href="class.datetime.md">DateTime</a>, що повертається <a href="function.date-create.md">date_create()</a></p>
+<p><code>format</code></p>
+<p>Шаблон результуючого рядка (string) з датою. Дивіться параметри форматування нижче. Також існує кілька <a href="class.datetimeinterface.md#datetimeinterface.constants.types">визначених констант дати/часу</a>, які можна використовувати замість цих параметрів. Наприклад: **<code>DATE_RSS</code>**заменяет шаблон<code>&#x27;D, d M Y H:i:s&#x27;</code></p>
+<p><strong>В параметре<code>format</code> розпізнаються такі символи</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Символ в строке <code>format</code></th><th>Опис</th><th>Приклад возвращаемого значения</th></tr></thead><tbody><tr><td><em>День</em></td><td>---</td><td>---</td></tr><tr><td><code>d</code></td><td>День місяця, 2 цифри з провідним нулем</td><td>Від <code>01</code>до<code>31</code></td></tr><tr><td><code>D</code></td><td>Текстова вистава дня тижня, 3 символи</td><td>Від <code>Mon</code>до<code>Sun</code></td></tr><tr><td><code>j</code></td><td>День місяця без ведучого нуля</td><td>Від до<code>31</code></td></tr><tr><td><code>l</code> (маленька &#x27;L&#x27;)</td><td>Повне найменування дня тижня</td><td>Від <code>Sunday</code>до<code>Saturday</code></td></tr><tr><td><code>N</code></td><td>Порядковий номер дня тижня відповідно до стандарту ISO 8601</td><td>Від (понеділок) до <code>7</code> (Неділя)</td></tr><tr><td><code>S</code></td><td>Англійський суфікс порядкового числа місяця, 2 символи</td><td><code>st</code><code>nd</code><code>rd</code>или<code>th</code>. . Застосовують спільно з <code>j</code></td></tr><tr><td><code>w</code></td><td>Порядковий номер дня тижня</td><td>Від (неділя) до<code>6</code>(субота)</td></tr><tr><td><code>z</code></td><td>Порядковий номер дня у році (починаючи з 0)</td><td>Від до<code>365</code></td></tr><tr><td><em>Тиждень</em></td><td>---</td><td>---</td></tr><tr><td><code>W</code></td><td>Порядковий номер тижня року відповідно до стандарту ISO 8601; тижні починаються з понеділка</td><td>Наприклад: <code>42</code> (42-й тиждень року)</td></tr><tr><td><em>Місяць</em></td><td>---</td><td>---</td></tr><tr><td><code>F</code></td><td>Повне найменування місяця, наприклад January або March</td><td>Від <code>January</code>до<code>December</code></td></tr><tr><td><code>m</code></td><td>Порядковий номер місяця з провідним нулем</td><td>Від <code>01</code>до<code>12</code></td></tr><tr><td><code>M</code></td><td>Скорочена назва місяця, 3 символи</td><td>Від <code>Jan</code>до<code>Dec</code></td></tr><tr><td><code>n</code></td><td>Порядковий номер місяця без провідного нуля</td><td>Від до<code>12</code></td></tr><tr><td><code>t</code></td><td>Кількість днів у вказаному місяці</td><td>Від <code>28</code>до<code>31</code></td></tr><tr><td><em>Рік</em></td><td>---</td><td>---</td></tr><tr><td><code>L</code></td><td>Ознака високосного року</td><td>якщо рік високосний, інакше</td></tr><tr><td><code>o</code></td><td>Номер року відповідно до стандарту ISO 8601. Має те саме значення, що й <code>Y</code>крім випадку, коли номер тижня ISO (<code>W</code>) належить попередньому чи наступному році; тоді буде використано рік цього тижня.</td><td>Приклади: <code>1999</code>или<code>2003</code></td></tr><tr><td><code>X</code></td><td>Розширене повне числове подання року, не менше 4 цифр, <code>-</code> для років до нашої ери та <code>+</code> для років нашої ери.</td><td>Приклади: <code>-0055</code><code>+0787</code><code>+1999</code><code>+10191</code></td></tr><tr><td><code>x</code></td><td>Розширене повне числове уявлення, якщо потрібно, або стандартне повне числове уявлення, якщо можливо (наприклад, <code>Y</code>). Не менш як чотири цифри. Для років до нашої ери вказано префікс <code>-</code>. . У років після (і включаючи) <code>10000</code> префікс <code>+</code></td><td>Приклади: <code>-0055</code><code>0787</code><code>1999</code><code>+10191</code></td></tr><tr><td><code>Y</code></td><td>Повне числове подання року, не менше 4 цифр, <code>-</code> для років до н.</td><td>Приклади: <code>-0055</code><code>0787</code><code>1999</code><code>2003</code><code>10191</code></td></tr><tr><td><code>y</code></td><td>Номер року, 2 цифри</td><td>Приклади: <code>99</code><code>03</code></td></tr><tr><td><em>Час</em></td><td>---</td><td>---</td></tr><tr><td><code>a</code></td><td>Ante meridiem (лат. «до полудня») або Post meridiem (лат. «після полудня») у нижньому регістрі</td><td><code>am</code>или<code>pm</code></td></tr><tr><td><code>A</code></td><td>Ante meridiem або Post meridiem у верхньому регістрі</td><td><code>AM</code>или<code>PM</code></td></tr><tr><td><code>B</code></td><td>Час у форматі Інтернет-часу (альтернативної системи відліку часу доби)</td><td>Від <code>000</code>до<code>999</code></td></tr><tr><td><code>g</code></td><td>Годинник у 12-годинному форматі без провідного нуля</td><td>Від до<code>12</code></td></tr><tr><td><code>G</code></td><td>Годинник у 24-годинному форматі без провідного нуля</td><td>Від до<code>23</code></td></tr><tr><td><code>h</code></td><td>Годинник у 12-годинному форматі з провідним нулем</td><td>Від <code>01</code>до<code>12</code></td></tr><tr><td><code>H</code></td><td>Годинник у 24-годинному форматі з провідним нулем</td><td>Від <code>00</code>до<code>23</code></td></tr><tr><td><code>i</code></td><td>Хвилини з провідним нулем</td><td>Від <code>00</code>до<code>59</code></td></tr><tr><td><code>s</code></td><td>Секунди з провідним нулем</td><td>Від <code>00</code>до<code>59</code></td></tr><tr><td><code>u</code></td><td>Мікросекунди. Врахуйте, що функція <a href="function.date.md">date()</a> завжди повертатиме значення <code>000000</code>, т. до. вона приймає цілий (int) параметр, тоді як метод <strong>DateTime::format()</strong> підтримує мікросекунди, якщо об&#x27;єкт <a href="class.datetime.md">DateTime</a> створений із ними.</td><td>Наприклад: <code>654321</code></td></tr><tr><td><code>v</code></td><td>Мілісекунди. Зауваження таке саме, як і для <code>u</code></td><td>Приклад: <code>654</code></td></tr><tr><td><em>Часовий пояс</em></td><td>---</td><td>---</td></tr><tr><td><code>e</code></td><td>Ідентифікатор часового поясу</td><td>Приклади: <code>UTC</code><code>GMT</code><code>Atlantic/Azores</code></td></tr><tr><td><code>I</code> (Заголовна i)</td><td>Ознака літнього часу</td><td>якщо дата відповідає літньому часу, в іншому випадку</td></tr><tr><td><code>O</code></td><td>Різниця з часом за Грінвічем без двокрапки між годинами та хвилинами</td><td>Наприклад: <code>+0200</code></td></tr><tr><td><code>P</code></td><td>Різниця з часом за Грінвічем з двокрапкою між годинами та хвилинами</td><td>Наприклад: <code>+02:00</code></td></tr><tr><td><code>p</code></td><td>Те саме, що і <code>P</code>, але повертає<code>Z</code> замість <code>+00:00</code> (доступний, починаючи з PHP 8.0.0)</td><td>Наприклад: <code>Z</code>или<code>+02:00</code></td></tr><tr><td><code>T</code></td><td>Абревіатура часового поясу, якщо відома; в іншому випадку зсув за Грінвічем.</td><td>Приклади: <code>EST</code><code>MDT</code><code>+05</code></td></tr><tr><td><code>Z</code></td><td>Зміщення часового поясу за секунди. Для часових поясів, розташованих на захід від UTC, повертаються негативні числа, а для розташованих на схід від UTC — позитивні.</td><td>Від <code>-43200</code>до<code>50400</code></td></tr><tr><td><em>Повна дата/час</em></td><td>---</td><td>---</td></tr><tr><td><code>c</code></td><td>Дата у форматі стандарту ISO 8601</td><td>2004-02-12T15:19:21+00:00</td></tr><tr><td><code>r</code></td><td>Дата у форматі <a href="http://www.faqs.org/rfcs/rfc2822">» RFC 222</a><a href="http://www.faqs.org/rfcs/rfc5322">» RFC 5322</a></td><td>Наприклад: <code>Thu, 21 Dec 2000 16:01:07 +0200</code></td></tr><tr><td><code>U</code></td><td>Кількість секунд, що минули з початку Епохи Unix (1 січня 1970 00:00:00 GMT)</td><td>Смотрите также<a href="function.time.md">time()</a></td></tr></tbody></table>
+<p>Будь-які інші символи, зустрінуті в рядку-шаблоні, будуть виведені в результуючий рядок без змін . <code>Z</code> завжди повертає при использовании<a href="function.gmdate.md">gmdate()</a></p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Оскільки ця функція приймає як параметр цілочислові (int) мітки часу, символ форматує <code>u</code> буде корисним лише при роботі з функцією <a href="function.date-format.md">date_format()</a> та користувальницькими мітками часу, створеними функцією <a href="function.date-create.md">date_create()</a></p>
+</blockquote>
+<h3>Значення, що повертаються</h3>
+<p>Повертає рядок із відформатованою датою у разі успішного виконання.</p>
+<h3>список змін</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>8.2.0</td><td>Додані символи форматування <code>X</code>и<code>x</code></td></tr><tr><td>8.0.0</td><td>Доданий символ форматування <code>p</code></td></tr></tbody></table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання</strong> DateTimeInterface::format()****</p>
+<p>Об&#x27;єктно-орієнтований стиль</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:90px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Процедурний стиль</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:90px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-yaml"><span class="hljs-number">2000-01-01 00:00:00</span>
+</code></pre>
+<p><strong>Приклад #2 Більше прикладів</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:324px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Можна запобігти розширенню розпізнаного символу в рядку формату, екрануючи його попереднім зворотним слішем. Якщо символ зі зворотним слешем вже утворює спеціальну послідовність, його також може знадобитися екранувати.</p>
+<p><strong>Приклад #3 Екранування символів під час форматування</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:126px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Для форматування дат іншими мовами замість методу <strong>DateTimeInterface::format()</strong> можна використовувати метод <a href="intldateformatter.format.md">IntlDateFormatter::format()</a></p>
+<h3>Примітки</h3>
+<p>Цей метод не використовує налаштування локалі. Висновок робиться англійською мовою.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.date.md">date()</a> - Форматує тимчасову мітку Unix</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/datetime.format.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/datetime.format.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"datetime.format.md","content":"# DateTimeInterface::format\n\n# DateTimeImmutable::format\n\n# DateTime::format\n\n# date\\_format\n\n(PHP 5 \u003e= 5.2.0, PHP 7, PHP 8)\n\nDateTimeInterface::format -- DateTimeImmutable::format -- DateTime::format -- date\\_format — Повертає дату, відформатовану відповідно до переданого формату\n\n### Опис\n\nОб'єктно-орієнтований стиль\n\n```methodsynopsis\npublic DateTimeInterface::format(string $format): string\n```\n\n```methodsynopsis\npublic DateTimeImmutable::format(string $format): string\n```\n\n```methodsynopsis\npublic DateTime::format(string $format): string\n```\n\nПроцедурний стиль\n\n```methodsynopsis\ndate_format(DateTimeInterface $object, string $format): string\n```\n\nПовертає рядок дати, перетвореної відповідно до переданого формату.\n\n### Список параметрів\n\n`object`\n\nТільки для процедурного стилю: об'єкт [DateTime](class.datetime.md), що повертається [date\\_create()](function.date-create.md)\n\n`format`\n\nШаблон результуючого рядка (string) з датою. Дивіться параметри форматування нижче. Також існує кілька [визначених констант дати/часу](class.datetimeinterface.md#datetimeinterface.constants.types), які можна використовувати замість цих параметрів. Наприклад: \\*\\*`DATE_RSS`\\*\\*заменяет шаблон`'D, d M Y H:i:s'`\n\n**В параметре`format` розпізнаються такі символи**\n\n| Символ в строке `format` | Опис | Приклад возвращаемого значения |\n| --- | --- | --- |\n| *День* | \\--- | \\--- |\n| `d` | День місяця, 2 цифри з провідним нулем | Від `01`до`31` |\n| `D` | Текстова вистава дня тижня, 3 символи | Від `Mon`до`Sun` |\n| `j` | День місяця без ведучого нуля | Від до`31` |\n| `l` (маленька 'L') | Повне найменування дня тижня | Від `Sunday`до`Saturday` |\n| `N` | Порядковий номер дня тижня відповідно до стандарту ISO 8601 | Від (понеділок) до `7` (Неділя) |\n| `S` | Англійський суфікс порядкового числа місяця, 2 символи | `st` `nd` `rd`или`th`. . Застосовують спільно з `j` |\n| `w` | Порядковий номер дня тижня | Від (неділя) до`6`(субота) |\n| `z` | Порядковий номер дня у році (починаючи з 0) | Від до`365` |\n| *Тиждень* | \\--- | \\--- |\n| `W` | Порядковий номер тижня року відповідно до стандарту ISO 8601; тижні починаються з понеділка | Наприклад: `42` (42-й тиждень року) |\n| *Місяць* | \\--- | \\--- |\n| `F` | Повне найменування місяця, наприклад January або March | Від `January`до`December` |\n| `m` | Порядковий номер місяця з провідним нулем | Від `01`до`12` |\n| `M` | Скорочена назва місяця, 3 символи | Від `Jan`до`Dec` |\n| `n` | Порядковий номер місяця без провідного нуля | Від до`12` |\n| `t` | Кількість днів у вказаному місяці | Від `28`до`31` |\n| *Рік* | \\--- | \\--- |\n| `L` | Ознака високосного року | якщо рік високосний, інакше |\n| `o` | Номер року відповідно до стандарту ISO 8601. Має те саме значення, що й `Y`крім випадку, коли номер тижня ISO (`W`) належить попередньому чи наступному році; тоді буде використано рік цього тижня. | Приклади: `1999`или`2003` |\n| `X` | Розширене повне числове подання року, не менше 4 цифр, `-` для років до нашої ери та `+` для років нашої ери. | Приклади: `-0055` `+0787` `+1999` `+10191` |\n| `x` | Розширене повне числове уявлення, якщо потрібно, або стандартне повне числове уявлення, якщо можливо (наприклад, `Y`). Не менш як чотири цифри. Для років до нашої ери вказано префікс `-`. . У років після (і включаючи) `10000` префікс `+` | Приклади: `-0055` `0787` `1999` `+10191` |\n| `Y` | Повне числове подання року, не менше 4 цифр, `-` для років до н. | Приклади: `-0055` `0787` `1999` `2003` `10191` |\n| `y` | Номер року, 2 цифри | Приклади: `99` `03` |\n| *Час* | \\--- | \\--- |\n| `a` | Ante meridiem (лат. «до полудня») або Post meridiem (лат. «після полудня») у нижньому регістрі | `am`или`pm` |\n| `A` | Ante meridiem або Post meridiem у верхньому регістрі | `AM`или`PM` |\n| `B` | Час у форматі Інтернет-часу (альтернативної системи відліку часу доби) | Від `000`до`999` |\n| `g` | Годинник у 12-годинному форматі без провідного нуля | Від до`12` |\n| `G` | Годинник у 24-годинному форматі без провідного нуля | Від до`23` |\n| `h` | Годинник у 12-годинному форматі з провідним нулем | Від `01`до`12` |\n| `H` | Годинник у 24-годинному форматі з провідним нулем | Від `00`до`23` |\n| `i` | Хвилини з провідним нулем | Від `00`до`59` |\n| `s` | Секунди з провідним нулем | Від `00`до`59` |\n| `u` | Мікросекунди. Врахуйте, що функція [date()](function.date.md) завжди повертатиме значення `000000`, т. до. вона приймає цілий (int) параметр, тоді як метод **DateTime::format()** підтримує мікросекунди, якщо об'єкт [DateTime](class.datetime.md) створений із ними. | Наприклад: `654321` |\n| `v` | Мілісекунди. Зауваження таке саме, як і для `u` | Приклад: `654` |\n| *Часовий пояс* | \\--- | \\--- |\n| `e` | Ідентифікатор часового поясу | Приклади: `UTC` `GMT` `Atlantic/Azores` |\n| `I` (Заголовна i) | Ознака літнього часу | якщо дата відповідає літньому часу, в іншому випадку |\n| `O` | Різниця з часом за Грінвічем без двокрапки між годинами та хвилинами | Наприклад: `+0200` |\n| `P` | Різниця з часом за Грінвічем з двокрапкою між годинами та хвилинами | Наприклад: `+02:00` |\n| `p` | Те саме, що і `P`, але повертає`Z` замість `+00:00` (доступний, починаючи з PHP 8.0.0) | Наприклад: `Z`или`+02:00` |\n| `T` | Абревіатура часового поясу, якщо відома; в іншому випадку зсув за Грінвічем. | Приклади: `EST` `MDT` `+05` |\n| `Z` | Зміщення часового поясу за секунди. Для часових поясів, розташованих на захід від UTC, повертаються негативні числа, а для розташованих на схід від UTC — позитивні. | Від `-43200`до`50400` |\n| *Повна дата/час* | \\--- | \\--- |\n| `c` | Дата у форматі стандарту ISO 8601 | 2004-02-12T15:19:21+00:00 |\n| `r` | Дата у форматі [» RFC 222](http://www.faqs.org/rfcs/rfc2822) [» RFC 5322](http://www.faqs.org/rfcs/rfc5322) | Наприклад: `Thu, 21 Dec 2000 16:01:07 +0200` |\n| `U` | Кількість секунд, що минули з початку Епохи Unix (1 січня 1970 00:00:00 GMT) | Смотрите также[time()](function.time.md) |\n\nБудь-які інші символи, зустрінуті в рядку-шаблоні, будуть виведені в результуючий рядок без змін . `Z` завжди повертає при использовании[gmdate()](function.gmdate.md)\n\n\u003e **Зауваження** :\n\u003e \n\u003e Оскільки ця функція приймає як параметр цілочислові (int) мітки часу, символ форматує `u` буде корисним лише при роботі з функцією [date\\_format()](function.date-format.md) та користувальницькими мітками часу, створеними функцією [date\\_create()](function.date-create.md)\n\n### Значення, що повертаються\n\nПовертає рядок із відформатованою датою у разі успішного виконання.\n\n### список змін\n\n| Версия | Опис |\n| --- | --- |\n| 8.2.0 | Додані символи форматування `X`и`x` |\n| 8.0.0 | Доданий символ форматування `p` |\n\n### Приклади\n\n**Приклад #1 Приклад використання** DateTimeInterface::format()\\*\\*\\*\\*\n\nОб'єктно-орієнтований стиль\n\n```php\n\u003c?php\n$date = new DateTimeImmutable('2000-01-01');\necho $date-\u003eformat('Y-m-d H:i:s');\n?\u003e\n```\n\nПроцедурний стиль\n\n```php\n\u003c?php\n$date = date_create('2000-01-01');\necho date_format($date, 'Y-m-d H:i:s');\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n```\n2000-01-01 00:00:00\n```\n\n**Приклад #2 Більше прикладів**\n\n```php\n\u003c?php\n// установка часового пояса по умолчанию.\ndate_default_timezone_set('UTC');\n\n// сейчас\n$date = new DateTimeImmutable();\n\n// Выведет что-то подобное: Wednesday\necho $date-\u003eformat('l'), \"\\n\";\n\n// Выведет что-то подобное: Wednesday 19th of October 2022 08:40:48 AM\necho $date-\u003eformat('l jS \\o\\f F Y h:i:s A'), \"\\n\";\n\n/* Использование констант в параметре format */\n// Выведет что-то подобное: Wed, 19 Oct 2022 08:40:48 +0000\necho $date-\u003eformat(DateTimeInterface::RFC2822), \"\\n\";\n?\u003e\n```\n\nМожна запобігти розширенню розпізнаного символу в рядку формату, екрануючи його попереднім зворотним слішем. Якщо символ зі зворотним слешем вже утворює спеціальну послідовність, його також може знадобитися екранувати.\n\n**Приклад #3 Екранування символів під час форматування**\n\n```php\n\u003c?php\n$date = new DateTimeImmutable();\n\n// Выведет что-то подобное: Wednesday the 19th\necho $date-\u003eformat('l \\t\\h\\e jS');\n?\u003e\n```\n\nДля форматування дат іншими мовами замість методу **DateTimeInterface::format()** можна використовувати метод [IntlDateFormatter::format()](intldateformatter.format.md)\n\n### Примітки\n\nЦей метод не використовує налаштування локалі. Висновок робиться англійською мовою.\n\n### Дивіться також\n\n-   [date()](function.date.md) \\- Форматує тимчасову мітку Unix\n","title":"DateTimeInterface::format","contentType":2,"navigation":[{"datetime.diff.md":"« DateTimeInterface::diff"},{"datetime.getoffset.md":"DateTimeInterface::getOffset »"},{"index.md":"PHP Manual"},{"class.datetimeinterface.md":"DateTimeInterface"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"datetime.format.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

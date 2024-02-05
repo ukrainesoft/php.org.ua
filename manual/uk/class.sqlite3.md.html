@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас SQLite3</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="sqlite3.constants.md" class="mx-4">« Зумовлені константи</a><a href="sqlite3.backup.md" class="mx-4">SQLite3::backup »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.sqlite3.md" class="mx-4">SQLite3</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас SQLite3</h1>
+<p>(PHP 5 &gt;= 5.3.0, PHP 7, PHP 8)</p>
+<h2>Вступ</h2>
+<p>Клас, що надає доступ до API SQLite 3 бази даних.</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+    
+     class SQLite3
+     {
+
+    /* Константы */
+    
+     public
+     const
+     int
+      OK;
+
+    public
+     const
+     int
+      DENY;
+
+    public
+     const
+     int
+      IGNORE;
+
+    public
+     const
+     int
+      CREATE_INDEX;
+
+    public
+     const
+     int
+      CREATE_TABLE;
+
+    public
+     const
+     int
+      CREATE_TEMP_INDEX;
+
+    public
+     const
+     int
+      CREATE_TEMP_TABLE;
+
+    public
+     const
+     int
+      CREATE_TEMP_TRIGGER;
+
+    public
+     const
+     int
+      CREATE_TEMP_VIEW;
+
+    public
+     const
+     int
+      CREATE_TRIGGER;
+
+    public
+     const
+     int
+      CREATE_VIEW;
+
+    public
+     const
+     int
+      DELETE;
+
+    public
+     const
+     int
+      DROP_INDEX;
+
+    public
+     const
+     int
+      DROP_TABLE;
+
+    public
+     const
+     int
+      DROP_TEMP_INDEX;
+
+    public
+     const
+     int
+      DROP_TEMP_TABLE;
+
+    public
+     const
+     int
+      DROP_TEMP_TRIGGER;
+
+    public
+     const
+     int
+      DROP_TEMP_VIEW;
+
+    public
+     const
+     int
+      DROP_TRIGGER;
+
+    public
+     const
+     int
+      DROP_VIEW;
+
+    public
+     const
+     int
+      INSERT;
+
+    public
+     const
+     int
+      PRAGMA;
+
+    public
+     const
+     int
+      READ;
+
+    public
+     const
+     int
+      SELECT;
+
+    public
+     const
+     int
+      TRANSACTION;
+
+    public
+     const
+     int
+      UPDATE;
+
+    public
+     const
+     int
+      ATTACH;
+
+    public
+     const
+     int
+      DETACH;
+
+    public
+     const
+     int
+      ALTER_TABLE;
+
+    public
+     const
+     int
+      REINDEX;
+
+    public
+     const
+     int
+      ANALYZE;
+
+    public
+     const
+     int
+      CREATE_VTABLE;
+
+    public
+     const
+     int
+      DROP_VTABLE;
+
+    public
+     const
+     int
+      FUNCTION;
+
+    public
+     const
+     int
+      SAVEPOINT;
+
+    public
+     const
+     int
+      COPY;
+
+    public
+     const
+     int
+      RECURSIVE;
+
+
+    /* Методы */
+    
+   public __construct(string $filename, int $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE, string $encryptionKey = &quot;&quot;)
+
+    public backup(SQLite3 $destination, string $sourceDatabase = &quot;main&quot;, string $destinationDatabase = &quot;main&quot;): bool
+public busyTimeout(int $milliseconds): bool
+public changes(): int
+public close(): bool
+public createAggregate(    string $name,    callable $stepCallback,    callable $finalCallback,    int $argCount = -1): bool
+public createCollation(string $name, callable $callback): bool
+public createFunction(    string $name,    callable $callback,    int $argCount = -1,    int $flags = 0): bool
+public enableExceptions(bool $enable = false): bool
+public static escapeString(string $string): string
+public exec(string $query): bool
+public lastErrorCode(): int
+public lastErrorMsg(): string
+public lastInsertRowID(): int
+public loadExtension(string $name): bool
+public open(string $filename, int $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE, string $encryptionKey = &quot;&quot;): void
+public openBlob(    string $table,    string $column,    int $rowid,    string $database = &quot;main&quot;,    int $flags = SQLITE3_OPEN_READONLY): resource|false
+public prepare(string $query): SQLite3Stmt|false
+public query(string $query): SQLite3Result|false
+public querySingle(string $query, bool $entireRow = false): mixed
+public setAuthorizer(?callable $callback): bool
+public static version(): array
+
+   }
+</code></pre>
+<h2>Обумовлені константи</h2>
+<p><strong><code>SQLite3::OK</code></strong></p>
+<p><strong><code>SQLite3::DENY</code></strong></p>
+<p><strong><code>SQLite3::IGNORE</code></strong></p>
+<p><strong><code>SQLite3::CREATE_INDEX</code></strong></p>
+<p><strong><code>SQLite3::CREATE_TABLE</code></strong></p>
+<p><strong><code>SQLite3::CREATE_TEMP_INDEX</code></strong></p>
+<p><strong><code>SQLite3::CREATE_TEMP_TABLE</code></strong></p>
+<p><strong><code>SQLite3::CREATE_TEMP_TRIGGER</code></strong></p>
+<p><strong><code>SQLite3::CREATE_TEMP_VIEW</code></strong></p>
+<p><strong><code>SQLite3::CREATE_TRIGGER</code></strong></p>
+<p><strong><code>SQLite3::CREATE_VIEW</code></strong></p>
+<p><strong><code>SQLite3::DELETE</code></strong></p>
+<p><strong><code>SQLite3::DROP_INDEX</code></strong></p>
+<p><strong><code>SQLite3::DROP_TABLE</code></strong></p>
+<p><strong><code>SQLite3::DROP_TEMP_INDEX</code></strong></p>
+<p><strong><code>SQLite3::DROP_TEMP_TABLE</code></strong></p>
+<p><strong><code>SQLite3::DROP_TEMP_TRIGGER</code></strong></p>
+<p><strong><code>SQLite3::DROP_TEMP_VIEW</code></strong></p>
+<p><strong><code>SQLite3::DROP_TRIGGER</code></strong></p>
+<p><strong><code>SQLite3::DROP_VIEW</code></strong></p>
+<p><strong><code>SQLite3::INSERT</code></strong></p>
+<p><strong><code>SQLite3::PRAGMA</code></strong></p>
+<p><strong><code>SQLite3::READ</code></strong></p>
+<p><strong><code>SQLite3::SELECT</code></strong></p>
+<p><strong><code>SQLite3::TRANSACTION</code></strong></p>
+<p><strong><code>SQLite3::UPDATE</code></strong></p>
+<p><strong><code>SQLite3::ATTACH</code></strong></p>
+<p><strong><code>SQLite3::DETACH</code></strong></p>
+<p><strong><code>SQLite3::ALTER_TABLE</code></strong></p>
+<p><strong><code>SQLite3::REINDEX</code></strong></p>
+<p><strong><code>SQLite3::ANALYZE</code></strong></p>
+<p><strong><code>SQLite3::CREATE_VTABLE</code></strong></p>
+<p><strong><code>SQLite3::DROP_VTABLE</code></strong></p>
+<p><strong><code>SQLite3::FUNCTION</code></strong></p>
+<p><strong><code>SQLite3::SAVEPOINT</code></strong></p>
+<p><strong><code>SQLite3::COPY</code></strong></p>
+<p><strong><code>SQLite3::RECURSIVE</code></strong></p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="sqlite3.backup.md">SQLite3::backup</a>— Резервне копіювання однієї бази даних до іншої</li>
+<li><a href="sqlite3.busytimeout.md">SQLite3::busyTimeout</a> - Встановити обробник &quot;зайнято&quot; на з&#x27;єднання</li>
+<li><a href="sqlite3.changes.md">SQLite3::changes</a>— Отримати кількість рядків, які були змінені/віддалені/вставлені останнім запитом</li>
+<li><a href="sqlite3.close.md">SQLite3::close</a>— Закрити з&#x27;єднання з базою даних</li>
+<li><a href="sqlite3.construct.md">SQLite3::__construct</a>— Створює екземпляр SQLite3 і відкриває з&#x27;єднання з базою</li>
+<li><a href="sqlite3.createaggregate.md">SQLite3::createAggregate</a>— Зареєструвати функцію PHP як агрегуючу функцію SQL</li>
+<li><a href="sqlite3.createcollation.md">SQLite3::createCollation</a>— Реєструє функцію PHP для використання як функцію сортування SQL</li>
+<li><a href="sqlite3.createfunction.md">SQLite3::createFunction</a>— Реєструє функцію PHP для використання як скалярну функцію SQL</li>
+<li><a href="sqlite3.enableexceptions.md">SQLite3::enableExceptions</a> - Включити викид винятків</li>
+<li><a href="sqlite3.escapestring.md">SQLite3::escapeString</a>— Повертає правильно екранований рядок</li>
+<li><a href="sqlite3.exec.md">SQLite3::exec</a>— Виконує запит без результату до поточної бази даних</li>
+<li><a href="sqlite3.lasterrorcode.md">SQLite3::lastErrorCode</a>— Повертає числовий код результату останнього запиту SQLite.</li>
+<li><a href="sqlite3.lasterrormsg.md">SQLite3::lastErrorMsg</a>— Повертає текст англійською, що описує останній невдалий запит SQLite</li>
+<li><a href="sqlite3.lastinsertrowid.md">SQLite3::lastInsertRowID</a>— Повертає ідентифікатор рядка останньої вставки (INSERT) до бази даних</li>
+<li><a href="sqlite3.loadextension.md">SQLite3::loadExtension</a>— Спробувати завантажити бібліотеку модуля SQLite</li>
+<li><a href="sqlite3.open.md">SQLite3::open</a>— Відкрити базу даних SQLite</li>
+<li><a href="sqlite3.openblob.md">SQLite3::openBlob</a>— Відкриває ресурс потоку для читання BLOB</li>
+<li><a href="sqlite3.prepare.md">SQLite3::prepare</a>— Підготовляє SQL-запит для виконання</li>
+<li><a href="sqlite3.query.md">SQLite3::query</a> - Виконує SQL-запит</li>
+<li><a href="sqlite3.querysingle.md">SQLite3::querySingle</a>— Виконує запит та повертає одиночний результат</li>
+<li><a href="sqlite3.setauthorizer.md">SQLite3::setAuthorizer</a>— Встановлює callback-функцію, яка використовуватиметься як авторизатор для обмеження дій висловлювання</li>
+<li><a href="sqlite3.version.md">SQLite3::version</a>— Повертає версію бібліотеки SQLite3, містить як рядкову константу, так і цифрову</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.sqlite3.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.sqlite3.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.sqlite3.md","content":"# Клас SQLite3\n\n(PHP 5 \u003e= 5.3.0, PHP 7, PHP 8)\n\n## Вступ\n\nКлас, що надає доступ до API SQLite 3 бази даних.\n\n## Огляд класів\n\n```classsynopsis\n\n    \n     class SQLite3\n     {\n\n    /* Константы */\n    \n     public\n     const\n     int\n      OK;\n\n    public\n     const\n     int\n      DENY;\n\n    public\n     const\n     int\n      IGNORE;\n\n    public\n     const\n     int\n      CREATE_INDEX;\n\n    public\n     const\n     int\n      CREATE_TABLE;\n\n    public\n     const\n     int\n      CREATE_TEMP_INDEX;\n\n    public\n     const\n     int\n      CREATE_TEMP_TABLE;\n\n    public\n     const\n     int\n      CREATE_TEMP_TRIGGER;\n\n    public\n     const\n     int\n      CREATE_TEMP_VIEW;\n\n    public\n     const\n     int\n      CREATE_TRIGGER;\n\n    public\n     const\n     int\n      CREATE_VIEW;\n\n    public\n     const\n     int\n      DELETE;\n\n    public\n     const\n     int\n      DROP_INDEX;\n\n    public\n     const\n     int\n      DROP_TABLE;\n\n    public\n     const\n     int\n      DROP_TEMP_INDEX;\n\n    public\n     const\n     int\n      DROP_TEMP_TABLE;\n\n    public\n     const\n     int\n      DROP_TEMP_TRIGGER;\n\n    public\n     const\n     int\n      DROP_TEMP_VIEW;\n\n    public\n     const\n     int\n      DROP_TRIGGER;\n\n    public\n     const\n     int\n      DROP_VIEW;\n\n    public\n     const\n     int\n      INSERT;\n\n    public\n     const\n     int\n      PRAGMA;\n\n    public\n     const\n     int\n      READ;\n\n    public\n     const\n     int\n      SELECT;\n\n    public\n     const\n     int\n      TRANSACTION;\n\n    public\n     const\n     int\n      UPDATE;\n\n    public\n     const\n     int\n      ATTACH;\n\n    public\n     const\n     int\n      DETACH;\n\n    public\n     const\n     int\n      ALTER_TABLE;\n\n    public\n     const\n     int\n      REINDEX;\n\n    public\n     const\n     int\n      ANALYZE;\n\n    public\n     const\n     int\n      CREATE_VTABLE;\n\n    public\n     const\n     int\n      DROP_VTABLE;\n\n    public\n     const\n     int\n      FUNCTION;\n\n    public\n     const\n     int\n      SAVEPOINT;\n\n    public\n     const\n     int\n      COPY;\n\n    public\n     const\n     int\n      RECURSIVE;\n\n\n    /* Методы */\n    \n   public __construct(string $filename, int $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE, string $encryptionKey = \"\")\n\n    public backup(SQLite3 $destination, string $sourceDatabase = \"main\", string $destinationDatabase = \"main\"): bool\npublic busyTimeout(int $milliseconds): bool\npublic changes(): int\npublic close(): bool\npublic createAggregate(    string $name,    callable $stepCallback,    callable $finalCallback,    int $argCount = -1): bool\npublic createCollation(string $name, callable $callback): bool\npublic createFunction(    string $name,    callable $callback,    int $argCount = -1,    int $flags = 0): bool\npublic enableExceptions(bool $enable = false): bool\npublic static escapeString(string $string): string\npublic exec(string $query): bool\npublic lastErrorCode(): int\npublic lastErrorMsg(): string\npublic lastInsertRowID(): int\npublic loadExtension(string $name): bool\npublic open(string $filename, int $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE, string $encryptionKey = \"\"): void\npublic openBlob(    string $table,    string $column,    int $rowid,    string $database = \"main\",    int $flags = SQLITE3_OPEN_READONLY): resource|false\npublic prepare(string $query): SQLite3Stmt|false\npublic query(string $query): SQLite3Result|false\npublic querySingle(string $query, bool $entireRow = false): mixed\npublic setAuthorizer(?callable $callback): bool\npublic static version(): array\n\n   }\n```\n\n## Обумовлені константи\n\n**`SQLite3::OK`**\n\n**`SQLite3::DENY`**\n\n**`SQLite3::IGNORE`**\n\n**`SQLite3::CREATE_INDEX`**\n\n**`SQLite3::CREATE_TABLE`**\n\n**`SQLite3::CREATE_TEMP_INDEX`**\n\n**`SQLite3::CREATE_TEMP_TABLE`**\n\n**`SQLite3::CREATE_TEMP_TRIGGER`**\n\n**`SQLite3::CREATE_TEMP_VIEW`**\n\n**`SQLite3::CREATE_TRIGGER`**\n\n**`SQLite3::CREATE_VIEW`**\n\n**`SQLite3::DELETE`**\n\n**`SQLite3::DROP_INDEX`**\n\n**`SQLite3::DROP_TABLE`**\n\n**`SQLite3::DROP_TEMP_INDEX`**\n\n**`SQLite3::DROP_TEMP_TABLE`**\n\n**`SQLite3::DROP_TEMP_TRIGGER`**\n\n**`SQLite3::DROP_TEMP_VIEW`**\n\n**`SQLite3::DROP_TRIGGER`**\n\n**`SQLite3::DROP_VIEW`**\n\n**`SQLite3::INSERT`**\n\n**`SQLite3::PRAGMA`**\n\n**`SQLite3::READ`**\n\n**`SQLite3::SELECT`**\n\n**`SQLite3::TRANSACTION`**\n\n**`SQLite3::UPDATE`**\n\n**`SQLite3::ATTACH`**\n\n**`SQLite3::DETACH`**\n\n**`SQLite3::ALTER_TABLE`**\n\n**`SQLite3::REINDEX`**\n\n**`SQLite3::ANALYZE`**\n\n**`SQLite3::CREATE_VTABLE`**\n\n**`SQLite3::DROP_VTABLE`**\n\n**`SQLite3::FUNCTION`**\n\n**`SQLite3::SAVEPOINT`**\n\n**`SQLite3::COPY`**\n\n**`SQLite3::RECURSIVE`**\n\n## Зміст\n\n-   [SQLite3::backup](sqlite3.backup.md)— Резервне копіювання однієї бази даних до іншої\n-   [SQLite3::busyTimeout](sqlite3.busytimeout.md) - Встановити обробник \"зайнято\" на з'єднання\n-   [SQLite3::changes](sqlite3.changes.md)— Отримати кількість рядків, які були змінені/віддалені/вставлені останнім запитом\n-   [SQLite3::close](sqlite3.close.md)— Закрити з'єднання з базою даних\n-   [SQLite3::\\_\\_construct](sqlite3.construct.md)— Створює екземпляр SQLite3 і відкриває з'єднання з базою\n-   [SQLite3::createAggregate](sqlite3.createaggregate.md)— Зареєструвати функцію PHP як агрегуючу функцію SQL\n-   [SQLite3::createCollation](sqlite3.createcollation.md)— Реєструє функцію PHP для використання як функцію сортування SQL\n-   [SQLite3::createFunction](sqlite3.createfunction.md)— Реєструє функцію PHP для використання як скалярну функцію SQL\n-   [SQLite3::enableExceptions](sqlite3.enableexceptions.md) \\- Включити викид винятків\n-   [SQLite3::escapeString](sqlite3.escapestring.md)— Повертає правильно екранований рядок\n-   [SQLite3::exec](sqlite3.exec.md)— Виконує запит без результату до поточної бази даних\n-   [SQLite3::lastErrorCode](sqlite3.lasterrorcode.md)— Повертає числовий код результату останнього запиту SQLite.\n-   [SQLite3::lastErrorMsg](sqlite3.lasterrormsg.md)— Повертає текст англійською, що описує останній невдалий запит SQLite\n-   [SQLite3::lastInsertRowID](sqlite3.lastinsertrowid.md)— Повертає ідентифікатор рядка останньої вставки (INSERT) до бази даних\n-   [SQLite3::loadExtension](sqlite3.loadextension.md)— Спробувати завантажити бібліотеку модуля SQLite\n-   [SQLite3::open](sqlite3.open.md)— Відкрити базу даних SQLite\n-   [SQLite3::openBlob](sqlite3.openblob.md)— Відкриває ресурс потоку для читання BLOB\n-   [SQLite3::prepare](sqlite3.prepare.md)— Підготовляє SQL-запит для виконання\n-   [SQLite3::query](sqlite3.query.md) \\- Виконує SQL-запит\n-   [SQLite3::querySingle](sqlite3.querysingle.md)— Виконує запит та повертає одиночний результат\n-   [SQLite3::setAuthorizer](sqlite3.setauthorizer.md)— Встановлює callback-функцію, яка використовуватиметься як авторизатор для обмеження дій висловлювання\n-   [SQLite3::version](sqlite3.version.md)— Повертає версію бібліотеки SQLite3, містить як рядкову константу, так і цифрову\n","title":"Клас SQLite3","contentType":2,"navigation":[{"sqlite3.constants.md":"« Зумовлені константи"},{"sqlite3.backup.md":"SQLite3::backup »"},{"index.md":"PHP Manual"},{"book.sqlite3.md":"SQLite3"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.sqlite3.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

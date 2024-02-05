@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>openssl\_get\_cipher\_methods</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="function.openssl-get-cert-locations.md" class="mx-4">« openssl\_get\_cert\_locations</a><a href="function.openssl-get-curve-names.md" class="mx-4">openssl\_get\_curve\_names »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="ref.openssl.md" class="mx-4">Функції OpenSSL</a></div><article class="markdown_markdown__yfc8y"><div><h1>openssl_get_cipher_methods</h1>
+<p>(PHP 5 &gt;= 5.3.0, PHP 7, PHP 8)</p>
+<p>openssl_get_cipher_methods — Отримати список доступних алгоритмів шифрування</p>
+<h3>Опис</h3>
+<pre><code class="hljs language-methodsynopsis">openssl_get_cipher_methods(bool $aliases = false): array
+</code></pre>
+<p>Повертає список доступних алгоритмів шифрування.</p>
+<h3>Список параметрів</h3>
+<p><code>aliases</code></p>
+<p>Якщо хочете включити псевдоніми шифрів у масив, що повертається, то встановіть цей параметр у значення <strong><code>true</code></strong></p>
+<h3>Значення, що повертаються</h3>
+<p>Масив доступних методів шифрування. Зверніть увагу, що до OpenSSL 1.1.1 методи шифрування поверталися у верхньому та нижньому регістрі; з OpenSSL 1.1.1 повертаються лише малі варіанти.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання</strong> openssl_get_cipher_methods()****</p>
+<p>Показує, як можуть виглядати доступні шифри та їхні псевдоніми.</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:360px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Висновок наведеного прикладу буде схожим на:</p>
+<pre><code class="hljs language-csharp">Array
+(
+    [<span class="hljs-meta">0</span>] =&gt; aes<span class="hljs-number">-128</span>-cbc
+    [<span class="hljs-meta">1</span>] =&gt; aes<span class="hljs-number">-128</span>-cbc-hmac-sha1
+    [<span class="hljs-meta">2</span>] =&gt; aes<span class="hljs-number">-128</span>-cbc-hmac-sha256
+    [<span class="hljs-meta">3</span>] =&gt; aes<span class="hljs-number">-128</span>-ccm
+    [<span class="hljs-meta">4</span>] =&gt; aes<span class="hljs-number">-128</span>-cfb
+    [<span class="hljs-meta">5</span>] =&gt; aes<span class="hljs-number">-128</span>-cfb1
+    [<span class="hljs-meta">6</span>] =&gt; aes<span class="hljs-number">-128</span>-cfb8
+    [<span class="hljs-meta">7</span>] =&gt; aes<span class="hljs-number">-128</span>-ctr
+    [<span class="hljs-meta">9</span>] =&gt; aes<span class="hljs-number">-128</span>-gcm
+    [<span class="hljs-meta">10</span>] =&gt; aes<span class="hljs-number">-128</span>-ocb
+    [<span class="hljs-meta">11</span>] =&gt; aes<span class="hljs-number">-128</span>-ofb
+    [<span class="hljs-meta">12</span>] =&gt; aes<span class="hljs-number">-128</span>-xts
+    [<span class="hljs-meta">13</span>] =&gt; aes<span class="hljs-number">-192</span>-cbc
+    [<span class="hljs-meta">14</span>] =&gt; aes<span class="hljs-number">-192</span>-ccm
+    [<span class="hljs-meta">15</span>] =&gt; aes<span class="hljs-number">-192</span>-cfb
+    [<span class="hljs-meta">16</span>] =&gt; aes<span class="hljs-number">-192</span>-cfb1
+    [<span class="hljs-meta">17</span>] =&gt; aes<span class="hljs-number">-192</span>-cfb8
+    [<span class="hljs-meta">18</span>] =&gt; aes<span class="hljs-number">-192</span>-ctr
+    [<span class="hljs-meta">20</span>] =&gt; aes<span class="hljs-number">-192</span>-gcm
+    [<span class="hljs-meta">21</span>] =&gt; aes<span class="hljs-number">-192</span>-ocb
+    [<span class="hljs-meta">22</span>] =&gt; aes<span class="hljs-number">-192</span>-ofb
+    [<span class="hljs-meta">23</span>] =&gt; aes<span class="hljs-number">-256</span>-cbc
+    [<span class="hljs-meta">24</span>] =&gt; aes<span class="hljs-number">-256</span>-cbc-hmac-sha1
+    [<span class="hljs-meta">25</span>] =&gt; aes<span class="hljs-number">-256</span>-cbc-hmac-sha256
+    [<span class="hljs-meta">26</span>] =&gt; aes<span class="hljs-number">-256</span>-ccm
+    [<span class="hljs-meta">27</span>] =&gt; aes<span class="hljs-number">-256</span>-cfb
+    [<span class="hljs-meta">28</span>] =&gt; aes<span class="hljs-number">-256</span>-cfb1
+    [<span class="hljs-meta">29</span>] =&gt; aes<span class="hljs-number">-256</span>-cfb8
+    [<span class="hljs-meta">30</span>] =&gt; aes<span class="hljs-number">-256</span>-ctr
+    [<span class="hljs-meta">32</span>] =&gt; aes<span class="hljs-number">-256</span>-gcm
+    [<span class="hljs-meta">33</span>] =&gt; aes<span class="hljs-number">-256</span>-ocb
+    [<span class="hljs-meta">34</span>] =&gt; aes<span class="hljs-number">-256</span>-ofb
+    [<span class="hljs-meta">35</span>] =&gt; aes<span class="hljs-number">-256</span>-xts
+    [<span class="hljs-meta">36</span>] =&gt; aria<span class="hljs-number">-128</span>-cbc
+    [<span class="hljs-meta">37</span>] =&gt; aria<span class="hljs-number">-128</span>-ccm
+    [<span class="hljs-meta">38</span>] =&gt; aria<span class="hljs-number">-128</span>-cfb
+    [<span class="hljs-meta">39</span>] =&gt; aria<span class="hljs-number">-128</span>-cfb1
+    [<span class="hljs-meta">40</span>] =&gt; aria<span class="hljs-number">-128</span>-cfb8
+    [<span class="hljs-meta">41</span>] =&gt; aria<span class="hljs-number">-128</span>-ctr
+    [<span class="hljs-meta">43</span>] =&gt; aria<span class="hljs-number">-128</span>-gcm
+    [<span class="hljs-meta">44</span>] =&gt; aria<span class="hljs-number">-128</span>-ofb
+    [<span class="hljs-meta">45</span>] =&gt; aria<span class="hljs-number">-192</span>-cbc
+    [<span class="hljs-meta">46</span>] =&gt; aria<span class="hljs-number">-192</span>-ccm
+    [<span class="hljs-meta">47</span>] =&gt; aria<span class="hljs-number">-192</span>-cfb
+    [<span class="hljs-meta">48</span>] =&gt; aria<span class="hljs-number">-192</span>-cfb1
+    [<span class="hljs-meta">49</span>] =&gt; aria<span class="hljs-number">-192</span>-cfb8
+    [<span class="hljs-meta">50</span>] =&gt; aria<span class="hljs-number">-192</span>-ctr
+    [<span class="hljs-meta">52</span>] =&gt; aria<span class="hljs-number">-192</span>-gcm
+    [<span class="hljs-meta">53</span>] =&gt; aria<span class="hljs-number">-192</span>-ofb
+    [<span class="hljs-meta">54</span>] =&gt; aria<span class="hljs-number">-256</span>-cbc
+    [<span class="hljs-meta">55</span>] =&gt; aria<span class="hljs-number">-256</span>-ccm
+    [<span class="hljs-meta">56</span>] =&gt; aria<span class="hljs-number">-256</span>-cfb
+    [<span class="hljs-meta">57</span>] =&gt; aria<span class="hljs-number">-256</span>-cfb1
+    [<span class="hljs-meta">58</span>] =&gt; aria<span class="hljs-number">-256</span>-cfb8
+    [<span class="hljs-meta">59</span>] =&gt; aria<span class="hljs-number">-256</span>-ctr
+    [<span class="hljs-meta">61</span>] =&gt; aria<span class="hljs-number">-256</span>-gcm
+    [<span class="hljs-meta">62</span>] =&gt; aria<span class="hljs-number">-256</span>-ofb
+    [<span class="hljs-meta">63</span>] =&gt; bf-cbc
+    [<span class="hljs-meta">64</span>] =&gt; bf-cfb
+    [<span class="hljs-meta">66</span>] =&gt; bf-ofb
+    [<span class="hljs-meta">67</span>] =&gt; camellia<span class="hljs-number">-128</span>-cbc
+    [<span class="hljs-meta">68</span>] =&gt; camellia<span class="hljs-number">-128</span>-cfb
+    [<span class="hljs-meta">69</span>] =&gt; camellia<span class="hljs-number">-128</span>-cfb1
+    [<span class="hljs-meta">70</span>] =&gt; camellia<span class="hljs-number">-128</span>-cfb8
+    [<span class="hljs-meta">71</span>] =&gt; camellia<span class="hljs-number">-128</span>-ctr
+    [<span class="hljs-meta">73</span>] =&gt; camellia<span class="hljs-number">-128</span>-ofb
+    [<span class="hljs-meta">74</span>] =&gt; camellia<span class="hljs-number">-192</span>-cbc
+    [<span class="hljs-meta">75</span>] =&gt; camellia<span class="hljs-number">-192</span>-cfb
+    [<span class="hljs-meta">76</span>] =&gt; camellia<span class="hljs-number">-192</span>-cfb1
+    [<span class="hljs-meta">77</span>] =&gt; camellia<span class="hljs-number">-192</span>-cfb8
+    [<span class="hljs-meta">78</span>] =&gt; camellia<span class="hljs-number">-192</span>-ctr
+    [<span class="hljs-meta">80</span>] =&gt; camellia<span class="hljs-number">-192</span>-ofb
+    [<span class="hljs-meta">81</span>] =&gt; camellia<span class="hljs-number">-256</span>-cbc
+    [<span class="hljs-meta">82</span>] =&gt; camellia<span class="hljs-number">-256</span>-cfb
+    [<span class="hljs-meta">83</span>] =&gt; camellia<span class="hljs-number">-256</span>-cfb1
+    [<span class="hljs-meta">84</span>] =&gt; camellia<span class="hljs-number">-256</span>-cfb8
+    [<span class="hljs-meta">85</span>] =&gt; camellia<span class="hljs-number">-256</span>-ctr
+    [<span class="hljs-meta">87</span>] =&gt; camellia<span class="hljs-number">-256</span>-ofb
+    [<span class="hljs-meta">88</span>] =&gt; cast5-cbc
+    [<span class="hljs-meta">89</span>] =&gt; cast5-cfb
+    [<span class="hljs-meta">91</span>] =&gt; cast5-ofb
+    [<span class="hljs-meta">92</span>] =&gt; chacha20
+    [<span class="hljs-meta">93</span>] =&gt; chacha20-poly1305
+    [<span class="hljs-meta">111</span>] =&gt; id-aes128-CCM
+    [<span class="hljs-meta">112</span>] =&gt; id-aes128-GCM
+    [<span class="hljs-meta">113</span>] =&gt; id-aes128-wrap
+    [<span class="hljs-meta">114</span>] =&gt; id-aes128-wrap-pad
+    [<span class="hljs-meta">115</span>] =&gt; id-aes192-CCM
+    [<span class="hljs-meta">116</span>] =&gt; id-aes192-GCM
+    [<span class="hljs-meta">117</span>] =&gt; id-aes192-wrap
+    [<span class="hljs-meta">118</span>] =&gt; id-aes192-wrap-pad
+    [<span class="hljs-meta">119</span>] =&gt; id-aes256-CCM
+    [<span class="hljs-meta">120</span>] =&gt; id-aes256-GCM
+    [<span class="hljs-meta">121</span>] =&gt; id-aes256-wrap
+    [<span class="hljs-meta">122</span>] =&gt; id-aes256-wrap-pad
+    [<span class="hljs-meta">124</span>] =&gt; idea-cbc
+    [<span class="hljs-meta">125</span>] =&gt; idea-cfb
+    [<span class="hljs-meta">127</span>] =&gt; idea-ofb
+    [<span class="hljs-meta">137</span>] =&gt; seed-cbc
+    [<span class="hljs-meta">138</span>] =&gt; seed-cfb
+    [<span class="hljs-meta">140</span>] =&gt; seed-ofb
+    [<span class="hljs-meta">141</span>] =&gt; sm4-cbc
+    [<span class="hljs-meta">142</span>] =&gt; sm4-cfb
+    [<span class="hljs-meta">143</span>] =&gt; sm4-ctr
+    [<span class="hljs-meta">145</span>] =&gt; sm4-ofb
+)
+Array
+(
+    [<span class="hljs-meta">36</span>] =&gt; aes128
+    [<span class="hljs-meta">37</span>] =&gt; aes128-wrap
+    [<span class="hljs-meta">38</span>] =&gt; aes192
+    [<span class="hljs-meta">39</span>] =&gt; aes192-wrap
+    [<span class="hljs-meta">40</span>] =&gt; aes256
+    [<span class="hljs-meta">41</span>] =&gt; aes256-wrap
+    [<span class="hljs-meta">69</span>] =&gt; aria128
+    [<span class="hljs-meta">70</span>] =&gt; aria192
+    [<span class="hljs-meta">71</span>] =&gt; aria256
+    [<span class="hljs-meta">72</span>] =&gt; bf
+    [<span class="hljs-meta">77</span>] =&gt; blowfish
+    [<span class="hljs-meta">99</span>] =&gt; camellia128
+    [<span class="hljs-meta">100</span>] =&gt; camellia192
+    [<span class="hljs-meta">101</span>] =&gt; camellia256
+    [<span class="hljs-meta">102</span>] =&gt; cast
+    [<span class="hljs-meta">103</span>] =&gt; cast-cbc
+    [<span class="hljs-meta">146</span>] =&gt; idea
+    [<span class="hljs-meta">164</span>] =&gt; seed
+    [<span class="hljs-meta">169</span>] =&gt; sm4
+)
+</code></pre>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.openssl-get-md-methods.md">openssl_get_md_methods()</a> - Отримати список доступних методів хешування</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/function.openssl-get-cipher-methods.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/function.openssl-get-cipher-methods.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"function.openssl-get-cipher-methods.md","content":"# openssl\\_get\\_cipher\\_methods\n\n(PHP 5 \u003e= 5.3.0, PHP 7, PHP 8)\n\nopenssl\\_get\\_cipher\\_methods — Отримати список доступних алгоритмів шифрування\n\n### Опис\n\n```methodsynopsis\nopenssl_get_cipher_methods(bool $aliases = false): array\n```\n\nПовертає список доступних алгоритмів шифрування.\n\n### Список параметрів\n\n`aliases`\n\nЯкщо хочете включити псевдоніми шифрів у масив, що повертається, то встановіть цей параметр у значення **`true`**\n\n### Значення, що повертаються\n\nМасив доступних методів шифрування. Зверніть увагу, що до OpenSSL 1.1.1 методи шифрування поверталися у верхньому та нижньому регістрі; з OpenSSL 1.1.1 повертаються лише малі варіанти.\n\n### Приклади\n\n**Приклад #1 Приклад використання** openssl\\_get\\_cipher\\_methods()\\*\\*\\*\\*\n\nПоказує, як можуть виглядати доступні шифри та їхні псевдоніми.\n\n```php\n\u003c?php\n$ciphers             = openssl_get_cipher_methods();\n$ciphers_and_aliases = openssl_get_cipher_methods(true);\n$cipher_aliases      = array_diff($ciphers_and_aliases, $ciphers);\n\n//Режим ECB следует избегать\n$ciphers = array_filter( $ciphers, function($n) { return stripos($n,\"ecb\")===FALSE; } );\n\n//По крайней мере, в начале августа 2016 года следующие методы объявлены слабыми:\n$ciphers = array_filter( $ciphers, function($c) { return stripos($c,\"des\")===FALSE; } );\n$ciphers = array_filter( $ciphers, function($c) { return stripos($c,\"rc2\")===FALSE; } );\n$ciphers = array_filter( $ciphers, function($c) { return stripos($c,\"rc4\")===FALSE; } );\n$ciphers = array_filter( $ciphers, function($c) { return stripos($c,\"md5\")===FALSE; } );\n$cipher_aliases = array_filter($cipher_aliases,function($c) { return stripos($c,\"des\")===FALSE; } );\n$cipher_aliases = array_filter($cipher_aliases,function($c) { return stripos($c,\"rc2\")===FALSE; } );\n\nprint_r($ciphers);\nprint_r($cipher_aliases);\n?\u003e\n```\n\nВисновок наведеного прикладу буде схожим на:\n\n```\nArray\n(\n    [0] =\u003e aes-128-cbc\n    [1] =\u003e aes-128-cbc-hmac-sha1\n    [2] =\u003e aes-128-cbc-hmac-sha256\n    [3] =\u003e aes-128-ccm\n    [4] =\u003e aes-128-cfb\n    [5] =\u003e aes-128-cfb1\n    [6] =\u003e aes-128-cfb8\n    [7] =\u003e aes-128-ctr\n    [9] =\u003e aes-128-gcm\n    [10] =\u003e aes-128-ocb\n    [11] =\u003e aes-128-ofb\n    [12] =\u003e aes-128-xts\n    [13] =\u003e aes-192-cbc\n    [14] =\u003e aes-192-ccm\n    [15] =\u003e aes-192-cfb\n    [16] =\u003e aes-192-cfb1\n    [17] =\u003e aes-192-cfb8\n    [18] =\u003e aes-192-ctr\n    [20] =\u003e aes-192-gcm\n    [21] =\u003e aes-192-ocb\n    [22] =\u003e aes-192-ofb\n    [23] =\u003e aes-256-cbc\n    [24] =\u003e aes-256-cbc-hmac-sha1\n    [25] =\u003e aes-256-cbc-hmac-sha256\n    [26] =\u003e aes-256-ccm\n    [27] =\u003e aes-256-cfb\n    [28] =\u003e aes-256-cfb1\n    [29] =\u003e aes-256-cfb8\n    [30] =\u003e aes-256-ctr\n    [32] =\u003e aes-256-gcm\n    [33] =\u003e aes-256-ocb\n    [34] =\u003e aes-256-ofb\n    [35] =\u003e aes-256-xts\n    [36] =\u003e aria-128-cbc\n    [37] =\u003e aria-128-ccm\n    [38] =\u003e aria-128-cfb\n    [39] =\u003e aria-128-cfb1\n    [40] =\u003e aria-128-cfb8\n    [41] =\u003e aria-128-ctr\n    [43] =\u003e aria-128-gcm\n    [44] =\u003e aria-128-ofb\n    [45] =\u003e aria-192-cbc\n    [46] =\u003e aria-192-ccm\n    [47] =\u003e aria-192-cfb\n    [48] =\u003e aria-192-cfb1\n    [49] =\u003e aria-192-cfb8\n    [50] =\u003e aria-192-ctr\n    [52] =\u003e aria-192-gcm\n    [53] =\u003e aria-192-ofb\n    [54] =\u003e aria-256-cbc\n    [55] =\u003e aria-256-ccm\n    [56] =\u003e aria-256-cfb\n    [57] =\u003e aria-256-cfb1\n    [58] =\u003e aria-256-cfb8\n    [59] =\u003e aria-256-ctr\n    [61] =\u003e aria-256-gcm\n    [62] =\u003e aria-256-ofb\n    [63] =\u003e bf-cbc\n    [64] =\u003e bf-cfb\n    [66] =\u003e bf-ofb\n    [67] =\u003e camellia-128-cbc\n    [68] =\u003e camellia-128-cfb\n    [69] =\u003e camellia-128-cfb1\n    [70] =\u003e camellia-128-cfb8\n    [71] =\u003e camellia-128-ctr\n    [73] =\u003e camellia-128-ofb\n    [74] =\u003e camellia-192-cbc\n    [75] =\u003e camellia-192-cfb\n    [76] =\u003e camellia-192-cfb1\n    [77] =\u003e camellia-192-cfb8\n    [78] =\u003e camellia-192-ctr\n    [80] =\u003e camellia-192-ofb\n    [81] =\u003e camellia-256-cbc\n    [82] =\u003e camellia-256-cfb\n    [83] =\u003e camellia-256-cfb1\n    [84] =\u003e camellia-256-cfb8\n    [85] =\u003e camellia-256-ctr\n    [87] =\u003e camellia-256-ofb\n    [88] =\u003e cast5-cbc\n    [89] =\u003e cast5-cfb\n    [91] =\u003e cast5-ofb\n    [92] =\u003e chacha20\n    [93] =\u003e chacha20-poly1305\n    [111] =\u003e id-aes128-CCM\n    [112] =\u003e id-aes128-GCM\n    [113] =\u003e id-aes128-wrap\n    [114] =\u003e id-aes128-wrap-pad\n    [115] =\u003e id-aes192-CCM\n    [116] =\u003e id-aes192-GCM\n    [117] =\u003e id-aes192-wrap\n    [118] =\u003e id-aes192-wrap-pad\n    [119] =\u003e id-aes256-CCM\n    [120] =\u003e id-aes256-GCM\n    [121] =\u003e id-aes256-wrap\n    [122] =\u003e id-aes256-wrap-pad\n    [124] =\u003e idea-cbc\n    [125] =\u003e idea-cfb\n    [127] =\u003e idea-ofb\n    [137] =\u003e seed-cbc\n    [138] =\u003e seed-cfb\n    [140] =\u003e seed-ofb\n    [141] =\u003e sm4-cbc\n    [142] =\u003e sm4-cfb\n    [143] =\u003e sm4-ctr\n    [145] =\u003e sm4-ofb\n)\nArray\n(\n    [36] =\u003e aes128\n    [37] =\u003e aes128-wrap\n    [38] =\u003e aes192\n    [39] =\u003e aes192-wrap\n    [40] =\u003e aes256\n    [41] =\u003e aes256-wrap\n    [69] =\u003e aria128\n    [70] =\u003e aria192\n    [71] =\u003e aria256\n    [72] =\u003e bf\n    [77] =\u003e blowfish\n    [99] =\u003e camellia128\n    [100] =\u003e camellia192\n    [101] =\u003e camellia256\n    [102] =\u003e cast\n    [103] =\u003e cast-cbc\n    [146] =\u003e idea\n    [164] =\u003e seed\n    [169] =\u003e sm4\n)\n```\n\n### Дивіться також\n\n-   [openssl\\_get\\_md\\_methods()](function.openssl-get-md-methods.md) \\- Отримати список доступних методів хешування\n","title":"openssl\\_get\\_cipher\\_methods","contentType":2,"navigation":[{"function.openssl-get-cert-locations.md":"« openssl\\_get\\_cert\\_locations"},{"function.openssl-get-curve-names.md":"openssl\\_get\\_curve\\_names »"},{"index.md":"PHP Manual"},{"ref.openssl.md":"Функції OpenSSL"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.openssl-get-cipher-methods.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

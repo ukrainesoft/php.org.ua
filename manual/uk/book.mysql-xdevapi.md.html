@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Mysql\_xdevapi</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="changelog.mysqli.md" class="mx-4">&quot; Список змін</a><a href="intro.mysql-xdevapi.md" class="mx-4">Вступ &quot;</a><a href="index.md" class="mx-4">PHP Manual</a><a href="set.mysqlinfo.md" class="mx-4">MySQL</a></div><article class="markdown_markdown__yfc8y"><div><h1>Mysql_xdevapi</h1>
+<ul>
+<li><a href="intro.mysql-xdevapi.md">Вступ</a></li>
+<li><a href="mysql-xdevapi.setup.md">Встановлення та налаштування</a>
+<ul>
+<li><a href="mysql-xdevapi.requirements.md">Вимоги</a></li>
+<li><a href="mysql-xdevapi.installation.md">Установка</a></li>
+<li><a href="mysql-xdevapi.configuration.md">Налаштування під час виконання</a></li>
+<li><a href="mysql-xdevapi.build.md">Складання / Компіляція з вихідного коду</a></li>
+</ul>
+</li>
+<li><a href="mysql-xdevapi.constants.md">Обумовлені константи</a></li>
+<li><a href="changelog.mysql_xdevapi.md">список змін</a></li>
+<li><a href="mysql-xdevapi.examples.md">Приклади</a></li>
+<li><a href="ref.mysql-xdevapi.md">Функції Mysql_xdevapi</a>
+<ul>
+<li><a href="function.mysql-xdevapi-expression.md">expression</a>— Зв&#x27;язує підготовлені змінні твердження як параметри</li>
+<li><a href="function.mysql-xdevapi-getsession.md">getSession</a>— Підключається до сервера MySQL</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-baseresult.md">mysql_xdevapi\BaseResult</a> - Інтерфейс BaseResult
+<ul>
+<li><a href="mysql-xdevapi-baseresult.getwarnings.md">BaseResult::getWarnings</a>— Отримує попередження останньої операції</li>
+<li><a href="mysql-xdevapi-baseresult.getwarningscount.md">BaseResult::getWarningsCount</a>— Отримує кількість попереджень останньої операції</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-client.md">mysql_xdevapi\Client</a> - Клас Client
+<ul>
+<li><a href="mysql-xdevapi-client.close.md">mysql_xdevapi\Client::close</a> - Закриття клієнта</li>
+<li><a href="mysql-xdevapi-client.construct.md">Client::__construct</a> - Конструктор класу Client</li>
+<li><a href="mysql-xdevapi-client.getsession.md">Client::getClient</a>— Отримує сеанс клієнта</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-collection.md">mysql_xdevapi\Collection</a> - Клас Collection
+<ul>
+<li><a href="mysql-xdevapi-collection.add.md">Collection::add</a>— Додає документ у колекцію</li>
+<li><a href="mysql-xdevapi-collection.addorreplaceone.md">Collection::addOrReplaceOne</a>— Додає або замінює документ колекції</li>
+<li><a href="mysql-xdevapi-collection.construct.md">Collection::__construct</a> - Конструктор класу Collection</li>
+<li><a href="mysql-xdevapi-collection.count.md">Collection::count</a>— Отримує кількість документів</li>
+<li><a href="mysql-xdevapi-collection.createindex.md">Collection::createIndex</a>— Створює індекс для колекції</li>
+<li><a href="mysql-xdevapi-collection.dropindex.md">Collection::dropIndex</a>— Видаляє індекс колекції</li>
+<li><a href="mysql-xdevapi-collection.existsindatabase.md">Collection::existsInDatabase</a>— Перевіряє, чи існує колекція у базі даних</li>
+<li><a href="mysql-xdevapi-collection.find.md">Collection::find</a> - Шукає документ</li>
+<li><a href="mysql-xdevapi-collection.getname.md">Collection::getName</a>— Отримує назву колекції</li>
+<li><a href="mysql-xdevapi-collection.getone.md">Collection::getOne</a>— Отримує один документ</li>
+<li><a href="mysql-xdevapi-collection.getschema.md">Collection::getSchema</a>— Повертає об&#x27;єкт Schema</li>
+<li><a href="mysql-xdevapi-collection.getsession.md">Collection::getSession</a>— Повертає об&#x27;єкт Session</li>
+<li><a href="mysql-xdevapi-collection.modify.md">Collection::modify</a>— Змінює документи колекції</li>
+<li><a href="mysql-xdevapi-collection.remove.md">Collection::remove</a>— Видаляє документи колекції</li>
+<li><a href="mysql-xdevapi-collection.removeone.md">Collection::removeOne</a>— Видаляє один документ із колекції</li>
+<li><a href="mysql-xdevapi-collection.replaceone.md">Collection::replaceOne</a>— Замінює один документ колекції</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-collectionadd.md">mysql_xdevapi\CollectionAdd</a> - Клас CollectionAdd
+<ul>
+<li><a href="mysql-xdevapi-collectionadd.construct.md">CollectionAdd::__construct</a> - Конструктор класу CollectionAdd</li>
+<li><a href="mysql-xdevapi-collectionadd.execute.md">CollectionAdd::execute</a> - Виконує твердження</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-collectionfind.md">mysql_xdevapi\CollectionFind</a> - Клас CollectionFind
+<ul>
+<li><a href="mysql-xdevapi-collectionfind.bind.md">CollectionFind::bind</a>— Прив&#x27;язує значення до заповнювача запиту</li>
+<li><a href="mysql-xdevapi-collectionfind.construct.md">CollectionFind::__construct</a> - Конструктор класу CollectionFind</li>
+<li><a href="mysql-xdevapi-collectionfind.execute.md">CollectionFind::execute</a> - Виконує твердження</li>
+<li><a href="mysql-xdevapi-collectionfind.fields.md">CollectionFind::fields</a>— Встановлює фільтр поля документа</li>
+<li><a href="mysql-xdevapi-collectionfind.groupby.md">CollectionFind::groupBy</a> - Встановлює критерії угруповання</li>
+<li><a href="mysql-xdevapi-collectionfind.having.md">CollectionFind::having</a> - Встановлює умову для агрегатних функцій</li>
+<li><a href="mysql-xdevapi-collectionfind.limit.md">CollectionFind::limit</a>— Обмежує кількість документів, що повертаються.</li>
+<li><a href="mysql-xdevapi-collectionfind.lockexclusive.md">CollectionFind::lockExclusive</a> - Виконує операцію з EXCLUSIVE LOCK</li>
+<li><a href="mysql-xdevapi-collectionfind.lockshared.md">CollectionFind::lockShared</a> - Виконує операцію з SHARED LOCK</li>
+<li><a href="mysql-xdevapi-collectionfind.offset.md">CollectionFind::offset</a>— Пропускає вказану кількість елементів, що повертаються.</li>
+<li><a href="mysql-xdevapi-collectionfind.sort.md">CollectionFind::sort</a> - Встановлює критерії сортування</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-collectionmodify.md">mysql_xdevapi\CollectionModify</a> - Клас CollectionModify
+<ul>
+<li><a href="mysql-xdevapi-collectionmodify.arrayappend.md">CollectionModify::arrayAppend</a>— Додає елемент у поле масиву</li>
+<li><a href="mysql-xdevapi-collectionmodify.arrayinsert.md">CollectionModify::arrayInsert</a>— Додає елемент у поле масиву</li>
+<li><a href="mysql-xdevapi-collectionmodify.bind.md">CollectionModify::bind</a>— Прив&#x27;язує значення до заповнювача запиту</li>
+<li><a href="mysql-xdevapi-collectionmodify.construct.md">CollectionModify::__construct</a> - Конструктор класу CollectionModify</li>
+<li><a href="mysql-xdevapi-collectionmodify.execute.md">CollectionModify::execute</a> - Виконує операцію зміни</li>
+<li><a href="mysql-xdevapi-collectionmodify.limit.md">CollectionModify::limit</a>— Обмежує кількість документів, що змінюються.</li>
+<li><a href="mysql-xdevapi-collectionmodify.patch.md">CollectionModify::patch</a> - Виправляє документ</li>
+<li><a href="mysql-xdevapi-collectionmodify.replace.md">CollectionModify::replace</a> - Замінює поле документа</li>
+<li><a href="mysql-xdevapi-collectionmodify.set.md">CollectionModify::set</a> - Встановлює атрибут документа</li>
+<li><a href="mysql-xdevapi-collectionmodify.skip.md">CollectionModify::skip</a> - Пропускає елементи</li>
+<li><a href="mysql-xdevapi-collectionmodify.sort.md">CollectionModify::sort</a> - Встановлює критерії сортування</li>
+<li><a href="mysql-xdevapi-collectionmodify.unset.md">CollectionModify::unset</a>— скидає значення полів документа</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-collectionremove.md">mysql_xdevapi\CollectionRemove</a> - Клас CollectionRemove
+<ul>
+<li><a href="mysql-xdevapi-collectionremove.bind.md">CollectionRemove::bind</a>— Прив&#x27;язує значення до заповнювача</li>
+<li><a href="mysql-xdevapi-collectionremove.construct.md">CollectionRemove::__construct</a> - Конструктор класу CollectionRemove</li>
+<li><a href="mysql-xdevapi-collectionremove.execute.md">CollectionRemove::execute</a> - Виконує операцію видалення</li>
+<li><a href="mysql-xdevapi-collectionremove.limit.md">CollectionRemove::limit</a>— Обмежує кількість документів для видалення</li>
+<li><a href="mysql-xdevapi-collectionremove.sort.md">CollectionRemove::sort</a> - Встановлює критерії сортування</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-columnresult.md">mysql_xdevapi\ColumnResult</a> - Клас ColumnResult
+<ul>
+<li><a href="mysql-xdevapi-columnresult.construct.md">ColumnResult::__construct</a> - Конструктор класу ColumnResult</li>
+<li><a href="mysql-xdevapi-columnresult.getcharactersetname.md">ColumnResult::getCharacterSetName</a>— Отримує набір символів</li>
+<li><a href="mysql-xdevapi-columnresult.getcollationname.md">ColumnResult::getCollationName</a>— Отримує ім&#x27;я зіставлення</li>
+<li><a href="mysql-xdevapi-columnresult.getcolumnlabel.md">ColumnResult::getColumnLabel</a>— Отримує мітку стовпця</li>
+<li><a href="mysql-xdevapi-columnresult.getcolumnname.md">ColumnResult::getColumnName</a>— Отримує назву стовпця</li>
+<li><a href="mysql-xdevapi-columnresult.getfractionaldigits.md">ColumnResult::getFractionalDigits</a>— Отримує дрібну довжину цифри</li>
+<li><a href="mysql-xdevapi-columnresult.getlength.md">ColumnResult::getLength</a>— Отримує довжину поля стовпця</li>
+<li><a href="mysql-xdevapi-columnresult.getschemaname.md">ColumnResult::getSchemaName</a>— Отримує назву схеми</li>
+<li><a href="mysql-xdevapi-columnresult.gettablelabel.md">ColumnResult::getTableLabel</a>— Отримує мітку таблиці</li>
+<li><a href="mysql-xdevapi-columnresult.gettablename.md">ColumnResult::getTableName</a>— Отримує назву таблиці</li>
+<li><a href="mysql-xdevapi-columnresult.gettype.md">ColumnResult::getType</a>— Отримує тип стовпця</li>
+<li><a href="mysql-xdevapi-columnresult.isnumbersigned.md">ColumnResult::isNumberSigned</a> - Перевіряє, чи заданий числу знак</li>
+<li><a href="mysql-xdevapi-columnresult.ispadded.md">ColumnResult::isPadded</a>— Перевіряє, чи доповнюється</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-crudoperationbindable.md">mysql_xdevapi\CrudOperationBindable</a> - Інтерфейс CrudOperationBindable
+<ul>
+<li><a href="mysql-xdevapi-crudoperationbindable.bind.md">CrudOperationBindable::bind</a>— Прив&#x27;язує значення до заповнювача</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-crudoperationlimitable.md">mysql_xdevapi\CrudOperationLimitable</a> - Інтерфейс CrudOperationLimitable
+<ul>
+<li><a href="mysql-xdevapi-crudoperationlimitable.limit.md">CrudOperationLimitable::limit</a> - Встановлює ліміт результату</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-crudoperationskippable.md">mysql_xdevapi\CrudOperationSkippable</a> - Інтерфейс CrudOperationSkippable
+<ul>
+<li><a href="mysql-xdevapi-crudoperationskippable.skip.md">CrudOperationSkippable::skip</a> - Кількість операцій для пропуску</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-crudoperationsortable.md">mysql_xdevapi\CrudOperationSortable</a> - Інтерфейс CrudOperationSortable
+<ul>
+<li><a href="mysql-xdevapi-crudoperationsortable.sort.md">CrudOperationSortable::sort</a> - Сортує результати</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-databaseobject.md">mysql_xdevapi\DatabaseObject</a> - Інтерфейс DatabaseObject
+<ul>
+<li><a href="mysql-xdevapi-databaseobject.existsindatabase.md">DatabaseObject::existsInDatabase</a>— Перевіряє, чи існує об&#x27;єкт у базі даних</li>
+<li><a href="mysql-xdevapi-databaseobject.getname.md">DatabaseObject::getName</a>— Отримує ім&#x27;я об&#x27;єкта</li>
+<li><a href="mysql-xdevapi-databaseobject.getsession.md">DatabaseObject::getSession</a>— Отримує ім&#x27;я сесії</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-docresult.md">mysql_xdevapi\DocResult</a> - Клас DocResult
+<ul>
+<li><a href="mysql-xdevapi-docresult.construct.md">DocResult::__construct</a> - Конструктор DocResult</li>
+<li><a href="mysql-xdevapi-docresult.fetchall.md">DocResult::fetchAll</a>— Отримати всі рядки</li>
+<li><a href="mysql-xdevapi-docresult.fetchone.md">DocResult::fetchOne</a>— Отримати один рядок</li>
+<li><a href="mysql-xdevapi-docresult.getwarnings.md">DocResult::getWarnings</a>— Отримати попередження з останньої операції</li>
+<li><a href="mysql-xdevapi-docresult.getwarningscount.md">DocResult::getWarningsCount</a>— Отримати кількість попереджень із останньої операції</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-exception.md">mysql_xdevapi\Exception</a> - Клас Exception</li>
+<li><a href="class.mysql-xdevapi-executable.md">mysql_xdevapi\Executable</a> - Інтерфейс Executable
+<ul>
+<li><a href="mysql-xdevapi-executable.execute.md">Executable::execute</a> - Виконує твердження</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-executionstatus.md">mysql_xdevapi\ExecutionStatus</a> - Клас ExecutionStatus
+<ul>
+<li><a href="mysql-xdevapi-executionstatus.construct.md">ExecutionStatus::__construct</a> - Конструктор класу ExecutionStatus</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-expression.md">mysql_xdevapi\Expression</a> - Клас Expression
+<ul>
+<li><a href="mysql-xdevapi-expression.construct.md">Expression::__construct</a> - Конструктор класу Expression</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-result.md">mysql_xdevapi\Result</a> - Клас Result
+<ul>
+<li><a href="mysql-xdevapi-result.construct.md">Result::__construct</a> - Конструктор класу Result</li>
+<li><a href="mysql-xdevapi-result.getaffecteditemscount.md">Result::getAffectedItemsCount</a>— Отримує кількість порушених рядків</li>
+<li><a href="mysql-xdevapi-result.getautoincrementvalue.md">Result::getAutoIncrementValue</a>— Отримує значення автоінкремента</li>
+<li><a href="mysql-xdevapi-result.getgeneratedids.md">Result::getGeneratedIds</a>— Отримує згенеровані ідентифікатори</li>
+<li><a href="mysql-xdevapi-result.getwarnings.md">Result::getWarnings</a>— Отримує попередження останньої операції</li>
+<li><a href="mysql-xdevapi-result.getwarningscount.md">Result::getWarningsCount</a>— Отримує кількість попереджень останньої операції</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-rowresult.md">mysql_xdevapi\RowResult</a> - Клас RowResult
+<ul>
+<li><a href="mysql-xdevapi-rowresult.construct.md">RowResult::__construct</a> - Конструктор класу RowResult</li>
+<li><a href="mysql-xdevapi-rowresult.fetchall.md">RowResult::fetchAll</a>— Отримує всі рядки з результату</li>
+<li><a href="mysql-xdevapi-rowresult.fetchone.md">RowResult::fetchOne</a>— Отримує рядок із результату</li>
+<li><a href="mysql-xdevapi-rowresult.getcolumncount.md">RowResult::getColumnsCount</a>— Отримує кількість стовпців</li>
+<li><a href="mysql-xdevapi-rowresult.getcolumnnames.md">RowResult::getColumnNames</a>— Отримує всі імена стовпців</li>
+<li><a href="mysql-xdevapi-rowresult.getcolumns.md">RowResult::getColumns</a>— Отримує метадані стовпця</li>
+<li><a href="mysql-xdevapi-rowresult.getwarnings.md">RowResult::getWarnings</a>— Отримує попередження останньої операції</li>
+<li><a href="mysql-xdevapi-rowresult.getwarningscount.md">RowResult::getWarningsCount</a>— Отримує кількість попереджень останньої операції</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-schema.md">mysql_xdevapi\Schema</a> - Клас Schema
+<ul>
+<li><a href="mysql-xdevapi-schema.construct.md">Schema::__construct</a> - Конструктор класу Schema</li>
+<li><a href="mysql-xdevapi-schema.createcollection.md">Schema::createCollection</a>— Додає колекцію до схеми</li>
+<li><a href="mysql-xdevapi-schema.dropcollection.md">Schema::dropCollection</a>— Видаляє колекції зі схеми</li>
+<li><a href="mysql-xdevapi-schema.existsindatabase.md">Schema::existsInDatabase</a>— Перевіряє, чи існує у базі даних</li>
+<li><a href="mysql-xdevapi-schema.getcollection.md">Schema::getCollection</a>— Отримує колекцію зі схеми</li>
+<li><a href="mysql-xdevapi-schema.getcollectionastable.md">Schema::getCollectionAsTable</a>— Отримує колекцію як об&#x27;єкт класу Table</li>
+<li><a href="mysql-xdevapi-schema.getcollections.md">Schema::getCollections</a>— Отримує всі колекції схеми</li>
+<li><a href="mysql-xdevapi-schema.getname.md">Schema::getName</a>— Отримує ім&#x27;я схеми</li>
+<li><a href="mysql-xdevapi-schema.getsession.md">Schema::getSession</a>— Отримує сесію схеми</li>
+<li><a href="mysql-xdevapi-schema.gettable.md">Schema::getTable</a>— Отримує таблицю схеми</li>
+<li><a href="mysql-xdevapi-schema.gettables.md">Schema::getTables</a>— Отримує таблиці схеми</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-schemaobject.md">mysql_xdevapi\SchemaObject</a> - Інтерфейс SchemaObject
+<ul>
+<li><a href="mysql-xdevapi-schemaobject.getschema.md">SchemaObject::getSchema</a>— Отримує об&#x27;єкт схеми</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-session.md">mysql_xdevapi\Session</a> - Клас Session
+<ul>
+<li><a href="mysql-xdevapi-session.close.md">Session::close</a> - Закриває сесію</li>
+<li><a href="mysql-xdevapi-session.commit.md">Session::commit</a> - Фіксує транзакцію</li>
+<li><a href="mysql-xdevapi-session.construct.md">Session::__construct</a> - Опис конструктора</li>
+<li><a href="mysql-xdevapi-session.createschema.md">Session::createSchema</a> - Створює нову схему</li>
+<li><a href="mysql-xdevapi-session.dropschema.md">Session::dropSchema</a> - Видаляє схему</li>
+<li><a href="mysql-xdevapi-session.generateuuid.md">Session::generateUUID</a>— Отримує новий UUID</li>
+<li><a href="mysql-xdevapi-session.getdefaultschema.md">Session::getDefaultSchema</a>— Отримує ім&#x27;я схеми за умовчанням</li>
+<li><a href="mysql-xdevapi-session.getschema.md">Session::getSchema</a>— Отримує новий об&#x27;єкт схеми</li>
+<li><a href="mysql-xdevapi-session.getschemas.md">Session::getSchemas</a>— Отримує схеми</li>
+<li><a href="mysql-xdevapi-session.getserverversion.md">Session::getServerVersion</a>— Отримує версію сервера</li>
+<li><a href="mysql-xdevapi-session.listclients.md">Session::listClients</a>— Отримує список клієнтів</li>
+<li><a href="mysql-xdevapi-session.quotename.md">Session::quoteName</a> - Додає лапки</li>
+<li><a href="mysql-xdevapi-session.releasesavepoint.md">Session::releaseSavepoint</a>— Скасує встановлену точку збереження</li>
+<li><a href="mysql-xdevapi-session.rollback.md">Session::rollback</a> - Відкочує транзакцію</li>
+<li><a href="mysql-xdevapi-session.rollbackto.md">Session::rollbackTo</a> - Відкочує транзакцію до точки збереження</li>
+<li><a href="mysql-xdevapi-session.setsavepoint.md">Session::setSavepoint</a>— Створює точку збереження</li>
+<li><a href="mysql-xdevapi-session.sql.md">Session::sql</a> - Створює SQL-запит</li>
+<li><a href="mysql-xdevapi-session.starttransaction.md">Session::startTransaction</a> - Починає транзакцію</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-sqlstatement.md">mysql_xdevapi\SqlStatement</a> - Клас SqlStatement
+<ul>
+<li><a href="mysql-xdevapi-sqlstatement.bind.md">SqlStatement::bind</a>— Зв&#x27;язує параметри затвердження</li>
+<li><a href="mysql-xdevapi-sqlstatement.construct.md">SqlStatement::__construct</a> - Опис конструктора</li>
+<li><a href="mysql-xdevapi-sqlstatement.execute.md">SqlStatement::execute</a>— Виконує операцію</li>
+<li><a href="mysql-xdevapi-sqlstatement.getnextresult.md">SqlStatement::getNextResult</a>— Отримує наступний результат</li>
+<li><a href="mysql-xdevapi-sqlstatement.getresult.md">SqlStatement::getResult</a>— Отримує результат</li>
+<li><a href="mysql-xdevapi-sqlstatement.hasmoreresults.md">SqlStatement::hasMoreResults</a>— Перевіряє, чи є ще результати</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-sqlstatementresult.md">mysql_xdevapi\SqlStatementResult</a> - Клас SqlStatementResult
+<ul>
+<li><a href="mysql-xdevapi-sqlstatementresult.construct.md">SqlStatementResult::__construct</a> - Опис конструктора</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.fetchall.md">SqlStatementResult::fetchAll</a>— Отримує всі рядки з результату</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.fetchone.md">SqlStatementResult::fetchOne</a>— Отримує один рядок</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getaffecteditemscount.md">SqlStatementResult::getAffectedItemsCount</a>— Отримує порушену кількість рядків</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getcolumncount.md">SqlStatementResult::getColumnsCount</a>— Отримує кількість стовпців</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getcolumnnames.md">SqlStatementResult::getColumnNames</a>— Отримує імена стовпців</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getcolumns.md">SqlStatementResult::getColumns</a>— Отримує стовпці</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getgeneratedids.md">SqlStatementResult::getGeneratedIds</a>— Отримує згенеровані ідентифікатори</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getlastinsertid.md">SqlStatementResult::getLastInsertId</a>— Отримує останній ідентифікатор вставки</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getwarnings.md">SqlStatementResult::getWarnings</a>— Отримує попередження від останньої операції</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getwarningcount.md">SqlStatementResult::getWarningsCount</a>— Отримує кількість попереджень від останньої операції</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.hasdata.md">SqlStatementResult::hasData</a>— Перевіряє, чи є результати дані</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.nextresult.md">SqlStatementResult::nextResult</a>— Отримує наступний результат</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-statement.md">mysql_xdevapi\Statement</a> - Клас Statement
+<ul>
+<li><a href="mysql-xdevapi-statement.construct.md">Statement::__construct</a> - Опис конструктора</li>
+<li><a href="mysql-xdevapi-statement.getnextresult.md">Statement::getNextResult</a>— Отримує наступний результат</li>
+<li><a href="mysql-xdevapi-statement.getresult.md">Statement::getResult</a>— Отримує результат</li>
+<li><a href="mysql-xdevapi-statement.hasmoreresults.md">Statement::hasMoreResults</a>— Перевіряє, чи є ще результати</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-table.md">mysql_xdevapi\Table</a> - Клас Table
+<ul>
+<li><a href="mysql-xdevapi-table.construct.md">Table::__construct</a> - Конструктор Table</li>
+<li><a href="mysql-xdevapi-table.count.md">Table::count</a>— Отримати кількість рядків</li>
+<li><a href="mysql-xdevapi-table.delete.md">Table::delete</a>— Видалити рядки з таблиці</li>
+<li><a href="mysql-xdevapi-table.existsindatabase.md">Table::existsInDatabase</a>— Перевірити, чи існує таблиця у базі даних</li>
+<li><a href="mysql-xdevapi-table.getname.md">Table::getName</a>— Отримати ім&#x27;я таблиці</li>
+<li><a href="mysql-xdevapi-table.getschema.md">Table::getSchema</a>— Отримати схему таблиці</li>
+<li><a href="mysql-xdevapi-table.getsession.md">Table::getSession</a>— Отримати таблицю сесій</li>
+<li><a href="mysql-xdevapi-table.insert.md">Table::insert</a>— Вставити рядки таблиці</li>
+<li><a href="mysql-xdevapi-table.isview.md">Table::isView</a>— Перевірити, чи таблиця є поданням</li>
+<li><a href="mysql-xdevapi-table.select.md">Table::select</a> - Вибрати рядки з таблиці</li>
+<li><a href="mysql-xdevapi-table.update.md">Table::update</a>— Оновити рядки у таблиці</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-tabledelete.md">mysql_xdevapi\TableDelete</a> - Клас TableDelete
+<ul>
+<li><a href="mysql-xdevapi-tabledelete.bind.md">TableDelete::bind</a>— Зв&#x27;язує параметри запиту на видалення</li>
+<li><a href="mysql-xdevapi-tabledelete.construct.md">TableDelete::__construct</a> - Конструктор класу TableDelete</li>
+<li><a href="mysql-xdevapi-tabledelete.execute.md">TableDelete::execute</a>— Виконує запит на видалення</li>
+<li><a href="mysql-xdevapi-tabledelete.limit.md">TableDelete::limit</a>— Обмежує рядки видалення</li>
+<li><a href="mysql-xdevapi-tabledelete.orderby.md">TableDelete::orderby</a>— Встановлює критерії сортування видалення</li>
+<li><a href="mysql-xdevapi-tabledelete.where.md">TableDelete::where</a>— Встановлює умову пошуку для видалення</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-tableinsert.md">mysql_xdevapi\TableInsert</a> - Клас TableInsert
+<ul>
+<li><a href="mysql-xdevapi-tableinsert.construct.md">TableInsert::__construct</a> - Конструктор класу TableInsert</li>
+<li><a href="mysql-xdevapi-tableinsert.execute.md">TableInsert::execute</a>— Виконує запит на вставку</li>
+<li><a href="mysql-xdevapi-tableinsert.values.md">TableInsert::values</a>— Додає значення вставки рядка</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-tableselect.md">mysql_xdevapi\TableSelect</a> - Клас TableSelect
+<ul>
+<li><a href="mysql-xdevapi-tableselect.bind.md">TableSelect::bind</a>— Прив&#x27;язує параметри запиту вибірки</li>
+<li><a href="mysql-xdevapi-tableselect.construct.md">TableSelect::__construct</a> - Конструктор класу TableSelect</li>
+<li><a href="mysql-xdevapi-tableselect.execute.md">TableSelect::execute</a>— Виконує оператор вибірки</li>
+<li><a href="mysql-xdevapi-tableselect.groupby.md">TableSelect::groupBy</a>— Встановлює критерії угруповання вибірки</li>
+<li><a href="mysql-xdevapi-tableselect.having.md">TableSelect::having</a>— Встановлює вибір із умовою</li>
+<li><a href="mysql-xdevapi-tableselect.limit.md">TableSelect::limit</a>— Обмежує вибрані рядки</li>
+<li><a href="mysql-xdevapi-tableselect.lockexclusive.md">TableSelect::lockExclusive</a> - Виконує EXCLUSIVE LOCK</li>
+<li><a href="mysql-xdevapi-tableselect.lockshared.md">TableSelect::lockShared</a> - Виконує SHARED LOCK</li>
+<li><a href="mysql-xdevapi-tableselect.offset.md">TableSelect::offset</a> - Встановлює межу зміщення</li>
+<li><a href="mysql-xdevapi-tableselect.orderby.md">TableSelect::orderby</a>— Встановлює критерії сортування вибірки</li>
+<li><a href="mysql-xdevapi-tableselect.where.md">TableSelect::where</a>— Встановлює умову пошуку вибірки</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-tableupdate.md">mysql_xdevapi\TableUpdate</a> - Клас TableUpdate
+<ul>
+<li><a href="mysql-xdevapi-tableupdate.bind.md">TableUpdate::bind</a>— Прив&#x27;язує параметри запиту на оновлення</li>
+<li><a href="mysql-xdevapi-tableupdate.construct.md">TableUpdate::__construct</a> - Конструктор класу TableUpdate</li>
+<li><a href="mysql-xdevapi-tableupdate.execute.md">TableUpdate::execute</a>— Виконує запит на оновлення</li>
+<li><a href="mysql-xdevapi-tableupdate.limit.md">TableUpdate::limit</a> - Обмежує кількість рядків для оновлення</li>
+<li><a href="mysql-xdevapi-tableupdate.orderby.md">TableUpdate::orderby</a> - Встановлює критерії сортування</li>
+<li><a href="mysql-xdevapi-tableupdate.set.md">TableUpdate::set</a>— Додає поле для оновлення</li>
+<li><a href="mysql-xdevapi-tableupdate.where.md">TableUpdate::where</a> - Встановлює фільтр пошуку</li>
+</ul>
+</li>
+<li><a href="class.mysql-xdevapi-warning.md">mysql_xdevapi\Warning</a> - Клас Warning
+<ul>
+<li><a href="mysql-xdevapi-warning.construct.md">Warning::__construct</a> - Конструктор класу Warning</li>
+</ul>
+</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/book.mysql-xdevapi.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/book.mysql-xdevapi.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"book.mysql-xdevapi.md","content":"# Mysql\\_xdevapi\n\n-   [Вступ](intro.mysql-xdevapi.md)\n-   [Встановлення та налаштування](mysql-xdevapi.setup.md)\n    -   [Вимоги](mysql-xdevapi.requirements.md)\n    -   [Установка](mysql-xdevapi.installation.md)\n    -   [Налаштування під час виконання](mysql-xdevapi.configuration.md)\n    -   [Складання / Компіляція з вихідного коду](mysql-xdevapi.build.md)\n-   [Обумовлені константи](mysql-xdevapi.constants.md)\n-   [список змін](changelog.mysql_xdevapi.md)\n-   [Приклади](mysql-xdevapi.examples.md)\n-   [Функції Mysql\\_xdevapi](ref.mysql-xdevapi.md)\n    -   [expression](function.mysql-xdevapi-expression.md)— Зв'язує підготовлені змінні твердження як параметри\n    -   [getSession](function.mysql-xdevapi-getsession.md)— Підключається до сервера MySQL\n-   [mysql\\_xdevapi\\\\BaseResult](class.mysql-xdevapi-baseresult.md) \\- Інтерфейс BaseResult\n    -   [BaseResult::getWarnings](mysql-xdevapi-baseresult.getwarnings.md)— Отримує попередження останньої операції\n    -   [BaseResult::getWarningsCount](mysql-xdevapi-baseresult.getwarningscount.md)— Отримує кількість попереджень останньої операції\n-   [mysql\\_xdevapi\\\\Client](class.mysql-xdevapi-client.md) \\- Клас Client\n    -   [mysql\\_xdevapi\\\\Client::close](mysql-xdevapi-client.close.md) \\- Закриття клієнта\n    -   [Client::\\_\\_construct](mysql-xdevapi-client.construct.md) \\- Конструктор класу Client\n    -   [Client::getClient](mysql-xdevapi-client.getsession.md)— Отримує сеанс клієнта\n-   [mysql\\_xdevapi\\\\Collection](class.mysql-xdevapi-collection.md) \\- Клас Collection\n    -   [Collection::add](mysql-xdevapi-collection.add.md)— Додає документ у колекцію\n    -   [Collection::addOrReplaceOne](mysql-xdevapi-collection.addorreplaceone.md)— Додає або замінює документ колекції\n    -   [Collection::\\_\\_construct](mysql-xdevapi-collection.construct.md) \\- Конструктор класу Collection\n    -   [Collection::count](mysql-xdevapi-collection.count.md)— Отримує кількість документів\n    -   [Collection::createIndex](mysql-xdevapi-collection.createindex.md)— Створює індекс для колекції\n    -   [Collection::dropIndex](mysql-xdevapi-collection.dropindex.md)— Видаляє індекс колекції\n    -   [Collection::existsInDatabase](mysql-xdevapi-collection.existsindatabase.md)— Перевіряє, чи існує колекція у базі даних\n    -   [Collection::find](mysql-xdevapi-collection.find.md) \\- Шукає документ\n    -   [Collection::getName](mysql-xdevapi-collection.getname.md)— Отримує назву колекції\n    -   [Collection::getOne](mysql-xdevapi-collection.getone.md)— Отримує один документ\n    -   [Collection::getSchema](mysql-xdevapi-collection.getschema.md)— Повертає об'єкт Schema\n    -   [Collection::getSession](mysql-xdevapi-collection.getsession.md)— Повертає об'єкт Session\n    -   [Collection::modify](mysql-xdevapi-collection.modify.md)— Змінює документи колекції\n    -   [Collection::remove](mysql-xdevapi-collection.remove.md)— Видаляє документи колекції\n    -   [Collection::removeOne](mysql-xdevapi-collection.removeone.md)— Видаляє один документ із колекції\n    -   [Collection::replaceOne](mysql-xdevapi-collection.replaceone.md)— Замінює один документ колекції\n-   [mysql\\_xdevapi\\\\CollectionAdd](class.mysql-xdevapi-collectionadd.md) \\- Клас CollectionAdd\n    -   [CollectionAdd::\\_\\_construct](mysql-xdevapi-collectionadd.construct.md) \\- Конструктор класу CollectionAdd\n    -   [CollectionAdd::execute](mysql-xdevapi-collectionadd.execute.md) \\- Виконує твердження\n-   [mysql\\_xdevapi\\\\CollectionFind](class.mysql-xdevapi-collectionfind.md) \\- Клас CollectionFind\n    -   [CollectionFind::bind](mysql-xdevapi-collectionfind.bind.md)— Прив'язує значення до заповнювача запиту\n    -   [CollectionFind::\\_\\_construct](mysql-xdevapi-collectionfind.construct.md) \\- Конструктор класу CollectionFind\n    -   [CollectionFind::execute](mysql-xdevapi-collectionfind.execute.md) \\- Виконує твердження\n    -   [CollectionFind::fields](mysql-xdevapi-collectionfind.fields.md)— Встановлює фільтр поля документа\n    -   [CollectionFind::groupBy](mysql-xdevapi-collectionfind.groupby.md) \\- Встановлює критерії угруповання\n    -   [CollectionFind::having](mysql-xdevapi-collectionfind.having.md) \\- Встановлює умову для агрегатних функцій\n    -   [CollectionFind::limit](mysql-xdevapi-collectionfind.limit.md)— Обмежує кількість документів, що повертаються.\n    -   [CollectionFind::lockExclusive](mysql-xdevapi-collectionfind.lockexclusive.md) \\- Виконує операцію з EXCLUSIVE LOCK\n    -   [CollectionFind::lockShared](mysql-xdevapi-collectionfind.lockshared.md) \\- Виконує операцію з SHARED LOCK\n    -   [CollectionFind::offset](mysql-xdevapi-collectionfind.offset.md)— Пропускає вказану кількість елементів, що повертаються.\n    -   [CollectionFind::sort](mysql-xdevapi-collectionfind.sort.md) \\- Встановлює критерії сортування\n-   [mysql\\_xdevapi\\\\CollectionModify](class.mysql-xdevapi-collectionmodify.md) \\- Клас CollectionModify\n    -   [CollectionModify::arrayAppend](mysql-xdevapi-collectionmodify.arrayappend.md)— Додає елемент у поле масиву\n    -   [CollectionModify::arrayInsert](mysql-xdevapi-collectionmodify.arrayinsert.md)— Додає елемент у поле масиву\n    -   [CollectionModify::bind](mysql-xdevapi-collectionmodify.bind.md)— Прив'язує значення до заповнювача запиту\n    -   [CollectionModify::\\_\\_construct](mysql-xdevapi-collectionmodify.construct.md) \\- Конструктор класу CollectionModify\n    -   [CollectionModify::execute](mysql-xdevapi-collectionmodify.execute.md) \\- Виконує операцію зміни\n    -   [CollectionModify::limit](mysql-xdevapi-collectionmodify.limit.md)— Обмежує кількість документів, що змінюються.\n    -   [CollectionModify::patch](mysql-xdevapi-collectionmodify.patch.md) \\- Виправляє документ\n    -   [CollectionModify::replace](mysql-xdevapi-collectionmodify.replace.md) \\- Замінює поле документа\n    -   [CollectionModify::set](mysql-xdevapi-collectionmodify.set.md) \\- Встановлює атрибут документа\n    -   [CollectionModify::skip](mysql-xdevapi-collectionmodify.skip.md) \\- Пропускає елементи\n    -   [CollectionModify::sort](mysql-xdevapi-collectionmodify.sort.md) \\- Встановлює критерії сортування\n    -   [CollectionModify::unset](mysql-xdevapi-collectionmodify.unset.md)— скидає значення полів документа\n-   [mysql\\_xdevapi\\\\CollectionRemove](class.mysql-xdevapi-collectionremove.md) \\- Клас CollectionRemove\n    -   [CollectionRemove::bind](mysql-xdevapi-collectionremove.bind.md)— Прив'язує значення до заповнювача\n    -   [CollectionRemove::\\_\\_construct](mysql-xdevapi-collectionremove.construct.md) \\- Конструктор класу CollectionRemove\n    -   [CollectionRemove::execute](mysql-xdevapi-collectionremove.execute.md) \\- Виконує операцію видалення\n    -   [CollectionRemove::limit](mysql-xdevapi-collectionremove.limit.md)— Обмежує кількість документів для видалення\n    -   [CollectionRemove::sort](mysql-xdevapi-collectionremove.sort.md) \\- Встановлює критерії сортування\n-   [mysql\\_xdevapi\\\\ColumnResult](class.mysql-xdevapi-columnresult.md) \\- Клас ColumnResult\n    -   [ColumnResult::\\_\\_construct](mysql-xdevapi-columnresult.construct.md) \\- Конструктор класу ColumnResult\n    -   [ColumnResult::getCharacterSetName](mysql-xdevapi-columnresult.getcharactersetname.md)— Отримує набір символів\n    -   [ColumnResult::getCollationName](mysql-xdevapi-columnresult.getcollationname.md)— Отримує ім'я зіставлення\n    -   [ColumnResult::getColumnLabel](mysql-xdevapi-columnresult.getcolumnlabel.md)— Отримує мітку стовпця\n    -   [ColumnResult::getColumnName](mysql-xdevapi-columnresult.getcolumnname.md)— Отримує назву стовпця\n    -   [ColumnResult::getFractionalDigits](mysql-xdevapi-columnresult.getfractionaldigits.md)— Отримує дрібну довжину цифри\n    -   [ColumnResult::getLength](mysql-xdevapi-columnresult.getlength.md)— Отримує довжину поля стовпця\n    -   [ColumnResult::getSchemaName](mysql-xdevapi-columnresult.getschemaname.md)— Отримує назву схеми\n    -   [ColumnResult::getTableLabel](mysql-xdevapi-columnresult.gettablelabel.md)— Отримує мітку таблиці\n    -   [ColumnResult::getTableName](mysql-xdevapi-columnresult.gettablename.md)— Отримує назву таблиці\n    -   [ColumnResult::getType](mysql-xdevapi-columnresult.gettype.md)— Отримує тип стовпця\n    -   [ColumnResult::isNumberSigned](mysql-xdevapi-columnresult.isnumbersigned.md) \\- Перевіряє, чи заданий числу знак\n    -   [ColumnResult::isPadded](mysql-xdevapi-columnresult.ispadded.md)— Перевіряє, чи доповнюється\n-   [mysql\\_xdevapi\\\\CrudOperationBindable](class.mysql-xdevapi-crudoperationbindable.md) \\- Інтерфейс CrudOperationBindable\n    -   [CrudOperationBindable::bind](mysql-xdevapi-crudoperationbindable.bind.md)— Прив'язує значення до заповнювача\n-   [mysql\\_xdevapi\\\\CrudOperationLimitable](class.mysql-xdevapi-crudoperationlimitable.md) \\- Інтерфейс CrudOperationLimitable\n    -   [CrudOperationLimitable::limit](mysql-xdevapi-crudoperationlimitable.limit.md) \\- Встановлює ліміт результату\n-   [mysql\\_xdevapi\\\\CrudOperationSkippable](class.mysql-xdevapi-crudoperationskippable.md) \\- Інтерфейс CrudOperationSkippable\n    -   [CrudOperationSkippable::skip](mysql-xdevapi-crudoperationskippable.skip.md) \\- Кількість операцій для пропуску\n-   [mysql\\_xdevapi\\\\CrudOperationSortable](class.mysql-xdevapi-crudoperationsortable.md) \\- Інтерфейс CrudOperationSortable\n    -   [CrudOperationSortable::sort](mysql-xdevapi-crudoperationsortable.sort.md) \\- Сортує результати\n-   [mysql\\_xdevapi\\\\DatabaseObject](class.mysql-xdevapi-databaseobject.md) \\- Інтерфейс DatabaseObject\n    -   [DatabaseObject::existsInDatabase](mysql-xdevapi-databaseobject.existsindatabase.md)— Перевіряє, чи існує об'єкт у базі даних\n    -   [DatabaseObject::getName](mysql-xdevapi-databaseobject.getname.md)— Отримує ім'я об'єкта\n    -   [DatabaseObject::getSession](mysql-xdevapi-databaseobject.getsession.md)— Отримує ім'я сесії\n-   [mysql\\_xdevapi\\\\DocResult](class.mysql-xdevapi-docresult.md) \\- Клас DocResult\n    -   [DocResult::\\_\\_construct](mysql-xdevapi-docresult.construct.md) \\- Конструктор DocResult\n    -   [DocResult::fetchAll](mysql-xdevapi-docresult.fetchall.md)— Отримати всі рядки\n    -   [DocResult::fetchOne](mysql-xdevapi-docresult.fetchone.md)— Отримати один рядок\n    -   [DocResult::getWarnings](mysql-xdevapi-docresult.getwarnings.md)— Отримати попередження з останньої операції\n    -   [DocResult::getWarningsCount](mysql-xdevapi-docresult.getwarningscount.md)— Отримати кількість попереджень із останньої операції\n-   [mysql\\_xdevapi\\\\Exception](class.mysql-xdevapi-exception.md) \\- Клас Exception\n-   [mysql\\_xdevapi\\\\Executable](class.mysql-xdevapi-executable.md) \\- Інтерфейс Executable\n    -   [Executable::execute](mysql-xdevapi-executable.execute.md) \\- Виконує твердження\n-   [mysql\\_xdevapi\\\\ExecutionStatus](class.mysql-xdevapi-executionstatus.md) \\- Клас ExecutionStatus\n    -   [ExecutionStatus::\\_\\_construct](mysql-xdevapi-executionstatus.construct.md) \\- Конструктор класу ExecutionStatus\n-   [mysql\\_xdevapi\\\\Expression](class.mysql-xdevapi-expression.md) \\- Клас Expression\n    -   [Expression::\\_\\_construct](mysql-xdevapi-expression.construct.md) \\- Конструктор класу Expression\n-   [mysql\\_xdevapi\\\\Result](class.mysql-xdevapi-result.md) \\- Клас Result\n    -   [Result::\\_\\_construct](mysql-xdevapi-result.construct.md) \\- Конструктор класу Result\n    -   [Result::getAffectedItemsCount](mysql-xdevapi-result.getaffecteditemscount.md)— Отримує кількість порушених рядків\n    -   [Result::getAutoIncrementValue](mysql-xdevapi-result.getautoincrementvalue.md)— Отримує значення автоінкремента\n    -   [Result::getGeneratedIds](mysql-xdevapi-result.getgeneratedids.md)— Отримує згенеровані ідентифікатори\n    -   [Result::getWarnings](mysql-xdevapi-result.getwarnings.md)— Отримує попередження останньої операції\n    -   [Result::getWarningsCount](mysql-xdevapi-result.getwarningscount.md)— Отримує кількість попереджень останньої операції\n-   [mysql\\_xdevapi\\\\RowResult](class.mysql-xdevapi-rowresult.md) \\- Клас RowResult\n    -   [RowResult::\\_\\_construct](mysql-xdevapi-rowresult.construct.md) \\- Конструктор класу RowResult\n    -   [RowResult::fetchAll](mysql-xdevapi-rowresult.fetchall.md)— Отримує всі рядки з результату\n    -   [RowResult::fetchOne](mysql-xdevapi-rowresult.fetchone.md)— Отримує рядок із результату\n    -   [RowResult::getColumnsCount](mysql-xdevapi-rowresult.getcolumncount.md)— Отримує кількість стовпців\n    -   [RowResult::getColumnNames](mysql-xdevapi-rowresult.getcolumnnames.md)— Отримує всі імена стовпців\n    -   [RowResult::getColumns](mysql-xdevapi-rowresult.getcolumns.md)— Отримує метадані стовпця\n    -   [RowResult::getWarnings](mysql-xdevapi-rowresult.getwarnings.md)— Отримує попередження останньої операції\n    -   [RowResult::getWarningsCount](mysql-xdevapi-rowresult.getwarningscount.md)— Отримує кількість попереджень останньої операції\n-   [mysql\\_xdevapi\\\\Schema](class.mysql-xdevapi-schema.md) \\- Клас Schema\n    -   [Schema::\\_\\_construct](mysql-xdevapi-schema.construct.md) \\- Конструктор класу Schema\n    -   [Schema::createCollection](mysql-xdevapi-schema.createcollection.md)— Додає колекцію до схеми\n    -   [Schema::dropCollection](mysql-xdevapi-schema.dropcollection.md)— Видаляє колекції зі схеми\n    -   [Schema::existsInDatabase](mysql-xdevapi-schema.existsindatabase.md)— Перевіряє, чи існує у базі даних\n    -   [Schema::getCollection](mysql-xdevapi-schema.getcollection.md)— Отримує колекцію зі схеми\n    -   [Schema::getCollectionAsTable](mysql-xdevapi-schema.getcollectionastable.md)— Отримує колекцію як об'єкт класу Table\n    -   [Schema::getCollections](mysql-xdevapi-schema.getcollections.md)— Отримує всі колекції схеми\n    -   [Schema::getName](mysql-xdevapi-schema.getname.md)— Отримує ім'я схеми\n    -   [Schema::getSession](mysql-xdevapi-schema.getsession.md)— Отримує сесію схеми\n    -   [Schema::getTable](mysql-xdevapi-schema.gettable.md)— Отримує таблицю схеми\n    -   [Schema::getTables](mysql-xdevapi-schema.gettables.md)— Отримує таблиці схеми\n-   [mysql\\_xdevapi\\\\SchemaObject](class.mysql-xdevapi-schemaobject.md) \\- Інтерфейс SchemaObject\n    -   [SchemaObject::getSchema](mysql-xdevapi-schemaobject.getschema.md)— Отримує об'єкт схеми\n-   [mysql\\_xdevapi\\\\Session](class.mysql-xdevapi-session.md) \\- Клас Session\n    -   [Session::close](mysql-xdevapi-session.close.md) \\- Закриває сесію\n    -   [Session::commit](mysql-xdevapi-session.commit.md) \\- Фіксує транзакцію\n    -   [Session::\\_\\_construct](mysql-xdevapi-session.construct.md) \\- Опис конструктора\n    -   [Session::createSchema](mysql-xdevapi-session.createschema.md) \\- Створює нову схему\n    -   [Session::dropSchema](mysql-xdevapi-session.dropschema.md) \\- Видаляє схему\n    -   [Session::generateUUID](mysql-xdevapi-session.generateuuid.md)— Отримує новий UUID\n    -   [Session::getDefaultSchema](mysql-xdevapi-session.getdefaultschema.md)— Отримує ім'я схеми за умовчанням\n    -   [Session::getSchema](mysql-xdevapi-session.getschema.md)— Отримує новий об'єкт схеми\n    -   [Session::getSchemas](mysql-xdevapi-session.getschemas.md)— Отримує схеми\n    -   [Session::getServerVersion](mysql-xdevapi-session.getserverversion.md)— Отримує версію сервера\n    -   [Session::listClients](mysql-xdevapi-session.listclients.md)— Отримує список клієнтів\n    -   [Session::quoteName](mysql-xdevapi-session.quotename.md) \\- Додає лапки\n    -   [Session::releaseSavepoint](mysql-xdevapi-session.releasesavepoint.md)— Скасує встановлену точку збереження\n    -   [Session::rollback](mysql-xdevapi-session.rollback.md) \\- Відкочує транзакцію\n    -   [Session::rollbackTo](mysql-xdevapi-session.rollbackto.md) \\- Відкочує транзакцію до точки збереження\n    -   [Session::setSavepoint](mysql-xdevapi-session.setsavepoint.md)— Створює точку збереження\n    -   [Session::sql](mysql-xdevapi-session.sql.md) \\- Створює SQL-запит\n    -   [Session::startTransaction](mysql-xdevapi-session.starttransaction.md) \\- Починає транзакцію\n-   [mysql\\_xdevapi\\\\SqlStatement](class.mysql-xdevapi-sqlstatement.md) \\- Клас SqlStatement\n    -   [SqlStatement::bind](mysql-xdevapi-sqlstatement.bind.md)— Зв'язує параметри затвердження\n    -   [SqlStatement::\\_\\_construct](mysql-xdevapi-sqlstatement.construct.md) \\- Опис конструктора\n    -   [SqlStatement::execute](mysql-xdevapi-sqlstatement.execute.md)— Виконує операцію\n    -   [SqlStatement::getNextResult](mysql-xdevapi-sqlstatement.getnextresult.md)— Отримує наступний результат\n    -   [SqlStatement::getResult](mysql-xdevapi-sqlstatement.getresult.md)— Отримує результат\n    -   [SqlStatement::hasMoreResults](mysql-xdevapi-sqlstatement.hasmoreresults.md)— Перевіряє, чи є ще результати\n-   [mysql\\_xdevapi\\\\SqlStatementResult](class.mysql-xdevapi-sqlstatementresult.md) \\- Клас SqlStatementResult\n    -   [SqlStatementResult::\\_\\_construct](mysql-xdevapi-sqlstatementresult.construct.md) \\- Опис конструктора\n    -   [SqlStatementResult::fetchAll](mysql-xdevapi-sqlstatementresult.fetchall.md)— Отримує всі рядки з результату\n    -   [SqlStatementResult::fetchOne](mysql-xdevapi-sqlstatementresult.fetchone.md)— Отримує один рядок\n    -   [SqlStatementResult::getAffectedItemsCount](mysql-xdevapi-sqlstatementresult.getaffecteditemscount.md)— Отримує порушену кількість рядків\n    -   [SqlStatementResult::getColumnsCount](mysql-xdevapi-sqlstatementresult.getcolumncount.md)— Отримує кількість стовпців\n    -   [SqlStatementResult::getColumnNames](mysql-xdevapi-sqlstatementresult.getcolumnnames.md)— Отримує імена стовпців\n    -   [SqlStatementResult::getColumns](mysql-xdevapi-sqlstatementresult.getcolumns.md)— Отримує стовпці\n    -   [SqlStatementResult::getGeneratedIds](mysql-xdevapi-sqlstatementresult.getgeneratedids.md)— Отримує згенеровані ідентифікатори\n    -   [SqlStatementResult::getLastInsertId](mysql-xdevapi-sqlstatementresult.getlastinsertid.md)— Отримує останній ідентифікатор вставки\n    -   [SqlStatementResult::getWarnings](mysql-xdevapi-sqlstatementresult.getwarnings.md)— Отримує попередження від останньої операції\n    -   [SqlStatementResult::getWarningsCount](mysql-xdevapi-sqlstatementresult.getwarningcount.md)— Отримує кількість попереджень від останньої операції\n    -   [SqlStatementResult::hasData](mysql-xdevapi-sqlstatementresult.hasdata.md)— Перевіряє, чи є результати дані\n    -   [SqlStatementResult::nextResult](mysql-xdevapi-sqlstatementresult.nextresult.md)— Отримує наступний результат\n-   [mysql\\_xdevapi\\\\Statement](class.mysql-xdevapi-statement.md) \\- Клас Statement\n    -   [Statement::\\_\\_construct](mysql-xdevapi-statement.construct.md) \\- Опис конструктора\n    -   [Statement::getNextResult](mysql-xdevapi-statement.getnextresult.md)— Отримує наступний результат\n    -   [Statement::getResult](mysql-xdevapi-statement.getresult.md)— Отримує результат\n    -   [Statement::hasMoreResults](mysql-xdevapi-statement.hasmoreresults.md)— Перевіряє, чи є ще результати\n-   [mysql\\_xdevapi\\\\Table](class.mysql-xdevapi-table.md) \\- Клас Table\n    -   [Table::\\_\\_construct](mysql-xdevapi-table.construct.md) \\- Конструктор Table\n    -   [Table::count](mysql-xdevapi-table.count.md)— Отримати кількість рядків\n    -   [Table::delete](mysql-xdevapi-table.delete.md)— Видалити рядки з таблиці\n    -   [Table::existsInDatabase](mysql-xdevapi-table.existsindatabase.md)— Перевірити, чи існує таблиця у базі даних\n    -   [Table::getName](mysql-xdevapi-table.getname.md)— Отримати ім'я таблиці\n    -   [Table::getSchema](mysql-xdevapi-table.getschema.md)— Отримати схему таблиці\n    -   [Table::getSession](mysql-xdevapi-table.getsession.md)— Отримати таблицю сесій\n    -   [Table::insert](mysql-xdevapi-table.insert.md)— Вставити рядки таблиці\n    -   [Table::isView](mysql-xdevapi-table.isview.md)— Перевірити, чи таблиця є поданням\n    -   [Table::select](mysql-xdevapi-table.select.md) \\- Вибрати рядки з таблиці\n    -   [Table::update](mysql-xdevapi-table.update.md)— Оновити рядки у таблиці\n-   [mysql\\_xdevapi\\\\TableDelete](class.mysql-xdevapi-tabledelete.md) \\- Клас TableDelete\n    -   [TableDelete::bind](mysql-xdevapi-tabledelete.bind.md)— Зв'язує параметри запиту на видалення\n    -   [TableDelete::\\_\\_construct](mysql-xdevapi-tabledelete.construct.md) \\- Конструктор класу TableDelete\n    -   [TableDelete::execute](mysql-xdevapi-tabledelete.execute.md)— Виконує запит на видалення\n    -   [TableDelete::limit](mysql-xdevapi-tabledelete.limit.md)— Обмежує рядки видалення\n    -   [TableDelete::orderby](mysql-xdevapi-tabledelete.orderby.md)— Встановлює критерії сортування видалення\n    -   [TableDelete::where](mysql-xdevapi-tabledelete.where.md)— Встановлює умову пошуку для видалення\n-   [mysql\\_xdevapi\\\\TableInsert](class.mysql-xdevapi-tableinsert.md) \\- Клас TableInsert\n    -   [TableInsert::\\_\\_construct](mysql-xdevapi-tableinsert.construct.md) \\- Конструктор класу TableInsert\n    -   [TableInsert::execute](mysql-xdevapi-tableinsert.execute.md)— Виконує запит на вставку\n    -   [TableInsert::values](mysql-xdevapi-tableinsert.values.md)— Додає значення вставки рядка\n-   [mysql\\_xdevapi\\\\TableSelect](class.mysql-xdevapi-tableselect.md) \\- Клас TableSelect\n    -   [TableSelect::bind](mysql-xdevapi-tableselect.bind.md)— Прив'язує параметри запиту вибірки\n    -   [TableSelect::\\_\\_construct](mysql-xdevapi-tableselect.construct.md) \\- Конструктор класу TableSelect\n    -   [TableSelect::execute](mysql-xdevapi-tableselect.execute.md)— Виконує оператор вибірки\n    -   [TableSelect::groupBy](mysql-xdevapi-tableselect.groupby.md)— Встановлює критерії угруповання вибірки\n    -   [TableSelect::having](mysql-xdevapi-tableselect.having.md)— Встановлює вибір із умовою\n    -   [TableSelect::limit](mysql-xdevapi-tableselect.limit.md)— Обмежує вибрані рядки\n    -   [TableSelect::lockExclusive](mysql-xdevapi-tableselect.lockexclusive.md) \\- Виконує EXCLUSIVE LOCK\n    -   [TableSelect::lockShared](mysql-xdevapi-tableselect.lockshared.md) \\- Виконує SHARED LOCK\n    -   [TableSelect::offset](mysql-xdevapi-tableselect.offset.md) \\- Встановлює межу зміщення\n    -   [TableSelect::orderby](mysql-xdevapi-tableselect.orderby.md)— Встановлює критерії сортування вибірки\n    -   [TableSelect::where](mysql-xdevapi-tableselect.where.md)— Встановлює умову пошуку вибірки\n-   [mysql\\_xdevapi\\\\TableUpdate](class.mysql-xdevapi-tableupdate.md) \\- Клас TableUpdate\n    -   [TableUpdate::bind](mysql-xdevapi-tableupdate.bind.md)— Прив'язує параметри запиту на оновлення\n    -   [TableUpdate::\\_\\_construct](mysql-xdevapi-tableupdate.construct.md) \\- Конструктор класу TableUpdate\n    -   [TableUpdate::execute](mysql-xdevapi-tableupdate.execute.md)— Виконує запит на оновлення\n    -   [TableUpdate::limit](mysql-xdevapi-tableupdate.limit.md) \\- Обмежує кількість рядків для оновлення\n    -   [TableUpdate::orderby](mysql-xdevapi-tableupdate.orderby.md) \\- Встановлює критерії сортування\n    -   [TableUpdate::set](mysql-xdevapi-tableupdate.set.md)— Додає поле для оновлення\n    -   [TableUpdate::where](mysql-xdevapi-tableupdate.where.md) \\- Встановлює фільтр пошуку\n-   [mysql\\_xdevapi\\\\Warning](class.mysql-xdevapi-warning.md) \\- Клас Warning\n    -   [Warning::\\_\\_construct](mysql-xdevapi-warning.construct.md) \\- Конструктор класу Warning\n","title":"Mysql\\_xdevapi","contentType":2,"navigation":[{"changelog.mysqli.md":"\" Список змін"},{"intro.mysql-xdevapi.md":"Вступ \""},{"index.md":"PHP Manual"},{"set.mysqlinfo.md":"MySQL"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"book.mysql-xdevapi.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>DateTimeImmutable::createFromFormat</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="datetimeimmutable.construct.md" class="mx-4">« DateTimeImmutable::\_\_construct</a><a href="datetimeimmutable.createfrominterface.md" class="mx-4">DateTimeImmutable::createFromInterface »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="class.datetimeimmutable.md" class="mx-4">DateTimeImmutable</a></div><article class="markdown_markdown__yfc8y"><div><h1>DateTimeImmutable::createFromFormat</h1>
+<h1>date_create_immutable_from_format</h1>
+<p>(PHP 5 &gt;= 5.5.0, PHP 7, PHP 8)</p>
+<p>DateTimeImmutable::createFromFormat -- date_create_immutable_from_format — Розбирає рядок з датою згідно з вказаним форматом</p>
+<h3>Опис</h3>
+<p>Об&#x27;єктно-орієнтований стиль</p>
+<pre><code class="hljs language-methodsynopsis">public static DateTimeImmutable::createFromFormat(string $format, string $datetime, ?DateTimeZone $timezone = null): DateTimeImmutable|false
+</code></pre>
+<p>Процедурний стиль</p>
+<pre><code class="hljs language-methodsynopsis">date_create_immutable_from_format(string $format, string $datetime, ?DateTimeZone $timezone = null): DateTimeImmutable|false
+</code></pre>
+<p>Повертає новий об&#x27;єкт DateTimeImmutable, що представляє дату та час, вказані рядком у параметрі <code>datetime</code>, які були відформатовані у заданому форматі <code>format</code></p>
+<h3>Список параметрів</h3>
+<p><code>format</code></p>
+<p>Формат дати та часу у вигляді рядка (string), якому відповідає значення другого аргументу функції. Список варіантів форматування наведено нижче. Найчастіше, при форматуванні використовуються самі символи, як і функції <a href="function.date.md">date()</a></p>
+<p>Усі поля ініціалізуються з поточною датою/часом. У більшості випадків необхідно їх &quot;обнулити&quot; (епоха Unix, <code>1970-01-01 00:00:00 UTC</code>). Для цього потрібно додати символ <code>!</code> як перший символ параметра <code>format</code>или в качестве последнего. Для получения дополнительной информации смотрите документацию по каждому символу ниже.</p>
+<p>Формат розбирається ліворуч, це означає, що в деяких ситуаціях порядок присутності символів формату впливає на результат. В разі <code>z</code> (День року) потрібно, щоб рік уже був розібраний, наприклад, за допомогою символів <code>Y</code>или<code>y</code></p>
+<p>Символи для аналізу чисел допускають широкий діапазон значень, що виходить за межі логічного діапазону. Наприклад, <code>d</code>(день месяца) принимает значения в диапазоне от<code>00</code>до<code>99</code>. Єдиним обмеженням є кількість цифр. Коли задаються значення, що виходять за межі діапазону, спрацьовує механізм переповнення аналізатора дати/часу. Нижче показано кілька прикладів такої поведінки.</p>
+<p>Це означає, що розібрані дані для літери формату є жадібними і зчитуватимуться до кількості цифр, що допускається форматом. Також це означає, що у рядку <code>datetime</code> не вистачає символів для наступних символів формату. Приклад на цій сторінці також ілюструє проблему.</p>
+<p><strong>Список можливих символів для складання рядка <code>format</code></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Символ в строке <code>format</code></th><th>Опис</th><th>Возможные значения</th></tr></thead><tbody><tr><td><em>День</em></td><td>---</td><td>---</td></tr><tr><td><code>d</code>и<code>j</code></td><td>День місяця, 2 цифри з нулем на початку чи без нього</td><td>Від <code>01</code>до<code>31</code> або від до<code>31</code>. . (допускається використання двозначних чисел, що перевищують кількість днів на місяці, у цьому випадку різниця переноситься на наступний місяць. Наприклад, використання числа 33 із січнем означає 2 лютого)</td></tr><tr><td><code>D</code>и<code>l</code></td><td>Текстова вистава дня тижня</td><td>Від <code>Mon</code>до<code>Sun</code> або від <code>Sunday</code>до<code>Saturday</code>. . Якщо задане ім&#x27;я дня відрізняється від імені дня, що належить розібраній даті (або за замовчуванням), то відбувається переповнення до <em>наступною</em> дати із заданим ім&#x27;ям дня. Дивіться нижче приклади для пояснення.</td></tr><tr><td><code>S</code></td><td>Суфікс для числа в англійській нумерації, 2 літери. Ці літери будуть пропущені при розборі рядка.</td><td><code>st</code><code>nd</code><code>rd</code>или<code>th</code></td></tr><tr><td><code>z</code></td><td>Номер з початку року (починаючи з 0); має передувати <code>Y</code>или<code>y</code></td><td>C по<code>365</code>. . (Допускаються тризначні числа, що перевищують числа на рік, у цьому випадку різниця переноситься на наступний рік. Наприклад, використання числа 366 з 2022 роком означає 2 січня 2023 року)</td></tr><tr><td><em>Місяць</em></td><td>---</td><td>---</td></tr><tr><td><code>F</code>и<code>M</code></td><td>Текстова вистава місяця, наприклад January або Sept</td><td>С<code>January</code>по<code>December</code> або з <code>Jan</code>по<code>Dec</code></td></tr><tr><td><code>m</code>и<code>n</code></td><td>Числове уявлення місяця з першим нулем або без нього</td><td>С<code>01</code>по<code>12</code> або з по<code>12</code>. . (Допускаються двоцифрові числа більше 12, у цьому випадку різниця переноситься на наступний рік. Наприклад, використання числа 13 означає січень наступного року)</td></tr><tr><td><em>Рік</em></td><td>---</td><td>---</td></tr><tr><td><code>X</code>и<code>x</code></td><td>Повне числове подання року, до 19 цифр, з префіксом <code>+</code> или<code>-</code></td><td>Приклади: <code>0055</code><code>787</code><code>1999</code><code>-2003</code><code>+10191</code></td></tr><tr><td><code>Y</code></td><td>Повне числове уявлення року, до 4 цифр.</td><td>Приклади: <code>0055</code><code>787</code><code>1999</code><code>2003</code></td></tr><tr><td><code>y</code></td><td>2 цифри у поданні року (в діапазоні 1970-2069 включно)</td><td>Приклади: <code>99</code>или<code>03</code> (буде розшифровано як <code>1999</code>и<code>2003</code> відповідно)</td></tr><tr><td><em>Час</em></td><td>---</td><td>---</td></tr><tr><td><code>a</code>и<code>A</code></td><td>До полудня та Після полудня</td><td><code>am</code>или<code>pm</code></td></tr><tr><td><code>g</code>и<code>h</code></td><td>12-ти годинний формат часу з першим нулем або без нього</td><td>С по<code>12</code> або з <code>01</code>по<code>12</code>. . (Допускається використання двозначних чисел більше 12, у цьому випадку різниця переноситься на наступний день. Наприклад, використання числа <code>14</code> означає <code>02</code> у наступному періоді AM/PM)</td></tr><tr><td><code>G</code>и<code>H</code></td><td>24-х годинний формат часу з нулем на початку або без нього</td><td>С по<code>23</code> або з <code>00</code>по<code>23</code> (Допускаються двоцифрові числа більше 24, у цьому випадку різниця переноситься на наступний день. Наприклад, використання <code>26</code> означає <code>02:00</code> наступного дня)</td></tr><tr><td><code>i</code></td><td>Хвилини з нулем на початку</td><td>С<code>00</code>по<code>59</code>. . (допускається використання двозначних чисел більше 59, у цьому випадку різниця переноситься на наступну годину. Наприклад, використання числа <code>66</code> означає <code>:06</code> наступної години)</td></tr><tr><td><code>s</code></td><td>Секунди з нулем на початку</td><td>Від <code>00</code>до<code>59</code>. . (Допускаються двоцифрові числа більше 59, у цьому випадку різниця переноситься на наступну хвилину. Наприклад, використання числа <code>90</code> означає <code>:30</code> наступної хвилини)</td></tr><tr><td><code>v</code></td><td>Дріб у мілісекундах (до 3 цифр)</td><td>Приклади: <code>12</code><code>0.12</code> секунд), <code>345</code><code>0.345</code> секунд)</td></tr><tr><td><code>u</code></td><td>Дріб у мікросекундах (до 6 цифр)</td><td>Приклади: <code>45</code><code>0.45</code> секунд), <code>654321</code><code>0.654321</code> секунд)</td></tr><tr><td><em>Часовий пояс</em></td><td>---</td><td>---</td></tr><tr><td><code>e</code><code>O</code><code>P</code>и<code>T</code></td><td>Ідентифікатор часового поясу, або різниця в годиннику щодо UTC, або різниця щодо UTC з двокрапкою між годинником і хвилинами, або абревіатура часового поясу</td><td>Приклади: <code>UTC</code><code>GMT</code><code>Atlantic/Azores</code>или<code>+0200</code>или<code>+02:00</code>или<code>EST</code><code>MDT</code></td></tr><tr><td><em>Дата/Час повністю</em></td><td>---</td><td>---</td></tr><tr><td><code>U</code></td><td>Кількість секунд від початку Епохи Unix (January 1 1970 00:00:00 GMT)</td><td>Приклад: <code>1292177455</code></td></tr><tr><td><em>Пробіл та Розділювачі</em></td><td>---</td><td>---</td></tr><tr><td>(пробіл)</td><td>Нуль або кілька символів пробілу, табуляції, нерозривної пробілу NBSP (U+A0) або вузької нерозривної пробілу NNBSP (U+202F)</td><td>Приклад: <code>&quot;\t&quot;</code><code>&quot; &quot;</code></td></tr><tr><td><code>#</code></td><td>Один із наступних символів: <code>:</code><code>,</code><code>-</code> или<code>) .</code></td><td>Приклад:</td></tr><tr><td><code>:</code><code>,</code><code>-</code> или<code>) .</code></td><td>Розділювач символ.</td><td>Приклад: <code>-</code></td></tr><tr><td><code>?</code></td><td>Один випадковий (будь-який) символ</td><td>Приклад: <code>^</code> (Будьте уважні: у UTF-8 кодуванні вам може знадобитися більше одного <code>?</code> тому що там один символ може займати більше одного байта. У таких випадках може допомогти використання <code>*</code></td></tr><tr><td><code>*</code></td><td>Будь-яка кількість будь-яких символів до наступного роздільника</td><td>Приклад: <code>*</code>в<code>Y-*-d</code> для рядка <code>2009-aWord-08</code> буде відповідати <code>aWord</code></td></tr><tr><td><code>!</code></td><td>Скидає всі поля (рік, місяць, день, година, хвилина, секунда та часовий пояс) до нульових значень ( для години, хвилини, секунди, для місяця та дня, <code>1970</code> для року та <code>UTC</code> для інформації про часовий пояс).</td><td>Без <code>!</code> всі поля відповідатимуть поточному часу.</td></tr><tr><td>`</td><td>`</td><td>Скидає значення незаданих полів (рік, місяць, день, година, хвилина, секунда, часовий пояс) до нульових значень.</td></tr><tr><td><code>+</code></td><td>Якщо заданий цей специфікатор, дані, що завершують рядок (нуль байт наприклад) не викликатимуть помилку, тільки попередження</td><td>Используйте<a href="datetime.getlasterrors.md">DateTime::getLastErrors()</a> для визначення, чи були у рядку завершальні символи.</td></tr></tbody></table>
+<p>Наявність у рядку формату символів, що не розпізнаються, відсутніх у списку вище, призведе до помилки розбору рядка. У цьому випадку повідомлення про помилку буде додано до структури, що повертається. Отримати це повідомлення можна за допомогою функції <a href="datetime.getlasterrors.md">DateTime::getLastErrors()</a></p>
+<p>Для вставки в<code>format</code> літерний символ, ви повинні екранувати його за допомогою зворотного слєша(<code>\</code></p>
+<p>Якщо <code>format</code> не містить символ <code>!</code>, то значення полів, не заданих у рядку формату, будуть встановлені відповідно до поточного часу.</p>
+<p>Якщо <code>format</code> містить символ <code>!</code>, то значення полів, не заданих у рядку формату (як і значення полів зліва від <code>!</code>) будуть встановлені відповідно до значень полів початку Епохи Unix.</p>
+<p>Якщо будь-який символ часу розібраний, всі інші поля, пов&#x27;язані з часом, встановлюються в &quot;0&quot;, якщо вони також не розібрані.</p>
+<p>Початок епохи Unix 1970-01-01 00:00:00 UTC.</p>
+<p><code>datetime</code></p>
+<p>Рядок, що представляє час.</p>
+<p><code>timezone</code></p>
+<p>Об&#x27;єкт класу <a href="class.datetimezone.md">DateTimeZone</a>, що представляє очікуваний часовий пояс.</p>
+<p>Якщо <code>timezone</code>не указан или**<code>null</code>**и<code>datetime</code> не містить часовий пояс, то буде використано поточний часовий пояс.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Параметр<code>timezone</code> і поточний часовий пояс буде проігноровано, якщо параметр <code>datetime</code> також містить мітку часу UNIX (тобто timestamp виду <code>946684800</code>) або зазначений часовий пояс (тобто <code>2010-01-28T15:00:00+02:00</code></p>
+</blockquote>
+<h3>Значення, що повертаються</h3>
+<p>Повертає новий екземпляр DateTimeImmutable або **<code>false</code>**в случае возникновения ошибки.</p>
+<h3>Помилки</h3>
+<p>Функція викидає <a href="class.valueerror.md">ValueError</a>, якщо параметр <code>datetime</code> містить нульові байти.</p>
+<h3>список змін</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>8.2.9</td><td>Специфікатор (пробіл) також підтримує символи нерозривної пробілу NBSP (U+A0) і вузької нерозривної пробілу NNBSP (U+202F).</td></tr><tr><td>8.2.0</td><td>Додані специфікатори <code>X</code>и<code>x</code>параметру<code>format</code></td></tr><tr><td>8.0.21, 8.1.8, 8.2.0</td><td>Тепер, коли у параметр <code>datetime</code> передаються нульові байти, викидається виняток <a href="class.valueerror.md">ValueError</a>, Раніше така ситуація ігнорувалась.</td></tr><tr><td>7.3.0</td><td>Доданий специфікатор <code>v</code>параметру<code>format</code></td></tr></tbody></table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання</strong> DateTimeImmutable::createFromFormat()****</p>
+<p>Об&#x27;єктно-орієнтований стиль</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:90px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p><strong>Приклад #2 Використання певних констант формату за допомогою <strong>DateTimeImmutable::createFromFormat()</strong></strong></p>
+<p>Об&#x27;єктно-орієнтований стиль</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:90px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p><a href="class.datetimeinterface.md#datetimeinterface.constants.types">Константи форматування</a>, що використовуються в даному прикладі, складаються з рядка символів для <a href="datetime.format.md">форматування</a> об&#x27;єкта <a href="class.datetimeimmutable.md">DateTimeImmutable</a>. У більшості випадків ці літери збігаються з тими самими елементами інформації про дату/час, які визначені в параметрах вище, але вони, як правило, більш м&#x27;які.</p>
+<p><strong>Приклад #3 Тонкощі <strong>DateTimeImmutable::createFromFormat()</strong></strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:432px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Висновок наведеного прикладу буде схожим на:</p>
+<pre><code class="hljs language-yaml"><span class="hljs-string">Текущее</span> <span class="hljs-string">время:</span> <span class="hljs-number">2022-06-02 15:50:46</span>
+<span class="hljs-string">Формат:</span> <span class="hljs-string">Y-m-d;</span> <span class="hljs-number">2009-02-15 15:50:46</span>
+<span class="hljs-string">Формат:</span> <span class="hljs-string">Y-m-d</span> <span class="hljs-string">H:i:s;</span> <span class="hljs-number">2009-02-15 15:16:17</span>
+<span class="hljs-string">Формат:</span> <span class="hljs-string">Y-m-!d</span> <span class="hljs-string">H:i:s;</span> <span class="hljs-number">1970-01-15 15:16:17</span>
+<span class="hljs-string">Формат:</span> <span class="hljs-type">!d;</span> <span class="hljs-number">1970-01-15 00:00:00</span>
+<span class="hljs-string">Формат:</span> <span class="hljs-string">i;</span> <span class="hljs-number">2022-06-02 00:15:00</span>
+</code></pre>
+<p><strong>Приклад #4 Форматування рядка за допомогою літеральних символів</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:72px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Висновок наведеного прикладу буде схожим на:</p>
+<pre><code class="hljs language-makefile"><span class="hljs-section">23:15:03</span>
+</code></pre>
+<p><strong>Приклад #5 Поведінка при переповненні</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:72px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Висновок наведеного прикладу буде схожим на:</p>
+<pre><code class="hljs language-yaml"><span class="hljs-string">Sat,</span> <span class="hljs-number">04</span> <span class="hljs-string">Jun</span> <span class="hljs-number">2022 17:01:37</span> <span class="hljs-string">+0000</span>
+</code></pre>
+<p>Хоча результат виглядає дивно, він правильний, тому що трапляються такі переповнення:</p>
+<ol>
+<li><code>97</code>секунд перевалюють за хвилину, залишаючи<code>37</code>секунд.</li>
+<li><code>61</code>хвилин перевалює за годину, залишаючи хвилину.</li>
+<li><code>35</code>днів перевалюють за місяць, залишаючи <code>4</code>дня. Кількість днів залежить від місяця, тому що не в кожному місяці однакова кількість днів.</li>
+<li><code>18</code>місяців перевалюють за рік, залишаючи<code>6</code>місяців.</li>
+</ol>
+<p><strong>Приклад #6 Поведінка імені переповненого дня</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:90px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Висновок наведеного прикладу буде схожим на:</p>
+<pre><code class="hljs language-yaml"><span class="hljs-string">Mon,</span> <span class="hljs-number">10</span> <span class="hljs-string">Aug</span> <span class="hljs-number">2020 01:00:00</span> <span class="hljs-string">+0000</span>
+</code></pre>
+<p>Хоча результат виглядає дивно, він правильний, тому що трапляються такі переповнення:</p>
+<ol>
+<li><code>3 Aug 2020 25:00:00</code>перевалює за<code>(Tue) 4 Aug 2020 01:00</code></li>
+<li>Застосовується<code>Mon</code>, що перекладає дату на<code>Mon, 10 Aug 2020 01:00:00</code>. Пояснення щодо ключових слів, таких як<code>Mon</code>, описано у розділі відносні формати.</li>
+</ol>
+<p>Для виявлення переповнень у датах можна використовувати метод <a href="datetimeimmutable.getlasterrors.md">DateTimeImmutable::getLastErrors()</a>, який включатиме попередження, якщо відбулося переповнення.</p>
+<p><strong>Приклад #7 Виявлення переповнення дат</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:126px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Висновок наведеного прикладу буде схожим на:</p>
+<pre><code class="hljs language-scss">Sat, <span class="hljs-number">04</span> Jun <span class="hljs-number">2022</span> <span class="hljs-number">17</span>:<span class="hljs-number">01</span>:<span class="hljs-number">37</span> +<span class="hljs-number">0000</span>
+
+<span class="hljs-built_in">array</span>(<span class="hljs-number">4</span>) {
+  &#x27;warning_count&#x27; =&gt;
+  <span class="hljs-built_in">int</span>(<span class="hljs-number">2</span>)
+  &#x27;warnings&#x27; =&gt;
+  <span class="hljs-built_in">array</span>(<span class="hljs-number">1</span>) {
+    <span class="hljs-selector-attr">[19]</span> =&gt;
+    <span class="hljs-built_in">string</span>(<span class="hljs-number">27</span>) &quot;The parsed date was invalid&quot;
+  }
+  &#x27;error_count&#x27; =&gt;
+  <span class="hljs-built_in">int</span>(<span class="hljs-number">0</span>)
+  &#x27;errors&#x27; =&gt;
+  <span class="hljs-built_in">array</span>(<span class="hljs-number">0</span>) {
+  }
+}
+</code></pre>
+<p><strong>Приклад #8 Жадібна поведінка при розборі</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:72px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Висновок наведеного прикладу буде схожим на:</p>
+<pre><code class="hljs language-css">Array
+(
+    <span class="hljs-selector-attr">[year]</span> =&gt;
+    <span class="hljs-selector-attr">[month]</span> =&gt;
+    <span class="hljs-selector-attr">[day]</span> =&gt;
+    <span class="hljs-selector-attr">[hour]</span> =&gt; <span class="hljs-number">60</span>
+    <span class="hljs-selector-attr">[minute]</span> =&gt; <span class="hljs-number">10</span>
+    <span class="hljs-selector-attr">[second]</span> =&gt; <span class="hljs-number">0</span>
+    <span class="hljs-selector-attr">[fraction]</span> =&gt; <span class="hljs-number">0</span>
+    <span class="hljs-selector-attr">[warning_count]</span> =&gt; <span class="hljs-number">1</span>
+    <span class="hljs-selector-attr">[warnings]</span> =&gt; Array
+        (
+            <span class="hljs-selector-attr">[5]</span> =&gt; The parsed <span class="hljs-selector-tag">time</span> was invalid
+        )
+
+    <span class="hljs-selector-attr">[error_count]</span> =&gt; <span class="hljs-number">1</span>
+    <span class="hljs-selector-attr">[errors]</span> =&gt; Array
+        (
+            <span class="hljs-selector-attr">[4]</span> =&gt; <span class="hljs-selector-tag">A</span> two digit second could not be found
+        )
+
+    <span class="hljs-selector-attr">[is_localtime]</span> =&gt;
+)
+</code></pre>
+<p>Формат<code>G</code> призначений для розбору 24-годинного годинника з провідним нулем або без нього. Для цього необхідно розібрати 1 чи 2 цифри. Так як є дві наступні цифри, він жадібно зчитує це як <code>60</code></p>
+<p>Наступні символи формату <code>i</code>и<code>s</code> вимагають двох цифр. Це означає, що <code>10</code> передається як хвилина (<code>i</code>) і що потім залишається недостатньо цифр для розбору секунд (<code>s</code></p>
+<p>На цю проблему вказує масив <code>errors</code></p>
+<p>Крім того, година <code>60</code>находится вне диапазона -<code>24</code>, что добавляет предупреждение в массив<code>warnings</code> про те, що час є недійсним.</p>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="datetimeimmutable.construct.md">DateTimeImmutable::__construct()</a> - Повертає новий об&#x27;єкт DateTimeImmutable</li>
+<li><a href="datetimeimmutable.getlasterrors.md">DateTimeImmutable::getLastErrors()</a> - Повертає попередження та помилки</li>
+<li><a href="function.checkdate.md">checkdate()</a> - Перевіряє коректність дати за григоріанським календарем</li>
+<li><a href="function.strptime.md">strptime()</a> - Розбирає рядок дати/часу, згенерований функцією strftime</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/datetimeimmutable.createfromformat.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/datetimeimmutable.createfromformat.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"datetimeimmutable.createfromformat.md","content":"# DateTimeImmutable::createFromFormat\n\n# date\\_create\\_immutable\\_from\\_format\n\n(PHP 5 \u003e= 5.5.0, PHP 7, PHP 8)\n\nDateTimeImmutable::createFromFormat -- date\\_create\\_immutable\\_from\\_format — Розбирає рядок з датою згідно з вказаним форматом\n\n### Опис\n\nОб'єктно-орієнтований стиль\n\n```methodsynopsis\npublic static DateTimeImmutable::createFromFormat(string $format, string $datetime, ?DateTimeZone $timezone = null): DateTimeImmutable|false\n```\n\nПроцедурний стиль\n\n```methodsynopsis\ndate_create_immutable_from_format(string $format, string $datetime, ?DateTimeZone $timezone = null): DateTimeImmutable|false\n```\n\nПовертає новий об'єкт DateTimeImmutable, що представляє дату та час, вказані рядком у параметрі `datetime`, які були відформатовані у заданому форматі `format`\n\n### Список параметрів\n\n`format`\n\nФормат дати та часу у вигляді рядка (string), якому відповідає значення другого аргументу функції. Список варіантів форматування наведено нижче. Найчастіше, при форматуванні використовуються самі символи, як і функції [date()](function.date.md)\n\nУсі поля ініціалізуються з поточною датою/часом. У більшості випадків необхідно їх \"обнулити\" (епоха Unix, `1970-01-01 00:00:00 UTC`). Для цього потрібно додати символ `!` як перший символ параметра `format`или в качестве последнего. Для получения дополнительной информации смотрите документацию по каждому символу ниже.\n\nФормат розбирається ліворуч, це означає, що в деяких ситуаціях порядок присутності символів формату впливає на результат. В разі `z` (День року) потрібно, щоб рік уже був розібраний, наприклад, за допомогою символів `Y`или`y`\n\nСимволи для аналізу чисел допускають широкий діапазон значень, що виходить за межі логічного діапазону. Наприклад, `d`(день месяца) принимает значения в диапазоне от`00`до`99`. Єдиним обмеженням є кількість цифр. Коли задаються значення, що виходять за межі діапазону, спрацьовує механізм переповнення аналізатора дати/часу. Нижче показано кілька прикладів такої поведінки.\n\nЦе означає, що розібрані дані для літери формату є жадібними і зчитуватимуться до кількості цифр, що допускається форматом. Також це означає, що у рядку `datetime` не вистачає символів для наступних символів формату. Приклад на цій сторінці також ілюструє проблему.\n\n**Список можливих символів для складання рядка `format`**\n\n| Символ в строке `format` | Опис | Возможные значения |\n| --- | --- | --- |\n| *День* | \\--- | \\--- |\n| `d`и`j` | День місяця, 2 цифри з нулем на початку чи без нього | Від `01`до`31` або від до`31`. . (допускається використання двозначних чисел, що перевищують кількість днів на місяці, у цьому випадку різниця переноситься на наступний місяць. Наприклад, використання числа 33 із січнем означає 2 лютого) |\n| `D`и`l` | Текстова вистава дня тижня | Від `Mon`до`Sun` або від `Sunday`до`Saturday`. . Якщо задане ім'я дня відрізняється від імені дня, що належить розібраній даті (або за замовчуванням), то відбувається переповнення до *наступною* дати із заданим ім'ям дня. Дивіться нижче приклади для пояснення. |\n| `S` | Суфікс для числа в англійській нумерації, 2 літери. Ці літери будуть пропущені при розборі рядка. | `st` `nd` `rd`или`th` |\n| `z` | Номер з початку року (починаючи з 0); має передувати `Y`или`y` | C по`365`. . (Допускаються тризначні числа, що перевищують числа на рік, у цьому випадку різниця переноситься на наступний рік. Наприклад, використання числа 366 з 2022 роком означає 2 січня 2023 року) |\n| *Місяць* | \\--- | \\--- |\n| `F`и`M` | Текстова вистава місяця, наприклад January або Sept | С`January`по`December` або з `Jan`по`Dec` |\n| `m`и`n` | Числове уявлення місяця з першим нулем або без нього | С`01`по`12` або з по`12`. . (Допускаються двоцифрові числа більше 12, у цьому випадку різниця переноситься на наступний рік. Наприклад, використання числа 13 означає січень наступного року) |\n| *Рік* | \\--- | \\--- |\n| `X`и`x` | Повне числове подання року, до 19 цифр, з префіксом `+` или`-` | Приклади: `0055` `787` `1999` `-2003` `+10191` |\n| `Y` | Повне числове уявлення року, до 4 цифр. | Приклади: `0055` `787` `1999` `2003` |\n| `y` | 2 цифри у поданні року (в діапазоні 1970-2069 включно) | Приклади: `99`или`03` (буде розшифровано як `1999`и`2003` відповідно) |\n| *Час* | \\--- | \\--- |\n| `a`и`A` | До полудня та Після полудня | `am`или`pm` |\n| `g`и`h` | 12-ти годинний формат часу з першим нулем або без нього | С по`12` або з `01`по`12`. . (Допускається використання двозначних чисел більше 12, у цьому випадку різниця переноситься на наступний день. Наприклад, використання числа `14` означає `02` у наступному періоді AM/PM) |\n| `G`и`H` | 24-х годинний формат часу з нулем на початку або без нього | С по`23` або з `00`по`23` (Допускаються двоцифрові числа більше 24, у цьому випадку різниця переноситься на наступний день. Наприклад, використання `26` означає `02:00` наступного дня) |\n| `i` | Хвилини з нулем на початку | С`00`по`59`. . (допускається використання двозначних чисел більше 59, у цьому випадку різниця переноситься на наступну годину. Наприклад, використання числа `66` означає `:06` наступної години) |\n| `s` | Секунди з нулем на початку | Від `00`до`59`. . (Допускаються двоцифрові числа більше 59, у цьому випадку різниця переноситься на наступну хвилину. Наприклад, використання числа `90` означає `:30` наступної хвилини) |\n| `v` | Дріб у мілісекундах (до 3 цифр) | Приклади: `12` `0.12` секунд), `345` `0.345` секунд) |\n| `u` | Дріб у мікросекундах (до 6 цифр) | Приклади: `45` `0.45` секунд), `654321` `0.654321` секунд) |\n| *Часовий пояс* | \\--- | \\--- |\n| `e` `O` `P`и`T` | Ідентифікатор часового поясу, або різниця в годиннику щодо UTC, або різниця щодо UTC з двокрапкою між годинником і хвилинами, або абревіатура часового поясу | Приклади: `UTC` `GMT` `Atlantic/Azores`или`+0200`или`+02:00`или`EST` `MDT` |\n| *Дата/Час повністю* | \\--- | \\--- |\n| `U` | Кількість секунд від початку Епохи Unix (January 1 1970 00:00:00 GMT) | Приклад: `1292177455` |\n| *Пробіл та Розділювачі* | \\--- | \\--- |\n| (пробіл) | Нуль або кілька символів пробілу, табуляції, нерозривної пробілу NBSP (U+A0) або вузької нерозривної пробілу NNBSP (U+202F) | Приклад: `\"\\t\"` `\" \"` |\n| `#` | Один із наступних символів: `:` `,` `-` или`) .` | Приклад: |\n| `:` `,` `-` или`) .` | Розділювач символ. | Приклад: `-` |\n| `?` | Один випадковий (будь-який) символ | Приклад: `^` (Будьте уважні: у UTF-8 кодуванні вам може знадобитися більше одного `?` тому що там один символ може займати більше одного байта. У таких випадках може допомогти використання `*` |\n| `*` | Будь-яка кількість будь-яких символів до наступного роздільника | Приклад: `*`в`Y-*-d` для рядка `2009-aWord-08` буде відповідати `aWord` |\n| `!` | Скидає всі поля (рік, місяць, день, година, хвилина, секунда та часовий пояс) до нульових значень ( для години, хвилини, секунди, для місяця та дня, `1970` для року та `UTC` для інформації про часовий пояс). | Без `!` всі поля відповідатимуть поточному часу. |\n| \\` | \\` | Скидає значення незаданих полів (рік, місяць, день, година, хвилина, секунда, часовий пояс) до нульових значень. |\n| `+` | Якщо заданий цей специфікатор, дані, що завершують рядок (нуль байт наприклад) не викликатимуть помилку, тільки попередження | Используйте[DateTime::getLastErrors()](datetime.getlasterrors.md) для визначення, чи були у рядку завершальні символи. |\n\nНаявність у рядку формату символів, що не розпізнаються, відсутніх у списку вище, призведе до помилки розбору рядка. У цьому випадку повідомлення про помилку буде додано до структури, що повертається. Отримати це повідомлення можна за допомогою функції [DateTime::getLastErrors()](datetime.getlasterrors.md)\n\nДля вставки в`format` літерний символ, ви повинні екранувати його за допомогою зворотного слєша(`\\`\n\nЯкщо `format` не містить символ `!`, то значення полів, не заданих у рядку формату, будуть встановлені відповідно до поточного часу.\n\nЯкщо `format` містить символ `!`, то значення полів, не заданих у рядку формату (як і значення полів зліва від `!`) будуть встановлені відповідно до значень полів початку Епохи Unix.\n\nЯкщо будь-який символ часу розібраний, всі інші поля, пов'язані з часом, встановлюються в \"0\", якщо вони також не розібрані.\n\nПочаток епохи Unix 1970-01-01 00:00:00 UTC.\n\n`datetime`\n\nРядок, що представляє час.\n\n`timezone`\n\nОб'єкт класу [DateTimeZone](class.datetimezone.md), що представляє очікуваний часовий пояс.\n\nЯкщо `timezone`не указан или\\*\\*`null`\\*\\*и`datetime` не містить часовий пояс, то буде використано поточний часовий пояс.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Параметр`timezone` і поточний часовий пояс буде проігноровано, якщо параметр `datetime` також містить мітку часу UNIX (тобто timestamp виду `946684800`) або зазначений часовий пояс (тобто `2010-01-28T15:00:00+02:00`\n\n### Значення, що повертаються\n\nПовертає новий екземпляр DateTimeImmutable або \\*\\*`false`\\*\\*в случае возникновения ошибки.\n\n### Помилки\n\nФункція викидає [ValueError](class.valueerror.md), якщо параметр `datetime` містить нульові байти.\n\n### список змін\n\n| Версия | Опис |\n| --- | --- |\n| 8.2.9 | Специфікатор (пробіл) також підтримує символи нерозривної пробілу NBSP (U+A0) і вузької нерозривної пробілу NNBSP (U+202F). |\n| 8.2.0 | Додані специфікатори `X`и`x`параметру`format` |\n| 8.0.21, 8.1.8, 8.2.0 | Тепер, коли у параметр `datetime` передаються нульові байти, викидається виняток [ValueError](class.valueerror.md), Раніше така ситуація ігнорувалась. |\n| 7.3.0 | Доданий специфікатор `v`параметру`format` |\n\n### Приклади\n\n**Приклад #1 Приклад використання** DateTimeImmutable::createFromFormat()\\*\\*\\*\\*\n\nОб'єктно-орієнтований стиль\n\n```php\n\u003c?php\n$date = DateTimeImmutable::createFromFormat('j-M-Y', '15-Feb-2009');\necho $date-\u003eformat('Y-m-d');\n?\u003e\n```\n\n**Приклад #2 Використання певних констант формату за допомогою **DateTimeImmutable::createFromFormat()****\n\nОб'єктно-орієнтований стиль\n\n```php\n\u003c?php\n$date = DateTimeImmutable::createFromFormat(DateTimeInterface::ISO8601, '2004-02-12T15:19:21+00:00');\n$date = DateTimeImmutable::createFromFormat(DateTimeInterface::RFC3339_EXTENDED, '2013-10-14T09:00:00.000+02:00');\n?\u003e\n```\n\n[Константи форматування](class.datetimeinterface.md#datetimeinterface.constants.types), що використовуються в даному прикладі, складаються з рядка символів для [форматування](datetime.format.md) об'єкта [DateTimeImmutable](class.datetimeimmutable.md). У більшості випадків ці літери збігаються з тими самими елементами інформації про дату/час, які визначені в параметрах вище, але вони, як правило, більш м'які.\n\n**Приклад #3 Тонкощі **DateTimeImmutable::createFromFormat()****\n\n```php\n\u003c?php\necho 'Текущее время: ' . date('Y-m-d H:i:s') . \"\\n\";\n\n$format = 'Y-m-d';\n$date = DateTimeImmutable::createFromFormat($format, '2009-02-15');\necho \"Формат: $format; \" . $date-\u003eformat('Y-m-d H:i:s') . \"\\n\";\n\n$format = 'Y-m-d H:i:s';\n$date = DateTimeImmutable::createFromFormat($format, '2009-02-15 15:16:17');\necho \"Формат: $format; \" . $date-\u003eformat('Y-m-d H:i:s') . \"\\n\";\n\n$format = 'Y-m-!d H:i:s';\n$date = DateTimeImmutable::createFromFormat($format, '2009-02-15 15:16:17');\necho \"Формат: $format; \" . $date-\u003eformat('Y-m-d H:i:s') . \"\\n\";\n\n$format = '!d';\n$date = DateTimeImmutable::createFromFormat($format, '15');\necho \"Формат: $format; \" . $date-\u003eformat('Y-m-d H:i:s') . \"\\n\";\n\n$format = 'i';\n$date = DateTimeImmutable::createFromFormat($format, '15');\necho \"Формат: $format; \" . $date-\u003eformat('Y-m-d H:i:s') . \"\\n\";\n?\u003e\n```\n\nВисновок наведеного прикладу буде схожим на:\n\n```\nТекущее время: 2022-06-02 15:50:46\nФормат: Y-m-d; 2009-02-15 15:50:46\nФормат: Y-m-d H:i:s; 2009-02-15 15:16:17\nФормат: Y-m-!d H:i:s; 1970-01-15 15:16:17\nФормат: !d; 1970-01-15 00:00:00\nФормат: i; 2022-06-02 00:15:00\n```\n\n**Приклад #4 Форматування рядка за допомогою літеральних символів**\n\n```php\n\u003c?php\necho DateTimeImmutable::createFromFormat('H\\h i\\m s\\s','23h 15m 03s')-\u003eformat('H:i:s');\n?\u003e\n```\n\nВисновок наведеного прикладу буде схожим на:\n\n```\n23:15:03\n```\n\n**Приклад #5 Поведінка при переповненні**\n\n```php\n\u003c?php\necho DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2021-17-35 16:60:97')-\u003eformat(DateTimeImmutable::RFC2822);\n?\u003e\n```\n\nВисновок наведеного прикладу буде схожим на:\n\n```\nSat, 04 Jun 2022 17:01:37 +0000\n```\n\nХоча результат виглядає дивно, він правильний, тому що трапляються такі переповнення:\n\n1.  `97`секунд перевалюють за хвилину, залишаючи`37`секунд.\n2.  `61`хвилин перевалює за годину, залишаючи хвилину.\n3.  `35`днів перевалюють за місяць, залишаючи `4`дня. Кількість днів залежить від місяця, тому що не в кожному місяці однакова кількість днів.\n4.  `18`місяців перевалюють за рік, залишаючи`6`місяців.\n\n**Приклад #6 Поведінка імені переповненого дня**\n\n```php\n\u003c?php\n$d = DateTime::createFromFormat(DateTimeInterface::RFC1123, 'Mon, 3 Aug 2020 25:00:00 +0000');\necho $d-\u003eformat(DateTime::RFC1123), \"\\n\";\n?\u003e\n```\n\nВисновок наведеного прикладу буде схожим на:\n\n```\nMon, 10 Aug 2020 01:00:00 +0000\n```\n\nХоча результат виглядає дивно, він правильний, тому що трапляються такі переповнення:\n\n1.  `3 Aug 2020 25:00:00`перевалює за`(Tue) 4 Aug 2020 01:00`\n2.  Застосовується`Mon`, що перекладає дату на`Mon, 10 Aug 2020 01:00:00`. Пояснення щодо ключових слів, таких як`Mon`, описано у розділі відносні формати.\n\nДля виявлення переповнень у датах можна використовувати метод [DateTimeImmutable::getLastErrors()](datetimeimmutable.getlasterrors.md), який включатиме попередження, якщо відбулося переповнення.\n\n**Приклад #7 Виявлення переповнення дат**\n\n```php\n\u003c?php\n$d = DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2021-17-35 16:60:97');\necho $d-\u003eformat(DateTimeImmutable::RFC2822), \"\\n\\n\";\n\nvar_dump(DateTimeImmutable::GetLastErrors());\n?\u003e\n```\n\nВисновок наведеного прикладу буде схожим на:\n\n```\nSat, 04 Jun 2022 17:01:37 +0000\n\narray(4) {\n  'warning_count' =\u003e\n  int(2)\n  'warnings' =\u003e\n  array(1) {\n    [19] =\u003e\n    string(27) \"The parsed date was invalid\"\n  }\n  'error_count' =\u003e\n  int(0)\n  'errors' =\u003e\n  array(0) {\n  }\n}\n```\n\n**Приклад #8 Жадібна поведінка при розборі**\n\n```php\n\u003c?php\nprint_r(date_parse_from_format('Gis', '60101'));\n?\u003e\n```\n\nВисновок наведеного прикладу буде схожим на:\n\n```\nArray\n(\n    [year] =\u003e\n    [month] =\u003e\n    [day] =\u003e\n    [hour] =\u003e 60\n    [minute] =\u003e 10\n    [second] =\u003e 0\n    [fraction] =\u003e 0\n    [warning_count] =\u003e 1\n    [warnings] =\u003e Array\n        (\n            [5] =\u003e The parsed time was invalid\n        )\n\n    [error_count] =\u003e 1\n    [errors] =\u003e Array\n        (\n            [4] =\u003e A two digit second could not be found\n        )\n\n    [is_localtime] =\u003e\n)\n```\n\nФормат`G` призначений для розбору 24-годинного годинника з провідним нулем або без нього. Для цього необхідно розібрати 1 чи 2 цифри. Так як є дві наступні цифри, він жадібно зчитує це як `60`\n\nНаступні символи формату `i`и`s` вимагають двох цифр. Це означає, що `10` передається як хвилина (`i`) і що потім залишається недостатньо цифр для розбору секунд (`s`\n\nНа цю проблему вказує масив `errors`\n\nКрім того, година `60`находится вне диапазона -`24`, что добавляет предупреждение в массив`warnings` про те, що час є недійсним.\n\n### Дивіться також\n\n-   [DateTimeImmutable::\\_\\_construct()](datetimeimmutable.construct.md) \\- Повертає новий об'єкт DateTimeImmutable\n-   [DateTimeImmutable::getLastErrors()](datetimeimmutable.getlasterrors.md) \\- Повертає попередження та помилки\n-   [checkdate()](function.checkdate.md) \\- Перевіряє коректність дати за григоріанським календарем\n-   [strptime()](function.strptime.md) \\- Розбирає рядок дати/часу, згенерований функцією strftime\n","title":"DateTimeImmutable::createFromFormat","contentType":2,"navigation":[{"datetimeimmutable.construct.md":"« DateTimeImmutable::\\_\\_construct"},{"datetimeimmutable.createfrominterface.md":"DateTimeImmutable::createFromInterface »"},{"index.md":"PHP Manual"},{"class.datetimeimmutable.md":"DateTimeImmutable"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"datetimeimmutable.createfromformat.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

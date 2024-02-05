@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>openssl\_get\_curve\_names</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="function.openssl-get-cipher-methods.md" class="mx-4">« openssl\_get\_cipher\_methods</a><a href="function.openssl-get-md-methods.md" class="mx-4">openssl\_get\_md\_methods »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="ref.openssl.md" class="mx-4">Функції OpenSSL</a></div><article class="markdown_markdown__yfc8y"><div><h1>openssl_get_curve_names</h1>
+<p>(PHP 7 &gt;= 7.1.0, PHP 8)</p>
+<p>openssl_get_curve_names — список доступних імен кривих для ECC</p>
+<h3>Опис</h3>
+<pre><code class="hljs language-methodsynopsis">openssl_get_curve_names(): array|false
+</code></pre>
+<p>Повертає список доступних кривих імен для використання в еліптичній криптографії (ECC) для операцій з відкритим/закритим ключем. Дві найбільш стандартизовані/підтримувані криві: <em>prime256v1</em>(NIST P-256) и<em>secp384r1</em>(NIST P-384).</p>
+<p><strong>Наближені еквівалентності розмірів ключів AES, RSA, DSA та ECC</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>AES размер симметричного ключа (Биты)</th><th>Размер ключа RSA и DSA (Биты)</th><th>Размер ключа ECC (Биты)</th></tr></thead><tbody><tr><td>80</td><td>1024</td><td>160</td></tr><tr><td>112</td><td>2048</td><td>224</td></tr><tr><td>128</td><td>3072</td><td>256</td></tr><tr><td>192</td><td>7680</td><td>384</td></tr><tr><td>256</td><td>15360</td><td>512</td></tr></tbody></table>
+<p><a href="http://dx.doi.org/10.6028/NIST.SP.800-57pt1r4">» NIST рекомендує використовувати криві ECC як мінімум у 256 біт</a></p>
+<h3>Список параметрів</h3>
+<p>Ця функція не має параметрів.</p>
+<h3>Значення, що повертаються</h3>
+<p>Масив з доступними іменами кривих або **<code>false</code>**в случае возникновения ошибки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання</strong> openssl_get_curve_names()****</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:90px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Висновок наведеного прикладу буде схожим на:</p>
+<pre><code class="hljs language-csharp">Array
+(
+    [<span class="hljs-meta">0</span>] =&gt; secp112r1
+    [<span class="hljs-meta">1</span>] =&gt; secp112r2
+    [<span class="hljs-meta">2</span>] =&gt; secp128r1
+    [<span class="hljs-meta">3</span>] =&gt; secp128r2
+    [<span class="hljs-meta">4</span>] =&gt; secp160k1
+    [<span class="hljs-meta">5</span>] =&gt; secp160r1
+    [<span class="hljs-meta">6</span>] =&gt; secp160r2
+    [<span class="hljs-meta">7</span>] =&gt; secp192k1
+    [<span class="hljs-meta">8</span>] =&gt; secp224k1
+    [<span class="hljs-meta">9</span>] =&gt; secp224r1
+    [<span class="hljs-meta">10</span>] =&gt; secp256k1
+    [<span class="hljs-meta">11</span>] =&gt; secp384r1
+    [<span class="hljs-meta">12</span>] =&gt; secp521r1
+    [<span class="hljs-meta">13</span>] =&gt; prime192v1
+    [<span class="hljs-meta">14</span>] =&gt; prime192v2
+    [<span class="hljs-meta">15</span>] =&gt; prime192v3
+    [<span class="hljs-meta">16</span>] =&gt; prime239v1
+    [<span class="hljs-meta">17</span>] =&gt; prime239v2
+    [<span class="hljs-meta">18</span>] =&gt; prime239v3
+    [<span class="hljs-meta">19</span>] =&gt; prime256v1
+    [<span class="hljs-meta">20</span>] =&gt; sect113r1
+    [<span class="hljs-meta">21</span>] =&gt; sect113r2
+    [<span class="hljs-meta">22</span>] =&gt; sect131r1
+    [<span class="hljs-meta">23</span>] =&gt; sect131r2
+    [<span class="hljs-meta">24</span>] =&gt; sect163k1
+    [<span class="hljs-meta">25</span>] =&gt; sect163r1
+    [<span class="hljs-meta">26</span>] =&gt; sect163r2
+    [<span class="hljs-meta">27</span>] =&gt; sect193r1
+    [<span class="hljs-meta">28</span>] =&gt; sect193r2
+    [<span class="hljs-meta">29</span>] =&gt; sect233k1
+    [<span class="hljs-meta">30</span>] =&gt; sect233r1
+    [<span class="hljs-meta">31</span>] =&gt; sect239k1
+    [<span class="hljs-meta">32</span>] =&gt; sect283k1
+    [<span class="hljs-meta">33</span>] =&gt; sect283r1
+    [<span class="hljs-meta">34</span>] =&gt; sect409k1
+    [<span class="hljs-meta">35</span>] =&gt; sect409r1
+    [<span class="hljs-meta">36</span>] =&gt; sect571k1
+    [<span class="hljs-meta">37</span>] =&gt; sect571r1
+    [<span class="hljs-meta">38</span>] =&gt; c2pnb163v1
+    [<span class="hljs-meta">39</span>] =&gt; c2pnb163v2
+    [<span class="hljs-meta">40</span>] =&gt; c2pnb163v3
+    [<span class="hljs-meta">41</span>] =&gt; c2pnb176v1
+    [<span class="hljs-meta">42</span>] =&gt; c2tnb191v1
+    [<span class="hljs-meta">43</span>] =&gt; c2tnb191v2
+    [<span class="hljs-meta">44</span>] =&gt; c2tnb191v3
+    [<span class="hljs-meta">45</span>] =&gt; c2pnb208w1
+    [<span class="hljs-meta">46</span>] =&gt; c2tnb239v1
+    [<span class="hljs-meta">47</span>] =&gt; c2tnb239v2
+    [<span class="hljs-meta">48</span>] =&gt; c2tnb239v3
+    [<span class="hljs-meta">49</span>] =&gt; c2pnb272w1
+    [<span class="hljs-meta">50</span>] =&gt; c2pnb304w1
+    [<span class="hljs-meta">51</span>] =&gt; c2tnb359v1
+    [<span class="hljs-meta">52</span>] =&gt; c2pnb368w1
+    [<span class="hljs-meta">53</span>] =&gt; c2tnb431r1
+    [<span class="hljs-meta">54</span>] =&gt; wap-wsg-idm-ecid-wtls1
+    [<span class="hljs-meta">55</span>] =&gt; wap-wsg-idm-ecid-wtls3
+    [<span class="hljs-meta">56</span>] =&gt; wap-wsg-idm-ecid-wtls4
+    [<span class="hljs-meta">57</span>] =&gt; wap-wsg-idm-ecid-wtls5
+    [<span class="hljs-meta">58</span>] =&gt; wap-wsg-idm-ecid-wtls6
+    [<span class="hljs-meta">59</span>] =&gt; wap-wsg-idm-ecid-wtls7
+    [<span class="hljs-meta">60</span>] =&gt; wap-wsg-idm-ecid-wtls8
+    [<span class="hljs-meta">61</span>] =&gt; wap-wsg-idm-ecid-wtls9
+    [<span class="hljs-meta">62</span>] =&gt; wap-wsg-idm-ecid-wtls10
+    [<span class="hljs-meta">63</span>] =&gt; wap-wsg-idm-ecid-wtls11
+    [<span class="hljs-meta">64</span>] =&gt; wap-wsg-idm-ecid-wtls12
+    [<span class="hljs-meta">65</span>] =&gt; Oakley-EC2N<span class="hljs-number">-3</span>
+    [<span class="hljs-meta">66</span>] =&gt; Oakley-EC2N<span class="hljs-number">-4</span>
+    [<span class="hljs-meta">67</span>] =&gt; brainpoolP160r1
+    [<span class="hljs-meta">68</span>] =&gt; brainpoolP160t1
+    [<span class="hljs-meta">69</span>] =&gt; brainpoolP192r1
+    [<span class="hljs-meta">70</span>] =&gt; brainpoolP192t1
+    [<span class="hljs-meta">71</span>] =&gt; brainpoolP224r1
+    [<span class="hljs-meta">72</span>] =&gt; brainpoolP224t1
+    [<span class="hljs-meta">73</span>] =&gt; brainpoolP256r1
+    [<span class="hljs-meta">74</span>] =&gt; brainpoolP256t1
+    [<span class="hljs-meta">75</span>] =&gt; brainpoolP320r1
+    [<span class="hljs-meta">76</span>] =&gt; brainpoolP320t1
+    [<span class="hljs-meta">77</span>] =&gt; brainpoolP384r1
+    [<span class="hljs-meta">78</span>] =&gt; brainpoolP384t1
+    [<span class="hljs-meta">79</span>] =&gt; brainpoolP512r1
+    [<span class="hljs-meta">80</span>] =&gt; brainpoolP512t1
+)
+</code></pre></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/function.openssl-get-curve-names.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/function.openssl-get-curve-names.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"function.openssl-get-curve-names.md","content":"# openssl\\_get\\_curve\\_names\n\n(PHP 7 \u003e= 7.1.0, PHP 8)\n\nopenssl\\_get\\_curve\\_names — список доступних імен кривих для ECC\n\n### Опис\n\n```methodsynopsis\nopenssl_get_curve_names(): array|false\n```\n\nПовертає список доступних кривих імен для використання в еліптичній криптографії (ECC) для операцій з відкритим/закритим ключем. Дві найбільш стандартизовані/підтримувані криві: *prime256v1*(NIST P-256) и*secp384r1*(NIST P-384).\n\n**Наближені еквівалентності розмірів ключів AES, RSA, DSA та ECC**\n\n| AES размер симметричного ключа (Биты) | Размер ключа RSA и DSA (Биты) | Размер ключа ECC (Биты) |\n| --- | --- | --- |\n| 80 | 1024 | 160 |\n| 112 | 2048 | 224 |\n| 128 | 3072 | 256 |\n| 192 | 7680 | 384 |\n| 256 | 15360 | 512 |\n\n[» NIST рекомендує використовувати криві ECC як мінімум у 256 біт](http://dx.doi.org/10.6028/NIST.SP.800-57pt1r4)\n\n### Список параметрів\n\nЦя функція не має параметрів.\n\n### Значення, що повертаються\n\nМасив з доступними іменами кривих або \\*\\*`false`\\*\\*в случае возникновения ошибки.\n\n### Приклади\n\n**Приклад #1 Приклад використання** openssl\\_get\\_curve\\_names()\\*\\*\\*\\*\n\n```php\n\u003c?php\n$curve_names = openssl_get_curve_names();\nprint_r($curve_names);\n?\u003e\n```\n\nВисновок наведеного прикладу буде схожим на:\n\n```\nArray\n(\n    [0] =\u003e secp112r1\n    [1] =\u003e secp112r2\n    [2] =\u003e secp128r1\n    [3] =\u003e secp128r2\n    [4] =\u003e secp160k1\n    [5] =\u003e secp160r1\n    [6] =\u003e secp160r2\n    [7] =\u003e secp192k1\n    [8] =\u003e secp224k1\n    [9] =\u003e secp224r1\n    [10] =\u003e secp256k1\n    [11] =\u003e secp384r1\n    [12] =\u003e secp521r1\n    [13] =\u003e prime192v1\n    [14] =\u003e prime192v2\n    [15] =\u003e prime192v3\n    [16] =\u003e prime239v1\n    [17] =\u003e prime239v2\n    [18] =\u003e prime239v3\n    [19] =\u003e prime256v1\n    [20] =\u003e sect113r1\n    [21] =\u003e sect113r2\n    [22] =\u003e sect131r1\n    [23] =\u003e sect131r2\n    [24] =\u003e sect163k1\n    [25] =\u003e sect163r1\n    [26] =\u003e sect163r2\n    [27] =\u003e sect193r1\n    [28] =\u003e sect193r2\n    [29] =\u003e sect233k1\n    [30] =\u003e sect233r1\n    [31] =\u003e sect239k1\n    [32] =\u003e sect283k1\n    [33] =\u003e sect283r1\n    [34] =\u003e sect409k1\n    [35] =\u003e sect409r1\n    [36] =\u003e sect571k1\n    [37] =\u003e sect571r1\n    [38] =\u003e c2pnb163v1\n    [39] =\u003e c2pnb163v2\n    [40] =\u003e c2pnb163v3\n    [41] =\u003e c2pnb176v1\n    [42] =\u003e c2tnb191v1\n    [43] =\u003e c2tnb191v2\n    [44] =\u003e c2tnb191v3\n    [45] =\u003e c2pnb208w1\n    [46] =\u003e c2tnb239v1\n    [47] =\u003e c2tnb239v2\n    [48] =\u003e c2tnb239v3\n    [49] =\u003e c2pnb272w1\n    [50] =\u003e c2pnb304w1\n    [51] =\u003e c2tnb359v1\n    [52] =\u003e c2pnb368w1\n    [53] =\u003e c2tnb431r1\n    [54] =\u003e wap-wsg-idm-ecid-wtls1\n    [55] =\u003e wap-wsg-idm-ecid-wtls3\n    [56] =\u003e wap-wsg-idm-ecid-wtls4\n    [57] =\u003e wap-wsg-idm-ecid-wtls5\n    [58] =\u003e wap-wsg-idm-ecid-wtls6\n    [59] =\u003e wap-wsg-idm-ecid-wtls7\n    [60] =\u003e wap-wsg-idm-ecid-wtls8\n    [61] =\u003e wap-wsg-idm-ecid-wtls9\n    [62] =\u003e wap-wsg-idm-ecid-wtls10\n    [63] =\u003e wap-wsg-idm-ecid-wtls11\n    [64] =\u003e wap-wsg-idm-ecid-wtls12\n    [65] =\u003e Oakley-EC2N-3\n    [66] =\u003e Oakley-EC2N-4\n    [67] =\u003e brainpoolP160r1\n    [68] =\u003e brainpoolP160t1\n    [69] =\u003e brainpoolP192r1\n    [70] =\u003e brainpoolP192t1\n    [71] =\u003e brainpoolP224r1\n    [72] =\u003e brainpoolP224t1\n    [73] =\u003e brainpoolP256r1\n    [74] =\u003e brainpoolP256t1\n    [75] =\u003e brainpoolP320r1\n    [76] =\u003e brainpoolP320t1\n    [77] =\u003e brainpoolP384r1\n    [78] =\u003e brainpoolP384t1\n    [79] =\u003e brainpoolP512r1\n    [80] =\u003e brainpoolP512t1\n)\n```\n","title":"openssl\\_get\\_curve\\_names","contentType":2,"navigation":[{"function.openssl-get-cipher-methods.md":"« openssl\\_get\\_cipher\\_methods"},{"function.openssl-get-md-methods.md":"openssl\\_get\\_md\\_methods »"},{"index.md":"PHP Manual"},{"ref.openssl.md":"Функції OpenSSL"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.openssl-get-curve-names.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

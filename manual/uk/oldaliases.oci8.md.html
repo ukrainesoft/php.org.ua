@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Застарілі найменування та функції OCI8</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="ocilob.writetofile.md" class="mx-4">« OCILob::writeToFile</a><a href="function.oci-internal-debug.md" class="mx-4">oci\_internal\_debug »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.oci8.md" class="mx-4">OCI8</a></div><article class="markdown_markdown__yfc8y"><div><h1>Застарілі найменування та функції OCI8</h1>
+<h2>Зміст</h2>
+<ul>
+<li><a href="function.oci-internal-debug.md">oci_internal_debug</a>— Вмикає або вимикає внутрішній висновок налагодження</li>
+<li><a href="function.ocibindbyname.md">ocibindbyname</a>— Псевдонім oci_bind_by_name</li>
+<li><a href="function.ocicancel.md">ocicancel</a>— Псевдонім oci_cancel</li>
+<li><a href="function.ocicloselob.md">ocicloselob</a> - Псевдонім OCILob::close</li>
+<li><a href="function.ocicollappend.md">ocicollappend</a> - Псевдонім OCICollection::append</li>
+<li><a href="function.ocicollassign.md">ocicollassign</a> - Псевдонім OCICollection::assign</li>
+<li><a href="function.ocicollassignelem.md">ocicollassignelem</a> - Псевдонім OCICollection::assignElem</li>
+<li><a href="function.ocicollgetelem.md">ocicollgetelem</a> - Псевдонім OCICollection::getElem</li>
+<li><a href="function.ocicollmax.md">ocicollmax</a> - Псевдонім OCICollection::max</li>
+<li><a href="function.ocicollsize.md">ocicollsize</a> - Псевдонім OCICollection::size</li>
+<li><a href="function.ocicolltrim.md">ocicolltrim</a> - Псевдонім OCICollection::trim</li>
+<li><a href="function.ocicolumnisnull.md">ocicolumnisnull</a>— Псевдонім oci_field_is_null</li>
+<li><a href="function.ocicolumnname.md">ocicolumnname</a>— Псевдонім oci_field_name</li>
+<li><a href="function.ocicolumnprecision.md">ocicolumnprecision</a>— Псевдонім oci_field_precision</li>
+<li><a href="function.ocicolumnscale.md">ocicolumnscale</a>— Псевдонім oci_field_scale</li>
+<li><a href="function.ocicolumnsize.md">ocicolumnsize</a>— Псевдонім oci_field_size</li>
+<li><a href="function.ocicolumntype.md">ocicolumntype</a>— Псевдонім oci_field_type</li>
+<li><a href="function.ocicolumntyperaw.md">ocicolumntyperaw</a>— Псевдонім oci_field_type_raw</li>
+<li><a href="function.ocicommit.md">ocicommit</a>— Псевдонім oci_commit</li>
+<li><a href="function.ocidefinebyname.md">ocidefinebyname</a>— Псевдонім oci_define_by_name</li>
+<li><a href="function.ocierror.md">ocierror</a>— Псевдонім oci_error</li>
+<li><a href="function.ociexecute.md">ociexecute</a>— Псевдонім oci_execute</li>
+<li><a href="function.ocifetch.md">ocifetch</a>— Псевдонім oci_fetch</li>
+<li><a href="function.ocifetchinto.md">ocifetchinto</a>— Застарілий варіант функцій oci_fetch_array, oci_fetch_object, oci_fetch_assoc та oci_fetch_row</li>
+<li><a href="function.ocifetchstatement.md">ocifetchstatement</a>— Псевдонім oci_fetch_all</li>
+<li><a href="function.ocifreecollection.md">ocifreecollection</a> - Псевдонім OCICollection::free</li>
+<li><a href="function.ocifreecursor.md">ocifreecursor</a>— Псевдонім oci_free_statement</li>
+<li><a href="function.ocifreedesc.md">ocifreedesc</a> - Псевдонім OCILob::free</li>
+<li><a href="function.ocifreestatement.md">ocifreestatement</a>— Псевдонім oci_free_statement</li>
+<li><a href="function.ociinternaldebug.md">ociinternaldebug</a>— Псевдонім oci_internal_debug</li>
+<li><a href="function.ociloadlob.md">ociloadlob</a> - Псевдонім OCILob::load</li>
+<li><a href="function.ocilogoff.md">ocilogoff</a>— Псевдонім oci_close</li>
+<li><a href="function.ocilogon.md">ocilogon</a>— Псевдонім oci_connect</li>
+<li><a href="function.ocinewcollection.md">ocinewcollection</a>— Псевдонім oci_new_collection</li>
+<li><a href="function.ocinewcursor.md">ocinewcursor</a>— Псевдонім oci_new_cursor</li>
+<li><a href="function.ocinewdescriptor.md">ocinewdescriptor</a>— Псевдонім oci_new_descriptor</li>
+<li><a href="function.ocinlogon.md">ocinlogon</a>— Псевдонім oci_new_connect</li>
+<li><a href="function.ocinumcols.md">ocinumcols</a>— Псевдонім oci_num_fields</li>
+<li><a href="function.ociparse.md">ociparse</a>— Псевдонім oci_parse</li>
+<li><a href="function.ociplogon.md">ociplogon</a>— Псевдонім oci_pconnect</li>
+<li><a href="function.ociresult.md">ociresult</a>— Псевдонім oci_result</li>
+<li><a href="function.ocirollback.md">ocirollback</a>— Псевдонім oci_rollback</li>
+<li><a href="function.ocirowcount.md">ocirowcount</a>— Псевдонім oci_num_rows</li>
+<li><a href="function.ocisavelob.md">ocisavelob</a> - Псевдонім OCILob::save</li>
+<li><a href="function.ocisavelobfile.md">ocisavelobfile</a> - Псевдонім OCILob::import</li>
+<li><a href="function.ociserverversion.md">ociserverversion</a>— Псевдонім oci_server_version</li>
+<li><a href="function.ocisetprefetch.md">ocisetprefetch</a>— Псевдонім oci_set_prefetch</li>
+<li><a href="function.ocistatementtype.md">ocistatementtype</a>— Псевдонім oci_statement_type</li>
+<li><a href="function.ociwritelobtofile.md">ociwritelobtofile</a> - Псевдонім OCILob::export</li>
+<li><a href="function.ociwritetemporarylob.md">ociwritetemporarylob</a> - Псевдонім OCILob::writeTemporary</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/oldaliases.oci8.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/oldaliases.oci8.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"oldaliases.oci8.md","content":"# Застарілі найменування та функції OCI8\n\n## Зміст\n\n-   [oci\\_internal\\_debug](function.oci-internal-debug.md)— Вмикає або вимикає внутрішній висновок налагодження\n-   [ocibindbyname](function.ocibindbyname.md)— Псевдонім oci\\_bind\\_by\\_name\n-   [ocicancel](function.ocicancel.md)— Псевдонім oci\\_cancel\n-   [ocicloselob](function.ocicloselob.md) \\- Псевдонім OCILob::close\n-   [ocicollappend](function.ocicollappend.md) \\- Псевдонім OCICollection::append\n-   [ocicollassign](function.ocicollassign.md) \\- Псевдонім OCICollection::assign\n-   [ocicollassignelem](function.ocicollassignelem.md) \\- Псевдонім OCICollection::assignElem\n-   [ocicollgetelem](function.ocicollgetelem.md) \\- Псевдонім OCICollection::getElem\n-   [ocicollmax](function.ocicollmax.md) \\- Псевдонім OCICollection::max\n-   [ocicollsize](function.ocicollsize.md) \\- Псевдонім OCICollection::size\n-   [ocicolltrim](function.ocicolltrim.md) \\- Псевдонім OCICollection::trim\n-   [ocicolumnisnull](function.ocicolumnisnull.md)— Псевдонім oci\\_field\\_is\\_null\n-   [ocicolumnname](function.ocicolumnname.md)— Псевдонім oci\\_field\\_name\n-   [ocicolumnprecision](function.ocicolumnprecision.md)— Псевдонім oci\\_field\\_precision\n-   [ocicolumnscale](function.ocicolumnscale.md)— Псевдонім oci\\_field\\_scale\n-   [ocicolumnsize](function.ocicolumnsize.md)— Псевдонім oci\\_field\\_size\n-   [ocicolumntype](function.ocicolumntype.md)— Псевдонім oci\\_field\\_type\n-   [ocicolumntyperaw](function.ocicolumntyperaw.md)— Псевдонім oci\\_field\\_type\\_raw\n-   [ocicommit](function.ocicommit.md)— Псевдонім oci\\_commit\n-   [ocidefinebyname](function.ocidefinebyname.md)— Псевдонім oci\\_define\\_by\\_name\n-   [ocierror](function.ocierror.md)— Псевдонім oci\\_error\n-   [ociexecute](function.ociexecute.md)— Псевдонім oci\\_execute\n-   [ocifetch](function.ocifetch.md)— Псевдонім oci\\_fetch\n-   [ocifetchinto](function.ocifetchinto.md)— Застарілий варіант функцій oci\\_fetch\\_array, oci\\_fetch\\_object, oci\\_fetch\\_assoc та oci\\_fetch\\_row\n-   [ocifetchstatement](function.ocifetchstatement.md)— Псевдонім oci\\_fetch\\_all\n-   [ocifreecollection](function.ocifreecollection.md) \\- Псевдонім OCICollection::free\n-   [ocifreecursor](function.ocifreecursor.md)— Псевдонім oci\\_free\\_statement\n-   [ocifreedesc](function.ocifreedesc.md) \\- Псевдонім OCILob::free\n-   [ocifreestatement](function.ocifreestatement.md)— Псевдонім oci\\_free\\_statement\n-   [ociinternaldebug](function.ociinternaldebug.md)— Псевдонім oci\\_internal\\_debug\n-   [ociloadlob](function.ociloadlob.md) \\- Псевдонім OCILob::load\n-   [ocilogoff](function.ocilogoff.md)— Псевдонім oci\\_close\n-   [ocilogon](function.ocilogon.md)— Псевдонім oci\\_connect\n-   [ocinewcollection](function.ocinewcollection.md)— Псевдонім oci\\_new\\_collection\n-   [ocinewcursor](function.ocinewcursor.md)— Псевдонім oci\\_new\\_cursor\n-   [ocinewdescriptor](function.ocinewdescriptor.md)— Псевдонім oci\\_new\\_descriptor\n-   [ocinlogon](function.ocinlogon.md)— Псевдонім oci\\_new\\_connect\n-   [ocinumcols](function.ocinumcols.md)— Псевдонім oci\\_num\\_fields\n-   [ociparse](function.ociparse.md)— Псевдонім oci\\_parse\n-   [ociplogon](function.ociplogon.md)— Псевдонім oci\\_pconnect\n-   [ociresult](function.ociresult.md)— Псевдонім oci\\_result\n-   [ocirollback](function.ocirollback.md)— Псевдонім oci\\_rollback\n-   [ocirowcount](function.ocirowcount.md)— Псевдонім oci\\_num\\_rows\n-   [ocisavelob](function.ocisavelob.md) \\- Псевдонім OCILob::save\n-   [ocisavelobfile](function.ocisavelobfile.md) \\- Псевдонім OCILob::import\n-   [ociserverversion](function.ociserverversion.md)— Псевдонім oci\\_server\\_version\n-   [ocisetprefetch](function.ocisetprefetch.md)— Псевдонім oci\\_set\\_prefetch\n-   [ocistatementtype](function.ocistatementtype.md)— Псевдонім oci\\_statement\\_type\n-   [ociwritelobtofile](function.ociwritelobtofile.md) \\- Псевдонім OCILob::export\n-   [ociwritetemporarylob](function.ociwritetemporarylob.md) \\- Псевдонім OCILob::writeTemporary\n","title":"Застарілі найменування та функції OCI8","contentType":2,"navigation":[{"ocilob.writetofile.md":"« OCILob::writeToFile"},{"function.oci-internal-debug.md":"oci\\_internal\\_debug »"},{"index.md":"PHP Manual"},{"book.oci8.md":"OCI8"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"oldaliases.oci8.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

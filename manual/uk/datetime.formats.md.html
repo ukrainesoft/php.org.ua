@@ -1,0 +1,911 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Допустимі формати дати/часу</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="datetime.error.tree.md" class="mx-4">« Date/Time Errors and Exceptions</a><a href="timezones.md" class="mx-4">Список підтримуваних часових поясів »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.datetime.md" class="mx-4">Дата час</a></div><article class="markdown_markdown__yfc8y"><div><h1>Допустимі формати дати/часу</h1>
+<p>У цьому розділі описуються всі різні формати в BNF-подібному синтаксисі, які приймає парсер: <a href="class.datetimeimmutable.md">DateTimeImmutable</a> <a href="class.datetime.md">DateTime</a> <a href="function.date-create-immutable.md">date_create_immutable()</a> <a href="function.date-create.md">date_create()</a> <a href="function.date-parse.md">date_parse()</a> і <a href="function.strtotime.md">strtotime()</a>. Формати згруповані за розділами. У більшості випадків формати з різних розділів, розділені пробілом, комою або точкою, можуть використовуватися в одному і тому ж рядку дати/часу. Для кожного з підтримуваних форматів наведено один або кілька прикладів, а також опис формату. Символи в одинарних лапках нечутливі до регістру (<code>&#x27;t&#x27;</code> еквівалентно як <code>t</code>, так и<code>T</code>), символи в подвійних лапках чутливі до регістру (<code>&quot;T&quot;</code> означає тільки <code>T</code></p>
+<p>Щоб відформатувати об&#x27;єкти <a href="class.datetimeimmutable.md">DateTimeImmutable</a> і <a href="class.datetime.md">DateTime</a>, обратитесь к документации метода<a href="datetime.format.md">DateTimeInterface::format()</a></p>
+<p>Слід взяти до уваги загальне склепіння правил.</p>
+<ol>
+<li>
+<p>Парсер допускає кожної одиниці виміру (рік, місяць, день, година, хвилина, секунда) повний діапазон значень. Для року це всього 4 цифри, для місяця – 0-12, дня – 0-31, для години – 0-24, а для хвилини – 0-59.</p>
+</li>
+<li>
+<p>Для секунд допускається значення 60, оскільки іноді рядки дати з цією секундою, що стрибає, дійсно з&#x27;являються. Але PHP реалізує час Unix, де &quot;60&quot; не є допустимим числом секунд і тому відбувається переповнення.</p>
+</li>
+<li>
+<p>Функция<a href="function.strtotime.md">strtotime()</a> повертає <strong><code>false</code></strong>, якщо якесь число знаходиться поза діапазонами, а конструктор<a href="datetimeimmutable.construct.md">DateTimeImmutable::__construct()</a>викидає виняток.</p>
+</li>
+<li>
+<p>Якщо рядок містить дату, то всі елементи часу обнулюються до 0.</p>
+</li>
+<li>
+<p>Все менш значущі елементи часу скидаються до 0, якщо у цьому рядку є якась частина часу.</p>
+</li>
+<li>
+<p>Парсер не робить жодних перевірок, щоб зробити його швидше (і більш універсальним).</p>
+</li>
+<li>
+<p>Крім правил для окремих елементів часу, синтаксичний аналізатор розуміє і специфічніші комбіновані формати, наприклад, розбір міток часу Unix (<code>@1690388256</code>) та дат тижня у форматі ISO (<code>2008-W28-3</code></p>
+</li>
+<li>
+<p>Існує додаткова перевірка, якщо вказано недійсну дату:</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:90px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-scss"><span class="hljs-built_in">array</span>(<span class="hljs-number">1</span>) {
+  <span class="hljs-selector-attr">[11]</span> =&gt;
+  <span class="hljs-built_in">string</span>(<span class="hljs-number">27</span>) &quot;The parsed date was invalid&quot;
+}
+</code></pre>
+</li>
+<li>
+<p>Крайні випадки вже можна обробити, для цього необхідно використати метод<a href="datetimeimmutable.createfromformat.md">DateTimeImmutable::createFromFormat()</a>, надаючи правильний формат.</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:72px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-csharp"><span class="hljs-built_in">object</span>(DateTimeImmutable)<span class="hljs-meta">#1 (3) {</span>
+  [<span class="hljs-string">&quot;date&quot;</span>]=&gt;
+  <span class="hljs-built_in">string</span>(<span class="hljs-number">26</span>) <span class="hljs-string">&quot;2015-10-04 17:24:43.000000&quot;</span>
+  [<span class="hljs-string">&quot;timezone_type&quot;</span>]=&gt;
+  <span class="hljs-built_in">int</span>(<span class="hljs-number">3</span>)
+  [<span class="hljs-string">&quot;timezone&quot;</span>]=&gt;
+  <span class="hljs-built_in">string</span>(<span class="hljs-number">13</span>) <span class="hljs-string">&quot;Europe/London&quot;</span>
+}
+</code></pre>
+</li>
+</ol>
+<h2>Формати часу</h2>
+<p>На цій сторінці описані формати дати/часу в BNF-подібному синтаксисі, які розуміє парсер функцій: <a href="class.datetimeimmutable.md">DateTimeImmutable</a> <a href="class.datetime.md">DateTime</a> <a href="function.date-create.md">date_create()</a> <a href="function.date-create-immutable.md">date_create_immutable()</a> і <a href="function.strtotime.md">strtotime()</a></p>
+<p>Щоб відформатувати об&#x27;єкти <a href="class.datetimeimmutable.md">DateTimeImmutable</a> і <a href="class.datetime.md">DateTime</a>, обратитесь к документации метода<a href="datetime.format.md">DateTimeInterface::format()</a></p>
+<p><strong>Використовувані символи</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опис</th><th>Формат</th><th>Приклады</th></tr></thead><tbody><tr><td><code>frac</code> (дробова частина)</td><td>. . [0-9]+</td><td>&quot;.21342&quot;, &quot;.85&quot;</td></tr><tr><td><code>hh</code> (годинник у 12-годинному форматі)</td><td>&quot;0&quot;?[1-9]</td><td>&quot;1&quot;[0-2]</td></tr><tr><td><code>HH</code> (годинник у 24-годинному форматі)</td><td>[01][0-9]</td><td>&quot;2&quot;[0-4]</td></tr><tr><td><code>meridian</code> (Ante meridiem або Post meridiem)</td><td>[AaPp] .? [Mm] .? [\ \t ]</td><td>&quot;A.m.&quot;, &quot;pM&quot;, &quot;am.&quot;</td></tr><tr><td><code>MM</code> (хвилини)</td><td>[0-5][0-9]</td><td>&quot;00&quot;, &quot;12&quot;, &quot;59&quot;</td></tr><tr><td><code>II</code> (секунди)</td><td>[0-5][0-9]</td><td>&quot;00&quot;, &quot;12&quot;, &quot;59&quot;</td></tr><tr><td><code>space</code> (Символ пробілу або табуляції)</td><td>[ \t]</td><td></td></tr><tr><td><code>tz</code> (часовий пояс)</td><td>&quot;(&quot;? [A-Za-z]{1,6} &quot;)&quot;?</td><td>[A-Z][a-z]+([_ ][A-Z][a-z]+)+</td></tr><tr><td><code>tzcorrection</code> (числове значення усунення часового поясу)</td><td>&quot;GMT&quot;? [+-] <code>hh</code> &quot;:&quot;? <code>MM</code>?</td><td>&quot;+0400&quot;, &quot;GMT-07:00&quot;, &quot;-07:00&quot;</td></tr></tbody></table>
+<p><strong>12-годинний формат</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опис</th><th>Формат</th><th>Приклады</th></tr></thead><tbody><tr><td>Тільки годинник (з Ante meridiem або Post meridiem)</td><td><code>hh</code><code>space</code>? <code>meridian</code></td><td>&quot;4 am&quot;, &quot;5PM&quot;</td></tr><tr><td>Годинники та хвилини (з <code>Ante meridiem</code>или<code>Post meridiem</code>) .</td><td><code>hh</code> [.:] <code>MM</code><code>space</code>? <code>meridian</code></td><td>&quot;4:08 am&quot;, &quot;7:19P.M.&quot;</td></tr><tr><td>Годинники, хвилини та секунди (з <code>Ante meridiem</code>или<code>Post meridiem</code>) .</td><td><code>hh</code> [.:] <code>MM</code> [.:] <code>II</code><code>space</code>? <code>meridian</code></td><td>&quot;4:08:37 am&quot;, &quot;7:19:19P.M.&quot;</td></tr><tr><td>MS SQL (Годинник, хвилини, секунди та дробова частина з Ante meridiem або Post meridiem)</td><td><code>hh</code> &quot;:&quot; <code>MM</code> &quot;:&quot; <code>II</code> [.:] [0-9]+ <code>meridian</code></td><td>&quot;4:08:39:12313am&quot;</td></tr></tbody></table>
+<p><strong>24-годинний формат</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опис</th><th>Формат</th><th>Приклады</th></tr></thead><tbody><tr><td>Годинник та хвилина</td><td>&#x27;t&#x27;? <code>HH</code> [.:] <code>MM</code></td><td>&quot;04:08&quot;, &quot;19.19&quot;, &quot;T23:43&quot;</td></tr><tr><td>Годинники та хвилини (без двокрапки-розділювача)</td><td>&#x27;t&#x27;? <code>HH</code><code>MM</code></td><td>&quot;0408&quot;, &quot;t1919&quot;, &quot;T2343&quot;</td></tr><tr><td>Годинники, хвилини та секунди</td><td>&#x27;t&#x27;? <code>HH</code> [.:] <code>MM</code> [.:] <code>II</code></td><td>&quot;04.08.37&quot;, &quot;t19:19:19&quot;</td></tr><tr><td>Годинники, хвилини та секунди (без двокрапки-розділювача)</td><td>&#x27;t&#x27;? <code>HH</code><code>MM</code><code>II</code></td><td>&quot;040837&quot;, &quot;T191919&quot;</td></tr><tr><td>Годинник, хвилини, секунди та часовий пояс</td><td>&#x27;t&#x27;? <code>HH</code> [.:] <code>MM</code> [.:] <code>II</code><code>space</code>? ( <code>tzcorrection</code></td><td><code>tz</code></td></tr><tr><td>Годинники, хвилини, секунди та дрібна частина</td><td>&#x27;t&#x27;? <code>HH</code> [.:] <code>MM</code> [.:] <code>II</code><code>frac</code></td><td>&quot;04.08.37.81412&quot;, &quot;19:19:19.532453&quot;</td></tr><tr><td>Відомості про часовий пояс</td><td><code>tz</code></td><td><code>tzcorrection</code></td></tr></tbody></table>
+<h2>Формати дати</h2>
+<p>На цій сторінці описані формати дати в BNF-подібному синтаксисі, які розуміє парсер функцій: <a href="class.datetimeimmutable.md">DateTimeImmutable</a> <a href="class.datetime.md">DateTime</a> <a href="function.date-create.md">date_create()</a> <a href="function.date-create-immutable.md">date_create_immutable()</a> і <a href="function.strtotime.md">strtotime()</a></p>
+<p>Щоб відформатувати об&#x27;єкти <a href="class.datetimeimmutable.md">DateTimeImmutable</a> і <a href="class.datetime.md">DateTime</a>, обратитесь к документации метода<a href="datetime.format.md">DateTimeInterface::format()</a></p>
+<p><strong>Використовувані символи</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опис</th><th>Формат</th><th>Приклады</th></tr></thead><tbody><tr><td><code>daysuf</code> (Суфікс порядкового числівника місяця)</td><td>&quot;st&quot;</td><td>&quot;nd&quot;</td></tr><tr><td><code>dd</code> (День місяця без провідних нулів)</td><td>[0-2]? [0-9]</td><td>&quot;3&quot;[01] <code>daysuf</code>?</td></tr><tr><td><code>DD</code> (День місяця, 2 цифри з провідним нулем)</td><td>&quot;0&quot; [0-9]</td><td>[1-2][0-9]</td></tr><tr><td><code>m</code> (Повна або скорочена назва місяця)</td><td>&#x27;january&#x27;</td><td>&#x27;february&#x27;</td></tr><tr><td><code>M</code> (скорочена назва місяця)</td><td>&#x27;jan&#x27;</td><td>&#x27;feb&#x27;</td></tr><tr><td><code>mm</code> (порядковий номер місяця)</td><td>&quot;0&quot;? [0-9]</td><td>&quot;1&quot;[0-2]</td></tr><tr><td><code>MM</code> (порядковий номер місяця, 2 цифри з провідним нулем)</td><td>&quot;0&quot; [0-9]</td><td>&quot;1&quot;[0-2]</td></tr><tr><td><code>y</code> (порядковий номер року)</td><td>[0-9]{1,4}</td><td>&quot;00&quot;, &quot;78&quot;, &quot;08&quot;, &quot;8&quot;, &quot;2008&quot;</td></tr><tr><td><code>yy</code> (порядковий номер року, 2 цифри)</td><td>[0-9]{2}</td><td>&quot;00&quot;, &quot;08&quot;, &quot;78&quot;</td></tr><tr><td><code>YY</code> (порядковий номер року, 4 цифри)</td><td>[0-9]{4}</td><td>&quot;2000&quot;, &quot;2008&quot;, &quot;1978&quot;</td></tr><tr><td><code>YYY</code></td><td>[0-9]{5,19}</td><td>&quot;81412&quot;, &quot;20192&quot;</td></tr></tbody></table>
+<p><strong>Регіональні нотації</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опис</th><th>Формат</th><th>Приклады</th></tr></thead><tbody><tr><td>Місяць та день в американській нотації</td><td><code>mm</code> &quot;/&quot; <code>dd</code></td><td>&quot;5/12&quot;, &quot;10/27&quot;</td></tr><tr><td>Місяць, день і рік в американській нотації</td><td><code>mm</code> &quot;/&quot; <code>dd</code> &quot;/&quot; <code>y</code></td><td>&quot;12/22/78&quot;, &quot;1/17/2006&quot;, &quot;1/17/6&quot;</td></tr><tr><td>4 цифри року, місяць і день зі слішем-розділювачем</td><td><code>YY</code> &quot;/&quot; <code>mm</code> &quot;/&quot; <code>dd</code></td><td>&quot;2008/6/30&quot;, &quot;1978/12/22&quot;</td></tr><tr><td>4 цифри року та місяць (GNU)</td><td><code>YY</code> &quot;-&quot; <code>mm</code></td><td>&quot;2008-6&quot;, &quot;2008-06&quot;, &quot;1978-12&quot;</td></tr><tr><td>Рік, місяць і день з дефісом-розділювачем</td><td><code>y</code> &quot;-&quot; <code>mm</code> &quot;-&quot; <code>dd</code></td><td>&quot;2008-6-30&quot;, &quot;78-12-22&quot;, &quot;8-6-21&quot;</td></tr><tr><td>День, місяць та 4 цифри року з роздільником у вигляді крапки, символу табуляції чи дефісу</td><td><code>dd</code> [ \t-] <code>mm</code> [.-] <code>YY</code></td><td>&quot;30-6-2008&quot;, &quot;22.12.1978&quot;</td></tr><tr><td>День, місяць та 2 цифри року з роздільником у вигляді крапки або символу табуляції</td><td><code>dd</code> [ \t] <code>mm</code> &quot;.&quot; <code>yy</code></td><td>&quot;30.6.08&quot;, &quot;22.12.78&quot;</td></tr><tr><td>День, назва місяця та рік</td><td><code>dd</code> [ \t.-]) . * <code>m</code> [ \t.-]) . * <code>y</code></td><td>&quot;30-June 2008&quot;, &quot;22DEC78&quot;, &quot;14 III 1879&quot;</td></tr><tr><td>Назва місяця та 4 цифри року (день місяця скидається на 1)</td><td><code>m</code> [ \t.-]) . * <code>YY</code></td><td>&quot;June 2008&quot;, &quot;DEC1978&quot;, &quot;March 1879&quot;</td></tr><tr><td>4 цифри року та назва місяця (день місяця скидається на 1)</td><td><code>YY</code> [ \t.-]) . * <code>m</code></td><td>&quot;2008 June&quot;, &quot;1978-XII&quot;, &quot;1879.MArCH&quot;</td></tr><tr><td>Назва місяця, день та рік</td><td><code>m</code> [ \t-]) . * <code>dd</code> [,.stndrh\t ]+ <code>y</code></td><td>&quot;July 1st, 2008&quot;, &quot;April 17, 1790&quot;, &quot;May.9,78&quot;</td></tr><tr><td>Назва місяця та дня</td><td><code>m</code> [ \t-]) . * <code>dd</code> [,.stndrh\t ]*</td><td>&quot;July 1st,&quot;, &quot;Apr 17&quot;, &quot;May.9&quot;</td></tr><tr><td>День та назва місяця</td><td><code>dd</code> [ \t-]) . * <code>m</code></td><td>&quot;1 July&quot;, &quot;17 Apr&quot;, &quot;9.May&quot;</td></tr><tr><td>Скорочена назва місяця, день та рік</td><td><code>M</code> &quot;-&quot; <code>DD</code> &quot;-&quot; <code>y</code></td><td>&quot;May-09-78&quot;, &quot;Apr-17-1790&quot;</td></tr><tr><td>Рік, скорочена назва місяця та дня</td><td><code>y</code> &quot;-&quot; <code>M</code> &quot;-&quot; <code>DD</code></td><td>&quot;78-Dec-22&quot;, &quot;1814-MAY-17&quot;</td></tr><tr><td>Лише рік</td><td><code>YY</code></td><td>&quot;1978&quot;, &quot;2008&quot;</td></tr><tr><td>Рік (розширений, 5-19 цифр зі знаком)</td><td>[+-] <code>YYY</code></td><td>&quot;-81120&quot;, &quot;+20192&quot;</td></tr><tr><td>Лише назва місяця</td><td><code>m</code></td><td>&quot;March&quot;, &quot;jun&quot;, &quot;DEC&quot;</td></tr></tbody></table>
+<p><strong>Нотації ISO8601</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опис</th><th>Формат</th><th>Приклады</th></tr></thead><tbody><tr><td>8 цифр (рік, місяць та день)</td><td><code>YY</code><code>MM</code><code>DD</code></td><td>&quot;15810726&quot;, &quot;19780417&quot;, &quot;18140517&quot;</td></tr><tr><td>8 цифр (рік, місяць і день) зі слішем-розділювачем</td><td><code>YY</code> &quot;/&quot; <code>MM</code> &quot;/&quot; <code>DD</code></td><td>&quot;2008/06/30&quot;, &quot;1978/12/22&quot;</td></tr><tr><td>2 цифри року, місяць та день з дефісом-розділювачем</td><td><code>yy</code> &quot;-&quot; <code>MM</code> &quot;-&quot; <code>DD</code></td><td>&quot;08-06-30&quot;, &quot;78-12-22&quot;</td></tr><tr><td>4 цифри року з необов&#x27;язковим знаком, місяць та день</td><td>[+-]? <code>YY</code> &quot;-&quot; <code>MM</code> &quot;-&quot; <code>DD</code></td><td>&quot;-0002-07-26&quot;, &quot;+1978-04-17&quot;, &quot;1814-05-17&quot;</td></tr><tr><td>П&#x27;ятизначний рік з обов&#x27;язковим знаком, місяцем та днем</td><td>[+-] <code>YYY</code> &quot;-&quot; <code>MM</code> &quot;-&quot; <code>DD</code></td><td>&quot;-81120-02-26&quot;, &quot;+20192-04-17&quot;</td></tr></tbody></table>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Формати <code>y</code>и<code>yy</code> для років менше 100 обробляються у виняткових випадках під час використання символів <code>y</code>или<code>yy</code>. . Якщо рік потрапляє до діапазону 0-69 (включно), то до нього додається 2000. Якщо ж рік належить діапазону 70-99 (включно), то до нього додається 1900. Це означає, що дата &quot;00-01-01&quot; інтерпретується як &quot;2000-01-01&quot;.</p>
+</blockquote>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Формат &quot;День, місяць та 2 цифри року з роздільником у вигляді крапки або символу табуляції&quot; (<code>dd</code> [ \t] <code>mm</code> &quot;.&quot; <code>yy</code>) працює тільки для років з діапазону 61-99 (включно). За межами цього діапазону надається перевага <em>формату часу</em> &quot;<code>HH</code> [.:] <code>MM</code> [.:] <code>SS</code>&quot;.</p>
+</blockquote>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Формат &quot;Тільки рік&quot; задіюється лише у випадку, якщо рядок часу було знайдено. Інакше віддається перевагу формату <code>HH</code> <code>MM</code></p>
+</blockquote>
+<p><strong>Застереження</strong></p>
+<p>Можливий вихід за межі діапазону форматів <code>dd</code>и<code>DD</code>. . День місяця з порядковим номером 0 має на увазі останній день попереднього місяця внаслідок виходу за межі діапазону. Згідно з написаним, &quot;2008-08-00&quot; рівносильно &quot;2008-07-31&quot;, а &quot;2008-06-31&quot; відповідає &quot;2008-07-01&quot; (у червні всього 30 днів).</p>
+<p>Зауважте, що діапазон днів обмежений 0-31, як зазначено вище регулярним виразом. Тож, наприклад, &quot;2008-06-32&quot; - некоректна дата.</p>
+<p>Також допускається вихід за межі діапазону для форматів <code>mm</code>и<code>MM</code> із значенням 0. Значення місяця 0 відповідає грудню попереднього року. Наприклад, дата &quot;2008-00-22&quot; рівносильна &quot;2007-12-22&quot;.</p>
+<p>Якщо врахувати два попередні зауваження та вихід за межі діапазону днів та місяців, отримаємо наступне: дата &quot;2008-00-00&quot; насамперед перетворюється на &quot;2007-12-00&quot;, яка буде перетворена на &quot;2007-11-30&quot;. Те саме станеться з датою &quot;0000-00-00&quot;, яка буде перетворена на &quot;-0001-11-30&quot; (мінус перший рік у календарі ISO 8601 та 2 рік до н. е. за григоріанським календарем).</p>
+<h2>Складові форматів</h2>
+<p>На цій сторінці описані різні складові формати дати/часу в BNF-подібному синтаксисі, які розуміє парсер функцій: <a href="class.datetimeimmutable.md">DateTimeImmutable</a> <a href="class.datetime.md">DateTime</a> <a href="function.date-create.md">date_create()</a> <a href="function.date-create-immutable.md">date_create_immutable()</a> і <a href="function.strtotime.md">strtotime()</a></p>
+<p>Щоб відформатувати об&#x27;єкти <a href="class.datetimeimmutable.md">DateTimeImmutable</a> і <a href="class.datetime.md">DateTime</a>, обратитесь к документации метода<a href="datetime.format.md">DateTimeInterface::format()</a></p>
+<p><strong>Використовувані символи</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опис</th><th>Форматы</th><th>Приклады</th></tr></thead><tbody><tr><td><code>DD</code> (День місяця з провідним нулем)</td><td>&quot;0&quot; [0-9]</td><td>[1-2][0-9]</td></tr><tr><td><code>doy</code> (День на рік)</td><td>&quot;00&quot;[1-9]</td><td>&quot;0&quot;[1-9][0-9]</td></tr><tr><td><code>frac</code> (дробова частина)</td><td>. . [0-9]+</td><td>&quot;.21342&quot;, &quot;.85&quot;</td></tr><tr><td><code>hh</code> (годинник)</td><td>&quot;0&quot;?[1-9]</td><td>&quot;1&quot;[0-2]</td></tr><tr><td><code>HH</code> (годинник з провідним нулем)</td><td>[01][0-9]</td><td>&quot;2&quot;[0-4]</td></tr><tr><td><code>meridian</code> (Ante meridiem або Post meridiem)</td><td>[AaPp] .? [Mm] .? [\ \t ]</td><td>&quot;A.m.&quot;, &quot;pM&quot;, &quot;am.&quot;</td></tr><tr><td><code>ii</code> (хвилини)</td><td>[0-5]? [0-9]</td><td>&quot;04&quot;, &quot;8&quot;, &quot;59&quot;</td></tr><tr><td><code>II</code> (хвилини з провідним нулем)</td><td>[0-5][0-9]</td><td>&quot;04&quot;, &quot;08&quot;, &quot;59&quot;</td></tr><tr><td><code>M</code> (скорочене найменування місяця)</td><td>&#x27;jan&#x27;</td><td>&#x27;feb&#x27;</td></tr><tr><td><code>MM</code> (місяць із провідним нулем)</td><td>[0-1][0-9]</td><td>&quot;00&quot;, &quot;12&quot;</td></tr><tr><td><code>space</code> (Символ пробілу або табуляції)</td><td>[ \t]</td><td></td></tr><tr><td><code>ss</code> (секунди)</td><td>[0-5]? [0-9]) .</td><td>60</td></tr><tr><td><code>SS</code> (секунди з провідним нулем)</td><td>[0-5][0-9]</td><td>&quot;04&quot;, &quot;08&quot;, &quot;59&quot;</td></tr><tr><td><code>W</code> (тиждень у році)</td><td>&quot;0&quot;[1-9]</td><td>[1-4][0-9]</td></tr><tr><td><code>tzcorrection</code> (Зміщення часового поясу)</td><td>&quot;GMT&quot;? [+-] <code>hh</code> &quot;:&quot;? <code>II</code>?</td><td>&quot;+0400&quot;, &quot;GMT-07:00&quot;, &quot;-07:00&quot;</td></tr><tr><td><code>YY</code> (4 цифри року)</td><td>[0-9]{4}</td><td>&quot;2000&quot;, &quot;2008&quot;, &quot;1978&quot;</td></tr></tbody></table>
+<p><strong>Формати стандартів</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опис</th><th>Приклады</th></tr></thead><tbody><tr><td>ATOM</td><td>&quot;2022-06-02T16:58:35+00:00&quot;</td></tr><tr><td>COOKIE</td><td>&quot;Thursday, 02-Jun-2022 16:58:35 UTC&quot;</td></tr><tr><td>ISO8601</td><td>&quot;2022-06-02T16:58:35+0000&quot;</td></tr><tr><td><a href="http://www.faqs.org/rfcs/rfc822">» RFC 822</a></td><td>&quot;Thu, 02 Jun 22 16:58:35 +0000&quot;</td></tr><tr><td><a href="http://www.faqs.org/rfcs/rfc850">» RFC 850</a></td><td>&quot;Thursday, 02-Jun-22 16:58:35 UTC&quot;</td></tr><tr><td><a href="http://www.faqs.org/rfcs/rfc1036">» RFC 1036</a></td><td>&quot;Thu, 02 Jun 22 16:58:35 +0000&quot;</td></tr><tr><td><a href="http://www.faqs.org/rfcs/rfc1123">» RFC 1123</a></td><td>&quot;Thu, 02 Jun 2022 16:58:35 +0000&quot;</td></tr><tr><td><a href="http://www.faqs.org/rfcs/rfc2822">» RFC 2822</a></td><td>&quot;Thu, 02 Jun 2022 16:58:35 +0000&quot;</td></tr><tr><td><a href="http://www.faqs.org/rfcs/rfc3339">» RFC 3339</a></td><td>&quot;2022-06-02T16:58:35+00:00&quot;</td></tr><tr><td><a href="http://www.faqs.org/rfcs/rfc3339">» RFC 3339</a> Extended</td><td>&quot;2022-06-02T16:58:35.698+00:00&quot;</td></tr><tr><td><a href="http://www.faqs.org/rfcs/rfc7231">» RFC 7231</a></td><td>&quot;Thu, 02 Jun 2022 16:58:35 GMT&quot;</td></tr><tr><td>RSS</td><td>&quot;Thu, 02 Jun 2022 16:58:35 +0000&quot;</td></tr><tr><td>W3C</td><td>&quot;2022-06-02T16:58:35+00:00&quot;</td></tr></tbody></table>
+<p><strong>Регіональні нотації</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опис</th><th>Формат</th><th>Приклады</th></tr></thead><tbody><tr><td>Загальний формат log-записів</td><td><code>dd</code> &quot;/&quot; <code>M</code> &quot;/&quot; <code>YY</code> : <code>HH</code> &quot;:&quot; <code>II</code> &quot;:&quot; <code>SS</code><code>space</code><code>tzcorrection</code></td><td>&quot;10/Oct/2000:13:55:36 -0700&quot;</td></tr><tr><td>EXIF</td><td><code>YY</code> &quot;:&quot; <code>MM</code> &quot;:&quot; <code>DD</code> &quot; &quot; <code>HH</code> &quot;:&quot; <code>II</code> &quot;:&quot; <code>SS</code></td><td>&quot;2008:08:07 18:11:31&quot;</td></tr><tr><td>Рік та тиждень у форматі ISO</td><td><code>YY</code> &quot;-&quot;? &quot;W&quot; <code>W</code></td><td>&quot;2008W27&quot;, &quot;2008-W28&quot;</td></tr><tr><td>Рік, тиждень у форматі ISO та день тижня</td><td><code>YY</code> &quot;-&quot;? &quot;W&quot; <code>W</code> &quot;-&quot;? [0-7]</td><td>&quot;2008W273&quot;, &quot;2008-W28-3&quot;</td></tr><tr><td>MySQL</td><td><code>YY</code> &quot;-&quot; <code>MM</code> &quot;-&quot; <code>DD</code> &quot; &quot; <code>HH</code> &quot;:&quot; <code>II</code> &quot;:&quot; <code>SS</code></td><td>&quot;2008-08-07 18:11:31&quot;</td></tr><tr><td>PostgreSQL: рік і день у році</td><td><code>YY</code> &quot;.&quot;? <code>doy</code></td><td>&quot;2008.197&quot;, &quot;2008197&quot;</td></tr><tr><td>SOAP</td><td><code>YY</code> &quot;-&quot; <code>MM</code> &quot;-&quot; <code>DD</code> &quot;T&quot; <code>HH</code> &quot;:&quot; <code>II</code> &quot;:&quot; <code>SS</code><code>frac</code><code>tzcorrection</code>?</td><td>&quot;2008-07-01T22:35:17.02&quot;, &quot;2008-07-01T22:35:17.03+08:00&quot;</td></tr><tr><td>Unix Timestamp</td><td>&quot;@&quot; &quot;-&quot;? [0-9]+</td><td>&quot;@1215282385&quot;</td></tr><tr><td>Мітка часу Unix з мікросекундами</td><td>&quot;@&quot; &quot;-&quot;? [0-9]+ &quot;.&quot; [0-9]{0,6}</td><td>&quot;@1607974647.503686&quot;</td></tr><tr><td>XMLRPC</td><td><code>YY</code><code>MM</code><code>DD</code> &quot;T&quot; <code>hh</code> &quot;:&quot; <code>II</code> &quot;:&quot; <code>SS</code></td><td>&quot;20080701T22:38:07&quot;, &quot;20080701T9:38:07&quot;</td></tr><tr><td>XMLRPC (Compact)</td><td><code>YY</code><code>MM</code><code>DD</code> &#x27;t&#x27; <code>hh</code><code>II</code><code>SS</code></td><td>&quot;20080701t223807&quot;, &quot;20080701T093807&quot;</td></tr><tr><td>WDDX</td><td><code>YY</code> &quot;-&quot; <code>mm</code> &quot;-&quot; <code>dd</code> &quot;T&quot; <code>hh</code> &quot;:&quot; <code>ii</code> &quot;:&quot; <code>ss</code></td><td>&quot;2008-7-1T9:3:37&quot;</td></tr></tbody></table>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Символ &quot;W&quot; у форматах &quot;Рік та тиждень у форматі ISO&quot; та &quot;Рік, тиждень у форматі ISO та день тижня&quot; чутливий до регістру, допускається використання символу &quot;W&quot; тільки у верхньому регістрі.</p>
+<p>Символ &quot;T&quot; у форматах SOAP, XMLRPC та WDDX також чутливий до регістру, допускається використання символу &quot;T&quot; тільки у верхньому регістрі.</p>
+<p>Формат Unix Timestamp встановлює часовий пояс в UTC.</p>
+</blockquote>
+<h2>Відносні формати</h2>
+<p>На цій сторінці описані відносні формати дати/часу в BNF-подібному синтаксисі, які розуміє парсер функцій: <a href="class.datetimeimmutable.md">DateTimeImmutable</a> <a href="class.datetime.md">DateTime</a> <a href="function.date-create.md">date_create()</a> <a href="function.date-create-immutable.md">date_create_immutable()</a> і <a href="function.strtotime.md">strtotime()</a></p>
+<p>Щоб відформатувати об&#x27;єкти <a href="class.datetimeimmutable.md">DateTimeImmutable</a> і <a href="class.datetime.md">DateTime</a>, обратитесь к документации метода<a href="datetime.format.md">DateTimeInterface::format()</a></p>
+<p><strong>Використовувані символи</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опис</th><th>Формат</th></tr></thead><tbody><tr><td><code>dayname</code> (найменування дня тижня)</td><td>&#x27;sunday&#x27;</td></tr><tr><td><code>daytext</code> (інтервали в тижнях)</td><td>&#x27;weekday&#x27;</td></tr><tr><td><code>number</code></td><td>[+-]? [0-9]+</td></tr><tr><td><code>ordinal</code> (порядкові числівники та покажчики)</td><td>&#x27;first&#x27;</td></tr><tr><td><code>reltext</code> (покажчики)</td><td>&#x27;next&#x27;</td></tr><tr><td><code>space</code> (Символи пробілу та табуляції)</td><td>[ \t]+</td></tr><tr><td><code>unit</code> (інтервали)</td><td>&#x27;ms&#x27;</td></tr></tbody></table>
+<p><strong>Нотації на днях</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Формат</th><th>Опис</th><th>Приклады</th></tr></thead><tbody><tr><td>&#x27;yesterday&#x27;</td><td>Північ учора</td><td>&quot;yesterday 14:00&quot;</td></tr><tr><td>&#x27;midnight&#x27;</td><td>Час встановлюється о 00:00:00</td><td></td></tr><tr><td>&#x27;today&#x27;</td><td>Час встановлюється о 00:00:00</td><td></td></tr><tr><td>&#x27;now&#x27;</td><td>поточний час</td><td></td></tr><tr><td>&#x27;noon&#x27;</td><td>Час встановлюється о 12:00:00</td><td>&quot;yesterday noon&quot;</td></tr><tr><td>&#x27;tomorrow&#x27;</td><td>Опівночі завтра</td><td></td></tr><tr><td>&#x27;back of&#x27; <code>hour</code></td><td>15 хвилин заданої години</td><td>&quot;back of 7pm&quot;, &quot;back of 15&quot;</td></tr><tr><td>&#x27;front of&#x27; <code>hour</code></td><td>Без 15 хвилин задану годину</td><td>&quot;front of 5am&quot;, &quot;front of 23&quot;</td></tr><tr><td>&#x27;first day of&#x27;</td><td>Встановлює перший день цього місяця. Зазвичай цю нотацію краще використовувати разом із назвою місяця, що йде за нею, інакше буде враховуватися поточний місяць.</td><td>&quot;first day of January 2008&quot;</td></tr><tr><td>&#x27;last day of&#x27;</td><td>Встановлює останній день цього місяця. Зазвичай цю нотацію краще використовувати разом із назвою місяця, що йде за нею, інакше буде враховуватися поточний місяць.</td><td>&quot;last day of next month&quot;</td></tr><tr><td><code>ordinal</code><code>space</code><code>dayname</code><code>space</code> &#x27;of&#x27;</td><td>Обчислює <code>x</code> день тижня поточного чи заданого місяця.</td><td>&quot;first sat of July 2008&quot;</td></tr><tr><td>&#x27;last&#x27; <code>space</code><code>dayname</code><code>space</code> &#x27;of&#x27;</td><td>Обчислює <em>останній</em> день тижня поточного чи заданого місяця.</td><td>&quot;last sat of July 2008&quot;</td></tr><tr><td><code>number</code><code>space</code>? (<code>unit</code></td><td>&#x27;week&#x27;)</td><td>Обчислює відносний час з використанням числових значень періоду.</td></tr><tr><td><code>ordinal</code></td><td><code>reltext</code><code>space</code><code>unit</code></td><td>Обчислює відносний час під час використання рядкових значень періоду. . <code>last</code>и<code>previous</code> те саме, що і <code>-1</code><code>this</code> ні на що не впливає, а <code>next</code><code>+1</code></td></tr><tr><td>&#x27;ago&#x27;</td><td>Віднімає всі значення від останнього отриманого моменту часу.</td><td>&quot;2 days ago&quot;, &quot;8 days ago 14:00&quot;, &quot;2 months 5 days ago&quot;, &quot;2 months ago 5 days&quot;, &quot;2 days ago ago&quot;</td></tr><tr><td><code>dayname</code></td><td>Переміщається наступного дня вказаного дня тижня. (Дивіться <a href="datetime.formats.md#datetime.formats.relative.dayname-note">зауваження</a>) .</td><td>&quot;Monday&quot;</td></tr><tr><td><code>reltext</code><code>space</code> &#x27;week&#x27;</td><td>Розбирає специфічний формат &quot;weekday + last/this/next week&quot;.</td><td>&quot;Monday next week&quot;</td></tr></tbody></table>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Відносні вирази завжди обробляються <em>після</em> які є відносними. Наприклад, &quot;+1 week july 2008&quot; еквівалентно &quot;july 2008 +1 week&quot;.</p>
+<p>Винятком цього правила є: &quot;yesterday&quot;, &quot;midnight&quot;, &quot;today&quot;, &quot;noon&quot; і &quot;tomorrow&quot;. Записи &quot;tomorrow 11:00&quot; та &quot;11:00 tomorrow&quot; відрізняються. Якщо прийняти сьогоднішню дату за &quot;July 23rd, 2008&quot;, то перший запис повертає &quot;2008-07-24 11:00&quot;, а другий &quot;2008-07-24 00:00&quot;. Причина такої поведінки в тому, що ці п&#x27;ять виразів впливають безпосередньо на певний час.</p>
+<p>Такі ключові слова як &quot;first day of&quot; залежать від контексту, в якому використовується рядок відносного формату. Якщо вона використовується у статичному методі або функції, то референтом є поточна системна позначка часу. Однак при використанні у методі <a href="datetime.modify.md">DateTime::modify()</a> або <a href="datetimeimmutable.modify.md">DateTimeImmutable::modify()</a>, референтом є об&#x27;єкт, на якому викликається метод <code>modify()</code></p>
+</blockquote>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Слід звернути увагу на наведені нижче зауваження щодо поточного дня тижня та дня тижня, вказаного у рядку дати/часу. Поточний день тижня може бути вирахований із незалежної частини рядка дати/часу.</p>
+<ol>
+<li>&quot;<code>dayname</code>&quot; <em>не</em> зсуває дату другого дня. (Наприклад: &quot;Wed July 23rd, 2008&quot; означає &quot;2008-07-23&quot;).</li>
+<li>&quot;<code>number</code> <code>dayname</code>&quot; <em>не</em> зсуває дату другого дня. (Наприклад: &quot;1 wednesday july 23rd, 2008&quot; означає &quot;2008-07-23&quot;).</li>
+<li>&quot;<code>number</code>week<code>dayname</code>додає відповідну кількість тижнів, але <em>не</em> зсуває дату другого дня. У цьому випадку мають місце два різні блоки &quot;<code>number</code> week&quot; та &quot;<code>dayname</code>&quot;. (Наприклад: &quot;+1 week wednesday july 23rd, 2008&quot; означає &quot;2008-07-30&quot;).</li>
+<li>&quot;<code>ordinal</code> <code>dayname</code>&quot; <em>зрушує</em> дату другого дня. (Наприклад: &quot;last wednesday july 23rd, 2008&quot; означає &quot;2008-07-30&quot;).</li>
+<li>&quot;<code>number</code>week<code>ordinal</code> <code>dayname</code>додає відповідне число тижнів, а після <em>зрушує</em> дату другого дня. У цьому випадку мають місце два різні блоки &quot;<code>number</code> week&quot; та &quot;<code>ordinal</code> <code>dayname</code>&quot;. (Наприклад: &quot;+1 week first wednesday july 23rd, 2008&quot; означає &quot;2008-08-06&quot;).</li>
+<li>&quot;<code>ordinal</code> <code>dayname</code> &#x27;of&#x27; &quot; <em>не</em> зсуває дату другого дня. (Наприклад: &quot;first wednesday of july 23rd, 2008&quot; означає &quot;2008-07-02&quot;, тому що певні фрази з &#x27;of&#x27; скидають день місяця на &#x27;1&#x27; і в цьому випадку ігнорується &#x27;23rd&#x27;).</li>
+</ol>
+<p>Також слід звернути увагу, що &quot;of&quot; в &quot;<code>ordinal</code> <code>space</code> <code>dayname</code> <code>space</code> &#x27;of&#x27;&quot; та &quot;&#x27;last&#x27; <code>space</code> <code>dayname</code> <code>space</code> &#x27;of&#x27; &quot; має особливе значення.</p>
+<ol>
+<li>Встановлює день місяця один.</li>
+<li>&quot;<code>ordinal</code> <code>dayname</code> &#x27;of&#x27; &quot;<em>не</em> зсуває дату другого дня. (Наприклад: &quot;first tuesday of july 2008&quot; означає &quot;2008-07-01&quot;).</li>
+<li>&quot;<code>ordinal</code> <code>dayname</code>&quot; <em>зрушує</em> дату другого дня. (Наприклад: &quot;first tuesday july 2008&quot; означає &quot;2008-07-08&quot;, дивіться також 4-й пункт попереднього зауваження).</li>
+<li>&quot;&#x27;last&#x27; <code>dayname</code> &#x27;of&#x27; &quot; отримує останній у місяці <code>dayname</code>. . (Наприклад: &quot;last wed of july 2008&quot; означає &quot;2008-07-30&quot;)</li>
+<li>&quot;&#x27;last&#x27; <code>dayname</code>отримує останній <code>dayname</code> перед поточним днем. (Наприклад: &quot;last wed july 2008&quot; означає &quot;2008-06-25&quot;; &quot;july 2008&quot; встановлює дату в &quot;2008-07-01&quot;, а після &quot;last wed&quot; зміщує дату до попереднього середовища, а саме до &quot;2008 -06-25 &quot;).</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Відносні значення у місяцях розраховуються виходячи з їхньої тривалості. Наприклад, із &quot;+2 month 2011-11-30&quot; вийде &quot;2012-01-30&quot;. Це з тим, що листопад складається з 30 днів, а грудень з 31 дня, що становить 61 днів.</p>
+</blockquote>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Під числом (<code>number</code>) Мається на увазі ціле число (<em>integer</em>); Якщо буде вказано десяткове число, то десяткова точка (або кома) розглядатиметься як роздільник. Наприклад, <code>&#x27;+1.5 hours&#x27;</code> буде вважатися як <code>&#x27;+1 5 hours&#x27;</code>, а не<code>&#x27;+1 hour +30 minutes&#x27;</code></p>
+</blockquote>
+<h3>список змін</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>8.2.0</td><td>Символи <code>number</code> більше не приймають кілька знаків, наприклад, <code>+-2</code></td></tr><tr><td>7.0.8</td><td>Тижні завжди починаються з понеділка. Раніше можна було визначити початок тижня з неділі.</td></tr></tbody></table></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/datetime.formats.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/datetime.formats.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"datetime.formats.md","content":"# Допустимі формати дати/часу\n\nУ цьому розділі описуються всі різні формати в BNF-подібному синтаксисі, які приймає парсер: [DateTimeImmutable](class.datetimeimmutable.md) [DateTime](class.datetime.md) [date\\_create\\_immutable()](function.date-create-immutable.md) [date\\_create()](function.date-create.md) [date\\_parse()](function.date-parse.md) і [strtotime()](function.strtotime.md). Формати згруповані за розділами. У більшості випадків формати з різних розділів, розділені пробілом, комою або точкою, можуть використовуватися в одному і тому ж рядку дати/часу. Для кожного з підтримуваних форматів наведено один або кілька прикладів, а також опис формату. Символи в одинарних лапках нечутливі до регістру (`'t'` еквівалентно як `t`, так и`T`), символи в подвійних лапках чутливі до регістру (`\"T\"` означає тільки `T`\n\nЩоб відформатувати об'єкти [DateTimeImmutable](class.datetimeimmutable.md) і [DateTime](class.datetime.md), обратитесь к документации метода[DateTimeInterface::format()](datetime.format.md)\n\nСлід взяти до уваги загальне склепіння правил.\n\n1.  Парсер допускає кожної одиниці виміру (рік, місяць, день, година, хвилина, секунда) повний діапазон значень. Для року це всього 4 цифри, для місяця – 0-12, дня – 0-31, для години – 0-24, а для хвилини – 0-59.\n    \n2.  Для секунд допускається значення 60, оскільки іноді рядки дати з цією секундою, що стрибає, дійсно з'являються. Але PHP реалізує час Unix, де \"60\" не є допустимим числом секунд і тому відбувається переповнення.\n    \n3.  Функция[strtotime()](function.strtotime.md) повертає **`false`**, якщо якесь число знаходиться поза діапазонами, а конструктор[DateTimeImmutable::\\_\\_construct()](datetimeimmutable.construct.md)викидає виняток.\n    \n4.  Якщо рядок містить дату, то всі елементи часу обнулюються до 0.\n    \n5.  Все менш значущі елементи часу скидаються до 0, якщо у цьому рядку є якась частина часу.\n    \n6.  Парсер не робить жодних перевірок, щоб зробити його швидше (і більш універсальним).\n    \n7.  Крім правил для окремих елементів часу, синтаксичний аналізатор розуміє і специфічніші комбіновані формати, наприклад, розбір міток часу Unix (`@1690388256`) та дат тижня у форматі ISO (`2008-W28-3`\n    \n8.  Існує додаткова перевірка, якщо вказано недійсну дату:\n    \n    ```php\n    \u003c?php\n    $res = date_parse(\"2015-09-31\");\n    var_dump($res[\"warnings\"]);\n    ?\u003e\n    ```\n    \n    Результат виконання наведеного прикладу:\n    \n    ```\n    array(1) {\n      [11] =\u003e\n      string(27) \"The parsed date was invalid\"\n    }\n    ```\n    \n9.  Крайні випадки вже можна обробити, для цього необхідно використати метод[DateTimeImmutable::createFromFormat()](datetimeimmutable.createfromformat.md), надаючи правильний формат.\n    \n    ```php\n    \u003c?php\n    $res = DateTimeImmutable::createFromFormat(\"Y-m-d\", \"2015-09-34\");\n    var_dump($res);\n    ```\n    \n    Результат виконання наведеного прикладу:\n    \n    ```\n    object(DateTimeImmutable)#1 (3) {\n      [\"date\"]=\u003e\n      string(26) \"2015-10-04 17:24:43.000000\"\n      [\"timezone_type\"]=\u003e\n      int(3)\n      [\"timezone\"]=\u003e\n      string(13) \"Europe/London\"\n    }\n    ```\n    \n\n## Формати часу\n\nНа цій сторінці описані формати дати/часу в BNF-подібному синтаксисі, які розуміє парсер функцій: [DateTimeImmutable](class.datetimeimmutable.md) [DateTime](class.datetime.md) [date\\_create()](function.date-create.md) [date\\_create\\_immutable()](function.date-create-immutable.md) і [strtotime()](function.strtotime.md)\n\nЩоб відформатувати об'єкти [DateTimeImmutable](class.datetimeimmutable.md) і [DateTime](class.datetime.md), обратитесь к документации метода[DateTimeInterface::format()](datetime.format.md)\n\n**Використовувані символи**\n\n| Опис | Формат | Приклады |\n| --- | --- | --- |\n| `frac` (дробова частина) | . . \\[0-9\\]+ | \".21342\", \".85\" |\n| `hh` (годинник у 12-годинному форматі) | \"0\"?\\[1-9\\] | \"1\"\\[0-2\\] |\n| `HH` (годинник у 24-годинному форматі) | \\[01\\]\\[0-9\\] | \"2\"\\[0-4\\] |\n| `meridian` (Ante meridiem або Post meridiem) | \\[AaPp\\] .? \\[Mm\\] .? \\[\\\\ \\\\t \\] | \"A.m.\", \"pM\", \"am.\" |\n| `MM` (хвилини) | \\[0-5\\]\\[0-9\\] | \"00\", \"12\", \"59\" |\n| `II` (секунди) | \\[0-5\\]\\[0-9\\] | \"00\", \"12\", \"59\" |\n| `space` (Символ пробілу або табуляції) | \\[ \\\\t\\] |  |\n| `tz` (часовий пояс) | \"(\"? \\[A-Za-z\\]{1,6} \")\"? | \\[A-Z\\]\\[a-z\\]+(\\[\\_ \\]\\[A-Z\\]\\[a-z\\]+)+ |\n| `tzcorrection` (числове значення усунення часового поясу) | \"GMT\"? \\[+-\\] `hh` \":\"? `MM`? | \"+0400\", \"GMT-07:00\", \"-07:00\" |\n\n**12-годинний формат**\n\n| Опис | Формат | Приклады |\n| --- | --- | --- |\n| Тільки годинник (з Ante meridiem або Post meridiem) | `hh` `space`? `meridian` | \"4 am\", \"5PM\" |\n| Годинники та хвилини (з `Ante meridiem`или`Post meridiem`) . | `hh` \\[.:\\] `MM` `space`? `meridian` | \"4:08 am\", \"7:19P.M.\" |\n| Годинники, хвилини та секунди (з `Ante meridiem`или`Post meridiem`) . | `hh` \\[.:\\] `MM` \\[.:\\] `II` `space`? `meridian` | \"4:08:37 am\", \"7:19:19P.M.\" |\n| MS SQL (Годинник, хвилини, секунди та дробова частина з Ante meridiem або Post meridiem) | `hh` \":\" `MM` \":\" `II` \\[.:\\] \\[0-9\\]+ `meridian` | \"4:08:39:12313am\" |\n\n**24-годинний формат**\n\n| Опис | Формат | Приклады |\n| --- | --- | --- |\n| Годинник та хвилина | 't'? `HH` \\[.:\\] `MM` | \"04:08\", \"19.19\", \"T23:43\" |\n| Годинники та хвилини (без двокрапки-розділювача) | 't'? `HH` `MM` | \"0408\", \"t1919\", \"T2343\" |\n| Годинники, хвилини та секунди | 't'? `HH` \\[.:\\] `MM` \\[.:\\] `II` | \"04.08.37\", \"t19:19:19\" |\n| Годинники, хвилини та секунди (без двокрапки-розділювача) | 't'? `HH` `MM` `II` | \"040837\", \"T191919\" |\n| Годинник, хвилини, секунди та часовий пояс | 't'? `HH` \\[.:\\] `MM` \\[.:\\] `II` `space`? ( `tzcorrection` | `tz` |\n| Годинники, хвилини, секунди та дрібна частина | 't'? `HH` \\[.:\\] `MM` \\[.:\\] `II` `frac` | \"04.08.37.81412\", \"19:19:19.532453\" |\n| Відомості про часовий пояс | `tz` | `tzcorrection` |\n\n## Формати дати\n\nНа цій сторінці описані формати дати в BNF-подібному синтаксисі, які розуміє парсер функцій: [DateTimeImmutable](class.datetimeimmutable.md) [DateTime](class.datetime.md) [date\\_create()](function.date-create.md) [date\\_create\\_immutable()](function.date-create-immutable.md) і [strtotime()](function.strtotime.md)\n\nЩоб відформатувати об'єкти [DateTimeImmutable](class.datetimeimmutable.md) і [DateTime](class.datetime.md), обратитесь к документации метода[DateTimeInterface::format()](datetime.format.md)\n\n**Використовувані символи**\n\n| Опис | Формат | Приклады |\n| --- | --- | --- |\n| `daysuf` (Суфікс порядкового числівника місяця) | \"st\" | \"nd\" |\n| `dd` (День місяця без провідних нулів) | \\[0-2\\]? \\[0-9\\] | \"3\"\\[01\\] `daysuf`? |\n| `DD` (День місяця, 2 цифри з провідним нулем) | \"0\" \\[0-9\\] | \\[1-2\\]\\[0-9\\] |\n| `m` (Повна або скорочена назва місяця) | 'january' | 'february' |\n| `M` (скорочена назва місяця) | 'jan' | 'feb' |\n| `mm` (порядковий номер місяця) | \"0\"? \\[0-9\\] | \"1\"\\[0-2\\] |\n| `MM` (порядковий номер місяця, 2 цифри з провідним нулем) | \"0\" \\[0-9\\] | \"1\"\\[0-2\\] |\n| `y` (порядковий номер року) | \\[0-9\\]{1,4} | \"00\", \"78\", \"08\", \"8\", \"2008\" |\n| `yy` (порядковий номер року, 2 цифри) | \\[0-9\\]{2} | \"00\", \"08\", \"78\" |\n| `YY` (порядковий номер року, 4 цифри) | \\[0-9\\]{4} | \"2000\", \"2008\", \"1978\" |\n| `YYY` | \\[0-9\\]{5,19} | \"81412\", \"20192\" |\n\n**Регіональні нотації**\n\n| Опис | Формат | Приклады |\n| --- | --- | --- |\n| Місяць та день в американській нотації | `mm` \"/\" `dd` | \"5/12\", \"10/27\" |\n| Місяць, день і рік в американській нотації | `mm` \"/\" `dd` \"/\" `y` | \"12/22/78\", \"1/17/2006\", \"1/17/6\" |\n| 4 цифри року, місяць і день зі слішем-розділювачем | `YY` \"/\" `mm` \"/\" `dd` | \"2008/6/30\", \"1978/12/22\" |\n| 4 цифри року та місяць (GNU) | `YY` \"-\" `mm` | \"2008-6\", \"2008-06\", \"1978-12\" |\n| Рік, місяць і день з дефісом-розділювачем | `y` \"-\" `mm` \"-\" `dd` | \"2008-6-30\", \"78-12-22\", \"8-6-21\" |\n| День, місяць та 4 цифри року з роздільником у вигляді крапки, символу табуляції чи дефісу | `dd` \\[ \\\\t-\\] `mm` \\[.-\\] `YY` | \"30-6-2008\", \"22.12.1978\" |\n| День, місяць та 2 цифри року з роздільником у вигляді крапки або символу табуляції | `dd` \\[ \\\\t\\] `mm` \".\" `yy` | \"30.6.08\", \"22.12.78\" |\n| День, назва місяця та рік | `dd` \\[ \\\\t.-\\]) . \\* `m` \\[ \\\\t.-\\]) . \\* `y` | \"30-June 2008\", \"22DEC78\", \"14 III 1879\" |\n| Назва місяця та 4 цифри року (день місяця скидається на 1) | `m` \\[ \\\\t.-\\]) . \\* `YY` | \"June 2008\", \"DEC1978\", \"March 1879\" |\n| 4 цифри року та назва місяця (день місяця скидається на 1) | `YY` \\[ \\\\t.-\\]) . \\* `m` | \"2008 June\", \"1978-XII\", \"1879.MArCH\" |\n| Назва місяця, день та рік | `m` \\[ \\\\t-\\]) . \\* `dd` \\[,.stndrh\\\\t \\]+ `y` | \"July 1st, 2008\", \"April 17, 1790\", \"May.9,78\" |\n| Назва місяця та дня | `m` \\[ \\\\t-\\]) . \\* `dd` \\[,.stndrh\\\\t \\]\\* | \"July 1st,\", \"Apr 17\", \"May.9\" |\n| День та назва місяця | `dd` \\[ \\\\t-\\]) . \\* `m` | \"1 July\", \"17 Apr\", \"9.May\" |\n| Скорочена назва місяця, день та рік | `M` \"-\" `DD` \"-\" `y` | \"May-09-78\", \"Apr-17-1790\" |\n| Рік, скорочена назва місяця та дня | `y` \"-\" `M` \"-\" `DD` | \"78-Dec-22\", \"1814-MAY-17\" |\n| Лише рік | `YY` | \"1978\", \"2008\" |\n| Рік (розширений, 5-19 цифр зі знаком) | \\[+-\\] `YYY` | \"-81120\", \"+20192\" |\n| Лише назва місяця | `m` | \"March\", \"jun\", \"DEC\" |\n\n**Нотації ISO8601**\n\n| Опис | Формат | Приклады |\n| --- | --- | --- |\n| 8 цифр (рік, місяць та день) | `YY` `MM` `DD` | \"15810726\", \"19780417\", \"18140517\" |\n| 8 цифр (рік, місяць і день) зі слішем-розділювачем | `YY` \"/\" `MM` \"/\" `DD` | \"2008/06/30\", \"1978/12/22\" |\n| 2 цифри року, місяць та день з дефісом-розділювачем | `yy` \"-\" `MM` \"-\" `DD` | \"08-06-30\", \"78-12-22\" |\n| 4 цифри року з необов'язковим знаком, місяць та день | \\[+-\\]? `YY` \"-\" `MM` \"-\" `DD` | \"-0002-07-26\", \"+1978-04-17\", \"1814-05-17\" |\n| П'ятизначний рік з обов'язковим знаком, місяцем та днем | \\[+-\\] `YYY` \"-\" `MM` \"-\" `DD` | \"-81120-02-26\", \"+20192-04-17\" |\n\n\u003e **Зауваження** :\n\u003e \n\u003e Формати `y`и`yy` для років менше 100 обробляються у виняткових випадках під час використання символів `y`или`yy`. . Якщо рік потрапляє до діапазону 0-69 (включно), то до нього додається 2000. Якщо ж рік належить діапазону 70-99 (включно), то до нього додається 1900. Це означає, що дата \"00-01-01\" інтерпретується як \"2000-01-01\".\n\n\u003e **Зауваження** :\n\u003e \n\u003e Формат \"День, місяць та 2 цифри року з роздільником у вигляді крапки або символу табуляції\" (`dd` \\[ \\\\t\\] `mm` \".\" `yy`) працює тільки для років з діапазону 61-99 (включно). За межами цього діапазону надається перевага *формату часу* \"`HH` \\[.:\\] `MM` \\[.:\\] `SS`\".\n\n\u003e **Зауваження** :\n\u003e \n\u003e Формат \"Тільки рік\" задіюється лише у випадку, якщо рядок часу було знайдено. Інакше віддається перевагу формату `HH` `MM`\n\n**Застереження**\n\nМожливий вихід за межі діапазону форматів `dd`и`DD`. . День місяця з порядковим номером 0 має на увазі останній день попереднього місяця внаслідок виходу за межі діапазону. Згідно з написаним, \"2008-08-00\" рівносильно \"2008-07-31\", а \"2008-06-31\" відповідає \"2008-07-01\" (у червні всього 30 днів).\n\nЗауважте, що діапазон днів обмежений 0-31, як зазначено вище регулярним виразом. Тож, наприклад, \"2008-06-32\" - некоректна дата.\n\nТакож допускається вихід за межі діапазону для форматів `mm`и`MM` із значенням 0. Значення місяця 0 відповідає грудню попереднього року. Наприклад, дата \"2008-00-22\" рівносильна \"2007-12-22\".\n\nЯкщо врахувати два попередні зауваження та вихід за межі діапазону днів та місяців, отримаємо наступне: дата \"2008-00-00\" насамперед перетворюється на \"2007-12-00\", яка буде перетворена на \"2007-11-30\". Те саме станеться з датою \"0000-00-00\", яка буде перетворена на \"-0001-11-30\" (мінус перший рік у календарі ISO 8601 та 2 рік до н. е. за григоріанським календарем).\n\n## Складові форматів\n\nНа цій сторінці описані різні складові формати дати/часу в BNF-подібному синтаксисі, які розуміє парсер функцій: [DateTimeImmutable](class.datetimeimmutable.md) [DateTime](class.datetime.md) [date\\_create()](function.date-create.md) [date\\_create\\_immutable()](function.date-create-immutable.md) і [strtotime()](function.strtotime.md)\n\nЩоб відформатувати об'єкти [DateTimeImmutable](class.datetimeimmutable.md) і [DateTime](class.datetime.md), обратитесь к документации метода[DateTimeInterface::format()](datetime.format.md)\n\n**Використовувані символи**\n\n| Опис | Форматы | Приклады |\n| --- | --- | --- |\n| `DD` (День місяця з провідним нулем) | \"0\" \\[0-9\\] | \\[1-2\\]\\[0-9\\] |\n| `doy` (День на рік) | \"00\"\\[1-9\\] | \"0\"\\[1-9\\]\\[0-9\\] |\n| `frac` (дробова частина) | . . \\[0-9\\]+ | \".21342\", \".85\" |\n| `hh` (годинник) | \"0\"?\\[1-9\\] | \"1\"\\[0-2\\] |\n| `HH` (годинник з провідним нулем) | \\[01\\]\\[0-9\\] | \"2\"\\[0-4\\] |\n| `meridian` (Ante meridiem або Post meridiem) | \\[AaPp\\] .? \\[Mm\\] .? \\[\\\\ \\\\t \\] | \"A.m.\", \"pM\", \"am.\" |\n| `ii` (хвилини) | \\[0-5\\]? \\[0-9\\] | \"04\", \"8\", \"59\" |\n| `II` (хвилини з провідним нулем) | \\[0-5\\]\\[0-9\\] | \"04\", \"08\", \"59\" |\n| `M` (скорочене найменування місяця) | 'jan' | 'feb' |\n| `MM` (місяць із провідним нулем) | \\[0-1\\]\\[0-9\\] | \"00\", \"12\" |\n| `space` (Символ пробілу або табуляції) | \\[ \\\\t\\] |  |\n| `ss` (секунди) | \\[0-5\\]? \\[0-9\\]) . | 60 |\n| `SS` (секунди з провідним нулем) | \\[0-5\\]\\[0-9\\] | \"04\", \"08\", \"59\" |\n| `W` (тиждень у році) | \"0\"\\[1-9\\] | \\[1-4\\]\\[0-9\\] |\n| `tzcorrection` (Зміщення часового поясу) | \"GMT\"? \\[+-\\] `hh` \":\"? `II`? | \"+0400\", \"GMT-07:00\", \"-07:00\" |\n| `YY` (4 цифри року) | \\[0-9\\]{4} | \"2000\", \"2008\", \"1978\" |\n\n**Формати стандартів**\n\n| Опис | Приклады |\n| --- | --- |\n| ATOM | \"2022-06-02T16:58:35+00:00\" |\n| COOKIE | \"Thursday, 02-Jun-2022 16:58:35 UTC\" |\n| ISO8601 | \"2022-06-02T16:58:35+0000\" |\n| [» RFC 822](http://www.faqs.org/rfcs/rfc822) | \"Thu, 02 Jun 22 16:58:35 +0000\" |\n| [» RFC 850](http://www.faqs.org/rfcs/rfc850) | \"Thursday, 02-Jun-22 16:58:35 UTC\" |\n| [» RFC 1036](http://www.faqs.org/rfcs/rfc1036) | \"Thu, 02 Jun 22 16:58:35 +0000\" |\n| [» RFC 1123](http://www.faqs.org/rfcs/rfc1123) | \"Thu, 02 Jun 2022 16:58:35 +0000\" |\n| [» RFC 2822](http://www.faqs.org/rfcs/rfc2822) | \"Thu, 02 Jun 2022 16:58:35 +0000\" |\n| [» RFC 3339](http://www.faqs.org/rfcs/rfc3339) | \"2022-06-02T16:58:35+00:00\" |\n| [» RFC 3339](http://www.faqs.org/rfcs/rfc3339) Extended | \"2022-06-02T16:58:35.698+00:00\" |\n| [» RFC 7231](http://www.faqs.org/rfcs/rfc7231) | \"Thu, 02 Jun 2022 16:58:35 GMT\" |\n| RSS | \"Thu, 02 Jun 2022 16:58:35 +0000\" |\n| W3C | \"2022-06-02T16:58:35+00:00\" |\n\n**Регіональні нотації**\n\n| Опис | Формат | Приклады |\n| --- | --- | --- |\n| Загальний формат log-записів | `dd` \"/\" `M` \"/\" `YY` : `HH` \":\" `II` \":\" `SS` `space` `tzcorrection` | \"10/Oct/2000:13:55:36 -0700\" |\n| EXIF | `YY` \":\" `MM` \":\" `DD` \" \" `HH` \":\" `II` \":\" `SS` | \"2008:08:07 18:11:31\" |\n| Рік та тиждень у форматі ISO | `YY` \"-\"? \"W\" `W` | \"2008W27\", \"2008-W28\" |\n| Рік, тиждень у форматі ISO та день тижня | `YY` \"-\"? \"W\" `W` \"-\"? \\[0-7\\] | \"2008W273\", \"2008-W28-3\" |\n| MySQL | `YY` \"-\" `MM` \"-\" `DD` \" \" `HH` \":\" `II` \":\" `SS` | \"2008-08-07 18:11:31\" |\n| PostgreSQL: рік і день у році | `YY` \".\"? `doy` | \"2008.197\", \"2008197\" |\n| SOAP | `YY` \"-\" `MM` \"-\" `DD` \"T\" `HH` \":\" `II` \":\" `SS` `frac` `tzcorrection`? | \"2008-07-01T22:35:17.02\", \"2008-07-01T22:35:17.03+08:00\" |\n| Unix Timestamp | \"@\" \"-\"? \\[0-9\\]+ | \"@1215282385\" |\n| Мітка часу Unix з мікросекундами | \"@\" \"-\"? \\[0-9\\]+ \".\" \\[0-9\\]{0,6} | \"@1607974647.503686\" |\n| XMLRPC | `YY` `MM` `DD` \"T\" `hh` \":\" `II` \":\" `SS` | \"20080701T22:38:07\", \"20080701T9:38:07\" |\n| XMLRPC (Compact) | `YY` `MM` `DD` 't' `hh` `II` `SS` | \"20080701t223807\", \"20080701T093807\" |\n| WDDX | `YY` \"-\" `mm` \"-\" `dd` \"T\" `hh` \":\" `ii` \":\" `ss` | \"2008-7-1T9:3:37\" |\n\n\u003e **Зауваження** :\n\u003e \n\u003e Символ \"W\" у форматах \"Рік та тиждень у форматі ISO\" та \"Рік, тиждень у форматі ISO та день тижня\" чутливий до регістру, допускається використання символу \"W\" тільки у верхньому регістрі.\n\u003e \n\u003e Символ \"T\" у форматах SOAP, XMLRPC та WDDX також чутливий до регістру, допускається використання символу \"T\" тільки у верхньому регістрі.\n\u003e \n\u003e Формат Unix Timestamp встановлює часовий пояс в UTC.\n\n## Відносні формати\n\nНа цій сторінці описані відносні формати дати/часу в BNF-подібному синтаксисі, які розуміє парсер функцій: [DateTimeImmutable](class.datetimeimmutable.md) [DateTime](class.datetime.md) [date\\_create()](function.date-create.md) [date\\_create\\_immutable()](function.date-create-immutable.md) і [strtotime()](function.strtotime.md)\n\nЩоб відформатувати об'єкти [DateTimeImmutable](class.datetimeimmutable.md) і [DateTime](class.datetime.md), обратитесь к документации метода[DateTimeInterface::format()](datetime.format.md)\n\n**Використовувані символи**\n\n| Опис | Формат |\n| --- | --- |\n| `dayname` (найменування дня тижня) | 'sunday' |\n| `daytext` (інтервали в тижнях) | 'weekday' |\n| `number` | \\[+-\\]? \\[0-9\\]+ |\n| `ordinal` (порядкові числівники та покажчики) | 'first' |\n| `reltext` (покажчики) | 'next' |\n| `space` (Символи пробілу та табуляції) | \\[ \\\\t\\]+ |\n| `unit` (інтервали) | 'ms' |\n\n**Нотації на днях**\n\n| Формат | Опис | Приклады |\n| --- | --- | --- |\n| 'yesterday' | Північ учора | \"yesterday 14:00\" |\n| 'midnight' | Час встановлюється о 00:00:00 |  |\n| 'today' | Час встановлюється о 00:00:00 |  |\n| 'now' | поточний час |  |\n| 'noon' | Час встановлюється о 12:00:00 | \"yesterday noon\" |\n| 'tomorrow' | Опівночі завтра |  |\n| 'back of' `hour` | 15 хвилин заданої години | \"back of 7pm\", \"back of 15\" |\n| 'front of' `hour` | Без 15 хвилин задану годину | \"front of 5am\", \"front of 23\" |\n| 'first day of' | Встановлює перший день цього місяця. Зазвичай цю нотацію краще використовувати разом із назвою місяця, що йде за нею, інакше буде враховуватися поточний місяць. | \"first day of January 2008\" |\n| 'last day of' | Встановлює останній день цього місяця. Зазвичай цю нотацію краще використовувати разом із назвою місяця, що йде за нею, інакше буде враховуватися поточний місяць. | \"last day of next month\" |\n| `ordinal` `space` `dayname` `space` 'of' | Обчислює `x` день тижня поточного чи заданого місяця. | \"first sat of July 2008\" |\n| 'last' `space` `dayname` `space` 'of' | Обчислює *останній* день тижня поточного чи заданого місяця. | \"last sat of July 2008\" |\n| `number` `space`? (`unit` | 'week') | Обчислює відносний час з використанням числових значень періоду. |\n| `ordinal` | `reltext` `space` `unit` | Обчислює відносний час під час використання рядкових значень періоду. . `last`и`previous` те саме, що і `-1` `this` ні на що не впливає, а `next` `+1` |\n| 'ago' | Віднімає всі значення від останнього отриманого моменту часу. | \"2 days ago\", \"8 days ago 14:00\", \"2 months 5 days ago\", \"2 months ago 5 days\", \"2 days ago ago\" |\n| `dayname` | Переміщається наступного дня вказаного дня тижня. (Дивіться [зауваження](datetime.formats.md#datetime.formats.relative.dayname-note)) . | \"Monday\" |\n| `reltext` `space` 'week' | Розбирає специфічний формат \"weekday + last/this/next week\". | \"Monday next week\" |\n\n\u003e **Зауваження** :\n\u003e \n\u003e Відносні вирази завжди обробляються *після* які є відносними. Наприклад, \"+1 week july 2008\" еквівалентно \"july 2008 +1 week\".\n\u003e \n\u003e Винятком цього правила є: \"yesterday\", \"midnight\", \"today\", \"noon\" і \"tomorrow\". Записи \"tomorrow 11:00\" та \"11:00 tomorrow\" відрізняються. Якщо прийняти сьогоднішню дату за \"July 23rd, 2008\", то перший запис повертає \"2008-07-24 11:00\", а другий \"2008-07-24 00:00\". Причина такої поведінки в тому, що ці п'ять виразів впливають безпосередньо на певний час.\n\u003e \n\u003e Такі ключові слова як \"first day of\" залежать від контексту, в якому використовується рядок відносного формату. Якщо вона використовується у статичному методі або функції, то референтом є поточна системна позначка часу. Однак при використанні у методі [DateTime::modify()](datetime.modify.md) або [DateTimeImmutable::modify()](datetimeimmutable.modify.md), референтом є об'єкт, на якому викликається метод `modify()`\n\n\u003e **Зауваження** :\n\u003e \n\u003e Слід звернути увагу на наведені нижче зауваження щодо поточного дня тижня та дня тижня, вказаного у рядку дати/часу. Поточний день тижня може бути вирахований із незалежної частини рядка дати/часу.\n\u003e \n\u003e 1.  \"`dayname`\" *не* зсуває дату другого дня. (Наприклад: \"Wed July 23rd, 2008\" означає \"2008-07-23\").\n\u003e 2.  \"`number` `dayname`\" *не* зсуває дату другого дня. (Наприклад: \"1 wednesday july 23rd, 2008\" означає \"2008-07-23\").\n\u003e 3.  \"`number`week`dayname`додає відповідну кількість тижнів, але *не* зсуває дату другого дня. У цьому випадку мають місце два різні блоки \"`number` week\" та \"`dayname`\". (Наприклад: \"+1 week wednesday july 23rd, 2008\" означає \"2008-07-30\").\n\u003e 4.  \"`ordinal` `dayname`\" *зрушує* дату другого дня. (Наприклад: \"last wednesday july 23rd, 2008\" означає \"2008-07-30\").\n\u003e 5.  \"`number`week`ordinal` `dayname`додає відповідне число тижнів, а після *зрушує* дату другого дня. У цьому випадку мають місце два різні блоки \"`number` week\" та \"`ordinal` `dayname`\". (Наприклад: \"+1 week first wednesday july 23rd, 2008\" означає \"2008-08-06\").\n\u003e 6.  \"`ordinal` `dayname` 'of' \" *не* зсуває дату другого дня. (Наприклад: \"first wednesday of july 23rd, 2008\" означає \"2008-07-02\", тому що певні фрази з 'of' скидають день місяця на '1' і в цьому випадку ігнорується '23rd').\n\u003e \n\u003e Також слід звернути увагу, що \"of\" в \"`ordinal` `space` `dayname` `space` 'of'\" та \"'last' `space` `dayname` `space` 'of' \" має особливе значення.\n\u003e \n\u003e 1.  Встановлює день місяця один.\n\u003e 2.  \"`ordinal` `dayname` 'of' \"*не* зсуває дату другого дня. (Наприклад: \"first tuesday of july 2008\" означає \"2008-07-01\").\n\u003e 3.  \"`ordinal` `dayname`\" *зрушує* дату другого дня. (Наприклад: \"first tuesday july 2008\" означає \"2008-07-08\", дивіться також 4-й пункт попереднього зауваження).\n\u003e 4.  \"'last' `dayname` 'of' \" отримує останній у місяці `dayname`. . (Наприклад: \"last wed of july 2008\" означає \"2008-07-30\")\n\u003e 5.  \"'last' `dayname`отримує останній `dayname` перед поточним днем. (Наприклад: \"last wed july 2008\" означає \"2008-06-25\"; \"july 2008\" встановлює дату в \"2008-07-01\", а після \"last wed\" зміщує дату до попереднього середовища, а саме до \"2008 -06-25 \").\n\n\u003e **Зауваження** :\n\u003e \n\u003e Відносні значення у місяцях розраховуються виходячи з їхньої тривалості. Наприклад, із \"+2 month 2011-11-30\" вийде \"2012-01-30\". Це з тим, що листопад складається з 30 днів, а грудень з 31 дня, що становить 61 днів.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Під числом (`number`) Мається на увазі ціле число (*integer*); Якщо буде вказано десяткове число, то десяткова точка (або кома) розглядатиметься як роздільник. Наприклад, `'+1.5 hours'` буде вважатися як `'+1 5 hours'`, а не`'+1 hour +30 minutes'`\n\n### список змін\n\n| Версия | Опис |\n| --- | --- |\n| 8.2.0 | Символи `number` більше не приймають кілька знаків, наприклад, `+-2` |\n| 7.0.8 | Тижні завжди починаються з понеділка. Раніше можна було визначити початок тижня з неділі. |\n","title":"Допустимі формати дати/часу","contentType":2,"navigation":[{"datetime.error.tree.md":"« Date/Time Errors and Exceptions"},{"timezones.md":"Список підтримуваних часових поясів »"},{"index.md":"PHP Manual"},{"book.datetime.md":"Дата час"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"datetime.formats.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

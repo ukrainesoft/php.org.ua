@@ -1,0 +1,517 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас Zookeeper</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="function.zookeeper-dispatch.md" class="mx-4">« zookeeper\_dispatch</a><a href="zookeeper.addauth.md" class="mx-4">Zookeeper::addAuth »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.zookeeper.md" class="mx-4">ZooKeeper</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас Zookeeper</h1>
+<p>(PECL zookeeper &gt;= 0.1.0)</p>
+<h2>Вступ</h2>
+<p>Представляє сесію ZooKeeper.</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+
+    
+    
+     
+      class Zookeeper
+     
+
+     {
+    
+
+    
+    /* Методы */
+    
+   public
+   __construct(string $host = &#x27;&#x27;, callable $watcher_cb = null, int $recv_timeout = 10000)
+
+    public
+   addAuth(string $scheme, string $cert, callable $completion_cb = null): bool
+public
+   close(): void
+public
+   connect(string $host, callable $watcher_cb = null, int $recv_timeout = 10000): void
+public
+   create(    string $path,    string $value,    array $acls,    int $flags = null): string
+public
+   delete(string $path, int $version = -1): bool
+public
+   exists(string $path, callable $watcher_cb = null): array
+public
+   get(    string $path,    callable $watcher_cb = null,    array &amp;$stat = null,    int $max_size = 0): string
+public
+   getAcl(string $path): array
+public
+   getChildren(string $path, callable $watcher_cb = null): array
+public
+   getClientId(): int
+public
+   getConfig(): ZookeeperConfig
+public
+   getRecvTimeout(): int
+public
+   getState(): int
+public
+   isRecoverable(): bool
+public
+   set(    string $path,    string $value,    int $version = -1,    array &amp;$stat = null): bool
+public
+   setAcl(string $path, int $version, array $acl): bool
+public
+   static
+   setDebugLevel(int $logLevel): bool
+public
+   static
+   setDeterministicConnOrder(bool $yesOrNo): bool
+public
+   setLogStream(resource $stream): bool
+public
+   setWatcher(callable $watcher_cb): bool
+
+    
+
+    
+    /* Константы */
+    
+     const
+     int
+      PERM_READ = 1;
+
+    const
+     int
+      PERM_WRITE = 2;
+
+    const
+     int
+      PERM_CREATE = 4;
+
+    const
+     int
+      PERM_DELETE = 8;
+
+    const
+     int
+      PERM_ADMIN = 16;
+
+    const
+     int
+      PERM_ALL = 31;
+
+
+    const
+         int
+          EPHEMERAL = 1;
+
+    const
+     int
+      SEQUENCE = 2;
+
+
+    const
+     int
+      LOG_LEVEL_ERROR = 1;
+
+    const
+     int
+      LOG_LEVEL_WARN = 2;
+
+    const
+     int
+      LOG_LEVEL_INFO = 3;
+
+    const
+     int
+      LOG_LEVEL_DEBUG = 4;
+
+
+    const
+     int
+      EXPIRED_SESSION_STATE = -112;
+
+    const
+     int
+      AUTH_FAILED_STATE = -113;
+
+    const
+     int
+      CONNECTING_STATE = 1;
+
+    const
+     int
+      ASSOCIATING_STATE = 2;
+
+    const
+     int
+      CONNECTED_STATE = 3;
+
+    const
+     int
+      READONLY_STATE = 5;
+
+    const
+     int
+      NOTCONNECTED_STATE = 999;
+
+
+    const
+      int
+       CREATED_EVENT = 1;
+
+    const
+     int
+      DELETED_EVENT = 2;
+
+    const
+     int
+      CHANGED_EVENT = 3;
+
+    const
+     int
+      CHILD_EVENT = 4;
+
+    const
+     int
+      SESSION_EVENT = -1;
+
+    const
+     int
+      NOTWATCHING_EVENT = -2;
+
+
+    const
+     int
+      SYSTEMERROR = -1;
+
+    const
+     int
+      RUNTIMEINCONSISTENCY = -2;
+
+    const
+     int
+      DATAINCONSISTENCY = -3;
+
+    const
+     int
+      CONNECTIONLOSS = -4;
+
+    const
+     int
+      MARSHALLINGERROR = -5;
+
+    const
+     int
+      UNIMPLEMENTED = -6;
+
+    const
+     int
+      OPERATIONTIMEOUT = -7;
+
+    const
+     int
+      BADARGUMENTS = -8;
+
+    const
+     int
+      INVALIDSTATE = -9;
+
+    const
+     int
+      NEWCONFIGNOQUORUM = -13;
+
+    const
+     int
+      RECONFIGINPROGRESS = -14;
+
+
+    const
+     int
+      OK = 0;
+
+    const
+     int
+      APIERROR = -100;
+
+    const
+     int
+      NONODE = -101;
+
+    const
+     int
+      NOAUTH = -102;
+
+    const
+     int
+      BADVERSION = -103;
+
+    const
+     int
+      NOCHILDRENFOREPHEMERALS = -108;
+
+    const
+     int
+      NODEEXISTS = -110;
+
+    const
+     int
+      NOTEMPTY = -111;
+
+    const
+     int
+      SESSIONEXPIRED = -112;
+
+    const
+     int
+      INVALIDCALLBACK = -113;
+
+    const
+     int
+      INVALIDACL = -114;
+
+    const
+     int
+      AUTHFAILED = -115;
+
+    const
+     int
+      CLOSING = -116;
+
+    const
+     int
+      NOTHING = -117;
+
+    const
+     int
+      SESSIONMOVED = -118;
+
+    const
+     int
+      NOTREADONLY = -119;
+
+    const
+     int
+      EPHEMERALONLOCALSESSION = -120;
+
+    const
+     int
+      NOWATCHER = -121;
+
+    const
+     int
+      RECONFIGDISABLED = -122;
+
+    
+
+   }
+</code></pre>
+<h2>Обумовлені константи</h2>
+<h2>Дозволи ZooKeeper</h2>
+<p><strong><code>Zookeeper::PERM_READ</code></strong></p>
+<p>Можна читати значення вузла та список дочірніх вузлів</p>
+<p><strong><code>Zookeeper::PERM_WRITE</code></strong></p>
+<p>Можна встановлювати значення вузла</p>
+<p><strong><code>Zookeeper::PERM_CREATE</code></strong></p>
+<p>Можна створювати дочірні елементи</p>
+<p><strong><code>Zookeeper::PERM_DELETE</code></strong></p>
+<p>Можна видаляти дочірні елементи</p>
+<p><strong><code>Zookeeper::PERM_ADMIN</code></strong></p>
+<p>Можна запускати set_acl()</p>
+<p><strong><code>Zookeeper::PERM_ALL</code></strong></p>
+<p>Можна використовувати всі вищезгадані прапори разом</p>
+<h2>Прапори створення ZooKeeper</h2>
+<p><strong><code>Zookeeper::EPHEMERAL</code></strong></p>
+<p>Якщо встановлено прапорець Zookeeper::EPHEMERAL, вузол буде автоматично видалено після завершення клієнтської сесії.</p>
+<p><strong><code>Zookeeper::SEQUENCE</code></strong></p>
+<p>Якщо встановлено прапорець Zookeeper::SEQUENCE, до імені шляху буде додаватися унікальний номер із монотонно зростаючої послідовності. Номер із послідовності завжди має фіксовану довжину в 10 цифр, доповнену лідуючими нулями за потребою.</p>
+<h2>Рівень логування ZooKeeper</h2>
+<p><strong><code>Zookeeper::LOG_LEVEL_ERROR</code></strong></p>
+<p>Виводити лише повідомлення про помилки</p>
+<p><strong><code>Zookeeper::LOG_LEVEL_WARN</code></strong></p>
+<p>Виводити помилки та попередження</p>
+<p><strong><code>Zookeeper::LOG_LEVEL_INFO</code></strong></p>
+<p>Виводити великі повідомлення про дії, крім помилок і попереджень</p>
+<p><strong><code>Zookeeper::LOG_LEVEL_DEBUG</code></strong></p>
+<p>Виводити все</p>
+<h2>Стан ZooKeeper</h2>
+<p><strong><code>Zookeeper::EXPIRED_SESSION_STATE</code></strong></p>
+<p>З&#x27;єднання встановлено, але сесія закінчилася</p>
+<p><strong><code>Zookeeper::AUTH_FAILED_STATE</code></strong></p>
+<p>З&#x27;єднання встановлено, але автентифікація невдала</p>
+<p><strong><code>Zookeeper::CONNECTING_STATE</code></strong></p>
+<p>Встановлюється з&#x27;єднання</p>
+<p><strong><code>Zookeeper::ASSOCIATING_STATE</code></strong></p>
+<p>Асоціювання</p>
+<p><strong><code>Zookeeper::CONNECTED_STATE</code></strong></p>
+<p>З&#x27;єднання встановлено</p>
+<p><strong><code>Zookeeper::READONLY_STATE</code></strong></p>
+<p>TODO: допоможіть нам покращити модуль</p>
+<p><strong><code>Zookeeper::NOTCONNECTED_STATE</code></strong></p>
+<p>З&#x27;єднання не встановлено</p>
+<h2>Типи подій ZooKeeper</h2>
+<p><strong><code>Zookeeper::CREATED_EVENT</code></strong></p>
+<p>Вузол був створений</p>
+<p>Генерується лише шляхом спостереження за неіснуючими вузлами. Ці спостерігачі задаються за допомогою Zookeeper::exists.</p>
+<p><strong><code>Zookeeper::DELETED_EVENT</code></strong></p>
+<p>Вузол був видалений</p>
+<p>Генерується лише шляхом спостереження за вузлами. Ці спостерігачі задаються за допомогою Zookeeper::exists та Zookeeper::get.</p>
+<p><strong><code>Zookeeper::CHANGED_EVENT</code></strong></p>
+<p>Вузол був змінений</p>
+<p>Генерується лише шляхом спостереження за вузлами. Ці спостерігачі задаються за допомогою Zookeeper::exists та Zookeeper::get.</p>
+<p><strong><code>Zookeeper::CHILD_EVENT</code></strong></p>
+<p>Відбулася зміна у списку дочірніх вузлів</p>
+<p>Генерується лише шляхом спостереження за списком дочірніх вузлів. Ці спостерігачі задаються за допомогою Zookeeper::getChildren.</p>
+<p><strong><code>Zookeeper::SESSION_EVENT</code></strong></p>
+<p>Сесія була втрачена</p>
+<p>Генерується, коли клієнт втратив з&#x27;єднання з сервером, або ініціював переєднання.</p>
+<p><strong><code>Zookeeper::NOTWATCHING_EVENT</code></strong></p>
+<p>Спостерігач був вилучений</p>
+<p>Генерується сервером з різних причин, наприклад, пов&#x27;язаних з обмеженням ресурсу, і говорить про те, що подальше спостереження за вузлом неможливе.</p>
+<h2>Системні помилки та помилки на стороні сервера ZooKeeper</h2>
+<p><strong><code>Zookeeper::SYSTEMERROR</code></strong></p>
+<p>Ніколи не викидається сервером і може використовуватись лише для обмеження діапазону кодів помилок. Всі помилки більші за цю, але меншу Zookeeper::APIERROR, є системними помилками.</p>
+<p><strong><code>Zookeeper::RUNTIMEINCONSISTENCY</code></strong></p>
+<p>Виявлено неузгодженість під час виконання.</p>
+<p><strong><code>Zookeeper::DATAINCONSISTENCY</code></strong></p>
+<p>Виявлено неузгодженість даних.</p>
+<p><strong><code>Zookeeper::CONNECTIONLOSS</code></strong></p>
+<p>Втрачено з&#x27;єднання із сервером.</p>
+<p><strong><code>Zookeeper::MARSHALLINGERROR</code></strong></p>
+<p>Помилка при маршалінгу та демаршалінгу даних.</p>
+<p><strong><code>Zookeeper::UNIMPLEMENTED</code></strong></p>
+<p>Операцію не реалізовано.</p>
+<p><strong><code>Zookeeper::OPERATIONTIMEOUT</code></strong></p>
+<p>Перевищення часу очікування операції.</p>
+<p><strong><code>Zookeeper::BADARGUMENTS</code></strong></p>
+<p>Некоректний аргумент.</p>
+<p><strong><code>Zookeeper::INVALIDSTATE</code></strong></p>
+<p>Некоректний статус zhandle.</p>
+<p><strong><code>Zookeeper::NEWCONFIGNOQUORUM</code></strong></p>
+<p>Кворум нової конфігурації не підключений і синхронізований з лідером останньої підтвердженої конфігурації. Спробуйте запустити переконфігурацію після підключення та синхронізації нових серверів.</p>
+<p>Доступно з версії ZooKeeper 3.5.0</p>
+<p><strong><code>Zookeeper::RECONFIGINPROGRESS</code></strong></p>
+<p>Запит переконфігурації під час іншого процесу переконфігурації. На даний момент не підтримується. Спробуйте повторити пізніше.</p>
+<p>Доступно з версії ZooKeeper 3.5.0</p>
+<h2>ZooKeeper API Errors</h2>
+<p><strong><code>Zookeeper::OK</code></strong></p>
+<p>Все добре.</p>
+<p><strong><code>Zookeeper::APIERROR</code></strong></p>
+<p>Ніколи не викидається сервером і може використовуватись лише для обмеження діапазону кодів помилок. Всі помилки більші за цю, є помилками API (значення менші за це означають системні помилки).</p>
+<p><strong><code>Zookeeper::NONODE</code></strong></p>
+<p>Вузол відсутній.</p>
+<p><strong><code>Zookeeper::NOAUTH</code></strong></p>
+<p>Відсутня автентифікація.</p>
+<p><strong><code>Zookeeper::BADVERSION</code></strong></p>
+<p>Конфлікт версії.</p>
+<p><strong><code>Zookeeper::NOCHILDRENFOREPHEMERALS</code></strong></p>
+<p>Ефемерні вузли не повинні мати нащадків.</p>
+<p><strong><code>Zookeeper::NODEEXISTS</code></strong></p>
+<p>Вузол уже існує.</p>
+<p><strong><code>Zookeeper::NOTEMPTY</code></strong></p>
+<p>Вузол має нащадків.</p>
+<p><strong><code>Zookeeper::SESSIONEXPIRED</code></strong></p>
+<p>Термін дії сесії минув.</p>
+<p><strong><code>Zookeeper::INVALIDCALLBACK</code></strong></p>
+<p>Вказано неправильну функцію зворотного дзвінка.</p>
+<p><strong><code>Zookeeper::INVALIDACL</code></strong></p>
+<p>Вказано некоректний ACL.</p>
+<p><strong><code>Zookeeper::AUTHFAILED</code></strong></p>
+<p>Невдала аутентифікація клієнта.</p>
+<p><strong><code>Zookeeper::CLOSING</code></strong></p>
+<p>ZooKeeper закривається.</p>
+<p><strong><code>Zookeeper::NOTHING</code></strong></p>
+<p>(не помилка) Жодної відповіді від сервера для обробки.</p>
+<p><strong><code>Zookeeper::SESSIONMOVED</code></strong></p>
+<p>Сесію переміщено на інший сервер, таким чином операцію проігноровано.</p>
+<p><strong><code>Zookeeper::NOTREADONLY</code></strong></p>
+<p>Запит зміни статусу надіслано на сервер із режимом &quot;тільки читання&quot;.</p>
+<p><strong><code>Zookeeper::EPHEMERALONLOCALSESSION</code></strong></p>
+<p>Спроба створити ефемерний вузол у локальній сесії.</p>
+<p><strong><code>Zookeeper::NOWATCHER</code></strong></p>
+<p>Неможливо знайти спостерігача.</p>
+<p><strong><code>Zookeeper::RECONFIGDISABLED</code></strong></p>
+<p>Спроба зробити операцію переконфігурації у випадку, якщо вона заборонена.</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="zookeeper.addauth.md">Zookeeper::addAuth</a>— Вказує облікові дані програми</li>
+<li><a href="zookeeper.close.md">Zookeeper::close</a>— Закриває обробник zookeeper та звільняє будь-які ресурси</li>
+<li><a href="zookeeper.connect.md">Zookeeper::connect</a>— Створює дескриптор для спілкування із zookeeper</li>
+<li><a href="zookeeper.construct.md">Zookeeper::__construct</a>— Створює дескриптор для спілкування із zookeeper</li>
+<li><a href="zookeeper.create.md">Zookeeper::create</a> - Створює синхронно вузол</li>
+<li><a href="zookeeper.delete.md">Zookeeper::delete</a>— Видаляє синхронно вузол у zookeeper</li>
+<li><a href="zookeeper.exists.md">Zookeeper::exists</a>— Синхронно перевіряє наявність вузла в zookeeper</li>
+<li><a href="zookeeper.get.md">Zookeeper::get</a>— Синхронно отримує дані, пов&#x27;язані із вузлом</li>
+<li><a href="zookeeper.getacl.md">Zookeeper::getAcl</a>— Синхронно отримує ACL, пов&#x27;язаний із вузлом</li>
+<li><a href="zookeeper.getchildren.md">Zookeeper::getChildren</a> - Виводить список нащадків вузла синхронно</li>
+<li><a href="zookeeper.getclientid.md">Zookeeper::getClientId</a>— Повертає ідентифікатор сесії клієнта, дійсний лише в тому випадку, якщо підключення в даний час підключено (тобто останній стан спостерігача - ZOO_CONNECTED_STATE)</li>
+<li><a href="zookeeper.getconfig.md">Zookeeper::getConfig</a>— Отримує екземпляр ZookeeperConfig</li>
+<li><a href="zookeeper.getrecvtimeout.md">Zookeeper::getRecvTimeout</a>— Повертає час очікування для сесії, дійсний тільки якщо підключення в даний час підключено (тобто останній стан спостерігача - ZOO_CONNECTED_STATE). Це значення може змінитися після повторного підключення до сервера</li>
+<li><a href="zookeeper.getstate.md">Zookeeper::getState</a>— Отримує стан з&#x27;єднання zookeeper</li>
+<li><a href="zookeeper.isrecoverable.md">Zookeeper::isRecoverable</a>— Перевіряє, чи можна відновити поточний стан підключення ZooKeeper</li>
+<li><a href="zookeeper.set.md">Zookeeper::set</a> - Встановлює дані, пов&#x27;язані з вузлом</li>
+<li><a href="zookeeper.setacl.md">Zookeeper::setAcl</a>— Встановлює ACL, пов&#x27;язаний із вузлом синхронно</li>
+<li><a href="zookeeper.setdebuglevel.md">Zookeeper::setDebugLevel</a>— Встановлює рівень логування для бібліотеки</li>
+<li><a href="zookeeper.setdeterministicconnorder.md">Zookeeper::setDeterministicConnOrder</a> - Увімкнення/відключення рандомізації порядку кінцевих точок кворуму</li>
+<li><a href="zookeeper.setlogstream.md">Zookeeper::setLogStream</a>— Встановлює потік, який використовуватиме бібліотека для логування</li>
+<li><a href="zookeeper.setwatcher.md">Zookeeper::setWatcher</a> - Встановлює функцію спостерігача</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.zookeeper.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.zookeeper.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.zookeeper.md","content":"# Клас Zookeeper\n\n(PECL zookeeper \u003e= 0.1.0)\n\n## Вступ\n\nПредставляє сесію ZooKeeper.\n\n## Огляд класів\n\n```classsynopsis\n\n\n    \n    \n     \n      class Zookeeper\n     \n\n     {\n    \n\n    \n    /* Методы */\n    \n   public\n   __construct(string $host = '', callable $watcher_cb = null, int $recv_timeout = 10000)\n\n    public\n   addAuth(string $scheme, string $cert, callable $completion_cb = null): bool\npublic\n   close(): void\npublic\n   connect(string $host, callable $watcher_cb = null, int $recv_timeout = 10000): void\npublic\n   create(    string $path,    string $value,    array $acls,    int $flags = null): string\npublic\n   delete(string $path, int $version = -1): bool\npublic\n   exists(string $path, callable $watcher_cb = null): array\npublic\n   get(    string $path,    callable $watcher_cb = null,    array \u0026$stat = null,    int $max_size = 0): string\npublic\n   getAcl(string $path): array\npublic\n   getChildren(string $path, callable $watcher_cb = null): array\npublic\n   getClientId(): int\npublic\n   getConfig(): ZookeeperConfig\npublic\n   getRecvTimeout(): int\npublic\n   getState(): int\npublic\n   isRecoverable(): bool\npublic\n   set(    string $path,    string $value,    int $version = -1,    array \u0026$stat = null): bool\npublic\n   setAcl(string $path, int $version, array $acl): bool\npublic\n   static\n   setDebugLevel(int $logLevel): bool\npublic\n   static\n   setDeterministicConnOrder(bool $yesOrNo): bool\npublic\n   setLogStream(resource $stream): bool\npublic\n   setWatcher(callable $watcher_cb): bool\n\n    \n\n    \n    /* Константы */\n    \n     const\n     int\n      PERM_READ = 1;\n\n    const\n     int\n      PERM_WRITE = 2;\n\n    const\n     int\n      PERM_CREATE = 4;\n\n    const\n     int\n      PERM_DELETE = 8;\n\n    const\n     int\n      PERM_ADMIN = 16;\n\n    const\n     int\n      PERM_ALL = 31;\n\n\n    const\n         int\n          EPHEMERAL = 1;\n\n    const\n     int\n      SEQUENCE = 2;\n\n\n    const\n     int\n      LOG_LEVEL_ERROR = 1;\n\n    const\n     int\n      LOG_LEVEL_WARN = 2;\n\n    const\n     int\n      LOG_LEVEL_INFO = 3;\n\n    const\n     int\n      LOG_LEVEL_DEBUG = 4;\n\n\n    const\n     int\n      EXPIRED_SESSION_STATE = -112;\n\n    const\n     int\n      AUTH_FAILED_STATE = -113;\n\n    const\n     int\n      CONNECTING_STATE = 1;\n\n    const\n     int\n      ASSOCIATING_STATE = 2;\n\n    const\n     int\n      CONNECTED_STATE = 3;\n\n    const\n     int\n      READONLY_STATE = 5;\n\n    const\n     int\n      NOTCONNECTED_STATE = 999;\n\n\n    const\n      int\n       CREATED_EVENT = 1;\n\n    const\n     int\n      DELETED_EVENT = 2;\n\n    const\n     int\n      CHANGED_EVENT = 3;\n\n    const\n     int\n      CHILD_EVENT = 4;\n\n    const\n     int\n      SESSION_EVENT = -1;\n\n    const\n     int\n      NOTWATCHING_EVENT = -2;\n\n\n    const\n     int\n      SYSTEMERROR = -1;\n\n    const\n     int\n      RUNTIMEINCONSISTENCY = -2;\n\n    const\n     int\n      DATAINCONSISTENCY = -3;\n\n    const\n     int\n      CONNECTIONLOSS = -4;\n\n    const\n     int\n      MARSHALLINGERROR = -5;\n\n    const\n     int\n      UNIMPLEMENTED = -6;\n\n    const\n     int\n      OPERATIONTIMEOUT = -7;\n\n    const\n     int\n      BADARGUMENTS = -8;\n\n    const\n     int\n      INVALIDSTATE = -9;\n\n    const\n     int\n      NEWCONFIGNOQUORUM = -13;\n\n    const\n     int\n      RECONFIGINPROGRESS = -14;\n\n\n    const\n     int\n      OK = 0;\n\n    const\n     int\n      APIERROR = -100;\n\n    const\n     int\n      NONODE = -101;\n\n    const\n     int\n      NOAUTH = -102;\n\n    const\n     int\n      BADVERSION = -103;\n\n    const\n     int\n      NOCHILDRENFOREPHEMERALS = -108;\n\n    const\n     int\n      NODEEXISTS = -110;\n\n    const\n     int\n      NOTEMPTY = -111;\n\n    const\n     int\n      SESSIONEXPIRED = -112;\n\n    const\n     int\n      INVALIDCALLBACK = -113;\n\n    const\n     int\n      INVALIDACL = -114;\n\n    const\n     int\n      AUTHFAILED = -115;\n\n    const\n     int\n      CLOSING = -116;\n\n    const\n     int\n      NOTHING = -117;\n\n    const\n     int\n      SESSIONMOVED = -118;\n\n    const\n     int\n      NOTREADONLY = -119;\n\n    const\n     int\n      EPHEMERALONLOCALSESSION = -120;\n\n    const\n     int\n      NOWATCHER = -121;\n\n    const\n     int\n      RECONFIGDISABLED = -122;\n\n    \n\n   }\n```\n\n## Обумовлені константи\n\n## Дозволи ZooKeeper\n\n**`Zookeeper::PERM_READ`**\n\nМожна читати значення вузла та список дочірніх вузлів\n\n**`Zookeeper::PERM_WRITE`**\n\nМожна встановлювати значення вузла\n\n**`Zookeeper::PERM_CREATE`**\n\nМожна створювати дочірні елементи\n\n**`Zookeeper::PERM_DELETE`**\n\nМожна видаляти дочірні елементи\n\n**`Zookeeper::PERM_ADMIN`**\n\nМожна запускати set\\_acl()\n\n**`Zookeeper::PERM_ALL`**\n\nМожна використовувати всі вищезгадані прапори разом\n\n## Прапори створення ZooKeeper\n\n**`Zookeeper::EPHEMERAL`**\n\nЯкщо встановлено прапорець Zookeeper::EPHEMERAL, вузол буде автоматично видалено після завершення клієнтської сесії.\n\n**`Zookeeper::SEQUENCE`**\n\nЯкщо встановлено прапорець Zookeeper::SEQUENCE, до імені шляху буде додаватися унікальний номер із монотонно зростаючої послідовності. Номер із послідовності завжди має фіксовану довжину в 10 цифр, доповнену лідуючими нулями за потребою.\n\n## Рівень логування ZooKeeper\n\n**`Zookeeper::LOG_LEVEL_ERROR`**\n\nВиводити лише повідомлення про помилки\n\n**`Zookeeper::LOG_LEVEL_WARN`**\n\nВиводити помилки та попередження\n\n**`Zookeeper::LOG_LEVEL_INFO`**\n\nВиводити великі повідомлення про дії, крім помилок і попереджень\n\n**`Zookeeper::LOG_LEVEL_DEBUG`**\n\nВиводити все\n\n## Стан ZooKeeper\n\n**`Zookeeper::EXPIRED_SESSION_STATE`**\n\nЗ'єднання встановлено, але сесія закінчилася\n\n**`Zookeeper::AUTH_FAILED_STATE`**\n\nЗ'єднання встановлено, але автентифікація невдала\n\n**`Zookeeper::CONNECTING_STATE`**\n\nВстановлюється з'єднання\n\n**`Zookeeper::ASSOCIATING_STATE`**\n\nАсоціювання\n\n**`Zookeeper::CONNECTED_STATE`**\n\nЗ'єднання встановлено\n\n**`Zookeeper::READONLY_STATE`**\n\nTODO: допоможіть нам покращити модуль\n\n**`Zookeeper::NOTCONNECTED_STATE`**\n\nЗ'єднання не встановлено\n\n## Типи подій ZooKeeper\n\n**`Zookeeper::CREATED_EVENT`**\n\nВузол був створений\n\nГенерується лише шляхом спостереження за неіснуючими вузлами. Ці спостерігачі задаються за допомогою Zookeeper::exists.\n\n**`Zookeeper::DELETED_EVENT`**\n\nВузол був видалений\n\nГенерується лише шляхом спостереження за вузлами. Ці спостерігачі задаються за допомогою Zookeeper::exists та Zookeeper::get.\n\n**`Zookeeper::CHANGED_EVENT`**\n\nВузол був змінений\n\nГенерується лише шляхом спостереження за вузлами. Ці спостерігачі задаються за допомогою Zookeeper::exists та Zookeeper::get.\n\n**`Zookeeper::CHILD_EVENT`**\n\nВідбулася зміна у списку дочірніх вузлів\n\nГенерується лише шляхом спостереження за списком дочірніх вузлів. Ці спостерігачі задаються за допомогою Zookeeper::getChildren.\n\n**`Zookeeper::SESSION_EVENT`**\n\nСесія була втрачена\n\nГенерується, коли клієнт втратив з'єднання з сервером, або ініціював переєднання.\n\n**`Zookeeper::NOTWATCHING_EVENT`**\n\nСпостерігач був вилучений\n\nГенерується сервером з різних причин, наприклад, пов'язаних з обмеженням ресурсу, і говорить про те, що подальше спостереження за вузлом неможливе.\n\n## Системні помилки та помилки на стороні сервера ZooKeeper\n\n**`Zookeeper::SYSTEMERROR`**\n\nНіколи не викидається сервером і може використовуватись лише для обмеження діапазону кодів помилок. Всі помилки більші за цю, але меншу Zookeeper::APIERROR, є системними помилками.\n\n**`Zookeeper::RUNTIMEINCONSISTENCY`**\n\nВиявлено неузгодженість під час виконання.\n\n**`Zookeeper::DATAINCONSISTENCY`**\n\nВиявлено неузгодженість даних.\n\n**`Zookeeper::CONNECTIONLOSS`**\n\nВтрачено з'єднання із сервером.\n\n**`Zookeeper::MARSHALLINGERROR`**\n\nПомилка при маршалінгу та демаршалінгу даних.\n\n**`Zookeeper::UNIMPLEMENTED`**\n\nОперацію не реалізовано.\n\n**`Zookeeper::OPERATIONTIMEOUT`**\n\nПеревищення часу очікування операції.\n\n**`Zookeeper::BADARGUMENTS`**\n\nНекоректний аргумент.\n\n**`Zookeeper::INVALIDSTATE`**\n\nНекоректний статус zhandle.\n\n**`Zookeeper::NEWCONFIGNOQUORUM`**\n\nКворум нової конфігурації не підключений і синхронізований з лідером останньої підтвердженої конфігурації. Спробуйте запустити переконфігурацію після підключення та синхронізації нових серверів.\n\nДоступно з версії ZooKeeper 3.5.0\n\n**`Zookeeper::RECONFIGINPROGRESS`**\n\nЗапит переконфігурації під час іншого процесу переконфігурації. На даний момент не підтримується. Спробуйте повторити пізніше.\n\nДоступно з версії ZooKeeper 3.5.0\n\n## ZooKeeper API Errors\n\n**`Zookeeper::OK`**\n\nВсе добре.\n\n**`Zookeeper::APIERROR`**\n\nНіколи не викидається сервером і може використовуватись лише для обмеження діапазону кодів помилок. Всі помилки більші за цю, є помилками API (значення менші за це означають системні помилки).\n\n**`Zookeeper::NONODE`**\n\nВузол відсутній.\n\n**`Zookeeper::NOAUTH`**\n\nВідсутня автентифікація.\n\n**`Zookeeper::BADVERSION`**\n\nКонфлікт версії.\n\n**`Zookeeper::NOCHILDRENFOREPHEMERALS`**\n\nЕфемерні вузли не повинні мати нащадків.\n\n**`Zookeeper::NODEEXISTS`**\n\nВузол уже існує.\n\n**`Zookeeper::NOTEMPTY`**\n\nВузол має нащадків.\n\n**`Zookeeper::SESSIONEXPIRED`**\n\nТермін дії сесії минув.\n\n**`Zookeeper::INVALIDCALLBACK`**\n\nВказано неправильну функцію зворотного дзвінка.\n\n**`Zookeeper::INVALIDACL`**\n\nВказано некоректний ACL.\n\n**`Zookeeper::AUTHFAILED`**\n\nНевдала аутентифікація клієнта.\n\n**`Zookeeper::CLOSING`**\n\nZooKeeper закривається.\n\n**`Zookeeper::NOTHING`**\n\n(не помилка) Жодної відповіді від сервера для обробки.\n\n**`Zookeeper::SESSIONMOVED`**\n\nСесію переміщено на інший сервер, таким чином операцію проігноровано.\n\n**`Zookeeper::NOTREADONLY`**\n\nЗапит зміни статусу надіслано на сервер із режимом \"тільки читання\".\n\n**`Zookeeper::EPHEMERALONLOCALSESSION`**\n\nСпроба створити ефемерний вузол у локальній сесії.\n\n**`Zookeeper::NOWATCHER`**\n\nНеможливо знайти спостерігача.\n\n**`Zookeeper::RECONFIGDISABLED`**\n\nСпроба зробити операцію переконфігурації у випадку, якщо вона заборонена.\n\n## Зміст\n\n-   [Zookeeper::addAuth](zookeeper.addauth.md)— Вказує облікові дані програми\n-   [Zookeeper::close](zookeeper.close.md)— Закриває обробник zookeeper та звільняє будь-які ресурси\n-   [Zookeeper::connect](zookeeper.connect.md)— Створює дескриптор для спілкування із zookeeper\n-   [Zookeeper::\\_\\_construct](zookeeper.construct.md)— Створює дескриптор для спілкування із zookeeper\n-   [Zookeeper::create](zookeeper.create.md) \\- Створює синхронно вузол\n-   [Zookeeper::delete](zookeeper.delete.md)— Видаляє синхронно вузол у zookeeper\n-   [Zookeeper::exists](zookeeper.exists.md)— Синхронно перевіряє наявність вузла в zookeeper\n-   [Zookeeper::get](zookeeper.get.md)— Синхронно отримує дані, пов'язані із вузлом\n-   [Zookeeper::getAcl](zookeeper.getacl.md)— Синхронно отримує ACL, пов'язаний із вузлом\n-   [Zookeeper::getChildren](zookeeper.getchildren.md) \\- Виводить список нащадків вузла синхронно\n-   [Zookeeper::getClientId](zookeeper.getclientid.md)— Повертає ідентифікатор сесії клієнта, дійсний лише в тому випадку, якщо підключення в даний час підключено (тобто останній стан спостерігача - ZOO\\_CONNECTED\\_STATE)\n-   [Zookeeper::getConfig](zookeeper.getconfig.md)— Отримує екземпляр ZookeeperConfig\n-   [Zookeeper::getRecvTimeout](zookeeper.getrecvtimeout.md)— Повертає час очікування для сесії, дійсний тільки якщо підключення в даний час підключено (тобто останній стан спостерігача - ZOO\\_CONNECTED\\_STATE). Це значення може змінитися після повторного підключення до сервера\n-   [Zookeeper::getState](zookeeper.getstate.md)— Отримує стан з'єднання zookeeper\n-   [Zookeeper::isRecoverable](zookeeper.isrecoverable.md)— Перевіряє, чи можна відновити поточний стан підключення ZooKeeper\n-   [Zookeeper::set](zookeeper.set.md) \\- Встановлює дані, пов'язані з вузлом\n-   [Zookeeper::setAcl](zookeeper.setacl.md)— Встановлює ACL, пов'язаний із вузлом синхронно\n-   [Zookeeper::setDebugLevel](zookeeper.setdebuglevel.md)— Встановлює рівень логування для бібліотеки\n-   [Zookeeper::setDeterministicConnOrder](zookeeper.setdeterministicconnorder.md) \\- Увімкнення/відключення рандомізації порядку кінцевих точок кворуму\n-   [Zookeeper::setLogStream](zookeeper.setlogstream.md)— Встановлює потік, який використовуватиме бібліотека для логування\n-   [Zookeeper::setWatcher](zookeeper.setwatcher.md) \\- Встановлює функцію спостерігача\n","title":"Клас Zookeeper","contentType":2,"navigation":[{"function.zookeeper-dispatch.md":"« zookeeper\\_dispatch"},{"zookeeper.addauth.md":"Zookeeper::addAuth »"},{"index.md":"PHP Manual"},{"book.zookeeper.md":"ZooKeeper"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.zookeeper.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

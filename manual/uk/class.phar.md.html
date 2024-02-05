@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас Phar</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="phar.fileformat.signature.md" class="mx-4">« Формат підпису Phar</a><a href="phar.addemptydir.md" class="mx-4">Phar::addEmptyDir »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.phar.md" class="mx-4">Phar</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас Phar</h1>
+<p>(PHP 5 &gt;= 5.3.0, PHP 7, PHP 8, PECL phar &gt;= 1.0.0)</p>
+<h2>Вступ</h2>
+<p>Клас Phar надає високорівневий інтерфейс для доступу та створення архівів phar.</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+    
+     class Phar
+    
+
+    
+     extends
+      RecursiveDirectoryIterator
+    
+
+    
+     implements
+      Countable,
+
+     ArrayAccess {
+
+    /* Наследуемые константы */
+    
+     public
+     const
+     int
+      FilesystemIterator::CURRENT_MODE_MASK;
+public
+     const
+     int
+      FilesystemIterator::CURRENT_AS_PATHNAME;
+public
+     const
+     int
+      FilesystemIterator::CURRENT_AS_FILEINFO;
+public
+     const
+     int
+      FilesystemIterator::CURRENT_AS_SELF;
+public
+     const
+     int
+      FilesystemIterator::KEY_MODE_MASK;
+public
+     const
+     int
+      FilesystemIterator::KEY_AS_PATHNAME;
+public
+     const
+     int
+      FilesystemIterator::FOLLOW_SYMLINKS;
+public
+     const
+     int
+      FilesystemIterator::KEY_AS_FILENAME;
+public
+     const
+     int
+      FilesystemIterator::NEW_CURRENT_AND_KEY;
+public
+     const
+     int
+      FilesystemIterator::OTHER_MODE_MASK;
+public
+     const
+     int
+      FilesystemIterator::SKIP_DOTS;
+public
+     const
+     int
+      FilesystemIterator::UNIX_PATHS;
+
+
+    /* Константы */
+    const
+     int
+      BZ2;
+
+    const
+     int
+      GZ;
+
+    const
+     int
+      NONE;
+
+    const
+     int
+      PHAR;
+
+    const
+     int
+      TAR;
+
+    const
+     int
+      ZIP;
+
+    const
+     int
+      COMPRESSED;
+
+    const
+     int
+      PHP;
+
+    const
+     int
+      PHPS;
+
+    const
+     int
+      MD5;
+
+    const
+     int
+      OPENSSL;
+
+    const
+     int
+      OPENSSL_SHA256;
+
+    const
+     int
+      OPENSSL_SHA512;
+
+    const
+     int
+      SHA1;
+
+    const
+     int
+      SHA256;
+
+    const
+     int
+      SHA512;
+
+
+    /* Методы */
+    
+   public __construct(string $filename, int $flags = FilesystemIterator::SKIP_DOTS | FilesystemIterator::UNIX_PATHS, ?string $alias = null)
+
+    public addEmptyDir(string $directory): void
+public addFile(string $filename, ?string $localName = null): void
+public addFromString(string $localName, string $contents): void
+final public static apiVersion(): string
+public buildFromDirectory(string $directory, string $pattern = &quot;&quot;): array
+public buildFromIterator(Traversable $iterator, ?string $baseDirectory = null): array
+final public static canCompress(int $compression = 0): bool
+final public static canWrite(): bool
+public compress(int $compression, ?string $extension = null): ?Phar
+public compressFiles(int $compression): void
+public convertToData(?int $format = null, ?int $compression = null, ?string $extension = null): ?PharData
+public convertToExecutable(?int $format = null, ?int $compression = null, ?string $extension = null): ?Phar
+public copy(string $from, string $to): bool
+public count(int $mode = COUNT_NORMAL): int
+final public static createDefaultStub(?string $index = null, ?string $webIndex = null): string
+public decompress(?string $extension = null): ?Phar
+public decompressFiles(): bool
+public delMetadata(): bool
+public delete(string $localName): bool
+public extractTo(string $directory, array|string|null $files = null, bool $overwrite = false): bool
+public getAlias(): ?string
+public getMetadata(array $unserializeOptions = []): mixed
+public getModified(): bool
+public getPath(): string
+public getSignature(): array|false
+public getStub(): string
+final public static getSupportedCompression(): array
+final public static getSupportedSignatures(): array
+public getVersion(): string
+public hasMetadata(): bool
+final public static interceptFileFuncs(): void
+public isBuffering(): bool
+public isCompressed(): int|false
+public isFileFormat(int $format): bool
+final public static isValidPharFilename(string $filename, bool $executable = true): bool
+public isWritable(): bool
+final public static loadPhar(string $filename, ?string $alias = null): bool
+final public static mapPhar(?string $alias = null, int $offset = 0): bool
+final public static mount(string $pharPath, string $externalPath): void
+final public static mungServer(array $variables): void
+public offsetExists(string $localName): bool
+public offsetGet(string $localName): SplFileInfo
+public offsetSet(string $localName, resource|string $value): void
+public offsetUnset(string $localName): void
+final public static running(bool $returnPhar = true): string
+public setAlias(string $alias): bool
+public setDefaultStub(?string $index = null, ?string $webIndex = null): bool
+public setMetadata(mixed $metadata): void
+public setSignatureAlgorithm(int $algo, ?string $privateKey = null): void
+public setStub(resource|string $stub, int $length = -1): bool
+public startBuffering(): void
+public stopBuffering(): void
+final public static unlinkArchive(string $filename): bool
+final public static webPhar(    ?string $alias = null,    ?string $index = null,    ?string $fileNotFoundScript = null,    array $mimeTypes = [],    ?callable $rewrite = null): void
+
+    public __destruct()
+
+
+    /* Наследуемые методы */
+    public RecursiveDirectoryIterator::getChildren(): RecursiveDirectoryIterator
+public RecursiveDirectoryIterator::getSubPath(): string
+public RecursiveDirectoryIterator::getSubPathname(): string
+public RecursiveDirectoryIterator::hasChildren(bool $allowLinks = false): bool
+public RecursiveDirectoryIterator::key(): string
+public RecursiveDirectoryIterator::next(): void
+public RecursiveDirectoryIterator::rewind(): void
+
+    public FilesystemIterator::current(): string|SplFileInfo|FilesystemIterator
+public FilesystemIterator::getFlags(): int
+public FilesystemIterator::key(): string
+public FilesystemIterator::next(): void
+public FilesystemIterator::rewind(): void
+public FilesystemIterator::setFlags(int $flags): void
+
+    public DirectoryIterator::current(): mixed
+public DirectoryIterator::getBasename(string $suffix = &quot;&quot;): string
+public DirectoryIterator::getExtension(): string
+public DirectoryIterator::getFilename(): string
+public DirectoryIterator::isDot(): bool
+public DirectoryIterator::key(): mixed
+public DirectoryIterator::next(): void
+public DirectoryIterator::rewind(): void
+public DirectoryIterator::seek(int $offset): void
+public DirectoryIterator::__toString(): string
+public DirectoryIterator::valid(): bool
+
+    public SplFileInfo::getATime(): int|false
+public SplFileInfo::getBasename(string $suffix = &quot;&quot;): string
+public SplFileInfo::getCTime(): int|false
+public SplFileInfo::getExtension(): string
+public SplFileInfo::getFileInfo(?string $class = null): SplFileInfo
+public SplFileInfo::getFilename(): string
+public SplFileInfo::getGroup(): int|false
+public SplFileInfo::getInode(): int|false
+public SplFileInfo::getLinkTarget(): string|false
+public SplFileInfo::getMTime(): int|false
+public SplFileInfo::getOwner(): int|false
+public SplFileInfo::getPath(): string
+public SplFileInfo::getPathInfo(?string $class = null): ?SplFileInfo
+public SplFileInfo::getPathname(): string
+public SplFileInfo::getPerms(): int|false
+public SplFileInfo::getRealPath(): string|false
+public SplFileInfo::getSize(): int|false
+public SplFileInfo::getType(): string|false
+public SplFileInfo::isDir(): bool
+public SplFileInfo::isExecutable(): bool
+public SplFileInfo::isFile(): bool
+public SplFileInfo::isLink(): bool
+public SplFileInfo::isReadable(): bool
+public SplFileInfo::isWritable(): bool
+public SplFileInfo::openFile(string $mode = &quot;r&quot;, bool $useIncludePath = false, ?resource $context = null): SplFileObject
+public SplFileInfo::setFileClass(string $class = SplFileObject::class): void
+public SplFileInfo::setInfoClass(string $class = SplFileInfo::class): void
+public SplFileInfo::__toString(): string
+
+   }
+</code></pre>
+<h2>Зміст</h2>
+<ul>
+<li><a href="phar.addemptydir.md">Phar::addEmptyDir</a>— Додає в phar-архів порожню директорію</li>
+<li><a href="phar.addfile.md">Phar::addFile</a>— Додає в phar-архів файл із файлової системи</li>
+<li><a href="phar.addfromstring.md">Phar::addFromString</a>— Додає в phar-архів файл із рядка</li>
+<li><a href="phar.apiversion.md">Phar::apiVersion</a>— Повертає версію API</li>
+<li><a href="phar.buildfromdirectory.md">Phar::buildFromDirectory</a>— Створює phar-архів із файлів, розташованих усередині директорії</li>
+<li><a href="phar.buildfromiterator.md">Phar::buildFromIterator</a> - Створює phar-архів з ітератора</li>
+<li><a href="phar.cancompress.md">Phar::canCompress</a>— Перевіряє, чи модуль phar підтримує стиснення з використанням zlib або bzip2</li>
+<li><a href="phar.canwrite.md">Phar::canWrite</a>— Перевіряє, чи підтримує модуль phar збереження та створення phar-архівів</li>
+<li><a href="phar.compress.md">Phar::compress</a> - Стискає весь Phar-архів за допомогою Gzip- або Bzip2-стиснення</li>
+<li><a href="phar.compressfiles.md">Phar::compressFiles</a>— Стискає всі файли у поточному Phar-архіві</li>
+<li><a href="phar.construct.md">Phar::__construct</a>— Створює об&#x27;єкт Phar-архіву</li>
+<li><a href="phar.converttodata.md">Phar::convertToData</a>— Конвертує phar-архів у tar-або zip-файл, що не виконується.</li>
+<li><a href="phar.converttoexecutable.md">Phar::convertToExecutable</a>— Конвертує phar-архів в інший формат файлу, що виконується.</li>
+<li><a href="phar.copy.md">Phar::copy</a>— Копіює один файл усередині phar-архіву в інший новий файл усередині phar-архіву</li>
+<li><a href="phar.count.md">Phar::count</a>— Повертає кількість записів (файлів) у Phar-архіві</li>
+<li><a href="phar.createdefaultstub.md">Phar::createDefaultStub</a>— Створити заглушку у форматі phar-архіву</li>
+<li><a href="phar.decompress.md">Phar::decompress</a> - Розпаковує весь Phar-архів</li>
+<li><a href="phar.decompressfiles.md">Phar::decompressFiles</a>— Розпаковує всі файли в поточному Phar-архіві</li>
+<li><a href="phar.delmetadata.md">Phar::delMetadata</a>— Видалити глобальні метадані в архіві phar</li>
+<li><a href="phar.delete.md">Phar::delete</a>— Видаляє файл усередині phar-архіву</li>
+<li><a href="phar.destruct.md">Phar::__destruct</a>— Знищує об&#x27;єкт архіву Phar</li>
+<li><a href="phar.extractto.md">Phar::extractTo</a>— Витягти вміст phar-архіву в директорію</li>
+<li><a href="phar.getalias.md">Phar::getAlias</a> - Отримати псевдонім для Phar</li>
+<li><a href="phar.getmetadata.md">Phar::getMetadata</a>— Витягти метадані phar-архіву</li>
+<li><a href="phar.getmodified.md">Phar::getModified</a>— Визначити, чи змінювався phar-архів</li>
+<li><a href="phar.getpath.md">Phar::getPath</a>— Отримати реальний шлях до Phar-архіву на диску</li>
+<li><a href="phar.getsignature.md">Phar::getSignature</a>— Отримати MD5/SHA1/SHA256/SHA512/OpenSSL підпис Phar-архіву</li>
+<li><a href="phar.getstub.md">Phar::getStub</a>— Отримати завантажувач PHP або завантажувач заглушки Phar-архіву</li>
+<li><a href="phar.getsupportedcompression.md">Phar::getSupportedCompression</a>— Повертає масив підтримуваних алгоритмів стиснення.</li>
+<li><a href="phar.getsupportedsignatures.md">Phar::getSupportedSignatures</a>— Отримати масив підтримуваних алгоритмів підпису архіву</li>
+<li><a href="phar.getversion.md">Phar::getVersion</a>— Отримати версію Phar-архіву</li>
+<li><a href="phar.hasmetadata.md">Phar::hasMetadata</a>— Перевірити, чи містить phar-архів глобальні метадані</li>
+<li><a href="phar.interceptfilefuncs.md">Phar::interceptFileFuncs</a> - Вказує phar перехоплювати fopen, file_get_contents, opendir та всі stat-функції</li>
+<li><a href="phar.isbuffering.md">Phar::isBuffering</a>— Перевірити, чи будуть операції з Phar-архівом буферизовані чи записані безпосередньо на диск</li>
+<li><a href="phar.iscompressed.md">Phar::isCompressed</a> - Повертає Phar::GZ або PHAR::BZ2, якщо phar-архів стиснутий повністю (.tar.gz/tar.bz і так далі)</li>
+<li><a href="phar.isfileformat.md">Phar::isFileFormat</a>— Перевірити, що phar-архів має заданий формат (tar/phar/zip)</li>
+<li><a href="phar.isvalidpharfilename.md">Phar::isValidPharFilename</a>— Перевіряє, що ім&#x27;я файлу є коректним ім&#x27;ям phar-архіву.</li>
+<li><a href="phar.iswritable.md">Phar::isWritable</a> - Перевіряє, чи можна модифікувати phar-архів</li>
+<li><a href="phar.loadphar.md">Phar::loadPhar</a>— Завантажити phar-архів із псевдонімом</li>
+<li><a href="phar.mapphar.md">Phar::mapPhar</a>— Прочитати поточний запущений phar-архів та зареєструвати його маніфест</li>
+<li><a href="phar.mount.md">Phar::mount</a>— Монтування зовнішнього шляху або файлу до віртуального шляху в phar-архіві</li>
+<li><a href="phar.mungserver.md">Phar::mungServer</a> - Визначити список до чотирьох $_SERVER-змінних, які мають бути змінені для запуску</li>
+<li><a href="phar.offsetexists.md">Phar::offsetExists</a>— Визначити, чи є файл у архіві</li>
+<li><a href="phar.offsetget.md">Phar::offsetGet</a>— Отримати PharFileInfo об&#x27;єкт для конкретного файлу</li>
+<li><a href="phar.offsetset.md">Phar::offsetSet</a>— Зміна вмісту файлу</li>
+<li><a href="phar.offsetunset.md">Phar::offsetUnset</a>— Видалити файл із phar-архіву</li>
+<li><a href="phar.running.md">Phar::running</a>— Отримати повний шлях на диску або повний URL запущеного Phar-архіву</li>
+<li><a href="phar.setalias.md">Phar::setAlias</a>— Встановити псевдонім для Phar-архіву</li>
+<li><a href="phar.setdefaultstub.md">Phar::setDefaultStub</a>— Встановити завантажувач PHP або початкову заглушку Phar-архіву в завантажувач за замовчуванням</li>
+<li><a href="phar.setmetadata.md">Phar::setMetadata</a>— Встановити метадані phar-архіву</li>
+<li><a href="phar.setsignaturealgorithm.md">Phar::setSignatureAlgorithm</a>— Встановити алгоритм підписання phar-архіву та застосування його</li>
+<li><a href="phar.setstub.md">Phar::setStub</a>— Встановити завантажувач або заглушку в Phar-архів</li>
+<li><a href="phar.startbuffering.md">Phar::startBuffering</a>— Запуск буферизації операцій запису, відключаючи запис змін Phar-архіву на диск</li>
+<li><a href="phar.stopbuffering.md">Phar::stopBuffering</a>— Зупиняє буферизацію та записує всі зміни на диск</li>
+<li><a href="phar.unlinkarchive.md">Phar::unlinkArchive</a>— Повністю видалити архів із пам&#x27;яті та з диска</li>
+<li><a href="phar.webphar.md">Phar::webPhar</a>— Надсилає запит із браузера у внутрішній файл у phar-архіві</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.phar.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.phar.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.phar.md","content":"# Клас Phar\n\n(PHP 5 \u003e= 5.3.0, PHP 7, PHP 8, PECL phar \u003e= 1.0.0)\n\n## Вступ\n\nКлас Phar надає високорівневий інтерфейс для доступу та створення архівів phar.\n\n## Огляд класів\n\n```classsynopsis\n\n    \n     class Phar\n    \n\n    \n     extends\n      RecursiveDirectoryIterator\n    \n\n    \n     implements\n      Countable,\n\n     ArrayAccess {\n\n    /* Наследуемые константы */\n    \n     public\n     const\n     int\n      FilesystemIterator::CURRENT_MODE_MASK;\npublic\n     const\n     int\n      FilesystemIterator::CURRENT_AS_PATHNAME;\npublic\n     const\n     int\n      FilesystemIterator::CURRENT_AS_FILEINFO;\npublic\n     const\n     int\n      FilesystemIterator::CURRENT_AS_SELF;\npublic\n     const\n     int\n      FilesystemIterator::KEY_MODE_MASK;\npublic\n     const\n     int\n      FilesystemIterator::KEY_AS_PATHNAME;\npublic\n     const\n     int\n      FilesystemIterator::FOLLOW_SYMLINKS;\npublic\n     const\n     int\n      FilesystemIterator::KEY_AS_FILENAME;\npublic\n     const\n     int\n      FilesystemIterator::NEW_CURRENT_AND_KEY;\npublic\n     const\n     int\n      FilesystemIterator::OTHER_MODE_MASK;\npublic\n     const\n     int\n      FilesystemIterator::SKIP_DOTS;\npublic\n     const\n     int\n      FilesystemIterator::UNIX_PATHS;\n\n\n    /* Константы */\n    const\n     int\n      BZ2;\n\n    const\n     int\n      GZ;\n\n    const\n     int\n      NONE;\n\n    const\n     int\n      PHAR;\n\n    const\n     int\n      TAR;\n\n    const\n     int\n      ZIP;\n\n    const\n     int\n      COMPRESSED;\n\n    const\n     int\n      PHP;\n\n    const\n     int\n      PHPS;\n\n    const\n     int\n      MD5;\n\n    const\n     int\n      OPENSSL;\n\n    const\n     int\n      OPENSSL_SHA256;\n\n    const\n     int\n      OPENSSL_SHA512;\n\n    const\n     int\n      SHA1;\n\n    const\n     int\n      SHA256;\n\n    const\n     int\n      SHA512;\n\n\n    /* Методы */\n    \n   public __construct(string $filename, int $flags = FilesystemIterator::SKIP_DOTS | FilesystemIterator::UNIX_PATHS, ?string $alias = null)\n\n    public addEmptyDir(string $directory): void\npublic addFile(string $filename, ?string $localName = null): void\npublic addFromString(string $localName, string $contents): void\nfinal public static apiVersion(): string\npublic buildFromDirectory(string $directory, string $pattern = \"\"): array\npublic buildFromIterator(Traversable $iterator, ?string $baseDirectory = null): array\nfinal public static canCompress(int $compression = 0): bool\nfinal public static canWrite(): bool\npublic compress(int $compression, ?string $extension = null): ?Phar\npublic compressFiles(int $compression): void\npublic convertToData(?int $format = null, ?int $compression = null, ?string $extension = null): ?PharData\npublic convertToExecutable(?int $format = null, ?int $compression = null, ?string $extension = null): ?Phar\npublic copy(string $from, string $to): bool\npublic count(int $mode = COUNT_NORMAL): int\nfinal public static createDefaultStub(?string $index = null, ?string $webIndex = null): string\npublic decompress(?string $extension = null): ?Phar\npublic decompressFiles(): bool\npublic delMetadata(): bool\npublic delete(string $localName): bool\npublic extractTo(string $directory, array|string|null $files = null, bool $overwrite = false): bool\npublic getAlias(): ?string\npublic getMetadata(array $unserializeOptions = []): mixed\npublic getModified(): bool\npublic getPath(): string\npublic getSignature(): array|false\npublic getStub(): string\nfinal public static getSupportedCompression(): array\nfinal public static getSupportedSignatures(): array\npublic getVersion(): string\npublic hasMetadata(): bool\nfinal public static interceptFileFuncs(): void\npublic isBuffering(): bool\npublic isCompressed(): int|false\npublic isFileFormat(int $format): bool\nfinal public static isValidPharFilename(string $filename, bool $executable = true): bool\npublic isWritable(): bool\nfinal public static loadPhar(string $filename, ?string $alias = null): bool\nfinal public static mapPhar(?string $alias = null, int $offset = 0): bool\nfinal public static mount(string $pharPath, string $externalPath): void\nfinal public static mungServer(array $variables): void\npublic offsetExists(string $localName): bool\npublic offsetGet(string $localName): SplFileInfo\npublic offsetSet(string $localName, resource|string $value): void\npublic offsetUnset(string $localName): void\nfinal public static running(bool $returnPhar = true): string\npublic setAlias(string $alias): bool\npublic setDefaultStub(?string $index = null, ?string $webIndex = null): bool\npublic setMetadata(mixed $metadata): void\npublic setSignatureAlgorithm(int $algo, ?string $privateKey = null): void\npublic setStub(resource|string $stub, int $length = -1): bool\npublic startBuffering(): void\npublic stopBuffering(): void\nfinal public static unlinkArchive(string $filename): bool\nfinal public static webPhar(    ?string $alias = null,    ?string $index = null,    ?string $fileNotFoundScript = null,    array $mimeTypes = [],    ?callable $rewrite = null): void\n\n    public __destruct()\n\n\n    /* Наследуемые методы */\n    public RecursiveDirectoryIterator::getChildren(): RecursiveDirectoryIterator\npublic RecursiveDirectoryIterator::getSubPath(): string\npublic RecursiveDirectoryIterator::getSubPathname(): string\npublic RecursiveDirectoryIterator::hasChildren(bool $allowLinks = false): bool\npublic RecursiveDirectoryIterator::key(): string\npublic RecursiveDirectoryIterator::next(): void\npublic RecursiveDirectoryIterator::rewind(): void\n\n    public FilesystemIterator::current(): string|SplFileInfo|FilesystemIterator\npublic FilesystemIterator::getFlags(): int\npublic FilesystemIterator::key(): string\npublic FilesystemIterator::next(): void\npublic FilesystemIterator::rewind(): void\npublic FilesystemIterator::setFlags(int $flags): void\n\n    public DirectoryIterator::current(): mixed\npublic DirectoryIterator::getBasename(string $suffix = \"\"): string\npublic DirectoryIterator::getExtension(): string\npublic DirectoryIterator::getFilename(): string\npublic DirectoryIterator::isDot(): bool\npublic DirectoryIterator::key(): mixed\npublic DirectoryIterator::next(): void\npublic DirectoryIterator::rewind(): void\npublic DirectoryIterator::seek(int $offset): void\npublic DirectoryIterator::__toString(): string\npublic DirectoryIterator::valid(): bool\n\n    public SplFileInfo::getATime(): int|false\npublic SplFileInfo::getBasename(string $suffix = \"\"): string\npublic SplFileInfo::getCTime(): int|false\npublic SplFileInfo::getExtension(): string\npublic SplFileInfo::getFileInfo(?string $class = null): SplFileInfo\npublic SplFileInfo::getFilename(): string\npublic SplFileInfo::getGroup(): int|false\npublic SplFileInfo::getInode(): int|false\npublic SplFileInfo::getLinkTarget(): string|false\npublic SplFileInfo::getMTime(): int|false\npublic SplFileInfo::getOwner(): int|false\npublic SplFileInfo::getPath(): string\npublic SplFileInfo::getPathInfo(?string $class = null): ?SplFileInfo\npublic SplFileInfo::getPathname(): string\npublic SplFileInfo::getPerms(): int|false\npublic SplFileInfo::getRealPath(): string|false\npublic SplFileInfo::getSize(): int|false\npublic SplFileInfo::getType(): string|false\npublic SplFileInfo::isDir(): bool\npublic SplFileInfo::isExecutable(): bool\npublic SplFileInfo::isFile(): bool\npublic SplFileInfo::isLink(): bool\npublic SplFileInfo::isReadable(): bool\npublic SplFileInfo::isWritable(): bool\npublic SplFileInfo::openFile(string $mode = \"r\", bool $useIncludePath = false, ?resource $context = null): SplFileObject\npublic SplFileInfo::setFileClass(string $class = SplFileObject::class): void\npublic SplFileInfo::setInfoClass(string $class = SplFileInfo::class): void\npublic SplFileInfo::__toString(): string\n\n   }\n```\n\n## Зміст\n\n-   [Phar::addEmptyDir](phar.addemptydir.md)— Додає в phar-архів порожню директорію\n-   [Phar::addFile](phar.addfile.md)— Додає в phar-архів файл із файлової системи\n-   [Phar::addFromString](phar.addfromstring.md)— Додає в phar-архів файл із рядка\n-   [Phar::apiVersion](phar.apiversion.md)— Повертає версію API\n-   [Phar::buildFromDirectory](phar.buildfromdirectory.md)— Створює phar-архів із файлів, розташованих усередині директорії\n-   [Phar::buildFromIterator](phar.buildfromiterator.md) \\- Створює phar-архів з ітератора\n-   [Phar::canCompress](phar.cancompress.md)— Перевіряє, чи модуль phar підтримує стиснення з використанням zlib або bzip2\n-   [Phar::canWrite](phar.canwrite.md)— Перевіряє, чи підтримує модуль phar збереження та створення phar-архівів\n-   [Phar::compress](phar.compress.md) \\- Стискає весь Phar-архів за допомогою Gzip- або Bzip2-стиснення\n-   [Phar::compressFiles](phar.compressfiles.md)— Стискає всі файли у поточному Phar-архіві\n-   [Phar::\\_\\_construct](phar.construct.md)— Створює об'єкт Phar-архіву\n-   [Phar::convertToData](phar.converttodata.md)— Конвертує phar-архів у tar-або zip-файл, що не виконується.\n-   [Phar::convertToExecutable](phar.converttoexecutable.md)— Конвертує phar-архів в інший формат файлу, що виконується.\n-   [Phar::copy](phar.copy.md)— Копіює один файл усередині phar-архіву в інший новий файл усередині phar-архіву\n-   [Phar::count](phar.count.md)— Повертає кількість записів (файлів) у Phar-архіві\n-   [Phar::createDefaultStub](phar.createdefaultstub.md)— Створити заглушку у форматі phar-архіву\n-   [Phar::decompress](phar.decompress.md) \\- Розпаковує весь Phar-архів\n-   [Phar::decompressFiles](phar.decompressfiles.md)— Розпаковує всі файли в поточному Phar-архіві\n-   [Phar::delMetadata](phar.delmetadata.md)— Видалити глобальні метадані в архіві phar\n-   [Phar::delete](phar.delete.md)— Видаляє файл усередині phar-архіву\n-   [Phar::\\_\\_destruct](phar.destruct.md)— Знищує об'єкт архіву Phar\n-   [Phar::extractTo](phar.extractto.md)— Витягти вміст phar-архіву в директорію\n-   [Phar::getAlias](phar.getalias.md) \\- Отримати псевдонім для Phar\n-   [Phar::getMetadata](phar.getmetadata.md)— Витягти метадані phar-архіву\n-   [Phar::getModified](phar.getmodified.md)— Визначити, чи змінювався phar-архів\n-   [Phar::getPath](phar.getpath.md)— Отримати реальний шлях до Phar-архіву на диску\n-   [Phar::getSignature](phar.getsignature.md)— Отримати MD5/SHA1/SHA256/SHA512/OpenSSL підпис Phar-архіву\n-   [Phar::getStub](phar.getstub.md)— Отримати завантажувач PHP або завантажувач заглушки Phar-архіву\n-   [Phar::getSupportedCompression](phar.getsupportedcompression.md)— Повертає масив підтримуваних алгоритмів стиснення.\n-   [Phar::getSupportedSignatures](phar.getsupportedsignatures.md)— Отримати масив підтримуваних алгоритмів підпису архіву\n-   [Phar::getVersion](phar.getversion.md)— Отримати версію Phar-архіву\n-   [Phar::hasMetadata](phar.hasmetadata.md)— Перевірити, чи містить phar-архів глобальні метадані\n-   [Phar::interceptFileFuncs](phar.interceptfilefuncs.md) \\- Вказує phar перехоплювати fopen, file\\_get\\_contents, opendir та всі stat-функції\n-   [Phar::isBuffering](phar.isbuffering.md)— Перевірити, чи будуть операції з Phar-архівом буферизовані чи записані безпосередньо на диск\n-   [Phar::isCompressed](phar.iscompressed.md) \\- Повертає Phar::GZ або PHAR::BZ2, якщо phar-архів стиснутий повністю (.tar.gz/tar.bz і так далі)\n-   [Phar::isFileFormat](phar.isfileformat.md)— Перевірити, що phar-архів має заданий формат (tar/phar/zip)\n-   [Phar::isValidPharFilename](phar.isvalidpharfilename.md)— Перевіряє, що ім'я файлу є коректним ім'ям phar-архіву.\n-   [Phar::isWritable](phar.iswritable.md) \\- Перевіряє, чи можна модифікувати phar-архів\n-   [Phar::loadPhar](phar.loadphar.md)— Завантажити phar-архів із псевдонімом\n-   [Phar::mapPhar](phar.mapphar.md)— Прочитати поточний запущений phar-архів та зареєструвати його маніфест\n-   [Phar::mount](phar.mount.md)— Монтування зовнішнього шляху або файлу до віртуального шляху в phar-архіві\n-   [Phar::mungServer](phar.mungserver.md) \\- Визначити список до чотирьох $\\_SERVER-змінних, які мають бути змінені для запуску\n-   [Phar::offsetExists](phar.offsetexists.md)— Визначити, чи є файл у архіві\n-   [Phar::offsetGet](phar.offsetget.md)— Отримати PharFileInfo об'єкт для конкретного файлу\n-   [Phar::offsetSet](phar.offsetset.md)— Зміна вмісту файлу\n-   [Phar::offsetUnset](phar.offsetunset.md)— Видалити файл із phar-архіву\n-   [Phar::running](phar.running.md)— Отримати повний шлях на диску або повний URL запущеного Phar-архіву\n-   [Phar::setAlias](phar.setalias.md)— Встановити псевдонім для Phar-архіву\n-   [Phar::setDefaultStub](phar.setdefaultstub.md)— Встановити завантажувач PHP або початкову заглушку Phar-архіву в завантажувач за замовчуванням\n-   [Phar::setMetadata](phar.setmetadata.md)— Встановити метадані phar-архіву\n-   [Phar::setSignatureAlgorithm](phar.setsignaturealgorithm.md)— Встановити алгоритм підписання phar-архіву та застосування його\n-   [Phar::setStub](phar.setstub.md)— Встановити завантажувач або заглушку в Phar-архів\n-   [Phar::startBuffering](phar.startbuffering.md)— Запуск буферизації операцій запису, відключаючи запис змін Phar-архіву на диск\n-   [Phar::stopBuffering](phar.stopbuffering.md)— Зупиняє буферизацію та записує всі зміни на диск\n-   [Phar::unlinkArchive](phar.unlinkarchive.md)— Повністю видалити архів із пам'яті та з диска\n-   [Phar::webPhar](phar.webphar.md)— Надсилає запит із браузера у внутрішній файл у phar-архіві\n","title":"Клас Phar","contentType":2,"navigation":[{"phar.fileformat.signature.md":"« Формат підпису Phar"},{"phar.addemptydir.md":"Phar::addEmptyDir »"},{"index.md":"PHP Manual"},{"book.phar.md":"Phar"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.phar.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

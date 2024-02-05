@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас SolrDisMaxQuery</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="solrquery.settimeallowed.md" class="mx-4">« SolrQuery::setTimeAllowed</a><a href="solrdismaxquery.addbigramphrasefield.md" class="mx-4">SolrDisMaxQuery::addBigramPhraseField »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.solr.md" class="mx-4">Solr</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас SolrDisMaxQuery</h1>
+<p>(No version information available, might only be in Git)</p>
+<h2>Вступ</h2>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+
+
+    
+     
+      class SolrDisMaxQuery
+     
+
+     
+      extends
+       SolrQuery
+     
+
+     implements 
+       Serializable {
+
+
+    /* Наследуемые свойства */
+    
+     const
+     int
+      SolrQuery::ORDER_ASC = 0;
+const
+     int
+      SolrQuery::ORDER_DESC = 1;
+const
+     int
+      SolrQuery::FACET_SORT_INDEX = 0;
+const
+     int
+      SolrQuery::FACET_SORT_COUNT = 1;
+const
+     int
+      SolrQuery::TERMS_SORT_INDEX = 0;
+const
+     int
+      SolrQuery::TERMS_SORT_COUNT = 1;
+
+
+
+    /* Методы */
+    
+   public __construct(string $q = ?)
+
+    public addBigramPhraseField(string $field, string $boost, string $slop = ?): SolrDisMaxQuery
+public addBoostQuery(string $field, string $value, string $boost = ?): SolrDisMaxQuery
+public addPhraseField(string $field, string $boost, string $slop = ?): SolrDisMaxQuery
+public addQueryField(string $field, string $boost = ?): SolrDisMaxQuery
+public addTrigramPhraseField(string $field, string $boost, string $slop = ?): SolrDisMaxQuery
+public addUserField(string $field): SolrDisMaxQuery
+public removeBigramPhraseField(string $field): SolrDisMaxQuery
+public removeBoostQuery(string $field): SolrDisMaxQuery
+public removePhraseField(string $field): SolrDisMaxQuery
+public removeQueryField(string $field): SolrDisMaxQuery
+public removeTrigramPhraseField(string $field): SolrDisMaxQuery
+public removeUserField(string $field): SolrDisMaxQuery
+public setBigramPhraseFields(string $fields): SolrDisMaxQuery
+public setBigramPhraseSlop(string $slop): SolrDisMaxQuery
+public setBoostFunction(string $function): SolrDisMaxQuery
+public setBoostQuery(string $q): SolrDisMaxQuery
+public setMinimumMatch(string $value): SolrDisMaxQuery
+public setPhraseFields(string $fields): SolrDisMaxQuery
+public setPhraseSlop(string $slop): SolrDisMaxQuery
+public setQueryAlt(string $q): SolrDisMaxQuery
+public setQueryPhraseSlop(string $slop): SolrDisMaxQuery
+public setTieBreaker(string $tieBreaker): SolrDisMaxQuery
+public setTrigramPhraseFields(string $fields): SolrDisMaxQuery
+public setTrigramPhraseSlop(string $slop): SolrDisMaxQuery
+public setUserFields(string $fields): SolrDisMaxQuery
+public useDisMaxQueryParser(): SolrDisMaxQuery
+public useEDisMaxQueryParser(): SolrDisMaxQuery
+
+
+    /* Наследуемые методы */
+    public SolrQuery::addExpandFilterQuery(string $fq): SolrQuery
+public SolrQuery::addExpandSortField(string $field, string $order = ?): SolrQuery
+public SolrQuery::addFacetDateField(string $dateField): SolrQuery
+public SolrQuery::addFacetDateOther(string $value, string $field_override = ?): SolrQuery
+public SolrQuery::addFacetField(string $field): SolrQuery
+public SolrQuery::addFacetQuery(string $facetQuery): SolrQuery
+public SolrQuery::addField(string $field): SolrQuery
+public SolrQuery::addFilterQuery(string $fq): SolrQuery
+public SolrQuery::addGroupField(string $value): SolrQuery
+public SolrQuery::addGroupFunction(string $value): SolrQuery
+public SolrQuery::addGroupQuery(string $value): SolrQuery
+public SolrQuery::addGroupSortField(string $field, int $order = ?): SolrQuery
+public SolrQuery::addHighlightField(string $field): SolrQuery
+public SolrQuery::addMltField(string $field): SolrQuery
+public SolrQuery::addMltQueryField(string $field, float $boost): SolrQuery
+public SolrQuery::addSortField(string $field, int $order = SolrQuery::ORDER_DESC): SolrQuery
+public SolrQuery::addStatsFacet(string $field): SolrQuery
+public SolrQuery::addStatsField(string $field): SolrQuery
+public SolrQuery::collapse(SolrCollapseFunction $collapseFunction): SolrQuery
+public SolrQuery::getExpand(): bool
+public SolrQuery::getExpandFilterQueries(): array
+public SolrQuery::getExpandQuery(): array
+public SolrQuery::getExpandRows(): int
+public SolrQuery::getExpandSortFields(): array
+public SolrQuery::getFacet(): bool
+public SolrQuery::getFacetDateEnd(string $field_override = ?): string
+public SolrQuery::getFacetDateFields(): array
+public SolrQuery::getFacetDateGap(string $field_override = ?): string
+public SolrQuery::getFacetDateHardEnd(string $field_override = ?): string
+public SolrQuery::getFacetDateOther(string $field_override = ?): array
+public SolrQuery::getFacetDateStart(string $field_override = ?): string
+public SolrQuery::getFacetFields(): array
+public SolrQuery::getFacetLimit(string $field_override = ?): int
+public SolrQuery::getFacetMethod(string $field_override = ?): string
+public SolrQuery::getFacetMinCount(string $field_override = ?): int
+public SolrQuery::getFacetMissing(string $field_override = ?): bool
+public SolrQuery::getFacetOffset(string $field_override = ?): int
+public SolrQuery::getFacetPrefix(string $field_override = ?): string
+public SolrQuery::getFacetQueries(): array
+public SolrQuery::getFacetSort(string $field_override = ?): int
+public SolrQuery::getFields(): array
+public SolrQuery::getFilterQueries(): array
+public SolrQuery::getGroup(): bool
+public SolrQuery::getGroupCachePercent(): int
+public SolrQuery::getGroupFacet(): bool
+public SolrQuery::getGroupFields(): array
+public SolrQuery::getGroupFormat(): string
+public SolrQuery::getGroupFunctions(): array
+public SolrQuery::getGroupLimit(): int
+public SolrQuery::getGroupMain(): bool
+public SolrQuery::getGroupNGroups(): bool
+public SolrQuery::getGroupOffset(): int
+public SolrQuery::getGroupQueries(): array
+public SolrQuery::getGroupSortFields(): array
+public SolrQuery::getGroupTruncate(): bool
+public SolrQuery::getHighlight(): bool
+public SolrQuery::getHighlightAlternateField(string $field_override = ?): string
+public SolrQuery::getHighlightFields(): array
+public SolrQuery::getHighlightFormatter(string $field_override = ?): string
+public SolrQuery::getHighlightFragmenter(string $field_override = ?): string
+public SolrQuery::getHighlightFragsize(string $field_override = ?): int
+public SolrQuery::getHighlightHighlightMultiTerm(): bool
+public SolrQuery::getHighlightMaxAlternateFieldLength(string $field_override = ?): int
+public SolrQuery::getHighlightMaxAnalyzedChars(): int
+public SolrQuery::getHighlightMergeContiguous(string $field_override = ?): bool
+public SolrQuery::getHighlightRegexMaxAnalyzedChars(): int
+public SolrQuery::getHighlightRegexPattern(): string
+public SolrQuery::getHighlightRegexSlop(): float
+public SolrQuery::getHighlightRequireFieldMatch(): bool
+public SolrQuery::getHighlightSimplePost(string $field_override = ?): string
+public SolrQuery::getHighlightSimplePre(string $field_override = ?): string
+public SolrQuery::getHighlightSnippets(string $field_override = ?): int
+public SolrQuery::getHighlightUsePhraseHighlighter(): bool
+public SolrQuery::getMlt(): bool
+public SolrQuery::getMltBoost(): bool
+public SolrQuery::getMltCount(): int
+public SolrQuery::getMltFields(): array
+public SolrQuery::getMltMaxNumQueryTerms(): int
+public SolrQuery::getMltMaxNumTokens(): int
+public SolrQuery::getMltMaxWordLength(): int
+public SolrQuery::getMltMinDocFrequency(): int
+public SolrQuery::getMltMinTermFrequency(): int
+public SolrQuery::getMltMinWordLength(): int
+public SolrQuery::getMltQueryFields(): array
+public SolrQuery::getQuery(): string
+public SolrQuery::getRows(): int
+public SolrQuery::getSortFields(): array
+public SolrQuery::getStart(): int
+public SolrQuery::getStats(): bool
+public SolrQuery::getStatsFacets(): array
+public SolrQuery::getStatsFields(): array
+public SolrQuery::getTerms(): bool
+public SolrQuery::getTermsField(): string
+public SolrQuery::getTermsIncludeLowerBound(): bool
+public SolrQuery::getTermsIncludeUpperBound(): bool
+public SolrQuery::getTermsLimit(): int
+public SolrQuery::getTermsLowerBound(): string
+public SolrQuery::getTermsMaxCount(): int
+public SolrQuery::getTermsMinCount(): int
+public SolrQuery::getTermsPrefix(): string
+public SolrQuery::getTermsReturnRaw(): bool
+public SolrQuery::getTermsSort(): int
+public SolrQuery::getTermsUpperBound(): string
+public SolrQuery::getTimeAllowed(): int
+public SolrQuery::removeExpandFilterQuery(string $fq): SolrQuery
+public SolrQuery::removeExpandSortField(string $field): SolrQuery
+public SolrQuery::removeFacetDateField(string $field): SolrQuery
+public SolrQuery::removeFacetDateOther(string $value, string $field_override = ?): SolrQuery
+public SolrQuery::removeFacetField(string $field): SolrQuery
+public SolrQuery::removeFacetQuery(string $value): SolrQuery
+public SolrQuery::removeField(string $field): SolrQuery
+public SolrQuery::removeFilterQuery(string $fq): SolrQuery
+public SolrQuery::removeHighlightField(string $field): SolrQuery
+public SolrQuery::removeMltField(string $field): SolrQuery
+public SolrQuery::removeMltQueryField(string $queryField): SolrQuery
+public SolrQuery::removeSortField(string $field): SolrQuery
+public SolrQuery::removeStatsFacet(string $value): SolrQuery
+public SolrQuery::removeStatsField(string $field): SolrQuery
+public SolrQuery::setEchoHandler(bool $flag): SolrQuery
+public SolrQuery::setEchoParams(string $type): SolrQuery
+public SolrQuery::setExpand(bool $value): SolrQuery
+public SolrQuery::setExpandQuery(string $q): SolrQuery
+public SolrQuery::setExpandRows(int $value): SolrQuery
+public SolrQuery::setExplainOther(string $query): SolrQuery
+public SolrQuery::setFacet(bool $flag): SolrQuery
+public SolrQuery::setFacetDateEnd(string $value, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetDateGap(string $value, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetDateHardEnd(bool $value, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetDateStart(string $value, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetEnumCacheMinDefaultFrequency(int $frequency, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetLimit(int $limit, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetMethod(string $method, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetMinCount(int $mincount, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetMissing(bool $flag, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetOffset(int $offset, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetPrefix(string $prefix, string $field_override = ?): SolrQuery
+public SolrQuery::setFacetSort(int $facetSort, string $field_override = ?): SolrQuery
+public SolrQuery::setGroup(bool $value): SolrQuery
+public SolrQuery::setGroupCachePercent(int $percent): SolrQuery
+public SolrQuery::setGroupFacet(bool $value): SolrQuery
+public SolrQuery::setGroupFormat(string $value): SolrQuery
+public SolrQuery::setGroupLimit(int $value): SolrQuery
+public SolrQuery::setGroupMain(string $value): SolrQuery
+public SolrQuery::setGroupNGroups(bool $value): SolrQuery
+public SolrQuery::setGroupOffset(int $value): SolrQuery
+public SolrQuery::setGroupTruncate(bool $value): SolrQuery
+public SolrQuery::setHighlight(bool $flag): SolrQuery
+public SolrQuery::setHighlightAlternateField(string $field, string $field_override = ?): SolrQuery
+public SolrQuery::setHighlightFormatter(string $formatter, string $field_override = ?): SolrQuery
+public SolrQuery::setHighlightFragmenter(string $fragmenter, string $field_override = ?): SolrQuery
+public SolrQuery::setHighlightFragsize(int $size, string $field_override = ?): SolrQuery
+public SolrQuery::setHighlightHighlightMultiTerm(bool $flag): SolrQuery
+public SolrQuery::setHighlightMaxAlternateFieldLength(int $fieldLength, string $field_override = ?): SolrQuery
+public SolrQuery::setHighlightMaxAnalyzedChars(int $value): SolrQuery
+public SolrQuery::setHighlightMergeContiguous(bool $flag, string $field_override = ?): SolrQuery
+public SolrQuery::setHighlightRegexMaxAnalyzedChars(int $maxAnalyzedChars): SolrQuery
+public SolrQuery::setHighlightRegexPattern(string $value): SolrQuery
+public SolrQuery::setHighlightRegexSlop(float $factor): SolrQuery
+public SolrQuery::setHighlightRequireFieldMatch(bool $flag): SolrQuery
+public SolrQuery::setHighlightSimplePost(string $simplePost, string $field_override = ?): SolrQuery
+public SolrQuery::setHighlightSimplePre(string $simplePre, string $field_override = ?): SolrQuery
+public SolrQuery::setHighlightSnippets(int $value, string $field_override = ?): SolrQuery
+public SolrQuery::setHighlightUsePhraseHighlighter(bool $flag): SolrQuery
+public SolrQuery::setMlt(bool $flag): SolrQuery
+public SolrQuery::setMltBoost(bool $flag): SolrQuery
+public SolrQuery::setMltCount(int $count): SolrQuery
+public SolrQuery::setMltMaxNumQueryTerms(int $value): SolrQuery
+public SolrQuery::setMltMaxNumTokens(int $value): SolrQuery
+public SolrQuery::setMltMaxWordLength(int $maxWordLength): SolrQuery
+public SolrQuery::setMltMinDocFrequency(int $minDocFrequency): SolrQuery
+public SolrQuery::setMltMinTermFrequency(int $minTermFrequency): SolrQuery
+public SolrQuery::setMltMinWordLength(int $minWordLength): SolrQuery
+public SolrQuery::setOmitHeader(bool $flag): SolrQuery
+public SolrQuery::setQuery(string $query): SolrQuery
+public SolrQuery::setRows(int $rows): SolrQuery
+public SolrQuery::setShowDebugInfo(bool $flag): SolrQuery
+public SolrQuery::setStart(int $start): SolrQuery
+public SolrQuery::setStats(bool $flag): SolrQuery
+public SolrQuery::setTerms(bool $flag): SolrQuery
+public SolrQuery::setTermsField(string $fieldname): SolrQuery
+public SolrQuery::setTermsIncludeLowerBound(bool $flag): SolrQuery
+public SolrQuery::setTermsIncludeUpperBound(bool $flag): SolrQuery
+public SolrQuery::setTermsLimit(int $limit): SolrQuery
+public SolrQuery::setTermsLowerBound(string $lowerBound): SolrQuery
+public SolrQuery::setTermsMaxCount(int $frequency): SolrQuery
+public SolrQuery::setTermsMinCount(int $frequency): SolrQuery
+public SolrQuery::setTermsPrefix(string $prefix): SolrQuery
+public SolrQuery::setTermsReturnRaw(bool $flag): SolrQuery
+public SolrQuery::setTermsSort(int $sortType): SolrQuery
+public SolrQuery::setTermsUpperBound(string $upperBound): SolrQuery
+public SolrQuery::setTimeAllowed(int $timeAllowed): SolrQuery
+
+
+   }
+</code></pre>
+<h2>Обумовлені константи</h2>
+<p><strong><code>SolrDisMaxQuery::ORDER_ASC</code></strong></p>
+<p>Використовується для вказівки того, що сортування має бути у порядку зростаючому (дублювати для спрощення міграції)</p>
+<p><strong><code>SolrDisMaxQuery::ORDER_DESC</code></strong></p>
+<p>Використовується для вказівки, що сортування має бути в порядку зменшення (дублюється для спрощення міграції)</p>
+<p><strong><code>SolrDisMaxQuery::FACET_SORT_INDEX</code></strong></p>
+<p>Використовується для вказівки сортування фасету за індексом (дублюється для спрощення міграції)</p>
+<p><strong><code>SolrDisMaxQuery::FACET_SORT_COUNT</code></strong></p>
+<p>Використовується для сортування фасету за кількістю (дублюється для спрощення міграції)</p>
+<p><strong><code>SolrDisMaxQuery::TERMS_SORT_INDEX</code></strong></p>
+<p>Використовується в TermsComponent (дублюється для спрощення міграції)</p>
+<p><strong><code>SolrDisMaxQuery::TERMS_SORT_COUNT</code></strong></p>
+<p>Використовується в TermsComponent (дублюється для спрощення міграції)</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="solrdismaxquery.addbigramphrasefield.md">SolrDisMaxQuery::addBigramPhraseField</a> - Додає поле фразової біграми (параметр pf2)</li>
+<li><a href="solrdismaxquery.addboostquery.md">SolrDisMaxQuery::addBoostQuery</a>— Додає поле підвищення запиту зі значенням та необов&#x27;язковим посиленням (параметр bq)</li>
+<li><a href="solrdismaxquery.addphrasefield.md">SolrDisMaxQuery::addPhraseField</a> - Додає поле фрази (параметр pf)</li>
+<li><a href="solrdismaxquery.addqueryfield.md">SolrDisMaxQuery::addQueryField</a>— Додає поле запиту із необов&#x27;язковим підвищенням (параметр qf)</li>
+<li><a href="solrdismaxquery.addtrigramphrasefield.md">SolrDisMaxQuery::addTrigramPhraseField</a> - Додає поле триграми (параметр pf3)</li>
+<li><a href="solrdismaxquery.adduserfield.md">SolrDisMaxQuery::addUserField</a>— Додає поле до параметра поля користувача (uf)</li>
+<li><a href="solrdismaxquery.construct.md">SolrDisMaxQuery::__construct</a> - Конструктор класу</li>
+<li><a href="solrdismaxquery.removebigramphrasefield.md">SolrDisMaxQuery::removeBigramPhraseField</a> - Видаляє поле біграми фрази (параметр pf2)</li>
+<li><a href="solrdismaxquery.removeboostquery.md">SolrDisMaxQuery::removeBoostQuery</a>— Видаляє часткове підвищення запиту на ім&#x27;я поля (bq)</li>
+<li><a href="solrdismaxquery.removephrasefield.md">SolrDisMaxQuery::removePhraseField</a> - Видаляє поле фрази (параметра)</li>
+<li><a href="solrdismaxquery.removequeryfield.md">SolrDisMaxQuery::removeQueryField</a>— Видаляє поле запиту (параметр qf)</li>
+<li><a href="solrdismaxquery.removetrigramphrasefield.md">SolrDisMaxQuery::removeTrigramPhraseField</a> - Видаляє поле триграми (параметр pf3)</li>
+<li><a href="solrdismaxquery.removeuserfield.md">SolrDisMaxQuery::removeUserField</a>— Видаляє поле з параметра поля користувача (uf)</li>
+<li><a href="solrdismaxquery.setbigramphrasefields.md">SolrDisMaxQuery::setBigramPhraseFields</a> - Встановлює поля біграми фрази та їх посилення (і відхилення) за допомогою параметра pf2</li>
+<li><a href="solrdismaxquery.setbigramphraseslop.md">SolrDisMaxQuery::setBigramPhraseSlop</a> - Встановлює коефіцієнт відхилення біграми фрази (параметр ps2)</li>
+<li><a href="solrdismaxquery.setboostfunction.md">SolrDisMaxQuery::setBoostFunction</a> - Встановлює функцію посилення (параметр bf)</li>
+<li><a href="solrdismaxquery.setboostquery.md">SolrDisMaxQuery::setBoostQuery</a> - Безпосередньо встановлює параметр запиту посилення (bq)</li>
+<li><a href="solrdismaxquery.setminimummatch.md">SolrDisMaxQuery::setMinimumMatch</a> - Встановлює мінімальну відповідність &quot;Should&quot; (mm)</li>
+<li><a href="solrdismaxquery.setphrasefields.md">SolrDisMaxQuery::setPhraseFields</a>— Встановлює поля фрази та їх посилення (і відхилення) за допомогою pf2</li>
+<li><a href="solrdismaxquery.setphraseslop.md">SolrDisMaxQuery::setPhraseSlop</a>— Встановлює коефіцієнт відхилення за промовчанням для запитів фраз (параметр ps)</li>
+<li><a href="solrdismaxquery.setqueryalt.md">SolrDisMaxQuery::setQueryAlt</a> - Встановлює альтернативний запит (параметр q.alt)</li>
+<li><a href="solrdismaxquery.setqueryphraseslop.md">SolrDisMaxQuery::setQueryPhraseSlop</a>— Визначає коефіцієнт відхилення, дозволений для фразових запитів, які явно включені в рядок запиту користувача (параметр qf)</li>
+<li><a href="solrdismaxquery.settiebreaker.md">SolrDisMaxQuery::setTieBreaker</a> - Встановлює параметр Tie Breaker (параметр tie)</li>
+<li><a href="solrdismaxquery.settrigramphrasefields.md">SolrDisMaxQuery::setTrigramPhraseFields</a> - Безпосередньо встановлює поля триграми фрази (параметр pf3)</li>
+<li><a href="solrdismaxquery.settrigramphraseslop.md">SolrDisMaxQuery::setTrigramPhraseSlop</a> - Встановлює коефіцієнт відхилення триграми фрази (параметр ps3)</li>
+<li><a href="solrdismaxquery.setuserfields.md">SolrDisMaxQuery::setUserFields</a>— Встановлює параметр полів користувача (uf)</li>
+<li><a href="solrdismaxquery.usedismaxqueryparser.md">SolrDisMaxQuery::useDisMaxQueryParser</a> - Перемикає QueryParser на DisMax Query Parser</li>
+<li><a href="solrdismaxquery.useedismaxqueryparser.md">SolrDisMaxQuery::useEDisMaxQueryParser</a> - Перемикає QueryParser на EDisMax</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.solrdismaxquery.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.solrdismaxquery.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.solrdismaxquery.md","content":"# Клас SolrDisMaxQuery\n\n(No version information available, might only be in Git)\n\n## Вступ\n\n## Огляд класів\n\n```classsynopsis\n\n\n\n    \n     \n      class SolrDisMaxQuery\n     \n\n     \n      extends\n       SolrQuery\n     \n\n     implements \n       Serializable {\n\n\n    /* Наследуемые свойства */\n    \n     const\n     int\n      SolrQuery::ORDER_ASC = 0;\nconst\n     int\n      SolrQuery::ORDER_DESC = 1;\nconst\n     int\n      SolrQuery::FACET_SORT_INDEX = 0;\nconst\n     int\n      SolrQuery::FACET_SORT_COUNT = 1;\nconst\n     int\n      SolrQuery::TERMS_SORT_INDEX = 0;\nconst\n     int\n      SolrQuery::TERMS_SORT_COUNT = 1;\n\n\n\n    /* Методы */\n    \n   public __construct(string $q = ?)\n\n    public addBigramPhraseField(string $field, string $boost, string $slop = ?): SolrDisMaxQuery\npublic addBoostQuery(string $field, string $value, string $boost = ?): SolrDisMaxQuery\npublic addPhraseField(string $field, string $boost, string $slop = ?): SolrDisMaxQuery\npublic addQueryField(string $field, string $boost = ?): SolrDisMaxQuery\npublic addTrigramPhraseField(string $field, string $boost, string $slop = ?): SolrDisMaxQuery\npublic addUserField(string $field): SolrDisMaxQuery\npublic removeBigramPhraseField(string $field): SolrDisMaxQuery\npublic removeBoostQuery(string $field): SolrDisMaxQuery\npublic removePhraseField(string $field): SolrDisMaxQuery\npublic removeQueryField(string $field): SolrDisMaxQuery\npublic removeTrigramPhraseField(string $field): SolrDisMaxQuery\npublic removeUserField(string $field): SolrDisMaxQuery\npublic setBigramPhraseFields(string $fields): SolrDisMaxQuery\npublic setBigramPhraseSlop(string $slop): SolrDisMaxQuery\npublic setBoostFunction(string $function): SolrDisMaxQuery\npublic setBoostQuery(string $q): SolrDisMaxQuery\npublic setMinimumMatch(string $value): SolrDisMaxQuery\npublic setPhraseFields(string $fields): SolrDisMaxQuery\npublic setPhraseSlop(string $slop): SolrDisMaxQuery\npublic setQueryAlt(string $q): SolrDisMaxQuery\npublic setQueryPhraseSlop(string $slop): SolrDisMaxQuery\npublic setTieBreaker(string $tieBreaker): SolrDisMaxQuery\npublic setTrigramPhraseFields(string $fields): SolrDisMaxQuery\npublic setTrigramPhraseSlop(string $slop): SolrDisMaxQuery\npublic setUserFields(string $fields): SolrDisMaxQuery\npublic useDisMaxQueryParser(): SolrDisMaxQuery\npublic useEDisMaxQueryParser(): SolrDisMaxQuery\n\n\n    /* Наследуемые методы */\n    public SolrQuery::addExpandFilterQuery(string $fq): SolrQuery\npublic SolrQuery::addExpandSortField(string $field, string $order = ?): SolrQuery\npublic SolrQuery::addFacetDateField(string $dateField): SolrQuery\npublic SolrQuery::addFacetDateOther(string $value, string $field_override = ?): SolrQuery\npublic SolrQuery::addFacetField(string $field): SolrQuery\npublic SolrQuery::addFacetQuery(string $facetQuery): SolrQuery\npublic SolrQuery::addField(string $field): SolrQuery\npublic SolrQuery::addFilterQuery(string $fq): SolrQuery\npublic SolrQuery::addGroupField(string $value): SolrQuery\npublic SolrQuery::addGroupFunction(string $value): SolrQuery\npublic SolrQuery::addGroupQuery(string $value): SolrQuery\npublic SolrQuery::addGroupSortField(string $field, int $order = ?): SolrQuery\npublic SolrQuery::addHighlightField(string $field): SolrQuery\npublic SolrQuery::addMltField(string $field): SolrQuery\npublic SolrQuery::addMltQueryField(string $field, float $boost): SolrQuery\npublic SolrQuery::addSortField(string $field, int $order = SolrQuery::ORDER_DESC): SolrQuery\npublic SolrQuery::addStatsFacet(string $field): SolrQuery\npublic SolrQuery::addStatsField(string $field): SolrQuery\npublic SolrQuery::collapse(SolrCollapseFunction $collapseFunction): SolrQuery\npublic SolrQuery::getExpand(): bool\npublic SolrQuery::getExpandFilterQueries(): array\npublic SolrQuery::getExpandQuery(): array\npublic SolrQuery::getExpandRows(): int\npublic SolrQuery::getExpandSortFields(): array\npublic SolrQuery::getFacet(): bool\npublic SolrQuery::getFacetDateEnd(string $field_override = ?): string\npublic SolrQuery::getFacetDateFields(): array\npublic SolrQuery::getFacetDateGap(string $field_override = ?): string\npublic SolrQuery::getFacetDateHardEnd(string $field_override = ?): string\npublic SolrQuery::getFacetDateOther(string $field_override = ?): array\npublic SolrQuery::getFacetDateStart(string $field_override = ?): string\npublic SolrQuery::getFacetFields(): array\npublic SolrQuery::getFacetLimit(string $field_override = ?): int\npublic SolrQuery::getFacetMethod(string $field_override = ?): string\npublic SolrQuery::getFacetMinCount(string $field_override = ?): int\npublic SolrQuery::getFacetMissing(string $field_override = ?): bool\npublic SolrQuery::getFacetOffset(string $field_override = ?): int\npublic SolrQuery::getFacetPrefix(string $field_override = ?): string\npublic SolrQuery::getFacetQueries(): array\npublic SolrQuery::getFacetSort(string $field_override = ?): int\npublic SolrQuery::getFields(): array\npublic SolrQuery::getFilterQueries(): array\npublic SolrQuery::getGroup(): bool\npublic SolrQuery::getGroupCachePercent(): int\npublic SolrQuery::getGroupFacet(): bool\npublic SolrQuery::getGroupFields(): array\npublic SolrQuery::getGroupFormat(): string\npublic SolrQuery::getGroupFunctions(): array\npublic SolrQuery::getGroupLimit(): int\npublic SolrQuery::getGroupMain(): bool\npublic SolrQuery::getGroupNGroups(): bool\npublic SolrQuery::getGroupOffset(): int\npublic SolrQuery::getGroupQueries(): array\npublic SolrQuery::getGroupSortFields(): array\npublic SolrQuery::getGroupTruncate(): bool\npublic SolrQuery::getHighlight(): bool\npublic SolrQuery::getHighlightAlternateField(string $field_override = ?): string\npublic SolrQuery::getHighlightFields(): array\npublic SolrQuery::getHighlightFormatter(string $field_override = ?): string\npublic SolrQuery::getHighlightFragmenter(string $field_override = ?): string\npublic SolrQuery::getHighlightFragsize(string $field_override = ?): int\npublic SolrQuery::getHighlightHighlightMultiTerm(): bool\npublic SolrQuery::getHighlightMaxAlternateFieldLength(string $field_override = ?): int\npublic SolrQuery::getHighlightMaxAnalyzedChars(): int\npublic SolrQuery::getHighlightMergeContiguous(string $field_override = ?): bool\npublic SolrQuery::getHighlightRegexMaxAnalyzedChars(): int\npublic SolrQuery::getHighlightRegexPattern(): string\npublic SolrQuery::getHighlightRegexSlop(): float\npublic SolrQuery::getHighlightRequireFieldMatch(): bool\npublic SolrQuery::getHighlightSimplePost(string $field_override = ?): string\npublic SolrQuery::getHighlightSimplePre(string $field_override = ?): string\npublic SolrQuery::getHighlightSnippets(string $field_override = ?): int\npublic SolrQuery::getHighlightUsePhraseHighlighter(): bool\npublic SolrQuery::getMlt(): bool\npublic SolrQuery::getMltBoost(): bool\npublic SolrQuery::getMltCount(): int\npublic SolrQuery::getMltFields(): array\npublic SolrQuery::getMltMaxNumQueryTerms(): int\npublic SolrQuery::getMltMaxNumTokens(): int\npublic SolrQuery::getMltMaxWordLength(): int\npublic SolrQuery::getMltMinDocFrequency(): int\npublic SolrQuery::getMltMinTermFrequency(): int\npublic SolrQuery::getMltMinWordLength(): int\npublic SolrQuery::getMltQueryFields(): array\npublic SolrQuery::getQuery(): string\npublic SolrQuery::getRows(): int\npublic SolrQuery::getSortFields(): array\npublic SolrQuery::getStart(): int\npublic SolrQuery::getStats(): bool\npublic SolrQuery::getStatsFacets(): array\npublic SolrQuery::getStatsFields(): array\npublic SolrQuery::getTerms(): bool\npublic SolrQuery::getTermsField(): string\npublic SolrQuery::getTermsIncludeLowerBound(): bool\npublic SolrQuery::getTermsIncludeUpperBound(): bool\npublic SolrQuery::getTermsLimit(): int\npublic SolrQuery::getTermsLowerBound(): string\npublic SolrQuery::getTermsMaxCount(): int\npublic SolrQuery::getTermsMinCount(): int\npublic SolrQuery::getTermsPrefix(): string\npublic SolrQuery::getTermsReturnRaw(): bool\npublic SolrQuery::getTermsSort(): int\npublic SolrQuery::getTermsUpperBound(): string\npublic SolrQuery::getTimeAllowed(): int\npublic SolrQuery::removeExpandFilterQuery(string $fq): SolrQuery\npublic SolrQuery::removeExpandSortField(string $field): SolrQuery\npublic SolrQuery::removeFacetDateField(string $field): SolrQuery\npublic SolrQuery::removeFacetDateOther(string $value, string $field_override = ?): SolrQuery\npublic SolrQuery::removeFacetField(string $field): SolrQuery\npublic SolrQuery::removeFacetQuery(string $value): SolrQuery\npublic SolrQuery::removeField(string $field): SolrQuery\npublic SolrQuery::removeFilterQuery(string $fq): SolrQuery\npublic SolrQuery::removeHighlightField(string $field): SolrQuery\npublic SolrQuery::removeMltField(string $field): SolrQuery\npublic SolrQuery::removeMltQueryField(string $queryField): SolrQuery\npublic SolrQuery::removeSortField(string $field): SolrQuery\npublic SolrQuery::removeStatsFacet(string $value): SolrQuery\npublic SolrQuery::removeStatsField(string $field): SolrQuery\npublic SolrQuery::setEchoHandler(bool $flag): SolrQuery\npublic SolrQuery::setEchoParams(string $type): SolrQuery\npublic SolrQuery::setExpand(bool $value): SolrQuery\npublic SolrQuery::setExpandQuery(string $q): SolrQuery\npublic SolrQuery::setExpandRows(int $value): SolrQuery\npublic SolrQuery::setExplainOther(string $query): SolrQuery\npublic SolrQuery::setFacet(bool $flag): SolrQuery\npublic SolrQuery::setFacetDateEnd(string $value, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetDateGap(string $value, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetDateHardEnd(bool $value, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetDateStart(string $value, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetEnumCacheMinDefaultFrequency(int $frequency, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetLimit(int $limit, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetMethod(string $method, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetMinCount(int $mincount, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetMissing(bool $flag, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetOffset(int $offset, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetPrefix(string $prefix, string $field_override = ?): SolrQuery\npublic SolrQuery::setFacetSort(int $facetSort, string $field_override = ?): SolrQuery\npublic SolrQuery::setGroup(bool $value): SolrQuery\npublic SolrQuery::setGroupCachePercent(int $percent): SolrQuery\npublic SolrQuery::setGroupFacet(bool $value): SolrQuery\npublic SolrQuery::setGroupFormat(string $value): SolrQuery\npublic SolrQuery::setGroupLimit(int $value): SolrQuery\npublic SolrQuery::setGroupMain(string $value): SolrQuery\npublic SolrQuery::setGroupNGroups(bool $value): SolrQuery\npublic SolrQuery::setGroupOffset(int $value): SolrQuery\npublic SolrQuery::setGroupTruncate(bool $value): SolrQuery\npublic SolrQuery::setHighlight(bool $flag): SolrQuery\npublic SolrQuery::setHighlightAlternateField(string $field, string $field_override = ?): SolrQuery\npublic SolrQuery::setHighlightFormatter(string $formatter, string $field_override = ?): SolrQuery\npublic SolrQuery::setHighlightFragmenter(string $fragmenter, string $field_override = ?): SolrQuery\npublic SolrQuery::setHighlightFragsize(int $size, string $field_override = ?): SolrQuery\npublic SolrQuery::setHighlightHighlightMultiTerm(bool $flag): SolrQuery\npublic SolrQuery::setHighlightMaxAlternateFieldLength(int $fieldLength, string $field_override = ?): SolrQuery\npublic SolrQuery::setHighlightMaxAnalyzedChars(int $value): SolrQuery\npublic SolrQuery::setHighlightMergeContiguous(bool $flag, string $field_override = ?): SolrQuery\npublic SolrQuery::setHighlightRegexMaxAnalyzedChars(int $maxAnalyzedChars): SolrQuery\npublic SolrQuery::setHighlightRegexPattern(string $value): SolrQuery\npublic SolrQuery::setHighlightRegexSlop(float $factor): SolrQuery\npublic SolrQuery::setHighlightRequireFieldMatch(bool $flag): SolrQuery\npublic SolrQuery::setHighlightSimplePost(string $simplePost, string $field_override = ?): SolrQuery\npublic SolrQuery::setHighlightSimplePre(string $simplePre, string $field_override = ?): SolrQuery\npublic SolrQuery::setHighlightSnippets(int $value, string $field_override = ?): SolrQuery\npublic SolrQuery::setHighlightUsePhraseHighlighter(bool $flag): SolrQuery\npublic SolrQuery::setMlt(bool $flag): SolrQuery\npublic SolrQuery::setMltBoost(bool $flag): SolrQuery\npublic SolrQuery::setMltCount(int $count): SolrQuery\npublic SolrQuery::setMltMaxNumQueryTerms(int $value): SolrQuery\npublic SolrQuery::setMltMaxNumTokens(int $value): SolrQuery\npublic SolrQuery::setMltMaxWordLength(int $maxWordLength): SolrQuery\npublic SolrQuery::setMltMinDocFrequency(int $minDocFrequency): SolrQuery\npublic SolrQuery::setMltMinTermFrequency(int $minTermFrequency): SolrQuery\npublic SolrQuery::setMltMinWordLength(int $minWordLength): SolrQuery\npublic SolrQuery::setOmitHeader(bool $flag): SolrQuery\npublic SolrQuery::setQuery(string $query): SolrQuery\npublic SolrQuery::setRows(int $rows): SolrQuery\npublic SolrQuery::setShowDebugInfo(bool $flag): SolrQuery\npublic SolrQuery::setStart(int $start): SolrQuery\npublic SolrQuery::setStats(bool $flag): SolrQuery\npublic SolrQuery::setTerms(bool $flag): SolrQuery\npublic SolrQuery::setTermsField(string $fieldname): SolrQuery\npublic SolrQuery::setTermsIncludeLowerBound(bool $flag): SolrQuery\npublic SolrQuery::setTermsIncludeUpperBound(bool $flag): SolrQuery\npublic SolrQuery::setTermsLimit(int $limit): SolrQuery\npublic SolrQuery::setTermsLowerBound(string $lowerBound): SolrQuery\npublic SolrQuery::setTermsMaxCount(int $frequency): SolrQuery\npublic SolrQuery::setTermsMinCount(int $frequency): SolrQuery\npublic SolrQuery::setTermsPrefix(string $prefix): SolrQuery\npublic SolrQuery::setTermsReturnRaw(bool $flag): SolrQuery\npublic SolrQuery::setTermsSort(int $sortType): SolrQuery\npublic SolrQuery::setTermsUpperBound(string $upperBound): SolrQuery\npublic SolrQuery::setTimeAllowed(int $timeAllowed): SolrQuery\n\n\n   }\n```\n\n## Обумовлені константи\n\n**`SolrDisMaxQuery::ORDER_ASC`**\n\nВикористовується для вказівки того, що сортування має бути у порядку зростаючому (дублювати для спрощення міграції)\n\n**`SolrDisMaxQuery::ORDER_DESC`**\n\nВикористовується для вказівки, що сортування має бути в порядку зменшення (дублюється для спрощення міграції)\n\n**`SolrDisMaxQuery::FACET_SORT_INDEX`**\n\nВикористовується для вказівки сортування фасету за індексом (дублюється для спрощення міграції)\n\n**`SolrDisMaxQuery::FACET_SORT_COUNT`**\n\nВикористовується для сортування фасету за кількістю (дублюється для спрощення міграції)\n\n**`SolrDisMaxQuery::TERMS_SORT_INDEX`**\n\nВикористовується в TermsComponent (дублюється для спрощення міграції)\n\n**`SolrDisMaxQuery::TERMS_SORT_COUNT`**\n\nВикористовується в TermsComponent (дублюється для спрощення міграції)\n\n## Зміст\n\n-   [SolrDisMaxQuery::addBigramPhraseField](solrdismaxquery.addbigramphrasefield.md) \\- Додає поле фразової біграми (параметр pf2)\n-   [SolrDisMaxQuery::addBoostQuery](solrdismaxquery.addboostquery.md)— Додає поле підвищення запиту зі значенням та необов'язковим посиленням (параметр bq)\n-   [SolrDisMaxQuery::addPhraseField](solrdismaxquery.addphrasefield.md) \\- Додає поле фрази (параметр pf)\n-   [SolrDisMaxQuery::addQueryField](solrdismaxquery.addqueryfield.md)— Додає поле запиту із необов'язковим підвищенням (параметр qf)\n-   [SolrDisMaxQuery::addTrigramPhraseField](solrdismaxquery.addtrigramphrasefield.md) \\- Додає поле триграми (параметр pf3)\n-   [SolrDisMaxQuery::addUserField](solrdismaxquery.adduserfield.md)— Додає поле до параметра поля користувача (uf)\n-   [SolrDisMaxQuery::\\_\\_construct](solrdismaxquery.construct.md) \\- Конструктор класу\n-   [SolrDisMaxQuery::removeBigramPhraseField](solrdismaxquery.removebigramphrasefield.md) \\- Видаляє поле біграми фрази (параметр pf2)\n-   [SolrDisMaxQuery::removeBoostQuery](solrdismaxquery.removeboostquery.md)— Видаляє часткове підвищення запиту на ім'я поля (bq)\n-   [SolrDisMaxQuery::removePhraseField](solrdismaxquery.removephrasefield.md) \\- Видаляє поле фрази (параметра)\n-   [SolrDisMaxQuery::removeQueryField](solrdismaxquery.removequeryfield.md)— Видаляє поле запиту (параметр qf)\n-   [SolrDisMaxQuery::removeTrigramPhraseField](solrdismaxquery.removetrigramphrasefield.md) \\- Видаляє поле триграми (параметр pf3)\n-   [SolrDisMaxQuery::removeUserField](solrdismaxquery.removeuserfield.md)— Видаляє поле з параметра поля користувача (uf)\n-   [SolrDisMaxQuery::setBigramPhraseFields](solrdismaxquery.setbigramphrasefields.md) \\- Встановлює поля біграми фрази та їх посилення (і відхилення) за допомогою параметра pf2\n-   [SolrDisMaxQuery::setBigramPhraseSlop](solrdismaxquery.setbigramphraseslop.md) \\- Встановлює коефіцієнт відхилення біграми фрази (параметр ps2)\n-   [SolrDisMaxQuery::setBoostFunction](solrdismaxquery.setboostfunction.md) \\- Встановлює функцію посилення (параметр bf)\n-   [SolrDisMaxQuery::setBoostQuery](solrdismaxquery.setboostquery.md) \\- Безпосередньо встановлює параметр запиту посилення (bq)\n-   [SolrDisMaxQuery::setMinimumMatch](solrdismaxquery.setminimummatch.md) - Встановлює мінімальну відповідність \"Should\" (mm)\n-   [SolrDisMaxQuery::setPhraseFields](solrdismaxquery.setphrasefields.md)— Встановлює поля фрази та їх посилення (і відхилення) за допомогою pf2\n-   [SolrDisMaxQuery::setPhraseSlop](solrdismaxquery.setphraseslop.md)— Встановлює коефіцієнт відхилення за промовчанням для запитів фраз (параметр ps)\n-   [SolrDisMaxQuery::setQueryAlt](solrdismaxquery.setqueryalt.md) \\- Встановлює альтернативний запит (параметр q.alt)\n-   [SolrDisMaxQuery::setQueryPhraseSlop](solrdismaxquery.setqueryphraseslop.md)— Визначає коефіцієнт відхилення, дозволений для фразових запитів, які явно включені в рядок запиту користувача (параметр qf)\n-   [SolrDisMaxQuery::setTieBreaker](solrdismaxquery.settiebreaker.md) \\- Встановлює параметр Tie Breaker (параметр tie)\n-   [SolrDisMaxQuery::setTrigramPhraseFields](solrdismaxquery.settrigramphrasefields.md) \\- Безпосередньо встановлює поля триграми фрази (параметр pf3)\n-   [SolrDisMaxQuery::setTrigramPhraseSlop](solrdismaxquery.settrigramphraseslop.md) \\- Встановлює коефіцієнт відхилення триграми фрази (параметр ps3)\n-   [SolrDisMaxQuery::setUserFields](solrdismaxquery.setuserfields.md)— Встановлює параметр полів користувача (uf)\n-   [SolrDisMaxQuery::useDisMaxQueryParser](solrdismaxquery.usedismaxqueryparser.md) \\- Перемикає QueryParser на DisMax Query Parser\n-   [SolrDisMaxQuery::useEDisMaxQueryParser](solrdismaxquery.useedismaxqueryparser.md) \\- Перемикає QueryParser на EDisMax\n","title":"Клас SolrDisMaxQuery","contentType":2,"navigation":[{"solrquery.settimeallowed.md":"« SolrQuery::setTimeAllowed"},{"solrdismaxquery.addbigramphrasefield.md":"SolrDisMaxQuery::addBigramPhraseField »"},{"index.md":"PHP Manual"},{"book.solr.md":"Solr"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.solrdismaxquery.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

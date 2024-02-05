@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>db2\_set\_option</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="function.db2-server-info.md" class="mx-4">« db2\_server\_info</a><a href="function.db2-special-columns.md" class="mx-4">db2\_special\_columns »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="ref.ibm-db2.md" class="mx-4">Функції IBM DB2</a></div><article class="markdown_markdown__yfc8y"><div><h1>db2_set_option</h1>
+<p>(PECL ibm_db2 &gt;= 1.0.0)</p>
+<p>db2_set_option — Встановіть опцію для з&#x27;єднання або ресурсу оператора.</p>
+<h3>Опис</h3>
+<pre><code class="hljs language-methodsynopsis">db2_set_option(resource $resource, array $options, int $type): bool
+</code></pre>
+<p>Встановіть опцію для з&#x27;єднання або ресурсу оператора. Для ресурсу результуючого набору опції не можна задавати.</p>
+<h3>Список параметрів</h3>
+<p><code>resource</code></p>
+<p>Коректний ресурс оператора, отриманий з <a href="function.db2-prepare.md">db2_prepare()</a> або ж ресурс з&#x27;єднання, отриманий з <a href="function.db2-connect.md">db2_connect()</a> або <a href="function.db2-pconnect.md">db2_pconnect()</a></p>
+<p><code>options</code></p>
+<p>Асоціативний масив, що містить опції, що відповідають ресурсу. Цей параметр можна використовувати для зміни режиму автопідтвердження транзакцій, типу курсору та завдання регістра імен стовпців (нижній, верхній, як є) у результуючому наборі.</p>
+<p><code>autocommit</code></p>
+<p><code>DB2_AUTOCOMMIT_ON</code>- включить режим автоподтверждения транзакций для заданного соединения.</p>
+<p><code>DB2_AUTOCOMMIT_OFF</code>- отключить режим автоподтверждения транзакций для заданного соединения.</p>
+<p><code>cursor</code></p>
+<p><code>DB2_FORWARD_ONLY</code> - Задати тип курсору &quot;тільки вперед&quot;. Це тип за промовчанням і він підтримується всіма базами даних.</p>
+<p><code>DB2_SCROLLABLE</code> - задати тип курсору як &quot;перемотується&quot;. Даний тип курсору дозволяє отримувати доступ до довільних рядків результуючого набору та доступний лише для IBM DB2 Universal Database.</p>
+<p><code>binmode</code></p>
+<p><code>DB2_BINARY</code> - Визначає, що бінарні дані будуть повернуті як є. Це режим за промовчанням, він рівносильний завданню <code>ibm_db2.binmode=1</code>в php.ini.</p>
+<p><code>DB2_CONVERT</code> - Визначає, що бінарні дані будуть сконвертовані в шістнадцяткове подання. Рівносильно завдання <code>ibm_db2.binmode=2</code>в php.ini.</p>
+<p><code>DB2_CONVERT</code> - визначає, що бінарні дані будуть сконвертовані в <strong><code>null</code></strong>. Рівносильно завдання <code>ibm_db2.binmode=3</code>в php.ini.</p>
+<p><code>db2_attr_case</code></p>
+<p><code>DB2_CASE_LOWER</code> - Визначає, що імена стовпців будуть повернуті в нижньому регістрі.</p>
+<p><code>DB2_CASE_UPPER</code> - Визначає, що імена стовпців будуть повернуті у верхньому регістрі.</p>
+<p><code>DB2_CASE_NATURAL</code> - Визначає, що імена стовпців будуть повернуті як є.</p>
+<p><code>deferred_prepare</code></p>
+<p><code>DB2_DEFERRED_PREPARE_ON</code> - Включає відкладену підготовку ресурсу оператора.</p>
+<p><code>DB2_DEFERRED_PREPARE_OFF</code> - Вимикає відстрочену підготовку ресурсу оператора.</p>
+<p>Наступні нові опції i5/OS доступні в ibm_db2 версії 1.5.1 та вище. Ці опції доступні лише якщо PHP та ibm_db2 запущено на системі i5.</p>
+<p><code>i5_fetch_only</code></p>
+<p><code>DB2_I5_FETCH_ON</code> - курсори можуть бути тільки для читання і не можуть використовуватися для позиціонування DELETE або UPDATE. Є поведінкою за умовчанням, тільки якщо змінна оточення <code>SQL_ATTR_FOR_FETCH_ONLY</code>не установлена в<code>SQL_FALSE</code></p>
+<p><code>DB2_I5_FETCH_OFF</code> - курсори можна використовувати для позиціонування DELETE або UPDATE.</p>
+<p>Наступні нові опції доступні в ibm_db2 версії 1.8.0 та вище.</p>
+<p><code>rowcount</code></p>
+<p><code>DB2_ROWCOUNT_PREFETCH_ON</code> - клієнт може запитати кількість рядків перед вилученням, що означає, що функція <a href="function.db2-num-rows.md">db2_num_rows()</a> поверне кількість вибраних рядків, навіть якщо використовується курсор <code>ROLLFORWARD_ONLY</code></p>
+<p><code>DB2_ROWCOUNT_PREFETCH_OFF</code> - клієнт не може запитати кількість рядків перед вилученням</p>
+<p>Наступні нові опції доступні в ibm_db2 версії 1.7.0 та вище.</p>
+<p><code>trusted_user</code></p>
+<p>Щоб перевести користувача до статусу довіреного користувача, вкажіть ідентифікатор (рядок) довіреного користувача як значення цього параметра. Ця опція може бути задана лише ресурсу з&#x27;єднання. Для використання цієї опції необхідно, щоб з&#x27;єднання було дозволено довірений контекст.</p>
+<p><code>trusted_password</code></p>
+<p>Пароль (рядок), що відповідає ідентифікатору користувача, заданому в trusted_user.</p>
+<p>Наступні нові опції доступні в ibm_db2 версії 1.6.0 та вище. Ці опції надають корисну інформацію, яку можна отримати через <a href="function.db2-get-option.md">db2_get_option()</a></p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Якщо значення кожної опції встановлено, деякі сервери можуть не зуміти обробити всі значення та обріжуть його.</p>
+<p>Для впевненості в тому, що всі опції конвертовані коректно під час передачі на хост, використовуйте лише символи A-Z, 0-9, підкреслення(_) та точку (.).</p>
+</blockquote>
+<p><code>userid</code></p>
+<p><code>SQL_ATTR_INFO_USERID</code> - покажчик на символьний рядок, що закінчується null-байтом і містить ідентифікатор користувача, переданий базі при з&#x27;єднанні.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>DB2 для серверів z/OS та OS/390 підтримує довжину до 16 символів. Ідентифікатор користувача не скомпрометує ідентифікатор авторизації – це різні сутності.</p>
+</blockquote>
+<p><code>acctstr</code></p>
+<p><code>SQL_ATTR_INFO_ACCTSTR</code> - покажчик на символьний рядок, що закінчується null-байтом і використовується для ідентифікації облікового рядка клієнта, відповідного надісланого сервера при з&#x27;єднанні.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>DB2 для серверів z/OS та OS/390 підтримує довжину до 200 символів.</p>
+</blockquote>
+<p><code>applname</code></p>
+<p><code>SQL_ATTR_INFO_APPLNAME</code> - вказівник на символьний рядок, що закінчується null-байтом і використовується для ідентифікації імені клієнтської програми, відповідної надісланої на сервер під час з&#x27;єднання.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>DB2 для серверів z/OS та OS/390 підтримує довжину до 32 символів.</p>
+</blockquote>
+<p><code>wrkstnname</code></p>
+<p><code>SQL_ATTR_INFO_WRKSTNNAME</code> - вказівник на символьний рядок, що закінчується null-байтом і використовується для ідентифікації імені робочої станції, відповідної надісланої на сервер при з&#x27;єднанні.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>DB2 для серверів z/OS та OS/390 підтримує довжину до 18 символів.</p>
+</blockquote>
+<p><code>type</code></p>
+<p>Цілочисленне значення, що визначає тип ресурсу, який було передано у функцію.</p>
+<p>- передан ресурс соединения.</p>
+<p>Любое другое значение, отличное от означає ресурс оператора.</p>
+<p>Наступна таблиця показує, які параметри сумісні з ресурсами:</p>
+<p><strong>Матриця ресурс/параметр</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Ключ</th><th>Значение</th><th>Тип ресурса</th></tr></thead><tbody><tr><td></td><td></td><td>З&#x27;єднання</td></tr><tr><td>autocommit</td><td><code>DB2_AUTOCOMMIT_ON</code></td><td>X</td></tr><tr><td>autocommit</td><td><code>DB2_AUTOCOMMIT_OFF</code></td><td>X</td></tr><tr><td>cursor</td><td><code>DB2_SCROLLABLE</code></td><td>-</td></tr><tr><td>cursor</td><td><code>DB2_FORWARD_ONLY</code></td><td>-</td></tr><tr><td>binmode</td><td><code>DB2_BINARY</code></td><td>X</td></tr><tr><td>binmode</td><td><code>DB2_CONVERT</code></td><td>X</td></tr><tr><td>binmode</td><td><code>DB2_PASSTHRU</code></td><td>X</td></tr><tr><td>db2_attr_case</td><td><code>DB2_CASE_LOWER</code></td><td>X</td></tr><tr><td>db2_attr_case</td><td><code>DB2_CASE_UPPER</code></td><td>X</td></tr><tr><td>db2_attr_case</td><td><code>DB2_CASE_NATURAL</code></td><td>X</td></tr><tr><td>deferred_prepare</td><td><code>DB2_DEFERRED_PREPARE_ON</code></td><td>-</td></tr><tr><td>deferred_prepare</td><td><code>DB2_DEFERRED_PREPARE_OFF</code></td><td>-</td></tr><tr><td>i5_fetch_only</td><td><code>DB2_I5_FETCH_ON</code></td><td>-</td></tr><tr><td>i5_fetch_only</td><td><code>DB2_I5_FETCH_OFF</code></td><td>-</td></tr><tr><td>rowcount</td><td><code>DB2_ROWCOUNT_PREFETCH_ON</code></td><td>-</td></tr><tr><td>rowcount</td><td><code>DB2_ROWCOUNT_PREFETCH_OFF</code></td><td>-</td></tr><tr><td>trusted_user</td><td><code>&lt;USER NAME&gt; (String)</code></td><td>X</td></tr><tr><td>trusted_password</td><td><code>&lt;PASSWORD&gt; (String)</code></td><td>X</td></tr><tr><td>userid</td><td><code>SQL_ATTR_INFO_USERID</code></td><td>X</td></tr><tr><td>acctstr</td><td><code>SQL_ATTR_INFO_ACCTSTR</code></td><td>X</td></tr><tr><td>applname</td><td><code>SQL_ATTR_INFO_APPLNAME</code></td><td>X</td></tr><tr><td>wrkstnname</td><td><code>SQL_ATTR_INFO_WRKSTNNAME</code></td><td>X</td></tr></tbody></table>
+<h3>Значення, що повертаються</h3>
+<p>Повертає <strong><code>true</code></strong> у разі успішного виконання або **<code>false</code>**в случае возникновения ошибки.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Встановлення одного параметра для ресурсу з&#x27;єднання</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:612px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-title class_">Options</span> <span class="hljs-title class_">Set</span> <span class="hljs-title class_">Successfully</span>
+</code></pre>
+<p><strong>Приклад #2 Встановлення кількох параметрів для ресурсу з&#x27;єднання</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:666px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-title class_">Options</span> <span class="hljs-title class_">Set</span> <span class="hljs-title class_">Successfully</span>
+</code></pre>
+<p><strong>Приклад #3 Встановлення кількох параметрів з одним неправильним ключем</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:666px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-title class_">Could</span> <span class="hljs-title class_">Not</span> <span class="hljs-title class_">Set</span> <span class="hljs-title class_">Options</span>
+</code></pre>
+<p><strong>Приклад #4 Встановлення кількох параметрів з одним неправильним значенням</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:666px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-title class_">Could</span> <span class="hljs-title class_">Not</span> <span class="hljs-title class_">Set</span> <span class="hljs-title class_">Options</span>
+</code></pre>
+<p><strong>Приклад #5 Setting multiple parameters with connection resource and the wrong type</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:666px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-title class_">Could</span> <span class="hljs-title class_">Not</span> <span class="hljs-title class_">Set</span> <span class="hljs-title class_">Options</span>
+</code></pre>
+<p><strong>Приклад #6 Setting multiple parameters with the wrong resource</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:702px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-title class_">Could</span> <span class="hljs-title class_">Not</span> <span class="hljs-title class_">Set</span> <span class="hljs-title class_">Options</span>
+</code></pre>
+<p><strong>Приклад #7 Putting it all together</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:612px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-css">Array
+(
+    <span class="hljs-selector-attr">[empno]</span> =&gt; <span class="hljs-number">000140</span>
+    <span class="hljs-selector-attr">[firstnme]</span> =&gt; HEATHER
+    <span class="hljs-selector-attr">[midinit]</span> =&gt; <span class="hljs-selector-tag">A</span>
+    <span class="hljs-selector-attr">[lastname]</span> =&gt; NICHOLLS
+    <span class="hljs-selector-attr">[workdept]</span> =&gt; C01
+    <span class="hljs-selector-attr">[phoneno]</span> =&gt; <span class="hljs-number">1793</span>
+    <span class="hljs-selector-attr">[hiredate]</span> =&gt; <span class="hljs-number">1976</span>-<span class="hljs-number">12</span>-<span class="hljs-number">15</span>
+    <span class="hljs-selector-attr">[job]</span> =&gt; ANALYST
+    <span class="hljs-selector-attr">[edlevel]</span> =&gt; <span class="hljs-number">18</span>
+    <span class="hljs-selector-attr">[sex]</span> =&gt; F
+    <span class="hljs-selector-attr">[birthdate]</span> =&gt; <span class="hljs-number">1946</span>-<span class="hljs-number">01</span>-<span class="hljs-number">19</span>
+    <span class="hljs-selector-attr">[salary]</span> =&gt; <span class="hljs-number">28420.00</span>
+    <span class="hljs-selector-attr">[bonus]</span> =&gt; <span class="hljs-number">600.00</span>
+    <span class="hljs-selector-attr">[comm]</span> =&gt; <span class="hljs-number">2274.00</span>
+)
+
+Array
+(
+    <span class="hljs-selector-attr">[empno]</span> =&gt; <span class="hljs-number">000130</span>
+    <span class="hljs-selector-attr">[firstnme]</span> =&gt; DELORES
+    <span class="hljs-selector-attr">[midinit]</span> =&gt; M
+    <span class="hljs-selector-attr">[lastname]</span> =&gt; QUINTANA
+    <span class="hljs-selector-attr">[workdept]</span> =&gt; C01
+    <span class="hljs-selector-attr">[phoneno]</span> =&gt; <span class="hljs-number">4578</span>
+    <span class="hljs-selector-attr">[hiredate]</span> =&gt; <span class="hljs-number">1971</span>-<span class="hljs-number">07</span>-<span class="hljs-number">28</span>
+    <span class="hljs-selector-attr">[job]</span> =&gt; ANALYST
+    <span class="hljs-selector-attr">[edlevel]</span> =&gt; <span class="hljs-number">16</span>
+    <span class="hljs-selector-attr">[sex]</span> =&gt; F
+    <span class="hljs-selector-attr">[birthdate]</span> =&gt; <span class="hljs-number">1925</span>-<span class="hljs-number">09</span>-<span class="hljs-number">15</span>
+    <span class="hljs-selector-attr">[salary]</span> =&gt; <span class="hljs-number">23800.00</span>
+    <span class="hljs-selector-attr">[bonus]</span> =&gt; <span class="hljs-number">500.00</span>
+    <span class="hljs-selector-attr">[comm]</span> =&gt; <span class="hljs-number">1904.00</span>
+)
+</code></pre>
+<p><strong>Приклад #8 Курсор i5/OS тільки для читання</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:252px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs">first2 last2
+</code></pre>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="function.db2-connect.md">db2_connect()</a> - Повертає з&#x27;єднання з базою даних</li>
+<li><a href="function.db2-pconnect.md">db2_pconnect()</a> - Повертає постійне з&#x27;єднання з базою даних</li>
+<li><a href="function.db2-exec.md">db2_exec()</a> - Виконує SQL-запит безпосередньо</li>
+<li><a href="function.db2-prepare.md">db2_prepare()</a> - готує SQL-запит до виконання</li>
+<li><a href="function.db2-cursor-type.md">db2_cursor_type()</a> - Повертає тип курсору, який використовується у ресурсі оператора</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/function.db2-set-option.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/function.db2-set-option.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"function.db2-set-option.md","content":"# db2\\_set\\_option\n\n(PECL ibm\\_db2 \u003e= 1.0.0)\n\ndb2\\_set\\_option — Встановіть опцію для з'єднання або ресурсу оператора.\n\n### Опис\n\n```methodsynopsis\ndb2_set_option(resource $resource, array $options, int $type): bool\n```\n\nВстановіть опцію для з'єднання або ресурсу оператора. Для ресурсу результуючого набору опції не можна задавати.\n\n### Список параметрів\n\n`resource`\n\nКоректний ресурс оператора, отриманий з [db2\\_prepare()](function.db2-prepare.md) або ж ресурс з'єднання, отриманий з [db2\\_connect()](function.db2-connect.md) або [db2\\_pconnect()](function.db2-pconnect.md)\n\n`options`\n\nАсоціативний масив, що містить опції, що відповідають ресурсу. Цей параметр можна використовувати для зміни режиму автопідтвердження транзакцій, типу курсору та завдання регістра імен стовпців (нижній, верхній, як є) у результуючому наборі.\n\n`autocommit`\n\n`DB2_AUTOCOMMIT_ON`\\- включить режим автоподтверждения транзакций для заданного соединения.\n\n`DB2_AUTOCOMMIT_OFF`\\- отключить режим автоподтверждения транзакций для заданного соединения.\n\n`cursor`\n\n`DB2_FORWARD_ONLY` - Задати тип курсору \"тільки вперед\". Це тип за промовчанням і він підтримується всіма базами даних.\n\n`DB2_SCROLLABLE` - задати тип курсору як \"перемотується\". Даний тип курсору дозволяє отримувати доступ до довільних рядків результуючого набору та доступний лише для IBM DB2 Universal Database.\n\n`binmode`\n\n`DB2_BINARY` - Визначає, що бінарні дані будуть повернуті як є. Це режим за промовчанням, він рівносильний завданню `ibm_db2.binmode=1`в php.ini.\n\n`DB2_CONVERT` - Визначає, що бінарні дані будуть сконвертовані в шістнадцяткове подання. Рівносильно завдання `ibm_db2.binmode=2`в php.ini.\n\n`DB2_CONVERT` - визначає, що бінарні дані будуть сконвертовані в **`null`**. Рівносильно завдання `ibm_db2.binmode=3`в php.ini.\n\n`db2_attr_case`\n\n`DB2_CASE_LOWER` - Визначає, що імена стовпців будуть повернуті в нижньому регістрі.\n\n`DB2_CASE_UPPER` - Визначає, що імена стовпців будуть повернуті у верхньому регістрі.\n\n`DB2_CASE_NATURAL` - Визначає, що імена стовпців будуть повернуті як є.\n\n`deferred_prepare`\n\n`DB2_DEFERRED_PREPARE_ON` - Включає відкладену підготовку ресурсу оператора.\n\n`DB2_DEFERRED_PREPARE_OFF` - Вимикає відстрочену підготовку ресурсу оператора.\n\nНаступні нові опції i5/OS доступні в ibm\\_db2 версії 1.5.1 та вище. Ці опції доступні лише якщо PHP та ibm\\_db2 запущено на системі i5.\n\n`i5_fetch_only`\n\n`DB2_I5_FETCH_ON` - курсори можуть бути тільки для читання і не можуть використовуватися для позиціонування DELETE або UPDATE. Є поведінкою за умовчанням, тільки якщо змінна оточення `SQL_ATTR_FOR_FETCH_ONLY`не установлена в`SQL_FALSE`\n\n`DB2_I5_FETCH_OFF` - курсори можна використовувати для позиціонування DELETE або UPDATE.\n\nНаступні нові опції доступні в ibm\\_db2 версії 1.8.0 та вище.\n\n`rowcount`\n\n`DB2_ROWCOUNT_PREFETCH_ON` - клієнт може запитати кількість рядків перед вилученням, що означає, що функція [db2\\_num\\_rows()](function.db2-num-rows.md) поверне кількість вибраних рядків, навіть якщо використовується курсор `ROLLFORWARD_ONLY`\n\n`DB2_ROWCOUNT_PREFETCH_OFF` - клієнт не може запитати кількість рядків перед вилученням\n\nНаступні нові опції доступні в ibm\\_db2 версії 1.7.0 та вище.\n\n`trusted_user`\n\nЩоб перевести користувача до статусу довіреного користувача, вкажіть ідентифікатор (рядок) довіреного користувача як значення цього параметра. Ця опція може бути задана лише ресурсу з'єднання. Для використання цієї опції необхідно, щоб з'єднання було дозволено довірений контекст.\n\n`trusted_password`\n\nПароль (рядок), що відповідає ідентифікатору користувача, заданому в trusted\\_user.\n\nНаступні нові опції доступні в ibm\\_db2 версії 1.6.0 та вище. Ці опції надають корисну інформацію, яку можна отримати через [db2\\_get\\_option()](function.db2-get-option.md)\n\n\u003e **Зауваження** :\n\u003e \n\u003e Якщо значення кожної опції встановлено, деякі сервери можуть не зуміти обробити всі значення та обріжуть його.\n\u003e \n\u003e Для впевненості в тому, що всі опції конвертовані коректно під час передачі на хост, використовуйте лише символи A-Z, 0-9, підкреслення(\\_) та точку (.).\n\n`userid`\n\n`SQL_ATTR_INFO_USERID` - покажчик на символьний рядок, що закінчується null-байтом і містить ідентифікатор користувача, переданий базі при з'єднанні.\n\n\u003e **Зауваження** :\n\u003e \n\u003e DB2 для серверів z/OS та OS/390 підтримує довжину до 16 символів. Ідентифікатор користувача не скомпрометує ідентифікатор авторизації – це різні сутності.\n\n`acctstr`\n\n`SQL_ATTR_INFO_ACCTSTR` - покажчик на символьний рядок, що закінчується null-байтом і використовується для ідентифікації облікового рядка клієнта, відповідного надісланого сервера при з'єднанні.\n\n\u003e **Зауваження** :\n\u003e \n\u003e DB2 для серверів z/OS та OS/390 підтримує довжину до 200 символів.\n\n`applname`\n\n`SQL_ATTR_INFO_APPLNAME` - вказівник на символьний рядок, що закінчується null-байтом і використовується для ідентифікації імені клієнтської програми, відповідної надісланої на сервер під час з'єднання.\n\n\u003e **Зауваження** :\n\u003e \n\u003e DB2 для серверів z/OS та OS/390 підтримує довжину до 32 символів.\n\n`wrkstnname`\n\n`SQL_ATTR_INFO_WRKSTNNAME` - вказівник на символьний рядок, що закінчується null-байтом і використовується для ідентифікації імені робочої станції, відповідної надісланої на сервер при з'єднанні.\n\n\u003e **Зауваження** :\n\u003e \n\u003e DB2 для серверів z/OS та OS/390 підтримує довжину до 18 символів.\n\n`type`\n\nЦілочисленне значення, що визначає тип ресурсу, який було передано у функцію.\n\n\\- передан ресурс соединения.\n\nЛюбое другое значение, отличное от означає ресурс оператора.\n\nНаступна таблиця показує, які параметри сумісні з ресурсами:\n\n**Матриця ресурс/параметр**\n\n| Ключ | Значение | Тип ресурса |\n| --- | --- | --- |\n|  |  | З'єднання |\n| autocommit | `DB2_AUTOCOMMIT_ON` | X |\n| autocommit | `DB2_AUTOCOMMIT_OFF` | X |\n| cursor | `DB2_SCROLLABLE` | \\- |\n| cursor | `DB2_FORWARD_ONLY` | \\- |\n| binmode | `DB2_BINARY` | X |\n| binmode | `DB2_CONVERT` | X |\n| binmode | `DB2_PASSTHRU` | X |\n| db2\\_attr\\_case | `DB2_CASE_LOWER` | X |\n| db2\\_attr\\_case | `DB2_CASE_UPPER` | X |\n| db2\\_attr\\_case | `DB2_CASE_NATURAL` | X |\n| deferred\\_prepare | `DB2_DEFERRED_PREPARE_ON` | \\- |\n| deferred\\_prepare | `DB2_DEFERRED_PREPARE_OFF` | \\- |\n| i5\\_fetch\\_only | `DB2_I5_FETCH_ON` | \\- |\n| i5\\_fetch\\_only | `DB2_I5_FETCH_OFF` | \\- |\n| rowcount | `DB2_ROWCOUNT_PREFETCH_ON` | \\- |\n| rowcount | `DB2_ROWCOUNT_PREFETCH_OFF` | \\- |\n| trusted\\_user | `\u003cUSER NAME\u003e (String)` | X |\n| trusted\\_password | `\u003cPASSWORD\u003e (String)` | X |\n| userid | `SQL_ATTR_INFO_USERID` | X |\n| acctstr | `SQL_ATTR_INFO_ACCTSTR` | X |\n| applname | `SQL_ATTR_INFO_APPLNAME` | X |\n| wrkstnname | `SQL_ATTR_INFO_WRKSTNNAME` | X |\n\n### Значення, що повертаються\n\nПовертає **`true`** у разі успішного виконання або \\*\\*`false`\\*\\*в случае возникновения ошибки.\n\n### Приклади\n\n**Приклад #1 Встановлення одного параметра для ресурсу з'єднання**\n\n```php\n\u003c?php\n/* Параметры соединения с базой данных */\n$database = 'SAMPLE';\n$hostname = 'localhost';\n$port = 50000;\n$protocol = 'TCPIP';\n$username = 'db2inst1';\n$password = 'ibmdb2';\n\n/* Строка соединения */\n$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";\n$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL=$protocol;\";\n$conn_string .= \"UID=$username;PWD=$password;\";\n\n/* Получаем ресурс соединения */\n$conn = db2_connect($conn_string, '', '');\n\n/* Создаём ассоциативный массив опций */\n$options = array('autocommit' =\u003e DB2_AUTOCOMMIT_ON);\n\n/* Вызываем функцию */\n$result = db2_set_option($conn, $options, 1);\n\n/* Проверяем, все ли опции установились */\nif($result)\n{\n  echo 'Options Set Successfully';\n}\nelse\n{\n  echo 'Could Not Set Options';\n}\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n```\nOptions Set Successfully\n```\n\n**Приклад #2 Встановлення кількох параметрів для ресурсу з'єднання**\n\n```php\n\u003c?php\n/* Параметры соединения с базой данных */\n$database = 'SAMPLE';\n$hostname = 'localhost';\n$port = 50000;\n$protocol = 'TCPIP';\n$username = 'db2inst1';\n$password = 'ibmdb2';\n\n/* Строка соединения */\n$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";\n$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL=$protocol;\";\n$conn_string .= \"UID=$username;PWD=$password;\";\n\n/* Получаем ресурс соединения */\n$conn = db2_connect($conn_string, '', '');\n\n/* Создаём ассоциативный массив опций */\n$options = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF,\n                    'binmode' =\u003e DB2_PASSTHRU,\n              'db2_attr_case' =\u003e DB2_CASE_UPPER,\n                     'cursor' =\u003e DB2_SCROLLABLE);\n\n/* Вызываем функцию */\n$result = db2_set_option($conn, $options, 1);\n\n/* Проверяем, все ли опции установились */\nif($result)\n{\n  echo 'Options Set Successfully';\n}\nelse\n{\n  echo 'Could Not Set Options';\n}\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n```\nOptions Set Successfully\n```\n\n**Приклад #3 Встановлення кількох параметрів з одним неправильним ключем**\n\n```php\n\u003c?php\n/* Параметры соединения с базой данных */\n$database = 'SAMPLE';\n$hostname = 'localhost';\n$port = 50000;\n$protocol = 'TCPIP';\n$username = 'db2inst1';\n$password = 'ibmdb2';\n\n/* Строка соединения */\n$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";\n$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL=$protocol;\";\n$conn_string .= \"UID=$username;PWD=$password;\";\n\n/* Получаем ресурс соединения */\n$conn = db2_connect($conn_string, '', '');\n\n/* Создаём ассоциативный массив опций */\n$options = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF,\n             'MY_INVALID_KEY' =\u003e DB2_PASSTHRU,\n              'db2_attr_case' =\u003e DB2_CASE_UPPER,\n                     'cursor' =\u003e DB2_SCROLLABLE);\n\n/* Вызываем функцию */\n$result = db2_set_option($conn, $options, 1);\n\n/* Проверяем, все ли опции установились */\nif($result)\n{\n  echo 'Options Set Successfully';\n}\nelse\n{\n  echo 'Could Not Set Options';\n}\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n```\nCould Not Set Options\n```\n\n**Приклад #4 Встановлення кількох параметрів з одним неправильним значенням**\n\n```php\n\u003c?php\n/* Параметры соединения с базой данных */\n$database = 'SAMPLE';\n$hostname = 'localhost';\n$port = 50000;\n$protocol = 'TCPIP';\n$username = 'db2inst1';\n$password = 'ibmdb2';\n\n/* Строка соединения */\n$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";\n$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL=$protocol;\";\n$conn_string .= \"UID=$username;PWD=$password;\";\n\n/* Получаем ресурс соединения */\n$conn = db2_connect($conn_string, '', '');\n\n/* Создаём ассоциативный массив опций */\n$options = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF,\n                    'binmode' =\u003e 'INVALID_VALUE',\n              'db2_attr_case' =\u003e DB2_CASE_UPPER,\n                     'cursor' =\u003e DB2_SCROLLABLE);\n\n/* Вызываем функцию */\n$result = db2_set_option($conn, $options, 1);\n\n/* Проверяем, все ли опции установились */\nif($result)\n{\n  echo 'Options Set Successfully';\n}\nelse\n{\n  echo 'Could Not Set Options';\n}\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n```\nCould Not Set Options\n```\n\n**Приклад #5 Setting multiple parameters with connection resource and the wrong type**\n\n```php\n\u003c?php\n/* Параметры соединения с базой данных */\n$database = 'SAMPLE';\n$hostname = 'localhost';\n$port = 50000;\n$protocol = 'TCPIP';\n$username = 'db2inst1';\n$password = 'ibmdb2';\n\n/* Строка соединения */\n$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";\n$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL=$protocol;\";\n$conn_string .= \"UID=$username;PWD=$password;\";\n\n/* Получаем ресурс соединения */\n$conn = db2_connect($conn_string, '', '');\n\n/* Создаём ассоциативный массив опций */\n$options = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF,\n                    'binmode' =\u003e DB2_PASSTHRU,\n              'db2_attr_case' =\u003e DB2_CASE_UPPER,\n                     'cursor' =\u003e DB2_SCROLLABLE);\n\n/* Вызываем функцию */\n$result = db2_set_option($conn, $options, 2);\n\n/* Проверяем, все ли опции установились */\nif($result)\n{\n  echo 'Options Set Successfully';\n}\nelse\n{\n  echo 'Could Not Set Options';\n}\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n```\nCould Not Set Options\n```\n\n**Приклад #6 Setting multiple parameters with the wrong resource**\n\n```php\n\u003c?php\n/* Параметры соединения с базой данных */\n$database = 'SAMPLE';\n$hostname = 'localhost';\n$port = 50000;\n$protocol = 'TCPIP';\n$username = 'db2inst1';\n$password = 'ibmdb2';\n\n/* Строка соединения */\n$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";\n$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL=$protocol;\";\n$conn_string .= \"UID=$username;PWD=$password;\";\n\n/* Получаем ресурс соединения */\n$conn = db2_connect($conn_string, '', '');\n\n/* Создаём ассоциативный массив опций */\n$options = array('autocommit' =\u003e DB2_AUTOCOMMIT_OFF,\n                    'binmode' =\u003e DB2_PASSTHRU,\n              'db2_attr_case' =\u003e DB2_CASE_UPPER,\n                     'cursor' =\u003e DB2_SCROLLABLE);\n\n$stmt = db2_prepare($conn, 'SELECT * FROM EMPLOYEE');\n\n/* Вызываем функцию */\n$result = db2_set_option($stmt, $options, 1);\n\n/* Проверяем, все ли опции установились */\nif($result)\n{\n  echo 'Options Set Successfully';\n}\nelse\n{\n  echo 'Could Not Set Options';\n}\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n```\nCould Not Set Options\n```\n\n**Приклад #7 Putting it all together**\n\n```php\n\u003c?php\n/* Параметры соединения с базой данных */\n$database = 'SAMPLE';\n$hostname = 'localhost';\n$port = 50000;\n$protocol = 'TCPIP';\n$username = 'db2inst1';\n$password = 'ibmdb2';\n\n/* Строка соединения */\n$conn_string = \"DRIVER={IBM DB2 ODBC DRIVER};DATABASE=$database;\";\n$conn_string .= \"HOSTNAME=$hostname;PORT=$port;PROTOCOL=$protocol;\";\n$conn_string .= \"UID=$username;PWD=$password;\";\n\n/* Получаем ресурс соединения */\n$conn = db2_connect($conn_string, '', '');\n\n/* Создаём ассоциативный массив опций */\n$options = array('db2_attr_case' =\u003e DB2_CASE_LOWER,\n                        'cursor' =\u003e DB2_SCROLLABLE);\n\n$stmt = db2_prepare($conn, 'SELECT * FROM EMPLOYEE WHERE EMPNO = ? OR EMPNO = ?');\n\n/* Вызываем функцию */\n$option_result = db2_set_option($stmt, $options, 2);\n$result = db2_execute($stmt, array('000130', '000140'));\n\n/* Получаем строку 2 перед строкой 1. Перематываемый курсор! */\nprint_r(db2_fetch_assoc($stmt, 2));\nprint '\u003cbr /\u003e\u003cbr /\u003e';\nprint_r(db2_fetch_assoc($stmt, 1));\n\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n```\nArray\n(\n    [empno] =\u003e 000140\n    [firstnme] =\u003e HEATHER\n    [midinit] =\u003e A\n    [lastname] =\u003e NICHOLLS\n    [workdept] =\u003e C01\n    [phoneno] =\u003e 1793\n    [hiredate] =\u003e 1976-12-15\n    [job] =\u003e ANALYST\n    [edlevel] =\u003e 18\n    [sex] =\u003e F\n    [birthdate] =\u003e 1946-01-19\n    [salary] =\u003e 28420.00\n    [bonus] =\u003e 600.00\n    [comm] =\u003e 2274.00\n)\n\nArray\n(\n    [empno] =\u003e 000130\n    [firstnme] =\u003e DELORES\n    [midinit] =\u003e M\n    [lastname] =\u003e QUINTANA\n    [workdept] =\u003e C01\n    [phoneno] =\u003e 4578\n    [hiredate] =\u003e 1971-07-28\n    [job] =\u003e ANALYST\n    [edlevel] =\u003e 16\n    [sex] =\u003e F\n    [birthdate] =\u003e 1925-09-15\n    [salary] =\u003e 23800.00\n    [bonus] =\u003e 500.00\n    [comm] =\u003e 1904.00\n)\n```\n\n**Приклад #8 Курсор i5/OS тільки для читання**\n\n```php\n\u003c?php\n  $conn = db2_connect(\"\", \"\", \"\", array(\"i5_lib\"=\u003e\"nobody\"));\n  $stmt = db2_prepare($conn, 'select * from names where first = ?');\n  $name = \"first2\";\n  db2_bind_param($stmt, 1, \"name\", DB2_PARAM_IN);\n  $options = array(\"i5_fetch_only\"=\u003eDB2_I5_FETCH_ON);\n  db2_set_option($stmt,$options,0);\n  if (db2_execute($stmt)) {\n    while ($row = db2_fetch_array($stmt)) {\n      echo \"{$row[0]} {$row[1]}\";\n    }\n  }\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n```\nfirst2 last2\n```\n\n### Дивіться також\n\n-   [db2\\_connect()](function.db2-connect.md) \\- Повертає з'єднання з базою даних\n-   [db2\\_pconnect()](function.db2-pconnect.md) \\- Повертає постійне з'єднання з базою даних\n-   [db2\\_exec()](function.db2-exec.md) \\- Виконує SQL-запит безпосередньо\n-   [db2\\_prepare()](function.db2-prepare.md) \\- готує SQL-запит до виконання\n-   [db2\\_cursor\\_type()](function.db2-cursor-type.md) \\- Повертає тип курсору, який використовується у ресурсі оператора\n","title":"db2\\_set\\_option","contentType":2,"navigation":[{"function.db2-server-info.md":"« db2\\_server\\_info"},{"function.db2-special-columns.md":"db2\\_special\\_columns »"},{"index.md":"PHP Manual"},{"ref.ibm-db2.md":"Функції IBM DB2"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.db2-set-option.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

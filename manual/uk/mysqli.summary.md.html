@@ -1,0 +1,457 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Основна інформація про функції модуля MySQLi</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="mysqli.constants.md" class="mx-4">« Зумовлені константи</a><a href="class.mysqli.md" class="mx-4">mysqli »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.mysqli.md" class="mx-4">MySQLi</a></div><article class="markdown_markdown__yfc8y"><div><h1>Основна інформація про функції модуля MySQLi</h1>
+<p><strong>Основна інформація про методи <a href="class.mysqli.md">mysqli</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Класс mysqli</th></tr></thead><tbody><tr><td>ООП-інтерфейс</td></tr><tr><td>---</td></tr><tr><td><strong>Властивості</strong></td></tr><tr><td><a href="mysqli.affected-rows.md">$mysqli::affected_rows</a></td></tr><tr><td><a href="mysqli.get-client-info.md">$mysqli::client_info</a></td></tr><tr><td><a href="mysqli.get-client-version.md">$mysqli::client_version</a></td></tr><tr><td><a href="mysqli.connect-errno.md">$mysqli::connect_errno</a></td></tr><tr><td><a href="mysqli.connect-error.md">$mysqli::connect_error</a></td></tr><tr><td><a href="mysqli.errno.md">$mysqli::errno</a></td></tr><tr><td><a href="mysqli.error.md">$mysqli::error</a></td></tr><tr><td><a href="mysqli.field-count.md">$mysqli::field_count</a></td></tr><tr><td><a href="mysqli.get-host-info.md">$mysqli::host_info</a></td></tr><tr><td><a href="mysqli.get-proto-info.md">$mysqli::protocol_version</a></td></tr><tr><td><a href="mysqli.get-server-info.md">$mysqli::server_info</a></td></tr><tr><td><a href="mysqli.get-server-version.md">$mysqli::server_version</a></td></tr><tr><td><a href="mysqli.info.md">$mysqli::info</a></td></tr><tr><td><a href="mysqli.insert-id.md">$mysqli::insert_id</a></td></tr><tr><td><a href="mysqli.sqlstate.md">$mysqli::sqlstate</a></td></tr><tr><td><a href="mysqli.warning-count.md">$mysqli::warning_count</a></td></tr><tr><td><strong>Методи</strong></td></tr><tr><td><a href="mysqli.autocommit.md">mysqli::autocommit()</a></td></tr><tr><td><a href="mysqli.change-user.md">mysqli::change_user()</a></td></tr><tr><td><a href="mysqli.character-set-name.md">mysqli::character_set_name()</a></td></tr><tr><td><a href="mysqli.close.md">mysqli::close()</a></td></tr><tr><td><a href="mysqli.commit.md">mysqli::commit()</a></td></tr><tr><td><a href="mysqli.construct.md">mysqli::__construct()</a></td></tr><tr><td><a href="mysqli.debug.md">mysqli::debug()</a></td></tr><tr><td><a href="mysqli.dump-debug-info.md">mysqli::dump_debug_info()</a></td></tr><tr><td><a href="mysqli.get-charset.md">mysqli::get_charset()</a></td></tr><tr><td><a href="mysqli.get-connection-stats.md">mysqli::get_connection_stats()</a></td></tr><tr><td><a href="mysqli.get-client-info.md">mysqli::get_client_info()</a></td></tr><tr><td>Н/Д</td></tr><tr><td><a href="mysqli.get-server-info.md">mysqli::get_server_info()</a></td></tr><tr><td><a href="mysqli.get-warnings.md">mysqli::get_warnings()</a></td></tr><tr><td><a href="mysqli.init.md">mysqli::init()</a></td></tr><tr><td><a href="mysqli.kill.md">mysqli::kill()</a></td></tr><tr><td><a href="mysqli.more-results.md">mysqli::more_results()</a></td></tr><tr><td><a href="mysqli.multi-query.md">mysqli::multi_query()</a></td></tr><tr><td><a href="mysqli.next-result.md">mysqli::next_result()</a></td></tr><tr><td><a href="mysqli.options.md">mysqli::options()</a></td></tr><tr><td><a href="mysqli.ping.md">mysqli::ping()</a></td></tr><tr><td><a href="mysqli.prepare.md">mysqli::prepare()</a></td></tr><tr><td><a href="mysqli.query.md">mysqli::query()</a></td></tr><tr><td><a href="mysqli.real-connect.md">mysqli::real_connect()</a></td></tr><tr><td><a href="mysqli.real-escape-string.md">mysqli::real_escape_string()</a><a href="function.mysqli-escape-string.md">mysqli::escape_string()</a></td></tr><tr><td><a href="mysqli.real-query.md">mysqli::real_query()</a></td></tr><tr><td><a href="mysqli.refresh.md">mysqli::refresh()</a></td></tr><tr><td><a href="mysqli.rollback.md">mysqli::rollback()</a></td></tr><tr><td><a href="mysqli.select-db.md">mysqli::select_db()</a></td></tr><tr><td><a href="mysqli.set-charset.md">mysqli::set_charset()</a></td></tr><tr><td><a href="mysqli.ssl-set.md">mysqli::ssl_set()</a></td></tr><tr><td><a href="mysqli.stat.md">mysqli::stat()</a></td></tr><tr><td><a href="mysqli.stmt-init.md">mysqli::stmt_init()</a></td></tr><tr><td><a href="mysqli.store-result.md">mysqli::store_result()</a></td></tr><tr><td><a href="mysqli.thread-id.md">mysqli::thread_id()</a></td></tr><tr><td><a href="mysqli.thread-safe.md">mysqli::thread_safe()</a></td></tr><tr><td><a href="mysqli.use-result.md">mysqli::use_result()</a></td></tr></tbody></table>
+<p><strong>Основна інформація про методи <a href="class.mysqli-stmt.md">mysqli_stmt</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>MySQL_STMT</th></tr></thead><tbody><tr><td>ООП-інтерфейс</td></tr><tr><td>---</td></tr><tr><td><strong>Властивості</strong></td></tr><tr><td><a href="mysqli-stmt.affected-rows.md">$mysqli_stmt::affected_rows</a></td></tr><tr><td><a href="mysqli-stmt.errno.md">$mysqli_stmt::errno</a></td></tr><tr><td><a href="mysqli-stmt.error.md">$mysqli_stmt::error</a></td></tr><tr><td><a href="mysqli-stmt.field-count.md">$mysqli_stmt::field_count</a></td></tr><tr><td><a href="mysqli-stmt.insert-id.md">$mysqli_stmt::insert_id</a></td></tr><tr><td><a href="mysqli-stmt.num-rows.md">$mysqli_stmt::num_rows</a></td></tr><tr><td><a href="mysqli-stmt.param-count.md">$mysqli_stmt::param_count</a></td></tr><tr><td><a href="mysqli-stmt.sqlstate.md">$mysqli_stmt::sqlstate</a></td></tr><tr><td><strong>Методи</strong></td></tr><tr><td><a href="mysqli-stmt.attr-get.md">mysqli_stmt::attr_get()</a></td></tr><tr><td><a href="mysqli-stmt.attr-set.md">mysqli_stmt::attr_set()</a></td></tr><tr><td><a href="mysqli-stmt.bind-param.md">mysqli_stmt::bind_param()</a></td></tr><tr><td><a href="mysqli-stmt.bind-result.md">mysqli_stmt::bind_result()</a></td></tr><tr><td><a href="mysqli-stmt.close.md">mysqli_stmt::close()</a></td></tr><tr><td><a href="mysqli-stmt.data-seek.md">mysqli_stmt::data_seek()</a></td></tr><tr><td><a href="mysqli-stmt.execute.md">mysqli_stmt::execute()</a></td></tr><tr><td><a href="mysqli-stmt.fetch.md">mysqli_stmt::fetch()</a></td></tr><tr><td><a href="mysqli-stmt.free-result.md">mysqli_stmt::free_result()</a></td></tr><tr><td><a href="mysqli-stmt.get-result.md">mysqli_stmt::get_result()</a></td></tr><tr><td><a href="mysqli-stmt.get-warnings.md">mysqli_stmt::get_warnings()</a></td></tr><tr><td><a href="mysqli-stmt.more-results.md">mysqli_stmt::more_results()</a></td></tr><tr><td><a href="mysqli-stmt.next-result.md">mysqli_stmt::next_result()</a></td></tr><tr><td><a href="mysqli-stmt.num-rows.md">mysqli_stmt::num_rows()</a></td></tr><tr><td><a href="mysqli-stmt.prepare.md">mysqli_stmt::prepare()</a></td></tr><tr><td><a href="mysqli-stmt.reset.md">mysqli_stmt::reset()</a></td></tr><tr><td><a href="mysqli-stmt.result-metadata.md">mysqli_stmt::result_metadata()</a></td></tr><tr><td><a href="mysqli-stmt.send-long-data.md">mysqli_stmt::send_long_data()</a></td></tr><tr><td><a href="mysqli-stmt.store-result.md">mysqli_stmt::store_result()</a></td></tr></tbody></table>
+<p><strong>Основна інформація про методи <a href="class.mysqli-result.md">mysqli_result</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>mysqli_result</th></tr></thead><tbody><tr><td>ООП-інтерфейс</td></tr><tr><td>---</td></tr><tr><td><strong>Властивості</strong></td></tr><tr><td><a href="mysqli-result.current-field.md">$mysqli_result::current_field</a></td></tr><tr><td><a href="mysqli-result.field-count.md">$mysqli_result::field_count</a></td></tr><tr><td><a href="mysqli-result.lengths.md">$mysqli_result::lengths</a></td></tr><tr><td><a href="mysqli-result.num-rows.md">$mysqli_result::num_rows</a></td></tr><tr><td><strong>Методи</strong></td></tr><tr><td><a href="mysqli-result.data-seek.md">mysqli_result::data_seek()</a></td></tr><tr><td><a href="mysqli-result.fetch-all.md">mysqli_result::fetch_all()</a></td></tr><tr><td><a href="mysqli-result.fetch-array.md">mysqli_result::fetch_array()</a></td></tr><tr><td><a href="mysqli-result.fetch-assoc.md">mysqli_result::fetch_assoc()</a></td></tr><tr><td><a href="mysqli-result.fetch-column.md">mysqli_result::fetch_column()</a></td></tr><tr><td><a href="mysqli-result.fetch-field-direct.md">mysqli_result::fetch_field_direct()</a></td></tr><tr><td><a href="mysqli-result.fetch-field.md">mysqli_result::fetch_field()</a></td></tr><tr><td><a href="mysqli-result.fetch-fields.md">mysqli_result::fetch_fields()</a></td></tr><tr><td><a href="mysqli-result.fetch-object.md">mysqli_result::fetch_object()</a></td></tr><tr><td><a href="mysqli-result.fetch-row.md">mysqli_result::fetch_row()</a></td></tr><tr><td><a href="mysqli-result.field-seek.md">mysqli_result::field_seek()</a></td></tr><tr><td><a href="mysqli-result.free.md">mysqli_result::free()</a><a href="mysqli-result.free.md">mysqli_result::close</a><a href="mysqli-result.free.md">mysqli_result::free_result</a></td></tr></tbody></table>
+<p><strong>Основна інформація про методи <a href="class.mysqli-driver.md">mysqli_driver</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>MySQL_Driver</th></tr></thead><tbody><tr><td>ООП-інтерфейс</td></tr><tr><td>---</td></tr><tr><td><strong>Властивості</strong></td></tr><tr><td><a href="mysqli-driver.report-mode.md">$mysqli_driver::mysqli_report</a></td></tr><tr><td><strong>Методи</strong></td></tr><tr><td><a href="mysqli-driver.embedded-server-end.md">mysqli_driver::embedded_server_end()</a></td></tr><tr><td><a href="mysqli-driver.embedded-server-start.md">mysqli_driver::embedded_server_start()</a></td></tr></tbody></table>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Псевдоніми функцій призначені лише забезпечення зворотної сумісності. Не використовуйте їх у нових проектах.</p>
+</blockquote></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/mysqli.summary.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/mysqli.summary.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"mysqli.summary.md","content":"# Основна інформація про функції модуля MySQLi\n\n**Основна інформація про методи [mysqli](class.mysqli.md)**\n\n| Класс mysqli |\n| --- |\n| ООП-інтерфейс |\n| \\--- |\n| **Властивості** |\n| [$mysqli::affected\\_rows](mysqli.affected-rows.md) |\n| [$mysqli::client\\_info](mysqli.get-client-info.md) |\n| [$mysqli::client\\_version](mysqli.get-client-version.md) |\n| [$mysqli::connect\\_errno](mysqli.connect-errno.md) |\n| [$mysqli::connect\\_error](mysqli.connect-error.md) |\n| [$mysqli::errno](mysqli.errno.md) |\n| [$mysqli::error](mysqli.error.md) |\n| [$mysqli::field\\_count](mysqli.field-count.md) |\n| [$mysqli::host\\_info](mysqli.get-host-info.md) |\n| [$mysqli::protocol\\_version](mysqli.get-proto-info.md) |\n| [$mysqli::server\\_info](mysqli.get-server-info.md) |\n| [$mysqli::server\\_version](mysqli.get-server-version.md) |\n| [$mysqli::info](mysqli.info.md) |\n| [$mysqli::insert\\_id](mysqli.insert-id.md) |\n| [$mysqli::sqlstate](mysqli.sqlstate.md) |\n| [$mysqli::warning\\_count](mysqli.warning-count.md) |\n| **Методи** |\n| [mysqli::autocommit()](mysqli.autocommit.md) |\n| [mysqli::change\\_user()](mysqli.change-user.md) |\n| [mysqli::character\\_set\\_name()](mysqli.character-set-name.md) |\n| [mysqli::close()](mysqli.close.md) |\n| [mysqli::commit()](mysqli.commit.md) |\n| [mysqli::\\_\\_construct()](mysqli.construct.md) |\n| [mysqli::debug()](mysqli.debug.md) |\n| [mysqli::dump\\_debug\\_info()](mysqli.dump-debug-info.md) |\n| [mysqli::get\\_charset()](mysqli.get-charset.md) |\n| [mysqli::get\\_connection\\_stats()](mysqli.get-connection-stats.md) |\n| [mysqli::get\\_client\\_info()](mysqli.get-client-info.md) |\n| Н/Д |\n| [mysqli::get\\_server\\_info()](mysqli.get-server-info.md) |\n| [mysqli::get\\_warnings()](mysqli.get-warnings.md) |\n| [mysqli::init()](mysqli.init.md) |\n| [mysqli::kill()](mysqli.kill.md) |\n| [mysqli::more\\_results()](mysqli.more-results.md) |\n| [mysqli::multi\\_query()](mysqli.multi-query.md) |\n| [mysqli::next\\_result()](mysqli.next-result.md) |\n| [mysqli::options()](mysqli.options.md) |\n| [mysqli::ping()](mysqli.ping.md) |\n| [mysqli::prepare()](mysqli.prepare.md) |\n| [mysqli::query()](mysqli.query.md) |\n| [mysqli::real\\_connect()](mysqli.real-connect.md) |\n| [mysqli::real\\_escape\\_string()](mysqli.real-escape-string.md) [mysqli::escape\\_string()](function.mysqli-escape-string.md) |\n| [mysqli::real\\_query()](mysqli.real-query.md) |\n| [mysqli::refresh()](mysqli.refresh.md) |\n| [mysqli::rollback()](mysqli.rollback.md) |\n| [mysqli::select\\_db()](mysqli.select-db.md) |\n| [mysqli::set\\_charset()](mysqli.set-charset.md) |\n| [mysqli::ssl\\_set()](mysqli.ssl-set.md) |\n| [mysqli::stat()](mysqli.stat.md) |\n| [mysqli::stmt\\_init()](mysqli.stmt-init.md) |\n| [mysqli::store\\_result()](mysqli.store-result.md) |\n| [mysqli::thread\\_id()](mysqli.thread-id.md) |\n| [mysqli::thread\\_safe()](mysqli.thread-safe.md) |\n| [mysqli::use\\_result()](mysqli.use-result.md) |\n\n**Основна інформація про методи [mysqli\\_stmt](class.mysqli-stmt.md)**\n\n| MySQL\\_STMT |\n| --- |\n| ООП-інтерфейс |\n| \\--- |\n| **Властивості** |\n| [$mysqli\\_stmt::affected\\_rows](mysqli-stmt.affected-rows.md) |\n| [$mysqli\\_stmt::errno](mysqli-stmt.errno.md) |\n| [$mysqli\\_stmt::error](mysqli-stmt.error.md) |\n| [$mysqli\\_stmt::field\\_count](mysqli-stmt.field-count.md) |\n| [$mysqli\\_stmt::insert\\_id](mysqli-stmt.insert-id.md) |\n| [$mysqli\\_stmt::num\\_rows](mysqli-stmt.num-rows.md) |\n| [$mysqli\\_stmt::param\\_count](mysqli-stmt.param-count.md) |\n| [$mysqli\\_stmt::sqlstate](mysqli-stmt.sqlstate.md) |\n| **Методи** |\n| [mysqli\\_stmt::attr\\_get()](mysqli-stmt.attr-get.md) |\n| [mysqli\\_stmt::attr\\_set()](mysqli-stmt.attr-set.md) |\n| [mysqli\\_stmt::bind\\_param()](mysqli-stmt.bind-param.md) |\n| [mysqli\\_stmt::bind\\_result()](mysqli-stmt.bind-result.md) |\n| [mysqli\\_stmt::close()](mysqli-stmt.close.md) |\n| [mysqli\\_stmt::data\\_seek()](mysqli-stmt.data-seek.md) |\n| [mysqli\\_stmt::execute()](mysqli-stmt.execute.md) |\n| [mysqli\\_stmt::fetch()](mysqli-stmt.fetch.md) |\n| [mysqli\\_stmt::free\\_result()](mysqli-stmt.free-result.md) |\n| [mysqli\\_stmt::get\\_result()](mysqli-stmt.get-result.md) |\n| [mysqli\\_stmt::get\\_warnings()](mysqli-stmt.get-warnings.md) |\n| [mysqli\\_stmt::more\\_results()](mysqli-stmt.more-results.md) |\n| [mysqli\\_stmt::next\\_result()](mysqli-stmt.next-result.md) |\n| [mysqli\\_stmt::num\\_rows()](mysqli-stmt.num-rows.md) |\n| [mysqli\\_stmt::prepare()](mysqli-stmt.prepare.md) |\n| [mysqli\\_stmt::reset()](mysqli-stmt.reset.md) |\n| [mysqli\\_stmt::result\\_metadata()](mysqli-stmt.result-metadata.md) |\n| [mysqli\\_stmt::send\\_long\\_data()](mysqli-stmt.send-long-data.md) |\n| [mysqli\\_stmt::store\\_result()](mysqli-stmt.store-result.md) |\n\n**Основна інформація про методи [mysqli\\_result](class.mysqli-result.md)**\n\n| mysqli\\_result |\n| --- |\n| ООП-інтерфейс |\n| \\--- |\n| **Властивості** |\n| [$mysqli\\_result::current\\_field](mysqli-result.current-field.md) |\n| [$mysqli\\_result::field\\_count](mysqli-result.field-count.md) |\n| [$mysqli\\_result::lengths](mysqli-result.lengths.md) |\n| [$mysqli\\_result::num\\_rows](mysqli-result.num-rows.md) |\n| **Методи** |\n| [mysqli\\_result::data\\_seek()](mysqli-result.data-seek.md) |\n| [mysqli\\_result::fetch\\_all()](mysqli-result.fetch-all.md) |\n| [mysqli\\_result::fetch\\_array()](mysqli-result.fetch-array.md) |\n| [mysqli\\_result::fetch\\_assoc()](mysqli-result.fetch-assoc.md) |\n| [mysqli\\_result::fetch\\_column()](mysqli-result.fetch-column.md) |\n| [mysqli\\_result::fetch\\_field\\_direct()](mysqli-result.fetch-field-direct.md) |\n| [mysqli\\_result::fetch\\_field()](mysqli-result.fetch-field.md) |\n| [mysqli\\_result::fetch\\_fields()](mysqli-result.fetch-fields.md) |\n| [mysqli\\_result::fetch\\_object()](mysqli-result.fetch-object.md) |\n| [mysqli\\_result::fetch\\_row()](mysqli-result.fetch-row.md) |\n| [mysqli\\_result::field\\_seek()](mysqli-result.field-seek.md) |\n| [mysqli\\_result::free()](mysqli-result.free.md) [mysqli\\_result::close](mysqli-result.free.md) [mysqli\\_result::free\\_result](mysqli-result.free.md) |\n\n**Основна інформація про методи [mysqli\\_driver](class.mysqli-driver.md)**\n\n| MySQL\\_Driver |\n| --- |\n| ООП-інтерфейс |\n| \\--- |\n| **Властивості** |\n| [$mysqli\\_driver::mysqli\\_report](mysqli-driver.report-mode.md) |\n| **Методи** |\n| [mysqli\\_driver::embedded\\_server\\_end()](mysqli-driver.embedded-server-end.md) |\n| [mysqli\\_driver::embedded\\_server\\_start()](mysqli-driver.embedded-server-start.md) |\n\n\u003e **Зауваження** :\n\u003e \n\u003e Псевдоніми функцій призначені лише забезпечення зворотної сумісності. Не використовуйте їх у нових проектах.\n","title":"Основна інформація про функції модуля MySQLi","contentType":2,"navigation":[{"mysqli.constants.md":"« Зумовлені константи"},{"class.mysqli.md":"mysqli »"},{"index.md":"PHP Manual"},{"book.mysqli.md":"MySQLi"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli.summary.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

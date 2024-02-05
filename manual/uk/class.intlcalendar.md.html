@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас IntlCalendar</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="messageformatter.setpattern.md" class="mx-4">« MessageFormatter::setPattern</a><a href="intlcalendar.add.md" class="mx-4">IntlCalendar::add »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.intl.md" class="mx-4">intl</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас IntlCalendar</h1>
+<p>(PHP 5 &gt;= 5.5.0, PHP 7, PHP 8, PECL &gt;= 3.0.0a1)</p>
+<h2>Вступ</h2>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+    
+     class IntlCalendar
+     {
+
+    /* Константы */
+    
+     public
+     const
+     int
+      FIELD_ERA;
+
+    public
+     const
+     int
+      FIELD_YEAR;
+
+    public
+     const
+     int
+      FIELD_MONTH;
+
+    public
+     const
+     int
+      FIELD_WEEK_OF_YEAR;
+
+    public
+     const
+     int
+      FIELD_WEEK_OF_MONTH;
+
+    public
+     const
+     int
+      FIELD_DATE;
+
+    public
+     const
+     int
+      FIELD_DAY_OF_YEAR;
+
+    public
+     const
+     int
+      FIELD_DAY_OF_WEEK;
+
+    public
+     const
+     int
+      FIELD_DAY_OF_WEEK_IN_MONTH;
+
+    public
+     const
+     int
+      FIELD_AM_PM;
+
+    public
+     const
+     int
+      FIELD_HOUR;
+
+    public
+     const
+     int
+      FIELD_HOUR_OF_DAY;
+
+    public
+     const
+     int
+      FIELD_MINUTE;
+
+    public
+     const
+     int
+      FIELD_SECOND;
+
+    public
+     const
+     int
+      FIELD_MILLISECOND;
+
+    public
+     const
+     int
+      FIELD_ZONE_OFFSET;
+
+    public
+     const
+     int
+      FIELD_DST_OFFSET;
+
+    public
+     const
+     int
+      FIELD_YEAR_WOY;
+
+    public
+     const
+     int
+      FIELD_DOW_LOCAL;
+
+    public
+     const
+     int
+      FIELD_EXTENDED_YEAR;
+
+    public
+     const
+     int
+      FIELD_JULIAN_DAY;
+
+    public
+     const
+     int
+      FIELD_MILLISECONDS_IN_DAY;
+
+    public
+     const
+     int
+      FIELD_IS_LEAP_MONTH;
+
+    public
+     const
+     int
+      FIELD_FIELD_COUNT;
+
+    public
+     const
+     int
+      FIELD_DAY_OF_MONTH;
+
+    public
+     const
+     int
+      DOW_SUNDAY;
+
+    public
+     const
+     int
+      DOW_MONDAY;
+
+    public
+     const
+     int
+      DOW_TUESDAY;
+
+    public
+     const
+     int
+      DOW_WEDNESDAY;
+
+    public
+     const
+     int
+      DOW_THURSDAY;
+
+    public
+     const
+     int
+      DOW_FRIDAY;
+
+    public
+     const
+     int
+      DOW_SATURDAY;
+
+    public
+     const
+     int
+      DOW_TYPE_WEEKDAY;
+
+    public
+     const
+     int
+      DOW_TYPE_WEEKEND;
+
+    public
+     const
+     int
+      DOW_TYPE_WEEKEND_OFFSET;
+
+    public
+     const
+     int
+      DOW_TYPE_WEEKEND_CEASE;
+
+    public
+     const
+     int
+      WALLTIME_FIRST;
+
+    public
+     const
+     int
+      WALLTIME_LAST;
+
+    public
+     const
+     int
+      WALLTIME_NEXT_VALID;
+
+
+    /* Методы */
+    
+   private __construct()
+
+    public add(int $field, int $value): bool
+public after(IntlCalendar $other): bool
+public before(IntlCalendar $other): bool
+public clear(?int $field = null): true
+public static createInstance(IntlTimeZone|DateTimeZone|string|null $timezone = null, ?string $locale = null): ?IntlCalendar
+public equals(IntlCalendar $other): bool
+public fieldDifference(float $timestamp, int $field): int|false
+public static fromDateTime(DateTime|string $datetime, ?string $locale = null): ?IntlCalendar
+public get(int $field): int|false
+public getActualMaximum(int $field): int|false
+public getActualMinimum(int $field): int|false
+public static getAvailableLocales(): array
+public getDayOfWeekType(int $dayOfWeek): int|false
+public getErrorCode(): int|false
+public getErrorMessage(): string|false
+public getFirstDayOfWeek(): int|false
+public getGreatestMinimum(int $field): int|false
+public static getKeywordValuesForLocale(string $keyword, string $locale, bool $onlyCommon): IntlIterator|false
+public getLeastMaximum(int $field): int|false
+public getLocale(int $type): string|false
+public getMaximum(int $field): int|false
+public getMinimalDaysInFirstWeek(): int|false
+public getMinimum(int $field): int|false
+public static getNow(): float
+public getRepeatedWallTimeOption(): int
+public getSkippedWallTimeOption(): int
+public getTime(): float|false
+public getTimeZone(): IntlTimeZone|false
+public getType(): string
+public getWeekendTransition(int $dayOfWeek): int|false
+public inDaylightTime(): bool
+public isEquivalentTo(IntlCalendar $other): bool
+public isLenient(): bool
+public isSet(int $field): bool
+public isWeekend(?float $timestamp = null): bool
+public roll(int $field, int|bool $value): bool
+public set(int $field, int $value): true
+public set(    int $year,    int $month,    int $dayOfMonth = NULL,    int $hour = NULL,    int $minute = NULL,    int $second = NULL): true
+public setDate(int $year, int $month, int $dayOfMonth): void
+public setDateTime(    int $year,    int $month,    int $dayOfMonth,    int $hour,    int $minute,    int $second = null): void
+public setFirstDayOfWeek(int $dayOfWeek): true
+public setLenient(bool $lenient): true
+public setMinimalDaysInFirstWeek(int $days): true
+public setRepeatedWallTimeOption(int $option): true
+public setSkippedWallTimeOption(int $option): true
+public setTime(float $timestamp): bool
+public setTimeZone(IntlTimeZone|DateTimeZone|string|null $timezone): bool
+public toDateTime(): DateTime|false
+
+   }
+</code></pre>
+<h2>Обумовлені константи</h2>
+<p><strong><code>IntlCalendar::FIELD_ERA</code></strong></p>
+<p>Поле календаря чисельно представляє епоху, наприклад для &quot;від Різдва Христового&quot; та для &quot;до Різдва Христового&quot; у Григоріанському та Юліанському календарях та <code>235</code> для періоду Хейсей в Японському календарі. Не всі календарі мають більше за одну епоху.</p>
+<p><strong><code>IntlCalendar::FIELD_YEAR</code></strong></p>
+<p>Поле календар для року. Не унікально у тих кількох епох. Якщо календар містить більше однієї ери, то, як правило, мінімальне значення цього поля дорівнює</p>
+<p><strong><code>IntlCalendar::FIELD_MONTH</code></strong></p>
+<p>Поле календар для місяця. Послідовність місяців починається з нуля, отже Janurary (Січень) (тут використовується для позначення першого місяця року, але за фактом може бути зовсім інше ім&#x27;я, наприклад Muharram для Ісламського календаря) буде представлено числом , February (Февраль) числом , …, December (Декабрь) числом<code>11</code> і, для деяких календарів, 13-й або високосний місяць, значення дорівнюватиме <code>12</code></p>
+<p><strong><code>IntlCalendar::FIELD_WEEK_OF_YEAR</code></strong></p>
+<p>Поле календар для номера тижня в році. Залежить від того, з <a href="intlcalendar.getfirstdayofweek.md">якого дня починається тиждень</a> і <a href="intlcalendar.getminimaldaysinfirstweek.md">мінімальної кількості днів у тижні</a></p>
+<p><strong><code>IntlCalendar::FIELD_WEEK_OF_MONTH</code></strong></p>
+<p>Поле календар для номера тижня в місяці. Залежить від того, з <a href="intlcalendar.getfirstdayofweek.md">якого дня починається тиждень</a> і <a href="intlcalendar.getminimaldaysinfirstweek.md">мінімальної кількості днів у тижні</a></p>
+<p><strong><code>IntlCalendar::FIELD_DATE</code></strong></p>
+<p>Поле календар для номера дня в місяці. Те саме, що й <strong><code>IntlCalendar::FIELD_DAY_OF_MONTH</code></strong></p>
+<p><strong><code>IntlCalendar::FIELD_DAY_OF_YEAR</code></strong></p>
+<p>Поле календар для номера дня в році. Для Грегоріанського календаря знаходиться в діапазоні від до**<code>365</code>** або **<code>366</code>**</p>
+<p><strong><code>IntlCalendar::FIELD_DAY_OF_WEEK</code></strong></p>
+<p>Поле календаря для номера дня тижня. Починається з (Воскресенье, смотри<a href="class.intlcalendar.md#intlcalendar.constants.dow-sunday"><strong><code>IntlCalendar::DOW_SUNDAY</code></strong></a> і пов&#x27;язані константи) і закінчується 7 (субота).</p>
+<p><strong><code>IntlCalendar::FIELD_DAY_OF_WEEK_IN_MONTH</code></strong></p>
+<p>Номер дня тижня (Неділя, Понеділок, …) на місяць. Допустимо це значення одно , а значення дня тижня рівне (Понеділок), отже, це перший понеділок місяця. Максимальне значення дорівнює <code>5</code></p>
+<p>Також допустимі значення та нижче (негативні). Значення охоплює 7 днів безпосередньо перед початком місяця (перший відповідний день у місяці має значення ). Негативні значення відраховуються від кінця місяця. Так, значення <code>-1</code> вказує на останній відповідний день місяця, <code>-2</code> на другий з кінця і т.д.</p>
+<p>В отличие от<a href="class.intlcalendar.md#intlcalendar.constants.field-week-of-month"><strong><code>IntlCalendar::FIELD_WEEK_OF_MONTH</code></strong></a> і <a href="class.intlcalendar.md#intlcalendar.constants.field-week-of-year"><strong><code>IntlCalendar::FIELD_WEEK_OF_YEAR</code></strong></a>, це значення не залежить від <a href="intlcalendar.getfirstdayofweek.md">IntlCalendar::getFirstDayOfWeek()</a> і <a href="intlcalendar.getminimaldaysinfirstweek.md">IntlCalendar::getMinimalDaysInFirstWeek()</a>. Перше середовище - це перше середовище, навіть якщо тиждень розпочався попереднього місяця.</p>
+<p><strong><code>IntlCalendar::FIELD_AM_PM</code></strong></p>
+<p>Поле календаря определяющее время до/после полудня. Соответственно - до полудня, ( ) - після. Північ вважається як &quot;до полудня&quot;, опівдні як &quot;після полудня&quot;.</p>
+<p><strong><code>IntlCalendar::FIELD_HOUR</code></strong></p>
+<p>Поле календаря для годинника, без вказівки до або після полудня. Допустимі значення в інтервалі від до<code>11</code></p>
+<p><strong><code>IntlCalendar::FIELD_HOUR_OF_DAY</code></strong></p>
+<p>Поле календаря для повного (24-годинного формату) годинника. Допустимі значення від до<code>23</code></p>
+<p><strong><code>IntlCalendar::FIELD_MINUTE</code></strong></p>
+<p>Поле календар для хвилин.</p>
+<p><strong><code>IntlCalendar::FIELD_SECOND</code></strong></p>
+<p>Поле календар для секунд.</p>
+<p><strong><code>IntlCalendar::FIELD_MILLISECOND</code></strong></p>
+<p>Поле календар для мілісекунд.</p>
+<p><strong><code>IntlCalendar::FIELD_ZONE_OFFSET</code></strong></p>
+<p>Поле календаря для «сирого» усунення часового поясу, в мілісекундах. &quot;Сире&quot; усунення не враховує переходи на літній/зимовий час.</p>
+<p><strong><code>IntlCalendar::FIELD_DST_OFFSET</code></strong></p>
+<p>Поле календаря для зміщення часового поясу в мілісекундах залежно від літнього/зимового часу, якщо застосовується до цього часового поясу.</p>
+<p><strong><code>IntlCalendar::FIELD_YEAR_WOY</code></strong></p>
+<p>Поле календаря представляющее год для<a href="class.intlcalendar.md#intlcalendar.constants.field-week-of-year">тижня року</a></p>
+<p><strong><code>IntlCalendar::FIELD_DOW_LOCAL</code></strong></p>
+<p>Поле календар для локалізованого дня тижня. Приймає значення в діапазоні від до<code>7</code>. . використовується для дня тижня відповідного значення повертається функцією <a href="intlcalendar.getfirstdayofweek.md">IntlCalendar::getFirstDayOfWeek()</a></p>
+<p><strong><code>IntlCalendar::FIELD_EXTENDED_YEAR</code></strong></p>
+<p>Поле календаря для представлення номера року у контексті забезпечення безперервності між епохами. Наприклад, для Грегоріанського календаря, це значення для епохи &quot;після Різдва Христового&quot; буде відповідати <strong><code>IntlCalendar::FIELD_YEAR</code></strong>, а для епохи &quot;до Різдва Христового&quot;, рік <code>y</code>будет представлен как<code>-y + 1</code></p>
+<p><strong><code>IntlCalendar::FIELD_JULIAN_DAY</code></strong></p>
+<p>Поле календар для модифікованих номерів днів Юліанського календаря. На відміну від стандартного Юліанського календаря, у ньому перехід відбувається опівночі за локальним часом, а не опівдні за UTC. Він однозначно ідентифікує дату.</p>
+<p><strong><code>IntlCalendar::FIELD_MILLISECONDS_IN_DAY</code></strong></p>
+<p>Поле календаря, що охоплює <strong><code>IntlCalendar::FIELD_HOUR_OF_DAY</code></strong> <strong><code>IntlCalendar::FIELD_MINUTE</code></strong> **<code>IntlCalendar::FIELD_SECOND</code>** і **<code>IntlCalendar::FIELD_MILLISECOND</code>**Находится в диапазоне от до<code>24 * 3600 * 1000 - 1</code>. Це не кількість мілісекунд, що минула з півночі, тому що в моменти переходу на літній/зимовий час матиме розриви.</p>
+<p><strong><code>IntlCalendar::FIELD_IS_LEAP_MONTH</code></strong></p>
+<p>Поле календаря принимающее значение для високосного месяца и для звичайного.</p>
+<p><strong><code>IntlCalendar::FIELD_FIELD_COUNT</code></strong></p>
+<p>Загальна кількість полів.</p>
+<p><strong><code>IntlCalendar::FIELD_DAY_OF_MONTH</code></strong></p>
+<p>Псевдоним для<a href="class.intlcalendar.md#intlcalendar.constants.field-date"><strong><code>IntlCalendar::FIELD_DATE</code></strong></a></p>
+<p><strong><code>IntlCalendar::DOW_SUNDAY</code></strong></p>
+<p>Неділя.</p>
+<p><strong><code>IntlCalendar::DOW_MONDAY</code></strong></p>
+<p>Понеділок.</p>
+<p><strong><code>IntlCalendar::DOW_TUESDAY</code></strong></p>
+<p>Вівторок.</p>
+<p><strong><code>IntlCalendar::DOW_WEDNESDAY</code></strong></p>
+<p>Середа.</p>
+<p><strong><code>IntlCalendar::DOW_THURSDAY</code></strong></p>
+<p>Четвер.</p>
+<p><strong><code>IntlCalendar::DOW_FRIDAY</code></strong></p>
+<p>П&#x27;ятниця.</p>
+<p><strong><code>IntlCalendar::DOW_SATURDAY</code></strong></p>
+<p>Субота.</p>
+<p><strong><code>IntlCalendar::DOW_TYPE_WEEKDAY</code></strong></p>
+<p>Висновок <a href="intlcalendar.getdayofweektype.md">IntlCalendar::getDayOfWeekType()</a>означает, что день будний.</p>
+<p><strong><code>IntlCalendar::DOW_TYPE_WEEKEND</code></strong></p>
+<p>Висновок <a href="intlcalendar.getdayofweektype.md">IntlCalendar::getDayOfWeekType()</a> означає, що вихідний день.</p>
+<p><strong><code>IntlCalendar::DOW_TYPE_WEEKEND_OFFSET</code></strong></p>
+<p>Висновок <a href="intlcalendar.getdayofweektype.md">IntlCalendar::getDayOfWeekType()</a> означає, що вихідні розпочинаються у цей день.</p>
+<p><strong><code>IntlCalendar::DOW_TYPE_WEEKEND_CEASE</code></strong></p>
+<p>Висновок <a href="intlcalendar.getdayofweektype.md">IntlCalendar::getDayOfWeekType()</a> означає, що вихідні закінчуються у цей день.</p>
+<p><strong><code>IntlCalendar::WALLTIME_FIRST</code></strong></p>
+<p>Висновок <a href="intlcalendar.getskippedwalltimeoption.md">IntlCalendar::getSkippedWallTimeOption()</a> означає, що час у пропущеному діапазоні має посилатися на час менший на одну годину і висновок <a href="intlcalendar.getrepeatedwalltimeoption.md">IntlCalendar::getRepeatedWallTimeOption()</a> означає, що час у діапазоні, що повторюється, повинен ставитися до моменту першої появи такого часу.</p>
+<p><strong><code>IntlCalendar::WALLTIME_LAST</code></strong></p>
+<p>Висновок <a href="intlcalendar.getskippedwalltimeoption.md">IntlCalendar::getSkippedWallTimeOption()</a> означає, що час у пропущеному діапазоні має посилатися на час більший на одну годину і висновок <a href="intlcalendar.getrepeatedwalltimeoption.md">IntlCalendar::getRepeatedWallTimeOption()</a> означає, що час у діапазоні, що повторюється, повинен ставитися до моменту другої появи такого часу.</p>
+<p><strong><code>IntlCalendar::WALLTIME_NEXT_VALID</code></strong></p>
+<p>Висновок <a href="intlcalendar.getskippedwalltimeoption.md">IntlCalendar::getSkippedWallTimeOption()</a> означає, що час у пропущеному діапазоні відноситься до моменту, коли стався перехід на зимовий/літній час.</p>
+<h2>Зміст</h2>
+<ul>
+<li><a href="intlcalendar.add.md">IntlCalendar::add</a> - Додає кількість (зі знаком) часу в полі</li>
+<li><a href="intlcalendar.after.md">IntlCalendar::after</a> - Визначає, час цього об&#x27;єкта пізніше часу переданого об&#x27;єкта</li>
+<li><a href="intlcalendar.before.md">IntlCalendar::before</a>— Визначає, час цього об&#x27;єкта раніше переданого об&#x27;єкта</li>
+<li><a href="intlcalendar.clear.md">IntlCalendar::clear</a>— Очищає поле чи всі поля</li>
+<li><a href="intlcalendar.construct.md">IntlCalendar::__construct</a>— Закритий конструктор для заборони створення екземплярів</li>
+<li><a href="intlcalendar.createinstance.md">IntlCalendar::createInstance</a>— Створює новий об&#x27;єкт IntlCalendar</li>
+<li><a href="intlcalendar.equals.md">IntlCalendar::equals</a>— Порівнює час двох об&#x27;єктів IntlCalendar щодо рівності</li>
+<li><a href="intlcalendar.fielddifference.md">IntlCalendar::fieldDifference</a>— Обчислює різницю між заданим часом та часом об&#x27;єкта</li>
+<li><a href="intlcalendar.fromdatetime.md">IntlCalendar::fromDateTime</a>— Створює IntlCalendar з об&#x27;єкта чи рядка DateTime</li>
+<li><a href="intlcalendar.get.md">IntlCalendar::get</a>— Отримує значення поля</li>
+<li><a href="intlcalendar.getactualmaximum.md">IntlCalendar::getActualMaximum</a>— Максимальне значення для поля з урахуванням поточного часу об&#x27;єкта</li>
+<li><a href="intlcalendar.getactualminimum.md">IntlCalendar::getActualMinimum</a>— Мінімальне значення для поля з урахуванням поточного часу об&#x27;єкта</li>
+<li><a href="intlcalendar.getavailablelocales.md">IntlCalendar::getAvailableLocales</a>— Отримує масив мовних стандартів, для яких є дані</li>
+<li><a href="intlcalendar.getdayofweektype.md">IntlCalendar::getDayOfWeekType</a>— Повідомляє, чи є день буднім, вихідним чи днем ​​із переходом між ними</li>
+<li><a href="intlcalendar.geterrorcode.md">IntlCalendar::getErrorCode</a>— Отримує останній код помилки об&#x27;єкта</li>
+<li><a href="intlcalendar.geterrormessage.md">IntlCalendar::getErrorMessage</a>— Отримує останнє повідомлення про помилку об&#x27;єкта</li>
+<li><a href="intlcalendar.getfirstdayofweek.md">IntlCalendar::getFirstDayOfWeek</a>— отримує перший день тижня для мовного стандарту календаря</li>
+<li><a href="intlcalendar.getgreatestminimum.md">IntlCalendar::getGreatestMinimum</a>— Отримує найбільше локальне мінімальне значення поля</li>
+<li><a href="intlcalendar.getkeywordvaluesforlocale.md">IntlCalendar::getKeywordValuesForLocale</a>— Набір значень ключових слів мовного стандарту</li>
+<li><a href="intlcalendar.getleastmaximum.md">IntlCalendar::getLeastMaximum</a>— Отримує найменший локальний максимум для поля</li>
+<li><a href="intlcalendar.getlocale.md">IntlCalendar::getLocale</a>— Отримує мовний стандарт, пов&#x27;язаний із об&#x27;єктом</li>
+<li><a href="intlcalendar.getmaximum.md">IntlCalendar::getMaximum</a>— Отримує глобальне максимальне значення поля</li>
+<li><a href="intlcalendar.getminimaldaysinfirstweek.md">IntlCalendar::getMinimalDaysInFirstWeek</a>— Отримує мінімальну кількість днів, яка може бути у першому тижні на рік чи місяць</li>
+<li><a href="intlcalendar.getminimum.md">IntlCalendar::getMinimum</a>— Отримує глобальне мінімальне значення поля</li>
+<li><a href="intlcalendar.getnow.md">IntlCalendar::getNow</a>— Отримує число, що становить поточний час</li>
+<li><a href="intlcalendar.getrepeatedwalltimeoption.md">IntlCalendar::getRepeatedWallTimeOption</a>— Отримує поведінку для обробки часу процесора, що повторюється.</li>
+<li><a href="intlcalendar.getskippedwalltimeoption.md">IntlCalendar::getSkippedWallTimeOption</a>— Отримує поведінку для обробки пропущеного часу процесора</li>
+<li><a href="intlcalendar.gettime.md">IntlCalendar::getTime</a>— Отримує час, представлений на даний момент об&#x27;єктом</li>
+<li><a href="intlcalendar.gettimezone.md">IntlCalendar::getTimeZone</a>— Отримує часовий пояс об&#x27;єкту</li>
+<li><a href="intlcalendar.gettype.md">IntlCalendar::getType</a>— Отримує тип календаря</li>
+<li><a href="intlcalendar.getweekendtransition.md">IntlCalendar::getWeekendTransition</a>— Отримує час, коли вихідні починаються або закінчуються.</li>
+<li><a href="intlcalendar.indaylighttime.md">IntlCalendar::inDaylightTime</a>— Визначає, чи час об&#x27;єкта переходить на літній час.</li>
+<li><a href="intlcalendar.isequivalentto.md">IntlCalendar::isEquivalentTo</a>— Визначає, чи дорівнює інший календар, але для іншого часу</li>
+<li><a href="intlcalendar.islenient.md">IntlCalendar::isLenient</a>— Визначає, чи інтерпретація дати/часу є м&#x27;якою.</li>
+<li><a href="intlcalendar.isset.md">IntlCalendar::isSet</a>— Визначає, чи встановлено поле</li>
+<li><a href="intlcalendar.isweekend.md">IntlCalendar::isWeekend</a>— Визначає, чи доводиться певна дата/час на вихідні</li>
+<li><a href="intlcalendar.roll.md">IntlCalendar::roll</a>— Додає значення в поле без перенесення до найважливіших полів</li>
+<li><a href="intlcalendar.set.md">IntlCalendar::set</a>— Встановлює поле часу або одразу кілька спільних полів</li>
+<li><a href="intlcalendar.setdate.md">IntlCalendar::setDate</a> - Встановлює поля дати</li>
+<li><a href="intlcalendar.setdatetime.md">IntlCalendar::setDateTime</a>— Встановлює поля дати та часу</li>
+<li><a href="intlcalendar.setfirstdayofweek.md">IntlCalendar::setFirstDayOfWeek</a>— Встановлює день, який є початком тижня</li>
+<li><a href="intlcalendar.setlenient.md">IntlCalendar::setLenient</a>— Встановлює, чи інтерпретація дати/часу повинна бути м&#x27;якою.</li>
+<li><a href="intlcalendar.setminimaldaysinfirstweek.md">IntlCalendar::setMinimalDaysInFirstWeek</a>— Встановлює мінімальну кількість днів, яка може бути у першому тижні на рік чи місяць</li>
+<li><a href="intlcalendar.setrepeatedwalltimeoption.md">IntlCalendar::setRepeatedWallTimeOption</a>— Встановлює поведінку для обробки часу процесора, що повторюється, при негативних переходах зміщення часового поясу.</li>
+<li><a href="intlcalendar.setskippedwalltimeoption.md">IntlCalendar::setSkippedWallTimeOption</a>— Встановлює поведінку для обробки пропущеного часу процесора при позитивних переходах усунення часового поясу</li>
+<li><a href="intlcalendar.settime.md">IntlCalendar::setTime</a>— Встановлює календарний час у мілісекундах від початку епохи Unix</li>
+<li><a href="intlcalendar.settimezone.md">IntlCalendar::setTimeZone</a>— Встановлює часовий пояс, який використовується календарем.</li>
+<li><a href="intlcalendar.todatetime.md">IntlCalendar::toDateTime</a>— Перетворює об&#x27;єкт IntlCalendar на об&#x27;єкт DateTime</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.intlcalendar.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.intlcalendar.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.intlcalendar.md","content":"# Клас IntlCalendar\n\n(PHP 5 \u003e= 5.5.0, PHP 7, PHP 8, PECL \u003e= 3.0.0a1)\n\n## Вступ\n\n## Огляд класів\n\n```classsynopsis\n\n    \n     class IntlCalendar\n     {\n\n    /* Константы */\n    \n     public\n     const\n     int\n      FIELD_ERA;\n\n    public\n     const\n     int\n      FIELD_YEAR;\n\n    public\n     const\n     int\n      FIELD_MONTH;\n\n    public\n     const\n     int\n      FIELD_WEEK_OF_YEAR;\n\n    public\n     const\n     int\n      FIELD_WEEK_OF_MONTH;\n\n    public\n     const\n     int\n      FIELD_DATE;\n\n    public\n     const\n     int\n      FIELD_DAY_OF_YEAR;\n\n    public\n     const\n     int\n      FIELD_DAY_OF_WEEK;\n\n    public\n     const\n     int\n      FIELD_DAY_OF_WEEK_IN_MONTH;\n\n    public\n     const\n     int\n      FIELD_AM_PM;\n\n    public\n     const\n     int\n      FIELD_HOUR;\n\n    public\n     const\n     int\n      FIELD_HOUR_OF_DAY;\n\n    public\n     const\n     int\n      FIELD_MINUTE;\n\n    public\n     const\n     int\n      FIELD_SECOND;\n\n    public\n     const\n     int\n      FIELD_MILLISECOND;\n\n    public\n     const\n     int\n      FIELD_ZONE_OFFSET;\n\n    public\n     const\n     int\n      FIELD_DST_OFFSET;\n\n    public\n     const\n     int\n      FIELD_YEAR_WOY;\n\n    public\n     const\n     int\n      FIELD_DOW_LOCAL;\n\n    public\n     const\n     int\n      FIELD_EXTENDED_YEAR;\n\n    public\n     const\n     int\n      FIELD_JULIAN_DAY;\n\n    public\n     const\n     int\n      FIELD_MILLISECONDS_IN_DAY;\n\n    public\n     const\n     int\n      FIELD_IS_LEAP_MONTH;\n\n    public\n     const\n     int\n      FIELD_FIELD_COUNT;\n\n    public\n     const\n     int\n      FIELD_DAY_OF_MONTH;\n\n    public\n     const\n     int\n      DOW_SUNDAY;\n\n    public\n     const\n     int\n      DOW_MONDAY;\n\n    public\n     const\n     int\n      DOW_TUESDAY;\n\n    public\n     const\n     int\n      DOW_WEDNESDAY;\n\n    public\n     const\n     int\n      DOW_THURSDAY;\n\n    public\n     const\n     int\n      DOW_FRIDAY;\n\n    public\n     const\n     int\n      DOW_SATURDAY;\n\n    public\n     const\n     int\n      DOW_TYPE_WEEKDAY;\n\n    public\n     const\n     int\n      DOW_TYPE_WEEKEND;\n\n    public\n     const\n     int\n      DOW_TYPE_WEEKEND_OFFSET;\n\n    public\n     const\n     int\n      DOW_TYPE_WEEKEND_CEASE;\n\n    public\n     const\n     int\n      WALLTIME_FIRST;\n\n    public\n     const\n     int\n      WALLTIME_LAST;\n\n    public\n     const\n     int\n      WALLTIME_NEXT_VALID;\n\n\n    /* Методы */\n    \n   private __construct()\n\n    public add(int $field, int $value): bool\npublic after(IntlCalendar $other): bool\npublic before(IntlCalendar $other): bool\npublic clear(?int $field = null): true\npublic static createInstance(IntlTimeZone|DateTimeZone|string|null $timezone = null, ?string $locale = null): ?IntlCalendar\npublic equals(IntlCalendar $other): bool\npublic fieldDifference(float $timestamp, int $field): int|false\npublic static fromDateTime(DateTime|string $datetime, ?string $locale = null): ?IntlCalendar\npublic get(int $field): int|false\npublic getActualMaximum(int $field): int|false\npublic getActualMinimum(int $field): int|false\npublic static getAvailableLocales(): array\npublic getDayOfWeekType(int $dayOfWeek): int|false\npublic getErrorCode(): int|false\npublic getErrorMessage(): string|false\npublic getFirstDayOfWeek(): int|false\npublic getGreatestMinimum(int $field): int|false\npublic static getKeywordValuesForLocale(string $keyword, string $locale, bool $onlyCommon): IntlIterator|false\npublic getLeastMaximum(int $field): int|false\npublic getLocale(int $type): string|false\npublic getMaximum(int $field): int|false\npublic getMinimalDaysInFirstWeek(): int|false\npublic getMinimum(int $field): int|false\npublic static getNow(): float\npublic getRepeatedWallTimeOption(): int\npublic getSkippedWallTimeOption(): int\npublic getTime(): float|false\npublic getTimeZone(): IntlTimeZone|false\npublic getType(): string\npublic getWeekendTransition(int $dayOfWeek): int|false\npublic inDaylightTime(): bool\npublic isEquivalentTo(IntlCalendar $other): bool\npublic isLenient(): bool\npublic isSet(int $field): bool\npublic isWeekend(?float $timestamp = null): bool\npublic roll(int $field, int|bool $value): bool\npublic set(int $field, int $value): true\npublic set(    int $year,    int $month,    int $dayOfMonth = NULL,    int $hour = NULL,    int $minute = NULL,    int $second = NULL): true\npublic setDate(int $year, int $month, int $dayOfMonth): void\npublic setDateTime(    int $year,    int $month,    int $dayOfMonth,    int $hour,    int $minute,    int $second = null): void\npublic setFirstDayOfWeek(int $dayOfWeek): true\npublic setLenient(bool $lenient): true\npublic setMinimalDaysInFirstWeek(int $days): true\npublic setRepeatedWallTimeOption(int $option): true\npublic setSkippedWallTimeOption(int $option): true\npublic setTime(float $timestamp): bool\npublic setTimeZone(IntlTimeZone|DateTimeZone|string|null $timezone): bool\npublic toDateTime(): DateTime|false\n\n   }\n```\n\n## Обумовлені константи\n\n**`IntlCalendar::FIELD_ERA`**\n\nПоле календаря чисельно представляє епоху, наприклад для \"від Різдва Христового\" та для \"до Різдва Христового\" у Григоріанському та Юліанському календарях та `235` для періоду Хейсей в Японському календарі. Не всі календарі мають більше за одну епоху.\n\n**`IntlCalendar::FIELD_YEAR`**\n\nПоле календар для року. Не унікально у тих кількох епох. Якщо календар містить більше однієї ери, то, як правило, мінімальне значення цього поля дорівнює\n\n**`IntlCalendar::FIELD_MONTH`**\n\nПоле календар для місяця. Послідовність місяців починається з нуля, отже Janurary (Січень) (тут використовується для позначення першого місяця року, але за фактом може бути зовсім інше ім'я, наприклад Muharram для Ісламського календаря) буде представлено числом , February (Февраль) числом , …, December (Декабрь) числом`11` і, для деяких календарів, 13-й або високосний місяць, значення дорівнюватиме `12`\n\n**`IntlCalendar::FIELD_WEEK_OF_YEAR`**\n\nПоле календар для номера тижня в році. Залежить від того, з [якого дня починається тиждень](intlcalendar.getfirstdayofweek.md) і [мінімальної кількості днів у тижні](intlcalendar.getminimaldaysinfirstweek.md)\n\n**`IntlCalendar::FIELD_WEEK_OF_MONTH`**\n\nПоле календар для номера тижня в місяці. Залежить від того, з [якого дня починається тиждень](intlcalendar.getfirstdayofweek.md) і [мінімальної кількості днів у тижні](intlcalendar.getminimaldaysinfirstweek.md)\n\n**`IntlCalendar::FIELD_DATE`**\n\nПоле календар для номера дня в місяці. Те саме, що й **`IntlCalendar::FIELD_DAY_OF_MONTH`**\n\n**`IntlCalendar::FIELD_DAY_OF_YEAR`**\n\nПоле календар для номера дня в році. Для Грегоріанського календаря знаходиться в діапазоні від до\\*\\*`365`** або **`366`\\*\\*\n\n**`IntlCalendar::FIELD_DAY_OF_WEEK`**\n\nПоле календаря для номера дня тижня. Починається з (Воскресенье, смотри[**`IntlCalendar::DOW_SUNDAY`**](class.intlcalendar.md#intlcalendar.constants.dow-sunday) і пов'язані константи) і закінчується 7 (субота).\n\n**`IntlCalendar::FIELD_DAY_OF_WEEK_IN_MONTH`**\n\nНомер дня тижня (Неділя, Понеділок, …) на місяць. Допустимо це значення одно , а значення дня тижня рівне (Понеділок), отже, це перший понеділок місяця. Максимальне значення дорівнює `5`\n\nТакож допустимі значення та нижче (негативні). Значення охоплює 7 днів безпосередньо перед початком місяця (перший відповідний день у місяці має значення ). Негативні значення відраховуються від кінця місяця. Так, значення `-1` вказує на останній відповідний день місяця, `-2` на другий з кінця і т.д.\n\nВ отличие от[**`IntlCalendar::FIELD_WEEK_OF_MONTH`**](class.intlcalendar.md#intlcalendar.constants.field-week-of-month) і [**`IntlCalendar::FIELD_WEEK_OF_YEAR`**](class.intlcalendar.md#intlcalendar.constants.field-week-of-year), це значення не залежить від [IntlCalendar::getFirstDayOfWeek()](intlcalendar.getfirstdayofweek.md) і [IntlCalendar::getMinimalDaysInFirstWeek()](intlcalendar.getminimaldaysinfirstweek.md). Перше середовище - це перше середовище, навіть якщо тиждень розпочався попереднього місяця.\n\n**`IntlCalendar::FIELD_AM_PM`**\n\nПоле календаря определяющее время до/после полудня. Соответственно - до полудня, ( ) - після. Північ вважається як \"до полудня\", опівдні як \"після полудня\".\n\n**`IntlCalendar::FIELD_HOUR`**\n\nПоле календаря для годинника, без вказівки до або після полудня. Допустимі значення в інтервалі від до`11`\n\n**`IntlCalendar::FIELD_HOUR_OF_DAY`**\n\nПоле календаря для повного (24-годинного формату) годинника. Допустимі значення від до`23`\n\n**`IntlCalendar::FIELD_MINUTE`**\n\nПоле календар для хвилин.\n\n**`IntlCalendar::FIELD_SECOND`**\n\nПоле календар для секунд.\n\n**`IntlCalendar::FIELD_MILLISECOND`**\n\nПоле календар для мілісекунд.\n\n**`IntlCalendar::FIELD_ZONE_OFFSET`**\n\nПоле календаря для «сирого» усунення часового поясу, в мілісекундах. \"Сире\" усунення не враховує переходи на літній/зимовий час.\n\n**`IntlCalendar::FIELD_DST_OFFSET`**\n\nПоле календаря для зміщення часового поясу в мілісекундах залежно від літнього/зимового часу, якщо застосовується до цього часового поясу.\n\n**`IntlCalendar::FIELD_YEAR_WOY`**\n\nПоле календаря представляющее год для[тижня року](class.intlcalendar.md#intlcalendar.constants.field-week-of-year)\n\n**`IntlCalendar::FIELD_DOW_LOCAL`**\n\nПоле календар для локалізованого дня тижня. Приймає значення в діапазоні від до`7`. . використовується для дня тижня відповідного значення повертається функцією [IntlCalendar::getFirstDayOfWeek()](intlcalendar.getfirstdayofweek.md)\n\n**`IntlCalendar::FIELD_EXTENDED_YEAR`**\n\nПоле календаря для представлення номера року у контексті забезпечення безперервності між епохами. Наприклад, для Грегоріанського календаря, це значення для епохи \"після Різдва Христового\" буде відповідати **`IntlCalendar::FIELD_YEAR`**, а для епохи \"до Різдва Христового\", рік `y`будет представлен как`-y + 1`\n\n**`IntlCalendar::FIELD_JULIAN_DAY`**\n\nПоле календар для модифікованих номерів днів Юліанського календаря. На відміну від стандартного Юліанського календаря, у ньому перехід відбувається опівночі за локальним часом, а не опівдні за UTC. Він однозначно ідентифікує дату.\n\n**`IntlCalendar::FIELD_MILLISECONDS_IN_DAY`**\n\nПоле календаря, що охоплює **`IntlCalendar::FIELD_HOUR_OF_DAY`** **`IntlCalendar::FIELD_MINUTE`** \\*\\*`IntlCalendar::FIELD_SECOND`** і **`IntlCalendar::FIELD_MILLISECOND`\\*\\*Находится в диапазоне от до`24 * 3600 * 1000 - 1`. Це не кількість мілісекунд, що минула з півночі, тому що в моменти переходу на літній/зимовий час матиме розриви.\n\n**`IntlCalendar::FIELD_IS_LEAP_MONTH`**\n\nПоле календаря принимающее значение для високосного месяца и для звичайного.\n\n**`IntlCalendar::FIELD_FIELD_COUNT`**\n\nЗагальна кількість полів.\n\n**`IntlCalendar::FIELD_DAY_OF_MONTH`**\n\nПсевдоним для[**`IntlCalendar::FIELD_DATE`**](class.intlcalendar.md#intlcalendar.constants.field-date)\n\n**`IntlCalendar::DOW_SUNDAY`**\n\nНеділя.\n\n**`IntlCalendar::DOW_MONDAY`**\n\nПонеділок.\n\n**`IntlCalendar::DOW_TUESDAY`**\n\nВівторок.\n\n**`IntlCalendar::DOW_WEDNESDAY`**\n\nСереда.\n\n**`IntlCalendar::DOW_THURSDAY`**\n\nЧетвер.\n\n**`IntlCalendar::DOW_FRIDAY`**\n\nП'ятниця.\n\n**`IntlCalendar::DOW_SATURDAY`**\n\nСубота.\n\n**`IntlCalendar::DOW_TYPE_WEEKDAY`**\n\nВисновок [IntlCalendar::getDayOfWeekType()](intlcalendar.getdayofweektype.md)означает, что день будний.\n\n**`IntlCalendar::DOW_TYPE_WEEKEND`**\n\nВисновок [IntlCalendar::getDayOfWeekType()](intlcalendar.getdayofweektype.md) означає, що вихідний день.\n\n**`IntlCalendar::DOW_TYPE_WEEKEND_OFFSET`**\n\nВисновок [IntlCalendar::getDayOfWeekType()](intlcalendar.getdayofweektype.md) означає, що вихідні розпочинаються у цей день.\n\n**`IntlCalendar::DOW_TYPE_WEEKEND_CEASE`**\n\nВисновок [IntlCalendar::getDayOfWeekType()](intlcalendar.getdayofweektype.md) означає, що вихідні закінчуються у цей день.\n\n**`IntlCalendar::WALLTIME_FIRST`**\n\nВисновок [IntlCalendar::getSkippedWallTimeOption()](intlcalendar.getskippedwalltimeoption.md) означає, що час у пропущеному діапазоні має посилатися на час менший на одну годину і висновок [IntlCalendar::getRepeatedWallTimeOption()](intlcalendar.getrepeatedwalltimeoption.md) означає, що час у діапазоні, що повторюється, повинен ставитися до моменту першої появи такого часу.\n\n**`IntlCalendar::WALLTIME_LAST`**\n\nВисновок [IntlCalendar::getSkippedWallTimeOption()](intlcalendar.getskippedwalltimeoption.md) означає, що час у пропущеному діапазоні має посилатися на час більший на одну годину і висновок [IntlCalendar::getRepeatedWallTimeOption()](intlcalendar.getrepeatedwalltimeoption.md) означає, що час у діапазоні, що повторюється, повинен ставитися до моменту другої появи такого часу.\n\n**`IntlCalendar::WALLTIME_NEXT_VALID`**\n\nВисновок [IntlCalendar::getSkippedWallTimeOption()](intlcalendar.getskippedwalltimeoption.md) означає, що час у пропущеному діапазоні відноситься до моменту, коли стався перехід на зимовий/літній час.\n\n## Зміст\n\n-   [IntlCalendar::add](intlcalendar.add.md) \\- Додає кількість (зі знаком) часу в полі\n-   [IntlCalendar::after](intlcalendar.after.md) \\- Визначає, час цього об'єкта пізніше часу переданого об'єкта\n-   [IntlCalendar::before](intlcalendar.before.md)— Визначає, час цього об'єкта раніше переданого об'єкта\n-   [IntlCalendar::clear](intlcalendar.clear.md)— Очищає поле чи всі поля\n-   [IntlCalendar::\\_\\_construct](intlcalendar.construct.md)— Закритий конструктор для заборони створення екземплярів\n-   [IntlCalendar::createInstance](intlcalendar.createinstance.md)— Створює новий об'єкт IntlCalendar\n-   [IntlCalendar::equals](intlcalendar.equals.md)— Порівнює час двох об'єктів IntlCalendar щодо рівності\n-   [IntlCalendar::fieldDifference](intlcalendar.fielddifference.md)— Обчислює різницю між заданим часом та часом об'єкта\n-   [IntlCalendar::fromDateTime](intlcalendar.fromdatetime.md)— Створює IntlCalendar з об'єкта чи рядка DateTime\n-   [IntlCalendar::get](intlcalendar.get.md)— Отримує значення поля\n-   [IntlCalendar::getActualMaximum](intlcalendar.getactualmaximum.md)— Максимальне значення для поля з урахуванням поточного часу об'єкта\n-   [IntlCalendar::getActualMinimum](intlcalendar.getactualminimum.md)— Мінімальне значення для поля з урахуванням поточного часу об'єкта\n-   [IntlCalendar::getAvailableLocales](intlcalendar.getavailablelocales.md)— Отримує масив мовних стандартів, для яких є дані\n-   [IntlCalendar::getDayOfWeekType](intlcalendar.getdayofweektype.md)— Повідомляє, чи є день буднім, вихідним чи днем ​​із переходом між ними\n-   [IntlCalendar::getErrorCode](intlcalendar.geterrorcode.md)— Отримує останній код помилки об'єкта\n-   [IntlCalendar::getErrorMessage](intlcalendar.geterrormessage.md)— Отримує останнє повідомлення про помилку об'єкта\n-   [IntlCalendar::getFirstDayOfWeek](intlcalendar.getfirstdayofweek.md)— отримує перший день тижня для мовного стандарту календаря\n-   [IntlCalendar::getGreatestMinimum](intlcalendar.getgreatestminimum.md)— Отримує найбільше локальне мінімальне значення поля\n-   [IntlCalendar::getKeywordValuesForLocale](intlcalendar.getkeywordvaluesforlocale.md)— Набір значень ключових слів мовного стандарту\n-   [IntlCalendar::getLeastMaximum](intlcalendar.getleastmaximum.md)— Отримує найменший локальний максимум для поля\n-   [IntlCalendar::getLocale](intlcalendar.getlocale.md)— Отримує мовний стандарт, пов'язаний із об'єктом\n-   [IntlCalendar::getMaximum](intlcalendar.getmaximum.md)— Отримує глобальне максимальне значення поля\n-   [IntlCalendar::getMinimalDaysInFirstWeek](intlcalendar.getminimaldaysinfirstweek.md)— Отримує мінімальну кількість днів, яка може бути у першому тижні на рік чи місяць\n-   [IntlCalendar::getMinimum](intlcalendar.getminimum.md)— Отримує глобальне мінімальне значення поля\n-   [IntlCalendar::getNow](intlcalendar.getnow.md)— Отримує число, що становить поточний час\n-   [IntlCalendar::getRepeatedWallTimeOption](intlcalendar.getrepeatedwalltimeoption.md)— Отримує поведінку для обробки часу процесора, що повторюється.\n-   [IntlCalendar::getSkippedWallTimeOption](intlcalendar.getskippedwalltimeoption.md)— Отримує поведінку для обробки пропущеного часу процесора\n-   [IntlCalendar::getTime](intlcalendar.gettime.md)— Отримує час, представлений на даний момент об'єктом\n-   [IntlCalendar::getTimeZone](intlcalendar.gettimezone.md)— Отримує часовий пояс об'єкту\n-   [IntlCalendar::getType](intlcalendar.gettype.md)— Отримує тип календаря\n-   [IntlCalendar::getWeekendTransition](intlcalendar.getweekendtransition.md)— Отримує час, коли вихідні починаються або закінчуються.\n-   [IntlCalendar::inDaylightTime](intlcalendar.indaylighttime.md)— Визначає, чи час об'єкта переходить на літній час.\n-   [IntlCalendar::isEquivalentTo](intlcalendar.isequivalentto.md)— Визначає, чи дорівнює інший календар, але для іншого часу\n-   [IntlCalendar::isLenient](intlcalendar.islenient.md)— Визначає, чи інтерпретація дати/часу є м'якою.\n-   [IntlCalendar::isSet](intlcalendar.isset.md)— Визначає, чи встановлено поле\n-   [IntlCalendar::isWeekend](intlcalendar.isweekend.md)— Визначає, чи доводиться певна дата/час на вихідні\n-   [IntlCalendar::roll](intlcalendar.roll.md)— Додає значення в поле без перенесення до найважливіших полів\n-   [IntlCalendar::set](intlcalendar.set.md)— Встановлює поле часу або одразу кілька спільних полів\n-   [IntlCalendar::setDate](intlcalendar.setdate.md) \\- Встановлює поля дати\n-   [IntlCalendar::setDateTime](intlcalendar.setdatetime.md)— Встановлює поля дати та часу\n-   [IntlCalendar::setFirstDayOfWeek](intlcalendar.setfirstdayofweek.md)— Встановлює день, який є початком тижня\n-   [IntlCalendar::setLenient](intlcalendar.setlenient.md)— Встановлює, чи інтерпретація дати/часу повинна бути м'якою.\n-   [IntlCalendar::setMinimalDaysInFirstWeek](intlcalendar.setminimaldaysinfirstweek.md)— Встановлює мінімальну кількість днів, яка може бути у першому тижні на рік чи місяць\n-   [IntlCalendar::setRepeatedWallTimeOption](intlcalendar.setrepeatedwalltimeoption.md)— Встановлює поведінку для обробки часу процесора, що повторюється, при негативних переходах зміщення часового поясу.\n-   [IntlCalendar::setSkippedWallTimeOption](intlcalendar.setskippedwalltimeoption.md)— Встановлює поведінку для обробки пропущеного часу процесора при позитивних переходах усунення часового поясу\n-   [IntlCalendar::setTime](intlcalendar.settime.md)— Встановлює календарний час у мілісекундах від початку епохи Unix\n-   [IntlCalendar::setTimeZone](intlcalendar.settimezone.md)— Встановлює часовий пояс, який використовується календарем.\n-   [IntlCalendar::toDateTime](intlcalendar.todatetime.md)— Перетворює об'єкт IntlCalendar на об'єкт DateTime\n","title":"Клас IntlCalendar","contentType":2,"navigation":[{"messageformatter.setpattern.md":"« MessageFormatter::setPattern"},{"intlcalendar.add.md":"IntlCalendar::add »"},{"index.md":"PHP Manual"},{"book.intl.md":"intl"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.intlcalendar.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

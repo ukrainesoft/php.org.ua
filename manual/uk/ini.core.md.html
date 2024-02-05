@@ -1,0 +1,773 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Опис вбудованих директив php.ini</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="ini.sections.md" class="mx-4">« Список розділів php.ini</a><a href="extensions.md" class="mx-4">Список/класифікація модулів »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="ini.md" class="mx-4">Директиви php.ini</a></div><article class="markdown_markdown__yfc8y"><div><h2>Опис вбудованих директив php.ini</h2>
+<p>Цей список включає вбудовані директиви php.ini, які можна використовувати для налаштування PHP. Директиви, які обробляються модулями, перераховані та детально описані на сторінках документацій відповідних модулів. Наприклад, інформацію про директиви сесій можна знайти на <a href="session.configuration.md">сторінці документації сесій</a></p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Представлені тут значення за замовчуванням використовуються у випадку, якщо не було підключено php.ini; значення для бойового php.ini та розробки можуть відрізнятися.</p>
+</blockquote>
+<h2>Мовні опції</h2>
+<p><strong>Опції мови та інших налаштувань</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Имя</th><th>По умолчанию</th><th>Место изменения</th><th>Список изменений</th></tr></thead><tbody><tr><td><a href="ini.core.md#ini.short-open-tag">short_open_tag</a></td><td>&quot;1&quot;</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.precision">precision</a></td><td>&quot;14&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.serialize-precision">serialize_precision</a></td><td>&quot;-1&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>До версії PHP 7.1.0 значення за промовчанням дорівнювало 17.</td></tr><tr><td><a href="ini.core.md#ini.disable-functions">disable_functions</a></td><td>&quot;&quot;</td><td>Тільки <strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.disable-classes">disable_classes</a></td><td>&quot;&quot;</td><td>Тільки php.ini</td><td></td></tr><tr><td><a href="ini.core.md#ini.exit-on-timeout">exit_on_timeout</a></td><td>&quot;&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.expose-php">expose_php</a></td><td>&quot;1&quot;</td><td>Тільки php.ini</td><td></td></tr><tr><td><a href="ini.core.md#ini.hard-timeout">hard_timeout</a></td><td>&quot;2&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Доступна з версії PHP 7.1.0.</td></tr><tr><td><a href="ini.core.md#ini.zend.exception-ignore-args">zend.exception_ignore_args</a></td><td>&quot;0&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступна з версії PHP 7.4.0</td></tr><tr><td><a href="ini.core.md#ini.zend.multibyte">zend.multibyte</a></td><td>&quot;0&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.zend.script-encoding">zend.script_encoding</a></td><td>NULL</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.zend.detect-unicode">zend.detect_unicode</a></td><td>NULL</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.zend.signal-check">zend.signal_check</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.zend.assertions">zend.assertions</a></td><td>&quot;1&quot;</td><td><strong><code>INI_ALL</code></strong> з обмеженнями</td><td></td></tr><tr><td><a href="ini.core.md#ini.zend.exception-string-param-max-len">zend.exception_string_param_max_len</a></td><td>&quot;15&quot;</td><td><strong><code>INI_ALL</code></strong></td><td>Доступно з PHP 8.0.0.</td></tr></tbody></table>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>short_open_tag</code>bool</p>
+<p>Визначає, чи дозволяється коротка форма запису (<strong><code>&lt;? ?&gt;</code></strong>) тегів PHP. Якщо ви хочете використовувати PHP спільно з XML, ви можете вимкнути цю опцію, щоб безперешкодно використовувати <strong><code>&lt;?xml ?&gt;</code></strong>. В іншому випадку, ви можете відобразити це за допомогою PHP, наприклад: <strong><code>&lt;?php echo &#x27;&lt;?xml version=&quot;1.0&quot;?&gt;&#x27;; ?&gt;</code></strong>. Якщо ж ця опція відключена, ви повинні використовувати довгу форму тега PHP (<strong><code>&lt;?php ?&gt;</code></strong></p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Ця директива не впливає на скорочення <strong><code>&lt;?=</code></strong>, яка завжди доступна.</p>
+</blockquote>
+<p><code>precision</code>int</p>
+<p>Кількість цифр, що відображаються для чисел з плаваючою точкою . <code>-1</code> означає, що буде використано вдосконалений алгоритм округлення таких чисел.</p>
+<p><code>serialize_precision</code>int</p>
+<p>Кількість значущих цифр, що зберігаються при серіалізації чисел з плаваючою точкою . <code>-1</code> означає, що буде використано вдосконалений алгоритм округлення таких чисел.</p>
+<p><code>expose_php</code>bool</p>
+<p>Видає факт присутності PHP на сервері, включаючи передачу версії PHP в заголовку HTTP (наприклад, X-Powered-By: PHP/5.3.7).</p>
+<p><code>disable_functions</code>string</p>
+<p>Ця директива дозволяє вимкнути деякі функції. Вона приймає список імен функцій, розділений комами.</p>
+<p>Тільки <a href="functions.internal.md">внутрішні функції</a> можуть бути відключені за допомогою цієї директиви . <a href="functions.user-defined.md">Функції користувача</a> їй не схильні.</p>
+<p>Ця директива має бути встановлена ​​у php.ini. Наприклад, її не можна використовувати в httpd.conf.</p>
+<p><code>disable_classes</code>string</p>
+<p>Ця директива дозволяє вимкнути деякі класи. Вона приймає список імен класів, розділених комами. Ця директива має бути встановлена ​​у php.ini. Наприклад, її не можна використовувати в httpd.conf.</p>
+<p><code>zend.assertions</code>int</p>
+<p>Если задано значение , код перевірки буде виконуватися (режим розробки). Якщо заданий , код перевірок буде згенерований, однак виконуватися не буде. Якщо поставлено <code>-1</code>, код перевірки не буде генеруватися (продуктивний режим).</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Если процесс запущен в режиме релиза,<a href="ini.core.md#ini.zend.assertions">zend.assertions</a> не може бути змінений під час виконання, оскільки код тверджень не генерується.</p>
+<p>Если процесс запущен в режиме разработки,<a href="ini.core.md#ini.zend.assertions">zend.assertions</a> не може бути виставлений у <code>-1</code> під час виконання..</p>
+</blockquote>
+<p><code>zend.exception_string_param_max_len</code>int</p>
+<p>Максимальна довжина аргументів рядкової функції у рядкових трасуваннях стека. Значення має бути в діапазоні від <code>&quot;0&quot;</code>до<code>&quot;1000000&quot;</code></p>
+<p><code>hard_timeout</code>int</p>
+<p>Коли мине час очікування, встановлений у <a href="info.configuration.md#ini.max-execution-time">max_execution_time</a>, середовище виконання PHP акуратно відключить ресурси. Якщо під час цього щось застрягне, час очікування буде встановлено на вказану кількість секунд. Коли закінчиться жорсткий час очікування, PHP завершить роботу з помилкою. Якщо встановлено значення 0, жорсткий час очікування ніколи не активується.</p>
+<p>Коли PHP зупиняється після жорсткого часу очікування, це буде виглядати приблизно так:</p>
+<pre><code class="hljs language-lua">Fatal <span class="hljs-built_in">error</span>: Maximum execution <span class="hljs-built_in">time</span> of <span class="hljs-number">30</span>+<span class="hljs-number">2</span> seconds exceeded (terminated) <span class="hljs-keyword">in</span> Unknown on line <span class="hljs-number">0</span>
+</code></pre>
+<p><code>zend.exception_ignore_args</code>bool</p>
+<p>Виключає аргументи трасування стека, згенерованих з винятків.</p>
+<p><code>zend.multibyte</code>bool</p>
+<p>Дозволяє парсинг вихідних файлів у багатобайтні кодування. Включення zend.multibyte потрібно для використання кодувань символів подібних до SJIS, BIG5 і т.д., що містять спеціальні символи в багатобайтних рядкових даних. Сумісні з ISO-8859-1 кодування, наприклад UTF-8, EUC тощо, не потребують цієї опції.</p>
+<p>Модуль zend.multibyte вимагає модуля &quot;mbstring&quot;.</p>
+<p><code>zend.script_encoding</code>string</p>
+<p>Це значення буде використано лише за відсутності директиви <a href="control-structures.declare.md#control-structures.declare.encoding">declare(encoding=...)</a> на початку скрипту. При використанні несумісних кодувань з ISO-8859-1, потрібно використовувати опції і zend.multibyte і zend.script_encoding.</p>
+<p>Літеральні рядки мають бути транслітеровані із zend.script_encoding у mbstring.internal_encoding, якби викликали <a href="function.mb-convert-encoding.md">mb_convert_encoding()</a></p>
+<p><code>zend.detect_unicode</code>bool</p>
+<p>Визначає, чи потрібно перевіряти BOM (Byte Order Mark, мітка порядку байт) та коректність багатобайтних символів у файлі. Ця перевірка здійснюється до дзвінка <a href="function.halt-compiler.md">__halt_compiler()</a>. Доступна лише у режимі Zend Multibyte.</p>
+<p><code>zend.signal_check</code>bool</p>
+<p>Визначає, чи потрібно перевіряти замінені обробники сигналів після завершення скрипта.</p>
+<p><code>exit_on_timeout</code>bool</p>
+<p>Ця директива є тільки для Apache1 mod_php, яка змушує нащадка Apache завершитись, якщо перевищено час очікування виконання скрипту PHP. Перевищення часу очікування призводить до внутрішнього виклику longjmp() Apache1, який залишає деякі модулі в неузгодженому стані. Після завершення процесу всі незняті блокування або пам&#x27;ять буде очищено.</p>
+<h2>Обмеження ресурсів</h2>
+<p><strong>Обмеження ресурсів</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Имя</th><th>По умолчанию</th><th>Место изменения</th><th>Список изменений</th></tr></thead><tbody><tr><td><a href="ini.core.md#ini.memory-limit">memory_limit</a></td><td>&quot;128M&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr></tbody></table>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>memory_limit</code>int</p>
+<p>Ця директива визначає максимальний обсяг пам&#x27;яті в байтах, який дозволяється використовувати скрипту. Це допомагає запобігти ситуації, коли погано написаний скрипт з&#x27;їдає всю доступну пам&#x27;ять сервера. Для того, щоб усунути обмеження, встановіть значення цієї директиви в <code>-1</code></p>
+<p>Якщо вказано ціле значення (int), обсяг вимірюється байтами. Можна також використовувати скорочений запис, який описано в <a href="faq.using.md#faq.using.shorthandbytes">у цьому розділі FAQ</a></p>
+<p>Смотрите также:<a href="info.configuration.md#ini.max-execution-time">max_execution_time</a></p>
+<h2>Налаштування продуктивності</h2>
+<p><strong>Налаштування продуктивності</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Имя</th><th>По умолчанию</th><th>Место изменения</th><th>Список изменений</th></tr></thead><tbody><tr><td><a href="ini.core.md#ini.realpath-cache-size">realpath_cache_size</a></td><td>&quot;4M&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>До PHP 7.0.16 та 7.1.2, за умовчанням було <code>&quot;16K&quot;</code></td></tr><tr><td><a href="ini.core.md#ini.realpath-cache-ttl">realpath_cache_ttl</a></td><td>&quot;120&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr></tbody></table>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Использование<a href="ini.core.md#ini.open-basedir">open_basedir</a> <em>відключить</em>кеш realpath.</p>
+</blockquote>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>realpath_cache_size</code>int</p>
+<p>Визначає розмір кеша realpath, що використовується в PHP. Це значення має бути збільшено на системах, в яких PHP відкриває велику кількість файлів відповідно до кількості виконуваних файлових операцій.</p>
+<p>Розмір дорівнює загальному числу байт, що зберігається в рядках шляхів, плюс розмір даних пов&#x27;язаних з елементом, що кешується. Це означає, що для зберігання довгих шляхів у кеші, розмір цього кешу має бути більшим. Це значення не визначає безпосередньо кількість різних шляхів, які можуть бути закешовані.</p>
+<p>Розмір, необхідний кешування, залежить від системи.</p>
+<p><code>realpath_cache_ttl</code>int</p>
+<p>Час (в секундах) протягом якого буде використаний кеш realpath для вказаного файлу або директорії. Для систем з файлами, що рідко змінюються, це значення можна збільшити.</p>
+<h2>Обробка даних</h2>
+<p><strong>Конфігураційні опції обробки даних</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Имя</th><th>По умолчанию</th><th>Место изменения</th><th>Список изменений</th></tr></thead><tbody><tr><td><a href="ini.core.md#ini.arg-separator.output">arg_separator.output</a></td><td>&quot;&amp;&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.arg-separator.input">arg_separator.input</a></td><td>&quot;&amp;&quot;</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.variables-order">variables_order</a></td><td>&quot;EGPCS&quot;</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.request-order">request_order</a></td><td>&quot;&quot;</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.auto-globals-jit">auto_globals_jit</a></td><td>&quot;1&quot;</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.register-argc-argv">register_argc_argv</a></td><td>&quot;1&quot;</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.enable-post-data-reading">enable_post_data_reading</a></td><td>&quot;1&quot;</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.post-max-size">post_max_size</a></td><td>&quot;8M&quot;</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.auto-prepend-file">auto_prepend_file</a></td><td>NULL</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.auto-append-file">auto_append_file</a></td><td>NULL</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.default-mimetype">default_mimetype</a></td><td>&quot;text/html&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.default-charset">default_charset</a></td><td>&quot;UTF-8&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.input-encoding">input_encoding</a></td><td>&quot;&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.output-encoding">output_encoding</a></td><td>&quot;&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.internal-encoding">internal_encoding</a></td><td>&quot;&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr></tbody></table>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>arg_separator.output</code>string</p>
+<p>Цей роздільник використовується в генерованих PHP URL як роздільник аргументів.</p>
+<p><code>arg_separator.input</code>string</p>
+<p>Список роздільників, що використовуються PHP для отримання змінних із URL.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Кожен символ у цій директиві вважається роздільником!</p>
+</blockquote>
+<p><code>variables_order</code>string</p>
+<p>Встановлює порядок обробки змінних EGPCS (<code>E</code>nvironment,<code>G</code>et,<code>P</code>ost,<code>C</code>ookie, и<code>S</code>server). Наприклад, якщо variables_order установлена в<code>&quot;SP&quot;</code>, то PHP створить <a href="language.variables.predefined.md">superglobals</a> <a href="reserved.variables.server.md">$_SERVER</a> і <a href="reserved.variables.post.md">$_POST</a>, але не буде створювати <a href="reserved.variables.environment.md">$_ENV</a> <a href="reserved.variables.get.md">$_GET</a> і <a href="reserved.variables.cookies.md">$_COOKIE</a>. . Установка в &quot;&quot; означає, що жодна <a href="language.variables.predefined.md">superglobals</a>не будет установлена.</p>
+<p><strong>Увага</strong></p>
+<p>У CGI та FastCGI SAPI, <a href="reserved.variables.server.md">$_SERVER</a> також додаються значення змінних оточення; <code>S</code> завжди еквівалентна <code>ES</code>вне зависимости от самого положения<code>E</code> у цій директиві.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Ця директива також впливає на вміст та порядок змінної <a href="reserved.variables.request.md">$_REQUEST</a></p>
+</blockquote>
+<p><code>request_order</code>string</p>
+<p>Ця директива регулює порядок, в якому PHP додає змінні GET, POST та Cookie до масиву. _REQUEST. Додавання проводиться ліворуч, нові значення перезаписують старі.</p>
+<p>Якщо значення цієї директиви не встановлено, використовується значення директиви <a href="ini.core.md#ini.variables-order">variables_order</a>для содержимого переменной<a href="reserved.variables.request.md">$_REQUEST</a></p>
+<p>Зверніть увагу, що файли php.ini, що поставляються з дистрибутивом, з міркувань безпеки не містять значення <code>&#x27;C&#x27;</code>(cookies).</p>
+<p><code>auto_globals_jit</code>bool</p>
+<p>Коли увімкнено, змінні SERVER, REQUEST та ENV створюються в той момент, коли вони вперше використовуються (Just In Time), а не на початку виконання скрипту. Якщо ці змінні у скрипті не використовуються, включення цієї директиви призведе до зростання продуктивності.</p>
+<p><strong>Увага</strong></p>
+<p>Використання змінних SERVER, REQUEST та ENV перевіряється на стадії компіляції, тому їх використання за допомогою, наприклад, <a href="language.variables.variable.md">змінних змінних</a>не запустит их инициализацию.</p>
+<p><code>register_argc_argv</code>bool</p>
+<p>Повідомляє PHP, чи слід оголошувати змінні argv та argc (які міститимуть GET-інформацію). Дивіться також <a href="features.commandline.md">Використання PHP у командному рядку</a></p>
+<p><code>enable_post_data_reading</code>bool</p>
+<p>При відключенні цієї опції суперглобальні змінні <a href="reserved.variables.post.md">$_POST</a> і <a href="reserved.variables.files.md">$_FILES</a> <em>не будуть</em> заповнюватись. Єдиним способом прочитати POST-дані буде читання обгортки потоку <a href="wrappers.php.md">php://input</a>. Це може бути корисним при проксуванні запитів або обробки POST-даних способом, що більш ефективно використовує пам&#x27;ять.</p>
+<p><code>post_max_size</code>int</p>
+<p>Встановлює максимально допустимий розмір даних, які надсилаються методом POST. Це також впливає на завантаження файлів. Для завантаження великих файлів це значення має бути більшим за значення директиви <a href="ini.core.md#ini.upload-max-filesize">upload_max_filesize</a>. В сутності, <a href="ini.core.md#ini.memory-limit">memory_limit</a> має бути більше ніж <code>post_max_size</code>. Якщо вказано ціле значення (int), обсяг вимірюється байтами. Можна також використовувати скорочений запис, який описано в <a href="faq.using.md#faq.using.shorthandbytes">у цьому розділі FAQ</a>. Якщо розмір POST даних більше ніж post_max_size,<a href="language.variables.superglobals.md">суперглобальні змінні</a> <a href="reserved.variables.post.md">$_POST</a> і <a href="reserved.variables.files.md">$_FILES</a> будуть порожніми. Це можна відстежити у різний спосіб, наприклад передавши <a href="reserved.variables.get.md">$_GET</a> змінну скрипт, який обробляє дані, тобто . <code>&lt;form action=&quot;edit.php?processed=1&quot;&gt;</code>, а затем проверить, установлена ли переменная<a href="reserved.variables.get.md">$_GET[&#x27;processed&#x27;]</a></p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>PHP дозволяє скорочення значень байтів, включаючи K (кіло), M (мега) та G (гіга). PHP автоматично перетворює всі ці скорочення. Будьте обережні з перевищенням діапазону 32-бітових цілих значень (якщо ви використовуєте 32-бітну версію), оскільки це призведе до помилки вашого скрипту.</p>
+</blockquote>
+<p><strong>Список изменений<code>post_max_size</code></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>5.3.4</td><td>Встановлення <code>post_max_size</code> = 0 не знімає обмеження, якщо контент має тип application/x-www-form-urlencoded або не зареєстрований у PHP.</td></tr><tr><td>5.3.2 , 5.2.12</td><td>Стало можливим зняти обмеження на розмір пост-запиту установкою <code>post_max_size</code> 0.</td></tr></tbody></table>
+<p><code>auto_prepend_file</code>string</p>
+<p>Визначає ім&#x27;я файлу, який автоматично оброблятиметься перед основним файлом. Файл викликається так, ніби він був підключений за допомогою функції <a href="function.require.md">require</a>, так що <a href="ini.core.md#ini.include-path">include_path</a>также используется.</p>
+<p>Специальное значение<code>none</code> відключає цю директиву.</p>
+<p><code>auto_append_file</code>string</p>
+<p>Визначає ім&#x27;я файлу, який автоматично оброблятиметься після основного файлу. Файл викликається так, ніби він був підключений за допомогою функції <a href="function.require.md">require</a>, так що <a href="ini.core.md#ini.include-path">include_path</a> також використовується.</p>
+<p>Специальное значение<code>none</code> відключає цю директиву.</p>
+<blockquote>
+<p><strong>Зауваження</strong>: Якщо скрипт завершує роботу за допомогою <a href="function.exit.md">exit()</a>, auto-append<em>НЕ</em> виконується.</p>
+</blockquote>
+<p><code>default_mimetype</code>string</p>
+<p>За промовчанням PHP виводить назву кодування в заголовку Content-Type. Якщо не потрібно передавати кодування, просто залиште цю опцію порожньою.</p>
+<p>&quot;media type&quot; за замовчуванням встановлено як &quot;text/html&quot;.</p>
+<p><code>default_charset</code>string</p>
+<p>&quot;UTF-8&quot; є значенням за промовчанням і використовується як кодування за промовчанням для функцій <a href="function.mdentities.md">htmlentities()</a> <a href="function.md-entity-decode.md">html_entity_decode()</a> і <a href="function.mdspecialchars.md">htmlspecialchars()</a>, якщо параметр <code>encoding</code>не указан. Значение<code>default_charset</code> також використовується для вказівки кодування за промовчанням для функцій <a href="book.iconv.md">iconv</a>якщо конфігураційні опції <a href="iconv.configuration.md#ini.iconv.input-encoding"><code>iconv.input_encoding</code></a> <a href="iconv.configuration.md#ini.iconv.output-encoding"><code>iconv.output_encoding</code></a> і <a href="iconv.configuration.md#ini.iconv.internal-encoding"><code>iconv.internal_encoding</code></a> не встановлені, і для функцій <a href="book.mbstring.md">mbstring</a>, якщо не встановлено <a href="mbstring.configuration.md#ini.mbstring.http-input"><code>mbstring.http_input</code></a> <a href="mbstring.configuration.md#ini.mbstring.http-output"><code>mbstring.http_output</code></a> <a href="mbstring.configuration.md#ini.mbstring.internal-encoding"><code>mbstring.internal_encoding</code></a></p>
+<p>Усі версії PHP використовують це значення як кодування для стандартного заголовка Content-Type, що надсилається PHP, якщо цей заголовок не перевизначений викликом функції <a href="function.header.md">header()</a></p>
+<p>Не рекомендуется устанавливать<code>default_charset</code>в пустое значение.</p>
+<p><code>input_encoding</code>string</p>
+<p>Ця опція використовується для багатобайтних модулів, таких як mbstring та iconv. За промовчанням порожньо.</p>
+<p><code>output_encoding</code>string</p>
+<p>Ця опція використовується для багатобайтних модулів, таких як mbstring та iconv. За промовчанням порожньо.</p>
+<p><code>internal_encoding</code>string</p>
+<p>Ця опція використовується для багатобайтних модулів, таких як mbstring та iconv. За промовчанням порожньо. У цьому випадку використовується <a href="ini.core.md#ini.default-charset">default_charset</a></p>
+<h2>Шляхи та Директорії</h2>
+<p><strong>Конфігураційні Опції Шляхів та Директорій</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Имя</th><th>По умолчанию</th><th>Место изменения</th><th>Список изменений</th></tr></thead><tbody><tr><td><a href="ini.core.md#ini.include-path">include_path</a></td><td>&quot;.;/path/to/php/pear&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.open-basedir">open_basedir</a></td><td>NULL</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.doc-root">doc_root</a></td><td>NULL</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.user-dir">user_dir</a></td><td>NULL</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.user-ini.cache-ttl">user_ini.cache_ttl</a></td><td>&quot;300&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.user-ini.filename">user_ini.filename</a></td><td>&quot;.user.ini&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.extension-dir">extension_dir</a></td><td>&quot;/path/to/php&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.extension">extension</a></td><td>NULL</td><td>Тільки php.ini</td><td></td></tr><tr><td><a href="ini.core.md#ini.zend-extension">zend_extension</a></td><td>NULL</td><td>Тільки php.ini</td><td></td></tr><tr><td><a href="ini.core.md#ini.cgi.check-shebang-line">cgi.check_shebang_line</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.cgi.discard-path">cgi.discard_path</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.cgi.fix-pathinfo">cgi.fix_pathinfo</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.cgi.force-redirect">cgi.force_redirect</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.cgi.nph">cgi.nph</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.cgi.redirect-status-env">cgi.redirect_status_env</a></td><td>NULL</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.cgi.rfc2616-headers">cgi.rfc2616_headers</a></td><td>&quot;0&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.fastcgi.impersonate">fastcgi.impersonate</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.fastcgi.logging">fastcgi.logging</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr></tbody></table>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>include_path</code>string</p>
+<p>Вказує список директорій, у яких функції <a href="function.require.md">require</a> <a href="function.include.md">include</a> <a href="function.fopen.md">fopen()</a> <a href="function.file.md">file()</a> <a href="function.readfile.md">readfile()</a> і <a href="function.file-get-contents.md">file_get_contents()</a> шукають файли Формат відповідає формату системної змінної оточення PATH: список директорій, розділених двокрапкою в Unix або крапкою з комою у Windows.</p>
+<p>При пошуку файлів, що підключаються, PHP окремо розглядає кожне значення в include_path. Він перевіряє перший шлях, якщо файл у ньому не знайдений, то він переходить до наступного, і так до тих пір, поки не знайде файл, що підключається, або поверне <strong><code>E_WARNING</code></strong> або <strong><code>E_ERROR</code></strong>. Ви можете змінити ваш include_path під час виконання скрипту за допомогою функції <a href="function.set-include-path.md">set_include_path()</a></p>
+<p><strong>Приклад #1 include_path в Unix</strong></p>
+<p>include_path=&quot;.:/php/includes&quot;</p>
+<p><strong>Приклад #2 include_path у Windows</strong></p>
+<p>include_path=&quot;.;c:\php\includes&quot;</p>
+<p>Использование в include_path дозволяє задавати відносні шляхи для підключення файлів, оскільки точка означає поточну директорію. Однак, більш ефективно використовувати <code>include &#x27;./file&#x27;</code>чим змушувати PHP щоразу перевіряти поточну директорію при підключенні кожного файлу.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Змінні оточення (<code>ENV</code>) також доступні в .ini файлах. Таким чином, можна посилатися на домашню директорію за допомогою директив <code>${LOGIN}</code>и<code>${USER}</code></p>
+<p>Змінні оточення можуть відрізнятися між різними серверними API, оскільки самі оточення відрізняються один від одного.</p>
+</blockquote>
+<p><strong>Приклад #3 Налаштування include_path за допомогою змінної оточення ${USER} в Unix</strong></p>
+<p>include_path = &quot;.:${USER}/pear/php&quot;</p>
+<p><code>open_basedir</code>string</p>
+<p>Обмежує зазначеним деревом каталогів файли, які можуть бути доступні для PHP, включаючи файл.</p>
+<p>Коли скрипт намагається отримати доступ до файлу, наприклад, за допомогою функції <a href="function.fopen.md">fopen()</a> або <a href="function.gzopen.md">gzopen()</a>, перевіряється місцезнаходження файлу. Якщо файл знаходиться поза вказаним деревом каталогів, PHP відмовиться його відкривати. Всі символічні посилання будуть розкриті, так що за їх допомогою не вдасться обійти це обмеження. Якщо файл не існує, то символічне посилання не може бути прочитане і ім&#x27;я файлу (прочитане) буде розглядатися <strong>open_basedir</strong></p>
+<p>Опция<strong>open_basedir</strong> може поширюватися як на функції до роботи з файлової системою; наприклад, якщо <code>MySQL</code> налаштований використовувати драйвер <code>mysqlnd</code>, то<code>LOAD DATA INFILE</code>подпадает под опцию<strong>open_basedir</strong>. Безліч функцій PHP також використовує <code>open_basedir</code></p>
+<p>Специальное значение позначає, що робоча директорія скрипта буде використана як базова директорія. Однак це трохи небезпечно, так як поточна директорія скрипту може бути легко змінена за допомогою <a href="function.chdir.md">chdir()</a></p>
+<p>В httpd.conf,<strong>open_basedir</strong> може бути вимкнена (наприклад, для деяких віртуальних хостів) <a href="configuration.changes.md#configuration.changes.apache">тим же способом</a>, як і будь-яка інша конфігураційна директива: &quot;<code>php_admin_value open_basedir none</code>&quot;.</p>
+<p>У Windows розділяйте каталоги крапкою з комою. На всіх інших системах, розділяйте директорії двокрапкою. При роботі в якості модуля Apache, шляхи <strong>open_basedir</strong> автоматично успадковуються від батьківських директорій.</p>
+<p>Ограничение, определяемое<strong>open_basedir</strong> є ім&#x27;ям директорії, а чи не префіксом.</p>
+<p>За промовчанням всі файли можуть бути відкриті.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Значення open_Basedir можна зробити суворішим під час виконання скрипту. Це означає, що якщо open_basedir була встановлена ​​в <code>/www/</code> в php.ini, то скрипт може утиснути конфігурацію до <code>/www/tmp/</code> під час виконання за допомогою <a href="function.ini-set.md">ini_set()</a>. При вказівці кількох директорій можна використовувати константу <strong><code>PATH_SEPARATOR</code></strong> як роздільник шляхів, який залежить від операційної системи.</p>
+</blockquote>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Використання опції open_basedir установит<a href="ini.core.md#ini.realpath-cache-size">realpath_cache_size</a>на значение и таким образом<em>відключить</em>кеш realpath.</p>
+</blockquote>
+<p><strong>Застереження</strong></p>
+<p><code>open_basedir</code> - це просто додаткове підстрахування, яке аж ніяк не є всеосяжним і тому на нього не можна покладатися, коли йдеться про безпеку.</p>
+<p><code>doc_root</code>string</p>
+<p>Коренева директорія PHP на цьому сервері. Використовується лише у випадку, якщо не пуста. Якщо PHP не був скомпільований з FORCE_REDIRECT, вам<em>слід</em>установить doc_root, якщо ви використовуєте PHP як CGI під будь-яким веб-сервером (крім IIS). Альтернативою є використання конфігураційної директиви <a href="ini.core.md#ini.cgi.force-redirect">cgi.force_redirect</a>, Мова про яку йде нижче.</p>
+<p><code>user_ini.cache_ttl</code>int</p>
+<p><code>user_ini.filename</code>string</p>
+<p><code>user_dir</code>string</p>
+<p>Базове ім&#x27;я директорії, що використовується в домашньому каталозі користувача для файлів PHP, наприклад, public_html.</p>
+<p><code>extension_dir</code>string</p>
+<p>У якій директорії PHP повинен шукати модулі, що динамічно завантажуються. Рекомендується вказувати абсолютний шлях. Дивіться також: <a href="info.configuration.md#ini.enable-dl">enable_dl</a> і <a href="function.dl.md">dl()</a></p>
+<p><code>extension</code>string</p>
+<p>Які модулі, що динамічно завантажуються, повинні бути завантажені при старті PHP.</p>
+<p><code>zend_extension</code>string</p>
+<p>Ім&#x27;я модуля Zend (наприклад, XDebug), що динамічно завантажується, який повинен бути завантажений при старті PHP.</p>
+<p><code>cgi.check_shebang_line</code>bool</p>
+<p>Контролює, чи потрібно перевіряти перший рядок CGI PHP-скрипту на зміст <code>#!</code> (Shebang). Цей рядок може бути необхідним, якщо скрипт повинен підтримувати як окремий запуск, так і за допомогою PHP CGI. PHP у режимі CGI пропускає цей рядок і ігнорує його вміст, якщо ця директива включена.</p>
+<p><code>cgi.discard_path</code>bool</p>
+<p>Якщо дозволено, бінарний файл PHP CGI може безпечно розташовуватися поза веб-деревом і люди не зможуть обійти безпеку .htaccess.</p>
+<p><code>cgi.fix_pathinfo</code>bool</p>
+<p>Забезпечує підтримку <em>правильних</em> <code>PATH_INFO</code> <code>PATH_TRANSLATED</code>в CGI. Раньше PHP просто устанавливал<code>PATH_TRANSLATED</code>в<code>SCRIPT_FILENAME</code>и не обращал внимания на<code>PATH_INFO</code>. Для отримання додаткової інформації про <code>PATH_INFO</code>зверніться до специфікації CGI. Встановлення цього значення змусить PHP CGI виправляти свій шлях відповідно до специфікації. Значення 0 відповідає попередньому поведінці. За замовчуванням опція увімкнена. Ви повинні виправити свої скрипти так, щоб вони використовували <code>SCRIPT_FILENAME</code> замість <code>PATH_TRANSLATED</code></p>
+<p><code>cgi.force_redirect</code>bool</p>
+<p>Директива cgi.force_redirect необхідна для забезпечення безпеки під час роботи PHP як CGI під більшістю веб-серверів. Якщо залишити її невизначеною, PHP включає цю директиву. Ви можете вимкнути її <em>на свій страх і ризик</em></p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Користувачам Windows: У разі використання IIS ця опція <em>повинна</em> бути вимкнена. Те саме необхідно для OmniHTTPD і Xitami.</p>
+</blockquote>
+<p><code>cgi.nph</code>bool</p>
+<p>Якщо cgi.nph дозволена, cgi примусово повертатиме код 200 на кожен запит.</p>
+<p><code>cgi.redirect_status_env</code>string</p>
+<p>Якщо cgi.force_redirect включено і ви працюєте не під веб-сервером Apache або Netscape (iPlanet), вам <em>може</em> знадобиться встановити змінну оточення, яку шукатиме PHP щоб переконатися, що він може продовжувати виконання.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Встановлення цієї змінної <em>може</em> спричинити проблеми з безпекою, так що <em>ви повинні знати, що ви робите</em></p>
+</blockquote>
+<p><code>cgi.rfc2616_headers</code>int</p>
+<p>Повідомляє PHP, який тип заголовків використовувати при надсиланні коду відповіді HTTP. Якщо встановлено 0, PHP відправляє <a href="http://www.faqs.org/rfcs/rfc3875">» RFC 3875</a> заголовок &quot;Status:&quot;, який підтримується Apache та іншими веб-серверами. Якщо встановлено в 1, PHP надсилає заголовки, відповідні <a href="http://www.faqs.org/rfcs/rfc2616">» RFC 2616</a></p>
+<p>Якщо ця опція включена і ви використовуєте PHP в оточенні CGI (наприклад, PHP-FPM), замість використання HTTP-заголовків відповіді в стилі RFC 2616, потрібно використовувати їх еквівалент зі стандарту RFC 3875, наприклад, замість header(&quot;HTTP/1.0 404 Not found&quot;); потрібно використовувати header(&quot;Status: 404 Not Found&quot;);</p>
+<p>Залиште значення 0, якщо ви не впевнені в тому, що це означає.</p>
+<p><code>fastcgi.impersonate</code>string</p>
+<p>FastCGI під IIS (в ОС на базі WINNT) підтримує можливість імперсонації прав безпеки клієнта, що викликає. Це дозволяє IIS визначити контекст безпеки, у якому виконується запит. mod_fastcgi під Apache на даний момент не підтримує цю можливість (03/17/2002). Встановіть 1 під час роботи під IIS. Значення за замовчуванням – нуль.</p>
+<p><code>fastcgi.logging</code>bool</p>
+<p>Включає логування SAPI під час використання FastCGI. Логування увімкнено за замовчуванням.</p>
+<h2>Закачування файлів</h2>
+<p><strong>Конфігураційні Опції Закачування файлів</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Имя</th><th>По умолчанию</th><th>Место изменения</th><th>Список изменений</th></tr></thead><tbody><tr><td><a href="ini.core.md#ini.file-uploads">file_uploads</a></td><td>&quot;1&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.upload-tmp-dir">upload_tmp_dir</a></td><td>NULL</td><td><strong><code>INI_SYSTEM</code></strong></td><td></td></tr><tr><td><a href="info.configuration.md#ini.max-input-nesting-level">max_input_nesting_level</a></td><td>64</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="info.configuration.md#ini.max-input-vars">max_input_vars</a></td><td>1000</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.upload-max-filesize">upload_max_filesize</a></td><td>&quot;2M&quot;</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr><tr><td><a href="ini.core.md#ini.max-file-uploads">max_file_uploads</a></td><td>20</td><td><strong><code>INI_PERDIR</code></strong></td><td></td></tr></tbody></table>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>file_uploads</code>bool</p>
+<p>Дозволяти чи не дозволяти <a href="features.file-upload.md">закачування файлів</a>. Дивіться також директиви <a href="ini.core.md#ini.upload-max-filesize">upload_max_filesize</a> <a href="ini.core.md#ini.upload-tmp-dir">upload_tmp_dir</a> і <a href="ini.core.md#ini.post-max-size">post_max_size</a></p>
+<p><code>upload_tmp_dir</code>string</p>
+<p>Тимчасова директорія, що використовується для зберігання файлів під час закачування. Має бути доступною для запису користувачеві, від імені якого запущено PHP. Якщо не вказано, використовується каталог за промовчанням для вашої системи.</p>
+<p>Якщо до зазначеної директорії немає прав на запис, PHP відкотиться назад до системної тимчасової директорії, яка використовується за умовчанням. Якщо увімкнено директиву <a href="ini.core.md#ini.open-basedir">open_basedir</a>, то для успішного завантаження файлів системна директорія за умовчанням має бути дозволена.</p>
+<p><code>upload_max_filesize</code>int</p>
+<p>Максимальний розмір файлу, що закачується.</p>
+<p><a href="ini.core.md#ini.post-max-size">post_max_size</a> має бути більше, ніж це значення.</p>
+<p>Якщо вказано ціле значення (int), обсяг вимірюється байтами. Можна також використовувати скорочений запис, який описано в <a href="faq.using.md#faq.using.shorthandbytes">у цьому розділі FAQ</a></p>
+<p><code>max_file_uploads</code>int</p>
+<p>Максимально дозволена кількість файлів, що одночасно закачуються. Порожні поля завантаження не розглядаються цим обмеженням.</p>
+<h2>Загальний SQL</h2>
+<p><strong>Конфігураційні Опції Загального SQL</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Имя</th><th>По умолчанию</th><th>Место изменения</th><th>Список изменений</th></tr></thead><tbody><tr><td><a href="ini.core.md#ini.sql.safe-mode">sql.safe_mode</a></td><td>&quot;0&quot;</td><td><strong><code>INI_SYSTEM</code></strong></td><td>Видалено в PHP 7.2.0</td></tr></tbody></table>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>sql.safe_mode</code>bool</p>
+<p>Якщо увімкнено, функції з&#x27;єднання з базою даних, що використовують значення за замовчуванням, будуть використовувати ці значення замість будь-яких аргументів, що передаються. Для значень за замовчуванням дивіться документацію щодо функцій підключення відповідної бази даних.</p>
+<p><strong>Увага</strong></p>
+<p>Ця опція <em>ВИДАЛЕНО</em> у PHP 7.2.0.</p>
+<h2>Особливі налаштування для Windows</h2>
+<p><strong>Особливі опції конфігурації для Windows</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Имя</th><th>По умолчанию</th><th>Место изменения</th><th>Список изменений</th></tr></thead><tbody><tr><td><a href="ini.core.md#ini.windows-show-crt-warning">windows.show_crt_warning</a></td><td>&quot;0&quot;</td><td><strong><code>INI_ALL</code></strong></td><td></td></tr></tbody></table>
+<p>Коротке пояснення конфігураційних директив.</p>
+<p><code>windows.show_crt_warning</code>bool</p>
+<p>При ввімкненні цієї директиви буде відображено попередження Windows CRT.</p></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/ini.core.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/ini.core.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"ini.core.md","content":"## Опис вбудованих директив php.ini\n\nЦей список включає вбудовані директиви php.ini, які можна використовувати для налаштування PHP. Директиви, які обробляються модулями, перераховані та детально описані на сторінках документацій відповідних модулів. Наприклад, інформацію про директиви сесій можна знайти на [сторінці документації сесій](session.configuration.md)\n\n\u003e **Зауваження** :\n\u003e \n\u003e Представлені тут значення за замовчуванням використовуються у випадку, якщо не було підключено php.ini; значення для бойового php.ini та розробки можуть відрізнятися.\n\n## Мовні опції\n\n**Опції мови та інших налаштувань**\n\n| Имя | По умолчанию | Место изменения | Список изменений |\n| --- | --- | --- | --- |\n| [short\\_open\\_tag](ini.core.md#ini.short-open-tag) | \"1\" | **`INI_PERDIR`** |  |\n| [precision](ini.core.md#ini.precision) | \"14\" | **`INI_ALL`** |  |\n| [serialize\\_precision](ini.core.md#ini.serialize-precision) | \"-1\" | **`INI_ALL`** | До версії PHP 7.1.0 значення за промовчанням дорівнювало 17. |\n| [disable\\_functions](ini.core.md#ini.disable-functions) | \"\" | Тільки **`INI_SYSTEM`** |  |\n| [disable\\_classes](ini.core.md#ini.disable-classes) | \"\" | Тільки php.ini |  |\n| [exit\\_on\\_timeout](ini.core.md#ini.exit-on-timeout) | \"\" | **`INI_ALL`** |  |\n| [expose\\_php](ini.core.md#ini.expose-php) | \"1\" | Тільки php.ini |  |\n| [hard\\_timeout](ini.core.md#ini.hard-timeout) | \"2\" | **`INI_SYSTEM`** | Доступна з версії PHP 7.1.0. |\n| [zend.exception\\_ignore\\_args](ini.core.md#ini.zend.exception-ignore-args) | \"0\" | **`INI_ALL`** | Доступна з версії PHP 7.4.0 |\n| [zend.multibyte](ini.core.md#ini.zend.multibyte) | \"0\" | **`INI_ALL`** |  |\n| [zend.script\\_encoding](ini.core.md#ini.zend.script-encoding) | NULL | **`INI_ALL`** |  |\n| [zend.detect\\_unicode](ini.core.md#ini.zend.detect-unicode) | NULL | **`INI_ALL`** |  |\n| [zend.signal\\_check](ini.core.md#ini.zend.signal-check) | \"0\" | **`INI_SYSTEM`** |  |\n| [zend.assertions](ini.core.md#ini.zend.assertions) | \"1\" | **`INI_ALL`** з обмеженнями |  |\n| [zend.exception\\_string\\_param\\_max\\_len](ini.core.md#ini.zend.exception-string-param-max-len) | \"15\" | **`INI_ALL`** | Доступно з PHP 8.0.0. |\n\nКоротке пояснення конфігураційних директив.\n\n`short_open_tag`bool\n\nВизначає, чи дозволяється коротка форма запису (**`\u003c? ?\u003e`**) тегів PHP. Якщо ви хочете використовувати PHP спільно з XML, ви можете вимкнути цю опцію, щоб безперешкодно використовувати **`\u003c?xml ?\u003e`**. В іншому випадку, ви можете відобразити це за допомогою PHP, наприклад: **`\u003c?php echo '\u003c?xml version=\"1.0\"?\u003e'; ?\u003e`**. Якщо ж ця опція відключена, ви повинні використовувати довгу форму тега PHP (**`\u003c?php ?\u003e`**\n\n\u003e **Зауваження** :\n\u003e \n\u003e Ця директива не впливає на скорочення **`\u003c?=`**, яка завжди доступна.\n\n`precision`int\n\nКількість цифр, що відображаються для чисел з плаваючою точкою . `-1` означає, що буде використано вдосконалений алгоритм округлення таких чисел.\n\n`serialize_precision`int\n\nКількість значущих цифр, що зберігаються при серіалізації чисел з плаваючою точкою . `-1` означає, що буде використано вдосконалений алгоритм округлення таких чисел.\n\n`expose_php`bool\n\nВидає факт присутності PHP на сервері, включаючи передачу версії PHP в заголовку HTTP (наприклад, X-Powered-By: PHP/5.3.7).\n\n`disable_functions`string\n\nЦя директива дозволяє вимкнути деякі функції. Вона приймає список імен функцій, розділений комами.\n\nТільки [внутрішні функції](functions.internal.md) можуть бути відключені за допомогою цієї директиви . [Функції користувача](functions.user-defined.md) їй не схильні.\n\nЦя директива має бути встановлена ​​у php.ini. Наприклад, її не можна використовувати в httpd.conf.\n\n`disable_classes`string\n\nЦя директива дозволяє вимкнути деякі класи. Вона приймає список імен класів, розділених комами. Ця директива має бути встановлена ​​у php.ini. Наприклад, її не можна використовувати в httpd.conf.\n\n`zend.assertions`int\n\nЕсли задано значение , код перевірки буде виконуватися (режим розробки). Якщо заданий , код перевірок буде згенерований, однак виконуватися не буде. Якщо поставлено `-1`, код перевірки не буде генеруватися (продуктивний режим).\n\n\u003e **Зауваження** :\n\u003e \n\u003e Если процесс запущен в режиме релиза,[zend.assertions](ini.core.md#ini.zend.assertions) не може бути змінений під час виконання, оскільки код тверджень не генерується.\n\u003e \n\u003e Если процесс запущен в режиме разработки,[zend.assertions](ini.core.md#ini.zend.assertions) не може бути виставлений у `-1` під час виконання..\n\n`zend.exception_string_param_max_len`int\n\nМаксимальна довжина аргументів рядкової функції у рядкових трасуваннях стека. Значення має бути в діапазоні від `\"0\"`до`\"1000000\"`\n\n`hard_timeout`int\n\nКоли мине час очікування, встановлений у [max\\_execution\\_time](info.configuration.md#ini.max-execution-time), середовище виконання PHP акуратно відключить ресурси. Якщо під час цього щось застрягне, час очікування буде встановлено на вказану кількість секунд. Коли закінчиться жорсткий час очікування, PHP завершить роботу з помилкою. Якщо встановлено значення 0, жорсткий час очікування ніколи не активується.\n\nКоли PHP зупиняється після жорсткого часу очікування, це буде виглядати приблизно так:\n\n```\nFatal error: Maximum execution time of 30+2 seconds exceeded (terminated) in Unknown on line 0\n```\n\n`zend.exception_ignore_args`bool\n\nВиключає аргументи трасування стека, згенерованих з винятків.\n\n`zend.multibyte`bool\n\nДозволяє парсинг вихідних файлів у багатобайтні кодування. Включення zend.multibyte потрібно для використання кодувань символів подібних до SJIS, BIG5 і т.д., що містять спеціальні символи в багатобайтних рядкових даних. Сумісні з ISO-8859-1 кодування, наприклад UTF-8, EUC тощо, не потребують цієї опції.\n\nМодуль zend.multibyte вимагає модуля \"mbstring\".\n\n`zend.script_encoding`string\n\nЦе значення буде використано лише за відсутності директиви [declare(encoding=...)](control-structures.declare.md#control-structures.declare.encoding) на початку скрипту. При використанні несумісних кодувань з ISO-8859-1, потрібно використовувати опції і zend.multibyte і zend.script\\_encoding.\n\nЛітеральні рядки мають бути транслітеровані із zend.script\\_encoding у mbstring.internal\\_encoding, якби викликали [mb\\_convert\\_encoding()](function.mb-convert-encoding.md)\n\n`zend.detect_unicode`bool\n\nВизначає, чи потрібно перевіряти BOM (Byte Order Mark, мітка порядку байт) та коректність багатобайтних символів у файлі. Ця перевірка здійснюється до дзвінка [\\_\\_halt\\_compiler()](function.halt-compiler.md). Доступна лише у режимі Zend Multibyte.\n\n`zend.signal_check`bool\n\nВизначає, чи потрібно перевіряти замінені обробники сигналів після завершення скрипта.\n\n`exit_on_timeout`bool\n\nЦя директива є тільки для Apache1 mod\\_php, яка змушує нащадка Apache завершитись, якщо перевищено час очікування виконання скрипту PHP. Перевищення часу очікування призводить до внутрішнього виклику longjmp() Apache1, який залишає деякі модулі в неузгодженому стані. Після завершення процесу всі незняті блокування або пам'ять буде очищено.\n\n## Обмеження ресурсів\n\n**Обмеження ресурсів**\n\n| Имя | По умолчанию | Место изменения | Список изменений |\n| --- | --- | --- | --- |\n| [memory\\_limit](ini.core.md#ini.memory-limit) | \"128M\" | **`INI_ALL`** |  |\n\nКоротке пояснення конфігураційних директив.\n\n`memory_limit`int\n\nЦя директива визначає максимальний обсяг пам'яті в байтах, який дозволяється використовувати скрипту. Це допомагає запобігти ситуації, коли погано написаний скрипт з'їдає всю доступну пам'ять сервера. Для того, щоб усунути обмеження, встановіть значення цієї директиви в `-1`\n\nЯкщо вказано ціле значення (int), обсяг вимірюється байтами. Можна також використовувати скорочений запис, який описано в [у цьому розділі FAQ](faq.using.md#faq.using.shorthandbytes)\n\nСмотрите также:[max\\_execution\\_time](info.configuration.md#ini.max-execution-time)\n\n## Налаштування продуктивності\n\n**Налаштування продуктивності**\n\n| Имя | По умолчанию | Место изменения | Список изменений |\n| --- | --- | --- | --- |\n| [realpath\\_cache\\_size](ini.core.md#ini.realpath-cache-size) | \"4M\" | **`INI_SYSTEM`** | До PHP 7.0.16 та 7.1.2, за умовчанням було `\"16K\"` |\n| [realpath\\_cache\\_ttl](ini.core.md#ini.realpath-cache-ttl) | \"120\" | **`INI_SYSTEM`** |  |\n\n\u003e **Зауваження** :\n\u003e \n\u003e Использование[open\\_basedir](ini.core.md#ini.open-basedir) *відключить*кеш realpath.\n\nКоротке пояснення конфігураційних директив.\n\n`realpath_cache_size`int\n\nВизначає розмір кеша realpath, що використовується в PHP. Це значення має бути збільшено на системах, в яких PHP відкриває велику кількість файлів відповідно до кількості виконуваних файлових операцій.\n\nРозмір дорівнює загальному числу байт, що зберігається в рядках шляхів, плюс розмір даних пов'язаних з елементом, що кешується. Це означає, що для зберігання довгих шляхів у кеші, розмір цього кешу має бути більшим. Це значення не визначає безпосередньо кількість різних шляхів, які можуть бути закешовані.\n\nРозмір, необхідний кешування, залежить від системи.\n\n`realpath_cache_ttl`int\n\nЧас (в секундах) протягом якого буде використаний кеш realpath для вказаного файлу або директорії. Для систем з файлами, що рідко змінюються, це значення можна збільшити.\n\n## Обробка даних\n\n**Конфігураційні опції обробки даних**\n\n| Имя | По умолчанию | Место изменения | Список изменений |\n| --- | --- | --- | --- |\n| [arg\\_separator.output](ini.core.md#ini.arg-separator.output) | \"\u0026\" | **`INI_ALL`** |  |\n| [arg\\_separator.input](ini.core.md#ini.arg-separator.input) | \"\u0026\" | **`INI_PERDIR`** |  |\n| [variables\\_order](ini.core.md#ini.variables-order) | \"EGPCS\" | **`INI_PERDIR`** |  |\n| [request\\_order](ini.core.md#ini.request-order) | \"\" | **`INI_PERDIR`** |  |\n| [auto\\_globals\\_jit](ini.core.md#ini.auto-globals-jit) | \"1\" | **`INI_PERDIR`** |  |\n| [register\\_argc\\_argv](ini.core.md#ini.register-argc-argv) | \"1\" | **`INI_PERDIR`** |  |\n| [enable\\_post\\_data\\_reading](ini.core.md#ini.enable-post-data-reading) | \"1\" | **`INI_PERDIR`** |  |\n| [post\\_max\\_size](ini.core.md#ini.post-max-size) | \"8M\" | **`INI_PERDIR`** |  |\n| [auto\\_prepend\\_file](ini.core.md#ini.auto-prepend-file) | NULL | **`INI_PERDIR`** |  |\n| [auto\\_append\\_file](ini.core.md#ini.auto-append-file) | NULL | **`INI_PERDIR`** |  |\n| [default\\_mimetype](ini.core.md#ini.default-mimetype) | \"text/html\" | **`INI_ALL`** |  |\n| [default\\_charset](ini.core.md#ini.default-charset) | \"UTF-8\" | **`INI_ALL`** |  |\n| [input\\_encoding](ini.core.md#ini.input-encoding) | \"\" | **`INI_ALL`** |  |\n| [output\\_encoding](ini.core.md#ini.output-encoding) | \"\" | **`INI_ALL`** |  |\n| [internal\\_encoding](ini.core.md#ini.internal-encoding) | \"\" | **`INI_ALL`** |  |\n\nКоротке пояснення конфігураційних директив.\n\n`arg_separator.output`string\n\nЦей роздільник використовується в генерованих PHP URL як роздільник аргументів.\n\n`arg_separator.input`string\n\nСписок роздільників, що використовуються PHP для отримання змінних із URL.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Кожен символ у цій директиві вважається роздільником!\n\n`variables_order`string\n\nВстановлює порядок обробки змінних EGPCS (`E`nvironment,`G`et,`P`ost,`C`ookie, и`S`server). Наприклад, якщо variables\\_order установлена в`\"SP\"`, то PHP створить [superglobals](language.variables.predefined.md) [$\\_SERVER](reserved.variables.server.md) і [$\\_POST](reserved.variables.post.md), але не буде створювати [$\\_ENV](reserved.variables.environment.md) [$\\_GET](reserved.variables.get.md) і [$\\_COOKIE](reserved.variables.cookies.md). . Установка в \"\" означає, що жодна [superglobals](language.variables.predefined.md)не будет установлена.\n\n**Увага**\n\nУ CGI та FastCGI SAPI, [$\\_SERVER](reserved.variables.server.md) також додаються значення змінних оточення; `S` завжди еквівалентна `ES`вне зависимости от самого положения`E` у цій директиві.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Ця директива також впливає на вміст та порядок змінної [$\\_REQUEST](reserved.variables.request.md)\n\n`request_order`string\n\nЦя директива регулює порядок, в якому PHP додає змінні GET, POST та Cookie до масиву. \\_REQUEST. Додавання проводиться ліворуч, нові значення перезаписують старі.\n\nЯкщо значення цієї директиви не встановлено, використовується значення директиви [variables\\_order](ini.core.md#ini.variables-order)для содержимого переменной[$\\_REQUEST](reserved.variables.request.md)\n\nЗверніть увагу, що файли php.ini, що поставляються з дистрибутивом, з міркувань безпеки не містять значення `'C'`(cookies).\n\n`auto_globals_jit`bool\n\nКоли увімкнено, змінні SERVER, REQUEST та ENV створюються в той момент, коли вони вперше використовуються (Just In Time), а не на початку виконання скрипту. Якщо ці змінні у скрипті не використовуються, включення цієї директиви призведе до зростання продуктивності.\n\n**Увага**\n\nВикористання змінних SERVER, REQUEST та ENV перевіряється на стадії компіляції, тому їх використання за допомогою, наприклад, [змінних змінних](language.variables.variable.md)не запустит их инициализацию.\n\n`register_argc_argv`bool\n\nПовідомляє PHP, чи слід оголошувати змінні argv та argc (які міститимуть GET-інформацію). Дивіться також [Використання PHP у командному рядку](features.commandline.md)\n\n`enable_post_data_reading`bool\n\nПри відключенні цієї опції суперглобальні змінні [$\\_POST](reserved.variables.post.md) і [$\\_FILES](reserved.variables.files.md) *не будуть* заповнюватись. Єдиним способом прочитати POST-дані буде читання обгортки потоку [php://input](wrappers.php.md). Це може бути корисним при проксуванні запитів або обробки POST-даних способом, що більш ефективно використовує пам'ять.\n\n`post_max_size`int\n\nВстановлює максимально допустимий розмір даних, які надсилаються методом POST. Це також впливає на завантаження файлів. Для завантаження великих файлів це значення має бути більшим за значення директиви [upload\\_max\\_filesize](ini.core.md#ini.upload-max-filesize). В сутності, [memory\\_limit](ini.core.md#ini.memory-limit) має бути більше ніж `post_max_size`. Якщо вказано ціле значення (int), обсяг вимірюється байтами. Можна також використовувати скорочений запис, який описано в [у цьому розділі FAQ](faq.using.md#faq.using.shorthandbytes). Якщо розмір POST даних більше ніж post\\_max\\_size,[суперглобальні змінні](language.variables.superglobals.md) [$\\_POST](reserved.variables.post.md) і [$\\_FILES](reserved.variables.files.md) будуть порожніми. Це можна відстежити у різний спосіб, наприклад передавши [$\\_GET](reserved.variables.get.md) змінну скрипт, який обробляє дані, тобто . `\u003cform action=\"edit.php?processed=1\"\u003e`, а затем проверить, установлена ли переменная[$\\_GET\\['processed'\\]](reserved.variables.get.md)\n\n\u003e **Зауваження** :\n\u003e \n\u003e PHP дозволяє скорочення значень байтів, включаючи K (кіло), M (мега) та G (гіга). PHP автоматично перетворює всі ці скорочення. Будьте обережні з перевищенням діапазону 32-бітових цілих значень (якщо ви використовуєте 32-бітну версію), оскільки це призведе до помилки вашого скрипту.\n\n**Список изменений`post_max_size`**\n\n| Версия | Опис |\n| --- | --- |\n| 5.3.4 | Встановлення `post_max_size` = 0 не знімає обмеження, якщо контент має тип application/x-www-form-urlencoded або не зареєстрований у PHP. |\n| 5.3.2 , 5.2.12 | Стало можливим зняти обмеження на розмір пост-запиту установкою `post_max_size` 0. |\n\n`auto_prepend_file`string\n\nВизначає ім'я файлу, який автоматично оброблятиметься перед основним файлом. Файл викликається так, ніби він був підключений за допомогою функції [require](function.require.md), так що [include\\_path](ini.core.md#ini.include-path)также используется.\n\nСпециальное значение`none` відключає цю директиву.\n\n`auto_append_file`string\n\nВизначає ім'я файлу, який автоматично оброблятиметься після основного файлу. Файл викликається так, ніби він був підключений за допомогою функції [require](function.require.md), так що [include\\_path](ini.core.md#ini.include-path) також використовується.\n\nСпециальное значение`none` відключає цю директиву.\n\n\u003e **Зауваження**: Якщо скрипт завершує роботу за допомогою [exit()](function.exit.md), auto-append*НЕ* виконується.\n\n`default_mimetype`string\n\nЗа промовчанням PHP виводить назву кодування в заголовку Content-Type. Якщо не потрібно передавати кодування, просто залиште цю опцію порожньою.\n\n\"media type\" за замовчуванням встановлено як \"text/html\".\n\n`default_charset`string\n\n\"UTF-8\" є значенням за промовчанням і використовується як кодування за промовчанням для функцій [htmlentities()](function.mdentities.md) [html\\_entity\\_decode()](function.md-entity-decode.md) і [htmlspecialchars()](function.mdspecialchars.md), якщо параметр `encoding`не указан. Значение`default_charset` також використовується для вказівки кодування за промовчанням для функцій [iconv](book.iconv.md)якщо конфігураційні опції [`iconv.input_encoding`](iconv.configuration.md#ini.iconv.input-encoding) [`iconv.output_encoding`](iconv.configuration.md#ini.iconv.output-encoding) і [`iconv.internal_encoding`](iconv.configuration.md#ini.iconv.internal-encoding) не встановлені, і для функцій [mbstring](book.mbstring.md), якщо не встановлено [`mbstring.http_input`](mbstring.configuration.md#ini.mbstring.http-input) [`mbstring.http_output`](mbstring.configuration.md#ini.mbstring.http-output) [`mbstring.internal_encoding`](mbstring.configuration.md#ini.mbstring.internal-encoding)\n\nУсі версії PHP використовують це значення як кодування для стандартного заголовка Content-Type, що надсилається PHP, якщо цей заголовок не перевизначений викликом функції [header()](function.header.md)\n\nНе рекомендуется устанавливать`default_charset`в пустое значение.\n\n`input_encoding`string\n\nЦя опція використовується для багатобайтних модулів, таких як mbstring та iconv. За промовчанням порожньо.\n\n`output_encoding`string\n\nЦя опція використовується для багатобайтних модулів, таких як mbstring та iconv. За промовчанням порожньо.\n\n`internal_encoding`string\n\nЦя опція використовується для багатобайтних модулів, таких як mbstring та iconv. За промовчанням порожньо. У цьому випадку використовується [default\\_charset](ini.core.md#ini.default-charset)\n\n## Шляхи та Директорії\n\n**Конфігураційні Опції Шляхів та Директорій**\n\n| Имя | По умолчанию | Место изменения | Список изменений |\n| --- | --- | --- | --- |\n| [include\\_path](ini.core.md#ini.include-path) | \".;/path/to/php/pear\" | **`INI_ALL`** |  |\n| [open\\_basedir](ini.core.md#ini.open-basedir) | NULL | **`INI_ALL`** |  |\n| [doc\\_root](ini.core.md#ini.doc-root) | NULL | **`INI_SYSTEM`** |  |\n| [user\\_dir](ini.core.md#ini.user-dir) | NULL | **`INI_SYSTEM`** |  |\n| [user\\_ini.cache\\_ttl](ini.core.md#ini.user-ini.cache-ttl) | \"300\" | **`INI_SYSTEM`** |  |\n| [user\\_ini.filename](ini.core.md#ini.user-ini.filename) | \".user.ini\" | **`INI_SYSTEM`** |  |\n| [extension\\_dir](ini.core.md#ini.extension-dir) | \"/path/to/php\" | **`INI_SYSTEM`** |  |\n| [extension](ini.core.md#ini.extension) | NULL | Тільки php.ini |  |\n| [zend\\_extension](ini.core.md#ini.zend-extension) | NULL | Тільки php.ini |  |\n| [cgi.check\\_shebang\\_line](ini.core.md#ini.cgi.check-shebang-line) | \"1\" | **`INI_SYSTEM`** |  |\n| [cgi.discard\\_path](ini.core.md#ini.cgi.discard-path) | \"0\" | **`INI_SYSTEM`** |  |\n| [cgi.fix\\_pathinfo](ini.core.md#ini.cgi.fix-pathinfo) | \"1\" | **`INI_SYSTEM`** |  |\n| [cgi.force\\_redirect](ini.core.md#ini.cgi.force-redirect) | \"1\" | **`INI_SYSTEM`** |  |\n| [cgi.nph](ini.core.md#ini.cgi.nph) | \"0\" | **`INI_SYSTEM`** |  |\n| [cgi.redirect\\_status\\_env](ini.core.md#ini.cgi.redirect-status-env) | NULL | **`INI_SYSTEM`** |  |\n| [cgi.rfc2616\\_headers](ini.core.md#ini.cgi.rfc2616-headers) | \"0\" | **`INI_ALL`** |  |\n| [fastcgi.impersonate](ini.core.md#ini.fastcgi.impersonate) | \"0\" | **`INI_SYSTEM`** |  |\n| [fastcgi.logging](ini.core.md#ini.fastcgi.logging) | \"1\" | **`INI_SYSTEM`** |  |\n\nКоротке пояснення конфігураційних директив.\n\n`include_path`string\n\nВказує список директорій, у яких функції [require](function.require.md) [include](function.include.md) [fopen()](function.fopen.md) [file()](function.file.md) [readfile()](function.readfile.md) і [file\\_get\\_contents()](function.file-get-contents.md) шукають файли Формат відповідає формату системної змінної оточення PATH: список директорій, розділених двокрапкою в Unix або крапкою з комою у Windows.\n\nПри пошуку файлів, що підключаються, PHP окремо розглядає кожне значення в include\\_path. Він перевіряє перший шлях, якщо файл у ньому не знайдений, то він переходить до наступного, і так до тих пір, поки не знайде файл, що підключається, або поверне **`E_WARNING`** або **`E_ERROR`**. Ви можете змінити ваш include\\_path під час виконання скрипту за допомогою функції [set\\_include\\_path()](function.set-include-path.md)\n\n**Приклад #1 include\\_path в Unix**\n\ninclude\\_path=\".:/php/includes\"\n\n**Приклад #2 include\\_path у Windows**\n\ninclude\\_path=\".;c:\\\\php\\\\includes\"\n\nИспользование в include\\_path дозволяє задавати відносні шляхи для підключення файлів, оскільки точка означає поточну директорію. Однак, більш ефективно використовувати `include './file'`чим змушувати PHP щоразу перевіряти поточну директорію при підключенні кожного файлу.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Змінні оточення (`ENV`) також доступні в .ini файлах. Таким чином, можна посилатися на домашню директорію за допомогою директив `${LOGIN}`и`${USER}`\n\u003e \n\u003e Змінні оточення можуть відрізнятися між різними серверними API, оскільки самі оточення відрізняються один від одного.\n\n**Приклад #3 Налаштування include\\_path за допомогою змінної оточення ${USER} в Unix**\n\ninclude\\_path = \".:${USER}/pear/php\"\n\n`open_basedir`string\n\nОбмежує зазначеним деревом каталогів файли, які можуть бути доступні для PHP, включаючи файл.\n\nКоли скрипт намагається отримати доступ до файлу, наприклад, за допомогою функції [fopen()](function.fopen.md) або [gzopen()](function.gzopen.md), перевіряється місцезнаходження файлу. Якщо файл знаходиться поза вказаним деревом каталогів, PHP відмовиться його відкривати. Всі символічні посилання будуть розкриті, так що за їх допомогою не вдасться обійти це обмеження. Якщо файл не існує, то символічне посилання не може бути прочитане і ім'я файлу (прочитане) буде розглядатися **open\\_basedir**\n\nОпция**open\\_basedir** може поширюватися як на функції до роботи з файлової системою; наприклад, якщо `MySQL` налаштований використовувати драйвер `mysqlnd`, то`LOAD DATA INFILE`подпадает под опцию**open\\_basedir**. Безліч функцій PHP також використовує `open_basedir`\n\nСпециальное значение позначає, що робоча директорія скрипта буде використана як базова директорія. Однак це трохи небезпечно, так як поточна директорія скрипту може бути легко змінена за допомогою [chdir()](function.chdir.md)\n\nВ httpd.conf,**open\\_basedir** може бути вимкнена (наприклад, для деяких віртуальних хостів) [тим же способом](configuration.changes.md#configuration.changes.apache), як і будь-яка інша конфігураційна директива: \"`php_admin_value open_basedir none`\".\n\nУ Windows розділяйте каталоги крапкою з комою. На всіх інших системах, розділяйте директорії двокрапкою. При роботі в якості модуля Apache, шляхи **open\\_basedir** автоматично успадковуються від батьківських директорій.\n\nОграничение, определяемое**open\\_basedir** є ім'ям директорії, а чи не префіксом.\n\nЗа промовчанням всі файли можуть бути відкриті.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Значення open\\_Basedir можна зробити суворішим під час виконання скрипту. Це означає, що якщо open\\_basedir була встановлена ​​в `/www/` в php.ini, то скрипт може утиснути конфігурацію до `/www/tmp/` під час виконання за допомогою [ini\\_set()](function.ini-set.md). При вказівці кількох директорій можна використовувати константу **`PATH_SEPARATOR`** як роздільник шляхів, який залежить від операційної системи.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Використання опції open\\_basedir установит[realpath\\_cache\\_size](ini.core.md#ini.realpath-cache-size)на значение и таким образом*відключить*кеш realpath.\n\n**Застереження**\n\n`open_basedir` - це просто додаткове підстрахування, яке аж ніяк не є всеосяжним і тому на нього не можна покладатися, коли йдеться про безпеку.\n\n`doc_root`string\n\nКоренева директорія PHP на цьому сервері. Використовується лише у випадку, якщо не пуста. Якщо PHP не був скомпільований з FORCE\\_REDIRECT, вам*слід*установить doc\\_root, якщо ви використовуєте PHP як CGI під будь-яким веб-сервером (крім IIS). Альтернативою є використання конфігураційної директиви [cgi.force\\_redirect](ini.core.md#ini.cgi.force-redirect), Мова про яку йде нижче.\n\n`user_ini.cache_ttl`int\n\n`user_ini.filename`string\n\n`user_dir`string\n\nБазове ім'я директорії, що використовується в домашньому каталозі користувача для файлів PHP, наприклад, public\\_html.\n\n`extension_dir`string\n\nУ якій директорії PHP повинен шукати модулі, що динамічно завантажуються. Рекомендується вказувати абсолютний шлях. Дивіться також: [enable\\_dl](info.configuration.md#ini.enable-dl) і [dl()](function.dl.md)\n\n`extension`string\n\nЯкі модулі, що динамічно завантажуються, повинні бути завантажені при старті PHP.\n\n`zend_extension`string\n\nІм'я модуля Zend (наприклад, XDebug), що динамічно завантажується, який повинен бути завантажений при старті PHP.\n\n`cgi.check_shebang_line`bool\n\nКонтролює, чи потрібно перевіряти перший рядок CGI PHP-скрипту на зміст `#!` (Shebang). Цей рядок може бути необхідним, якщо скрипт повинен підтримувати як окремий запуск, так і за допомогою PHP CGI. PHP у режимі CGI пропускає цей рядок і ігнорує його вміст, якщо ця директива включена.\n\n`cgi.discard_path`bool\n\nЯкщо дозволено, бінарний файл PHP CGI може безпечно розташовуватися поза веб-деревом і люди не зможуть обійти безпеку .htaccess.\n\n`cgi.fix_pathinfo`bool\n\nЗабезпечує підтримку *правильних* `PATH_INFO` `PATH_TRANSLATED`в CGI. Раньше PHP просто устанавливал`PATH_TRANSLATED`в`SCRIPT_FILENAME`и не обращал внимания на`PATH_INFO`. Для отримання додаткової інформації про `PATH_INFO`зверніться до специфікації CGI. Встановлення цього значення змусить PHP CGI виправляти свій шлях відповідно до специфікації. Значення 0 відповідає попередньому поведінці. За замовчуванням опція увімкнена. Ви повинні виправити свої скрипти так, щоб вони використовували `SCRIPT_FILENAME` замість `PATH_TRANSLATED`\n\n`cgi.force_redirect`bool\n\nДиректива cgi.force\\_redirect необхідна для забезпечення безпеки під час роботи PHP як CGI під більшістю веб-серверів. Якщо залишити її невизначеною, PHP включає цю директиву. Ви можете вимкнути її *на свій страх і ризик*\n\n\u003e **Зауваження** :\n\u003e \n\u003e Користувачам Windows: У разі використання IIS ця опція *повинна* бути вимкнена. Те саме необхідно для OmniHTTPD і Xitami.\n\n`cgi.nph`bool\n\nЯкщо cgi.nph дозволена, cgi примусово повертатиме код 200 на кожен запит.\n\n`cgi.redirect_status_env`string\n\nЯкщо cgi.force\\_redirect включено і ви працюєте не під веб-сервером Apache або Netscape (iPlanet), вам *може* знадобиться встановити змінну оточення, яку шукатиме PHP щоб переконатися, що він може продовжувати виконання.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Встановлення цієї змінної *може* спричинити проблеми з безпекою, так що *ви повинні знати, що ви робите*\n\n`cgi.rfc2616_headers`int\n\nПовідомляє PHP, який тип заголовків використовувати при надсиланні коду відповіді HTTP. Якщо встановлено 0, PHP відправляє [» RFC 3875](http://www.faqs.org/rfcs/rfc3875) заголовок \"Status:\", який підтримується Apache та іншими веб-серверами. Якщо встановлено в 1, PHP надсилає заголовки, відповідні [» RFC 2616](http://www.faqs.org/rfcs/rfc2616)\n\nЯкщо ця опція включена і ви використовуєте PHP в оточенні CGI (наприклад, PHP-FPM), замість використання HTTP-заголовків відповіді в стилі RFC 2616, потрібно використовувати їх еквівалент зі стандарту RFC 3875, наприклад, замість header(\"HTTP/1.0 404 Not found\"); потрібно використовувати header(\"Status: 404 Not Found\");\n\nЗалиште значення 0, якщо ви не впевнені в тому, що це означає.\n\n`fastcgi.impersonate`string\n\nFastCGI під IIS (в ОС на базі WINNT) підтримує можливість імперсонації прав безпеки клієнта, що викликає. Це дозволяє IIS визначити контекст безпеки, у якому виконується запит. mod\\_fastcgi під Apache на даний момент не підтримує цю можливість (03/17/2002). Встановіть 1 під час роботи під IIS. Значення за замовчуванням – нуль.\n\n`fastcgi.logging`bool\n\nВключає логування SAPI під час використання FastCGI. Логування увімкнено за замовчуванням.\n\n## Закачування файлів\n\n**Конфігураційні Опції Закачування файлів**\n\n| Имя | По умолчанию | Место изменения | Список изменений |\n| --- | --- | --- | --- |\n| [file\\_uploads](ini.core.md#ini.file-uploads) | \"1\" | **`INI_SYSTEM`** |  |\n| [upload\\_tmp\\_dir](ini.core.md#ini.upload-tmp-dir) | NULL | **`INI_SYSTEM`** |  |\n| [max\\_input\\_nesting\\_level](info.configuration.md#ini.max-input-nesting-level) | 64 | **`INI_PERDIR`** |  |\n| [max\\_input\\_vars](info.configuration.md#ini.max-input-vars) | 1000 | **`INI_PERDIR`** |  |\n| [upload\\_max\\_filesize](ini.core.md#ini.upload-max-filesize) | \"2M\" | **`INI_PERDIR`** |  |\n| [max\\_file\\_uploads](ini.core.md#ini.max-file-uploads) | 20 | **`INI_PERDIR`** |  |\n\nКоротке пояснення конфігураційних директив.\n\n`file_uploads`bool\n\nДозволяти чи не дозволяти [закачування файлів](features.file-upload.md). Дивіться також директиви [upload\\_max\\_filesize](ini.core.md#ini.upload-max-filesize) [upload\\_tmp\\_dir](ini.core.md#ini.upload-tmp-dir) і [post\\_max\\_size](ini.core.md#ini.post-max-size)\n\n`upload_tmp_dir`string\n\nТимчасова директорія, що використовується для зберігання файлів під час закачування. Має бути доступною для запису користувачеві, від імені якого запущено PHP. Якщо не вказано, використовується каталог за промовчанням для вашої системи.\n\nЯкщо до зазначеної директорії немає прав на запис, PHP відкотиться назад до системної тимчасової директорії, яка використовується за умовчанням. Якщо увімкнено директиву [open\\_basedir](ini.core.md#ini.open-basedir), то для успішного завантаження файлів системна директорія за умовчанням має бути дозволена.\n\n`upload_max_filesize`int\n\nМаксимальний розмір файлу, що закачується.\n\n[post\\_max\\_size](ini.core.md#ini.post-max-size) має бути більше, ніж це значення.\n\nЯкщо вказано ціле значення (int), обсяг вимірюється байтами. Можна також використовувати скорочений запис, який описано в [у цьому розділі FAQ](faq.using.md#faq.using.shorthandbytes)\n\n`max_file_uploads`int\n\nМаксимально дозволена кількість файлів, що одночасно закачуються. Порожні поля завантаження не розглядаються цим обмеженням.\n\n## Загальний SQL\n\n**Конфігураційні Опції Загального SQL**\n\n| Имя | По умолчанию | Место изменения | Список изменений |\n| --- | --- | --- | --- |\n| [sql.safe\\_mode](ini.core.md#ini.sql.safe-mode) | \"0\" | **`INI_SYSTEM`** | Видалено в PHP 7.2.0 |\n\nКоротке пояснення конфігураційних директив.\n\n`sql.safe_mode`bool\n\nЯкщо увімкнено, функції з'єднання з базою даних, що використовують значення за замовчуванням, будуть використовувати ці значення замість будь-яких аргументів, що передаються. Для значень за замовчуванням дивіться документацію щодо функцій підключення відповідної бази даних.\n\n**Увага**\n\nЦя опція *ВИДАЛЕНО* у PHP 7.2.0.\n\n## Особливі налаштування для Windows\n\n**Особливі опції конфігурації для Windows**\n\n| Имя | По умолчанию | Место изменения | Список изменений |\n| --- | --- | --- | --- |\n| [windows.show\\_crt\\_warning](ini.core.md#ini.windows-show-crt-warning) | \"0\" | **`INI_ALL`** |  |\n\nКоротке пояснення конфігураційних директив.\n\n`windows.show_crt_warning`bool\n\nПри ввімкненні цієї директиви буде відображено попередження Windows CRT.\n","title":"Опис вбудованих директив php.ini","contentType":2,"navigation":[{"ini.sections.md":"« Список розділів php.ini"},{"extensions.md":"Список/класифікація модулів »"},{"index.md":"PHP Manual"},{"ini.md":"Директиви php.ini"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"ini.core.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

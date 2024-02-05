@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас ReflectionClass</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="reflection.getmodifiernames.md" class="mx-4">« Reflection::getModifierNames</a><a href="reflectionclass.construct.md" class="mx-4">ReflectionClass::\_\_construct »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.reflection.md" class="mx-4">Reflection</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас ReflectionClass</h1>
+<p>(PHP 5, PHP 7, PHP 8)</p>
+<h2>Вступ</h2>
+<p>Класс<strong>ReflectionClass</strong>сообщает информацию о классе.</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+    
+     class ReflectionClass
+    
+
+    
+     implements
+      Reflector {
+
+    /* Константы */
+    
+     public
+     const
+     int
+      IS_IMPLICIT_ABSTRACT;
+
+    public
+     const
+     int
+      IS_EXPLICIT_ABSTRACT;
+
+    public
+     const
+     int
+      IS_FINAL;
+
+    public
+     const
+     int
+      IS_READONLY;
+
+
+    /* Свойства */
+    public
+     string
+      $name;
+
+
+    /* Методы */
+    
+   public __construct(object|string $objectOrClass)
+
+    public static export(mixed $argument, bool $return = false): string
+public getAttributes(?string $name = null, int $flags = 0): array
+public getConstant(string $name): mixed
+public getConstants(?int $filter = null): array
+public getConstructor(): ?ReflectionMethod
+public getDefaultProperties(): array
+public getDocComment(): string|false
+public getEndLine(): int|false
+public getExtension(): ?ReflectionExtension
+public getExtensionName(): string|false
+public getFileName(): string|false
+public getInterfaceNames(): array
+public getInterfaces(): array
+public getMethod(string $name): ReflectionMethod
+public getMethods(?int $filter = null): array
+public getModifiers(): int
+public getName(): string
+public getNamespaceName(): string
+public getParentClass(): ReflectionClass|false
+public getProperties(?int $filter = null): array
+public getProperty(string $name): ReflectionProperty
+public getReflectionConstant(string $name): ReflectionClassConstant|false
+public getReflectionConstants(?int $filter = null): array
+public getShortName(): string
+public getStartLine(): int|false
+public getStaticProperties(): array
+public getStaticPropertyValue(string $name, mixed &amp;$def_value = ?): mixed
+public getTraitAliases(): array
+public getTraitNames(): array
+public getTraits(): array
+public hasConstant(string $name): bool
+public hasMethod(string $name): bool
+public hasProperty(string $name): bool
+public implementsInterface(ReflectionClass|string $interface): bool
+public inNamespace(): bool
+public isAbstract(): bool
+public isAnonymous(): bool
+public isCloneable(): bool
+public isEnum(): bool
+public isFinal(): bool
+public isInstance(object $object): bool
+public isInstantiable(): bool
+public isInterface(): bool
+public isInternal(): bool
+public isIterable(): bool
+public isReadOnly(): bool
+public isSubclassOf(ReflectionClass|string $class): bool
+public isTrait(): bool
+public isUserDefined(): bool
+public newInstance(mixed ...$args): object
+public newInstanceArgs(array $args = []): ?object
+public newInstanceWithoutConstructor(): object
+public setStaticPropertyValue(string $name, mixed $value): void
+public __toString(): string
+
+   }
+</code></pre>
+<h2>Властивості</h2>
+<p>name</p>
+<p>Назва класу. Доступно тільки для читання та викидає виняток <a href="class.reflectionexception.md">ReflectionException</a> під час спроби запису.</p>
+<h2>Обумовлені константи</h2>
+<h2>Модифікатори ReflectionClass</h2>
+<p><strong><code>ReflectionClass::IS_IMPLICIT_ABSTRACT</code></strong></p>
+<p>Вказує, що клас є <a href="language.oop5.abstract.md">абстрактним</a>тому, що він містить абстрактні методи.</p>
+<p><strong><code>ReflectionClass::IS_EXPLICIT_ABSTRACT</code></strong></p>
+<p>Вказує, що клас є <a href="language.oop5.abstract.md">абстрактним</a>тому що так зазначено при його описі.</p>
+<p><strong><code>ReflectionClass::IS_FINAL</code></strong></p>
+<p>Вказує, що клас є <a href="language.oop5.final.md">остаточним (final)</a></p>
+<p><strong><code>ReflectionClass::IS_READONLY</code></strong></p>
+<p>Вказує, що клас є <a href="language.oop5.basic.md#language.oop5.basic.class.readonly">readonly</a></p>
+<h2>список змін</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>8.0.0</td><td>Метод<a href="reflectionclass.export.md">ReflectionClass::export()</a>був видалений.</td></tr></tbody></table>
+<h2>Зміст</h2>
+<ul>
+<li><a href="reflectionclass.construct.md">ReflectionClass::__construct</a>— Створює об&#x27;єкт класу ReflectionClass</li>
+<li><a href="reflectionclass.export.md">ReflectionClass::export</a> - Експортує клас</li>
+<li><a href="reflectionclass.getattributes.md">ReflectionClass::getAttributes</a>— Отримує атрибути</li>
+<li><a href="reflectionclass.getconstant.md">ReflectionClass::getConstant</a>— Повертає певну константу</li>
+<li><a href="reflectionclass.getconstants.md">ReflectionClass::getConstants</a>— Повертає константи</li>
+<li><a href="reflectionclass.getconstructor.md">ReflectionClass::getConstructor</a> - Повертає конструктор класу</li>
+<li><a href="reflectionclass.getdefaultproperties.md">ReflectionClass::getDefaultProperties</a>— Повертає властивості за промовчанням</li>
+<li><a href="reflectionclass.getdoccomment.md">ReflectionClass::getDocComment</a>— Повертає doc-блоки коментарів</li>
+<li><a href="reflectionclass.getendline.md">ReflectionClass::getEndLine</a>— Повертає номер останнього рядка</li>
+<li><a href="reflectionclass.getextension.md">ReflectionClass::getExtension</a>— Повертає об&#x27;єкт класу ReflectionExtension для модуля, що визначає клас</li>
+<li><a href="reflectionclass.getextensionname.md">ReflectionClass::getExtensionName</a> - Повертає ім&#x27;я модуля, що визначає клас</li>
+<li><a href="reflectionclass.getfilename.md">ReflectionClass::getFileName</a>— Повертає ім&#x27;я файлу, у якому визначено клас</li>
+<li><a href="reflectionclass.getinterfacenames.md">ReflectionClass::getInterfaceNames</a>— Повертає імена інтерфейсів</li>
+<li><a href="reflectionclass.getinterfaces.md">ReflectionClass::getInterfaces</a>— Повертає інтерфейси</li>
+<li><a href="reflectionclass.getmethod.md">ReflectionClass::getMethod</a>— Повертає екземпляр ReflectionMethod для методу класу</li>
+<li><a href="reflectionclass.getmethods.md">ReflectionClass::getMethods</a>— Повертає список методів у вигляді масиву</li>
+<li><a href="reflectionclass.getmodifiers.md">ReflectionClass::getModifiers</a>— Повертає інформацію про модифікаторів класу</li>
+<li><a href="reflectionclass.getname.md">ReflectionClass::getName</a> - Повертає ім&#x27;я класу</li>
+<li><a href="reflectionclass.getnamespacename.md">ReflectionClass::getNamespaceName</a>— Повертає назву простору імен</li>
+<li><a href="reflectionclass.getparentclass.md">ReflectionClass::getParentClass</a> - Повертає батьківський клас</li>
+<li><a href="reflectionclass.getproperties.md">ReflectionClass::getProperties</a> - Повертає властивості</li>
+<li><a href="reflectionclass.getproperty.md">ReflectionClass::getProperty</a>— Повертає екземпляр ReflectionProperty для якості класу</li>
+<li><a href="reflectionclass.getreflectionconstant.md">ReflectionClass::getReflectionConstant</a>— Отримує ReflectionClassConstant для константи класу</li>
+<li><a href="reflectionclass.getreflectionconstants.md">ReflectionClass::getReflectionConstants</a>— Отримує константи класу</li>
+<li><a href="reflectionclass.getshortname.md">ReflectionClass::getShortName</a> - Повертає коротке ім&#x27;я</li>
+<li><a href="reflectionclass.getstartline.md">ReflectionClass::getStartLine</a>— Повертає номер початкового рядка</li>
+<li><a href="reflectionclass.getstaticproperties.md">ReflectionClass::getStaticProperties</a>— Повертає статичні властивості</li>
+<li><a href="reflectionclass.getstaticpropertyvalue.md">ReflectionClass::getStaticPropertyValue</a>— Повертає значення статичної властивості</li>
+<li><a href="reflectionclass.gettraitaliases.md">ReflectionClass::getTraitAliases</a>— Повертає масив псевдонімів трейтів</li>
+<li><a href="reflectionclass.gettraitnames.md">ReflectionClass::getTraitNames</a>— Повертає масив імен трейтів, які використовуються у цьому класі</li>
+<li><a href="reflectionclass.gettraits.md">ReflectionClass::getTraits</a>— Повертає масив трейтів, які використовуються у цьому класі.</li>
+<li><a href="reflectionclass.hasconstant.md">ReflectionClass::hasConstant</a>— Перевіряє, чи визначено константу</li>
+<li><a href="reflectionclass.hasmethod.md">ReflectionClass::hasMethod</a>— Перевіряє, чи заданий метод</li>
+<li><a href="reflectionclass.hasproperty.md">ReflectionClass::hasProperty</a>— Перевіряє, чи визначено властивість</li>
+<li><a href="reflectionclass.implementsinterface.md">ReflectionClass::implementsInterface</a>— Перевіряє, чи реалізується інтерфейс</li>
+<li><a href="reflectionclass.innamespace.md">ReflectionClass::inNamespace</a>— Перевіряє, чи визначений клас у просторі імен</li>
+<li><a href="reflectionclass.isabstract.md">ReflectionClass::isAbstract</a>— Перевіряє, чи клас є абстрактним.</li>
+<li><a href="reflectionclass.isanonymous.md">ReflectionClass::isAnonymous</a>— Перевіряє, чи є клас анонімним</li>
+<li><a href="reflectionclass.iscloneable.md">ReflectionClass::isCloneable</a>— Перевіряє, чи можна клонувати цей клас</li>
+<li><a href="reflectionclass.isenum.md">ReflectionClass::isEnum</a>— Повертає, чи є клас перерахуванням</li>
+<li><a href="reflectionclass.isfinal.md">ReflectionClass::isFinal</a>— Перевіряє, чи клас остаточний (final)</li>
+<li><a href="reflectionclass.isinstance.md">ReflectionClass::isInstance</a>— Перевіряє, чи об&#x27;єкт належить класу</li>
+<li><a href="reflectionclass.isinstantiable.md">ReflectionClass::isInstantiable</a>— Перевіряє, чи можна створити екземпляр класу</li>
+<li><a href="reflectionclass.isinterface.md">ReflectionClass::isInterface</a>— Перевіряє, чи клас є інтерфейсом</li>
+<li><a href="reflectionclass.isinternal.md">ReflectionClass::isInternal</a>— Перевіряє, чи є клас вбудованим у модуль чи ядро</li>
+<li><a href="reflectionclass.isiterable.md">ReflectionClass::isIterable</a>— Перевірити, чи клас ітерується.</li>
+<li><a href="reflectionclass.isiterateable.md">ReflectionClass::isIterateable</a> - Псевдонім ReflectionClass::isIterable</li>
+<li><a href="reflectionclass.isreadonly.md">ReflectionClass::isReadOnly</a>— Перевіряє, чи є клас доступним лише для читання</li>
+<li><a href="reflectionclass.issubclassof.md">ReflectionClass::isSubclassOf</a>— Перевіряє, чи є клас підкласом</li>
+<li><a href="reflectionclass.istrait.md">ReflectionClass::isTrait</a>— Перевіряє, чи це є трейтом.</li>
+<li><a href="reflectionclass.isuserdefined.md">ReflectionClass::isUserDefined</a>— Перевіряє, чи є клас для користувача</li>
+<li><a href="reflectionclass.newinstance.md">ReflectionClass::newInstance</a> - Створює екземпляр класу з переданими аргументами</li>
+<li><a href="reflectionclass.newinstanceargs.md">ReflectionClass::newInstanceArgs</a> - Створює екземпляр класу з переданими параметрами</li>
+<li><a href="reflectionclass.newinstancewithoutconstructor.md">ReflectionClass::newInstanceWithoutConstructor</a> - Створює новий екземпляр класу без виклику конструктора</li>
+<li><a href="reflectionclass.setstaticpropertyvalue.md">ReflectionClass::setStaticPropertyValue</a> - Встановлює значення статичної властивості</li>
+<li><a href="reflectionclass.tostring.md">ReflectionClass::__function toString() { [native code] }</a>— Повертає рядкову виставу об&#x27;єкта класу ReflectionClass</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.reflectionclass.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.reflectionclass.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.reflectionclass.md","content":"# Клас ReflectionClass\n\n(PHP 5, PHP 7, PHP 8)\n\n## Вступ\n\nКласс**ReflectionClass**сообщает информацию о классе.\n\n## Огляд класів\n\n```classsynopsis\n\n    \n     class ReflectionClass\n    \n\n    \n     implements\n      Reflector {\n\n    /* Константы */\n    \n     public\n     const\n     int\n      IS_IMPLICIT_ABSTRACT;\n\n    public\n     const\n     int\n      IS_EXPLICIT_ABSTRACT;\n\n    public\n     const\n     int\n      IS_FINAL;\n\n    public\n     const\n     int\n      IS_READONLY;\n\n\n    /* Свойства */\n    public\n     string\n      $name;\n\n\n    /* Методы */\n    \n   public __construct(object|string $objectOrClass)\n\n    public static export(mixed $argument, bool $return = false): string\npublic getAttributes(?string $name = null, int $flags = 0): array\npublic getConstant(string $name): mixed\npublic getConstants(?int $filter = null): array\npublic getConstructor(): ?ReflectionMethod\npublic getDefaultProperties(): array\npublic getDocComment(): string|false\npublic getEndLine(): int|false\npublic getExtension(): ?ReflectionExtension\npublic getExtensionName(): string|false\npublic getFileName(): string|false\npublic getInterfaceNames(): array\npublic getInterfaces(): array\npublic getMethod(string $name): ReflectionMethod\npublic getMethods(?int $filter = null): array\npublic getModifiers(): int\npublic getName(): string\npublic getNamespaceName(): string\npublic getParentClass(): ReflectionClass|false\npublic getProperties(?int $filter = null): array\npublic getProperty(string $name): ReflectionProperty\npublic getReflectionConstant(string $name): ReflectionClassConstant|false\npublic getReflectionConstants(?int $filter = null): array\npublic getShortName(): string\npublic getStartLine(): int|false\npublic getStaticProperties(): array\npublic getStaticPropertyValue(string $name, mixed \u0026$def_value = ?): mixed\npublic getTraitAliases(): array\npublic getTraitNames(): array\npublic getTraits(): array\npublic hasConstant(string $name): bool\npublic hasMethod(string $name): bool\npublic hasProperty(string $name): bool\npublic implementsInterface(ReflectionClass|string $interface): bool\npublic inNamespace(): bool\npublic isAbstract(): bool\npublic isAnonymous(): bool\npublic isCloneable(): bool\npublic isEnum(): bool\npublic isFinal(): bool\npublic isInstance(object $object): bool\npublic isInstantiable(): bool\npublic isInterface(): bool\npublic isInternal(): bool\npublic isIterable(): bool\npublic isReadOnly(): bool\npublic isSubclassOf(ReflectionClass|string $class): bool\npublic isTrait(): bool\npublic isUserDefined(): bool\npublic newInstance(mixed ...$args): object\npublic newInstanceArgs(array $args = []): ?object\npublic newInstanceWithoutConstructor(): object\npublic setStaticPropertyValue(string $name, mixed $value): void\npublic __toString(): string\n\n   }\n```\n\n## Властивості\n\nname\n\nНазва класу. Доступно тільки для читання та викидає виняток [ReflectionException](class.reflectionexception.md) під час спроби запису.\n\n## Обумовлені константи\n\n## Модифікатори ReflectionClass\n\n**`ReflectionClass::IS_IMPLICIT_ABSTRACT`**\n\nВказує, що клас є [абстрактним](language.oop5.abstract.md)тому, що він містить абстрактні методи.\n\n**`ReflectionClass::IS_EXPLICIT_ABSTRACT`**\n\nВказує, що клас є [абстрактним](language.oop5.abstract.md)тому що так зазначено при його описі.\n\n**`ReflectionClass::IS_FINAL`**\n\nВказує, що клас є [остаточним (final)](language.oop5.final.md)\n\n**`ReflectionClass::IS_READONLY`**\n\nВказує, що клас є [readonly](language.oop5.basic.md#language.oop5.basic.class.readonly)\n\n## список змін\n\n| Версия | Опис |\n| --- | --- |\n| 8.0.0 | Метод[ReflectionClass::export()](reflectionclass.export.md)був видалений. |\n\n## Зміст\n\n-   [ReflectionClass::\\_\\_construct](reflectionclass.construct.md)— Створює об'єкт класу ReflectionClass\n-   [ReflectionClass::export](reflectionclass.export.md) \\- Експортує клас\n-   [ReflectionClass::getAttributes](reflectionclass.getattributes.md)— Отримує атрибути\n-   [ReflectionClass::getConstant](reflectionclass.getconstant.md)— Повертає певну константу\n-   [ReflectionClass::getConstants](reflectionclass.getconstants.md)— Повертає константи\n-   [ReflectionClass::getConstructor](reflectionclass.getconstructor.md) \\- Повертає конструктор класу\n-   [ReflectionClass::getDefaultProperties](reflectionclass.getdefaultproperties.md)— Повертає властивості за промовчанням\n-   [ReflectionClass::getDocComment](reflectionclass.getdoccomment.md)— Повертає doc-блоки коментарів\n-   [ReflectionClass::getEndLine](reflectionclass.getendline.md)— Повертає номер останнього рядка\n-   [ReflectionClass::getExtension](reflectionclass.getextension.md)— Повертає об'єкт класу ReflectionExtension для модуля, що визначає клас\n-   [ReflectionClass::getExtensionName](reflectionclass.getextensionname.md) \\- Повертає ім'я модуля, що визначає клас\n-   [ReflectionClass::getFileName](reflectionclass.getfilename.md)— Повертає ім'я файлу, у якому визначено клас\n-   [ReflectionClass::getInterfaceNames](reflectionclass.getinterfacenames.md)— Повертає імена інтерфейсів\n-   [ReflectionClass::getInterfaces](reflectionclass.getinterfaces.md)— Повертає інтерфейси\n-   [ReflectionClass::getMethod](reflectionclass.getmethod.md)— Повертає екземпляр ReflectionMethod для методу класу\n-   [ReflectionClass::getMethods](reflectionclass.getmethods.md)— Повертає список методів у вигляді масиву\n-   [ReflectionClass::getModifiers](reflectionclass.getmodifiers.md)— Повертає інформацію про модифікаторів класу\n-   [ReflectionClass::getName](reflectionclass.getname.md) \\- Повертає ім'я класу\n-   [ReflectionClass::getNamespaceName](reflectionclass.getnamespacename.md)— Повертає назву простору імен\n-   [ReflectionClass::getParentClass](reflectionclass.getparentclass.md) \\- Повертає батьківський клас\n-   [ReflectionClass::getProperties](reflectionclass.getproperties.md) \\- Повертає властивості\n-   [ReflectionClass::getProperty](reflectionclass.getproperty.md)— Повертає екземпляр ReflectionProperty для якості класу\n-   [ReflectionClass::getReflectionConstant](reflectionclass.getreflectionconstant.md)— Отримує ReflectionClassConstant для константи класу\n-   [ReflectionClass::getReflectionConstants](reflectionclass.getreflectionconstants.md)— Отримує константи класу\n-   [ReflectionClass::getShortName](reflectionclass.getshortname.md) \\- Повертає коротке ім'я\n-   [ReflectionClass::getStartLine](reflectionclass.getstartline.md)— Повертає номер початкового рядка\n-   [ReflectionClass::getStaticProperties](reflectionclass.getstaticproperties.md)— Повертає статичні властивості\n-   [ReflectionClass::getStaticPropertyValue](reflectionclass.getstaticpropertyvalue.md)— Повертає значення статичної властивості\n-   [ReflectionClass::getTraitAliases](reflectionclass.gettraitaliases.md)— Повертає масив псевдонімів трейтів\n-   [ReflectionClass::getTraitNames](reflectionclass.gettraitnames.md)— Повертає масив імен трейтів, які використовуються у цьому класі\n-   [ReflectionClass::getTraits](reflectionclass.gettraits.md)— Повертає масив трейтів, які використовуються у цьому класі.\n-   [ReflectionClass::hasConstant](reflectionclass.hasconstant.md)— Перевіряє, чи визначено константу\n-   [ReflectionClass::hasMethod](reflectionclass.hasmethod.md)— Перевіряє, чи заданий метод\n-   [ReflectionClass::hasProperty](reflectionclass.hasproperty.md)— Перевіряє, чи визначено властивість\n-   [ReflectionClass::implementsInterface](reflectionclass.implementsinterface.md)— Перевіряє, чи реалізується інтерфейс\n-   [ReflectionClass::inNamespace](reflectionclass.innamespace.md)— Перевіряє, чи визначений клас у просторі імен\n-   [ReflectionClass::isAbstract](reflectionclass.isabstract.md)— Перевіряє, чи клас є абстрактним.\n-   [ReflectionClass::isAnonymous](reflectionclass.isanonymous.md)— Перевіряє, чи є клас анонімним\n-   [ReflectionClass::isCloneable](reflectionclass.iscloneable.md)— Перевіряє, чи можна клонувати цей клас\n-   [ReflectionClass::isEnum](reflectionclass.isenum.md)— Повертає, чи є клас перерахуванням\n-   [ReflectionClass::isFinal](reflectionclass.isfinal.md)— Перевіряє, чи клас остаточний (final)\n-   [ReflectionClass::isInstance](reflectionclass.isinstance.md)— Перевіряє, чи об'єкт належить класу\n-   [ReflectionClass::isInstantiable](reflectionclass.isinstantiable.md)— Перевіряє, чи можна створити екземпляр класу\n-   [ReflectionClass::isInterface](reflectionclass.isinterface.md)— Перевіряє, чи клас є інтерфейсом\n-   [ReflectionClass::isInternal](reflectionclass.isinternal.md)— Перевіряє, чи є клас вбудованим у модуль чи ядро\n-   [ReflectionClass::isIterable](reflectionclass.isiterable.md)— Перевірити, чи клас ітерується.\n-   [ReflectionClass::isIterateable](reflectionclass.isiterateable.md) \\- Псевдонім ReflectionClass::isIterable\n-   [ReflectionClass::isReadOnly](reflectionclass.isreadonly.md)— Перевіряє, чи є клас доступним лише для читання\n-   [ReflectionClass::isSubclassOf](reflectionclass.issubclassof.md)— Перевіряє, чи є клас підкласом\n-   [ReflectionClass::isTrait](reflectionclass.istrait.md)— Перевіряє, чи це є трейтом.\n-   [ReflectionClass::isUserDefined](reflectionclass.isuserdefined.md)— Перевіряє, чи є клас для користувача\n-   [ReflectionClass::newInstance](reflectionclass.newinstance.md) \\- Створює екземпляр класу з переданими аргументами\n-   [ReflectionClass::newInstanceArgs](reflectionclass.newinstanceargs.md) \\- Створює екземпляр класу з переданими параметрами\n-   [ReflectionClass::newInstanceWithoutConstructor](reflectionclass.newinstancewithoutconstructor.md) \\- Створює новий екземпляр класу без виклику конструктора\n-   [ReflectionClass::setStaticPropertyValue](reflectionclass.setstaticpropertyvalue.md) \\- Встановлює значення статичної властивості\n-   [ReflectionClass::\\_\\_function toString() { \\[native code\\] }](reflectionclass.tostring.md)— Повертає рядкову виставу об'єкта класу ReflectionClass\n","title":"Клас ReflectionClass","contentType":2,"navigation":[{"reflection.getmodifiernames.md":"« Reflection::getModifierNames"},{"reflectionclass.construct.md":"ReflectionClass::\\_\\_construct »"},{"index.md":"PHP Manual"},{"book.reflection.md":"Reflection"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.reflectionclass.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

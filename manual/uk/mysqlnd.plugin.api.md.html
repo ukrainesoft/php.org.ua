@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>API плагінів mysqlnd</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="mysqlnd.plugin.architecture.md" class="mx-4">« Архітектура плагінів MySQL Native Driver</a><a href="mysqlnd.plugin.developing.md" class="mx-4">Розпочинаємо розробку плагіна mysqlnd »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="mysqlnd.plugin.md" class="mx-4">API для плагінів до вбудованого драйвера MySQL</a></div><article class="markdown_markdown__yfc8y"><div><h2>API плагінів mysqlnd</h2>
+<p>API плагінів <code>mysqlnd</code>предоставляет следующие функции:</p>
+<ul>
+<li>
+<p>mysqlnd_plugin_register()</p>
+</li>
+<li>
+<p>mysqlnd_plugin_count()</p>
+</li>
+<li>
+<p>mysqlnd_plugin_get_plugin_connection_data()</p>
+</li>
+<li>
+<p>mysqlnd_plugin_get_plugin_result_data()</p>
+</li>
+<li>
+<p>mysqlnd_plugin_get_plugin_stmt_data()</p>
+</li>
+<li>
+<p>mysqlnd_plugin_get_plugin_net_data()</p>
+</li>
+<li>
+<p>mysqlnd_plugin_get_plugin_protocol_data()</p>
+</li>
+<li>
+<p>mysqlnd_conn_get_methods()</p>
+</li>
+<li>
+<p>mysqlnd_result_get_methods()</p>
+</li>
+<li>
+<p>mysqlnd_result_meta_get_methods()</p>
+</li>
+<li>
+<p>mysqlnd_stmt_get_methods()</p>
+</li>
+<li>
+<p>mysqlnd_net_get_methods()</p>
+</li>
+<li>
+<p>mysqlnd_protocol_get_methods()</p>
+</li>
+</ul>
+<p>Немає стандартних визначень того, що таке плагін та як він працює.</p>
+<p>Часто зустрічаються в плагінах компоненти:</p>
+<ul>
+<li>
+<p>Менеджер плагіна</p>
+</li>
+<li>
+<p>API плагіна</p>
+</li>
+<li>
+<p>Сервіси програми (або модулі)</p>
+</li>
+<li>
+<p>API сервісів програми (або API модулів)</p>
+</li>
+</ul>
+<p>Концепция плагина<code>mysqlnd</code> експлуатує цю функціональність і, крім того, тішить нас відкритою архітектурою.</p>
+<p><strong>Немає заборон</strong></p>
+<p>Плагін має повний доступ до всіх нутрощів. <code>mysqlnd</code>. Немає обмежень або заборон, пов&#x27;язаних із безпекою. Все, що завгодно, можна переписати для реалізації дружніх або ворожих алгоритмів, так що рекомендується ставити плагіни тільки з довірених джерел.</p>
+<p>Як обговорювалося вище, плагіни можуть вільно використовувати покажчики. Ці покажчики нічим не обмежені і можуть вказувати дані іншого плагіна. Найпростіша арифметична операція дозволить отримати доступ до даних іншого плагіна.</p>
+<p>Рекомендується писати плагіни, що співпрацюють, які можуть працювати спільно з іншими плагінами і завжди викликати батьківські методи. Плагіни ніколи не повинні поводитися вороже до самого <code>mysqlnd</code></p>
+<p><strong>Проблеми: приклад співробітництва та побудови ланцюжка</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Модуль</th><th>Указатель mysqlnd.query()</th><th>Стек вызова, если вызывается родитель</th></tr></thead><tbody><tr><td>ext/mysqlnd</td><td>mysqlnd.query()</td><td>mysqlnd.query</td></tr><tr><td>ext/mysqlnd_cache</td><td>mysqlnd_cache.query()</td><td></td></tr></tbody></table>
+<ol>
+<li>
+<p>mysqlnd_cache.query()</p>
+</li>
+<li>
+<p>mysqlnd.query</p>
+</li>
+</ol>
+<p>| | ext/mysqlnd_monitor | mysqlnd_monitor.query() |</p>
+<ol>
+<li>
+<p>mysqlnd_monitor.query()</p>
+</li>
+<li>
+<p>mysqlnd_cache.query()</p>
+</li>
+<li>
+<p>mysqlnd.query</p>
+</li>
+</ol>
+<p>У цьому сценарії завантажені плагіни кеша (<code>ext/mysqlnd_cache</code>) та моніторингу (<code>ext/mysqlnd_monitor</code>). Оба наследуют класс<code>Connection::query()</code>. реєстрація плагінів відбувається на етапі <code>MINIT</code> відповідно до описаної вище логіки. PHP за замовчуванням викликає модулі в алфавітному порядку. Плагіни не знають один про одного і не накладають будь-яких залежностей.</p>
+<p>За умовчанням, плагіни викликають батьківський метод query зі своєї, перевизначеної, версії цього методу.</p>
+<p><strong>Резюме з модуля PHP</strong></p>
+<p>Повторення пройденого матеріалу на прикладі поведінки плагіна <code>ext/mysqlnd_plugin</code>, що використовує API плагінів <code>mysqlnd</code>для PHP:</p>
+<ul>
+<li>
+<p>Будь-яка програма PHP, що використовує MySQL намагається встановити з&#x27;єднання за адресою 192.168.2.29</p>
+</li>
+<li>
+<p>Додаток використовує один із наступних модулів<code>ext/mysql</code> <code>ext/mysqli</code>или<code>PDO_MYSQL</code>. Усі три модулі використовують<code>mysqlnd</code>для з&#x27;єднання з 192.168.2.29.</p>
+</li>
+<li>
+<p><code>Mysqlnd</code>викликає метод з&#x27;єднання, який успадковується плагіном<code>ext/mysqlnd_plugin</code></p>
+</li>
+<li>
+<p><code>ext/mysqlnd_plugin</code>викликає зареєстрований користувачем метод<code>proxy::connect()</code></p>
+</li>
+<li>
+<p>Цей метод підміняє IP адресу з&#x27;єднання з 192.168.2.29 на 127.0.0.1 та повертає встановлене<code>parent::connect()</code>соединение.</p>
+</li>
+<li>
+<p><code>ext/mysqlnd_plugin</code>робить те саме, що і<code>parent::connect(127.0.0.1)</code>викликаючи оригінальний метод<code>mysqlnd</code>для соединения.</p>
+</li>
+<li>
+<p><code>ext/mysqlnd</code>встановлює з&#x27;єднання та повертає його<code>ext/mysqlnd_plugin</code>. . <code>ext/mysqlnd_plugin</code>, своєю чергою, передає його далі.</p>
+</li>
+<li>
+<p>Не має значення, який модуль був використаний, він все одно отримає з&#x27;єднання до 127.0.0.1. Після цього модуль повертає це з&#x27;єднання додатку. Коло замкнулося.</p>
+</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/mysqlnd.plugin.api.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/mysqlnd.plugin.api.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"mysqlnd.plugin.api.md","content":"## API плагінів mysqlnd\n\nAPI плагінів `mysqlnd`предоставляет следующие функции:\n\n-   mysqlnd\\_plugin\\_register()\n    \n-   mysqlnd\\_plugin\\_count()\n    \n-   mysqlnd\\_plugin\\_get\\_plugin\\_connection\\_data()\n    \n-   mysqlnd\\_plugin\\_get\\_plugin\\_result\\_data()\n    \n-   mysqlnd\\_plugin\\_get\\_plugin\\_stmt\\_data()\n    \n-   mysqlnd\\_plugin\\_get\\_plugin\\_net\\_data()\n    \n-   mysqlnd\\_plugin\\_get\\_plugin\\_protocol\\_data()\n    \n-   mysqlnd\\_conn\\_get\\_methods()\n    \n-   mysqlnd\\_result\\_get\\_methods()\n    \n-   mysqlnd\\_result\\_meta\\_get\\_methods()\n    \n-   mysqlnd\\_stmt\\_get\\_methods()\n    \n-   mysqlnd\\_net\\_get\\_methods()\n    \n-   mysqlnd\\_protocol\\_get\\_methods()\n    \n\nНемає стандартних визначень того, що таке плагін та як він працює.\n\nЧасто зустрічаються в плагінах компоненти:\n\n-   Менеджер плагіна\n    \n-   API плагіна\n    \n-   Сервіси програми (або модулі)\n    \n-   API сервісів програми (або API модулів)\n    \n\nКонцепция плагина`mysqlnd` експлуатує цю функціональність і, крім того, тішить нас відкритою архітектурою.\n\n**Немає заборон**\n\nПлагін має повний доступ до всіх нутрощів. `mysqlnd`. Немає обмежень або заборон, пов'язаних із безпекою. Все, що завгодно, можна переписати для реалізації дружніх або ворожих алгоритмів, так що рекомендується ставити плагіни тільки з довірених джерел.\n\nЯк обговорювалося вище, плагіни можуть вільно використовувати покажчики. Ці покажчики нічим не обмежені і можуть вказувати дані іншого плагіна. Найпростіша арифметична операція дозволить отримати доступ до даних іншого плагіна.\n\nРекомендується писати плагіни, що співпрацюють, які можуть працювати спільно з іншими плагінами і завжди викликати батьківські методи. Плагіни ніколи не повинні поводитися вороже до самого `mysqlnd`\n\n**Проблеми: приклад співробітництва та побудови ланцюжка**\n\n| Модуль | Указатель mysqlnd.query() | Стек вызова, если вызывается родитель |\n| --- | --- | --- |\n| ext/mysqlnd | mysqlnd.query() | mysqlnd.query |\n| ext/mysqlnd\\_cache | mysqlnd\\_cache.query() |  |\n\n1.  mysqlnd\\_cache.query()\n    \n2.  mysqlnd.query\n    \n\n| | ext/mysqlnd\\_monitor | mysqlnd\\_monitor.query() |\n\n1.  mysqlnd\\_monitor.query()\n    \n2.  mysqlnd\\_cache.query()\n    \n3.  mysqlnd.query\n    \n\nУ цьому сценарії завантажені плагіни кеша (`ext/mysqlnd_cache`) та моніторингу (`ext/mysqlnd_monitor`). Оба наследуют класс`Connection::query()`. реєстрація плагінів відбувається на етапі `MINIT` відповідно до описаної вище логіки. PHP за замовчуванням викликає модулі в алфавітному порядку. Плагіни не знають один про одного і не накладають будь-яких залежностей.\n\nЗа умовчанням, плагіни викликають батьківський метод query зі своєї, перевизначеної, версії цього методу.\n\n**Резюме з модуля PHP**\n\nПовторення пройденого матеріалу на прикладі поведінки плагіна `ext/mysqlnd_plugin`, що використовує API плагінів `mysqlnd`для PHP:\n\n-   Будь-яка програма PHP, що використовує MySQL намагається встановити з'єднання за адресою 192.168.2.29\n    \n-   Додаток використовує один із наступних модулів`ext/mysql` `ext/mysqli`или`PDO_MYSQL`. Усі три модулі використовують`mysqlnd`для з'єднання з 192.168.2.29.\n    \n-   `Mysqlnd`викликає метод з'єднання, який успадковується плагіном`ext/mysqlnd_plugin`\n    \n-   `ext/mysqlnd_plugin`викликає зареєстрований користувачем метод`proxy::connect()`\n    \n-   Цей метод підміняє IP адресу з'єднання з 192.168.2.29 на 127.0.0.1 та повертає встановлене`parent::connect()`соединение.\n    \n-   `ext/mysqlnd_plugin`робить те саме, що і`parent::connect(127.0.0.1)`викликаючи оригінальний метод`mysqlnd`для соединения.\n    \n-   `ext/mysqlnd`встановлює з'єднання та повертає його`ext/mysqlnd_plugin`. . `ext/mysqlnd_plugin`, своєю чергою, передає його далі.\n    \n-   Не має значення, який модуль був використаний, він все одно отримає з'єднання до 127.0.0.1. Після цього модуль повертає це з'єднання додатку. Коло замкнулося.\n","title":"API плагінів mysqlnd","contentType":2,"navigation":[{"mysqlnd.plugin.architecture.md":"« Архітектура плагінів MySQL Native Driver"},{"mysqlnd.plugin.developing.md":"Розпочинаємо розробку плагіна mysqlnd »"},{"index.md":"PHP Manual"},{"mysqlnd.plugin.md":"API для плагінів до вбудованого драйвера MySQL"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqlnd.plugin.api.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

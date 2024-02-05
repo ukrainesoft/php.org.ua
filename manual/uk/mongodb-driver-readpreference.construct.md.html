@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>MongoDB\\Driver\\ReadPreference::\_\_construct</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="mongodb-driver-readpreference.bsonserialize.md" class="mx-4">« MongoDB\\Driver\\ReadPreference::bsonSerialize</a><a href="mongodb-driver-readpreference.gethedge.md" class="mx-4">MongoDB\\Driver\\ReadPreference::getHedge »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="class.mongodb-driver-readpreference.md" class="mx-4">MongoDB\\Driver\\ReadPreference</a></div><article class="markdown_markdown__yfc8y"><div><h1>MongoDB\Driver\ReadPreference::__construct</h1>
+<p>(mongodb &gt;=1.0.0)</p>
+<p>MongoDB\Driver\ReadPreference::__construct — Створити новий ReadPreference</p>
+<h3>Опис</h3>
+<pre><code class="hljs language-methodsynopsis">final public MongoDB\Driver\ReadPreference::__construct(string|int $mode, ?array $tagSets = null, ?array $options = null)
+</code></pre>
+<p>Створює новий <a href="class.mongodb-driver-readpreference.md">MongoDB\Driver\ReadPreference</a>що є незмінним об&#x27;єктом значення.</p>
+<h3>Список параметрів</h3>
+<p><code>mode</code></p>
+<p><strong>Режим переваги читання</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Значение</th><th>Опис</th></tr></thead><tbody><tr><td>**<code>MongoDB\Driver\ReadPreference::RP_PRIMARY</code>**or<code>&quot;primary&quot;</code></td><td></td></tr><tr><td>Усі операції зчитується з поточного первинного вузла реплік набору. Це перевага для читання за промовчанням для MongoDB.</td><td></td></tr></tbody></table>
+<p>**<code>MongoDB\Driver\ReadPreference::RP_PRIMARY_PREFERRED</code>**or<code>&quot;primaryPreferred&quot;</code></p>
+<p>У більшості ситуацій операції зчитуються з первинного вузла, але якщо він недоступний, операції зчитуються з вторинних вузлів.</p>
+<p>**<code>MongoDB\Driver\ReadPreference::RP_SECONDARY</code>**или<code>&quot;secondary&quot;</code></p>
+<p>Усі операції зчитуються із вторинних вузлів набору реплік.</p>
+<p>**<code>MongoDB\Driver\ReadPreference::RP_SECONDARY_PREFERRED</code>**или<code>&quot;secondaryPreferred&quot;</code></p>
+<p>У більшості ситуацій операції зчитуються з вторинних членів, але якщо вторинні члени недоступні, операції зчитуються з первинного вузла.</p>
+<p>**<code>MongoDB\Driver\ReadPreference::RP_NEAREST</code>**or<code>&quot;nearest&quot;</code></p>
+<p>Операції зчитуються з члена набору реплік із найменшою затримкою мережі, незалежно від типу члена.</p>
+<p><code>tagSets</code></p>
+<p>Набори тегів дозволяють настроювати операції читання для певних членів набору реплік. Цей параметр має бути масивом асоціативних масивів, кожен з яких містить нуль або кілька пар ключ-значення. При виборі сервера для операції читання драйвер намагається вибрати вузол, що має всі теги в наборі (тобто асоціативний масив пар ключ-значення). Якщо вибір не вдався, driver will attempt subsequent sets. Порожній набір тегів (<code>array()</code>) буде відповідати будь-якому вузлу і може використовуватись як резервний.</p>
+<p>Теги не сумісні з режимом <strong><code>MongoDB\Driver\ReadPreference::RP_PRIMARY</code></strong>, і, зазвичай, застосовується лише за виборі вторинного члена набору для операції читання. Однак режим <strong><code>MongoDB\Driver\ReadPreference::RP_NEAREST</code></strong> у поєднанні з набором тегів вибирає відповідний член з найменшою затримкою мережі. Цей член може бути первинним чи вторинним.</p>
+<p><code>options</code></p>
+<p><strong>options</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опция</th><th>Тип</th><th>Опис</th></tr></thead><tbody><tr><td>hedge</td><td>object</td><td>array</td></tr><tr><td>Вказує, чи використовувати <a href="https://www.mongodb.com/docs/manual/core/sharded-cluster-query-router/#mongos-hedged-reads">» хеджовані читання</a>, що підтримуються MongoDB 4.4+ для закритих запитів.</td><td></td><td></td></tr></tbody></table>
+<p>Хеджовані читання з сервера доступні для всіх неосновних переваг читання та включаються за умовчанням під час використання режиму <code>&quot;nearest&quot;</code>. Цей параметр дозволяє явно дозволити читання з хеджування на сервері для неосновних переваг читання, вказавши <code>[&#x27;enabled&#x27; =&gt; true]</code>, або явно відключивши серверне читання з хеджуванням для переваг читання <code>&quot;nearest&quot;</code>, указав<code>[&#x27;enabled&#x27; =&gt; false]</code></p>
+<p>| | maxStalenessSeconds | int |</p>
+<p>Визначає максимальне відставання реплікації чи “staleness” для читання з вторинних вузлів. Коли оцінювана staleness вторинних вузлів перевищує це значення, драйвер припиняє використовувати її для операцій читання.</p>
+<p>Якщо вказано, максимальний staleness має бути 32-бітовим числом без знака, більшим чи рівним <strong><code>MongoDB\Driver\ReadPreference::SMALLEST_MAX_STALENESS_SECONDS</code></strong></p>
+<p>По умолчанию используется**<code>MongoDB\Driver\ReadPreference::NO_MAX_STALENESS</code>**, що означає, що драйвер не враховуватиме відставання вторинних вузлів при виборі напрямку для операції читання.</p>
+<p>Цей параметр несумісний із режимом <strong><code>MongoDB\Driver\ReadPreference::RP_PRIMARY</code></strong>. Вказівка ​​максимальної staleness також вимагає, щоб усі екземпляри MongoDB у розгортанні використовували MongoDB 3.4+. Виняток буде викинуто під час виконання, якщо екземпляри MongoDB у розгортанні мають старішу версію.</p>
+<h3>Помилки</h3>
+<ul>
+<li>При помилці парсингу аргумент кидає виняток<a href="class.mongodb-driver-exception-invalidargumentexception.md">MongoDB\Driver\Exception\InvalidArgumentException</a></li>
+<li>При некоректному<code>mode</code> викидає <a href="class.mongodb-driver-exception-invalidargumentexception.md">MongoDB\Driver\Exception\InvalidArgumentException</a></li>
+<li>Якщо <code>tagSets</code>надається як первинна перевага читання або має неправильний формат (тобто не масив з нуля або більше документів) викидає<a href="class.mongodb-driver-exception-invalidargumentexception.md">MongoDB\Driver\Exception\InvalidArgumentException</a></li>
+<li>Якщо опція <code>&quot;maxStalenessSeconds&quot;</code>надається для первинної переваги читання або знаходиться поза діапазоном, викидає<a href="class.mongodb-driver-exception-invalidargumentexception.md">MongoDB\Driver\Exception\InvalidArgumentException</a></li>
+</ul>
+<h3>список змін</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>PECL mongodb 1.8.0</td><td>Добавлен параметр<code>&quot;hedge&quot;</code></td></tr><tr><td>PECL mongodb 1.3.0</td><td></td></tr><tr><td>Аргумент<code>mode</code> тепер набуває рядкового значення, яке відповідає URI-опції <code>&quot;readPreference&quot;</code>для<a href="mongodb-driver-manager.construct.md">MongoDB\Driver\Manager::__construct()</a></td><td></td></tr></tbody></table>
+<p>| | PECL mongodb 1.2.0 |</p>
+<p>Добавлен третий аргумент<code>options</code>, який підтримує параметр <code>&quot;maxStalenessSeconds&quot;</code></p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання</strong> MongoDB\Driver\ReadPreference::__construct()****</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:288px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Результат виконання наведеного прикладу:</p>
+<pre><code class="hljs language-scss"><span class="hljs-selector-tag">object</span>(MongoDB\Driver\ReadPreference)<span class="hljs-selector-id">#1</span> (<span class="hljs-number">1</span>) {
+  <span class="hljs-selector-attr">[<span class="hljs-string">&quot;mode&quot;</span>]</span>=&gt;
+  <span class="hljs-built_in">string</span>(<span class="hljs-number">18</span>) &quot;secondaryPreferred&quot;
+}
+<span class="hljs-selector-tag">object</span>(MongoDB\Driver\ReadPreference)<span class="hljs-selector-id">#1</span> (<span class="hljs-number">2</span>) {
+  <span class="hljs-selector-attr">[<span class="hljs-string">&quot;mode&quot;</span>]</span>=&gt;
+  <span class="hljs-built_in">string</span>(<span class="hljs-number">7</span>) &quot;nearest&quot;
+  <span class="hljs-selector-attr">[<span class="hljs-string">&quot;tags&quot;</span>]</span>=&gt;
+  <span class="hljs-built_in">array</span>(<span class="hljs-number">1</span>) {
+    <span class="hljs-selector-attr">[0]</span>=&gt;
+    <span class="hljs-selector-tag">object</span>(stdClass)<span class="hljs-selector-id">#2</span> (<span class="hljs-number">1</span>) {
+      <span class="hljs-selector-attr">[<span class="hljs-string">&quot;dc&quot;</span>]</span>=&gt;
+      <span class="hljs-built_in">string</span>(<span class="hljs-number">2</span>) &quot;ny&quot;
+    }
+  }
+}
+<span class="hljs-selector-tag">object</span>(MongoDB\Driver\ReadPreference)<span class="hljs-selector-id">#1</span> (<span class="hljs-number">2</span>) {
+  <span class="hljs-selector-attr">[<span class="hljs-string">&quot;mode&quot;</span>]</span>=&gt;
+  <span class="hljs-built_in">string</span>(<span class="hljs-number">9</span>) &quot;secondary&quot;
+  <span class="hljs-selector-attr">[<span class="hljs-string">&quot;maxStalenessSeconds&quot;</span>]</span>=&gt;
+  <span class="hljs-built_in">int</span>(<span class="hljs-number">120</span>)
+}
+<span class="hljs-selector-tag">object</span>(MongoDB\Driver\ReadPreference)<span class="hljs-selector-id">#1</span> (<span class="hljs-number">2</span>) {
+  <span class="hljs-selector-attr">[<span class="hljs-string">&quot;mode&quot;</span>]</span>=&gt;
+  <span class="hljs-built_in">string</span>(<span class="hljs-number">9</span>) &quot;secondary&quot;
+  <span class="hljs-selector-attr">[<span class="hljs-string">&quot;hedge&quot;</span>]</span>=&gt;
+  <span class="hljs-selector-tag">object</span>(stdClass)<span class="hljs-selector-id">#1</span> (<span class="hljs-number">1</span>) {
+    <span class="hljs-selector-attr">[<span class="hljs-string">&quot;enabled&quot;</span>]</span>=&gt;
+    <span class="hljs-built_in">bool</span>(true)
+  }
+}
+</code></pre>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="https://www.mongodb.com/docs/manual/core/read-preference/">» Посібник з переваги читання</a></li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/mongodb-driver-readpreference.construct.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/mongodb-driver-readpreference.construct.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"mongodb-driver-readpreference.construct.md","content":"# MongoDB\\\\Driver\\\\ReadPreference::\\_\\_construct\n\n(mongodb \u003e=1.0.0)\n\nMongoDB\\\\Driver\\\\ReadPreference::\\_\\_construct — Створити новий ReadPreference\n\n### Опис\n\n```methodsynopsis\nfinal public MongoDB\\Driver\\ReadPreference::__construct(string|int $mode, ?array $tagSets = null, ?array $options = null)\n```\n\nСтворює новий [MongoDB\\\\Driver\\\\ReadPreference](class.mongodb-driver-readpreference.md)що є незмінним об'єктом значення.\n\n### Список параметрів\n\n`mode`\n\n**Режим переваги читання**\n\n| Значение | Опис |\n| --- | --- |\n| \\*\\*`MongoDB\\Driver\\ReadPreference::RP_PRIMARY`\\*\\*or`\"primary\"` |  |\n| Усі операції зчитується з поточного первинного вузла реплік набору. Це перевага для читання за промовчанням для MongoDB. |  |\n\n\\*\\*`MongoDB\\Driver\\ReadPreference::RP_PRIMARY_PREFERRED`\\*\\*or`\"primaryPreferred\"`\n\nУ більшості ситуацій операції зчитуються з первинного вузла, але якщо він недоступний, операції зчитуються з вторинних вузлів.\n\n\\*\\*`MongoDB\\Driver\\ReadPreference::RP_SECONDARY`\\*\\*или`\"secondary\"`\n\nУсі операції зчитуються із вторинних вузлів набору реплік.\n\n\\*\\*`MongoDB\\Driver\\ReadPreference::RP_SECONDARY_PREFERRED`\\*\\*или`\"secondaryPreferred\"`\n\nУ більшості ситуацій операції зчитуються з вторинних членів, але якщо вторинні члени недоступні, операції зчитуються з первинного вузла.\n\n\\*\\*`MongoDB\\Driver\\ReadPreference::RP_NEAREST`\\*\\*or`\"nearest\"`\n\nОперації зчитуються з члена набору реплік із найменшою затримкою мережі, незалежно від типу члена.\n\n`tagSets`\n\nНабори тегів дозволяють настроювати операції читання для певних членів набору реплік. Цей параметр має бути масивом асоціативних масивів, кожен з яких містить нуль або кілька пар ключ-значення. При виборі сервера для операції читання драйвер намагається вибрати вузол, що має всі теги в наборі (тобто асоціативний масив пар ключ-значення). Якщо вибір не вдався, driver will attempt subsequent sets. Порожній набір тегів (`array()`) буде відповідати будь-якому вузлу і може використовуватись як резервний.\n\nТеги не сумісні з режимом **`MongoDB\\Driver\\ReadPreference::RP_PRIMARY`**, і, зазвичай, застосовується лише за виборі вторинного члена набору для операції читання. Однак режим **`MongoDB\\Driver\\ReadPreference::RP_NEAREST`** у поєднанні з набором тегів вибирає відповідний член з найменшою затримкою мережі. Цей член може бути первинним чи вторинним.\n\n`options`\n\n**options**\n\n| Опция | Тип | Опис |\n| --- | --- | --- |\n| hedge | object | array |\n| Вказує, чи використовувати [» хеджовані читання](https://www.mongodb.com/docs/manual/core/sharded-cluster-query-router/#mongos-hedged-reads), що підтримуються MongoDB 4.4+ для закритих запитів. |  |  |\n\nХеджовані читання з сервера доступні для всіх неосновних переваг читання та включаються за умовчанням під час використання режиму `\"nearest\"`. Цей параметр дозволяє явно дозволити читання з хеджування на сервері для неосновних переваг читання, вказавши `['enabled' =\u003e true]`, або явно відключивши серверне читання з хеджуванням для переваг читання `\"nearest\"`, указав`['enabled' =\u003e false]`\n\n| | maxStalenessSeconds | int |\n\nВизначає максимальне відставання реплікації чи “staleness” для читання з вторинних вузлів. Коли оцінювана staleness вторинних вузлів перевищує це значення, драйвер припиняє використовувати її для операцій читання.\n\nЯкщо вказано, максимальний staleness має бути 32-бітовим числом без знака, більшим чи рівним **`MongoDB\\Driver\\ReadPreference::SMALLEST_MAX_STALENESS_SECONDS`**\n\nПо умолчанию используется\\*\\*`MongoDB\\Driver\\ReadPreference::NO_MAX_STALENESS`\\*\\*, що означає, що драйвер не враховуватиме відставання вторинних вузлів при виборі напрямку для операції читання.\n\nЦей параметр несумісний із режимом **`MongoDB\\Driver\\ReadPreference::RP_PRIMARY`**. Вказівка ​​максимальної staleness також вимагає, щоб усі екземпляри MongoDB у розгортанні використовували MongoDB 3.4+. Виняток буде викинуто під час виконання, якщо екземпляри MongoDB у розгортанні мають старішу версію.\n\n### Помилки\n\n-   При помилці парсингу аргумент кидає виняток[MongoDB\\\\Driver\\\\Exception\\\\InvalidArgumentException](class.mongodb-driver-exception-invalidargumentexception.md)\n-   При некоректному`mode` викидає [MongoDB\\\\Driver\\\\Exception\\\\InvalidArgumentException](class.mongodb-driver-exception-invalidargumentexception.md)\n-   Якщо `tagSets`надається як первинна перевага читання або має неправильний формат (тобто не масив з нуля або більше документів) викидає[MongoDB\\\\Driver\\\\Exception\\\\InvalidArgumentException](class.mongodb-driver-exception-invalidargumentexception.md)\n-   Якщо опція `\"maxStalenessSeconds\"`надається для первинної переваги читання або знаходиться поза діапазоном, викидає[MongoDB\\\\Driver\\\\Exception\\\\InvalidArgumentException](class.mongodb-driver-exception-invalidargumentexception.md)\n\n### список змін\n\n| Версия | Опис |\n| --- | --- |\n| PECL mongodb 1.8.0 | Добавлен параметр`\"hedge\"` |\n| PECL mongodb 1.3.0 |  |\n| Аргумент`mode` тепер набуває рядкового значення, яке відповідає URI-опції `\"readPreference\"`для[MongoDB\\\\Driver\\\\Manager::\\_\\_construct()](mongodb-driver-manager.construct.md) |  |\n\n| | PECL mongodb 1.2.0 |\n\nДобавлен третий аргумент`options`, який підтримує параметр `\"maxStalenessSeconds\"`\n\n### Приклади\n\n**Приклад #1 Приклад використання** MongoDB\\\\Driver\\\\ReadPreference::\\_\\_construct()\\*\\*\\*\\*\n\n```php\n\u003c?php\n\n/* Предпочитать вторичный узел, но в случае отказа отступить к первичному. */\nvar_dump(new MongoDB\\Driver\\ReadPreference(MongoDB\\Driver\\ReadPreference::RP_SECONDARY_PREFERRED));\n\n/* Предпочитать узел в Нью-Йоркском центре обработки данных с минимальной задержкой. */\nvar_dump(new MongoDB\\Driver\\ReadPreference(MongoDB\\Driver\\ReadPreference::RP_NEAREST, [['dc' =\u003e 'ny']]));\n\n/* Требуется дополнительный узел, чья задержка репликации находится в пределах двух минут от основного */\nvar_dump(new MongoDB\\Driver\\ReadPreference(MongoDB\\Driver\\ReadPreference::RP_SECONDARY, null, ['maxStalenessSeconds' =\u003e 120]));\n\n/* Явно включить хеджирование чтения на сервере */\nvar_dump(new MongoDB\\Driver\\ReadPreference(MongoDB\\Driver\\ReadPreference::RP_SECONDARY, null, ['hedge' =\u003e ['enabled' =\u003e true]]));\n\n?\u003e\n```\n\nРезультат виконання наведеного прикладу:\n\n```\nobject(MongoDB\\Driver\\ReadPreference)#1 (1) {\n  [\"mode\"]=\u003e\n  string(18) \"secondaryPreferred\"\n}\nobject(MongoDB\\Driver\\ReadPreference)#1 (2) {\n  [\"mode\"]=\u003e\n  string(7) \"nearest\"\n  [\"tags\"]=\u003e\n  array(1) {\n    [0]=\u003e\n    object(stdClass)#2 (1) {\n      [\"dc\"]=\u003e\n      string(2) \"ny\"\n    }\n  }\n}\nobject(MongoDB\\Driver\\ReadPreference)#1 (2) {\n  [\"mode\"]=\u003e\n  string(9) \"secondary\"\n  [\"maxStalenessSeconds\"]=\u003e\n  int(120)\n}\nobject(MongoDB\\Driver\\ReadPreference)#1 (2) {\n  [\"mode\"]=\u003e\n  string(9) \"secondary\"\n  [\"hedge\"]=\u003e\n  object(stdClass)#1 (1) {\n    [\"enabled\"]=\u003e\n    bool(true)\n  }\n}\n```\n\n### Дивіться також\n\n-   [» Посібник з переваги читання](https://www.mongodb.com/docs/manual/core/read-preference/)\n","title":"MongoDB\\\\Driver\\\\ReadPreference::\\_\\_construct","contentType":2,"navigation":[{"mongodb-driver-readpreference.bsonserialize.md":"« MongoDB\\\\Driver\\\\ReadPreference::bsonSerialize"},{"mongodb-driver-readpreference.gethedge.md":"MongoDB\\\\Driver\\\\ReadPreference::getHedge »"},{"index.md":"PHP Manual"},{"class.mongodb-driver-readpreference.md":"MongoDB\\\\Driver\\\\ReadPreference"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mongodb-driver-readpreference.construct.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Document Object Model</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="refs.xml.md" class="mx-4">« Обробка XML</a><a href="intro.dom.md" class="mx-4">Вступ &quot;</a><a href="index.md" class="mx-4">PHP Manual</a><a href="refs.xml.md" class="mx-4">Обробка XML</a></div><article class="markdown_markdown__yfc8y"><div><h1>Document Object Model</h1>
+<ul>
+<li><a href="intro.dom.md">Вступ</a></li>
+<li><a href="dom.setup.md">Встановлення та налаштування</a>
+<ul>
+<li><a href="dom.requirements.md">Вимоги</a></li>
+<li><a href="dom.installation.md">Установка</a></li>
+<li><a href="dom.configuration.md">Налаштування під час виконання</a></li>
+<li><a href="dom.resources.md">Типи ресурсів</a></li>
+</ul>
+</li>
+<li><a href="dom.constants.md">Обумовлені константи</a></li>
+<li><a href="dom.examples.md">Приклади</a></li>
+<li><a href="class.domattr.md">DOMAttr</a> - Клас DOMAttr
+<ul>
+<li><a href="domattr.construct.md">DOMAttr::__construct</a> - Створює екземпляр класу DOMAttr</li>
+<li><a href="domattr.isid.md">DOMAttr::isId</a>— Перевіряє, чи є атрибут певним ідентифікатором</li>
+</ul>
+</li>
+<li><a href="class.domcdatasection.md">DOMCdataSection</a> - Клас DOMCdataSection
+<ul>
+<li><a href="domcdatasection.construct.md">DOMCdataSection::__construct</a>— Створює новий екземпляр класу DOMCdataSection</li>
+</ul>
+</li>
+<li><a href="class.domcharacterdata.md">DOMCharacterData</a> - Клас DOMCharacterData
+<ul>
+<li><a href="domcharacterdata.after.md">DOMCharacterData::after</a>— Додає вузли після символьних даних</li>
+<li><a href="domcharacterdata.appenddata.md">DOMCharacterData::appendData</a>— Додати рядок до кінця символьних даних вузла</li>
+<li><a href="domcharacterdata.before.md">DOMCharacterData::before</a> - Додає вузли перед вузлом</li>
+<li><a href="domcharacterdata.deletedata.md">DOMCharacterData::deleteData</a>— Видалити діапазон символів із вузла</li>
+<li><a href="domcharacterdata.insertdata.md">DOMCharacterData::insertData</a>— Вставити рядок у вказану 16-бітну позицію</li>
+<li><a href="domcharacterdata.remove.md">DOMCharacterData::remove</a>— Видаляє символьні дані</li>
+<li><a href="domcharacterdata.replacedata.md">DOMCharacterData::replaceData</a>— Замінити підрядок у вузлі типу DOMCharacterData</li>
+<li><a href="domcharacterdata.replacewith.md">DOMCharacterData::replaceWith</a>— Замінює символьні дані новими вузлами</li>
+<li><a href="domcharacterdata.substringdata.md">DOMCharacterData::substringData</a>— Витягує певний діапазон даних із вузла</li>
+</ul>
+</li>
+<li><a href="class.domchildnode.md">DOMChildNode</a> - Інтерфейс DOMChildNode
+<ul>
+<li><a href="domchildnode.after.md">DOMChildNode::after</a> - Додає вузли після вузла</li>
+<li><a href="domchildnode.before.md">DOMChildNode::before</a> - Додає вузли перед вузлом</li>
+<li><a href="domchildnode.remove.md">DOMChildNode::remove</a> - Видаляє вузол</li>
+<li><a href="domchildnode.replacewith.md">DOMChildNode::replaceWith</a> - Замінює вузол на нові вузли</li>
+</ul>
+</li>
+<li><a href="class.domcomment.md">DOMComment</a> - Клас DOMComment
+<ul>
+<li><a href="domcomment.construct.md">DOMComment::__construct</a>— Створює новий екземпляр класу DOMComment</li>
+</ul>
+</li>
+<li><a href="class.domdocument.md">DOMDocument</a> - Клас DOMDocument
+<ul>
+<li><a href="domdocument.adoptnode.md">DOMDocument::adoptNode</a>— Переносить вузол із іншого документа</li>
+<li><a href="domdocument.append.md">DOMDocument::append</a>— Додає вузли після останнього дочірнього вузла</li>
+<li><a href="domdocument.construct.md">DOMDocument::__construct</a>— Створює новий об&#x27;єкт DOMDocument</li>
+<li><a href="domdocument.createattribute.md">DOMDocument::createAttribute</a> - Створює новий атрибут</li>
+<li><a href="domdocument.createattributens.md">DOMDocument::createAttributeNS</a>— Створює новий атрибут вузла із відповідним простором імен</li>
+<li><a href="domdocument.createcdatasection.md">DOMDocument::createCDATASection</a> - Створює новий вузол cdata</li>
+<li><a href="domdocument.createcomment.md">DOMDocument::createComment</a> - Створити новий вузол коментаря</li>
+<li><a href="domdocument.createdocumentfragment.md">DOMDocument::createDocumentFragment</a> - Створює новий фрагмент документа</li>
+<li><a href="domdocument.createelement.md">DOMDocument::createElement</a> - Створює новий вузол елемента</li>
+<li><a href="domdocument.createelementns.md">DOMDocument::createElementNS</a>— Створити новий вузол елемента із відповідним простором імен</li>
+<li><a href="domdocument.createentityreference.md">DOMDocument::createEntityReference</a> - Створити новий вузол посилання на сутність</li>
+<li><a href="domdocument.createprocessinginstruction.md">DOMDocument::createProcessingInstruction</a> - Створити новий PI-вузол</li>
+<li><a href="domdocument.createtextnode.md">DOMDocument::createTextNode</a> - Створити новий текстовий вузол</li>
+<li><a href="domdocument.getelementbyid.md">DOMDocument::getElementById</a>— Шукає елемент із певним ідентифікатором</li>
+<li><a href="domdocument.getelementsbytagname.md">DOMDocument::getElementsByTagName</a>— Шукає всі елементи із заданим локальним ім&#x27;ям</li>
+<li><a href="domdocument.getelementsbytagnamens.md">DOMDocument::getElementsByTagNameNS</a>— Шукає всі елементи із заданим ім&#x27;ям у вказаному просторі імен</li>
+<li><a href="domdocument.importnode.md">DOMDocument::importNode</a>— Імпортувати вузол у поточний документ</li>
+<li><a href="domdocument.load.md">DOMDocument::load</a>— Завантаження XML із файлу</li>
+<li><a href="domdocument.loadhtml.md">DOMDocument::loadHTML</a>— Завантаження HTML із рядка</li>
+<li><a href="domdocument.loadhtmlfile.md">DOMDocument::loadHTMLFile</a>— Завантаження HTML із файлу</li>
+<li><a href="domdocument.loadxml.md">DOMDocument::loadXML</a>— Завантаження XML із рядка</li>
+<li><a href="domdocument.normalizedocument.md">DOMDocument::normalizeDocument</a> - Нормалізує документ</li>
+<li><a href="domdocument.prepend.md">DOMDocument::prepend</a> - Додає вузли перед першим дочірнім вузлом</li>
+<li><a href="domdocument.registernodeclass.md">DOMDocument::registerNodeClass</a>— Реєстрація розширеного класу, який використовується для створення типу базового вузла</li>
+<li><a href="domdocument.relaxngvalidate.md">DOMDocument::relaxNGValidate</a> - Здійснює перевірку документа на правильність побудови за допомогою relaxNG</li>
+<li><a href="domdocument.relaxngvalidatesource.md">DOMDocument::relaxNGValidateSource</a> - Перевіряє документ за допомогою relaxNG</li>
+<li><a href="domdocument.replacechildren.md">DOMDocument::replaceChildren</a>— Замінює дочірні вузли у документі</li>
+<li><a href="domdocument.save.md">DOMDocument::save</a>— Зберігає XML-дерево із внутрішнього подання до файлу</li>
+<li><a href="domdocument.savehtml.md">DOMDocument::saveHTML</a>— Зберігає документ із внутрішнього подання до рядка, використовуючи форматування HTML</li>
+<li><a href="domdocument.savehtmlfile.md">DOMDocument::saveHTMLFile</a>— Зберігає документ із внутрішнього подання до файлу, використовуючи форматування HTML</li>
+<li><a href="domdocument.savexml.md">DOMDocument::saveXML</a>— Зберігає XML-дерево з внутрішньої вистави у вигляді рядка</li>
+<li><a href="domdocument.schemavalidate.md">DOMDocument::schemaValidate</a>— Перевіряє дійсність документа, ґрунтуючись на заданій схемі. Підтримується лише XML-схема 1.0.</li>
+<li><a href="domdocument.schemavalidatesource.md">DOMDocument::schemaValidateSource</a>— Перевіряє дійсність документа, ґрунтуючись на схемі</li>
+<li><a href="domdocument.validate.md">DOMDocument::validate</a>— Перевіряє документ на відповідність його DTD</li>
+<li><a href="domdocument.xinclude.md">DOMDocument::xinclude</a>— Вставляє XInclude в об&#x27;єкті DOMDocument.</li>
+</ul>
+</li>
+<li><a href="class.domdocumentfragment.md">DOMDocumentFragment</a> - Клас DOMDocumentFragment
+<ul>
+<li><a href="domdocumentfragment.append.md">DOMDocumentFragment::append</a>— Додає вузли після останнього дочірнього вузла</li>
+<li><a href="domdocumentfragment.appendxml.md">DOMDocumentFragment::appendXML</a>— Додавання необроблених даних XML</li>
+<li><a href="domdocumentfragment.construct.md">DOMDocumentFragment::__construct</a> - Конструктор об&#x27;єкта DOMDocumentFragment</li>
+<li><a href="domdocumentfragment.prepend.md">DOMDocumentFragment::prepend</a> - Додає вузли перед першим дочірнім вузлом</li>
+<li><a href="domdocumentfragment.replacechildren.md">DOMDocumentFragment::replaceChildren</a>— Замінює дочірні елементи фрагмента</li>
+</ul>
+</li>
+<li><a href="class.domdocumenttype.md">DOMDocumentType</a> - Клас DOMDocumentType</li>
+<li><a href="class.domelement.md">DOMElement</a> - Клас DOMElement
+<ul>
+<li><a href="domelement.after.md">DOMElement::after</a>— Додає вузли після елемента</li>
+<li><a href="domelement.append.md">DOMElement::append</a>— Додає вузли після останнього дочірнього вузла</li>
+<li><a href="domelement.before.md">DOMElement::before</a>— Додає вузли перед елементом</li>
+<li><a href="domelement.construct.md">DOMElement::__construct</a>— Створює новий екземпляр класу DOMElement</li>
+<li><a href="domelement.getattribute.md">DOMElement::getAttribute</a>— Повертає значення атрибуту</li>
+<li><a href="domelement.getattributenames.md">DOMElement::getAttributeNames</a>— Отримує імена атрибутів</li>
+<li><a href="domelement.getattributenode.md">DOMElement::getAttributeNode</a> - Повертає вузол атрибуту</li>
+<li><a href="domelement.getattributenodens.md">DOMElement::getAttributeNodeNS</a> - Повертає вузол атрибуту</li>
+<li><a href="domelement.getattributens.md">DOMElement::getAttributeNS</a>— Повертає значення атрибуту</li>
+<li><a href="domelement.getelementsbytagname.md">DOMElement::getElementsByTagName</a>— Повертає елементи на ім&#x27;я тега</li>
+<li><a href="domelement.getelementsbytagnamens.md">DOMElement::getElementsByTagNameNS</a>— Отримує елементи локального імені в заданому просторі імен</li>
+<li><a href="domelement.hasattribute.md">DOMElement::hasAttribute</a>— Перевіряє, чи існує атрибут</li>
+<li><a href="domelement.hasattributens.md">DOMElement::hasAttributeNS</a> - Перевіряє, чи існує заданий атрибут</li>
+<li><a href="domelement.insertadjacentelement.md">DOMElement::insertAdjacentElement</a> - Додає сусідній елемент</li>
+<li><a href="domelement.insertadjacenttext.md">DOMElement::insertAdjacentText</a>— Додає сусідній текст</li>
+<li><a href="domelement.prepend.md">DOMElement::prepend</a> - Додає вузли перед першим дочірнім вузлом</li>
+<li><a href="domelement.remove.md">DOMElement::remove</a> - Видаляє елемент</li>
+<li><a href="domelement.removeattribute.md">DOMElement::removeAttribute</a> - Видаляє атрибут</li>
+<li><a href="domelement.removeattributenode.md">DOMElement::removeAttributeNode</a> - Видаляє атрибут</li>
+<li><a href="domelement.removeattributens.md">DOMElement::removeAttributeNS</a> - Видаляє атрибут</li>
+<li><a href="domelement.replacechildren.md">DOMElement::replaceChildren</a>— Замінює дочірні елементи елемента</li>
+<li><a href="domelement.replacewith.md">DOMElement::replaceWith</a>— Замінює елемент новими вузлами</li>
+<li><a href="domelement.setattribute.md">DOMElement::setAttribute</a>— Додає новий або змінює існуючий атрибут</li>
+<li><a href="domelement.setattributenode.md">DOMElement::setAttributeNode</a>— Додає новий вузол атрибуту до елементу</li>
+<li><a href="domelement.setattributenodens.md">DOMElement::setAttributeNodeNS</a>— Додає новий атрибут елемент</li>
+<li><a href="domelement.setattributens.md">DOMElement::setAttributeNS</a> - Додає новий атрибут</li>
+<li><a href="domelement.setidattribute.md">DOMElement::setIdAttribute</a>— Оголошує атрибут із зазначеним ім&#x27;ям тип ID</li>
+<li><a href="domelement.setidattributenode.md">DOMElement::setIdAttributeNode</a>— Оголошує зазначений сайт атрибута тип ID</li>
+<li><a href="domelement.setidattributens.md">DOMElement::setIdAttributeNS</a>— Оголошує атрибуту із зазначеними локальним ім&#x27;ям та URI простору імен тип ID</li>
+<li><a href="domelement.toggleattribute.md">DOMElement::toggleAttribute</a> - Перемикає атрибут</li>
+</ul>
+</li>
+<li><a href="class.domentity.md">DOMEntity</a> - Клас DOMEntity</li>
+<li><a href="class.domentityreference.md">DOMEntityReference</a> - Клас DOMEntityReference
+<ul>
+<li><a href="domentityreference.construct.md">DOMEntityReference::__construct</a>— Створює новий об&#x27;єкт класу DOM EntityReference</li>
+</ul>
+</li>
+<li><a href="class.domexception.md">DOMException</a> - Клас DOMException</li>
+<li><a href="class.domimplementation.md">DOMImplementation</a> - Клас DOMImplementation
+<ul>
+<li><a href="domimplementation.construct.md">DOMImplementation::__construct</a>— Створює новий об&#x27;єкт класу DOMImplementation</li>
+<li><a href="domimplementation.createdocument.md">DOMImplementation::createDocument</a>— Створює об&#x27;єкт класу DOMDocument заданого типу з його елементом.</li>
+<li><a href="domimplementation.createdocumenttype.md">DOMImplementation::createDocumentType</a>— Створює порожній об&#x27;єкт класу DOMDocumentType</li>
+<li><a href="domimplementation.hasfeature.md">DOMImplementation::hasFeature</a>— Перевірка, чи реалізована певна можливість у реалізації DOM</li>
+</ul>
+</li>
+<li><a href="class.domnamednodemap.md">DOMNamedNodeMap</a>— Клас DOMNamedNodeMap
+<ul>
+<li><a href="domnamednodemap.count.md">DOMNamedNodeMap::count</a> - Кількість вузлів у відображенні</li>
+<li><a href="domnamednodemap.getiterator.md">DOMNamedNodeMap::getIterator</a>— Отримує зовнішній ітератор</li>
+<li><a href="domnamednodemap.getnameditem.md">DOMNamedNodeMap::getNamedItem</a>— Отримує вузол, вказаний на ім&#x27;я</li>
+<li><a href="domnamednodemap.getnameditemns.md">DOMNamedNodeMap::getNamedItemNS</a>— Отримує вузол із заданим локальним ім&#x27;ям та URI простору імен</li>
+<li><a href="domnamednodemap.item.md">DOMNamedNodeMap::item</a>— Отримує вузол із заданим індексом</li>
+</ul>
+</li>
+<li><a href="class.domnamespacenode.md">DOMNameSpaceNode</a>— Клас DOMNameSpaceNode</li>
+<li><a href="class.domnode.md">DOMNode</a> - Клас DOMNode
+<ul>
+<li><a href="domnode.appendchild.md">DOMNode::appendChild</a>— Додає новий дочірній вузол до кінця списку нащадків.</li>
+<li><a href="domnode.c14n.md">DOMNode::C14N</a> - Канонізувати вузли в рядок</li>
+<li><a href="domnode.c14nfile.md">DOMNode::C14NFile</a> - Канонізувати вузли у файл</li>
+<li><a href="domnode.clonenode.md">DOMNode::cloneNode</a> - Клонує вузол</li>
+<li><a href="domnode.contains.md">DOMNode::contains</a>— Перевіряє, чи містить вузол інший вузол</li>
+<li><a href="domnode.getlineno.md">DOMNode::getLineNo</a>— Отримує номер рядка вузла</li>
+<li><a href="domnode.getnodepath.md">DOMNode::getNodePath</a> - Отримання XPath вузла</li>
+<li><a href="domnode.getrootnode.md">DOMNode::getRootNode</a>— Отримує кореневий вузол</li>
+<li><a href="domnode.hasattributes.md">DOMNode::hasAttributes</a>— Перевіряє, чи цей вузол має атрибути.</li>
+<li><a href="domnode.haschildnodes.md">DOMNode::hasChildNodes</a>— Перевіряє, чи цей вузол має нащадків.</li>
+<li><a href="domnode.insertbefore.md">DOMNode::insertBefore</a>— Додає новий дочірній вузол перед вказаним вузлом</li>
+<li><a href="domnode.isdefaultnamespace.md">DOMNode::isDefaultNamespace</a>— Перевіряє, чи вказаний URI простору імен вузла є простором імен за умовчанням чи ні</li>
+<li><a href="domnode.isequalnode.md">DOMNode::isEqualNode</a>— Перевіряє, що обидва вузли ідентичні</li>
+<li><a href="domnode.issamenode.md">DOMNode::isSameNode</a>— Вказує, чи є два вузли одним і тим самим вузлом</li>
+<li><a href="domnode.issupported.md">DOMNode::isSupported</a>— Перевіряє, чи підтримується можливість у певній версії</li>
+<li><a href="domnode.lookupnamespaceuri.md">DOMNode::lookupNamespaceURI</a>— Отримує URI простору імен вузла за префіксом</li>
+<li><a href="domnode.lookupprefix.md">DOMNode::lookupPrefix</a>— Повертає префікс простору імен вузла із URI простору імен</li>
+<li><a href="domnode.normalize.md">DOMNode::normalize</a> - Нормалізує вузол</li>
+<li><a href="domnode.removechild.md">DOMNode::removeChild</a> - Видаляє дочірній вузол зі списку нащадків.</li>
+<li><a href="domnode.replacechild.md">DOMNode::replaceChild</a> - Замінює дочірній вузол</li>
+</ul>
+</li>
+<li><a href="class.domnodelist.md">DOMNodeList</a> - Клас DOMNodeList
+<ul>
+<li><a href="domnodelist.count.md">DOMNodeList::count</a>— Отримати кількість вузлів у списку</li>
+<li><a href="domnodelist.getiterator.md">DOMNodeList::getIterator</a>— Отримує зовнішній ітератор</li>
+<li><a href="domnodelist.item.md">DOMNodeList::item</a>— Отримує вузол із заданим індексом</li>
+</ul>
+</li>
+<li><a href="class.domnotation.md">DOMNotation</a> - Клас DOMNotation</li>
+<li><a href="class.domparentnode.md">DOMParentNode</a> - Інтерфейс DOMParentNode
+<ul>
+<li><a href="domparentnode.append.md">DOMParentNode::append</a>— Додає вузли після останнього дочірнього вузла</li>
+<li><a href="domparentnode.prepend.md">DOMParentNode::prepend</a> - Додає вузли перед першим дочірнім вузлом</li>
+<li><a href="domparentnode.replacechildren.md">DOMParentNode::replaceChildren</a>— Замінює нащадків у вузлі</li>
+</ul>
+</li>
+<li><a href="class.domprocessinginstruction.md">DOMProcessingInstruction</a> - Клас DOMProcessingInstruction
+<ul>
+<li><a href="domprocessinginstruction.construct.md">DOMProcessingInstruction::__construct</a>— Створює новий об&#x27;єкт класу DOMProcessingInstruction</li>
+</ul>
+</li>
+<li><a href="class.domtext.md">DOMText</a> - Клас DOMText
+<ul>
+<li><a href="domtext.construct.md">DOMText::__construct</a>— Створює об&#x27;єкт класу DOMText</li>
+<li><a href="domtext.iselementcontentwhitespace.md">DOMText::isElementContentWhitespace</a>— Повертає, чи містить текстовий вузол пробіл у вмісті елемента</li>
+<li><a href="domtext.iswhitespaceinelementcontent.md">DOMText::isWhitespaceInElementContent</a>— Визначає, чи містить текстовий вузол пробіли у вмісті</li>
+<li><a href="domtext.splittext.md">DOMText::splitText</a>— Поділяє вузол на два, починаючи із заданої позиції</li>
+</ul>
+</li>
+<li><a href="class.domxpath.md">DOMXPath</a> - Клас DOMXPath
+<ul>
+<li><a href="domxpath.construct.md">DOMXPath::__construct</a>— Створює новий об&#x27;єкт класу DOMXPath</li>
+<li><a href="domxpath.evaluate.md">DOMXPath::evaluate</a>— Обчислює переданий вираз XPath і повертає типізований результат, якщо можливо</li>
+<li><a href="domxpath.query.md">DOMXPath::query</a>— Виконує заданий вираз XPath</li>
+<li><a href="domxpath.registernamespace.md">DOMXPath::registerNamespace</a>— Реєструє простір імен з об&#x27;єктом DOMXPath</li>
+<li><a href="domxpath.registerphpfunctions.md">DOMXPath::registerPhpFunctions</a> - Реєстрація PHP-функцій як функцій XPath</li>
+</ul>
+</li>
+<li><a href="ref.dom.md">Функції DOM</a>
+<ul>
+<li><a href="function.dom-import-simplexml.md">dom_import_simplexml</a>— Отримує об&#x27;єкт класу DOMElement із об&#x27;єкта класу SimpleXMLElement</li>
+</ul>
+</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/book.dom.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/book.dom.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"book.dom.md","content":"# Document Object Model\n\n-   [Вступ](intro.dom.md)\n-   [Встановлення та налаштування](dom.setup.md)\n    -   [Вимоги](dom.requirements.md)\n    -   [Установка](dom.installation.md)\n    -   [Налаштування під час виконання](dom.configuration.md)\n    -   [Типи ресурсів](dom.resources.md)\n-   [Обумовлені константи](dom.constants.md)\n-   [Приклади](dom.examples.md)\n-   [DOMAttr](class.domattr.md) \\- Клас DOMAttr\n    -   [DOMAttr::\\_\\_construct](domattr.construct.md) \\- Створює екземпляр класу DOMAttr\n    -   [DOMAttr::isId](domattr.isid.md)— Перевіряє, чи є атрибут певним ідентифікатором\n-   [DOMCdataSection](class.domcdatasection.md) \\- Клас DOMCdataSection\n    -   [DOMCdataSection::\\_\\_construct](domcdatasection.construct.md)— Створює новий екземпляр класу DOMCdataSection\n-   [DOMCharacterData](class.domcharacterdata.md) \\- Клас DOMCharacterData\n    -   [DOMCharacterData::after](domcharacterdata.after.md)— Додає вузли після символьних даних\n    -   [DOMCharacterData::appendData](domcharacterdata.appenddata.md)— Додати рядок до кінця символьних даних вузла\n    -   [DOMCharacterData::before](domcharacterdata.before.md) \\- Додає вузли перед вузлом\n    -   [DOMCharacterData::deleteData](domcharacterdata.deletedata.md)— Видалити діапазон символів із вузла\n    -   [DOMCharacterData::insertData](domcharacterdata.insertdata.md)— Вставити рядок у вказану 16-бітну позицію\n    -   [DOMCharacterData::remove](domcharacterdata.remove.md)— Видаляє символьні дані\n    -   [DOMCharacterData::replaceData](domcharacterdata.replacedata.md)— Замінити підрядок у вузлі типу DOMCharacterData\n    -   [DOMCharacterData::replaceWith](domcharacterdata.replacewith.md)— Замінює символьні дані новими вузлами\n    -   [DOMCharacterData::substringData](domcharacterdata.substringdata.md)— Витягує певний діапазон даних із вузла\n-   [DOMChildNode](class.domchildnode.md) \\- Інтерфейс DOMChildNode\n    -   [DOMChildNode::after](domchildnode.after.md) \\- Додає вузли після вузла\n    -   [DOMChildNode::before](domchildnode.before.md) \\- Додає вузли перед вузлом\n    -   [DOMChildNode::remove](domchildnode.remove.md) \\- Видаляє вузол\n    -   [DOMChildNode::replaceWith](domchildnode.replacewith.md) \\- Замінює вузол на нові вузли\n-   [DOMComment](class.domcomment.md) \\- Клас DOMComment\n    -   [DOMComment::\\_\\_construct](domcomment.construct.md)— Створює новий екземпляр класу DOMComment\n-   [DOMDocument](class.domdocument.md) \\- Клас DOMDocument\n    -   [DOMDocument::adoptNode](domdocument.adoptnode.md)— Переносить вузол із іншого документа\n    -   [DOMDocument::append](domdocument.append.md)— Додає вузли після останнього дочірнього вузла\n    -   [DOMDocument::\\_\\_construct](domdocument.construct.md)— Створює новий об'єкт DOMDocument\n    -   [DOMDocument::createAttribute](domdocument.createattribute.md) \\- Створює новий атрибут\n    -   [DOMDocument::createAttributeNS](domdocument.createattributens.md)— Створює новий атрибут вузла із відповідним простором імен\n    -   [DOMDocument::createCDATASection](domdocument.createcdatasection.md) \\- Створює новий вузол cdata\n    -   [DOMDocument::createComment](domdocument.createcomment.md) \\- Створити новий вузол коментаря\n    -   [DOMDocument::createDocumentFragment](domdocument.createdocumentfragment.md) \\- Створює новий фрагмент документа\n    -   [DOMDocument::createElement](domdocument.createelement.md) \\- Створює новий вузол елемента\n    -   [DOMDocument::createElementNS](domdocument.createelementns.md)— Створити новий вузол елемента із відповідним простором імен\n    -   [DOMDocument::createEntityReference](domdocument.createentityreference.md) \\- Створити новий вузол посилання на сутність\n    -   [DOMDocument::createProcessingInstruction](domdocument.createprocessinginstruction.md) \\- Створити новий PI-вузол\n    -   [DOMDocument::createTextNode](domdocument.createtextnode.md) \\- Створити новий текстовий вузол\n    -   [DOMDocument::getElementById](domdocument.getelementbyid.md)— Шукає елемент із певним ідентифікатором\n    -   [DOMDocument::getElementsByTagName](domdocument.getelementsbytagname.md)— Шукає всі елементи із заданим локальним ім'ям\n    -   [DOMDocument::getElementsByTagNameNS](domdocument.getelementsbytagnamens.md)— Шукає всі елементи із заданим ім'ям у вказаному просторі імен\n    -   [DOMDocument::importNode](domdocument.importnode.md)— Імпортувати вузол у поточний документ\n    -   [DOMDocument::load](domdocument.load.md)— Завантаження XML із файлу\n    -   [DOMDocument::loadHTML](domdocument.loadhtml.md)— Завантаження HTML із рядка\n    -   [DOMDocument::loadHTMLFile](domdocument.loadhtmlfile.md)— Завантаження HTML із файлу\n    -   [DOMDocument::loadXML](domdocument.loadxml.md)— Завантаження XML із рядка\n    -   [DOMDocument::normalizeDocument](domdocument.normalizedocument.md) \\- Нормалізує документ\n    -   [DOMDocument::prepend](domdocument.prepend.md) \\- Додає вузли перед першим дочірнім вузлом\n    -   [DOMDocument::registerNodeClass](domdocument.registernodeclass.md)— Реєстрація розширеного класу, який використовується для створення типу базового вузла\n    -   [DOMDocument::relaxNGValidate](domdocument.relaxngvalidate.md) \\- Здійснює перевірку документа на правильність побудови за допомогою relaxNG\n    -   [DOMDocument::relaxNGValidateSource](domdocument.relaxngvalidatesource.md) \\- Перевіряє документ за допомогою relaxNG\n    -   [DOMDocument::replaceChildren](domdocument.replacechildren.md)— Замінює дочірні вузли у документі\n    -   [DOMDocument::save](domdocument.save.md)— Зберігає XML-дерево із внутрішнього подання до файлу\n    -   [DOMDocument::saveHTML](domdocument.savehtml.md)— Зберігає документ із внутрішнього подання до рядка, використовуючи форматування HTML\n    -   [DOMDocument::saveHTMLFile](domdocument.savehtmlfile.md)— Зберігає документ із внутрішнього подання до файлу, використовуючи форматування HTML\n    -   [DOMDocument::saveXML](domdocument.savexml.md)— Зберігає XML-дерево з внутрішньої вистави у вигляді рядка\n    -   [DOMDocument::schemaValidate](domdocument.schemavalidate.md)— Перевіряє дійсність документа, ґрунтуючись на заданій схемі. Підтримується лише XML-схема 1.0.\n    -   [DOMDocument::schemaValidateSource](domdocument.schemavalidatesource.md)— Перевіряє дійсність документа, ґрунтуючись на схемі\n    -   [DOMDocument::validate](domdocument.validate.md)— Перевіряє документ на відповідність його DTD\n    -   [DOMDocument::xinclude](domdocument.xinclude.md)— Вставляє XInclude в об'єкті DOMDocument.\n-   [DOMDocumentFragment](class.domdocumentfragment.md) \\- Клас DOMDocumentFragment\n    -   [DOMDocumentFragment::append](domdocumentfragment.append.md)— Додає вузли після останнього дочірнього вузла\n    -   [DOMDocumentFragment::appendXML](domdocumentfragment.appendxml.md)— Додавання необроблених даних XML\n    -   [DOMDocumentFragment::\\_\\_construct](domdocumentfragment.construct.md) \\- Конструктор об'єкта DOMDocumentFragment\n    -   [DOMDocumentFragment::prepend](domdocumentfragment.prepend.md) \\- Додає вузли перед першим дочірнім вузлом\n    -   [DOMDocumentFragment::replaceChildren](domdocumentfragment.replacechildren.md)— Замінює дочірні елементи фрагмента\n-   [DOMDocumentType](class.domdocumenttype.md) \\- Клас DOMDocumentType\n-   [DOMElement](class.domelement.md) \\- Клас DOMElement\n    -   [DOMElement::after](domelement.after.md)— Додає вузли після елемента\n    -   [DOMElement::append](domelement.append.md)— Додає вузли після останнього дочірнього вузла\n    -   [DOMElement::before](domelement.before.md)— Додає вузли перед елементом\n    -   [DOMElement::\\_\\_construct](domelement.construct.md)— Створює новий екземпляр класу DOMElement\n    -   [DOMElement::getAttribute](domelement.getattribute.md)— Повертає значення атрибуту\n    -   [DOMElement::getAttributeNames](domelement.getattributenames.md)— Отримує імена атрибутів\n    -   [DOMElement::getAttributeNode](domelement.getattributenode.md) \\- Повертає вузол атрибуту\n    -   [DOMElement::getAttributeNodeNS](domelement.getattributenodens.md) \\- Повертає вузол атрибуту\n    -   [DOMElement::getAttributeNS](domelement.getattributens.md)— Повертає значення атрибуту\n    -   [DOMElement::getElementsByTagName](domelement.getelementsbytagname.md)— Повертає елементи на ім'я тега\n    -   [DOMElement::getElementsByTagNameNS](domelement.getelementsbytagnamens.md)— Отримує елементи локального імені в заданому просторі імен\n    -   [DOMElement::hasAttribute](domelement.hasattribute.md)— Перевіряє, чи існує атрибут\n    -   [DOMElement::hasAttributeNS](domelement.hasattributens.md) \\- Перевіряє, чи існує заданий атрибут\n    -   [DOMElement::insertAdjacentElement](domelement.insertadjacentelement.md) \\- Додає сусідній елемент\n    -   [DOMElement::insertAdjacentText](domelement.insertadjacenttext.md)— Додає сусідній текст\n    -   [DOMElement::prepend](domelement.prepend.md) \\- Додає вузли перед першим дочірнім вузлом\n    -   [DOMElement::remove](domelement.remove.md) \\- Видаляє елемент\n    -   [DOMElement::removeAttribute](domelement.removeattribute.md) \\- Видаляє атрибут\n    -   [DOMElement::removeAttributeNode](domelement.removeattributenode.md) \\- Видаляє атрибут\n    -   [DOMElement::removeAttributeNS](domelement.removeattributens.md) \\- Видаляє атрибут\n    -   [DOMElement::replaceChildren](domelement.replacechildren.md)— Замінює дочірні елементи елемента\n    -   [DOMElement::replaceWith](domelement.replacewith.md)— Замінює елемент новими вузлами\n    -   [DOMElement::setAttribute](domelement.setattribute.md)— Додає новий або змінює існуючий атрибут\n    -   [DOMElement::setAttributeNode](domelement.setattributenode.md)— Додає новий вузол атрибуту до елементу\n    -   [DOMElement::setAttributeNodeNS](domelement.setattributenodens.md)— Додає новий атрибут елемент\n    -   [DOMElement::setAttributeNS](domelement.setattributens.md) \\- Додає новий атрибут\n    -   [DOMElement::setIdAttribute](domelement.setidattribute.md)— Оголошує атрибут із зазначеним ім'ям тип ID\n    -   [DOMElement::setIdAttributeNode](domelement.setidattributenode.md)— Оголошує зазначений сайт атрибута тип ID\n    -   [DOMElement::setIdAttributeNS](domelement.setidattributens.md)— Оголошує атрибуту із зазначеними локальним ім'ям та URI простору імен тип ID\n    -   [DOMElement::toggleAttribute](domelement.toggleattribute.md) \\- Перемикає атрибут\n-   [DOMEntity](class.domentity.md) \\- Клас DOMEntity\n-   [DOMEntityReference](class.domentityreference.md) \\- Клас DOMEntityReference\n    -   [DOMEntityReference::\\_\\_construct](domentityreference.construct.md)— Створює новий об'єкт класу DOM EntityReference\n-   [DOMException](class.domexception.md) \\- Клас DOMException\n-   [DOMImplementation](class.domimplementation.md) \\- Клас DOMImplementation\n    -   [DOMImplementation::\\_\\_construct](domimplementation.construct.md)— Створює новий об'єкт класу DOMImplementation\n    -   [DOMImplementation::createDocument](domimplementation.createdocument.md)— Створює об'єкт класу DOMDocument заданого типу з його елементом.\n    -   [DOMImplementation::createDocumentType](domimplementation.createdocumenttype.md)— Створює порожній об'єкт класу DOMDocumentType\n    -   [DOMImplementation::hasFeature](domimplementation.hasfeature.md)— Перевірка, чи реалізована певна можливість у реалізації DOM\n-   [DOMNamedNodeMap](class.domnamednodemap.md)— Клас DOMNamedNodeMap\n    -   [DOMNamedNodeMap::count](domnamednodemap.count.md) \\- Кількість вузлів у відображенні\n    -   [DOMNamedNodeMap::getIterator](domnamednodemap.getiterator.md)— Отримує зовнішній ітератор\n    -   [DOMNamedNodeMap::getNamedItem](domnamednodemap.getnameditem.md)— Отримує вузол, вказаний на ім'я\n    -   [DOMNamedNodeMap::getNamedItemNS](domnamednodemap.getnameditemns.md)— Отримує вузол із заданим локальним ім'ям та URI простору імен\n    -   [DOMNamedNodeMap::item](domnamednodemap.item.md)— Отримує вузол із заданим індексом\n-   [DOMNameSpaceNode](class.domnamespacenode.md)— Клас DOMNameSpaceNode\n-   [DOMNode](class.domnode.md) \\- Клас DOMNode\n    -   [DOMNode::appendChild](domnode.appendchild.md)— Додає новий дочірній вузол до кінця списку нащадків.\n    -   [DOMNode::C14N](domnode.c14n.md) \\- Канонізувати вузли в рядок\n    -   [DOMNode::C14NFile](domnode.c14nfile.md) \\- Канонізувати вузли у файл\n    -   [DOMNode::cloneNode](domnode.clonenode.md) \\- Клонує вузол\n    -   [DOMNode::contains](domnode.contains.md)— Перевіряє, чи містить вузол інший вузол\n    -   [DOMNode::getLineNo](domnode.getlineno.md)— Отримує номер рядка вузла\n    -   [DOMNode::getNodePath](domnode.getnodepath.md) \\- Отримання XPath вузла\n    -   [DOMNode::getRootNode](domnode.getrootnode.md)— Отримує кореневий вузол\n    -   [DOMNode::hasAttributes](domnode.hasattributes.md)— Перевіряє, чи цей вузол має атрибути.\n    -   [DOMNode::hasChildNodes](domnode.haschildnodes.md)— Перевіряє, чи цей вузол має нащадків.\n    -   [DOMNode::insertBefore](domnode.insertbefore.md)— Додає новий дочірній вузол перед вказаним вузлом\n    -   [DOMNode::isDefaultNamespace](domnode.isdefaultnamespace.md)— Перевіряє, чи вказаний URI простору імен вузла є простором імен за умовчанням чи ні\n    -   [DOMNode::isEqualNode](domnode.isequalnode.md)— Перевіряє, що обидва вузли ідентичні\n    -   [DOMNode::isSameNode](domnode.issamenode.md)— Вказує, чи є два вузли одним і тим самим вузлом\n    -   [DOMNode::isSupported](domnode.issupported.md)— Перевіряє, чи підтримується можливість у певній версії\n    -   [DOMNode::lookupNamespaceURI](domnode.lookupnamespaceuri.md)— Отримує URI простору імен вузла за префіксом\n    -   [DOMNode::lookupPrefix](domnode.lookupprefix.md)— Повертає префікс простору імен вузла із URI простору імен\n    -   [DOMNode::normalize](domnode.normalize.md) \\- Нормалізує вузол\n    -   [DOMNode::removeChild](domnode.removechild.md) \\- Видаляє дочірній вузол зі списку нащадків.\n    -   [DOMNode::replaceChild](domnode.replacechild.md) \\- Замінює дочірній вузол\n-   [DOMNodeList](class.domnodelist.md) \\- Клас DOMNodeList\n    -   [DOMNodeList::count](domnodelist.count.md)— Отримати кількість вузлів у списку\n    -   [DOMNodeList::getIterator](domnodelist.getiterator.md)— Отримує зовнішній ітератор\n    -   [DOMNodeList::item](domnodelist.item.md)— Отримує вузол із заданим індексом\n-   [DOMNotation](class.domnotation.md) \\- Клас DOMNotation\n-   [DOMParentNode](class.domparentnode.md) \\- Інтерфейс DOMParentNode\n    -   [DOMParentNode::append](domparentnode.append.md)— Додає вузли після останнього дочірнього вузла\n    -   [DOMParentNode::prepend](domparentnode.prepend.md) \\- Додає вузли перед першим дочірнім вузлом\n    -   [DOMParentNode::replaceChildren](domparentnode.replacechildren.md)— Замінює нащадків у вузлі\n-   [DOMProcessingInstruction](class.domprocessinginstruction.md) \\- Клас DOMProcessingInstruction\n    -   [DOMProcessingInstruction::\\_\\_construct](domprocessinginstruction.construct.md)— Створює новий об'єкт класу DOMProcessingInstruction\n-   [DOMText](class.domtext.md) \\- Клас DOMText\n    -   [DOMText::\\_\\_construct](domtext.construct.md)— Створює об'єкт класу DOMText\n    -   [DOMText::isElementContentWhitespace](domtext.iselementcontentwhitespace.md)— Повертає, чи містить текстовий вузол пробіл у вмісті елемента\n    -   [DOMText::isWhitespaceInElementContent](domtext.iswhitespaceinelementcontent.md)— Визначає, чи містить текстовий вузол пробіли у вмісті\n    -   [DOMText::splitText](domtext.splittext.md)— Поділяє вузол на два, починаючи із заданої позиції\n-   [DOMXPath](class.domxpath.md) \\- Клас DOMXPath\n    -   [DOMXPath::\\_\\_construct](domxpath.construct.md)— Створює новий об'єкт класу DOMXPath\n    -   [DOMXPath::evaluate](domxpath.evaluate.md)— Обчислює переданий вираз XPath і повертає типізований результат, якщо можливо\n    -   [DOMXPath::query](domxpath.query.md)— Виконує заданий вираз XPath\n    -   [DOMXPath::registerNamespace](domxpath.registernamespace.md)— Реєструє простір імен з об'єктом DOMXPath\n    -   [DOMXPath::registerPhpFunctions](domxpath.registerphpfunctions.md) \\- Реєстрація PHP-функцій як функцій XPath\n-   [Функції DOM](ref.dom.md)\n    -   [dom\\_import\\_simplexml](function.dom-import-simplexml.md)— Отримує об'єкт класу DOMElement із об'єкта класу SimpleXMLElement\n","title":"Document Object Model","contentType":2,"navigation":[{"refs.xml.md":"« Обробка XML"},{"intro.dom.md":"Вступ \""},{"index.md":"PHP Manual"},{"refs.xml.md":"Обробка XML"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"book.dom.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

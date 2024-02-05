@@ -1,0 +1,1493 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Класс[Imagick](class.imagick.md)</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="imagick.examples-1.md" class="mx-4">« Базове використання</a><a href="imagick.adaptiveblurimage.md" class="mx-4">Imagick::adaptiveBlurImage »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.imagick.md" class="mx-4">ImageMagick</a></div><article class="markdown_markdown__yfc8y"><div><h1>Класс<a href="class.imagick.md">Imagick</a></h1>
+<p>(PECL imagick 2, PECL imagick 3)</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+    
+     class Imagick
+     implements 
+       Iterator {
+    
+   public __construct(mixed $files = ?)
+
+    public adaptiveBlurImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public adaptiveResizeImage(    int $columns,    int $rows,    bool $bestfit = false,    bool $legacy = false): bool
+public adaptiveSharpenImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public adaptiveThresholdImage(int $width, int $height, int $offset): bool
+public addImage(Imagick $source): bool
+public addNoiseImage(int $noise_type, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public affineTransformImage(ImagickDraw $matrix): bool
+public animateImages(string $x_server): bool
+public annotateImage(    ImagickDraw $draw_settings,    float $x,    float $y,    float $angle,    string $text): bool
+public appendImages(bool $stack): Imagick
+public autoLevelImage(int $channel = Imagick::CHANNEL_DEFAULT): bool
+public averageImages(): Imagick
+public blackThresholdImage(mixed $threshold): bool
+public blueShiftImage(float $factor = 1.5): bool
+public blurImage(float $radius, float $sigma, int $channel = ?): bool
+public borderImage(mixed $bordercolor, int $width, int $height): bool
+public brightnessContrastImage(float $brightness, float $contrast, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public charcoalImage(float $radius, float $sigma): bool
+public chopImage(    int $width,    int $height,    int $x,    int $y): bool
+public clampImage(int $channel = Imagick::CHANNEL_DEFAULT): bool
+public clear(): bool
+public clipImage(): bool
+public clipImagePath(string $pathname, string $inside): void
+public clipPathImage(string $pathname, bool $inside): bool
+public clone(): Imagick
+public clutImage(Imagick $lookup_table, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public coalesceImages(): Imagick
+public colorFloodfillImage(    mixed $fill,    float $fuzz,    mixed $bordercolor,    int $x,    int $y): bool
+public colorizeImage(mixed $colorize, mixed $opacity, bool $legacy = false): bool
+public colorMatrixImage(array $color_matrix = Imagick::CHANNEL_DEFAULT): bool
+public combineImages(int $channelType): Imagick
+public commentImage(string $comment): bool
+public compareImageChannels(Imagick $image, int $channelType, int $metricType): array
+public compareImageLayers(int $method): Imagick
+public compareImages(Imagick $compare, int $metric): array
+public compositeImage(    Imagick $composite_object,    int $composite,    int $x,    int $y,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public contrastImage(bool $sharpen): bool
+public contrastStretchImage(float $black_point, float $white_point, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public convolveImage(array $kernel, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public count(int $mode = 0): int
+public cropImage(    int $width,    int $height,    int $x,    int $y): bool
+public cropThumbnailImage(int $width, int $height, bool $legacy = false): bool
+public current(): Imagick
+public cycleColormapImage(int $displace): bool
+public decipherImage(string $passphrase): bool
+public deconstructImages(): Imagick
+public deleteImageArtifact(string $artifact): bool
+public deleteImageProperty(string $name): bool
+public deskewImage(float $threshold): bool
+public despeckleImage(): bool
+public destroy(): bool
+public displayImage(string $servername): bool
+public displayImages(string $servername): bool
+public distortImage(int $method, array $arguments, bool $bestfit): bool
+public drawImage(ImagickDraw $draw): bool
+public edgeImage(float $radius): bool
+public embossImage(float $radius, float $sigma): bool
+public encipherImage(string $passphrase): bool
+public enhanceImage(): bool
+public equalizeImage(): bool
+public evaluateImage(int $op, float $constant, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public exportImagePixels(    int $x,    int $y,    int $width,    int $height,    string $map,    int $STORAGE): array
+public extentImage(    int $width,    int $height,    int $x,    int $y): bool
+public filter(ImagickKernel $ImagickKernel, int $channel = Imagick::CHANNEL_UNDEFINED): bool
+public flattenImages(): Imagick
+public flipImage(): bool
+public floodFillPaintImage(    mixed $fill,    float $fuzz,    mixed $target,    int $x,    int $y,    bool $invert,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public flopImage(): bool
+public forwardFourierTransformimage(bool $magnitude): bool
+public frameImage(    mixed $matte_color,    int $width,    int $height,    int $inner_bevel,    int $outer_bevel): bool
+public functionImage(int $function, array $arguments, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public fxImage(string $expression, int $channel = Imagick::CHANNEL_DEFAULT): Imagick
+public gammaImage(float $gamma, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public gaussianBlurImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public getColorspace(): int
+public getCompression(): int
+public getCompressionQuality(): int
+public static getCopyright(): string
+public getFilename(): string
+public getFont(): string
+public getFormat(): string
+public getGravity(): int
+public static getHomeURL(): string
+public getImage(): Imagick
+public getImageAlphaChannel(): bool
+public getImageArtifact(string $artifact): string
+public getImageAttribute(string $key): string
+public getImageBackgroundColor(): ImagickPixel
+public getImageBlob(): string
+public getImageBluePrimary(): array
+public getImageBorderColor(): ImagickPixel
+public getImageChannelDepth(int $channel): int
+public getImageChannelDistortion(Imagick $reference, int $channel, int $metric): float
+public getImageChannelDistortions(Imagick $reference, int $metric, int $channel = Imagick::CHANNEL_DEFAULT): float
+public getImageChannelExtrema(int $channel): array
+public getImageChannelKurtosis(int $channel = Imagick::CHANNEL_DEFAULT): array
+public getImageChannelMean(int $channel): array
+public getImageChannelRange(int $channel): array
+public getImageChannelStatistics(): array
+public getImageClipMask(): Imagick
+public getImageColormapColor(int $index): ImagickPixel
+public getImageColors(): int
+public getImageColorspace(): int
+public getImageCompose(): int
+public getImageCompression(): int
+public getImageCompressionQuality(): int
+public getImageDelay(): int
+public getImageDepth(): int
+public getImageDispose(): int
+public getImageDistortion(MagickWand $reference, int $metric): float
+public getImageExtrema(): array
+public getImageFilename(): string
+public getImageFormat(): string
+public getImageGamma(): float
+public getImageGeometry(): array
+public getImageGravity(): int
+public getImageGreenPrimary(): array
+public getImageHeight(): int
+public getImageHistogram(): array
+public getImageIndex(): int
+public getImageInterlaceScheme(): int
+public getImageInterpolateMethod(): int
+public getImageIterations(): int
+public getImageLength(): int
+public getImageMatte(): bool
+public getImageMatteColor(): ImagickPixel
+public getImageMimeType(): string
+public getImageOrientation(): int
+public getImagePage(): array
+public getImagePixelColor(int $x, int $y): ImagickPixel
+public getImageProfile(string $name): string
+public getImageProfiles(string $pattern = &quot;*&quot;, bool $include_values = true): array
+public getImageProperties(string $pattern = &quot;*&quot;, bool $include_values = true): array
+public getImageProperty(string $name): string
+public getImageRedPrimary(): array
+public getImageRegion(    int $width,    int $height,    int $x,    int $y): Imagick
+public getImageRenderingIntent(): int
+public getImageResolution(): array
+public getImagesBlob(): string
+public getImageScene(): int
+public getImageSignature(): string
+public getImageSize(): int
+public getImageTicksPerSecond(): int
+public getImageTotalInkDensity(): float
+public getImageType(): int
+public getImageUnits(): int
+public getImageVirtualPixelMethod(): int
+public getImageWhitePoint(): array
+public getImageWidth(): int
+public getInterlaceScheme(): int
+public getIteratorIndex(): int
+public getNumberImages(): int
+public getOption(string $key): string
+public static getPackageName(): string
+public getPage(): array
+public getPixelIterator(): ImagickPixelIterator
+public getPixelRegionIterator(    int $x,    int $y,    int $columns,    int $rows): ImagickPixelIterator
+public getPointSize(): float
+public static getQuantum(): int
+public static getQuantumDepth(): array
+public static getQuantumRange(): array
+public static getRegistry(string $key): string
+public static getReleaseDate(): string
+public static getResource(int $type): int
+public static getResourceLimit(int $type): int
+public getSamplingFactors(): array
+public getSize(): array
+public getSizeOffset(): int
+public static getVersion(): array
+public haldClutImage(Imagick $clut, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public hasNextImage(): bool
+public hasPreviousImage(): bool
+public identifyFormat(string $embedText): string|false
+public identifyImage(bool $appendRawOutput = false): array
+public implodeImage(float $radius): bool
+public importImagePixels(    int $x,    int $y,    int $width,    int $height,    string $map,    int $storage,    array $pixels): bool
+public inverseFourierTransformImage(Imagick $complement, bool $magnitude): bool
+public labelImage(string $label): bool
+public levelImage(    float $blackPoint,    float $gamma,    float $whitePoint,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public linearStretchImage(float $blackPoint, float $whitePoint): bool
+public liquidRescaleImage(    int $width,    int $height,    float $delta_x,    float $rigidity): bool
+public static listRegistry(): array
+public magnifyImage(): bool
+public mapImage(Imagick $map, bool $dither): bool
+public matteFloodfillImage(    float $alpha,    float $fuzz,    mixed $bordercolor,    int $x,    int $y): bool
+public medianFilterImage(float $radius): bool
+public mergeImageLayers(int $layer_method): Imagick
+public minifyImage(): bool
+public modulateImage(float $brightness, float $saturation, float $hue): bool
+public montageImage(    ImagickDraw $draw,    string $tile_geometry,    string $thumbnail_geometry,    int $mode,    string $frame): Imagick
+public morphImages(int $number_frames): Imagick
+public morphology(    int $morphologyMethod,    int $iterations,    ImagickKernel $ImagickKernel,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public mosaicImages(): Imagick
+public motionBlurImage(    float $radius,    float $sigma,    float $angle,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public negateImage(bool $gray, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public newImage(    int $cols,    int $rows,    mixed $background,    string $format = ?): bool
+public newPseudoImage(int $columns, int $rows, string $pseudoString): bool
+public nextImage(): bool
+public normalizeImage(int $channel = Imagick::CHANNEL_DEFAULT): bool
+public oilPaintImage(float $radius): bool
+public opaquePaintImage(    mixed $target,    mixed $fill,    float $fuzz,    bool $invert,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public optimizeImageLayers(): bool
+public orderedPosterizeImage(string $threshold_map, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public paintFloodfillImage(    mixed $fill,    float $fuzz,    mixed $bordercolor,    int $x,    int $y,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public paintOpaqueImage(    mixed $target,    mixed $fill,    float $fuzz,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public paintTransparentImage(mixed $target, float $alpha, float $fuzz): bool
+public pingImage(string $filename): bool
+public pingImageBlob(string $image): bool
+public pingImageFile(resource $filehandle, string $fileName = ?): bool
+public polaroidImage(ImagickDraw $properties, float $angle): bool
+public posterizeImage(int $levels, bool $dither): bool
+public previewImages(int $preview): bool
+public previousImage(): bool
+public profileImage(string $name, ?string $profile): bool
+public quantizeImage(    int $numberColors,    int $colorspace,    int $treedepth,    bool $dither,    bool $measureError): bool
+public quantizeImages(    int $numberColors,    int $colorspace,    int $treedepth,    bool $dither,    bool $measureError): bool
+public queryFontMetrics(ImagickDraw $properties, string $text, bool $multiline = ?): array
+public static queryFonts(string $pattern = &quot;*&quot;): array
+public static queryFormats(string $pattern = &quot;*&quot;): array
+public radialBlurImage(float $angle, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public raiseImage(    int $width,    int $height,    int $x,    int $y,    bool $raise): bool
+public randomThresholdImage(float $low, float $high, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public readImage(string $filename): bool
+public readImageBlob(string $image, string $filename = ?): bool
+public readImageFile(resource $filehandle, string $fileName = null): bool
+public readImages(array $filenames): bool
+public recolorImage(array $matrix): bool
+public reduceNoiseImage(float $radius): bool
+public remapImage(Imagick $replacement, int $DITHER): bool
+public removeImage(): bool
+public removeImageProfile(string $name): string
+public render(): bool
+public resampleImage(    float $x_resolution,    float $y_resolution,    int $filter,    float $blur): bool
+public resetImagePage(string $page): bool
+public resizeImage(    int $columns,    int $rows,    int $filter,    float $blur,    bool $bestfit = false,    bool $legacy = false): bool
+public rollImage(int $x, int $y): bool
+public rotateImage(mixed $background, float $degrees): bool
+public rotationalBlurImage(float $angle, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public roundCorners(    float $x_rounding,    float $y_rounding,    float $stroke_width = 10,    float $displace = 5,    float $size_correction = -6): bool
+public sampleImage(int $columns, int $rows): bool
+public scaleImage(    int $columns,    int $rows,    bool $bestfit = false,    bool $legacy = false): bool
+public segmentImage(    int $COLORSPACE,    float $cluster_threshold,    float $smooth_threshold,    bool $verbose = false): bool
+public selectiveBlurImage(    float $radius,    float $sigma,    float $threshold,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public separateImageChannel(int $channel): bool
+public sepiaToneImage(float $threshold): bool
+public setBackgroundColor(mixed $background): bool
+public setColorspace(int $COLORSPACE): bool
+public setCompression(int $compression): bool
+public setCompressionQuality(int $quality): bool
+public setFilename(string $filename): bool
+public setFirstIterator(): bool
+public setFont(string $font): bool
+public setFormat(string $format): bool
+public setGravity(int $gravity): bool
+public setImage(Imagick $replace): bool
+public setImageAlphaChannel(int $mode): bool
+public setImageArtifact(string $artifact, string $value): bool
+public setImageAttribute(string $key, string $value): bool
+public setImageBackgroundColor(mixed $background): bool
+public setImageBias(float $bias): bool
+public setImageBiasQuantum(float $bias): void
+public setImageBluePrimary(float $x, float $y): bool
+public setImageBorderColor(mixed $border): bool
+public setImageChannelDepth(int $channel, int $depth): bool
+public setImageClipMask(Imagick $clip_mask): bool
+public setImageColormapColor(int $index, ImagickPixel $color): bool
+public setImageColorspace(int $colorspace): bool
+public setImageCompose(int $compose): bool
+public setImageCompression(int $compression): bool
+public setImageCompressionQuality(int $quality): bool
+public setImageDelay(int $delay): bool
+public setImageDepth(int $depth): bool
+public setImageDispose(int $dispose): bool
+public setImageExtent(int $columns, int $rows): bool
+public setImageFilename(string $filename): bool
+public setImageFormat(string $format): bool
+public setImageGamma(float $gamma): bool
+public setImageGravity(int $gravity): bool
+public setImageGreenPrimary(float $x, float $y): bool
+public setImageIndex(int $index): bool
+public setImageInterlaceScheme(int $interlace_scheme): bool
+public setImageInterpolateMethod(int $method): bool
+public setImageIterations(int $iterations): bool
+public setImageMatte(bool $matte): bool
+public setImageMatteColor(mixed $matte): bool
+public setImageOpacity(float $opacity): bool
+public setImageOrientation(int $orientation): bool
+public setImagePage(    int $width,    int $height,    int $x,    int $y): bool
+public setImageProfile(string $name, string $profile): bool
+public setImageProperty(string $name, string $value): bool
+public setImageRedPrimary(float $x, float $y): bool
+public setImageRenderingIntent(int $rendering_intent): bool
+public setImageResolution(float $x_resolution, float $y_resolution): bool
+public setImageScene(int $scene): bool
+public setImageTicksPerSecond(int $ticks_per_second): bool
+public setImageType(int $image_type): bool
+public setImageUnits(int $units): bool
+public setImageVirtualPixelMethod(int $method): bool
+public setImageWhitePoint(float $x, float $y): bool
+public setInterlaceScheme(int $interlace_scheme): bool
+public setIteratorIndex(int $index): bool
+public setLastIterator(): bool
+public setOption(string $key, string $value): bool
+public setPage(    int $width,    int $height,    int $x,    int $y): bool
+public setPointSize(float $point_size): bool
+public setProgressMonitor(callable $callback): bool
+public static setRegistry(string $key, string $value): bool
+public setResolution(float $x_resolution, float $y_resolution): bool
+public static setResourceLimit(int $type, int $limit): bool
+public setSamplingFactors(array $factors): bool
+public setSize(int $columns, int $rows): bool
+public setSizeOffset(int $columns, int $rows, int $offset): bool
+public setType(int $image_type): bool
+public shadeImage(bool $gray, float $azimuth, float $elevation): bool
+public shadowImage(    float $opacity,    float $sigma,    int $x,    int $y): bool
+public sharpenImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public shaveImage(int $columns, int $rows): bool
+public shearImage(mixed $background, float $x_shear, float $y_shear): bool
+public sigmoidalContrastImage(    bool $sharpen,    float $alpha,    float $beta,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public sketchImage(float $radius, float $sigma, float $angle): bool
+public smushImages(bool $stack, int $offset): Imagick
+public solarizeImage(int $threshold): bool
+public sparseColorImage(int $SPARSE_METHOD, array $arguments, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public spliceImage(    int $width,    int $height,    int $x,    int $y): bool
+public spreadImage(float $radius): bool
+public statisticImage(    int $type,    int $width,    int $height,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public steganoImage(Imagick $watermark_wand, int $offset): Imagick
+public stereoImage(Imagick $offset_wand): bool
+public stripImage(): bool
+public subImageMatch(Imagick $Imagick, array &amp;$offset = ?, float &amp;$similarity = ?): Imagick
+swirlImage(float $degrees): bool
+textureImage(Imagick $texture_wand): Imagick
+public thresholdImage(float $threshold, int $channel = Imagick::CHANNEL_DEFAULT): bool
+public thumbnailImage(    int $columns,    int $rows,    bool $bestfit = false,    bool $fill = false,    bool $legacy = false): bool
+public tintImage(mixed $tint, mixed $opacity, bool $legacy = false): bool
+public __toString(): string
+public transformImage(string $crop, string $geometry): Imagick
+public transformImageColorspace(int $colorspace): bool
+public transparentPaintImage(    mixed $target,    float $alpha,    float $fuzz,    bool $invert): bool
+public transposeImage(): bool
+public transverseImage(): bool
+public trimImage(float $fuzz): bool
+public uniqueImageColors(): bool
+public unsharpMaskImage(    float $radius,    float $sigma,    float $amount,    float $threshold,    int $channel = Imagick::CHANNEL_DEFAULT): bool
+public valid(): bool
+public vignetteImage(    float $blackPoint,    float $whitePoint,    int $x,    int $y): bool
+public waveImage(float $amplitude, float $length): bool
+public whiteThresholdImage(mixed $threshold): bool
+public writeImage(string $filename = NULL): bool
+public writeImageFile(resource $filehandle, string $format = ?): bool
+public writeImages(string $filename, bool $adjoin): bool
+public writeImagesFile(resource $filehandle, string $format = ?): bool
+
+   }
+</code></pre>
+<h2>Методи зображення та глобальні методи</h2>
+<p>Клас Imagick має можливість утримувати та обробляти кілька зображень одночасно. Це досягається рахунок внутрішнього стека, у якому існує покажчик, що вказує на поточне зображення. Деякі функції працюють з усіма зображеннями в класі Imagick, але все-таки більшість працює тільки з поточним зображенням у внутрішньому стеку. За згодою, імена методів можуть містити слово Image для позначення того, що вони впливають лише на поточне зображення у стеку.</p>
+<h2>Методи класу</h2>
+<p>Тут наведено список найбільш використовуваних методів, об&#x27;єднаних у групи за призначенням:</p>
+<p><strong>Методи класу за призначенням</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Эффекты изображения</th><th>Методы получения</th><th>Методы установки</th><th>Чтение/запись изображений</th><th>Другие</th></tr></thead><tbody><tr><td><a href="imagick.adaptiveblurimage.md">Imagick::adaptiveBlurImage()</a></td><td><a href="imagick.getcompression.md">Imagick::getCompression()</a></td><td><a href="imagick.setbackgroundcolor.md">Imagick::setBackgroundColor()</a></td><td><a href="imagick.construct.md">Imagick::__construct()</a></td><td><a href="imagick.clear.md">Imagick::clear()</a></td></tr><tr><td><a href="imagick.adaptiveresizeimage.md">Imagick::adaptiveResizeImage()</a></td><td><a href="imagick.getfilename.md">Imagick::getFilename()</a></td><td><a href="imagick.setcompressionquality.md">Imagick::setCompressionQuality()</a></td><td><a href="imagick.addimage.md">Imagick::addImage()</a></td><td><a href="imagick.clone.md">Imagick::clone()</a></td></tr><tr><td><a href="imagick.adaptivesharpenimage.md">Imagick::adaptiveSharpenImage()</a></td><td><a href="imagick.getformat.md">Imagick::getFormat()</a></td><td><a href="imagick.setcompression.md">Imagick::setCompression()</a></td><td><a href="imagick.appendimages.md">Imagick::appendImages()</a></td><td><a href="imagick.current.md">Imagick::current()</a></td></tr><tr><td><a href="imagick.adaptivethresholdimage.md">Imagick::adaptiveThresholdImage()</a></td><td><a href="imagick.getimagebackgroundcolor.md">Imagick::getImageBackgroundColor()</a></td><td><a href="imagick.setfilename.md">Imagick::setFilename()</a></td><td><a href="imagick.getfilename.md">Imagick::getFilename()</a></td><td><a href="imagick.destroy.md">Imagick::destroy()</a></td></tr><tr><td><a href="imagick.addnoiseimage.md">Imagick::addNoiseImage()</a></td><td><a href="imagick.getimageblob.md">Imagick::getImageBlob()</a></td><td><a href="imagick.getimagesblob.md">Imagick::getImagesBlob()</a></td><td><a href="imagick.setformat.md">Imagick::setFormat()</a></td><td><a href="imagick.getformat.md">Imagick::getFormat()</a></td></tr><tr><td><a href="imagick.affinetransformimage.md">Imagick::affinetransformimage()</a></td><td><a href="imagick.getimageblueprimary.md">Imagick::getImageBluePrimary()</a></td><td><a href="imagick.setimagebackgroundcolor.md">Imagick::setImageBackgroundColor()</a></td><td><a href="imagick.getimagefilename.md">Imagick::getImageFilename()</a></td><td><a href="imagick.gethomeurl.md">Imagick::getHomeURL()</a></td></tr><tr><td><a href="imagick.annotateimage.md">Imagick::annotateImage()</a></td><td><a href="imagick.getimagebordercolor.md">Imagick::getImageBorderColor()</a></td><td><a href="imagick.setfirstiterator.md">Imagick::setFirstIterator()</a></td><td><a href="imagick.getimageformat.md">Imagick::getImageFormat()</a></td><td><a href="imagick.commentimage.md">Imagick::commentImage()</a></td></tr><tr><td><a href="imagick.averageimages.md">Imagick::averageImages()</a></td><td><a href="imagick.getimagechanneldepth.md">Imagick::getImageChannelDepth()</a></td><td><a href="imagick.setimagebias.md">Imagick::setImageBias()</a></td><td><a href="imagick.getimage.md">Imagick::getImage()</a></td><td><a href="imagick.getnumberimages.md">Imagick::getNumberImages()</a></td></tr><tr><td><a href="imagick.blackthresholdimage.md">Imagick::blackThresholdImage()</a></td><td><a href="imagick.getimagechanneldistortion.md">Imagick::getImageChannelDistortion()</a></td><td><a href="imagick.setimageblueprimary.md">Imagick::setImageBluePrimary()</a></td><td><a href="imagick.setimagefilename.md">Imagick::setImageFilename()</a></td><td><a href="imagick.getreleasedate.md">Imagick::getReleaseDate()</a></td></tr><tr><td><a href="imagick.blurimage.md">Imagick::blurImage()</a></td><td><a href="imagick.getimagechannelextrema.md">Imagick::getImageChannelExtrema()</a></td><td><a href="imagick.setimagebordercolor.md">Imagick::setImageBorderColor()</a></td><td><a href="imagick.setimageformat.md">Imagick::setImageFormat()</a></td><td><a href="imagick.getversion.md">Imagick::getVersion()</a></td></tr><tr><td><a href="imagick.borderimage.md">Imagick::borderImage()</a></td><td><a href="imagick.getimagechannelmean.md">Imagick::getImageChannelMean()</a></td><td><a href="imagick.setimagechanneldepth.md">Imagick::setImageChannelDepth()</a></td><td><a href="imagick.readimagefile.md">Imagick::readImageFile()</a></td><td><a href="imagick.hasnextimage.md">Imagick::hasNextImage()</a></td></tr><tr><td><a href="imagick.charcoalimage.md">Imagick::charcoalImage()</a></td><td><a href="imagick.getimagechannelstatistics.md">Imagick::getImageChannelStatistics()</a></td><td><a href="imagick.setimagecolormapcolor.md">Imagick::setImageColormapColor()</a></td><td><a href="imagick.readimage.md">Imagick::readImage()</a></td><td><a href="imagick.haspreviousimage.md">Imagick::hasPreviousImage()</a></td></tr><tr><td><a href="imagick.chopimage.md">Imagick::chopImage()</a></td><td><a href="imagick.getimagecolormapcolor.md">Imagick::getImageColormapColor()</a></td><td><a href="imagick.setimagecolorspace.md">Imagick::setImageColorSpace()</a></td><td><a href="imagick.writeimages.md">Imagick::writeImages()</a></td><td><a href="imagick.labelimage.md">Imagick::labelImage()</a></td></tr><tr><td><a href="imagick.clipimage.md">Imagick::clipImage()</a></td><td><a href="imagick.getimagecolorspace.md">Imagick::getImageColorspace()</a></td><td><a href="imagick.setimagecompose.md">Imagick::setImageCompose()</a></td><td><a href="imagick.writeimage.md">Imagick::writeImage()</a></td><td><a href="imagick.newimage.md">Imagick::newImage()</a></td></tr><tr><td><a href="imagick.clippathimage.md">Imagick::clipPathImage()</a></td><td><a href="imagick.getimagecolors.md">Imagick::getImageColors()</a></td><td><a href="imagick.setimagecompression.md">Imagick::setImageCompression()</a></td><td></td><td><a href="imagick.newpseudoimage.md">Imagick::newPseudoImage()</a></td></tr><tr><td><a href="imagick.coalesceimages.md">Imagick::coalesceImages()</a></td><td><a href="imagick.getimagecompose.md">Imagick::getImageCompose()</a></td><td><a href="imagick.setimagedelay.md">Imagick::setImageDelay()</a></td><td></td><td><a href="imagick.nextimage.md">Imagick::nextImage()</a></td></tr><tr><td><a href="imagick.colorfloodfillimage.md">Imagick::colorFloodFillImage()</a></td><td><a href="imagick.getimagedelay.md">Imagick::getImageDelay()</a></td><td><a href="imagick.setimagedepth.md">Imagick::setImageDepth()</a></td><td></td><td><a href="imagick.pingimageblob.md">Imagick::pingImageBlob()</a></td></tr><tr><td><a href="imagick.colorizeimage.md">Imagick::colorizeImage()</a></td><td><a href="imagick.getimagedepth.md">Imagick::getImageDepth()</a></td><td><a href="imagick.setimagedispose.md">Imagick::setImageDispose()</a></td><td></td><td><a href="imagick.pingimagefile.md">Imagick::pingImageFile()</a></td></tr><tr><td><a href="imagick.combineimages.md">Imagick::combineImages()</a></td><td><a href="imagick.getimagedispose.md">Imagick::getImageDispose()</a></td><td><a href="imagick.setimagedispose.md">Imagick::setImageDispose()</a></td><td></td><td><a href="imagick.pingimage.md">Imagick::pingImage()</a></td></tr><tr><td><a href="imagick.compareimagechannels.md">Imagick::compareImageChannels()</a></td><td><a href="imagick.getimagedistortion.md">Imagick::getImageDistortion()</a></td><td><a href="imagick.setimageextent.md">Imagick::setImageExtent()</a></td><td></td><td><a href="imagick.previousimage.md">Imagick::previousImage()</a></td></tr><tr><td><a href="imagick.compareimagelayers.md">Imagick::compareImageLayers()</a></td><td><a href="imagick.getimageextrema.md">Imagick::getImageExtrema()</a></td><td><a href="imagick.setimagefilename.md">Imagick::setImageFilename()</a></td><td></td><td><a href="imagick.profileimage.md">Imagick::profileImage()</a></td></tr><tr><td><a href="imagick.compositeimage.md">Imagick::compositeImage()</a></td><td><a href="imagick.getimagefilename.md">Imagick::getImageFilename()</a></td><td><a href="imagick.setimageformat.md">Imagick::setImageFormat()</a></td><td></td><td><a href="imagick.queryformats.md">Imagick::queryFormats()</a></td></tr><tr><td><a href="imagick.contrastimage.md">Imagick::contrastImage()</a></td><td><a href="imagick.getimageformat.md">Imagick::getImageFormat()</a></td><td><a href="imagick.setimagegamma.md">Imagick::setImageGamma()</a></td><td></td><td><a href="imagick.removeimageprofile.md">Imagick::removeImageProfile()</a></td></tr><tr><td><a href="imagick.contraststretchimage.md">Imagick::contrastStretchImage()</a></td><td><a href="imagick.getimagegamma.md">Imagick::getImageGamma()</a></td><td><a href="imagick.setimagegreenprimary.md">Imagick::setImageGreenPrimary()</a></td><td></td><td><a href="imagick.removeimage.md">Imagick::removeImage()</a></td></tr><tr><td><a href="imagick.convolveimage.md">Imagick::convolveImage()</a></td><td><a href="imagick.getimagegeometry.md">Imagick::getImageGeometry()</a></td><td><a href="imagick.setimageindex.md">Imagick::setImageIndex()</a></td><td></td><td><a href="imagick.setfirstiterator.md">Imagick::setFirstIterator()</a></td></tr><tr><td><a href="imagick.cropimage.md">Imagick::cropImage()</a></td><td><a href="imagick.getimagegreenprimary.md">Imagick::getImageGreenPrimary()</a></td><td><a href="imagick.setimageinterpolatemethod.md">Imagick::setImageInterpolateMethod()</a></td><td></td><td><a href="imagick.setimageindex.md">Imagick::setImageIndex()</a></td></tr><tr><td><a href="imagick.cyclecolormapimage.md">Imagick::cycleColormapImage()</a></td><td><a href="imagick.getimageheight.md">Imagick::getImageHeight()</a></td><td><a href="imagick.setimageiterations.md">Imagick::setImageIterations()</a></td><td></td><td><a href="imagick.valid.md">Imagick::valid()</a></td></tr><tr><td><a href="imagick.deconstructimages.md">Imagick::deconstructImages()</a></td><td><a href="imagick.getimagehistogram.md">Imagick::getImageHistogram()</a></td><td><a href="imagick.setimagemattecolor.md">Imagick::setImageMatteColor()</a></td><td></td><td><a href="imagick.getcopyright.md">Imagick::getCopyright()</a></td></tr><tr><td><a href="imagick.drawimage.md">Imagick::drawImage()</a></td><td><a href="imagick.getimageindex.md">Imagick::getImageIndex()</a></td><td><a href="imagick.setimagematte.md">Imagick::setImageMatte()</a></td><td></td><td></td></tr><tr><td><a href="imagick.edgeimage.md">Imagick::edgeImage()</a></td><td><a href="imagick.getimageinterlacescheme.md">Imagick::getImageInterlaceScheme()</a></td><td><a href="imagick.setimagepage.md">Imagick::setImagePage()</a></td><td></td><td></td></tr><tr><td><a href="imagick.embossimage.md">Imagick::embossImage()</a></td><td><a href="imagick.getimageinterpolatemethod.md">Imagick::getImageInterpolateMethod()</a></td><td><a href="imagick.setimageprofile.md">Imagick::setImageProfile()</a></td><td></td><td></td></tr><tr><td><a href="imagick.enhanceimage.md">Imagick::enhanceImage()</a></td><td><a href="imagick.getimageiterations.md">Imagick::getImageIterations()</a></td><td><a href="imagick.setimageproperty.md">Imagick::setImageProperty()</a></td><td></td><td></td></tr><tr><td><a href="imagick.equalizeimage.md">Imagick::equalizeImage()</a></td><td><a href="imagick.getimagemattecolor.md">Imagick::getImageMatteColor()</a></td><td><a href="imagick.setimageredprimary.md">Imagick::setImageRedPrimary()</a></td><td></td><td></td></tr><tr><td><a href="imagick.evaluateimage.md">Imagick::evaluateImage()</a></td><td><a href="imagick.getimagematte.md">Imagick::getImageMatte()</a></td><td><a href="imagick.setimagerenderingintent.md">Imagick::setImageRenderingIntent()</a></td><td></td><td></td></tr><tr><td><a href="imagick.flattenimages.md">Imagick::flattenImages()</a></td><td><a href="imagick.getimagepage.md">Imagick::getImagePage()</a></td><td><a href="imagick.setimageresolution.md">Imagick::setImageResolution()</a></td><td></td><td></td></tr><tr><td><a href="imagick.flipimage.md">Imagick::flipImage()</a></td><td><a href="imagick.getimagepixelcolor.md">Imagick::getImagePixelColor()</a></td><td><a href="imagick.setimagescene.md">Imagick::setImageScene()</a></td><td></td><td></td></tr><tr><td><a href="imagick.flopimage.md">Imagick::flopImage()</a></td><td><a href="imagick.getimageprofile.md">Imagick::getImageProfile()</a></td><td><a href="imagick.setimagetickspersecond.md">Imagick::setImageTicksPerSecond()</a></td><td></td><td></td></tr><tr><td></td><td><a href="imagick.getimageproperty.md">Imagick::getImageProperty()</a></td><td><a href="imagick.setimagetype.md">Imagick::setImageType()</a></td><td></td><td></td></tr><tr><td><a href="imagick.fximage.md">Imagick::fxImage()</a></td><td><a href="imagick.getimageredprimary.md">Imagick::getImageRedPrimary()</a></td><td><a href="imagick.setimageunits.md">Imagick::setImageUnits()</a></td><td></td><td></td></tr><tr><td><a href="imagick.gammaimage.md">Imagick::gammaImage()</a></td><td><a href="imagick.getimageregion.md">Imagick::getImageRegion()</a></td><td><a href="imagick.setimagevirtualpixelmethod.md">Imagick::setImageVirtualPixelMethod()</a></td><td></td><td></td></tr><tr><td><a href="imagick.gaussianblurimage.md">Imagick::gaussianBlurImage()</a></td><td><a href="imagick.getimagerenderingintent.md">Imagick::getImageRenderingIntent()</a></td><td><a href="imagick.setimagewhitepoint.md">Imagick::setImageWhitepoint()</a></td><td></td><td></td></tr><tr><td><a href="imagick.implodeimage.md">Imagick::implodeImage()</a></td><td><a href="imagick.getimageresolution.md">Imagick::getImageResolution()</a></td><td><a href="imagick.setinterlacescheme.md">Imagick::setInterlaceScheme()</a></td><td></td><td></td></tr><tr><td><a href="imagick.levelimage.md">Imagick::levelImage()</a></td><td><a href="imagick.getimagescene.md">Imagick::getImageScene()</a></td><td><a href="imagick.setoption.md">Imagick::setOption()</a></td><td></td><td></td></tr><tr><td><a href="imagick.linearstretchimage.md">Imagick::linearStretchImage()</a></td><td><a href="imagick.getimagesignature.md">Imagick::getImageSignature()</a></td><td><a href="imagick.setpage.md">Imagick::setPage()</a></td><td></td><td></td></tr><tr><td><a href="imagick.magnifyimage.md">Imagick::magnifyImage()</a></td><td><a href="imagick.getimagetickspersecond.md">Imagick::getImageTicksPerSecond()</a></td><td><a href="imagick.setresolution.md">Imagick::setResolution()</a></td><td></td><td></td></tr><tr><td><a href="imagick.mattefloodfillimage.md">Imagick::matteFloodFillImage()</a></td><td><a href="imagick.getimagetotalinkdensity.md">Imagick::getImageTotalInkDensity()</a></td><td><a href="imagick.setresourcelimit.md">Imagick::setResourceLimit()</a></td><td></td><td></td></tr><tr><td><a href="imagick.medianfilterimage.md">Imagick::medianFilterImage()</a></td><td><a href="imagick.getimagetype.md">Imagick::getImageType()</a></td><td><a href="imagick.setsamplingfactors.md">Imagick::setSamplingFactors()</a></td><td></td><td></td></tr><tr><td><a href="imagick.minifyimage.md">Imagick::minifyImage()</a></td><td><a href="imagick.getimageunits.md">Imagick::getImageUnits()</a></td><td><a href="imagick.setsizeoffset.md">Imagick::setSizeOffset()</a></td><td></td><td></td></tr><tr><td><a href="imagick.modulateimage.md">Imagick::modulateImage()</a></td><td><a href="imagick.getimagevirtualpixelmethod.md">Imagick::getImageVirtualPixelMethod()</a></td><td><a href="imagick.setsize.md">Imagick::setSize()</a></td><td></td><td></td></tr><tr><td><a href="imagick.montageimage.md">Imagick::montageImage()</a></td><td><a href="imagick.getimagewhitepoint.md">Imagick::getImageWhitepoint()</a></td><td><a href="imagick.settype.md">Imagick::setType()</a></td><td></td><td></td></tr><tr><td><a href="imagick.morphimages.md">Imagick::morphImages()</a></td><td><a href="imagick.getimagewidth.md">Imagick::getImageWidth()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.mosaicimages.md">Imagick::mosaicImages()</a></td><td><a href="imagick.getimage.md">Imagick::getImage()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.motionblurimage.md">Imagick::motionBlurImage()</a></td><td><a href="imagick.getinterlacescheme.md">Imagick::getInterlaceScheme()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.negateimage.md">Imagick::negateImage()</a></td><td><a href="imagick.getnumberimages.md">Imagick::getNumberImages()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.normalizeimage.md">Imagick::normalizeImage()</a></td><td><a href="imagick.getoption.md">Imagick::getOption()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.oilpaintimage.md">Imagick::oilPaintImage()</a></td><td><a href="imagick.getpackagename.md">Imagick::getPackageName()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.optimizeimagelayers.md">Imagick::optimizeImageLayers()</a></td><td><a href="imagick.getpage.md">Imagick::getPage()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.paintopaqueimage.md">Imagick::paintOpaqueImage()</a></td><td><a href="imagick.getpixeliterator.md">Imagick::getPixelIterator()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.painttransparentimage.md">Imagick::paintTransparentImage()</a></td><td><a href="imagick.getpixelregioniterator.md">Imagick::getPixelRegionIterator()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.posterizeimage.md">Imagick::posterizeImage()</a></td><td><a href="imagick.getquantumdepth.md">Imagick::getQuantumDepth()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.radialblurimage.md">Imagick::radialBlurImage()</a></td><td><a href="imagick.getquantumrange.md">Imagick::getQuantumRange()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.raiseimage.md">Imagick::raiseImage()</a></td><td><a href="imagick.getresourcelimit.md">Imagick::getResourceLimit()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.randomthresholdimage.md">Imagick::randomThresholdImage()</a></td><td><a href="imagick.getresource.md">Imagick::getResource()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.reducenoiseimage.md">Imagick::reduceNoiseImage()</a></td><td><a href="imagick.getsamplingfactors.md">Imagick::getSamplingFactors()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.render.md">Imagick::render()</a></td><td><a href="imagick.getsizeoffset.md">Imagick::getSizeOffset()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.resampleimage.md">Imagick::resampleImage()</a></td><td><a href="imagick.getsize.md">Imagick::getSize()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.resizeimage.md">Imagick::resizeImage()</a></td><td><a href="imagick.identifyimage.md">Imagick::identifyImage()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.rollimage.md">Imagick::rollImage()</a></td><td><a href="imagick.getimagesize.md">Imagick::getImageSize()</a></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.rotateimage.md">Imagick::rotateImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.sampleimage.md">Imagick::sampleImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.scaleimage.md">Imagick::scaleImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.separateimagechannel.md">Imagick::separateImageChannel()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.sepiatoneimage.md">Imagick::sepiaToneImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.shadeimage.md">Imagick::shadeImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.shadowimage.md">Imagick::shadowImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.sharpenimage.md">Imagick::sharpenImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.shaveimage.md">Imagick::shaveImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.shearimage.md">Imagick::shearImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.sigmoidalcontrastimage.md">Imagick::sigmoidalContrastImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.sketchimage.md">Imagick::sketchImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.solarizeimage.md">Imagick::solarizeImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.spliceimage.md">Imagick::spliceImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.spreadimage.md">Imagick::spreadImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.steganoimage.md">Imagick::steganoImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.stereoimage.md">Imagick::stereoImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.stripimage.md">Imagick::stripImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.swirlimage.md">Imagick::swirlImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.textureimage.md">Imagick::textureImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.thresholdimage.md">Imagick::thresholdImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.thumbnailimage.md">Imagick::thumbnailImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.tintimage.md">Imagick::tintImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.transverseimage.md">Imagick::transverseImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.trimimage.md">Imagick::trimImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.uniqueimagecolors.md">Imagick::uniqueImageColors()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.unsharpmaskimage.md">Imagick::unsharpMaskImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.vignetteimage.md">Imagick::vignetteImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.waveimage.md">Imagick::waveImage()</a></td><td></td><td></td><td></td><td></td></tr><tr><td><a href="imagick.whitethresholdimage.md">Imagick::whiteThresholdImage()</a></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<h2>Зміст</h2>
+<ul>
+<li><a href="imagick.adaptiveblurimage.md">Imagick::adaptiveBlurImage</a>— Додає адаптивний фільтр розмиття до зображення</li>
+<li><a href="imagick.adaptiveresizeimage.md">Imagick::adaptiveResizeImage</a>— Адаптивна зміна розміру зображення з даними тріангуляції</li>
+<li><a href="imagick.adaptivesharpenimage.md">Imagick::adaptiveSharpenImage</a>— Адаптивна зміна різкості зображення</li>
+<li><a href="imagick.adaptivethresholdimage.md">Imagick::adaptiveThresholdImage</a>— Вибір порога кожного пікселя в залежності від діапазону інтенсивності</li>
+<li><a href="imagick.addimage.md">Imagick::addImage</a>— Додає нове зображення до списку зображень об&#x27;єкту Imagick</li>
+<li><a href="imagick.addnoiseimage.md">Imagick::addNoiseImage</a> - Накладає випадковий шум на зображення</li>
+<li><a href="imagick.affinetransformimage.md">Imagick::affineTransformImage</a>— Перетворює зображення</li>
+<li><a href="imagick.animateimages.md">Imagick::animateImages</a>— Анімація одного або кількох зображень</li>
+<li><a href="imagick.annotateimage.md">Imagick::annotateImage</a>— Додає текстовий коментар на зображення</li>
+<li><a href="imagick.appendimages.md">Imagick::appendImages</a>— Об&#x27;єднує набір зображень</li>
+<li><a href="imagick.autolevelimage.md">Imagick::autoLevelImage</a>— Налаштовує рівні певного каналу зображення</li>
+<li><a href="imagick.averageimages.md">Imagick::averageImages</a>— Усереднює набір зображень</li>
+<li><a href="imagick.blackthresholdimage.md">Imagick::blackThresholdImage</a>— Перевести всі пікселі нижче граничного значення в чорний колір</li>
+<li><a href="imagick.blueshiftimage.md">Imagick::blueShiftImage</a>— Приглушує кольори зображення</li>
+<li><a href="imagick.blurimage.md">Imagick::blurImage</a>— Додає фільтр розмиття до зображення</li>
+<li><a href="imagick.borderimage.md">Imagick::borderImage</a>— Оточує зображення рамкою</li>
+<li><a href="imagick.brightnesscontrastimage.md">Imagick::brightnessContrastImage</a>— Змінює яскравість та/або контраст зображення</li>
+<li><a href="imagick.charcoalimage.md">Imagick::charcoalImage</a> - Малювання вугіллям</li>
+<li><a href="imagick.chopimage.md">Imagick::chopImage</a>— Видаляє область зображення та обрізає його.</li>
+<li><a href="imagick.clampimage.md">Imagick::clampImage</a> - Обмежує діапазон кольорів від 0 до квантової глибини.</li>
+<li><a href="imagick.clear.md">Imagick::clear</a>— Очищає всі ресурси, пов&#x27;язані з об&#x27;єктом Imagick</li>
+<li><a href="imagick.clipimage.md">Imagick::clipImage</a>— Обрізка вздовж найближчого контуру з профілем 8BIM</li>
+<li><a href="imagick.clipimagepath.md">Imagick::clipImagePath</a>— Кліпи вздовж іменованих шляхів із профілю 8BIM, якщо вони є</li>
+<li><a href="imagick.clippathimage.md">Imagick::clipPathImage</a>— Відсікти уздовж зазначеного контуру з профілем 8BIM</li>
+<li><a href="imagick.clone.md">Imagick::clone</a>— Створює точну копію об&#x27;єкту Imagick</li>
+<li><a href="imagick.clutimage.md">Imagick::clutImage</a>— Замінює кольори у зображенні</li>
+<li><a href="imagick.coalesceimages.md">Imagick::coalesceImages</a>— Компонує набір зображень</li>
+<li><a href="imagick.colorfloodfillimage.md">Imagick::colorFloodfillImage</a>— Змінює значення кольору будь-якого пікселя, що відповідає цільовому</li>
+<li><a href="imagick.colorizeimage.md">Imagick::colorizeImage</a>— Змішування кольору заливки із зображенням</li>
+<li><a href="imagick.colormatriximage.md">Imagick::colorMatrixImage</a>— Застосовує перетворення кольору до зображення</li>
+<li><a href="imagick.combineimages.md">Imagick::combineImages</a>— Об&#x27;єднує одне або кілька зображень в одне зображення</li>
+<li><a href="imagick.commentimage.md">Imagick::commentImage</a>— Додає коментар до вашого зображення</li>
+<li><a href="imagick.compareimagechannels.md">Imagick::compareImageChannels</a>— Повертає різницю в одному чи кількох зображеннях</li>
+<li><a href="imagick.compareimagelayers.md">Imagick::compareImageLayers</a>— Повертає максимальну область, що обмежує між зображеннями.</li>
+<li><a href="imagick.compareimages.md">Imagick::compareImages</a>— Порівнює зображення з відновленим зображенням</li>
+<li><a href="imagick.compositeimage.md">Imagick::compositeImage</a>— Накладає одне зображення на інше</li>
+<li><a href="imagick.construct.md">Imagick::__construct</a> - Конструктор об&#x27;єкту Imagick</li>
+<li><a href="imagick.contrastimage.md">Imagick::contrastImage</a>— Змінює контраст зображення</li>
+<li><a href="imagick.contraststretchimage.md">Imagick::contrastStretchImage</a>— Підвищує контрастність кольорового зображення</li>
+<li><a href="imagick.convolveimage.md">Imagick::convolveImage</a>— Застосовується ядро ​​згортки для користувача.</li>
+<li><a href="imagick.count.md">Imagick::count</a>— Отримує кількість зображень</li>
+<li><a href="imagick.cropimage.md">Imagick::cropImage</a>— Витягує область зображення</li>
+<li><a href="imagick.cropthumbnailimage.md">Imagick::cropThumbnailImage</a> - Створює обрізану мініатюру</li>
+<li><a href="imagick.current.md">Imagick::current</a>— Повертає посилання на поточний об&#x27;єкт Imagick</li>
+<li><a href="imagick.cyclecolormapimage.md">Imagick::cycleColormapImage</a>— Відображає карту кольорів зображення</li>
+<li><a href="imagick.decipherimage.md">Imagick::decipherImage</a>— Розшифровує зображення</li>
+<li><a href="imagick.deconstructimages.md">Imagick::deconstructImages</a>— Повертає певні піксельні відмінності між зображеннями</li>
+<li><a href="imagick.deleteimageartifact.md">Imagick::deleteImageArtifact</a>— Видаляє артефакт зображення</li>
+<li><a href="imagick.deleteimageproperty.md">Imagick::deleteImageProperty</a>— Видаляє властивість зображення</li>
+<li><a href="imagick.deskewimage.md">Imagick::deskewImage</a>— Видаляє перекіс із зображення</li>
+<li><a href="imagick.despeckleimage.md">Imagick::despeckleImage</a> - Зменшує спекл-шум на зображенні</li>
+<li><a href="imagick.destroy.md">Imagick::destroy</a>— Видаляє об&#x27;єкт Imagick</li>
+<li><a href="imagick.displayimage.md">Imagick::displayImage</a>— Виводить зображення</li>
+<li><a href="imagick.displayimages.md">Imagick::displayImages</a>— Виводить зображення або послідовність зображень</li>
+<li><a href="imagick.distortimage.md">Imagick::distortImage</a>— Спотворює зображення, використовуючи різні методи спотворення</li>
+<li><a href="imagick.drawimage.md">Imagick::drawImage</a>— Виконує рендеринг об&#x27;єкту ImagickDraw на поточному зображенні</li>
+<li><a href="imagick.edgeimage.md">Imagick::edgeImage</a>— Підсилює краї зображення.</li>
+<li><a href="imagick.embossimage.md">Imagick::embossImage</a>— Повертає зображення у градаціях сірого із тривимірним ефектом</li>
+<li><a href="imagick.encipherimage.md">Imagick::encipherImage</a> - Шифрує зображення</li>
+<li><a href="imagick.enhanceimage.md">Imagick::enhanceImage</a>— Покращує якість шумного зображення</li>
+<li><a href="imagick.equalizeimage.md">Imagick::equalizeImage</a>— Вирівнює гістограму зображення</li>
+<li><a href="imagick.evaluateimage.md">Imagick::evaluateImage</a>— Застосовує вираз до зображення</li>
+<li><a href="imagick.exportimagepixels.md">Imagick::exportImagePixels</a>— Експортує пікселі зображення</li>
+<li><a href="imagick.extentimage.md">Imagick::extentImage</a>— Встановлює розмір зображення</li>
+<li><a href="imagick.filter.md">Imagick::filter</a>— Застосовується ядро ​​згортки для користувача.</li>
+<li><a href="imagick.flattenimages.md">Imagick::flattenImages</a>— Поєднує послідовність зображень</li>
+<li><a href="imagick.flipimage.md">Imagick::flipImage</a>— Створює вертикальне дзеркало зображення</li>
+<li><a href="imagick.floodfillpaintimage.md">Imagick::floodFillPaintImage</a>— Змінює значення кольору будь-якого пікселя, що відповідає цільовому</li>
+<li><a href="imagick.flopimage.md">Imagick::flopImage</a>— Створює горизонтальне дзеркальне відображення</li>
+<li><a href="imagick.forwardfouriertransformimage.md">Imagick::forwardFourierTransformImage</a> - Реалізує дискретне перетворення Фур&#x27;є</li>
+<li><a href="imagick.frameimage.md">Imagick::frameImage</a>— Додає імітацію тривимірного кордону</li>
+<li><a href="imagick.functionimage.md">Imagick::functionImage</a>— Застосовує функцію зображення.</li>
+<li><a href="imagick.fximage.md">Imagick::fxImage</a>— Оцінює вираз для кожного пікселя у зображенні</li>
+<li><a href="imagick.gammaimage.md">Imagick::gammaImage</a> - Гамма-корекція зображення</li>
+<li><a href="imagick.gaussianblurimage.md">Imagick::gaussianBlurImage</a>— Розмиває зображення</li>
+<li><a href="imagick.getcolorspace.md">Imagick::getColorspace</a>— Повертає палітру кольорів</li>
+<li><a href="imagick.getcompression.md">Imagick::getCompression</a>— Повертає тип стиснення об&#x27;єкта</li>
+<li><a href="imagick.getcompressionquality.md">Imagick::getCompressionQuality</a>— Повертає якість стиснення об&#x27;єкта</li>
+<li><a href="imagick.getcopyright.md">Imagick::getCopyright</a>— Повертає копірайт API ImageMagick у вигляді рядка</li>
+<li><a href="imagick.getfilename.md">Imagick::getFilename</a> - Ім&#x27;я файлу результуючого зображення</li>
+<li><a href="imagick.getfont.md">Imagick::getFont</a>— Повертає назву шрифту</li>
+<li><a href="imagick.getformat.md">Imagick::getFormat</a>— Повертає формат Imagick об&#x27;єкту</li>
+<li><a href="imagick.getgravity.md">Imagick::getGravity</a> - Повертає значення гравітації (тяжіння)</li>
+<li><a href="imagick.gethomeurl.md">Imagick::getHomeURL</a>— Повертає домашню URL-адресу бібліотеки ImageMagick</li>
+<li><a href="imagick.getimage.md">Imagick::getImage</a>— Повертає новий об&#x27;єкт Imagick</li>
+<li><a href="imagick.getimagealphachannel.md">Imagick::getImageAlphaChannel</a>— Перевіряє, чи є зображення альфа-канал</li>
+<li><a href="imagick.getimageartifact.md">Imagick::getImageArtifact</a>— Повертає артефакт зображення</li>
+<li><a href="imagick.getimageattribute.md">Imagick::getImageAttribute</a> - Повертає іменований атрибут</li>
+<li><a href="imagick.getimagebackgroundcolor.md">Imagick::getImageBackgroundColor</a>— Повертає колір тла зображення</li>
+<li><a href="imagick.getimageblob.md">Imagick::getImageBlob</a>— Повертає послідовність зображень у вигляді BLOB</li>
+<li><a href="imagick.getimageblueprimary.md">Imagick::getImageBluePrimary</a>— Повертає основну точку синього кольору зображення</li>
+<li><a href="imagick.getimagebordercolor.md">Imagick::getImageBorderColor</a>— Повертає колір рамки зображення</li>
+<li><a href="imagick.getimagechanneldepth.md">Imagick::getImageChannelDepth</a>— Повертає глибину для певного каналу зображення</li>
+<li><a href="imagick.getimagechanneldistortion.md">Imagick::getImageChannelDistortion</a>— Порівнює канали зображення з відновленим зображенням</li>
+<li><a href="imagick.getimagechanneldistortions.md">Imagick::getImageChannelDistortions</a>— Повертає спотворення каналу</li>
+<li><a href="imagick.getimagechannelextrema.md">Imagick::getImageChannelExtrema</a>— Повертає екстремуми для одного або кількох каналів зображення</li>
+<li><a href="imagick.getimagechannelkurtosis.md">Imagick::getImageChannelKurtosis</a>— Повертає ексцес та асиметрію певного каналу</li>
+<li><a href="imagick.getimagechannelmean.md">Imagick::getImageChannelMean</a>— Повертає середнє та стандартне відхилення</li>
+<li><a href="imagick.getimagechannelrange.md">Imagick::getImageChannelRange</a>— Повертає діапазон каналів</li>
+<li><a href="imagick.getimagechannelstatistics.md">Imagick::getImageChannelStatistics</a>— Повертає статистику для кожного каналу зображення</li>
+<li><a href="imagick.getimageclipmask.md">Imagick::getImageClipMask</a>— Повертає відсічну маску зображення</li>
+<li><a href="imagick.getimagecolormapcolor.md">Imagick::getImageColormapColor</a>— Повертає колір зазначеного індексу палітри</li>
+<li><a href="imagick.getimagecolors.md">Imagick::getImageColors</a>— Повертає кількість унікальних кольорів у зображенні</li>
+<li><a href="imagick.getimagecolorspace.md">Imagick::getImageColorspace</a>— Повертає палітру кольорів зображення</li>
+<li><a href="imagick.getimagecompose.md">Imagick::getImageCompose</a>— Повертає складовий оператор, пов&#x27;язаний із зображенням</li>
+<li><a href="imagick.getimagecompression.md">Imagick::getImageCompression</a>— Повертає поточний тип компресії зображення</li>
+<li><a href="imagick.getimagecompressionquality.md">Imagick::getImageCompressionQuality</a>— Повертає поточну якість стиснення зображення</li>
+<li><a href="imagick.getimagedelay.md">Imagick::getImageDelay</a>— Повертає затримку зображення</li>
+<li><a href="imagick.getimagedepth.md">Imagick::getImageDepth</a>— Повертає глибину зображення</li>
+<li><a href="imagick.getimagedispose.md">Imagick::getImageDispose</a>— Повертає метод видалення зображення</li>
+<li><a href="imagick.getimagedistortion.md">Imagick::getImageDistortion</a>— Порівнює зображення з відновленим зображенням</li>
+<li><a href="imagick.getimageextrema.md">Imagick::getImageExtrema</a>— Повертає екстремуми зображення</li>
+<li><a href="imagick.getimagefilename.md">Imagick::getImageFilename</a>— Повертає ім&#x27;я файлу конкретного зображення у послідовності</li>
+<li><a href="imagick.getimageformat.md">Imagick::getImageFormat</a>— Повертає формат зображення в послідовності.</li>
+<li><a href="imagick.getimagegamma.md">Imagick::getImageGamma</a>— Повертає гаму зображення</li>
+<li><a href="imagick.getimagegeometry.md">Imagick::getImageGeometry</a>— Повертає ширину та висоту у вигляді асоціативного масиву</li>
+<li><a href="imagick.getimagegravity.md">Imagick::getImageGravity</a> - Повертає значення гравітації (тяжіння)</li>
+<li><a href="imagick.getimagegreenprimary.md">Imagick::getImageGreenPrimary</a>— Повертає первинну точку кольоровості зеленого</li>
+<li><a href="imagick.getimageheight.md">Imagick::getImageHeight</a>— Повертає висоту зображення</li>
+<li><a href="imagick.getimagehistogram.md">Imagick::getImageHistogram</a>— Повертає гістограму зображення</li>
+<li><a href="imagick.getimageindex.md">Imagick::getImageIndex</a>— Повертає індекс активного поточного зображення.</li>
+<li><a href="imagick.getimageinterlacescheme.md">Imagick::getImageInterlaceScheme</a>— Отримує схему надрядкового зображення</li>
+<li><a href="imagick.getimageinterpolatemethod.md">Imagick::getImageInterpolateMethod</a>— Повертає метод інтерполяції</li>
+<li><a href="imagick.getimageiterations.md">Imagick::getImageIterations</a>— Повертає ітерацію зображення</li>
+<li><a href="imagick.getimagelength.md">Imagick::getImageLength</a>— Повертає довжину зображення у байтах</li>
+<li><a href="imagick.getimagematte.md">Imagick::getImageMatte</a>— Повертає, якщо зображення містить матовий канал</li>
+<li><a href="imagick.getimagemattecolor.md">Imagick::getImageMatteColor</a>— Повертає матовий колір зображення</li>
+<li><a href="imagick.getimagemimetype.md">Imagick::getImageMimeType</a>— Повертає MIME-тип зображення</li>
+<li><a href="imagick.getimageorientation.md">Imagick::getImageOrientation</a>— Повертає орієнтацію зображення</li>
+<li><a href="imagick.getimagepage.md">Imagick::getImagePage</a>— Повертає геометрію сторінки</li>
+<li><a href="imagick.getimagepixelcolor.md">Imagick::getImagePixelColor</a>— Повертає колір вказаного пікселя</li>
+<li><a href="imagick.getimageprofile.md">Imagick::getImageProfile</a>— Повертає іменований профіль зображення</li>
+<li><a href="imagick.getimageprofiles.md">Imagick::getImageProfiles</a>— Повертає профілі зображень</li>
+<li><a href="imagick.getimageproperties.md">Imagick::getImageProperties</a>— Повертає властивості зображення</li>
+<li><a href="imagick.getimageproperty.md">Imagick::getImageProperty</a>— Повертає іменовану властивість зображення</li>
+<li><a href="imagick.getimageredprimary.md">Imagick::getImageRedPrimary</a>— Повертає червону первинну точку кольоровості</li>
+<li><a href="imagick.getimageregion.md">Imagick::getImageRegion</a>— Витягує область зображення</li>
+<li><a href="imagick.getimagerenderingintent.md">Imagick::getImageRenderingIntent</a>— Повертає схему передачі кольору зображення</li>
+<li><a href="imagick.getimageresolution.md">Imagick::getImageResolution</a>— Повертає роздільну здатність зображення за X та Y</li>
+<li><a href="imagick.getimagesblob.md">Imagick::getImagesBlob</a>— Повертає всі послідовності зображення у вигляді великого двійкового об&#x27;єкта</li>
+<li><a href="imagick.getimagescene.md">Imagick::getImageScene</a>— Повертає сцену зображення</li>
+<li><a href="imagick.getimagesignature.md">Imagick::getImageSignature</a> - Генерує хеш SHA-256</li>
+<li><a href="imagick.getimagesize.md">Imagick::getImageSize</a>— Повертає розмір зображення у байтах</li>
+<li><a href="imagick.getimagetickspersecond.md">Imagick::getImageTicksPerSecond</a>— Отримує кількість кадрів на секунду для зображення</li>
+<li><a href="imagick.getimagetotalinkdensity.md">Imagick::getImageTotalInkDensity</a>— Повертає загальну щільність чорнила зображення</li>
+<li><a href="imagick.getimagetype.md">Imagick::getImageType</a>— Повертає можливий тип зображення</li>
+<li><a href="imagick.getimageunits.md">Imagick::getImageUnits</a>— Повертає одиниці вимірювання роздільної здатності зображення</li>
+<li><a href="imagick.getimagevirtualpixelmethod.md">Imagick::getImageVirtualPixelMethod</a>— Повертає метод віртуального пікселя</li>
+<li><a href="imagick.getimagewhitepoint.md">Imagick::getImageWhitePoint</a>— Повертає білу точку кольоровості</li>
+<li><a href="imagick.getimagewidth.md">Imagick::getImageWidth</a>— Повертає ширину зображення</li>
+<li><a href="imagick.getinterlacescheme.md">Imagick::getInterlaceScheme</a>— Отримує схему стиснення зображення</li>
+<li><a href="imagick.getiteratorindex.md">Imagick::getIteratorIndex</a>— Повертає індекс активного поточного зображення.</li>
+<li><a href="imagick.getnumberimages.md">Imagick::getNumberImages</a>— Повертає кількість зображень в об&#x27;єкті</li>
+<li><a href="imagick.getoption.md">Imagick::getOption</a>— Повертає значення, пов&#x27;язане із зазначеним ключем</li>
+<li><a href="imagick.getpackagename.md">Imagick::getPackageName</a>— Повертає ім&#x27;я ImageMagick</li>
+<li><a href="imagick.getpage.md">Imagick::getPage</a>— Повертає геометрію сторінки</li>
+<li><a href="imagick.getpixeliterator.md">Imagick::getPixelIterator</a> - Повертає MagickPixelIterator</li>
+<li><a href="imagick.getpixelregioniterator.md">Imagick::getPixelRegionIterator</a>— Повертає об&#x27;єкт ImagickPixelIterator для секції зображення</li>
+<li><a href="imagick.getpointsize.md">Imagick::getPointSize</a>— Повертає розмір точки</li>
+<li><a href="imagick.getquantum.md">Imagick::getQuantum</a>— Повертає квантовий діапазон ImageMagick</li>
+<li><a href="imagick.getquantumdepth.md">Imagick::getQuantumDepth</a> - Повертає величину глибини</li>
+<li><a href="imagick.getquantumrange.md">Imagick::getQuantumRange</a>— Повертає розмір спектру Imagick</li>
+<li><a href="imagick.getregistry.md">Imagick::getRegistry</a>— Отримує запис StringRegistry</li>
+<li><a href="imagick.getreleasedate.md">Imagick::getReleaseDate</a>— Повертає дату випуску ImageMagick</li>
+<li><a href="imagick.getresource.md">Imagick::getResource</a>— Повертає розмір пам&#x27;яті вказаного ресурсу.</li>
+<li><a href="imagick.getresourcelimit.md">Imagick::getResourceLimit</a>— Повертає заданий ліміт ресурсів</li>
+<li><a href="imagick.getsamplingfactors.md">Imagick::getSamplingFactors</a>— Повертає горизонтальний та вертикальний фактор вибірки</li>
+<li><a href="imagick.getsize.md">Imagick::getSize</a>— Повертає розмір, пов&#x27;язаний із об&#x27;єктом Imagick</li>
+<li><a href="imagick.getsizeoffset.md">Imagick::getSizeOffset</a>— Повертає розмір усунення</li>
+<li><a href="imagick.getversion.md">Imagick::getVersion</a>— Повертає версію API ImageMagick</li>
+<li><a href="imagick.haldclutimage.md">Imagick::haldClutImage</a>— Замінює кольори у зображенні</li>
+<li><a href="imagick.hasnextimage.md">Imagick::hasNextImage</a>— Перевіряє, чи об&#x27;єкт містить більше зображень</li>
+<li><a href="imagick.haspreviousimage.md">Imagick::hasPreviousImage</a>— Перевіряє, чи об&#x27;єкт має попереднє зображення.</li>
+<li><a href="imagick.identifyformat.md">Imagick::identifyFormat</a>— Замінює будь-які вбудовані символи форматування відповідною властивістю зображення</li>
+<li><a href="imagick.identifyimage.md">Imagick::identifyImage</a>— Визначає зображення та отримує атрибути</li>
+<li><a href="imagick.implodeimage.md">Imagick::implodeImage</a>— Створює копію зображення</li>
+<li><a href="imagick.importimagepixels.md">Imagick::importImagePixels</a>— Імпортує пікселі зображення</li>
+<li><a href="imagick.inversefouriertransformimage.md">Imagick::inverseFourierTransformImage</a> - Реалізує дискретне перетворення Фур&#x27;є</li>
+<li><a href="imagick.labelimage.md">Imagick::labelImage</a>— Додає позначку до зображення</li>
+<li><a href="imagick.levelimage.md">Imagick::levelImage</a>— Регулює рівні зображення</li>
+<li><a href="imagick.linearstretchimage.md">Imagick::linearStretchImage</a>— Розтягує з насиченням яскравість зображення</li>
+<li><a href="imagick.liquidrescaleimage.md">Imagick::liquidRescaleImage</a>— Анімує зображення чи зображення</li>
+<li><a href="imagick.listregistry.md">Imagick::listRegistry</a>— Перелічує всі налаштування реєстру</li>
+<li><a href="imagick.magnifyimage.md">Imagick::magnifyImage</a>— Пропорційно масштабує зображення вдвічі</li>
+<li><a href="imagick.mapimage.md">Imagick::mapImage</a>— Замінює кольори зображення на найближчий колір із еталонного зображення</li>
+<li><a href="imagick.mattefloodfillimage.md">Imagick::matteFloodfillImage</a>— Змінює значення прозорості кольору</li>
+<li><a href="imagick.medianfilterimage.md">Imagick::medianFilterImage</a>— Застосовує цифровий фільтр</li>
+<li><a href="imagick.mergeimagelayers.md">Imagick::mergeImageLayers</a>— Об&#x27;єднує шари зображення</li>
+<li><a href="imagick.minifyimage.md">Imagick::minifyImage</a>— Масштабує зображення пропорційно до половини його розміру.</li>
+<li><a href="imagick.modulateimage.md">Imagick::modulateImage</a>— Керуйте яскравістю, насиченістю та відтінком</li>
+<li><a href="imagick.montageimage.md">Imagick::montageImage</a>— Створює складне зображення</li>
+<li><a href="imagick.morphimages.md">Imagick::morphImages</a>— Перетворює набір зображень</li>
+<li><a href="imagick.morphology.md">Imagick::morphology</a>— Застосовує зображення ядро, надане користувачем, відповідно до заданого методу морфології</li>
+<li><a href="imagick.mosaicimages.md">Imagick::mosaicImages</a>— Формує мозаїку із зображень</li>
+<li><a href="imagick.motionblurimage.md">Imagick::motionBlurImage</a>— Імітує розмиття у русі</li>
+<li><a href="imagick.negateimage.md">Imagick::negateImage</a> - Інвертує кольори в еталонному зображенні</li>
+<li><a href="imagick.newimage.md">Imagick::newImage</a>— Створює нове зображення</li>
+<li><a href="imagick.newpseudoimage.md">Imagick::newPseudoImage</a>— Створює нове зображення</li>
+<li><a href="imagick.nextimage.md">Imagick::nextImage</a>— Переходить до наступного зображення</li>
+<li><a href="imagick.normalizeimage.md">Imagick::normalizeImage</a>— Підвищує контрастність кольорового зображення</li>
+<li><a href="imagick.oilpaintimage.md">Imagick::oilPaintImage</a>— Імітує картину олією</li>
+<li><a href="imagick.opaquepaintimage.md">Imagick::opaquePaintImage</a>— Змінює значення кольору будь-якого пікселя, що відповідає цільовому</li>
+<li><a href="imagick.optimizeimagelayers.md">Imagick::optimizeImageLayers</a>— Видаляє повторювані частини зображень для оптимізації</li>
+<li><a href="imagick.orderedposterizeimage.md">Imagick::orderedPosterizeImage</a> - Виконує впорядкований дизеринг</li>
+<li><a href="imagick.paintfloodfillimage.md">Imagick::paintFloodfillImage</a>— Змінює значення кольору будь-якого пікселя, що відповідає меті</li>
+<li><a href="imagick.paintopaqueimage.md">Imagick::paintOpaqueImage</a>— Змінює будь-який піксель, що відповідає кольору</li>
+<li><a href="imagick.painttransparentimage.md">Imagick::paintTransparentImage</a>— Змінює будь-який піксель, який відповідає кольору, на колір, визначений заливкою</li>
+<li><a href="imagick.pingimage.md">Imagick::pingImage</a>— Отримує основні атрибути зображення</li>
+<li><a href="imagick.pingimageblob.md">Imagick::pingImageBlob</a>— Швидко витягує атрибути</li>
+<li><a href="imagick.pingimagefile.md">Imagick::pingImageFile</a>— Отримує базові атрибути зображення у спрощений спосіб.</li>
+<li><a href="imagick.polaroidimage.md">Imagick::polaroidImage</a> - Імітує фото Polaroid</li>
+<li><a href="imagick.posterizeimage.md">Imagick::posterizeImage</a>— Зменшує зображення до обмеженої кількості рівнів кольору</li>
+<li><a href="imagick.previewimages.md">Imagick::previewImages</a>— Швидке визначення відповідних параметрів для обробки зображень</li>
+<li><a href="imagick.previousimage.md">Imagick::previousImage</a>— Перехід до попереднього зображення в об&#x27;єкті</li>
+<li><a href="imagick.profileimage.md">Imagick::profileImage</a>— Додає або видаляє профіль зображення</li>
+<li><a href="imagick.quantizeimage.md">Imagick::quantizeImage</a> - Аналізує кольори еталонного зображення</li>
+<li><a href="imagick.quantizeimages.md">Imagick::quantizeImages</a>— Аналізує кольори у послідовності зображень</li>
+<li><a href="imagick.queryfontmetrics.md">Imagick::queryFontMetrics</a>— Повертає масив, який представляє метрики шрифту</li>
+<li><a href="imagick.queryfonts.md">Imagick::queryFonts</a>— Повертає налаштовані шрифти</li>
+<li><a href="imagick.queryformats.md">Imagick::queryFormats</a>— Повертає формати, які підтримує Imagick</li>
+<li><a href="imagick.radialblurimage.md">Imagick::radialBlurImage</a>— Радіальне розмиття зображення</li>
+<li><a href="imagick.raiseimage.md">Imagick::raiseImage</a>— Створює імітацію ефекту 3D-кнопки</li>
+<li><a href="imagick.randomthresholdimage.md">Imagick::randomThresholdImage</a>— Створює висококонтрастне двокольорове зображення</li>
+<li><a href="imagick.readimage.md">Imagick::readImage</a>— Читає зображення із файлу</li>
+<li><a href="imagick.readimageblob.md">Imagick::readImageBlob</a>— Зчитує зображення з двійкового рядка</li>
+<li><a href="imagick.readimagefile.md">Imagick::readImageFile</a>— Читає зображення із відкритого дескриптора файлу</li>
+<li><a href="imagick.readimages.md">Imagick::readimages</a>— Читає зображення з масиву імен файлів</li>
+<li><a href="imagick.recolorimage.md">Imagick::recolorImage</a>— Перефарбовує зображення</li>
+<li><a href="imagick.reducenoiseimage.md">Imagick::reduceNoiseImage</a>— Згладжує контури зображення</li>
+<li><a href="imagick.remapimage.md">Imagick::remapImage</a>— Перезначає кольори зображення</li>
+<li><a href="imagick.removeimage.md">Imagick::removeImage</a>— Видалення зображення зі списку зображень</li>
+<li><a href="imagick.removeimageprofile.md">Imagick::removeImageProfile</a>— Видаляє іменований профіль зображення та повертає його</li>
+<li><a href="imagick.render.md">Imagick::render</a> - Відображає всі попередні команди малювання</li>
+<li><a href="imagick.resampleimage.md">Imagick::resampleImage</a>— Перетворює зображення до потрібної роздільної здатності</li>
+<li><a href="imagick.resetimagepage.md">Imagick::resetImagePage</a>— Скидає сторінку зображення</li>
+<li><a href="imagick.resizeimage.md">Imagick::resizeImage</a>— Масштабує зображення</li>
+<li><a href="imagick.rollimage.md">Imagick::rollImage</a>— Зміщує зображення</li>
+<li><a href="imagick.rotateimage.md">Imagick::rotateImage</a>— Повертає зображення</li>
+<li><a href="imagick.rotationalblurimage.md">Imagick::rotationalBlurImage</a>— Застосовує обертальне розмиття до зображення.</li>
+<li><a href="imagick.roundcorners.md">Imagick::roundCorners</a>— Заокруглює кути зображення</li>
+<li><a href="imagick.sampleimage.md">Imagick::sampleImage</a>— Масштабує зображення з піксельною вибіркою</li>
+<li><a href="imagick.scaleimage.md">Imagick::scaleImage</a>— Масштабує розмір зображення</li>
+<li><a href="imagick.segmentimage.md">Imagick::segmentImage</a>— Сегментує зображення</li>
+<li><a href="imagick.selectiveblurimage.md">Imagick::selectiveBlurImage</a> - Вибіркове розмиття зображення в межах порогового значення контрастності</li>
+<li><a href="imagick.separateimagechannel.md">Imagick::separateImageChannel</a>— Відокремлює канал від зображення</li>
+<li><a href="imagick.sepiatoneimage.md">Imagick::sepiaToneImage</a>— Тонування зображення сепією</li>
+<li><a href="imagick.setbackgroundcolor.md">Imagick::setBackgroundColor</a>— Встановлює колір тла об&#x27;єкта за промовчанням</li>
+<li><a href="imagick.setcolorspace.md">Imagick::setColorspace</a>— Встановлює колірний простір</li>
+<li><a href="imagick.setcompression.md">Imagick::setCompression</a>— Встановлює тип стиснення об&#x27;єкта за промовчанням</li>
+<li><a href="imagick.setcompressionquality.md">Imagick::setCompressionQuality</a>— Встановлює якість стандартного стиснення об&#x27;єкта</li>
+<li><a href="imagick.setfilename.md">Imagick::setFilename</a>— Встановлює ім&#x27;я файлу перед читанням чи записом зображення</li>
+<li><a href="imagick.setfirstiterator.md">Imagick::setFirstIterator</a> - Встановлює ітератор Imagick для першого зображення</li>
+<li><a href="imagick.setfont.md">Imagick::setFont</a> - Встановлює шрифт</li>
+<li><a href="imagick.setformat.md">Imagick::setFormat</a>— Встановлює формат об&#x27;єкту Imagick</li>
+<li><a href="imagick.setgravity.md">Imagick::setGravity</a> - Встановлює гравітацію</li>
+<li><a href="imagick.setimage.md">Imagick::setImage</a>— Замінює зображення в об&#x27;єкті</li>
+<li><a href="imagick.setimagealphachannel.md">Imagick::setImageAlphaChannel</a> - Встановлює альфа-канал зображення</li>
+<li><a href="imagick.setimageartifact.md">Imagick::setImageArtifact</a>— Встановлює артефакт зображення</li>
+<li><a href="imagick.setimageattribute.md">Imagick::setImageAttribute</a>— Встановлює атрибут зображення</li>
+<li><a href="imagick.setimagebackgroundcolor.md">Imagick::setImageBackgroundColor</a>— Встановлює колір тла зображення</li>
+<li><a href="imagick.setimagebias.md">Imagick::setImageBias</a>— Встановлює зміщення зображення для будь-якого методу, який згортає зображення</li>
+<li><a href="imagick.setimagebiasquantum.md">Imagick::setImageBiasQuantum</a>— Встановлює зміщення зображення</li>
+<li><a href="imagick.setimageblueprimary.md">Imagick::setImageBluePrimary</a>— Встановлює кольоровість зображення блакитною основною точкою.</li>
+<li><a href="imagick.setimagebordercolor.md">Imagick::setImageBorderColor</a>— Встановлює колір рамки зображення</li>
+<li><a href="imagick.setimagechanneldepth.md">Imagick::setImageChannelDepth</a>— Встановлює глибину певного каналу зображення</li>
+<li><a href="imagick.setimageclipmask.md">Imagick::setImageClipMask</a> - Встановлює маску кліпу</li>
+<li><a href="imagick.setimagecolormapcolor.md">Imagick::setImageColormapColor</a>— Встановлює колір вказаного індексу картки</li>
+<li><a href="imagick.setimagecolorspace.md">Imagick::setImageColorspace</a>— Встановлює колірний простір зображення</li>
+<li><a href="imagick.setimagecompose.md">Imagick::setImageCompose</a>— Встановлює оператор складеного зображення</li>
+<li><a href="imagick.setimagecompression.md">Imagick::setImageCompression</a>— Встановлює стиснення зображення</li>
+<li><a href="imagick.setimagecompressionquality.md">Imagick::setImageCompressionQuality</a>— Встановлює якість стиснення зображення</li>
+<li><a href="imagick.setimagedelay.md">Imagick::setImageDelay</a>— Встановлює затримку зображення</li>
+<li><a href="imagick.setimagedepth.md">Imagick::setImageDepth</a>— Встановлює глибину зображення</li>
+<li><a href="imagick.setimagedispose.md">Imagick::setImageDispose</a>— Встановлює метод видалення зображення</li>
+<li><a href="imagick.setimageextent.md">Imagick::setImageExtent</a>— Встановлює розмір зображення</li>
+<li><a href="imagick.setimagefilename.md">Imagick::setImageFilename</a>— Встановлює ім&#x27;я конкретного файлу.</li>
+<li><a href="imagick.setimageformat.md">Imagick::setImageFormat</a>— Встановлює формат певного зображення</li>
+<li><a href="imagick.setimagegamma.md">Imagick::setImageGamma</a>— Встановлює гаму зображення</li>
+<li><a href="imagick.setimagegravity.md">Imagick::setImageGravity</a>— Встановлює гравітацію зображення</li>
+<li><a href="imagick.setimagegreenprimary.md">Imagick::setImageGreenPrimary</a>— Встановлює кольоровість зображення зеленою первинною точкою.</li>
+<li><a href="imagick.setimageindex.md">Imagick::setImageIndex</a> - Встановлює позицію ітератора</li>
+<li><a href="imagick.setimageinterlacescheme.md">Imagick::setImageInterlaceScheme</a>— Встановлює стиснення зображення</li>
+<li><a href="imagick.setimageinterpolatemethod.md">Imagick::setImageInterpolateMethod</a>— Встановлює метод інтерполяції пікселів зображення</li>
+<li><a href="imagick.setimageiterations.md">Imagick::setImageIterations</a>— Встановлює ітерацію зображення</li>
+<li><a href="imagick.setimagematte.md">Imagick::setImageMatte</a>— Встановлює матовий канал зображення</li>
+<li><a href="imagick.setimagemattecolor.md">Imagick::setImageMatteColor</a>— Встановлює матовий колір зображення</li>
+<li><a href="imagick.setimageopacity.md">Imagick::setImageOpacity</a>— Встановлює рівень непрозорості зображення</li>
+<li><a href="imagick.setimageorientation.md">Imagick::setImageOrientation</a>— Встановлює орієнтацію зображення</li>
+<li><a href="imagick.setimagepage.md">Imagick::setImagePage</a>— Встановлює геометрію сторінки зображення</li>
+<li><a href="imagick.setimageprofile.md">Imagick::setImageProfile</a> - Додає іменований профіль до об&#x27;єкту Imagick</li>
+<li><a href="imagick.setimageproperty.md">Imagick::setImageProperty</a>— Встановлює властивість зображення</li>
+<li><a href="imagick.setimageredprimary.md">Imagick::setImageRedPrimary</a>— Встановлює червону первинну точку кольоровості зображення</li>
+<li><a href="imagick.setimagerenderingintent.md">Imagick::setImageRenderingIntent</a>— Встановлює схему передачі кольору зображення</li>
+<li><a href="imagick.setimageresolution.md">Imagick::setImageResolution</a>— Встановлює роздільну здатність зображення</li>
+<li><a href="imagick.setimagescene.md">Imagick::setImageScene</a>— Встановлює сцену зображення</li>
+<li><a href="imagick.setimagetickspersecond.md">Imagick::setImageTicksPerSecond</a>— Встановлює тривалість відображення кадру</li>
+<li><a href="imagick.setimagetype.md">Imagick::setImageType</a>— Встановлює тип зображення</li>
+<li><a href="imagick.setimageunits.md">Imagick::setImageUnits</a>— Встановлює одиниці вимірювання роздільної здатності зображення</li>
+<li><a href="imagick.setimagevirtualpixelmethod.md">Imagick::setImageVirtualPixelMethod</a> - Встановлює метод віртуального пікселя</li>
+<li><a href="imagick.setimagewhitepoint.md">Imagick::setImageWhitePoint</a>— Встановлює білу точку кольору зображення</li>
+<li><a href="imagick.setinterlacescheme.md">Imagick::setInterlaceScheme</a>— Встановлює стиснення зображення</li>
+<li><a href="imagick.setiteratorindex.md">Imagick::setIteratorIndex</a> - Встановлює позицію ітератора</li>
+<li><a href="imagick.setlastiterator.md">Imagick::setLastIterator</a> - Встановлює ітератор Imagick до останнього зображення</li>
+<li><a href="imagick.setoption.md">Imagick::setOption</a> - Встановлює опцію</li>
+<li><a href="imagick.setpage.md">Imagick::setPage</a>— Встановлює геометрію сторінки об&#x27;єкту Imagick</li>
+<li><a href="imagick.setpointsize.md">Imagick::setPointSize</a> - Встановлює розмір точки</li>
+<li><a href="imagick.setprogressmonitor.md">Imagick::setProgressMonitor</a>— Встановлює callback-функцію, яка буде викликатись під час обробки зображення Imagick</li>
+<li><a href="imagick.setregistry.md">Imagick::setRegistry</a>— Встановлює значення запису реєстру ImageMagick з ім&#x27;ям key</li>
+<li><a href="imagick.setresolution.md">Imagick::setResolution</a>— Встановлює роздільну здатність зображення</li>
+<li><a href="imagick.setresourcelimit.md">Imagick::setResourceLimit</a> - Встановлює ліміт для конкретного ресурсу</li>
+<li><a href="imagick.setsamplingfactors.md">Imagick::setSamplingFactors</a>— Встановлює коефіцієнти вибірки зображень</li>
+<li><a href="imagick.setsize.md">Imagick::setSize</a>— Встановлює розмір об&#x27;єкту Imagick</li>
+<li><a href="imagick.setsizeoffset.md">Imagick::setSizeOffset</a>— Встановлює розмір та усунення об&#x27;єкта Imagick</li>
+<li><a href="imagick.settype.md">Imagick::setType</a>— Встановлює атрибут типу зображення</li>
+<li><a href="imagick.shadeimage.md">Imagick::shadeImage</a>— Створює 3D-ефект</li>
+<li><a href="imagick.shadowimage.md">Imagick::shadowImage</a>— Імітує тінь зображення</li>
+<li><a href="imagick.sharpenimage.md">Imagick::sharpenImage</a>— Підвищує різкість зображення</li>
+<li><a href="imagick.shaveimage.md">Imagick::shaveImage</a>— Видаляє пікселі по краях зображення</li>
+<li><a href="imagick.shearimage.md">Imagick::shearImage</a> - Створює паралелограм</li>
+<li><a href="imagick.sigmoidalcontrastimage.md">Imagick::sigmoidalContrastImage</a> - Регулює контраст зображення</li>
+<li><a href="imagick.sketchimage.md">Imagick::sketchImage</a> - Імітує малюнок олівцем</li>
+<li><a href="imagick.smushimages.md">Imagick::smushImages</a>— Бере всі зображення з поточного покажчика зображення до кінця списку зображень і переміщує їх</li>
+<li><a href="imagick.solarizeimage.md">Imagick::solarizeImage</a>— Застосовує до зображення ефект соляризації</li>
+<li><a href="imagick.sparsecolorimage.md">Imagick::sparseColorImage</a> - Інтерполює кольори</li>
+<li><a href="imagick.spliceimage.md">Imagick::spliceImage</a>— Склеює суцільний колір у зображення</li>
+<li><a href="imagick.spreadimage.md">Imagick::spreadImage</a>— Випадково зміщує кожен піксель у блоці</li>
+<li><a href="imagick.statisticimage.md">Imagick::statisticImage</a>— Модифікація зображення за допомогою функції статистики</li>
+<li><a href="imagick.steganoimage.md">Imagick::steganoImage</a>— Приховує цифровий водяний знак у зображенні</li>
+<li><a href="imagick.stereoimage.md">Imagick::stereoImage</a>— Об&#x27;єднує два зображення</li>
+<li><a href="imagick.stripimage.md">Imagick::stripImage</a>— Знімає зображення всіх профілів та коментарів</li>
+<li><a href="imagick.subimagematch.md">Imagick::subImageMatch</a>— Виконує пошук фрагмента зображення у поточному зображенні та повертає другорядне зображення.</li>
+<li><a href="imagick.swirlimage.md">Imagick::swirlImage</a>— Закручує пікселі навколо центру зображення</li>
+<li><a href="imagick.textureimage.md">Imagick::textureImage</a>— Багато разів розміщує зображення текстури</li>
+<li><a href="imagick.thresholdimage.md">Imagick::thresholdImage</a> - Змінює окремі пікселі на основі порогового значення</li>
+<li><a href="imagick.thumbnailimage.md">Imagick::thumbnailImage</a>— Змінює розмір зображення</li>
+<li><a href="imagick.tintimage.md">Imagick::tintImage</a>— Застосовує вектор кольору до кожного пікселя зображення</li>
+<li><a href="imagick.tostring.md">Imagick::__function toString() { [native code] }</a>— Повертає зображення у вигляді рядка</li>
+<li><a href="imagick.transformimage.md">Imagick::transformImage</a>— Зручний метод налаштування розміру кадрування та геометрії зображення</li>
+<li><a href="imagick.transformimagecolorspace.md">Imagick::transformImageColorspace</a>— Перетворює зображення на новий колірний простір</li>
+<li><a href="imagick.transparentpaintimage.md">Imagick::transparentPaintImage</a>— Малює пікселі прозорими</li>
+<li><a href="imagick.transposeimage.md">Imagick::transposeImage</a>— Створює вертикальне дзеркальне відображення</li>
+<li><a href="imagick.transverseimage.md">Imagick::transverseImage</a>— Створює горизонтальне дзеркальне відображення</li>
+<li><a href="imagick.trimimage.md">Imagick::trimImage</a>— Видаляє краї із зображення</li>
+<li><a href="imagick.uniqueimagecolors.md">Imagick::uniqueImageColors</a> - Відкидає все, крім одного, будь-якого кольору пікселя</li>
+<li><a href="imagick.unsharpmaskimage.md">Imagick::unsharpMaskImage</a> - Різкість зображення</li>
+<li><a href="imagick.valid.md">Imagick::valid</a>— Перевіряє, чи поточний елемент є коректним.</li>
+<li><a href="imagick.vignetteimage.md">Imagick::vignetteImage</a>— Додає він&#x27;єтний фільтр до зображення</li>
+<li><a href="imagick.waveimage.md">Imagick::waveImage</a>— Застосовує хвильовий фільтр до зображення</li>
+<li><a href="imagick.whitethresholdimage.md">Imagick::whiteThresholdImage</a>— Зафарбовує всі пікселі вище за поріг у білий</li>
+<li><a href="imagick.writeimage.md">Imagick::writeImage</a>— Записує зображення за вказаним ім&#x27;ям файлу</li>
+<li><a href="imagick.writeimagefile.md">Imagick::writeImageFile</a>— Записує зображення у файл</li>
+<li><a href="imagick.writeimages.md">Imagick::writeImages</a>— Записує зображення або послідовність зображень</li>
+<li><a href="imagick.writeimagesfile.md">Imagick::writeImagesFile</a>— Записує кадри у файловий дескриптор</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.imagick.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.imagick.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.imagick.md","content":"# Класс[Imagick](class.imagick.md)\n\n(PECL imagick 2, PECL imagick 3)\n\n## Огляд класів\n\n```classsynopsis\n\n    \n     class Imagick\n     implements \n       Iterator {\n    \n   public __construct(mixed $files = ?)\n\n    public adaptiveBlurImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic adaptiveResizeImage(    int $columns,    int $rows,    bool $bestfit = false,    bool $legacy = false): bool\npublic adaptiveSharpenImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic adaptiveThresholdImage(int $width, int $height, int $offset): bool\npublic addImage(Imagick $source): bool\npublic addNoiseImage(int $noise_type, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic affineTransformImage(ImagickDraw $matrix): bool\npublic animateImages(string $x_server): bool\npublic annotateImage(    ImagickDraw $draw_settings,    float $x,    float $y,    float $angle,    string $text): bool\npublic appendImages(bool $stack): Imagick\npublic autoLevelImage(int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic averageImages(): Imagick\npublic blackThresholdImage(mixed $threshold): bool\npublic blueShiftImage(float $factor = 1.5): bool\npublic blurImage(float $radius, float $sigma, int $channel = ?): bool\npublic borderImage(mixed $bordercolor, int $width, int $height): bool\npublic brightnessContrastImage(float $brightness, float $contrast, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic charcoalImage(float $radius, float $sigma): bool\npublic chopImage(    int $width,    int $height,    int $x,    int $y): bool\npublic clampImage(int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic clear(): bool\npublic clipImage(): bool\npublic clipImagePath(string $pathname, string $inside): void\npublic clipPathImage(string $pathname, bool $inside): bool\npublic clone(): Imagick\npublic clutImage(Imagick $lookup_table, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic coalesceImages(): Imagick\npublic colorFloodfillImage(    mixed $fill,    float $fuzz,    mixed $bordercolor,    int $x,    int $y): bool\npublic colorizeImage(mixed $colorize, mixed $opacity, bool $legacy = false): bool\npublic colorMatrixImage(array $color_matrix = Imagick::CHANNEL_DEFAULT): bool\npublic combineImages(int $channelType): Imagick\npublic commentImage(string $comment): bool\npublic compareImageChannels(Imagick $image, int $channelType, int $metricType): array\npublic compareImageLayers(int $method): Imagick\npublic compareImages(Imagick $compare, int $metric): array\npublic compositeImage(    Imagick $composite_object,    int $composite,    int $x,    int $y,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic contrastImage(bool $sharpen): bool\npublic contrastStretchImage(float $black_point, float $white_point, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic convolveImage(array $kernel, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic count(int $mode = 0): int\npublic cropImage(    int $width,    int $height,    int $x,    int $y): bool\npublic cropThumbnailImage(int $width, int $height, bool $legacy = false): bool\npublic current(): Imagick\npublic cycleColormapImage(int $displace): bool\npublic decipherImage(string $passphrase): bool\npublic deconstructImages(): Imagick\npublic deleteImageArtifact(string $artifact): bool\npublic deleteImageProperty(string $name): bool\npublic deskewImage(float $threshold): bool\npublic despeckleImage(): bool\npublic destroy(): bool\npublic displayImage(string $servername): bool\npublic displayImages(string $servername): bool\npublic distortImage(int $method, array $arguments, bool $bestfit): bool\npublic drawImage(ImagickDraw $draw): bool\npublic edgeImage(float $radius): bool\npublic embossImage(float $radius, float $sigma): bool\npublic encipherImage(string $passphrase): bool\npublic enhanceImage(): bool\npublic equalizeImage(): bool\npublic evaluateImage(int $op, float $constant, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic exportImagePixels(    int $x,    int $y,    int $width,    int $height,    string $map,    int $STORAGE): array\npublic extentImage(    int $width,    int $height,    int $x,    int $y): bool\npublic filter(ImagickKernel $ImagickKernel, int $channel = Imagick::CHANNEL_UNDEFINED): bool\npublic flattenImages(): Imagick\npublic flipImage(): bool\npublic floodFillPaintImage(    mixed $fill,    float $fuzz,    mixed $target,    int $x,    int $y,    bool $invert,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic flopImage(): bool\npublic forwardFourierTransformimage(bool $magnitude): bool\npublic frameImage(    mixed $matte_color,    int $width,    int $height,    int $inner_bevel,    int $outer_bevel): bool\npublic functionImage(int $function, array $arguments, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic fxImage(string $expression, int $channel = Imagick::CHANNEL_DEFAULT): Imagick\npublic gammaImage(float $gamma, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic gaussianBlurImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic getColorspace(): int\npublic getCompression(): int\npublic getCompressionQuality(): int\npublic static getCopyright(): string\npublic getFilename(): string\npublic getFont(): string\npublic getFormat(): string\npublic getGravity(): int\npublic static getHomeURL(): string\npublic getImage(): Imagick\npublic getImageAlphaChannel(): bool\npublic getImageArtifact(string $artifact): string\npublic getImageAttribute(string $key): string\npublic getImageBackgroundColor(): ImagickPixel\npublic getImageBlob(): string\npublic getImageBluePrimary(): array\npublic getImageBorderColor(): ImagickPixel\npublic getImageChannelDepth(int $channel): int\npublic getImageChannelDistortion(Imagick $reference, int $channel, int $metric): float\npublic getImageChannelDistortions(Imagick $reference, int $metric, int $channel = Imagick::CHANNEL_DEFAULT): float\npublic getImageChannelExtrema(int $channel): array\npublic getImageChannelKurtosis(int $channel = Imagick::CHANNEL_DEFAULT): array\npublic getImageChannelMean(int $channel): array\npublic getImageChannelRange(int $channel): array\npublic getImageChannelStatistics(): array\npublic getImageClipMask(): Imagick\npublic getImageColormapColor(int $index): ImagickPixel\npublic getImageColors(): int\npublic getImageColorspace(): int\npublic getImageCompose(): int\npublic getImageCompression(): int\npublic getImageCompressionQuality(): int\npublic getImageDelay(): int\npublic getImageDepth(): int\npublic getImageDispose(): int\npublic getImageDistortion(MagickWand $reference, int $metric): float\npublic getImageExtrema(): array\npublic getImageFilename(): string\npublic getImageFormat(): string\npublic getImageGamma(): float\npublic getImageGeometry(): array\npublic getImageGravity(): int\npublic getImageGreenPrimary(): array\npublic getImageHeight(): int\npublic getImageHistogram(): array\npublic getImageIndex(): int\npublic getImageInterlaceScheme(): int\npublic getImageInterpolateMethod(): int\npublic getImageIterations(): int\npublic getImageLength(): int\npublic getImageMatte(): bool\npublic getImageMatteColor(): ImagickPixel\npublic getImageMimeType(): string\npublic getImageOrientation(): int\npublic getImagePage(): array\npublic getImagePixelColor(int $x, int $y): ImagickPixel\npublic getImageProfile(string $name): string\npublic getImageProfiles(string $pattern = \"*\", bool $include_values = true): array\npublic getImageProperties(string $pattern = \"*\", bool $include_values = true): array\npublic getImageProperty(string $name): string\npublic getImageRedPrimary(): array\npublic getImageRegion(    int $width,    int $height,    int $x,    int $y): Imagick\npublic getImageRenderingIntent(): int\npublic getImageResolution(): array\npublic getImagesBlob(): string\npublic getImageScene(): int\npublic getImageSignature(): string\npublic getImageSize(): int\npublic getImageTicksPerSecond(): int\npublic getImageTotalInkDensity(): float\npublic getImageType(): int\npublic getImageUnits(): int\npublic getImageVirtualPixelMethod(): int\npublic getImageWhitePoint(): array\npublic getImageWidth(): int\npublic getInterlaceScheme(): int\npublic getIteratorIndex(): int\npublic getNumberImages(): int\npublic getOption(string $key): string\npublic static getPackageName(): string\npublic getPage(): array\npublic getPixelIterator(): ImagickPixelIterator\npublic getPixelRegionIterator(    int $x,    int $y,    int $columns,    int $rows): ImagickPixelIterator\npublic getPointSize(): float\npublic static getQuantum(): int\npublic static getQuantumDepth(): array\npublic static getQuantumRange(): array\npublic static getRegistry(string $key): string\npublic static getReleaseDate(): string\npublic static getResource(int $type): int\npublic static getResourceLimit(int $type): int\npublic getSamplingFactors(): array\npublic getSize(): array\npublic getSizeOffset(): int\npublic static getVersion(): array\npublic haldClutImage(Imagick $clut, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic hasNextImage(): bool\npublic hasPreviousImage(): bool\npublic identifyFormat(string $embedText): string|false\npublic identifyImage(bool $appendRawOutput = false): array\npublic implodeImage(float $radius): bool\npublic importImagePixels(    int $x,    int $y,    int $width,    int $height,    string $map,    int $storage,    array $pixels): bool\npublic inverseFourierTransformImage(Imagick $complement, bool $magnitude): bool\npublic labelImage(string $label): bool\npublic levelImage(    float $blackPoint,    float $gamma,    float $whitePoint,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic linearStretchImage(float $blackPoint, float $whitePoint): bool\npublic liquidRescaleImage(    int $width,    int $height,    float $delta_x,    float $rigidity): bool\npublic static listRegistry(): array\npublic magnifyImage(): bool\npublic mapImage(Imagick $map, bool $dither): bool\npublic matteFloodfillImage(    float $alpha,    float $fuzz,    mixed $bordercolor,    int $x,    int $y): bool\npublic medianFilterImage(float $radius): bool\npublic mergeImageLayers(int $layer_method): Imagick\npublic minifyImage(): bool\npublic modulateImage(float $brightness, float $saturation, float $hue): bool\npublic montageImage(    ImagickDraw $draw,    string $tile_geometry,    string $thumbnail_geometry,    int $mode,    string $frame): Imagick\npublic morphImages(int $number_frames): Imagick\npublic morphology(    int $morphologyMethod,    int $iterations,    ImagickKernel $ImagickKernel,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic mosaicImages(): Imagick\npublic motionBlurImage(    float $radius,    float $sigma,    float $angle,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic negateImage(bool $gray, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic newImage(    int $cols,    int $rows,    mixed $background,    string $format = ?): bool\npublic newPseudoImage(int $columns, int $rows, string $pseudoString): bool\npublic nextImage(): bool\npublic normalizeImage(int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic oilPaintImage(float $radius): bool\npublic opaquePaintImage(    mixed $target,    mixed $fill,    float $fuzz,    bool $invert,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic optimizeImageLayers(): bool\npublic orderedPosterizeImage(string $threshold_map, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic paintFloodfillImage(    mixed $fill,    float $fuzz,    mixed $bordercolor,    int $x,    int $y,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic paintOpaqueImage(    mixed $target,    mixed $fill,    float $fuzz,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic paintTransparentImage(mixed $target, float $alpha, float $fuzz): bool\npublic pingImage(string $filename): bool\npublic pingImageBlob(string $image): bool\npublic pingImageFile(resource $filehandle, string $fileName = ?): bool\npublic polaroidImage(ImagickDraw $properties, float $angle): bool\npublic posterizeImage(int $levels, bool $dither): bool\npublic previewImages(int $preview): bool\npublic previousImage(): bool\npublic profileImage(string $name, ?string $profile): bool\npublic quantizeImage(    int $numberColors,    int $colorspace,    int $treedepth,    bool $dither,    bool $measureError): bool\npublic quantizeImages(    int $numberColors,    int $colorspace,    int $treedepth,    bool $dither,    bool $measureError): bool\npublic queryFontMetrics(ImagickDraw $properties, string $text, bool $multiline = ?): array\npublic static queryFonts(string $pattern = \"*\"): array\npublic static queryFormats(string $pattern = \"*\"): array\npublic radialBlurImage(float $angle, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic raiseImage(    int $width,    int $height,    int $x,    int $y,    bool $raise): bool\npublic randomThresholdImage(float $low, float $high, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic readImage(string $filename): bool\npublic readImageBlob(string $image, string $filename = ?): bool\npublic readImageFile(resource $filehandle, string $fileName = null): bool\npublic readImages(array $filenames): bool\npublic recolorImage(array $matrix): bool\npublic reduceNoiseImage(float $radius): bool\npublic remapImage(Imagick $replacement, int $DITHER): bool\npublic removeImage(): bool\npublic removeImageProfile(string $name): string\npublic render(): bool\npublic resampleImage(    float $x_resolution,    float $y_resolution,    int $filter,    float $blur): bool\npublic resetImagePage(string $page): bool\npublic resizeImage(    int $columns,    int $rows,    int $filter,    float $blur,    bool $bestfit = false,    bool $legacy = false): bool\npublic rollImage(int $x, int $y): bool\npublic rotateImage(mixed $background, float $degrees): bool\npublic rotationalBlurImage(float $angle, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic roundCorners(    float $x_rounding,    float $y_rounding,    float $stroke_width = 10,    float $displace = 5,    float $size_correction = -6): bool\npublic sampleImage(int $columns, int $rows): bool\npublic scaleImage(    int $columns,    int $rows,    bool $bestfit = false,    bool $legacy = false): bool\npublic segmentImage(    int $COLORSPACE,    float $cluster_threshold,    float $smooth_threshold,    bool $verbose = false): bool\npublic selectiveBlurImage(    float $radius,    float $sigma,    float $threshold,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic separateImageChannel(int $channel): bool\npublic sepiaToneImage(float $threshold): bool\npublic setBackgroundColor(mixed $background): bool\npublic setColorspace(int $COLORSPACE): bool\npublic setCompression(int $compression): bool\npublic setCompressionQuality(int $quality): bool\npublic setFilename(string $filename): bool\npublic setFirstIterator(): bool\npublic setFont(string $font): bool\npublic setFormat(string $format): bool\npublic setGravity(int $gravity): bool\npublic setImage(Imagick $replace): bool\npublic setImageAlphaChannel(int $mode): bool\npublic setImageArtifact(string $artifact, string $value): bool\npublic setImageAttribute(string $key, string $value): bool\npublic setImageBackgroundColor(mixed $background): bool\npublic setImageBias(float $bias): bool\npublic setImageBiasQuantum(float $bias): void\npublic setImageBluePrimary(float $x, float $y): bool\npublic setImageBorderColor(mixed $border): bool\npublic setImageChannelDepth(int $channel, int $depth): bool\npublic setImageClipMask(Imagick $clip_mask): bool\npublic setImageColormapColor(int $index, ImagickPixel $color): bool\npublic setImageColorspace(int $colorspace): bool\npublic setImageCompose(int $compose): bool\npublic setImageCompression(int $compression): bool\npublic setImageCompressionQuality(int $quality): bool\npublic setImageDelay(int $delay): bool\npublic setImageDepth(int $depth): bool\npublic setImageDispose(int $dispose): bool\npublic setImageExtent(int $columns, int $rows): bool\npublic setImageFilename(string $filename): bool\npublic setImageFormat(string $format): bool\npublic setImageGamma(float $gamma): bool\npublic setImageGravity(int $gravity): bool\npublic setImageGreenPrimary(float $x, float $y): bool\npublic setImageIndex(int $index): bool\npublic setImageInterlaceScheme(int $interlace_scheme): bool\npublic setImageInterpolateMethod(int $method): bool\npublic setImageIterations(int $iterations): bool\npublic setImageMatte(bool $matte): bool\npublic setImageMatteColor(mixed $matte): bool\npublic setImageOpacity(float $opacity): bool\npublic setImageOrientation(int $orientation): bool\npublic setImagePage(    int $width,    int $height,    int $x,    int $y): bool\npublic setImageProfile(string $name, string $profile): bool\npublic setImageProperty(string $name, string $value): bool\npublic setImageRedPrimary(float $x, float $y): bool\npublic setImageRenderingIntent(int $rendering_intent): bool\npublic setImageResolution(float $x_resolution, float $y_resolution): bool\npublic setImageScene(int $scene): bool\npublic setImageTicksPerSecond(int $ticks_per_second): bool\npublic setImageType(int $image_type): bool\npublic setImageUnits(int $units): bool\npublic setImageVirtualPixelMethod(int $method): bool\npublic setImageWhitePoint(float $x, float $y): bool\npublic setInterlaceScheme(int $interlace_scheme): bool\npublic setIteratorIndex(int $index): bool\npublic setLastIterator(): bool\npublic setOption(string $key, string $value): bool\npublic setPage(    int $width,    int $height,    int $x,    int $y): bool\npublic setPointSize(float $point_size): bool\npublic setProgressMonitor(callable $callback): bool\npublic static setRegistry(string $key, string $value): bool\npublic setResolution(float $x_resolution, float $y_resolution): bool\npublic static setResourceLimit(int $type, int $limit): bool\npublic setSamplingFactors(array $factors): bool\npublic setSize(int $columns, int $rows): bool\npublic setSizeOffset(int $columns, int $rows, int $offset): bool\npublic setType(int $image_type): bool\npublic shadeImage(bool $gray, float $azimuth, float $elevation): bool\npublic shadowImage(    float $opacity,    float $sigma,    int $x,    int $y): bool\npublic sharpenImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic shaveImage(int $columns, int $rows): bool\npublic shearImage(mixed $background, float $x_shear, float $y_shear): bool\npublic sigmoidalContrastImage(    bool $sharpen,    float $alpha,    float $beta,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic sketchImage(float $radius, float $sigma, float $angle): bool\npublic smushImages(bool $stack, int $offset): Imagick\npublic solarizeImage(int $threshold): bool\npublic sparseColorImage(int $SPARSE_METHOD, array $arguments, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic spliceImage(    int $width,    int $height,    int $x,    int $y): bool\npublic spreadImage(float $radius): bool\npublic statisticImage(    int $type,    int $width,    int $height,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic steganoImage(Imagick $watermark_wand, int $offset): Imagick\npublic stereoImage(Imagick $offset_wand): bool\npublic stripImage(): bool\npublic subImageMatch(Imagick $Imagick, array \u0026$offset = ?, float \u0026$similarity = ?): Imagick\nswirlImage(float $degrees): bool\ntextureImage(Imagick $texture_wand): Imagick\npublic thresholdImage(float $threshold, int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic thumbnailImage(    int $columns,    int $rows,    bool $bestfit = false,    bool $fill = false,    bool $legacy = false): bool\npublic tintImage(mixed $tint, mixed $opacity, bool $legacy = false): bool\npublic __toString(): string\npublic transformImage(string $crop, string $geometry): Imagick\npublic transformImageColorspace(int $colorspace): bool\npublic transparentPaintImage(    mixed $target,    float $alpha,    float $fuzz,    bool $invert): bool\npublic transposeImage(): bool\npublic transverseImage(): bool\npublic trimImage(float $fuzz): bool\npublic uniqueImageColors(): bool\npublic unsharpMaskImage(    float $radius,    float $sigma,    float $amount,    float $threshold,    int $channel = Imagick::CHANNEL_DEFAULT): bool\npublic valid(): bool\npublic vignetteImage(    float $blackPoint,    float $whitePoint,    int $x,    int $y): bool\npublic waveImage(float $amplitude, float $length): bool\npublic whiteThresholdImage(mixed $threshold): bool\npublic writeImage(string $filename = NULL): bool\npublic writeImageFile(resource $filehandle, string $format = ?): bool\npublic writeImages(string $filename, bool $adjoin): bool\npublic writeImagesFile(resource $filehandle, string $format = ?): bool\n\n   }\n```\n\n## Методи зображення та глобальні методи\n\nКлас Imagick має можливість утримувати та обробляти кілька зображень одночасно. Це досягається рахунок внутрішнього стека, у якому існує покажчик, що вказує на поточне зображення. Деякі функції працюють з усіма зображеннями в класі Imagick, але все-таки більшість працює тільки з поточним зображенням у внутрішньому стеку. За згодою, імена методів можуть містити слово Image для позначення того, що вони впливають лише на поточне зображення у стеку.\n\n## Методи класу\n\nТут наведено список найбільш використовуваних методів, об'єднаних у групи за призначенням:\n\n**Методи класу за призначенням**\n\n| Эффекты изображения | Методы получения | Методы установки | Чтение/запись изображений | Другие |\n| --- | --- | --- | --- | --- |\n| [Imagick::adaptiveBlurImage()](imagick.adaptiveblurimage.md) | [Imagick::getCompression()](imagick.getcompression.md) | [Imagick::setBackgroundColor()](imagick.setbackgroundcolor.md) | [Imagick::\\_\\_construct()](imagick.construct.md) | [Imagick::clear()](imagick.clear.md) |\n| [Imagick::adaptiveResizeImage()](imagick.adaptiveresizeimage.md) | [Imagick::getFilename()](imagick.getfilename.md) | [Imagick::setCompressionQuality()](imagick.setcompressionquality.md) | [Imagick::addImage()](imagick.addimage.md) | [Imagick::clone()](imagick.clone.md) |\n| [Imagick::adaptiveSharpenImage()](imagick.adaptivesharpenimage.md) | [Imagick::getFormat()](imagick.getformat.md) | [Imagick::setCompression()](imagick.setcompression.md) | [Imagick::appendImages()](imagick.appendimages.md) | [Imagick::current()](imagick.current.md) |\n| [Imagick::adaptiveThresholdImage()](imagick.adaptivethresholdimage.md) | [Imagick::getImageBackgroundColor()](imagick.getimagebackgroundcolor.md) | [Imagick::setFilename()](imagick.setfilename.md) | [Imagick::getFilename()](imagick.getfilename.md) | [Imagick::destroy()](imagick.destroy.md) |\n| [Imagick::addNoiseImage()](imagick.addnoiseimage.md) | [Imagick::getImageBlob()](imagick.getimageblob.md) | [Imagick::getImagesBlob()](imagick.getimagesblob.md) | [Imagick::setFormat()](imagick.setformat.md) | [Imagick::getFormat()](imagick.getformat.md) |\n| [Imagick::affinetransformimage()](imagick.affinetransformimage.md) | [Imagick::getImageBluePrimary()](imagick.getimageblueprimary.md) | [Imagick::setImageBackgroundColor()](imagick.setimagebackgroundcolor.md) | [Imagick::getImageFilename()](imagick.getimagefilename.md) | [Imagick::getHomeURL()](imagick.gethomeurl.md) |\n| [Imagick::annotateImage()](imagick.annotateimage.md) | [Imagick::getImageBorderColor()](imagick.getimagebordercolor.md) | [Imagick::setFirstIterator()](imagick.setfirstiterator.md) | [Imagick::getImageFormat()](imagick.getimageformat.md) | [Imagick::commentImage()](imagick.commentimage.md) |\n| [Imagick::averageImages()](imagick.averageimages.md) | [Imagick::getImageChannelDepth()](imagick.getimagechanneldepth.md) | [Imagick::setImageBias()](imagick.setimagebias.md) | [Imagick::getImage()](imagick.getimage.md) | [Imagick::getNumberImages()](imagick.getnumberimages.md) |\n| [Imagick::blackThresholdImage()](imagick.blackthresholdimage.md) | [Imagick::getImageChannelDistortion()](imagick.getimagechanneldistortion.md) | [Imagick::setImageBluePrimary()](imagick.setimageblueprimary.md) | [Imagick::setImageFilename()](imagick.setimagefilename.md) | [Imagick::getReleaseDate()](imagick.getreleasedate.md) |\n| [Imagick::blurImage()](imagick.blurimage.md) | [Imagick::getImageChannelExtrema()](imagick.getimagechannelextrema.md) | [Imagick::setImageBorderColor()](imagick.setimagebordercolor.md) | [Imagick::setImageFormat()](imagick.setimageformat.md) | [Imagick::getVersion()](imagick.getversion.md) |\n| [Imagick::borderImage()](imagick.borderimage.md) | [Imagick::getImageChannelMean()](imagick.getimagechannelmean.md) | [Imagick::setImageChannelDepth()](imagick.setimagechanneldepth.md) | [Imagick::readImageFile()](imagick.readimagefile.md) | [Imagick::hasNextImage()](imagick.hasnextimage.md) |\n| [Imagick::charcoalImage()](imagick.charcoalimage.md) | [Imagick::getImageChannelStatistics()](imagick.getimagechannelstatistics.md) | [Imagick::setImageColormapColor()](imagick.setimagecolormapcolor.md) | [Imagick::readImage()](imagick.readimage.md) | [Imagick::hasPreviousImage()](imagick.haspreviousimage.md) |\n| [Imagick::chopImage()](imagick.chopimage.md) | [Imagick::getImageColormapColor()](imagick.getimagecolormapcolor.md) | [Imagick::setImageColorSpace()](imagick.setimagecolorspace.md) | [Imagick::writeImages()](imagick.writeimages.md) | [Imagick::labelImage()](imagick.labelimage.md) |\n| [Imagick::clipImage()](imagick.clipimage.md) | [Imagick::getImageColorspace()](imagick.getimagecolorspace.md) | [Imagick::setImageCompose()](imagick.setimagecompose.md) | [Imagick::writeImage()](imagick.writeimage.md) | [Imagick::newImage()](imagick.newimage.md) |\n| [Imagick::clipPathImage()](imagick.clippathimage.md) | [Imagick::getImageColors()](imagick.getimagecolors.md) | [Imagick::setImageCompression()](imagick.setimagecompression.md) |  | [Imagick::newPseudoImage()](imagick.newpseudoimage.md) |\n| [Imagick::coalesceImages()](imagick.coalesceimages.md) | [Imagick::getImageCompose()](imagick.getimagecompose.md) | [Imagick::setImageDelay()](imagick.setimagedelay.md) |  | [Imagick::nextImage()](imagick.nextimage.md) |\n| [Imagick::colorFloodFillImage()](imagick.colorfloodfillimage.md) | [Imagick::getImageDelay()](imagick.getimagedelay.md) | [Imagick::setImageDepth()](imagick.setimagedepth.md) |  | [Imagick::pingImageBlob()](imagick.pingimageblob.md) |\n| [Imagick::colorizeImage()](imagick.colorizeimage.md) | [Imagick::getImageDepth()](imagick.getimagedepth.md) | [Imagick::setImageDispose()](imagick.setimagedispose.md) |  | [Imagick::pingImageFile()](imagick.pingimagefile.md) |\n| [Imagick::combineImages()](imagick.combineimages.md) | [Imagick::getImageDispose()](imagick.getimagedispose.md) | [Imagick::setImageDispose()](imagick.setimagedispose.md) |  | [Imagick::pingImage()](imagick.pingimage.md) |\n| [Imagick::compareImageChannels()](imagick.compareimagechannels.md) | [Imagick::getImageDistortion()](imagick.getimagedistortion.md) | [Imagick::setImageExtent()](imagick.setimageextent.md) |  | [Imagick::previousImage()](imagick.previousimage.md) |\n| [Imagick::compareImageLayers()](imagick.compareimagelayers.md) | [Imagick::getImageExtrema()](imagick.getimageextrema.md) | [Imagick::setImageFilename()](imagick.setimagefilename.md) |  | [Imagick::profileImage()](imagick.profileimage.md) |\n| [Imagick::compositeImage()](imagick.compositeimage.md) | [Imagick::getImageFilename()](imagick.getimagefilename.md) | [Imagick::setImageFormat()](imagick.setimageformat.md) |  | [Imagick::queryFormats()](imagick.queryformats.md) |\n| [Imagick::contrastImage()](imagick.contrastimage.md) | [Imagick::getImageFormat()](imagick.getimageformat.md) | [Imagick::setImageGamma()](imagick.setimagegamma.md) |  | [Imagick::removeImageProfile()](imagick.removeimageprofile.md) |\n| [Imagick::contrastStretchImage()](imagick.contraststretchimage.md) | [Imagick::getImageGamma()](imagick.getimagegamma.md) | [Imagick::setImageGreenPrimary()](imagick.setimagegreenprimary.md) |  | [Imagick::removeImage()](imagick.removeimage.md) |\n| [Imagick::convolveImage()](imagick.convolveimage.md) | [Imagick::getImageGeometry()](imagick.getimagegeometry.md) | [Imagick::setImageIndex()](imagick.setimageindex.md) |  | [Imagick::setFirstIterator()](imagick.setfirstiterator.md) |\n| [Imagick::cropImage()](imagick.cropimage.md) | [Imagick::getImageGreenPrimary()](imagick.getimagegreenprimary.md) | [Imagick::setImageInterpolateMethod()](imagick.setimageinterpolatemethod.md) |  | [Imagick::setImageIndex()](imagick.setimageindex.md) |\n| [Imagick::cycleColormapImage()](imagick.cyclecolormapimage.md) | [Imagick::getImageHeight()](imagick.getimageheight.md) | [Imagick::setImageIterations()](imagick.setimageiterations.md) |  | [Imagick::valid()](imagick.valid.md) |\n| [Imagick::deconstructImages()](imagick.deconstructimages.md) | [Imagick::getImageHistogram()](imagick.getimagehistogram.md) | [Imagick::setImageMatteColor()](imagick.setimagemattecolor.md) |  | [Imagick::getCopyright()](imagick.getcopyright.md) |\n| [Imagick::drawImage()](imagick.drawimage.md) | [Imagick::getImageIndex()](imagick.getimageindex.md) | [Imagick::setImageMatte()](imagick.setimagematte.md) |  |  |\n| [Imagick::edgeImage()](imagick.edgeimage.md) | [Imagick::getImageInterlaceScheme()](imagick.getimageinterlacescheme.md) | [Imagick::setImagePage()](imagick.setimagepage.md) |  |  |\n| [Imagick::embossImage()](imagick.embossimage.md) | [Imagick::getImageInterpolateMethod()](imagick.getimageinterpolatemethod.md) | [Imagick::setImageProfile()](imagick.setimageprofile.md) |  |  |\n| [Imagick::enhanceImage()](imagick.enhanceimage.md) | [Imagick::getImageIterations()](imagick.getimageiterations.md) | [Imagick::setImageProperty()](imagick.setimageproperty.md) |  |  |\n| [Imagick::equalizeImage()](imagick.equalizeimage.md) | [Imagick::getImageMatteColor()](imagick.getimagemattecolor.md) | [Imagick::setImageRedPrimary()](imagick.setimageredprimary.md) |  |  |\n| [Imagick::evaluateImage()](imagick.evaluateimage.md) | [Imagick::getImageMatte()](imagick.getimagematte.md) | [Imagick::setImageRenderingIntent()](imagick.setimagerenderingintent.md) |  |  |\n| [Imagick::flattenImages()](imagick.flattenimages.md) | [Imagick::getImagePage()](imagick.getimagepage.md) | [Imagick::setImageResolution()](imagick.setimageresolution.md) |  |  |\n| [Imagick::flipImage()](imagick.flipimage.md) | [Imagick::getImagePixelColor()](imagick.getimagepixelcolor.md) | [Imagick::setImageScene()](imagick.setimagescene.md) |  |  |\n| [Imagick::flopImage()](imagick.flopimage.md) | [Imagick::getImageProfile()](imagick.getimageprofile.md) | [Imagick::setImageTicksPerSecond()](imagick.setimagetickspersecond.md) |  |  |\n|  | [Imagick::getImageProperty()](imagick.getimageproperty.md) | [Imagick::setImageType()](imagick.setimagetype.md) |  |  |\n| [Imagick::fxImage()](imagick.fximage.md) | [Imagick::getImageRedPrimary()](imagick.getimageredprimary.md) | [Imagick::setImageUnits()](imagick.setimageunits.md) |  |  |\n| [Imagick::gammaImage()](imagick.gammaimage.md) | [Imagick::getImageRegion()](imagick.getimageregion.md) | [Imagick::setImageVirtualPixelMethod()](imagick.setimagevirtualpixelmethod.md) |  |  |\n| [Imagick::gaussianBlurImage()](imagick.gaussianblurimage.md) | [Imagick::getImageRenderingIntent()](imagick.getimagerenderingintent.md) | [Imagick::setImageWhitepoint()](imagick.setimagewhitepoint.md) |  |  |\n| [Imagick::implodeImage()](imagick.implodeimage.md) | [Imagick::getImageResolution()](imagick.getimageresolution.md) | [Imagick::setInterlaceScheme()](imagick.setinterlacescheme.md) |  |  |\n| [Imagick::levelImage()](imagick.levelimage.md) | [Imagick::getImageScene()](imagick.getimagescene.md) | [Imagick::setOption()](imagick.setoption.md) |  |  |\n| [Imagick::linearStretchImage()](imagick.linearstretchimage.md) | [Imagick::getImageSignature()](imagick.getimagesignature.md) | [Imagick::setPage()](imagick.setpage.md) |  |  |\n| [Imagick::magnifyImage()](imagick.magnifyimage.md) | [Imagick::getImageTicksPerSecond()](imagick.getimagetickspersecond.md) | [Imagick::setResolution()](imagick.setresolution.md) |  |  |\n| [Imagick::matteFloodFillImage()](imagick.mattefloodfillimage.md) | [Imagick::getImageTotalInkDensity()](imagick.getimagetotalinkdensity.md) | [Imagick::setResourceLimit()](imagick.setresourcelimit.md) |  |  |\n| [Imagick::medianFilterImage()](imagick.medianfilterimage.md) | [Imagick::getImageType()](imagick.getimagetype.md) | [Imagick::setSamplingFactors()](imagick.setsamplingfactors.md) |  |  |\n| [Imagick::minifyImage()](imagick.minifyimage.md) | [Imagick::getImageUnits()](imagick.getimageunits.md) | [Imagick::setSizeOffset()](imagick.setsizeoffset.md) |  |  |\n| [Imagick::modulateImage()](imagick.modulateimage.md) | [Imagick::getImageVirtualPixelMethod()](imagick.getimagevirtualpixelmethod.md) | [Imagick::setSize()](imagick.setsize.md) |  |  |\n| [Imagick::montageImage()](imagick.montageimage.md) | [Imagick::getImageWhitepoint()](imagick.getimagewhitepoint.md) | [Imagick::setType()](imagick.settype.md) |  |  |\n| [Imagick::morphImages()](imagick.morphimages.md) | [Imagick::getImageWidth()](imagick.getimagewidth.md) |  |  |  |\n| [Imagick::mosaicImages()](imagick.mosaicimages.md) | [Imagick::getImage()](imagick.getimage.md) |  |  |  |\n| [Imagick::motionBlurImage()](imagick.motionblurimage.md) | [Imagick::getInterlaceScheme()](imagick.getinterlacescheme.md) |  |  |  |\n| [Imagick::negateImage()](imagick.negateimage.md) | [Imagick::getNumberImages()](imagick.getnumberimages.md) |  |  |  |\n| [Imagick::normalizeImage()](imagick.normalizeimage.md) | [Imagick::getOption()](imagick.getoption.md) |  |  |  |\n| [Imagick::oilPaintImage()](imagick.oilpaintimage.md) | [Imagick::getPackageName()](imagick.getpackagename.md) |  |  |  |\n| [Imagick::optimizeImageLayers()](imagick.optimizeimagelayers.md) | [Imagick::getPage()](imagick.getpage.md) |  |  |  |\n| [Imagick::paintOpaqueImage()](imagick.paintopaqueimage.md) | [Imagick::getPixelIterator()](imagick.getpixeliterator.md) |  |  |  |\n| [Imagick::paintTransparentImage()](imagick.painttransparentimage.md) | [Imagick::getPixelRegionIterator()](imagick.getpixelregioniterator.md) |  |  |  |\n| [Imagick::posterizeImage()](imagick.posterizeimage.md) | [Imagick::getQuantumDepth()](imagick.getquantumdepth.md) |  |  |  |\n| [Imagick::radialBlurImage()](imagick.radialblurimage.md) | [Imagick::getQuantumRange()](imagick.getquantumrange.md) |  |  |  |\n| [Imagick::raiseImage()](imagick.raiseimage.md) | [Imagick::getResourceLimit()](imagick.getresourcelimit.md) |  |  |  |\n| [Imagick::randomThresholdImage()](imagick.randomthresholdimage.md) | [Imagick::getResource()](imagick.getresource.md) |  |  |  |\n| [Imagick::reduceNoiseImage()](imagick.reducenoiseimage.md) | [Imagick::getSamplingFactors()](imagick.getsamplingfactors.md) |  |  |  |\n| [Imagick::render()](imagick.render.md) | [Imagick::getSizeOffset()](imagick.getsizeoffset.md) |  |  |  |\n| [Imagick::resampleImage()](imagick.resampleimage.md) | [Imagick::getSize()](imagick.getsize.md) |  |  |  |\n| [Imagick::resizeImage()](imagick.resizeimage.md) | [Imagick::identifyImage()](imagick.identifyimage.md) |  |  |  |\n| [Imagick::rollImage()](imagick.rollimage.md) | [Imagick::getImageSize()](imagick.getimagesize.md) |  |  |  |\n| [Imagick::rotateImage()](imagick.rotateimage.md) |  |  |  |  |\n| [Imagick::sampleImage()](imagick.sampleimage.md) |  |  |  |  |\n| [Imagick::scaleImage()](imagick.scaleimage.md) |  |  |  |  |\n| [Imagick::separateImageChannel()](imagick.separateimagechannel.md) |  |  |  |  |\n| [Imagick::sepiaToneImage()](imagick.sepiatoneimage.md) |  |  |  |  |\n| [Imagick::shadeImage()](imagick.shadeimage.md) |  |  |  |  |\n| [Imagick::shadowImage()](imagick.shadowimage.md) |  |  |  |  |\n| [Imagick::sharpenImage()](imagick.sharpenimage.md) |  |  |  |  |\n| [Imagick::shaveImage()](imagick.shaveimage.md) |  |  |  |  |\n| [Imagick::shearImage()](imagick.shearimage.md) |  |  |  |  |\n| [Imagick::sigmoidalContrastImage()](imagick.sigmoidalcontrastimage.md) |  |  |  |  |\n| [Imagick::sketchImage()](imagick.sketchimage.md) |  |  |  |  |\n| [Imagick::solarizeImage()](imagick.solarizeimage.md) |  |  |  |  |\n| [Imagick::spliceImage()](imagick.spliceimage.md) |  |  |  |  |\n| [Imagick::spreadImage()](imagick.spreadimage.md) |  |  |  |  |\n| [Imagick::steganoImage()](imagick.steganoimage.md) |  |  |  |  |\n| [Imagick::stereoImage()](imagick.stereoimage.md) |  |  |  |  |\n| [Imagick::stripImage()](imagick.stripimage.md) |  |  |  |  |\n| [Imagick::swirlImage()](imagick.swirlimage.md) |  |  |  |  |\n| [Imagick::textureImage()](imagick.textureimage.md) |  |  |  |  |\n| [Imagick::thresholdImage()](imagick.thresholdimage.md) |  |  |  |  |\n| [Imagick::thumbnailImage()](imagick.thumbnailimage.md) |  |  |  |  |\n| [Imagick::tintImage()](imagick.tintimage.md) |  |  |  |  |\n| [Imagick::transverseImage()](imagick.transverseimage.md) |  |  |  |  |\n| [Imagick::trimImage()](imagick.trimimage.md) |  |  |  |  |\n| [Imagick::uniqueImageColors()](imagick.uniqueimagecolors.md) |  |  |  |  |\n| [Imagick::unsharpMaskImage()](imagick.unsharpmaskimage.md) |  |  |  |  |\n| [Imagick::vignetteImage()](imagick.vignetteimage.md) |  |  |  |  |\n| [Imagick::waveImage()](imagick.waveimage.md) |  |  |  |  |\n| [Imagick::whiteThresholdImage()](imagick.whitethresholdimage.md) |  |  |  |  |\n\n## Зміст\n\n-   [Imagick::adaptiveBlurImage](imagick.adaptiveblurimage.md)— Додає адаптивний фільтр розмиття до зображення\n-   [Imagick::adaptiveResizeImage](imagick.adaptiveresizeimage.md)— Адаптивна зміна розміру зображення з даними тріангуляції\n-   [Imagick::adaptiveSharpenImage](imagick.adaptivesharpenimage.md)— Адаптивна зміна різкості зображення\n-   [Imagick::adaptiveThresholdImage](imagick.adaptivethresholdimage.md)— Вибір порога кожного пікселя в залежності від діапазону інтенсивності\n-   [Imagick::addImage](imagick.addimage.md)— Додає нове зображення до списку зображень об'єкту Imagick\n-   [Imagick::addNoiseImage](imagick.addnoiseimage.md) \\- Накладає випадковий шум на зображення\n-   [Imagick::affineTransformImage](imagick.affinetransformimage.md)— Перетворює зображення\n-   [Imagick::animateImages](imagick.animateimages.md)— Анімація одного або кількох зображень\n-   [Imagick::annotateImage](imagick.annotateimage.md)— Додає текстовий коментар на зображення\n-   [Imagick::appendImages](imagick.appendimages.md)— Об'єднує набір зображень\n-   [Imagick::autoLevelImage](imagick.autolevelimage.md)— Налаштовує рівні певного каналу зображення\n-   [Imagick::averageImages](imagick.averageimages.md)— Усереднює набір зображень\n-   [Imagick::blackThresholdImage](imagick.blackthresholdimage.md)— Перевести всі пікселі нижче граничного значення в чорний колір\n-   [Imagick::blueShiftImage](imagick.blueshiftimage.md)— Приглушує кольори зображення\n-   [Imagick::blurImage](imagick.blurimage.md)— Додає фільтр розмиття до зображення\n-   [Imagick::borderImage](imagick.borderimage.md)— Оточує зображення рамкою\n-   [Imagick::brightnessContrastImage](imagick.brightnesscontrastimage.md)— Змінює яскравість та/або контраст зображення\n-   [Imagick::charcoalImage](imagick.charcoalimage.md) \\- Малювання вугіллям\n-   [Imagick::chopImage](imagick.chopimage.md)— Видаляє область зображення та обрізає його.\n-   [Imagick::clampImage](imagick.clampimage.md) \\- Обмежує діапазон кольорів від 0 до квантової глибини.\n-   [Imagick::clear](imagick.clear.md)— Очищає всі ресурси, пов'язані з об'єктом Imagick\n-   [Imagick::clipImage](imagick.clipimage.md)— Обрізка вздовж найближчого контуру з профілем 8BIM\n-   [Imagick::clipImagePath](imagick.clipimagepath.md)— Кліпи вздовж іменованих шляхів із профілю 8BIM, якщо вони є\n-   [Imagick::clipPathImage](imagick.clippathimage.md)— Відсікти уздовж зазначеного контуру з профілем 8BIM\n-   [Imagick::clone](imagick.clone.md)— Створює точну копію об'єкту Imagick\n-   [Imagick::clutImage](imagick.clutimage.md)— Замінює кольори у зображенні\n-   [Imagick::coalesceImages](imagick.coalesceimages.md)— Компонує набір зображень\n-   [Imagick::colorFloodfillImage](imagick.colorfloodfillimage.md)— Змінює значення кольору будь-якого пікселя, що відповідає цільовому\n-   [Imagick::colorizeImage](imagick.colorizeimage.md)— Змішування кольору заливки із зображенням\n-   [Imagick::colorMatrixImage](imagick.colormatriximage.md)— Застосовує перетворення кольору до зображення\n-   [Imagick::combineImages](imagick.combineimages.md)— Об'єднує одне або кілька зображень в одне зображення\n-   [Imagick::commentImage](imagick.commentimage.md)— Додає коментар до вашого зображення\n-   [Imagick::compareImageChannels](imagick.compareimagechannels.md)— Повертає різницю в одному чи кількох зображеннях\n-   [Imagick::compareImageLayers](imagick.compareimagelayers.md)— Повертає максимальну область, що обмежує між зображеннями.\n-   [Imagick::compareImages](imagick.compareimages.md)— Порівнює зображення з відновленим зображенням\n-   [Imagick::compositeImage](imagick.compositeimage.md)— Накладає одне зображення на інше\n-   [Imagick::\\_\\_construct](imagick.construct.md) \\- Конструктор об'єкту Imagick\n-   [Imagick::contrastImage](imagick.contrastimage.md)— Змінює контраст зображення\n-   [Imagick::contrastStretchImage](imagick.contraststretchimage.md)— Підвищує контрастність кольорового зображення\n-   [Imagick::convolveImage](imagick.convolveimage.md)— Застосовується ядро ​​згортки для користувача.\n-   [Imagick::count](imagick.count.md)— Отримує кількість зображень\n-   [Imagick::cropImage](imagick.cropimage.md)— Витягує область зображення\n-   [Imagick::cropThumbnailImage](imagick.cropthumbnailimage.md) \\- Створює обрізану мініатюру\n-   [Imagick::current](imagick.current.md)— Повертає посилання на поточний об'єкт Imagick\n-   [Imagick::cycleColormapImage](imagick.cyclecolormapimage.md)— Відображає карту кольорів зображення\n-   [Imagick::decipherImage](imagick.decipherimage.md)— Розшифровує зображення\n-   [Imagick::deconstructImages](imagick.deconstructimages.md)— Повертає певні піксельні відмінності між зображеннями\n-   [Imagick::deleteImageArtifact](imagick.deleteimageartifact.md)— Видаляє артефакт зображення\n-   [Imagick::deleteImageProperty](imagick.deleteimageproperty.md)— Видаляє властивість зображення\n-   [Imagick::deskewImage](imagick.deskewimage.md)— Видаляє перекіс із зображення\n-   [Imagick::despeckleImage](imagick.despeckleimage.md) \\- Зменшує спекл-шум на зображенні\n-   [Imagick::destroy](imagick.destroy.md)— Видаляє об'єкт Imagick\n-   [Imagick::displayImage](imagick.displayimage.md)— Виводить зображення\n-   [Imagick::displayImages](imagick.displayimages.md)— Виводить зображення або послідовність зображень\n-   [Imagick::distortImage](imagick.distortimage.md)— Спотворює зображення, використовуючи різні методи спотворення\n-   [Imagick::drawImage](imagick.drawimage.md)— Виконує рендеринг об'єкту ImagickDraw на поточному зображенні\n-   [Imagick::edgeImage](imagick.edgeimage.md)— Підсилює краї зображення.\n-   [Imagick::embossImage](imagick.embossimage.md)— Повертає зображення у градаціях сірого із тривимірним ефектом\n-   [Imagick::encipherImage](imagick.encipherimage.md) \\- Шифрує зображення\n-   [Imagick::enhanceImage](imagick.enhanceimage.md)— Покращує якість шумного зображення\n-   [Imagick::equalizeImage](imagick.equalizeimage.md)— Вирівнює гістограму зображення\n-   [Imagick::evaluateImage](imagick.evaluateimage.md)— Застосовує вираз до зображення\n-   [Imagick::exportImagePixels](imagick.exportimagepixels.md)— Експортує пікселі зображення\n-   [Imagick::extentImage](imagick.extentimage.md)— Встановлює розмір зображення\n-   [Imagick::filter](imagick.filter.md)— Застосовується ядро ​​згортки для користувача.\n-   [Imagick::flattenImages](imagick.flattenimages.md)— Поєднує послідовність зображень\n-   [Imagick::flipImage](imagick.flipimage.md)— Створює вертикальне дзеркало зображення\n-   [Imagick::floodFillPaintImage](imagick.floodfillpaintimage.md)— Змінює значення кольору будь-якого пікселя, що відповідає цільовому\n-   [Imagick::flopImage](imagick.flopimage.md)— Створює горизонтальне дзеркальне відображення\n-   [Imagick::forwardFourierTransformImage](imagick.forwardfouriertransformimage.md) \\- Реалізує дискретне перетворення Фур'є\n-   [Imagick::frameImage](imagick.frameimage.md)— Додає імітацію тривимірного кордону\n-   [Imagick::functionImage](imagick.functionimage.md)— Застосовує функцію зображення.\n-   [Imagick::fxImage](imagick.fximage.md)— Оцінює вираз для кожного пікселя у зображенні\n-   [Imagick::gammaImage](imagick.gammaimage.md) \\- Гамма-корекція зображення\n-   [Imagick::gaussianBlurImage](imagick.gaussianblurimage.md)— Розмиває зображення\n-   [Imagick::getColorspace](imagick.getcolorspace.md)— Повертає палітру кольорів\n-   [Imagick::getCompression](imagick.getcompression.md)— Повертає тип стиснення об'єкта\n-   [Imagick::getCompressionQuality](imagick.getcompressionquality.md)— Повертає якість стиснення об'єкта\n-   [Imagick::getCopyright](imagick.getcopyright.md)— Повертає копірайт API ImageMagick у вигляді рядка\n-   [Imagick::getFilename](imagick.getfilename.md) \\- Ім'я файлу результуючого зображення\n-   [Imagick::getFont](imagick.getfont.md)— Повертає назву шрифту\n-   [Imagick::getFormat](imagick.getformat.md)— Повертає формат Imagick об'єкту\n-   [Imagick::getGravity](imagick.getgravity.md) \\- Повертає значення гравітації (тяжіння)\n-   [Imagick::getHomeURL](imagick.gethomeurl.md)— Повертає домашню URL-адресу бібліотеки ImageMagick\n-   [Imagick::getImage](imagick.getimage.md)— Повертає новий об'єкт Imagick\n-   [Imagick::getImageAlphaChannel](imagick.getimagealphachannel.md)— Перевіряє, чи є зображення альфа-канал\n-   [Imagick::getImageArtifact](imagick.getimageartifact.md)— Повертає артефакт зображення\n-   [Imagick::getImageAttribute](imagick.getimageattribute.md) \\- Повертає іменований атрибут\n-   [Imagick::getImageBackgroundColor](imagick.getimagebackgroundcolor.md)— Повертає колір тла зображення\n-   [Imagick::getImageBlob](imagick.getimageblob.md)— Повертає послідовність зображень у вигляді BLOB\n-   [Imagick::getImageBluePrimary](imagick.getimageblueprimary.md)— Повертає основну точку синього кольору зображення\n-   [Imagick::getImageBorderColor](imagick.getimagebordercolor.md)— Повертає колір рамки зображення\n-   [Imagick::getImageChannelDepth](imagick.getimagechanneldepth.md)— Повертає глибину для певного каналу зображення\n-   [Imagick::getImageChannelDistortion](imagick.getimagechanneldistortion.md)— Порівнює канали зображення з відновленим зображенням\n-   [Imagick::getImageChannelDistortions](imagick.getimagechanneldistortions.md)— Повертає спотворення каналу\n-   [Imagick::getImageChannelExtrema](imagick.getimagechannelextrema.md)— Повертає екстремуми для одного або кількох каналів зображення\n-   [Imagick::getImageChannelKurtosis](imagick.getimagechannelkurtosis.md)— Повертає ексцес та асиметрію певного каналу\n-   [Imagick::getImageChannelMean](imagick.getimagechannelmean.md)— Повертає середнє та стандартне відхилення\n-   [Imagick::getImageChannelRange](imagick.getimagechannelrange.md)— Повертає діапазон каналів\n-   [Imagick::getImageChannelStatistics](imagick.getimagechannelstatistics.md)— Повертає статистику для кожного каналу зображення\n-   [Imagick::getImageClipMask](imagick.getimageclipmask.md)— Повертає відсічну маску зображення\n-   [Imagick::getImageColormapColor](imagick.getimagecolormapcolor.md)— Повертає колір зазначеного індексу палітри\n-   [Imagick::getImageColors](imagick.getimagecolors.md)— Повертає кількість унікальних кольорів у зображенні\n-   [Imagick::getImageColorspace](imagick.getimagecolorspace.md)— Повертає палітру кольорів зображення\n-   [Imagick::getImageCompose](imagick.getimagecompose.md)— Повертає складовий оператор, пов'язаний із зображенням\n-   [Imagick::getImageCompression](imagick.getimagecompression.md)— Повертає поточний тип компресії зображення\n-   [Imagick::getImageCompressionQuality](imagick.getimagecompressionquality.md)— Повертає поточну якість стиснення зображення\n-   [Imagick::getImageDelay](imagick.getimagedelay.md)— Повертає затримку зображення\n-   [Imagick::getImageDepth](imagick.getimagedepth.md)— Повертає глибину зображення\n-   [Imagick::getImageDispose](imagick.getimagedispose.md)— Повертає метод видалення зображення\n-   [Imagick::getImageDistortion](imagick.getimagedistortion.md)— Порівнює зображення з відновленим зображенням\n-   [Imagick::getImageExtrema](imagick.getimageextrema.md)— Повертає екстремуми зображення\n-   [Imagick::getImageFilename](imagick.getimagefilename.md)— Повертає ім'я файлу конкретного зображення у послідовності\n-   [Imagick::getImageFormat](imagick.getimageformat.md)— Повертає формат зображення в послідовності.\n-   [Imagick::getImageGamma](imagick.getimagegamma.md)— Повертає гаму зображення\n-   [Imagick::getImageGeometry](imagick.getimagegeometry.md)— Повертає ширину та висоту у вигляді асоціативного масиву\n-   [Imagick::getImageGravity](imagick.getimagegravity.md) \\- Повертає значення гравітації (тяжіння)\n-   [Imagick::getImageGreenPrimary](imagick.getimagegreenprimary.md)— Повертає первинну точку кольоровості зеленого\n-   [Imagick::getImageHeight](imagick.getimageheight.md)— Повертає висоту зображення\n-   [Imagick::getImageHistogram](imagick.getimagehistogram.md)— Повертає гістограму зображення\n-   [Imagick::getImageIndex](imagick.getimageindex.md)— Повертає індекс активного поточного зображення.\n-   [Imagick::getImageInterlaceScheme](imagick.getimageinterlacescheme.md)— Отримує схему надрядкового зображення\n-   [Imagick::getImageInterpolateMethod](imagick.getimageinterpolatemethod.md)— Повертає метод інтерполяції\n-   [Imagick::getImageIterations](imagick.getimageiterations.md)— Повертає ітерацію зображення\n-   [Imagick::getImageLength](imagick.getimagelength.md)— Повертає довжину зображення у байтах\n-   [Imagick::getImageMatte](imagick.getimagematte.md)— Повертає, якщо зображення містить матовий канал\n-   [Imagick::getImageMatteColor](imagick.getimagemattecolor.md)— Повертає матовий колір зображення\n-   [Imagick::getImageMimeType](imagick.getimagemimetype.md)— Повертає MIME-тип зображення\n-   [Imagick::getImageOrientation](imagick.getimageorientation.md)— Повертає орієнтацію зображення\n-   [Imagick::getImagePage](imagick.getimagepage.md)— Повертає геометрію сторінки\n-   [Imagick::getImagePixelColor](imagick.getimagepixelcolor.md)— Повертає колір вказаного пікселя\n-   [Imagick::getImageProfile](imagick.getimageprofile.md)— Повертає іменований профіль зображення\n-   [Imagick::getImageProfiles](imagick.getimageprofiles.md)— Повертає профілі зображень\n-   [Imagick::getImageProperties](imagick.getimageproperties.md)— Повертає властивості зображення\n-   [Imagick::getImageProperty](imagick.getimageproperty.md)— Повертає іменовану властивість зображення\n-   [Imagick::getImageRedPrimary](imagick.getimageredprimary.md)— Повертає червону первинну точку кольоровості\n-   [Imagick::getImageRegion](imagick.getimageregion.md)— Витягує область зображення\n-   [Imagick::getImageRenderingIntent](imagick.getimagerenderingintent.md)— Повертає схему передачі кольору зображення\n-   [Imagick::getImageResolution](imagick.getimageresolution.md)— Повертає роздільну здатність зображення за X та Y\n-   [Imagick::getImagesBlob](imagick.getimagesblob.md)— Повертає всі послідовності зображення у вигляді великого двійкового об'єкта\n-   [Imagick::getImageScene](imagick.getimagescene.md)— Повертає сцену зображення\n-   [Imagick::getImageSignature](imagick.getimagesignature.md) \\- Генерує хеш SHA-256\n-   [Imagick::getImageSize](imagick.getimagesize.md)— Повертає розмір зображення у байтах\n-   [Imagick::getImageTicksPerSecond](imagick.getimagetickspersecond.md)— Отримує кількість кадрів на секунду для зображення\n-   [Imagick::getImageTotalInkDensity](imagick.getimagetotalinkdensity.md)— Повертає загальну щільність чорнила зображення\n-   [Imagick::getImageType](imagick.getimagetype.md)— Повертає можливий тип зображення\n-   [Imagick::getImageUnits](imagick.getimageunits.md)— Повертає одиниці вимірювання роздільної здатності зображення\n-   [Imagick::getImageVirtualPixelMethod](imagick.getimagevirtualpixelmethod.md)— Повертає метод віртуального пікселя\n-   [Imagick::getImageWhitePoint](imagick.getimagewhitepoint.md)— Повертає білу точку кольоровості\n-   [Imagick::getImageWidth](imagick.getimagewidth.md)— Повертає ширину зображення\n-   [Imagick::getInterlaceScheme](imagick.getinterlacescheme.md)— Отримує схему стиснення зображення\n-   [Imagick::getIteratorIndex](imagick.getiteratorindex.md)— Повертає індекс активного поточного зображення.\n-   [Imagick::getNumberImages](imagick.getnumberimages.md)— Повертає кількість зображень в об'єкті\n-   [Imagick::getOption](imagick.getoption.md)— Повертає значення, пов'язане із зазначеним ключем\n-   [Imagick::getPackageName](imagick.getpackagename.md)— Повертає ім'я ImageMagick\n-   [Imagick::getPage](imagick.getpage.md)— Повертає геометрію сторінки\n-   [Imagick::getPixelIterator](imagick.getpixeliterator.md) \\- Повертає MagickPixelIterator\n-   [Imagick::getPixelRegionIterator](imagick.getpixelregioniterator.md)— Повертає об'єкт ImagickPixelIterator для секції зображення\n-   [Imagick::getPointSize](imagick.getpointsize.md)— Повертає розмір точки\n-   [Imagick::getQuantum](imagick.getquantum.md)— Повертає квантовий діапазон ImageMagick\n-   [Imagick::getQuantumDepth](imagick.getquantumdepth.md) \\- Повертає величину глибини\n-   [Imagick::getQuantumRange](imagick.getquantumrange.md)— Повертає розмір спектру Imagick\n-   [Imagick::getRegistry](imagick.getregistry.md)— Отримує запис StringRegistry\n-   [Imagick::getReleaseDate](imagick.getreleasedate.md)— Повертає дату випуску ImageMagick\n-   [Imagick::getResource](imagick.getresource.md)— Повертає розмір пам'яті вказаного ресурсу.\n-   [Imagick::getResourceLimit](imagick.getresourcelimit.md)— Повертає заданий ліміт ресурсів\n-   [Imagick::getSamplingFactors](imagick.getsamplingfactors.md)— Повертає горизонтальний та вертикальний фактор вибірки\n-   [Imagick::getSize](imagick.getsize.md)— Повертає розмір, пов'язаний із об'єктом Imagick\n-   [Imagick::getSizeOffset](imagick.getsizeoffset.md)— Повертає розмір усунення\n-   [Imagick::getVersion](imagick.getversion.md)— Повертає версію API ImageMagick\n-   [Imagick::haldClutImage](imagick.haldclutimage.md)— Замінює кольори у зображенні\n-   [Imagick::hasNextImage](imagick.hasnextimage.md)— Перевіряє, чи об'єкт містить більше зображень\n-   [Imagick::hasPreviousImage](imagick.haspreviousimage.md)— Перевіряє, чи об'єкт має попереднє зображення.\n-   [Imagick::identifyFormat](imagick.identifyformat.md)— Замінює будь-які вбудовані символи форматування відповідною властивістю зображення\n-   [Imagick::identifyImage](imagick.identifyimage.md)— Визначає зображення та отримує атрибути\n-   [Imagick::implodeImage](imagick.implodeimage.md)— Створює копію зображення\n-   [Imagick::importImagePixels](imagick.importimagepixels.md)— Імпортує пікселі зображення\n-   [Imagick::inverseFourierTransformImage](imagick.inversefouriertransformimage.md) \\- Реалізує дискретне перетворення Фур'є\n-   [Imagick::labelImage](imagick.labelimage.md)— Додає позначку до зображення\n-   [Imagick::levelImage](imagick.levelimage.md)— Регулює рівні зображення\n-   [Imagick::linearStretchImage](imagick.linearstretchimage.md)— Розтягує з насиченням яскравість зображення\n-   [Imagick::liquidRescaleImage](imagick.liquidrescaleimage.md)— Анімує зображення чи зображення\n-   [Imagick::listRegistry](imagick.listregistry.md)— Перелічує всі налаштування реєстру\n-   [Imagick::magnifyImage](imagick.magnifyimage.md)— Пропорційно масштабує зображення вдвічі\n-   [Imagick::mapImage](imagick.mapimage.md)— Замінює кольори зображення на найближчий колір із еталонного зображення\n-   [Imagick::matteFloodfillImage](imagick.mattefloodfillimage.md)— Змінює значення прозорості кольору\n-   [Imagick::medianFilterImage](imagick.medianfilterimage.md)— Застосовує цифровий фільтр\n-   [Imagick::mergeImageLayers](imagick.mergeimagelayers.md)— Об'єднує шари зображення\n-   [Imagick::minifyImage](imagick.minifyimage.md)— Масштабує зображення пропорційно до половини його розміру.\n-   [Imagick::modulateImage](imagick.modulateimage.md)— Керуйте яскравістю, насиченістю та відтінком\n-   [Imagick::montageImage](imagick.montageimage.md)— Створює складне зображення\n-   [Imagick::morphImages](imagick.morphimages.md)— Перетворює набір зображень\n-   [Imagick::morphology](imagick.morphology.md)— Застосовує зображення ядро, надане користувачем, відповідно до заданого методу морфології\n-   [Imagick::mosaicImages](imagick.mosaicimages.md)— Формує мозаїку із зображень\n-   [Imagick::motionBlurImage](imagick.motionblurimage.md)— Імітує розмиття у русі\n-   [Imagick::negateImage](imagick.negateimage.md) \\- Інвертує кольори в еталонному зображенні\n-   [Imagick::newImage](imagick.newimage.md)— Створює нове зображення\n-   [Imagick::newPseudoImage](imagick.newpseudoimage.md)— Створює нове зображення\n-   [Imagick::nextImage](imagick.nextimage.md)— Переходить до наступного зображення\n-   [Imagick::normalizeImage](imagick.normalizeimage.md)— Підвищує контрастність кольорового зображення\n-   [Imagick::oilPaintImage](imagick.oilpaintimage.md)— Імітує картину олією\n-   [Imagick::opaquePaintImage](imagick.opaquepaintimage.md)— Змінює значення кольору будь-якого пікселя, що відповідає цільовому\n-   [Imagick::optimizeImageLayers](imagick.optimizeimagelayers.md)— Видаляє повторювані частини зображень для оптимізації\n-   [Imagick::orderedPosterizeImage](imagick.orderedposterizeimage.md) \\- Виконує впорядкований дизеринг\n-   [Imagick::paintFloodfillImage](imagick.paintfloodfillimage.md)— Змінює значення кольору будь-якого пікселя, що відповідає меті\n-   [Imagick::paintOpaqueImage](imagick.paintopaqueimage.md)— Змінює будь-який піксель, що відповідає кольору\n-   [Imagick::paintTransparentImage](imagick.painttransparentimage.md)— Змінює будь-який піксель, який відповідає кольору, на колір, визначений заливкою\n-   [Imagick::pingImage](imagick.pingimage.md)— Отримує основні атрибути зображення\n-   [Imagick::pingImageBlob](imagick.pingimageblob.md)— Швидко витягує атрибути\n-   [Imagick::pingImageFile](imagick.pingimagefile.md)— Отримує базові атрибути зображення у спрощений спосіб.\n-   [Imagick::polaroidImage](imagick.polaroidimage.md) \\- Імітує фото Polaroid\n-   [Imagick::posterizeImage](imagick.posterizeimage.md)— Зменшує зображення до обмеженої кількості рівнів кольору\n-   [Imagick::previewImages](imagick.previewimages.md)— Швидке визначення відповідних параметрів для обробки зображень\n-   [Imagick::previousImage](imagick.previousimage.md)— Перехід до попереднього зображення в об'єкті\n-   [Imagick::profileImage](imagick.profileimage.md)— Додає або видаляє профіль зображення\n-   [Imagick::quantizeImage](imagick.quantizeimage.md) \\- Аналізує кольори еталонного зображення\n-   [Imagick::quantizeImages](imagick.quantizeimages.md)— Аналізує кольори у послідовності зображень\n-   [Imagick::queryFontMetrics](imagick.queryfontmetrics.md)— Повертає масив, який представляє метрики шрифту\n-   [Imagick::queryFonts](imagick.queryfonts.md)— Повертає налаштовані шрифти\n-   [Imagick::queryFormats](imagick.queryformats.md)— Повертає формати, які підтримує Imagick\n-   [Imagick::radialBlurImage](imagick.radialblurimage.md)— Радіальне розмиття зображення\n-   [Imagick::raiseImage](imagick.raiseimage.md)— Створює імітацію ефекту 3D-кнопки\n-   [Imagick::randomThresholdImage](imagick.randomthresholdimage.md)— Створює висококонтрастне двокольорове зображення\n-   [Imagick::readImage](imagick.readimage.md)— Читає зображення із файлу\n-   [Imagick::readImageBlob](imagick.readimageblob.md)— Зчитує зображення з двійкового рядка\n-   [Imagick::readImageFile](imagick.readimagefile.md)— Читає зображення із відкритого дескриптора файлу\n-   [Imagick::readimages](imagick.readimages.md)— Читає зображення з масиву імен файлів\n-   [Imagick::recolorImage](imagick.recolorimage.md)— Перефарбовує зображення\n-   [Imagick::reduceNoiseImage](imagick.reducenoiseimage.md)— Згладжує контури зображення\n-   [Imagick::remapImage](imagick.remapimage.md)— Перезначає кольори зображення\n-   [Imagick::removeImage](imagick.removeimage.md)— Видалення зображення зі списку зображень\n-   [Imagick::removeImageProfile](imagick.removeimageprofile.md)— Видаляє іменований профіль зображення та повертає його\n-   [Imagick::render](imagick.render.md) \\- Відображає всі попередні команди малювання\n-   [Imagick::resampleImage](imagick.resampleimage.md)— Перетворює зображення до потрібної роздільної здатності\n-   [Imagick::resetImagePage](imagick.resetimagepage.md)— Скидає сторінку зображення\n-   [Imagick::resizeImage](imagick.resizeimage.md)— Масштабує зображення\n-   [Imagick::rollImage](imagick.rollimage.md)— Зміщує зображення\n-   [Imagick::rotateImage](imagick.rotateimage.md)— Повертає зображення\n-   [Imagick::rotationalBlurImage](imagick.rotationalblurimage.md)— Застосовує обертальне розмиття до зображення.\n-   [Imagick::roundCorners](imagick.roundcorners.md)— Заокруглює кути зображення\n-   [Imagick::sampleImage](imagick.sampleimage.md)— Масштабує зображення з піксельною вибіркою\n-   [Imagick::scaleImage](imagick.scaleimage.md)— Масштабує розмір зображення\n-   [Imagick::segmentImage](imagick.segmentimage.md)— Сегментує зображення\n-   [Imagick::selectiveBlurImage](imagick.selectiveblurimage.md) \\- Вибіркове розмиття зображення в межах порогового значення контрастності\n-   [Imagick::separateImageChannel](imagick.separateimagechannel.md)— Відокремлює канал від зображення\n-   [Imagick::sepiaToneImage](imagick.sepiatoneimage.md)— Тонування зображення сепією\n-   [Imagick::setBackgroundColor](imagick.setbackgroundcolor.md)— Встановлює колір тла об'єкта за промовчанням\n-   [Imagick::setColorspace](imagick.setcolorspace.md)— Встановлює колірний простір\n-   [Imagick::setCompression](imagick.setcompression.md)— Встановлює тип стиснення об'єкта за промовчанням\n-   [Imagick::setCompressionQuality](imagick.setcompressionquality.md)— Встановлює якість стандартного стиснення об'єкта\n-   [Imagick::setFilename](imagick.setfilename.md)— Встановлює ім'я файлу перед читанням чи записом зображення\n-   [Imagick::setFirstIterator](imagick.setfirstiterator.md) \\- Встановлює ітератор Imagick для першого зображення\n-   [Imagick::setFont](imagick.setfont.md) \\- Встановлює шрифт\n-   [Imagick::setFormat](imagick.setformat.md)— Встановлює формат об'єкту Imagick\n-   [Imagick::setGravity](imagick.setgravity.md) \\- Встановлює гравітацію\n-   [Imagick::setImage](imagick.setimage.md)— Замінює зображення в об'єкті\n-   [Imagick::setImageAlphaChannel](imagick.setimagealphachannel.md) \\- Встановлює альфа-канал зображення\n-   [Imagick::setImageArtifact](imagick.setimageartifact.md)— Встановлює артефакт зображення\n-   [Imagick::setImageAttribute](imagick.setimageattribute.md)— Встановлює атрибут зображення\n-   [Imagick::setImageBackgroundColor](imagick.setimagebackgroundcolor.md)— Встановлює колір тла зображення\n-   [Imagick::setImageBias](imagick.setimagebias.md)— Встановлює зміщення зображення для будь-якого методу, який згортає зображення\n-   [Imagick::setImageBiasQuantum](imagick.setimagebiasquantum.md)— Встановлює зміщення зображення\n-   [Imagick::setImageBluePrimary](imagick.setimageblueprimary.md)— Встановлює кольоровість зображення блакитною основною точкою.\n-   [Imagick::setImageBorderColor](imagick.setimagebordercolor.md)— Встановлює колір рамки зображення\n-   [Imagick::setImageChannelDepth](imagick.setimagechanneldepth.md)— Встановлює глибину певного каналу зображення\n-   [Imagick::setImageClipMask](imagick.setimageclipmask.md) \\- Встановлює маску кліпу\n-   [Imagick::setImageColormapColor](imagick.setimagecolormapcolor.md)— Встановлює колір вказаного індексу картки\n-   [Imagick::setImageColorspace](imagick.setimagecolorspace.md)— Встановлює колірний простір зображення\n-   [Imagick::setImageCompose](imagick.setimagecompose.md)— Встановлює оператор складеного зображення\n-   [Imagick::setImageCompression](imagick.setimagecompression.md)— Встановлює стиснення зображення\n-   [Imagick::setImageCompressionQuality](imagick.setimagecompressionquality.md)— Встановлює якість стиснення зображення\n-   [Imagick::setImageDelay](imagick.setimagedelay.md)— Встановлює затримку зображення\n-   [Imagick::setImageDepth](imagick.setimagedepth.md)— Встановлює глибину зображення\n-   [Imagick::setImageDispose](imagick.setimagedispose.md)— Встановлює метод видалення зображення\n-   [Imagick::setImageExtent](imagick.setimageextent.md)— Встановлює розмір зображення\n-   [Imagick::setImageFilename](imagick.setimagefilename.md)— Встановлює ім'я конкретного файлу.\n-   [Imagick::setImageFormat](imagick.setimageformat.md)— Встановлює формат певного зображення\n-   [Imagick::setImageGamma](imagick.setimagegamma.md)— Встановлює гаму зображення\n-   [Imagick::setImageGravity](imagick.setimagegravity.md)— Встановлює гравітацію зображення\n-   [Imagick::setImageGreenPrimary](imagick.setimagegreenprimary.md)— Встановлює кольоровість зображення зеленою первинною точкою.\n-   [Imagick::setImageIndex](imagick.setimageindex.md) \\- Встановлює позицію ітератора\n-   [Imagick::setImageInterlaceScheme](imagick.setimageinterlacescheme.md)— Встановлює стиснення зображення\n-   [Imagick::setImageInterpolateMethod](imagick.setimageinterpolatemethod.md)— Встановлює метод інтерполяції пікселів зображення\n-   [Imagick::setImageIterations](imagick.setimageiterations.md)— Встановлює ітерацію зображення\n-   [Imagick::setImageMatte](imagick.setimagematte.md)— Встановлює матовий канал зображення\n-   [Imagick::setImageMatteColor](imagick.setimagemattecolor.md)— Встановлює матовий колір зображення\n-   [Imagick::setImageOpacity](imagick.setimageopacity.md)— Встановлює рівень непрозорості зображення\n-   [Imagick::setImageOrientation](imagick.setimageorientation.md)— Встановлює орієнтацію зображення\n-   [Imagick::setImagePage](imagick.setimagepage.md)— Встановлює геометрію сторінки зображення\n-   [Imagick::setImageProfile](imagick.setimageprofile.md) \\- Додає іменований профіль до об'єкту Imagick\n-   [Imagick::setImageProperty](imagick.setimageproperty.md)— Встановлює властивість зображення\n-   [Imagick::setImageRedPrimary](imagick.setimageredprimary.md)— Встановлює червону первинну точку кольоровості зображення\n-   [Imagick::setImageRenderingIntent](imagick.setimagerenderingintent.md)— Встановлює схему передачі кольору зображення\n-   [Imagick::setImageResolution](imagick.setimageresolution.md)— Встановлює роздільну здатність зображення\n-   [Imagick::setImageScene](imagick.setimagescene.md)— Встановлює сцену зображення\n-   [Imagick::setImageTicksPerSecond](imagick.setimagetickspersecond.md)— Встановлює тривалість відображення кадру\n-   [Imagick::setImageType](imagick.setimagetype.md)— Встановлює тип зображення\n-   [Imagick::setImageUnits](imagick.setimageunits.md)— Встановлює одиниці вимірювання роздільної здатності зображення\n-   [Imagick::setImageVirtualPixelMethod](imagick.setimagevirtualpixelmethod.md) \\- Встановлює метод віртуального пікселя\n-   [Imagick::setImageWhitePoint](imagick.setimagewhitepoint.md)— Встановлює білу точку кольору зображення\n-   [Imagick::setInterlaceScheme](imagick.setinterlacescheme.md)— Встановлює стиснення зображення\n-   [Imagick::setIteratorIndex](imagick.setiteratorindex.md) \\- Встановлює позицію ітератора\n-   [Imagick::setLastIterator](imagick.setlastiterator.md) \\- Встановлює ітератор Imagick до останнього зображення\n-   [Imagick::setOption](imagick.setoption.md) \\- Встановлює опцію\n-   [Imagick::setPage](imagick.setpage.md)— Встановлює геометрію сторінки об'єкту Imagick\n-   [Imagick::setPointSize](imagick.setpointsize.md) \\- Встановлює розмір точки\n-   [Imagick::setProgressMonitor](imagick.setprogressmonitor.md)— Встановлює callback-функцію, яка буде викликатись під час обробки зображення Imagick\n-   [Imagick::setRegistry](imagick.setregistry.md)— Встановлює значення запису реєстру ImageMagick з ім'ям key\n-   [Imagick::setResolution](imagick.setresolution.md)— Встановлює роздільну здатність зображення\n-   [Imagick::setResourceLimit](imagick.setresourcelimit.md) \\- Встановлює ліміт для конкретного ресурсу\n-   [Imagick::setSamplingFactors](imagick.setsamplingfactors.md)— Встановлює коефіцієнти вибірки зображень\n-   [Imagick::setSize](imagick.setsize.md)— Встановлює розмір об'єкту Imagick\n-   [Imagick::setSizeOffset](imagick.setsizeoffset.md)— Встановлює розмір та усунення об'єкта Imagick\n-   [Imagick::setType](imagick.settype.md)— Встановлює атрибут типу зображення\n-   [Imagick::shadeImage](imagick.shadeimage.md)— Створює 3D-ефект\n-   [Imagick::shadowImage](imagick.shadowimage.md)— Імітує тінь зображення\n-   [Imagick::sharpenImage](imagick.sharpenimage.md)— Підвищує різкість зображення\n-   [Imagick::shaveImage](imagick.shaveimage.md)— Видаляє пікселі по краях зображення\n-   [Imagick::shearImage](imagick.shearimage.md) \\- Створює паралелограм\n-   [Imagick::sigmoidalContrastImage](imagick.sigmoidalcontrastimage.md) \\- Регулює контраст зображення\n-   [Imagick::sketchImage](imagick.sketchimage.md) \\- Імітує малюнок олівцем\n-   [Imagick::smushImages](imagick.smushimages.md)— Бере всі зображення з поточного покажчика зображення до кінця списку зображень і переміщує їх\n-   [Imagick::solarizeImage](imagick.solarizeimage.md)— Застосовує до зображення ефект соляризації\n-   [Imagick::sparseColorImage](imagick.sparsecolorimage.md) \\- Інтерполює кольори\n-   [Imagick::spliceImage](imagick.spliceimage.md)— Склеює суцільний колір у зображення\n-   [Imagick::spreadImage](imagick.spreadimage.md)— Випадково зміщує кожен піксель у блоці\n-   [Imagick::statisticImage](imagick.statisticimage.md)— Модифікація зображення за допомогою функції статистики\n-   [Imagick::steganoImage](imagick.steganoimage.md)— Приховує цифровий водяний знак у зображенні\n-   [Imagick::stereoImage](imagick.stereoimage.md)— Об'єднує два зображення\n-   [Imagick::stripImage](imagick.stripimage.md)— Знімає зображення всіх профілів та коментарів\n-   [Imagick::subImageMatch](imagick.subimagematch.md)— Виконує пошук фрагмента зображення у поточному зображенні та повертає другорядне зображення.\n-   [Imagick::swirlImage](imagick.swirlimage.md)— Закручує пікселі навколо центру зображення\n-   [Imagick::textureImage](imagick.textureimage.md)— Багато разів розміщує зображення текстури\n-   [Imagick::thresholdImage](imagick.thresholdimage.md) \\- Змінює окремі пікселі на основі порогового значення\n-   [Imagick::thumbnailImage](imagick.thumbnailimage.md)— Змінює розмір зображення\n-   [Imagick::tintImage](imagick.tintimage.md)— Застосовує вектор кольору до кожного пікселя зображення\n-   [Imagick::\\_\\_function toString() { \\[native code\\] }](imagick.tostring.md)— Повертає зображення у вигляді рядка\n-   [Imagick::transformImage](imagick.transformimage.md)— Зручний метод налаштування розміру кадрування та геометрії зображення\n-   [Imagick::transformImageColorspace](imagick.transformimagecolorspace.md)— Перетворює зображення на новий колірний простір\n-   [Imagick::transparentPaintImage](imagick.transparentpaintimage.md)— Малює пікселі прозорими\n-   [Imagick::transposeImage](imagick.transposeimage.md)— Створює вертикальне дзеркальне відображення\n-   [Imagick::transverseImage](imagick.transverseimage.md)— Створює горизонтальне дзеркальне відображення\n-   [Imagick::trimImage](imagick.trimimage.md)— Видаляє краї із зображення\n-   [Imagick::uniqueImageColors](imagick.uniqueimagecolors.md) \\- Відкидає все, крім одного, будь-якого кольору пікселя\n-   [Imagick::unsharpMaskImage](imagick.unsharpmaskimage.md) \\- Різкість зображення\n-   [Imagick::valid](imagick.valid.md)— Перевіряє, чи поточний елемент є коректним.\n-   [Imagick::vignetteImage](imagick.vignetteimage.md)— Додає він'єтний фільтр до зображення\n-   [Imagick::waveImage](imagick.waveimage.md)— Застосовує хвильовий фільтр до зображення\n-   [Imagick::whiteThresholdImage](imagick.whitethresholdimage.md)— Зафарбовує всі пікселі вище за поріг у білий\n-   [Imagick::writeImage](imagick.writeimage.md)— Записує зображення за вказаним ім'ям файлу\n-   [Imagick::writeImageFile](imagick.writeimagefile.md)— Записує зображення у файл\n-   [Imagick::writeImages](imagick.writeimages.md)— Записує зображення або послідовність зображень\n-   [Imagick::writeImagesFile](imagick.writeimagesfile.md)— Записує кадри у файловий дескриптор\n","title":"Класс[Imagick](class.imagick.md)","contentType":2,"navigation":[{"imagick.examples-1.md":"« Базове використання"},{"imagick.adaptiveblurimage.md":"Imagick::adaptiveBlurImage »"},{"index.md":"PHP Manual"},{"book.imagick.md":"ImageMagick"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.imagick.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

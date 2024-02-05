@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Типи атрибутів RADIUS</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="radius.constants.packets.md" class="mx-4">типи пакетів RADIUS</a><a href="radius.constants.vendor-specific.md" class="mx-4">Атрибути RADIUS специфічні для різних виробників.</a><a href="index.md" class="mx-4">PHP Manual</a><a href="radius.constants.md" class="mx-4">Обумовлені константи</a></div><article class="markdown_markdown__yfc8y"><div><h2>Типи атрибутів RADIUS</h2>
+<p>Ці константи описують типи атрибутів RADIUS, які можна використовувати у функціях <a href="function.radius-put-addr.md">radius_put_addr()</a> <a href="function.radius-put-attr.md">radius_put_attr()</a> <a href="function.radius-put-int.md">radius_put_int()</a> і <a href="function.radius-put-string.md">radius_put_string()</a></p>
+<p><strong><code>RADIUS_USER_NAME</code></strong>(int)</p>
+<p>Атрибут User-Name. Повинен бути типу string і містити ім&#x27;я користувача, що автентифікується. Атрибут можна встановити функцією <a href="function.radius-put-attr.md">radius_put_attr()</a></p>
+<p><strong><code>RADIUS_USER_PASSWORD</code></strong>(int)</p>
+<p>Атрибут User-Password. Має бути типу string і містити пароль користувача. Атрибут можна встановити функцією <a href="function.radius-put-attr.md">radius_put_attr()</a>. Це значення буде обфусковано при передачі згідно <a href="http://www.faqs.org/rfcs/rfc2865">» секції 5.2 RFC 2865</a></p>
+<p><strong><code>RADIUS_CHAP_PASSWORD</code></strong>(int)</p>
+<p>Атрибут Chap-Password. Має бути типу string і містити ідентифікатор CHAP користувача, 16 байт, що містять MD5-хеш ідентифікатора CHAP, текстове представлення пароля та перевірочне значення CHAP з&#x27;єднаними в один рядок. Зверніть увагу, що перевірочне значення CHAP також має бути надіслано окремо в атрибуті <a href="radius.constants.attributes.md#constant.radius-chap-challenge"><strong><code>RADIUS_CHAP_CHALLENGE</code></strong></a></p>
+<p><strong>Приклад #1 Використання паролів CHAP</strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:450px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p><strong><code>RADIUS_NAS_IP_ADDRESS</code></strong>(int)</p>
+<p>Атрибут NAS IP-Address. Очікується, що значення буде IP адресою клієнта RADIUS у вигляді цілого числа. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a></p>
+<p><strong><code>RADIUS_NAS_PORT</code></strong>(int)</p>
+<p>Атрибут NAS-Port. Очікується, що значення буде фізичним портом клієнта RADIUS як цілого числа. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a></p>
+<p><strong><code>RADIUS_SERVICE_TYPE</code></strong>(int)</p>
+<p>Атрибут Service-Type. Значення атрибута позначає тип сервісу запитуваного клієнтом, має бути цілим числом. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a></p>
+<p>Допустимі такі значення:</p>
+<ul>
+<li><strong><code>RADIUS_LOGIN</code></strong></li>
+<li><strong><code>RADIUS_FRAMED</code></strong></li>
+<li><strong><code>RADIUS_CALLBACK_LOGIN</code></strong></li>
+<li><strong><code>RADIUS_CALLBACK_FRAMED</code></strong></li>
+<li><strong><code>RADIUS_OUTBOUND</code></strong></li>
+<li><strong><code>RADIUS_ADMINISTRATIVE</code></strong></li>
+<li><strong><code>RADIUS_NAS_PROMPT</code></strong></li>
+<li><strong><code>RADIUS_AUTHENTICATE_ONLY</code></strong></li>
+<li><strong><code>RADIUS_CALLBACK_NAS_PROMPT</code></strong></li>
+</ul>
+<p><strong><code>RADIUS_FRAMED_PROTOCOL</code></strong>(int)</p>
+<p>Атрибут Framed-Protocol. Атрибут повинен бути цілим числом, що означає протокол обгортку. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a>. Допустимі значення:</p>
+<ul>
+<li><strong><code>RADIUS_PPP</code></strong></li>
+<li><strong><code>RADIUS_SLIP</code></strong></li>
+<li><strong><code>RADIUS_ARAP</code></strong></li>
+<li><strong><code>RADIUS_GANDALF</code></strong></li>
+<li><strong><code>RADIUS_XYLOGICS</code></strong></li>
+</ul>
+<p><strong><code>RADIUS_FRAMED_IP_ADDRESS</code></strong>(int)</p>
+<p>Атрибут Framed-IP-Address. Атрибут повинен містити адресу мережі користувача у вигляді цілого числа. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a> та витягується функцією <a href="function.radius-cvt-addr.md">radius_cvt_addr()</a></p>
+<p><strong><code>RADIUS_FRAMED_IP_NETMASK</code></strong>(int)</p>
+<p>Атрибут Framed-IP-Netmask. Атрибут повинен містити маску мережі користувача у вигляді цілого числа. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a> та витягується функцією <a href="function.radius-cvt-addr.md">radius_cvt_addr()</a></p>
+<p><strong><code>RADIUS_FRAMED_ROUTING</code></strong>(int)</p>
+<p>Атрибут Framed-Routing. Атрибут має бути цілим числом та містити метод маршрутизації. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a></p>
+<p>Допустимі значення:</p>
+<ul>
+<li>: Без маршрутизації</li>
+<li>: Посилання пакетів маршрутизації</li>
+<li>: Чекати на пакети маршрутизації.</li>
+<li><code>3</code>: Посилати та чекати</li>
+</ul>
+<p><strong><code>RADIUS_FILTER_ID</code></strong>(int)</p>
+<p>Атрибут Filter-ID. Атрибут повинен бути залежним від реалізації, людино-читаним рядком фільтрів. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a></p>
+<p><strong><code>RADIUS_FRAMED_MTU</code></strong>(int)</p>
+<p>Атрибут Framed-MTU. Ціле число, що означає значення MTU. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a></p>
+<p><strong><code>RADIUS_FRAMED_COMPRESSION</code></strong>(int)</p>
+<p>Атрибут Framed-Compression. Ціле число, що означає протокол стиснення. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a> Допустимі значення:</p>
+<ul>
+<li><strong><code>RADIUS_COMP_NONE</code></strong>: Без стиску</li>
+<li><strong><code>RADIUS_COMP_VJ</code></strong>: Стиснення заголовків VJ TCP/IP</li>
+<li><strong><code>RADIUS_COMP_IPXHDR</code></strong>: Стиснення заголовків IPX</li>
+<li><strong><code>RADIUS_COMP_STAC_LZS</code></strong>: Стиснення Stac-LZS (додано в PECL radius 1.3.0b2)</li>
+</ul>
+<p><strong><code>RADIUS_LOGIN_IP_HOST</code></strong>(int)</p>
+<p>Атрибут Login-IP-Host. Ціле число, що представляє IP-адресу, з якою з&#x27;єднується користувач. Атрибут встановлюється функцією <a href="function.radius-put-addr.md">radius_put_addr()</a></p>
+<p><strong><code>RADIUS_LOGIN_SERVICE</code></strong>(int)</p>
+<p>Атрибут Login-Service Значення атрибута означає послугу, з якою користувач з&#x27;єднується на сервері автентифікації. Це значення можна перетворити на ціле число PHP за допомогою функції <a href="function.radius-cvt-int.md">radius_cvt_int()</a></p>
+<p><strong><code>RADIUS_LOGIN_TCP_PORT</code></strong>(int)</p>
+<p>Атрибут Login-TCP-Port. Атрибут означає порт, з яким користувач з&#x27;єднується на сервері автентифікації. Це значення можна перетворити на ціле число PHP за допомогою функції <a href="function.radius-cvt-int.md">radius_cvt_int()</a></p>
+<p><strong><code>RADIUS_REPLY_MESSAGE</code></strong>(int)</p>
+<p>Атрибут Reply-Message. Значення атрибута містить текст, який можна показати користувачеві у відповідь на запит автентифікації.</p>
+<p><strong><code>RADIUS_CALLBACK_NUMBER</code></strong>(int)</p>
+<p>Атрибути Callback-Number. Атрибут містить рядок, який можна використовувати як зворотний дзвінок.</p>
+<p><strong><code>RADIUS_CALLBACK_ID</code></strong>(int)</p>
+<p>Атрибут Callback-Id. Рядок, що містить ім&#x27;я викликаного методу специфічного для конкретної реалізації.</p>
+<p><strong><code>RADIUS_FRAMED_ROUTE</code></strong>(int)</p>
+<p>Атрибут Framed-Route. Рядок, що містить список маршрутів, що залежить від реалізації, сконфігурованих для користувача.</p>
+<p><strong><code>RADIUS_FRAMED_IPX_NETWORK</code></strong>(int)</p>
+<p>Атрибут Framed-IPX-Network. Ціле число, що визначає мережу IPX, налаштовану для користувача або <code>0xFFFFFFFE</code>що закликає клієнта RADIUS вибрати мережу самостійно. Можна витягти за допомогою <a href="function.radius-cvt-int.md">radius_cvt_int()</a></p>
+<p><strong><code>RADIUS_STATE</code></strong>(int)</p>
+<p>Атрибут State. Рядок, що залежить від реалізації, включений у відповідь Access-Challenge прийшов від сервера, яку необхідно включити в наступний запит Access-Request. Повинен встановлюватись функцією <a href="function.radius-put-attr.md">radius_put_attr()</a></p>
+<p><strong><code>RADIUS_CLASS</code></strong>(int)</p>
+<p>Атрибут Class. Довільний рядок включений у повідомлення Access-Accept і який має бути надісланий серверу облікових даних у запиті Accounting-Request. Повинен встановлюватись функцією <a href="function.radius-put-attr.md">radius_put_attr()</a></p>
+<p><strong><code>RADIUS_VENDOR_SPECIFIC</code></strong>(int)</p>
+<p>Атрибут Vendor-Specific. Загалом значення цього атрибуту повинні встановлюватися з використанням функцій <a href="function.radius-put-vendor-addr.md">radius_put_vendor_addr()</a> <a href="function.radius-put-vendor-attr.md">radius_put_vendor_attr()</a> <a href="function.radius-put-vendor-int.md">radius_put_vendor_int()</a> і <a href="function.radius-put-vendor-string.md">radius_put_vendor_string()</a>, а чи не безпосередньо.</p>
+<p>Ці константи необхідні інтерпретації специфічних, які від виробника атрибутів, які у відповідях сервера RADIUS; коли отримані такі атрибути, потрібно використовувати функцію <a href="function.radius-get-vendor-attr.md">radius_get_vendor_attr()</a> для вилучення ідентифікатора вендора, типу атрибута та його значення.</p>
+<p><strong><code>RADIUS_SESSION_TIMEOUT</code></strong>(int)</p>
+<p>Час очікування сесії</p>
+<p><strong><code>RADIUS_IDLE_TIMEOUT</code></strong>(int)</p>
+<p>Час очікування простою</p>
+<p><strong><code>RADIUS_TERMINATION_ACTION</code></strong>(int)</p>
+<p>Припинення операції</p>
+<p><strong><code>RADIUS_CALLED_STATION_ID</code></strong>(int)</p>
+<p>Ідентифікатор станції, що викликається</p>
+<p><strong><code>RADIUS_CALLING_STATION_ID</code></strong>(int)</p>
+<p>Ідентифікатор зухвалої станції</p>
+<p><strong><code>RADIUS_NAS_IDENTIFIER</code></strong>(int)</p>
+<p>NAS ID</p>
+<p><strong><code>RADIUS_PROXY_STATE</code></strong>(int)</p>
+<p>Стан проксі</p>
+<p><strong><code>RADIUS_LOGIN_LAT_SERVICE</code></strong>(int)</p>
+<p>Сервіс входу до системи LAT</p>
+<p><strong><code>RADIUS_LOGIN_LAT_NODE</code></strong>(int)</p>
+<p>Вузол входу до системи LAT</p>
+<p><strong><code>RADIUS_LOGIN_LAT_GROUP</code></strong>(int)</p>
+<p>Група входу до системи LAT</p>
+<p><strong><code>RADIUS_FRAMED_APPLETALK_LINK</code></strong>(int)</p>
+<p>Framed Appletalk Link</p>
+<p><strong><code>RADIUS_FRAMED_APPLETALK_NETWORK</code></strong>(int)</p>
+<p>Framed Appletalk Network</p>
+<p><strong><code>RADIUS_FRAMED_APPLETALK_ZONE</code></strong>(int)</p>
+<p>Framed Appletalk Zone</p>
+<p><strong><code>RADIUS_CHAP_CHALLENGE</code></strong>(int)</p>
+<p>Перевірочне значення</p>
+<p><strong><code>RADIUS_NAS_PORT_TYPE</code></strong>(int)</p>
+<p>Тип порту NAS, одна з констант:</p>
+<ul>
+<li><strong><code>RADIUS_ASYNC</code></strong></li>
+<li><strong><code>RADIUS_SYNC</code></strong></li>
+<li><strong><code>RADIUS_ISDN_SYNC</code></strong></li>
+<li><strong><code>RADIUS_ISDN_ASYNC_V120</code></strong></li>
+<li><strong><code>RADIUS_ISDN_ASYNC_V110</code></strong></li>
+<li><strong><code>RADIUS_VIRTUAL</code></strong></li>
+<li><strong><code>RADIUS_PIAFS</code></strong></li>
+<li><strong><code>RADIUS_HDLC_CLEAR_CHANNEL</code></strong></li>
+<li><strong><code>RADIUS_X_25</code></strong></li>
+<li><strong><code>RADIUS_X_75</code></strong></li>
+<li><strong><code>RADIUS_G_3_FAX</code></strong></li>
+<li><strong><code>RADIUS_SDSL</code></strong></li>
+<li><strong><code>RADIUS_ADSL_CAP</code></strong></li>
+<li><strong><code>RADIUS_ADSL_DMT</code></strong></li>
+<li><strong><code>RADIUS_IDSL</code></strong></li>
+<li><strong><code>RADIUS_ETHERNET</code></strong></li>
+<li><strong><code>RADIUS_XDSL</code></strong></li>
+<li><strong><code>RADIUS_CABLE</code></strong></li>
+<li><strong><code>RADIUS_WIRELESS_OTHER</code></strong></li>
+<li><strong><code>RADIUS_WIRELESS_IEEE_802_11</code></strong></li>
+</ul>
+<p><strong><code>RADIUS_PORT_LIMIT</code></strong>(int)</p>
+<p>Обмеження на порти</p>
+<p><strong><code>RADIUS_LOGIN_LAT_PORT</code></strong>(int)</p>
+<p>Порт входу до системи LAT</p>
+<p><strong><code>RADIUS_CONNECT_INFO</code></strong>(int)</p>
+<p>Інформація про з&#x27;єднання</p>
+<p><strong><code>RADIUS_ACCT_STATUS_TYPE</code></strong>(int)</p>
+<p>Статус системи управління обліковими даними, одна з констант:</p>
+<ul>
+<li><strong><code>RADIUS_START</code></strong></li>
+<li><strong><code>RADIUS_STOP</code></strong></li>
+<li><strong><code>RADIUS_ACCOUNTING_ON</code></strong></li>
+<li><strong><code>RADIUS_ACCOUNTING_OFF</code></strong></li>
+</ul>
+<p><strong><code>RADIUS_ACCT_DELAY_TIME</code></strong>(int)</p>
+<p>Час затримки системи керування обліковими даними</p>
+<p><strong><code>RADIUS_ACCT_INPUT_OCTETS</code></strong>(int)</p>
+<p>Вхідні байти до системи управління обліковими даними</p>
+<p><strong><code>RADIUS_ACCT_OUTPUT_OCTETS</code></strong>(int)</p>
+<p>Вихідні байти із системи управління обліковими даними</p>
+<p><strong><code>RADIUS_ACCT_SESSION_ID</code></strong>(int)</p>
+<p>Ідентифікатор сесії системи управління обліковими даними</p>
+<p><strong><code>RADIUS_ACCT_AUTHENTIC</code></strong>(int)</p>
+<p>Тип системи управління обліковими даними, одна з констант:</p>
+<ul>
+<li><strong><code>RADIUS_AUTH_RADIUS</code></strong></li>
+<li><strong><code>RADIUS_AUTH_LOCAL</code></strong></li>
+<li><strong><code>RADIUS_AUTH_REMOTE</code></strong></li>
+</ul>
+<p><strong><code>RADIUS_ACCT_SESSION_TIME</code></strong>(int)</p>
+<p>Час сесії у системі управління обліковими даними</p>
+<p><strong><code>RADIUS_ACCT_INPUT_PACKETS</code></strong>(int)</p>
+<p>Вхідні пакети до системи управління обліковими даними</p>
+<p><strong><code>RADIUS_ACCT_OUTPUT_PACKETS</code></strong>(int)</p>
+<p>Вихідні пакети із системи управління обліковими даними</p>
+<p><strong><code>RADIUS_ACCT_TERMINATE_CAUSE</code></strong>(int)</p>
+<p>Аварійне завершення сеансу управління обліковими даними:</p>
+<ul>
+<li><strong><code>RADIUS_TERM_USER_REQUEST</code></strong></li>
+<li><strong><code>RADIUS_TERM_LOST_CARRIER</code></strong></li>
+<li><strong><code>RADIUS_TERM_LOST_SERVICE</code></strong></li>
+<li><strong><code>RADIUS_TERM_IDLE_TIMEOUT</code></strong></li>
+<li><strong><code>RADIUS_TERM_SESSION_TIMEOUT</code></strong></li>
+<li><strong><code>RADIUS_TERM_ADMIN_RESET</code></strong></li>
+<li><strong><code>RADIUS_TERM_ADMIN_REBOOT</code></strong></li>
+<li><strong><code>RADIUS_TERM_PORT_ERROR</code></strong></li>
+<li><strong><code>RADIUS_TERM_NAS_ERROR</code></strong></li>
+<li><strong><code>RADIUS_TERM_NAS_REQUEST</code></strong></li>
+<li><strong><code>RADIUS_TERM_NAS_REBOOT</code></strong></li>
+<li><strong><code>RADIUS_TERM_PORT_UNNEEDED</code></strong></li>
+<li><strong><code>RADIUS_TERM_PORT_PREEMPTED</code></strong></li>
+<li><strong><code>RADIUS_TERM_PORT_SUSPENDED</code></strong></li>
+<li><strong><code>RADIUS_TERM_SERVICE_UNAVAILABLE</code></strong></li>
+<li><strong><code>RADIUS_TERM_CALLBACK</code></strong></li>
+<li><strong><code>RADIUS_TERM_USER_ERROR</code></strong></li>
+<li><strong><code>RADIUS_TERM_HOST_REQUEST</code></strong></li>
+</ul>
+<p><strong><code>RADIUS_ACCT_MULTI_SESSION_ID</code></strong>(int)</p>
+<p>Багатосесійний ідентифікатор системи управління обліковими даними</p>
+<p><strong><code>RADIUS_ACCT_LINK_COUNT</code></strong>(int)</p>
+<p>Кількість з&#x27;єднань системи управління обліковими даними</p></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/radius.constants.attributes.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/radius.constants.attributes.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"radius.constants.attributes.md","content":"## Типи атрибутів RADIUS\n\nЦі константи описують типи атрибутів RADIUS, які можна використовувати у функціях [radius\\_put\\_addr()](function.radius-put-addr.md) [radius\\_put\\_attr()](function.radius-put-attr.md) [radius\\_put\\_int()](function.radius-put-int.md) і [radius\\_put\\_string()](function.radius-put-string.md)\n\n**`RADIUS_USER_NAME`**(int)\n\nАтрибут User-Name. Повинен бути типу string і містити ім'я користувача, що автентифікується. Атрибут можна встановити функцією [radius\\_put\\_attr()](function.radius-put-attr.md)\n\n**`RADIUS_USER_PASSWORD`**(int)\n\nАтрибут User-Password. Має бути типу string і містити пароль користувача. Атрибут можна встановити функцією [radius\\_put\\_attr()](function.radius-put-attr.md). Це значення буде обфусковано при передачі згідно [» секції 5.2 RFC 2865](http://www.faqs.org/rfcs/rfc2865)\n\n**`RADIUS_CHAP_PASSWORD`**(int)\n\nАтрибут Chap-Password. Має бути типу string і містити ідентифікатор CHAP користувача, 16 байт, що містять MD5-хеш ідентифікатора CHAP, текстове представлення пароля та перевірочне значення CHAP з'єднаними в один рядок. Зверніть увагу, що перевірочне значення CHAP також має бути надіслано окремо в атрибуті [**`RADIUS_CHAP_CHALLENGE`**](radius.constants.attributes.md#constant.radius-chap-challenge)\n\n**Приклад #1 Використання паролів CHAP**\n\n```php\n\u003c?php\n// Для начала создадим обработчик аутентификации и запрос.\n$radh = radius_auth_open();\nradius_add_server($radh, $server, $port, $secret, 3, 3);\nradius_create_request($radh, RADIUS_ACCESS_REQUEST);\n\n// Считая, что $password содержит пароль в незашифрованном виде, мы делаем:\n\n// Создаём проверочное значение.\n$challenge = mt_rand();\n\n// Задаём идентификатор CHAP.\n$ident = 1;\n\n// Добавляем атрибут Chap-Password.\n$cp = md5(pack('Ca*', $ident, $password.$challenge), true);\nradius_put_attr($radh, RADIUS_CHAP_PASSWORD, pack('C', $ident).$cp);\n\n// Добавляем атрибут Chap-Challenge.\nradius_put_attr($radh, RADIUS_CHAP_CHALLENGE, $challenge);\n\n/* Теперь можно добавлять прочие необходимые аттриубты\n * и вызывать radius_send_request(). */\n?\u003e\n```\n\n**`RADIUS_NAS_IP_ADDRESS`**(int)\n\nАтрибут NAS IP-Address. Очікується, що значення буде IP адресою клієнта RADIUS у вигляді цілого числа. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md)\n\n**`RADIUS_NAS_PORT`**(int)\n\nАтрибут NAS-Port. Очікується, що значення буде фізичним портом клієнта RADIUS як цілого числа. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md)\n\n**`RADIUS_SERVICE_TYPE`**(int)\n\nАтрибут Service-Type. Значення атрибута позначає тип сервісу запитуваного клієнтом, має бути цілим числом. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md)\n\nДопустимі такі значення:\n\n-   **`RADIUS_LOGIN`**\n-   **`RADIUS_FRAMED`**\n-   **`RADIUS_CALLBACK_LOGIN`**\n-   **`RADIUS_CALLBACK_FRAMED`**\n-   **`RADIUS_OUTBOUND`**\n-   **`RADIUS_ADMINISTRATIVE`**\n-   **`RADIUS_NAS_PROMPT`**\n-   **`RADIUS_AUTHENTICATE_ONLY`**\n-   **`RADIUS_CALLBACK_NAS_PROMPT`**\n\n**`RADIUS_FRAMED_PROTOCOL`**(int)\n\nАтрибут Framed-Protocol. Атрибут повинен бути цілим числом, що означає протокол обгортку. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md). Допустимі значення:\n\n-   **`RADIUS_PPP`**\n-   **`RADIUS_SLIP`**\n-   **`RADIUS_ARAP`**\n-   **`RADIUS_GANDALF`**\n-   **`RADIUS_XYLOGICS`**\n\n**`RADIUS_FRAMED_IP_ADDRESS`**(int)\n\nАтрибут Framed-IP-Address. Атрибут повинен містити адресу мережі користувача у вигляді цілого числа. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md) та витягується функцією [radius\\_cvt\\_addr()](function.radius-cvt-addr.md)\n\n**`RADIUS_FRAMED_IP_NETMASK`**(int)\n\nАтрибут Framed-IP-Netmask. Атрибут повинен містити маску мережі користувача у вигляді цілого числа. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md) та витягується функцією [radius\\_cvt\\_addr()](function.radius-cvt-addr.md)\n\n**`RADIUS_FRAMED_ROUTING`**(int)\n\nАтрибут Framed-Routing. Атрибут має бути цілим числом та містити метод маршрутизації. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md)\n\nДопустимі значення:\n\n-   : Без маршрутизації\n-   : Посилання пакетів маршрутизації\n-   : Чекати на пакети маршрутизації.\n-   `3`: Посилати та чекати\n\n**`RADIUS_FILTER_ID`**(int)\n\nАтрибут Filter-ID. Атрибут повинен бути залежним від реалізації, людино-читаним рядком фільтрів. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md)\n\n**`RADIUS_FRAMED_MTU`**(int)\n\nАтрибут Framed-MTU. Ціле число, що означає значення MTU. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md)\n\n**`RADIUS_FRAMED_COMPRESSION`**(int)\n\nАтрибут Framed-Compression. Ціле число, що означає протокол стиснення. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md) Допустимі значення:\n\n-   **`RADIUS_COMP_NONE`**: Без стиску\n-   **`RADIUS_COMP_VJ`**: Стиснення заголовків VJ TCP/IP\n-   **`RADIUS_COMP_IPXHDR`**: Стиснення заголовків IPX\n-   **`RADIUS_COMP_STAC_LZS`**: Стиснення Stac-LZS (додано в PECL radius 1.3.0b2)\n\n**`RADIUS_LOGIN_IP_HOST`**(int)\n\nАтрибут Login-IP-Host. Ціле число, що представляє IP-адресу, з якою з'єднується користувач. Атрибут встановлюється функцією [radius\\_put\\_addr()](function.radius-put-addr.md)\n\n**`RADIUS_LOGIN_SERVICE`**(int)\n\nАтрибут Login-Service Значення атрибута означає послугу, з якою користувач з'єднується на сервері автентифікації. Це значення можна перетворити на ціле число PHP за допомогою функції [radius\\_cvt\\_int()](function.radius-cvt-int.md)\n\n**`RADIUS_LOGIN_TCP_PORT`**(int)\n\nАтрибут Login-TCP-Port. Атрибут означає порт, з яким користувач з'єднується на сервері автентифікації. Це значення можна перетворити на ціле число PHP за допомогою функції [radius\\_cvt\\_int()](function.radius-cvt-int.md)\n\n**`RADIUS_REPLY_MESSAGE`**(int)\n\nАтрибут Reply-Message. Значення атрибута містить текст, який можна показати користувачеві у відповідь на запит автентифікації.\n\n**`RADIUS_CALLBACK_NUMBER`**(int)\n\nАтрибути Callback-Number. Атрибут містить рядок, який можна використовувати як зворотний дзвінок.\n\n**`RADIUS_CALLBACK_ID`**(int)\n\nАтрибут Callback-Id. Рядок, що містить ім'я викликаного методу специфічного для конкретної реалізації.\n\n**`RADIUS_FRAMED_ROUTE`**(int)\n\nАтрибут Framed-Route. Рядок, що містить список маршрутів, що залежить від реалізації, сконфігурованих для користувача.\n\n**`RADIUS_FRAMED_IPX_NETWORK`**(int)\n\nАтрибут Framed-IPX-Network. Ціле число, що визначає мережу IPX, налаштовану для користувача або `0xFFFFFFFE`що закликає клієнта RADIUS вибрати мережу самостійно. Можна витягти за допомогою [radius\\_cvt\\_int()](function.radius-cvt-int.md)\n\n**`RADIUS_STATE`**(int)\n\nАтрибут State. Рядок, що залежить від реалізації, включений у відповідь Access-Challenge прийшов від сервера, яку необхідно включити в наступний запит Access-Request. Повинен встановлюватись функцією [radius\\_put\\_attr()](function.radius-put-attr.md)\n\n**`RADIUS_CLASS`**(int)\n\nАтрибут Class. Довільний рядок включений у повідомлення Access-Accept і який має бути надісланий серверу облікових даних у запиті Accounting-Request. Повинен встановлюватись функцією [radius\\_put\\_attr()](function.radius-put-attr.md)\n\n**`RADIUS_VENDOR_SPECIFIC`**(int)\n\nАтрибут Vendor-Specific. Загалом значення цього атрибуту повинні встановлюватися з використанням функцій [radius\\_put\\_vendor\\_addr()](function.radius-put-vendor-addr.md) [radius\\_put\\_vendor\\_attr()](function.radius-put-vendor-attr.md) [radius\\_put\\_vendor\\_int()](function.radius-put-vendor-int.md) і [radius\\_put\\_vendor\\_string()](function.radius-put-vendor-string.md), а чи не безпосередньо.\n\nЦі константи необхідні інтерпретації специфічних, які від виробника атрибутів, які у відповідях сервера RADIUS; коли отримані такі атрибути, потрібно використовувати функцію [radius\\_get\\_vendor\\_attr()](function.radius-get-vendor-attr.md) для вилучення ідентифікатора вендора, типу атрибута та його значення.\n\n**`RADIUS_SESSION_TIMEOUT`**(int)\n\nЧас очікування сесії\n\n**`RADIUS_IDLE_TIMEOUT`**(int)\n\nЧас очікування простою\n\n**`RADIUS_TERMINATION_ACTION`**(int)\n\nПрипинення операції\n\n**`RADIUS_CALLED_STATION_ID`**(int)\n\nІдентифікатор станції, що викликається\n\n**`RADIUS_CALLING_STATION_ID`**(int)\n\nІдентифікатор зухвалої станції\n\n**`RADIUS_NAS_IDENTIFIER`**(int)\n\nNAS ID\n\n**`RADIUS_PROXY_STATE`**(int)\n\nСтан проксі\n\n**`RADIUS_LOGIN_LAT_SERVICE`**(int)\n\nСервіс входу до системи LAT\n\n**`RADIUS_LOGIN_LAT_NODE`**(int)\n\nВузол входу до системи LAT\n\n**`RADIUS_LOGIN_LAT_GROUP`**(int)\n\nГрупа входу до системи LAT\n\n**`RADIUS_FRAMED_APPLETALK_LINK`**(int)\n\nFramed Appletalk Link\n\n**`RADIUS_FRAMED_APPLETALK_NETWORK`**(int)\n\nFramed Appletalk Network\n\n**`RADIUS_FRAMED_APPLETALK_ZONE`**(int)\n\nFramed Appletalk Zone\n\n**`RADIUS_CHAP_CHALLENGE`**(int)\n\nПеревірочне значення\n\n**`RADIUS_NAS_PORT_TYPE`**(int)\n\nТип порту NAS, одна з констант:\n\n-   **`RADIUS_ASYNC`**\n-   **`RADIUS_SYNC`**\n-   **`RADIUS_ISDN_SYNC`**\n-   **`RADIUS_ISDN_ASYNC_V120`**\n-   **`RADIUS_ISDN_ASYNC_V110`**\n-   **`RADIUS_VIRTUAL`**\n-   **`RADIUS_PIAFS`**\n-   **`RADIUS_HDLC_CLEAR_CHANNEL`**\n-   **`RADIUS_X_25`**\n-   **`RADIUS_X_75`**\n-   **`RADIUS_G_3_FAX`**\n-   **`RADIUS_SDSL`**\n-   **`RADIUS_ADSL_CAP`**\n-   **`RADIUS_ADSL_DMT`**\n-   **`RADIUS_IDSL`**\n-   **`RADIUS_ETHERNET`**\n-   **`RADIUS_XDSL`**\n-   **`RADIUS_CABLE`**\n-   **`RADIUS_WIRELESS_OTHER`**\n-   **`RADIUS_WIRELESS_IEEE_802_11`**\n\n**`RADIUS_PORT_LIMIT`**(int)\n\nОбмеження на порти\n\n**`RADIUS_LOGIN_LAT_PORT`**(int)\n\nПорт входу до системи LAT\n\n**`RADIUS_CONNECT_INFO`**(int)\n\nІнформація про з'єднання\n\n**`RADIUS_ACCT_STATUS_TYPE`**(int)\n\nСтатус системи управління обліковими даними, одна з констант:\n\n-   **`RADIUS_START`**\n-   **`RADIUS_STOP`**\n-   **`RADIUS_ACCOUNTING_ON`**\n-   **`RADIUS_ACCOUNTING_OFF`**\n\n**`RADIUS_ACCT_DELAY_TIME`**(int)\n\nЧас затримки системи керування обліковими даними\n\n**`RADIUS_ACCT_INPUT_OCTETS`**(int)\n\nВхідні байти до системи управління обліковими даними\n\n**`RADIUS_ACCT_OUTPUT_OCTETS`**(int)\n\nВихідні байти із системи управління обліковими даними\n\n**`RADIUS_ACCT_SESSION_ID`**(int)\n\nІдентифікатор сесії системи управління обліковими даними\n\n**`RADIUS_ACCT_AUTHENTIC`**(int)\n\nТип системи управління обліковими даними, одна з констант:\n\n-   **`RADIUS_AUTH_RADIUS`**\n-   **`RADIUS_AUTH_LOCAL`**\n-   **`RADIUS_AUTH_REMOTE`**\n\n**`RADIUS_ACCT_SESSION_TIME`**(int)\n\nЧас сесії у системі управління обліковими даними\n\n**`RADIUS_ACCT_INPUT_PACKETS`**(int)\n\nВхідні пакети до системи управління обліковими даними\n\n**`RADIUS_ACCT_OUTPUT_PACKETS`**(int)\n\nВихідні пакети із системи управління обліковими даними\n\n**`RADIUS_ACCT_TERMINATE_CAUSE`**(int)\n\nАварійне завершення сеансу управління обліковими даними:\n\n-   **`RADIUS_TERM_USER_REQUEST`**\n-   **`RADIUS_TERM_LOST_CARRIER`**\n-   **`RADIUS_TERM_LOST_SERVICE`**\n-   **`RADIUS_TERM_IDLE_TIMEOUT`**\n-   **`RADIUS_TERM_SESSION_TIMEOUT`**\n-   **`RADIUS_TERM_ADMIN_RESET`**\n-   **`RADIUS_TERM_ADMIN_REBOOT`**\n-   **`RADIUS_TERM_PORT_ERROR`**\n-   **`RADIUS_TERM_NAS_ERROR`**\n-   **`RADIUS_TERM_NAS_REQUEST`**\n-   **`RADIUS_TERM_NAS_REBOOT`**\n-   **`RADIUS_TERM_PORT_UNNEEDED`**\n-   **`RADIUS_TERM_PORT_PREEMPTED`**\n-   **`RADIUS_TERM_PORT_SUSPENDED`**\n-   **`RADIUS_TERM_SERVICE_UNAVAILABLE`**\n-   **`RADIUS_TERM_CALLBACK`**\n-   **`RADIUS_TERM_USER_ERROR`**\n-   **`RADIUS_TERM_HOST_REQUEST`**\n\n**`RADIUS_ACCT_MULTI_SESSION_ID`**(int)\n\nБагатосесійний ідентифікатор системи управління обліковими даними\n\n**`RADIUS_ACCT_LINK_COUNT`**(int)\n\nКількість з'єднань системи управління обліковими даними\n","title":"Типи атрибутів RADIUS","contentType":2,"navigation":[{"radius.constants.packets.md":"типи пакетів RADIUS"},{"radius.constants.vendor-specific.md":"Атрибути RADIUS специфічні для різних виробників."},{"index.md":"PHP Manual"},{"radius.constants.md":"Обумовлені константи"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"radius.constants.attributes.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,776 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Зміни, що ламають зворотну сумісність</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="migration80.new-features.md" class="mx-4">« Нова функціональність</a><a href="migration80.deprecated.md" class="mx-4">Функціональність, оголошена застарілою в PHP 8.0.x</a><a href="index.md" class="mx-4">PHP Manual</a><a href="migration80.md" class="mx-4">Міграція з PHP 7.4.x на PHP 8.0.x</a></div><article class="markdown_markdown__yfc8y"><div><h2>Зміни, що ламають зворотну сумісність</h2>
+<h3>Ядро PHP</h3>
+<h4>Порівняння рядків з числами</h4>
+<p>Нестрогі порівняння чисел і нечислових рядків тепер працюють, як перетворення числа на рядок з наступним порівнянням рядків. Порівняння чисел та числових рядків працює, як і раніше. Зокрема, це означає, що <code>0 == &quot;not-a-number&quot;</code> Тепер видасть false.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Сравнение</th><th>До</th><th>После</th></tr></thead><tbody><tr><td><code>0 == &quot;0&quot;</code></td><td><strong><code>true</code></strong></td><td><strong><code>true</code></strong></td></tr><tr><td><code>0 == &quot;0.0&quot;</code></td><td><strong><code>true</code></strong></td><td><strong><code>true</code></strong></td></tr><tr><td><code>0 == &quot;foo&quot;</code></td><td><strong><code>true</code></strong></td><td><strong><code>false</code></strong></td></tr><tr><td><code>0 == &quot;&quot;</code></td><td><strong><code>true</code></strong></td><td><strong><code>false</code></strong></td></tr><tr><td><code>42 == &quot; 42&quot;</code></td><td><strong><code>true</code></strong></td><td><strong><code>true</code></strong></td></tr><tr><td><code>42 == &quot;42foo&quot;</code></td><td><strong><code>true</code></strong></td><td><strong><code>false</code></strong></td></tr></tbody></table>
+<h4>Інші зміни, що ламають зворотну сумісність</h4>
+<ul>
+<li>
+<p><code>match</code>тепер зарезервоване ключове слово.</p>
+</li>
+<li>
+<p><code>mixed</code>тепер зарезервоване слово, тому його не можна використовувати для назви класу, інтерфейсу чи риси, а також заборонено використовувати у просторах імен.</p>
+</li>
+<li>
+<p>Помилки тверджень (assertions) тепер викидаються за умовчанням. Якщо краща стара поведінка,<code>assert.exception=0</code>можна встановити в INI-налаштуваннях.</p>
+</li>
+<li>
+<p>Методи з тим самим ім&#x27;ям, як і клас, більше не інтерпретуються як конструктори. Натомість слід використовувати метод<a href="language.oop5.decon.md#object.construct">__construct()</a></p>
+</li>
+<li>
+<p>Можливість статичного виклику нестатичних методів видалено. Таким чином,<a href="function.is-callable.md">is_callable()</a>завершиться помилкою під час перевірки нестатичного методу з ім&#x27;ям класу (необхідно перевіряти з екземпляром об&#x27;єкта).</p>
+</li>
+<li>
+<p>Приведення типів<code>(real)</code>и<code>(unset)</code>видалено.</p>
+</li>
+<li>
+<p>INI-директива<a href="errorfunc.configuration.md#ini.track-errors">track_errors</a>видалено. Це означає, що php_errormsg більше не є актуальним. Замість нього можна використовувати функцію<a href="function.error-get-last.md">error_get_last()</a></p>
+</li>
+<li>
+<p>Можливість визначати константи без урахування регістру було видалено. Третій аргумент<a href="function.define.md">define()</a>більше не може бути**<code>true</code>**</p>
+</li>
+<li>
+<p>Можливість вказувати автозавантажувач за допомогою функції<a href="function.autoload.md">__autoload()</a>було видалено. Натомість слід використовувати<a href="function.spl-autoload-register.md">spl_autoload_register()</a></p>
+</li>
+<li>
+<p>Аргумент<code>errcontext</code>більше не передається в користувальницькі обробники помилок, заданих за допомогою<a href="function.set-error-handler.md">set_error_handler()</a></p>
+</li>
+<li>
+<p><a href="function.create-function.md">create_function()</a>було видалено. Замість неї можна використовувати анонімні функції.</p>
+</li>
+<li>
+<p><a href="function.each.md">each()</a>було видалено. Замість неї можна використовувати<a href="control-structures.foreach.md">foreach</a> або <a href="class.arrayiterator.md">ArrayIterator</a></p>
+</li>
+<li>
+<p>Можливість відв&#x27;язати це від замикань, які були створені з методу з використанням<a href="closure.fromcallable.md">Closure::fromCallable()</a> або <a href="reflectionmethod.getclosure.md">ReflectionMethod::getClosure()</a>, було видалено.</p>
+</li>
+<li>
+<p>Можливість відв&#x27;язати це від належних замикань, що містять використання цього, також була видалена.</p>
+</li>
+<li>
+<p>Можливість використання<a href="function.array-key-exists.md">array_key_exists()</a>з об&#x27;єктами було видалено. Натомість можна використовувати<a href="function.isset.md">isset()</a> або <a href="function.property-exists.md">property_exists()</a></p>
+</li>
+<li>
+<p>Робота параметра<code>key</code> у функції <a href="function.array-key-exists.md">array_key_exists()</a>тепер наведена відповідно до<a href="function.isset.md">isset()</a>та звичайним доступом до масиву. Всі типи ключів тепер використовують звичайне приведення типів, масив/об&#x27;єкт до ключа призведе до викидання<a href="class.typeerror.md">TypeError</a></p>
+</li>
+<li>
+<p>Будь-який масив, у якого в якості першого числового ключа вказано число n, використовуватиме n+1 для наступного наступного неявного ключа, навіть якщо n негативно.</p>
+</li>
+<li>
+<p>Рівень error_reporting за замовчуванням тепер**<code>E_ALL</code><strong>. Раніше він виключав</strong><code>E_NOTICE</code>** і **<code>E_DEPRECATED</code>**</p>
+</li>
+<li>
+<p><a href="errorfunc.configuration.md#ini.display-startup-errors">display_startup_errors</a>тепер включено за замовчуванням.</p>
+</li>
+<li>
+<p>Використання parent всередині класу, який не має батька, тепер призведе до фатальної помилки під час компіляції.</p>
+</li>
+<li>
+<p>Оператор<code>@</code>більше не пригнічує фатальних помилок (<strong><code>E_ERROR</code></strong> <strong><code>E_CORE_ERROR</code></strong> <strong><code>E_COMPILE_ERROR</code></strong> <strong><code>E_USER_ERROR</code></strong> <strong><code>E_RECOVERABLE_ERROR</code></strong> <strong><code>E_PARSE</code></strong>). Обробники помилок, які очікують, що error_reporting матиме значення при використанні оператора<code>@</code>, повинні робити такі перевірки через бітову маску:</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:324px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Крім цього, обов&#x27;язково слід приховати відображення повідомлень про помилки у виробничому середовищі, які можуть призвести до витоку інформації. Перевірте, що<code>display_errors=Off</code>використовується разом із записом журналу помилок.</p>
+</li>
+<li>
+<p><code>#[</code>більше не інтерпретується як початок коментаря, оскільки цей синтаксис тепер використовується для атрибутів.</p>
+</li>
+<li>
+<p>Помилки успадкування через несумісні сигнатури методів (порушення LSP) тепер завжди викликають фатальну помилку. Раніше у деяких випадках видавалося попередження.</p>
+</li>
+<li>
+<p>Пріоритет оператора конкатенації змінився щодо зрушень бітів і додавання, а також віднімання.</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:144px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+</li>
+<li>
+<p>Аргументи зі значенням за замовчуванням, яке дозволяється в**<code>null</code><strong>під час виконання, більше не будуть явно позначати тип аргументу як nullable. Натомість потрібно вказувати або явний тип, що дозволяє значення null, або явне значення</strong><code>null</code>**по умолчанию.</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:162px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+</li>
+<li>
+<p>Ряд попереджень перетворено на винятки<a href="class.error.md">Error</a> :</p>
+<ul>
+<li>Спроба запису як неіснуючого об&#x27;єкта. Раніше це неявно створювало об&#x27;єкт stdClass у разі null, false та порожніх рядків.</li>
+<li>Спроба додати елемент до масиву, для якого вже використовується ключ PHP_INT_MAX.</li>
+<li>Спроба використовувати неприпустимий тип (масив або об&#x27;єкт) як ключ масиву або зміщення рядка.</li>
+<li>Спроба записати в індекс масиву скалярне значення.</li>
+<li>Спроба розпакувати значення, яке не є масивом/Traversable.</li>
+<li>Спроба отримати доступ до некваліфікованих константів, які не визначені. Раніше некваліфікований доступ до константів призводив до попередження та інтерпретувався як рядок.</li>
+<li>Передача невірної кількості аргументів у неваріативну вбудовану функцію призведе до помилки<a href="class.argumentcounterror.md">ArgumentCountError</a></li>
+</ul>
+<p>Ряд повідомлень перетворено на попередження:</p>
+<ul>
+<li>Спроба прочитати невизначену змінну.</li>
+<li>Спроба прочитати невизначену властивість.</li>
+<li>Спроба прочитати невизначений ключ масиву.</li>
+<li>Спроба прочитати властивість необ&#x27;єкта.</li>
+<li>Спроба отримати доступ до індексу масиву немасиву.</li>
+<li>Спроба перетворити масив на рядок.</li>
+<li>Спроба використовувати ресурс як ключ масиву.</li>
+<li>Спроба використовувати null, логічне значення або число з плаваючою точкою як рядковий зсув.</li>
+<li>Спроба прочитати усунення рядка за межами допустимого кордону.</li>
+<li>Спроба присвоїти зміщення рядка порожній рядок.</li>
+</ul>
+</li>
+<li>
+<p>При спробі призначити кілька байтів усунення рядка тепер буде видано попередження.</p>
+</li>
+<li>
+<p>Несподівані символи у вихідних файлах (наприклад, байти NUL за межами рядків) тепер призводять до виключення<a href="class.parseerror.md">ParseError</a>замість попередження під час компіляції.</p>
+</li>
+<li>
+<p>Неперехоплені винятки тепер проходять процедуру &quot;чистого завершення&quot;, це означає, що після неперехопленого виключення викликатимуться деструктори.</p>
+</li>
+<li>
+<p>Фатальна помилка часу компіляції &quot;Only variables can be passed by reference&quot; була відкладена до часу виконання та перетворена на виключення <a href="class.error.md">Error</a> &quot;Argument cannot be passed by reference&quot;.</p>
+</li>
+<li>
+<p>Деякі повідомлення &quot;Only variables can be passed by reference&quot; були перетворені на виключення &quot;Argument cannot be passed by reference&quot;.</p>
+</li>
+<li>
+<p>Згенероване ім&#x27;я для анонімних класів змінилося. Тепер він буде включати ім&#x27;я першого з батьків або інтерфейсу:</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:162px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>За новими іменами, як і раніше, слідуватиме NUL-байт і унікальний суфікс.</p>
+</li>
+<li>
+<p>Посилання на неабсолютні трейти методів в адаптаціях псевдонімів трейтів мають бути однозначними:</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:162px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Якщо існують і<code>T1::func()</code>, и<code>T2::func()</code>, цей код раніше приймався без повідомлення, і передбачалося, що func посилається на<code>T1::func</code>. Тепер натомість буде викинуто фатальну помилку: необхідно явно вказати<code>T1::func</code>или<code>T2::func</code></p>
+</li>
+<li>
+<p>Сигнатура абстрактних методів, визначених у трейтах, тепер перевіряється за методом класу, що реалізує:</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:234px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+</li>
+<li>
+<p>Відключені функції тепер обробляються так само, як неіснуючі функції. Виклик вимкненої функції повідомить, що немає такої функції, це дає можливість перевизначити вимкнену функцію.</p>
+</li>
+<li>
+<p>Оболонки потоку<code>data://</code>більше не доступні для запису, що відповідає документованій поведінці.</p>
+</li>
+<li>
+<p>Арифметичні та побітові оператори<code>+</code> <code>-</code> <code>*</code> <code>**</code> <code>%</code> <code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>&amp;</code> <code>^</code> <code>~</code> <code>++</code> <code>--</code>тепер будуть послідовно видавати<a href="class.typeerror.md">TypeError</a>, коли одним з операндів є масив (array), ресурс (<a href="language.types.resource.md">resource</a>) чи не перевантажений об&#x27;єкт (object). Єдиним винятком із цього правила є операція злиття масивів<code>+</code> яка, як і раніше, підтримується.</p>
+</li>
+<li>
+<p>Приведення з плаваючою точкою в рядок тепер завжди поводитиметься незалежно від локалі.</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:108px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Смотрите<a href="function.printf.md">printf()</a> <a href="function.number-format.md">number_format()</a>и**NumberFormatter()**для отримання інформації про способи настроювання форматування чисел.</p>
+</li>
+<li>
+<p>Видалено підтримку застарілих фігурних дужок для доступу до зміщення.</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:162px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+</li>
+<li>
+<p>Застосування модифікатора final до закритого методу тепер спричинить попередження, якщо цей метод не є конструктором.</p>
+</li>
+<li>
+<p>Якщо у конструкторі об&#x27;єкта використовується<a href="function.exit.md">exit()</a>, Деструктор об&#x27;єкта більше не буде викликатися. Це відповідає поведінці, коли конструктор викидає виняток.</p>
+</li>
+<li>
+<p>Імена у просторі імен більше не можуть містити прогалини:<code>Foo\Bar</code>буде розпізнаватись як ім&#x27;я в просторі імен,<code>Foo \ Bar</code>- Ні. І навпаки, зарезервовані ключові слова тепер дозволені як сегменти простору імен, що також може змінити інтерпретацію коду:<code>new\x</code>тепер збігається з<code>constant(&#x27;new\x&#x27;)</code>, але не з <code>new \x()</code></p>
+</li>
+<li>
+<p>Для вкладених тернарних операторів тепер потрібна явна вказівка ​​дужок.</p>
+</li>
+<li>
+<p><a href="function.debug-backtrace.md">debug_backtrace()</a> і <a href="exception.gettrace.md">Exception::getTrace()</a>більше не надаватимуть посилання на аргументи. Неможливо змінити аргументи функції через трасування.</p>
+</li>
+<li>
+<p>Обробка числових рядків була змінена, щоб зробити її більш зрозумілою і менш схильною до помилок. Завершальні прогалини тепер дозволено у числових рядках для узгодженості з тим, як обробляються початкові прогалини. В основному це впливає на:</p>
+<ul>
+<li>Функцию<a href="function.is-numeric.md">is_numeric()</a></li>
+<li>Порівняння рядків з рядками</li>
+<li>Оголошення типів</li>
+<li>Операції збільшення та зменшення</li>
+</ul>
+<p>Поняття &quot;провідний числовий рядок&quot; в основному було відкинуто; випадки, коли це залишилося, є для полегшення міграції. Рядки, які видавали <strong><code>E_NOTICE</code></strong> &quot;A non well-formed numeric value encountered&quot;, тепер видаватимуть <strong><code>E_WARNING</code></strong> &quot;A non-numeric value encountered&quot;, а всі рядки, які видавали <strong><code>E_WARNING</code></strong> &quot;A non-numeric value encountered&quot; тепер видаватиме <a href="class.typeerror.md">TypeError</a>. В основному це впливає на:</p>
+<ul>
+<li>Арифметичні операції</li>
+<li>Побітові операції</li>
+</ul>
+<p>Ця зміна**<code>E_WARNING</code><strong>на<a href="class.typeerror.md">TypeError</a>також впливає на</strong><code>E_WARNING</code>** &quot;Illegal string offset &#x27;string&#x27;&quot; для неприпустимих зсувів рядка. Поведінка явних наведень до int/float з рядків не змінилася.</p>
+</li>
+<li>
+<p>Тепер у магічних методів перевірятимуться аргументи і типи, що повертаються, якщо вони оголошені. Сигнатура має відповідати наступному списку:</p>
+<ul>
+<li><code>__call(string $name, array $arguments): mixed</code></li>
+<li><code>__callStatic(string $name, array $arguments): mixed</code></li>
+<li><code>__clone(): void</code></li>
+<li><code>__debugInfo(): ?array</code></li>
+<li><code>__get(string $name): mixed</code></li>
+<li><code>__invoke(mixed $arguments): mixed</code></li>
+<li><code>__isset(string $name): bool</code></li>
+<li><code>__serialize(): array</code></li>
+<li><code>__set(string $name, mixed $value): void</code></li>
+<li><code>__set_state(array $properties): object</code></li>
+<li><code>__sleep(): array</code></li>
+<li><code>__unserialize(array $data): void</code></li>
+<li><code>__unset(string $name): void</code></li>
+<li><code>__wakeup(): void</code></li>
+</ul>
+</li>
+<li>
+<p>Ключі масиву<a href="function.call-user-func-array.md">call_user_func_array()</a>тепер інтерпретуватимуться як імена параметрів, а не ігноруватимуться.</p>
+</li>
+<li>
+<p>Оголошення функції з ім&#x27;ям <code>assert()</code>всередині простору імен більше не допускається та викликає**<code>E_COMPILE_ERROR</code>**Функция<a href="function.assert.md">assert()</a>піддається спеціальної обробки з боку движка, що може призвести до неузгодженої поведінки щодо однойменної функції у просторі імен.</p>
+</li>
+</ul>
+<h3>Перетворення ресурсів на об&#x27;єкти</h3>
+<p>Декілька ресурсів (<a href="language.types.resource.md">resource</a>) були перетворені на об&#x27;єкти (object). Перевірки значення, що повертається з використанням <a href="function.is-resource.md">is_resource()</a> слід замінити перевірками на <strong><code>false</code></strong></p>
+<ul>
+<li>
+<p><a href="function.curl-init.md">curl_init()</a>тепер повертає об&#x27;єкт<a href="class.curlhandle.md">CurlHandle</a>замість ресурсу (<a href="language.types.resource.md">resource</a>). Функція<a href="function.curl-close.md">curl_close()</a>більше не має сенсу, натомість екземпляр<a href="class.curlhandle.md">CurlHandle</a>автоматично знищується, якщо на нього немає посилання.</p>
+</li>
+<li>
+<p><a href="function.curl-multi-init.md">curl_multi_init()</a>тепер повертає об&#x27;єкт<a href="class.curlmultihandle.md">CurlMultiHandle</a>замість ресурсу (<a href="language.types.resource.md">resource</a>). Функція<a href="function.curl-multi-close.md">curl_multi_close()</a>більше не має сенсу, натомість екземпляр<a href="class.curlmultihandle.md">CurlMultiHandle</a>автоматично знищується, якщо на нього немає посилання.</p>
+</li>
+<li>
+<p><a href="function.curl-share-init.md">curl_share_init()</a>тепер повертає об&#x27;єкт<a href="class.curlsharehandle.md">CurlShareHandle</a>замість ресурсу (<a href="language.types.resource.md">resource</a>). Функція<a href="function.curl-share-close.md">curl_share_close()</a>більше не має сенсу, натомість екземпляр<a href="class.curlsharehandle.md">CurlShareHandle</a>автоматично знищується, якщо на нього немає посилання.</p>
+</li>
+<li>
+<p><a href="function.enchant-broker-init.md">enchant_broker_init()</a>тепер повертає об&#x27;єкт<a href="class.enchantbroker.md">EnchantBroker</a>замість ресурсу (<a href="language.types.resource.md">resource</a></p>
+</li>
+<li>
+<p><a href="function.enchant-broker-request-dict.md">enchant_broker_request_dict()</a> і <a href="function.enchant-broker-request-pwl-dict.md">enchant_broker_request_pwl_dict()</a>тепер повертають<a href="class.enchantdictionary.md">EnchantDictionary</a>об&#x27;єкт замість ресурсу (<a href="language.types.resource.md">resource</a></p>
+</li>
+<li>
+<p>Модуль GD тепер використовує об&#x27;єкти<a href="class.gdimage.md">GdImage</a>як базова структура даних для зображень, а не ресурси (<a href="language.types.resource.md">resource</a>). Функція<a href="function.imagedestroy.md">imagedestroy()</a>більше немає сенсу; натомість екземпляр<a href="class.gdimage.md">GdImage</a>автоматично знищується, якщо на нього немає посилання.</p>
+</li>
+<li>
+<p><a href="function.openssl-x509-read.md">openssl_x509_read()</a> і <a href="function.openssl-csr-sign.md">openssl_csr_sign()</a>тепер повертають об&#x27;єкт<a href="class.opensslcertificate.md">OpenSSLCertificate</a>замість ресурсу (<a href="language.types.resource.md">resource</a>). Функція<a href="function.openssl-x509-free.md">openssl_x509_free()</a>оголошена застарілою і більше не має сенсу, натомість екземпляр<a href="class.opensslcertificate.md">OpenSSLCertificate</a>автоматично знищується, якщо на нього більше не посилаються.</p>
+</li>
+<li>
+<p><a href="function.openssl-csr-new.md">openssl_csr_new()</a>тепер повертає об&#x27;єкт<a href="class.opensslcertificatesigningrequest.md">OpenSSLCertificateSigningRequest</a>замість ресурсу (<a href="language.types.resource.md">resource</a></p>
+</li>
+<li>
+<p><a href="function.openssl-pkey-new.md">openssl_pkey_new()</a>тепер повертає об&#x27;єкт<a href="class.opensslasymmetrickey.md">OpenSSLAsymmetricKey</a>замість ресурсу (<a href="language.types.resource.md">resource</a>). Функція<a href="function.openssl-pkey-free.md">openssl_pkey_free()</a>оголошена застарілою і більше не має сенсу, натомість екземпляр<a href="class.opensslasymmetrickey.md">OpenSSLAsymmetricKey</a>автоматично знищується, якщо на нього більше не посилаються.</p>
+</li>
+<li>
+<p><a href="function.shmop-open.md">shmop_open()</a>тепер повертає об&#x27;єкт<a href="class.shmop.md">Shmop</a>замість ресурсу (<a href="language.types.resource.md">resource</a>). Функція<a href="function.shmop-close.md">shmop_close()</a>більше немає сенсу і оголошена застарілою; натомість екземпляр<a href="class.shmop.md">Shmop</a>автоматично знищується, якщо на нього більше не посилаються.</p>
+</li>
+<li>
+<p><a href="function.socket-create.md">socket_create()</a> <a href="function.socket-create-listen.md">socket_create_listen()</a> <a href="function.socket-accept.md">socket_accept()</a> <a href="function.socket-import-stream.md">socket_import_stream()</a> <a href="function.socket-addrinfo-connect.md">socket_addrinfo_connect()</a> <a href="function.socket-addrinfo-bind.md">socket_addrinfo_bind()</a> і <a href="function.socket-wsaprotocol-info-import.md">socket_wsaprotocol_info_import()</a>тепер повертають об&#x27;єкт<a href="class.socket.md">Socket</a>замість ресурсу (<a href="language.types.resource.md">resource</a>) . <a href="function.socket-addrinfo-lookup.md">socket_addrinfo_lookup()</a>тепер повертає масив об&#x27;єктів<a href="class.addressinfo.md">AddressInfo</a>замість масиву ресурсів (<a href="language.types.resource.md">resource</a></p>
+</li>
+<li>
+<p><a href="function.msg-get-queue.md">msg_get_queue()</a>тепер повертають об&#x27;єкт<a href="class.sysvmessagequeue.md">SysvMessageQueue</a>замість ресурсу (<a href="language.types.resource.md">resource</a></p>
+</li>
+<li>
+<p><a href="function.sem-get.md">sem_get()</a>тепер повертають об&#x27;єкт<a href="class.sysvsemaphore.md">SysvSemaphore</a>замість ресурсу (<a href="language.types.resource.md">resource</a></p>
+</li>
+<li>
+<p><a href="function.shm-attach.md">shm_attach()</a>тепер повертають об&#x27;єкт<a href="class.sysvsharedmemory.md">SysvSharedMemory</a>замість ресурсу (<a href="language.types.resource.md">resource</a></p>
+</li>
+<li>
+<p><a href="function.xml-parser-create.md">xml_parser_create()</a> і <a href="function.xml-parser-create-ns.md">xml_parser_create_ns()</a>тепер повертають об&#x27;єкт<a href="class.xmlparser.md">XMLParser</a>замість ресурсу (<a href="language.types.resource.md">resource</a>). Функція<a href="function.xml-parser-free.md">xml_parser_free()</a>більше не має сенсу, натомість екземпляр XMLParser автоматично знищується, якщо на нього більше не посилаються.</p>
+</li>
+<li>
+<p>Функції <a href="book.xmlwriter.md">XMLWriter</a>тепер приймають та повертають, відповідно, об&#x27;єкти<a href="class.xmlwriter.md">XMLWriter</a>замість ресурсів (<a href="language.types.resource.md">resource</a></p>
+</li>
+<li>
+<p><a href="function.inflate-init.md">inflate_init()</a>тепер повертає об&#x27;єкт<a href="class.inflatecontext.md">InflateContext</a>замість ресурсу (<a href="language.types.resource.md">resource</a></p>
+</li>
+<li>
+<p><a href="function.deflate-init.md">deflate_init()</a>тепер повертає об&#x27;єкт<a href="class.deflatecontext.md">DeflateContext</a>замість ресурсу (<a href="language.types.resource.md">resource</a></p>
+</li>
+</ul>
+<h3>COM та .Net (Windows)</h3>
+<p>Можливість імпорту констант без урахування регістру з бібліотек типів було видалено. Другий аргумент <a href="function.com-load-typelib.md">com_load_typelib()</a> більше не може бути false; <a href="com.configuration.md#ini.com.autoregister-casesensitive">com.autoregister_casesensitive</a> більше не можна вимкнути; Маркери без урахування регістру в <a href="com.configuration.md#ini.com.typelib-file">com.typelib_file</a> ігноруються.</p>
+<h3>CURL</h3>
+<p><strong><code>CURLOPT_POSTFIELDS</code></strong> більше не сприймає об&#x27;єкти як масиви. Щоб інтерпретувати об&#x27;єкт як масив, виконайте явне приведення <code>(array)</code>. Те саме стосується і інших параметрів, що приймають масиви.</p>
+<h3>дата та час</h3>
+<p>Для роботи функцій <a href="function.mktime.md">mktime()</a> і <a href="function.gmmktime.md">gmmktime()</a> тепер потрібно хоча б один аргумент . <a href="function.time.md">time()</a> може використовуватись для отримання поточної позначки часу.</p>
+<h3>DOM</h3>
+<p>Були видалені нереалізовані класи з модуля DOM, які мали обробника і містили тестові дані. Ці класи також були видалені в останній версії стандарту DOM:</p>
+<ul>
+<li><strong>DOMNameList</strong></li>
+<li><strong>DomImplementationList</strong></li>
+<li><strong>DOMConfiguration</strong></li>
+<li><strong>DomError</strong></li>
+<li><strong>DomErrorHandler</strong></li>
+<li><strong>DOMImplementationSource</strong></li>
+<li><strong>DOMLocator</strong></li>
+<li><strong>DOMUserDataHandler</strong></li>
+<li><strong>DOMTypeInfo</strong></li>
+<li><strong>DOMStringExtend</strong></li>
+</ul>
+<p>Видалено нереалізовані методи модуля DOM, які не мали реалізації:</p>
+<ul>
+<li><strong>DOMNamedNodeMap::setNamedItem()</strong></li>
+<li><strong>DOMNamedNodeMap::removeNamedItem()</strong></li>
+<li><strong>DOMNamedNodeMap::setNamedItemNS()</strong></li>
+<li><strong>DOMNamedNodeMap::removeNamedItemNS()</strong></li>
+<li><strong>DOMText::replaceWholeText()</strong></li>
+<li><strong>DOMNode::compareDocumentPosition()</strong></li>
+<li><a href="domnode.isequalnode.md">DOMNode::isEqualNode()</a></li>
+<li><strong>DOMNode::getFeature()</strong></li>
+<li><strong>DOMNode::setUserData()</strong></li>
+<li><strong>DOMNode::getUserData()</strong></li>
+<li><strong>DOMDocument::renameNode()</strong></li>
+</ul>
+<h3>Enchant</h3>
+<ul>
+<li><a href="function.enchant-broker-list-dicts.md">enchant_broker_list_dicts()</a> <a href="function.enchant-broker-describe.md">enchant_broker_describe()</a> і <a href="function.enchant-dict-suggest.md">enchant_dict_suggest()</a>тепер повертають порожній масив замість**<code>null</code>**</li>
+</ul>
+<h3>Exif</h3>
+<p><a href="function.read-exif-data.md">read_exif_data()</a> була вилучена; Замість неї слід використовувати <a href="function.exif-read-data.md">exif_read_data()</a></p>
+<h3>Фільтрування даних</h3>
+<ul>
+<li>
+<p>Флаги**<code>FILTER_FLAG_SCHEME_REQUIRED</code>** і **<code>FILTER_FLAG_HOST_REQUIRED</code><strong>для фільтра</strong><code>FILTER_VALIDATE_URL</code>** были удалены . <code>scheme</code>и<code>host</code>необхідні (і завжди були).</p>
+</li>
+<li>
+<p>Типи**<code>INPUT_REQUEST</code>** і **<code>INPUT_SESSION</code>**для<a href="function.filter-input.md">filter_input()</a>і їй похідних було видалено. Вони ніколи не були реалізовані, а спроба їх використання завжди викликала попередження.</p>
+</li>
+</ul>
+<h3>GD</h3>
+<ul>
+<li>
+<p>Застарілі функції <a href="function.image2wbmp.md">image2wbmp()</a> були вилучені.</p>
+</li>
+<li>
+<p>Застарілі функції <a href="function.png2wbmp.md">png2wbmp()</a> і <a href="function.jpeg2wbmp.md">jpeg2wbmp()</a> були вилучені.</p>
+</li>
+<li>
+<p>Параметр<code>mode</code>за замовчуванням для функції<a href="function.imagecropauto.md">imagecropauto()</a>більше не набуває значення<code>-1</code>. Натомість слід використовувати <strong><code>IMG_CROP_DEFAULT</code></strong></p>
+</li>
+<li>
+<p>У Windows, php_gd2.dll перейменований на php_gd.dll.</p>
+</li>
+</ul>
+<h3>GMP</h3>
+<p><a href="function.gmp-random.md">gmp_random()</a> було видалено. Замість неї слід використовувати <a href="function.gmp-random-range.md">gmp_random_range()</a> або <a href="function.gmp-random-bits.md">gmp_random_bits()</a></p>
+<h3>Iconv</h3>
+<p>Реалізації iconv, які неправильно встановлюють errno у разі виникнення помилок, більше не підтримуються.</p>
+<h3>IMAP</h3>
+<ul>
+<li>
+<p>Невикористовуваний аргумент<code>default_host</code> функції <a href="function.imap-headerinfo.md">imap_headerinfo()</a>був видалений.</p>
+</li>
+<li>
+<p>Функция<a href="function.imap-header.md">imap_header()</a>яка є псевдонімом<a href="function.imap-headerinfo.md">imap_headerinfo()</a>, було видалено.</p>
+</li>
+</ul>
+<h3>Функції інтернаціоналізації</h3>
+<ul>
+<li>
+<p>Застаріла константа**<code>INTL_IDNA_VARIANT_2003</code>**видалено.</p>
+</li>
+<li>
+<p>Застаріла константа**<code>Normalizer::NONE</code>**видалено.</p>
+</li>
+</ul>
+<h3>LDAP</h3>
+<ul>
+<li>
+<p>Застарілі функції <a href="function.ldap-sort.md">ldap_sort()</a> <a href="function.ldap-control-paged-result.md">ldap_control_paged_result()</a> і <a href="function.ldap-control-paged-result-response.md">ldap_control_paged_result_response()</a>видалено.</p>
+</li>
+<li>
+<p>Змінився інтерфейс<a href="function.ldap-set-rebind-proc.md">ldap_set_rebind_proc()</a>; параметр<code>callback</code>більше не приймає порожні рядки; натомість слід вказувати**<code>null</code>**</p>
+</li>
+</ul>
+<h3>MBString</h3>
+<ul>
+<li>
+<p>Директива<a href="mbstring.configuration.md#ini.mbstring.func-overload">mbstring.func_overload</a>було видалено. Пов&#x27;язані константи**<code>MB_OVERLOAD_MAIL</code>** **<code>MB_OVERLOAD_STRING</code>** і **<code>MB_OVERLOAD_REGEX</code>**також було видалено. Зрештою, записи<code>&quot;func_overload&quot;</code>и<code>&quot;func_overload_list&quot;</code>в<a href="function.mb-get-info.md">mb_get_info()</a> були вилучені.</p>
+</li>
+<li>
+<p><a href="function.mb-parse-str.md">mb_parse_str()</a>більше не можна використовувати без передачі масиву результатів.</p>
+</li>
+<li>
+<p>Видалено низку застарілих псевдонімів mbregex. У наступному списку вказано, які функції слід використовувати замість них:</p>
+<ul>
+<li><strong>mbregex_encoding()</strong> → <a href="function.mb-regex-encoding.md">mb_regex_encoding()</a></li>
+<li><strong>mbereg()</strong> → <a href="function.mb-ereg.md">mb_ereg()</a></li>
+<li><strong>mberegi()</strong> → <a href="function.mb-eregi.md">mb_eregi()</a></li>
+<li><strong>mbereg_replace()</strong> → <a href="function.mb-ereg-replace.md">mb_ereg_replace()</a></li>
+<li><strong>mberegi_replace()</strong> → <a href="function.mb-eregi-replace.md">mb_eregi_replace()</a></li>
+<li><strong>mbsplit()</strong> → <a href="function.mb-split.md">mb_split()</a></li>
+<li><strong>mbereg_match()</strong> → <a href="function.mb-ereg-match.md">mb_ereg_match()</a></li>
+<li><strong>mbereg_search()</strong> → <a href="function.mb-ereg-search.md">mb_ereg_search()</a></li>
+<li><strong>mbereg_search_pos()</strong> → <a href="function.mb-ereg-search-pos.md">mb_ereg_search_pos()</a></li>
+<li><strong>mbereg_search_regs()</strong> → <a href="function.mb-ereg-search-regs.md">mb_ereg_search_regs()</a></li>
+<li><strong>mbereg_search_init()</strong> → <a href="function.mb-ereg-search-init.md">mb_ereg_search_init()</a></li>
+<li><strong>mbereg_search_getregs()</strong> → <a href="function.mb-ereg-search-getregs.md">mb_ereg_search_getregs()</a></li>
+<li><strong>mbereg_search_getpos()</strong> → <a href="function.mb-ereg-search-getpos.md">mb_ereg_search_getpos()</a></li>
+<li><strong>mbereg_search_setpos()</strong> → <a href="function.mb-ereg-search-setpos.md">mb_ereg_search_setpos()</a></li>
+</ul>
+</li>
+<li>
+<p>Модифікатор <code>e</code>для<a href="function.mb-ereg-replace.md">mb_ereg_replace()</a>був видалений. Замість нього слід використовувати<a href="function.mb-ereg-replace-callback.md">mb_ereg_replace_callback()</a></p>
+</li>
+<li>
+<p>Аргумент нерядкового шаблону для<a href="function.mb-ereg-replace.md">mb_ereg_replace()</a>тепер інтерпретуватиметься як рядок замість кодової точки ASCII. Попередню поведінку можна відновити явним викликом<a href="function.chr.md">chr()</a></p>
+</li>
+<li>
+<p>Аргумент<code>needle</code>для функцій<a href="function.mb-strpos.md">mb_strpos()</a> <a href="function.mb-strrpos.md">mb_strrpos()</a> <a href="function.mb-stripos.md">mb_stripos()</a> <a href="function.mb-strripos.md">mb_strripos()</a> <a href="function.mb-strstr.md">mb_strstr()</a> <a href="function.mb-stristr.md">mb_stristr()</a> <a href="function.mb-strrchr.md">mb_strrchr()</a> і <a href="function.mb-strrichr.md">mb_strrichr()</a>тепер може бути порожнім.</p>
+</li>
+<li>
+<p>Параметр<code>is_hex</code>, який не використовувався для внутрішніх цілей, був видалений з<a href="function.mb-decode-numericentity.md">mb_decode_numericentity()</a></p>
+</li>
+<li>
+<p>Застаріла поведінка передачі кодування як третій аргумент замість зміщення для функції<a href="function.mb-strrpos.md">mb_strrpos()</a>було видалено; замість цього як четвертий аргумент слід вказати явне зміщення з кодуванням.</p>
+</li>
+<li>
+<p>Псевдоніми кодування символів<code>ISO_8859-*</code>були замінені на псевдоніми<code>ISO8859-*</code>для кращої сумісності із модулем iconv. Псевдоніми mbregex ISO 8859 з підкресленням (<code>ISO_8859_*</code>и<code>ISO8859_*</code>) також були видалені.</p>
+</li>
+<li>
+<p><a href="function.mb-ereg.md">mb_ereg()</a> і <a href="function.mb-eregi.md">mb_eregi()</a>тепер повертатимуть логічне значення**<code>true</code>**, у разі знайденого збігу. Раніше вони повертали ціле число , якщо аргумент <code>matches</code>не було передано, або<code>max(1, strlen($matches[0]))</code>, якщо <code>matches</code>був не пустий.</p>
+</li>
+</ul>
+<h3>OCI8</h3>
+<ul>
+<li>
+<p>Класс<strong>OCI-Lob</strong>перейменований на<a href="class.ocilob.md">OCILob</a>, а клас<strong>OCI-Collection</strong> - у <a href="class.ocicollection.md">OCICollection</a>для імені сумісність забезпечується засобами інструкції типу arginfo PHP 8.</p>
+</li>
+<li>
+<p>Деякі функції псевдонімів оголошено застарілим.</p>
+</li>
+<li>
+<p><a href="function.oci-internal-debug.md">oci_internal_debug()</a> та її псевдонім <a href="function.ociinternaldebug.md">ociinternaldebug()</a> були вилучені.</p>
+</li>
+</ul>
+<h3>ODBC</h3>
+<ul>
+<li>
+<p><a href="function.odbc-connect.md">odbc_connect()</a>більше не використовує з&#x27;єднання повторно.</p>
+</li>
+<li>
+<p>Параметр, що не використовується<code>flags</code> функції <a href="function.odbc-exec.md">odbc_exec()</a>був видалений.</p>
+</li>
+</ul>
+<h3>OpenSSL</h3>
+<ul>
+<li><a href="function.openssl-seal.md">openssl_seal()</a> і <a href="function.openssl-open.md">openssl_open()</a>тепер вимагають передачі<code>method</code>, оскільки попереднє значення є типовим<code>&quot;RC4&quot;</code>вважається небезпечним.</li>
+</ul>
+<h3>Регулярні вирази (сумісні з Perl)</h3>
+<p>При передачі неприпустимих послідовностей, що управляють, вони більше не інтерпретуються як літерали. Така поведінка раніше вимагала модифікатора <code>X</code>, що тепер ігнорується.</p>
+<h3>Об&#x27;єкти даних PHP</h3>
+<ul>
+<li>
+<p>Режим обробки помилок за умовчанням було змінено з &quot;тихого&quot; (silent) на &quot;виключення&quot; (exceptions). Детальніше дивіться <a href="pdo.error-handling.md">Помилки та обробка помилок</a></p>
+</li>
+<li>
+<p>Змінилися сигнатури деяких методів PDO:</p>
+<ul>
+<li><code>PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs)</code></li>
+<li><code>PDOStatement::setFetchMode(int $mode, mixed ...$args)</code></li>
+</ul>
+</li>
+</ul>
+<h3>PDO ODBC</h3>
+<p>Директива php.ini<a href="ref.pdo-odbc.md#ini.pdo-odbc.db2-instance-name">pdo_odbc.db2_instance_name</a> було видалено.</p>
+<h3>PDO MySQL</h3>
+<p><a href="pdo.intransaction.md">PDO::inTransaction()</a> тепер повідомляє фактичний стан транзакції підключення, а не про приблизний від PDO. Якщо запит, за умови &quot;неявної фіксації&quot;, виконується, то <a href="pdo.intransaction.md">PDO::inTransaction()</a> згодом поверне <strong><code>false</code></strong>, оскільки транзакція буде неактивною.</p>
+<h3>PostgreSQL</h3>
+<ul>
+<li>
+<p>Застарілий синтаксис<a href="function.pg-connect.md">pg_connect()</a>з використанням кількох параметрів замість рядка підключення більше не підтримується.</p>
+</li>
+<li>
+<p>Застарілі сигнатури<a href="function.pg-lo-import.md">pg_lo_import()</a> і <a href="function.pg-lo-export.md">pg_lo_export()</a>, що передають з&#x27;єднання як останній аргумент, більше не підтримуються. Натомість з&#x27;єднання має бути передано першим аргументом.</p>
+</li>
+<li>
+<p><a href="function.pg-fetch-all.md">pg_fetch_all()</a>тепер повертатиме порожній масив замість**<code>false</code>**для наборів результатів із відсутніми рядками.</p>
+</li>
+</ul>
+<h3>Phar</h3>
+<p>Метадані, пов&#x27;язані з phar, більше не будуть десеріалізуватися автоматично, щоб виправити потенційні вразливості безпеки через створення екземплярів об&#x27;єкта, автозавантаження і т.д.</p>
+<h3>Reflection</h3>
+<ul>
+<li>
+<p>Сигнатури методів</p>
+<ul>
+<li><code>ReflectionClass::newInstance($args)</code></li>
+<li><code>ReflectionFunction::invoke($args)</code></li>
+<li><code>ReflectionMethod::invoke($object, $args)</code></li>
+</ul>
+<p>були змінені на:</p>
+<ul>
+<li><code>ReflectionClass::newInstance(...$args)</code></li>
+<li><code>ReflectionFunction::invoke(...$args)</code></li>
+<li><code>ReflectionMethod::invoke($object, ...$args)</code></li>
+</ul>
+<p>Код, який повинен бути сумісний як з PHP 7, так і з PHP 8, може використовувати такі сигнатури:</p>
+<ul>
+<li><code>ReflectionClass::newInstance($arg = null, ...$args)</code></li>
+<li><code>ReflectionFunction::invoke($arg = null, ...$args)</code></li>
+<li><code>ReflectionMethod::invoke($object, $arg = null, ...$args)</code></li>
+</ul>
+</li>
+<li>
+<p>Метод<a href="reflectiontype.tostring.md">ReflectionType::__toString()</a>тепер повертатиме повне налагоджувальне уявлення типу і більше не є застарілим. Зокрема, результат включатиме індикатор допустимості значень NULL для типів, що допускають значення NULL. Формат значення, що повертається, нестабільний і може змінюватися в залежності від версії PHP.</p>
+</li>
+<li>
+<p>Методи Reflection export() були видалені. Натомість об&#x27;єкти reflection можуть бути перетворені на рядок.</p>
+</li>
+<li>
+<p><a href="reflectionmethod.isconstructor.md">ReflectionMethod::isConstructor()</a> і <a href="reflectionmethod.isdestructor.md">ReflectionMethod::isDestructor()</a>тепер також повертають**<code>true</code>**для методів інтерфейсів<a href="language.oop5.decon.md#object.construct">__construct()</a> і <a href="language.oop5.decon.md#object.destruct">__destruct()</a>. Раніше це було правильно тільки для методів класів і трейтів.</p>
+</li>
+<li>
+<p>Метод**ReflectionType::isBuiltin()**переїхав в<a href="class.reflectionnamedtype.md">ReflectionNamedType</a>. У<a href="class.reflectionuniontype.md">ReflectionUnionType</a>цього методу немає.</p>
+</li>
+</ul>
+<h3>Сокети</h3>
+<ul>
+<li>Застарілі<code>flags</code> **<code>AI_IDN_ALLOW_UNASSIGNED</code>** і **<code>AI_IDN_USE_STD3_ASCII_RULES</code>**для<a href="function.socket-addrinfo-lookup.md">socket_addrinfo_lookup()</a> були вилучені.</li>
+</ul>
+<h3>Стандартна бібліотека PHP (SPL)</h3>
+<ul>
+<li>
+<p><a href="splfileobject.fgetss.md">SplFileObject::fgetss()</a>був видалений.</p>
+</li>
+<li>
+<p><a href="splfileobject.seek.md">SplFileObject::seek()</a>тепер завжди переміщається початку рядка. Раніше, позиція<code>&gt;=1</code>переміщала на початок наступні рядки.</p>
+</li>
+<li>
+<p><a href="splheap.compare.md">SplHeap::compare()</a>тепер вказує сигнатуру методу. Наслідуючі класи, які реалізують цей метод, тепер повинні використовувати сумісну сигнатуру методу.</p>
+</li>
+<li>
+<p><a href="spldoublylinkedlist.push.md">SplDoublyLinkedList::push()</a> <a href="spldoublylinkedlist.unshift.md">SplDoublyLinkedList::unshift()</a> і <a href="splqueue.enqueue.md">SplQueue::enqueue()</a>тепер повертають void замість**<code>true</code>**</p>
+</li>
+<li>
+<p><a href="function.spl-autoload-register.md">spl_autoload_register()</a>тепер завжди викидатиме<a href="class.typeerror.md">TypeError</a>для неприпустимих аргументів, тому другий аргумент<code>do_throw</code>ігнорується, якщо для нього встановлено значення**<code>false</code>**</p>
+</li>
+<li>
+<p><a href="class.splfixedarray.md">SplFixedArray</a>тепер є<a href="class.iteratoraggregate.md">IteratorAggregate</a>, а не<a href="class.iterator.md">Iterator</a>. . <a href="splfixedarray.rewind.md">SplFixedArray::rewind()</a> <a href="splfixedarray.current.md">SplFixedArray::current()</a> <a href="splfixedarray.key.md">SplFixedArray::key()</a> <a href="splfixedarray.next.md">SplFixedArray::next()</a> і <a href="splfixedarray.valid.md">SplFixedArray::valid()</a>були вилучені. Замість них було додано<a href="splfixedarray.getiterator.md">SplFixedArray::getIterator()</a>. Будь-який код, який використовує явну ітерацію над SplFixedArray, тепер має отримати<a href="class.iterator.md">Iterator</a> за допомогою <a href="splfixedarray.getiterator.md">SplFixedArray::getIterator()</a>. Це означає, що <a href="class.splfixedarray.md">SplFixedArray</a>тепер безпечно використовувати у вкладених циклах.</p>
+</li>
+</ul>
+<h3>Бібліотека стандартних функцій</h3>
+<ul>
+<li>
+<p><a href="function.assert.md">assert()</a>більше не виконуватиме рядкові аргументи, натомість вони будуть оброблятися як будь-які звичайні аргументи. Таким чином, замість<code>assert(&#x27;$a == $b&#x27;)</code>слід використовувати<code>assert($a == $b)</code>. INI-директива<a href="info.configuration.md#ini.assert.quiet-eval">assert.quiet_eval</a>та константа**<code>ASSERT_QUIET_EVAL</code>**були видалені, оскільки вони не мають сенсу.</p>
+</li>
+<li>
+<p><a href="function.parse-str.md">parse_str()</a>більше не можна використовувати без зазначення масиву результатів.</p>
+</li>
+<li>
+<p>Фильтр<a href="filters.string.md#filters.string.strip_tags">string.strip_tags</a>видалено.</p>
+</li>
+<li>
+<p>Аргумент<code>needle</code>функций<a href="function.strpos.md">strpos()</a> <a href="function.strrpos.md">strrpos()</a> <a href="function.stripos.md">stripos()</a> <a href="function.strripos.md">strripos()</a> <a href="function.strstr.md">strstr()</a> <a href="function.strchr.md">strchr()</a> <a href="function.strrchr.md">strrchr()</a> і <a href="function.stristr.md">stristr()</a>тепер завжди інтерпретуватиметься як рядок. Раніше невеликі потреби інтерпретувалися як кодова точка ASCII. Явний виклик<a href="function.chr.md">chr()</a>може використовуватись для відновлення попередньої поведінки.</p>
+</li>
+<li>
+<p>Аргумент<code>needle</code>функций<a href="function.strpos.md">strpos()</a> <a href="function.strrpos.md">strrpos()</a> <a href="function.stripos.md">stripos()</a> <a href="function.strripos.md">strripos()</a> <a href="function.strstr.md">strstr()</a> <a href="function.stristr.md">stristr()</a> і <a href="function.strrchr.md">strrchr()</a>тепер може бути порожнім.</p>
+</li>
+<li>
+<p>Аргумент<code>length</code>функций<a href="function.substr.md">substr()</a> <a href="function.substr-count.md">substr_count()</a> <a href="function.substr-compare.md">substr_compare()</a> і <a href="function.iconv-substr.md">iconv_substr()</a>тепер може бути**<code>null</code><strong>Значения</strong><code>null</code>**означає відсутність аргументу довжини, і тому функції повернуть залишок рядка замість порожнього рядка.</p>
+</li>
+<li>
+<p>Аргумент<code>length</code> функції <a href="function.array-splice.md">array_splice()</a>тепер може бути**<code>null</code><strong>. Передача значення</strong><code>null</code>**означає відсутність аргументу, тому функція видалити все, починаючи від<code>offset</code>до кінця масиву.</p>
+</li>
+<li>
+<p>Аргумент<code>args</code>функций<a href="function.vsprintf.md">vsprintf()</a> <a href="function.vfprintf.md">vfprintf()</a> і <a href="function.vprintf.md">vprintf()</a>тепер має бути масивом. Раніше приймався будь-який тип.</p>
+</li>
+<li>
+<p>Параметр<code>&#x27;salt&#x27;</code> функції <a href="function.password-hash.md">password_hash()</a>більше не підтримується. Якщо використовується опція<code>&#x27;salt&#x27;</code>, генерується попередження, передана сіль ігнорується, а замість неї використовується сгенерована сіль.</p>
+</li>
+<li>
+<p>Функция<a href="function.quotemeta.md">quotemeta()</a>тепер повертатиме порожній рядок, якщо було передано порожній рядок. Раніше поверталося**<code>false</code>**</p>
+</li>
+<li>
+<p>Видалено такі функції:</p>
+<ul>
+<li><a href="function.hebrevc.md">hebrevc()</a></li>
+<li><a href="function.convert-cyr-string.md">convert_cyr_string()</a></li>
+<li><a href="function.money-format.md">money_format()</a></li>
+<li><a href="function.ezmlm-hash.md">ezmlm_hash()</a></li>
+<li><a href="function.restore-include-path.md">restore_include_path()</a></li>
+<li><a href="function.get-magic-quotes-gpc.md">get_magic_quotes_gpc()</a></li>
+<li><a href="function.get-magic-quotes-runtime.md">get_magic_quotes_runtime()</a></li>
+<li><a href="function.fgetss.md">fgetss()</a></li>
+</ul>
+</li>
+<li>
+<p>**<code>FILTER_SANITIZE_MAGIC_QUOTES</code>**видалено.</p>
+</li>
+<li>
+<p>Виклик <a href="function.implode.md">implode()</a>з параметрами у зворотному порядку<code>($pieces, $glue)</code>більше не підтримується.</p>
+</li>
+<li>
+<p><a href="function.parse-url.md">parse_url()</a>тепер буде розрізняти відсутні та порожні запити та фрагменти:</p>
+<ul>
+<li><code>http://example.com/foo → query = null, fragment = null</code></li>
+<li><code>http://example.com/foo? → query = &quot;&quot;, fragment = null</code></li>
+<li><code>http://example.com/foo# → query = null, fragment = &quot;&quot;</code></li>
+<li><code>http://example.com/foo?# → query = &quot;&quot;, fragment = &quot;&quot;</code></li>
+</ul>
+<p>Раніше у всіх випадках query та fragment були**<code>null</code>**</p>
+</li>
+<li>
+<p><a href="function.var-dump.md">var_dump()</a> і <a href="function.debug-zval-dump.md">debug_zval_dump()</a>тепер друкуватимуть числа з плаваючою точкою, використовуючи<a href="ini.core.md#ini.serialize-precision">serialize_precision</a>, а не<a href="ini.core.md#ini.precision">precision</a>. У конфігурації за промовчанням це означає, що цифри з плаваючою точкою тепер друкуються з повною точністю цими функціями налагодження.</p>
+</li>
+<li>
+<p>Якщо масив, що повертається<a href="language.oop5.magic.md#object.sleep">__sleep()</a>, Містить неіснуючі властивості, тепер вони автоматично проігноруються. Раніше такі властивості були б серіалізовані, якби вони мали значення**<code>null</code>**</p>
+</li>
+<li>
+<p>Локаль за замовчуванням під час запуску тепер завжди буде визначено як<code>&quot;C&quot;</code>. За замовчуванням локалі не успадковуються з оточення. Раніше для**<code>LC_ALL</code><strong>було встановлено значення<code>&quot;C&quot;</code>, в той час як</strong><code>LC_CTYPE</code>**успадковувався від оточення. Однак деякі функції не враховували успадковану локаль без явного виклику<a href="function.setlocale.md">setlocale()</a>. Явний виклик<a href="function.setlocale.md">setlocale()</a>тепер потрібно завжди, якщо компонент локалі повинен бути змінений зі значенням за замовчуванням.</p>
+</li>
+<li>
+<p>Застарілий резервний варіант DES в<a href="function.crypt.md">crypt()</a>був видалений. Якщо в<a href="function.crypt.md">crypt()</a>передається невідомий формат солі, функція завершиться помилкою з<code>*0</code>замість повернення до слабкого хешу DES.</p>
+</li>
+<li>
+<p>При вказанні значень поза допустимим діапазоном для SHA256/SHA512<a href="function.crypt.md">crypt()</a>тепер буде видана помилка<code>*0</code>замість обмеження до найближчої межі. Це відповідає поведінці glibc.</p>
+</li>
+<li>
+<p>Результат функцій сортування міг змінитися, якщо масиві є однакові елементи.</p>
+</li>
+<li>
+<p>Будь-які функції, що приймають callback-функції, які явно не вказані для прийому параметрів посилання, тепер будуть попереджати, якщо використовується callback-функція з посиланнями. Наприклад,<a href="function.array-filter.md">array_filter()</a> і <a href="function.array-reduce.md">array_reduce()</a>. Раніше так було більшість функцій, але не всі.</p>
+</li>
+<li>
+<p>Обгортка HTTP-потоку, використовувана такими функціями, як<a href="function.file-get-contents.md">file_get_contents()</a>, тепер за промовчанням оголошує HTTP/1.1, а не HTTP/1.0. Не змінює поведінки клієнта, але може змусити сервери реагувати інакше. Щоб зберегти стару поведінку, установіть параметр контексту потоку<code>&#x27;protocol_version&#x27;</code>, наПриклад:</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:90px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+</li>
+<li>
+<p>Виклик <a href="function.crypt.md">crypt()</a>без явної передачі солі більше не підтримується. Якщо ви хочете створити надійний хеш із автоматично згенерованою сіллю, використовуйте натомість<a href="function.password-hash.md">password_hash()</a></p>
+</li>
+<li>
+<p><a href="function.substr.md">substr()</a> <a href="function.mb-substr.md">mb_substr()</a> <a href="function.iconv-substr.md">iconv_substr()</a> і <a href="function.grapheme-substr.md">grapheme_substr()</a>тепер послідовно фіксують зміщення межі кордону рядка. Раніше, у деяких випадках, замість порожнього рядка повертався**<code>false</code>**</p>
+</li>
+<li>
+<p>У Windows функції виконання програм (<a href="function.proc-open.md">proc_open()</a> <a href="function.exec.md">exec()</a> <a href="function.popen.md">popen()</a>і т.д.) з використанням оболонки тепер послідовно виконують**%comspec% /s /c &quot;$commandline&quot;<strong>яка робить те ж саме, що і виконання</strong>$commandline**(без додаткових лапок).</p>
+</li>
+</ul>
+<h3>Sysvsem</h3>
+<ul>
+<li>Параметр<code>auto_release</code>в<a href="function.sem-get.md">sem_get()</a>був змінений, щоб набувати логічних значень (bool), а не цілі числа (int).</li>
+</ul>
+<h3>Tidy</h3>
+<ul>
+<li>
+<p>Параметр<code>use_include_path</code>, який не використовувався внутрішньо, був видалений з<a href="tidy.repairstring.md">tidy_repair_string()</a></p>
+</li>
+<li>
+<p><a href="tidy.repairstring.md">tidy::repairString()</a> і <a href="tidy.repairfile.md">tidy::repairFile()</a>стали статичними методами</p>
+</li>
+</ul>
+<h3>PHP-лексер (Tokenizer)</h3>
+<ul>
+<li>
+<p>У лексемах<code>T_COMMENT</code>більше не буде символу нового рядка наприкінці. Натомість новий рядок буде частиною наступної лексеми<code>T_WHITESPACE</code>. Слід зазначити, що за<code>T_COMMENT</code>не завжди слідує пробіл, за ним також може бути<code>T_CLOSE_TAG</code>або кінець файлу.</p>
+</li>
+<li>
+<p>Імена у просторах імен тепер представлені за допомогою<code>T_NAME_QUALIFIED</code> <code>Foo\Bar</code> <code>T_NAME_FULLY_QUALIFIED</code> <code>\Foo\Bar</code>) та лексеми<code>T_NAME_RELATIVE</code> <code>namespace\Foo\Bar</code>)) . <code>T_NS_SEPARATOR</code>використовується тільки для автономних розділювачів простору імен і лише синтаксично дійсний у поєднанні з оголошеннями групового використання.</p>
+</li>
+</ul>
+<h3>XMLReader</h3>
+<p><a href="xmlreader.open.md">XMLReader::open()</a> і <a href="xmlreader.xml.md">XMLReader::xml()</a> тепер є статичними методами. Їх, як і раніше, можна викликати як методи екземпляра, але наступні класи повинні оголошувати їх як статичні, якщо вони перевизначають ці методи.</p>
+<h3>XML-RPC</h3>
+<p>Модуль XML-RPC був переміщений до PECL і не є частиною дистрибутива PHP.</p>
+<h3>Zip</h3>
+<p><strong><code>ZipArchive::OPSYS_Z_CPM</code></strong> була видалена (у цьому імені була помилка). Використовуйте замість неї <strong><code>ZipArchive::OPSYS_CPM</code></strong></p>
+<h3>Zlib</h3>
+<ul>
+<li>
+<p><a href="function.gzgetss.md">gzgetss()</a>видалено.</p>
+</li>
+<li>
+<p><a href="zlib.configuration.md#ini.zlib.output-compression">zlib.output_compression</a>більше не вимикається автоматично для<code>Content-Type: image/*</code></p>
+</li>
+</ul>
+<h3>Пакети тестів PHP для Windows</h3>
+<p>Скрипт виконання тестів був перейменований з run-test.php на run-tests.php, щоб відповідати його імені в php-src.</p></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/migration80.incompatible.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/migration80.incompatible.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"migration80.incompatible.md","content":"## Зміни, що ламають зворотну сумісність\n\n### Ядро PHP\n\n#### Порівняння рядків з числами\n\nНестрогі порівняння чисел і нечислових рядків тепер працюють, як перетворення числа на рядок з наступним порівнянням рядків. Порівняння чисел та числових рядків працює, як і раніше. Зокрема, це означає, що `0 == \"not-a-number\"` Тепер видасть false.\n\n| Сравнение | До | После |\n| --- | --- | --- |\n| `0 == \"0\"` | **`true`** | **`true`** |\n| `0 == \"0.0\"` | **`true`** | **`true`** |\n| `0 == \"foo\"` | **`true`** | **`false`** |\n| `0 == \"\"` | **`true`** | **`false`** |\n| `42 == \" 42\"` | **`true`** | **`true`** |\n| `42 == \"42foo\"` | **`true`** | **`false`** |\n\n#### Інші зміни, що ламають зворотну сумісність\n\n-   `match`тепер зарезервоване ключове слово.\n    \n-   `mixed`тепер зарезервоване слово, тому його не можна використовувати для назви класу, інтерфейсу чи риси, а також заборонено використовувати у просторах імен.\n    \n-   Помилки тверджень (assertions) тепер викидаються за умовчанням. Якщо краща стара поведінка,`assert.exception=0`можна встановити в INI-налаштуваннях.\n    \n-   Методи з тим самим ім'ям, як і клас, більше не інтерпретуються як конструктори. Натомість слід використовувати метод[\\_\\_construct()](language.oop5.decon.md#object.construct)\n    \n-   Можливість статичного виклику нестатичних методів видалено. Таким чином,[is\\_callable()](function.is-callable.md)завершиться помилкою під час перевірки нестатичного методу з ім'ям класу (необхідно перевіряти з екземпляром об'єкта).\n    \n-   Приведення типів`(real)`и`(unset)`видалено.\n    \n-   INI-директива[track\\_errors](errorfunc.configuration.md#ini.track-errors)видалено. Це означає, що php\\_errormsg більше не є актуальним. Замість нього можна використовувати функцію[error\\_get\\_last()](function.error-get-last.md)\n    \n-   Можливість визначати константи без урахування регістру було видалено. Третій аргумент[define()](function.define.md)більше не може бути\\*\\*`true`\\*\\*\n    \n-   Можливість вказувати автозавантажувач за допомогою функції[\\_\\_autoload()](function.autoload.md)було видалено. Натомість слід використовувати[spl\\_autoload\\_register()](function.spl-autoload-register.md)\n    \n-   Аргумент`errcontext`більше не передається в користувальницькі обробники помилок, заданих за допомогою[set\\_error\\_handler()](function.set-error-handler.md)\n    \n-   [create\\_function()](function.create-function.md)було видалено. Замість неї можна використовувати анонімні функції.\n    \n-   [each()](function.each.md)було видалено. Замість неї можна використовувати[foreach](control-structures.foreach.md) або [ArrayIterator](class.arrayiterator.md)\n    \n-   Можливість відв'язати це від замикань, які були створені з методу з використанням[Closure::fromCallable()](closure.fromcallable.md) або [ReflectionMethod::getClosure()](reflectionmethod.getclosure.md), було видалено.\n    \n-   Можливість відв'язати це від належних замикань, що містять використання цього, також була видалена.\n    \n-   Можливість використання[array\\_key\\_exists()](function.array-key-exists.md)з об'єктами було видалено. Натомість можна використовувати[isset()](function.isset.md) або [property\\_exists()](function.property-exists.md)\n    \n-   Робота параметра`key` у функції [array\\_key\\_exists()](function.array-key-exists.md)тепер наведена відповідно до[isset()](function.isset.md)та звичайним доступом до масиву. Всі типи ключів тепер використовують звичайне приведення типів, масив/об'єкт до ключа призведе до викидання[TypeError](class.typeerror.md)\n    \n-   Будь-який масив, у якого в якості першого числового ключа вказано число n, використовуватиме n+1 для наступного наступного неявного ключа, навіть якщо n негативно.\n    \n-   Рівень error\\_reporting за замовчуванням тепер\\*\\*`E_ALL`**. Раніше він виключав**`E_NOTICE`** і **`E_DEPRECATED`\\*\\*\n    \n-   [display\\_startup\\_errors](errorfunc.configuration.md#ini.display-startup-errors)тепер включено за замовчуванням.\n    \n-   Використання parent всередині класу, який не має батька, тепер призведе до фатальної помилки під час компіляції.\n    \n-   Оператор`@`більше не пригнічує фатальних помилок (**`E_ERROR`** **`E_CORE_ERROR`** **`E_COMPILE_ERROR`** **`E_USER_ERROR`** **`E_RECOVERABLE_ERROR`** **`E_PARSE`**). Обробники помилок, які очікують, що error\\_reporting матиме значення при використанні оператора`@`, повинні робити такі перевірки через бітову маску:\n    \n    ```php\n    \u003c?php\n    // Замініть це\n    function my_error_handler($err_no, $err_msg, $filename, $linenum) {\n        if (error_reporting() == 0) {\n            return false;\n        }\n        // ...\n    }\n    \n    // На це\n    function my_error_handler($err_no, $err_msg, $filename, $linenum) {\n        if (!(error_reporting() \u0026 $err_no)) {\n            return false;\n        }\n        // ...\n    }\n    ?\u003e\n    ```\n    \n    Крім цього, обов'язково слід приховати відображення повідомлень про помилки у виробничому середовищі, які можуть призвести до витоку інформації. Перевірте, що`display_errors=Off`використовується разом із записом журналу помилок.\n    \n-   `#[`більше не інтерпретується як початок коментаря, оскільки цей синтаксис тепер використовується для атрибутів.\n    \n-   Помилки успадкування через несумісні сигнатури методів (порушення LSP) тепер завжди викликають фатальну помилку. Раніше у деяких випадках видавалося попередження.\n    \n-   Пріоритет оператора конкатенації змінився щодо зрушень бітів і додавання, а також віднімання.\n    \n    ```php\n    \u003c?php\n    echo \"Сума: \". $a + $b;\n    // Раніше інтерпретувалося як:\n    echo (\"Сума: \". $a) + $b;\n    // Тепер інтерпретується як:\n    echo \"Сума:\" . ($a + $b);\n    ?\u003e\n    ```\n    \n-   Аргументи зі значенням за замовчуванням, яке дозволяється в\\*\\*`null`**під час виконання, більше не будуть явно позначати тип аргументу як nullable. Натомість потрібно вказувати або явний тип, що дозволяє значення null, або явне значення**`null`\\*\\*по умолчанию.\n    \n    ```php\n    \u003c?php\n    // Замініть цей код:\n    function test(int $arg = CONST_RESOLVING_TO_NULL) {}\n    // На цей:\n    function test(?int $arg = CONST_RESOLVING_TO_NULL) {}\n    // На цей (альтернативний варіант):\n    function test(int $arg = null) {}\n    ?\u003e\n    ```\n    \n-   Ряд попереджень перетворено на винятки[Error](class.error.md) :\n    \n    -   Спроба запису як неіснуючого об'єкта. Раніше це неявно створювало об'єкт stdClass у разі null, false та порожніх рядків.\n    -   Спроба додати елемент до масиву, для якого вже використовується ключ PHP\\_INT\\_MAX.\n    -   Спроба використовувати неприпустимий тип (масив або об'єкт) як ключ масиву або зміщення рядка.\n    -   Спроба записати в індекс масиву скалярне значення.\n    -   Спроба розпакувати значення, яке не є масивом/Traversable.\n    -   Спроба отримати доступ до некваліфікованих константів, які не визначені. Раніше некваліфікований доступ до константів призводив до попередження та інтерпретувався як рядок.\n    -   Передача невірної кількості аргументів у неваріативну вбудовану функцію призведе до помилки[ArgumentCountError](class.argumentcounterror.md)\n    \n    Ряд повідомлень перетворено на попередження:\n    \n    -   Спроба прочитати невизначену змінну.\n    -   Спроба прочитати невизначену властивість.\n    -   Спроба прочитати невизначений ключ масиву.\n    -   Спроба прочитати властивість необ'єкта.\n    -   Спроба отримати доступ до індексу масиву немасиву.\n    -   Спроба перетворити масив на рядок.\n    -   Спроба використовувати ресурс як ключ масиву.\n    -   Спроба використовувати null, логічне значення або число з плаваючою точкою як рядковий зсув.\n    -   Спроба прочитати усунення рядка за межами допустимого кордону.\n    -   Спроба присвоїти зміщення рядка порожній рядок.\n-   При спробі призначити кілька байтів усунення рядка тепер буде видано попередження.\n    \n-   Несподівані символи у вихідних файлах (наприклад, байти NUL за межами рядків) тепер призводять до виключення[ParseError](class.parseerror.md)замість попередження під час компіляції.\n    \n-   Неперехоплені винятки тепер проходять процедуру \"чистого завершення\", це означає, що після неперехопленого виключення викликатимуться деструктори.\n    \n-   Фатальна помилка часу компіляції \"Only variables can be passed by reference\" була відкладена до часу виконання та перетворена на виключення [Error](class.error.md) \"Argument cannot be passed by reference\".\n    \n-   Деякі повідомлення \"Only variables can be passed by reference\" були перетворені на виключення \"Argument cannot be passed by reference\".\n    \n-   Згенероване ім'я для анонімних класів змінилося. Тепер він буде включати ім'я першого з батьків або інтерфейсу:\n    \n    ```php\n    \u003c?php\n    new class extends ParentClass {};\n    // -\u003e ParentClass@anonymous\n    new class implements FirstInterface, SecondInterface {};\n    // -\u003e FirstInterface@anonymous\n    new class {};\n    // -\u003e class@anonymous\n    ?\u003e\n    ```\n    \n    За новими іменами, як і раніше, слідуватиме NUL-байт і унікальний суфікс.\n    \n-   Посилання на неабсолютні трейти методів в адаптаціях псевдонімів трейтів мають бути однозначними:\n    \n    ```php\n    \u003c?php\n    class X {\n        use T1, T2 {\n            func as otherFunc;\n        }\n        function func() {}\n    }\n    ?\u003e\n    ```\n    \n    Якщо існують і`T1::func()`, и`T2::func()`, цей код раніше приймався без повідомлення, і передбачалося, що func посилається на`T1::func`. Тепер натомість буде викинуто фатальну помилку: необхідно явно вказати`T1::func`или`T2::func`\n    \n-   Сигнатура абстрактних методів, визначених у трейтах, тепер перевіряється за методом класу, що реалізує:\n    \n    ```php\n    \u003c?php\n    trait MyTrait {\n        abstract private function neededByTrait(): string;\n    }\n    \n    class MyClass {\n        use MyTrait;\n    \n        // Помилка через невідповідність типу значення, що повертається.\n        private function neededByTrait(): int { return 42; }\n    }\n    ?\u003e\n    ```\n    \n-   Відключені функції тепер обробляються так само, як неіснуючі функції. Виклик вимкненої функції повідомить, що немає такої функції, це дає можливість перевизначити вимкнену функцію.\n    \n-   Оболонки потоку`data://`більше не доступні для запису, що відповідає документованій поведінці.\n    \n-   Арифметичні та побітові оператори`+` `-` `*` `**` `%` `\u003c\u003c` `\u003e\u003e` `\u0026` `^` `~` `++` `--`тепер будуть послідовно видавати[TypeError](class.typeerror.md), коли одним з операндів є масив (array), ресурс ([resource](language.types.resource.md)) чи не перевантажений об'єкт (object). Єдиним винятком із цього правила є операція злиття масивів`+` яка, як і раніше, підтримується.\n    \n-   Приведення з плаваючою точкою в рядок тепер завжди поводитиметься незалежно від локалі.\n    \n    ```php\n    \u003c?php\n    setlocale(LC_ALL, \"de_DE\");\n    // Раніше: 3,14\n    // Тепер: 3.14\n    ?\u003e\n    ```\n    \n    Смотрите[printf()](function.printf.md) [number\\_format()](function.number-format.md)и\\*\\*NumberFormatter()\\*\\*для отримання інформації про способи настроювання форматування чисел.\n    \n-   Видалено підтримку застарілих фігурних дужок для доступу до зміщення.\n    \n    ```php\n    \u003c?php\n    // Замість:\n    $array{0};\n    $array{\"key\"};\n    // Використовуйте:\n    $array[0];\n    $array[\"key\"];\n    ?\u003e\n    ```\n    \n-   Застосування модифікатора final до закритого методу тепер спричинить попередження, якщо цей метод не є конструктором.\n    \n-   Якщо у конструкторі об'єкта використовується[exit()](function.exit.md), Деструктор об'єкта більше не буде викликатися. Це відповідає поведінці, коли конструктор викидає виняток.\n    \n-   Імена у просторі імен більше не можуть містити прогалини:`Foo\\Bar`буде розпізнаватись як ім'я в просторі імен,`Foo \\ Bar`\\- Ні. І навпаки, зарезервовані ключові слова тепер дозволені як сегменти простору імен, що також може змінити інтерпретацію коду:`new\\x`тепер збігається з`constant('new\\x')`, але не з `new \\x()`\n    \n-   Для вкладених тернарних операторів тепер потрібна явна вказівка ​​дужок.\n    \n-   [debug\\_backtrace()](function.debug-backtrace.md) і [Exception::getTrace()](exception.gettrace.md)більше не надаватимуть посилання на аргументи. Неможливо змінити аргументи функції через трасування.\n    \n-   Обробка числових рядків була змінена, щоб зробити її більш зрозумілою і менш схильною до помилок. Завершальні прогалини тепер дозволено у числових рядках для узгодженості з тим, як обробляються початкові прогалини. В основному це впливає на:\n    \n    -   Функцию[is\\_numeric()](function.is-numeric.md)\n    -   Порівняння рядків з рядками\n    -   Оголошення типів\n    -   Операції збільшення та зменшення\n    \n    Поняття \"провідний числовий рядок\" в основному було відкинуто; випадки, коли це залишилося, є для полегшення міграції. Рядки, які видавали **`E_NOTICE`** \"A non well-formed numeric value encountered\", тепер видаватимуть **`E_WARNING`** \"A non-numeric value encountered\", а всі рядки, які видавали **`E_WARNING`** \"A non-numeric value encountered\" тепер видаватиме [TypeError](class.typeerror.md). В основному це впливає на:\n    \n    -   Арифметичні операції\n    -   Побітові операції\n    \n    Ця зміна\\*\\*`E_WARNING`**на[TypeError](class.typeerror.md)також впливає на**`E_WARNING`\\*\\* \"Illegal string offset 'string'\" для неприпустимих зсувів рядка. Поведінка явних наведень до int/float з рядків не змінилася.\n    \n-   Тепер у магічних методів перевірятимуться аргументи і типи, що повертаються, якщо вони оголошені. Сигнатура має відповідати наступному списку:\n    \n    -   `__call(string $name, array $arguments): mixed`\n    -   `__callStatic(string $name, array $arguments): mixed`\n    -   `__clone(): void`\n    -   `__debugInfo(): ?array`\n    -   `__get(string $name): mixed`\n    -   `__invoke(mixed $arguments): mixed`\n    -   `__isset(string $name): bool`\n    -   `__serialize(): array`\n    -   `__set(string $name, mixed $value): void`\n    -   `__set_state(array $properties): object`\n    -   `__sleep(): array`\n    -   `__unserialize(array $data): void`\n    -   `__unset(string $name): void`\n    -   `__wakeup(): void`\n-   Ключі масиву[call\\_user\\_func\\_array()](function.call-user-func-array.md)тепер інтерпретуватимуться як імена параметрів, а не ігноруватимуться.\n    \n-   Оголошення функції з ім'ям `assert()`всередині простору імен більше не допускається та викликає\\*\\*`E_COMPILE_ERROR`\\*\\*Функция[assert()](function.assert.md)піддається спеціальної обробки з боку движка, що може призвести до неузгодженої поведінки щодо однойменної функції у просторі імен.\n    \n\n### Перетворення ресурсів на об'єкти\n\nДекілька ресурсів ([resource](language.types.resource.md)) були перетворені на об'єкти (object). Перевірки значення, що повертається з використанням [is\\_resource()](function.is-resource.md) слід замінити перевірками на **`false`**\n\n-   [curl\\_init()](function.curl-init.md)тепер повертає об'єкт[CurlHandle](class.curlhandle.md)замість ресурсу ([resource](language.types.resource.md)). Функція[curl\\_close()](function.curl-close.md)більше не має сенсу, натомість екземпляр[CurlHandle](class.curlhandle.md)автоматично знищується, якщо на нього немає посилання.\n    \n-   [curl\\_multi\\_init()](function.curl-multi-init.md)тепер повертає об'єкт[CurlMultiHandle](class.curlmultihandle.md)замість ресурсу ([resource](language.types.resource.md)). Функція[curl\\_multi\\_close()](function.curl-multi-close.md)більше не має сенсу, натомість екземпляр[CurlMultiHandle](class.curlmultihandle.md)автоматично знищується, якщо на нього немає посилання.\n    \n-   [curl\\_share\\_init()](function.curl-share-init.md)тепер повертає об'єкт[CurlShareHandle](class.curlsharehandle.md)замість ресурсу ([resource](language.types.resource.md)). Функція[curl\\_share\\_close()](function.curl-share-close.md)більше не має сенсу, натомість екземпляр[CurlShareHandle](class.curlsharehandle.md)автоматично знищується, якщо на нього немає посилання.\n    \n-   [enchant\\_broker\\_init()](function.enchant-broker-init.md)тепер повертає об'єкт[EnchantBroker](class.enchantbroker.md)замість ресурсу ([resource](language.types.resource.md)\n    \n-   [enchant\\_broker\\_request\\_dict()](function.enchant-broker-request-dict.md) і [enchant\\_broker\\_request\\_pwl\\_dict()](function.enchant-broker-request-pwl-dict.md)тепер повертають[EnchantDictionary](class.enchantdictionary.md)об'єкт замість ресурсу ([resource](language.types.resource.md)\n    \n-   Модуль GD тепер використовує об'єкти[GdImage](class.gdimage.md)як базова структура даних для зображень, а не ресурси ([resource](language.types.resource.md)). Функція[imagedestroy()](function.imagedestroy.md)більше немає сенсу; натомість екземпляр[GdImage](class.gdimage.md)автоматично знищується, якщо на нього немає посилання.\n    \n-   [openssl\\_x509\\_read()](function.openssl-x509-read.md) і [openssl\\_csr\\_sign()](function.openssl-csr-sign.md)тепер повертають об'єкт[OpenSSLCertificate](class.opensslcertificate.md)замість ресурсу ([resource](language.types.resource.md)). Функція[openssl\\_x509\\_free()](function.openssl-x509-free.md)оголошена застарілою і більше не має сенсу, натомість екземпляр[OpenSSLCertificate](class.opensslcertificate.md)автоматично знищується, якщо на нього більше не посилаються.\n    \n-   [openssl\\_csr\\_new()](function.openssl-csr-new.md)тепер повертає об'єкт[OpenSSLCertificateSigningRequest](class.opensslcertificatesigningrequest.md)замість ресурсу ([resource](language.types.resource.md)\n    \n-   [openssl\\_pkey\\_new()](function.openssl-pkey-new.md)тепер повертає об'єкт[OpenSSLAsymmetricKey](class.opensslasymmetrickey.md)замість ресурсу ([resource](language.types.resource.md)). Функція[openssl\\_pkey\\_free()](function.openssl-pkey-free.md)оголошена застарілою і більше не має сенсу, натомість екземпляр[OpenSSLAsymmetricKey](class.opensslasymmetrickey.md)автоматично знищується, якщо на нього більше не посилаються.\n    \n-   [shmop\\_open()](function.shmop-open.md)тепер повертає об'єкт[Shmop](class.shmop.md)замість ресурсу ([resource](language.types.resource.md)). Функція[shmop\\_close()](function.shmop-close.md)більше немає сенсу і оголошена застарілою; натомість екземпляр[Shmop](class.shmop.md)автоматично знищується, якщо на нього більше не посилаються.\n    \n-   [socket\\_create()](function.socket-create.md) [socket\\_create\\_listen()](function.socket-create-listen.md) [socket\\_accept()](function.socket-accept.md) [socket\\_import\\_stream()](function.socket-import-stream.md) [socket\\_addrinfo\\_connect()](function.socket-addrinfo-connect.md) [socket\\_addrinfo\\_bind()](function.socket-addrinfo-bind.md) і [socket\\_wsaprotocol\\_info\\_import()](function.socket-wsaprotocol-info-import.md)тепер повертають об'єкт[Socket](class.socket.md)замість ресурсу ([resource](language.types.resource.md)) . [socket\\_addrinfo\\_lookup()](function.socket-addrinfo-lookup.md)тепер повертає масив об'єктів[AddressInfo](class.addressinfo.md)замість масиву ресурсів ([resource](language.types.resource.md)\n    \n-   [msg\\_get\\_queue()](function.msg-get-queue.md)тепер повертають об'єкт[SysvMessageQueue](class.sysvmessagequeue.md)замість ресурсу ([resource](language.types.resource.md)\n    \n-   [sem\\_get()](function.sem-get.md)тепер повертають об'єкт[SysvSemaphore](class.sysvsemaphore.md)замість ресурсу ([resource](language.types.resource.md)\n    \n-   [shm\\_attach()](function.shm-attach.md)тепер повертають об'єкт[SysvSharedMemory](class.sysvsharedmemory.md)замість ресурсу ([resource](language.types.resource.md)\n    \n-   [xml\\_parser\\_create()](function.xml-parser-create.md) і [xml\\_parser\\_create\\_ns()](function.xml-parser-create-ns.md)тепер повертають об'єкт[XMLParser](class.xmlparser.md)замість ресурсу ([resource](language.types.resource.md)). Функція[xml\\_parser\\_free()](function.xml-parser-free.md)більше не має сенсу, натомість екземпляр XMLParser автоматично знищується, якщо на нього більше не посилаються.\n    \n-   Функції [XMLWriter](book.xmlwriter.md)тепер приймають та повертають, відповідно, об'єкти[XMLWriter](class.xmlwriter.md)замість ресурсів ([resource](language.types.resource.md)\n    \n-   [inflate\\_init()](function.inflate-init.md)тепер повертає об'єкт[InflateContext](class.inflatecontext.md)замість ресурсу ([resource](language.types.resource.md)\n    \n-   [deflate\\_init()](function.deflate-init.md)тепер повертає об'єкт[DeflateContext](class.deflatecontext.md)замість ресурсу ([resource](language.types.resource.md)\n    \n\n### COM та .Net (Windows)\n\nМожливість імпорту констант без урахування регістру з бібліотек типів було видалено. Другий аргумент [com\\_load\\_typelib()](function.com-load-typelib.md) більше не може бути false; [com.autoregister\\_casesensitive](com.configuration.md#ini.com.autoregister-casesensitive) більше не можна вимкнути; Маркери без урахування регістру в [com.typelib\\_file](com.configuration.md#ini.com.typelib-file) ігноруються.\n\n### CURL\n\n**`CURLOPT_POSTFIELDS`** більше не сприймає об'єкти як масиви. Щоб інтерпретувати об'єкт як масив, виконайте явне приведення `(array)`. Те саме стосується і інших параметрів, що приймають масиви.\n\n### дата та час\n\nДля роботи функцій [mktime()](function.mktime.md) і [gmmktime()](function.gmmktime.md) тепер потрібно хоча б один аргумент . [time()](function.time.md) може використовуватись для отримання поточної позначки часу.\n\n### DOM\n\nБули видалені нереалізовані класи з модуля DOM, які мали обробника і містили тестові дані. Ці класи також були видалені в останній версії стандарту DOM:\n\n-   **DOMNameList**\n-   **DomImplementationList**\n-   **DOMConfiguration**\n-   **DomError**\n-   **DomErrorHandler**\n-   **DOMImplementationSource**\n-   **DOMLocator**\n-   **DOMUserDataHandler**\n-   **DOMTypeInfo**\n-   **DOMStringExtend**\n\nВидалено нереалізовані методи модуля DOM, які не мали реалізації:\n\n-   **DOMNamedNodeMap::setNamedItem()**\n-   **DOMNamedNodeMap::removeNamedItem()**\n-   **DOMNamedNodeMap::setNamedItemNS()**\n-   **DOMNamedNodeMap::removeNamedItemNS()**\n-   **DOMText::replaceWholeText()**\n-   **DOMNode::compareDocumentPosition()**\n-   [DOMNode::isEqualNode()](domnode.isequalnode.md)\n-   **DOMNode::getFeature()**\n-   **DOMNode::setUserData()**\n-   **DOMNode::getUserData()**\n-   **DOMDocument::renameNode()**\n\n### Enchant\n\n-   [enchant\\_broker\\_list\\_dicts()](function.enchant-broker-list-dicts.md) [enchant\\_broker\\_describe()](function.enchant-broker-describe.md) і [enchant\\_dict\\_suggest()](function.enchant-dict-suggest.md)тепер повертають порожній масив замість\\*\\*`null`\\*\\*\n\n### Exif\n\n[read\\_exif\\_data()](function.read-exif-data.md) була вилучена; Замість неї слід використовувати [exif\\_read\\_data()](function.exif-read-data.md)\n\n### Фільтрування даних\n\n-   Флаги\\*\\*`FILTER_FLAG_SCHEME_REQUIRED`** і **`FILTER_FLAG_HOST_REQUIRED`**для фільтра**`FILTER_VALIDATE_URL`\\*\\* были удалены . `scheme`и`host`необхідні (і завжди були).\n    \n-   Типи\\*\\*`INPUT_REQUEST`** і **`INPUT_SESSION`\\*\\*для[filter\\_input()](function.filter-input.md)і їй похідних було видалено. Вони ніколи не були реалізовані, а спроба їх використання завжди викликала попередження.\n    \n\n### GD\n\n-   Застарілі функції [image2wbmp()](function.image2wbmp.md) були вилучені.\n    \n-   Застарілі функції [png2wbmp()](function.png2wbmp.md) і [jpeg2wbmp()](function.jpeg2wbmp.md) були вилучені.\n    \n-   Параметр`mode`за замовчуванням для функції[imagecropauto()](function.imagecropauto.md)більше не набуває значення`-1`. Натомість слід використовувати **`IMG_CROP_DEFAULT`**\n    \n-   У Windows, php\\_gd2.dll перейменований на php\\_gd.dll.\n    \n\n### GMP\n\n[gmp\\_random()](function.gmp-random.md) було видалено. Замість неї слід використовувати [gmp\\_random\\_range()](function.gmp-random-range.md) або [gmp\\_random\\_bits()](function.gmp-random-bits.md)\n\n### Iconv\n\nРеалізації iconv, які неправильно встановлюють errno у разі виникнення помилок, більше не підтримуються.\n\n### IMAP\n\n-   Невикористовуваний аргумент`default_host` функції [imap\\_headerinfo()](function.imap-headerinfo.md)був видалений.\n    \n-   Функция[imap\\_header()](function.imap-header.md)яка є псевдонімом[imap\\_headerinfo()](function.imap-headerinfo.md), було видалено.\n    \n\n### Функції інтернаціоналізації\n\n-   Застаріла константа\\*\\*`INTL_IDNA_VARIANT_2003`\\*\\*видалено.\n    \n-   Застаріла константа\\*\\*`Normalizer::NONE`\\*\\*видалено.\n    \n\n### LDAP\n\n-   Застарілі функції [ldap\\_sort()](function.ldap-sort.md) [ldap\\_control\\_paged\\_result()](function.ldap-control-paged-result.md) і [ldap\\_control\\_paged\\_result\\_response()](function.ldap-control-paged-result-response.md)видалено.\n    \n-   Змінився інтерфейс[ldap\\_set\\_rebind\\_proc()](function.ldap-set-rebind-proc.md); параметр`callback`більше не приймає порожні рядки; натомість слід вказувати\\*\\*`null`\\*\\*\n    \n\n### MBString\n\n-   Директива[mbstring.func\\_overload](mbstring.configuration.md#ini.mbstring.func-overload)було видалено. Пов'язані константи\\*\\*`MB_OVERLOAD_MAIL`\\*\\* \\*\\*`MB_OVERLOAD_STRING`** і **`MB_OVERLOAD_REGEX`\\*\\*також було видалено. Зрештою, записи`\"func_overload\"`и`\"func_overload_list\"`в[mb\\_get\\_info()](function.mb-get-info.md) були вилучені.\n    \n-   [mb\\_parse\\_str()](function.mb-parse-str.md)більше не можна використовувати без передачі масиву результатів.\n    \n-   Видалено низку застарілих псевдонімів mbregex. У наступному списку вказано, які функції слід використовувати замість них:\n    \n    -   **mbregex\\_encoding()** → [mb\\_regex\\_encoding()](function.mb-regex-encoding.md)\n    -   **mbereg()** → [mb\\_ereg()](function.mb-ereg.md)\n    -   **mberegi()** → [mb\\_eregi()](function.mb-eregi.md)\n    -   **mbereg\\_replace()** → [mb\\_ereg\\_replace()](function.mb-ereg-replace.md)\n    -   **mberegi\\_replace()** → [mb\\_eregi\\_replace()](function.mb-eregi-replace.md)\n    -   **mbsplit()** → [mb\\_split()](function.mb-split.md)\n    -   **mbereg\\_match()** → [mb\\_ereg\\_match()](function.mb-ereg-match.md)\n    -   **mbereg\\_search()** → [mb\\_ereg\\_search()](function.mb-ereg-search.md)\n    -   **mbereg\\_search\\_pos()** → [mb\\_ereg\\_search\\_pos()](function.mb-ereg-search-pos.md)\n    -   **mbereg\\_search\\_regs()** → [mb\\_ereg\\_search\\_regs()](function.mb-ereg-search-regs.md)\n    -   **mbereg\\_search\\_init()** → [mb\\_ereg\\_search\\_init()](function.mb-ereg-search-init.md)\n    -   **mbereg\\_search\\_getregs()** → [mb\\_ereg\\_search\\_getregs()](function.mb-ereg-search-getregs.md)\n    -   **mbereg\\_search\\_getpos()** → [mb\\_ereg\\_search\\_getpos()](function.mb-ereg-search-getpos.md)\n    -   **mbereg\\_search\\_setpos()** → [mb\\_ereg\\_search\\_setpos()](function.mb-ereg-search-setpos.md)\n-   Модифікатор `e`для[mb\\_ereg\\_replace()](function.mb-ereg-replace.md)був видалений. Замість нього слід використовувати[mb\\_ereg\\_replace\\_callback()](function.mb-ereg-replace-callback.md)\n    \n-   Аргумент нерядкового шаблону для[mb\\_ereg\\_replace()](function.mb-ereg-replace.md)тепер інтерпретуватиметься як рядок замість кодової точки ASCII. Попередню поведінку можна відновити явним викликом[chr()](function.chr.md)\n    \n-   Аргумент`needle`для функцій[mb\\_strpos()](function.mb-strpos.md) [mb\\_strrpos()](function.mb-strrpos.md) [mb\\_stripos()](function.mb-stripos.md) [mb\\_strripos()](function.mb-strripos.md) [mb\\_strstr()](function.mb-strstr.md) [mb\\_stristr()](function.mb-stristr.md) [mb\\_strrchr()](function.mb-strrchr.md) і [mb\\_strrichr()](function.mb-strrichr.md)тепер може бути порожнім.\n    \n-   Параметр`is_hex`, який не використовувався для внутрішніх цілей, був видалений з[mb\\_decode\\_numericentity()](function.mb-decode-numericentity.md)\n    \n-   Застаріла поведінка передачі кодування як третій аргумент замість зміщення для функції[mb\\_strrpos()](function.mb-strrpos.md)було видалено; замість цього як четвертий аргумент слід вказати явне зміщення з кодуванням.\n    \n-   Псевдоніми кодування символів`ISO_8859-*`були замінені на псевдоніми`ISO8859-*`для кращої сумісності із модулем iconv. Псевдоніми mbregex ISO 8859 з підкресленням (`ISO_8859_*`и`ISO8859_*`) також були видалені.\n    \n-   [mb\\_ereg()](function.mb-ereg.md) і [mb\\_eregi()](function.mb-eregi.md)тепер повертатимуть логічне значення\\*\\*`true`\\*\\*, у разі знайденого збігу. Раніше вони повертали ціле число , якщо аргумент `matches`не було передано, або`max(1, strlen($matches[0]))`, якщо `matches`був не пустий.\n    \n\n### OCI8\n\n-   Класс**OCI-Lob**перейменований на[OCILob](class.ocilob.md), а клас**OCI-Collection** - у [OCICollection](class.ocicollection.md)для імені сумісність забезпечується засобами інструкції типу arginfo PHP 8.\n    \n-   Деякі функції псевдонімів оголошено застарілим.\n    \n-   [oci\\_internal\\_debug()](function.oci-internal-debug.md) та її псевдонім [ociinternaldebug()](function.ociinternaldebug.md) були вилучені.\n    \n\n### ODBC\n\n-   [odbc\\_connect()](function.odbc-connect.md)більше не використовує з'єднання повторно.\n    \n-   Параметр, що не використовується`flags` функції [odbc\\_exec()](function.odbc-exec.md)був видалений.\n    \n\n### OpenSSL\n\n-   [openssl\\_seal()](function.openssl-seal.md) і [openssl\\_open()](function.openssl-open.md)тепер вимагають передачі`method`, оскільки попереднє значення є типовим`\"RC4\"`вважається небезпечним.\n\n### Регулярні вирази (сумісні з Perl)\n\nПри передачі неприпустимих послідовностей, що управляють, вони більше не інтерпретуються як літерали. Така поведінка раніше вимагала модифікатора `X`, що тепер ігнорується.\n\n### Об'єкти даних PHP\n\n-   Режим обробки помилок за умовчанням було змінено з \"тихого\" (silent) на \"виключення\" (exceptions). Детальніше дивіться [Помилки та обробка помилок](pdo.error-handling.md)\n    \n-   Змінилися сигнатури деяких методів PDO:\n    \n    -   `PDO::query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs)`\n    -   `PDOStatement::setFetchMode(int $mode, mixed ...$args)`\n\n### PDO ODBC\n\nДиректива php.ini[pdo\\_odbc.db2\\_instance\\_name](ref.pdo-odbc.md#ini.pdo-odbc.db2-instance-name) було видалено.\n\n### PDO MySQL\n\n[PDO::inTransaction()](pdo.intransaction.md) тепер повідомляє фактичний стан транзакції підключення, а не про приблизний від PDO. Якщо запит, за умови \"неявної фіксації\", виконується, то [PDO::inTransaction()](pdo.intransaction.md) згодом поверне **`false`**, оскільки транзакція буде неактивною.\n\n### PostgreSQL\n\n-   Застарілий синтаксис[pg\\_connect()](function.pg-connect.md)з використанням кількох параметрів замість рядка підключення більше не підтримується.\n    \n-   Застарілі сигнатури[pg\\_lo\\_import()](function.pg-lo-import.md) і [pg\\_lo\\_export()](function.pg-lo-export.md), що передають з'єднання як останній аргумент, більше не підтримуються. Натомість з'єднання має бути передано першим аргументом.\n    \n-   [pg\\_fetch\\_all()](function.pg-fetch-all.md)тепер повертатиме порожній масив замість\\*\\*`false`\\*\\*для наборів результатів із відсутніми рядками.\n    \n\n### Phar\n\nМетадані, пов'язані з phar, більше не будуть десеріалізуватися автоматично, щоб виправити потенційні вразливості безпеки через створення екземплярів об'єкта, автозавантаження і т.д.\n\n### Reflection\n\n-   Сигнатури методів\n    \n    -   `ReflectionClass::newInstance($args)`\n    -   `ReflectionFunction::invoke($args)`\n    -   `ReflectionMethod::invoke($object, $args)`\n    \n    були змінені на:\n    \n    -   `ReflectionClass::newInstance(...$args)`\n    -   `ReflectionFunction::invoke(...$args)`\n    -   `ReflectionMethod::invoke($object, ...$args)`\n    \n    Код, який повинен бути сумісний як з PHP 7, так і з PHP 8, може використовувати такі сигнатури:\n    \n    -   `ReflectionClass::newInstance($arg = null, ...$args)`\n    -   `ReflectionFunction::invoke($arg = null, ...$args)`\n    -   `ReflectionMethod::invoke($object, $arg = null, ...$args)`\n-   Метод[ReflectionType::\\_\\_toString()](reflectiontype.tostring.md)тепер повертатиме повне налагоджувальне уявлення типу і більше не є застарілим. Зокрема, результат включатиме індикатор допустимості значень NULL для типів, що допускають значення NULL. Формат значення, що повертається, нестабільний і може змінюватися в залежності від версії PHP.\n    \n-   Методи Reflection export() були видалені. Натомість об'єкти reflection можуть бути перетворені на рядок.\n    \n-   [ReflectionMethod::isConstructor()](reflectionmethod.isconstructor.md) і [ReflectionMethod::isDestructor()](reflectionmethod.isdestructor.md)тепер також повертають\\*\\*`true`\\*\\*для методів інтерфейсів[\\_\\_construct()](language.oop5.decon.md#object.construct) і [\\_\\_destruct()](language.oop5.decon.md#object.destruct). Раніше це було правильно тільки для методів класів і трейтів.\n    \n-   Метод\\*\\*ReflectionType::isBuiltin()\\*\\*переїхав в[ReflectionNamedType](class.reflectionnamedtype.md). У[ReflectionUnionType](class.reflectionuniontype.md)цього методу немає.\n    \n\n### Сокети\n\n-   Застарілі`flags` \\*\\*`AI_IDN_ALLOW_UNASSIGNED`** і **`AI_IDN_USE_STD3_ASCII_RULES`\\*\\*для[socket\\_addrinfo\\_lookup()](function.socket-addrinfo-lookup.md) були вилучені.\n\n### Стандартна бібліотека PHP (SPL)\n\n-   [SplFileObject::fgetss()](splfileobject.fgetss.md)був видалений.\n    \n-   [SplFileObject::seek()](splfileobject.seek.md)тепер завжди переміщається початку рядка. Раніше, позиція`\u003e=1`переміщала на початок наступні рядки.\n    \n-   [SplHeap::compare()](splheap.compare.md)тепер вказує сигнатуру методу. Наслідуючі класи, які реалізують цей метод, тепер повинні використовувати сумісну сигнатуру методу.\n    \n-   [SplDoublyLinkedList::push()](spldoublylinkedlist.push.md) [SplDoublyLinkedList::unshift()](spldoublylinkedlist.unshift.md) і [SplQueue::enqueue()](splqueue.enqueue.md)тепер повертають void замість\\*\\*`true`\\*\\*\n    \n-   [spl\\_autoload\\_register()](function.spl-autoload-register.md)тепер завжди викидатиме[TypeError](class.typeerror.md)для неприпустимих аргументів, тому другий аргумент`do_throw`ігнорується, якщо для нього встановлено значення\\*\\*`false`\\*\\*\n    \n-   [SplFixedArray](class.splfixedarray.md)тепер є[IteratorAggregate](class.iteratoraggregate.md), а не[Iterator](class.iterator.md). . [SplFixedArray::rewind()](splfixedarray.rewind.md) [SplFixedArray::current()](splfixedarray.current.md) [SplFixedArray::key()](splfixedarray.key.md) [SplFixedArray::next()](splfixedarray.next.md) і [SplFixedArray::valid()](splfixedarray.valid.md)були вилучені. Замість них було додано[SplFixedArray::getIterator()](splfixedarray.getiterator.md). Будь-який код, який використовує явну ітерацію над SplFixedArray, тепер має отримати[Iterator](class.iterator.md) за допомогою [SplFixedArray::getIterator()](splfixedarray.getiterator.md). Це означає, що [SplFixedArray](class.splfixedarray.md)тепер безпечно використовувати у вкладених циклах.\n    \n\n### Бібліотека стандартних функцій\n\n-   [assert()](function.assert.md)більше не виконуватиме рядкові аргументи, натомість вони будуть оброблятися як будь-які звичайні аргументи. Таким чином, замість`assert('$a == $b')`слід використовувати`assert($a == $b)`. INI-директива[assert.quiet\\_eval](info.configuration.md#ini.assert.quiet-eval)та константа\\*\\*`ASSERT_QUIET_EVAL`\\*\\*були видалені, оскільки вони не мають сенсу.\n    \n-   [parse\\_str()](function.parse-str.md)більше не можна використовувати без зазначення масиву результатів.\n    \n-   Фильтр[string.strip\\_tags](filters.string.md#filters.string.strip_tags)видалено.\n    \n-   Аргумент`needle`функций[strpos()](function.strpos.md) [strrpos()](function.strrpos.md) [stripos()](function.stripos.md) [strripos()](function.strripos.md) [strstr()](function.strstr.md) [strchr()](function.strchr.md) [strrchr()](function.strrchr.md) і [stristr()](function.stristr.md)тепер завжди інтерпретуватиметься як рядок. Раніше невеликі потреби інтерпретувалися як кодова точка ASCII. Явний виклик[chr()](function.chr.md)може використовуватись для відновлення попередньої поведінки.\n    \n-   Аргумент`needle`функций[strpos()](function.strpos.md) [strrpos()](function.strrpos.md) [stripos()](function.stripos.md) [strripos()](function.strripos.md) [strstr()](function.strstr.md) [stristr()](function.stristr.md) і [strrchr()](function.strrchr.md)тепер може бути порожнім.\n    \n-   Аргумент`length`функций[substr()](function.substr.md) [substr\\_count()](function.substr-count.md) [substr\\_compare()](function.substr-compare.md) і [iconv\\_substr()](function.iconv-substr.md)тепер може бути\\*\\*`null`**Значения**`null`\\*\\*означає відсутність аргументу довжини, і тому функції повернуть залишок рядка замість порожнього рядка.\n    \n-   Аргумент`length` функції [array\\_splice()](function.array-splice.md)тепер може бути\\*\\*`null`**. Передача значення**`null`\\*\\*означає відсутність аргументу, тому функція видалити все, починаючи від`offset`до кінця масиву.\n    \n-   Аргумент`args`функций[vsprintf()](function.vsprintf.md) [vfprintf()](function.vfprintf.md) і [vprintf()](function.vprintf.md)тепер має бути масивом. Раніше приймався будь-який тип.\n    \n-   Параметр`'salt'` функції [password\\_hash()](function.password-hash.md)більше не підтримується. Якщо використовується опція`'salt'`, генерується попередження, передана сіль ігнорується, а замість неї використовується сгенерована сіль.\n    \n-   Функция[quotemeta()](function.quotemeta.md)тепер повертатиме порожній рядок, якщо було передано порожній рядок. Раніше поверталося\\*\\*`false`\\*\\*\n    \n-   Видалено такі функції:\n    \n    -   [hebrevc()](function.hebrevc.md)\n    -   [convert\\_cyr\\_string()](function.convert-cyr-string.md)\n    -   [money\\_format()](function.money-format.md)\n    -   [ezmlm\\_hash()](function.ezmlm-hash.md)\n    -   [restore\\_include\\_path()](function.restore-include-path.md)\n    -   [get\\_magic\\_quotes\\_gpc()](function.get-magic-quotes-gpc.md)\n    -   [get\\_magic\\_quotes\\_runtime()](function.get-magic-quotes-runtime.md)\n    -   [fgetss()](function.fgetss.md)\n-   \\*\\*`FILTER_SANITIZE_MAGIC_QUOTES`\\*\\*видалено.\n    \n-   Виклик [implode()](function.implode.md)з параметрами у зворотному порядку`($pieces, $glue)`більше не підтримується.\n    \n-   [parse\\_url()](function.parse-url.md)тепер буде розрізняти відсутні та порожні запити та фрагменти:\n    \n    -   `http://example.com/foo → query = null, fragment = null`\n    -   `http://example.com/foo? → query = \"\", fragment = null`\n    -   `http://example.com/foo# → query = null, fragment = \"\"`\n    -   `http://example.com/foo?# → query = \"\", fragment = \"\"`\n    \n    Раніше у всіх випадках query та fragment були\\*\\*`null`\\*\\*\n    \n-   [var\\_dump()](function.var-dump.md) і [debug\\_zval\\_dump()](function.debug-zval-dump.md)тепер друкуватимуть числа з плаваючою точкою, використовуючи[serialize\\_precision](ini.core.md#ini.serialize-precision), а не[precision](ini.core.md#ini.precision). У конфігурації за промовчанням це означає, що цифри з плаваючою точкою тепер друкуються з повною точністю цими функціями налагодження.\n    \n-   Якщо масив, що повертається[\\_\\_sleep()](language.oop5.magic.md#object.sleep), Містить неіснуючі властивості, тепер вони автоматично проігноруються. Раніше такі властивості були б серіалізовані, якби вони мали значення\\*\\*`null`\\*\\*\n    \n-   Локаль за замовчуванням під час запуску тепер завжди буде визначено як`\"C\"`. За замовчуванням локалі не успадковуються з оточення. Раніше для\\*\\*`LC_ALL`**було встановлено значення`\"C\"`, в той час як**`LC_CTYPE`\\*\\*успадковувався від оточення. Однак деякі функції не враховували успадковану локаль без явного виклику[setlocale()](function.setlocale.md). Явний виклик[setlocale()](function.setlocale.md)тепер потрібно завжди, якщо компонент локалі повинен бути змінений зі значенням за замовчуванням.\n    \n-   Застарілий резервний варіант DES в[crypt()](function.crypt.md)був видалений. Якщо в[crypt()](function.crypt.md)передається невідомий формат солі, функція завершиться помилкою з`*0`замість повернення до слабкого хешу DES.\n    \n-   При вказанні значень поза допустимим діапазоном для SHA256/SHA512[crypt()](function.crypt.md)тепер буде видана помилка`*0`замість обмеження до найближчої межі. Це відповідає поведінці glibc.\n    \n-   Результат функцій сортування міг змінитися, якщо масиві є однакові елементи.\n    \n-   Будь-які функції, що приймають callback-функції, які явно не вказані для прийому параметрів посилання, тепер будуть попереджати, якщо використовується callback-функція з посиланнями. Наприклад,[array\\_filter()](function.array-filter.md) і [array\\_reduce()](function.array-reduce.md). Раніше так було більшість функцій, але не всі.\n    \n-   Обгортка HTTP-потоку, використовувана такими функціями, як[file\\_get\\_contents()](function.file-get-contents.md), тепер за промовчанням оголошує HTTP/1.1, а не HTTP/1.0. Не змінює поведінки клієнта, але може змусити сервери реагувати інакше. Щоб зберегти стару поведінку, установіть параметр контексту потоку`'protocol_version'`, наПриклад:\n    \n    ```php\n    \u003c?php\n    $ctx = stream_context_create(['http' =\u003e ['protocol_version' =\u003e '1.0']]);\n    echo file_get_contents('http://example.org', false, $ctx);\n    ?\u003e\n    ```\n    \n-   Виклик [crypt()](function.crypt.md)без явної передачі солі більше не підтримується. Якщо ви хочете створити надійний хеш із автоматично згенерованою сіллю, використовуйте натомість[password\\_hash()](function.password-hash.md)\n    \n-   [substr()](function.substr.md) [mb\\_substr()](function.mb-substr.md) [iconv\\_substr()](function.iconv-substr.md) і [grapheme\\_substr()](function.grapheme-substr.md)тепер послідовно фіксують зміщення межі кордону рядка. Раніше, у деяких випадках, замість порожнього рядка повертався\\*\\*`false`\\*\\*\n    \n-   У Windows функції виконання програм ([proc\\_open()](function.proc-open.md) [exec()](function.exec.md) [popen()](function.popen.md)і т.д.) з використанням оболонки тепер послідовно виконують\\*\\*%comspec% /s /c \"$commandline\"**яка робить те ж саме, що і виконання**$commandline\\*\\*(без додаткових лапок).\n    \n\n### Sysvsem\n\n-   Параметр`auto_release`в[sem\\_get()](function.sem-get.md)був змінений, щоб набувати логічних значень (bool), а не цілі числа (int).\n\n### Tidy\n\n-   Параметр`use_include_path`, який не використовувався внутрішньо, був видалений з[tidy\\_repair\\_string()](tidy.repairstring.md)\n    \n-   [tidy::repairString()](tidy.repairstring.md) і [tidy::repairFile()](tidy.repairfile.md)стали статичними методами\n    \n\n### PHP-лексер (Tokenizer)\n\n-   У лексемах`T_COMMENT`більше не буде символу нового рядка наприкінці. Натомість новий рядок буде частиною наступної лексеми`T_WHITESPACE`. Слід зазначити, що за`T_COMMENT`не завжди слідує пробіл, за ним також може бути`T_CLOSE_TAG`або кінець файлу.\n    \n-   Імена у просторах імен тепер представлені за допомогою`T_NAME_QUALIFIED` `Foo\\Bar` `T_NAME_FULLY_QUALIFIED` `\\Foo\\Bar`) та лексеми`T_NAME_RELATIVE` `namespace\\Foo\\Bar`)) . `T_NS_SEPARATOR`використовується тільки для автономних розділювачів простору імен і лише синтаксично дійсний у поєднанні з оголошеннями групового використання.\n    \n\n### XMLReader\n\n[XMLReader::open()](xmlreader.open.md) і [XMLReader::xml()](xmlreader.xml.md) тепер є статичними методами. Їх, як і раніше, можна викликати як методи екземпляра, але наступні класи повинні оголошувати їх як статичні, якщо вони перевизначають ці методи.\n\n### XML-RPC\n\nМодуль XML-RPC був переміщений до PECL і не є частиною дистрибутива PHP.\n\n### Zip\n\n**`ZipArchive::OPSYS_Z_CPM`** була видалена (у цьому імені була помилка). Використовуйте замість неї **`ZipArchive::OPSYS_CPM`**\n\n### Zlib\n\n-   [gzgetss()](function.gzgetss.md)видалено.\n    \n-   [zlib.output\\_compression](zlib.configuration.md#ini.zlib.output-compression)більше не вимикається автоматично для`Content-Type: image/*`\n    \n\n### Пакети тестів PHP для Windows\n\nСкрипт виконання тестів був перейменований з run-test.php на run-tests.php, щоб відповідати його імені в php-src.\n","title":"Зміни, що ламають зворотну сумісність","contentType":2,"navigation":[{"migration80.new-features.md":"« Нова функціональність"},{"migration80.deprecated.md":"Функціональність, оголошена застарілою в PHP 8.0.x"},{"index.md":"PHP Manual"},{"migration80.md":"Міграція з PHP 7.4.x на PHP 8.0.x"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"migration80.incompatible.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

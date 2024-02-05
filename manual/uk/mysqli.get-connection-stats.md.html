@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>mysqli::get\_connection\_stats</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="mysqli.get-client-version.md" class="mx-4">« mysqli::$client\_version</a><a href="mysqli.get-host-info.md" class="mx-4">mysqli::$host\_info »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="class.mysqli.md" class="mx-4">mysqli</a></div><article class="markdown_markdown__yfc8y"><div><h1>mysqli::get_connection_stats</h1>
+<h1>mysqli_get_connection_stats</h1>
+<p>(PHP 5 &gt;= 5.3.0, PHP 7, PHP 8)</p>
+<p>mysqli::get_connection_stats -- mysqli_get_connection_stats — Повертає статистику з&#x27;єднання з клієнтом</p>
+<h3>Опис</h3>
+<p>Об&#x27;єктно-орієнтований стиль</p>
+<pre><code class="hljs language-methodsynopsis">public mysqli::get_connection_stats(): array
+</code></pre>
+<p>Процедурний стиль</p>
+<pre><code class="hljs language-methodsynopsis">mysqli_get_connection_stats(mysqli $mysql): array
+</code></pre>
+<p>Повертає статистику з&#x27;єднання із клієнтом.</p>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Доступно лише з модулем <a href="book.mysqlnd.md">mysqlnd</a></p>
+</blockquote>
+<h3>Список параметрів</h3>
+<p><code>mysql</code></p>
+<p>Тільки для процедурного стилю: об&#x27;єкт <a href="class.mysqli.md">mysqli</a>, який повернула функція <a href="function.mysqli-connect.md">mysqli_connect()</a>или функция<a href="mysqli.init.md">mysqli_init()</a></p>
+<h3>Значення, що повертаються</h3>
+<p>Повертає масив статистики з&#x27;єднання.</p>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання</strong> mysqli_get_connection_stats()****</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:90px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p>Висновок наведеного прикладу буде схожим на:</p>
+<pre><code class="hljs language-csharp">Array
+(
+    [<span class="hljs-meta">bytes_sent</span>] =&gt; <span class="hljs-number">43</span>
+    [<span class="hljs-meta">bytes_received</span>] =&gt; <span class="hljs-number">80</span>
+    [<span class="hljs-meta">packets_sent</span>] =&gt; <span class="hljs-number">1</span>
+    [<span class="hljs-meta">packets_received</span>] =&gt; <span class="hljs-number">2</span>
+    [<span class="hljs-meta">protocol_overhead_in</span>] =&gt; <span class="hljs-number">8</span>
+    [<span class="hljs-meta">protocol_overhead_out</span>] =&gt; <span class="hljs-number">4</span>
+    [<span class="hljs-meta">bytes_received_ok_packet</span>] =&gt; <span class="hljs-number">11</span>
+    [<span class="hljs-meta">bytes_received_eof_packet</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">bytes_received_rset_header_packet</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">bytes_received_rset_field_meta_packet</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">bytes_received_rset_row_packet</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">bytes_received_prepare_response_packet</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">bytes_received_change_user_packet</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">packets_sent_command</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">packets_received_ok</span>] =&gt; <span class="hljs-number">1</span>
+    [<span class="hljs-meta">packets_received_eof</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">packets_received_rset_header</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">packets_received_rset_field_meta</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">packets_received_rset_row</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">packets_received_prepare_response</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">packets_received_change_user</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">result_set_queries</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">non_result_set_queries</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">no_index_used</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">bad_index_used</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">slow_queries</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">buffered_sets</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">unbuffered_sets</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">ps_buffered_sets</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">ps_unbuffered_sets</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">flushed_normal_sets</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">flushed_ps_sets</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">ps_prepared_never_executed</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">ps_prepared_once_executed</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_fetched_from_server_normal</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_fetched_from_server_ps</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_buffered_from_client_normal</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_buffered_from_client_ps</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_fetched_from_client_normal_buffered</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_fetched_from_client_normal_unbuffered</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_fetched_from_client_ps_buffered</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_fetched_from_client_ps_unbuffered</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_fetched_from_client_ps_cursor</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_skipped_normal</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">rows_skipped_ps</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">copy_on_write_saved</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">copy_on_write_performed</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">command_buffer_too_small</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">connect_success</span>] =&gt; <span class="hljs-number">1</span>
+    [<span class="hljs-meta">connect_failure</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">connection_reused</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">reconnect</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">pconnect_success</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">active_connections</span>] =&gt; <span class="hljs-number">1</span>
+    [<span class="hljs-meta">active_persistent_connections</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">explicit_close</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">implicit_close</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">disconnect_close</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">in_middle_of_command_close</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">explicit_free_result</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">implicit_free_result</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">explicit_stmt_close</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">implicit_stmt_close</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_emalloc_count</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_emalloc_ammount</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_ecalloc_count</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_ecalloc_ammount</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_erealloc_count</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_erealloc_ammount</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_efree_count</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_malloc_count</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_malloc_ammount</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_calloc_count</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_calloc_ammount</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_realloc_count</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_realloc_ammount</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">mem_free_count</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_null</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_bit</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_tinyint</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_short</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_int24</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_int</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_bigint</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_decimal</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_float</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_double</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_date</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_year</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_time</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_datetime</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_timestamp</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_string</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_blob</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_enum</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_set</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_geometry</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_text_fetched_other</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_null</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_bit</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_tinyint</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_short</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_int24</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_int</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_bigint</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_decimal</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_float</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_double</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_date</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_year</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_time</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_datetime</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_timestamp</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_string</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_blob</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_enum</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_set</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_geometry</span>] =&gt; <span class="hljs-number">0</span>
+    [<span class="hljs-meta">proto_binary_fetched_other</span>] =&gt; <span class="hljs-number">0</span>
+)
+</code></pre>
+<h3>Дивіться також</h3>
+<ul>
+<li><a href="mysqlnd.stats.md">Опис статистики</a></li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/mysqli.get-connection-stats.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/mysqli.get-connection-stats.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"mysqli.get-connection-stats.md","content":"# mysqli::get\\_connection\\_stats\n\n# mysqli\\_get\\_connection\\_stats\n\n(PHP 5 \u003e= 5.3.0, PHP 7, PHP 8)\n\nmysqli::get\\_connection\\_stats -- mysqli\\_get\\_connection\\_stats — Повертає статистику з'єднання з клієнтом\n\n### Опис\n\nОб'єктно-орієнтований стиль\n\n```methodsynopsis\npublic mysqli::get_connection_stats(): array\n```\n\nПроцедурний стиль\n\n```methodsynopsis\nmysqli_get_connection_stats(mysqli $mysql): array\n```\n\nПовертає статистику з'єднання із клієнтом.\n\n\u003e **Зауваження** :\n\u003e \n\u003e Доступно лише з модулем [mysqlnd](book.mysqlnd.md)\n\n### Список параметрів\n\n`mysql`\n\nТільки для процедурного стилю: об'єкт [mysqli](class.mysqli.md), який повернула функція [mysqli\\_connect()](function.mysqli-connect.md)или функция[mysqli\\_init()](mysqli.init.md)\n\n### Значення, що повертаються\n\nПовертає масив статистики з'єднання.\n\n### Приклади\n\n**Приклад #1 Приклад використання** mysqli\\_get\\_connection\\_stats()\\*\\*\\*\\*\n\n```php\n\u003c?php\n$link = mysqli_connect();\nprint_r(mysqli_get_connection_stats($link));\n?\u003e\n```\n\nВисновок наведеного прикладу буде схожим на:\n\n```\nArray\n(\n    [bytes_sent] =\u003e 43\n    [bytes_received] =\u003e 80\n    [packets_sent] =\u003e 1\n    [packets_received] =\u003e 2\n    [protocol_overhead_in] =\u003e 8\n    [protocol_overhead_out] =\u003e 4\n    [bytes_received_ok_packet] =\u003e 11\n    [bytes_received_eof_packet] =\u003e 0\n    [bytes_received_rset_header_packet] =\u003e 0\n    [bytes_received_rset_field_meta_packet] =\u003e 0\n    [bytes_received_rset_row_packet] =\u003e 0\n    [bytes_received_prepare_response_packet] =\u003e 0\n    [bytes_received_change_user_packet] =\u003e 0\n    [packets_sent_command] =\u003e 0\n    [packets_received_ok] =\u003e 1\n    [packets_received_eof] =\u003e 0\n    [packets_received_rset_header] =\u003e 0\n    [packets_received_rset_field_meta] =\u003e 0\n    [packets_received_rset_row] =\u003e 0\n    [packets_received_prepare_response] =\u003e 0\n    [packets_received_change_user] =\u003e 0\n    [result_set_queries] =\u003e 0\n    [non_result_set_queries] =\u003e 0\n    [no_index_used] =\u003e 0\n    [bad_index_used] =\u003e 0\n    [slow_queries] =\u003e 0\n    [buffered_sets] =\u003e 0\n    [unbuffered_sets] =\u003e 0\n    [ps_buffered_sets] =\u003e 0\n    [ps_unbuffered_sets] =\u003e 0\n    [flushed_normal_sets] =\u003e 0\n    [flushed_ps_sets] =\u003e 0\n    [ps_prepared_never_executed] =\u003e 0\n    [ps_prepared_once_executed] =\u003e 0\n    [rows_fetched_from_server_normal] =\u003e 0\n    [rows_fetched_from_server_ps] =\u003e 0\n    [rows_buffered_from_client_normal] =\u003e 0\n    [rows_buffered_from_client_ps] =\u003e 0\n    [rows_fetched_from_client_normal_buffered] =\u003e 0\n    [rows_fetched_from_client_normal_unbuffered] =\u003e 0\n    [rows_fetched_from_client_ps_buffered] =\u003e 0\n    [rows_fetched_from_client_ps_unbuffered] =\u003e 0\n    [rows_fetched_from_client_ps_cursor] =\u003e 0\n    [rows_skipped_normal] =\u003e 0\n    [rows_skipped_ps] =\u003e 0\n    [copy_on_write_saved] =\u003e 0\n    [copy_on_write_performed] =\u003e 0\n    [command_buffer_too_small] =\u003e 0\n    [connect_success] =\u003e 1\n    [connect_failure] =\u003e 0\n    [connection_reused] =\u003e 0\n    [reconnect] =\u003e 0\n    [pconnect_success] =\u003e 0\n    [active_connections] =\u003e 1\n    [active_persistent_connections] =\u003e 0\n    [explicit_close] =\u003e 0\n    [implicit_close] =\u003e 0\n    [disconnect_close] =\u003e 0\n    [in_middle_of_command_close] =\u003e 0\n    [explicit_free_result] =\u003e 0\n    [implicit_free_result] =\u003e 0\n    [explicit_stmt_close] =\u003e 0\n    [implicit_stmt_close] =\u003e 0\n    [mem_emalloc_count] =\u003e 0\n    [mem_emalloc_ammount] =\u003e 0\n    [mem_ecalloc_count] =\u003e 0\n    [mem_ecalloc_ammount] =\u003e 0\n    [mem_erealloc_count] =\u003e 0\n    [mem_erealloc_ammount] =\u003e 0\n    [mem_efree_count] =\u003e 0\n    [mem_malloc_count] =\u003e 0\n    [mem_malloc_ammount] =\u003e 0\n    [mem_calloc_count] =\u003e 0\n    [mem_calloc_ammount] =\u003e 0\n    [mem_realloc_count] =\u003e 0\n    [mem_realloc_ammount] =\u003e 0\n    [mem_free_count] =\u003e 0\n    [proto_text_fetched_null] =\u003e 0\n    [proto_text_fetched_bit] =\u003e 0\n    [proto_text_fetched_tinyint] =\u003e 0\n    [proto_text_fetched_short] =\u003e 0\n    [proto_text_fetched_int24] =\u003e 0\n    [proto_text_fetched_int] =\u003e 0\n    [proto_text_fetched_bigint] =\u003e 0\n    [proto_text_fetched_decimal] =\u003e 0\n    [proto_text_fetched_float] =\u003e 0\n    [proto_text_fetched_double] =\u003e 0\n    [proto_text_fetched_date] =\u003e 0\n    [proto_text_fetched_year] =\u003e 0\n    [proto_text_fetched_time] =\u003e 0\n    [proto_text_fetched_datetime] =\u003e 0\n    [proto_text_fetched_timestamp] =\u003e 0\n    [proto_text_fetched_string] =\u003e 0\n    [proto_text_fetched_blob] =\u003e 0\n    [proto_text_fetched_enum] =\u003e 0\n    [proto_text_fetched_set] =\u003e 0\n    [proto_text_fetched_geometry] =\u003e 0\n    [proto_text_fetched_other] =\u003e 0\n    [proto_binary_fetched_null] =\u003e 0\n    [proto_binary_fetched_bit] =\u003e 0\n    [proto_binary_fetched_tinyint] =\u003e 0\n    [proto_binary_fetched_short] =\u003e 0\n    [proto_binary_fetched_int24] =\u003e 0\n    [proto_binary_fetched_int] =\u003e 0\n    [proto_binary_fetched_bigint] =\u003e 0\n    [proto_binary_fetched_decimal] =\u003e 0\n    [proto_binary_fetched_float] =\u003e 0\n    [proto_binary_fetched_double] =\u003e 0\n    [proto_binary_fetched_date] =\u003e 0\n    [proto_binary_fetched_year] =\u003e 0\n    [proto_binary_fetched_time] =\u003e 0\n    [proto_binary_fetched_datetime] =\u003e 0\n    [proto_binary_fetched_timestamp] =\u003e 0\n    [proto_binary_fetched_string] =\u003e 0\n    [proto_binary_fetched_blob] =\u003e 0\n    [proto_binary_fetched_enum] =\u003e 0\n    [proto_binary_fetched_set] =\u003e 0\n    [proto_binary_fetched_geometry] =\u003e 0\n    [proto_binary_fetched_other] =\u003e 0\n)\n```\n\n### Дивіться також\n\n-   [Опис статистики](mysqlnd.stats.md)\n","title":"mysqli::get\\_connection\\_stats","contentType":2,"navigation":[{"mysqli.get-client-version.md":"« mysqli::$client\\_version"},{"mysqli.get-host-info.md":"mysqli::$host\\_info »"},{"index.md":"PHP Manual"},{"class.mysqli.md":"mysqli"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"mysqli.get-connection-stats.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>curl\_getinfo</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="function.curl-exec.md" class="mx-4">« curl\_exec</a><a href="function.curl-init.md" class="mx-4">curl\_init »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="ref.curl.md" class="mx-4">Опції cURL</a></div><article class="markdown_markdown__yfc8y"><div><h1>curl_getinfo</h1>
+<p>(PHP 4 &gt;= 4.0.4, PHP 5, PHP 7, PHP 8)</p>
+<p>curl_getinfo — Отримує інформацію про конкретну передачу</p>
+<h3>Опис</h3>
+<pre><code class="hljs language-methodsynopsis">curl_getinfo(CurlHandle $handle, ?int $option = null): mixed
+</code></pre>
+<p>Отримує інформацію про останню передачу.</p>
+<h3>Список параметрів</h3>
+<p><code>handle</code></p>
+<p>Дескриптор cURL, отриманий з <a href="function.curl-init.md">curl_init()</a></p>
+<p><code>option</code></p>
+<p>Константа зі списку:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Опция</th><th>Опис</th></tr></thead><tbody><tr><td><strong><code>CURLINFO_CAINFO</code></strong></td><td>Шлях до вбудованого сертифіката центру засвідчення за промовчанням</td></tr><tr><td><strong><code>CURLINFO_CAPATH</code></strong></td><td>Рядок шляху до вбудованого сертифіката засвідчувального центру за промовчанням</td></tr><tr><td><strong><code>CURLINFO_EFFECTIVE_URL</code></strong></td><td>Остання ефективна URL</td></tr><tr><td><strong><code>CURLINFO_HTTP_CODE</code></strong></td><td>Останній код відповіді. Починаючи з cURL 7.10.8, це застарілий псевдонім опції. <strong><code>CURLINFO_RESPONSE_CODE</code></strong></td></tr><tr><td><strong><code>CURLINFO_FILETIME</code></strong></td><td>Час отримання документа по годиннику віддаленого сервера, якщо параметр <strong><code>CURLOPT_FILETIME</code></strong> включений для дескриптора cURL; якщо повертається значення -1, час отримання документа невідомо</td></tr><tr><td><strong><code>CURLINFO_TOTAL_TIME</code></strong></td><td>Загальний час транзакції за секунди для останньої передачі</td></tr><tr><td><strong><code>CURLINFO_NAMELOOKUP_TIME</code></strong></td><td>Час у секундах, витрачений на дозвіл імені</td></tr><tr><td><strong><code>CURLINFO_CONNECT_TIME</code></strong></td><td>Час у секундах, витрачений на встановлення з&#x27;єднання</td></tr><tr><td><strong><code>CURLINFO_PRETRANSFER_TIME</code></strong></td><td>Час у секундах від запуску до моменту початку передачі файлу</td></tr><tr><td><strong><code>CURLINFO_STARTTRANSFER_TIME</code></strong></td><td>Час у секундах від запуску передачі до отримання першого байта</td></tr><tr><td><strong><code>CURLINFO_REDIRECT_COUNT</code></strong></td><td>Число перенаправлень, якщо параметр <strong><code>CURLOPT_FOLLOWLOCATION</code></strong> включений для дескриптора cURL</td></tr><tr><td><strong><code>CURLINFO_REDIRECT_TIME</code></strong></td><td>Загальний час у секундах, який був потрібний для всіх кроків перенаправлення до запуску останньої транзакції, якщо параметр <strong><code>CURLOPT_FOLLOWLOCATION</code></strong> включений для дескриптора cURL</td></tr><tr><td><strong><code>CURLINFO_REDIRECT_URL</code></strong></td><td>Якщо параметр дескриптора <strong><code>CURLOPT_FOLLOWLOCATION</code></strong> відключено: URL-адресу перенаправлення, знайдену в останній транзакції, яку наступного разу потрібно запросити вручну. Якщо параметр <strong><code>CURLOPT_FOLLOWLOCATION</code></strong> увімкнено: порожнє значення. Тоді URL-адреса перенаправлення доступна в опції <strong><code>CURLINFO_EFFECTIVE_URL</code></strong></td></tr><tr><td><strong><code>CURLINFO_PRIMARY_IP</code></strong></td><td>IP-адреса останнього з&#x27;єднання</td></tr><tr><td><strong><code>CURLINFO_PRIMARY_PORT</code></strong></td><td>Порт призначення останнього з&#x27;єднання</td></tr><tr><td><strong><code>CURLINFO_LOCAL_IP</code></strong></td><td>Локальна (вихідна) IP-адреса останнього з&#x27;єднання</td></tr><tr><td><strong><code>CURLINFO_LOCAL_PORT</code></strong></td><td>Локальний (вихідний) порт останнього з&#x27;єднання</td></tr><tr><td><strong><code>CURLINFO_SIZE_UPLOAD</code></strong></td><td>Загальна кількість переданих байтів</td></tr><tr><td><strong><code>CURLINFO_SIZE_DOWNLOAD</code></strong></td><td>Загальна кількість отриманих байтів</td></tr><tr><td><strong><code>CURLINFO_SPEED_DOWNLOAD</code></strong></td><td>Середня швидкість отримання даних</td></tr><tr><td><strong><code>CURLINFO_SPEED_UPLOAD</code></strong></td><td>Середня швидкість передачі даних</td></tr><tr><td><strong><code>CURLINFO_HEADER_SIZE</code></strong></td><td>Сумарний розмір отриманих заголовків</td></tr><tr><td><strong><code>CURLINFO_HEADER_OUT</code></strong></td><td>Надісланий рядок запиту. Щоб цей параметр працював, потрібно додати опцію <strong><code>CURLINFO_HEADER_OUT</code></strong> у дескриптор через виклик функції <a href="function.curl-setopt.md">curl_setopt()</a></td></tr><tr><td><strong><code>CURLINFO_REFERER</code></strong></td><td>Заголовок реферера</td></tr><tr><td><strong><code>CURLINFO_REQUEST_SIZE</code></strong></td><td>Сумарний розмір відправлених запитів, працює поки що тільки для HTTP-запитів</td></tr><tr><td><strong><code>CURLINFO_RETRY_AFTER</code></strong></td><td>Інформація із заголовка <code>Retry-After:</code> або нуль, якщо допустимого заголовка не було</td></tr><tr><td><strong><code>CURLINFO_SSL_VERIFYRESULT</code></strong></td><td>Результат перевірки сертифікації SSL, запитаний з параметром <strong><code>CURLOPT_SSL_VERIFYPEER</code></strong></td></tr><tr><td><strong><code>CURLINFO_CONTENT_LENGTH_DOWNLOAD</code></strong></td><td>Розмір отриманих даних, прочитаний із заголовка <code>Content-Length:</code></td></tr><tr><td><strong><code>CURLINFO_CONTENT_LENGTH_UPLOAD</code></strong></td><td>Розмір переданих даних</td></tr><tr><td><strong><code>CURLINFO_CONTENT_TYPE</code></strong></td><td>Значення заголовка <code>Content-Type:</code> запитаного документа. Значення NULL вказує, що сервер не надіслав допустимий заголовок <code>Content-Type:</code></td></tr><tr><td><strong><code>CURLINFO_PRIVATE</code></strong></td><td>Закриті дані, пов&#x27;язані з поточним дескриптором cURL, які раніше були встановлені функцією <a href="function.curl-setopt.md">curl_setopt()</a>с параметром**<code>CURLOPT_PRIVATE</code>**</td></tr><tr><td><strong><code>CURLINFO_PROXY_ERROR</code></strong></td><td>Детальний код помилки проксі-сервера (SOCKS), коли остання передача повернула помилку <strong><code>CURLE_PROXY</code></strong>. . Значення, що повертається, дорівнюватиме значенню константи з сімейства <strong><code>CURLPX_*</code></strong>. . Код помилки дорівнюватиме значенню константи **<code>CURLPX_OK</code>**якщо код відповіді не був доступний</td></tr><tr><td><strong><code>CURLINFO_RESPONSE_CODE</code></strong></td><td>Останній код відповіді</td></tr><tr><td><strong><code>CURLINFO_HTTP_CONNECTCODE</code></strong></td><td>Код відповіді на запит CONNECT</td></tr><tr><td><strong><code>CURLINFO_HTTPAUTH_AVAIL</code></strong></td><td>Бітова маска доступного методу або методів аутентифікації на основі даних попередньої відповіді</td></tr><tr><td><strong><code>CURLINFO_PROXYAUTH_AVAIL</code></strong></td><td>Бітова маска доступного методу або методів аутентифікації проксі-сервера на основі даних попередньої відповіді</td></tr><tr><td><strong><code>CURLINFO_OS_ERRNO</code></strong></td><td>Значення змінної Errno у разі збою з&#x27;єднання. Номер помилки залежить від ОС та особливостей системи</td></tr><tr><td><strong><code>CURLINFO_NUM_CONNECTS</code></strong></td><td>Кількість з&#x27;єднань, які curl довелося створити, що успішно виконати попередню передачу</td></tr><tr><td><strong><code>CURLINFO_SSL_ENGINES</code></strong></td><td>Список підтримуваних криптодвижків бібліотеки OpenSSL</td></tr><tr><td><strong><code>CURLINFO_COOKIELIST</code></strong></td><td>Відомі куки</td></tr><tr><td><strong><code>CURLINFO_FTP_ENTRY_PATH</code></strong></td><td>Шлях входу на FTP-сервер</td></tr><tr><td><strong><code>CURLINFO_APPCONNECT_TIME</code></strong></td><td>Час у секундах від запуску до встановлення SSL- або SSH-підключення або рукостискання з віддаленим хостом</td></tr><tr><td><strong><code>CURLINFO_CERTINFO</code></strong></td><td>Ланцюжок сертифікатів TLS</td></tr><tr><td><strong><code>CURLINFO_CONDITION_UNMET</code></strong></td><td>Інформація про невиконані за відведений час умови</td></tr><tr><td><strong><code>CURLINFO_RTSP_CLIENT_CSEQ</code></strong></td><td>Наступний CSeq-заголовок RTSP-клієнта</td></tr><tr><td><strong><code>CURLINFO_RTSP_CSEQ_RECV</code></strong></td><td>Останній отриманий заголовок CSeq</td></tr><tr><td><strong><code>CURLINFO_RTSP_SERVER_CSEQ</code></strong></td><td>Наступний CSeq-заголовок RTSP-сервера</td></tr><tr><td><strong><code>CURLINFO_RTSP_SESSION_ID</code></strong></td><td>Ідентифікатор RTSP-сесії</td></tr><tr><td><strong><code>CURLINFO_CONTENT_LENGTH_DOWNLOAD_T</code></strong></td><td>Розмір даних. Це значення зчитується з поля <code>Content-Length:</code>. . Значення дорівнює -1, якщо розмір невідомий</td></tr><tr><td><strong><code>CURLINFO_CONTENT_LENGTH_UPLOAD_T</code></strong></td><td>Розмір надісланих даних. Значення дорівнює -1, якщо розмір невідомий</td></tr><tr><td><strong><code>CURLINFO_HTTP_VERSION</code></strong></td><td>Версія HTTP-протоколу останнього з&#x27;єднання. Значення, що повертається, дорівнюватиме значенню константи з сімейства <strong><code>CURL_HTTP_VERSION_*</code></strong> або 0, якщо версію неможливо визначити</td></tr><tr><td><strong><code>CURLINFO_PROTOCOL</code></strong></td><td>Протокол останнього з&#x27;єднання HTTP. Значення, що повертається, дорівнюватиме значенню константи з сімейства <strong><code>CURLPROTO_*</code></strong></td></tr><tr><td><strong><code>CURLINFO_PROXY_SSL_VERIFYRESULT</code></strong></td><td>Результат запитаної перевірки сертифіката (з параметром <strong><code>CURLOPT_PROXY_SSL_VERIFYPEER</code></strong>). Працює тільки для серверів HTTPS-проксі</td></tr><tr><td><strong><code>CURLINFO_SCHEME</code></strong></td><td>Схема URL останнього з&#x27;єднання</td></tr><tr><td><strong><code>CURLINFO_SIZE_DOWNLOAD_T</code></strong></td><td>Загальна кількість байтів, отриманих. Число буде вказано лише для останньої передачі та скидатиметься при кожній новій передачі</td></tr><tr><td><strong><code>CURLINFO_SIZE_UPLOAD_T</code></strong></td><td>Загальна кількість байтів, які були передані</td></tr><tr><td><strong><code>CURLINFO_SPEED_DOWNLOAD_T</code></strong></td><td>Середня швидкість отримання даних у байтах за секунду, яку curl виміряв в кінці передачі</td></tr><tr><td><strong><code>CURLINFO_SPEED_UPLOAD_T</code></strong></td><td>Середня швидкість передачі даних у байтах за секунду, яку curl виміряв в кінці передачі</td></tr><tr><td><strong><code>CURLINFO_APPCONNECT_TIME_T</code></strong></td><td>Час у мікросекундах, що минув від запуску до завершення SSL або SSH підключення або рукостискання з віддаленим хостом</td></tr><tr><td><strong><code>CURLINFO_CONNECT_TIME_T</code></strong></td><td>Загальний час у мікросекундах, що минув від запуску до завершення підключення до віддаленого хоста або проксі-сервера</td></tr><tr><td><strong><code>CURLINFO_FILETIME_T</code></strong></td><td>Час отримання документа у вигляді мітки часу Unix по годинниках віддаленого сервера, альтернатива опції <strong><code>CURLINFO_FILETIME</code></strong>, щоб дозволити системам з 32-бітними long-змінними витягувати дати за межами діапазону 32-бітних міток часу</td></tr><tr><td><strong><code>CURLINFO_NAMELOOKUP_TIME_T</code></strong></td><td>Час у мікросекундах від запуску до дозволу імені</td></tr><tr><td><strong><code>CURLINFO_PRETRANSFER_TIME_T</code></strong></td><td>Час у мікросекундах від запуску до моменту початку передачі файлу</td></tr><tr><td><strong><code>CURLINFO_REDIRECT_TIME_T</code></strong></td><td>Загальний час у мікросекундах, який знадобився для всіх кроків перенаправлення, включаючи пошук імені, підключення, попередню основну передачу до запуску остаточної транзакції</td></tr><tr><td><strong><code>CURLINFO_STARTTRANSFER_TIME_T</code></strong></td><td>Час у мікросекундах від запуску передачі до отримання першого байта</td></tr><tr><td><strong><code>CURLINFO_TOTAL_TIME_T</code></strong></td><td>Загальний час попередньої передачі в мікросекундах, включаючи роздільну здатність імені, TCP-з&#x27;єднання і т.д.</td></tr></tbody></table>
+<h3>Значення, що повертаються</h3>
+<p>Якщо параметр <code>option</code> заданий, повертається його значення. В інших випадках повертається асоціативний масив з такими елементами (які відповідають значенням параметра <code>option</code>) или**<code>false</code>**в случае ошибки:</p>
+<ul>
+<li>«url»</li>
+<li>«content_type»</li>
+<li>«http_code»</li>
+<li>«header_size»</li>
+<li>«request_size»</li>
+<li>«filetime»</li>
+<li>«ssl_verify_result»</li>
+<li>«redirect_count»</li>
+<li>«total_time»</li>
+<li>«namelookup_time»</li>
+<li>«connect_time»</li>
+<li>«pretransfer_time»</li>
+<li>«size_upload»</li>
+<li>«size_download»</li>
+<li>«speed_download»</li>
+<li>«speed_upload»</li>
+<li>«download_content_length»</li>
+<li>«upload_content_length»</li>
+<li>«starttransfer_time»</li>
+<li>«redirect_time»</li>
+<li>«certinfo»</li>
+<li>«primary_ip»</li>
+<li>«primary_port»</li>
+<li>«local_ip»</li>
+<li>«local_port»</li>
+<li>«redirect_url»</li>
+<li>«request_header» (Значення буде заповнено, лише якщо функцією<a href="function.curl-setopt.md">curl_setopt()</a>для дескриптора включено параметр**<code>CURLINFO_HEADER_OUT</code>**</li>
+</ul>
+<p>Врахуйте, що закриті дані не додаються до асоціативного масиву і витягуються окремо через опцію <strong><code>CURLINFO_PRIVATE</code></strong></p>
+<h3>список змін</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Версия</th><th>Опис</th></tr></thead><tbody><tr><td>8.3.0</td><td>Додані опції <strong><code>CURLINFO_CAINFO</code></strong> і <strong><code>CURLINFO_CAPATH</code></strong></td></tr><tr><td>8.2.0</td><td>Додані опції <strong><code>CURLINFO_PROXY_ERROR</code></strong><strong><code>CURLINFO_REFERER</code></strong><strong><code>CURLINFO_RETRY_AFTER</code></strong></td></tr><tr><td>8.0.0</td><td><code>handle</code> тепер чекає екземпляр <a href="class.curlhandle.md">CurlHandle</a>; раніше, очікувався ресурс (resource).</td></tr><tr><td>8.0.0</td><td>Тепер параметр <code>option</code>принимает значение**<code>null</code>**. . раніше значенням за умовчанням був</td></tr><tr><td>7.3.0</td><td>Додані опції <strong><code>CURLINFO_CONTENT_LENGTH_DOWNLOAD_T</code></strong><strong><code>CURLINFO_CONTENT_LENGTH_UPLOAD_T</code></strong><strong><code>CURLINFO_HTTP_VERSION</code></strong><strong><code>CURLINFO_PROTOCOL</code></strong><strong><code>CURLINFO_PROXY_SSL_VERIFYRESULT</code></strong><strong><code>CURLINFO_SCHEME</code></strong><strong><code>CURLINFO_SIZE_DOWNLOAD_T</code></strong><strong><code>CURLINFO_SIZE_UPLOAD_T</code></strong><strong><code>CURLINFO_SPEED_DOWNLOAD_T</code></strong><strong><code>CURLINFO_SPEED_UPLOAD_T</code></strong><strong><code>CURLINFO_APPCONNECT_TIME_T</code></strong><strong><code>CURLINFO_CONNECT_TIME_T</code></strong><strong><code>CURLINFO_FILETIME_T</code></strong><strong><code>CURLINFO_NAMELOOKUP_TIME_T</code></strong><strong><code>CURLINFO_PRETRANSFER_TIME_T</code></strong><strong><code>CURLINFO_REDIRECT_TIME_T</code></strong><strong><code>CURLINFO_STARTTRANSFER_TIME_T</code></strong><strong><code>CURLINFO_TOTAL_TIME_T</code></strong></td></tr></tbody></table>
+<h3>Приклади</h3>
+<p><strong>Приклад #1 Приклад використання функції</strong> curl_getinfo()****</p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:342px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<p><strong>Приклад #2 Приклад використання функції</strong> curl_getinfo()<strong>с параметром<code>option</code></strong></p>
+<pre><div class="flex flex-col w-full relative"><section style="display:flex;position:relative;text-align:initial;width:100%;height:414px" class="rounded-lg overflow-hidden"><div style="display:flex;height:100%;width:100%;justify-content:center;align-items:center">Loading...</div><div style="width:100%;display:none" class="rounded-lg"></div></section><div class="self-end z-10 absolute bottom-0 right-0"><button class="mb-6 lg:mb-0 p-2 sm:px-12 lg:px-8 bg-sky-800 hover:bg-sky-900 font-bold border-sky-800 text-white rounded-tl-lg rounded-br-lg">▶</button></div></div></pre>
+<h3>Примітки</h3>
+<blockquote>
+<p><strong>Зауваження</strong> :</p>
+<p>Інформація, яку збирає ця функція, зберігається в дескрипторі та доступна для запуску повторної передачі. Тобто поки статистика не перевизначена внутрішньо, ця функція повертає попередню інформацію.</p>
+</blockquote></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/function.curl-getinfo.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/function.curl-getinfo.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"function.curl-getinfo.md","content":"# curl\\_getinfo\n\n(PHP 4 \u003e= 4.0.4, PHP 5, PHP 7, PHP 8)\n\ncurl\\_getinfo — Отримує інформацію про конкретну передачу\n\n### Опис\n\n```methodsynopsis\ncurl_getinfo(CurlHandle $handle, ?int $option = null): mixed\n```\n\nОтримує інформацію про останню передачу.\n\n### Список параметрів\n\n`handle`\n\nДескриптор cURL, отриманий з [curl\\_init()](function.curl-init.md)\n\n`option`\n\nКонстанта зі списку:\n\n| Опция | Опис |\n| --- | --- |\n| **`CURLINFO_CAINFO`** | Шлях до вбудованого сертифіката центру засвідчення за промовчанням |\n| **`CURLINFO_CAPATH`** | Рядок шляху до вбудованого сертифіката засвідчувального центру за промовчанням |\n| **`CURLINFO_EFFECTIVE_URL`** | Остання ефективна URL |\n| **`CURLINFO_HTTP_CODE`** | Останній код відповіді. Починаючи з cURL 7.10.8, це застарілий псевдонім опції. **`CURLINFO_RESPONSE_CODE`** |\n| **`CURLINFO_FILETIME`** | Час отримання документа по годиннику віддаленого сервера, якщо параметр **`CURLOPT_FILETIME`** включений для дескриптора cURL; якщо повертається значення -1, час отримання документа невідомо |\n| **`CURLINFO_TOTAL_TIME`** | Загальний час транзакції за секунди для останньої передачі |\n| **`CURLINFO_NAMELOOKUP_TIME`** | Час у секундах, витрачений на дозвіл імені |\n| **`CURLINFO_CONNECT_TIME`** | Час у секундах, витрачений на встановлення з'єднання |\n| **`CURLINFO_PRETRANSFER_TIME`** | Час у секундах від запуску до моменту початку передачі файлу |\n| **`CURLINFO_STARTTRANSFER_TIME`** | Час у секундах від запуску передачі до отримання першого байта |\n| **`CURLINFO_REDIRECT_COUNT`** | Число перенаправлень, якщо параметр **`CURLOPT_FOLLOWLOCATION`** включений для дескриптора cURL |\n| **`CURLINFO_REDIRECT_TIME`** | Загальний час у секундах, який був потрібний для всіх кроків перенаправлення до запуску останньої транзакції, якщо параметр **`CURLOPT_FOLLOWLOCATION`** включений для дескриптора cURL |\n| **`CURLINFO_REDIRECT_URL`** | Якщо параметр дескриптора **`CURLOPT_FOLLOWLOCATION`** відключено: URL-адресу перенаправлення, знайдену в останній транзакції, яку наступного разу потрібно запросити вручну. Якщо параметр **`CURLOPT_FOLLOWLOCATION`** увімкнено: порожнє значення. Тоді URL-адреса перенаправлення доступна в опції **`CURLINFO_EFFECTIVE_URL`** |\n| **`CURLINFO_PRIMARY_IP`** | IP-адреса останнього з'єднання |\n| **`CURLINFO_PRIMARY_PORT`** | Порт призначення останнього з'єднання |\n| **`CURLINFO_LOCAL_IP`** | Локальна (вихідна) IP-адреса останнього з'єднання |\n| **`CURLINFO_LOCAL_PORT`** | Локальний (вихідний) порт останнього з'єднання |\n| **`CURLINFO_SIZE_UPLOAD`** | Загальна кількість переданих байтів |\n| **`CURLINFO_SIZE_DOWNLOAD`** | Загальна кількість отриманих байтів |\n| **`CURLINFO_SPEED_DOWNLOAD`** | Середня швидкість отримання даних |\n| **`CURLINFO_SPEED_UPLOAD`** | Середня швидкість передачі даних |\n| **`CURLINFO_HEADER_SIZE`** | Сумарний розмір отриманих заголовків |\n| **`CURLINFO_HEADER_OUT`** | Надісланий рядок запиту. Щоб цей параметр працював, потрібно додати опцію **`CURLINFO_HEADER_OUT`** у дескриптор через виклик функції [curl\\_setopt()](function.curl-setopt.md) |\n| **`CURLINFO_REFERER`** | Заголовок реферера |\n| **`CURLINFO_REQUEST_SIZE`** | Сумарний розмір відправлених запитів, працює поки що тільки для HTTP-запитів |\n| **`CURLINFO_RETRY_AFTER`** | Інформація із заголовка `Retry-After:` або нуль, якщо допустимого заголовка не було |\n| **`CURLINFO_SSL_VERIFYRESULT`** | Результат перевірки сертифікації SSL, запитаний з параметром **`CURLOPT_SSL_VERIFYPEER`** |\n| **`CURLINFO_CONTENT_LENGTH_DOWNLOAD`** | Розмір отриманих даних, прочитаний із заголовка `Content-Length:` |\n| **`CURLINFO_CONTENT_LENGTH_UPLOAD`** | Розмір переданих даних |\n| **`CURLINFO_CONTENT_TYPE`** | Значення заголовка `Content-Type:` запитаного документа. Значення NULL вказує, що сервер не надіслав допустимий заголовок `Content-Type:` |\n| **`CURLINFO_PRIVATE`** | Закриті дані, пов'язані з поточним дескриптором cURL, які раніше були встановлені функцією [curl\\_setopt()](function.curl-setopt.md)с параметром\\*\\*`CURLOPT_PRIVATE`\\*\\* |\n| **`CURLINFO_PROXY_ERROR`** | Детальний код помилки проксі-сервера (SOCKS), коли остання передача повернула помилку **`CURLE_PROXY`**. . Значення, що повертається, дорівнюватиме значенню константи з сімейства **`CURLPX_*`**. . Код помилки дорівнюватиме значенню константи \\*\\*`CURLPX_OK`\\*\\*якщо код відповіді не був доступний |\n| **`CURLINFO_RESPONSE_CODE`** | Останній код відповіді |\n| **`CURLINFO_HTTP_CONNECTCODE`** | Код відповіді на запит CONNECT |\n| **`CURLINFO_HTTPAUTH_AVAIL`** | Бітова маска доступного методу або методів аутентифікації на основі даних попередньої відповіді |\n| **`CURLINFO_PROXYAUTH_AVAIL`** | Бітова маска доступного методу або методів аутентифікації проксі-сервера на основі даних попередньої відповіді |\n| **`CURLINFO_OS_ERRNO`** | Значення змінної Errno у разі збою з'єднання. Номер помилки залежить від ОС та особливостей системи |\n| **`CURLINFO_NUM_CONNECTS`** | Кількість з'єднань, які curl довелося створити, що успішно виконати попередню передачу |\n| **`CURLINFO_SSL_ENGINES`** | Список підтримуваних криптодвижків бібліотеки OpenSSL |\n| **`CURLINFO_COOKIELIST`** | Відомі куки |\n| **`CURLINFO_FTP_ENTRY_PATH`** | Шлях входу на FTP-сервер |\n| **`CURLINFO_APPCONNECT_TIME`** | Час у секундах від запуску до встановлення SSL- або SSH-підключення або рукостискання з віддаленим хостом |\n| **`CURLINFO_CERTINFO`** | Ланцюжок сертифікатів TLS |\n| **`CURLINFO_CONDITION_UNMET`** | Інформація про невиконані за відведений час умови |\n| **`CURLINFO_RTSP_CLIENT_CSEQ`** | Наступний CSeq-заголовок RTSP-клієнта |\n| **`CURLINFO_RTSP_CSEQ_RECV`** | Останній отриманий заголовок CSeq |\n| **`CURLINFO_RTSP_SERVER_CSEQ`** | Наступний CSeq-заголовок RTSP-сервера |\n| **`CURLINFO_RTSP_SESSION_ID`** | Ідентифікатор RTSP-сесії |\n| **`CURLINFO_CONTENT_LENGTH_DOWNLOAD_T`** | Розмір даних. Це значення зчитується з поля `Content-Length:`. . Значення дорівнює -1, якщо розмір невідомий |\n| **`CURLINFO_CONTENT_LENGTH_UPLOAD_T`** | Розмір надісланих даних. Значення дорівнює -1, якщо розмір невідомий |\n| **`CURLINFO_HTTP_VERSION`** | Версія HTTP-протоколу останнього з'єднання. Значення, що повертається, дорівнюватиме значенню константи з сімейства **`CURL_HTTP_VERSION_*`** або 0, якщо версію неможливо визначити |\n| **`CURLINFO_PROTOCOL`** | Протокол останнього з'єднання HTTP. Значення, що повертається, дорівнюватиме значенню константи з сімейства **`CURLPROTO_*`** |\n| **`CURLINFO_PROXY_SSL_VERIFYRESULT`** | Результат запитаної перевірки сертифіката (з параметром **`CURLOPT_PROXY_SSL_VERIFYPEER`**). Працює тільки для серверів HTTPS-проксі |\n| **`CURLINFO_SCHEME`** | Схема URL останнього з'єднання |\n| **`CURLINFO_SIZE_DOWNLOAD_T`** | Загальна кількість байтів, отриманих. Число буде вказано лише для останньої передачі та скидатиметься при кожній новій передачі |\n| **`CURLINFO_SIZE_UPLOAD_T`** | Загальна кількість байтів, які були передані |\n| **`CURLINFO_SPEED_DOWNLOAD_T`** | Середня швидкість отримання даних у байтах за секунду, яку curl виміряв в кінці передачі |\n| **`CURLINFO_SPEED_UPLOAD_T`** | Середня швидкість передачі даних у байтах за секунду, яку curl виміряв в кінці передачі |\n| **`CURLINFO_APPCONNECT_TIME_T`** | Час у мікросекундах, що минув від запуску до завершення SSL або SSH підключення або рукостискання з віддаленим хостом |\n| **`CURLINFO_CONNECT_TIME_T`** | Загальний час у мікросекундах, що минув від запуску до завершення підключення до віддаленого хоста або проксі-сервера |\n| **`CURLINFO_FILETIME_T`** | Час отримання документа у вигляді мітки часу Unix по годинниках віддаленого сервера, альтернатива опції **`CURLINFO_FILETIME`**, щоб дозволити системам з 32-бітними long-змінними витягувати дати за межами діапазону 32-бітних міток часу |\n| **`CURLINFO_NAMELOOKUP_TIME_T`** | Час у мікросекундах від запуску до дозволу імені |\n| **`CURLINFO_PRETRANSFER_TIME_T`** | Час у мікросекундах від запуску до моменту початку передачі файлу |\n| **`CURLINFO_REDIRECT_TIME_T`** | Загальний час у мікросекундах, який знадобився для всіх кроків перенаправлення, включаючи пошук імені, підключення, попередню основну передачу до запуску остаточної транзакції |\n| **`CURLINFO_STARTTRANSFER_TIME_T`** | Час у мікросекундах від запуску передачі до отримання першого байта |\n| **`CURLINFO_TOTAL_TIME_T`** | Загальний час попередньої передачі в мікросекундах, включаючи роздільну здатність імені, TCP-з'єднання і т.д. |\n\n### Значення, що повертаються\n\nЯкщо параметр `option` заданий, повертається його значення. В інших випадках повертається асоціативний масив з такими елементами (які відповідають значенням параметра `option`) или\\*\\*`false`\\*\\*в случае ошибки:\n\n-   «url»\n-   «content\\_type»\n-   «http\\_code»\n-   «header\\_size»\n-   «request\\_size»\n-   «filetime»\n-   «ssl\\_verify\\_result»\n-   «redirect\\_count»\n-   «total\\_time»\n-   «namelookup\\_time»\n-   «connect\\_time»\n-   «pretransfer\\_time»\n-   «size\\_upload»\n-   «size\\_download»\n-   «speed\\_download»\n-   «speed\\_upload»\n-   «download\\_content\\_length»\n-   «upload\\_content\\_length»\n-   «starttransfer\\_time»\n-   «redirect\\_time»\n-   «certinfo»\n-   «primary\\_ip»\n-   «primary\\_port»\n-   «local\\_ip»\n-   «local\\_port»\n-   «redirect\\_url»\n-   «request\\_header» (Значення буде заповнено, лише якщо функцією[curl\\_setopt()](function.curl-setopt.md)для дескриптора включено параметр\\*\\*`CURLINFO_HEADER_OUT`\\*\\*\n\nВрахуйте, що закриті дані не додаються до асоціативного масиву і витягуються окремо через опцію **`CURLINFO_PRIVATE`**\n\n### список змін\n\n| Версия | Опис |\n| --- | --- |\n| 8.3.0 | Додані опції **`CURLINFO_CAINFO`** і **`CURLINFO_CAPATH`** |\n| 8.2.0 | Додані опції **`CURLINFO_PROXY_ERROR`** **`CURLINFO_REFERER`** **`CURLINFO_RETRY_AFTER`** |\n| 8.0.0 | `handle` тепер чекає екземпляр [CurlHandle](class.curlhandle.md); раніше, очікувався ресурс (resource). |\n| 8.0.0 | Тепер параметр `option`принимает значение\\*\\*`null`\\*\\*. . раніше значенням за умовчанням був |\n| 7.3.0 | Додані опції **`CURLINFO_CONTENT_LENGTH_DOWNLOAD_T`** **`CURLINFO_CONTENT_LENGTH_UPLOAD_T`** **`CURLINFO_HTTP_VERSION`** **`CURLINFO_PROTOCOL`** **`CURLINFO_PROXY_SSL_VERIFYRESULT`** **`CURLINFO_SCHEME`** **`CURLINFO_SIZE_DOWNLOAD_T`** **`CURLINFO_SIZE_UPLOAD_T`** **`CURLINFO_SPEED_DOWNLOAD_T`** **`CURLINFO_SPEED_UPLOAD_T`** **`CURLINFO_APPCONNECT_TIME_T`** **`CURLINFO_CONNECT_TIME_T`** **`CURLINFO_FILETIME_T`** **`CURLINFO_NAMELOOKUP_TIME_T`** **`CURLINFO_PRETRANSFER_TIME_T`** **`CURLINFO_REDIRECT_TIME_T`** **`CURLINFO_STARTTRANSFER_TIME_T`** **`CURLINFO_TOTAL_TIME_T`** |\n\n### Приклади\n\n**Приклад #1 Приклад використання функції** curl\\_getinfo()\\*\\*\\*\\*\n\n```php\n\u003c?php\n\n// Создаём дескриптор cURL\n$ch = curl_init('http://www.example.com/');\n\n// Запускаем\ncurl_exec($ch);\n\n// Проверяем наличие ошибок\nif (!curl_errno($ch)) {\n  $info = curl_getinfo($ch);\n  echo 'Прошло ', $info['total_time'], ' секунд во время запроса к ', $info['url'], \"\\n\";\n}\n\n// Закрываем дескриптор\ncurl_close($ch);\n\n?\u003e\n```\n\n**Приклад #2 Приклад використання функції** curl\\_getinfo()**с параметром`option`**\n\n```php\n\u003c?php\n\n// Создаём дескриптор cURL\n$ch = curl_init('http://www.example.com/');\n\n// Запускаем\ncurl_exec($ch);\n\n// Проверяем наличие ошибок\nif (!curl_errno($ch)) {\n  switch ($http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE)) {\n    case 200:  # OK\n      break;\n    default:\n      echo 'Неожиданный код HTTP: ', $http_code, \"\\n\";\n  }\n}\n\n// Закрываем дескриптор\ncurl_close($ch);\n\n?\u003e\n```\n\n### Примітки\n\n\u003e **Зауваження** :\n\u003e \n\u003e Інформація, яку збирає ця функція, зберігається в дескрипторі та доступна для запуску повторної передачі. Тобто поки статистика не перевизначена внутрішньо, ця функція повертає попередню інформацію.\n","title":"curl\\_getinfo","contentType":2,"navigation":[{"function.curl-exec.md":"« curl\\_exec"},{"function.curl-init.md":"curl\\_init »"},{"index.md":"PHP Manual"},{"ref.curl.md":"Опції cURL"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"function.curl-getinfo.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

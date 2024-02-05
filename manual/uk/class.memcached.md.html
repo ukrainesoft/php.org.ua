@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="uk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/><link rel="manifest" href="/favicon/site.webmanifest"/><link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/><link rel="alternate" type="application/rss+xml" href="/feed.xml"/><meta name="description" content="🇺🇦 php - документація з PHP Українською."/><title>Клас Memcached</title><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/17c4eaefaaa50284.css" as="style"/><link rel="stylesheet" href="/_next/static/css/17c4eaefaaa50284.css" data-n-g=""/><link rel="preload" href="/_next/static/css/6fcd3741bb78bb72.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6fcd3741bb78bb72.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-df4cf1c8d23aa877.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-8db7d21a15d54ad1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6d8425e70214bf17.js" defer=""></script><script src="/_next/static/chunks/769-27377d6c7f34e30b.js" defer=""></script><script src="/_next/static/chunks/463-aa1f5d5a9828a9d0.js" defer=""></script><script src="/_next/static/chunks/234-d5dc0e6bdf7bcef4.js" defer=""></script><script src="/_next/static/chunks/pages/manual/uk/%5Bslug%5D-fbcc27f948a2079d.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_buildManifest.js" defer=""></script><script src="/_next/static/aTdXUbop8S7MnPlMxZSRg/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><style>
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #0284c7;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #0284c7, 0 0 5px #0284c7;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+        -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+      #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px;
+      }
+      #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #0284c7;
+        border-left-color: #0284c7;
+        border-radius: 50%;
+        -webkit-animation: nprogresss-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+      .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative;
+      }
+      .nprogress-custom-parent #nprogress .spinner,
+      .nprogress-custom-parent #nprogress .bar {
+        position: absolute;
+      }
+      @-webkit-keyframes nprogress-spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes nprogress-spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex flex-col mx-auto flex flex-col items-center justify-center mt-14 mx-auto max-w-3xl xl:max-w-5xl "><nav class="py-3 bg-white/80 backdrop-blur-md shadow-md w-full dark:bg-gray-800 fixed top-0 left-0 right-0 z-20"><div class="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl"><div class="flex space-x-10 flex-row"><div class="flex items-center"><a class="cursor-pointer" href="/"><h3 class="text-2xl font-bold font-logo italic">🇺🇦 php</h3></a></div><ul class="hidden items-center md:space-x-8 md:justify-start md:flex bg-white dark:bg-gray-800 w-full sm:w-auto flex-column fixed sm:relative sm:p-0 z-20 sm:z-auto top-0 sm:top-auto right-0 sm:right-auto sm:bg-inherit text-right"><li class="sm:hidden items-end p-5 sm:p-0"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/manual/uk/index.md">Документація</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/about">Про проєкт</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><a href="/php-the-right-way">PHP: Правильний шлях</a></li><li class="items-center border-t sm:border-0 justify-center p-5 sm:p-0"><div class=" relative inline-block text-right dropdown"><span class="rounded-md shadow-sm"><button class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117"><span>PHP 8.3</span><svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></span><div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"><div class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu"><div class="py-1"><a href="/releases/uk/8.3.md" tabindex="0" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.3</a><a href="/releases/uk/8.2.md" tabindex="1" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.2</a><a href="/releases/uk/8.1.md" tabindex="2" class="text-gray-700 w-full flex justify-end px-6 py-2 text-sm leading-5 text-right" role="menuitem">PHP 8.1</a></div></div></div></div></li></ul></div><div class="flex justify-end space-x-2 items-center"><div class="pointer-events-auto w-full rounded-lg bg-white dark:bg-gray-600 text-[0.8125rem] leading-5  ring-1 ring-slate-700/10 undefined"><div class="flex items-center py-2.5 px-3.5"><svg class="mr-2 h-5 w-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" class="outline-none block w-full h-full dark:bg-gray-600" placeholder="Пошук..." value=""/></div></div></div><div class="flex items-center sm:hidden"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></div></div></nav></div><div class="min-h-screen mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0"><main><div class="container mx-auto p-5 bg-[url(&#x27;/hero-bg.svg&#x27;)]"><div class="text-right"><a href="memcached.sessions.md" class="mx-4">« Підтримка сесій</a><a href="memcached.add.md" class="mx-4">Memcached::add »</a><a href="index.md" class="mx-4">PHP Manual</a><a href="book.memcached.md" class="mx-4">Memcached</a></div><article class="markdown_markdown__yfc8y"><div><h1>Клас Memcached</h1>
+<p>(PECL memcached &gt;= 0.1.0)</p>
+<h2>Вступ</h2>
+<p>Представляє з&#x27;єднання до набору серверів memcached.</p>
+<h2>Огляд класів</h2>
+<pre><code class="hljs language-classsynopsis">
+     
+    
+
+    
+     
+      class Memcached
+     
+     {
+
+    /* Методы */
+    
+   public __construct(?string $persistent_id = null, ?callable $callback = null, ?string $connection_str = null)
+
+    public add(string $key, mixed $value, int $expiration = 0): bool
+public addByKey(    string $server_key,    string $key,    mixed $value,    int $expiration = 0): bool
+public addServer(string $host, int $port, int $weight = 0): bool
+public addServers(array $servers): bool
+public append(string $key, string $value): ?bool
+public appendByKey(string $server_key, string $key, string $value): ?bool
+public cas(    string|int|float $cas_token,    string $key,    mixed $value,    int $expiration = 0): bool
+public casByKey(    string|int|float $cas_token,    string $server_key,    string $key,    mixed $value,    int $expiration = 0): bool
+public decrement(    string $key,    int $offset = 1,    int $initial_value = 0,    int $expiry = 0): int|false
+public decrementByKey(    string $server_key,    string $key,    int $offset = 1,    int $initial_value = 0,    int $expiry = 0): int|false
+public delete(string $key, int $time = 0): bool
+public deleteByKey(string $server_key, string $key, int $time = 0): bool
+public deleteMulti(array $keys, int $time = 0): array
+public deleteMultiByKey(string $server_key, array $keys, int $time = 0): array
+public fetch(): array|false
+public fetchAll(): array|false
+public flush(int $delay = 0): bool
+public get(string $key, ?callable $cache_cb = null, int $get_flags = 0): mixed
+public getAllKeys(): array|false
+public getByKey(    string $server_key,    string $key,    ?callable $cache_cb = null,    int $get_flags = 0): mixed
+public getDelayed(array $keys, bool $with_cas = false, ?callable $value_cb = null): bool
+public getDelayedByKey(    string $server_key,    array $keys,    bool $with_cas = false,    ?callable $value_cb = null): bool
+public getMulti(array $keys, int $get_flags = 0): array|false
+public getMultiByKey(string $server_key, array $keys, int $get_flags = 0): array|false
+public getOption(int $option): mixed
+public getResultCode(): int
+public getResultMessage(): string
+public getServerByKey(string $server_key): array|false
+public getServerList(): array
+public getStats(?string $type = null): array|false
+public getVersion(): array|false
+public increment(    string $key,    int $offset = 1,    int $initial_value = 0,    int $expiry = 0): int|false
+public incrementByKey(    string $server_key,    string $key,    int $offset = 1,    int $initial_value = 0,    int $expiry = 0): int|false
+public isPersistent(): bool
+public isPristine(): bool
+public prepend(string $key, string $value): ?bool
+public prependByKey(string $server_key, string $key, string $value): ?bool
+public quit(): bool
+public replace(string $key, mixed $value, int $expiration = 0): bool
+public replaceByKey(    string $server_key,    string $key,    mixed $value,    int $expiration = 0): bool
+public resetServerList(): bool
+public set(string $key, mixed $value, int $expiration = 0): bool
+public setByKey(    string $server_key,    string $key,    mixed $value,    int $expiration = 0): bool
+public setMulti(array $items, int $expiration = 0): bool
+public setMultiByKey(string $server_key, array $items, int $expiration = 0): bool
+public setOption(int $option, mixed $value): bool
+public setOptions(array $options): bool
+public setSaslAuthData(string $username, string $password): bool
+public touch(string $key, int $expiration = 0): bool
+public touchByKey(string $server_key, string $key, int $expiration = 0): bool
+
+   }
+</code></pre>
+<h2>Зміст</h2>
+<ul>
+<li><a href="memcached.add.md">Memcached::add</a>— Додає елемент із новим ключем</li>
+<li><a href="memcached.addbykey.md">Memcached::addByKey</a>— Додає новий елемент на заданий сервер</li>
+<li><a href="memcached.addserver.md">Memcached::addServer</a>— Додає сервер у пул</li>
+<li><a href="memcached.addservers.md">Memcached::addServers</a>— Додає кілька серверів у пул</li>
+<li><a href="memcached.append.md">Memcached::append</a>— Додає дані до наявного запису</li>
+<li><a href="memcached.appendbykey.md">Memcached::appendByKey</a>— Додає дані до наявного запису на заданому сервері</li>
+<li><a href="memcached.cas.md">Memcached::cas</a>— Порівнює та встановлює значення для запису</li>
+<li><a href="memcached.casbykey.md">Memcached::casByKey</a>— Порівнює та встановлює значення для запису на конкретному сервері</li>
+<li><a href="memcached.construct.md">Memcached::__construct</a> - Створює екземпляр класу Memcached</li>
+<li><a href="memcached.decrement.md">Memcached::decrement</a>— Зменшує числове значення запису</li>
+<li><a href="memcached.decrementbykey.md">Memcached::decrementByKey</a>— Зменшує числове значення запису, що зберігається на певному сервері</li>
+<li><a href="memcached.delete.md">Memcached::delete</a> - Видаляє запис</li>
+<li><a href="memcached.deletebykey.md">Memcached::deleteByKey</a>— Видаляє запис із вказаного сервера</li>
+<li><a href="memcached.deletemulti.md">Memcached::deleteMulti</a> - Видаляє кілька записів</li>
+<li><a href="memcached.deletemultibykey.md">Memcached::deleteMultiByKey</a>— Видаляє кілька записів із вказаного сервера</li>
+<li><a href="memcached.fetch.md">Memcached::fetch</a>— Витягує наступний результат</li>
+<li><a href="memcached.fetchall.md">Memcached::fetchAll</a>— Витягує всі отримані записи</li>
+<li><a href="memcached.flush.md">Memcached::flush</a>— Анулює всі записи у кеші</li>
+<li><a href="memcached.get.md">Memcached::get</a>— Отримання запису</li>
+<li><a href="memcached.getallkeys.md">Memcached::getAllKeys</a>— Отримує всі ключі, що зберігаються на серверах</li>
+<li><a href="memcached.getbykey.md">Memcached::getByKey</a>— Отримує запис із певного сервера</li>
+<li><a href="memcached.getdelayed.md">Memcached::getDelayed</a>— Запитує кілька записів</li>
+<li><a href="memcached.getdelayedbykey.md">Memcached::getDelayedByKey</a>— Запитує кілька записів із вказаного сервера</li>
+<li><a href="memcached.getmulti.md">Memcached::getMulti</a>— Отримує кілька записів</li>
+<li><a href="memcached.getmultibykey.md">Memcached::getMultiByKey</a>— Отримує кілька записів із вказаного сервера</li>
+<li><a href="memcached.getoption.md">Memcached::getOption</a>— Отримує значення Memcached параметра</li>
+<li><a href="memcached.getresultcode.md">Memcached::getResultCode</a>— Повертає результуючий код останньої виконаної операції</li>
+<li><a href="memcached.getresultmessage.md">Memcached::getResultMessage</a>— Повертає повідомлення, яке описує результат виконання останньої операції</li>
+<li><a href="memcached.getserverbykey.md">Memcached::getServerByKey</a>— Отримує інформацію про сервер за ключом</li>
+<li><a href="memcached.getserverlist.md">Memcached::getServerList</a>— Отримує список серверів у пулі</li>
+<li><a href="memcached.getstats.md">Memcached::getStats</a>— Отримує статистику про сервери в пулі</li>
+<li><a href="memcached.getversion.md">Memcached::getVersion</a>— Отримує інформацію про версію серверів у пулі</li>
+<li><a href="memcached.increment.md">Memcached::increment</a>— Збільшує числове значення запису</li>
+<li><a href="memcached.incrementbykey.md">Memcached::incrementByKey</a>— Збільшує числове значення запису, що зберігається на вказаному сервері</li>
+<li><a href="memcached.ispersistent.md">Memcached::isPersistent</a>— Перевіряє, чи використовується стійке з&#x27;єднання з сервером memcache</li>
+<li><a href="memcached.ispristine.md">Memcached::isPristine</a>— Перевіряє чи вже створено екземпляр класу Memcached</li>
+<li><a href="memcached.prepend.md">Memcached::prepend</a>— Додає дані на початок існуючого запису</li>
+<li><a href="memcached.prependbykey.md">Memcached::prependByKey</a>— Додає дані на початок існуючого запису на вказаному сервері</li>
+<li><a href="memcached.quit.md">Memcached::quit</a>— Закриває всі відкриті з&#x27;єднання</li>
+<li><a href="memcached.replace.md">Memcached::replace</a>— Замінює існуючий запис із зазначеним ключем</li>
+<li><a href="memcached.replacebykey.md">Memcached::replaceByKey</a>— Замінює існуючий запис із заданим ключем на вказаному сервері</li>
+<li><a href="memcached.resetserverlist.md">Memcached::resetServerList</a>— Очищає список серверів</li>
+<li><a href="memcached.set.md">Memcached::set</a> - Зберігає запис</li>
+<li><a href="memcached.setbykey.md">Memcached::setByKey</a>— Зберігає запис на вказаному сервері</li>
+<li><a href="memcached.setmulti.md">Memcached::setMulti</a>— Зберігає кілька записів</li>
+<li><a href="memcached.setmultibykey.md">Memcached::setMultiByKey</a>— Зберігає кілька записів на вказаному сервері</li>
+<li><a href="memcached.setoption.md">Memcached::setOption</a>— Встановлює параметр для Memcached</li>
+<li><a href="memcached.setoptions.md">Memcached::setOptions</a>— Встановлює кілька параметрів Memcached</li>
+<li><a href="memcached.setsaslauthdata.md">Memcached::setSaslAuthData</a>— Встановлює облікові дані для автентифікації</li>
+<li><a href="memcached.touch.md">Memcached::touch</a>— Встановлює новий термін зберігання для запису</li>
+<li><a href="memcached.touchbykey.md">Memcached::touchByKey</a>— Встановлює новий термін зберігання для запису на вказаному сервері</li>
+</ul></div></article><ul class="flex flex-col sm:flex-row justify-center sm:justify-end items-center sm:m-5 sm:text-sm text-gray-500 dark:text-gray-400"><li class="w-max-full space-y-5 m-5"><a href="https://github.com/ukrainesoft/php.org.ua-docs/blob/master/md/uk/class.memcached.md" class="sm:mx-3 bg-sky-800 hover:bg-white hover:text-sky-800 border border-sky text-white font-bold p-3 sm:px-12 lg:px-8 mb-6 lg:mb-0" target="_blank">Дивитись статтю на GitHub</a></li><li><a href="https://github.com/ukrainesoft/php.org.ua-docs/edit/master/md/uk/class.memcached.md" class="mx-3 font-bold hover:underline" target="_blank">Виправити на GitHub</a></li></ul></div></main><footer class="bg-white rounded-tl-lg rounded-tr-lg shadow flex items-center justify-between p-6 dark:bg-gray-800"><div class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://php.org.ua" class="hover:underline font-logo italic">php.org.ua</a> <!-- -->© <!-- -->2024<!-- --> by <a href="https://lisdev.com" target="_blank">lisdev</a></div><div class="items-center space-x-4"><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><li><a class="mr-4 hover:underline md:mr-6" href="/terms">Правила та умови</a></li><li><a class="mr-4 hover:underline md:mr-6" href="/privacy">Політика конфіденційності</a></li></ul></div><div class="items-center space-x-4"><a target="_blank" href="https://github.com/ukrainesoft/php.org.ua-docs"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a><a target="_blank" href="https://t.me/php_org_ua"><style data-emotion="css vubbuv">.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}</style><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-sky-500 cursor-pointer css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TelegramIcon"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg></a></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"class.memcached.md","content":"# Клас Memcached\n\n(PECL memcached \u003e= 0.1.0)\n\n## Вступ\n\nПредставляє з'єднання до набору серверів memcached.\n\n## Огляд класів\n\n```classsynopsis\n\n     \n    \n\n    \n     \n      class Memcached\n     \n     {\n\n    /* Методы */\n    \n   public __construct(?string $persistent_id = null, ?callable $callback = null, ?string $connection_str = null)\n\n    public add(string $key, mixed $value, int $expiration = 0): bool\npublic addByKey(    string $server_key,    string $key,    mixed $value,    int $expiration = 0): bool\npublic addServer(string $host, int $port, int $weight = 0): bool\npublic addServers(array $servers): bool\npublic append(string $key, string $value): ?bool\npublic appendByKey(string $server_key, string $key, string $value): ?bool\npublic cas(    string|int|float $cas_token,    string $key,    mixed $value,    int $expiration = 0): bool\npublic casByKey(    string|int|float $cas_token,    string $server_key,    string $key,    mixed $value,    int $expiration = 0): bool\npublic decrement(    string $key,    int $offset = 1,    int $initial_value = 0,    int $expiry = 0): int|false\npublic decrementByKey(    string $server_key,    string $key,    int $offset = 1,    int $initial_value = 0,    int $expiry = 0): int|false\npublic delete(string $key, int $time = 0): bool\npublic deleteByKey(string $server_key, string $key, int $time = 0): bool\npublic deleteMulti(array $keys, int $time = 0): array\npublic deleteMultiByKey(string $server_key, array $keys, int $time = 0): array\npublic fetch(): array|false\npublic fetchAll(): array|false\npublic flush(int $delay = 0): bool\npublic get(string $key, ?callable $cache_cb = null, int $get_flags = 0): mixed\npublic getAllKeys(): array|false\npublic getByKey(    string $server_key,    string $key,    ?callable $cache_cb = null,    int $get_flags = 0): mixed\npublic getDelayed(array $keys, bool $with_cas = false, ?callable $value_cb = null): bool\npublic getDelayedByKey(    string $server_key,    array $keys,    bool $with_cas = false,    ?callable $value_cb = null): bool\npublic getMulti(array $keys, int $get_flags = 0): array|false\npublic getMultiByKey(string $server_key, array $keys, int $get_flags = 0): array|false\npublic getOption(int $option): mixed\npublic getResultCode(): int\npublic getResultMessage(): string\npublic getServerByKey(string $server_key): array|false\npublic getServerList(): array\npublic getStats(?string $type = null): array|false\npublic getVersion(): array|false\npublic increment(    string $key,    int $offset = 1,    int $initial_value = 0,    int $expiry = 0): int|false\npublic incrementByKey(    string $server_key,    string $key,    int $offset = 1,    int $initial_value = 0,    int $expiry = 0): int|false\npublic isPersistent(): bool\npublic isPristine(): bool\npublic prepend(string $key, string $value): ?bool\npublic prependByKey(string $server_key, string $key, string $value): ?bool\npublic quit(): bool\npublic replace(string $key, mixed $value, int $expiration = 0): bool\npublic replaceByKey(    string $server_key,    string $key,    mixed $value,    int $expiration = 0): bool\npublic resetServerList(): bool\npublic set(string $key, mixed $value, int $expiration = 0): bool\npublic setByKey(    string $server_key,    string $key,    mixed $value,    int $expiration = 0): bool\npublic setMulti(array $items, int $expiration = 0): bool\npublic setMultiByKey(string $server_key, array $items, int $expiration = 0): bool\npublic setOption(int $option, mixed $value): bool\npublic setOptions(array $options): bool\npublic setSaslAuthData(string $username, string $password): bool\npublic touch(string $key, int $expiration = 0): bool\npublic touchByKey(string $server_key, string $key, int $expiration = 0): bool\n\n   }\n```\n\n## Зміст\n\n-   [Memcached::add](memcached.add.md)— Додає елемент із новим ключем\n-   [Memcached::addByKey](memcached.addbykey.md)— Додає новий елемент на заданий сервер\n-   [Memcached::addServer](memcached.addserver.md)— Додає сервер у пул\n-   [Memcached::addServers](memcached.addservers.md)— Додає кілька серверів у пул\n-   [Memcached::append](memcached.append.md)— Додає дані до наявного запису\n-   [Memcached::appendByKey](memcached.appendbykey.md)— Додає дані до наявного запису на заданому сервері\n-   [Memcached::cas](memcached.cas.md)— Порівнює та встановлює значення для запису\n-   [Memcached::casByKey](memcached.casbykey.md)— Порівнює та встановлює значення для запису на конкретному сервері\n-   [Memcached::\\_\\_construct](memcached.construct.md) \\- Створює екземпляр класу Memcached\n-   [Memcached::decrement](memcached.decrement.md)— Зменшує числове значення запису\n-   [Memcached::decrementByKey](memcached.decrementbykey.md)— Зменшує числове значення запису, що зберігається на певному сервері\n-   [Memcached::delete](memcached.delete.md) \\- Видаляє запис\n-   [Memcached::deleteByKey](memcached.deletebykey.md)— Видаляє запис із вказаного сервера\n-   [Memcached::deleteMulti](memcached.deletemulti.md) \\- Видаляє кілька записів\n-   [Memcached::deleteMultiByKey](memcached.deletemultibykey.md)— Видаляє кілька записів із вказаного сервера\n-   [Memcached::fetch](memcached.fetch.md)— Витягує наступний результат\n-   [Memcached::fetchAll](memcached.fetchall.md)— Витягує всі отримані записи\n-   [Memcached::flush](memcached.flush.md)— Анулює всі записи у кеші\n-   [Memcached::get](memcached.get.md)— Отримання запису\n-   [Memcached::getAllKeys](memcached.getallkeys.md)— Отримує всі ключі, що зберігаються на серверах\n-   [Memcached::getByKey](memcached.getbykey.md)— Отримує запис із певного сервера\n-   [Memcached::getDelayed](memcached.getdelayed.md)— Запитує кілька записів\n-   [Memcached::getDelayedByKey](memcached.getdelayedbykey.md)— Запитує кілька записів із вказаного сервера\n-   [Memcached::getMulti](memcached.getmulti.md)— Отримує кілька записів\n-   [Memcached::getMultiByKey](memcached.getmultibykey.md)— Отримує кілька записів із вказаного сервера\n-   [Memcached::getOption](memcached.getoption.md)— Отримує значення Memcached параметра\n-   [Memcached::getResultCode](memcached.getresultcode.md)— Повертає результуючий код останньої виконаної операції\n-   [Memcached::getResultMessage](memcached.getresultmessage.md)— Повертає повідомлення, яке описує результат виконання останньої операції\n-   [Memcached::getServerByKey](memcached.getserverbykey.md)— Отримує інформацію про сервер за ключом\n-   [Memcached::getServerList](memcached.getserverlist.md)— Отримує список серверів у пулі\n-   [Memcached::getStats](memcached.getstats.md)— Отримує статистику про сервери в пулі\n-   [Memcached::getVersion](memcached.getversion.md)— Отримує інформацію про версію серверів у пулі\n-   [Memcached::increment](memcached.increment.md)— Збільшує числове значення запису\n-   [Memcached::incrementByKey](memcached.incrementbykey.md)— Збільшує числове значення запису, що зберігається на вказаному сервері\n-   [Memcached::isPersistent](memcached.ispersistent.md)— Перевіряє, чи використовується стійке з'єднання з сервером memcache\n-   [Memcached::isPristine](memcached.ispristine.md)— Перевіряє чи вже створено екземпляр класу Memcached\n-   [Memcached::prepend](memcached.prepend.md)— Додає дані на початок існуючого запису\n-   [Memcached::prependByKey](memcached.prependbykey.md)— Додає дані на початок існуючого запису на вказаному сервері\n-   [Memcached::quit](memcached.quit.md)— Закриває всі відкриті з'єднання\n-   [Memcached::replace](memcached.replace.md)— Замінює існуючий запис із зазначеним ключем\n-   [Memcached::replaceByKey](memcached.replacebykey.md)— Замінює існуючий запис із заданим ключем на вказаному сервері\n-   [Memcached::resetServerList](memcached.resetserverlist.md)— Очищає список серверів\n-   [Memcached::set](memcached.set.md) \\- Зберігає запис\n-   [Memcached::setByKey](memcached.setbykey.md)— Зберігає запис на вказаному сервері\n-   [Memcached::setMulti](memcached.setmulti.md)— Зберігає кілька записів\n-   [Memcached::setMultiByKey](memcached.setmultibykey.md)— Зберігає кілька записів на вказаному сервері\n-   [Memcached::setOption](memcached.setoption.md)— Встановлює параметр для Memcached\n-   [Memcached::setOptions](memcached.setoptions.md)— Встановлює кілька параметрів Memcached\n-   [Memcached::setSaslAuthData](memcached.setsaslauthdata.md)— Встановлює облікові дані для автентифікації\n-   [Memcached::touch](memcached.touch.md)— Встановлює новий термін зберігання для запису\n-   [Memcached::touchByKey](memcached.touchbykey.md)— Встановлює новий термін зберігання для запису на вказаному сервері\n","title":"Клас Memcached","contentType":2,"navigation":[{"memcached.sessions.md":"« Підтримка сесій"},{"memcached.add.md":"Memcached::add »"},{"index.md":"PHP Manual"},{"book.memcached.md":"Memcached"}]}},"__N_SSG":true},"page":"/manual/uk/[slug]","query":{"slug":"class.memcached.md"},"buildId":"aTdXUbop8S7MnPlMxZSRg","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

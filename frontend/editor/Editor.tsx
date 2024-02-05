@@ -12,7 +12,7 @@ export const Editor = ({
   onCodeChange?: (code: string) => void
 }) => (
   <MonacoEditor
-    height={LINE_HEIGHT * children.split('\n').length + 'px'}
+    height={Math.max(45, LINE_HEIGHT * children.split('\n').length) + 'px'}
     defaultLanguage="php"
     theme="vs-dark"
     value={children}

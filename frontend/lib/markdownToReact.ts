@@ -18,12 +18,13 @@ export default function markdownToReact(markdown: string): ReactElement {
       components: {
         code: (props: any, children: any) => {
           const lang = getLanugageFromClassName(props.className)
-          if (lang === 'php') {
-            return createElement(CodeRunner, { code: props.children[0] || '' })
+          const code = props.children[0] || ''
+          if (lang === 'php' && typeof code === 'string') {
+            return createElement(CodeRunner, { code })
           }
           if (lang === 'php_no_run') {
             return createElement(Editor, {
-              children: props.children[0] || '',
+              children: code,
               readOnly: true,
             })
           }

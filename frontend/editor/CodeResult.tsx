@@ -5,6 +5,7 @@ const resultClasses = [
   'bg-gray-800',
   'dark:bg-gray-900',
   'p-5',
+  'mt-4',
   'w-full',
   'rounded-lg',
 ]

@@ -16,18 +16,11 @@ export const links: (Link[] | Link)[] = [
   },
   findLinkBySlug('/about'),
   findLinkBySlug('/php-the-right-way'),
-  [
-    {
-      title: 'PHP 8.2',
-      slug: '/releases/uk/8.2.md',
-      url: '/releases/uk/8.2.md',
-    },
-    {
-      title: 'PHP 8.1',
-      slug: '/releases/uk/8.1.md',
-      url: '/releases/uk/8.1.md',
-    },
-  ],
+  [3, 2, 1].map((v) => ({
+    title: `PHP 8.${v}`,
+    slug: `/releases/uk/8.${v}.md`,
+    url: `/releases/uk/8.${v}.md`,
+  })),
 ]
 
 type Props = {
@@ -42,7 +35,7 @@ export default ({ className }: Props) => {
         className="py-3 bg-white/80
           backdrop-blur-md shadow-md w-full
           dark:bg-gray-800
-          fixed top-0 left-0 right-0 z-10"
+          fixed top-0 left-0 right-0 z-20"
       >
         <div className="flex justify-around md:justify-between mx-auto max-w-3xl xl:max-w-5xl">
           <div className="flex space-x-10 flex-row">

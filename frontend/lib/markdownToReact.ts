@@ -9,6 +9,7 @@ import rehypeRaw from 'rehype-raw'
 
 import { ReactElement } from 'rehype-react/lib'
 import CodeRunner from '../editor/CodeRunner'
+import { Editor } from '../editor/Editor'
 
 export default function markdownToReact(markdown: string): ReactElement {
   const result = unified()
@@ -19,6 +20,12 @@ export default function markdownToReact(markdown: string): ReactElement {
           const lang = getLanugageFromClassName(props.className)
           if (lang === 'php') {
             return createElement(CodeRunner, { code: props.children[0] || '' })
+          }
+          if (lang === 'php_no_run') {
+            return createElement(Editor, {
+              children: props.children[0] || '',
+              readOnly: true,
+            })
           }
 
           return createElement('code', props, props.children)

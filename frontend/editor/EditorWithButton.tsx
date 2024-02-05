@@ -1,7 +1,7 @@
-import Editor from '@monaco-editor/react'
 import { useEffect, useState } from 'react'
 import RunCodeButton from './RunCodeButton'
 import { useWindupString } from 'windups'
+import { Editor } from './Editor'
 
 type Props = {
   code?: string
@@ -27,28 +27,22 @@ export default function ({
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full relative">
       <Editor
-        height="40vh"
-        defaultLanguage="php"
-        theme="vs-dark"
-        value={code}
-        className="rounded h-full"
-        onChange={(value) => {
-          onCodeChange && onCodeChange(value || '')
-          setCode(value || '')
+        onCodeChange={(code) => {
+          onCodeChange?.(code)
+          setCode(code || '')
         }}
-        wrapperProps={{
-          className: 'rounded-t-lg rounded-l-lg overflow-hidden h-full w-full',
-        }}
-      />
-      <div className="self-end mb-2">
+      >
+        {code}
+      </Editor>
+      <div className="self-end z-10 absolute bottom-0 right-0">
         <RunCodeButton
           code={code}
           onProcessingStart={onProcessingStart}
           onProcessingEnd={onProcessingEnd}
         >
-          Виконати
+          ▶
         </RunCodeButton>
       </div>
     </div>
